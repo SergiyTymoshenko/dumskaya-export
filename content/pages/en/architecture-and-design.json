@@ -31,50 +31,130 @@
       {
        "t": "p",
        "html": "We develop custom architectural solutions that take into account the specific features of each property, its function, its aesthetics, and the client’s requirements."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Architectural design"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Architectural design </strong>Development of custom architectural concepts and projects for private houses and residential and commercial properties. We work out the building’s architecture, massing and spatial solutions, facades, proportions, materials, and the overall exterior appearance of the property."
-      },
+       "html": "Development of custom architectural concepts and projects for private houses and residential and commercial properties. We work out the building’s architecture, massing and spatial solutions, facades, proportions, materials, and the overall exterior appearance of the property."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Facades and architectural solutions"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Facades and architectural solutions </strong>Facade design for new and existing buildings. We select finishing materials, color schemes, architectural elements, and lighting to create a cohesive, contemporary look for the property."
-      },
+       "html": "Facade design for new and existing buildings. We select finishing materials, color schemes, architectural elements, and lighting to create a cohesive, contemporary look for the property."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Renovation and adaptive reuse of buildings"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Renovation and adaptive reuse of buildings </strong>We develop architectural solutions for renovating existing properties, changing their appearance, and adapting spaces to new functional needs."
+       "html": "We develop architectural solutions for renovating existing properties, changing their appearance, and adapting spaces to new functional needs."
       },
       {
        "t": "p",
        "html": "For historic and architecturally significant buildings, design solutions are developed with the specific features of the property and the applicable preservation requirements in mind."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Landscaping and outdoor spaces"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Landscaping and outdoor spaces </strong>We develop a concept for the surrounding space in a unified architectural style: the layout of pathways, seating areas, outdoor lighting, planting, and other landscape elements."
-      },
+       "html": "We develop a concept for the surrounding space in a unified architectural style: the layout of pathways, seating areas, outdoor lighting, planting, and other landscape elements."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Energy-efficient architectural solutions"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Energy-efficient architectural solutions </strong>The design process can incorporate modern energy-efficient solutions, the rational use of materials, and technologies aimed at reducing the building’s operating costs."
-      },
+       "html": "The design process can incorporate modern energy-efficient solutions, the rational use of materials, and technologies aimed at reducing the building’s operating costs."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Interior architecture"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Interior architecture </strong>We design interior spaces with the building’s architecture, layout, functional zoning, and usage scenarios in mind."
+       "html": "We design interior spaces with the building’s architecture, layout, functional zoning, and usage scenarios in mind."
       },
       {
        "t": "p",
        "html": "Architecture and interior are treated as a single system, which makes it possible to create a functional and visually cohesive space."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3D modeling and architectural visualization"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>3D modeling and architectural visualization </strong>We create detailed photorealistic 3D visualizations of facades, exteriors, interiors, and the surrounding grounds."
+       "html": "We create detailed photorealistic 3D visualizations of facades, exteriors, interiors, and the surrounding grounds."
       },
       {
        "t": "p",
        "html": "Visualization lets you evaluate the architectural design in advance: the building’s proportions, materials, color combinations, lighting, and how the property interacts with its surroundings."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Technical documentation"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Technical documentation </strong>Depending on the project scope, we develop the necessary working drawings, diagrams, specifications, and other technical documentation for implementing the design solutions."
+       "html": "Depending on the project scope, we develop the necessary working drawings, diagrams, specifications, and other technical documentation for implementing the design solutions."
       },
       {
        "t": "p",
@@ -83,14 +163,24 @@
       {
        "t": "p",
        "html": "Where necessary, architectural solutions are adapted to technical requirements, the specifics of the particular property, and local building codes."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Custom design"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Every property is approached individually. We can develop a new architectural concept or adapt an existing design to a specific site, building, layout, and the client’s requirements."
       },
       {
        "t": "p",
-       "html": "<strong>Custom design </strong>Every property is approached individually. We can develop a new architectural concept or adapt an existing design to a specific site, building, layout, and the client’s requirements."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) — architectural design, facade design, interior architecture, and 3D visualization for private and commercial properties.</strong>"
+       "html": "<strong>DUMSKAYA DESIGN — architectural design, facade design, interior architecture, and 3D visualization for private and commercial properties.</strong>"
       }
      ]
     },

@@ -53,12 +53,11 @@
        "html": "Includes:"
       },
       {
-       "t": "p",
-       "html": "— a measured floor plan of the space;"
-      },
-      {
-       "t": "p",
-       "html": "— a furniture layout plan."
+       "t": "ul",
+       "items": [
+        "a measured floor plan of the space;",
+        "a furniture layout plan."
+       ]
       },
       {
        "t": "p",
@@ -101,44 +100,19 @@
        "html": "As part of the project, we can design bespoke cabinet furniture for all the main rooms:"
       },
       {
-       "t": "p",
-       "html": "— kitchens with built-in appliances;"
-      },
-      {
-       "t": "p",
-       "html": "— wardrobes and built-in storage systems;"
-      },
-      {
-       "t": "p",
-       "html": "— walk-in closets;"
-      },
-      {
-       "t": "p",
-       "html": "— bedroom furniture;"
-      },
-      {
-       "t": "p",
-       "html": "— living room furniture;"
-      },
-      {
-       "t": "p",
-       "html": "— TV areas and wall panels;"
-      },
-      {
-       "t": "p",
-       "html": "— entrance hall furniture;"
-      },
-      {
-       "t": "p",
-       "html": "— bathroom furniture;"
-      },
-      {
-       "t": "p",
-       "html": "— workspaces and home offices;"
-      },
-      {
-       "t": "p",
-       "html": "— furniture for commercial spaces."
+       "t": "ul",
+       "items": [
+        "kitchens with built-in appliances;",
+        "wardrobes and built-in storage systems;",
+        "walk-in closets;",
+        "bedroom furniture;",
+        "living room furniture;",
+        "TV areas and wall panels;",
+        "entrance hall furniture;",
+        "bathroom furniture;",
+        "workspaces and home offices;",
+        "furniture for commercial spaces."
+       ]
       },
       {
        "t": "p",
@@ -173,32 +147,16 @@
        "html": "The package is ideal if:"
       },
       {
-       "t": "p",
-       "html": "— your apartment or house already has its finishes in place;"
-      },
-      {
-       "t": "p",
-       "html": "— the property was purchased with a developer’s finish;"
-      },
-      {
-       "t": "p",
-       "html": "— no major renovation is required;"
-      },
-      {
-       "t": "p",
-       "html": "— the apartment or house needs to be fully furnished;"
-      },
-      {
-       "t": "p",
-       "html": "— you need a kitchen and built-in furniture made to custom dimensions;"
-      },
-      {
-       "t": "p",
-       "html": "— you want a unified furniture design for all rooms;"
-      },
-      {
-       "t": "p",
-       "html": "— you need professional drawings for production."
+       "t": "ul",
+       "items": [
+        "your apartment or house already has its finishes in place;",
+        "the property was purchased with a developer’s finish;",
+        "no major renovation is required;",
+        "the apartment or house needs to be fully furnished;",
+        "you need a kitchen and built-in furniture made to custom dimensions;",
+        "you want a unified furniture design for all rooms;",
+        "you need professional drawings for production."
+       ]
       },
       {
        "t": "p",
@@ -230,7 +188,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) — interior design and bespoke furniture, conceived as one cohesive whole.</strong>"
+       "html": "<strong>DUMSKAYA DESIGN — interior design and bespoke furniture, conceived as one cohesive whole.</strong>"
       }
      ]
     },

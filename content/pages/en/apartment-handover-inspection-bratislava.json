@@ -85,16 +85,12 @@
        "html": "<strong>Why choose us?</strong>"
       },
       {
-       "t": "p",
-       "html": "✅ Experience in design and renovation — we know what to look for"
-      },
-      {
-       "t": "p",
-       "html": "✅ We work in the client’s interests, not the developer’s"
-      },
-      {
-       "t": "p",
-       "html": "✅ We help prepare formal defect notices for the developer"
+       "t": "ul",
+       "items": [
+        "Experience in design and renovation — we know what to look for",
+        "We work in the client’s interests, not the developer’s",
+        "We help prepare formal defect notices for the developer"
+       ]
       },
       {
        "t": "p",

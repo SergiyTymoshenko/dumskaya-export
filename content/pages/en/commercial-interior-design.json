@@ -31,18 +31,38 @@
       {
        "t": "p",
        "html": "We work with offices, stores, boutiques, beauty salons, dental clinics and medical offices, restaurants, cafés, hotels, showrooms, and other commercial properties."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Concept design"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Concept design </strong>We develop a bespoke commercial interior concept that takes into account the nature of the business, the corporate identity, the target audience, functional requirements, and the specific features of the space."
+       "html": "We develop a bespoke commercial interior concept that takes into account the nature of the business, the corporate identity, the target audience, functional requirements, and the specific features of the space."
       },
       {
        "t": "p",
        "html": "The interior becomes part of the company’s visual identity and helps create a recognizable brand atmosphere."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Layout and functional zoning"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Layout and functional zoning </strong>Smart space planning is especially important for commercial premises."
+       "html": "Smart space planning is especially important for commercial premises."
       },
       {
        "t": "p",
@@ -55,26 +75,56 @@
       {
        "t": "p",
        "html": "For stores and boutiques, we plan sales areas, display windows, fitting rooms, checkout areas, storage systems, and customer flow."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3D visualization of commercial interiors"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>3D visualization of commercial interiors </strong>We create photorealistic 3D visualizations that let you see the future interior before the project is implemented."
+       "html": "We create photorealistic 3D visualizations that let you see the future interior before the project is implemented."
       },
       {
        "t": "p",
        "html": "3D visualization shows the layout, furniture, materials, color schemes, lighting, and decorative elements, and helps finalize key decisions in advance."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Materials and finishes"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Materials and finishes </strong>We select finishing materials based on the design, the purpose of the space, the intensity of use, practicality requirements, and the project budget."
+       "html": "We select finishing materials based on the design, the purpose of the space, the intensity of use, practicality requirements, and the project budget."
       },
       {
        "t": "p",
        "html": "For commercial interiors, durability, ease of maintenance, and materials that keep their original appearance under heavy use are especially important."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Commercial lighting"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Commercial lighting </strong>Lighting is an essential part of a commercial interior’s architecture."
+       "html": "Lighting is an essential part of a commercial interior’s architecture."
       },
       {
        "t": "p",
@@ -95,82 +145,107 @@
       {
        "t": "p",
        "html": "Furniture manufacturing, delivery, and installation based on the completed design are also available."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Branding in the interior"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Branding in the interior </strong>A commercial interior can become an extension of a company’s corporate identity."
+       "html": "A commercial interior can become an extension of a company’s corporate identity."
       },
       {
        "t": "p",
        "html": "Logos, signage, brand colors, wayfinding, and graphic and decorative elements can be integrated into the design concept to create a recognizable image of the space."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Technical documentation"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Technical documentation </strong>Depending on the project scope, we prepare the technical documentation and working drawings needed to implement the approved concept."
+       "html": "Depending on the project scope, we prepare the technical documentation and working drawings needed to implement the approved concept."
       },
       {
        "t": "p",
        "html": "The documentation helps coordinate the work of contractors, furniture manufacturers, and other specialists involved in implementing the project."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Project support"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Project support </strong>Depending on the project, <strong>DUMSKAYA DESIGN</strong> can oversee the implementation of the developed concept and liaise with contractors, suppliers, and furniture manufacturers."
+       "html": "Depending on the project, <strong>DUMSKAYA DESIGN</strong> can oversee the implementation of the developed concept and liaise with contractors, suppliers, and furniture manufacturers."
       },
       {
        "t": "p",
        "html": "This helps preserve the integrity of the original design at the various stages of bringing the commercial interior to life."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Modern and practical solutions"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Modern and practical solutions </strong>In our designs, we take into account the safety, accessibility, functional, and operational requirements of each specific commercial space."
+       "html": "In our designs, we take into account the safety, accessibility, functional, and operational requirements of each specific commercial space."
       },
       {
        "t": "p",
        "html": "At the client’s request, natural materials, energy-efficient lighting, and other resource-efficient solutions can be used."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Design for a wide range of commercial spaces"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Design for a wide range of commercial spaces </strong>We develop bespoke interior solutions for various types of business:"
+       "html": "We develop bespoke interior solutions for various types of business:"
       },
       {
-       "t": "p",
-       "html": "— offices and business spaces;"
-      },
-      {
-       "t": "p",
-       "html": "— stores and boutiques;"
-      },
-      {
-       "t": "p",
-       "html": "— beauty salons;"
-      },
-      {
-       "t": "p",
-       "html": "— barbershops;"
-      },
-      {
-       "t": "p",
-       "html": "— showrooms;"
-      },
-      {
-       "t": "p",
-       "html": "— dental clinics and medical offices;"
-      },
-      {
-       "t": "p",
-       "html": "— restaurants and cafés;"
-      },
-      {
-       "t": "p",
-       "html": "— hotels and apartments;"
-      },
-      {
-       "t": "p",
-       "html": "— studios and service spaces;"
-      },
-      {
-       "t": "p",
-       "html": "— other commercial premises."
+       "t": "ul",
+       "items": [
+        "offices and business spaces;",
+        "stores and boutiques;",
+        "beauty salons;",
+        "barbershops;",
+        "showrooms;",
+        "dental clinics and medical offices;",
+        "restaurants and cafés;",
+        "hotels and apartments;",
+        "studios and service spaces;",
+        "other commercial premises."
+       ]
       },
       {
        "t": "p",
@@ -178,7 +253,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) — commercial interior design, 3D visualization, technical documentation, custom furniture, and full project implementation.</strong>"
+       "html": "<strong>DUMSKAYA DESIGN — commercial interior design, 3D visualization, technical documentation, custom furniture, and full project implementation.</strong>"
       },
       {
        "t": "p",

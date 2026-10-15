@@ -237,16 +237,12 @@
        "html": "Before you start designing a kitchen, it is important to consider the shape and size of the room:"
       },
       {
-       "t": "p",
-       "html": "- “Small kitchens”: Straight and L-shaped layouts are ideal for small spaces, as they make efficient use of every centimeter."
-      },
-      {
-       "t": "p",
-       "html": "- “Narrow kitchens”: Straight, U-shaped, and L-shaped layouts make the most of the room’s length."
-      },
-      {
-       "t": "p",
-       "html": "- “Square kitchens”: Two-wall (galley) layouts create a harmonious balance between work zones and storage."
+       "t": "ul",
+       "items": [
+        "“Small kitchens”: Straight and L-shaped layouts are ideal for small spaces, as they make efficient use of every centimeter.",
+        "“Narrow kitchens”: Straight, U-shaped, and L-shaped layouts make the most of the room’s length.",
+        "“Square kitchens”: Two-wall (galley) layouts create a harmonious balance between work zones and storage."
+       ]
       },
       {
        "t": "p",
@@ -257,16 +253,12 @@
        "html": "The work triangle is a concept that covers three main zones: the refrigerator, the stove, and the sink. Arranging these elements correctly makes cooking convenient and efficient:"
       },
       {
-       "t": "p",
-       "html": "- “Straight layout”: All elements are placed along one wall. Suitable for narrow spaces but may not work for large kitchens."
-      },
-      {
-       "t": "p",
-       "html": "- “L-shaped layout”: Ideal for most kitchens, as it provides convenient access to all zones."
-      },
-      {
-       "t": "p",
-       "html": "- “U-shaped layout”: Good for large kitchens, offering plenty of storage and work surfaces, but it can look bulky."
+       "t": "ul",
+       "items": [
+        "“Straight layout”: All elements are placed along one wall. Suitable for narrow spaces but may not work for large kitchens.",
+        "“L-shaped layout”: Ideal for most kitchens, as it provides convenient access to all zones.",
+        "“U-shaped layout”: Good for large kitchens, offering plenty of storage and work surfaces, but it can look bulky."
+       ]
       },
       {
        "t": "p",
@@ -277,12 +269,11 @@
        "html": "Adding an island or a peninsula can significantly improve a kitchen’s functionality:"
       },
       {
-       "t": "p",
-       "html": "- “Island”: Great for large kitchens; it can serve as an extra work surface, a dining area, or storage space."
-      },
-      {
-       "t": "p",
-       "html": "- “Peninsula”: A compact alternative to an island, suitable for smaller spaces; it adds extra work surface and storage."
+       "t": "ul",
+       "items": [
+        "“Island”: Great for large kitchens; it can serve as an extra work surface, a dining area, or storage space.",
+        "“Peninsula”: A compact alternative to an island, suitable for smaller spaces; it adds extra work surface and storage."
+       ]
       },
       {
        "t": "p",
@@ -293,16 +284,12 @@
        "html": "Good kitchen ergonomics ensure comfort and safety:"
       },
       {
-       "t": "p",
-       "html": "- “Distance between elements”: Allow enough room to move comfortably between work zones."
-      },
-      {
-       "t": "p",
-       "html": "- “Access to windows and balconies”: Keep in mind the need for easy access to windows for ventilation and natural light."
-      },
-      {
-       "t": "p",
-       "html": "- “Cabinet height and placement”: Mount upper cabinets at a comfortable height so that reaching dishes and food is never awkward."
+       "t": "ul",
+       "items": [
+        "“Distance between elements”: Allow enough room to move comfortably between work zones.",
+        "“Access to windows and balconies”: Keep in mind the need for easy access to windows for ventilation and natural light.",
+        "“Cabinet height and placement”: Mount upper cabinets at a comfortable height so that reaching dishes and food is never awkward."
+       ]
       },
       {
        "t": "p",
@@ -313,12 +300,11 @@
        "html": "Materials and colors play an important role in setting the atmosphere of the kitchen:"
       },
       {
-       "t": "p",
-       "html": "- “Materials”: Use high-quality, durable materials such as natural wood, stone, and stainless steel."
-      },
-      {
-       "t": "p",
-       "html": "- “Colors”: Light tones visually enlarge the space, while dark ones add depth and elegance."
+       "t": "ul",
+       "items": [
+        "“Materials”: Use high-quality, durable materials such as natural wood, stone, and stainless steel.",
+        "“Colors”: Light tones visually enlarge the space, while dark ones add depth and elegance."
+       ]
       },
       {
        "t": "p",
@@ -329,12 +315,11 @@
        "html": "Modern technology can make working in the kitchen much easier:"
       },
       {
-       "t": "p",
-       "html": "- “Smart devices”: Integrating smart refrigerators, cooktops, and other appliances simplifies cooking and food storage."
-      },
-      {
-       "t": "p",
-       "html": "- “Lighting”: Using different types of lighting — general, task, and decorative — creates a comfortable atmosphere and ensures that work areas are well lit."
+       "t": "ul",
+       "items": [
+        "“Smart devices”: Integrating smart refrigerators, cooktops, and other appliances simplifies cooking and food storage.",
+        "“Lighting”: Using different types of lighting — general, task, and decorative — creates a comfortable atmosphere and ensures that work areas are well lit."
+       ]
       },
       {
        "t": "p",
@@ -345,16 +330,12 @@
        "html": "A well-thought-out storage system makes the kitchen more functional and convenient:"
       },
       {
-       "t": "p",
-       "html": "- “Built-in cabinets”: Make the most of vertical space to store dishes and food."
-      },
-      {
-       "t": "p",
-       "html": "- “Pull-out drawers and shelves”: Provide easy access to everything you need."
-      },
-      {
-       "t": "p",
-       "html": "- “Organizers and dividers”: Help keep things tidy and the space efficiently organized."
+       "t": "ul",
+       "items": [
+        "“Built-in cabinets”: Make the most of vertical space to store dishes and food.",
+        "“Pull-out drawers and shelves”: Provide easy access to everything you need.",
+        "“Organizers and dividers”: Help keep things tidy and the space efficiently organized."
+       ]
       },
       {
        "t": "p",
@@ -365,12 +346,11 @@
        "html": "The kitchen should reflect the owners’ personal style and preferences:"
       },
       {
-       "t": "p",
-       "html": "- “Decorative elements”: Add personal touches such as artwork, plants, or unique hardware."
-      },
-      {
-       "t": "p",
-       "html": "- “Functional accents”: Use stylish yet practical decorative elements such as designer faucets, unusual light fixtures, or open shelving."
+       "t": "ul",
+       "items": [
+        "“Decorative elements”: Add personal touches such as artwork, plants, or unique hardware.",
+        "“Functional accents”: Use stylish yet practical decorative elements such as designer faucets, unusual light fixtures, or open shelving."
+       ]
       },
       {
        "t": "p",
@@ -381,12 +361,11 @@
        "html": "Creating a cozy atmosphere in the kitchen is important for the overall perception of the space:"
       },
       {
-       "t": "p",
-       "html": "- “Soft seating and textiles”: Upholstered furniture and textiles add comfort and warmth."
-      },
-      {
-       "t": "p",
-       "html": "- “Pleasant smells”: Install range hoods and ventilation systems to keep the air fresh and get rid of unpleasant odors."
+       "t": "ul",
+       "items": [
+        "“Soft seating and textiles”: Upholstered furniture and textiles add comfort and warmth.",
+        "“Pleasant smells”: Install range hoods and ventilation systems to keep the air fresh and get rid of unpleasant odors."
+       ]
       },
       {
        "t": "p",
@@ -397,12 +376,11 @@
        "html": "Eco-friendly materials and energy-efficient solutions help protect the environment and save resources:"
       },
       {
-       "t": "p",
-       "html": "- “Eco-friendly materials”: Choose natural and recyclable materials for furniture and finishes."
-      },
-      {
-       "t": "p",
-       "html": "- “Energy-efficient appliances”: Use appliances with a high energy efficiency class to reduce electricity costs."
+       "t": "ul",
+       "items": [
+        "“Eco-friendly materials”: Choose natural and recyclable materials for furniture and finishes.",
+        "“Energy-efficient appliances”: Use appliances with a high energy efficiency class to reduce electricity costs."
+       ]
       },
       {
        "t": "p",

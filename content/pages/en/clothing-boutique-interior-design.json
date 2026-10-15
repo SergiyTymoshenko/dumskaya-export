@@ -35,10 +35,20 @@
       {
        "t": "p",
        "html": "The project includes photorealistic 3D visualizations of the boutique interior, allowing the layout, furniture, lighting, materials, and overall atmosphere of the space to be evaluated in advance."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Women’s clothing boutique interior design"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Women’s clothing boutique interior design</strong> The interior concept was developed specifically for a women’s clothing store, where the aesthetics of the space must go hand in hand with convenience and functionality."
+       "html": "The interior concept was developed specifically for a women’s clothing store, where the aesthetics of the space must go hand in hand with convenience and functionality."
       },
       {
        "t": "p",
@@ -47,50 +57,54 @@
       {
        "t": "p",
        "html": "The layout makes efficient use of the commercial floor area while maintaining a sense of open, comfortable space."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Retail space layout"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Retail space layout</strong> A well-planned layout helps shoppers move comfortably through the boutique, while the collections on display remain clearly visible and easy to access."
+       "html": "A well-planned layout helps shoppers move comfortably through the boutique, while the collections on display remain clearly visible and easy to access."
       },
       {
        "t": "p",
        "html": "The project took into account the placement of the main functional areas:"
       },
       {
-       "t": "p",
-       "html": "— clothing display areas;"
-      },
-      {
-       "t": "p",
-       "html": "— retail racks, shelving, and storage systems;"
-      },
-      {
-       "t": "p",
-       "html": "— fitting rooms;"
-      },
-      {
-       "t": "p",
-       "html": "— customer flow routes;"
-      },
-      {
-       "t": "p",
-       "html": "— checkout and service area;"
-      },
-      {
-       "t": "p",
-       "html": "— decorative and branded elements;"
-      },
-      {
-       "t": "p",
-       "html": "— lighting and interior accents."
+       "t": "ul",
+       "items": [
+        "clothing display areas;",
+        "retail racks, shelving, and storage systems;",
+        "fitting rooms;",
+        "customer flow routes;",
+        "checkout and service area;",
+        "decorative and branded elements;",
+        "lighting and interior accents."
+       ]
       },
       {
        "t": "p",
        "html": "The result is a functional commercial interior designed for both shopper comfort and an impressive presentation of the clothing."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Custom furniture for the boutique"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Custom furniture for the boutique</strong> Furniture and retail fixtures are an important part of the store’s overall interior concept."
+       "html": "Furniture and retail fixtures are an important part of the store’s overall interior concept."
       },
       {
        "t": "p",
@@ -99,18 +113,38 @@
       {
        "t": "p",
        "html": "Shelving, display cases, storage systems, racks, counters, and other furniture elements are integrated into the interior and adapted to the specific features of the particular retail space."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Clothing boutique lighting"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Clothing boutique lighting</strong> Lighting plays an important role in a clothing store interior. It affects the atmosphere of the space, the perception of colors and materials, and the presentation of merchandise."
+       "html": "Lighting plays an important role in a clothing store interior. It affects the atmosphere of the space, the perception of colors and materials, and the presentation of merchandise."
       },
       {
        "t": "p",
        "html": "The lighting concept was designed to highlight the clothing collections, architectural and interior details, furniture, and the boutique’s main functional areas, while creating a comfortable atmosphere for visitors."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3D visualization of the boutique interior"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>3D visualization of the boutique interior</strong> Photorealistic 3D interior visualizations were created for the project, showing what the boutique would look like before work began."
+       "html": "Photorealistic 3D interior visualizations were created for the project, showing what the boutique would look like before work began."
       },
       {
        "t": "p",
@@ -119,10 +153,20 @@
       {
        "t": "p",
        "html": "This approach helps finalize the design concept and gain a clear visual picture of the interior before the project is implemented."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Turnkey design and renovation of a commercial space"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Turnkey design and renovation of a commercial space</strong> The project was carried out as a comprehensive interior design and turnkey renovation solution for the boutique — from concept development to its implementation."
+       "html": "The project was carried out as a comprehensive interior design and turnkey renovation solution for the boutique — from concept development to its implementation."
       },
       {
        "t": "p",
@@ -130,7 +174,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) designs interiors for boutiques, stores, offices, beauty salons, and other commercial spaces.</strong>"
+       "html": "<strong>DUMSKAYA DESIGN designs interiors for boutiques, stores, offices, beauty salons, and other commercial spaces.</strong>"
       },
       {
        "t": "p",
