@@ -1,4 +1,4 @@
-# Сайт dumskaya-design.com — подключается к основному Caddyfile строкой «import sites/*.caddy».
+# Сайт dumskaya-design.com — подключается к основному Caddyfile строкой «import sites/dumskaya.caddy».
 # Другие сайты на сервере этот файл не затрагивает.
 # Адрес сайта подставляет установщик (deploy/server-setup.sh): в режиме preview — порт 8088, доступный только
 # с самого сервера (просмотр через SSH-туннель, любое имя: localhost или 127.0.0.1), в режиме live — домен, HTTPS-сертификат Caddy получает сам.
