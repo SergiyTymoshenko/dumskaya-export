@@ -9,3 +9,5 @@ leads.jsonl
 __pycache__/
 content/image-manifest.json
 i18n-work/
+# собирается из content/redirects.json при каждой выкладке (scripts/build_caddy.py)
+deploy/caddy/dumskaya-redirects.snippet
