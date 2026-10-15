@@ -51,6 +51,15 @@ ssh -t eurox 'sudo bash ~/dumskaya/deploy/server-setup.sh live'
 
 Caddy сам получит HTTPS-сертификат. Затем в Search Console отправить `https://dumskaya-design.com/sitemap.xml`.
 
+## Если на сервере что-то пошло не так
+
+```bash
+ssh -t eurox 'sudo bash ~/dumskaya/deploy/server-doctor.sh'
+```
+
+Показывает состояние Caddy и причину ошибки, возвращает основной Caddyfile к виду до установки сайта
+и проверяет, что остальные сайты на сервере отвечают.
+
 ## Где что лежит
 
 | Путь | Что внутри |

@@ -30,7 +30,13 @@ echo "Caddy: $(caddy version | cut -d' ' -f1), режим: $MODE, пользов
 install -d -o "$USER_NAME" -g "$USER_NAME" -m 755 /var/www/dumskaya /var/www/dumskaya/site
 install -d -o "$USER_NAME" -g "$USER_NAME" -m 750 "$APP"
 install -d -m 755 /etc/caddy/sites
-if id caddy >/dev/null 2>&1; then install -d -o caddy -g caddy -m 755 /var/log/caddy; fi
+# Caddy работает от своего пользователя: журнал сайта должен принадлежать ему,
+# иначе Caddy не сможет его открыть и не примет новый конфиг
+CU="$(systemctl show caddy -p User --value 2>/dev/null)"; CU="${CU:-root}"
+as_caddy() { if [ "$CU" = root ]; then "$@"; else sudo -u "$CU" -H "$@"; fi; }
+install -d -o "$CU" -g "$CU" -m 755 /var/log/caddy
+[ -f /var/log/caddy/dumskaya.log ] || install -o "$CU" -g "$CU" -m 640 /dev/null /var/log/caddy/dumskaya.log
+chown "$CU":"$CU" /var/log/caddy/dumskaya.log*
 
 # 2. Caddy
 if [ "$MODE" = live ]; then
@@ -50,18 +56,31 @@ for f in dumskaya.caddy dumskaya-redirects.snippet; do
   [ -f "/etc/caddy/sites/$f" ] && cp -a "/etc/caddy/sites/$f" "/etc/caddy/sites/$f.bak-$TS"
   mv "/etc/caddy/sites/$f.new" "/etc/caddy/sites/$f"
 done
-grep -qE '^[[:space:]]*import[[:space:]]+sites/\*\.caddy' "$CADDYFILE" || printf '\nimport sites/*.caddy\n' >> "$CADDYFILE"
+# В основной Caddyfile добавляется одна строка — импорт только файла этого сайта
+IMPORT_RE='^[[:space:]]*import[[:space:]]+sites/(\*|dumskaya)\.caddy[[:space:]]*$'
+grep -qE "$IMPORT_RE" "$CADDYFILE" || printf '\n# dumskaya-design.com (~/dumskaya/deploy/server-setup.sh)\nimport sites/dumskaya.caddy\n' >> "$CADDYFILE"
 
 restore() {
-  echo "Проверка конфига не прошла — возвращаю как было."
+  echo "$1 — возвращаю как было."
   cp -a "$CADDYFILE.bak-$TS" "$CADDYFILE"
   for f in dumskaya.caddy dumskaya-redirects.snippet; do
     if [ -f "/etc/caddy/sites/$f.bak-$TS" ]; then mv "/etc/caddy/sites/$f.bak-$TS" "/etc/caddy/sites/$f"; else rm -f "/etc/caddy/sites/$f"; fi
   done
-  exit 1
 }
-caddy validate --config "$CADDYFILE" --adapter caddyfile >/tmp/dumskaya-caddy-validate.log 2>&1 || { tail -5 /tmp/dumskaya-caddy-validate.log; restore; }
-systemctl reload caddy
+# проверка от имени пользователя Caddy — так же, как конфиг будет загружаться на самом деле
+if ! as_caddy caddy validate --config "$CADDYFILE" --adapter caddyfile >/tmp/dumskaya-caddy-validate.log 2>&1; then
+  tail -5 /tmp/dumskaya-caddy-validate.log | cut -c1-400 || true
+  restore "Проверка конфига не прошла"
+  exit 1
+fi
+if ! systemctl reload caddy; then
+  journalctl -u caddy -n 8 --no-pager -o cat | grep -iE 'error|fail|denied|address' | tail -4 | cut -c1-400 || true
+  restore "Caddy не принял новый конфиг"
+  systemctl reload caddy 2>/dev/null || true
+  systemctl is-active --quiet caddy || systemctl restart caddy
+  echo "Caddy: $(systemctl is-active caddy), прежние настройки на месте."
+  exit 1
+fi
 echo "Caddy перезагружен."
 find /etc/caddy -name '*.bak-*' -mtime +30 -delete 2>/dev/null || true
 
