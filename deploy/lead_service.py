@@ -64,7 +64,7 @@ def send_telegram(lead):
         f"<b>Контакт:</b> {html.escape(lead['contact'])}",
     ]
     if lead.get("model"):
-        lines.append(f"<b>Модель:</b> {html.escape(lead['model'])}")
+        lines.append(f"<b>Интересует:</b> {html.escape(lead['model'])}")
     if lead.get("message"):
         lines.append(f"<b>Сообщение:</b>\n{html.escape(lead['message'])}")
     lines.append(f"<i>{html.escape(lead.get('lang', ''))} · https://dumskaya-design.com{html.escape(lead.get('page', ''))}</i>")
@@ -87,7 +87,7 @@ def send_mail(lead):
     body = [
         f"Имя: {lead['name']}",
         f"Контакт: {lead['contact']}",
-        f"Модель: {lead['model']}" if lead.get("model") else "",
+        f"Интересует: {lead['model']}" if lead.get("model") else "",
         "",
         lead.get("message", ""),
         "",

@@ -18,7 +18,7 @@ __SITE__ {
 		-Server
 	}
 
-	# 344 постоянных редиректа со старых адресов (генерируется из content/redirects.json)
+	# постоянные редиректы со старых адресов (файл собирается из content/redirects.json при выкладке)
 	import /etc/caddy/sites/dumskaya-redirects.snippet
 
 	handle /api/* {
