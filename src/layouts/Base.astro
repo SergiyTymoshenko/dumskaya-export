@@ -40,7 +40,9 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="google-site-verification" content={site.verification.google} />
   <meta name="yandex-verification" content={site.verification.yandex} />
-  <link rel="icon" href="/favicon.png" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.png" sizes="96x96" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <meta name="theme-color" content="#ffffff" />
   {!noindex && <Schema page={page} />}
   <slot name="head" />

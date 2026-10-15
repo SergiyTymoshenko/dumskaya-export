@@ -11,7 +11,7 @@ const year = new Date().getFullYear();
 ---
 <footer class="ftr wrap">
   <div class="ftr__brand">
-    <p class="ftr__logo">DUMSKAYA DESIGN</p>
+    <a class="ftr__logo" href={lang === 'ru' ? '/' : `/${lang}`}><img src="/logo.svg" alt="DUMSKAYA DESIGN — studio interior" width="150" height="89" loading="lazy" /></a>
     <p class="muted">{T.city}</p>
   </div>
   <div class="ftr__contacts">
@@ -46,7 +46,8 @@ const year = new Date().getFullYear();
   .ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
   .ftr a { text-decoration: none; }
   .ftr a:hover { text-decoration: underline; }
-  .ftr__logo { font-family: var(--display); letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink); margin-bottom: 6px !important; }
+  .ftr__logo { display: inline-block; line-height: 0; margin-bottom: 14px; }
+  .ftr__logo img { width: 150px; height: auto; }
   .ftr__contacts { display: grid; gap: 20px; align-content: start; justify-items: start; }
   .ftr__contacts .btn:hover { text-decoration: none; }
   .ftr__aside { display: grid; gap: 20px; align-content: start; }

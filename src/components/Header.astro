@@ -17,7 +17,7 @@ const phone = site.contacts.phones[0];
     <span class="hdr__burger-label">{T.menu}</span>
   </button>
 
-  <a class="hdr__logo" href={home} aria-label="DUMSKAYA DESIGN">DUMSKAYA DESIGN</a>
+  <a class="hdr__logo" href={home}><img src="/logo-h.svg" alt="DUMSKAYA DESIGN" width="208" height="34" /></a>
 
   <div class="hdr__right">
     <nav class="hdr__langs" aria-label="Language">
@@ -39,7 +39,7 @@ const phone = site.contacts.phones[0];
       <span class="burger burger--x" aria-hidden="true"><i></i><i></i></span>
       <span class="hdr__burger-label">{T.close}</span>
     </button>
-    <a class="hdr__logo" href={home}>DUMSKAYA DESIGN</a>
+    <a class="hdr__logo" href={home}><img src="/logo-h.svg" alt="DUMSKAYA DESIGN" width="208" height="34" /></a>
     <span></span>
   </div>
   <nav class="menu__body" aria-label={T.menu}>
@@ -119,11 +119,9 @@ const phone = site.contacts.phones[0];
   .burger--x i:first-child { top: 5px; transform: rotate(45deg); }
   .burger--x i:last-child { bottom: 5px; transform: rotate(-45deg); }
 
-  .hdr__logo {
-    font-family: var(--display); text-transform: uppercase;
-    letter-spacing: 0.3em; margin-right: -0.3em;
-    font-size: clamp(14px, 1.6vw, 19px); color: var(--ink); text-decoration: none; white-space: nowrap;
-  }
+  .hdr__logo { display: block; line-height: 0; }
+  .hdr__logo img { display: block; height: 26px; width: auto; }
+  @media (min-width: 720px) { .hdr__logo img { height: 34px; } }
   .hdr__right { justify-self: end; display: flex; align-items: center; gap: 20px; }
   .hdr__langs { display: none; gap: 12px; font-size: 13px; letter-spacing: 0.06em; }
   .hdr__langs a { color: var(--stone); text-decoration: none; }

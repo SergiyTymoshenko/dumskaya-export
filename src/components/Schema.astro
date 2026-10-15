@@ -18,7 +18,7 @@ const studio = {
   name: 'DUMSKAYA DESIGN',
   description: 'Interior design studio: residential and commercial interiors, custom furniture and turnkey renovation in Bratislava and Vienna.',
   url: `${SITE}/`,
-  logo: img('65d3aa3656ff01000f88c35d'),
+  logo: `${SITE}/logo.png`,
   image: img('6abd6a8768c5e81567a1bfe0'),
   email: c.email,
   telephone: c.phones[0].tel,
@@ -34,7 +34,7 @@ if (page.type === 'home' || page.type === 'contact') {
   graph.push(studio);
   if (page.type === 'home') graph.push({ '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: 'DUMSKAYA DESIGN', inLanguage: ['ru', 'uk', 'en'], publisher: { '@id': ORG_ID } });
 } else {
-  graph.push({ '@type': 'Organization', '@id': ORG_ID, name: 'DUMSKAYA DESIGN', url: `${SITE}/` });
+  graph.push({ '@type': 'Organization', '@id': ORG_ID, name: 'DUMSKAYA DESIGN', url: `${SITE}/`, logo: `${SITE}/logo.png` });
 }
 const crumbs = crumbsFor(page);
 if (crumbs.length > 1) {
