@@ -1,0 +1,59 @@
+# Сайт dumskaya-design.com — подключается к основному Caddyfile строкой «import sites/*.caddy».
+# Другие сайты на сервере этот файл не затрагивает.
+# Адрес сайта подставляет установщик (deploy/server-setup.sh): в режиме preview — только 127.0.0.1:8088
+# (просмотр через SSH-туннель), в режиме live — домен, HTTPS-сертификат Caddy получает сам.
+
+__WWW_BLOCK__
+
+__SITE__ {
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		X-Frame-Options "SAMEORIGIN"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		-Server
+	}
+
+	# 344 постоянных редиректа со старых адресов (генерируется из content/redirects.json)
+	import /etc/caddy/sites/dumskaya-redirects.snippet
+
+	handle /api/* {
+		reverse_proxy 127.0.0.1:8095
+	}
+
+	handle {
+		root * /var/www/dumskaya/site
+		redir /index.html / 301
+		@html path_regexp html ^(/.+)\.html$
+		redir @html {re.html.1} 301
+		@slash path_regexp slash ^(/.+)/$
+		redir @slash {re.slash.1} 301
+
+		@static path /img/* /_astro/*
+		header @static Cache-Control "public, max-age=31536000, immutable"
+		@pages not path /img/* /_astro/*
+		header @pages Cache-Control "public, max-age=600"
+
+		try_files {path} {path}.html
+		file_server
+	}
+
+	handle_errors {
+		@404 expression {err.status_code} == 404
+		handle @404 {
+			root * /var/www/dumskaya/site
+			rewrite * /404.html
+			file_server
+		}
+	}
+
+	log {
+		output file /var/log/caddy/dumskaya.log {
+			roll_size 10MiB
+			roll_keep 5
+		}
+	}
+}

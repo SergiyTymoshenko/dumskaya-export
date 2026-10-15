@@ -1,0 +1,18 @@
+[Unit]
+Description=DUMSKAYA DESIGN — приём заявок с сайта
+After=network-online.target
+
+[Service]
+User=deploy
+WorkingDirectory=/home/deploy/dumskaya
+EnvironmentFile=/home/deploy/dumskaya/lead.env
+ExecStart=/usr/bin/python3 /home/deploy/dumskaya/deploy/lead_service.py
+Restart=always
+RestartSec=5
+NoNewPrivileges=yes
+ProtectSystem=strict
+ReadWritePaths=/home/deploy/dumskaya
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

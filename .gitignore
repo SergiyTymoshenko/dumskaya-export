@@ -4,3 +4,6 @@ dist/
 public/img/
 .DS_Store
 .env
+deploy/lead.env
+leads.jsonl
+__pycache__/
