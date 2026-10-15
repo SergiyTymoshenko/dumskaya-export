@@ -20,8 +20,7 @@ fi
 STAMP="$(node -v) $(shasum package-lock.json 2>/dev/null || sha1sum package-lock.json)"
 if [ ! -d node_modules ] || [ "$(cat node_modules/.dd-stamp 2>/dev/null)" != "$STAMP" ]; then
   echo "▸ Установка пакетов"
-  rm -rf node_modules
-  npm install --no-audit --no-fund --loglevel=error
+  npm ci --no-audit --no-fund --loglevel=error
   echo "$STAMP" > node_modules/.dd-stamp
 fi
 
@@ -30,7 +29,7 @@ node scripts/images.mjs
 echo "▸ 2/5 Сборка"
 PUBLIC_ANALYTICS=1 npx astro build >/dev/null
 echo "▸ 3/5 Проверка"
-python3 scripts/check_site.py | head -3
+python3 scripts/check_site.py | sed -n '1,2p'
 python3 scripts/build_caddy.py
 
 echo "▸ 4/5 Выкладка на $HOST"
@@ -40,7 +39,9 @@ if ! ssh "$HOST" 'test -d /var/www/dumskaya/site'; then
   echo "  Первая выкладка: настраиваю сервер (нужен пароль sudo)…"
   ssh -t "$HOST" 'sudo bash ~/dumskaya/deploy/server-setup.sh preview'
 fi
-rsync -az --delete --delay-updates --exclude '.DS_Store' dist/ "$HOST:/var/www/dumskaya/site/"
+# --delay-updates (подмена файлов в самом конце) есть не во всех версиях rsync на macOS
+DELAY=""; case "$(rsync --help 2>&1)" in *--delay-updates*) DELAY="--delay-updates" ;; esac
+rsync -az --delete $DELAY --exclude '.DS_Store' dist/ "$HOST:/var/www/dumskaya/site/"
 
 echo "▸ 5/5 Настройки сервера"
 if ssh "$HOST" 'cd ~/dumskaya/deploy && sha256sum -c --quiet ~/dumskaya/installed.sha256 >/dev/null 2>&1'; then

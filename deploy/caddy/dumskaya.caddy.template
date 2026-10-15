@@ -6,6 +6,7 @@
 __WWW_BLOCK__
 
 __SITE__ {
+	__BIND__
 	encode zstd gzip
 
 	header {

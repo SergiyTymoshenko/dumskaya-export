@@ -10,8 +10,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import sharp from 'sharp';
+import { fileURLToPath } from 'node:url';
 
-const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = (process.env.IMAGES_DIR || path.join(os.homedir(), 'Documents/dumskaya-export/images')).replace(/^~/, os.homedir());
 const OUT = path.join(ROOT, 'public', 'img');
 const WIDTHS = [480, 960, 1440, 1920];

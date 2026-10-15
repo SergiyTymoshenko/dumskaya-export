@@ -20,14 +20,17 @@ npm run deploy
 
 ## Первый запуск на Mac
 
+В Терминале на Mac (не на сервере):
+
 ```bash
-git clone https://github.com/SergiyTymoshenko/dumskaya-export.git ~/dumskaya-site
-cd ~/dumskaya-site
-npm install
-npm run deploy          # первый раз фото обрабатываются долго (около 2 300 штук), потом — только новые
+cd ~/dumskaya-site && git fetch origin && git reset --hard origin/main && bash scripts/mac-setup.sh
 ```
 
-Нужны Node.js 22.19+ (лучше актуальная LTS с nodejs.org; проверить: `node -v`), python3 и ssh-доступ `ssh eurox`.
+`scripts/mac-setup.sh` при необходимости обновляет Node.js (нужен 22.19+) и запускает `npm run deploy`.
+Первый раз фото обрабатываются долго (около 2 300 штук) и около 700 МБ уходит на сервер, потом — только новое.
+Если клона ещё нет: `git clone https://github.com/SergiyTymoshenko/dumskaya-export.git ~/dumskaya-site`.
+
+Нужны python3 и ssh-доступ `ssh eurox`.
 Оригиналы фото берутся из `~/Documents/dumskaya-export/images` (другая папка: `IMAGES_DIR=... npm run deploy`).
 
 ## Заявки с сайта

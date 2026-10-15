@@ -7,3 +7,4 @@ public/img/
 deploy/lead.env
 leads.jsonl
 __pycache__/
+content/image-manifest.json

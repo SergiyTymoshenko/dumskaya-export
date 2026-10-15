@@ -36,11 +36,13 @@ if id caddy >/dev/null 2>&1; then install -d -o caddy -g caddy -m 755 /var/log/c
 if [ "$MODE" = live ]; then
   SITE="dumskaya-design.com"
   WWW="www.dumskaya-design.com {\n\tredir https://dumskaya-design.com{uri} 301\n}"
+  BIND=""
 else
   SITE="http://127.0.0.1:8088"
   WWW=""
+  BIND="bind 127.0.0.1"
 fi
-sed -e "s#__SITE__#$SITE#" -e "s#__WWW_BLOCK__#$WWW#" "$HERE/caddy/dumskaya.caddy.template" > /etc/caddy/sites/dumskaya.caddy.new
+sed -e "s#__SITE__#$SITE#" -e "s#__WWW_BLOCK__#$WWW#" -e "s#__BIND__#$BIND#" "$HERE/caddy/dumskaya.caddy.template" > /etc/caddy/sites/dumskaya.caddy.new
 cp "$HERE/caddy/dumskaya-redirects.snippet" /etc/caddy/sites/dumskaya-redirects.snippet.new
 
 cp -a "$CADDYFILE" "$CADDYFILE.bak-$TS"
