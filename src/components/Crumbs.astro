@@ -1,0 +1,13 @@
+---
+// Хлебные крошки (видимые) — та же цепочка уходит в разметку BreadcrumbList.
+interface Props { items: { label: string; href?: string | null }[] }
+const { items } = Astro.props;
+---
+<nav class="crumbs" aria-label="breadcrumbs">
+  {items.map((it, i) => (
+    <>
+      {i > 0 && ' / '}
+      {it.href && i < items.length - 1 ? <a href={it.href}>{it.label}</a> : <span aria-current={i === items.length - 1 ? 'page' : undefined}>{it.label}</span>}
+    </>
+  ))}
+</nav>

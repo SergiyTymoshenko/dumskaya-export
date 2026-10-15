@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui } from '../lib/i18n';
+import type { Page } from '../lib/data';
+const page = { path: '/404', lang: 'ru', type: '404', group: null, title: 'Страница не найдена | DUMSKAYA DESIGN', description: '', h1: 'Страница не найдена', og_image: null, alternates: {}, sections: [] } as unknown as Page;
+const ru = ui('ru'), ua = ui('ua'), en = ui('en');
+---
+<Base page={page} noindex>
+  <div class="nf wrap">
+    <h1 class="display">{ru.notFound.title}</h1>
+    <p>{ru.notFound.text}</p>
+    <p class="nf__links"><a class="btn btn--solid" href="/">{ru.home}</a> <a class="btn" href="/proekty-interior-design">{ru.projects}</a></p>
+    <p class="muted" lang="uk">{ua.notFound.title}. <a href="/ua">{ua.home}</a></p>
+    <p class="muted" lang="en">{en.notFound.title}. <a href="/en">{en.home}</a></p>
+  </div>
+</Base>
+<style>
+  .nf { padding-block: clamp(64px, 12vw, 160px); text-align: center; display: grid; justify-items: center; gap: 8px; }
+  .nf h1 { font-size: clamp(24px, 3.4vw, 40px); }
+  .nf__links { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin: 16px 0 24px; }
+</style>

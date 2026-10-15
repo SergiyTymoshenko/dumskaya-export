@@ -80,3 +80,62 @@ export function isServicesSection(s: Section) {
   const h = s.blocks.find((b) => b.type === 'heading') as any;
   return !!h && /^(Услуги студии|Послуги студії|Interior design studio services|Our services|Services)/i.test(h.text);
 }
+
+/** Все страницы данного типа на языке lang (порядок — по русскому адресу). */
+export function pagesOfType(type: string, lang: Lang) {
+  return pages.filter((p) => p.type === type && p.lang === lang).sort((a, b) => (a.alternates.ru || a.path).localeCompare(b.alternates.ru || b.path));
+}
+
+/** Текст страницы без блока «Услуги студии». */
+export function mainParts(page: Page): Part[] {
+  return page.sections.filter((s) => !isServicesSection(s)).flatMap((s) => s.blocks)
+    .filter((b) => b.type === 'text').flatMap((b: any) => b.parts as Part[]);
+}
+
+export function servicesCards(page: Page) {
+  const s = page.sections.find(isServicesSection);
+  return ((s?.blocks.find((b) => b.type === 'cards') as any)?.items || []) as { title: string; href: string | null; image: Img | null }[];
+}
+
+export function homePath(lang: Lang) {
+  return lang === 'ru' ? '/' : `/${lang}`;
+}
+
+export const plain = (h: string) => h.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
+
+/** Хлебные крошки страницы (видимые и для разметки BreadcrumbList). */
+export function crumbsFor(page: Page): { label: string; href: string | null }[] {
+  const lang = page.lang;
+  const t: any = {
+    ru: { home: 'Главная', projects: 'Проекты', kitchens: 'Кухни', tips: 'Советы', shop: 'Магазин', prices: 'Цены', contacts: 'Контакты' },
+    ua: { home: 'Головна', projects: 'Проєкти', kitchens: 'Кухні', tips: 'Поради', shop: 'Магазин', prices: 'Ціни', contacts: 'Контакти' },
+    en: { home: 'Home', projects: 'Projects', kitchens: 'Kitchens', tips: 'Tips', shop: 'Shop', prices: 'Prices', contacts: 'Contact' },
+  }[lang];
+  const home = { label: t.home, href: homePath(lang) };
+  const last = (label: string) => ({ label, href: page.path });
+  const L = (ru: string) => localize(ru, lang);
+  switch (page.type) {
+    case 'home': return [home];
+    case 'portfolio': return [home, last(t.projects)];
+    case 'project': return [home, { label: t.projects, href: L('/proekty-interior-design') }, last(page.h1)];
+    case 'kitchen': {
+      const code = (page.alternates.ru || page.path).match(/k-?(\d{2})/i)?.[1];
+      return [home, { label: t.kitchens, href: L('/kupkuhni-na-zakaz-vienna-bratislava') }, last(code ? `K-${code}` : page.h1)];
+    }
+    case 'article': return [home, { label: t.tips, href: null }, last(page.h1)];
+    case 'contact': return [home, last(t.contacts)];
+    case 'shop': {
+      const ru = page.alternates.ru || page.path;
+      if (ru === '/shop') return [home, last(t.shop)];
+      return [home, { label: t.shop, href: L('/shop') }, last(page.h1 || page.title.split('|')[0].trim())];
+    }
+    default: {
+      const ru = page.alternates.ru || page.path;
+      if (ru === '/price-interior-design-bratislava-wien-praha') return [home, last(t.prices)];
+      const menu = (site.menu[lang] || []) as any[];
+      const group = menu.find((m) => m.children?.some((c: any) => c.href === page.path));
+      const prices = group && /Цен|Ціни|Prices/.test(group.label);
+      return [home, ...(group ? [{ label: group.label, href: prices ? L('/price-interior-design-bratislava-wien-praha') : null }] : []), last(page.h1)];
+    }
+  }
+}

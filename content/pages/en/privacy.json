@@ -1,0 +1,115 @@
+{
+ "path": "/en/privacy",
+ "lang": "en",
+ "type": "privacy",
+ "group": null,
+ "title": "Privacy Policy | DUMSKAYA DESIGN",
+ "description": "What data the DUMSKAYA DESIGN website collects, why, how long it is kept and your rights: enquiry form, e-mails and Google Analytics cookies.",
+ "h1": "Privacy policy",
+ "og_image": null,
+ "alternates": {
+  "ru": "/privacy",
+  "ua": "/ua/privacy",
+  "en": "/en/privacy"
+ },
+ "sections": [
+  {
+   "id": "privacy",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Privacy policy"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Who processes your data"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "DUMSKAYA DESIGN interior design studio, Súkennícka 1, 821 09 Bratislava, Slovakia. E-mail: <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>, phone: <a href=\"tel:+421918177785\">+421 918 17 77 85</a>."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What data and why"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "When you send the enquiry form, we receive your name, phone number or e-mail and your message. We use this data only to answer your enquiry and prepare an offer (Art. 6(1)(b) GDPR — steps prior to entering into a contract)."
+      },
+      {
+       "t": "p",
+       "html": "If you write to us by e-mail, WhatsApp or Telegram, we receive the data you include in your message and use it to reply."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Who receives the data"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Enquiries from the website are delivered to our mailbox (Google Gmail) and to Telegram. The website is hosted on a Hetzner server in the European Union. We do not sell your data or share it with third parties for advertising."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How long we keep the data"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Enquiries are kept for no longer than 24 months after our last contact unless we sign a contract. Contract data is kept for as long as Slovak law requires."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Cookies and analytics"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The website uses Google Analytics via Google Tag Manager to understand which pages are useful to visitors. These cookies are loaded only after you consent in the banner. You can withdraw consent at any time by clearing the site cookies in your browser; the banner will appear again."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Your rights"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "You can request access to, correction or deletion of your data, restrict or object to processing, and receive your data in a machine-readable format. Write to <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>. You can also lodge a complaint with the Slovak data protection authority, Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk)."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

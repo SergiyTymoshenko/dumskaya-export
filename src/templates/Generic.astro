@@ -1,14 +1,24 @@
 ---
-// Временный общий шаблон для страниц, у которых пока нет своего (услуги, кухни, цены, статьи).
+// Общий шаблон: услуги, пакеты, каталоги кухонь и прочие страницы с блоками.
 import Blocks from '../components/Blocks.astro';
+import Crumbs from '../components/Crumbs.astro';
 import { ui, type Lang } from '../lib/i18n';
-import type { Page } from '../lib/data';
+import { site, homePath, localize, type Page } from '../lib/data';
 interface Props { page: Page }
 const { page } = Astro.props;
-const T = ui(page.lang as Lang);
-const home = page.lang === 'ru' ? '/' : `/${page.lang}`;
+const lang = page.lang as Lang;
+const T = ui(lang);
+const menu = site.menu[lang] as any[];
+const group = menu.find((m) => m.children?.some((c: any) => c.href === page.path));
+const groupHref = group && group.label === T.prices2 ? localize('/price-interior-design-bratislava-wien-praha', lang) : null;
+const hasH1 = page.sections.some((s) => s.blocks.some((b) => b.type === 'heading' && b.level === 1));
+const crumbs = [{ label: T.home, href: homePath(lang) }, ...(group ? [{ label: group.label, href: groupHref }] : []), { label: page.h1 }];
 ---
 <div class="wrap" style="padding-top:20px">
-  <nav class="crumbs" aria-label="breadcrumbs"><a href={home}>{T.home}</a> / <span aria-current="page">{page.h1}</span></nav>
+  <Crumbs items={crumbs} />
 </div>
+{!hasH1 && <h1 class="display wrap gh1">{page.h1}</h1>}
 <Blocks sections={page.sections} />
+<style>
+  .gh1 { font-size: clamp(22px, 3vw, 36px); margin-block: 32px 16px; max-width: 30ch; }
+</style>

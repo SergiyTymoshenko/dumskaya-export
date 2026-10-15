@@ -408,6 +408,28 @@
     "name": "YouTube",
     "href": "https://www.youtube.com/@DUMSKAYADESIGN"
    }
+  ],
+  "address": {
+   "street": "Súkennícka 1",
+   "postal": "821 09",
+   "city": "Bratislava",
+   "district": "Ružinov",
+   "country": "SK",
+   "label": {
+    "ru": "Súkennícka 1, 821 09 Братислава, Словакия",
+    "ua": "Súkennícka 1, 821 09 Братислава, Словаччина",
+    "en": "Súkennícka 1, 821 09 Bratislava, Slovakia"
+   }
+  },
+  "messengers": [
+   {
+    "name": "WhatsApp",
+    "href": "https://wa.me/421918177785"
+   },
+   {
+    "name": "Telegram",
+    "href": "https://t.me/+421918177785"
+   }
   ]
  },
  "analytics": {

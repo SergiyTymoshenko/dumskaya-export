@@ -1,0 +1,90 @@
+---
+import Crumbs from '../components/Crumbs.astro';
+import Parts from '../components/Parts.astro';
+import Img from '../components/Img.astro';
+import Tile from '../components/Tile.astro';
+import { ui, type Lang } from '../lib/i18n';
+import { homePath, mainParts, allGalleryImages, pagesOfType, firstGallery, localize, type Page } from '../lib/data';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang = page.lang as Lang;
+const T = ui(lang);
+const model = (page.alternates.ru || page.path).match(/k-?(\d{2})/i)?.[1];
+const code = model ? `K-${model}` : '';
+const images = allGalleryImages(page);
+const [hero, ...thumbs] = images;
+const parts = mainParts(page);
+// «Основные характеристики»: короткие абзацы «Название: значение» → таблица-штамп
+const plainP = (p: any) => (p.t === 'p' ? p.html.replace(/<[^>]+>/g, '').trim() : '');
+const specAt = parts.findIndex((p) => /характеристик|specification|features/i.test(plainP(p)) && plainP(p).length < 80);
+const specs: [string, string][] = [];
+let specEnd = specAt;
+if (specAt >= 0) {
+  for (let k = specAt + 1; k < parts.length; k++) {
+    const m = plainP(parts[k]).match(/^([^:]{2,40}):\s*(.{1,120}?)\.?$/);
+    if (!m) break;
+    specs.push([m[1], m[2]]);
+    specEnd = k;
+  }
+}
+const before = specs.length ? parts.slice(0, specAt) : parts;
+const after = specs.length ? parts.slice(specEnd + 1) : [];
+const specTitle = specAt >= 0 ? plainP(parts[specAt]).replace(/:$/, '') : '';
+const catalog = localize('/kupkuhni-na-zakaz-vienna-bratislava', lang);
+const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
+const all = pagesOfType('kitchen', lang);
+const i = all.findIndex((p) => p.path === page.path);
+const others = [1, 2, 3].map((d) => all[(i + d) % all.length]).filter((p) => p && p.path !== page.path);
+const num = (p: Page) => (p.alternates.ru || p.path).match(/k-?(\d{2})/i)?.[1];
+---
+<div class="wrap ktop">
+  <Crumbs items={[{ label: T.home, href: homePath(lang) }, { label: T.kitchens, href: catalog }, { label: code }]} />
+</div>
+<div class="kgrid wrap">
+  <div class="kgal">
+    {hero && <Img id={hero.id} alt={hero.alt} sizes="(min-width: 960px) 60vw, 100vw" eager class="kgal__hero" />}
+    {thumbs.length > 0 && <div class="kgal__thumbs">{thumbs.map((t) => <Img id={t.id} alt={t.alt} sizes="(min-width: 960px) 20vw, 33vw" />)}</div>}
+  </div>
+  <div class="kinfo">
+    <p class="kinfo__code display">{code}</p>
+    <h1 class="kinfo__h1">{page.h1}</h1>
+    <div class="kinfo__btns">
+      {contact && <a class="btn btn--solid" href={`${contact}?model=${code}`}>{T.kitchenPrice} {code}</a>}
+      {catalog && <a class="btn" href={catalog}>{T.allKitchens}</a>}
+    </div>
+    <Parts parts={before} class="kinfo__text" />
+    {specs.length > 0 && (
+      <table class="stamp kspec">
+        <caption class="stamp__head">{specTitle}</caption>
+        <tbody>{specs.map(([k, v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody>
+      </table>
+    )}
+    {after.length > 0 && <Parts parts={after} class="kinfo__text" />}
+  </div>
+</div>
+{others.length > 0 && (
+  <section class="kother" aria-labelledby="ko">
+    <h2 id="ko" class="section-title wrap kother__h">{T.otherKitchens}</h2>
+    <div class="tiles tiles--3">
+      {others.map((o) => <Tile href={o.path} image={firstGallery(o)[0]?.id} alt={o.h1} title={`K-${num(o)}`} sizes="(min-width: 960px) 33vw, 50vw" />)}
+    </div>
+  </section>
+)}
+<style>
+  .ktop { padding-block: 20px 24px; }
+  .kgrid { display: grid; gap: 40px; padding-bottom: clamp(48px, 7vw, 96px); }
+  @media (min-width: 960px) { .kgrid { grid-template-columns: 7fr 5fr; gap: clamp(40px, 5vw, 80px); align-items: start; } .kinfo { position: sticky; top: calc(var(--header) + 24px); } }
+  .kgal :global(.kgal__hero) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .kgal__thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); margin-top: var(--gap); }
+  .kgal__thumbs :global(img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .kinfo__code { font-size: clamp(32px, 4vw, 48px); margin: 0; }
+  .kinfo__h1 { font: 400 clamp(17px, 1.6vw, 20px)/1.4 var(--body); color: var(--ink); margin: 12px 0 24px; }
+  .kinfo__btns { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+  :global(.kinfo__text) { font-size: 16px; }
+  .kother__h { padding-bottom: 24px; }
+  .stamp { width: 100%; border-collapse: collapse; border: 1px solid var(--ink); font-size: 14px; line-height: 1.4; margin: 8px 0 24px; }
+  .stamp__head { caption-side: top; text-align: left; border: 1px solid var(--ink); border-bottom: 0; padding: 8px 12px; font-family: var(--display); letter-spacing: 0.14em; text-transform: uppercase; font-size: 12px; color: var(--ink); }
+  .stamp th, .stamp td { border-top: 1px solid var(--ink); padding: 8px 12px; vertical-align: top; text-align: left; }
+  .stamp th { width: 40%; font-weight: 400; color: var(--stone); border-right: 1px solid var(--ink); font-size: 13px; }
+  .stamp td { color: var(--ink); }
+</style>

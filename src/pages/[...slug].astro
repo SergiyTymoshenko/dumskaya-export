@@ -3,6 +3,11 @@ import Base from '../layouts/Base.astro';
 import Home from '../templates/Home.astro';
 import Portfolio from '../templates/Portfolio.astro';
 import Project from '../templates/Project.astro';
+import Article from '../templates/Article.astro';
+import Kitchen from '../templates/Kitchen.astro';
+import Contact from '../templates/Contact.astro';
+import Price from '../templates/Price.astro';
+import Shop from '../templates/Shop.astro';
 import Generic from '../templates/Generic.astro';
 import { pages, type Page } from '../lib/data';
 
@@ -14,7 +19,9 @@ export function getStaticPaths() {
 }
 
 const { page } = Astro.props as { page: Page };
-const T = { home: Home, portfolio: Portfolio, project: Project }[page.type as 'home'] || Generic;
+const isPriceOverview = (page.alternates.ru || page.path) === '/price-interior-design-bratislava-wien-praha';
+const map: Record<string, any> = { home: Home, portfolio: Portfolio, project: Project, article: Article, kitchen: Kitchen, contact: Contact, shop: Shop };
+const T = isPriceOverview ? Price : map[page.type] || Generic;
 ---
 <Base page={page}>
   <T page={page} />

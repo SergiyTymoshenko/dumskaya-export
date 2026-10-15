@@ -1,0 +1,43 @@
+---
+// Согласие на cookie: Google Tag Manager загружается только после «Принять».
+import { ui, type Lang } from '../lib/i18n';
+interface Props { lang: Lang; gtm: string }
+const { lang, gtm } = Astro.props;
+const T = ui(lang);
+const privacy = lang === 'ru' ? '/privacy' : `/${lang}/privacy`;
+---
+<div class="cookie" data-cookie hidden role="region" aria-label="Cookies">
+  <p>{T.cookie.text} <a href={privacy}>{T.form.privacy}</a></p>
+  <div class="cookie__btns">
+    <button type="button" class="btn" data-choice="denied">{T.cookie.decline}</button>
+    <button type="button" class="btn btn--solid" data-choice="granted">{T.cookie.accept}</button>
+  </div>
+</div>
+<script is:inline define:vars={{ gtm }}>
+  (function () {
+    var KEY = 'dd-consent';
+    function load() {
+      if (window.__gtmLoaded) return; window.__gtmLoaded = true;
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtm);
+    }
+    var v = null; try { v = localStorage.getItem(KEY); } catch (e) {}
+    if (v === 'granted') { load(); return; }
+    if (v === 'denied') return;
+    var box = document.querySelector('[data-cookie]'); if (!box) return;
+    box.hidden = false;
+    box.addEventListener('click', function (e) {
+      var c = e.target.closest('[data-choice]'); if (!c) return;
+      try { localStorage.setItem(KEY, c.dataset.choice); } catch (err) {}
+      box.hidden = true;
+      if (c.dataset.choice === 'granted') load();
+    });
+  })();
+</script>
+<style>
+  .cookie { position: fixed; z-index: 40; left: 12px; right: 12px; bottom: 12px; max-width: 720px; margin-inline: auto;
+    background: #fff; border: 1px solid var(--ink); padding: 16px 18px; display: grid; gap: 12px; font-size: 14px; box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+  .cookie p { margin: 0; }
+  .cookie__btns { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+  .cookie .btn { min-height: 40px; padding: 8px 18px; font-size: 14px; }
+  @media (min-width: 720px) { .cookie { grid-template-columns: 1fr auto; align-items: center; } }
+</style>

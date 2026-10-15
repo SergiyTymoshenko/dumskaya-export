@@ -1,9 +1,10 @@
 ---
 // Общий вывод блоков страницы: заголовки, текст, фото, карточки, кнопки.
+// На странице остаётся ровно один H1 (если шаблон выводит свой — skipH1).
 import Img from './Img.astro';
 import Tile from './Tile.astro';
 import Parts from './Parts.astro';
-import type { Section } from '../lib/data';
+import { splitCaption, type Section } from '../lib/data';
 
 interface Props { sections: Section[]; skipH1?: boolean }
 const { sections, skipH1 = false } = Astro.props;
@@ -21,11 +22,17 @@ const { sections, skipH1 = false } = Astro.props;
           {b.images.map((i) => <Img id={i.id} alt={i.alt} sizes={b.images.length === 1 ? '100vw' : '(min-width: 720px) 50vw, 100vw'} />)}
         </div>
       );
-      if (b.type === 'cards') return (
-        <div class:list={['tiles', b.items.length > 4 && b.items.length % 3 === 0 && 'tiles--3']}>
-          {b.items.map((c) => <Tile href={c.href} image={c.image?.id} alt={c.image?.alt} title={c.title} sizes="(min-width: 960px) 33vw, 50vw" />)}
-        </div>
-      );
+      if (b.type === 'cards') {
+        const three = b.items.length >= 6;
+        return (
+          <div class:list={['tiles', three && 'tiles--3']}>
+            {b.items.map((c) => {
+              const [name, area] = splitCaption(c.title);
+              return <Tile href={c.href} image={c.image?.id} alt={c.image?.alt} title={name} sub={area} sizes={three ? '(min-width: 960px) 33vw, 50vw' : '(min-width: 720px) 50vw, 100vw'} />;
+            })}
+          </div>
+        );
+      }
       if (b.type === 'buttons') return (
         <div class="wrap blk__btns">
           {b.items.map((x, i) => x.href && <a class:list={['btn', i === 0 && 'btn--solid']} href={x.href}>{x.text}</a>)}
@@ -37,12 +44,13 @@ const { sections, skipH1 = false } = Astro.props;
 ))}
 
 <style>
-  .blk { padding-block: clamp(24px, 4vw, 48px); }
-  .blk__h1 { font-size: clamp(24px, 3.4vw, 40px); margin-block: 8px 24px; max-width: 30ch; }
-  .blk__h { margin-block: 8px 24px; }
+  .blk { padding-block: clamp(16px, 3vw, 40px); }
+  .blk__h1 { font-size: clamp(22px, 3vw, 36px); margin-block: 8px 24px; max-width: 30ch; }
+  .blk__h { margin-block: 24px 20px; max-width: 40ch; }
   .blk__text { margin-block: 8px 24px; }
   .blk__gallery { display: grid; gap: var(--gap); grid-template-columns: 1fr; margin-block: 16px; }
   @media (min-width: 720px) { .blk__gallery { grid-template-columns: 1fr 1fr; } .blk__gallery.is-single { grid-template-columns: 1fr; } }
-  .blk__gallery :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .blk__gallery :global(img) { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+  .blk__gallery.is-single :global(img) { aspect-ratio: auto; max-height: 80svh; }
   .blk__btns { display: flex; flex-wrap: wrap; gap: 12px; margin-block: 16px; }
 </style>

@@ -1,0 +1,67 @@
+---
+// Разметка schema.org (JSON-LD): студия, сайт, хлебные крошки, статьи, фото проектов.
+import { site, manifest, crumbsFor, allGalleryImages, type Page } from '../lib/data';
+import { HREFLANG } from '../lib/i18n';
+interface Props { page: Page }
+const { page } = Astro.props;
+const SITE = 'https://dumskaya-design.com';
+const abs = (p: string) => SITE + (p === '/' ? '/' : p);
+const img = (id?: string | null) => {
+  const m = id ? manifest[id] : null;
+  return m ? `${SITE}/img/${m.files[m.files.length - 1][1]}` : undefined;
+};
+const c = site.contacts;
+const ORG_ID = `${SITE}/#studio`;
+const studio = {
+  '@type': 'ProfessionalService',
+  '@id': ORG_ID,
+  name: 'DUMSKAYA DESIGN',
+  description: 'Interior design studio: residential and commercial interiors, custom furniture and turnkey renovation in Bratislava and Vienna.',
+  url: `${SITE}/`,
+  logo: img('65d3aa3656ff01000f88c35d'),
+  image: img('6abd6a8768c5e81567a1bfe0'),
+  email: c.email,
+  telephone: c.phones[0].tel,
+  priceRange: '€€',
+  address: { '@type': 'PostalAddress', streetAddress: c.address.street, postalCode: c.address.postal, addressLocality: c.address.city, addressCountry: c.address.country },
+  areaServed: [{ '@type': 'City', name: 'Bratislava' }, { '@type': 'City', name: 'Vienna' }],
+  contactPoint: c.phones.map((p: any) => ({ '@type': 'ContactPoint', telephone: p.tel, contactType: 'customer service', areaServed: p.city.en, availableLanguage: ['ru', 'uk', 'en'] })),
+  sameAs: c.social.map((s: any) => s.href),
+  founder: { '@type': 'Person', name: 'Irina Dumskaya' },
+};
+const graph: any[] = [];
+if (page.type === 'home' || page.type === 'contact') {
+  graph.push(studio);
+  if (page.type === 'home') graph.push({ '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: 'DUMSKAYA DESIGN', inLanguage: ['ru', 'uk', 'en'], publisher: { '@id': ORG_ID } });
+} else {
+  graph.push({ '@type': 'Organization', '@id': ORG_ID, name: 'DUMSKAYA DESIGN', url: `${SITE}/` });
+}
+const crumbs = crumbsFor(page);
+if (crumbs.length > 1) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((cr, i) => ({ '@type': 'ListItem', position: i + 1, name: cr.label, ...(cr.href ? { item: abs(cr.href) } : {}) })),
+  });
+}
+const images = allGalleryImages(page).filter((i) => manifest[i.id]);
+if (page.type === 'article') {
+  graph.push({
+    '@type': 'Article', headline: page.h1, description: page.description, inLanguage: HREFLANG[page.lang],
+    mainEntityOfPage: abs(page.path), image: images.slice(0, 5).map((i) => img(i.id)),
+    author: { '@id': ORG_ID }, publisher: { '@id': ORG_ID },
+  });
+}
+if (page.type === 'project' || page.type === 'kitchen') {
+  graph.push({
+    '@type': 'CreativeWork', name: page.h1, description: page.description, inLanguage: HREFLANG[page.lang], url: abs(page.path),
+    creator: { '@id': ORG_ID },
+    image: images.slice(0, 12).map((i) => ({
+      '@type': 'ImageObject', contentUrl: img(i.id), caption: i.alt,
+      creator: { '@type': 'Organization', name: 'DUMSKAYA DESIGN' }, creditText: 'DUMSKAYA DESIGN',
+      copyrightNotice: '© DUMSKAYA DESIGN',
+    })),
+  });
+}
+const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+---
+<script type="application/ld+json" set:html={json} />

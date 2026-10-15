@@ -33,7 +33,7 @@ const year = new Date().getFullYear();
         : <a href={altPath(page, l)} hreflang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</a>)}
     </p>
   </div>
-  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}.</p>
+  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}. <a href={lang === 'ru' ? '/privacy' : `/${lang}/privacy`}>{T.form.privacy}</a></p>
 </footer>
 
 <style>

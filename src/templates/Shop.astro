@@ -1,0 +1,53 @@
+---
+// Магазин: список товаров и карточка товара. Цены на сайте не публикуются — «Узнать цену» ведёт в форму.
+import Crumbs from '../components/Crumbs.astro';
+import Img from '../components/Img.astro';
+import Tile from '../components/Tile.astro';
+import { ui, type Lang } from '../lib/i18n';
+import { homePath, pagesOfType, firstGallery, localize, type Page } from '../lib/data';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang = page.lang as Lang;
+const T = ui(lang);
+const name = page.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '').replace(/\s*\([^)]*\)\s*$/, '');
+const code = page.title.match(/\((TDD-\d+)\)/)?.[1];
+const ru = page.alternates.ru || page.path;
+const isProduct = /^\/shop\/(?!cat\/)[^/]+$/.test(ru);
+const products = pagesOfType('shop', lang).filter((p) => /^\/shop\/(?!cat\/)[^/]+$/.test(p.alternates.ru || p.path));
+const shopHome = localize('/shop', lang);
+const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
+const images = firstGallery(page);
+const pname = (p: Page) => p.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '');
+---
+<div class="wrap stop">
+  <Crumbs items={[{ label: T.home, href: homePath(lang) }, { label: T.shop, href: isProduct ? shopHome : null }, ...(isProduct ? [{ label: name }] : [])]} />
+</div>
+{isProduct ? (
+  <div class="wrap sgrid">
+    <div class="sgal">{images.map((i, n) => <Img id={i.id} alt={`${name} — ${T.photo} ${n + 1}`} sizes="(min-width: 960px) 30vw, 50vw" eager={n === 0} />)}</div>
+    <div class="sinfo">
+      <h1 class="display sinfo__h1">{name}</h1>
+      {code && <p class="muted">{T.article}: {code}</p>}
+      <p>{page.description}</p>
+      {contact && <a class="btn btn--solid" href={`${contact}?model=${code || ''}`}>{T.askPrice}</a>}
+    </div>
+  </div>
+) : (
+  <>
+    <h1 class="display wrap stitle">{name}</h1>
+    <p class="wrap muted sdesc">{page.description}</p>
+    <div class="tiles tiles--3">
+      {products.map((p) => <Tile href={p.path} image={firstGallery(p)[0]?.id} alt={pname(p)} title={pname(p).replace(/\s*\([^)]*\)$/, '')} sub={pname(p).match(/\((TDD-\d+)\)/)?.[1]} sizes="(min-width: 960px) 33vw, 50vw" />)}
+    </div>
+  </>
+)}
+<style>
+  .stop { padding-block: 20px 24px; }
+  .stitle { font-size: clamp(22px, 3vw, 36px); margin: 16px 0 12px; }
+  .sdesc { max-width: var(--measure); margin-bottom: 32px; }
+  .sgrid { display: grid; gap: 40px; padding-bottom: clamp(48px, 7vw, 96px); }
+  @media (min-width: 960px) { .sgrid { grid-template-columns: 7fr 5fr; } }
+  .sgal { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+  .sgal :global(img) { width: 100%; aspect-ratio: 1; object-fit: cover; background: #f3f1ed; }
+  .sinfo__h1 { font-size: clamp(22px, 2.6vw, 32px); margin-bottom: 12px; }
+</style>

@@ -596,7 +596,8 @@ def main():
         elif ru_path in M:
             title, desc = M[ru_path][lang]
         if title is None:
-            missing.append(path)
+            if p["type"] != "privacy":
+                missing.append(path)
             continue
         p["title"], p["description"] = fit(title, T_MAX), desc
         with open(f, "w", encoding="utf-8") as fh:

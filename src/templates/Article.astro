@@ -1,0 +1,62 @@
+---
+import Crumbs from '../components/Crumbs.astro';
+import Parts from '../components/Parts.astro';
+import Img from '../components/Img.astro';
+import Tile from '../components/Tile.astro';
+import ServiceLinks from '../components/ServiceLinks.astro';
+import { ui, type Lang } from '../lib/i18n';
+import { homePath, mainParts, allGalleryImages, pagesOfType, firstGallery, servicesCards, localize, type Page } from '../lib/data';
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang = page.lang as Lang;
+const T = ui(lang);
+const parts = mainParts(page);
+const images = allGalleryImages(page);
+const [lead, ...rest] = images;
+const others = pagesOfType('article', lang).filter((p) => p.path !== page.path);
+const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
+// фото между частями текста: делим текст на 2 половины, между ними — 2 фото
+const half = Math.ceil(parts.length / 2);
+---
+<article>
+  <header class="wrap ahead">
+    <Crumbs items={[{ label: T.home, href: homePath(lang) }, { label: T.tips }, { label: page.h1 }]} />
+    <h1 class="display ahead__h1">{page.h1}</h1>
+  </header>
+  {lead && <div class="alead"><Img id={lead.id} alt={lead.alt} sizes="100vw" eager /></div>}
+  <div class="wrap abody">
+    <Parts parts={parts.slice(0, half)} />
+    {rest.length > 1 && (
+      <div class="apair">{rest.slice(0, 2).map((i) => <Img id={i.id} alt={i.alt} sizes="(min-width: 720px) 33vw, 100vw" />)}</div>
+    )}
+    <Parts parts={parts.slice(half)} />
+    {contact && <p><a class="btn btn--solid" href={contact}>{T.consult}</a></p>}
+  </div>
+  {rest.length > 2 && (
+    <div class="agal">{rest.slice(2).map((i) => <Img id={i.id} alt={i.alt} sizes="(min-width: 720px) 50vw, 100vw" />)}</div>
+  )}
+</article>
+{others.length > 0 && (
+  <section class="aother" aria-labelledby="ot">
+    <h2 id="ot" class="section-title wrap aother__h">{T.otherTips}</h2>
+    <div class="tiles tiles--3">
+      {others.map((o) => <Tile href={o.path} image={firstGallery(o)[0]?.id} alt={firstGallery(o)[0]?.alt} title={o.h1} sizes="(min-width: 960px) 33vw, 50vw" />)}
+    </div>
+  </section>
+)}
+<ServiceLinks items={servicesCards(page)} lang={lang} />
+<style>
+  .ahead { padding-block: 20px clamp(24px, 4vw, 40px); }
+  .ahead__h1 { font-size: clamp(22px, 3vw, 36px); max-width: 28ch; margin-top: clamp(24px, 4vw, 48px); }
+  .alead :global(img) { width: 100%; max-height: 78svh; object-fit: cover; }
+  .abody { max-width: calc(var(--measure) + 2 * var(--pad)); margin-inline: auto; padding-block: clamp(32px, 5vw, 64px); }
+  .apair { display: grid; gap: var(--gap); grid-template-columns: 1fr 1fr; margin: 32px calc(var(--pad) * -1); }
+  @media (min-width: 960px) { .apair { margin-inline: -12vw; } }
+  .apair :global(img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .agal { display: grid; gap: var(--gap); grid-template-columns: 1fr 1fr; }
+  .agal :global(img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  @media (max-width: 719px) { .agal { grid-template-columns: 1fr; } }
+  .aother { padding-top: clamp(48px, 7vw, 96px); }
+  .aother__h { padding-bottom: 24px; }
+  .aother :global(.tile__title) { font-size: clamp(12px, 1.2vw, 15px); }
+</style>

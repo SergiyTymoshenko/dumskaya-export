@@ -1,0 +1,20 @@
+---
+import { ui, type Lang } from '../lib/i18n';
+interface Props { items: { title: string; href: string | null }[]; lang: Lang }
+const { items, lang } = Astro.props;
+const T = ui(lang);
+const list = items.filter((i) => i.href);
+---
+{list.length > 0 && (
+  <section class="svc wrap" aria-labelledby="svc-h">
+    <h2 id="svc-h" class="svc__h">{T.services}</h2>
+    <ul>{list.map((c) => <li><a href={c.href}>{c.title}</a></li>)}</ul>
+  </section>
+)}
+<style>
+  .svc { padding-block: clamp(48px, 7vw, 96px); border-top: 1px solid var(--line); }
+  .svc__h { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 15px; margin-bottom: 16px; }
+  .svc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 28px; }
+  .svc a { text-decoration: none; border-bottom: 1px solid var(--line); }
+  .svc a:hover { border-color: var(--oak); }
+</style>

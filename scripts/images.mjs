@@ -47,7 +47,7 @@ async function work() {
     const meta = images[id];
     const name = names[id];
     if (!meta) continue;
-    const src = path.join(SRC, path.basename(meta.file));
+    const src = path.join(SRC, meta.file.replace(/^images\//, ''));
     const widths = WIDTHS.filter((w) => w < meta.width).concat(meta.width > 1920 ? [] : [meta.width]);
     const uniq = [...new Set(widths.map((w) => Math.min(w, 1920)))].sort((a, b) => a - b);
     const files = uniq.map((w) => ({ w, file: `${name}-${w}.webp` }));
