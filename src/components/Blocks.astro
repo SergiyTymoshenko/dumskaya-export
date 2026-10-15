@@ -8,13 +8,14 @@ import { splitCaption, type Section } from '../lib/data';
 
 interface Props { sections: Section[]; skipH1?: boolean }
 const { sections, skipH1 = false } = Astro.props;
+import Caps from './Caps.astro';
 ---
 {sections.map((s) => (
   <section class="blk">
     {s.blocks.map((b) => {
       if (b.type === 'heading') {
-        if (b.level === 1) return skipH1 ? null : <h1 class="blk__h1 display wrap">{b.text}</h1>;
-        return <h2 class="section-title blk__h wrap">{b.text}</h2>;
+        if (b.level === 1) return skipH1 ? null : <h1 class="blk__h1 display wrap"><Caps text={b.text} /></h1>;
+        return <h2 class="section-title blk__h wrap"><Caps text={b.text} /></h2>;
       }
       if (b.type === 'text') return <div class="wrap blk__text"><Parts parts={b.parts} /></div>;
       if (b.type === 'gallery') return (
@@ -45,7 +46,7 @@ const { sections, skipH1 = false } = Astro.props;
 
 <style>
   .blk { padding-block: clamp(16px, 3vw, 40px); }
-  .blk__h1 { font-size: clamp(22px, 3vw, 36px); margin-block: 8px 24px; max-width: 30ch; }
+  .blk__h1 { font-size: clamp(20px, 2.4vw, 30px); margin-block: 8px 24px; max-width: 30ch; }
   .blk__h { margin-block: 24px 20px; max-width: 40ch; }
   .blk__text { margin-block: 8px 24px; }
   .blk__gallery { display: grid; gap: var(--gap); grid-template-columns: 1fr; margin-block: 16px; }

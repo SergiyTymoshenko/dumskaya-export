@@ -1,6 +1,6 @@
-@import '@fontsource/tenor-sans/400.css';
 @import '@fontsource/commissioner/400.css';
 @import '@fontsource/commissioner/500.css';
+@import '@fontsource/montserrat/300.css';
 @import '@fontsource/montserrat/400.css';
 
 :root {
@@ -14,9 +14,9 @@
   --oak: #8a6e4b;
   --veil: rgba(0, 0, 0, 0.42);
 
-  --display: 'Tenor Sans', 'Commissioner', Georgia, serif;
+  --display: 'Montserrat', 'Commissioner', system-ui, sans-serif; /* заголовки */
   --body: 'Commissioner', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --caption: 'Montserrat', 'Commissioner', system-ui, sans-serif; /* подписи на фото */
+  --caption: var(--display); /* подписи на фото — тот же шрифт */
 
   --pad: clamp(16px, 4.5vw, 56px);
   --gap: 4px;
@@ -27,6 +27,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 /* атрибут hidden всегда скрывает элемент, даже если у его класса задан display */
 [hidden] { display: none !important; }
+.unit { text-transform: none; letter-spacing: 0.04em; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header) + 16px); }
 body {
   margin: 0;
@@ -49,17 +50,17 @@ button { font: inherit; color: inherit; }
   font-family: var(--display);
   font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  line-height: 1.2;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
   color: var(--ink);
 }
 h1, h2, h3 { color: var(--ink); font-weight: 400; margin: 0; }
 h2.section-title {
   font-family: var(--display);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: clamp(20px, 2.4vw, 26px);
-  line-height: 1.25;
+  letter-spacing: 0.18em;
+  font-size: clamp(17px, 1.9vw, 22px);
+  line-height: 1.4;
 }
 .prose { max-width: var(--measure); }
 .prose p { margin: 0 0 1em; }

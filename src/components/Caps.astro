@@ -1,0 +1,8 @@
+---
+// Текст для заголовков заглавными буквами: единицы площади (м², m²) остаются строчными,
+// чтобы не превращаться в «М²».
+interface Props { text: string }
+const { text } = Astro.props;
+const parts = String(text ?? '').split(/((?<=\d\s?|\/)(?:м²|m²|м2|m2)(?![0-9A-Za-zА-Яа-яЁё]))/);
+---
+{parts.map((p, i) => (i % 2 ? <span class="unit">{p}</span> : p))}

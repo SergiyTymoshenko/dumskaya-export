@@ -77,13 +77,13 @@ const num = (p: Page) => (p.alternates.ru || p.path).match(/k-?(\d{2})/i)?.[1];
   .kgal :global(.kgal__hero) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
   .kgal__thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); margin-top: var(--gap); }
   .kgal__thumbs :global(img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-  .kinfo__code { font-size: clamp(32px, 4vw, 48px); margin: 0; }
+  .kinfo__code { font-size: clamp(26px, 3.2vw, 38px); margin: 0; }
   .kinfo__h1 { font: 400 clamp(17px, 1.6vw, 20px)/1.4 var(--body); color: var(--ink); margin: 12px 0 24px; }
   .kinfo__btns { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
   :global(.kinfo__text) { font-size: 16px; }
   .kother__h { padding-bottom: 24px; }
   .stamp { width: 100%; border-collapse: collapse; border: 1px solid var(--ink); font-size: 14px; line-height: 1.4; margin: 8px 0 24px; }
-  .stamp__head { caption-side: top; text-align: left; border: 1px solid var(--ink); border-bottom: 0; padding: 8px 12px; font-family: var(--display); letter-spacing: 0.14em; text-transform: uppercase; font-size: 12px; color: var(--ink); }
+  .stamp__head { caption-side: top; text-align: left; border: 1px solid var(--ink); border-bottom: 0; padding: 8px 12px; font-family: var(--display); letter-spacing: 0.2em; text-transform: uppercase; font-size: 11px; color: var(--ink); }
   .stamp th, .stamp td { border-top: 1px solid var(--ink); padding: 8px 12px; vertical-align: top; text-align: left; }
   .stamp th { width: 40%; font-weight: 400; color: var(--stone); border-right: 1px solid var(--ink); font-size: 13px; }
   .stamp td { color: var(--ink); }
