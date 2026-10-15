@@ -20,19 +20,19 @@
     "object": "Apartment Metropolis",
     "area": "75 m²",
     "city": "Bratislava",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design (“Furniture” package), 3D visualization and custom furniture"
    },
    "ua": {
     "object": "Квартира Metropolis",
     "area": "75 м²",
     "city": "Братислава",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт (пакет «Меблі»), 3D-візуалізація та меблі на замовлення"
    },
    "ru": {
     "object": "Квартира Metropolis",
     "area": "75 м²",
     "city": "Братислава",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект (пакет «Мебель»), 3D-визуализация и мебель на заказ"
    }
   }
  },
@@ -57,19 +57,19 @@
     "object": "Apartment",
     "area": "80 m²",
     "city": "Kyiv",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings and custom furniture"
    },
    "ua": {
     "object": "Квартира",
     "area": "80 м²",
     "city": "Київ",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація та меблі на замовлення"
    },
    "ru": {
     "object": "Квартира",
     "area": "80 м²",
     "city": "Киев",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация и мебель на заказ"
    }
   }
  },
@@ -94,19 +94,19 @@
     "object": "Apartment Eurovea City",
     "area": "56 m²",
     "city": "Bratislava",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design (“Furniture” package), 3D visualization and custom furniture"
    },
    "ua": {
     "object": "Квартира Eurovea City",
     "area": "56 м²",
     "city": "Братислава",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт (пакет «Меблі»), 3D-візуалізація та меблі на замовлення"
    },
    "ru": {
     "object": "Квартира Eurovea City",
     "area": "56 м²",
     "city": "Братислава",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект (пакет «Мебель»), 3D-визуализация и мебель на заказ"
    }
   }
  },
@@ -131,19 +131,19 @@
     "object": "Duplex apartment with 20 m² terrace",
     "area": "158 m²",
     "city": "Bratislava",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Дворівнева квартира з терасою 20 м²",
     "area": "158 м²",
     "city": "Братислава",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Двухуровневая квартира с террасой 20 м²",
     "area": "158 м²",
     "city": "Братислава",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -168,19 +168,19 @@
     "object": "Private house",
     "area": "120 m²",
     "city": "Bratislava",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design (“Express” package) and electrical design"
    },
    "ua": {
     "object": "Приватний будинок",
     "area": "120 м²",
     "city": "Братислава",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт (пакет «Експрес») та проєкт електрики"
    },
    "ru": {
     "object": "Частный дом",
     "area": "120 м²",
     "city": "Братислава",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект (пакет «Экспресс») и проект электрики"
    }
   }
  },
@@ -205,19 +205,19 @@
     "object": "Apartment",
     "area": "58 m²",
     "city": "Vienna",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Квартира",
     "area": "58 м²",
     "city": "Відень",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Квартира",
     "area": "58 м²",
     "city": "Вена",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -242,19 +242,19 @@
     "object": "Private house",
     "area": "140 m²",
     "city": "Dunajská Streda",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design"
    },
    "ua": {
     "object": "Приватний будинок",
     "area": "140 м²",
     "city": "Дунайська-Стреда",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт"
    },
    "ru": {
     "object": "Частный дом",
     "area": "140 м²",
     "city": "Дунайска-Стреда",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект"
    }
   }
  },
@@ -279,19 +279,19 @@
     "object": "Private house",
     "area": "212 m²",
     "city": "Kharkiv",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Приватний будинок",
     "area": "212 м²",
     "city": "Харків",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Частный дом",
     "area": "212 м²",
     "city": "Харьков",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -305,9 +305,9 @@
   },
   "cover": "6abd6b6368c5e81567a1c463",
   "title": {
-   "en": "Apartment in Warsaw, 43 m²",
-   "ua": "Квартира у Варшаві, 43 м²",
-   "ru": "Квартира в Варшаве, 43 м²"
+   "ru": "Минималистичная квартира в Варшаве, 43 м²",
+   "ua": "Мінімалістична квартира у Варшаві, 43 м²",
+   "en": "Minimalist apartment in Warsaw, 43 m²"
   },
   "explicit_warsaw": true,
   "area": 43,
@@ -316,19 +316,19 @@
     "object": "Apartment, minimalist",
     "area": "43 m²",
     "city": "Warsaw",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design (“Basic” package) and 3D visualization"
    },
    "ua": {
     "object": "Квартира, мінімалізм",
     "area": "43 м²",
     "city": "Варшава",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт (пакет «Базовий») та 3D-візуалізація"
    },
    "ru": {
     "object": "Квартира, минимализм",
     "area": "43 м²",
     "city": "Варшава",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект (пакет «Базовый») и 3D-визуализация"
    }
   }
  },
@@ -353,19 +353,19 @@
     "object": "Apartment",
     "area": "63 m²",
     "city": "Kraków",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture, turnkey renovation and styling"
    },
    "ua": {
     "object": "Квартира",
     "area": "63 м²",
     "city": "Краків",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення, ремонт під ключ та декорування"
    },
    "ru": {
     "object": "Квартира",
     "area": "63 м²",
     "city": "Краков",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
    }
   }
  },
@@ -389,17 +389,17 @@
    "en": {
     "object": "Apartment with 18 m² terrace",
     "area": "60 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design and 3D visualization"
    },
    "ua": {
     "object": "Квартира з терасою 18 м²",
     "area": "60 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт та 3D-візуалізація"
    },
    "ru": {
     "object": "Квартира с террасой 18 м²",
     "area": "60 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект и 3D-визуализация"
    }
   }
  },
@@ -423,17 +423,17 @@
    "en": {
     "object": "Apartment",
     "area": "54 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture, turnkey renovation and styling"
    },
    "ua": {
     "object": "Квартира",
     "area": "54 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення, ремонт під ключ та декорування"
    },
    "ru": {
     "object": "Квартира",
     "area": "54 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
    }
   }
  },
@@ -457,17 +457,17 @@
    "en": {
     "object": "Apartment",
     "area": "45 m²",
-    "works": "Design project, custom furniture and turnkey renovation"
+    "works": "Interior design"
    },
    "ua": {
     "object": "Квартира",
     "area": "45 м²",
-    "works": "Дизайн-проєкт, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт"
    },
    "ru": {
     "object": "Квартира",
     "area": "45 м²",
-    "works": "Дизайн-проект, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект"
    }
   }
  },
@@ -491,17 +491,17 @@
    "en": {
     "object": "Apartment",
     "area": "48 m²",
-    "works": "Design project, custom furniture and turnkey renovation"
+    "works": "Interior design, custom furniture, turnkey renovation and styling"
    },
    "ua": {
     "object": "Квартира",
     "area": "48 м²",
-    "works": "Дизайн-проєкт, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, меблі на замовлення, ремонт під ключ та декорування"
    },
    "ru": {
     "object": "Квартира",
     "area": "48 м²",
-    "works": "Дизайн-проект, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, мебель на заказ, ремонт под ключ и декорирование"
    }
   }
  },
@@ -526,19 +526,19 @@
     "object": "Квартира",
     "area": "58 м²",
     "city": "Братислава",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
    },
    "ua": {
     "object": "Квартира",
     "area": "58 м²",
     "city": "Братислава",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення, ремонт під ключ та декорування"
    },
    "en": {
     "object": "Apartment",
     "area": "58 m²",
     "city": "Bratislava",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture, turnkey renovation and styling"
    }
   }
  },
@@ -562,17 +562,17 @@
    "en": {
     "object": "Apartment",
     "area": "52 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture, turnkey renovation and styling"
    },
    "ua": {
     "object": "Квартира",
     "area": "52 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення, ремонт під ключ та декорування"
    },
    "ru": {
     "object": "Квартира",
     "area": "52 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
    }
   }
  },
@@ -597,19 +597,19 @@
     "object": "Apartment",
     "area": "43 m²",
     "city": "Warsaw",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, technical drawings, custom furniture, turnkey renovation and styling"
    },
    "ua": {
     "object": "Квартира",
     "area": "43 м²",
     "city": "Варшава",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, технічна документація, меблі на замовлення, ремонт під ключ та декорування"
    },
    "ru": {
     "object": "Квартира",
     "area": "43 м²",
     "city": "Варшава",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
    }
   }
  },
@@ -634,19 +634,19 @@
     "object": "Apartment",
     "area": "52 m²",
     "city": "Bratislava",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Квартира",
     "area": "52 м²",
     "city": "Братислава",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Квартира",
     "area": "52 м²",
     "city": "Братислава",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -671,7 +671,7 @@
     "object": "Apartment",
     "area": "160 m²",
     "city": "Dubai",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Апартаменти",
@@ -708,19 +708,19 @@
     "object": "Apartment",
     "area": "140 m²",
     "city": "Los Angeles",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings and furniture design"
    },
    "ua": {
     "object": "Апартаменти",
     "area": "140 м²",
     "city": "Лос-Анджелес",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація та проєкт меблів"
    },
    "ru": {
     "object": "Апартаменты",
     "area": "140 м²",
     "city": "Лос-Анджелес",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация и проект мебели"
    }
   }
  },
@@ -745,19 +745,19 @@
     "object": "Apartment",
     "area": "90 m²",
     "city": "Prague",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Апартаменти",
     "area": "90 м²",
     "city": "Прага",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Апартаменты",
     "area": "90 м²",
     "city": "Прага",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -782,19 +782,19 @@
     "object": "Apartment",
     "area": "57 m²",
     "city": "New York",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Апартаменти",
     "area": "57 м²",
     "city": "Нью-Йорк",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Апартаменты",
     "area": "57 м²",
     "city": "Нью-Йорк",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -819,19 +819,19 @@
     "object": "Apartment, minimalist",
     "area": "64 m²",
     "city": "Kraków",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization and technical drawings"
    },
    "ua": {
     "object": "Квартира, мінімалізм",
     "area": "64 м²",
     "city": "Краків",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація та технічна документація"
    },
    "ru": {
     "object": "Квартира, минимализм",
     "area": "64 м²",
     "city": "Краков",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация и техническая документация"
    }
   }
  },
@@ -856,19 +856,19 @@
     "object": "Private house",
     "area": "217 m²",
     "city": "Kyiv",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Приватний будинок",
     "area": "217 м²",
     "city": "Київ",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Частный дом",
     "area": "217 м²",
     "city": "Киев",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -893,19 +893,19 @@
     "object": "Private house",
     "area": "160 m²",
     "city": "Munich",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Приватний будинок",
     "area": "160 м²",
     "city": "Мюнхен",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Частный дом",
     "area": "160 м²",
     "city": "Мюнхен",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -930,19 +930,19 @@
     "object": "Private house",
     "area": "215 m²",
     "city": "Berlin",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Приватний будинок",
     "area": "215 м²",
     "city": "Берлін",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Частный дом",
     "area": "215 м²",
     "city": "Берлин",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -967,19 +967,19 @@
     "object": "Apartment with 30 m² terrace",
     "area": "119 m²",
     "city": "Kyiv",
-    "works": "Design project, custom furniture and turnkey renovation"
+    "works": "Interior design"
    },
    "ua": {
     "object": "Квартира з терасою 30 м²",
     "area": "119 м²",
     "city": "Київ",
-    "works": "Дизайн-проєкт, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт"
    },
    "ru": {
     "object": "Квартира с террасой 30 м²",
     "area": "119 м²",
     "city": "Киев",
-    "works": "Дизайн-проект, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект"
    }
   }
  },
@@ -1004,19 +1004,19 @@
     "object": "Apartment, modern classic",
     "area": "120 m²",
     "city": "London",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Квартира, сучасна класика",
     "area": "120 м²",
     "city": "Лондон",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Квартира, современная классика",
     "area": "120 м²",
     "city": "Лондон",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -1041,19 +1041,19 @@
     "object": "Apartment",
     "area": "107 m²",
     "city": "Madrid",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Апартаменти",
     "area": "107 м²",
     "city": "Мадрид",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Апартаменты",
     "area": "107 м²",
     "city": "Мадрид",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -1078,19 +1078,19 @@
     "object": "Apartment",
     "area": "108 m²",
     "city": "Barcelona",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Апартаменти",
     "area": "108 м²",
     "city": "Барселона",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Апартаменты",
     "area": "108 м²",
     "city": "Барселона",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -1114,17 +1114,17 @@
    "en": {
     "object": "Apartment",
     "area": "51 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture, turnkey renovation and styling"
    },
    "ua": {
     "object": "Квартира",
     "area": "51 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення, ремонт під ключ та декорування"
    },
    "ru": {
     "object": "Квартира",
     "area": "51 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
    }
   }
  },
@@ -1149,19 +1149,19 @@
     "object": "Apartment",
     "area": "115 m²",
     "city": "Vienna",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Квартира",
     "area": "115 м²",
     "city": "Відень",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Квартира",
     "area": "115 м²",
     "city": "Вена",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -1186,19 +1186,19 @@
     "object": "Apartment",
     "area": "60 m²",
     "city": "Varna",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Квартира",
     "area": "60 м²",
     "city": "Варна",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Квартира",
     "area": "60 м²",
     "city": "Варна",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -1222,17 +1222,17 @@
    "en": {
     "object": "Three-room apartment",
     "area": "47 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design"
    },
    "ua": {
     "object": "Трикімнатна квартира",
     "area": "47 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт"
    },
    "ru": {
     "object": "Трёхкомнатная квартира",
     "area": "47 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект"
    }
   }
  },
@@ -1257,19 +1257,19 @@
     "object": "Villa",
     "area": "179 m²",
     "city": "Madrid",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Вілла",
     "area": "179 м²",
     "city": "Мадрид",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Вилла",
     "area": "179 м²",
     "city": "Мадрид",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -1294,19 +1294,19 @@
     "object": "Villa",
     "area": "220 m²",
     "city": "Burgas",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Вілла",
     "area": "220 м²",
     "city": "Бургас",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Вилла",
     "area": "220 м²",
     "city": "Бургас",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -1330,17 +1330,17 @@
    "en": {
     "object": "Private house",
     "area": "230 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Приватний будинок",
     "area": "230 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Частный дом",
     "area": "230 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -1364,17 +1364,17 @@
    "en": {
     "object": "Duplex apartment",
     "area": "43 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Дворівнева квартира",
     "area": "43 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, технічна документація, меблі на замовлення та ремонт під ключ"
    },
    "ru": {
     "object": "Двухуровневая квартира",
     "area": "43 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
    }
   }
  },
@@ -1398,17 +1398,17 @@
    "en": {
     "object": "Cosmetology salon",
     "area": "54 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design (“Express” package), 3D visualization and technical drawings"
    },
    "ua": {
     "object": "Косметологічний салон",
     "area": "54 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт (пакет «Експрес»), 3D-візуалізація та технічна документація"
    },
    "ru": {
     "object": "Косметологический салон",
     "area": "54 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект (пакет «Экспресс»), 3D-визуализация и техническая документация"
    }
   }
  },
@@ -1432,17 +1432,17 @@
    "en": {
     "object": "Beauty salon",
     "area": "63 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design and technical drawings"
    },
    "ua": {
     "object": "Салон краси",
     "area": "63 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт та технічна документація"
    },
    "ru": {
     "object": "Салон красоты",
     "area": "63 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект и техническая документация"
    }
   }
  },
@@ -1466,17 +1466,17 @@
    "en": {
     "object": "Office",
     "area": "500 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization and custom furniture"
    },
    "ua": {
     "object": "Офіс",
     "area": "500 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація та меблі на замовлення"
    },
    "ru": {
     "object": "Офис",
     "area": "500 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация и мебель на заказ"
    }
   }
  },
@@ -1500,17 +1500,17 @@
    "en": {
     "object": "Photo studio",
     "area": "130 m²",
-    "works": "Design project, custom furniture and turnkey renovation"
+    "works": "Interior design, custom furniture, turnkey renovation and design supervision"
    },
    "ua": {
     "object": "Фотостудія",
     "area": "130 м²",
-    "works": "Дизайн-проєкт, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, меблі на замовлення, ремонт під ключ та авторський супровід"
    },
    "ru": {
     "object": "Фотостудия",
     "area": "130 м²",
-    "works": "Дизайн-проект, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, мебель на заказ, ремонт под ключ и авторское сопровождение"
    }
   }
  },
@@ -1535,19 +1535,19 @@
     "object": "Clothing boutique",
     "area": "140 m²",
     "city": "Kyiv",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, furniture design and turnkey renovation"
    },
    "ua": {
     "object": "Бутик одягу",
     "area": "140 м²",
     "city": "Київ",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація, проєкт меблів та ремонт під ключ"
    },
    "ru": {
     "object": "Бутик одежды",
     "area": "140 м²",
     "city": "Киев",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация, проект мебели и ремонт под ключ"
    }
   }
  },
@@ -1571,17 +1571,17 @@
    "en": {
     "object": "Sauna and bathhouse",
     "area": "120 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design and furniture design"
    },
    "ua": {
     "object": "Лазня і сауна",
     "area": "120 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт та проєкт меблів"
    },
    "ru": {
     "object": "Баня и сауна",
     "area": "120 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект и проект мебели"
    }
   }
  },
@@ -1605,7 +1605,7 @@
    "en": {
     "object": "Office",
     "area": "140 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Офіс",
@@ -1640,7 +1640,7 @@
     "object": "Office",
     "area": "53 m²",
     "city": "Poznań",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization, custom furniture and turnkey renovation"
    },
    "ua": {
     "object": "Офіс",
@@ -1676,17 +1676,17 @@
    "en": {
     "object": "Executive office",
     "area": "7 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization and custom furniture"
    },
    "ua": {
     "object": "Кабінет керівника",
     "area": "7 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація та меблі на замовлення"
    },
    "ru": {
     "object": "Кабинет руководителя",
     "area": "7 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация и мебель на заказ"
    }
   }
  },
@@ -1710,17 +1710,17 @@
    "en": {
     "object": "Retail store",
     "area": "50 m²",
-    "works": "Design project, 3D visualization, custom furniture and turnkey renovation"
+    "works": "Interior design, 3D visualization and custom furniture"
    },
    "ua": {
     "object": "Магазин",
     "area": "50 м²",
-    "works": "Дизайн-проєкт, 3D-візуалізація, меблі на замовлення та ремонт під ключ"
+    "works": "Дизайн-проєкт, 3D-візуалізація та меблі на замовлення"
    },
    "ru": {
     "object": "Магазин",
     "area": "50 м²",
-    "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+    "works": "Дизайн-проект, 3D-визуализация и мебель на заказ"
    }
   }
  },
@@ -1734,9 +1734,9 @@
   },
   "cover": "66b619f623f9a34a612c9e7d",
   "title": {
-   "ru": "Вилла, Испания, Марбелья",
-   "ua": "Вілла, Іспанія, Марбелья.",
-   "en": "Villa, Spain, Marbella"
+   "ru": "Фасад виллы в Марбелье",
+   "ua": "Фасад вілли в Марбельї",
+   "en": "Villa facade in Marbella"
   },
   "explicit_warsaw": false,
   "area": null
@@ -1751,8 +1751,9 @@
   },
   "cover": "673a059eece0e84849b9e2cf",
   "title": {
-   "ru": "3D моделирование эскизного проекта фасада дома",
-   "en": "Private House"
+   "ru": "3D-визуализация фасада и двора",
+   "ua": "3D-візуалізація фасаду та двору",
+   "en": "3D facade and garden visualization"
   },
   "explicit_warsaw": false,
   "area": null
@@ -1767,9 +1768,9 @@
   },
   "cover": "66a56e39d68a3eb051612386",
   "title": {
-   "ru": "Частный дом",
-   "ua": "Частний будинок",
-   "en": "Private House"
+   "ru": "Фасады частного дома",
+   "ua": "Фасади приватного будинку",
+   "en": "Private house facades"
   },
   "explicit_warsaw": false,
   "area": null
@@ -1784,9 +1785,9 @@
   },
   "cover": "66d313f8e6210d11a55d877c",
   "title": {
-   "ru": "Архитектурное решение для фасада барбершопа, Украина, Киев",
-   "ua": "Архітектурне рішення для фасаду барбершопу, Україна, Київ",
-   "en": "Architectural Facade Design for a Barbershop, Kyiv, Ukraine"
+   "ru": "Фасад барбершопа в Киеве",
+   "ua": "Фасад барбершопу в Києві",
+   "en": "Barbershop facade in Kyiv"
   },
   "explicit_warsaw": false,
   "area": null
@@ -1801,9 +1802,9 @@
   },
   "cover": "66d476c1e93b01287b01e50b",
   "title": {
-   "ru": "Архитектурное решение беседка с перголой",
-   "ua": "Архітектурне рішення для бесідки з перголою",
-   "en": "Architectural Design of a Pergola Gazebo"
+   "ru": "Беседка с перголой",
+   "ua": "Альтанка з перголою",
+   "en": "Gazebo with pergola"
   },
   "explicit_warsaw": false,
   "area": null

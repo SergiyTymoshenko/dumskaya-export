@@ -226,12 +226,18 @@
      "parts": [
       {
        "t": "p",
-       "html": "Creating a functional and aesthetically appealing kitchen requires a careful approach to furniture arrangement and layout. The key rules that will help you achieve this include the following:"
-      },
-      {
-       "t": "p",
-       "html": "<strong>1. Analyzing the features of the room</strong>"
-      },
+       "html": "A convenient and beautiful kitchen starts with a well-thought-out layout and furniture arrangement. Here are the basic rules:"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "1. Analyzing the features of the room"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Before you start designing a kitchen, it is important to consider the shape and size of the room:"
@@ -243,14 +249,20 @@
         "“Narrow kitchens”: Straight, U-shaped, and L-shaped layouts make the most of the room’s length.",
         "“Square kitchens”: Two-wall (galley) layouts create a harmonious balance between work zones and storage."
        ]
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "2. Optimizing the work triangle"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>2. Optimizing the work triangle</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The work triangle is a concept that covers three main zones: the refrigerator, the stove, and the sink. Arranging these elements correctly makes cooking convenient and efficient:"
+       "html": "The work triangle is made up of the kitchen’s three main zones: the refrigerator, the stove, and the sink. How they are arranged determines how convenient it is to cook:"
       },
       {
        "t": "ul",
@@ -259,11 +271,17 @@
         "“L-shaped layout”: Ideal for most kitchens, as it provides convenient access to all zones.",
         "“U-shaped layout”: Good for large kitchens, offering plenty of storage and work surfaces, but it can look bulky."
        ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>3. Using islands and peninsulas</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3. Using islands and peninsulas"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Adding an island or a peninsula can significantly improve a kitchen’s functionality:"
@@ -274,11 +292,17 @@
         "“Island”: Great for large kitchens; it can serve as an extra work surface, a dining area, or storage space.",
         "“Peninsula”: A compact alternative to an island, suitable for smaller spaces; it adds extra work surface and storage."
        ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>4. Ergonomics and convenience</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "4. Ergonomics and convenience"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Good kitchen ergonomics ensure comfort and safety:"
@@ -290,11 +314,17 @@
         "“Access to windows and balconies”: Keep in mind the need for easy access to windows for ventilation and natural light.",
         "“Cabinet height and placement”: Mount upper cabinets at a comfortable height so that reaching dishes and food is never awkward."
        ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>5. Choosing materials and colors</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "5. Choosing materials and colors"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Materials and colors play an important role in setting the atmosphere of the kitchen:"
@@ -305,11 +335,17 @@
         "“Materials”: Use high-quality, durable materials such as natural wood, stone, and stainless steel.",
         "“Colors”: Light tones visually enlarge the space, while dark ones add depth and elegance."
        ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>6. Integrating modern technology</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "6. Integrating modern technology"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Modern technology can make working in the kitchen much easier:"
@@ -320,11 +356,17 @@
         "“Smart devices”: Integrating smart refrigerators, cooktops, and other appliances simplifies cooking and food storage.",
         "“Lighting”: Using different types of lighting — general, task, and decorative — creates a comfortable atmosphere and ensures that work areas are well lit."
        ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>7. Storage and organization</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "7. Storage and organization"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "A well-thought-out storage system makes the kitchen more functional and convenient:"
@@ -336,11 +378,17 @@
         "“Pull-out drawers and shelves”: Provide easy access to everything you need.",
         "“Organizers and dividers”: Help keep things tidy and the space efficiently organized."
        ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>8. Personalizing the space</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "8. Personalizing the space"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The kitchen should reflect the owners’ personal style and preferences:"
@@ -351,14 +399,20 @@
         "“Decorative elements”: Add personal touches such as artwork, plants, or unique hardware.",
         "“Functional accents”: Use stylish yet practical decorative elements such as designer faucets, unusual light fixtures, or open shelving."
        ]
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "9. Comfort and coziness"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>9. Comfort and coziness</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Creating a cozy atmosphere in the kitchen is important for the overall perception of the space:"
+       "html": "A kitchen should be not only convenient but also cozy:"
       },
       {
        "t": "ul",
@@ -366,11 +420,17 @@
         "“Soft seating and textiles”: Upholstered furniture and textiles add comfort and warmth.",
         "“Pleasant smells”: Install range hoods and ventilation systems to keep the air fresh and get rid of unpleasant odors."
        ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>10. Eco-friendliness and sustainability</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "10. Eco-friendliness and sustainability"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Eco-friendly materials and energy-efficient solutions help protect the environment and save resources:"
@@ -379,24 +439,16 @@
        "t": "ul",
        "items": [
         "“Eco-friendly materials”: Choose natural and recyclable materials for furniture and finishes.",
-        "“Energy-efficient appliances”: Use appliances with a high energy efficiency class to reduce electricity costs."
+        "“Energy-efficient appliances”: Choose appliances with a high energy efficiency class to cut your electricity costs."
        ]
       },
       {
        "t": "p",
-       "html": "<strong>Conclusion</strong>"
+       "html": "If you need help designing and building your kitchen, contact <strong>DUMSKAYA DESIGN</strong> — we’ll design and make the kitchen of your dreams."
       },
       {
        "t": "p",
-       "html": "The right furniture arrangement and kitchen layout play a key role in creating a functional and aesthetically appealing space. By following the rules described above, you can achieve a harmonious combination of convenience, style, and efficiency, making the kitchen the true heart of the home."
-      },
-      {
-       "t": "p",
-       "html": "If you need help designing and manufacturing the kitchen of your dreams, contact DUMSKAYA DESIGN — we will be happy to help you create a stylish and comfortable space!"
-      },
-      {
-       "t": "p",
-       "html": "Over 15 years of experience!"
+       "html": "<strong>Over 15 years of experience!</strong>"
       }
      ]
     },
@@ -412,7 +464,7 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -447,7 +499,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 52 m² | DUMSKAYA DESIGN",
- "description": "52 m² apartment: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "description": "52 m² apartment: interior design, 3D visualization, technical drawings, custom furniture, turnkey renovation and styling.",
  "h1": "Apartment interior design, custom furniture and turnkey renovation, 52 m²",
  "og_image": "6abd6aff68c5e81567a1c258",
  "alternates": {
@@ -30,19 +30,19 @@
       },
       {
        "t": "p",
-       "html": "The design covers the apartment’s main functional areas: the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom. Custom wardrobes, shelving, and storage systems are also integrated into the project."
+       "html": "The project covers the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom, as well as built-in wardrobes, shelving, and storage systems."
       },
       {
        "t": "p",
-       "html": "Custom furniture solutions were developed for each area, taking into account the specifics of the space, ergonomics, and the owners’ everyday needs. Designing the furniture alongside the interior makes it possible to use the apartment’s floor area efficiently and preserve the visual cohesion of all the rooms."
+       "html": "The furniture for each area was designed together with the interior, tailored to the specifics of the rooms and the owners’ habits."
       },
       {
        "t": "p",
-       "html": "Before implementation began, a detailed cost estimate was prepared covering renovation work, finishing materials, custom furniture, and appliances. This approach provides a more complete picture of the project’s implementation budget in advance."
+       "html": "Before work began, a detailed cost estimate was prepared covering renovation work, finishing materials, furniture, and appliances — so the budget was known in advance."
       },
       {
        "t": "p",
-       "html": "The project is presented as photorealistic 3D visualizations showcasing the layout, interior, and furniture solutions for this 52 m² apartment."
+       "html": "The gallery features photorealistic 3D visualizations of the apartment."
       }
      ]
     },
@@ -151,7 +151,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -159,7 +159,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -194,7 +194,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

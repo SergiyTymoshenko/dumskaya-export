@@ -4,7 +4,7 @@
  "type": "project",
  "group": "commercial",
  "title": "Photo Studio Interior Design 130 m² | DUMSKAYA DESIGN",
- "description": "130 m² photo studio: design project, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "description": "130 m² photo studio: interior design, custom furniture, turnkey renovation and design supervision. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Photo studio interior design and custom furniture, 130 m²",
  "og_image": "67ae680933ccb01054d5a2fd",
  "alternates": {
@@ -34,7 +34,7 @@
       },
       {
        "t": "p",
-       "html": "Particular attention was paid to functional zoning, lighting, the organization of shooting spaces, and the creation of diverse interior sets within a single property. This makes it possible to use the studio’s floor area efficiently and create a range of visual scenarios for photo and video shoots."
+       "html": "The main goal was to fit several distinctly different sets for photo and video shoots into 130 m², with zoning and lighting organized around them."
       },
       {
        "t": "p",
@@ -42,7 +42,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> offers photo studio and commercial interior design, custom furniture, and turnkey renovation in Bratislava and Vienna. We develop comprehensive solutions for photo studios, beauty salons, offices, stores, showrooms, and other commercial spaces — from concept and technical documentation to furniture manufacturing and full implementation of the interior."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs photo studios, beauty salons, offices, stores, and showrooms in Bratislava and Vienna — from concept and technical documentation to custom furniture and turnkey renovation."
       }
      ]
     },
@@ -215,7 +215,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -223,7 +223,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -258,7 +258,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

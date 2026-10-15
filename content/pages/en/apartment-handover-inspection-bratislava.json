@@ -26,64 +26,82 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>A handover inspection of a new-build apartment</strong> is an important step before moving in that helps you avoid hidden defects and unnecessary repair costs. <strong>DUMSKAYA DESIGN</strong> offers professional assistance with property handover in Bratislava to ensure your new home meets the promised quality standards."
+       "html": "<strong>A handover inspection of a new-build apartment</strong> is a check before you move in that helps uncover hidden defects and avoid unnecessary repair costs. <strong>DUMSKAYA DESIGN</strong> (Bratislava, Slovakia) carries out apartment handover inspections in Bratislava and checks whether your new home meets the promised quality standards."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What the service includes"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Checking that the apartment complies with the project documentation"
       },
       {
        "t": "p",
-       "html": "<strong>What does the service include? </strong>"
+       "html": "Inspecting wall, ceiling, and floor finishes for defects"
       },
       {
        "t": "p",
-       "html": "✔️ Checking that the apartment complies with the project documentation"
+       "html": "Checking windows, doors, and balcony structures"
       },
       {
        "t": "p",
-       "html": "✔️ Inspecting wall, ceiling, and floor finishes for defects"
+       "html": "Checking utility systems: electrical, water supply, ventilation"
       },
       {
        "t": "p",
-       "html": "✔️ Checking windows, doors, and balcony structures"
+       "html": "Assessing the quality of plumbing fixtures and installed equipment"
       },
       {
        "t": "p",
-       "html": "✔️ Testing utility systems (electrical, water supply, ventilation)"
+       "html": "Checking geometry: wall angle deviations and floor levelness"
       },
       {
        "t": "p",
-       "html": "✔️ Assessing the quality of plumbing fixtures and installed equipment"
+       "html": "Documenting defects and drawing up a list of issues for the developer"
       },
       {
        "t": "p",
-       "html": "✔️ Checking walls for angular deviations and floors for levelness"
+       "html": "Advice on next steps if defects are found"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Pricing"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "€250 — handover inspection of an apartment up to 50 m²"
       },
       {
        "t": "p",
-       "html": "✔️ Documenting identified defects and drawing up a list of issues for the developer"
+       "html": "€400 — handover inspection of an apartment of 50 m² or more"
       },
       {
        "t": "p",
-       "html": "✔️ Advice on next steps if defects are found"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Service cost: </strong>"
-      },
-      {
-       "t": "p",
-       "html": "📌 €250 – handover inspection of an apartment up to 50 m²"
-      },
-      {
-       "t": "p",
-       "html": "📌 €400 – handover inspection of an apartment of 50 m² or more"
-      },
-      {
-       "t": "p",
-       "html": "📌 If you need a follow-up inspection after the developer has fixed the defects, a repeat visit costs €200."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Why choose us?</strong>"
-      },
+       "html": "€200 — repeat visit if a follow-up inspection is needed after the developer has fixed the defects"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Why choose us?"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "ul",
        "items": [
@@ -94,7 +112,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>Book a professional apartment handover inspection with DUMSKAYA DESIGN (Bratislava, Slovakia) and gain confidence in the quality of your new home! </strong>"
+       "html": "<strong>Book an apartment handover inspection with DUMSKAYA DESIGN (Bratislava, Slovakia) and be confident in the quality of your new home.</strong>"
       }
      ]
     },
@@ -145,7 +163,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

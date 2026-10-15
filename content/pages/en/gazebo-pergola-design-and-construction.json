@@ -22,9 +22,13 @@
      "text": "Exclusive gazebo with pergola: design project and completed build"
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "DUMSKAYA DESIGN (Bratislava, Slovakia) developed a design project for an exclusive gazebo with a pergola that combines contemporary aesthetics, functionality, and comfort. The project included a detailed architectural concept for the structure, covering its proportions, appearance, combination of finishing materials, layout of the lounge area, and decorative lighting. Particular attention was paid to making the gazebo blend harmoniously with the architecture of the private house and its surroundings. The design provided a comfortable area for relaxing and entertaining guests, comfortable seating, and well-thought-out lighting so the space can be enjoyed in the evening. High-quality finishing materials suitable for outdoor use and resistant to weather conditions were specified. To show the future appearance of the structure, the studio prepared photorealistic 3D visualizations. The gazebo with pergola was built in accordance with the project developed by DUMSKAYA DESIGN. This page presents not only the design 3D visualizations but also photos of the completed structure, showing the result of the project’s implementation. DUMSKAYA DESIGN (Bratislava, Slovakia) — we create interiors and exteriors that become reality."
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "DUMSKAYA DESIGN (Bratislava, Slovakia) designed a gazebo with a pergola, developing the architectural concept and proportions, the combination of finishing materials, a lounge area with seating, and decorative lighting for the evening. The gazebo was designed to complement the architecture of the private house, with weather-resistant finishing materials. It was built to the studio’s design — below are 3D visualizations and photos of the finished gazebo."
+      }
+     ]
     },
     {
      "type": "gallery",
@@ -109,7 +113,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -117,7 +121,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/3d-visualization-facade-exterior-price"
       }
      ]
@@ -152,7 +156,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

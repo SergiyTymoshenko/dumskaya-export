@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 80 m² in Kyiv | DUMSKAYA DESIGN",
- "description": "80 m² apartment in Kyiv: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "80 m² apartment in Kyiv: interior design, 3D visualization, technical drawings and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Apartment interior design in Kyiv, custom furniture, 80 m²",
  "og_image": "6abd0a7d61617a4443ab2567",
  "alternates": {
@@ -42,7 +42,7 @@
       },
       {
        "t": "p",
-       "html": "Every stage of implementation was accompanied by design supervision from <strong>DUMSKAYA DESIGN</strong>, ensuring that the work carried out matched the developed interior concept and technical documentation."
+       "html": "Implementation was accompanied by design supervision from <strong>DUMSKAYA DESIGN</strong>: the studio made sure the work matched the concept and the technical documentation."
       }
      ]
     },
@@ -220,7 +220,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Technical documentation developed under the “Basic” interior design package — €35/m²"
+     "text": "Technical documentation developed under the “Basic” design package — €35/m²"
     },
     {
      "type": "gallery",
@@ -435,7 +435,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -443,7 +443,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -478,7 +478,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

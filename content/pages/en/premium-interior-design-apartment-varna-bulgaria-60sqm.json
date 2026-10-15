@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 60 m² in Varna | DUMSKAYA DESIGN",
- "description": "60 m² apartment in Varna: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "60 m² apartment in Varna: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Apartment interior design in Varna, custom furniture and turnkey renovation, 60 m²",
  "og_image": "6abd6ad93ba7c7b83394f9b9",
  "alternates": {
@@ -26,27 +26,23 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 60 m² apartment in Varna, Bulgaria. The project combined interior design, technical documentation, bespoke furniture, and a complete turnkey apartment renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 60 m² apartment in Varna, Bulgaria: interior design, technical documentation, custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The layout and interior solutions cover the living room, bedroom, a kitchen with built-in appliances, walk-in closets, an entrance hall, a bathroom, and functional storage systems. Special attention was paid to ergonomics, rational use of floor area, and creating a comfortable space for everyday life."
+       "html": "The project included the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, bathroom, and storage systems."
       },
       {
        "t": "p",
-       "html": "Custom furniture was designed and manufactured for the apartment, including the kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems. The furniture was designed together with the interior, which made it possible to integrate it precisely into the architecture of the rooms and make efficient use of every square meter of the apartment."
+       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-made; the furniture was designed together with the interior to make use of every square meter of the 60 m²."
       },
       {
        "t": "p",
-       "html": "Before work began, a detailed cost estimate was prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project. After the design stage was completed, a full turnkey renovation of the apartment in Varna was carried out in accordance with the technical documentation."
+       "html": "Before work began, a detailed cost estimate was prepared covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting. The studio then carried out a turnkey renovation of the apartment in Varna based on the technical documentation."
       },
       {
        "t": "p",
-       "html": "Photorealistic 3D visualizations were prepared for the project, allowing the future interior, materials, furniture, and lighting to be evaluated in advance. The completed result is shown in photos of the finished apartment and the bespoke furniture made for it."
-      },
-      {
-       "t": "p",
-       "html": "The 60 m² apartment project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach — from interior design and technical documentation to the manufacture of bespoke furniture and the finished interior."
+       "html": "Below are 3D visualizations of the project and photos of the finished apartment with its custom-made furniture."
       }
      ]
     },
@@ -197,7 +193,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "Custom furniture in Bratislava",
        "href": "/en/custom-residential-furniture"
       },
       {
@@ -205,7 +201,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -240,7 +236,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

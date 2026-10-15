@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 48 m² | DUMSKAYA DESIGN",
- "description": "48 m² apartment: design project, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "description": "48 m² apartment: interior design, custom furniture, turnkey renovation and styling. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Apartment interior design, custom furniture and turnkey renovation, 48 m²",
  "og_image": "6abd6ac73ba7c7b83394f91e",
  "alternates": {
@@ -26,23 +26,23 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> designed and delivered a comprehensive project for a 48 m² apartment, including interior design, a turnkey renovation, the manufacture of custom furniture, and decorating."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> designed and delivered a project for a 48 m² apartment: interior design, a turnkey renovation, custom furniture, and decorating."
       },
       {
        "t": "p",
-       "html": "The main goal of the project was to create a functional and comfortable living space within the apartment’s relatively small floor area. The layout and interior solutions were developed with ergonomics, efficient use of every square meter, and the visual cohesion of the interior in mind."
+       "html": "The goal was to make a small apartment comfortable to live in and to use every square meter."
       },
       {
        "t": "p",
-       "html": "Particular attention was paid to custom furniture designed specifically for the dimensions and features of the rooms. Bespoke furniture solutions make it possible to use space efficiently, provide the necessary storage systems, and maintain a unified interior style."
+       "html": "The furniture was custom-made to the room dimensions, which gave the apartment the storage it needed while keeping the interior in a unified style."
       },
       {
        "t": "p",
-       "html": "The project was delivered end to end: from developing the interior concept and design documentation to the renovation work, the manufacture and installation of the furniture, and the final decorating of the space. This approach makes it possible to ensure that the finished interior matches the design project."
+       "html": "The studio managed the project from the concept and documentation to the renovation, furniture installation, and final decorating — which is why the finished interior matches the design project."
       },
       {
        "t": "p",
-       "html": "This page features photographs of the completed interior and the manufactured furniture, showing the final result of our comprehensive work on a 48 m² apartment."
+       "html": "Below are photos of the finished interior and the custom-made furniture."
       }
      ]
     },
@@ -169,7 +169,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -177,7 +177,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -212,7 +212,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

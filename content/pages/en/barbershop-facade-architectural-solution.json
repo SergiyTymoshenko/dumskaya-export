@@ -26,11 +26,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an architectural solution for the renovation of a barbershop facade in Kyiv, Ukraine. The project called for a skillful balance of contemporary design, a recognizable brand identity, and the architectural character of the surrounding urban environment."
-      },
-      {
-       "t": "p",
-       "html": "The main goal was to transform the existing facade and create a striking look for the commercial property — one that attracts attention, reinforces the brand’s positioning, and interacts harmoniously with the surrounding architecture."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an architectural solution for the renovation of a barbershop facade in Kyiv, Ukraine. The task was to bring together contemporary design, the shop’s brand identity, and the character of the surrounding buildings."
       }
      ]
     },
@@ -48,11 +44,11 @@
       },
       {
        "t": "p",
-       "html": "Particular attention was paid to the entrance area, the proportions of the facade, visual accents, and details that emphasize the barbershop’s individuality and make it more visible from the street."
+       "html": "The key focal points are the entrance area, the proportions of the facade, and the details that make the barbershop stand out from the street."
       },
       {
        "t": "p",
-       "html": "The result is a contemporary commercial facade design that creates a recognizable image for the business and matches the atmosphere of a premium men’s space."
+       "html": "The facade gained a recognizable look in keeping with a premium men’s space."
       }
      ]
     },
@@ -82,10 +78,6 @@
         "decorative facade lighting;",
         "integration of the property into the surrounding urban environment."
        ]
-      },
-      {
-       "t": "p",
-       "html": "This approach makes it possible to create an expressive commercial facade that serves architectural, functional, and image-building purposes at the same time."
       }
      ]
     },
@@ -99,23 +91,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "Photorealistic 3D visualizations of the facade were created to clearly present the architectural concept."
-      },
-      {
-       "t": "p",
-       "html": "The visualizations show the proposed finishing materials, color solutions, architectural details, decorative lighting, the entrance area, and the overall appearance of the renovated building."
-      },
-      {
-       "t": "p",
-       "html": "3D visualization makes it possible to evaluate the architectural solution before implementation and see how the renovated barbershop facade will look within its urban surroundings."
+       "html": "Photorealistic 3D visualizations show the finishing materials, colors, details, decorative lighting, and entrance area of the renovated facade in its street setting."
       },
       {
        "t": "p",
        "html": "<strong>DUMSKAYA DESIGN — architectural design, commercial facade design, renovation solutions, and photorealistic 3D visualization.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN — we create architecture that works for your brand.</strong>"
       }
      ]
     },
@@ -136,7 +116,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -144,7 +124,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/3d-visualization-facade-exterior-price"
       }
      ]
@@ -179,7 +159,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -5,6 +5,7 @@ import Img from '../components/Img.astro';
 import Tile from '../components/Tile.astro';
 import { ui, type Lang } from '../lib/i18n';
 import { homePath, mainParts, allGalleryImages, pagesOfType, firstGallery, localize, type Page } from '../lib/data';
+import { typo } from '../lib/typo';
 interface Props { page: Page }
 const { page } = Astro.props;
 const lang = page.lang as Lang;
@@ -32,10 +33,11 @@ const after = specs.length ? parts.slice(specEnd + 1) : [];
 const specTitle = specAt >= 0 ? plainP(parts[specAt]).replace(/:$/, '') : '';
 const catalog = localize('/kupkuhni-na-zakaz-vienna-bratislava', lang);
 const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
-const all = pagesOfType('kitchen', lang);
+const num = (p: Page) => (p.alternates.ru || p.path).match(/k-?(\d{2})/i)?.[1];
+const all = pagesOfType('kitchen', lang).sort((a, b) => Number(num(a)) - Number(num(b)));
 const i = all.findIndex((p) => p.path === page.path);
 const others = [1, 2, 3].map((d) => all[(i + d) % all.length]).filter((p) => p && p.path !== page.path);
-const num = (p: Page) => (p.alternates.ru || p.path).match(/k-?(\d{2})/i)?.[1];
+const descr = (p: Page) => { const d = p.title.split('|')[0].split(':').slice(1).join(':').trim(); return d ? d[0].toUpperCase() + d.slice(1) : ''; };
 ---
 <div class="wrap ktop">
   <Crumbs items={[{ label: T.home, href: homePath(lang) }, { label: T.kitchens, href: catalog }, { label: code }]} />
@@ -47,7 +49,7 @@ const num = (p: Page) => (p.alternates.ru || p.path).match(/k-?(\d{2})/i)?.[1];
   </div>
   <div class="kinfo">
     <p class="kinfo__code display">{code}</p>
-    <h1 class="kinfo__h1">{page.h1}</h1>
+    <h1 class="kinfo__h1">{typo(page.h1)}</h1>
     <div class="kinfo__btns">
       {contact && <a class="btn btn--solid" href={`${contact}?model=${code}`}>{T.kitchenPrice} {code}</a>}
       {catalog && <a class="btn" href={catalog}>{T.allKitchens}</a>}
@@ -60,20 +62,22 @@ const num = (p: Page) => (p.alternates.ru || p.path).match(/k-?(\d{2})/i)?.[1];
       </table>
     )}
     {after.length > 0 && <Parts parts={after} class="kinfo__text" />}
+    <p class="kinfo__made">{T.made}</p>
   </div>
 </div>
 {others.length > 0 && (
   <section class="kother" aria-labelledby="ko">
     <h2 id="ko" class="section-title wrap kother__h">{T.otherKitchens}</h2>
     <div class="tiles tiles--3">
-      {others.map((o) => <Tile href={o.path} image={firstGallery(o)[0]?.id} alt={o.h1} title={`K-${num(o)}`} sizes="(min-width: 960px) 33vw, 50vw" />)}
+      {others.map((o) => <Tile href={o.path} image={firstGallery(o)[0]?.id} alt={o.h1} title={`K-${num(o)}`} sub={descr(o)} sizes="(min-width: 960px) 33vw, 50vw" />)}
     </div>
   </section>
 )}
 <style>
   .ktop { padding-block: 20px 24px; }
   .kgrid { display: grid; gap: 40px; padding-bottom: clamp(48px, 7vw, 96px); }
-  @media (min-width: 960px) { .kgrid { grid-template-columns: 7fr 5fr; gap: clamp(40px, 5vw, 80px); align-items: start; } .kinfo { position: sticky; top: calc(var(--header) + 24px); } }
+  /* на компьютере фото закреплены, а текст и характеристики прокручиваются рядом */
+  @media (min-width: 960px) { .kgrid { grid-template-columns: 7fr 5fr; gap: clamp(40px, 5vw, 80px); align-items: start; } .kgal { position: sticky; top: calc(var(--header) + 16px); } }
   .kgal :global(.kgal__hero) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
   .kgal__thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); margin-top: var(--gap); }
   .kgal__thumbs :global(img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
@@ -81,6 +85,7 @@ const num = (p: Page) => (p.alternates.ru || p.path).match(/k-?(\d{2})/i)?.[1];
   .kinfo__h1 { font: 400 clamp(17px, 1.6vw, 20px)/1.4 var(--body); color: var(--ink); margin: 12px 0 24px; }
   .kinfo__btns { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
   :global(.kinfo__text) { font-size: 16px; }
+  .kinfo__made { font-size: 14px; color: var(--stone); margin: 0; padding-top: 16px; border-top: 1px solid var(--line); }
   .kother__h { padding-bottom: 24px; }
   .stamp { width: 100%; border-collapse: collapse; border: 1px solid var(--ink); font-size: 14px; line-height: 1.4; margin: 8px 0 24px; }
   .stamp__head { caption-side: top; text-align: left; border: 1px solid var(--ink); border-bottom: 0; padding: 8px 12px; font-family: var(--display); letter-spacing: 0.2em; text-transform: uppercase; font-size: 11px; color: var(--ink); }

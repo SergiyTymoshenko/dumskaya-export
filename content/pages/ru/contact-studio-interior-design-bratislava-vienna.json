@@ -26,70 +26,12 @@
      "parts": [
       {
        "t": "p",
-       "html": "Вы можете позвонить нам, написать <strong>Telegram </strong>или <strong>WhatsApp, </strong>оставить заявку через форму."
-      }
-     ]
-    },
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Дизайн студия Братислава, Словакия Súkennícka 1, 821 09 Ružinov, Bratislava +421 918 17 77 85 Дизайн студия Вена, Австрия +43 677 61430187 Дизайн студия Киев, Украина +38 095 366 25 75",
-       "href": "tel:+421918177785",
-       "image": null
-      },
-      {
-       "title": "dumskaya.design@gmail.com",
-       "href": "mailto:dumskaya.design@gmail.com",
-       "image": null
-      },
-      {
-       "title": "https://dumskaya-design.com",
-       "href": "/",
-       "image": null
-      }
-     ]
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Форма записи на бесплатную консультацию"
+       "html": "Позвоните, напишите в <strong>Telegram</strong> или <strong>WhatsApp</strong> или оставьте заявку через форму — ответим в течение рабочего дня."
       }
      ]
     },
     {
      "type": "form"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Thank you!"
-      },
-      {
-       "t": "p",
-       "html": "We will contact you shortly."
-      },
-      {
-       "t": "p",
-       "html": "Ok"
-      },
-      {
-       "t": "p",
-       "html": "Can't send form"
-      },
-      {
-       "t": "p",
-       "html": "Please try again later."
-      },
-      {
-       "t": "p",
-       "html": "Ok"
-      }
-     ]
     }
    ]
   },

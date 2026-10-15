@@ -16,8 +16,18 @@ const project = list[idx];
 const [name, area] = splitCaption(project?.label || page.h1);
 const images = allGalleryImages(page);
 const [hero, ...photos] = images;
-const parts: Part[] = page.sections.filter((s) => !isServicesSection(s))
-  .flatMap((s) => s.blocks).filter((b) => b.type === 'text').flatMap((b: any) => b.parts);
+// текст проекта по порядку; подзаголовок выводится, только если за ним идёт текст
+// (подписи к галереям вроде «Фотографии реализованного объекта» не нужны — фото идут общей лентой)
+type Item = { h: string } | { p: Part[] };
+const items: Item[] = [];
+const blocks = page.sections.filter((s) => !isServicesSection(s)).flatMap((s) => s.blocks);
+blocks.forEach((b, k) => {
+  if (b.type === 'heading' && b.level > 1 && blocks[k + 1]?.type === 'text' && k > 0) items.push({ h: b.text });
+  else if (b.type === 'text') {
+    const last = items[items.length - 1];
+    if (last && 'p' in last) last.p.push(...b.parts); else items.push({ p: [...b.parts] });
+  }
+});
 const services = page.sections.find(isServicesSection);
 const serviceLinks = ((services?.blocks.find((b) => b.type === 'cards') as any)?.items || []).filter((c: any) => c.href);
 
@@ -36,11 +46,12 @@ const contact = localize('/contact-studio-interior-design-bratislava-vienna', la
 const prices = localize('/price-interior-design-bratislava-wien-praha', lang);
 const home = lang === 'ru' ? '/' : `/${lang}`;
 import Caps from '../components/Caps.astro';
+import { typo } from '../lib/typo';
 ---
 <section class="phero">
   <Img id={hero?.id} alt={hero?.alt || name} sizes="100vw" eager class="phero__img" />
   <div class="phero__cap">
-    <p class="phero__title display">{name}</p>
+    <p class="phero__title display"><Caps text={name} /></p>
     {area && <p class="phero__sub">{area}</p>}
   </div>
 </section>
@@ -66,7 +77,11 @@ import Caps from '../components/Caps.astro';
   </aside>
 
   <div class="pmain">
-    {parts.length > 0 && <Parts parts={parts} class="pmain__text" />}
+    {items.length > 0 && (
+      <div class="pmain__text">
+        {items.map((it) => ('h' in it ? <h2 class="ph2">{typo(it.h)}</h2> : <Parts parts={it.p} />))}
+      </div>
+    )}
     <div class="pgallery">
       {photos.map((i) => <Img id={i.id} alt={i.alt} sizes="(min-width: 960px) 60vw, 100vw" />)}
     </div>
@@ -112,7 +127,9 @@ import Caps from '../components/Caps.astro';
   .pside__btns { display: grid; gap: 10px; margin-top: 28px; }
   @media (min-width: 560px) and (max-width: 959px) { .pside__btns { grid-template-columns: 1fr 1fr; } }
 
-  :global(.pmain__text) { margin-bottom: clamp(32px, 5vw, 56px); }
+  .pmain__text { margin-bottom: clamp(32px, 5vw, 56px); }
+  .ph2 { font: 500 clamp(17px, 1.5vw, 19px)/1.35 var(--body); color: var(--ink); margin: 1.6em 0 0.6em; max-width: var(--measure); }
+  .ph2:first-child { margin-top: 0; }
   .pgallery { display: grid; gap: var(--gap); grid-template-columns: 1fr 1fr; }
   .pgallery :global(img) { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
   .pgallery :global(img:nth-child(3n+1)) { grid-column: 1 / -1; }
@@ -125,7 +142,8 @@ import Caps from '../components/Caps.astro';
   .pnav__all { text-align: center; margin: 32px 0 0; }
   .psvc { padding-block: clamp(48px, 7vw, 96px); }
   .psvc__h { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; margin-bottom: 16px; }
-  .psvc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 28px; }
-  .psvc a { text-decoration: none; border-bottom: 1px solid var(--line); }
+  .psvc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 28px; }
+  .psvc li { padding-block: 8px; }
+  .psvc a { text-decoration: none; border-bottom: 1px solid var(--line); padding-block: 4px; }
   .psvc a:hover { border-color: var(--oak); }
 </style>

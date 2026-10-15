@@ -20,22 +20,36 @@ const privacy = lang === 'ru' ? '/privacy' : `/${lang}/privacy`;
       if (window.__gtmLoaded) return; window.__gtmLoaded = true;
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtm);
     }
+    var box = document.querySelector('[data-cookie]');
+    // «Настройки cookie» в подвале: снова показать выбор (согласие можно отозвать в любой момент)
+    document.querySelectorAll('[data-cookie-settings]').forEach(function (b) {
+      b.hidden = false;
+      b.addEventListener('click', function () {
+        try { localStorage.removeItem(KEY); } catch (e) {}
+        if (box) { box.hidden = false; box.querySelector('button').focus(); }
+      });
+    });
     var v = null; try { v = localStorage.getItem(KEY); } catch (e) {}
-    if (v === 'granted') { load(); return; }
-    if (v === 'denied') return;
-    var box = document.querySelector('[data-cookie]'); if (!box) return;
-    box.hidden = false;
+    if (v === 'granted') { load(); }
+    if (!box) return;
+    if (!v) box.hidden = false;
     box.addEventListener('click', function (e) {
       var c = e.target.closest('[data-choice]'); if (!c) return;
       try { localStorage.setItem(KEY, c.dataset.choice); } catch (err) {}
       box.hidden = true;
       if (c.dataset.choice === 'granted') load();
+      // согласие отозвано после загрузки аналитики — перезагрузить страницу без неё
+      else if (window.__gtmLoaded) location.reload();
     });
   })();
 </script>
 <style>
   .cookie { position: fixed; z-index: 40; left: 12px; right: 12px; bottom: 12px; max-width: 720px; margin-inline: auto;
     background: #fff; border: 1px solid var(--ink); padding: 16px 18px; display: grid; gap: 12px; font-size: 14px; box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+  @media (max-width: 719px) {
+    .cookie { left: 8px; right: 8px; bottom: 8px; padding: 12px 14px; gap: 10px; font-size: 13px; line-height: 1.45; }
+    .cookie .cookie__btns { display: grid; grid-template-columns: 1fr 1fr; }
+  }
   .cookie p { margin: 0; }
   .cookie__btns { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
   .cookie .btn { min-height: 40px; padding: 8px 18px; font-size: 14px; }

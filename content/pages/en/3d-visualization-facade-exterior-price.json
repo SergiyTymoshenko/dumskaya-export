@@ -75,7 +75,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Creating a 3D visualization of a building facade involves several stages, each with its own specifics, possible revisions, and cost:"
+       "html": "3D facade visualization is done in stages. For each stage below, you’ll find the scope of work, the cost, and the revision terms:"
       }
      ]
     },
@@ -89,13 +89,13 @@
      "parts": [
       {
        "t": "p",
-       "html": "At this stage, drawings, plans, materials, and reference examples are provided to help form a clear picture of the project."
+       "html": "You provide drawings, plans, materials, and reference examples — we use them to form a clear picture of the project."
       },
       {
        "t": "ul",
        "items": [
-        "Cost: Usually included in the overall project price, but if the technical brief needs significant refinement, an additional fee may apply (approximately €50–125).",
-        "Revisions: No revisions are provided at this stage, only clarification of details."
+        "Cost: usually included in the project price. If the technical brief needs significant refinement, an additional fee of approximately €50–125 may apply.",
+        "Revisions: not included — only clarification of details."
        ]
       }
      ]
@@ -116,7 +116,7 @@
        "t": "ul",
        "items": [
         "Cost: €200–375 (depending on the complexity of the building and the facade area).",
-        "Revisions: Basic changes to the shape are free of charge. Significant changes that require rework are charged extra (about €50 per change)."
+        "Revisions: basic changes to the shape are free of charge. Significant changes that require rework cost about €50 each."
        ]
       }
      ]
@@ -137,7 +137,7 @@
        "t": "ul",
        "items": [
         "Cost: €125–250, depending on the number of textures and the complexity of the materials.",
-        "Revisions: 1–2 rounds of adjustments (for example, changing a texture’s color) are free of charge. Replacing all textures is charged extra (about €40 per round)."
+        "Revisions: 1–2 rounds of adjustments (for example, changing a texture’s color) are free of charge. Replacing all textures costs about €40 per round."
        ]
       }
      ]
@@ -158,7 +158,7 @@
        "t": "ul",
        "items": [
         "Cost: €75–200, depending on complexity.",
-        "Revisions: One round of lighting adjustments is free of charge; further changes cost €25 per revision."
+        "Revisions: one round of lighting adjustments is free of charge; further changes cost €25 per revision."
        ]
       }
      ]
@@ -179,7 +179,7 @@
        "t": "ul",
        "items": [
         "Cost: Usually included in the project.",
-        "Revisions: Minor camera angle adjustments are free of charge. More significant changes cost €25–50."
+        "Revisions: minor camera angle adjustments are free of charge; more significant changes cost €25–50."
        ]
       }
      ]
@@ -200,7 +200,7 @@
        "t": "ul",
        "items": [
         "Cost: €250–500 per view.",
-        "Revisions: Revisions to the final render are not included, as changes require re-rendering (€75–125, depending on complexity)."
+        "Revisions: not included — any change requires re-rendering (€75–125, depending on complexity)."
        ]
       }
      ]
@@ -215,13 +215,13 @@
      "parts": [
       {
        "t": "p",
-       "html": "Additional revisions not specified in the initial technical brief."
+       "html": "Changes that were not in the original technical brief."
       },
       {
        "t": "ul",
        "items": [
-        "Cost: Assessed individually (€40–125 per change).",
-        "Revisions: Charged separately unless provided for in the contract."
+        "Cost: €40–125 per change, assessed individually.",
+        "Revisions: charged separately unless provided for in the contract."
        ]
       }
      ]
@@ -236,7 +236,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Includes modeling and visualization of the surrounding elements around the facade (trees, pathways, lighting)."
+       "html": "Modeling and visualization of the surroundings around the facade: trees, pathways, lighting."
       },
       {
        "t": "p",
@@ -247,7 +247,7 @@
        "items": [
         "Basic surroundings: €125–250.",
         "Detailed landscape: €250–625.",
-        "Revisions: One round of adjustments to the placement of main objects is free of charge. Significant changes cost €50–100 per round."
+        "Revisions: one round of adjustments to the placement of the main objects is free of charge; significant changes cost €50–100 per round."
        ]
       }
      ]
@@ -262,7 +262,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Includes modeling of buildings, site improvements, landscape, and surroundings for adjacent plots."
+       "html": "Modeling of buildings, site improvements, landscape, and surroundings on adjacent plots."
       },
       {
        "t": "p",
@@ -271,8 +271,8 @@
       {
        "t": "ul",
        "items": [
-        "Second plot: Basic modeling — €200–375. If detailed surroundings and landscaping are required, add €250–500. Final render (per view) — €250–500.",
-        "Third plot: The cost is the same as for the second plot."
+        "Second plot: basic modeling — €200–375; detailed surroundings and landscaping — an additional €250–500; final render — €250–500 per view.",
+        "Third plot: the cost is the same as for the second."
        ]
       },
       {
@@ -298,7 +298,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "At this stage, a unique design concept for the facade or site is developed. The service includes an analysis of architectural trends, several sketch options for the facade, development of the overall style, and the selection of materials and main forms. It is suitable for clients who do not have a clear technical brief but want to see a creative solution."
+       "html": "We develop an original concept for the facade or site: we analyze architectural trends, create several sketch options, and define the overall style, materials, and main forms."
       },
       {
        "t": "p",
@@ -310,11 +310,11 @@
       },
       {
        "t": "p",
-       "html": "2. Creation of several conceptual facade sketches (2–3 options)."
+       "html": "2. Creating 2–3 conceptual facade sketches."
       },
       {
        "t": "p",
-       "html": "3. Refinement of one selected option and its development into a 3D model."
+       "html": "3. Refining the selected option and developing it into a 3D model."
       },
       {
        "t": "p",
@@ -335,7 +335,7 @@
        "t": "ul",
        "items": [
         "Free of charge: 1–2 rounds of adjustments to the selected concept.",
-        "Paid: Additional concept options or rework of an existing design — from €125 per round."
+        "Paid: additional concept options or rework of an existing design — from €125 per round."
        ]
       },
       {
@@ -352,7 +352,7 @@
       },
       {
        "t": "p",
-       "html": "This service is useful for clients who have not yet settled on an exact facade style or who want to propose something unique and contemporary. Once the concept is approved, a full 3D visualization is created based on it."
+       "html": "Suitable if there’s no clear technical brief or the facade style hasn’t been chosen yet, and you want to see a contemporary, unconventional solution. Once the concept is approved, a full 3D visualization is created based on it."
       }
      ]
     },
@@ -366,7 +366,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "This service includes a 3D visualization of an existing building design (based on the drawings or plans provided), which is then placed in its surroundings. The goal is to show how the project will look in a real or modeled environment, including the landscape, neighboring buildings, and natural elements."
+       "html": "Based on your drawings or plans, we create a 3D visualization of the finished building design and place it in its surroundings. You can see how the house will look in a real or modeled environment — with landscaping, neighboring buildings, and nature."
       },
       {
        "t": "p",
@@ -396,9 +396,7 @@
        "t": "ul",
        "items": [
         "Modeling the existing building: €250–500 (depending on the level of detail and complexity of the project).",
-        "Developing the surroundings:",
-        "Basic level (lawn, a few trees, simple elements): €125–250.",
-        "Detailed landscape and surroundings: €250–750.",
+        "Developing the surroundings: basic level (lawn, a few trees, simple elements) — €125–250; detailed landscape and surroundings — €250–750.",
         "Final render: €250–500 per view."
        ]
       },
@@ -410,7 +408,7 @@
        "t": "ul",
        "items": [
         "Free of charge: 1 round of adjustments to the integration into the surroundings (for example, moving the building or minor landscape changes).",
-        "Paid: Significant changes to the building model — €75–125.",
+        "Paid: significant changes to the building model — €75–125.",
         "Adjusting the entire surroundings or adding new objects — €50–125."
        ]
       },
@@ -431,15 +429,15 @@
       },
       {
        "t": "p",
-       "html": "This service is ideal for architects who want to show how an already designed project will fit into a real site, or for presenting a project to investors by highlighting its advantages within its surroundings."
+       "html": "Architects use this service to show how a finished design will fit into a real site, and it’s also useful for presenting a project to investors."
       },
       {
        "t": "p",
-       "html": "<strong>The final cost will depend on the complexity of the project, the required level of detail, and the number of revisions.</strong>"
+       "html": "<strong>The final cost depends on the complexity of the project, the level of detail, and the number of revisions.</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>If the project includes a single concept for all plots, part of the work can be streamlined, which will reduce the overall cost.</strong>"
+       "html": "<strong>If all the plots share a single concept, some of the work can be combined — which lowers the overall cost.</strong>"
       }
      ]
     },
@@ -545,7 +543,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -26,19 +26,15 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> carried out the architectural design of the facades of a private house."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an architectural solution for the facades of a private house — a concept for the building’s exterior that respects its existing architecture and proportions."
       },
       {
        "t": "p",
-       "html": "The project involved developing an architectural concept for the building’s exterior that takes into account its existing architecture, proportions, and overall style. The main focus was on creating a contemporary, harmonious look for the private house."
+       "html": "The project works out the combinations of finishing materials, the color palette, architectural elements, and exterior details, as well as the proportions of the facades and the relationship between the different parts of the building."
       },
       {
        "t": "p",
-       "html": "The project included working out facade solutions, combinations of finishing materials, the color palette, architectural elements, and exterior details. Special attention was given to the proportions of the facades and the visual relationship between the different parts of the building."
-      },
-      {
-       "t": "p",
-       "html": "To clearly present the future appearance of the house, photorealistic 3D facade visualizations were prepared, making it possible to evaluate the architectural concept, materials, and color schemes before work began."
+       "html": "The gallery features photorealistic 3D visualizations of the facades, showing the materials and color schemes before any work begins."
       },
       {
        "t": "p",
@@ -83,7 +79,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -91,7 +87,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/3d-visualization-facade-exterior-price"
       }
      ]
@@ -126,7 +122,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

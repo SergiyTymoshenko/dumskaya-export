@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 43 m² in Warsaw | DUMSKAYA DESIGN",
- "description": "43 m² apartment in Warsaw: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "43 m² apartment in Warsaw: interior design, technical drawings, custom furniture, turnkey renovation and styling. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Apartment interior design in Warsaw, custom furniture and turnkey renovation, 43 m²",
  "og_image": "6abd6aaa6bbe6103844834dd",
  "alternates": {
@@ -26,31 +26,27 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 43 m² apartment in Warsaw, Poland. The project brought together interior design, technical documentation, the manufacture of custom furniture, a turnkey renovation, and the final decorating of the rooms."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 43 m² apartment in Warsaw, Poland: interior design, technical documentation, custom furniture, a turnkey renovation, and decorating."
       },
       {
        "t": "p",
-       "html": "The interior is designed in a contemporary style with minimalist elements. Understated forms, natural materials, a calm, neutral color scheme, and well-planned lighting create a harmonious space. Particular attention was paid to ergonomics, functionality, and efficient use of the small apartment’s floor area."
+       "html": "The interior is contemporary with minimalist touches: understated forms, natural materials, and a calm, neutral palette. In 43 m², every square meter counts."
       },
       {
        "t": "p",
-       "html": "As part of the project, layout and interior solutions were developed taking into account the placement of furniture, appliances, and storage systems. Every element of the interior was selected with the room dimensions, everyday convenience, and the overall stylistic concept in mind."
+       "html": "The furniture and storage systems were custom-made to suit the architecture of the rooms."
       },
       {
        "t": "p",
-       "html": "Custom furniture was designed and manufactured for the apartment. The furniture structures and storage systems were developed around the architecture of the rooms, which made it possible to use the available space efficiently and ensure the visual unity of the interior."
+       "html": "The studio then carried out a turnkey renovation based on the technical documentation and installed the custom-made furniture."
       },
       {
        "t": "p",
-       "html": "Once the design stage was complete, a full turnkey renovation of the apartment was carried out in Warsaw in accordance with the technical documentation. The work included implementing the interior solutions, installing the manufactured furniture, and preparing the rooms for move-in."
+       "html": "The project was completed with made-to-measure curtains and interior decorating."
       },
       {
        "t": "p",
-       "html": "The final stage involved making the curtains and decorating the interior. Textiles and decorative elements complemented the overall concept, creating a cohesive and comfortable living space."
-      },
-      {
-       "t": "p",
-       "html": "The result is presented in photographs of the finished apartment and the manufactured furniture. The project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to designing and delivering small apartments — from the initial concept to a fully finished interior."
+       "html": "Below are photos of the finished apartment and the custom-made furniture."
       }
      ]
     },
@@ -185,7 +181,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -193,7 +189,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -228,7 +224,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -52,19 +52,15 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>The K-02 standard model</strong> is a contemporary L-shaped kitchen in beige tones that combines a minimalist aesthetic, natural textures, and a well-thought-out use of space. The clean geometry of the cabinetry, the mix of veneered and painted fronts, and a porcelain stoneware countertop create an elegant and functional interior."
+       "html": "<strong>The K-02 standard model</strong> is a minimalist L-shaped kitchen with an island in beige tones. Veneered upper fronts and painted lower fronts, simple geometry, and a porcelain stoneware countertop create a calm interior with natural textures."
       },
       {
        "t": "p",
-       "html": "The kitchen island complements the main work area, providing extra surface for cooking and everyday tasks. The L-shaped layout allows the storage, cooking, and built-in appliance zones to be arranged efficiently."
+       "html": "The island adds another work surface for cooking and everyday tasks, while the L-shaped section holds the cabinets, the cooking zone, and built-in appliances."
       },
       {
        "t": "p",
-       "html": "Particular attention has been paid to detail. The upper fronts are made of veneer, the lower ones are painted, and the carcass is made of 18 mm laminated chipboard. The FREE FOLD Hafele lift-up mechanism makes the upper cabinets easy to open, while Hettich hinges with soft-close mechanisms let the doors close smoothly and silently."
-      },
-      {
-       "t": "p",
-       "html": "AvanTech YOU Hettich drawers round out the kitchen’s functional equipment and support its contemporary character."
+       "html": "The upper cabinets open upward on FREE FOLD Hafele lift-up mechanisms, and Hettich hinges with soft-close mechanisms let the doors close smoothly and silently."
       },
       {
        "t": "p",
@@ -136,19 +132,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN makes custom kitchens for apartments, country houses, and contemporary living spaces in Bratislava and Vienna.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The K-02 model can be adapted to the individual dimensions of your room, the location of utility lines and appliances, and the client’s preferences. <strong>We take a comprehensive approach to kitchen furniture: from design development to manufacturing, delivery, and professional installation.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>On request, the kitchen can also be fitted with a sink, appliances, a range hood, and plumbing fixtures.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>To order the K-02 kitchen or get a personalized price quote, contact DUMSKAYA DESIGN.</strong>"
+       "html": "We will design the K-02 around your kitchen’s dimensions, utility connections, and appliance placement, then manufacture and install it in Bratislava or Vienna."
       }
      ]
     },
@@ -195,7 +179,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

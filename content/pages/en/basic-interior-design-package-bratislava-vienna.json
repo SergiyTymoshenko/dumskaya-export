@@ -26,192 +26,277 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>The “Basic” interior design package — €35–45/m²</strong>"
+       "html": "<strong>“Basic”</strong> is a complete interior design project for an apartment, house, or commercial space: a layout, photorealistic 3D visualization, and the essential working drawings for the construction crew."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> offers the “Basic” design package for apartments, private houses, and commercial spaces that need a fully developed interior concept and a complete set of technical documentation for the renovation work."
-      },
+       "html": "Choose it before a renovation or a layout change, when you need to decide in advance where the partitions, plumbing, electrical wiring, and lighting will go and which finishing materials will be used. You see the interior before work begins and receive the drawings it will be built from."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What’s included in the “Basic” package"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "1. Measured floor plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "The package combines layout solutions, photorealistic 3D visualization, and the essential working drawings the construction crew needs to bring the interior to life."
-      },
+       "html": "We record the dimensions of the rooms and the location of walls, openings, windows, doors, and utilities. The entire project is built on this plan."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "2. Furniture layout plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "It is the optimal choice if the property is about to be renovated or needs a reconfigured layout, with decisions on the placement of utility connections, lighting, plumbing fixtures, finishing materials, and other elements of the future interior."
-      },
+       "html": "A functional layout with furniture, plumbing fixtures, and key interior elements. We take into account room dimensions, circulation, ergonomics, storage systems, and how you use the space."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3. Demolition and construction plans"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "As a result, you see in advance what the space will look like after the renovation and receive a technical foundation for bringing it to life."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What’s included in the “Basic” package</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>1. Measured floor plan</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Before design work begins, the key dimensions of the space are recorded, along with the location of walls, openings, windows, doors, utilities, and other architectural elements. The measured floor plan becomes the foundation for further development of the design project."
-      },
-      {
-       "t": "p",
-       "html": "<strong>2. Furniture layout plan</strong>"
-      },
-      {
-       "t": "p",
-       "html": "A functional layout of the space is developed, showing the placement of furniture, plumbing fixtures, and key interior elements. Planning takes into account room dimensions, ease of movement, ergonomics, storage systems, and the ways the space will be used."
-      },
-      {
-       "t": "p",
-       "html": "<strong>3. Demolition and construction plans</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Where necessary, plans are prepared for demolishing existing structures and building new partitions. This lets the construction crew understand exactly what changes need to be made on site."
-      },
-      {
-       "t": "p",
-       "html": "<strong>4. Plumbing fixture layout plan</strong>"
-      },
+       "html": "Where needed, we show which structures to demolish and where to build new partitions — so the crew knows exactly what to change on site."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "4. Plumbing fixture layout plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The locations of plumbing fixtures and the required utility connection points are determined. Bathrooms, guest toilets, kitchens, laundry rooms, and other spaces that require plumbing connections are worked out in detail."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "5. Underfloor heating plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>5. Underfloor heating plan</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Where necessary, a layout is developed for the zones of electric underfloor heating (or another type specified in the project), taking into account the placement of furniture and plumbing fixtures."
-      },
-      {
-       "t": "p",
-       "html": "<strong>6. Outlet and electrical connection plan</strong>"
-      },
+       "html": "If the project includes underfloor heating (electric or another type), we mark out its zones around the furniture and plumbing fixtures."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "6. Outlet and electrical connection plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "A plan is developed showing the location of outlets, electrical connection points, and appliance connections. The electrical layout is designed around the future arrangement of furniture, the kitchen, TVs, workspaces, and other equipment."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "7. Light switch plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>7. Light switch plan</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The location of switches and the main lighting control scenarios are determined. This makes the lighting convenient to use and allows the necessary electrical connection points to be planned in advance."
-      },
-      {
-       "t": "p",
-       "html": "<strong>8. Lighting plan</strong>"
-      },
+       "html": "The location of switches and the main lighting control scenarios: the lighting is convenient to use, and the necessary electrical connection points are planned in advance."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "8. Lighting plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "A plan is developed showing the placement of general and decorative light sources. Depending on the interior concept, the project may include ceiling fixtures, track systems, pendant lights, wall sconces, LED strip lighting, and other solutions."
-      },
-      {
-       "t": "p",
-       "html": "<strong>9. Ceiling plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "9. Ceiling plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "A plan of the ceiling structures is developed, taking into account lighting, built-in elements, and the architecture of the space."
-      },
-      {
-       "t": "p",
-       "html": "<strong>10. Flooring plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "10. Flooring plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The types and boundaries of floor coverings, laying directions, and transitions between materials are defined. This makes it possible to agree in advance on the use of parquet, engineered wood flooring, ceramic tile, porcelain tile, and other floor coverings."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "11. Wall elevations for the kitchen and bathrooms"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "For the kitchen and bathrooms, which have many built-in elements and utilities, we prepare wall elevations: they show exactly where the furniture, plumbing fixtures, tile, outlets, and appliances will go."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "12. Specifications and material schedules"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "A list of the main finishing materials in the concept — so that you and the crew know what’s needed to bring the interior to life."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3D visualization of every room"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Photorealistic 3D visualizations of each main room: even before the renovation, you can see how the materials, furniture, lighting, color, and decor work together."
       },
       {
        "t": "p",
-       "html": "<strong>11. Wall elevations for the kitchen and bathrooms</strong>"
+       "html": "This way, the interior is agreed on before it starts being built on site. The price includes <strong>one full round of revisions</strong> to the concept."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Technical documentation for the renovation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "One of the main advantages of “Basic” is the set of working drawings: once the layout and concept are approved, the designer prepares it for the construction crew."
       },
       {
        "t": "p",
-       "html": "For rooms with a large number of built-in elements and utility lines, the necessary wall elevations are prepared. They make it possible to define more precisely the placement of furniture, plumbing fixtures, tile, outlets, equipment, and other elements."
-      },
-      {
-       "t": "p",
-       "html": "<strong>12. Specifications and material schedules</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The project includes information on the main finishing materials called for by the developed concept. This helps the client and the construction crew keep track of the materials needed to bring the interior to life."
-      },
-      {
-       "t": "p",
-       "html": "<strong>3D visualization of every room</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Photorealistic 3D visualizations are created for each main room. They let you see the future interior before renovation work begins and evaluate how materials, furniture, lighting, colors, and decorative elements work together."
-      },
-      {
-       "t": "p",
-       "html": "3D visualization helps finalize the interior before decisions are carried out on site. The package price includes <strong>one full round of revisions</strong> to the developed concept."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Technical documentation for the renovation</strong>"
-      },
-      {
-       "t": "p",
-       "html": "One of the main advantages of the “Basic” package is its set of working drawings. Once the layout and interior concept are approved, the designer prepares technical documentation that is handed over to the construction crew."
-      },
-      {
-       "t": "p",
-       "html": "This links the visual concept of the interior to the actual construction work. Builders receive clear information about the location of partitions, plumbing, electrical work, lighting, ceilings, flooring, and other project elements."
-      },
-      {
-       "t": "p",
-       "html": "As a result, fewer decisions have to be made on the spot during the renovation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Properties suited to the “Basic” package</strong>"
-      },
+       "html": "The builders get clear instructions on partitions, plumbing, electrical work, lighting, ceilings, and floors, and fewer decisions have to be made on the fly during the renovation."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Properties suited to the “Basic” package"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The package can be used for apartments in new developments, apartments in existing buildings, private houses, condos, investment properties, offices, beauty salons, stores, showrooms, and small commercial spaces."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Who the “Basic” package is for"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "If a renovation lies ahead and the interior is being created from scratch: you need to plan the layout and furniture arrangement, design the electrical, lighting, and plumbing systems, choose the finishes, and hand working drawings over to the crew."
       },
       {
        "t": "p",
-       "html": "Each project is developed individually, taking into account the architecture of the specific property, its floor area, its purpose, and the client’s requirements."
-      },
+       "html": "A package for those who want to see the interior in 3D visualizations and receive a complete design project but don’t need extended support."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What you get"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Who the “Basic” package is for</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The package is ideal if your apartment or house is about to be renovated and you need to create a new interior from scratch, develop a convenient layout, determine furniture placement in advance, design the electrical and lighting systems, define the placement of plumbing fixtures, select finishing materials, and prepare working drawings for the construction crew."
-      },
-      {
-       "t": "p",
-       "html": "The package is also a good fit for those who want to see their future interior in 3D visualizations in advance and receive a complete design project without an extended package of support services."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What you get</strong>"
-      },
-      {
-       "t": "p",
-       "html": "As a result, you receive a complete interior design project that includes a functional layout solution, a furniture arrangement, an approved style concept, photorealistic 3D visualizations, plans for electrical work and lighting, plumbing fixtures, ceilings, and flooring, the necessary wall elevations, and a set of technical documentation for the renovation work."
-      },
-      {
-       "t": "p",
-       "html": "In this way, the design project becomes not just a visual concept but a practical tool for bringing the interior to life."
-      },
-      {
-       "t": "p",
-       "html": "<strong>“Basic” package pricing</strong>"
-      },
+       "html": "A complete design project: a layout with furniture arrangement, a style concept, 3D visualizations, electrical, lighting, plumbing, ceiling, and floor plans, wall elevations, and a set of working drawings for the renovation."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "“Basic” package pricing"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>€35–45/m² </strong>"
@@ -223,34 +308,38 @@
       {
        "t": "p",
        "html": "The final cost depends on the floor area of the property, the number of rooms, the complexity of the layout, and the scope of technical documentation required."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Additional services"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "You can add design supervision, a detailed renovation cost estimate, furnishing and procurement (furniture, lighting, decor), and the design and manufacture of custom furniture — kitchens, wardrobes, and other cabinet furniture — with delivery and installation, as well as a turnkey renovation. That way, you work with a single contractor from the design project to the finished interior."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Interior design and project implementation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> takes residential and commercial interiors from layout and concept through to working drawings, custom furniture, and implementation."
       },
       {
        "t": "p",
-       "html": "<strong>Additional services</strong>"
-      },
-      {
-       "t": "p",
-       "html": "If needed, the basic design project can be supplemented with other services from <strong>DUMSKAYA DESIGN:</strong> design supervision, a detailed cost estimate for construction and finishing work, furnishing and procurement, selection of furniture, lighting, and decor, custom furniture design, manufacturing of kitchens, wardrobes, and other cabinet furniture, furniture delivery and installation, and the organization of a turnkey renovation."
-      },
-      {
-       "t": "p",
-       "html": "This means that once the design project is complete, you can continue working with a single contractor and move straight on to bringing the interior to life."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Interior design and project implementation</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> works with residential and commercial properties, developing interiors from the initial layout and visual concept through to technical documentation, custom furniture, and project implementation."
-      },
-      {
-       "t": "p",
-       "html": "The studio’s main geographic focus is <strong>Bratislava and Vienna</strong>. We can also take on projects in other cities across Europe and the USA."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN — interior design, technical design documentation, custom furniture, and end-to-end interior implementation.</strong>"
+       "html": "We work primarily in <strong>Bratislava and Vienna</strong> and also take on projects in other European cities and in the USA."
       }
      ]
     },
@@ -320,7 +409,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

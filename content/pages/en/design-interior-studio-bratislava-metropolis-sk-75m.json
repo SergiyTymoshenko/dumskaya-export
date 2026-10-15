@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 75 m² in Bratislava, Metropolis",
- "description": "75 m² apartment (Metropolis) in Bratislava: design project, 3D visualization and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "75 m² apartment (Metropolis) in Bratislava: interior design (“Furniture” package), 3D visualization and custom furniture.",
  "h1": "Apartment interior design in Metropolis, Bratislava, custom furniture, 75 m²",
  "og_image": "6abd6a8768c5e81567a1bfe0",
  "alternates": {
@@ -34,7 +34,7 @@
       },
       {
        "t": "p",
-       "html": "The project was completed as part of the <a href=\"/en/custom-furniture-bratislava-design-production\">“Furniture” design package</a> and includes the interior concept, photorealistic 3D visualizations, technical documentation, as well as the design and manufacture of custom cabinet furniture in Bratislava."
+       "html": "The project was completed as part of the <a href=\"/en/custom-furniture-bratislava-design-production\">“Furniture” design package</a> and includes the development of the interior concept, photorealistic 3D visualizations, technical documentation, and the design and manufacture of custom cabinet furniture in Bratislava."
       },
       {
        "t": "p",
@@ -223,7 +223,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Technical documentation developed as part of the “Furniture” interior design package"
+     "text": "Technical documentation developed under the “Furniture” design package"
     },
     {
      "type": "gallery",
@@ -507,7 +507,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -515,7 +515,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -550,7 +550,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

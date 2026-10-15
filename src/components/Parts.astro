@@ -1,15 +1,17 @@
 ---
 // Абзацы и списки текста страницы (разметка — только <strong>, <em>, <a>).
 import type { Part } from '../lib/data';
+import { typoHtml } from '../lib/typo';
 interface Props { parts: Part[]; class?: string }
 const { parts, class: cls } = Astro.props;
+const h = (s: string) => typoHtml(s).replace(/\n/g, '<br>');
 ---
 <div class:list={['prose', cls]}>
   {parts.map((p) =>
     p.t === 'p'
-      ? <p set:html={p.html.replace(/\n/g, '<br>')} />
+      ? <p set:html={h(p.html)} />
       : p.t === 'ol'
-        ? <ol>{p.items.map((i) => <li set:html={i} />)}</ol>
-        : <ul>{p.items.map((i) => <li set:html={i} />)}</ul>
+        ? <ol>{p.items.map((i) => <li set:html={h(i)} />)}</ol>
+        : <ul>{p.items.map((i) => <li set:html={h(i)} />)}</ul>
   )}
 </div>

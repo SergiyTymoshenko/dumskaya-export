@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 52 m², Bratislava | DUMSKAYA DESIGN",
- "description": "52 m² apartment in Bratislava: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "52 m² apartment in Bratislava: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Apartment interior design in Bratislava, custom furniture and turnkey renovation, 52 m²",
  "og_image": "6abd6b0c61617a4443acb569",
  "alternates": {
@@ -26,23 +26,23 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> completed a comprehensive project for a 52 m² apartment in Bratislava, including interior design, technical documentation, the design and manufacture of custom furniture, and a turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a project for a 52 m² apartment in Bratislava: interior design, technical documentation, custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The project covers the apartment’s main functional areas: the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom. Custom wardrobes, shelving, and storage systems are also integrated into the interior."
+       "html": "The project covers the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom, including built-in wardrobes, shelving, and storage systems."
       },
       {
        "t": "p",
-       "html": "Custom furniture was designed and manufactured for each area, tailored to the room dimensions, the layout, and functional requirements. Designing the interior and furniture together made it possible to use the apartment’s floor area efficiently and maintain a unified visual character throughout the space."
+       "html": "The furniture for each area was custom-made to the dimensions of the rooms and designed together with the interior — in 52 m², this made it possible to use the floor area with no wasted space."
       },
       {
        "t": "p",
-       "html": "Before the renovation began, a detailed cost estimate was prepared covering labor, construction and finishing materials, custom furniture, appliances, plumbing fixtures, and lighting. The project was delivered end to end — from developing the interior concept and technical documentation to the renovation and the manufacture and installation of the furniture."
+       "html": "Before the renovation began, the client received a detailed cost estimate covering labor, construction and finishing materials, furniture, appliances, plumbing fixtures, and lighting. The studio managed the project from concept through renovation and furniture installation."
       },
       {
        "t": "p",
-       "html": "This page features photorealistic 3D visualizations alongside photographs of the completed interior and the manufactured furniture, allowing you to compare the original concept with the final result."
+       "html": "Below are 3D visualizations and photos of the finished apartment with its custom-made furniture, so you can compare the concept with the result."
       }
      ]
     },
@@ -269,7 +269,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -277,7 +277,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -312,7 +312,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -34,19 +34,15 @@
       },
       {
        "t": "p",
-       "html": "Combining the architecture of the house and the surrounding landscape in a single 3D visualization lets you see the property as a unified composition and assess how harmoniously the facade blends with the landscaping of the grounds."
+       "html": "The house and the plot are shown in a single visualization, so you can immediately see how the facade works with the landscaping."
       },
       {
        "t": "p",
-       "html": "Special attention is paid to the realistic rendering of materials and textures, natural light, shadows, vegetation, and details of the surroundings. As a result, the visualization shows the future appearance of the house and yard as clearly as possible."
+       "html": "Materials and textures, natural light, shadows, and vegetation are rendered realistically — the visualization shows how the house and yard will actually look."
       },
       {
        "t": "p",
-       "html": "3D visualization helps you compare different architectural and color solutions, choose materials, and make any necessary changes before construction and finishing work begins."
-      },
-      {
-       "t": "p",
-       "html": "This type of visualization is ideal for presenting a project, approving architectural decisions, and gaining a clearer understanding of the final result at the design stage."
+       "html": "The visualization helps you compare architectural and color options, choose materials, and make changes before construction begins; it is also useful for presenting the project and getting decisions approved."
       },
       {
        "t": "p",
@@ -88,7 +84,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -96,7 +92,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/3d-visualization-facade-exterior-price"
       }
      ]
@@ -131,7 +127,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -4,7 +4,7 @@
  "type": "project",
  "group": "commercial",
  "title": "Beauty Salon Interior Design 63 m² | DUMSKAYA DESIGN",
- "description": "63 m² beauty salon: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "description": "63 m² beauty salon: interior design and technical drawings. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Beauty salon interior design, 63 m²",
  "og_image": "672c8bfab72094b9d64a8db8",
  "alternates": {
@@ -26,19 +26,19 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 63 m² beauty salon, creating a stylish, functional, and comfortable commercial space for both clients and specialists."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 63 m² beauty salon — a space that works well for both clients and beauty professionals."
       },
       {
        "t": "p",
-       "html": "The salon layout was planned around its various work areas: stations for hairdressers, manicurists, and brow artists, an esthetician’s treatment room, a reception area, and a staff room. Functional zoning makes it possible to organize workflows efficiently while keeping the interior cohesive."
+       "html": "The 63 m² space accommodates stations for hairdressers, manicurists, and brow artists, an esthetician’s treatment room, a reception area, and a staff room; the zoning follows the salon’s workflows."
       },
       {
        "t": "p",
-       "html": "The project combines contemporary aesthetics with practical solutions for a professional space. Special attention was paid to ergonomics, lighting, storage systems, and the organization of workstations. The interior design project also includes the technical documentation required to implement the interior."
+       "html": "Lighting, storage systems, and workstation ergonomics were worked out in detail. The project includes technical documentation for implementation."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> offers interior design for beauty salons, hair salons, beauty studios, and other commercial spaces in Bratislava and Vienna. The range of services can include the interior design project, custom furniture, technical documentation, and turnkey renovation — from the initial concept to the finished interior."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs beauty salons, hair salons, and beauty studios in Bratislava and Vienna — from the interior design project and technical documentation to custom furniture and turnkey renovation."
       }
      ]
     },
@@ -211,7 +211,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -219,7 +219,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -254,7 +254,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

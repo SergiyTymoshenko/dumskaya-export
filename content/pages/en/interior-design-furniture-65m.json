@@ -26,11 +26,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "In this project, the <strong>DUMSKAYA DESIGN</strong> interior design studio (Bratislava, Slovakia) delivered the full scope of work: interior design, technical documentation, the design and manufacture of custom furniture, and a turnkey renovation. The design covered every room: the living room, bedroom, a kitchen with custom interior fittings and built-in appliances, walk-in closets, the entrance hall, bathroom, wardrobes, and shelving. Furniture was custom-designed for each area. Before the renovation began, the client received a detailed cost estimate for labor, building materials, furniture, appliances, plumbing fixtures, light fixtures, and more."
+       "html": "In this project, the <strong>DUMSKAYA DESIGN</strong> studio (Bratislava, Slovakia) delivered the full cycle of work: interior design, technical documentation, furniture design and manufacturing, and a turnkey renovation. The project covers every room — the living room, bedroom, a kitchen with custom interior fittings and built-in appliances, walk-in closets, the entrance hall, and the bathroom; bespoke furniture, including wardrobes and shelving, was designed for each area."
       },
       {
        "t": "p",
-       "html": "Shown here are 3D visualizations and photos of the completed project."
+       "html": "Before the renovation began, the client received a detailed cost estimate for labor, construction materials, furniture, home appliances, plumbing fixtures, and lighting. Below are 3D visualizations and photos of the completed project."
       }
      ]
     },
@@ -75,7 +75,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "Custom furniture in Bratislava",
        "href": "/en/custom-residential-furniture"
       },
       {
@@ -83,7 +83,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -118,7 +118,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

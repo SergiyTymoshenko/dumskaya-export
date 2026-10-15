@@ -5,7 +5,7 @@
  "group": null,
  "title": "Architecture & Design in Bratislava | DUMSKAYA DESIGN",
  "description": "Architectural design of private houses, facades and garden structures: concept, 3D visualization and working drawings. Bratislava and Vienna.",
- "h1": "Architecture & Design | DUMSKAYA DESIGN Bratislava",
+ "h1": "Architectural design of houses and facades in Bratislava",
  "og_image": "66b61a3143d3e7af1c1a5467",
  "alternates": {
   "ru": "/architecture-design-bratislava",
@@ -19,18 +19,14 @@
     {
      "type": "heading",
      "level": 1,
-     "text": "Architecture & Design | DUMSKAYA DESIGN Bratislava"
+     "text": "Architectural design of houses and facades in Bratislava"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> offers architecture, architectural design, renovation, interior architecture, and 3D visualization services for private houses and residential and commercial properties."
-      },
-      {
-       "t": "p",
-       "html": "We develop custom architectural solutions that take into account the specific features of each property, its function, its aesthetics, and the client’s requirements."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> works with private houses and residential and commercial properties: architectural design, renovation, interior architecture, and 3D visualization."
       }
      ]
     },
@@ -44,7 +40,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Development of custom architectural concepts and projects for private houses and residential and commercial properties. We work out the building’s architecture, massing and spatial solutions, facades, proportions, materials, and the overall exterior appearance of the property."
+       "html": "Concepts and designs for private houses and residential and commercial buildings. We work out the massing and spatial solutions, facades, proportions, materials, and exterior appearance."
       }
      ]
     },
@@ -58,7 +54,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Facade design for new and existing buildings. We select finishing materials, color schemes, architectural elements, and lighting to create a cohesive, contemporary look for the property."
+       "html": "Facade design for new and existing buildings: finishing materials, color, architectural elements, and lighting brought together in a single contemporary look."
       }
      ]
     },
@@ -72,7 +68,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "We develop architectural solutions for renovating existing properties, changing their appearance, and adapting spaces to new functional needs."
+       "html": "We design renovations of existing buildings: changing their appearance and adapting the space to new uses."
       },
       {
        "t": "p",
@@ -90,7 +86,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "We develop a concept for the surrounding space in a unified architectural style: the layout of pathways, seating areas, outdoor lighting, planting, and other landscape elements."
+       "html": "We design the grounds in the same style as the house: pathways, seating areas, outdoor lighting, planting, and other landscape elements."
       }
      ]
     },
@@ -104,7 +100,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "The design process can incorporate modern energy-efficient solutions, the rational use of materials, and technologies aimed at reducing the building’s operating costs."
+       "html": "Where needed, we build energy-efficient solutions and the efficient use of materials into the design — this reduces the building’s operating costs."
       }
      ]
     },
@@ -140,7 +136,7 @@
       },
       {
        "t": "p",
-       "html": "Visualization lets you evaluate the architectural design in advance: the building’s proportions, materials, color combinations, lighting, and how the property interacts with its surroundings."
+       "html": "The visualization shows you in advance the architectural design, the building’s proportions, materials, colors, lighting, and how the property looks in its surroundings."
       }
      ]
     },
@@ -154,15 +150,15 @@
      "parts": [
       {
        "t": "p",
-       "html": "Depending on the project scope, we develop the necessary working drawings, diagrams, specifications, and other technical documentation for implementing the design solutions."
+       "html": "Depending on the project scope, we prepare working drawings, diagrams, specifications, and other documentation used to implement the project."
       },
       {
        "t": "p",
-       "html": "<strong>Project support: DUMSKAYA DESIGN</strong> can support the project at various stages of implementation, working with the contractors, manufacturers, and other specialists involved in the project."
+       "html": "<strong>Project support.</strong> DUMSKAYA DESIGN can support implementation at various stages and work with contractors, manufacturers, and other specialists on the project."
       },
       {
        "t": "p",
-       "html": "Where necessary, architectural solutions are adapted to technical requirements, the specifics of the particular property, and local building codes."
+       "html": "Where needed, we adapt the solutions to technical requirements, the specifics of the property, and local building codes."
       }
      ]
     },
@@ -176,7 +172,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Every property is approached individually. We can develop a new architectural concept or adapt an existing design to a specific site, building, layout, and the client’s requirements."
+       "html": "We can develop a new architectural concept or adapt an existing design to your site, building, layout, and requirements."
       },
       {
        "t": "p",
@@ -192,7 +188,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "3D visualization of building facades and surroundings",
+       "text": "3D visualization of facades and grounds",
        "href": "/en/3d-visualization-facade-exterior-price"
       }
      ]
@@ -290,7 +286,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

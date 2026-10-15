@@ -4,7 +4,7 @@
  "type": "project",
  "group": "commercial",
  "title": "Office Interior Design 500 m² | DUMSKAYA DESIGN",
- "description": "500 m² office: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "description": "500 m² office: interior design, 3D visualization and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Office interior design and custom furniture, 500 m²",
  "og_image": "66f5d29bd24f7464d55b574d",
  "alternates": {
@@ -22,9 +22,13 @@
      "text": "Office interior design and custom furniture, 500 m²"
     },
     {
-     "type": "heading",
-     "level": 2,
-     "text": "DUMSKAYA DESIGN (Bratislava, Slovakia) developed an interior design project for a 500 m² office and manufactured custom office furniture based on the design. The office space was planned with functional zoning, workstation ergonomics, and a contemporary, prestigious interior in mind. Particular attention was paid to the layout of staff work areas, executive offices, meeting spaces, the reception, and the conference room. Custom furniture was designed and manufactured for the project, including wall panels, staff and executive desks, a meeting table, cabinets, drawer units, and furniture for the reception area, conference room, and director’s office. Designing the furniture individually made it possible to integrate it into the architecture of the space and maintain a unified interior concept. This page features 3D visualizations of the project as well as videos of the completed interior and the finished furniture, showing the result of comprehensive work on the office space. DUMSKAYA DESIGN offers office and commercial interior design, as well as custom furniture design and manufacturing in Bratislava and Vienna. We develop comprehensive solutions for offices, corporate spaces, and other commercial properties — from the layout and design concept to technical documentation and bespoke furniture."
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "DUMSKAYA DESIGN (Bratislava, Slovakia) developed an interior design project for a 500 m² office and manufactured custom furniture for it. The project includes staff work areas, executive offices, meeting rooms, a reception area, and a conference room. Custom-made pieces include wall panels, staff and executive desks, a meeting table, cabinets, drawer units, and furniture for the reception, conference room, and director’s office. Below are 3D visualizations of the project and a video of the finished interior."
+      }
+     ]
     },
     {
      "type": "heading",
@@ -236,7 +240,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -244,7 +248,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -289,7 +293,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

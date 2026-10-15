@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Duplex Apartment Design 158 m², Bratislava | DUMSKAYA DESIGN",
- "description": "158 m² duplex apartment with 20 m² terrace in Bratislava: design project, 3D visualization and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "158 m² duplex apartment with 20 m² terrace in Bratislava: interior design, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Duplex apartment design in Bratislava, furniture and turnkey renovation, 158 m²",
  "og_image": "6abd6a8e6bbe610384483447",
  "alternates": {
@@ -26,27 +26,23 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 158 m² duplex apartment with a 20 m² terrace in Bratislava, Slovakia. The project combined interior design, technical documentation, bespoke furniture, and a complete turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 158 m² duplex apartment with a 20 m² terrace in Bratislava: interior design, technical documentation, custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The interior is designed in a bold <strong>total-black</strong> style. The concept is built on deep dark shades, clean geometry, carefully selected textures, and well-thought-out lighting scenarios. This combination creates a contemporary architectural space with a strong individual character."
+       "html": "The interior is designed in a <strong>total-black</strong> style: deep dark shades, clean geometry, carefully selected textures, and several lighting scenarios create a space with a strong character."
       },
       {
        "t": "p",
-       "html": "The layout covers the living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, bathrooms, and functional storage systems. Special attention was paid to the ergonomics of the duplex apartment and the visual connection between the apartment’s functional areas."
+       "html": "The two levels accommodate the living room, bedrooms, kitchen with built-in appliances, walk-in closets, entrance hall, bathrooms, and storage systems; special thought was given to the visual connection between the levels and zones."
       },
       {
        "t": "p",
-       "html": "Custom furniture was developed for the project, including the kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems. The furniture was designed together with the interior, which made it possible to integrate it precisely into the architecture of the rooms and preserve a unified stylistic concept."
+       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-made and designed together with the interior."
       },
       {
        "t": "p",
-       "html": "Before work began, a detailed cost estimate was prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project. After the design stage was completed, a full turnkey renovation of the apartment in Bratislava was carried out in accordance with the technical documentation."
-      },
-      {
-       "t": "p",
-       "html": "The 158 m² project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to designing and delivering contemporary interiors in Bratislava — from concept and technical solutions to bespoke furniture and a finished interior."
+       "html": "Before work began, a detailed cost estimate was prepared covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting. A turnkey renovation of the apartment was then carried out according to the technical documentation."
       }
      ]
     },
@@ -251,7 +247,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -259,7 +255,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -294,7 +290,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -22,64 +22,74 @@
      "text": "The “Premium+” design package — our most comprehensive design and project support"
     },
     {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>“Premium+”</strong> is the most comprehensive design package from <strong>DUMSKAYA DESIGN</strong> for apartments, houses, and commercial spaces."
+      },
+      {
+       "t": "p",
+       "html": "Everything included in “Premium”, plus 2 months of design supervision, furniture drawings, complete finishing material specifications, and schedules for all interior items."
+      },
+      {
+       "t": "p",
+       "html": "It’s for those who, beyond the concept and documentation, need the designer’s support while the project is being brought to life."
+      }
+     ]
+    },
+    {
      "type": "heading",
      "level": 2,
-     "text": "The “Premium+” interior design package — €70/m²"
+     "text": "What’s included in the “Premium+” package"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "1. All “Premium” package services"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> offers the <strong>“Premium+”</strong> design package for apartments, private houses, and commercial spaces that call for the most detailed interior development, extended technical documentation, and professional support for the project during implementation."
+       "html": "A measured floor plan, a functional layout and furniture arrangement, demolition and construction plans, electrical, lighting, plumbing, ceiling, and floor plans, extended wall elevations, detail drawings and sections, specifications, and quantity calculations for the main materials."
       },
       {
        "t": "p",
-       "html": "The package includes all “Premium” services, plus 2 months of design supervision, furniture drawings, complete finishing material specifications, and schedules of all items featured in the interior."
+       "html": "Photorealistic 3D visualizations of each main room (up to two full rounds of revisions) and two material-selection trips with the designer."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "2. Design supervision for 2 months"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "For two months, the designer stays involved in the project: advising on design solutions, clarifying details, checking that the work matches the project, and helping out when a quick decision is needed on site."
       },
       {
        "t": "p",
-       "html": "“Premium+” is the most comprehensive design project format offered by <strong>DUMSKAYA DESIGN</strong>, for clients who want not only a concept and technical documentation but also the designer’s support while the approved solutions are being implemented."
-      },
+       "html": "This way, both you and the crew stick to the approved concept, and the interior keeps its integrity throughout the renovation."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3. Development of furniture drawings"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>What’s included in the “Premium+” package</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>1. All “Premium” package services</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The package includes all the core and extended services of the “Premium” package: a measured floor plan, a functional layout, a furniture arrangement, demolition and construction plans, electrical, lighting, plumbing, ceiling, and flooring plans, extended wall elevations, detail drawings and sections, specifications, and quantity calculations for the main materials."
-      },
-      {
-       "t": "p",
-       "html": "Photorealistic 3D visualizations of the rooms are also created, with up to two full rounds of revisions, and two material-selection trips with the designer are included."
-      },
-      {
-       "t": "p",
-       "html": "<strong>2. Design supervision for 2 months</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The package includes design supervision of the project for 2 months."
-      },
-      {
-       "t": "p",
-       "html": "The designer helps make sure the work being done matches the approved design project, advises on implementation, and helps promptly resolve design-related issues that arise during the renovation."
-      },
-      {
-       "t": "p",
-       "html": "This reduces the risk of deviations from the approved concept and preserves the integrity of the interior during implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>3. Development of furniture drawings</strong>"
-      },
-      {
-       "t": "p",
-       "html": "For bespoke furniture, a set of furniture drawings is prepared for subsequent manufacturing."
+       "html": "A set of drawings for custom furniture: the dimensions, placement, appearance, and construction of each piece."
       },
       {
        "t": "p",
@@ -87,12 +97,18 @@
       },
       {
        "t": "p",
-       "html": "Furniture drawings make it possible to tie the architecture of the space, the interior design, and the future furniture together more precisely into a single system."
-      },
-      {
-       "t": "p",
-       "html": "<strong>4. Complete finishing material specifications</strong>"
-      },
+       "html": "This way, the architecture of the space, the interior, and the furniture come together as a single system. Based on these drawings, <strong>DUMSKAYA DESIGN</strong> can also manufacture the furniture at its own production facility."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "4. Complete finishing material specifications"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The project includes extended specifications of the finishing materials called for by the approved concept."
@@ -103,12 +119,18 @@
       },
       {
        "t": "p",
-       "html": "This helps you compile a more complete list of required items in advance and simplifies the purchasing process."
-      },
-      {
-       "t": "p",
-       "html": "<strong>5. Schedules of all interior items</strong>"
-      },
+       "html": "With a complete list of items, it’s easier to plan purchases."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "5. Schedules of all interior items"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The package also includes schedules of the main items featured in the interior."
@@ -119,88 +141,18 @@
       },
       {
        "t": "p",
-       "html": "This approach gives you a more complete picture of everything needed to furnish and equip the property and greatly simplifies preparation for implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Photorealistic 3D visualization</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Photorealistic 3D visualizations are created for each main room."
-      },
-      {
-       "t": "p",
-       "html": "They let you evaluate the future interior in advance, along with how materials, furniture, lighting, color, textiles, and decorative elements work together."
-      },
-      {
-       "t": "p",
-       "html": "The package includes up to two full rounds of revisions to the developed visual concept."
-      },
-      {
-       "t": "p",
-       "html": "This makes it possible to agree on the interior in greater detail before renovation work begins."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Extended technical documentation</strong>"
-      },
-      {
-       "t": "p",
-       "html": "“Premium+” includes the most complete set of documentation for bringing the interior to life."
-      },
-      {
-       "t": "p",
-       "html": "In addition to standard working drawings, the project may include extended wall elevations, detail drawings and sections, furniture drawings, finishing material specifications, and schedules of interior items."
-      },
-      {
-       "t": "p",
-       "html": "This level of detail is especially important for complex properties that involve many bespoke solutions, a lot of built-in furniture, non-standard structures, and different types of finishes."
-      },
-      {
-       "t": "p",
-       "html": "The more detailed the project, the fewer decisions have to be made on site during the renovation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Design supervision of the project</strong>"
-      },
-      {
-       "t": "p",
-       "html": "One of the key advantages of the “Premium+” package is 2 months of design supervision."
-      },
-      {
-       "t": "p",
-       "html": "During implementation, the designer stays involved in the project and helps the construction team and the client stick to the approved concept."
-      },
-      {
-       "t": "p",
-       "html": "Design supervision may include consultations on design solutions, clarification of specific details, checks that the work complies with the project, and help in situations that call for a quick decision on site."
-      },
-      {
-       "t": "p",
-       "html": "This is especially useful for complex interiors, where it is important to maintain precision of execution and avoid accidental changes to the concept during the renovation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Custom furniture as part of the project</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Furniture plays an important role in the architecture of a modern interior, which is why “Premium+” includes the separate development of furniture drawings."
-      },
-      {
-       "t": "p",
-       "html": "This makes it possible to work out the dimensions, placement, appearance, and main structural features of the bespoke pieces in advance."
-      },
-      {
-       "t": "p",
-       "html": "If needed, DUMSKAYA DESIGN can also manufacture the designed furniture at its own production facility: kitchens, wardrobes, walk-in closets, wall panels, built-in storage systems, and other cabinet furniture."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Properties suited to the “Premium+” package</strong>"
-      },
+       "html": "You see everything needed to furnish and equip the property, and preparing for implementation becomes much simpler."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Properties suited to the “Premium+” package"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The package is suitable for apartments, private houses, condos, investment properties, offices, salons, stores, showrooms, and other commercial spaces."
@@ -208,47 +160,53 @@
       {
        "t": "p",
        "html": "It is especially well suited to properties with complex architecture, a large amount of bespoke furniture, non-standard materials, complex technical solutions, and exacting standards of execution."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Who the “Premium+” package is for"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "If you need the most complete project possible, want to make fewer decisions on your own during the renovation, and want the designer’s support during implementation."
       },
       {
        "t": "p",
-       "html": "Each project is developed individually, taking into account the architecture of the property, its floor area, its purpose, the budget, and the client’s requirements."
+       "html": "And also if the project involves a lot of custom furniture, non-standard solutions, and complex junctions between materials, or if the property needs extensive furnishing and procurement."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What you get"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The most complete design project possible: a layout with furniture arrangement, 3D visualizations, an extended set of drawings with wall elevations, detail drawings, and sections, furniture drawings, finishing material specifications, and schedules of interior items."
       },
       {
        "t": "p",
-       "html": "<strong>Who the “Premium+” package is for</strong>"
-      },
-      {
-       "t": "p",
-       "html": "This package is worth choosing if you need the most complete design project possible, want to reduce the number of decisions you have to make on your own during the renovation, and want professional support from the designer during implementation."
-      },
-      {
-       "t": "p",
-       "html": "It is also a good fit if the project involves a lot of bespoke furniture, non-standard solutions, or complex junctions between materials, or if the property needs extensive furnishing and procurement."
-      },
-      {
-       "t": "p",
-       "html": "“Premium+” is the right choice for clients who want a fully integrated package: from the interior concept and technical documentation to furniture drawings, specifications, and support during implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What you get</strong>"
-      },
-      {
-       "t": "p",
-       "html": "As a result, you receive the most complete interior design project possible, including a functional layout, a furniture arrangement, photorealistic 3D visualizations, an extended set of technical drawings, wall elevations, detail drawings, sections, furniture drawings, finishing material specifications, and schedules of interior items."
-      },
-      {
-       "t": "p",
-       "html": "The package also includes up to two full rounds of revisions to the visual concept, two material-selection trips with the designer, and 2 months of design supervision."
-      },
-      {
-       "t": "p",
-       "html": "The project becomes a detailed guide for bringing the interior to life and helps translate the approved concept into the real property as accurately as possible."
-      },
-      {
-       "t": "p",
-       "html": "<strong>“Premium+” package pricing</strong>"
-      },
+       "html": "Plus up to two full rounds of revisions to the visualizations, two material-selection trips with the designer, and 2 months of design supervision."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "“Premium+” package pricing"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>€70/m²</strong>"
@@ -260,58 +218,74 @@
       {
        "t": "p",
        "html": "<strong>The final cost depends on the floor area of the property, the number of rooms, the complexity of the architectural and interior solutions, the scope of furniture documentation, and the level of project detail required.</strong>"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "How “Premium+” differs from “Premium”"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "“Premium” (€50/m²) is a detailed project with extended technical documentation, specifications, two full rounds of revisions to the visualizations, and two material-selection trips with the designer."
       },
       {
        "t": "p",
-       "html": "<strong>How “Premium+” differs from “Premium”</strong>"
+       "html": "“Premium+” (€70/m²) adds 2 months of design supervision, furniture drawings, complete finishing material specifications, and schedules of all the main interior items."
       },
       {
        "t": "p",
-       "html": "The “Premium” package includes an extended design project with detailed technical documentation, specifications, two full rounds of revisions to the visualizations, and two material-selection trips with the designer."
+       "html": "Put simply, “Premium” prepares the project for the renovation, while “Premium+” also supports the renovation itself."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Additional services"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "You can add a detailed renovation cost estimate, full furnishing and procurement, purchasing of individual items, and custom furniture manufacturing with delivery and installation, as well as a turnkey renovation. That way, after the design stage you continue working with a single contractor."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Interior design in Bratislava and Vienna"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs residential and commercial interiors, makes custom furniture, and supports the implementation."
       },
       {
        "t": "p",
-       "html": "“Premium+” additionally includes 2 months of design supervision, furniture drawings, complete finishing material specifications, and schedules of all the main interior items."
-      },
+       "html": "We work primarily in Bratislava and Vienna, as well as in other European cities and in the USA."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Order the “Premium+” design package"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "While “Premium” prepares the project for renovation to a high standard, “Premium+” adds stronger oversight and support during the implementation itself."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Additional services</strong>"
-      },
-      {
-       "t": "p",
-       "html": "If needed, the “Premium+” package can be supplemented with a detailed cost estimate for construction and finishing work, full furnishing and procurement, purchasing of individual items, bespoke furniture manufacturing, delivery and installation, and a complete turnkey renovation."
-      },
-      {
-       "t": "p",
-       "html": "This means that once the design project is complete, you can continue working with a single contractor and move on to the full implementation of the interior."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Interior design in Bratislava and Vienna</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> works with residential and commercial properties, combining interior design, photorealistic visualization, technical documentation, custom furniture, and implementation support."
-      },
-      {
-       "t": "p",
-       "html": "The studio’s main geographic focus is Bratislava and Vienna. We also work on projects in other cities across Europe and the USA."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> — interior design, technical design documentation, custom furniture, and end-to-end interior implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Order the “Premium+” design package</strong>"
-      },
-      {
-       "t": "p",
-       "html": "If you need the most complete design project possible, with in-depth technical development, furniture documentation, specifications, and professional support during implementation, the “Premium+” package offers the most comprehensive way of working on your interior."
+       "html": "Need the most complete project possible — with furniture documentation, specifications, and support during the renovation? Choose “Premium+”."
       }
      ]
     },
@@ -358,7 +332,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

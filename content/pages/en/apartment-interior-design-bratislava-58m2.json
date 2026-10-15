@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 58 m², Bratislava | DUMSKAYA DESIGN",
- "description": "58 m² apartment in Bratislava: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "58 m² apartment in Bratislava: interior design, 3D visualization, technical drawings, custom furniture, turnkey renovation and styling.",
  "h1": "Interior design project for an apartment in Bratislava with a total area of 58 m²",
  "og_image": "6abd6af84888499d20745492",
  "alternates": {
@@ -26,27 +26,23 @@
      "parts": [
       {
        "t": "p",
-       "html": "Interior design studio <strong>DUMSKAYA DESIGN</strong> developed a comprehensive interior design project for a 58 m² apartment in Bratislava."
+       "html": "Interior design studio <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 58 m² apartment in Bratislava. The project covered the full cycle of work: technical documentation, custom furniture, decorating, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The project included the full scope of work needed to create a contemporary and functional living space: developing the design project, preparing technical documentation, designing and manufacturing custom furniture, professional decorating, and carrying out a complete turnkey renovation."
+       "html": "The design covers the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, and bathroom. Built-in wardrobes, shelving, and storage systems were custom-designed for each area."
       },
       {
        "t": "p",
-       "html": "The design covers all of the apartment’s main rooms: the living room, bedroom, kitchen with custom-designed storage systems and built-in appliances, walk-in closets, entrance hall, and bathroom. Custom furniture solutions were developed for each area, including built-in wardrobes, shelving, and functional storage systems."
+       "html": "Within 58 m², the layout and furniture were planned to provide ample storage while keeping the interior open and airy."
       },
       {
        "t": "p",
-       "html": "With a floor area of 58 m², particular attention was paid to making efficient use of every square meter. The layout and furniture solutions make it possible to organize the space effectively and provide ample storage while preserving the feeling of an open, visually light interior."
+       "html": "Before the renovation, the client received a detailed cost estimate covering construction and finishing work, materials, furniture, and appliances."
       },
       {
        "t": "p",
-       "html": "Before the renovation began, the client received a detailed cost estimate covering construction and finishing work, materials, the manufacture of custom furniture, and appliances. This made it possible to determine the main costs in advance and plan the stages of the project’s implementation."
-      },
-      {
-       "t": "p",
-       "html": "To give a clear picture of the future interior, photorealistic 3D visualizations were prepared, showing the planned materials, furniture, lighting, color schemes, and the overall atmosphere of the apartment."
+       "html": "The gallery features photorealistic 3D visualizations of the apartment."
       },
       {
        "t": "p",
@@ -123,7 +119,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -131,7 +127,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -166,7 +162,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

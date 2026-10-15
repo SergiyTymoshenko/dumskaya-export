@@ -4,7 +4,7 @@
  "type": "project",
  "group": "commercial",
  "title": "Executive Office Interior Design 7 m² | DUMSKAYA DESIGN",
- "description": "7 m² executive office: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "7 m² executive office: interior design, 3D visualization and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Design and custom build of an executive office, 7 m²",
  "og_image": "66c3d91eef7f2fa45041f5e0",
  "alternates": {
@@ -30,15 +30,11 @@
       },
       {
        "t": "p",
-       "html": "The main goal was to create a functional workspace in a small area. The interior and furniture were designed as a single composition, taking into account ergonomics, workstation organization, and efficient use of space."
+       "html": "A fully functional workspace had to fit into 7 m², so the interior and custom furniture were designed as a single whole, made to the exact dimensions of this room."
       },
       {
        "t": "p",
-       "html": "Made-to-measure custom furniture was designed for the office, tailored to the room layout and the overall interior concept."
-      },
-      {
-       "t": "p",
-       "html": "This page presents 3D visualizations of the executive office, showing the interior design and furniture solutions developed for it."
+       "html": "The gallery features 3D visualizations of the office."
       },
       {
        "t": "p",
@@ -67,7 +63,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -75,7 +71,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -110,7 +106,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

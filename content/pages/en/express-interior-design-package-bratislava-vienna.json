@@ -26,32 +26,31 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>The “Express” interior design package — €20/m²</strong>"
+       "html": "<strong>“Express”</strong> is a quick interior concept for an apartment, house, or commercial space: a measured floor plan, a furniture layout, and photorealistic 3D visualizations of the main rooms."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> offers the <strong>“Express”</strong> design package for apartments, private houses, and commercial spaces that need a professional concept for the future interior developed quickly, without an extended set of technical documentation."
+       "html": "You see the layout, the combination of materials, the furniture, lighting, and color before finishing work even begins."
       },
       {
        "t": "p",
-       "html": "The package includes a measured floor plan, a functional furniture layout, and photorealistic 3D visualizations of the main rooms."
-      },
-      {
-       "t": "p",
-       "html": "You see the future interior in advance and can evaluate the layout and how materials, furniture, lighting, and colors work together before finishing work even begins."
-      },
-      {
-       "t": "p",
-       "html": "“Express” is the optimal choice for properties where the main construction and engineering decisions have already been made, but a professional interior concept and a clear visual direction are needed to carry the project forward."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What’s included in the “Express” package</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>1. Measured floor plan</strong>"
-      },
+       "html": "The package is designed for properties where the construction and engineering solutions have already been decided. It does not include a full set of working drawings, and electrical design is charged separately."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What’s included in the “Express” package"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "1. Measured floor plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Before design work begins, the key dimensions of the rooms are recorded, along with the location of walls, window and door openings, utilities, and other architectural elements."
@@ -59,11 +58,17 @@
       {
        "t": "p",
        "html": "The measured floor plan becomes an accurate foundation for developing the layout and the subsequent 3D visualization."
-      },
-      {
-       "t": "p",
-       "html": "<strong>2. Furniture layout plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "2. Furniture layout plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "A functional layout is developed showing the placement of furniture and key interior elements."
@@ -71,15 +76,17 @@
       {
        "t": "p",
        "html": "The design takes into account room dimensions, ease of movement, ergonomics, storage areas, and the ways the space will be used day to day."
-      },
-      {
-       "t": "p",
-       "html": "A well-planned furniture arrangement shows you, before finishing work begins, how efficiently the floor area is being used and how comfortably the space is organized."
-      },
-      {
-       "t": "p",
-       "html": "<strong>3. Photorealistic 3D visualization</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3. Photorealistic 3D visualization"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Photorealistic 3D visualizations of the future interior are created for each main room."
@@ -90,80 +97,90 @@
       },
       {
        "t": "p",
-       "html": "You can see the future interior before it is built and assess in advance how well the chosen concept meets your expectations."
+       "html": "The package includes one full round of revisions to the concept."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "A fast design project without unnecessary documentation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The main advantage of “Express” is speed. Turnaround time: from 14 days after the layout is approved."
       },
       {
        "t": "p",
-       "html": "The package includes one full round of revisions to the developed concept."
+       "html": "Unlike the more comprehensive packages, it does not include a full set of construction and engineering drawings: the work focuses on layout, functionality, style, and the visual character of the space."
       },
       {
        "t": "p",
-       "html": "<strong>A fast design project without unnecessary documentation</strong>"
+       "html": "This is convenient if the engineering solutions have already been developed, the renovation follows existing documentation, or you primarily need a visual concept."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Properties suited to the “Express” package"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Apartments in new developments and existing buildings, private houses, condos, investment properties, offices, small stores, beauty salons, showrooms, and other commercial spaces."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Who the “Express” package is for"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "If, before finishing work begins, you need to quickly settle on the furniture arrangement and overall style, choose a combination of materials and colors, and see the interior in 3D visualizations."
       },
       {
        "t": "p",
-       "html": "The main advantage of the “Express” package is that you get a professionally developed interior concept in a short time."
+       "html": "It suits both your own home and investment properties, where speed, an attractive look, and efficient use of space matter."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What you get"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "An interior concept: a measured floor plan, a furniture layout, and photorealistic 3D visualizations of the main rooms."
       },
       {
        "t": "p",
-       "html": "Unlike the extended design packages, “Express” does not include a full set of construction and engineering drawings."
-      },
-      {
-       "t": "p",
-       "html": "This makes it possible to focus on the key tasks: layout, functionality, style, and the visual character of the future space."
-      },
-      {
-       "t": "p",
-       "html": "The package is especially convenient for properties where the engineering solutions have already been developed, where the renovation follows existing documentation, or where the client primarily needs a professional visual concept of the interior."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Properties suited to the “Express” package</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The package can be used for apartments in new developments, apartments in existing buildings, private houses, condos, investment properties, offices, small stores, beauty salons, showrooms, and other commercial spaces."
-      },
-      {
-       "t": "p",
-       "html": "Each concept is developed individually, taking into account the architecture of the space, its floor area, its purpose, the client’s wishes, and the required level of functionality."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Who the “Express” package is for</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The package is a good fit if you need to develop an interior quickly before finishing work begins, determine the optimal furniture arrangement, choose the overall style of the space, select a combination of materials and colors, and see the future interior in advance in photorealistic 3D visualizations."
-      },
-      {
-       "t": "p",
-       "html": "“Express” is also suitable if you don’t need a full set of technical documentation or if the main construction decisions have already been defined by another project."
-      },
-      {
-       "t": "p",
-       "html": "It is a convenient option both for your own home and for investment properties, where speed of design development, visual appeal, and efficient use of space are especially important."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What you get</strong>"
-      },
-      {
-       "t": "p",
-       "html": "As a result, you receive a professionally developed interior concept that includes a measured floor plan, a functional furniture layout, and photorealistic 3D visualizations of the main rooms."
-      },
-      {
-       "t": "p",
-       "html": "You know in advance what the property will look like once the work is complete, which materials and colors to use, how to arrange the furniture, and what the overall visual character of the space should be."
-      },
-      {
-       "t": "p",
-       "html": "The project becomes a clear visual foundation for bringing the interior to life."
-      },
-      {
-       "t": "p",
-       "html": "<strong>“Express” package pricing</strong>"
-      },
+       "html": "You know in advance what the property will look like, which materials and colors to use, where the furniture will go, and what the character of the space will be."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "“Express” package pricing"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>€20/m²</strong>"
@@ -174,63 +191,79 @@
       },
       {
        "t": "p",
-       "html": "<strong>The final cost is determined by the floor area, the number of rooms, and the complexity of the property.</strong>"
+       "html": "<strong>The final cost depends on the floor area, the number of rooms, and the complexity of the property.</strong>"
       },
       {
        "t": "p",
        "html": "<strong>Turnaround time: from 14 days after the layout is approved.</strong>"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What’s not included in the “Express” package"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "A full set of working drawings for the construction crew is not included in the package. Electrical design is charged separately."
       },
       {
        "t": "p",
-       "html": "<strong>What’s not included in the “Express” package</strong>"
+       "html": "If you need demolition and construction plans, electrical, lighting, plumbing, ceiling, and floor plans, as well as wall elevations, choose the “Basic” package (€35–45/m²)."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Additional services"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "“Express” can be supplemented with individual technical drawings, electrical, lighting, and plumbing design, custom furniture design with furniture drawings, a renovation cost estimate, design supervision, furnishing and procurement, furniture manufacturing and installation, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The “Express” package focuses on developing the layout and visual concept of the interior and does not include a full set of working drawings for the construction crew."
+       "html": "You can start with a quick concept and expand the project at later stages."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Interior design in Bratislava and Vienna"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs residential and commercial interiors, makes custom furniture, and sees projects through to completion."
       },
       {
        "t": "p",
-       "html": "If the property requires demolition and construction plans, electrical, lighting, plumbing, ceiling, and flooring plans, wall elevations, and other technical documentation, we recommend choosing the “Basic” design package."
-      },
+       "html": "We work primarily in Bratislava and Vienna, as well as in other European cities and in the USA."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Order the “Express” design package"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "This division lets you choose exactly the scope of design work your property needs."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Additional services</strong>"
-      },
-      {
-       "t": "p",
-       "html": "If needed, the “Express” package can be supplemented with individual technical drawings, electrical, lighting, and plumbing design, bespoke furniture design, furniture drawings, a renovation cost estimate, design supervision, furnishing and procurement, furniture manufacturing and installation, and a turnkey renovation."
-      },
-      {
-       "t": "p",
-       "html": "This lets you start with a quick interior concept and, if needed, expand the project with additional services at later stages."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Interior design in Bratislava and Vienna</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> works on residential and commercial interiors, combining functional space planning, modern visualization, technical design, custom furniture, and end-to-end project implementation."
-      },
-      {
-       "t": "p",
-       "html": "The studio’s main geographic focus is Bratislava and Vienna. We also work on projects in other cities across Europe and the USA."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> — interior design, custom furniture, and interior implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Order the “Express” design package</strong>"
-      },
-      {
-       "t": "p",
-       "html": "If you need to quickly define the layout, style, and visual character of your future interior, the “Express” package gives you a ready-made professional concept without developing an extended set of technical documentation."
+       "html": "Need to settle on the layout, style, and look of your interior quickly? “Express” gives you a ready-made concept without unnecessary documentation."
       }
      ]
     },
@@ -308,7 +341,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

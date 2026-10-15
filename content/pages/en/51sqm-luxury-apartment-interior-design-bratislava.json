@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 51 m² | DUMSKAYA DESIGN",
- "description": "51 m² apartment: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "description": "51 m² apartment: interior design, 3D visualization, technical drawings, custom furniture, turnkey renovation and styling.",
  "h1": "Apartment interior design, custom furniture and turnkey renovation, 51 m²",
  "og_image": "6abd6b1b68c5e81567a1c2e1",
  "alternates": {
@@ -26,23 +26,23 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a comprehensive project for a 51 m² apartment, including the interior design and technical documentation, the manufacture of custom furniture, a turnkey renovation, and final decorating."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a project for a 51 m² apartment: interior design, technical documentation, custom furniture, a turnkey renovation, and decorating."
       },
       {
        "t": "p",
-       "html": "The design covers the apartment’s main functional areas: the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom. Custom wardrobes, shelving, and storage systems are also integrated into the interior."
+       "html": "The design covers the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom; wardrobes, shelving, and storage systems are built into the interior."
       },
       {
        "t": "p",
-       "html": "Custom furniture solutions were developed for each area, tailored to the dimensions of the rooms and the owners’ lifestyle. Designing the interior and furniture at the same time makes it possible to use the apartment’s floor area efficiently, provide convenient storage, and preserve the visual cohesion of the space."
+       "html": "The furniture for each area was designed around the room dimensions and the owners’ habits — at the same time as the interior — so storage is convenient and the space feels cohesive."
       },
       {
        "t": "p",
-       "html": "The project was delivered end to end — from developing the interior concept and technical documentation to the renovation work, the manufacture and installation of the furniture, and final decorating. Before implementation began, a detailed cost estimate was prepared for construction and finishing materials, custom furniture, and appliances."
+       "html": "Before work began, a detailed cost estimate was prepared for construction and finishing materials, furniture, and appliances. The studio managed the project from the concept through the renovation, furniture installation, and decorating."
       },
       {
        "t": "p",
-       "html": "The project is presented as photorealistic 3D visualizations showcasing the layout, interior, and furniture solutions for this 51 m² apartment."
+       "html": "The gallery features photorealistic 3D visualizations of the apartment."
       }
      ]
     },
@@ -147,7 +147,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -155,7 +155,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -190,7 +190,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -80,7 +80,7 @@ export function allGalleryImages(page: Page): Img[] {
 
 export function isServicesSection(s: Section) {
   const h = s.blocks.find((b) => b.type === 'heading') as any;
-  return !!h && /^(Услуги студии|Послуги студії|Interior design studio services|Our services|Services)/i.test(h.text);
+  return !!h && /^(Услуги студии|Послуги студії|Interior design studio services|Our (interior design )?services|Services)/i.test(h.text);
 }
 
 /** Все страницы данного типа на языке lang (порядок — по русскому адресу). */

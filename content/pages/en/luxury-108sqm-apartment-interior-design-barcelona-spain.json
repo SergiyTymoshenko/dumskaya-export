@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 108 m², Barcelona | DUMSKAYA DESIGN",
- "description": "108 m² apartment in Barcelona: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "108 m² apartment in Barcelona: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Apartment interior design in Barcelona, custom furniture and turnkey renovation, 108 m²",
  "og_image": "6abd6ae14888499d20745418",
  "alternates": {
@@ -26,39 +26,27 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 108 m² apartment in Barcelona, Spain. The project combined interior design, technical documentation, the design and manufacture of custom furniture, and a full turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 108 m² apartment in Barcelona, Spain: interior design, technical documentation, custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The apartment’s interior was designed with an emphasis on contemporary aesthetics, functionality, and everyday living comfort. The layout solutions take into account the specifics of each room, the placement of furniture and appliances, the organization of storage systems, lighting, and the visual connection between the living spaces."
+       "html": "The project included the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, bathroom, and storage areas — all rooms unified by a single concept of materials, color, and lighting."
       },
       {
        "t": "p",
-       "html": "The project covers the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, bathroom, and functional storage areas. All rooms are united by a single interior concept in which finishing materials, color combinations, lighting, and furniture solutions are carefully coordinated."
+       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-designed and made to the dimensions of the rooms."
       },
       {
        "t": "p",
-       "html": "Bespoke furniture pieces were designed and manufactured for the apartment, including the kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems. The furniture was developed around the room dimensions, the specifics of the layout, and the overall style of the interior, which made it possible to use the space efficiently and preserve the visual cohesion of the project."
+       "html": "Before work began, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting."
       },
       {
        "t": "p",
-       "html": "In preparation for implementation, we produced technical documentation and a detailed cost estimate covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project. This made it possible to define the scope of work and set the implementation budget in advance."
+       "html": "The studio then carried out a turnkey renovation of the apartment in Barcelona: construction and finishing work, installation of the custom-made furniture, and the final fit-out of the rooms."
       },
       {
        "t": "p",
-       "html": "Once the design stage was complete, a full turnkey renovation of the apartment in Barcelona was carried out in line with the developed interior solutions and technical documentation. The implementation included construction and finishing work, installation of the custom furniture, and fitting out of the living spaces."
-      },
-      {
-       "t": "p",
-       "html": "To preview the future interior, photorealistic 3D visualizations were created showing the layout solutions, material combinations, furniture, lighting, and the overall atmosphere of the rooms."
-      },
-      {
-       "t": "p",
-       "html": "This page features photos of the completed renovation, the finished furniture, and its installation. They show not only the final interior of the apartment but also individual stages in the implementation of the custom furniture solutions."
-      },
-      {
-       "t": "p",
-       "html": "This 108 m² apartment project in Barcelona showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to creating contemporary residential interiors — from the interior design project and technical documentation to furniture manufacturing and full implementation of the space."
+       "html": "Below are 3D visualizations of the project, photos of the renovated apartment, and photos of the furniture installation, showing not only the result but also the stages of the work."
       }
      ]
     },
@@ -411,7 +399,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -419,7 +407,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -454,7 +442,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

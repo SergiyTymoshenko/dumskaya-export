@@ -4,7 +4,7 @@
  "type": "project",
  "group": "commercial",
  "title": "Office Interior Design 140 m² | DUMSKAYA DESIGN",
- "description": "140 m² office: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "description": "140 m² office: interior design, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Office interior design and custom furniture, 140 m²",
  "og_image": "66d385f5adeaee0e909d04aa",
  "alternates": {
@@ -30,19 +30,19 @@
       },
       {
        "t": "p",
-       "html": "The office was designed with an emphasis on functionality, professional aesthetics, and comfort for everyday work. The layout makes it possible to organize workstations efficiently while creating a prestigious business environment for staff, meetings, and client interactions."
+       "html": "The layout combines staff workstations with polished client-facing areas for meetings and discussions."
       },
       {
        "t": "p",
-       "html": "Custom office furniture was designed specifically for this project and integrated into the overall interior concept. Particular attention was paid to ergonomics, lighting, storage systems, the choice of materials, and the practical organization of each workspace."
+       "html": "The office furniture was custom-made for this project, taking into account workstation ergonomics, storage systems, and lighting."
       },
       {
        "t": "p",
-       "html": "This page features photorealistic 3D visualizations and photos of the completed interior, allowing you to compare the original concept with the finished office."
+       "html": "Below are 3D visualizations and photos of the finished office, so you can compare the concept with the result."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> offers office and commercial interior design, custom furniture, and turnkey renovation in Bratislava and Vienna. We develop comprehensive solutions for offices, law firms, corporate spaces, stores, beauty salons, and other commercial properties — from the initial concept and technical documentation to furniture manufacturing and full implementation of the interior."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs offices and commercial interiors in Bratislava and Vienna — from concept and technical documentation to custom furniture and turnkey renovation."
       }
      ]
     },
@@ -161,7 +161,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -169,7 +169,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -204,7 +204,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

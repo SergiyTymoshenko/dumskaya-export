@@ -33,7 +33,7 @@ const year = new Date().getFullYear();
         : <a href={altPath(page, l)} hreflang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</a>)}
     </p>
   </div>
-  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}. <a href={lang === 'ru' ? '/privacy' : `/${lang}/privacy`}>{T.form.privacy}</a></p>
+  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}. <a href={lang === 'ru' ? '/privacy' : `/${lang}/privacy`}>{T.form.privacy}</a><button type="button" class="ftr__cookie" data-cookie-settings hidden>{T.cookieSettings}</button></p>
 </footer>
 
 <style>
@@ -43,8 +43,10 @@ const year = new Date().getFullYear();
   }
   @media (min-width: 960px) { .ftr { grid-template-columns: 1fr 1.4fr 1fr; } }
   .ftr p { margin: 0; }
-  .ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
   .ftr a { text-decoration: none; }
+  .ftr li > a, .ftr__social a, .ftr__langs > * { display: inline-block; padding-block: 10px; }
+  .ftr__langs > * { min-width: 32px; }
   .ftr a:hover { text-decoration: underline; }
   .ftr__logo { display: inline-block; line-height: 0; margin-bottom: 14px; }
   .ftr__logo img { width: 150px; height: auto; }
@@ -52,7 +54,9 @@ const year = new Date().getFullYear();
   .ftr__contacts .btn:hover { text-decoration: none; }
   .ftr__aside { display: grid; gap: 20px; align-content: start; }
   .ftr__social { grid-auto-flow: column; justify-content: start; gap: 20px !important; }
-  .ftr__langs { display: flex; gap: 14px; letter-spacing: 0.06em; }
+  .ftr__langs { display: flex; gap: 8px; letter-spacing: 0.06em; }
   .ftr__langs a { color: var(--stone); }
   .ftr__copy { grid-column: 1 / -1; font-size: 13px; }
+  .ftr__copy a, .ftr__cookie { display: inline-block; padding-block: 10px; }
+  .ftr__cookie { margin-left: 16px; border: 0; background: none; padding-inline: 0; font-size: 13px; color: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: .2em; }
 </style>

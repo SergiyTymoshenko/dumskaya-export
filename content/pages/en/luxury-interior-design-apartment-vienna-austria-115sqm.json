@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 115 m² in Vienna | DUMSKAYA DESIGN",
- "description": "115 m² apartment in Vienna: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "115 m² apartment in Vienna: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Apartment interior design in Vienna, custom furniture and turnkey renovation, 115 m²",
  "og_image": "6abd6b354888499d207455da",
  "alternates": {
@@ -30,19 +30,19 @@
       },
       {
        "t": "p",
-       "html": "The design covers the living room, bedroom, kitchen, walk-in closets, entrance hall, bathroom, built-in wardrobes, shelving, and storage systems. All rooms were designed in a single contemporary style with an emphasis on functionality, ergonomics, and comfort."
+       "html": "The design covers the living room, bedroom, kitchen, walk-in closets, entrance hall, and bathroom, including built-in wardrobes, shelving, and storage systems."
       },
       {
        "t": "p",
-       "html": "Particular attention was paid to custom furniture. The furniture was designed alongside the interior, which made it possible to integrate the wardrobes, storage systems, and the kitchen with built-in appliances precisely into the architecture of the apartment."
+       "html": "The wardrobes, storage systems, and kitchen with built-in appliances were custom-made and designed alongside the interior — tailored to the architecture of this particular apartment."
       },
       {
        "t": "p",
-       "html": "Before implementation began, a detailed cost estimate was prepared covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other necessary items. Once the design work was complete, a turnkey renovation of the apartment was carried out in Vienna in accordance with the technical documentation."
+       "html": "Before work began, a detailed cost estimate was prepared covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting. A turnkey renovation of the apartment was then carried out according to the technical documentation."
       },
       {
        "t": "p",
-       "html": "The project is presented through photorealistic 3D visualizations and photographs of the completed interior. Together, they make it possible to compare the original design concept with the finished apartment and see how accurately the project was implemented."
+       "html": "Below are 3D visualizations and photos of the finished apartment, so you can compare the concept with the result."
       }
      ]
     },
@@ -209,7 +209,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -217,7 +217,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -252,7 +252,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

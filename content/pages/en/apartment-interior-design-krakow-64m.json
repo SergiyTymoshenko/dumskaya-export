@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 64 m² in Kraków, minimalist",
- "description": "64 m² minimalist apartment in Kraków: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "64 m² minimalist apartment in Kraków: interior design, 3D visualization and technical drawings. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Minimalist apartment interior design, 64 m²",
  "og_image": "6ac15f6e4888499d2081143b",
  "alternates": {
@@ -26,7 +26,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed a design project for a 64 m² apartment in a contemporary minimalist style. The concept is founded on functionality, the understated architecture of the space, a calm color scheme, and the visual cohesion of the interior."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 64 m² apartment in Kraków in a contemporary minimalist style, with clean spatial architecture and a calm color palette."
       },
       {
        "t": "p",
@@ -38,11 +38,7 @@
       },
       {
        "t": "p",
-       "html": "The layout and interior solutions were developed with ergonomics and everyday comfort in mind. Every element of the interior is part of an overall composition, so the apartment is perceived as a single contemporary space."
-      },
-      {
-       "t": "p",
-       "html": "The project includes the development of the interior concept, photorealistic 3D visualizations, and the technical documentation required for subsequent implementation of the design solutions."
+       "html": "The project included the interior concept, photorealistic 3D visualizations, and technical documentation for implementation."
       }
      ]
     },
@@ -187,7 +183,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -195,7 +191,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -230,7 +226,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

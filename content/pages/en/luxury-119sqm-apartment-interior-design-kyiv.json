@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 119 m² in Kyiv, with 30 m² terrace",
- "description": "119 m² apartment with 30 m² terrace in Kyiv: design project, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "119 m² apartment with 30 m² terrace in Kyiv: interior design. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Luxury apartment interior design with a terrace in Kyiv, 119 m²",
  "og_image": "6abd6a956bbe610384483468",
  "alternates": {
@@ -26,7 +26,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed an interior design project for a 119 m² apartment with a terrace in Kyiv, Ukraine. The interior concept is executed in a contemporary luxury style that combines elegant aesthetics, functionality, and a high level of everyday comfort."
+       "html": "<strong>DUMSKAYA DESIGN</strong> developed an interior design project for a 119 m² apartment with a 30 m² terrace in Kyiv, Ukraine, in a contemporary luxury style."
       },
       {
        "t": "p",
@@ -42,7 +42,7 @@
       },
       {
        "t": "p",
-       "html": "The terrace serves as an extension of the living space and complements the overall concept of the apartment. The project showcases the <strong>DUMSKAYA DESIGN</strong> approach to creating contemporary luxury interiors in which premium aesthetics go hand in hand with functionality and comfort."
+       "html": "The 30 m² terrace is designed as an extension of the living space."
       }
      ]
     },
@@ -179,7 +179,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -187,7 +187,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -222,7 +222,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

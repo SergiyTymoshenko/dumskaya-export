@@ -22,37 +22,35 @@
      "text": "The “Premium” design package — extended interior design in Bratislava and Vienna"
     },
     {
-     "type": "heading",
-     "level": 2,
-     "text": "The “Premium” interior design package — €50/m²"
-    },
-    {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> offers the <strong>“Premium”</strong> design package for apartments, private houses, and commercial spaces that call for the most detailed interior development, an extended set of technical documentation, and professional support in preparing the project for implementation."
+       "html": "<strong>“Premium”</strong> is a design project with maximum detail: a full set of working drawings, as in “Basic”, plus wall elevations for every room, detail drawings and sections, specifications, and quantity calculations for the main materials."
       },
       {
        "t": "p",
-       "html": "The package combines layout solutions, photorealistic 3D visualizations, a complete set of core technical drawings, room-by-room wall elevations, detail drawings and sections, specifications, and quantity calculations for the main materials."
+       "html": "Also included: up to two full rounds of revisions to the 3D visualizations and two material-selection trips with the designer."
       },
       {
        "t": "p",
-       "html": "The package also includes two material-selection trips with the designer."
-      },
-      {
-       "t": "p",
-       "html": "“Premium” is suited to projects where precise execution, detailed solutions, and keeping questions to a minimum during the renovation itself are especially important."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What’s included in the “Premium” package</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>1. Measured floor plan</strong>"
-      },
+       "html": "A package for apartments, houses, and commercial spaces where precise execution matters and you want as few questions as possible to come up during the renovation."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What’s included in the “Premium” package"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "1. Measured floor plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Before design work begins, the key dimensions of the rooms are recorded, along with the location of walls, window and door openings, utilities, and other architectural elements."
@@ -60,11 +58,17 @@
       {
        "t": "p",
        "html": "The measured floor plan becomes the foundation for developing the layout, technical documentation, and 3D visualizations."
-      },
-      {
-       "t": "p",
-       "html": "<strong>2. Furniture layout plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "2. Furniture layout plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "A functional layout is developed showing the placement of furniture, plumbing fixtures, and key interior elements."
@@ -72,23 +76,31 @@
       {
        "t": "p",
        "html": "Room dimensions, ease of movement, ergonomics, storage systems, and the ways the space will be used day to day are all taken into account."
-      },
-      {
-       "t": "p",
-       "html": "<strong>3. Demolition and construction plans</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3. Demolition and construction plans"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Where necessary, plans are prepared for demolishing existing structures and building new partitions."
-      },
-      {
-       "t": "p",
-       "html": "This lets the construction crew understand exactly the scope and sequence of the work required."
-      },
-      {
-       "t": "p",
-       "html": "<strong>4. Plumbing fixture layout plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "4. Plumbing fixture layout plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The exact locations of plumbing fixtures and the required utility connection points are determined."
@@ -96,19 +108,31 @@
       {
        "t": "p",
        "html": "Bathrooms, guest toilets, kitchens, laundry rooms, and other spaces that require plumbing connections are worked out in detail."
-      },
-      {
-       "t": "p",
-       "html": "<strong>5. Underfloor heating plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "5. Underfloor heating plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Where necessary, a layout of underfloor heating zones is developed, taking into account the furniture, plumbing fixtures, and specifics of the floor plan."
-      },
-      {
-       "t": "p",
-       "html": "<strong>6. Outlet and electrical connection plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "6. Outlet and electrical connection plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "A plan is developed showing the location of outlets, electrical connection points, and appliance connections."
@@ -116,23 +140,31 @@
       {
        "t": "p",
        "html": "The electrical layout is designed around the future arrangement of furniture, the kitchen, TVs, workspaces, and other equipment."
-      },
-      {
-       "t": "p",
-       "html": "<strong>7. Light switch plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "7. Light switch plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The location of switches and the lighting control scenarios are determined."
-      },
-      {
-       "t": "p",
-       "html": "This makes the lighting convenient to use and allows the necessary electrical connection points to be planned in advance."
-      },
-      {
-       "t": "p",
-       "html": "<strong>8. Lighting plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "8. Lighting plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "A plan is developed showing the placement of general and decorative light sources."
@@ -140,19 +172,31 @@
       {
        "t": "p",
        "html": "The project may include ceiling fixtures, track systems, pendant lights, wall sconces, LED strip lighting, and other solutions."
-      },
-      {
-       "t": "p",
-       "html": "<strong>9. Ceiling plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "9. Ceiling plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "A plan of the ceiling structures is developed, taking into account lighting, built-in elements, and the architecture of the space."
-      },
-      {
-       "t": "p",
-       "html": "<strong>10. Flooring plan</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "10. Flooring plan"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The types and boundaries of floor coverings, laying directions, and transitions between materials are defined."
@@ -160,47 +204,63 @@
       {
        "t": "p",
        "html": "This makes it possible to agree in advance on the use of parquet, engineered wood flooring, ceramic tile, porcelain tile, and other floor coverings."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "11. Room-by-room wall elevations"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>11. Room-by-room wall elevations</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The “Premium” package includes extended wall elevations for more detailed development of the interior."
+       "html": "Extended wall elevations are prepared for every room, not just for the kitchen and bathrooms as in the “Basic” package."
       },
       {
        "t": "p",
        "html": "The elevations may show furniture, plumbing fixtures, tile, decorative panels, outlets, light fixtures, built-in elements, and other important details."
-      },
-      {
-       "t": "p",
-       "html": "<strong>12. Detail drawings and sections</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "12. Detail drawings and sections"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "For complex interior solutions, additional detail drawings, cross-sections, and sectional views are prepared."
-      },
-      {
-       "t": "p",
-       "html": "They help the construction crew build non-standard structures and complex interior elements more accurately."
-      },
-      {
-       "t": "p",
-       "html": "<strong>13. Specifications and quantity calculations for the main materials</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "13. Specifications and quantity calculations for the main materials"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The project includes specifications and information on the main finishing materials called for by the approved concept."
-      },
-      {
-       "t": "p",
-       "html": "This helps identify the necessary items in advance and simplifies preparation for purchasing and implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Photorealistic 3D visualization of every room</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Photorealistic 3D visualization of every room"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Photorealistic 3D visualizations are created for each main room."
@@ -211,36 +271,40 @@
       },
       {
        "t": "p",
-       "html": "At the visualization stage, the look of the future space can be agreed on in detail before renovation work begins."
+       "html": "“Premium” includes up to two full rounds of revisions to the concept (“Basic” includes one)."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Extended technical documentation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "What sets “Premium” apart is the level of technical detail: in addition to standard working drawings, the project includes extended wall elevations, detail drawings, sections, and specifications."
       },
       {
        "t": "p",
-       "html": "The “Premium” package includes up to two full rounds of revisions to the developed concept."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Extended technical documentation</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The key difference of the “Premium” package is its higher level of technical detail."
-      },
-      {
-       "t": "p",
-       "html": "In addition to standard working drawings, the project includes extended wall elevations, detail drawings, sections, specifications, and additional information needed to accurately execute complex interior solutions."
-      },
-      {
-       "t": "p",
-       "html": "This is especially important for properties with bespoke furniture, decorative panels, non-standard ceiling structures, complex junctions between materials, and a large number of built-in elements."
+       "html": "This is especially important if the interior has a lot of custom furniture, decorative panels, non-standard ceilings, complex junctions between materials, and built-in elements."
       },
       {
        "t": "p",
        "html": "The more detailed the technical documentation, the fewer decisions have to be made on site during the renovation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Two material-selection trips with the designer</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Two material-selection trips with the designer"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The package includes two material-selection trips with the designer."
@@ -251,12 +315,18 @@
       },
       {
        "t": "p",
-       "html": "This helps bring the finished result as close as possible to the approved 3D visualizations and reduces the risk of unsuccessful material combinations on site."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Properties suited to the “Premium” package</strong>"
-      },
+       "html": "As a result, the finished interior is closer to the approved 3D visualizations, and the risk of unsuccessful material combinations on site is lower."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Properties suited to the “Premium” package"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The package is suitable for apartments in new developments, apartments in existing buildings, private houses, condos, investment properties, offices, beauty salons, stores, showrooms, and other commercial spaces."
@@ -264,47 +334,53 @@
       {
        "t": "p",
        "html": "It is especially well suited to properties with complex architecture, a large amount of built-in furniture, non-standard finishing solutions, and high demands on the quality of execution."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Who the “Premium” package is for"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "If you need the most thoroughly developed project possible with detailed documentation for the crew, the interior has many bespoke solutions, or you want as few questions as possible to come up during the renovation."
       },
       {
        "t": "p",
-       "html": "Each project is developed individually, taking into account the architecture of the property, its floor area, its purpose, the budget, and the client’s requirements."
+       "html": "And also if detailed work on materials, more revisions to the visualizations, and the designer’s help in choosing finishes matter to you."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What you get"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "A detailed design project: a layout with furniture arrangement, 3D visualizations, an extended set of drawings with wall elevations, detail drawings, and sections, specifications, and quantity calculations for the main materials."
       },
       {
        "t": "p",
-       "html": "<strong>Who the “Premium” package is for</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The package is recommended if you need the most thoroughly developed design project, require detailed technical documentation for the construction crew, have many bespoke solutions planned for the interior, or want to minimize the number of questions that come up during the renovation."
-      },
-      {
-       "t": "p",
-       "html": "It is also a good fit if detailed work on materials, the ability to make more changes to the visual concept, and professional help from the designer in choosing finishing materials matter to you."
-      },
-      {
-       "t": "p",
-       "html": "“Premium” is the optimal choice for projects where quality of execution and precise adherence to the approved concept are the priority."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What you get</strong>"
-      },
-      {
-       "t": "p",
-       "html": "As a result, you receive a thoroughly developed interior design project that includes a functional layout, a furniture arrangement, photorealistic 3D visualizations, an extended set of technical drawings, wall elevations, detail drawings, sections, specifications, and quantity calculations for the main materials."
-      },
-      {
-       "t": "p",
-       "html": "The package also includes up to two full rounds of revisions to the visual concept and two material-selection trips with the designer."
-      },
-      {
-       "t": "p",
-       "html": "The project becomes a detailed guide for bringing the interior to life and helps the construction crew follow the approved concept as precisely as possible."
-      },
-      {
-       "t": "p",
-       "html": "<strong>“Premium” package pricing</strong>"
-      },
+       "html": "Plus up to two full rounds of revisions to the visualizations and two material-selection trips with the designer."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "“Premium” package pricing"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>€50/m²</strong>"
@@ -316,58 +392,74 @@
       {
        "t": "p",
        "html": "<strong>The final cost depends on the floor area of the property, the number of rooms, the complexity of the architectural and interior solutions, and the scope of technical documentation required.</strong>"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "How “Premium” differs from the “Basic” package"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "“Basic” (€35–45/m²) is a complete design project with the core set of working drawings for the renovation."
       },
       {
        "t": "p",
-       "html": "<strong>How “Premium” differs from the “Basic” package</strong>"
+       "html": "“Premium” (€50/m²) adds wall elevations for every room, detail drawings and sections, extended specifications and material calculations, up to two full rounds of revisions to the visualizations instead of one, and two material-selection trips with the designer."
       },
       {
        "t": "p",
-       "html": "The “Basic” package includes the core set of technical drawings and provides a complete design project for carrying out the renovation."
+       "html": "If the property is complex or precise execution is important to you, “Premium” will better prepare the project for construction work."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Additional services"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "You can add design supervision, a detailed renovation cost estimate, furnishing and procurement (furniture, lighting, decor), and the design and manufacture of custom furniture — kitchens, wardrobes, walk-in closets — with delivery and installation, as well as a turnkey renovation. That way, after the design stage you continue working with a single contractor."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Interior design in Bratislava and Vienna"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs residential and commercial interiors: layout, visualization, working documentation, custom furniture, and implementation."
       },
       {
        "t": "p",
-       "html": "“Premium” offers a deeper level of project detail: additional wall elevations, detail drawings and sections, extended specifications and material calculations, up to two full rounds of revisions to the visualizations, and two material-selection trips with the designer."
-      },
+       "html": "We work primarily in Bratislava and Vienna, as well as in other European cities and in the USA."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Order the “Premium” design package"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "If the property is complex or it is especially important to you that the interior be executed as precisely as possible, the “Premium” package prepares the project for construction work to a higher standard."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Additional services</strong>"
-      },
-      {
-       "t": "p",
-       "html": "If needed, the “Premium” package can be supplemented with design supervision, a detailed cost estimate for construction and finishing work, furnishing and procurement, selection of furniture, lighting, and decor, bespoke furniture design, manufacturing of kitchens, wardrobes, walk-in closets, and other cabinet furniture, furniture delivery and installation, and a turnkey renovation."
-      },
-      {
-       "t": "p",
-       "html": "This means that once the design project is complete, you can continue working with a single contractor and move straight on to bringing the interior to life."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Interior design in Bratislava and Vienna</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> works with residential and commercial properties, combining interior design, photorealistic visualization, technical documentation, custom furniture, and end-to-end project implementation."
-      },
-      {
-       "t": "p",
-       "html": "The studio’s main geographic focus is Bratislava and Vienna. We also work on projects in other cities across Europe and the USA."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> — interior design, technical design documentation, custom furniture, and end-to-end interior implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Order the “Premium” design package</strong>"
-      },
-      {
-       "t": "p",
-       "html": "If you need the most detailed design project possible, with extended technical documentation and additional support from the designer as you prepare for the renovation, the “Premium” package delivers a high level of development at every stage of the project."
+       "html": "If you need the most detailed project possible, with extended documentation and the designer’s support as you prepare for the renovation, choose “Premium”."
       }
      ]
     },
@@ -414,7 +506,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

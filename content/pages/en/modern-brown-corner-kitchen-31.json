@@ -108,15 +108,11 @@
       },
       {
        "t": "p",
-       "html": "The kitchen has an L-shaped configuration. The furniture runs along two adjacent walls, making use of the corner space and distributing work surfaces, cabinets, and built-in appliance zones between two sections."
+       "html": "The layout is L-shaped: 3.9 linear meters of furniture along two adjacent walls. Work surfaces, cabinets, and spaces for built-in appliances are distributed between two sections, and the corner is used too."
       },
       {
        "t": "p",
-       "html": "The total length of the model is 3.9 linear meters, and the overall dimensions of the standard composition are 3.9 × 2.3 × 0.6 m. The placement of the sink, cooktop, refrigerator, and other appliances is determined during custom design based on room dimensions and utility connections. The standard model does not include a separate island."
-      },
-      {
-       "t": "p",
-       "html": "Both upper and lower fronts are made of laminated chipboard but have different finishes: the upper row is light lime green, while the lower and remaining fronts have a brown woodgrain decor. The carcass is made of 18 mm laminated chipboard, and the countertop is chipboard-based. The wood texture is created by the decorative surface of the laminated panels; solid wood is not part of the stated standard configuration."
+       "html": "All the fronts are made of laminated chipboard: the upper row is light lime green, and the rest have a brown woodgrain decor. The wood texture comes from the panel’s surface finish — it is not solid wood."
       },
       {
        "t": "p",
@@ -125,10 +121,6 @@
       {
        "t": "p",
        "html": "The model also includes a cargo pull-out for storing food and kitchen utensils. Hinged doors are fitted with Muller Profi Line hinges with soft-close mechanisms, and pull-out elements with Muller telescopic slides without soft-close mechanisms. Cabinet handles are included."
-      },
-      {
-       "t": "p",
-       "html": "Additional custom-order options: more functional cabinet hardware, upgraded opening mechanisms, additional storage systems, and alternative materials ranging from budget to premium. These options are selected at the client’s request and are not part of the stated standard configuration."
       },
       {
        "t": "p",
@@ -204,15 +196,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN designs and manufactures custom kitchens for apartments, condos, and private homes in Bratislava and Vienna. The K-31 can be adapted to the room dimensions, the location of utility connections, and built-in appliance requirements, and you can also choose different colors, materials, and cabinet interior fittings.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>We offer furniture design, material selection, manufacturing, delivery, and professional installation. At the client’s request, we can also select a sink, faucet, range hood, and appliances.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Order the K-31 kitchen from DUMSKAYA DESIGN and get a personalized quote.</strong>"
+       "html": "We will adapt the K-31 to your kitchen: together with you, we choose the dimensions, shades, materials, hardware, and cabinet interior fittings."
       }
      ]
     },
@@ -259,7 +243,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

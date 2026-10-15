@@ -26,64 +26,94 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> prepares detailed cost estimates for construction and finishing work, as well as for the materials required to renovate apartments, private homes, and other spaces in Bratislava and Vienna. An estimate lets you determine the expected renovation budget in advance, assess the scope of work, and plan expenses before the project begins."
+       "html": "<strong>DUMSKAYA DESIGN</strong> prepares detailed cost estimates covering construction work, finishing work, and materials for the renovation of apartments, private homes, and other spaces in Bratislava and Vienna. With an estimate, you know the budget and the scope of work in advance and can plan your expenses."
       },
       {
        "t": "p",
-       "html": "The cost of preparing an estimate is €5/m² of the property’s floor area. The calculation takes into account the specific features of the space, its actual dimensions, the condition of the surfaces, and the planned renovation work."
+       "html": "The price is €5/m² of the property’s floor area. The calculation takes into account the actual dimensions of the rooms, the condition of the surfaces, and the planned work."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Measurements and condition assessment"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "We measure the walls, floors, and ceilings and identify geometric deviations in the surfaces. Based on this data, we calculate the work quantities and the amount of materials needed."
       },
       {
        "t": "p",
-       "html": "<strong>Measurements and condition assessment</strong>"
+       "html": "This way, the estimate reflects the real condition of the property and comes closer to the actual costs."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Cost calculation for construction and finishing work"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The estimate includes a list of work items with quantities and costs: preparatory, construction, and finishing work, depending on the condition of the property and the planned renovation."
       },
       {
        "t": "p",
-       "html": "Preparing the estimate includes measuring the actual dimensions of the walls, floors, and ceilings and identifying geometric deviations in the surfaces. The data obtained is used to calculate the volume of construction and finishing work and the required quantity of materials."
+       "html": "You can see what makes up the budget, compare contractor bids, and keep spending under control at every stage."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Specification of construction and finishing materials"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "A separate section covers materials: how much construction and finishing material the work requires and how much it costs."
       },
       {
        "t": "p",
-       "html": "This approach helps account for the actual conditions of the property and reduces the likelihood of significant discrepancies between preliminary calculations and actual costs."
+       "html": "The specification helps you plan purchases and agree on the budget before the renovation begins. If the materials or the scope of work change, the calculation is adjusted."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What the client receives"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "A detailed renovation cost estimate: work quantities and costs, plus a list of materials with quantities and approximate costs."
       },
       {
        "t": "p",
-       "html": "<strong>Cost calculation for construction and finishing work</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The estimate lists the work included in the project, with quantities and costs. Depending on the condition of the property and the planned renovation, the calculation may include preparatory, construction, and finishing operations."
-      },
-      {
-       "t": "p",
-       "html": "The detailed structure of the estimate helps the client understand what makes up the budget, compare contractor bids, and control spending at each stage of implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Specification of construction and finishing materials</strong>"
-      },
-      {
-       "t": "p",
-       "html": "A separate section of the estimate is dedicated to materials. For the planned work, the required quantities and costs of construction and finishing materials are calculated."
-      },
-      {
-       "t": "p",
-       "html": "The specification helps plan purchases, estimate expenses, and agree on the budget before renovation work begins. If the selected materials or the scope of work change, the calculation may need to be adjusted."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What the client receives</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The result of the service is a detailed renovation cost estimate that includes the calculated quantities and cost of the work, a list of the required materials, their quantities, and their approximate cost."
-      },
-      {
-       "t": "p",
-       "html": "The document can be used for preliminary budgeting, approving renovation work, planning purchases, and subsequently monitoring expenses."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Service cost and terms</strong>"
-      },
+       "html": "You can use it to plan the budget and purchases, approve the work, and monitor spending."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Service cost and terms"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>The price for preparing an estimate is €5/m² of the property’s floor area.</strong>"
@@ -95,10 +125,6 @@
       {
        "t": "p",
        "html": "The estimate is based on the available information about the property and the agreed scope of work. Final costs may change if hidden defects are discovered or if design decisions, the scope of work, or material prices change."
-      },
-      {
-       "t": "p",
-       "html": "Preparing a detailed estimate is an important step in organizing an apartment or house renovation. It helps you assess the financial costs in advance and establish a consistent process for carrying out the project."
       }
      ]
     },
@@ -149,7 +175,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

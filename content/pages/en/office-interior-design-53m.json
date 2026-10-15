@@ -4,7 +4,7 @@
  "type": "project",
  "group": "commercial",
  "title": "Office Interior Design 53 m² in Poznań | DUMSKAYA DESIGN",
- "description": "53 m² office in Poznań: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "53 m² office in Poznań: interior design, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Office interior design and custom furniture, 53 m²",
  "og_image": "66d35160e6210d11a55e14a7",
  "alternates": {
@@ -26,15 +26,15 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> designed and delivered a 53 m² office project covering interior design, custom furniture manufacturing, and a turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> designed and delivered a 53 m² office project in Poznań: the interior, custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The project was created with an emphasis on functional workspace organization, ergonomics, and contemporary aesthetics. The custom furniture was designed alongside the interior, making it possible to use the office floor area as efficiently as possible and create a single, harmonious space."
+       "html": "The furniture was designed together with the interior to make full use of the small office’s floor area."
       },
       {
        "t": "p",
-       "html": "This page features photorealistic 3D visualizations of the project and photos of the completed office, showing how closely the finished result matches the developed concept."
+       "html": "Below are 3D visualizations of the project, along with photos and a video of the finished office."
       },
       {
        "t": "p",
@@ -137,7 +137,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -145,7 +145,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -180,7 +180,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

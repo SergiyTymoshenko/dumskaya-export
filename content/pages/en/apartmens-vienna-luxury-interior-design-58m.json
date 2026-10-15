@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 58 m² in Vienna | DUMSKAYA DESIGN",
- "description": "58 m² apartment in Vienna: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "58 m² apartment in Vienna: interior design, technical drawings, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Apartment interior design in Vienna, custom furniture and turnkey renovation, 58 m²",
  "og_image": "6abd6a794888499d20745202",
  "alternates": {
@@ -26,23 +26,19 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 58 m² apartment in Vienna, Austria. The project brought together interior design, technical documentation, the design and manufacture of custom furniture, furnishing and procurement, and a turnkey renovation of the apartment."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 58 m² apartment in Vienna, Austria: interior design, technical documentation, custom furniture, furnishing and procurement, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "In developing the interior, particular attention was paid to the functional use of floor area, ergonomics, and the organization of storage systems. In a 58 m² apartment, it is important to make good use of every meter while preserving the feeling of an open, comfortable, and visually cohesive space."
+       "html": "In 58 m², it is important to make use of every meter without losing the sense of open space — hence the attention to the layout, ergonomics, and storage."
       },
       {
        "t": "p",
-       "html": "The custom furniture was designed alongside the interior, which made it possible to integrate furniture solutions and storage systems directly into the architecture of the apartment. This approach helps use the available space efficiently and maintain a unified stylistic concept throughout the interior."
+       "html": "The custom furniture was designed alongside the interior, so the wardrobes and storage systems are built into the architecture of the apartment rather than added on top of it."
       },
       {
        "t": "p",
-       "html": "Before implementation began, a detailed cost estimate was prepared covering the required work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project. Once the design stage was complete, a turnkey renovation of the apartment was carried out in Vienna in accordance with the technical documentation."
-      },
-      {
-       "t": "p",
-       "html": "This 58 m² apartment project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to delivering residential interiors in Vienna — from developing the design concept and technical solutions to manufacturing custom furniture and carrying out the renovation work."
+       "html": "Before work began, a detailed cost estimate was prepared covering labor, materials, furniture, appliances, plumbing fixtures, and lighting. A turnkey renovation of the apartment was then carried out according to the technical documentation."
       }
      ]
     },
@@ -143,7 +139,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -151,7 +147,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -186,7 +182,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

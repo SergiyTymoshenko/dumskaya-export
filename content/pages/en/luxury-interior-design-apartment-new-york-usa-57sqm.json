@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 57 m², New York | DUMSKAYA DESIGN",
- "description": "57 m² apartment in New York: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "57 m² apartment in New York: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Apartment interior design in New York, custom furniture and turnkey renovation, 57 m²",
  "og_image": "6abd6af268c5e81567a1c21a",
  "alternates": {
@@ -26,35 +26,27 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 57 m² apartment in New York, USA. The project brought together interior design, technical documentation, the design and manufacture of custom furniture, and a full turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 57 m² apartment in New York, USA: interior design, technical documentation, custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The apartment’s interior was designed with an emphasis on contemporary aesthetics, functionality, and efficient use of the living space. The layout solutions take into account the specifics of each room, the placement of furniture and appliances, the organization of storage systems, and everyday living comfort."
+       "html": "The 57 m² space fits a living room, a bedroom, a kitchen with built-in appliances, walk-in closets, an entrance hall, and a bathroom. The layout is planned so that the small floor area provides enough room for both living and storage."
       },
       {
        "t": "p",
-       "html": "The project covers the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, bathroom, and functional storage areas. All rooms are united by a single interior concept with carefully considered materials, color combinations, lighting, and furniture solutions."
+       "html": "The kitchen, built-in wardrobes, walk-in closets, and storage systems were custom-made to the exact room dimensions, so the floor area is fully used and the interior looks cohesive."
       },
       {
        "t": "p",
-       "html": "Bespoke furniture pieces were designed and manufactured for the apartment, including the kitchen, built-in wardrobes, walk-in closets, and storage systems. The furniture was developed around the exact room dimensions, the specifics of the layout, and the overall style of the interior. This approach made it possible to use the available floor area as efficiently as possible and create a visually cohesive space."
+       "html": "Before work began, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting."
       },
       {
        "t": "p",
-       "html": "In preparation for implementation, we produced technical documentation and a detailed cost estimate covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other elements specified in the project."
+       "html": "The studio then carried out a turnkey renovation of the apartment according to the design, installed the custom-made furniture, and fitted out the rooms."
       },
       {
        "t": "p",
-       "html": "Once the design stage was complete, a full turnkey renovation of the apartment was carried out in New York. The work followed the approved interior solutions and technical documentation, including installation of the manufactured furniture and the final fit-out of the living spaces."
-      },
-      {
-       "t": "p",
-       "html": "Photorealistic 3D visualizations were created to preview the future interior. They make it possible to evaluate the layout and design solutions, as well as the combination of materials, furniture, and lighting, before implementation begins."
-      },
-      {
-       "t": "p",
-       "html": "The result of the project is presented in photographs of the finished interior and the manufactured furniture. This 57 m² apartment project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to creating contemporary living spaces — from developing the design project to fully implementing the interior."
+       "html": "This page features 3D visualizations of the project and photos of the finished interior with the custom-made furniture, so you can compare the concept with the result."
       }
      ]
     },
@@ -241,7 +233,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -249,7 +241,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -284,7 +276,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

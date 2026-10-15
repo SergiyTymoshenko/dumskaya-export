@@ -4,7 +4,7 @@
  "type": "project",
  "group": "commercial",
  "title": "Retail Store Interior Design 50 m² | DUMSKAYA DESIGN",
- "description": "50 m² retail store: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "description": "50 m² retail store: interior design, 3D visualization and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Store interior design and custom furniture, 50 m²",
  "og_image": "6abe047d4888499d2075a16a",
  "alternates": {
@@ -22,9 +22,13 @@
      "text": "Store interior design and custom furniture, 50 m²"
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "DUMSKAYA DESIGN (Bratislava, Slovakia) developed an interior design project for a 50 m² store and also designed and manufactured custom furniture for the retail space. In developing the interior, particular attention was paid to the functional organization of a small floor area, convenience for customers and staff, product presentation, and creating a cohesive visual identity for the store. The layout solutions make efficient use of the available space and ensure comfortable customer flow. Custom retail furniture was designed for the project and integrated into the overall interior concept. Individual design makes it possible to account for the room dimensions, how products are displayed and stored, functional requirements, and the company’s visual style. This page features photorealistic 3D visualizations of the design project, showing the layout, the design of the retail space, and the furniture solutions developed for it. DUMSKAYA DESIGN offers interior design for stores, boutiques, showrooms, and other commercial spaces, as well as custom furniture design and manufacturing in Bratislava and Vienna. We create bespoke interior solutions for retail and commercial spaces, tailored to the specifics of the business and the premises."
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "DUMSKAYA DESIGN (Bratislava, Slovakia) developed an interior design project for a 50 m² store and manufactured custom retail furniture for it. The small floor area had to comfortably accommodate merchandise, customers, and staff while preserving a cohesive look for the store. The furniture was designed around the room’s dimensions, product display and storage, and the company’s brand identity. Below are photorealistic 3D visualizations of the project."
+      }
+     ]
     },
     {
      "type": "gallery",
@@ -63,7 +67,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -71,7 +75,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -106,7 +110,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Duplex Apartment Interior Design 43 m² | DUMSKAYA DESIGN",
- "description": "43 m² duplex apartment: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "43 m² duplex apartment: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Interior design project for a 43 m² duplex apartment",
  "og_image": "66d3798dadeaee0e909ce7ef",
  "alternates": {
@@ -26,11 +26,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "In this project, the interior design studio <strong>DUMSKAYA DESIGN</strong> (Bratislava, Slovakia) carried out the full scope of work: interior design, technical documentation, design and manufacture of bespoke furniture, and turnkey renovation. The design covered every room: the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, bathroom, wardrobes, and shelving. Furniture was custom-designed for each area. Before the renovation began, the client received a detailed cost estimate for labor, construction materials, furniture, appliances, plumbing fixtures, lighting, and more. 3D visualizations, photos, and video of the completed project are presented."
+       "html": "For a 43 m² duplex apartment, the <strong>DUMSKAYA DESIGN</strong> studio (Bratislava, Slovakia) delivered the full cycle of work: interior design, technical documentation, custom furniture manufacturing, and a turnkey renovation. The design covered the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom; furniture designed by the studio was made for each area."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) — we create interiors that truly come to life.</strong>"
+       "html": "Before the renovation began, the client received a detailed cost estimate for labor, materials, furniture, appliances, plumbing fixtures, and lighting. Below are 3D visualizations, photos, and a video of the finished apartment."
       }
      ]
     },
@@ -98,7 +98,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -106,7 +106,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -141,7 +141,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

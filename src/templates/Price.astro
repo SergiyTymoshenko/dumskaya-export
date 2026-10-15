@@ -3,72 +3,59 @@
 // по заголовкам/абзацам с ценой в €; остальное (вступление, доп. услуги) — обычным текстом.
 import Crumbs from '../components/Crumbs.astro';
 import Parts from '../components/Parts.astro';
+import Caps from '../components/Caps.astro';
 import ServiceLinks from '../components/ServiceLinks.astro';
 import { ui, type Lang } from '../lib/i18n';
-import { homePath, isServicesSection, servicesCards, plain, type Page, type Part } from '../lib/data';
+import { homePath, servicesCards, localize, projectsFor, type Page } from '../lib/data';
+import { parsePacks } from '../lib/packs';
+import { typo } from '../lib/typo';
 interface Props { page: Page }
 const { page } = Astro.props;
 const lang = page.lang as Lang;
 const T = ui(lang);
-type Pack = { title: string; name: string; price: string; note: string; parts: Part[]; buttons: { text: string; href: string | null }[] };
-const PRICE = /(€\s?\d[\d\s,.–-]*(?:€)?\s*\/\s*m²|\d[\d\s,.–-]*\s*€\s*\/\s*м²)/i;
-const isPack = (t: string) => PRICE.test(t) && t.length < 200;
-const intro: Part[] = [];
-const packs: Pack[] = [];
-const extra: { title: string; parts: Part[]; buttons: any[] }[] = [];
-let cur: any = null;
-function startPack(text: string) {
-  const m = text.match(PRICE)!;
-  const before = text.slice(0, m.index).replace(/[\s—–-]+$/, '');
-  const after = text.slice(m.index! + m[0].length).replace(/^[\s.—–-]+/, '');
-  const q = before.match(/[«“"]([^»”"]+)[»”"]/);
-  const name = q ? q[1] : before.replace(/Interior Design Package|Дизайн-пакет (интерьера|інтер’єру)/i, '').trim();
-  cur = { title: text, name, price: m[0].replace(/\s+/g, ' ').trim(), note: after, parts: [], buttons: [] };
-  packs.push(cur);
-}
-for (const s of page.sections) {
-  if (isServicesSection(s)) continue;
-  for (const b of s.blocks) {
-    if (b.type === 'heading') {
-      if (b.level === 1) continue;
-      if (isPack(b.text)) startPack(b.text);
-      else { cur = { title: b.text, parts: [], buttons: [] }; extra.push(cur); }
-    } else if (b.type === 'text') {
-      for (const p of b.parts) {
-        if (p.t === 'p' && isPack(plain(p.html)) && /[«“"]/.test(plain(p.html)) && plain(p.html).length < 120) { startPack(plain(p.html)); continue; }
-        (cur ? cur.parts : intro).push(p);
-      }
-    } else if (b.type === 'buttons' && cur) {
-      cur.buttons.push(...b.items.filter((x) => x.href));
-    }
-  }
-}
+const { intro, packs, extra } = parsePacks(page);
+const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
+// примеры работ подписываются названием проекта («Квартира Metropolis в Братиславе, 75 м²»)
+const projectLabel = new Map(projectsFor(lang).map((p) => [p.href, p.label]));
+const exLabel = (x: { text: string; href: string | null }) => projectLabel.get(x.href || '') ||
+  x.text.replace(/^(Пример работы|Пример|Посмотреть пример работы( с)?|Приклад роботи|Приклад|Переглянути приклад роботи( з)?|Example of (our )?work|Example|See an example( of work)?( with)?)\s*[:—-]?\s*/i, '');
+const order = (name: string) => contact && `${contact}?model=${encodeURIComponent(T.packModel.replace('{}', name))}#lead`;
 ---
 <div class="wrap ptop">
   <Crumbs items={[{ label: T.home, href: homePath(lang) }, { label: T.prices2 }]} />
-  <h1 class="display ptop__h1">{page.h1}</h1>
+  <h1 class="display ptop__h1"><Caps text={page.h1} /></h1>
   {intro.length > 0 && <Parts parts={intro} class="ptop__intro" />}
 </div>
 <div class="packs wrap">
-  {packs.map((p) => (
-    <section class="pack">
-      <div class="pack__head">
-        <h2 class="pack__name display">{p.name}</h2>
-        <p class="pack__price">{p.price}</p>
-        {p.note && <p class="pack__note muted">{p.note}</p>}
-      </div>
-      <div class="pack__body">
-        <Parts parts={p.parts} />
-        <div class="pack__btns">{p.buttons.slice(0, 2).map((b, i) => <a class:list={['btn', i === 1 && 'btn--solid']} href={b.href}>{b.text}</a>)}</div>
-      </div>
-    </section>
-  ))}
+  {packs.map((p) => {
+    const examples = p.buttons.filter((x) => x.href !== p.href);
+    return (
+      <section class="pack">
+        <div class="pack__head">
+          <h2 class="pack__name display">{p.name}</h2>
+          <p class="pack__price">{typo(p.price)}</p>
+          {p.min && <p class="pack__min">{typo(p.min)}</p>}
+          {p.note && <p class="pack__note muted">{typo(p.note)}</p>}
+        </div>
+        <div class="pack__body">
+          <Parts parts={p.parts} />
+          <div class="pack__btns">
+            {order(p.name) && <a class="btn btn--solid" href={order(p.name)}>{T.orderPack}</a>}
+            {p.href && <a class="btn" href={p.href}>{T.packDetails}</a>}
+          </div>
+          {examples.length > 0 && (
+            <p class="pack__ex">{T.examples}: {examples.map((x, i) => <>{i > 0 && ' · '}<a href={x.href}>{exLabel(x)}</a></>)}</p>
+          )}
+        </div>
+      </section>
+    );
+  })}
   {extra.map((x) => (
     <section class="pack">
-      <div class="pack__head"><h2 class="pack__name display">{x.title}</h2></div>
+      <div class="pack__head"><h2 class="pack__name display"><Caps text={x.title} /></h2></div>
       <div class="pack__body">
         <Parts parts={x.parts} />
-        <div class="pack__btns">{x.buttons.slice(0, 2).map((b: any) => <a class="btn btn--solid" href={b.href}>{b.text}</a>)}</div>
+        <div class="pack__btns">{x.buttons.slice(0, 3).map((b, i) => <a class:list={['btn', i === 0 && 'btn--solid']} href={b.href}>{b.text}</a>)}</div>
       </div>
     </section>
   ))}
@@ -76,13 +63,16 @@ for (const s of page.sections) {
 <ServiceLinks items={servicesCards(page)} lang={lang} />
 <style>
   .ptop { padding-block: 20px clamp(32px, 5vw, 56px); }
-  .ptop__h1 { font-size: clamp(20px, 2.4vw, 30px); max-width: 30ch; margin: clamp(24px, 4vw, 48px) 0 24px; }
+  .ptop__h1 { font-size: clamp(20px, 2.4vw, 30px); max-width: 30em; margin: clamp(24px, 4vw, 48px) 0 24px; }
   :global(.ptop__intro) { color: var(--text); }
   .packs { padding-bottom: clamp(48px, 7vw, 96px); }
   .pack { display: grid; gap: 20px 64px; padding-block: clamp(28px, 4vw, 48px); border-top: 1px solid var(--ink); }
   @media (min-width: 960px) { .pack { grid-template-columns: 4fr 8fr; } }
   .pack__name { font-size: clamp(17px, 1.8vw, 22px); }
   .pack__price { font: 300 clamp(26px, 3vw, 38px)/1.1 var(--display); color: var(--ink); margin: 14px 0 0; letter-spacing: 0.04em; }
-  .pack__note { font-size: 14px; margin: 10px 0 0; }
+  .pack__min { font-size: 14px; margin: 10px 0 0; color: var(--ink); }
+  .pack__note { font-size: 14px; margin: 6px 0 0; }
+  .pack__ex { font-size: 14px; color: var(--stone); margin: 16px 0 0; }
+  .pack__ex a { color: var(--text); }
   .pack__btns { display: flex; flex-wrap: wrap; gap: 10px; }
 </style>

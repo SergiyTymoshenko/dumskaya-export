@@ -5,7 +5,7 @@
  "group": null,
  "title": "Магазин мебели DUMSKAYA DESIGN — офисная мебель",
  "description": "Мебель для кабинета руководителя из коллекции Executive Desk: столы, шкафы и стол для переговоров. Производство в Европе, доставка по Словакии и Австрии.",
- "h1": "",
+ "h1": "Магазин мебели DUMSKAYA DESIGN",
  "og_image": null,
  "alternates": {
   "ru": "/shop",
@@ -40,29 +40,11 @@
      ]
     },
     {
-     "type": "buttons",
-     "items": [
-      {
-       "text": "Buy",
-       "href": null
-      }
-     ]
-    },
-    {
      "type": "gallery",
      "images": [
       {
        "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
        "alt": "Executive conference table"
-      }
-     ]
-    },
-    {
-     "type": "buttons",
-     "items": [
-      {
-       "text": "Buy",
-       "href": null
       }
      ]
     },
@@ -76,29 +58,11 @@
      ]
     },
     {
-     "type": "buttons",
-     "items": [
-      {
-       "text": "Buy",
-       "href": null
-      }
-     ]
-    },
-    {
      "type": "gallery",
      "images": [
       {
        "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
        "alt": "Executive desk boss (size M)"
-      }
-     ]
-    },
-    {
-     "type": "buttons",
-     "items": [
-      {
-       "text": "Buy",
-       "href": null
       }
      ]
     },
@@ -112,33 +76,11 @@
      ]
     },
     {
-     "type": "buttons",
-     "items": [
-      {
-       "text": "Buy",
-       "href": null
-      }
-     ]
-    },
-    {
      "type": "gallery",
      "images": [
       {
        "id": "a0417189-861e-4ffc-b410-fcea44834081",
        "alt": "Exclusive executive cabinet (size S)"
-      }
-     ]
-    },
-    {
-     "type": "buttons",
-     "items": [
-      {
-       "text": "Buy",
-       "href": null
-      },
-      {
-       "text": "1",
-       "href": null
       }
      ]
     }

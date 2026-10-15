@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 140 m², Los Angeles | DUMSKAYA DESIGN",
- "description": "140 m² apartment in Los Angeles: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "140 m² apartment in Los Angeles: interior design, 3D visualization, technical drawings and furniture design. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Apartment interior design in Los Angeles, custom furniture, and turnkey renovation, 140 m²",
  "og_image": "6abd6ac168c5e81567a1c102",
  "alternates": {
@@ -26,35 +26,27 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed a comprehensive project for a 140 m² apartment in Los Angeles, California, USA. The project combined premium interior design, technical documentation, the design and manufacturing of custom furniture, and solutions for a full turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> developed a project for a 140 m² apartment in Los Angeles (California, USA): premium interior design, technical documentation, custom furniture, and solutions for a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The apartment interior was designed with an emphasis on contemporary aesthetics, functionality, and a high level of everyday comfort. The layout solutions take into account the features of each room, the placement of furniture and appliances, storage organization, lighting, and the visual connection between the living spaces."
+       "html": "The project covers the living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, bathrooms, and storage areas — all rooms follow a single concept, with materials, color, lighting, and furniture coordinated with one another."
       },
       {
        "t": "p",
-       "html": "The project covers the living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, bathrooms, and functional storage areas. All rooms are united by a single interior concept that coordinates finishing materials, color combinations, lighting, and furniture solutions."
+       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-designed for the room dimensions and layout, so no floor area is wasted and the interior looks cohesive."
       },
       {
        "t": "p",
-       "html": "Custom furniture solutions were developed for the apartment, including the kitchen, built-in cabinets, walk-in closets, shelving, and storage systems. The furniture was designed around the room dimensions, the specifics of the layout, and the overall style of the interior, making efficient use of space while preserving the visual unity of the project."
+       "html": "Technical documentation and a detailed cost estimate were prepared for the project, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting. The client can see the scope of work and the implementation budget in advance."
       },
       {
        "t": "p",
-       "html": "In preparation for implementation, technical documentation and a detailed cost estimate were developed, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project. This makes it possible to define the scope of work in advance, approve technical solutions, and set the implementation budget."
+       "html": "The project provides for a turnkey renovation of the apartment based on the documentation developed — construction and finishing work, furniture manufacturing, and interior fit-out in a single sequence."
       },
       {
        "t": "p",
-       "html": "The project also includes a complete turnkey renovation of the apartment in Los Angeles in line with the developed interior concept and technical documentation. This approach brings design, construction and finishing work, furniture manufacturing, and interior fit-out together into a single implementation sequence."
-      },
-      {
-       "t": "p",
-       "html": "To present the future interior, photorealistic 3D visualizations were created, showing the layout solutions, material combinations, furniture, lighting, and the overall atmosphere of the rooms. The visualizations make it possible to evaluate the interior before construction begins and to approve key design decisions."
-      },
-      {
-       "t": "p",
-       "html": "The 140 m² apartment project in Los Angeles showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to creating contemporary premium living spaces — from developing the interior design project and technical documentation to custom furniture solutions and preparation for the full implementation of the interior."
+       "html": "The gallery features photorealistic 3D visualizations showing the apartment’s layout, materials, furniture, and lighting before any work begins."
       }
      ]
     },
@@ -139,7 +131,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -147,7 +139,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -182,7 +174,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

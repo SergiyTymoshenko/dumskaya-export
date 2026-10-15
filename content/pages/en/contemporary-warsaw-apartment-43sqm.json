@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 43 m² in Warsaw, minimalist",
- "description": "43 m² minimalist apartment in Warsaw: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "43 m² minimalist apartment in Warsaw: interior design (“Basic” package) and 3D visualization. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Apartment interior design in Warsaw, 43 m² — contemporary minimalism",
  "og_image": "6abd6b6368c5e81567a1c463",
  "alternates": {
@@ -26,27 +26,23 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed a design project for a 43 m² apartment in Warsaw, Poland. The main goal was to create a contemporary, functional, and comfortable living space that makes efficient use of every square meter."
+       "html": "<strong>DUMSKAYA DESIGN</strong> developed a design project for a 43 m² apartment in Warsaw, Poland. The goal was to fit everything needed into a small floor area without losing the sense of space."
       },
       {
        "t": "p",
-       "html": "The interior is designed in a contemporary minimalist style. A light, neutral color scheme, understated forms, natural materials, and well-planned lighting create a visually spacious and harmonious environment. Particular attention was paid to balancing aesthetics, ergonomics, and practicality."
+       "html": "The interior is designed in a contemporary minimalist style: a light, neutral color scheme, understated forms, and natural materials."
       },
       {
        "t": "p",
-       "html": "The layout includes a living area, kitchen, bedroom, workspace, bathroom, and functional storage systems. Each zone is organized around the residents’ everyday needs, ease of movement, and efficient use of the available floor area."
+       "html": "The layout includes a living area, kitchen, bedroom, workspace, bathroom, and storage systems."
       },
       {
        "t": "p",
-       "html": "The project was developed as part of the <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic” design package</a>. We prepared the layout and interior solutions and selected finishing materials, lighting, and furniture to match the overall style of the apartment. The carefully planned placement of furniture and storage systems preserves a sense of open space even in compact rooms."
+       "html": "The project was developed as part of the <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic” design package</a>: layout and interior solutions, plus the selection of finishing materials, lighting, and furniture."
       },
       {
        "t": "p",
-       "html": "Photorealistic 3D visualizations were prepared to present the future interior, making it possible to evaluate the combination of materials, color schemes, furniture, and lighting before implementation begins."
-      },
-      {
-       "t": "p",
-       "html": "This 43 m² apartment project in Warsaw showcases <strong>DUMSKAYA DESIGN</strong>’s approach to designing small living spaces where contemporary aesthetics are combined with functionality, ergonomics, and everyday comfort."
+       "html": "The gallery features photorealistic 3D visualizations of the apartment."
       }
      ]
     },
@@ -183,7 +179,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -191,7 +187,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -226,7 +222,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

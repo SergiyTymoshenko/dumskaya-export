@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Private House Design 215 m², Berlin | DUMSKAYA DESIGN",
- "description": "215 m² private house in Berlin: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "215 m² private house in Berlin: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Private house interior design in Berlin, custom furniture and turnkey renovation, 215 m²",
  "og_image": "6abd6aa461617a4443acb2fc",
  "alternates": {
@@ -26,35 +26,27 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed a comprehensive project for a 215 m² private house in Berlin, Germany. The project combined interior design, technical documentation, the design and manufacture of custom furniture, and a full turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 215 m² private house in Berlin, Germany: interior design, technical documentation, custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The interior of the house was designed with an emphasis on contemporary aesthetics, functionality, and everyday living comfort. The layout solutions take into account the building’s architectural features, the relationship between the rooms, the placement of furniture and appliances, the organization of storage systems, and lighting scenarios."
+       "html": "The project included the living room, bedrooms, kitchen with built-in appliances, walk-in closets, entrance hall, bathrooms, and storage areas — all rooms unified by a single concept of materials, color, and lighting."
       },
       {
        "t": "p",
-       "html": "The project covers the living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, bathrooms, and functional storage areas. All spaces are united by a single interior concept in which the materials, color combinations, lighting, and furniture solutions have been carefully thought through."
+       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-designed and made to the dimensions of the house’s rooms."
       },
       {
        "t": "p",
-       "html": "Custom furniture was designed and manufactured for the house, including the kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems. The furniture was developed around the room dimensions, the specifics of the layout, and the overall style of the interior, which made it possible to use the space efficiently and ensure the visual coherence of the living environment."
+       "html": "Before work began, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting."
       },
       {
        "t": "p",
-       "html": "In preparation for implementation, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project."
+       "html": "The studio then carried out a turnkey renovation of the house in Berlin: construction and finishing work, installation of the custom-made furniture, and the final fit-out of the rooms."
       },
       {
        "t": "p",
-       "html": "Once the design stage was complete, a full turnkey renovation of the private house in Berlin was carried out in line with the developed interior solutions and technical documentation. The implementation included construction and finishing work, installation of the custom furniture, and fitting out of the living spaces."
-      },
-      {
-       "t": "p",
-       "html": "To preview the future interior, photorealistic 3D visualizations were created, making it possible to review the layout solutions, combination of materials, furniture, lighting, and overall atmosphere of the rooms before work began."
-      },
-      {
-       "t": "p",
-       "html": "This 215 m² private house project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to creating contemporary residential interiors — from the interior design project and technical documentation to furniture manufacturing and full implementation of the space."
+       "html": "The gallery features photorealistic 3D visualizations of the project."
       }
      ]
     },
@@ -203,7 +195,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -211,7 +203,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -246,7 +238,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

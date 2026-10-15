@@ -52,7 +52,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>The K-21 kitchen</strong> is a white L-shaped model in neoclassical style that combines understated aesthetics with a convenient layout for everyday living. The light, solid-color furniture composition helps create a sense of order and visual lightness, while the L-shaped layout uses two adjoining walls for work surfaces, appliances, and cabinets."
+       "html": "<strong>The K-21 kitchen</strong> is a white neoclassical L-shaped kitchen. Light solid-color fronts create a sense of order and lightness, while work surfaces, appliances, and cabinets run along two adjacent walls."
       },
       {
        "t": "p",
@@ -60,7 +60,7 @@
       },
       {
        "t": "p",
-       "html": "The K-21 kitchen is 4.7 linear meters long. The L-shaped configuration allows kitchen functions to be distributed along two walls while leaving open space for a dining area or comfortable movement. A separate island is not included in the standard model."
+       "html": "At 4.7 linear meters, it leaves free space for a dining area or a walkway. The standard model has no island."
       },
       {
        "t": "p",
@@ -69,10 +69,6 @@
       {
        "t": "p",
        "html": "The standard configuration includes Muller soft-close hinges that ensure the doors close smoothly. Pull-out elements run on Muller telescopic slides without soft-close. Cabinet handles are included; a cargo pull-out and lift-up mechanisms are not."
-      },
-      {
-       "t": "p",
-       "html": "<strong>The K-21 configuration</strong> can be modified to suit the client’s needs. On request, the kitchen can be equipped with more functional furniture hardware and additional storage systems. The model can also be made from alternative materials, either more budget-friendly or more premium. Materials, cabinet interiors, and fittings are selected based on your preferences, the specifics of the room, and the project budget."
       },
       {
        "t": "p",
@@ -148,19 +144,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN designs and makes custom kitchens for apartments, condos, and private homes in Bratislava and Vienna.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>The K-21 model can be adapted to the dimensions of a specific room, the location of utility connections, and your preferences for built-in appliance placement. We help you determine a convenient cabinet configuration and select the fronts, countertop, hardware, and cabinet interiors.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>The studio offers furniture project design, kitchen manufacturing, delivery, and professional installation. At the client’s request, the kitchen can also be supplied with a sink, faucet, range hood, and appliances.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>You can order the K-21 kitchen and get a personalized price quote from DUMSKAYA DESIGN.</strong>"
+       "html": "We make the K-21 to fit your kitchen — with more functional hardware, additional storage systems, and materials that cost less or more than the standard ones."
       }
      ]
     },
@@ -207,7 +191,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

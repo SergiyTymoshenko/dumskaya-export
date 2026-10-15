@@ -59,27 +59,39 @@
      "parts": [
       {
        "t": "p",
-       "html": "Designing the interior of a child’s bedroom is a process that calls for particular attention to safety, functionality, and aesthetics."
-      },
-      {
-       "t": "p",
-       "html": "<strong>1. Identifying your child’s needs</strong>"
-      },
+       "html": "In a children’s room, safety, functionality, and aesthetics are especially important. Here are the basic rules that will help you take everything into account."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "1. Identifying your child’s needs"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>Age: </strong>The needs of an infant, a preschooler, and a school-age child differ greatly. Keep in mind that a toddler needs more room to play, while a schoolchild needs a place to study."
       },
       {
        "t": "p",
-       "html": "<strong>Interests:</strong> It’s important to take your child’s hobbies into account — this will help you create a space that feels inspiring and comfortable to them."
-      },
+       "html": "<strong>Interests:</strong> Take your child’s hobbies into account: a room like that is inspiring and comfortable to be in."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "2. Space planning"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>2. Space planning</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Zoning:</strong> Divide the room into zones for sleeping, playing, and studying. This will help create a well-structured space."
+       "html": "<strong>Zoning:</strong> Divide the room into zones for sleeping, playing, and studying."
       },
       {
        "t": "p",
@@ -87,15 +99,21 @@
       },
       {
        "t": "p",
-       "html": "<strong>Ergonomics:</strong> All furniture should be suited to the child’s height. For example, chairs and desks should be age-appropriate, and shelves should be within easy reach."
-      },
+       "html": "<strong>Ergonomics:</strong> Choose furniture to suit your child’s height: a desk and chair appropriate for their age, and shelves within easy reach."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3. Color palette and lighting"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>3. Color palette and lighting</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Color scheme: </strong>Use neutral, calm colors for the main finishes. Bright accents can be added through decor and textiles. As a rule, bright colors suit the play area, while calm ones work best for sleeping."
+       "html": "<strong>Color palette:</strong> Keep the main finishes in calm, neutral colors and add bright accents with decor and textiles. Bright colors suit the play area; calm ones suit the sleeping area."
       },
       {
        "t": "p",
@@ -103,7 +121,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>Natural light:</strong> Maximize access to daylight."
+       "html": "<strong>Natural light:</strong> Let as much daylight into the room as possible."
       },
       {
        "t": "p",
@@ -112,27 +130,39 @@
       {
        "t": "p",
        "html": "<strong>Zone lighting: </strong>Add reading lamps next to the bed, as well as a desk lamp on the desk."
-      },
-      {
-       "t": "p",
-       "html": "<strong>4. Safety</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "4. Safety"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>Materials:</strong> Use eco-friendly, hypoallergenic materials. This is especially important for wall finishes, flooring, and furniture."
       },
       {
        "t": "p",
-       "html": "<strong>Furniture:</strong> All furniture must be safe. Avoid sharp corners and check that large pieces are stable. For younger children, be sure to anchor cabinets and shelves to the walls."
+       "html": "<strong>Furniture:</strong> Avoid sharp corners and check that large pieces are stable. If your child is young, be sure to anchor cabinets and shelves to the walls."
       },
       {
        "t": "p",
-       "html": "<strong>Electrical:</strong> All outlets should be fitted with safety covers, and cables should be kept out of reach."
-      },
-      {
-       "t": "p",
-       "html": "<strong>5. Furniture and storage</strong>"
-      },
+       "html": "<strong>Electrical:</strong> Fit all outlets with safety covers and hide the cables."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "5. Furniture and storage"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>Bed:</strong> For toddlers, choose beds with side rails to prevent falls. For school-age children, beds with storage drawers are a good fit."
@@ -143,24 +173,36 @@
       },
       {
        "t": "p",
-       "html": "<strong>Multifunctional furniture:</strong> If space is limited, use furniture that serves several purposes, such as a bed with a built-in workspace or a folding table."
-      },
-      {
-       "t": "p",
-       "html": "<strong>6. Decor</strong>"
-      },
+       "html": "<strong>Multifunctional furniture:</strong> If space is tight, choose furniture that serves several purposes — for example, a bed with a work area or a folding table."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "6. Decor"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>Textiles:</strong> Add soft elements — cushions, rugs, curtains. They not only make the room cozier but also bring in pops of color."
       },
       {
        "t": "p",
-       "html": "<strong>Personalization:</strong> It’s important for children to feel that the space is truly theirs. Use their favorite colors and add decor featuring their favorite characters or motifs."
-      },
-      {
-       "t": "p",
-       "html": "<strong>7. Planning for the future</strong>"
-      },
+       "html": "<strong>Personalization:</strong> Your child should feel that the room is truly theirs. Use their favorite colors and add decor featuring their favorite characters or motifs."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "7. Planning for the future"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>Modularity:</strong> Keep in mind that your child’s needs will change. Use modular systems that can easily be adapted to new purposes."
@@ -168,11 +210,17 @@
       {
        "t": "p",
        "html": "<strong>Room to grow:</strong> Leave some free space so you can add new elements over time, such as a study area or extra storage."
-      },
-      {
-       "t": "p",
-       "html": "<strong>8. Inspiration and details</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "8. Inspiration and details"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "<strong>Details:</strong> Add interesting details that highlight your child’s personality: shelves with their favorite books, an art wall for painting or a magnetic board."
@@ -183,15 +231,11 @@
       },
       {
        "t": "p",
-       "html": "Creating a child’s bedroom is not just an interior design task — it’s an opportunity to create a space that will help your child develop, inspire them, and bring them joy."
+       "html": "A good children’s room is more than just a furnished room — it’s a space that helps your child grow, inspires them, and brings them joy."
       },
       {
        "t": "p",
-       "html": "Want a one-of-a-kind interior? Commission your interior design with us. A personalized approach, exclusive materials, and projects worldwide."
-      },
-      {
-       "t": "p",
-       "html": "Get in touch and start transforming your home!"
+       "html": "Want a one-of-a-kind interior? Commission your interior design project with us: a personalized approach, exclusive materials, and projects worldwide. Get in touch, and let’s start transforming your home!"
       },
       {
        "t": "p",
@@ -211,7 +255,7 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -246,7 +290,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

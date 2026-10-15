@@ -1,9 +1,14 @@
 ---
 // Общий шаблон: услуги, пакеты, каталоги кухонь и прочие страницы с блоками.
+// Страница дизайн-пакета дополнительно получает карточку с ценой: на компьютере она
+// закреплена справа, на телефоне стоит сразу под заголовком.
 import Blocks from '../components/Blocks.astro';
 import Crumbs from '../components/Crumbs.astro';
+import Caps from '../components/Caps.astro';
 import { ui, type Lang } from '../lib/i18n';
-import { site, homePath, localize, type Page } from '../lib/data';
+import { site, homePath, localize, isServicesSection, plain, type Page } from '../lib/data';
+import { packFor } from '../lib/packs';
+import { typo } from '../lib/typo';
 interface Props { page: Page }
 const { page } = Astro.props;
 const lang = page.lang as Lang;
@@ -13,12 +18,58 @@ const group = menu.find((m) => m.children?.some((c: any) => c.href === page.path
 const groupHref = group && group.label === T.prices2 ? localize('/price-interior-design-bratislava-wien-praha', lang) : null;
 const hasH1 = page.sections.some((s) => s.blocks.some((b) => b.type === 'heading' && b.level === 1));
 const crumbs = [{ label: T.home, href: homePath(lang) }, ...(group ? [{ label: group.label, href: groupHref }] : []), { label: page.h1 }];
+
+const pack = packFor(page);
+const main = page.sections.filter((s) => !isServicesSection(s));
+const services = page.sections.filter(isServicesSection);
+const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
+const overview = localize('/price-interior-design-bratislava-wien-praha', lang);
+const summary = pack?.parts.find((p) => p.t === 'p');
 ---
 <div class="wrap" style="padding-top:20px">
   <Crumbs items={crumbs} />
 </div>
-{!hasH1 && <h1 class="display wrap gh1">{page.h1}</h1>}
-<Blocks sections={page.sections} lang={lang} />
+{pack ? (
+  <div class="gpack">
+    <h1 class="display wrap gh1 gpack__h1"><Caps text={page.h1} /></h1>
+    <aside class="gpack__aside" aria-label={T.prices2}>
+      <div class="pcard">
+        <p class="pcard__name display">{pack.name}</p>
+        <p class="pcard__price">{typo(pack.price)}</p>
+        {pack.min && <p class="pcard__min">{typo(pack.min)}</p>}
+        {pack.note && <p class="pcard__note">{typo(pack.note)}</p>}
+        {summary && summary.t === 'p' && <p class="pcard__text">{typo(plain(summary.html))}</p>}
+        <div class="pcard__btns">
+          {contact && <a class="btn btn--solid" href={`${contact}?model=${encodeURIComponent(T.packModel.replace('{}', pack.name))}#lead`}>{T.orderPack}</a>}
+          {overview && <a class="btn" href={overview}>{T.allPacks}</a>}
+        </div>
+      </div>
+    </aside>
+    <div class="gpack__body"><Blocks sections={main} lang={lang} skipH1 /></div>
+  </div>
+) : (
+  <>
+    {!hasH1 && <h1 class="display wrap gh1"><Caps text={page.h1} /></h1>}
+    <Blocks sections={main} lang={lang} />
+  </>
+)}
+<Blocks sections={services} lang={lang} />
 <style>
-  .gh1 { font-size: clamp(20px, 2.4vw, 30px); margin-block: 32px 16px; max-width: 30ch; }
+  .gh1 { font-size: clamp(20px, 2.4vw, 30px); margin-block: 32px 16px; max-width: 30em; }
+  .gpack { display: grid; grid-template-areas: 'h' 'a' 'b'; }
+  .gpack__h1 { grid-area: h; }
+  .gpack__aside { grid-area: a; padding-inline: var(--pad); }
+  .gpack__body { grid-area: b; min-width: 0; }
+  .gpack__body > :global(.blk:first-child) { padding-top: 0; }
+  @media (min-width: 1100px) {
+    .gpack { grid-template-columns: minmax(0, 1fr) 340px; grid-template-areas: 'h a' 'b a'; column-gap: 24px; padding-right: var(--pad); }
+    .gpack__aside { padding: 32px 0 0; align-self: start; position: sticky; top: calc(var(--header) + 16px); }
+  }
+  .pcard { border: 1px solid var(--ink); padding: 22px 22px 24px; margin-block: 8px 16px; }
+  .pcard__name { font-size: 15px; margin: 0; }
+  .pcard__price { font: 300 clamp(28px, 3vw, 38px)/1.1 var(--display); color: var(--ink); margin: 12px 0 0; letter-spacing: 0.04em; }
+  .pcard__min { font-size: 14px; color: var(--ink); margin: 10px 0 0; }
+  .pcard__note { font-size: 14px; color: var(--stone); margin: 6px 0 0; }
+  .pcard__text { font-size: 15px; margin: 14px 0 0; }
+  .pcard__btns { display: grid; gap: 10px; margin-top: 20px; }
 </style>

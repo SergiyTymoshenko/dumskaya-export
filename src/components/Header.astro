@@ -28,6 +28,7 @@ const phone = site.contacts.phones[0];
       ))}
     </nav>
     <a class="hdr__phone" href={`tel:${phone.tel}`} aria-label={`${T.call}: ${phone.text}`}>
+      <span class="hdr__phone-text" aria-hidden="true">{phone.text}</span>
       <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>
     </a>
   </div>
@@ -43,15 +44,20 @@ const phone = site.contacts.phones[0];
     <span></span>
   </div>
   <nav class="menu__body" aria-label={T.menu}>
+    <p class="menu__langs menu__langs--top">
+      {LANGS.map((l) => l === lang
+        ? <span aria-current="true">{LANG_LABEL[l]}</span>
+        : <a href={altPath(page, l)} hreflang={l === 'ua' ? 'uk' : l} lang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</a>)}
+    </p>
     <ul class="menu__main">
       {menu.filter((m) => !m.children).map((m) => (
         <li><a class="display" href={m.href} aria-current={m.href === page.path ? 'page' : undefined}>{m.label}</a></li>
       ))}
     </ul>
     <div class="menu__groups">
-      {menu.filter((m) => m.children).map((g, i) => (
+      {menu.filter((m) => m.children).map((g) => (
         <section>
-          {i === 2 && priceOverview
+          {g.label === T.prices2 && priceOverview
             ? <h2 class="menu__group"><a href={priceOverview}>{g.label}</a></h2>
             : <h2 class="menu__group">{g.label}</h2>}
           <ul>
@@ -63,11 +69,6 @@ const phone = site.contacts.phones[0];
       ))}
     </div>
     <div class="menu__foot">
-      <p class="menu__langs">
-        {LANGS.map((l) => l === lang
-          ? <span aria-current="true">{LANG_LABEL[l]}</span>
-          : <a href={altPath(page, l)} hreflang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</a>)}
-      </p>
       <p>
         {site.contacts.phones.map((p: any) => (
           <span class="menu__phone"><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{p.city[lang]}</span></span>
@@ -113,6 +114,7 @@ const phone = site.contacts.phones[0];
   }
   .hdr__burger-label { font-size: 13px; letter-spacing: 0.06em; }
   @media (max-width: 719px) { .hdr__burger-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); } }
+  .hdr__burger { min-width: 44px; }
   .burger { position: relative; width: 26px; height: 12px; }
   .burger i { position: absolute; left: 0; right: 0; height: 1.5px; background: currentColor; }
   .burger i:first-child { top: 0; } .burger i:last-child { bottom: 0; }
@@ -128,7 +130,10 @@ const phone = site.contacts.phones[0];
   .hdr__langs a:hover { color: var(--ink); }
   .hdr__langs [aria-current] { color: var(--ink); }
   @media (min-width: 720px) { .hdr__langs { display: flex; } }
-  .hdr__phone { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-right: -12px; color: var(--ink); }
+  .hdr__phone { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-width: 44px; height: 44px; margin-right: -12px; padding-right: 12px; color: var(--ink); text-decoration: none; }
+  .hdr__phone svg { flex: none; }
+  .hdr__phone-text { display: none; font-size: 14px; letter-spacing: 0.04em; white-space: nowrap; }
+  @media (min-width: 1100px) { .hdr__phone-text { display: inline; } .hdr__phone { flex-direction: row-reverse; } }
 
   .menu { position: fixed; inset: 0; z-index: 50; overflow-y: auto; background: var(--paper); }
   .menu__body { padding: clamp(24px, 5vw, 64px) var(--pad) 48px; display: grid; gap: 40px; }
@@ -141,14 +146,20 @@ const phone = site.contacts.phones[0];
   @media (min-width: 1100px) { .menu__groups { grid-template-columns: repeat(4, 1fr); } }
   .menu__group { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; margin-bottom: 12px; color: var(--ink); }
   .menu__group a { text-decoration: none; }
-  .menu__groups ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .menu__groups ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .menu__groups li a { display: inline-block; padding-block: 6px; }
   .menu__groups a { text-decoration: none; }
   .menu__groups a[aria-current] { color: var(--oak); }
   .menu__foot { font-size: 15px; border-top: 1px solid var(--line); padding-top: 24px; display: grid; gap: 8px; }
   @media (min-width: 960px) { .menu__foot { grid-column: 1 / -1; } }
   .menu__foot p { margin: 0; }
   .menu__phone { display: inline-block; margin-right: 24px; }
-  .menu__langs { display: flex; gap: 16px; letter-spacing: 0.06em; }
+  .menu__langs { display: flex; gap: 4px; letter-spacing: 0.06em; margin: 0; }
+  .menu__langs > * { display: inline-grid; place-items: center; min-width: 44px; min-height: 44px; }
   .menu__langs a { color: var(--stone); text-decoration: none; }
+  .menu__langs [aria-current] { color: var(--ink); border-bottom: 1px solid var(--ink); }
+  .menu__langs--top { margin: -12px 0 -16px -10px; }
+  @media (min-width: 960px) { .menu__langs--top { grid-column: 1 / -1; } }
+  .menu__phone a, .menu__foot p > a { display: inline-block; padding-block: 8px; }
   :global(html.menu-open) { overflow: hidden; }
 </style>

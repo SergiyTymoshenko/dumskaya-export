@@ -5,6 +5,7 @@ import ServiceLinks from '../components/ServiceLinks.astro';
 import { ui, type Lang } from '../lib/i18n';
 import { site, homePath, servicesCards, mainParts, type Page } from '../lib/data';
 import Parts from '../components/Parts.astro';
+import Caps from '../components/Caps.astro';
 interface Props { page: Page }
 const { page } = Astro.props;
 const lang = page.lang as Lang;
@@ -14,7 +15,7 @@ const c = site.contacts;
 ---
 <div class="wrap ctop">
   <Crumbs items={[{ label: T.home, href: homePath(lang) }, { label: T.contacts }]} />
-  <h1 class="display ctop__h1">{page.h1}</h1>
+  <h1 class="display ctop__h1"><Caps text={page.h1} /></h1>
 </div>
 <div class="wrap cgrid">
   <div class="cinfo">
@@ -33,13 +34,13 @@ const c = site.contacts;
 <ServiceLinks items={servicesCards(page)} lang={lang} />
 <style>
   .ctop { padding-block: 20px clamp(24px, 4vw, 40px); }
-  .ctop__h1 { font-size: clamp(22px, 2.6vw, 32px); margin-top: clamp(24px, 4vw, 48px); max-width: 24ch; }
+  .ctop__h1 { font-size: clamp(22px, 2.6vw, 32px); margin-top: clamp(24px, 4vw, 48px); max-width: 24em; }
   .cgrid { display: grid; gap: 48px; padding-bottom: clamp(48px, 7vw, 96px); }
   @media (min-width: 960px) { .cgrid { grid-template-columns: 1fr 1fr; gap: 88px; } }
   .cinfo__list { margin: 24px 0 0; display: grid; gap: 0; border-top: 1px solid var(--ink); }
   .cinfo__list div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
   .cinfo__list dt { color: var(--stone); font-size: 14px; }
   .cinfo__list dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
-  .cinfo__list a { text-decoration: none; }
+  .cinfo__list a { text-decoration: none; display: inline-block; padding-block: 10px; margin-block: -10px; }
   .cinfo__list a:hover { text-decoration: underline; }
 </style>

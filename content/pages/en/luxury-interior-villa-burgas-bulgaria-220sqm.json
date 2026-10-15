@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Villa Interior Design 220 m² in Burgas | DUMSKAYA DESIGN",
- "description": "220 m² villa in Burgas: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "220 m² villa in Burgas: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Villa interior design in Burgas, custom furniture and turnkey renovation, 220 m²",
  "og_image": "6abd6b434888499d20745636",
  "alternates": {
@@ -26,35 +26,27 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed a comprehensive project for a 220 m² villa in Burgas, Bulgaria. The project combined interior design, technical documentation, the design and manufacture of bespoke furniture, and a complete turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 220 m² villa in Burgas, Bulgaria: interior design, technical documentation, custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The villa’s interior was designed with an emphasis on contemporary aesthetics, functionality, and everyday comfort. The layout solutions take into account the architectural features of the building, the relationships between rooms, the placement of furniture and appliances, the organization of storage systems, and lighting scenarios."
+       "html": "The project included a spacious living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, bathrooms, and storage areas — all rooms unified by a single concept of materials, color, and lighting."
       },
       {
        "t": "p",
-       "html": "The project covers a spacious living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, bathrooms, and functional storage areas. All rooms are united by a single interior concept in which materials, color combinations, lighting, and furniture solutions have been carefully considered."
+       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-designed and made to the dimensions of the villa’s rooms."
       },
       {
        "t": "p",
-       "html": "Custom-made furniture was designed and manufactured for the villa, including the kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems. The furniture was designed to suit the room dimensions, layout features, and overall style of the interior, which made it possible to use the space efficiently and ensure the visual coherence of the living environment."
+       "html": "Before work began, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting."
       },
       {
        "t": "p",
-       "html": "In preparation for implementation, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project."
+       "html": "The studio then carried out a turnkey renovation of the villa in Burgas: construction and finishing work, installation of the custom-made furniture, and the final fit-out of the rooms."
       },
       {
        "t": "p",
-       "html": "After the design stage was completed, a full turnkey renovation of the villa in Burgas was carried out in accordance with the developed interior solutions and technical documentation. The implementation included construction and finishing work, installation of the custom furniture, and fitting out of the living spaces."
-      },
-      {
-       "t": "p",
-       "html": "To preview the future interior, photorealistic 3D visualizations were created, making it possible to review the layout solutions, combination of materials, furniture, lighting, and overall atmosphere of the rooms before work began."
-      },
-      {
-       "t": "p",
-       "html": "The 220 m² villa project in Burgas showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to creating contemporary residential interiors — from the interior design project and technical documentation to furniture manufacturing and the finished interior."
+       "html": "The gallery features photorealistic 3D visualizations of the project."
       }
      ]
     },
@@ -115,7 +107,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -123,7 +115,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -158,7 +150,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

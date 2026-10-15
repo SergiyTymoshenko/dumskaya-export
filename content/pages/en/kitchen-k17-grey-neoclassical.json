@@ -52,7 +52,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>The K-17 standard model</strong> is an elegant neoclassical design that combines a calm gray color palette, the expressive geometry of a U-shaped layout, and the functionality of modern kitchen furniture. Solid-color fronts, a compact laminate countertop, and a well-thought-out cabinet arrangement create a harmonious interior in which traditional aesthetics are complemented by contemporary materials."
+       "html": "<strong>The K-17 standard model</strong> is a neoclassical U-shaped kitchen in a calm gray: classic aesthetics, solid-color fronts, and a modern compact laminate countertop."
       },
       {
        "t": "p",
@@ -60,15 +60,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>The kitchen’s defining feature</strong> is its U-shaped configuration, which allows the cabinets to be arranged along three sides of the room. This layout provides a convenient arrangement of work surfaces, built-in appliances, and storage."
-      },
-      {
-       "t": "p",
-       "html": "The total length of the kitchen is 6.7 linear meters. The three-sided layout allows the main functional zones to be distributed efficiently and creates comfortable conditions for cooking."
-      },
-      {
-       "t": "p",
-       "html": "With no separate island, the central part of the kitchen remains open. At the same time, the U-shaped layout provides ample work surface area and plenty of cabinets for storing dishes, food, and kitchen utensils."
+       "html": "<strong>The kitchen’s defining feature</strong> is its U-shaped layout: 6.7 linear meters of furniture along three walls. There are plenty of work surfaces and cabinets for dishes and food, while the center of the kitchen stays open — the model has no island."
       },
       {
        "t": "p",
@@ -76,19 +68,11 @@
       },
       {
        "t": "p",
-       "html": "The compact laminate countertop underscores the contemporary interpretation of a classic kitchen interior. The dense, compact structure of the material allows for sleek work surfaces that blend harmoniously with the solid-color fronts."
-      },
-      {
-       "t": "p",
        "html": "The kitchen carcass is made of 18 mm laminated chipboard."
       },
       {
        "t": "p",
-       "html": "For convenient storage, the kitchen features a cargo pull-out that makes efficient use of the cabinets’ interior space and provides easy access to food and kitchen essentials."
-      },
-      {
-       "t": "p",
-       "html": "Muller Profi Line soft-close hinges ensure the doors close smoothly. The drawers run on concealed Muller slides, which round out the kitchen’s functional hardware and support its clean aesthetic."
+       "html": "The cargo pull-out keeps food and small kitchen items close at hand. Muller Profi Line soft-close hinges close the doors smoothly, and the drawers run on concealed Muller runners."
       },
       {
        "t": "p",
@@ -168,27 +152,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN designs and makes custom kitchens for apartments, condos, and private homes in Bratislava and Vienna.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The K-17 standard model can be adapted to the specific dimensions of your room, taking into account the location of utility connections and built-in appliances, as well as the client’s storage preferences."
-      },
-      {
-       "t": "p",
-       "html": "<strong>When developing a custom design, the size of the kitchen cabinets, the placement of work surfaces, and the configuration of the U-shaped layout can be adjusted to suit the specific room.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>We offer comprehensive services covering kitchen furniture design, selection of materials and hardware, manufacturing, delivery, and professional installation.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>At the client’s request, the kitchen can also be fitted with a sink, appliances, a range hood, and plumbing fixtures.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>You can order the K-17 kitchen or get a personalized price quote from DUMSKAYA DESIGN.</strong>"
+       "html": "We make the K-17 to fit your kitchen: we adjust the cabinet sizes, the configuration of the U-shaped layout, and the appliance placement to suit your utility connections."
       }
      ]
     },
@@ -235,7 +199,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

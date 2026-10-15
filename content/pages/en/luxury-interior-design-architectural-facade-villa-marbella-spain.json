@@ -30,19 +30,11 @@
       },
       {
        "t": "p",
-       "html": "The concept aims to refresh the existing exterior while preserving harmonious architectural proportions and creating a contemporary, elegant look for the building. Carefully selected facade materials, expressive architectural details, and balanced color combinations emphasize the villa’s character and create a premium aesthetic."
+       "html": "The goal was to update the existing exterior, preserving the building’s proportions while giving it a contemporary, elegant look. The villa’s character is emphasized by the facade materials, architectural details, and color combinations."
       },
       {
        "t": "p",
-       "html": "Particular attention was given to the facade proportions, the interplay of architectural elements, the combination of textures and materials, and the overall visual coherence of the exterior. The result is a contemporary architectural concept that combines elegance, functionality, and an up-to-date style."
-      },
-      {
-       "t": "p",
-       "html": "The villa’s updated exterior is presented in photorealistic 3D visualizations, which make it possible to evaluate the proposed facade design, finishing materials, color schemes, architectural elements, and the overall character of the building even before the renovation begins."
-      },
-      {
-       "t": "p",
-       "html": "The visualization clearly shows how the existing villa can be transformed through carefully considered architectural facade solutions while maintaining a harmonious connection between the building and its surroundings."
+       "html": "The villa’s new look is shown in photorealistic 3D visualizations and a 3D tour, so the facade, finishing materials, and colors can be assessed before the renovation begins."
       },
       {
        "t": "p",
@@ -88,7 +80,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -96,7 +88,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/3d-visualization-facade-exterior-price"
       }
      ]
@@ -131,7 +123,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

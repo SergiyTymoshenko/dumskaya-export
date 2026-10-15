@@ -134,6 +134,10 @@ def main():
             if m:
                 ctx = txt[max(0, m.start() - 60): m.end() + 30].replace("\n", " ")
                 warn.append(f"гео в тексте {u}: …{ctx}…")
+    # фото, которых не было при сборке (вместо них серая заглушка .ph): сборка на Mac из оригиналов должна давать 0
+    ph = [u for u, f in pages.items() if 'class="ph' in open(f, encoding="utf-8").read()]
+    if ph:
+        warn.insert(0, f"страниц с заглушками вместо фото: {len(ph)} (нет оригиналов — проверьте вывод npm run images), например {ph[0]}")
     clash = [u for u in pages if u in redirects]
     for u in clash:
         errs.append(f"страница стоит в редиректах: {u}")

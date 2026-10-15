@@ -35,27 +35,29 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> carries out comprehensive turnkey renovations of apartments, houses, and commercial spaces in Bratislava, Vienna, and other cities across Slovakia and Austria."
+       "html": "<strong>DUMSKAYA DESIGN</strong> carries out turnkey renovations of apartments, houses, and commercial spaces in Bratislava, Vienna, and other cities across Slovakia and Austria."
       },
       {
        "t": "p",
-       "html": "We can deliver a property in full — from preparing the interior design project, technical documentation, and cost estimate to construction and finishing work, interior furnishing and procurement, custom furniture manufacturing, and final installation."
+       "html": "We can take on the entire property — from the interior design project, technical documentation, and cost estimate to construction and finishing work, procurement, custom furniture, and final installation."
       },
       {
        "t": "p",
-       "html": "The work may include demolition, building partition walls, electrical and plumbing work, preparing walls and ceilings, laying tile and flooring, painting, installing lighting, and fitting plumbing fixtures, doors, and built-in and cabinet furniture."
-      },
+       "html": "We carry out the renovation strictly according to the approved design project: the placement of furniture, lighting, electrical points, and plumbing, as well as the materials, are all defined in advance, so there are fewer changes along the way."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Turnkey renovation with a single team"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "We pay particular attention to making sure the renovation follows the approved design project precisely. This allows us to determine the placement of furniture, lighting, electrical connection points, and plumbing in advance, select materials, and reduce the number of changes made during construction itself."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Turnkey renovation with a single team</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Clients can get the full range of services from <strong>DUMSKAYA DESIGN:</strong>"
+       "html": "What <strong>DUMSKAYA DESIGN</strong> can take care of:"
       },
       {
        "t": "ul",
@@ -76,167 +78,253 @@
       },
       {
        "t": "p",
-       "html": "We can also carry out individual stages of a renovation if the design project or part of the work has already been completed by another contractor."
-      },
+       "html": "You can also order individual stages — for example, if the design project or part of the work has already been completed by another contractor."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "The work we carry out"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>Types of renovation and construction work we carry out</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> carries out the full range of construction, engineering, and finishing work for apartments, houses, and commercial spaces."
-      },
-      {
-       "t": "p",
-       "html": "Depending on the property and the chosen delivery format, we can carry out either a complete turnkey renovation or individual stages of the work."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Demolition and preparatory work</strong>"
-      },
+       "html": "Our main types of construction, engineering, and finishing work:"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Demolition and preparatory work"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Removal of partition walls, flooring, tile, ceiling structures, doors, plumbing fixtures, and other existing interior elements. Preparing the space for construction and engineering work to begin."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Partition walls and general construction work</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Partition walls and general construction work"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Building new partition walls from blocks and drywall, creating niches, enclosures, and decorative structures, preparing openings, leveling surfaces, and other construction work according to the project documentation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Electrical work</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Electrical work"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Running new electrical wiring, installing and relocating outlets and switches, installing electrical panels and connection points for household appliances, lighting, LED accent lighting, and other electrical equipment."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Plumbing work</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Plumbing work"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Laying out water supply and drain lines, relocating plumbing points, installing in-wall toilet frames, bathtubs, shower systems, washbasins, faucets, kitchen plumbing fixtures, and other equipment."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Heating and building systems</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Heating and building systems"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Installing and relocating radiators, preparing connections for heating equipment, installing underfloor heating, and carrying out other engineering work in line with the technical capabilities of the property."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Plastering and painting</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Plastering and painting"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Leveling walls and ceilings, plastering, skim coating, priming, preparing surfaces for paint or decorative finishes, and painting walls and ceilings."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Drywall work</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Drywall work"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Installation of drywall ceilings, partitions, niches, enclosures, curtain cornices, concealed lighting, and other interior structures."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Tiling</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Tiling"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Laying ceramic and porcelain tile, mosaics, and large-format materials in bathrooms, kitchens, entrance halls, and other rooms."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Flooring</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Flooring"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Subfloor preparation and installation of parquet, engineered wood, laminate, SPC, vinyl flooring, tile, and other types of floor materials."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Installation of doors and decorative elements</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Installation of doors and decorative elements"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Installation of interior and concealed doors, baseboards, decorative panels, moldings, and other interior elements."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Lighting</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Lighting"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Installation of recessed and surface-mounted fixtures, pendant lighting, track systems, decorative accent lighting, and LED profiles."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Installation of plumbing fixtures and equipment</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Installation of plumbing fixtures and equipment"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Installation of toilets, bathtubs, shower enclosures and screens, faucets, sinks, heated towel racks, mirrors, and other equipment."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Custom furniture</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Custom furniture"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Design, manufacturing, delivery, and installation of kitchens, built-in wardrobes, walk-in closets, TV walls, wall panels, bathroom furniture, and other made-to-measure cabinet furniture."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Interior furnishing and procurement</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Interior furnishing and procurement"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Selection and ordering of finishing materials, plumbing fixtures, lighting, doors, furniture, and other interior elements in line with the approved design project."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Final installation and move-in preparation</strong>"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Final installation and move-in preparation"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Installation of furniture, lighting, plumbing fixtures, and decorative elements, completion of installation work, and getting the interior ready for use."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Renovation cost"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The cost depends on the size and condition of the property, the scope of demolition and construction work, the complexity of the engineering solutions, the materials, the level of furnishing, and the timeline."
       },
       {
        "t": "p",
-       "html": "<strong>Renovation cost</strong>"
+       "html": "For a preliminary assessment, send us a floor plan of the space, a design project, or any existing technical documentation. Based on these, we will give you an approximate cost, and once the scope of work has been clarified, we will prepare a detailed cost estimate."
       },
       {
        "t": "p",
-       "html": "The cost of a renovation is calculated individually and depends on the size and condition of the property, the scope of demolition and construction work, the complexity of the engineering solutions, the chosen materials, the level of furnishing, and the required timeline."
-      },
-      {
-       "t": "p",
-       "html": "For a preliminary assessment, you can send us a floor plan of the space, a design project, or any existing technical documentation. After reviewing the initial information, we will prepare an approximate cost, and once the scope of work has been clarified, a detailed cost estimate."
-      },
-      {
-       "t": "p",
-       "html": "For properties without a finished project, we recommend preparing a design project and technical documentation first. This makes it possible to calculate the renovation budget more accurately before construction begins and reduces the number of additional decisions that have to be made during implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Full-cycle interior delivery</strong>"
-      },
-      {
-       "t": "p",
-       "html": "With full-cycle delivery, <strong>DUMSKAYA DESIGN</strong> can guide a property from interior design and technical documentation through renovation, furnishing, and furniture installation."
-      },
-      {
-       "t": "p",
-       "html": "This format makes it possible to coordinate all the key stages within a single project and bring the interior to life as close as possible to the approved visualizations and technical solutions."
+       "html": "If there is no finished design yet, we recommend starting with a design project and technical documentation: the renovation budget will be more accurate, and fewer decisions will have to be made on the fly."
       }
      ]
     },
@@ -291,7 +379,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

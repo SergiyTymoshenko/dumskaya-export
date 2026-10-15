@@ -22,9 +22,13 @@
      "text": "Concept design with 3D visualization of building facades and surroundings"
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "For this project, DUMSKAYA DESIGN (Bratislava, Slovakia) developed a unique concept design for the facade, presented in two versions: budget and premium. We also paid attention to the landscape and to blending the house harmoniously into its surroundings."
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "For this house, DUMSKAYA DESIGN (Bratislava, Slovakia) developed a concept design for the facade in budget and premium versions, as well as landscaping that blends the house into its surroundings."
+      }
+     ]
     },
     {
      "type": "heading",
@@ -36,11 +40,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "For this option, we used affordable yet high-quality materials while keeping the look attractive and contemporary. Minimalist decor emphasizes the style of the house, creating a neat and functional facade."
+       "html": "Affordable yet high-quality materials and minimalist decor: the result is a contemporary, neat, and functional facade."
       },
       {
        "t": "p",
-       "html": "We also analyzed the site to select the best plantings and pathways made of inexpensive yet durable materials. The landscape design highlights the natural beauty of the surroundings while staying within a limited budget."
+       "html": "Plants were selected based on an analysis of the site, and the pathways are made of inexpensive yet durable materials. The landscaping highlights the natural surroundings and stays within a limited budget."
       }
      ]
     },
@@ -54,11 +58,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "This option features high-end finishing materials such as natural stone, premium plaster, and wood paneling. Exclusive decorative elements add elegance to the facade and emphasize the individuality of the house."
+       "html": "The finishes are natural stone, premium plaster, and wood paneling. Exclusive decorative elements make the facade elegant and emphasize the character of the house."
       },
       {
        "t": "p",
-       "html": "The landscape design focuses on a premium feel: rare ornamental plants, lounge areas with integrated architectural lighting, and pathways made of fine natural stone. Every detail blends harmoniously with the architecture of the house and the surrounding nature."
+       "html": "Premium-level landscaping: rare ornamental plants, lounge areas with architectural lighting, and pathways made of fine natural stone. Every detail blends with the architecture of the house and the surrounding nature."
       }
      ]
     },
@@ -72,7 +76,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "We paid special attention to making the facade and the surrounding grounds blend organically into the environment. As a result, the house looks like a natural part of the landscape, striking a balance between architecture and nature."
+       "html": "The facade and the surrounding grounds were designed with the environment in mind, so the house looks like a natural part of the landscape."
       }
      ]
     },
@@ -202,13 +206,13 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "3D tour of a cottage complex"
+     "text": "3D tour of the housing development"
     },
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -216,7 +220,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/3d-visualization-facade-exterior-price"
       }
      ]
@@ -251,7 +255,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

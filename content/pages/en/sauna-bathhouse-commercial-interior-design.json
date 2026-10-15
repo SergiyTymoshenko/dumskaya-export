@@ -4,7 +4,7 @@
  "type": "project",
  "group": "commercial",
  "title": "Sauna and Bathhouse Interior Design 120 m² | DUMSKAYA DESIGN",
- "description": "120 m² sauna and bathhouse: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "120 m² sauna and bathhouse: interior design and furniture design. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Commercial sauna and spa interior design, 120 m²",
  "og_image": "6abe044a6bbe610384497c6d",
  "alternates": {
@@ -26,23 +26,23 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 120 m² commercial sauna and spa. The interior concept combines functional planning, guest comfort, and a contemporary aesthetic for a space dedicated to relaxation and wellness treatments."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 120 m² commercial sauna and spa — a space for relaxation and wellness treatments."
       },
       {
        "t": "p",
-       "html": "The project included an overall style concept, layout solutions, and functional zoning. The space includes a reception area, a changing room with showers, restrooms, a lounge area, shared circulation areas, and a massage room. The layout is organized to ensure a logical visitor flow and convenient operation of the commercial facility."
+       "html": "The layout includes a reception area, a changing room with showers, restrooms, a relaxation area, a massage room, and circulation spaces; the rooms are arranged to follow the guest’s route through the space."
       },
       {
        "t": "p",
-       "html": "Special attention was paid to the atmosphere of the interior, ergonomics, and the way the different functional areas work together. Custom furniture was also designed for the premises, matching the overall concept and making efficient use of the available space."
+       "html": "Custom furniture was designed for the spaces in keeping with the project’s overall style."
       },
       {
        "t": "p",
-       "html": "The client can use the interior design project to carry out the work independently, or it can serve as the basis for full project delivery by <strong>DUMSKAYA DESIGN</strong> specialists. Depending on the task, the range of services can include design supervision, turnkey renovation, and the design and manufacture of custom furniture."
+       "html": "Using the design project, the client can carry out the work independently or entrust it to <strong>DUMSKAYA DESIGN</strong>, with design supervision, a turnkey renovation, and custom furniture manufacturing."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> offers interior design for saunas, steam baths, spas, and wellness spaces in Bratislava and Vienna. We design commercial interiors that take into account the specifics of the business, technical requirements, visitor comfort, and efficient use of floor area — from concept and design documentation to custom furniture and full project delivery."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs saunas, steam baths, spas, and wellness spaces in Bratislava and Vienna — from concept and design documentation to custom furniture and turnkey delivery."
       }
      ]
     },
@@ -239,7 +239,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -247,7 +247,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -282,7 +282,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

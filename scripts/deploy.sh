@@ -29,7 +29,12 @@ node scripts/images.mjs
 echo "▸ 2/5 Сборка"
 PUBLIC_ANALYTICS=1 npx astro build >/dev/null
 echo "▸ 3/5 Проверка"
-python3 scripts/check_site.py | sed -n '1,2p'
+CHECK="$(mktemp)"
+if ! python3 scripts/check_site.py >"$CHECK"; then
+  cat "$CHECK"; rm -f "$CHECK"
+  echo "Проверка нашла ошибки — выкладка остановлена. Пришлите Claude этот вывод."; exit 1
+fi
+grep -E '^(страниц|ошибок)|заглушк' "$CHECK"; rm -f "$CHECK"
 python3 scripts/build_caddy.py
 
 echo "▸ 4/5 Выкладка на $HOST"

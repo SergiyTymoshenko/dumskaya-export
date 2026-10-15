@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Дизайн квартири 56 м² у Братиславі, Eurovea City",
- "description": "Квартира 56 м² (Eurovea City) у Братиславі: дизайн-проєкт, 3D-візуалізація та меблі на замовлення. Студія DUMSKAYA DESIGN у Братиславі та Відні.",
+ "description": "Квартира 56 м² (Eurovea City) у Братиславі: дизайн-проєкт (пакет «Меблі»), 3D-візуалізація та меблі на замовлення.",
  "h1": "Дизайн інтер’єру квартири в Eurovea City, Братислава, меблі на замовлення, 56 м²",
  "og_image": "6abd6a8168c5e81567a1bfb4",
  "alternates": {
@@ -183,7 +183,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Технічна документація, розроблена в межах дизайн-пакету інтер’єру «Меблі»"
+     "text": "Технічна документація, розроблена в межах дизайн-пакету «Меблі»"
     },
     {
      "type": "gallery",
@@ -346,7 +346,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Назад",
+       "text": "Усі проєкти",
        "href": "/ua/realizovani-dyzain-proekty-ta-arkhitekturni-rishennia"
       },
       {
@@ -354,7 +354,7 @@
        "href": "/ua/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Ціни на пакети послуг",
+       "text": "Ціни на дизайн-пакети",
        "href": "/ua/tsina-dyzain-proektiv-interieru-bratislava-wien-praha"
       }
      ]

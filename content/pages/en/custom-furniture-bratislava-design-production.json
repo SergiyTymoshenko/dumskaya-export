@@ -26,28 +26,27 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>The “Furniture” interior design package — €35–45/m²</strong>"
+       "html": "<strong>“Furniture”</strong> is a package for apartments, houses, and commercial spaces where the finishing work is already done and what remains is to design, manufacture, and install custom furniture."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> offers a dedicated “Furniture” design package for apartments, houses, and commercial spaces where the main finishing work has already been completed and custom furniture now needs to be properly designed, manufactured, and installed."
-      },
-      {
-       "t": "p",
-       "html": "The package gives you not only a visual concept of the future interior but also a complete set of furniture drawings — the technical specification needed to manufacture bespoke cabinet furniture."
-      },
-      {
-       "t": "p",
-       "html": "It is the optimal solution if the space is already ready to be furnished and you need to plan the furniture arrangement, storage systems, kitchen, wardrobes, walk-in closets, and other built-in furniture."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What’s included in the “Furniture” package</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>1. Set of drawings</strong>"
-      },
+       "html": "You receive a 3D interior concept and a complete set of furniture drawings — the technical specification for manufacturing kitchens, wardrobes, walk-in closets, and other cabinet furniture."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What’s included in the “Furniture” package"
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "1. Set of drawings"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Includes:"
@@ -61,43 +60,57 @@
       },
       {
        "t": "p",
-       "html": "The layout makes it possible to determine furniture placement in advance and organize the space around the room’s dimensions, circulation paths, ergonomics, and functional requirements."
-      },
-      {
-       "t": "p",
-       "html": "<strong>2. 3D visualization of every room</strong>"
-      },
+       "html": "The layout shows where the furniture will go, taking into account the room’s dimensions, circulation, ergonomics, and your needs."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "2. 3D visualization of every room"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Photorealistic 3D visualizations are created for each room, letting you see the future interior and furniture before production even begins."
       },
       {
        "t": "p",
-       "html": "The package price includes one full round of revisions to the developed concept."
+       "html": "The price includes one full round of revisions to the concept."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3. Development of furniture drawings"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Once the design is approved, we prepare a complete set of furniture drawings: the dimensions, configuration, interior fittings, and construction of each piece."
       },
       {
        "t": "p",
-       "html": "<strong>3. Development of furniture drawings</strong>"
-      },
+       "html": "With these drawings, the furniture can go straight into production."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What furniture can be designed"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "Once the design is approved, a complete set of furniture drawings is prepared — the technical specification for manufacturing the custom furniture."
-      },
-      {
-       "t": "p",
-       "html": "The dimensions, configuration, interior fittings, and main structural solutions of the bespoke furniture are worked out in detail."
-      },
-      {
-       "t": "p",
-       "html": "As a result, you receive a project from which the furniture can go straight into production."
-      },
-      {
-       "t": "p",
-       "html": "<strong>What furniture can be designed</strong>"
-      },
-      {
-       "t": "p",
-       "html": "As part of the project, we can design bespoke cabinet furniture for all the main rooms:"
+       "html": "We design custom cabinet furniture for all the main rooms:"
       },
       {
        "t": "ul",
@@ -113,35 +126,39 @@
         "workspaces and home offices;",
         "furniture for commercial spaces."
        ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Custom furniture manufacturing"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Based on the finished drawings, <strong>DUMSKAYA DESIGN</strong> can manufacture the furniture at its own production facility, deliver it, and install it. The entire process — from measurements and 3D visualization to manufacturing and installation — is handled within a single project."
       },
       {
        "t": "p",
-       "html": "Each solution is designed individually to fit the dimensions of the specific room, the architecture of the space, and the client’s requirements."
+       "html": "Furniture made to custom dimensions is especially helpful in kitchens, built-in wardrobes, and walk-in closets, where every centimeter counts."
       },
       {
        "t": "p",
-       "html": "<strong>Custom furniture manufacturing</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Once the design stage is complete, <strong>DUMSKAYA DESIGN</strong> can arrange for the furniture to be manufactured according to the drawings developed."
-      },
-      {
-       "t": "p",
-       "html": "This lets you go through the entire process within a single project: from measurements, layout, and 3D visualization to working furniture drawings, manufacturing, delivery, and installation."
-      },
-      {
-       "t": "p",
-       "html": "Custom manufacturing is especially important for kitchens, built-in wardrobes, walk-in closets, and other structures where the available space needs to be used as efficiently as possible."
-      },
-      {
-       "t": "p",
-       "html": "The design takes into account the room’s dimensions, the location of utilities and built-in appliances, the required storage capacity, ergonomics, and the overall style of the interior."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Who the “Furniture” package is for</strong>"
-      },
+       "html": "We take into account the room’s dimensions, the location of utilities and built-in appliances, the required storage capacity, ergonomics, and the style of the interior."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Who the “Furniture” package is for"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "The package is ideal if:"
@@ -160,7 +177,7 @@
       },
       {
        "t": "p",
-       "html": "This way, you don’t need to order a full design project with an extensive set of construction documentation if the main renovation work has already been done."
+       "html": "If the renovation is already done, you don’t need a full design project with construction drawings like the one in the “Basic” package."
       },
       {
        "t": "p",
@@ -173,18 +190,20 @@
       {
        "t": "p",
        "html": "The final cost depends on the floor area of the property, the number of rooms, the amount of furniture to be designed, and the complexity of the project."
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What you get"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "What you get"
-      },
-      {
-       "t": "p",
-       "html": "As a result, you receive an approved furnishing concept for the space, furniture layout plans, photorealistic 3D visualizations, and a complete set of furniture drawings for manufacturing your custom furniture."
-      },
-      {
-       "t": "p",
-       "html": "<strong>If you also order manufacturing, the project can be delivered end to end — including production, delivery, and installation of the designed furniture.</strong>"
+       "html": "An approved furnishing concept, furniture layout plans, photorealistic 3D visualizations, and a complete set of furniture drawings for production."
       },
       {
        "t": "p",
@@ -266,7 +285,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -2,6 +2,7 @@
 import Img from '../components/Img.astro';
 import Tile from '../components/Tile.astro';
 import Parts from '../components/Parts.astro';
+import Caps from '../components/Caps.astro';
 import { ui, type Lang } from '../lib/i18n';
 import { projectsFor, splitCaption, localize, isServicesSection, site, type Page, type Part } from '../lib/data';
 import home from '../../content/home.json';
@@ -44,14 +45,15 @@ const heroTitle = lang === 'en' ? 'Interior design, custom furniture and turnkey
 <section class="hero">
   <Img id={home.hero} alt={heroTitle} sizes="100vw" eager class="hero__img" />
   <div class="hero__cap">
-    <h1 class="hero__title display">{heroTitle}</h1>
+    <h1 class="hero__title display"><Caps text={heroTitle} /></h1>
     <p class="hero__city">{T.city}</p>
+    {contact && <a class="btn hero__btn" href={contact}>{T.heroCta}</a>}
   </div>
 </section>
 
 <section class="studio section wrap" aria-labelledby="about">
   <figure class="studio__photo">
-    <Img id={home.portrait} alt="Ирина Думская — DUMSKAYA DESIGN" sizes="(min-width: 960px) 34vw, 100vw" />
+    <Img id={home.portrait} alt={T.portrait} sizes="(min-width: 960px) 34vw, 100vw" />
   </figure>
   <div class="studio__text">
     <h2 id="about" class="section-title">{T.about}</h2>
@@ -125,10 +127,14 @@ const heroTitle = lang === 'en' ? 'Interior design, custom furniture and turnkey
   .hero__cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 0 var(--pad) clamp(32px, 6vh, 64px); color: #fff; text-align: center; text-shadow: 0 1px 14px rgba(0,0,0,.35); }
   .hero__title { color: #fff; font: 400 clamp(15px, 2vw, 26px)/1.5 var(--caption); letter-spacing: 0.24em; padding-left: 0.24em; max-width: 34ch; margin: 0 auto; }
   .hero__city { margin: 14px 0 0; font-size: 14px; letter-spacing: 0.08em; }
+  .hero__btn { margin-top: 22px; color: #fff; border-color: rgba(255,255,255,.85); text-shadow: none; backdrop-filter: blur(2px); background: rgba(0,0,0,.12); }
+  .hero__btn:hover { background: #fff; color: var(--ink); border-color: #fff; }
 
   .studio { display: grid; gap: clamp(28px, 5vw, 80px); align-items: start; }
   @media (min-width: 960px) { .studio { grid-template-columns: 5fr 7fr; } }
   .studio__photo { margin: 0; }
+  /* на телефоне сначала текст и кнопки, портрет — после */
+  @media (max-width: 959px) { .studio__photo { order: 2; max-width: 420px; } }
   .studio__photo :global(img) { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
   .studio__text .section-title { margin-bottom: 24px; }
   .studio__more summary { cursor: pointer; display: inline-block; margin-bottom: 1em; color: var(--ink); text-decoration: underline; text-underline-offset: .2em; text-decoration-thickness: 1px; }
@@ -139,8 +145,9 @@ const heroTitle = lang === 'en' ? 'Interior design, custom furniture and turnkey
   .head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; padding-block: 0 24px; }
   .head__link { font-size: 15px; white-space: nowrap; }
   .services { padding-top: clamp(48px, 8vw, 112px); }
+  .benefits + .services { padding-top: 0; }
 
-  .benefits__title { max-width: 40ch; margin-bottom: clamp(28px, 4vw, 48px); }
+  .benefits__title { max-width: 32em; margin-bottom: clamp(28px, 4vw, 48px); }
   .benefits__grid { display: grid; gap: 32px 48px; border-top: 1px solid var(--line); padding-top: 32px; }
   @media (min-width: 720px) { .benefits__grid { grid-template-columns: 1fr 1fr; } }
   @media (min-width: 1100px) { .benefits__grid { grid-template-columns: repeat(3, 1fr); } }

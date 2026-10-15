@@ -1,8 +1,20 @@
 ---
-// Текст для заголовков заглавными буквами: единицы площади (м², m²) остаются строчными,
-// чтобы не превращаться в «М²».
+// Текст для заголовков и подписей заглавными буквами:
+// — единицы площади (м², m²) остаются строчными, чтобы не превращаться в «М²»;
+// — слова через дефис («дизайн-проект») не разрываются между строк;
+// — короткие слова и числа с единицами привязаны неразрывным пробелом (lib/typo).
+import { typo } from '../lib/typo';
 interface Props { text: string }
 const { text } = Astro.props;
-const parts = String(text ?? '').split(/((?<=\d\s?|\/)(?:м²|m²|м2|m2)(?![0-9A-Za-zА-Яа-яЁё]))/);
+const s = typo(String(text ?? ''));
+const RE = /((?<=\d[\s ]?|\/)(?:м²|m²|м2|m2)(?![0-9A-Za-zА-Яа-яЁё]))|([^\s ]+-[^\s ]+)/g;
+const out: { t: string; k: 0 | 1 | 2 }[] = [];
+let last = 0;
+for (const m of s.matchAll(RE)) {
+  if (m.index! > last) out.push({ t: s.slice(last, m.index), k: 0 });
+  out.push({ t: m[0], k: m[1] ? 1 : 2 });
+  last = m.index! + m[0].length;
+}
+if (last < s.length) out.push({ t: s.slice(last), k: 0 });
 ---
-{parts.map((p, i) => (i % 2 ? <span class="unit">{p}</span> : p))}
+{out.map((p) => (p.k === 1 ? <span class="unit">{p.t}</span> : p.k === 2 ? <span class="nw">{p.t}</span> : p.t))}

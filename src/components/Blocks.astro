@@ -4,7 +4,8 @@
 import Img from './Img.astro';
 import Tile from './Tile.astro';
 import Parts from './Parts.astro';
-import { splitCaption, type Section } from '../lib/data';
+import { splitCaption, pageByPath, type Section } from '../lib/data';
+import { typo } from '../lib/typo';
 import Caps from './Caps.astro';
 import LeadForm from './LeadForm.astro';
 import type { Lang } from '../lib/i18n';
@@ -12,13 +13,29 @@ import type { Lang } from '../lib/i18n';
 interface Props { sections: Section[]; skipH1?: boolean; lang?: Lang }
 const { sections, skipH1 = false, lang = 'ru' } = Astro.props;
 let formN = 0;
+// Уровни заголовков без пропусков: подзаголовок, встретившийся до первого H2, выводится как H2
+// (выглядит так же, как H3), чтобы после H1 не шёл сразу H3.
+let seenH2 = false;
+// Карточки моделей кухонь: подпись «K-09» и описание из заголовка страницы, порядок — по номеру модели.
+const kitchenNo = (href: string | null) => {
+  const p = href ? pageByPath.get(href) : null;
+  if (!p || p.type !== 'kitchen') return null;
+  const n = (p.alternates.ru || p.path).match(/k-?(\d{2})/i)?.[1];
+  if (!n) return null;
+  const d = p.title.split('|')[0].split(':').slice(1).join(':').trim();
+  return { n: Number(n), title: `K-${n}`, sub: d ? d[0].toUpperCase() + d.slice(1) : '' };
+};
+// Основная (чёрная) кнопка — заявка/консультация, если она есть в наборе; иначе первая.
+const isLeadBtn = (x: { text: string; href: string | null }) =>
+  !!x.href && (/contact|kontakt|#lead/i.test(x.href) || /консультац|consultation|заявк|замов.*консультац/i.test(x.text));
 ---
 {sections.map((s) => (
   <section class="blk">
     {s.blocks.map((b) => {
       if (b.type === 'heading') {
         if (b.level === 1) return skipH1 ? null : <h1 class="blk__h1 display wrap"><Caps text={b.text} /></h1>;
-        if (b.level >= 3) return <h3 class="blk__h3 wrap">{b.text}</h3>;
+        if (b.level >= 3) return seenH2 ? <h3 class="blk__h3 wrap">{typo(b.text)}</h3> : <h2 class="blk__h3 wrap">{typo(b.text)}</h2>;
+        seenH2 = true;
         return <h2 class="section-title blk__h wrap"><Caps text={b.text} /></h2>;
       }
       if (b.type === 'text') return <div class="wrap blk__text"><Parts parts={b.parts} /></div>;
@@ -29,20 +46,28 @@ let formN = 0;
       );
       if (b.type === 'cards') {
         const three = b.items.length >= 6;
+        const kit = b.items.map((c) => kitchenNo(c.href));
+        const items = kit.every(Boolean)
+          ? b.items.map((c, i) => ({ c, k: kit[i]! })).sort((x, y) => x.k.n - y.k.n)
+          : b.items.map((c) => ({ c, k: null }));
         return (
           <div class:list={['tiles', three && 'tiles--3']}>
-            {b.items.map((c) => {
-              const [name, area] = splitCaption(c.title);
-              return <Tile href={c.href} image={c.image?.id} alt={c.image?.alt} title={name} sub={area} sizes={three ? '(min-width: 960px) 33vw, 50vw' : '(min-width: 720px) 50vw, 100vw'} />;
+            {items.map(({ c, k }) => {
+              const [name, area] = k ? [k.title, k.sub] : splitCaption(c.title);
+              return <Tile href={c.href} image={c.image?.id} alt={c.image?.alt || (k ? `${k.title} ${k.sub}` : '')} title={name} sub={area} sizes={three ? '(min-width: 960px) 33vw, 50vw' : '(min-width: 720px) 50vw, 100vw'} />;
             })}
           </div>
         );
       }
-      if (b.type === 'buttons') return (
-        <div class="wrap blk__btns">
-          {b.items.map((x, i) => x.href && <a class:list={['btn', i === 0 && 'btn--solid']} href={x.href}>{x.text}</a>)}
-        </div>
-      );
+      if (b.type === 'buttons') {
+        const items = b.items.filter((x) => x.href);
+        const main = Math.max(0, items.findIndex(isLeadBtn));
+        return (
+          <div class="wrap blk__btns">
+            {items.map((x, i) => <a class:list={['btn', i === main && 'btn--solid']} href={x.href}>{x.text}</a>)}
+          </div>
+        );
+      }
       if (b.type === 'faq') return (
         <div class="wrap blk__faq">
           {b.items.map((f) => (
@@ -69,8 +94,8 @@ let formN = 0;
 
 <style>
   .blk { padding-block: clamp(16px, 3vw, 40px); }
-  .blk__h1 { font-size: clamp(20px, 2.4vw, 30px); margin-block: 8px 24px; max-width: 30ch; }
-  .blk__h { margin-block: 24px 20px; max-width: 40ch; }
+  .blk__h1 { font-size: clamp(20px, 2.4vw, 30px); margin-block: 8px 24px; max-width: 30em; }
+  .blk__h { margin-block: 24px 20px; max-width: 34em; }
   .blk__text { margin-block: 8px 24px; }
   .blk__gallery { display: grid; gap: var(--gap); grid-template-columns: 1fr; margin-block: 16px; }
   @media (min-width: 720px) { .blk__gallery { grid-template-columns: 1fr 1fr; } .blk__gallery.is-single { grid-template-columns: 1fr; } }

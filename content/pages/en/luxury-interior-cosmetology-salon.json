@@ -4,7 +4,7 @@
  "type": "project",
  "group": "commercial",
  "title": "Cosmetology Salon Interior Design 54 m² | DUMSKAYA DESIGN",
- "description": "54 m² cosmetology salon: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "54 m² cosmetology salon: interior design (“Express” package), 3D visualization and technical drawings. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Skincare clinic interior design, 54 m²",
  "og_image": "6abe045b3ba7c7b833963e2b",
  "alternates": {
@@ -30,19 +30,15 @@
       },
       {
        "t": "p",
-       "html": "The salon layout was developed with the specifics of skincare treatments and daily workflows in mind. The project includes a reception and waiting area, treatment rooms, and a restroom. Functional zoning makes rational use of the floor area and ensures convenient movement for clients and staff."
+       "html": "The layout includes a reception and waiting area, treatment rooms, and a restroom; the rooms are arranged around the flow of treatments and the movement of clients and staff."
       },
       {
        "t": "p",
-       "html": "In designing the interior, special attention was paid to ergonomics, lighting, the organization of work areas, and creating a modern, professional atmosphere. The interior combines aesthetic solutions with the practical requirements typical of skincare and beauty spaces."
+       "html": "The project included photorealistic 3D visualizations and technical documentation for implementation."
       },
       {
        "t": "p",
-       "html": "The project includes photorealistic 3D visualizations and the technical documentation needed to understand the interior concept and subsequently implement the design solutions."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> offers interior design for skincare clinics, aesthetic medicine clinics, beauty salons, and other commercial spaces in Bratislava and Vienna. We develop projects that take into account the specifics of the business, the size of the premises, functional requirements, and the client’s wishes."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs skincare clinics, aesthetic medicine clinics, and beauty salons in Bratislava and Vienna, taking into account the specifics of the business and the size of the premises."
       }
      ]
     },
@@ -233,7 +229,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -241,7 +237,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -276,7 +272,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

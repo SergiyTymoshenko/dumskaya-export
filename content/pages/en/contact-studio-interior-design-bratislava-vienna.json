@@ -26,70 +26,12 @@
      "parts": [
       {
        "t": "p",
-       "html": "You can call us, message us on <strong>Telegram </strong>or <strong>WhatsApp, </strong>or submit a request through the form."
-      }
-     ]
-    },
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Design studio Bratislava, Slovakia Súkennícka 1, 821 09 Ružinov, Bratislava +421 918 17 77 85 Design studio Vienna, Austria +43 677 61430187 Design studio Kyiv, Ukraine +38 095 366 25 75",
-       "href": "tel:+421918177785",
-       "image": null
-      },
-      {
-       "title": "dumskaya.design@gmail.com",
-       "href": "mailto:dumskaya.design@gmail.com",
-       "image": null
-      },
-      {
-       "title": "https://dumskaya-design.com",
-       "href": "/en",
-       "image": null
-      }
-     ]
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Free consultation booking form"
+       "html": "Call us, message us on <strong>Telegram</strong> or <strong>WhatsApp</strong>, or submit a request through the form — we will reply within one business day."
       }
      ]
     },
     {
      "type": "form"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Thank you!"
-      },
-      {
-       "t": "p",
-       "html": "We will contact you shortly."
-      },
-      {
-       "t": "p",
-       "html": "OK"
-      },
-      {
-       "t": "p",
-       "html": "Your message couldn’t be sent"
-      },
-      {
-       "t": "p",
-       "html": "Please try again later."
-      },
-      {
-       "t": "p",
-       "html": "OK"
-      }
-     ]
     }
    ]
   },
@@ -121,7 +63,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

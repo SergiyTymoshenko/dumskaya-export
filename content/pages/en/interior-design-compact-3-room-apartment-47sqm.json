@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Three-room Apartment Interior Design 47 m² | DUMSKAYA DESIGN",
- "description": "47 m² three-room apartment: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "47 m² three-room apartment: interior design. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Interior design project example: a 3-room (two-bedroom) apartment in just 47 m²",
  "og_image": "66a181999313b53dae626968",
  "alternates": {
@@ -26,15 +26,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "A story from <strong>DUMSKAYA DESIGN</strong> (Bratislava, Slovakia)"
-      },
-      {
-       "t": "p",
        "html": "A client came to our studio with a challenging task: to organize a living space for a young family in just 47 m². We needed to plan a living room combined with a kitchen, a convenient bathroom, a spacious children’s room with a study area, and a cozy bedroom."
       },
       {
        "t": "p",
-       "html": "We developed an open-plan layout in which the living room and kitchen merge into a single bright space, perfect for spending time together and entertaining guests. The bathroom was positioned so that it is easily accessible from all rooms. In the children’s room, we created a cozy place for sleeping, playing, and studying, using multifunctional furniture and smart storage systems and incorporating the balcony into the living area. The parents’ bedroom, although compact, turned out very cozy and private thanks to careful zoning and the choice of color palette."
+       "html": "The living room and kitchen were combined into a single bright space for the family and guests. The bathroom was positioned so that it is accessible from every room. In the children’s room, the balcony was joined to the living area, and spaces for sleeping, playing, and studying were organized with multifunctional furniture and storage systems. Thanks to zoning and the color palette, the compact parents’ bedroom turned out cozy and private."
       },
       {
        "t": "p",
@@ -127,7 +123,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -135,7 +131,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -170,7 +166,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

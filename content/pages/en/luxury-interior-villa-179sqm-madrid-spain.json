@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Villa Interior Design 179 m² in Madrid | DUMSKAYA DESIGN",
- "description": "179 m² villa in Madrid: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "179 m² villa in Madrid: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Villa interior design project, Madrid, Spain, 179 m²",
  "og_image": "66d8771b691bf08b5b13a8cf",
  "alternates": {
@@ -26,11 +26,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "In this project, the <strong>DUMSKAYA DESIGN</strong> interior design studio (Bratislava, Slovakia) delivered the full scope of work: interior design, technical documentation, the design and manufacture of custom furniture, and a turnkey renovation. The design covered every room: the living room, bedroom, a kitchen with custom interior fittings and built-in appliances, walk-in closets, the entrance hall, bathroom, wardrobes, and shelving. Furniture was custom-designed for each area. Before the renovation began, the client received a detailed cost estimate for labor, building materials, furniture, appliances, plumbing fixtures, light fixtures, and more."
+       "html": "For a 179 m² villa in Madrid, the <strong>DUMSKAYA DESIGN</strong> studio (Bratislava, Slovakia) delivered the full cycle of work: interior design, technical documentation, custom furniture manufacturing, and a turnkey renovation. The design covered the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom; furniture designed by the studio was made for each area."
       },
       {
        "t": "p",
-       "html": "Shown here are 3D visualizations of the private house."
+       "html": "Before the renovation began, the client received a detailed cost estimate for labor, materials, furniture, appliances, plumbing fixtures, and lighting. The gallery features 3D visualizations of the villa."
       }
      ]
     },
@@ -175,7 +175,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -183,7 +183,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -218,7 +218,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

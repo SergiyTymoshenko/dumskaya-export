@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 120 m² in London, modern classic",
- "description": "120 m² modern classic apartment in London: design project, 3D visualization and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "120 m² modern classic apartment in London: interior design, 3D visualization, technical drawings, custom furniture and turnkey renovation.",
  "h1": "Modern Classic apartment interior design in London, furniture and turnkey renovation, 120 m²",
  "og_image": "6abceda061617a4443aa9440",
  "alternates": {
@@ -26,27 +26,27 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 120 m² apartment in London, United Kingdom. The project combined interior design, technical documentation, bespoke furniture, and a complete turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 120 m² apartment in London, United Kingdom: interior design, technical documentation, custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The interior is designed in a contemporary classic style (<strong>Modern Classic</strong>). Classic proportions and decorative elements are combined with a modern spatial layout, clean forms, carefully selected materials, and well-thought-out lighting scenarios. The result is an elegant, functional interior with a fresh interpretation of classic aesthetics."
+       "html": "The interior is designed in a contemporary classic style (<strong>Modern Classic</strong>): classic proportions and decorative elements are combined with a modern layout, clean forms, and several lighting scenarios."
       },
       {
        "t": "p",
-       "html": "The layout and interior solutions cover the living room, bedroom, a kitchen with built-in appliances, walk-in closets, an entrance hall, a bathroom, and functional storage systems. Special attention was paid to ergonomics, the relationship between rooms, and efficient use of the apartment’s floor area."
+       "html": "The project included the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, bathroom, and storage systems."
       },
       {
        "t": "p",
-       "html": "Custom furniture was designed and manufactured for the project, including the kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems. The furniture was designed as part of the overall interior concept, which made it possible to integrate it precisely into the architecture of the rooms and maintain a consistent style throughout the space."
+       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-made as part of the overall interior concept."
       },
       {
        "t": "p",
-       "html": "Before work began, a detailed cost estimate was prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project. After the design stage, a full turnkey renovation of the apartment in London was carried out in accordance with the technical documentation."
+       "html": "Before work began, a detailed cost estimate was prepared covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting. A turnkey renovation of the apartment in London was then carried out based on the technical documentation."
       },
       {
        "t": "p",
-       "html": "Photorealistic 3D visualizations were also prepared for the project, allowing the future interior to be evaluated in advance. The completed result is shown in photos of the finished apartment and the bespoke furniture made for it."
+       "html": "Below are 3D visualizations of the project and photos of the finished apartment with its custom-made furniture."
       }
      ]
     },
@@ -257,7 +257,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -265,7 +265,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -300,7 +300,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

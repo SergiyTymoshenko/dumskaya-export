@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 160 m² in Dubai | DUMSKAYA DESIGN",
- "description": "160 m² apartment in Dubai: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "description": "160 m² apartment in Dubai: interior design, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Apartment interior design project in Dubai, UAE, 160 m²",
  "og_image": "66b92fb98acd8b217ebcf386",
  "alternates": {
@@ -26,7 +26,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "In this project, the <strong>DUMSKAYA DESIGN</strong> interior design studio (Bratislava, Slovakia) delivered a full scope of work: developing the interior design project, manufacturing custom furniture, and carrying out a turnkey renovation."
+       "html": "For a 160 m² apartment in Dubai, the <strong>DUMSKAYA DESIGN</strong> studio (Bratislava, Slovakia) delivered a full scope of work: the interior design project, custom furniture manufacturing, and a turnkey renovation."
       },
       {
        "t": "p",
@@ -38,11 +38,11 @@
       },
       {
        "t": "p",
-       "html": "Photorealistic 3D visualizations of the property are presented."
+       "html": "The gallery features photorealistic 3D visualizations of the apartment."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) successfully delivers projects not only in Slovakia but also beyond its borders, including in Dubai. We work with clients across Europe and the Middle East, offering a full cycle of interior design and implementation services.</strong>"
+       "html": "<strong>DUMSKAYA DESIGN works with clients across Europe and the Middle East — from the interior design project to the finished interior.</strong>"
       }
      ]
     },
@@ -75,7 +75,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -83,7 +83,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -118,7 +118,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

@@ -26,11 +26,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "design, manufacturing in Europe, and project delivery"
+       "html": "Design, manufacturing in Europe, and project delivery"
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) </strong>designs and delivers turnkey furniture projects for residential and commercial properties in the USA. We handle the full cycle of work — from concept and design to furniture manufacturing in Europe, shipping, and coordination of on-site installation."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> designs and delivers turnkey furniture projects for residential and commercial properties in the USA — from concept and design to furniture manufacturing in Europe, shipping, and coordination of on-site installation."
       },
       {
        "t": "p",
@@ -43,15 +43,17 @@
         "commercial spaces",
         "boutiques and showrooms"
        ]
-      },
-      {
-       "t": "p",
-       "html": "What a turnkey furniture project includes"
-      },
-      {
-       "t": "p",
-       "html": "We ensure a consistent style, precise execution, and full control at every stage:"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "What a turnkey furniture project includes"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "ul",
        "items": [
@@ -68,23 +70,35 @@
       {
        "t": "p",
        "html": "You receive a fully finished furniture project, thought through down to the smallest detail and adapted for implementation in the USA."
-      },
-      {
-       "t": "p",
-       "html": "Timeline"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Timeline"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "Furniture project development: 1–2 months"
       },
       {
        "t": "p",
-       "html": "Furniture manufacturing and delivery: 4–5 months from approval of the final design"
-      },
-      {
-       "t": "p",
-       "html": "Residential and commercial projects in the USA"
-      },
+       "html": "Furniture manufacturing and delivery: 4–5 months after project approval"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Residential and commercial projects in the USA"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
        "html": "We work with private and business clients, taking into account the requirements of the US market, the way the furniture will be used, and the type of property."
@@ -104,11 +118,17 @@
       {
        "t": "p",
        "html": "and other US cities."
-      },
-      {
-       "t": "p",
-       "html": "Why choose DUMSKAYA DESIGN"
-      },
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Why choose DUMSKAYA DESIGN"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "ul",
        "items": [
@@ -459,7 +479,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

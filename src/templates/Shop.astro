@@ -37,7 +37,7 @@ const pname = (p: Page) => p.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '');
     <h1 class="display wrap stitle">{name}</h1>
     <p class="wrap muted sdesc">{page.description}</p>
     <div class="tiles tiles--3">
-      {products.map((p) => <Tile href={p.path} image={firstGallery(p)[0]?.id} alt={pname(p)} title={pname(p).replace(/\s*\([^)]*\)$/, '')} sub={pname(p).match(/\((TDD-\d+)\)/)?.[1]} sizes="(min-width: 960px) 33vw, 50vw" />)}
+      {products.map((p, n) => <Tile href={p.path} image={firstGallery(p)[0]?.id} alt={pname(p)} title={pname(p).replace(/\s*\([^)]*\)$/, '')} sub={pname(p).match(/\((TDD-\d+)\)/)?.[1]} sizes="(min-width: 960px) 33vw, 50vw" eager={n < 3} below />)}
     </div>
   </>
 )}

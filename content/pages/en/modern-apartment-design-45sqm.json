@@ -4,7 +4,7 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 45 m² | DUMSKAYA DESIGN",
- "description": "45 m² apartment: design project, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "description": "45 m² apartment: interior design. DUMSKAYA DESIGN, Bratislava and Vienna.",
  "h1": "Apartment interior design, 45 m²",
  "og_image": "6abd6b5c3ba7c7b83394fc44",
  "alternates": {
@@ -26,19 +26,15 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed a contemporary-style design project for a 45 m² apartment. The main goal of the project was to create a functional, visually light, and comfortable living space within a relatively small floor area."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed a contemporary-style design project for a 45 m² apartment. The goal was to make a small apartment functional and visually light."
       },
       {
        "t": "p",
-       "html": "The interior concept is built on a combination of clean lines, simple, understated forms, natural materials, and a calm, neutral color palette. This approach helps preserve a sense of space and create a contemporary atmosphere without visual clutter."
+       "html": "Clean lines, simple forms, natural materials, and a calm, neutral palette keep the interior uncluttered and preserve a sense of space."
       },
       {
        "t": "p",
-       "html": "The project pays particular attention to ergonomics and efficient use of floor area. The layout and interior solutions make it possible to organize functional zones effectively and make every square meter of the apartment part of a single, well-thought-out concept."
-      },
-      {
-       "t": "p",
-       "html": "The interior combines contemporary aesthetics with practicality, creating a comfortable environment for everyday life. The project shows how even 45 m² can become a functional and visually cohesive living space."
+       "html": "The layout is organized so that the 45 m² has room for every functional zone and not a single meter goes to waste."
       }
      ]
     },
@@ -171,7 +167,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Back",
+       "text": "All projects",
        "href": "/en/portfolio-interior-design-projects"
       },
       {
@@ -179,7 +175,7 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
+       "text": "Design package prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -214,7 +210,7 @@
        }
       },
       {
-       "title": "Custom Furniture",
+       "title": "Custom furniture",
        "href": "/en/custom-residential-furniture",
        "image": {
         "id": "65d3f45eaa9648000f6ff429",

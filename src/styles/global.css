@@ -3,18 +3,25 @@
 @import '@fontsource/montserrat/300.css';
 @import '@fontsource/montserrat/400.css';
 
+/* Запасной шрифт с метриками Montserrat: пока он грузится, заголовки не меняют ширину строк (меньше сдвигов вёрстки) */
+@font-face {
+  font-family: 'Montserrat Fallback';
+  src: local('Arial'), local('Helvetica'), local('Liberation Sans');
+  size-adjust: 113.04%; ascent-override: 85.67%; descent-override: 22.21%; line-gap-override: 0%;
+}
+
 :root {
   /* Цвета: белая бумага, чёрный для заголовков, тёплый графит для текста,
      серый камень для служебного, светлая линия и дуб — единственный акцент. */
   --paper: #ffffff;
   --ink: #000000;
   --text: #2b2a27;
-  --stone: #857f76;
+  --stone: #736d65; /* 5:1 на белом — проходит WCAG AA для мелкого текста */
   --line: #e2ded6;
   --oak: #8a6e4b;
   --veil: rgba(0, 0, 0, 0.42);
 
-  --display: 'Montserrat', 'Commissioner', system-ui, sans-serif; /* заголовки */
+  --display: 'Montserrat', 'Montserrat Fallback', 'Commissioner', system-ui, sans-serif; /* заголовки */
   --body: 'Commissioner', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --caption: var(--display); /* подписи на фото — тот же шрифт */
 
@@ -28,6 +35,7 @@
 /* атрибут hidden всегда скрывает элемент, даже если у его класса задан display */
 [hidden] { display: none !important; }
 .unit { text-transform: none; letter-spacing: 0.04em; }
+.nw { white-space: nowrap; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header) + 16px); }
 body {
   margin: 0;
@@ -55,6 +63,8 @@ button { font: inherit; color: inherit; }
   color: var(--ink);
 }
 h1, h2, h3 { color: var(--ink); font-weight: 400; margin: 0; }
+/* на телефоне длинные заголовки заглавными с меньшей разрядкой, чтобы не растягивались на 6–7 строк */
+@media (max-width: 719px) { h1.display { letter-spacing: 0.1em; } }
 h2.section-title {
   font-family: var(--display);
   text-transform: uppercase;
@@ -95,7 +105,7 @@ h2.section-title {
 .tile img, .tile .ph { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .8s cubic-bezier(.2,.6,.2,1); }
 .tile::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,.55) 0%, rgba(0,0,0,.18) 32%, rgba(0,0,0,0) 55%);
+  background: linear-gradient(to top, rgba(0,0,0,.6) 0%, rgba(0,0,0,.22) 38%, rgba(0,0,0,0) 62%);
   pointer-events: none;
 }
 .tile__cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 20px 16px 22px; text-align: center; }
@@ -104,14 +114,33 @@ h2.section-title {
 .tile__sub { margin-top: 6px; font-size: 13px; letter-spacing: 0.04em; opacity: .9; }
 .tiles--3 .tile__title { font-size: clamp(11px, 0.9vw, 13px); letter-spacing: 0.2em; padding-left: 0.2em; }
 .tiles--3 .tile__cap { padding: 14px 10px 16px; }
-@media (hover: hover) { .tile:hover img { transform: scale(1.025); } .tile:hover { color: #fff; } }
+/* на телефоне в две колонки: подписи мельче разрядкой, затемнение выше — чтобы читались */
+@media (max-width: 719px) {
+  .tiles--3 .tile__title { letter-spacing: 0.08em; padding-left: 0.08em; font-size: 11px; line-height: 1.35; }
+  .tiles--3 .tile__cap { padding: 10px 8px 12px; }
+  .tiles--3 .tile__sub { font-size: 12px; margin-top: 3px; }
+  .tiles--3 .tile::after { background: linear-gradient(to top, rgba(0,0,0,.7) 0%, rgba(0,0,0,.3) 45%, rgba(0,0,0,0) 75%); }
+}
+/* подпись под фото — для светлых предметных снимков (магазин) */
+.tile--below { color: var(--ink); background: none; }
+.tile--below::after { display: none; }
+.tile--below .tile__cap { position: static; padding: 12px 8px 20px; }
+.tile--below .tile__title { letter-spacing: 0.12em; padding-left: 0.12em; }
+.tile--below .tile__sub { color: var(--stone); }
+@media (hover: hover) { .tile--below:hover { color: var(--oak); } }
+@media (hover: hover) { .tile:hover img { transform: scale(1.025); } .tile:not(.tile--below):hover { color: #fff; } }
 
-.ph { display: block; background: repeating-linear-gradient(135deg, #ece9e3 0 12px, #e5e1da 12px 24px); }
+/* заглушка вместо фото, которого нет в сборке: не схлопывается в нулевую высоту */
+.ph { display: block; width: 100%; aspect-ratio: 4 / 3; background: repeating-linear-gradient(135deg, #ece9e3 0 12px, #e5e1da 12px 24px); }
 
-.crumbs { font-size: 13px; color: var(--stone); }
-.crumbs a { text-decoration: none; }
-.crumbs a:hover { text-decoration: underline; }
-.crumbs span[aria-current] { color: var(--ink); }
+.crumbs { font-size: 13px; color: var(--stone); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.crumbs a { color: var(--text); text-decoration: underline; text-decoration-color: var(--line); }
+.crumbs a:hover { color: var(--oak); text-decoration-color: currentColor; }
+.crumbs span[aria-current] { color: var(--stone); }
+
+/* «перейти к содержимому» — видна только при переходе клавиатурой */
+.skip { position: absolute; z-index: 100; left: 8px; top: -60px; padding: 10px 16px; background: var(--ink); color: var(--paper); font-size: 14px; text-decoration: none; }
+.skip:focus { top: 8px; color: var(--paper); }
 
 .visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
