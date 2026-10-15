@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 60 m² | DUMSKAYA DESIGN",
- "description": "60 m² apartment with 18 m² terrace: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Apartment Interior Design with Terrace, 60 m²",
+ "description": "60 m² apartment with 18 m² terrace: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Interior design of an apartment with a terrace, 60 m²",
  "og_image": "6abd6ab34888499d20745304",
  "alternates": {
   "ru": "/apartment-interior-design-60m",
@@ -14,35 +14,35 @@
  },
  "sections": [
   {
-   "id": "6884d34553fd64883a42e72d",
+   "id": "66a100d0f38918cb3ecc820a",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Apartment Interior Design with Terrace, 60 m²"
+     "text": "Interior design of an apartment with a terrace, 60 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed the interior design project for a 60 m² apartment with an 18 m² terrace. The project features a contemporary style with a strong focus on functionality, ergonomics and visual harmony."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 60 m² apartment with an 18 m² terrace. The project is executed in a contemporary style, with an emphasis on functionality, ergonomics, and the visual cohesion of the space."
       },
       {
        "t": "p",
-       "html": "The design concept is based on clean lines, minimalist forms, natural materials and a calm, neutral color palette. This combination creates a contemporary interior that remains comfortable for everyday living while maintaining a spacious and uncluttered atmosphere."
+       "html": "The concept is based on clean lines, simple, understated forms, natural materials, and a calm, neutral color palette. This combination creates a contemporary interior that remains comfortable for everyday life while visually preserving a sense of open space."
       },
       {
        "t": "p",
-       "html": "Particular attention was given to efficient use of the apartment’s floor area, functional zoning, storage solutions, lighting and visual connections between the different spaces. The 18 m² terrace becomes a natural extension of the living area and provides an additional space for relaxation."
+       "html": "During the design process, particular attention was paid to efficient use of the apartment’s floor area, convenient organization of functional zones, storage systems, lighting, and the connections between individual rooms. The 18 m² terrace becomes an extension of the living space and an additional area for relaxation."
       },
       {
        "t": "p",
-       "html": "The page features photorealistic 3D visualizations and project materials, providing a detailed view of the interior concept, layout solutions, material combinations and overall atmosphere of the apartment."
+       "html": "This page features photorealistic 3D visualizations and design materials that allow you to evaluate in detail the interior concept, the layout solutions, the combination of materials, and the overall atmosphere of the apartment."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> provides interior design for apartments, residences and private houses in Bratislava and Vienna. We create individual design projects based on the architecture of each property, the client’s lifestyle, functional requirements and budget — from space planning and 3D visualization to a complete set of technical documentation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> offers interior design for apartments, condos, and private houses in Bratislava and Vienna. We develop bespoke projects tailored to the architecture of the property, the client’s lifestyle, functional requirements, and the chosen budget — from the layout concept and 3D visualization to a complete set of technical documentation."
       }
      ]
     },
@@ -214,12 +214,7 @@
        "alt": "As-built floor plan of the apartment"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6890b4134ebcf4b693368305",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -228,11 +223,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -240,18 +235,18 @@
    ]
   },
   {
-   "id": "68850e036a8709c50fe5321b",
+   "id": "69cbf8073722b1e9a20e894c",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -259,7 +254,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -283,7 +278,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

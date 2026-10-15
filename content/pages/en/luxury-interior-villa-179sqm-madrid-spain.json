@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Villa Interior Design 179 m² in Madrid | DUMSKAYA DESIGN",
- "description": "179 m² villa in Madrid: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Luxury interior design project of a 179 m² villa in Madrid, Spain",
+ "description": "179 m² villa in Madrid: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Villa interior design project, Madrid, Spain, 179 m²",
  "og_image": "66d8771b691bf08b5b13a8cf",
  "alternates": {
   "ru": "/interior-design-villa-179m-madrid-spain",
@@ -14,43 +14,23 @@
  },
  "sections": [
   {
-   "id": "6884d35553fd64883a42edaf",
+   "id": "66d8767152c46352b313a5c7",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Luxury interior design project of a 179 m² villa in Madrid, Spain"
+     "text": "Villa interior design project, Madrid, Spain, 179 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "In this project, <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed a full-scope luxury interior design project for a 179 m² villa in Madrid, Spain. The scope of work included interior design, technical documentation, custom furniture design and production, and turnkey renovation."
+       "html": "In this project, the <strong>DUMSKAYA DESIGN</strong> interior design studio (Bratislava, Slovakia) delivered the full scope of work: interior design, technical documentation, the design and manufacture of custom furniture, and a turnkey renovation. The design covered every room: the living room, bedroom, a kitchen with custom interior fittings and built-in appliances, walk-in closets, the entrance hall, bathroom, wardrobes, and shelving. Furniture was custom-designed for each area. Before the renovation began, the client received a detailed cost estimate for labor, building materials, furniture, appliances, plumbing fixtures, light fixtures, and more."
       },
       {
        "t": "p",
-       "html": "The design covered all areas of the villa, including the living room, bedrooms, kitchen with tailored storage solutions and built-in appliances, walk-in closets, entrance hall, bathroom, cabinets, and shelving."
-      },
-      {
-       "t": "p",
-       "html": "Bespoke furniture was designed for each area, carefully tailored to the architecture of the villa as well as the client’s individual needs, preferences, and lifestyle."
-      },
-      {
-       "t": "p",
-       "html": "Before the renovation began, the client received a detailed cost estimate covering every stage of the project — from construction and finishing works to materials, custom furniture, appliances, plumbing, and lighting."
-      },
-      {
-       "t": "p",
-       "html": "The project is presented through photorealistic 3D visualizations, showcasing the interior concept, materials, furniture solutions, lighting, and overall atmosphere of the villa."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> creates premium residential interiors in Spain, Slovakia, across Europe, and the USA, providing comprehensive services from interior design and technical documentation to bespoke furniture production and turnkey implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN — interiors that come to life.</strong>"
+       "html": "Shown here are 3D visualizations of the private house."
       }
      ]
     },
@@ -190,12 +170,7 @@
        "alt": "sculptural lighting in villa hallway madrid, spain"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6890b6b94ebcf4b69336a201",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -204,11 +179,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -216,18 +191,18 @@
    ]
   },
   {
-   "id": "68851110cddeb0472c4ee6b4",
+   "id": "69cbfd9396e5151906220d27",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -235,7 +210,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -259,7 +234,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

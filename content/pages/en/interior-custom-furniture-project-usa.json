@@ -9,11 +9,12 @@
  "og_image": "6abd6ad368c5e81567a1c165",
  "alternates": {
   "ru": "/interior-custom-furniture-project-usa",
+  "ua": "/ua/interior-custom-furniture-project-usa",
   "en": "/en/interior-custom-furniture-project-usa"
  },
  "sections": [
   {
-   "id": "695a5b5af3dd0c9a41041bbf",
+   "id": "695a4b50f3dd0c9a4103f0a2",
    "blocks": [
     {
      "type": "heading",
@@ -25,15 +26,15 @@
      "parts": [
       {
        "t": "p",
-       "html": "design, production in Europe and implementation"
+       "html": "design, manufacturing in Europe, and project delivery"
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN Bratislava, Slovakia </strong>develops and delivers turnkey furniture projects for residential and commercial properties in the USA. We provide a full-cycle service — from concept development and furniture design to in-house production in Europe, international delivery, and on-site installation coordination."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) </strong>designs and delivers turnkey furniture projects for residential and commercial properties in the USA. We handle the full cycle of work — from concept and design to furniture manufacturing in Europe, shipping, and coordination of on-site installation."
       },
       {
        "t": "p",
-       "html": "We work with projects of any scale:"
+       "html": "We work on properties of any scale:"
       },
       {
        "t": "ul",
@@ -45,32 +46,32 @@
       },
       {
        "t": "p",
-       "html": "What is included in a turnkey furniture project"
+       "html": "What a turnkey furniture project includes"
       },
       {
        "t": "p",
-       "html": "We ensure a cohesive design, precise execution, and full control at every stage of the process:"
+       "html": "We ensure a consistent style, precise execution, and full control at every stage:"
       },
       {
        "t": "ul",
        "items": [
-        "furniture concept development and space zoning",
-        "custom furniture design for all zones",
-        "detailed technical and production documentation",
+        "furniture concept development and zoning",
+        "custom furniture design for all areas",
+        "technical and working documentation for manufacturing",
         "selection of materials, finishes, and hardware",
-        "furniture production in Europe",
+        "furniture manufacturing in Europe",
         "quality control during manufacturing",
-        "organization of international delivery to the USA",
-        "coordination of furniture installation on site"
+        "arranging international shipping to the USA",
+        "coordination of on-site furniture installation"
        ]
       },
       {
        "t": "p",
-       "html": "You receive a fully completed turnkey furniture project, carefully designed down to the smallest details and fully adapted for implementation in the USA."
+       "html": "You receive a fully finished furniture project, thought through down to the smallest detail and adapted for implementation in the USA."
       },
       {
        "t": "p",
-       "html": "Project timeline"
+       "html": "Timeline"
       },
       {
        "t": "p",
@@ -78,7 +79,7 @@
       },
       {
        "t": "p",
-       "html": "Furniture production and delivery: 4–5 months from approval of the finalized project"
+       "html": "Furniture manufacturing and delivery: 4–5 months from approval of the final design"
       },
       {
        "t": "p",
@@ -86,7 +87,7 @@
       },
       {
        "t": "p",
-       "html": "We work with private and business clients, taking into account the requirements of the U.S. market, operational specifics, and the format of each property."
+       "html": "We work with private and business clients, taking into account the requirements of the US market, the way the furniture will be used, and the type of property."
       },
       {
        "t": "p",
@@ -102,7 +103,7 @@
       },
       {
        "t": "p",
-       "html": "and other cities across the USA."
+       "html": "and other US cities."
       },
       {
        "t": "p",
@@ -111,30 +112,30 @@
       {
        "t": "ul",
        "items": [
-        "turnkey furniture projects for the U.S. market",
-        "in-house furniture production in Europe",
-        "fully customized solutions with no templates",
+        "turnkey furniture projects for the US market",
+        "our own furniture production in Europe",
+        "custom solutions, no templates",
         "premium materials and precise attention to detail",
-        "clear timelines and a structured workflow",
-        "professional coordination of furniture installation"
+        "clear timelines and a structured process",
+        "professional installation coordination"
        ]
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN Bratislava, Slovakia is a studio with many years of international experience and a reliable partner for delivering turnkey furniture projects in the USA.</strong>"
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) is a studio with many years of international experience and a reliable partner for turnkey furniture projects in the USA.</strong>"
       }
      ]
     }
    ]
   },
   {
-   "id": "695a5b5af3dd0c9a41041bcf",
+   "id": "695a4b50f3dd0c9a4103f0b2",
    "blocks": [
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Request a free consultation",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       }
      ]
@@ -142,7 +143,7 @@
    ]
   },
   {
-   "id": "695a5b5af3dd0c9a41041bc5",
+   "id": "695a4b50f3dd0c9a4103f0a8",
    "blocks": [
     {
      "type": "heading",
@@ -297,7 +298,7 @@
    ]
   },
   {
-   "id": "695a5b5af3dd0c9a41041bc9",
+   "id": "695a4b50f3dd0c9a4103f0ac",
    "blocks": [
     {
      "type": "heading",
@@ -376,12 +377,12 @@
    ]
   },
   {
-   "id": "695a5b5af3dd0c9a41041bcb",
+   "id": "695a4b50f3dd0c9a4103f0ae",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Custom-designed wardrobes"
+     "text": "Custom-designed walk-in closets"
     },
     {
      "type": "gallery",
@@ -431,18 +432,18 @@
    ]
   },
   {
-   "id": "695a5ebe6f96f0f757cc16a6",
+   "id": "69cbf313c4c90529feccedd3",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -450,7 +451,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -474,7 +475,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

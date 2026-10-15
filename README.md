@@ -60,6 +60,22 @@ ssh -t eurox 'sudo bash ~/dumskaya/deploy/server-doctor.sh'
 Показывает состояние Caddy и причину ошибки, возвращает основной Caddyfile к виду до установки сайта
 и проверяет, что остальные сайты на сервере отвечают.
 
+## Переводы (UA и EN)
+
+Тексты страниц пишутся на русском (`content/pages/ru/`), украинская и английская версии собираются из них:
+структура, фото и блоки те же, тексты — из памяти переводов `content/i18n/tm-{ua,en}.json`
+(русская строка → перевод), ссылки автоматически ведут на страницы того же языка.
+Адреса, title и description украинских и английских страниц при сборке не меняются.
+
+После правки русских текстов:
+```bash
+python3 scripts/i18n/extract.py            # новые строки → пакеты i18n-work/<lang>-NN.json
+# перевести пакеты (правила и глоссарий: scripts/i18n/GUIDE.md), ответы — i18n-work/out-<lang>-NN.json
+python3 scripts/i18n/check_batch.py i18n-work/ua-01.json
+python3 scripts/i18n/assemble.py --import   # добавить переводы в память и собрать страницы
+python3 scripts/i18n/check_tm.py ua && python3 scripts/i18n/check_tm.py en
+```
+
 ## Где что лежит
 
 | Путь | Что внутри |

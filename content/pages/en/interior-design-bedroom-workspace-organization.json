@@ -5,7 +5,7 @@
  "group": null,
  "title": "Home Office in the Bedroom: How to Plan It | DUMSKAYA",
  "description": "How to fit a workspace into a bedroom: zoning, lighting, custom furniture and storage. Practical advice from an interior designer.",
- "h1": "How to Organize a Workspace in Your Bedroom",
+ "h1": "How to set up a workspace in your bedroom",
  "og_image": "66c512eeef7f2fa45044b154",
  "alternates": {
   "ru": "/kak-pravilno-organizovat-rabochee-mesto-v-spalne",
@@ -14,146 +14,12 @@
  },
  "sections": [
   {
-   "id": "6893b2421e203a66d8dad18f",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      },
-      {
-       "title": "Kitchen model №K-05",
-       "href": "/en/kitchen-k05-beige-classic",
-       "image": {
-        "id": "67d2ce3732bfd979ec7466ca",
-        "alt": "classic kitchen style with white cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-11",
-       "href": "/en/kitchen-k11-grey-modern",
-       "image": {
-        "id": "67d2d3d532bfd979ec747e9e",
-        "alt": "contemporary kitchen with island and bar stools"
-       }
-      },
-      {
-       "title": "Kitchen model №K-08",
-       "href": "/en/kitchen-k08-brown-minimalist",
-       "image": {
-        "id": "67d2cfa84385e682489fe2ff",
-        "alt": "small typical kitchen with efficient storage"
-       }
-      },
-      {
-       "title": "Kitchen model №K-03",
-       "href": "/en/kitchen-k03-black-modern",
-       "image": {
-        "id": "67d2c0e46ad366460788472f",
-        "alt": "open plan kitchen with dining area"
-       }
-      },
-      {
-       "title": "Kitchen model №K-04",
-       "href": "/en/kitchen-k04-grey-modern",
-       "image": {
-        "id": "67c8be7ee5449e0536081d2e",
-        "alt": "functional kitchen design with wooden accents"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6893b2671e203a66d8dad292",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      },
-      {
-       "title": "Kitchen model №K-05",
-       "href": "/en/kitchen-k05-beige-classic",
-       "image": {
-        "id": "67d2ce3732bfd979ec7466ca",
-        "alt": "classic kitchen style with white cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-11",
-       "href": "/en/kitchen-k11-grey-modern",
-       "image": {
-        "id": "67d2d3d532bfd979ec747e9e",
-        "alt": "contemporary kitchen with island and bar stools"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6893b2871e203a66d8dad3e2",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6884d34753fd64883a42e7cf",
+   "id": "66a23eaba35d7b20d874d05e",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "How to Organize a Workspace in Your Bedroom"
+     "text": "How to set up a workspace in your bedroom"
     },
     {
      "type": "gallery",
@@ -181,64 +47,56 @@
      ]
     },
     {
+     "type": "heading",
+     "level": 2,
+     "text": "Organizing a workspace in the bedroom"
+    },
+    {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>Organizing a Workspace in the Bedroom</strong>"
+       "html": "A well-organized workspace in the bedroom can significantly boost productivity and comfort. Here are a few tips on how to create the ideal work area."
       },
       {
        "t": "p",
-       "html": "The proper organization of a workspace in the bedroom can greatly enhance both productivity and comfort. Here are some tips to create the ideal work area."
+       "html": "<strong>Choosing the spot: </strong>Place the desk near a window for natural light, or choose a quiet corner to minimize distractions."
       },
       {
        "t": "p",
-       "html": "Choosing the right spot: Place your desk near a window for natural light or choose a quiet corner to minimize distractions."
+       "html": "<strong>Ergonomics: </strong>Invest in an ergonomic chair and desk. Ensure good lighting with an adjustable desk lamp."
       },
       {
        "t": "p",
-       "html": "Ergonomics: Invest in an ergonomic chair and desk. Ensure good lighting with an adjustable desk lamp."
+       "html": "<strong>Storage and order: </strong>Use shelves and drawers for storage. Keep only the essentials on the desk to avoid clutter."
       },
       {
        "t": "p",
-       "html": "Storage and order: Use shelves and drawers for storage. Keep only essential items on the desk to avoid clutter."
+       "html": "<strong>Blending into the interior: </strong>Choose furniture and accessories that match the bedroom’s overall color scheme. Use rugs or folding screens to define zones."
       },
       {
        "t": "p",
-       "html": "Integration into the interior: Select furniture and accessories that match the bedroom’s color palette. Use rugs or screens to visually separate the work zone."
+       "html": "<strong>Personal touches: </strong>Add plants, photos, or artwork for a cozy feel. Use a small rug or a throw for extra comfort."
       },
       {
        "t": "p",
-       "html": "Personal touches: Add plants, photos, or artwork to create a cozy atmosphere. A throw or rug can add extra comfort."
+       "html": "<strong>Technology: </strong>Organize cables with cable management solutions. Make sure all devices are conveniently placed and connected."
       },
       {
        "t": "p",
-       "html": "Technology: Manage cables with organizers and ensure all devices are conveniently placed and connected."
+       "html": "Setting up a workspace in the bedroom requires a balance between functionality and aesthetics. If you need help, contact <strong>DUMSKAYA DESIGN</strong> — we will be happy to help you create a stylish and comfortable space!"
       },
       {
        "t": "p",
-       "html": "Creating a workspace in the bedroom requires balancing functionality and aesthetics."
-      },
-      {
-       "t": "p",
-       "html": "<strong>💎 If you need assistance, DUMSKAYA DESIGN Bratislava, Slovakia will gladly help you design a stylish and practical spac</strong>e!"
-      },
-      {
-       "t": "p",
-       "html": "<strong>📩 Over 15 years of experience. We work worldw</strong>ide."
+       "html": "<strong>Over 15 years of experience!</strong>"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6893a37052a5e72c94df7bb7",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
@@ -246,7 +104,7 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Price of available service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -254,18 +112,18 @@
    ]
   },
   {
-   "id": "688513bb53fd64883a44169c",
+   "id": "69cc032800dc909974419b05",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -273,7 +131,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -297,7 +155,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

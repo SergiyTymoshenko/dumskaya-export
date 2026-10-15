@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 56 m² in Bratislava, Eurovea City",
- "description": "56 m² apartment (Eurovea City) in Bratislava: design project, 3D visualisation and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Apartment Interior Design in Eurovea City, Bratislava, Custom Furniture, 56 m²",
+ "description": "56 m² apartment (Eurovea City) in Bratislava: design project, 3D visualization and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Apartment interior design in Eurovea City, Bratislava, custom furniture, 56 m²",
  "og_image": "6abd6a8168c5e81567a1bfb4",
  "alternates": {
   "ru": "/studio-interior-design-bratislava-eurovea-56m",
@@ -14,35 +14,35 @@
  },
  "sections": [
   {
-   "id": "694c60c559254b3aa22833bf",
+   "id": "694c37ef6ab3a41370d83ffa",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Apartment Interior Design in Eurovea City, Bratislava, Custom Furniture, 56 m²"
+     "text": "Apartment interior design in Eurovea City, Bratislava, custom furniture, 56 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed the interior design for a 56 m² apartment in <strong>Eurovea City</strong>, Bratislava. The project was based on the developer’s existing finishes, with a focus on functional space planning, contemporary aesthetics and comfortable urban living."
+       "html": "<strong>DUMSKAYA DESIGN</strong> developed an interior design project for a 56 m² apartment in <strong>Eurovea City</strong>, Bratislava. The project was based on the developer’s finishes, with an emphasis on functional space planning, contemporary aesthetics, and comfortable city living."
       },
       {
        "t": "p",
-       "html": "The central space of the apartment is an open-plan kitchen and living room with a kitchen island, combining cooking, dining and relaxation areas. The apartment also includes a bedroom with a workspace, laundry room, bathroom, entrance hall with integrated storage and a terrace."
+       "html": "The heart of the apartment is an open-plan kitchen and living area with a kitchen island, bringing together the cooking area, the dining area, and a lounge space. The plan also includes a bedroom with a work area, a laundry room, a bathroom, an entrance hall with storage systems, and a terrace."
       },
       {
        "t": "p",
-       "html": "The project was developed within the <a href=\"/en/custom-furniture-bratislava-design-production\">Furniture Design Package</a> and includes the interior concept, photorealistic 3D visualizations, technical documentation, as well as the design and production of custom-made cabinetry in Bratislava."
+       "html": "The project was completed under the <a href=\"/en/custom-furniture-bratislava-design-production\">“Furniture” design package</a> and includes the interior concept, photorealistic 3D visualizations, the necessary technical documentation, and the design and manufacture of custom cabinet furniture in Bratislava."
       },
       {
        "t": "p",
-       "html": "The custom furniture was designed together with the interior, allowing the available space to be used efficiently and integrating storage systems and other furniture elements into the architecture of the apartment. Upholstered furniture, lighting and decorative elements were also carefully selected for the project."
+       "html": "The custom furniture solutions were developed alongside the interior, making it possible to use the apartment’s floor area efficiently and integrate storage systems and other furniture elements into the overall architecture of the space. Upholstered furniture, lighting, and decor were also selected."
       },
       {
        "t": "p",
-       "html": "The interior features a light neutral color palette, natural materials, minimalist décor and functional solutions. All elements were adapted to the client’s budget while maintaining a balance between aesthetics, practicality and contemporary design. The project was also supported by DUMSKAYA DESIGN’s design supervision."
+       "html": "The interior features a light, neutral color palette with natural materials, understated decor, and functional solutions. All elements were adapted to the client’s budget while maintaining a balance between aesthetics, practicality, and contemporary style. The project was accompanied by design supervision from <strong>DUMSKAYA DESIGN</strong>."
       }
      ]
     },
@@ -178,21 +178,12 @@
    ]
   },
   {
-   "id": "694c60c559254b3aa22833c3",
+   "id": "694c37ef6ab3a41370d83ffe",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Technical documentation developed within the “Furniture” interior design package"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "* At the client’s request, the technical documentation was prepared in Russian."
-      }
-     ]
+     "text": "Technical documentation developed as part of the “Furniture” interior design package"
     },
     {
      "type": "gallery",
@@ -350,12 +341,7 @@
        "alt": "designer interior eurovea city bratislava"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "694c7a3d44b5188795391b57",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -364,11 +350,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -376,18 +362,18 @@
    ]
   },
   {
-   "id": "694c7a5044b5188795391bb0",
+   "id": "69cbfdbd96e5151906220e78",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -395,7 +381,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -419,7 +405,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

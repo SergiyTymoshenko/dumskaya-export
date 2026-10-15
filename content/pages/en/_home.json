@@ -5,7 +5,7 @@
  "group": null,
  "title": "Interior Design in Bratislava & Vienna | DUMSKAYA DESIGN",
  "description": "DUMSKAYA DESIGN: interior design for apartments, houses and offices, custom furniture and turnkey renovation in Bratislava and Vienna. Free consultation.",
- "h1": "INTERIOR DESIGN & FURNITURE BRATISLAVA & VIENNA",
+ "h1": "Interior design, custom furniture manufacturing, and turnkey renovation",
  "og_image": "6abd0a7d61617a4443ab2567",
  "alternates": {
   "ru": "/",
@@ -14,22 +14,29 @@
  },
  "sections": [
   {
-   "id": "6884d34053fd64883a42e555",
+   "id": "5d4d7e711e2c240023a2eb28",
    "blocks": [
     {
-     "type": "heading",
-     "level": 2,
-     "text": "DUMSKAYA DESIGN"
-    },
-    {
-     "type": "heading",
-     "level": 1,
-     "text": "INTERIOR DESIGN & FURNITURE BRATISLAVA & VIENNA"
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "DUMSKAYA DESIGN"
+      },
+      {
+       "t": "p",
+       "html": "INTERIOR DESIGN &amp; FURNITURE"
+      },
+      {
+       "t": "p",
+       "html": "BRATISLAVA &amp; VIENNA"
+      }
+     ]
     }
    ]
   },
   {
-   "id": "6884d34053fd64883a42e557",
+   "id": "5eff4ac0759b310022b7131f",
    "blocks": [
     {
      "type": "gallery",
@@ -41,6 +48,11 @@
      ]
     },
     {
+     "type": "heading",
+     "level": 1,
+     "text": "Interior design, custom furniture manufacturing, and turnkey renovation"
+    },
+    {
      "type": "text",
      "parts": [
       {
@@ -49,15 +61,15 @@
       },
       {
        "t": "p",
-       "html": "My name is <strong>Irina Dumskaya</strong>, and I am pleased to welcome you to the world of unique and innovative interior design from the <strong>DUMSKAYA DESIGN Bratislava, Slovakia</strong>. Our mission is to transform your space into a true reflection of your style, comfort and ambition. In every project we aim not only to create a beautiful interior but also to bring a part of your personality into it so that you feel truly at home every day."
+       "html": "My name is <strong>Irina Dumskaya</strong>, and I am delighted to welcome you to the world of unique and innovative interior design by <strong>DUMSKAYA DESIGN </strong>(Bratislava, Slovakia). Our mission is to turn your space into a true reflection of your style, comfort, and ambitions. In every project, we strive not only to create a beautiful interior but also to bring a part of your personality into it, so that you feel truly at home there every day."
       },
       {
        "t": "p",
-       "html": "In our work we combine a creative approach with technical precision to ensure that our projects are not only aesthetically appealing but also functional. We pride ourselves on listening carefully to our clients and turning their dreams into reality. Whether you are planning to decorate a cosy family home or a stylish commercial space, my team and I are ready to offer solutions that exceed your expectations."
+       "html": "In our work, we combine a creative approach with technical precision so that our projects are not only aesthetically appealing but also functional. We take pride in listening carefully to our clients and turning their dreams into reality. Whether you are planning a cozy family home or a stylish commercial space, my team and I are ready to offer solutions that will exceed your expectations."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN Bratislava, Slovakia</strong> studio develops design projects with renovation and custom-made furniture from start to finish for apartments, cottages, townhouses, private country houses, villas, hotels, offices, shops and beauty salons."
+       "html": "The <strong>DUMSKAYA DESIGN</strong> studio (Bratislava, Slovakia) develops interior design projects complete with turnkey renovation and furniture manufacturing for apartments, detached houses, townhouses, private country homes, villas, hotels, offices, stores, and beauty salons."
       },
       {
        "t": "p",
@@ -69,25 +81,25 @@
       },
       {
        "t": "p",
-       "html": "<strong>Irina Dumskaya</strong>"
+       "html": "<strong>Irina Dumskaya</strong>"
       },
       {
        "t": "p",
-       "html": "Head and lead designer of the <strong>DUMSKAYA DESIGN Bratislava, Slovakia</strong> interior studio"
+       "html": "Studio Director and Principal Designer, <strong>DUMSKAYA DESIGN</strong>"
       },
       {
        "t": "p",
-       "html": "What will you receive when you order a design project from DUMSKAYA DESIGN Bratislava, Slovakia?"
+       "html": "What do you get when you commission a design from DUMSKAYA DESIGN?"
       },
       {
        "t": "p",
-       "html": "1. Individual design:"
+       "html": "1. Personalized design:"
       },
       {
        "t": "ul",
        "items": [
         "Unique solutions that reflect your style and way of life.",
-        "Consideration of all your wishes and needs."
+        "All your wishes and needs taken into account."
        ]
       },
       {
@@ -97,12 +109,12 @@
       {
        "t": "ul",
        "items": [
-        "Measured plan of the premises.",
+        "Measured floor plan of the space.",
         "Furniture layout plan.",
-        "Demolition and installation plans.",
-        "Door and window schedules.",
-        "Plans for plumbing equipment, underfloor heating, sockets and switches.",
-        "Plans for lighting equipment, ceilings and floors."
+        "Demolition and construction plans.",
+        "Door and window opening schedules.",
+        "Plans for plumbing fixtures, underfloor heating, outlets, and switches.",
+        "Lighting, ceiling, and floor plans."
        ]
       },
       {
@@ -112,19 +124,19 @@
       {
        "t": "ul",
        "items": [
-        "A full list of finishing materials and their quantities.",
-        "Precise instructions for wall layouts."
+        "A complete list of finishing materials and their quantities.",
+        "Precise instructions for wall elevations."
        ]
       },
       {
        "t": "p",
-       "html": "4. Interior visualisation:"
+       "html": "4. Interior visualization:"
       },
       {
        "t": "ul",
        "items": [
-        "Photorealistic 3D visualisations of all rooms.",
-        "The ability to make adjustments to achieve the perfect result."
+        "Photorealistic 3D visualizations of all rooms.",
+        "The option to make revisions to achieve the perfect result."
        ]
       },
       {
@@ -134,18 +146,18 @@
       {
        "t": "ul",
        "items": [
-        "Site visits with a designer to select materials.",
-        "Author supervision to monitor project implementation."
+        "Material-selection trips with the designer.",
+        "Design supervision to oversee the project’s implementation."
        ]
       },
       {
        "t": "p",
-       "html": "6. Comprehensive approach:"
+       "html": "6. A comprehensive approach:"
       },
       {
        "t": "ul",
        "items": [
-        "From concept to completion – we take on all stages of the project, including developing furniture drawings and sections."
+        "From concept to completion — we take on every stage of the project, including the development of furniture drawings and sections."
        ]
       },
       {
@@ -156,52 +168,52 @@
        "t": "ul",
        "items": [
         "Professional oversight at every stage of the project.",
-        "Time savings and prevention of costly mistakes."
+        "Saving time and avoiding costly mistakes."
        ]
       },
       {
        "t": "p",
-       "html": "By ordering a design project from <strong>DUMSKAYA DESIGN Bratislava, Slovakia</strong>, you receive not just an interior, but a space that reflects your uniqueness and will delight you every day."
+       "html": "<strong>When you commission a design from DUMSKAYA DESIGN (Bratislava, Slovakia), you get more than an interior — you get a space that reflects your individuality and brings you joy every day.</strong>"
       }
      ]
     }
    ]
   },
   {
-   "id": "6884d34053fd64883a42e559",
+   "id": "66a1243ef38918cb3ece0d6c",
    "blocks": [
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Price of available service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       },
       {
        "text": "Completed projects",
-       "href": null
+       "href": "/en/portfolio-interior-design-projects"
       }
      ]
     }
    ]
   },
   {
-   "id": "6884d34053fd64883a42e55d",
+   "id": "67d458805c9de83c34466850",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -209,7 +221,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -233,7 +245,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

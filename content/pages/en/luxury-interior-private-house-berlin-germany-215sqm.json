@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Private House Design 215 m², Berlin | DUMSKAYA DESIGN",
- "description": "215 m² private house in Berlin: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Private House Interior Design, Custom Furniture & Turnkey Renovation in Berlin, 215 m²",
+ "description": "215 m² private house in Berlin: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Private house interior design in Berlin, custom furniture and turnkey renovation, 215 m²",
  "og_image": "6abd6aa461617a4443acb2fc",
  "alternates": {
   "ru": "/interior-design-private-house-215m",
@@ -14,47 +14,47 @@
  },
  "sections": [
   {
-   "id": "6884d34553fd64883a42e756",
+   "id": "66a1471b2717c741d0931a8f",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Private House Interior Design, Custom Furniture & Turnkey Renovation in Berlin, 215 m²"
+     "text": "Private house interior design in Berlin, custom furniture and turnkey renovation, 215 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed a comprehensive interior design project for a 215 m² private house in Berlin, Germany. The project combined interior design, technical documentation, custom furniture design and manufacturing, and comprehensive turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> developed a comprehensive project for a 215 m² private house in Berlin, Germany. The project combined interior design, technical documentation, the design and manufacture of custom furniture, and a full turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The house interior was designed with an emphasis on contemporary aesthetics, functionality and everyday comfort. The space planning takes into account the architectural features of the building, connections between rooms, furniture and appliance placement, integrated storage solutions and lighting scenarios."
+       "html": "The interior of the house was designed with an emphasis on contemporary aesthetics, functionality, and everyday living comfort. The layout solutions take into account the building’s architectural features, the relationship between the rooms, the placement of furniture and appliances, the organization of storage systems, and lighting scenarios."
       },
       {
        "t": "p",
-       "html": "The project covers the living room, bedrooms, kitchen with built-in appliances, walk-in wardrobes, entrance hall, bathrooms and functional storage areas. All spaces follow a cohesive interior design concept, with carefully considered materials, colour combinations, lighting and furniture solutions."
+       "html": "The project covers the living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, bathrooms, and functional storage areas. All spaces are united by a single interior concept in which the materials, color combinations, lighting, and furniture solutions have been carefully thought through."
       },
       {
        "t": "p",
-       "html": "Custom-made furniture was designed and manufactured specifically for the private house, including the kitchen, built-in wardrobes, walk-in closets, shelving and storage systems. Each furniture element was developed according to the room dimensions, layout requirements and overall interior style, ensuring efficient use of space and a consistent visual identity throughout the home."
+       "html": "Custom furniture was designed and manufactured for the house, including the kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems. The furniture was developed around the room dimensions, the specifics of the layout, and the overall style of the interior, which made it possible to use the space efficiently and ensure the visual coherence of the living environment."
       },
       {
        "t": "p",
-       "html": "The preparation stage included technical documentation and a detailed cost estimate covering construction and finishing works, materials, furniture, household appliances, bathroom fixtures, lighting and other elements specified in the project."
+       "html": "In preparation for implementation, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project."
       },
       {
        "t": "p",
-       "html": "Following the design stage, a comprehensive turnkey house renovation in Berlin was completed in accordance with the developed interior solutions and technical documentation. The implementation included construction and finishing works, installation of custom-made furniture and preparation of the residential spaces."
+       "html": "Once the design stage was complete, a full turnkey renovation of the private house in Berlin was carried out in line with the developed interior solutions and technical documentation. The implementation included construction and finishing work, installation of the custom furniture, and fitting out of the living spaces."
       },
       {
        "t": "p",
-       "html": "Photorealistic 3D visualizations were created to present the proposed interior before implementation. They provide a detailed preview of the layouts, materials, furniture, lighting solutions and overall atmosphere of the rooms."
+       "html": "To preview the future interior, photorealistic 3D visualizations were created, making it possible to review the layout solutions, combination of materials, furniture, lighting, and overall atmosphere of the rooms before work began."
       },
       {
        "t": "p",
-       "html": "This 215 m² private house project demonstrates <strong>DUMSKAYA DESIGN</strong>’s comprehensive approach to contemporary residential interiors — from initial design development and technical documentation to custom furniture production and complete project implementation."
+       "html": "This 215 m² private house project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to creating contemporary residential interiors — from the interior design project and technical documentation to furniture manufacturing and full implementation of the space."
       }
      ]
     },
@@ -198,12 +198,7 @@
        "alt": "Private house in Berlin, Germany, 215 m² — photo 34"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6891f17d1be4da47e71a092c",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -212,11 +207,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -224,18 +219,18 @@
    ]
   },
   {
-   "id": "688510e538ec9f6ebf528a51",
+   "id": "69cbfd2596e51519062209aa",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -243,7 +238,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -267,7 +262,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

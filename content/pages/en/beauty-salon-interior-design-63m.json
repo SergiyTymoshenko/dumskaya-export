@@ -4,8 +4,8 @@
  "type": "project",
  "group": "commercial",
  "title": "Beauty Salon Interior Design 63 m² | DUMSKAYA DESIGN",
- "description": "63 m² beauty salon: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
- "h1": "Beauty Salon Interior Design, 63 m²",
+ "description": "63 m² beauty salon: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "h1": "Beauty salon interior design, 63 m²",
  "og_image": "672c8bfab72094b9d64a8db8",
  "alternates": {
   "ru": "/beauty-salon-interior-design-63m",
@@ -14,31 +14,31 @@
  },
  "sections": [
   {
-   "id": "6884d35a53fd64883a42eee0",
+   "id": "672c704df28c99c98b204256",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Beauty Salon Interior Design, 63 m²"
+     "text": "Beauty salon interior design, 63 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed the interior design project for a 63 m² beauty salon, creating a stylish, functional and comfortable commercial space for both clients and beauty professionals."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 63 m² beauty salon, creating a stylish, functional, and comfortable commercial space for both clients and specialists."
       },
       {
        "t": "p",
-       "html": "The layout was carefully planned to accommodate different working areas, including spaces for hairdressers, manicure and brow specialists, a cosmetologist’s room, reception and staff area. Functional zoning helps organize daily workflows efficiently while maintaining a cohesive and welcoming interior."
+       "html": "The salon layout was planned around its various work areas: stations for hairdressers, manicurists, and brow artists, an esthetician’s treatment room, a reception area, and a staff room. Functional zoning makes it possible to organize workflows efficiently while keeping the interior cohesive."
       },
       {
        "t": "p",
-       "html": "The project combines contemporary aesthetics with practical solutions for a professional beauty environment. Particular attention was given to ergonomics, lighting, storage and the organization of individual workstations. The design project also includes the necessary technical documentation for its implementation."
+       "html": "The project combines contemporary aesthetics with practical solutions for a professional space. Special attention was paid to ergonomics, lighting, storage systems, and the organization of workstations. The interior design project also includes the technical documentation required to implement the interior."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> provides interior design for beauty salons, hair salons, beauty studios and other commercial spaces in Bratislava and Vienna. Our services can include interior design, custom furniture, detailed technical documentation and comprehensive turnkey renovation — from the initial concept to the finished interior."
+       "html": "<strong>DUMSKAYA DESIGN</strong> offers interior design for beauty salons, hair salons, beauty studios, and other commercial spaces in Bratislava and Vienna. The range of services can include the interior design project, custom furniture, technical documentation, and turnkey renovation — from the initial concept to the finished interior."
       }
      ]
     },
@@ -206,25 +206,20 @@
        "alt": "spa treatment room with cozy, private ambiance"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "688f53615a6566f77ee83652",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
        "text": "Back",
-       "href": "/en/commercial-interior-design"
+       "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Price of available design service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -232,18 +227,18 @@
    ]
   },
   {
-   "id": "6885135534050975d3079c84",
+   "id": "69cc01c0a9268f298b519e64",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -251,7 +246,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -275,7 +270,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

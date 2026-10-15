@@ -54,7 +54,7 @@ const t = {
     next: 'Next project', prev: 'Previous project',
     contacts: 'Contact', rights: 'All rights reserved',
     m2: 'm²', photo: 'Photo',
-    tips: 'Tips', otherTips: 'More tips', kitchens: 'Kitchens', otherKitchens: 'Other kitchen models', allKitchens: 'Kitchen catalogue',
+    tips: 'Tips', otherTips: 'More tips', kitchens: 'Kitchens', otherKitchens: 'Other kitchen models', allKitchens: 'Kitchen catalog',
     kitchenPrice: 'Get a price', more: 'Details', prices2: 'Prices', shop: 'Shop', askPrice: 'Ask for a price', article: 'Item',
     form: { title: 'Request a free consultation', name: 'Name', contact: 'Phone or e-mail', message: 'Tell us about your property', send: 'Send request', sending: 'Sending…', ok: 'Request sent. We will get back to you within one working day.', fail: 'The request could not be sent. Please call us or send an e-mail.', consent: 'By sending the form you agree to the processing of your data to answer your request.', privacy: 'Privacy policy', model: 'Model' },
     write: 'Write', messengers: 'Messengers', address: 'Studio address',

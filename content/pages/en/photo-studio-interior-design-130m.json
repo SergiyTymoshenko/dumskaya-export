@@ -5,7 +5,7 @@
  "group": "commercial",
  "title": "Photo Studio Interior Design 130 m² | DUMSKAYA DESIGN",
  "description": "130 m² photo studio: design project, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
- "h1": "Photo Studio Interior Design & Custom Furniture, 130 m²",
+ "h1": "Photo studio interior design and custom furniture, 130 m²",
  "og_image": "67ae680933ccb01054d5a2fd",
  "alternates": {
   "ru": "/photo-studio-interior-design-custom-furniture-130m2-bratislava",
@@ -14,35 +14,35 @@
  },
  "sections": [
   {
-   "id": "6884d35e53fd64883a42f06e",
+   "id": "67aa5a3817dc20f7babdb9fb",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Photo Studio Interior Design & Custom Furniture, 130 m²"
+     "text": "Photo studio interior design and custom furniture, 130 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed and completed the interior design project for a 130 m² photo studio, including turnkey renovation with design supervision and custom furniture design."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> designed and delivered a 130 m² photo studio project, including a turnkey renovation with design supervision and the design of custom furniture."
       },
       {
        "t": "p",
-       "html": "The photo studio was planned to accommodate different professional shooting scenarios while providing a comfortable working environment for the team. The project includes a corridor, reception area, dressing room, makeup area, themed Barbie room, a space with a cyclorama and a loft area with several photo zones."
+       "html": "The photo studio is organized around a variety of professional shooting scenarios and a comfortable workflow for the team. The project includes a corridor, a reception area, a wardrobe room, a prep and makeup area, a themed Barbie room, a cyclorama room, and a loft zone with several photo sets."
       },
       {
        "t": "p",
-       "html": "Particular attention was given to functional zoning, lighting, the organization of shooting areas and the creation of diverse interior settings within a single studio. This approach makes efficient use of the available space while providing different visual environments for photo and video shoots."
+       "html": "Particular attention was paid to functional zoning, lighting, the organization of shooting spaces, and the creation of diverse interior sets within a single property. This makes it possible to use the studio’s floor area efficiently and create a range of visual scenarios for photo and video shoots."
       },
       {
        "t": "p",
-       "html": "The project also included custom-designed furniture, such as a reception desk with wall panels, makeup tables, wardrobes, cabinets, shelves, a bed and other interior elements. Designing the furniture together with the interior made it possible to maintain a consistent concept and use the available space efficiently."
+       "html": "Custom furniture was designed for the project, including a reception desk with wall panels, makeup tables, cabinets, drawer units, shelves, a bed, and other interior elements. The furniture was designed alongside the interior, which made it possible to preserve a unified concept and make efficient use of the space."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> provides photo studio and commercial interior design, custom furniture and turnkey renovation services in Bratislava and Vienna. We develop comprehensive solutions for photo studios, beauty salons, offices, shops, showrooms and other commercial spaces — from the initial concept and technical documentation to custom furniture production and complete interior implementation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> offers photo studio and commercial interior design, custom furniture, and turnkey renovation in Bratislava and Vienna. We develop comprehensive solutions for photo studios, beauty salons, offices, stores, showrooms, and other commercial spaces — from concept and technical documentation to furniture manufacturing and full implementation of the interior."
       }
      ]
     },
@@ -210,25 +210,20 @@
        "alt": "photo studio interior with zones for multiple formats"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "688f53615a6566f77ee83666",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
        "text": "Back",
-       "href": "/en/commercial-interior-design"
+       "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Price of available design service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -236,18 +231,18 @@
    ]
   },
   {
-   "id": "6885137134050975d307a047",
+   "id": "69cc028700dc909974419118",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -255,7 +250,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -279,7 +274,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

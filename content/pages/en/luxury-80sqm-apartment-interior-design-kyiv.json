@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 80 m² in Kyiv | DUMSKAYA DESIGN",
- "description": "80 m² apartment in Kyiv: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Apartment Interior Design in Kyiv, Custom Furniture, 80 m²",
+ "description": "80 m² apartment in Kyiv: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Apartment interior design in Kyiv, custom furniture, 80 m²",
  "og_image": "6abd0a7d61617a4443ab2567",
  "alternates": {
   "ru": "/studio-interior-design-disain-proekt-kvartira-kiev-80m",
@@ -14,35 +14,35 @@
  },
  "sections": [
   {
-   "id": "6884d37053fd64883a42f7f0",
+   "id": "69c97264b8067016771c46c6",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Apartment Interior Design in Kyiv, Custom Furniture, 80 m²"
+     "text": "Apartment interior design in Kyiv, custom furniture, 80 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed the interior design for an 80 m² apartment in Kyiv, Ukraine. The main objective was to create a contemporary, functional and comfortable interior adapted to the owners’ lifestyle and everyday use of the space."
+       "html": "<strong>DUMSKAYA DESIGN</strong> developed an interior design project for an 80 m² apartment in Kyiv, Ukraine. The main goal was to create a contemporary, functional, and comfortable interior tailored to the owners’ lifestyle and the way they use the space every day."
       },
       {
        "t": "p",
-       "html": "The central area of the apartment is an open-plan kitchen and living room with a functional island, combining cooking, dining and relaxation zones. The layout also includes a master bedroom, a second bedroom with a workspace, a walk-in wardrobe with laundry area, bathroom, entrance hall with integrated storage and a glazed terrace designed for comfortable year-round use."
+       "html": "The centerpiece of the apartment is an open-plan kitchen and living area with a functional island, combining the cooking, dining, and relaxation areas. The plan also includes a master bedroom, a second bedroom with a workstation, a walk-in closet with a laundry area, a bathroom, an entrance hall with built-in storage, and a glazed terrace for comfortable year-round use."
       },
       {
        "t": "p",
-       "html": "The project includes the interior concept, photorealistic 3D visualizations, a complete set of technical documentation, as well as the design and production of custom-made cabinetry. The furniture was developed together with the interior, allowing the available space to be used efficiently and storage solutions to be seamlessly integrated into the architecture of the apartment."
+       "html": "The project includes the interior concept, photorealistic 3D visualizations, a full set of technical documentation, and the design and manufacture of custom cabinet furniture. The custom furniture solutions were developed alongside the interior, making it possible to use the floor area efficiently and integrate storage systems into the architecture of the apartment."
       },
       {
        "t": "p",
-       "html": "Finishing materials, furniture, lighting, sanitary equipment and decorative elements were also selected for the project. The interior features a light neutral color palette, natural materials, minimalist décor and functional solutions that create a calm and contemporary atmosphere."
+       "html": "Finishing materials, furniture, lighting, plumbing fixtures, and decor were also selected for the project. The interior features a light, neutral color palette with natural materials, understated decor, and functional solutions that create a calm, contemporary atmosphere."
       },
       {
        "t": "p",
-       "html": "All stages of project implementation were supported by <strong>DUMSKAYA DESIGN</strong>’s design supervision, helping ensure that the implemented solutions followed the approved interior concept and technical documentation."
+       "html": "Every stage of implementation was accompanied by design supervision from <strong>DUMSKAYA DESIGN</strong>, ensuring that the work carried out matched the developed interior concept and technical documentation."
       }
      ]
     },
@@ -210,26 +210,17 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "3D tour of the developed apartment interior design"
+     "text": "3D tour of the apartment interior design"
     }
    ]
   },
   {
-   "id": "694461ff9ae3b97b1e5ddb0f",
+   "id": "69c9727bb8067016771c475e",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Technical documentation developed as part of the “Basic” interior design package — €35/m²"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "* At the client’s request, the technical documentation was prepared in Russian."
-      }
-     ]
+     "text": "Technical documentation developed under the “Basic” interior design package — €35/m²"
     },
     {
      "type": "gallery",
@@ -439,12 +430,7 @@
        "alt": "full set of working drawings for apartment"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6944623fa741048494eaf336",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -453,11 +439,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -465,18 +451,18 @@
    ]
   },
   {
-   "id": "6885113fcddeb0472c4ee860",
+   "id": "69cbfedb3722b1e9a20ec511",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -484,7 +470,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -508,7 +494,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

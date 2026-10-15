@@ -4,8 +4,8 @@
  "type": "project",
  "group": "commercial",
  "title": "Cosmetology Salon Interior Design 54 m² | DUMSKAYA DESIGN",
- "description": "54 m² cosmetology salon: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Cosmetology Salon Interior Design, 54 m²",
+ "description": "54 m² cosmetology salon: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Skincare clinic interior design, 54 m²",
  "og_image": "6abe045b3ba7c7b833963e2b",
  "alternates": {
   "ru": "/interior-design-cosmetology-salon",
@@ -14,35 +14,35 @@
  },
  "sections": [
   {
-   "id": "69432f2ea32cde1ef17218aa",
+   "id": "69430484ca12a146ee280d24",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Cosmetology Salon Interior Design, 54 m²"
+     "text": "Skincare clinic interior design, 54 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed the interior design project for the 54 m² ABC Cosmetology salon. The project was created within the Express interior design package, with a focus on functional space planning, client comfort and an efficient working environment for specialists."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for ABC Cosmetology, a 54 m² skincare clinic. The project was completed under the “Express” design package, with a focus on functional space planning, client comfort, and convenience for the specialists."
       },
       {
        "t": "p",
-       "html": "The salon layout was designed around the specific requirements of cosmetology procedures and everyday workflows. The project includes a reception and waiting area, cosmetology treatment rooms and a restroom. Functional zoning allows the available floor area to be used efficiently while providing convenient circulation for clients and staff."
+       "html": "The salon layout was developed with the specifics of skincare treatments and daily workflows in mind. The project includes a reception and waiting area, treatment rooms, and a restroom. Functional zoning makes rational use of the floor area and ensures convenient movement for clients and staff."
       },
       {
        "t": "p",
-       "html": "Particular attention was given to ergonomics, lighting, the organization of treatment areas and the creation of a contemporary professional atmosphere. The interior combines aesthetic solutions with the practical requirements of cosmetology and beauty spaces."
+       "html": "In designing the interior, special attention was paid to ergonomics, lighting, the organization of work areas, and creating a modern, professional atmosphere. The interior combines aesthetic solutions with the practical requirements typical of skincare and beauty spaces."
       },
       {
        "t": "p",
-       "html": "The project includes photorealistic 3D visualizations and technical documentation, providing a clear representation of the interior concept and the information required for implementing the proposed design solutions."
+       "html": "The project includes photorealistic 3D visualizations and the technical documentation needed to understand the interior concept and subsequently implement the design solutions."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> provides interior design for cosmetology salons, aesthetic medicine clinics, beauty salons and other commercial spaces in Bratislava and Vienna. We develop individual projects based on the specific requirements of each business, available floor area, functionality and the client’s preferences."
+       "html": "<strong>DUMSKAYA DESIGN</strong> offers interior design for skincare clinics, aesthetic medicine clinics, beauty salons, and other commercial spaces in Bratislava and Vienna. We develop projects that take into account the specifics of the business, the size of the premises, functional requirements, and the client’s wishes."
       }
      ]
     },
@@ -228,25 +228,20 @@
        "alt": "equipment layout plan cosmetology"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "69433b84d22254630dc24c93",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
        "text": "Back",
-       "href": "/en/commercial-interior-design"
+       "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Price of available design service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -254,18 +249,18 @@
    ]
   },
   {
-   "id": "694349b1ef89fdbede9b4123",
+   "id": "69cc02148db0832389dfd21a",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -273,7 +268,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -297,7 +292,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

@@ -4,8 +4,8 @@
  "type": "project",
  "group": "commercial",
  "title": "Office Interior Design 140 m² | DUMSKAYA DESIGN",
- "description": "140 m² office: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
- "h1": "Office Interior Design & Custom Furniture, 140 m²",
+ "description": "140 m² office: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "h1": "Office interior design and custom furniture, 140 m²",
  "og_image": "66d385f5adeaee0e909d04aa",
  "alternates": {
   "ru": "/office-interior-design-140m",
@@ -14,35 +14,35 @@
  },
  "sections": [
   {
-   "id": "6884d35153fd64883a42ec00",
+   "id": "66d38412e8a1e0fe01defc54",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Office Interior Design & Custom Furniture, 140 m²"
+     "text": "Office interior design and custom furniture, 140 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed the interior design of a 140 m² office for a law firm, including custom furniture and turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> delivered the interior design of a 140 m² law firm office, including custom furniture manufacturing and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The office was designed with a focus on functionality, professional aesthetics and comfortable everyday use. The layout provides an efficient organization of workspaces while creating a representative business environment suitable for employees, meetings and communication with clients."
+       "html": "The office was designed with an emphasis on functionality, professional aesthetics, and comfort for everyday work. The layout makes it possible to organize workstations efficiently while creating a prestigious business environment for staff, meetings, and client interactions."
       },
       {
        "t": "p",
-       "html": "Custom office furniture was designed specifically for the project and integrated into the overall interior concept. Particular attention was given to ergonomics, lighting, storage solutions, materials and the practical organization of each workspace."
+       "html": "Custom office furniture was designed specifically for this project and integrated into the overall interior concept. Particular attention was paid to ergonomics, lighting, storage systems, the choice of materials, and the practical organization of each workspace."
       },
       {
        "t": "p",
-       "html": "The page features photorealistic 3D visualizations and photographs of the completed interior, demonstrating how the original design concept was translated into the finished office."
+       "html": "This page features photorealistic 3D visualizations and photos of the completed interior, allowing you to compare the original concept with the finished office."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> provides office and commercial interior design, custom furniture and turnkey renovation in Bratislava and Vienna. We develop comprehensive solutions for offices, law firms, corporate spaces, shops, beauty salons and other commercial interiors — from the initial concept and technical documentation to furniture production and complete implementation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> offers office and commercial interior design, custom furniture, and turnkey renovation in Bratislava and Vienna. We develop comprehensive solutions for offices, law firms, corporate spaces, stores, beauty salons, and other commercial properties — from the initial concept and technical documentation to furniture manufacturing and full implementation of the interior."
       }
      ]
     },
@@ -156,25 +156,20 @@
        "alt": "turnkey office project for a law firm in Europe"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "688f53615a6566f77ee8367a",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
        "text": "Back",
-       "href": "/en/commercial-interior-design"
+       "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Price of available design service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -182,18 +177,18 @@
    ]
   },
   {
-   "id": "688512fedcb134e613a276e5",
+   "id": "69cc02358db0832389dfd49f",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -201,7 +196,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -225,7 +220,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

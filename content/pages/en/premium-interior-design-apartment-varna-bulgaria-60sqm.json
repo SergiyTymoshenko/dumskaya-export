@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 60 m² in Varna | DUMSKAYA DESIGN",
- "description": "60 m² apartment in Varna: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Apartment Interior Design, Custom Furniture & Turnkey Renovation in Varna, 60 m²",
+ "description": "60 m² apartment in Varna: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Apartment interior design in Varna, custom furniture and turnkey renovation, 60 m²",
  "og_image": "6abd6ad93ba7c7b83394f9b9",
  "alternates": {
   "ru": "/interior-design-furniture-60m",
@@ -14,39 +14,39 @@
  },
  "sections": [
   {
-   "id": "6884d34a53fd64883a42e945",
+   "id": "66a58a44ccf4becda7d9e780",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Apartment Interior Design, Custom Furniture & Turnkey Renovation in Varna, 60 m²"
+     "text": "Apartment interior design in Varna, custom furniture and turnkey renovation, 60 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed and completed a comprehensive project for a 60 m² apartment in Varna, Bulgaria. The project combined interior design, technical documentation, custom-made furniture and comprehensive turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 60 m² apartment in Varna, Bulgaria. The project combined interior design, technical documentation, bespoke furniture, and a complete turnkey apartment renovation."
       },
       {
        "t": "p",
-       "html": "The layout and interior solutions include the living room, bedroom, kitchen with integrated appliances, walk-in wardrobes, entrance hall, bathroom and functional storage systems. Particular attention was given to ergonomics, efficient use of space and creating a comfortable environment for everyday living."
+       "html": "The layout and interior solutions cover the living room, bedroom, a kitchen with built-in appliances, walk-in closets, an entrance hall, a bathroom, and functional storage systems. Special attention was paid to ergonomics, rational use of floor area, and creating a comfortable space for everyday life."
       },
       {
        "t": "p",
-       "html": "Custom-made furniture was designed and manufactured specifically for the apartment, including the kitchen, built-in wardrobes, walk-in closets, shelving and storage systems. The furniture was developed together with the interior concept, allowing it to be precisely integrated into the architecture and making efficient use of every square metre."
+       "html": "Custom furniture was designed and manufactured for the apartment, including the kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems. The furniture was designed together with the interior, which made it possible to integrate it precisely into the architecture of the rooms and make efficient use of every square meter of the apartment."
       },
       {
        "t": "p",
-       "html": "Before implementation, a detailed estimate was prepared covering construction and finishing works, materials, custom furniture, household appliances, sanitary equipment, lighting and other elements specified in the project. Following the design stage, a comprehensive turnkey apartment renovation in Varna was completed in accordance with the developed technical documentation."
+       "html": "Before work began, a detailed cost estimate was prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project. After the design stage was completed, a full turnkey renovation of the apartment in Varna was carried out in accordance with the technical documentation."
       },
       {
        "t": "p",
-       "html": "The project also included photorealistic 3D visualizations, allowing the future interior, materials, furniture and lighting solutions to be evaluated before implementation. The completed result is presented through photographs of the finished apartment and its custom-made furniture."
+       "html": "Photorealistic 3D visualizations were prepared for the project, allowing the future interior, materials, furniture, and lighting to be evaluated in advance. The completed result is shown in photos of the finished apartment and the bespoke furniture made for it."
       },
       {
        "t": "p",
-       "html": "This 60 m² apartment project demonstrates <strong>DUMSKAYA DESIGN</strong>’s comprehensive approach — from interior design and technical documentation to custom furniture production and complete interior implementation."
+       "html": "The 60 m² apartment project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach — from interior design and technical documentation to the manufacture of bespoke furniture and the finished interior."
       }
      ]
     },
@@ -55,7 +55,7 @@
      "images": [
       {
        "id": "6abd6ad93ba7c7b83394f9b9",
-       "alt": "premium living room interior design varna bulgaria"
+       "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
       },
       {
        "id": "66d4903ae93b01287b021ed7",
@@ -192,25 +192,20 @@
        "alt": "panoramic view from apartment balcony varna bulgaria"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6890b6b84ebcf4b69336a1c4",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
        "text": "Back",
-       "href": "/en/portfolio-interior-design-projects"
+       "href": "/en/custom-residential-furniture"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -218,18 +213,18 @@
    ]
   },
   {
-   "id": "688511b76a8709c50fe5404a",
+   "id": "69cc00263a4c80365550e0e0",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -237,7 +232,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -261,7 +256,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

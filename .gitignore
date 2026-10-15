@@ -8,3 +8,4 @@ deploy/lead.env
 leads.jsonl
 __pycache__/
 content/image-manifest.json
+i18n-work/

@@ -5,7 +5,7 @@
  "group": null,
  "title": "Kitchen Layout Rules: Plan a Functional Kitchen | DUMSKAYA",
  "description": "Work triangle, storage zones, clearances and lighting: how to plan a comfortable, functional kitchen. Advice from an interior designer.",
- "h1": "How to Design a Comfortable and Functional Kitchen",
+ "h1": "How to plan a comfortable, functional kitchen",
  "og_image": "66c511596549f3d91ef8764e",
  "alternates": {
   "ru": "/kak-pravilno-organizovat-udobnuyu-i-funkcionalnuyu-kuhnyu",
@@ -14,21 +14,13 @@
  },
  "sections": [
   {
-   "id": "6893b2411e203a66d8dad14d",
+   "id": "67d8a2794b675ee497811008",
    "blocks": [
     {
      "type": "cards",
      "items": [
       {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
+       "title": "Kitchen model No. K-06",
        "href": "/en/kitchen-k06-white-minimalist",
        "image": {
         "id": "67c8c5edbc98e6d349021946",
@@ -36,7 +28,7 @@
        }
       },
       {
-       "title": "Kitchen model №K-05",
+       "title": "Kitchen model No. K-05",
        "href": "/en/kitchen-k05-beige-classic",
        "image": {
         "id": "67d2ce3732bfd979ec7466ca",
@@ -44,7 +36,7 @@
        }
       },
       {
-       "title": "Kitchen model №K-11",
+       "title": "Kitchen model No. K-11",
        "href": "/en/kitchen-k11-grey-modern",
        "image": {
         "id": "67d2d3d532bfd979ec747e9e",
@@ -52,7 +44,7 @@
        }
       },
       {
-       "title": "Kitchen model №K-08",
+       "title": "Kitchen model No. K-08",
        "href": "/en/kitchen-k08-brown-minimalist",
        "image": {
         "id": "67d2cfa84385e682489fe2ff",
@@ -60,7 +52,7 @@
        }
       },
       {
-       "title": "Kitchen model №K-03",
+       "title": "Kitchen model No. K-03",
        "href": "/en/kitchen-k03-black-modern",
        "image": {
         "id": "67d2c0e46ad366460788472f",
@@ -68,11 +60,19 @@
        }
       },
       {
-       "title": "Kitchen model №K-04",
+       "title": "Kitchen model No. K-04",
        "href": "/en/kitchen-k04-grey-modern",
        "image": {
         "id": "67c8be7ee5449e0536081d2e",
         "alt": "functional kitchen design with wooden accents"
+       }
+      },
+      {
+       "title": "Kitchen model No. K-41",
+       "href": "/en/modern-gray-straight-kitchen-41",
+       "image": {
+        "id": "67cb0bfd807a287f628edace",
+        "alt": "typical kitchen design with modern cabinets"
        }
       }
      ]
@@ -80,21 +80,13 @@
    ]
   },
   {
-   "id": "6893b2691e203a66d8dad307",
+   "id": "67ebac8c14296ee5989b4168",
    "blocks": [
     {
      "type": "cards",
      "items": [
       {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
+       "title": "Kitchen model No. K-06",
        "href": "/en/kitchen-k06-white-minimalist",
        "image": {
         "id": "67c8c5edbc98e6d349021946",
@@ -102,7 +94,7 @@
        }
       },
       {
-       "title": "Kitchen model №K-05",
+       "title": "Kitchen model No. K-05",
        "href": "/en/kitchen-k05-beige-classic",
        "image": {
         "id": "67d2ce3732bfd979ec7466ca",
@@ -110,37 +102,45 @@
        }
       },
       {
-       "title": "Kitchen model №K-11",
+       "title": "Kitchen model No. K-11",
        "href": "/en/kitchen-k11-grey-modern",
        "image": {
         "id": "67d2d3d532bfd979ec747e9e",
         "alt": "contemporary kitchen with island and bar stools"
        }
+      },
+      {
+       "title": "Kitchen model No. K-08",
+       "href": "/en/kitchen-k08-brown-minimalist",
+       "image": {
+        "id": "67d2cfa84385e682489fe2ff",
+        "alt": "small typical kitchen with efficient storage"
+       }
       }
      ]
     }
    ]
   },
   {
-   "id": "6893b2861e203a66d8dad3a3",
+   "id": "67ebac8814296ee5989b4113",
    "blocks": [
     {
      "type": "cards",
      "items": [
       {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
+       "title": "Kitchen model No. K-06",
        "href": "/en/kitchen-k06-white-minimalist",
        "image": {
         "id": "67c8c5edbc98e6d349021946",
         "alt": "standard kitchen layout with built-in appliances"
+       }
+      },
+      {
+       "title": "Kitchen model No. K-05",
+       "href": "/en/kitchen-k05-beige-classic",
+       "image": {
+        "id": "67d2ce3732bfd979ec7466ca",
+        "alt": "classic kitchen style with white cabinets"
        }
       }
      ]
@@ -148,12 +148,12 @@
    ]
   },
   {
-   "id": "6884d34753fd64883a42e7f7",
+   "id": "66a24b1e73766597ae381002",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "How to Design a Comfortable and Functional Kitchen"
+     "text": "How to plan a comfortable, functional kitchen"
     },
     {
      "type": "gallery",
@@ -217,224 +217,216 @@
      ]
     },
     {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen furniture layout principles from DUMSKAYA DESIGN"
+    },
+    {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>Furniture Layout Principles for the Kitchen by DUMSKAYA DESIGN Bratislava, Slovakia</strong>"
+       "html": "Creating a functional and aesthetically appealing kitchen requires a careful approach to furniture arrangement and layout. The key rules that will help you achieve this include the following:"
       },
       {
        "t": "p",
-       "html": "Creating a functional and visually appealing kitchen requires a thoughtful approach to layout and furniture arrangement. The following principles will help you achieve the perfect balance of comfort, functionality, and aesthetics:"
+       "html": "<strong>1. Analyzing the features of the room</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>1. Analyze the space</strong>"
+       "html": "Before you start designing a kitchen, it is important to consider the shape and size of the room:"
       },
       {
        "t": "p",
-       "html": "Before planning a kitchen layout, consider the shape and size of the room:"
+       "html": "- “Small kitchens”: Straight and L-shaped layouts are ideal for small spaces, as they make efficient use of every centimeter."
       },
       {
        "t": "p",
-       "html": "Small kitchens: Linear and L-shaped layouts are ideal, as they make the most of every inch."
+       "html": "- “Narrow kitchens”: Straight, U-shaped, and L-shaped layouts make the most of the room’s length."
       },
       {
        "t": "p",
-       "html": "Narrow kitchens: Linear, U-shaped, and L-shaped layouts are effective for utilizing the room's length."
+       "html": "- “Square kitchens”: Two-wall (galley) layouts create a harmonious balance between work zones and storage."
       },
       {
        "t": "p",
-       "html": "Square kitchens: Galley kitchens offer a balanced use of both storage and workspace."
+       "html": "<strong>2. Optimizing the work triangle</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>2. Optimize the work triangle</strong>"
+       "html": "The work triangle is a concept that covers three main zones: the refrigerator, the stove, and the sink. Arranging these elements correctly makes cooking convenient and efficient:"
       },
       {
        "t": "p",
-       "html": "The kitchen work triangle consists of the three main zones: refrigerator, stove, and sink. Their proper positioning improves cooking flow and efficiency:"
+       "html": "- “Straight layout”: All elements are placed along one wall. Suitable for narrow spaces but may not work for large kitchens."
       },
       {
        "t": "p",
-       "html": "Linear layout: All elements along one wall — suitable for narrow spaces but less ideal for larger rooms."
+       "html": "- “L-shaped layout”: Ideal for most kitchens, as it provides convenient access to all zones."
       },
       {
        "t": "p",
-       "html": "L-shaped layout: Ideal for most kitchens; it provides convenient access to all zones."
+       "html": "- “U-shaped layout”: Good for large kitchens, offering plenty of storage and work surfaces, but it can look bulky."
       },
       {
        "t": "p",
-       "html": "U-shaped layout: Works best in larger kitchens with ample storage and counter space but may feel bulky in small rooms."
+       "html": "<strong>3. Using islands and peninsulas</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>3. Use islands and peninsulas</strong>"
+       "html": "Adding an island or a peninsula can significantly improve a kitchen’s functionality:"
       },
       {
        "t": "p",
-       "html": "Adding an island or peninsula can significantly enhance functionality:"
+       "html": "- “Island”: Great for large kitchens; it can serve as an extra work surface, a dining area, or storage space."
       },
       {
        "t": "p",
-       "html": "Island: Perfect for spacious kitchens; it can serve as an extra prep area, dining zone, or storage solution."
+       "html": "- “Peninsula”: A compact alternative to an island, suitable for smaller spaces; it adds extra work surface and storage."
       },
       {
        "t": "p",
-       "html": "Peninsula: A compact alternative to an island, ideal for smaller kitchens, while still adding workspace and storage."
+       "html": "<strong>4. Ergonomics and convenience</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>4. Focus on ergonomics and convenience</strong>"
+       "html": "Good kitchen ergonomics ensure comfort and safety:"
       },
       {
        "t": "p",
-       "html": "Proper kitchen ergonomics improve both comfort and safety:"
+       "html": "- “Distance between elements”: Allow enough room to move comfortably between work zones."
       },
       {
        "t": "p",
-       "html": "Spacing: Ensure there’s enough room to move freely between work zones."
+       "html": "- “Access to windows and balconies”: Keep in mind the need for easy access to windows for ventilation and natural light."
       },
       {
        "t": "p",
-       "html": "Access to windows and balconies: Allow for natural light and ventilation."
+       "html": "- “Cabinet height and placement”: Mount upper cabinets at a comfortable height so that reaching dishes and food is never awkward."
       },
       {
        "t": "p",
-       "html": "Cabinet height: Position upper cabinets within comfortable reach to avoid strain."
+       "html": "<strong>5. Choosing materials and colors</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>5. Choose the right materials and colors</strong>"
+       "html": "Materials and colors play an important role in setting the atmosphere of the kitchen:"
       },
       {
        "t": "p",
-       "html": "Materials and colors define the mood and practicality of the kitchen:"
+       "html": "- “Materials”: Use high-quality, durable materials such as natural wood, stone, and stainless steel."
       },
       {
        "t": "p",
-       "html": "Materials: Opt for high-quality, durable materials like natural wood, stone, and stainless steel."
+       "html": "- “Colors”: Light tones visually enlarge the space, while dark ones add depth and elegance."
       },
       {
        "t": "p",
-       "html": "Colors: Light tones visually expand the space; darker shades bring depth and elegance."
+       "html": "<strong>6. Integrating modern technology</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>6. Integrate modern technology</strong>"
+       "html": "Modern technology can make working in the kitchen much easier:"
       },
       {
        "t": "p",
-       "html": "Smart solutions can streamline kitchen tasks:"
+       "html": "- “Smart devices”: Integrating smart refrigerators, cooktops, and other appliances simplifies cooking and food storage."
       },
       {
        "t": "p",
-       "html": "Smart appliances: Fridges, ovens, and gadgets with intelligent features make cooking and storing easier."
+       "html": "- “Lighting”: Using different types of lighting — general, task, and decorative — creates a comfortable atmosphere and ensures that work areas are well lit."
       },
       {
        "t": "p",
-       "html": "Lighting: Combine general, task, and accent lighting to ensure visibility and ambiance."
+       "html": "<strong>7. Storage and organization</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>7. Maximize storage and organization</strong>"
+       "html": "A well-thought-out storage system makes the kitchen more functional and convenient:"
       },
       {
        "t": "p",
-       "html": "Smart storage makes the kitchen more efficient:"
+       "html": "- “Built-in cabinets”: Make the most of vertical space to store dishes and food."
       },
       {
        "t": "p",
-       "html": "Built-in cabinets: Use vertical space to the fullest."
+       "html": "- “Pull-out drawers and shelves”: Provide easy access to everything you need."
       },
       {
        "t": "p",
-       "html": "Pull-out drawers and shelves: Provide easy access to everything you need."
+       "html": "- “Organizers and dividers”: Help keep things tidy and the space efficiently organized."
       },
       {
        "t": "p",
-       "html": "Organizers and dividers: Keep things neat and well-arranged."
+       "html": "<strong>8. Personalizing the space</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>8. Personalize the space</strong>"
+       "html": "The kitchen should reflect the owners’ personal style and preferences:"
       },
       {
        "t": "p",
-       "html": "A kitchen should reflect your personal taste and lifestyle:"
+       "html": "- “Decorative elements”: Add personal touches such as artwork, plants, or unique hardware."
       },
       {
        "t": "p",
-       "html": "Decor: Add unique touches like artwork, plants, or designer hardware."
+       "html": "- “Functional accents”: Use stylish yet practical decorative elements such as designer faucets, unusual light fixtures, or open shelving."
       },
       {
        "t": "p",
-       "html": "Functional accents: Include stylish yet practical elements like designer faucets, pendant lights, or open shelving."
+       "html": "<strong>9. Comfort and coziness</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>9. Prioritize comfort and coziness</strong>"
+       "html": "Creating a cozy atmosphere in the kitchen is important for the overall perception of the space:"
       },
       {
        "t": "p",
-       "html": "A warm atmosphere enhances the kitchen experience:"
+       "html": "- “Soft seating and textiles”: Upholstered furniture and textiles add comfort and warmth."
       },
       {
        "t": "p",
-       "html": "Soft seating and textiles: Cushioned furniture and fabrics add comfort."
+       "html": "- “Pleasant smells”: Install range hoods and ventilation systems to keep the air fresh and get rid of unpleasant odors."
       },
       {
        "t": "p",
-       "html": "Pleasant aromas: Use proper ventilation systems to maintain fresh air and eliminate odors."
+       "html": "<strong>10. Eco-friendliness and sustainability</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>10. Be sustainable</strong>"
+       "html": "Eco-friendly materials and energy-efficient solutions help protect the environment and save resources:"
       },
       {
        "t": "p",
-       "html": "Eco-friendly materials and appliances support the environment and reduce costs:"
+       "html": "- “Eco-friendly materials”: Choose natural and recyclable materials for furniture and finishes."
       },
       {
        "t": "p",
-       "html": "Green materials: Choose recyclable or natural options for furniture and finishes."
+       "html": "- “Energy-efficient appliances”: Use appliances with a high energy efficiency class to reduce electricity costs."
       },
       {
        "t": "p",
-       "html": "Energy-efficient appliances: Lower energy bills and environmental impact."
+       "html": "<strong>Conclusion</strong>"
       },
       {
        "t": "p",
-       "html": "Conclusion"
+       "html": "The right furniture arrangement and kitchen layout play a key role in creating a functional and aesthetically appealing space. By following the rules described above, you can achieve a harmonious combination of convenience, style, and efficiency, making the kitchen the true heart of the home."
       },
       {
        "t": "p",
-       "html": "The right furniture layout and kitchen planning are key to creating a space that’s both beautiful and efficient. By following these principles, you can achieve a harmonious design that meets your practical needs while reflecting your personal style."
+       "html": "If you need help designing and manufacturing the kitchen of your dreams, contact DUMSKAYA DESIGN — we will be happy to help you create a stylish and comfortable space!"
       },
       {
        "t": "p",
-       "html": "<strong>Need help designing and building your dream kitchen?</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Contact DUMSKAYA DESIGN Bratislava, Slovakia — we’ll help you create a stylish and functional space!</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Over 15 years of experience!</strong>"
+       "html": "Over 15 years of experience!"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6893a37052a5e72c94df7bca",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
@@ -442,7 +434,7 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Price of available service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -450,18 +442,18 @@
    ]
   },
   {
-   "id": "688513f353fd64883a44176a",
+   "id": "69cc0357376a1a22235b1a34",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -469,7 +461,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -493,7 +485,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

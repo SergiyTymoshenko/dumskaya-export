@@ -31,53 +31,53 @@
      "parts": [
       {
        "t": "p",
-       "html": "DUMSKAYA DESIGN interior design studio, Súkennícka 1, 821 09 Bratislava, Slovakia. E-mail: <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>, phone: <a href=\"tel:+421918177785\">+421 918 17 77 85</a>."
+       "html": "DUMSKAYA DESIGN interior design studio, Súkennícka 1, 821 09 Bratislava, Slovakia. Email: <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>, phone: <a href=\"tel:+421918177785\">+421 918 17 77 85</a>."
       }
      ]
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "What data and why"
+     "text": "What data we collect and why"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "When you send the enquiry form, we receive your name, phone number or e-mail and your message. We use this data only to answer your enquiry and prepare an offer (Art. 6(1)(b) GDPR — steps prior to entering into a contract)."
+       "html": "When you submit the request form, we receive your name, phone number or email address, and the text of your message. We use this data solely to respond to your request and prepare a proposal (Art. 6(1)(b) GDPR — steps taken prior to entering into a contract)."
       },
       {
        "t": "p",
-       "html": "If you write to us by e-mail, WhatsApp or Telegram, we receive the data you include in your message and use it to reply."
+       "html": "If you email us or message us on WhatsApp or Telegram, we receive the information you provide in your message and use it to reply."
       }
      ]
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "Who receives the data"
+     "text": "Who we share data with"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "Enquiries from the website are delivered to our mailbox (Google Gmail) and to Telegram. The website is hosted on a Hetzner server in the European Union. We do not sell your data or share it with third parties for advertising."
+       "html": "Requests from the website are delivered to our email (Google Gmail) and Telegram. The website is hosted on a Hetzner server in the European Union. Your data is not sold or shared with third parties for advertising."
       }
      ]
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "How long we keep the data"
+     "text": "How long we keep data"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "Enquiries are kept for no longer than 24 months after our last contact unless we sign a contract. Contract data is kept for as long as Slovak law requires."
+       "html": "Requests are kept for no longer than 24 months after our last communication, unless a contract has been concluded between us. Contract-related data is retained for as long as required by Slovak law."
       }
      ]
     },
@@ -91,7 +91,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "The website uses Google Analytics via Google Tag Manager to understand which pages are useful to visitors. These cookies are loaded only after you consent in the banner. You can withdraw consent at any time by clearing the site cookies in your browser; the banner will appear again."
+       "html": "The website uses Google Analytics via Google Tag Manager to understand which pages are useful to visitors. These cookies are loaded only after you give your consent in the banner. You can withdraw your consent at any time: clear the website’s cookies in your browser, and the banner will appear again."
       }
      ]
     },
@@ -105,7 +105,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "You can request access to, correction or deletion of your data, restrict or object to processing, and receive your data in a machine-readable format. Write to <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>. You can also lodge a complaint with the Slovak data protection authority, Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk)."
+       "html": "You can request access to your data, its correction or deletion, restrict or object to its processing, and receive your data in a machine-readable format. Write to <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>. You can file a complaint with the Úrad na ochranu osobných údajov Slovenskej republiky (the Office for Personal Data Protection of the Slovak Republic, dataprotection.gov.sk)."
       }
      ]
     }

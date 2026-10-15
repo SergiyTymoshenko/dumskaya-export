@@ -5,7 +5,7 @@
  "group": null,
  "title": "Balcony Design: Ideas and Tips | DUMSKAYA DESIGN",
  "description": "How to make a balcony comfortable and functional: a lounge, a study or storage. Furniture, lighting and materials — advice from an interior designer.",
- "h1": "How to Design a Comfortable and Functional Balcony",
+ "h1": "How to design a comfortable and functional balcony",
  "og_image": "66b4e40ff97515ef05f1d260",
  "alternates": {
   "ru": "/kak-pravilno-organizovat-udobnyj-i-funkcionalnyj-balkon",
@@ -14,146 +14,12 @@
  },
  "sections": [
   {
-   "id": "6893b2421e203a66d8dad1a5",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      },
-      {
-       "title": "Kitchen model №K-05",
-       "href": "/en/kitchen-k05-beige-classic",
-       "image": {
-        "id": "67d2ce3732bfd979ec7466ca",
-        "alt": "classic kitchen style with white cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-11",
-       "href": "/en/kitchen-k11-grey-modern",
-       "image": {
-        "id": "67d2d3d532bfd979ec747e9e",
-        "alt": "contemporary kitchen with island and bar stools"
-       }
-      },
-      {
-       "title": "Kitchen model №K-08",
-       "href": "/en/kitchen-k08-brown-minimalist",
-       "image": {
-        "id": "67d2cfa84385e682489fe2ff",
-        "alt": "small typical kitchen with efficient storage"
-       }
-      },
-      {
-       "title": "Kitchen model №K-03",
-       "href": "/en/kitchen-k03-black-modern",
-       "image": {
-        "id": "67d2c0e46ad366460788472f",
-        "alt": "open plan kitchen with dining area"
-       }
-      },
-      {
-       "title": "Kitchen model №K-04",
-       "href": "/en/kitchen-k04-grey-modern",
-       "image": {
-        "id": "67c8be7ee5449e0536081d2e",
-        "alt": "functional kitchen design with wooden accents"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6893b2681e203a66d8dad2af",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      },
-      {
-       "title": "Kitchen model №K-05",
-       "href": "/en/kitchen-k05-beige-classic",
-       "image": {
-        "id": "67d2ce3732bfd979ec7466ca",
-        "alt": "classic kitchen style with white cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-11",
-       "href": "/en/kitchen-k11-grey-modern",
-       "image": {
-        "id": "67d2d3d532bfd979ec747e9e",
-        "alt": "contemporary kitchen with island and bar stools"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6893b2871e203a66d8dad40c",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6884d34753fd64883a42e828",
+   "id": "66a26d72e5dd1ec1e7a51088",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "How to Design a Comfortable and Functional Balcony"
+     "text": "How to design a comfortable and functional balcony"
     },
     {
      "type": "gallery",
@@ -187,130 +53,58 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Perfect Balcony by DUMSKAYA DESIGN"
+     "text": "The perfect balcony by DUMSKAYA DESIGN"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "When a professional designer takes on the task, even a small balcony can be transformed into a cozy and functional space for relaxation and entertainment all year round. In our case — it’s 8 square meters of pure relaxation."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Lounge area"
-    },
-    {
-     "type": "text",
-     "parts": [
+       "html": "When a professional designer takes on the job, even a small balcony can become a cozy, functional space for relaxing and entertaining all year round. And in our case, that means 8 square meters of pure relaxation."
+      },
       {
        "t": "p",
-       "html": "The balcony begins with a spacious, comfortable corner sofa placed along the walls. Soft pillows and throws add a warm, welcoming atmosphere."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Bar counter"
-    },
-    {
-     "type": "text",
-     "parts": [
+       "html": "<strong>Lounge area: </strong>The balcony begins with a large, comfortable corner sofa running along the walls. It is dressed with soft cushions and throws that create a cozy atmosphere."
+      },
       {
        "t": "p",
-       "html": "Along the balcony’s glazed edge, there’s a sleek bar counter with high stools — perfect for morning coffee or evening cocktails with a city view. It’s made from natural materials like wood and metal, seamlessly blending with the overall design."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Storage"
-    },
-    {
-     "type": "text",
-     "parts": [
+       "html": "<strong>Bar counter: </strong>An elegant bar counter with high stools runs along the balcony glazing. It is the perfect spot for morning coffee or evening cocktails with a view of the city. The counter is made of natural materials such as wood and metal, in harmony with the overall concept of the balcony."
+      },
       {
        "t": "p",
-       "html": "A built-in-looking storage cabinet is cleverly integrated into the wall (a visual trick), offering plenty of space for seasonal items, pillows, blankets, tools, and more. Its modern, minimalist design keeps the space clean and uncluttered."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Barbecue zone"
-    },
-    {
-     "type": "text",
-     "parts": [
+       "html": "<strong>Storage: </strong>A spacious cabinet appears to be built into one of the walls (an optical illusion), providing plenty of room for seasonal items, cushions and throws, tools, and other belongings. The cabinet has a modern, unobtrusive design that doesn’t overload the space."
+      },
       {
        "t": "p",
-       "html": "A compact yet fully functional BBQ area is included. The grill is placed on its own stand to ensure safety and ease of use."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "UFO heater"
-    },
-    {
-     "type": "text",
-     "parts": [
+       "html": "<strong>Barbecue: </strong>The balcony features a compact yet functional barbecue area. The grill stands on its own base for safety and convenience."
+      },
       {
        "t": "p",
-       "html": "To make the balcony usable year-round, a UFO heater provides warmth and comfort even during cold months — ideal for family evenings and cozy gatherings with friends."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Greenery and decor"
-    },
-    {
-     "type": "text",
-     "parts": [
+       "html": "<strong>UFO heater: </strong>A UFO heater has been installed so the balcony can be used all year round. It maintains a comfortable temperature even in the colder months, creating a cozy setting for family evenings and get-togethers with friends."
+      },
       {
        "t": "p",
-       "html": "Potted plants and climbing greenery bring a refreshing, natural feel. Floor and built-in lighting create a romantic evening ambiance and highlight the details."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Conclusion"
-    },
-    {
-     "type": "text",
-     "parts": [
+       "html": "<strong>Greenery and decor: </strong>Potted plants and climbing plants trained along the beams add freshness and a natural, cozy feel. Soft lighting from floor lamps and recessed fixtures creates a romantic atmosphere in the evening."
+      },
       {
        "t": "p",
-       "html": "This balcony becomes a true gem of the apartment — a stylish, comfortable, and fully usable space designed for year-round enjoyment thanks to thoughtful planning and modern solutions."
+       "html": "<strong>Conclusion: </strong>A balcony like this becomes the true gem of the apartment: a functional, stylish space for relaxing and socializing that can be enjoyed all year round thanks to thoughtful design and modern solutions."
+      },
+      {
+       "t": "p",
+       "html": "If you need help, contact <strong>DUMSKAYA DESIGN</strong> — we’ll be happy to help you create a stylish and comfortable space!"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Over 15 years of experience!</strong>"
       }
      ]
     },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Need help creating your dream balcony? Contact DUMSKAYA DESIGN — we’ll help you design a stylish and comfortable space! Over 15 years of experience!"
-    }
-   ]
-  },
-  {
-   "id": "6893a37152a5e72c94df7c16",
-   "blocks": [
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
@@ -318,7 +112,7 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Price of available service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -326,18 +120,18 @@
    ]
   },
   {
-   "id": "6885140b53fd64883a4417f1",
+   "id": "69cc037e376a1a22235b1b7f",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -345,7 +139,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -369,7 +163,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

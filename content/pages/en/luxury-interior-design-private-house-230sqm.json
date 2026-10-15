@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Private House Interior Design 230 m² | DUMSKAYA DESIGN",
- "description": "230 m² private house: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Private House Interior Design, Custom Furniture & Turnkey Renovation, 230 m²",
+ "description": "230 m² private house: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Interior design of a 230 m² private house, custom furniture and turnkey renovation",
  "og_image": "6abd6b2e4888499d207455b1",
  "alternates": {
   "ru": "/dumskaya-interior-design-villa-230m",
@@ -14,39 +14,39 @@
  },
  "sections": [
   {
-   "id": "6884d35653fd64883a42edd7",
+   "id": "66d8b799cc78bc3bf9c8ab8b",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Private House Interior Design, Custom Furniture & Turnkey Renovation, 230 m²"
+     "text": "Interior design of a 230 m² private house, custom furniture and turnkey renovation"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed a comprehensive project for a 230 m² private house, including interior design, technical documentation, custom furniture design and manufacturing, and turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> developed a comprehensive project for a 230 m² private house, including interior design, technical documentation, the design and manufacture of bespoke furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The project covers the main functional areas of the house: living room, bedrooms, kitchen with built-in appliances, dressing rooms, entrance hall and bathrooms. The layout and interior solutions were developed with a strong focus on ergonomics, everyday comfort and visual consistency throughout the house."
+       "html": "The project covers the main functional areas of the house: the living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, and bathrooms. The layout and interior solutions were developed with ergonomics, everyday comfort, and the visual coherence of the space in mind."
       },
       {
        "t": "p",
-       "html": "Custom-made furniture was developed for the individual rooms, including built-in wardrobes, storage systems, shelving and other bespoke furniture elements. Designing the furniture together with the interior makes it possible to take the architecture of each room into account, use the available space efficiently and maintain a consistent style throughout the house."
+       "html": "Custom furniture was designed for the rooms, including built-in wardrobes, storage systems, shelving, and other furniture pieces. Designing the furniture together with the interior makes it possible to account for the architecture of the rooms, use space efficiently, and maintain a consistent style throughout the house."
       },
       {
        "t": "p",
-       "html": "The project was implemented as a comprehensive process — from the development of the interior concept and technical documentation to renovation works, custom furniture manufacturing and installation. Before implementation, a detailed estimate was prepared covering works, construction and finishing materials, furniture, household appliances, sanitary equipment and lighting."
+       "html": "The project was delivered as a complete package — from developing the interior concept and technical documentation to renovation work and the manufacture and installation of bespoke furniture. Before work began, a detailed cost estimate was prepared, covering labor, construction and finishing materials, furniture, appliances, plumbing fixtures, and lighting."
       },
       {
        "t": "p",
-       "html": "The project is presented through photorealistic 3D visualizations, demonstrating the interior, layout and custom furniture solutions developed for the 230 m² private house."
+       "html": "The project is presented in photorealistic 3D visualizations showing the interior, layout, and furniture solutions for the 230 m² private house."
       },
       {
        "t": "p",
-       "html": "<strong>Today, DUMSKAYA DESIGN is based in Bratislava, Slovakia, providing comprehensive interior design, custom furniture and turnkey renovation services with a primary focus on Bratislava and Vienna.</strong>"
+       "html": "<strong>Today, DUMSKAYA DESIGN is based in Bratislava, Slovakia, and delivers comprehensive interior projects, custom furniture, and turnkey renovations with a primary geographic focus on Bratislava and Vienna.</strong>"
       }
      ]
     },
@@ -222,12 +222,7 @@
        "alt": "neutral hallway design in luxury villa"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6890b6b94ebcf4b69336a1db",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -236,11 +231,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -248,18 +243,18 @@
    ]
   },
   {
-   "id": "6885115cd3e167d721b58474",
+   "id": "69cbff21ac8617e413403c92",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -267,7 +262,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -291,7 +286,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

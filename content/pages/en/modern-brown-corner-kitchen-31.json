@@ -5,7 +5,7 @@
  "group": null,
  "title": "Custom Kitchen K-31: Modern Brown Corner | DUMSKAYA DESIGN",
  "description": "Kitchen K-31, modern brown corner. Made to your measurements, manufactured and installed in Bratislava and Vienna. Free price quote.",
- "h1": "K-31 L-Shaped Kitchen with Light Lime Green Upper Cabinets and Brown Wood-Effect Lower Fronts",
+ "h1": "L-shaped K-31 kitchen with light lime-green upper cabinets and brown woodgrain fronts",
  "og_image": "6abea68dc8c59bb7c8398ef7",
  "alternates": {
   "ru": "/kuhni-pod-zakaz-k-31-cena-bratislava-slovakia",
@@ -14,19 +14,31 @@
  },
  "sections": [
   {
-   "id": "6884d36653fd64883a42f3ec",
+   "id": "67ca1fae2250deacf468a8cd",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "K-31 L-Shaped Kitchen with Light Lime Green Upper Cabinets and Brown Wood-Effect Lower Fronts"
+     "text": "L-shaped K-31 kitchen with light lime-green upper cabinets and brown woodgrain fronts"
     },
     {
      "type": "gallery",
      "images": [
       {
+       "id": "67ca214386dcc23eb9b24517",
+       "alt": "k-31 kitchen with light lime green upper cabinets and wood-effect lower fronts made to individual dimensions"
+      },
+      {
        "id": "6abea68dc8c59bb7c8398ef7",
        "alt": "k-31 l-shaped kitchen with light lime green upper cabinets and brown wood-effect lower fronts"
+      },
+      {
+       "id": "67ca204986dcc23eb9b242d8",
+       "alt": "Modern kitchen with a light green upper row and woodgrain lower fronts"
+      },
+      {
+       "id": "67ca2058a20afb270b7eeeb5",
+       "alt": "3.9-meter custom K-31 kitchen in lime green and brown in Bratislava"
       },
       {
        "id": "67ca2066d4431e8e14403b0d",
@@ -45,8 +57,20 @@
        "alt": "k-31 kitchen with light lime green upper cabinets and an l-shaped layout"
       },
       {
+       "id": "67ca20d0e3392d3d7b952841",
+       "alt": "Kitchen cabinets contrasting soft green and brown woodgrain surfaces"
+      },
+      {
+       "id": "67ca20e3d4431e8e14403c63",
+       "alt": "Modern L-shaped kitchen without an island, with lime-green and woodgrain fronts"
+      },
+      {
        "id": "67ca20efe3392d3d7b952878",
        "alt": "kitchen with pale green upper cabinets and brown wood-effect lower cabinetry"
+      },
+      {
+       "id": "67ca20fcd4431e8e14403cbd",
+       "alt": "L-shaped K-31 kitchen with work surfaces along two adjacent walls"
       },
       {
        "id": "67ca21103c0356227199573a",
@@ -63,10 +87,6 @@
       {
        "id": "67ca213ad4431e8e14403d78",
        "alt": "3.9 meter l-shaped kitchen with cargo storage and light lime green upper fronts"
-      },
-      {
-       "id": "67ca214386dcc23eb9b24517",
-       "alt": "k-31 kitchen with light lime green upper cabinets and wood-effect lower fronts made to individual dimensions"
       }
      ]
     },
@@ -80,83 +100,71 @@
      "parts": [
       {
        "t": "p",
-       "html": "The <strong>K-31 kitchen model </strong>combines a contemporary L-shaped layout with light lime green upper cabinets and brown wood-effect lower fronts. This distinctive combination brings color and natural-looking texture into one coordinated furniture composition."
+       "html": "<strong>The K-31 kitchen</strong> is a modern L-shaped design featuring a striking combination of light lime-green upper cabinets and brown woodgrain lower fronts. The two-tone finish gives the interior a more individual character: the soft green shade freshens up the upper part of the composition, while the warm wood texture of the lower cabinets creates a calm, cozy base."
       },
       {
        "t": "p",
-       "html": "The light lime green upper cabinetry introduces a fresh, gentle accent, while the warm brown wood-look finish of the lower cabinets gives the kitchen a grounded and welcoming character. Rather than using a uniform wood finish throughout, K-31 creates visual contrast between its upper and lower sections."
+       "html": "Unlike all-wood kitchens, the K-31 is built on a combination of color and texture. The light lime-green upper fronts can be echoed in interior details or left as a standalone accent. The brown woodgrain decor of the lower cabinets pairs well with light walls, ceramic tile, neutral tones, and stone-look surfaces."
       },
       {
        "t": "p",
-       "html": "The two finishes can be paired with light walls, neutral grey or beige materials, ceramic tiles, and stone-effect surfaces. The result is suitable for a contemporary apartment, private residence, or open-plan kitchen-living area."
+       "html": "The kitchen has an L-shaped configuration. The furniture runs along two adjacent walls, making use of the corner space and distributing work surfaces, cabinets, and built-in appliance zones between two sections."
       },
       {
        "t": "p",
-       "html": "K-31 has an L-shaped configuration, with cabinetry arranged along two adjoining walls. This layout makes use of the corner and allows work surfaces and storage to be distributed between separate sections."
+       "html": "The total length of the model is 3.9 linear meters, and the overall dimensions of the standard composition are 3.9 × 2.3 × 0.6 m. The placement of the sink, cooktop, refrigerator, and other appliances is determined during custom design based on room dimensions and utility connections. The standard model does not include a separate island."
       },
       {
        "t": "p",
-       "html": "The kitchen has a total linear length of 3.9 meters, with standard dimensions of 3.9 × 2.3 × 0.6 m. The positions of the sink, hob, refrigerator, and other built-in appliances can be determined during individual planning according to room dimensions and existing service connections. A separate kitchen island is not part of the standard model."
+       "html": "Both upper and lower fronts are made of laminated chipboard but have different finishes: the upper row is light lime green, while the lower and remaining fronts have a brown woodgrain decor. The carcass is made of 18 mm laminated chipboard, and the countertop is chipboard-based. The wood texture is created by the decorative surface of the laminated panels; solid wood is not part of the stated standard configuration."
       },
       {
        "t": "p",
-       "html": "Both upper and lower cabinet fronts are made from laminated particleboard, but feature different finishes. The upper cabinets have a solid light lime green finish, while the lower and remaining fronts have a brown wood-effect decor."
+       "html": "One of the K-31's functional advantages is the FREE FOLD Hafele lift-up mechanism, which is included in the standard configuration and provided for the corresponding upper cabinets. It lets the fronts open upward and gives convenient access to the contents."
       },
       {
        "t": "p",
-       "html": "The cabinet construction uses 18 mm laminated particleboard, and the countertop is chipboard-based. The wood-grain appearance is provided by the decorative finish of the laminated fronts; solid timber is not part of the stated standard specification."
+       "html": "The model also includes a cargo pull-out for storing food and kitchen utensils. Hinged doors are fitted with Muller Profi Line hinges with soft-close mechanisms, and pull-out elements with Muller telescopic slides without soft-close mechanisms. Cabinet handles are included."
       },
       {
        "t": "p",
-       "html": "A defining functional feature of K-31 is its FREE FOLD Hafele lift mechanism, included in the standard configuration. It allows the relevant upper cabinet fronts to open upwards, providing convenient access to upper-level storage."
+       "html": "Additional custom-order options: more functional cabinet hardware, upgraded opening mechanisms, additional storage systems, and alternative materials ranging from budget to premium. These options are selected at the client’s request and are not part of the stated standard configuration."
       },
       {
        "t": "p",
-       "html": "The kitchen also includes a pull-out cargo storage system for organizing food and kitchen essentials."
+       "html": "<strong>K-31 technical specifications — standard configuration</strong>"
       },
       {
        "t": "p",
-       "html": "Hinged cabinet doors use Muller Profi Line hinges with soft-close. Pull-out elements are equipped with Muller telescopic runners without soft-close. Cabinet handles are included in the standard specification."
+       "html": "Color: Light lime green on top and brown wood on the lower section"
       },
       {
        "t": "p",
-       "html": "K-31 can also be customized to suit individual requirements. Upon request, clients can choose more functional furniture fittings, upgraded opening mechanisms, and additional storage systems. Alternative materials are available as well, ranging from budget-friendly solutions to premium finishes. These are optional upgrades and are specified separately from the standard model."
+       "html": "Style: Modern"
       },
       {
        "t": "p",
-       "html": "<strong>K-31 Kitchen Specifications — Standard Configuration</strong>"
+       "html": "Layout: L-shaped"
       },
       {
        "t": "p",
-       "html": "Color: Light lime green upper cabinets with brown wood-effect lower cabinetry"
+       "html": "Countertop type: Chipboard-based"
       },
       {
        "t": "p",
-       "html": "Style: Contemporary"
+       "html": "Overall dimensions: 3.9 × 2.3 × 0.6 m"
       },
       {
        "t": "p",
-       "html": "Configuration: L-shaped / corner kitchen"
+       "html": "Lift-up mechanism: FREE FOLD Hafele"
       },
       {
        "t": "p",
-       "html": "Countertop: Chipboard-based"
+       "html": "Appliance installation: Built-in"
       },
       {
        "t": "p",
-       "html": "Dimensions: 3.9 × 2.3 × 0.6 m"
-      },
-      {
-       "t": "p",
-       "html": "Lift mechanism: FREE FOLD Hafele"
-      },
-      {
-       "t": "p",
-       "html": "Appliances: Designed for built-in appliances"
-      },
-      {
-       "t": "p",
-       "html": "Cargo storage: Yes"
+       "html": "Cargo pull-out: Yes"
       },
       {
        "t": "p",
@@ -164,68 +172,59 @@
       },
       {
        "t": "p",
-       "html": "Upper cabinet fronts: Laminated particleboard with a light lime green finish"
+       "html": "Upper fronts: Laminated chipboard, light lime-green decor"
       },
       {
        "t": "p",
-       "html": "Lower cabinet fronts: Laminated particleboard with a brown wood-effect finish"
+       "html": "Lower fronts: Laminated chipboard, brown woodgrain decor"
       },
       {
        "t": "p",
-       "html": "Cabinet construction: 18 mm laminated particleboard"
+       "html": "Carcass type: 18 mm laminated chipboard"
       },
       {
        "t": "p",
-       "html": "Linear length: 3.9 m"
+       "html": "Length: 3.9 linear m"
       },
       {
        "t": "p",
-       "html": "Kitchen island: No"
+       "html": "Island: No"
       },
       {
        "t": "p",
-       "html": "Hinges: Muller Profi Line with soft-close"
+       "html": "Hinges: Muller Profi Line soft-close"
       },
       {
        "t": "p",
-       "html": "Finish: Two-tone — light lime green upper cabinets and brown wood-effect remaining fronts"
+       "html": "Decor: Combination — light lime-green upper section and brown woodgrain fronts"
       },
       {
        "t": "p",
-       "html": "Drawer runners: Muller telescopic runners without soft-close"
+       "html": "Drawer slides: Muller telescopic, without soft-close"
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN, based in Bratislava, Slovakia, provides custom kitchen design and manufacturing services for apartments and private residences in Bratislava and Vienna.</strong>"
+       "html": "<strong>DUMSKAYA DESIGN designs and manufactures custom kitchens for apartments, condos, and private homes in Bratislava and Vienna. The K-31 can be adapted to the room dimensions, the location of utility connections, and built-in appliance requirements, and you can also choose different colors, materials, and cabinet interior fittings.</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>The K-31 model can be adapted to individual room dimensions, service connections, and built-in appliance requirements. Clients can select alternative shades, cabinet and countertop materials, hardware, and internal storage to suit their preferred functionality and budget.</strong>"
+       "html": "<strong>We offer furniture design, material selection, manufacturing, delivery, and professional installation. At the client’s request, we can also select a sink, faucet, range hood, and appliances.</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>Our services include kitchen planning, material and hardware selection, manufacturing, delivery, and professional installation. Sinks, taps, extractor hoods, and household appliances can also be selected upon request.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Order your K-31 kitchen from DUMSKAYA DESIGN and request a personalized quotation for your room dimensions and preferred specification.</strong>"
+       "html": "<strong>Order the K-31 kitchen from DUMSKAYA DESIGN and get a personalized quote.</strong>"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "689484cae5a194a45718d56b",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Catalog of standard kitchen collections",
+       "text": "Kitchen catalog",
        "href": "/en/custom-kitchens-bratislava-vienna"
       },
       {
-       "text": "Order your kitchen",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       }
      ]
@@ -233,18 +232,18 @@
    ]
   },
   {
-   "id": "6885171338ec9f6ebf52ac69",
+   "id": "69cc1a8e8e8e72c139940a9b",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -252,7 +251,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -276,7 +275,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

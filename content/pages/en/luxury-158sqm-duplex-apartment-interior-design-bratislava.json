@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Duplex Apartment Design 158 m², Bratislava | DUMSKAYA DESIGN",
- "description": "158 m² duplex apartment with 20 m² terrace in Bratislava: design project, 3D visualisation and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Duplex Apartment Interior Design, Custom Furniture & Turnkey Renovation in Bratislava, 158 m²",
+ "description": "158 m² duplex apartment with 20 m² terrace in Bratislava: design project, 3D visualization and custom furniture. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Duplex apartment design in Bratislava, furniture and turnkey renovation, 158 m²",
  "og_image": "6abd6a8e6bbe610384483447",
  "alternates": {
   "ru": "/interior-design-apartment-bratislava-158m",
@@ -14,39 +14,39 @@
  },
  "sections": [
   {
-   "id": "6884d34953fd64883a42e8cd",
+   "id": "66a4efe86c464ccd8ef769a1",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Duplex Apartment Interior Design, Custom Furniture & Turnkey Renovation in Bratislava, 158 m²"
+     "text": "Duplex apartment design in Bratislava, furniture and turnkey renovation, 158 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed and completed a comprehensive project for a 158 m² duplex apartment with a 20 m² terrace in Bratislava, Slovakia. The project combined interior design, technical documentation, custom-made furniture and comprehensive turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 158 m² duplex apartment with a 20 m² terrace in Bratislava, Slovakia. The project combined interior design, technical documentation, bespoke furniture, and a complete turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The interior follows a distinctive <strong>TOTAL BLACK</strong> concept. Deep dark tones, clean architectural geometry, carefully selected textures and sophisticated lighting scenarios define the overall aesthetic, creating a contemporary interior with a strong individual character."
+       "html": "The interior is designed in a bold <strong>total-black</strong> style. The concept is built on deep dark shades, clean geometry, carefully selected textures, and well-thought-out lighting scenarios. This combination creates a contemporary architectural space with a strong individual character."
       },
       {
        "t": "p",
-       "html": "The layout includes the living room, bedrooms, kitchen with integrated appliances, walk-in wardrobes, entrance hall, bathrooms and functional storage systems. Particular attention was given to the ergonomics of the duplex layout and the visual connection between the different functional areas of the apartment."
+       "html": "The layout covers the living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, bathrooms, and functional storage systems. Special attention was paid to the ergonomics of the duplex apartment and the visual connection between the apartment’s functional areas."
       },
       {
        "t": "p",
-       "html": "Custom-made furniture was developed specifically for the project, including the kitchen, built-in wardrobes, walk-in closets, shelving and storage systems. The furniture was designed together with the interior, allowing it to be precisely integrated into the architecture while maintaining a consistent design language throughout the apartment."
+       "html": "Custom furniture was developed for the project, including the kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems. The furniture was designed together with the interior, which made it possible to integrate it precisely into the architecture of the rooms and preserve a unified stylistic concept."
       },
       {
        "t": "p",
-       "html": "Before implementation, a detailed estimate was prepared covering construction and finishing works, materials, custom furniture, household appliances, sanitary equipment, lighting and other required elements. Following the design stage, the turnkey apartment renovation in Bratislava was completed according to the developed technical documentation."
+       "html": "Before work began, a detailed cost estimate was prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project. After the design stage was completed, a full turnkey renovation of the apartment in Bratislava was carried out in accordance with the technical documentation."
       },
       {
        "t": "p",
-       "html": "This 158 m² duplex apartment demonstrates <strong>DUMSKAYA DESIGN</strong>’s comprehensive approach to residential interiors in Bratislava — from the initial concept and technical solutions to custom furniture and complete interior implementation."
+       "html": "The 158 m² project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach to designing and delivering contemporary interiors in Bratislava — from concept and technical solutions to bespoke furniture and a finished interior."
       }
      ]
     },
@@ -246,12 +246,7 @@
        "alt": "designer bathroom with neutral palette bratislava"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6890b5cf4ebcf4b693369480",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -260,11 +255,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -272,18 +267,18 @@
    ]
   },
   {
-   "id": "688510b838ec9f6ebf5287f5",
+   "id": "69cbfcd996e515190621f6e5",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -291,7 +286,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -315,7 +310,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Duplex Apartment Interior Design 43 m² | DUMSKAYA DESIGN",
- "description": "43 m² duplex apartment: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Interior design project of a 43 m² duplex apartment",
+ "description": "43 m² duplex apartment: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Interior design project for a 43 m² duplex apartment",
  "og_image": "66d3798dadeaee0e909ce7ef",
  "alternates": {
   "ru": "/furniture-interior-design-43m",
@@ -14,43 +14,23 @@
  },
  "sections": [
   {
-   "id": "6884d34953fd64883a42e8f5",
+   "id": "66a57fee02afdf309a63d5f1",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Interior design project of a 43 m² duplex apartment"
+     "text": "Interior design project for a 43 m² duplex apartment"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "In this project, <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> delivered a full-service interior design solution for a 43 m² duplex apartment — from concept development and technical documentation to custom furniture design and production and turnkey renovation."
+       "html": "In this project, the interior design studio <strong>DUMSKAYA DESIGN</strong> (Bratislava, Slovakia) carried out the full scope of work: interior design, technical documentation, design and manufacture of bespoke furniture, and turnkey renovation. The design covered every room: the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, bathroom, wardrobes, and shelving. Furniture was custom-designed for each area. Before the renovation began, the client received a detailed cost estimate for labor, construction materials, furniture, appliances, plumbing fixtures, lighting, and more. 3D visualizations, photos, and video of the completed project are presented."
       },
       {
        "t": "p",
-       "html": "Despite its compact size, the apartment was carefully planned to maximize functionality, comfort, and efficient use of space. The design covered all areas, including the living room, bedroom, kitchen with custom storage solutions and built-in appliances, wardrobes, hallway, bathroom, cabinets, and shelving."
-      },
-      {
-       "t": "p",
-       "html": "Bespoke furniture was designed for each area, carefully adapted to the architecture of the duplex apartment and the client’s individual lifestyle, preferences, and storage needs."
-      },
-      {
-       "t": "p",
-       "html": "Before construction and renovation works began, the client received a detailed cost estimate covering every stage of the project — construction and finishing works, materials, custom furniture, appliances, plumbing, lighting, and other essential elements."
-      },
-      {
-       "t": "p",
-       "html": "The completed project is presented through photorealistic 3D visualizations, photographs, and video footage, demonstrating how the original interior concept was transformed into a functional and comfortable living space."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> creates residential and commercial interiors across Slovakia, Europe, and the USA, providing comprehensive services from interior design and technical documentation to bespoke furniture production and turnkey implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN — interiors that come to life.</strong>"
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) — we create interiors that truly come to life.</strong>"
       }
      ]
     },
@@ -112,13 +92,8 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Photos of the completed project and custom-made furniture"
-    }
-   ]
-  },
-  {
-   "id": "6890b6b94ebcf4b69336a1ee",
-   "blocks": [
+     "text": "Video tour of the apartment after the turnkey renovation"
+    },
     {
      "type": "buttons",
      "items": [
@@ -127,11 +102,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -139,18 +114,18 @@
    ]
   },
   {
-   "id": "6885118ad3e167d721b585e4",
+   "id": "69cbffd93a4c80365550ddab",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -158,7 +133,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -182,7 +157,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

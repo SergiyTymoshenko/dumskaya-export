@@ -14,7 +14,7 @@
  },
  "sections": [
   {
-   "id": "67e54da8c64222227173185d",
+   "id": "5d6533289ad68b0023dd3cd6",
    "blocks": [
     {
      "type": "heading",
@@ -26,7 +26,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Ви можете зателефонувати нам, написати в <strong>Telegram</strong> або <strong>WhatsApp</strong>, або залишити заявку через форму."
+       "html": "Ви можете зателефонувати нам, написати в <strong>Telegram </strong>або <strong>WhatsApp, </strong>залишити заявку через форму."
       }
      ]
     },
@@ -34,18 +34,18 @@
      "type": "cards",
      "items": [
       {
-       "title": "Дизайн студія Братислава, Словаччина Súkennícka 1, 821 09 Ružinov, Bratislava +421 918 17 77 85 Дизайн студія Відень, Австрія +43 677 61430187 Дизайн студія Київ, Україна +38 095 366 25 75",
+       "title": "Дизайн-студія Братислава, Словаччина Súkennícka 1, 821 09 Ružinov, Bratislava +421 918 17 77 85 Дизайн-студія Відень, Австрія +43 677 61430187 Дизайн-студія Київ, Україна +38 095 366 25 75",
        "href": "tel:+421918177785",
        "image": null
       },
       {
-       "title": "moc.liamg%40ngised.ayaksmud",
-       "href": "mailto:moc.liamg%40ngised.ayaksmud?subject=Заказ дизайн проекта",
+       "title": "dumskaya.design@gmail.com",
+       "href": "mailto:dumskaya.design@gmail.com",
        "image": null
       },
       {
        "title": "https://dumskaya-design.com",
-       "href": "/",
+       "href": "/ua",
        "image": null
       }
      ]
@@ -67,34 +67,34 @@
      "parts": [
       {
        "t": "p",
-       "html": "Thank you!"
+       "html": "Дякуємо!"
       },
       {
        "t": "p",
-       "html": "We will contact you shortly."
+       "html": "Ми зв’яжемося з вами найближчим часом."
       },
       {
        "t": "p",
-       "html": "Ok"
+       "html": "Гаразд"
       },
       {
        "t": "p",
-       "html": "Can't send form"
+       "html": "Не вдалося надіслати форму"
       },
       {
        "t": "p",
-       "html": "Please try again later."
+       "html": "Будь ласка, спробуйте пізніше."
       },
       {
        "t": "p",
-       "html": "Ok"
+       "html": "Гаразд"
       }
      ]
     }
    ]
   },
   {
-   "id": "69cd31c16606c54c65538c3b",
+   "id": "69cbf403c4c90529feccfb79",
    "blocks": [
     {
      "type": "heading",
@@ -109,7 +109,7 @@
        "href": "/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
-        "alt": "дизайнер інтер'єру, студія дизайну інтер'єру, квартири, будинки, братислава, словакія, відень, австрія, прага, чехія"
+        "alt": "дизайнер інтер’єру, студія дизайну інтер’єру, квартири, будинки, братислава, словакія, відень, австрія, прага, чехія"
        }
       },
       {
@@ -117,7 +117,7 @@
        "href": "/ua/dyzain-interieriv-komertsiinykh-prymishchen-bratislava-slovakia",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
-        "alt": "дизайнер інтер'єрів, офісу, салону краси, бутика жіночого одягу, магазину, ресепшн, ресторанів, готелів, кабінету керівника, братислава, словакія, відень, австрія, прага, чехія"
+        "alt": "дизайнер інтер’єрів, офісу, салону краси, бутика жіночого одягу, магазину, ресепшн, ресторанів, готелів, кабінету керівника, братислава, словакія, відень, австрія, прага, чехія"
        }
       },
       {
@@ -129,7 +129,7 @@
        }
       },
       {
-       "title": "Меблі для бізнесу на замовлення",
+       "title": "Меблі на замовлення для бізнесу",
        "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-dlia-komertsiinykh-obiektiv",
        "image": {
         "id": "6abe07964888499d2075ac31",

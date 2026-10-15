@@ -5,7 +5,7 @@
  "group": null,
  "title": "Children's Room Design: Key Principles | DUMSKAYA DESIGN",
  "description": "How to design a child's room: safety, zoning, furniture that grows with the child, light and colour. Key rules from DUMSKAYA DESIGN.",
- "h1": "Key Principles and Rules of Children's Room Interior Design",
+ "h1": "Key principles for designing a child’s bedroom",
  "og_image": "66b6289b8acd8b217eb748fd",
  "alternates": {
   "ru": "/osnovnye-principy-i-pravila-pri-proektirovanie-dizajna-interera-detskoj-komnaty",
@@ -14,146 +14,12 @@
  },
  "sections": [
   {
-   "id": "6893b2411e203a66d8dad179",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      },
-      {
-       "title": "Kitchen model №K-05",
-       "href": "/en/kitchen-k05-beige-classic",
-       "image": {
-        "id": "67d2ce3732bfd979ec7466ca",
-        "alt": "classic kitchen style with white cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-11",
-       "href": "/en/kitchen-k11-grey-modern",
-       "image": {
-        "id": "67d2d3d532bfd979ec747e9e",
-        "alt": "contemporary kitchen with island and bar stools"
-       }
-      },
-      {
-       "title": "Kitchen model №K-08",
-       "href": "/en/kitchen-k08-brown-minimalist",
-       "image": {
-        "id": "67d2cfa84385e682489fe2ff",
-        "alt": "small typical kitchen with efficient storage"
-       }
-      },
-      {
-       "title": "Kitchen model №K-03",
-       "href": "/en/kitchen-k03-black-modern",
-       "image": {
-        "id": "67d2c0e46ad366460788472f",
-        "alt": "open plan kitchen with dining area"
-       }
-      },
-      {
-       "title": "Kitchen model №K-04",
-       "href": "/en/kitchen-k04-grey-modern",
-       "image": {
-        "id": "67c8be7ee5449e0536081d2e",
-        "alt": "functional kitchen design with wooden accents"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6893b2691e203a66d8dad31c",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      },
-      {
-       "title": "Kitchen model №K-05",
-       "href": "/en/kitchen-k05-beige-classic",
-       "image": {
-        "id": "67d2ce3732bfd979ec7466ca",
-        "alt": "classic kitchen style with white cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-11",
-       "href": "/en/kitchen-k11-grey-modern",
-       "image": {
-        "id": "67d2d3d532bfd979ec747e9e",
-        "alt": "contemporary kitchen with island and bar stools"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6893b2861e203a66d8dad3b8",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6884d34c53fd64883a42ea35",
+   "id": "66b6269e9e0f8d435e4ef3da",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Key Principles and Rules of Children's Room Interior Design"
+     "text": "Key principles for designing a child’s bedroom"
     },
     {
      "type": "gallery",
@@ -193,59 +59,59 @@
      "parts": [
       {
        "t": "p",
-       "html": "Designing a child’s bedroom requires special attention to safety, functionality, and aesthetics."
+       "html": "Designing the interior of a child’s bedroom is a process that calls for particular attention to safety, functionality, and aesthetics."
       },
       {
        "t": "p",
-       "html": "<strong>1. Identifying the Child’s Needs</strong>"
+       "html": "<strong>1. Identifying your child’s needs</strong>"
       },
       {
        "t": "p",
-       "html": "Age: The needs of an infant, preschooler, and school-aged child differ significantly. Young children need more play space, while school-aged children require a dedicated study area."
+       "html": "<strong>Age: </strong>The needs of an infant, a preschooler, and a school-age child differ greatly. Keep in mind that a toddler needs more room to play, while a schoolchild needs a place to study."
       },
       {
        "t": "p",
-       "html": "Interests: Incorporating the child’s hobbies and passions helps create a space that is inspiring and comfortable for them."
+       "html": "<strong>Interests:</strong> It’s important to take your child’s hobbies into account — this will help you create a space that feels inspiring and comfortable to them."
       },
       {
        "t": "p",
-       "html": "<strong>2. Space Planning</strong>"
+       "html": "<strong>2. Space planning</strong>"
       },
       {
        "t": "p",
-       "html": "Zoning: Divide the room into sleep, play, and study zones to create a structured environment."
+       "html": "<strong>Zoning:</strong> Divide the room into zones for sleeping, playing, and studying. This will help create a well-structured space."
       },
       {
        "t": "p",
-       "html": "Functionality: Ensure each zone serves its intended purpose — the sleeping area should be calm and dark, the play area bright and safe."
+       "html": "<strong>Functionality:</strong> Make sure each zone serves its purpose. For example, the sleeping area should be calm and dark, while the play area should be bright and safe."
       },
       {
        "t": "p",
-       "html": "Ergonomics: Furniture should be adapted to the child’s height. Desks and chairs should match their age, and shelves should be easily accessible."
+       "html": "<strong>Ergonomics:</strong> All furniture should be suited to the child’s height. For example, chairs and desks should be age-appropriate, and shelves should be within easy reach."
       },
       {
        "t": "p",
-       "html": "<strong>3. Color Palette and Lighting</strong>"
+       "html": "<strong>3. Color palette and lighting</strong>"
       },
       {
        "t": "p",
-       "html": "Color scheme: Use neutral, calming tones for main finishes. Add bright accents through décor and textiles — vivid colors work well in the play area, while softer shades suit the sleeping zone."
+       "html": "<strong>Color scheme: </strong>Use neutral, calm colors for the main finishes. Bright accents can be added through decor and textiles. As a rule, bright colors suit the play area, while calm ones work best for sleeping."
       },
       {
        "t": "p",
-       "html": "Lighting:"
+       "html": "<strong>Lighting:</strong>"
       },
       {
        "t": "p",
-       "html": "Natural light: Maximize natural daylight."
+       "html": "<strong>Natural light:</strong> Maximize access to daylight."
       },
       {
        "t": "p",
-       "html": "General lighting: Use ceiling lights for even illumination."
+       "html": "<strong>General lighting: </strong>Create even lighting with ceiling fixtures."
       },
       {
        "t": "p",
-       "html": "Task lighting: Add reading lamps by the bed and a desk lamp in the study area."
+       "html": "<strong>Zone lighting: </strong>Add reading lamps next to the bed, as well as a desk lamp on the desk."
       },
       {
        "t": "p",
@@ -253,96 +119,91 @@
       },
       {
        "t": "p",
-       "html": "Materials: Opt for eco-friendly, hypoallergenic finishes for walls, floors, and furniture."
+       "html": "<strong>Materials:</strong> Use eco-friendly, hypoallergenic materials. This is especially important for wall finishes, flooring, and furniture."
       },
       {
        "t": "p",
-       "html": "Furniture: Avoid sharp corners, ensure stability of large items, and secure wardrobes/shelves to walls for younger children."
+       "html": "<strong>Furniture:</strong> All furniture must be safe. Avoid sharp corners and check that large pieces are stable. For younger children, be sure to anchor cabinets and shelves to the walls."
       },
       {
        "t": "p",
-       "html": "Electrical safety: Cover outlets and keep wires out of reach."
+       "html": "<strong>Electrical:</strong> All outlets should be fitted with safety covers, and cables should be kept out of reach."
       },
       {
        "t": "p",
-       "html": "<strong>5. Furniture and Storage</strong>"
+       "html": "<strong>5. Furniture and storage</strong>"
       },
       {
        "t": "p",
-       "html": "Bed: Choose beds with safety rails for toddlers; for school-aged children, consider beds with storage drawers."
+       "html": "<strong>Bed:</strong> For toddlers, choose beds with side rails to prevent falls. For school-age children, beds with storage drawers are a good fit."
       },
       {
        "t": "p",
-       "html": "Storage: Plan dedicated spaces for toys, clothes, and books. Modular units that adapt as the child grows are ideal."
+       "html": "<strong>Storage: </strong>Plan storage systems for toys, clothes, and books. Modules that can easily be rearranged and adapted as your child grows are ideal."
       },
       {
        "t": "p",
-       "html": "Multifunctional furniture: In small rooms, use multifunctional pieces, such as a loft bed with a desk or a foldable table."
+       "html": "<strong>Multifunctional furniture:</strong> If space is limited, use furniture that serves several purposes, such as a bed with a built-in workspace or a folding table."
       },
       {
        "t": "p",
-       "html": "<strong>6. Décor</strong>"
+       "html": "<strong>6. Decor</strong>"
       },
       {
        "t": "p",
-       "html": "Textiles: Add soft elements like cushions, rugs, and curtains for coziness and pops of color."
+       "html": "<strong>Textiles:</strong> Add soft elements — cushions, rugs, curtains. They not only make the room cozier but also bring in pops of color."
       },
       {
        "t": "p",
-       "html": "Personalization: Incorporate the child’s favorite colors, characters, or motifs to make them feel ownership of their space."
+       "html": "<strong>Personalization:</strong> It’s important for children to feel that the space is truly theirs. Use their favorite colors and add decor featuring their favorite characters or motifs."
       },
       {
        "t": "p",
-       "html": "<strong>7. Planning for the Future</strong>"
+       "html": "<strong>7. Planning for the future</strong>"
       },
       {
        "t": "p",
-       "html": "Modularity: Choose systems that can be reconfigured as needs change."
+       "html": "<strong>Modularity:</strong> Keep in mind that your child’s needs will change. Use modular systems that can easily be adapted to new purposes."
       },
       {
        "t": "p",
-       "html": "Room for growth: Leave space for future additions like a study nook or extra storage."
+       "html": "<strong>Room to grow:</strong> Leave some free space so you can add new elements over time, such as a study area or extra storage."
       },
       {
        "t": "p",
-       "html": "<strong>8. Inspiration and Detailing</strong>"
+       "html": "<strong>8. Inspiration and details</strong>"
       },
       {
        "t": "p",
-       "html": "Details: Add unique touches — a bookshelf with favorite stories, a creative wall for drawing, or magnetic boards."
+       "html": "<strong>Details:</strong> Add interesting details that highlight your child’s personality: shelves with their favorite books, an art wall for painting or a magnetic board."
       },
       {
        "t": "p",
-       "html": "Inspiration: Use ideas from magazines or design websites but tailor them to the child’s real needs and personality."
+       "html": "<strong>Inspiration:</strong> Draw ideas from magazines and interior design websites, but adapt them to your child’s real needs and preferences."
       },
       {
        "t": "p",
-       "html": "Creating a child’s bedroom is not only about decorating the space — it’s an opportunity to design an environment that nurtures, inspires, and brings joy to your child."
+       "html": "Creating a child’s bedroom is not just an interior design task — it’s an opportunity to create a space that will help your child develop, inspire them, and bring them joy."
       },
       {
        "t": "p",
-       "html": "💎 Want a unique interior? Order your custom design project with us! We offer a personalized approach, exclusive materials, and work worldwide."
+       "html": "Want a one-of-a-kind interior? Commission your interior design with us. A personalized approach, exclusive materials, and projects worldwide."
       },
       {
        "t": "p",
-       "html": "📩 Contact us today and start transforming your home!"
+       "html": "Get in touch and start transforming your home!"
       },
       {
        "t": "p",
-       "html": "Over 15 years of experience."
+       "html": "<strong>Over 15 years of experience!</strong>"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6893a2782c627e2e9d7044cd",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
@@ -350,7 +211,7 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Price of available service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -358,18 +219,18 @@
    ]
   },
   {
-   "id": "688513a553fd64883a44162c",
+   "id": "69cc030000dc9099744198fa",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -377,7 +238,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -401,7 +262,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

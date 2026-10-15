@@ -3,9 +3,9 @@
  "lang": "en",
  "type": "service",
  "group": null,
- "title": "Custom Kitchens in Bratislava & Vienna — Catalogue",
- "description": "Catalogue of custom kitchens: modern, classic and minimalist models. Designed to your measurements, made and installed in Bratislava and Vienna.",
- "h1": "Custom Kitchens in Bratislava & Vienna",
+ "title": "Custom Kitchens in Bratislava & Vienna — Catalog",
+ "description": "Catalog of custom kitchens: modern, classic and minimalist models. Designed to your measurements, made and installed in Bratislava and Vienna.",
+ "h1": "Custom kitchens in Bratislava and Vienna",
  "og_image": "6abea7264888499d2078543f",
  "alternates": {
   "ru": "/kupkuhni-na-zakaz-vienna-bratislava",
@@ -14,58 +14,58 @@
  },
  "sections": [
   {
-   "id": "6884d35e53fd64883a42f098",
+   "id": "67c88f63eec91e6d7422a7f9",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Custom Kitchens in Bratislava & Vienna"
+     "text": "Custom kitchens in Bratislava and Vienna"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "The furniture division of <strong>DUMSKAYA DESIGN (Bratislava, Slovakia) </strong>offers custom kitchens for apartments and private houses in Bratislava and Vienna. Choose a kitchen model from our catalogue, and we will prepare a price proposal based on the selected configuration and the dimensions of your space."
+       "html": "The furniture department of <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> offers custom kitchens for apartments and private homes. Choose a suitable model from our catalog, and we will prepare a price quote based on the selected configuration and the parameters of your room."
       },
       {
        "t": "p",
-       "html": "Each kitchen model can be adapted to the dimensions, layout and specific requirements of your interior. We can modify the kitchen configuration, dimensions of individual elements, materials, colors, furniture hardware and internal storage solutions."
+       "html": "Each model can be adapted to the dimensions, layout, and specific features of your room. We can change the kitchen’s configuration, the dimensions of individual elements, the materials, colors, furniture hardware, and interior fittings."
       },
       {
        "t": "p",
-       "html": "Depending on the client’s budget and requirements, materials and hardware can be selected from different price categories — from more affordable solutions to premium options. This allows you to use a preferred kitchen model as a starting point while creating an individual solution that matches your interior, functional needs and planned budget."
+       "html": "Depending on the client’s budget and requirements, the kitchen can be fitted with materials and hardware in various price categories — from more affordable solutions to the premium level."
       },
       {
        "t": "p",
-       "html": "We provide kitchen design, manufacturing, delivery and professional installation. Upon request, the kitchen can also be equipped with a sink, household appliances, extractor hood and plumbing equipment."
+       "html": "We also offer professional kitchen delivery and installation. At the client’s request, the kitchen can additionally be equipped with a sink, household appliances, a range hood, and plumbing fixtures."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> provides custom kitchens in Bratislava and Vienna — from selecting a model, individual adaptation and cost calculation to manufacturing, equipment, delivery and professional installation."
+       "html": "<strong>DUMSKAYA DESIGN offers custom kitchens in Bratislava and Vienna — from model selection, individual adaptation, and cost calculation to manufacturing, outfitting, delivery, and installation.</strong>"
       }
      ]
     }
    ]
   },
   {
-   "id": "6884d35e53fd64883a42f09a",
+   "id": "67c88f63eec91e6d7422a7fb",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Mass-produced kitchen catalog"
+     "text": "Catalog of standard kitchen models"
     }
    ]
   },
   {
-   "id": "6884d35e53fd64883a42f09c",
+   "id": "67c88f63eec91e6d7422a801",
    "blocks": [
     {
      "type": "cards",
      "items": [
       {
-       "title": "Kitchen Model K-45",
+       "title": "Kitchen model No. K-45",
        "href": "/en/modern-red-straight-kitchen-45-slovakia-bratislava-austria-vienna",
        "image": {
         "id": "6abea65b4888499d20785099",
@@ -73,7 +73,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-44",
+       "title": "Kitchen model No. K-44",
        "href": "/en/modern-red-straight-kitchen-44-slovakia-bratislava-austria-vienna",
        "image": {
         "id": "6abea6624888499d207850c8",
@@ -81,7 +81,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-06",
+       "title": "Kitchen model No. K-06",
        "href": "/en/kitchen-k06-white-minimalist",
        "image": {
         "id": "6abea7264888499d2078543f",
@@ -89,7 +89,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-05",
+       "title": "Kitchen model No. K-05",
        "href": "/en/kitchen-k05-beige-classic",
        "image": {
         "id": "6abea72ec8c59bb7c8399171",
@@ -97,7 +97,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-11",
+       "title": "Kitchen model No. K-11",
        "href": "/en/kitchen-k11-grey-modern",
        "image": {
         "id": "6abea7047bf8b4294f3dee4b",
@@ -105,7 +105,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-08",
+       "title": "Kitchen model No. K-08",
        "href": "/en/kitchen-k08-brown-minimalist",
        "image": {
         "id": "6abea7187bf8b4294f3deea9",
@@ -113,7 +113,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-03",
+       "title": "Kitchen model No. K-03",
        "href": "/en/kitchen-k03-black-modern",
        "image": {
         "id": "6abea73d4888499d207854b2",
@@ -121,7 +121,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-04",
+       "title": "Kitchen model No. K-04",
        "href": "/en/kitchen-k04-grey-modern",
        "image": {
         "id": "6abea73568c5e81567a5bd3f",
@@ -129,7 +129,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-41",
+       "title": "Kitchen model No. K-41",
        "href": "/en/modern-gray-straight-kitchen-41",
        "image": {
         "id": "6abea9327bf8b4294f3df680",
@@ -137,7 +137,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-07",
+       "title": "Kitchen model No. K-07",
        "href": "/en/kitchen-k07-white-modern",
        "image": {
         "id": "6abea71f6bbe6103844c303f",
@@ -145,7 +145,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-09",
+       "title": "Kitchen model No. K-09",
        "href": "/en/kitchen-k09-grey-modern",
        "image": {
         "id": "6abea7116bbe6103844c2ffa",
@@ -153,7 +153,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-12",
+       "title": "Kitchen model No. K-12",
        "href": "/en/kitchen-k12-beige-modern",
        "image": {
         "id": "6abea6ff7bf8b4294f3dee2c",
@@ -161,7 +161,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-02",
+       "title": "Kitchen model No. K-02",
        "href": "/en/kitchen-k02-beige-minimalist",
        "image": {
         "id": "6abea7437bf8b4294f3def6e",
@@ -169,7 +169,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-01",
+       "title": "Kitchen model No. K-01",
        "href": "/en/kitchen-k01-green-classic",
        "image": {
         "id": "6abea74a68c5e81567a5bda9",
@@ -177,7 +177,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-10",
+       "title": "Kitchen model No. K-10",
        "href": "/en/kitchen-k10-brown-loft",
        "image": {
         "id": "6abea70ac8c59bb7c83990fd",
@@ -185,7 +185,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-13",
+       "title": "Kitchen model No. K-13",
        "href": "/en/kitchen-k13-beige-minimalist",
        "image": {
         "id": "6abea6f87bf8b4294f3dee01",
@@ -193,7 +193,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-14",
+       "title": "Kitchen model No. K-14",
        "href": "/en/kitchen-k14-beige-minimalist",
        "image": {
         "id": "6abea6f37bf8b4294f3dedd3",
@@ -201,7 +201,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-15",
+       "title": "Kitchen model No. K-15",
        "href": "/en/kitchen-k15-red-modern",
        "image": {
         "id": "6abea6ea6bbe6103844c2f6e",
@@ -209,7 +209,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-16",
+       "title": "Kitchen model No. K-16",
        "href": "/en/kitchen-k16-green-neoclassical",
        "image": {
         "id": "6abea6e44888499d207852fb",
@@ -217,7 +217,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-17",
+       "title": "Kitchen model No. K-17",
        "href": "/en/kitchen-k17-grey-neoclassical",
        "image": {
         "id": "6abea6dd7bf8b4294f3ded6d",
@@ -225,7 +225,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-18",
+       "title": "Kitchen model No. K-18",
        "href": "/en/kitchen-k18-modern-gray-corner",
        "image": {
         "id": "6abea6d568c5e81567a5bbb3",
@@ -233,7 +233,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-19",
+       "title": "Kitchen model No. K-19",
        "href": "/en/kitchen-k19-modern-beige-straight",
        "image": {
         "id": "6abea6cf6bbe6103844c2f08",
@@ -241,7 +241,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-20",
+       "title": "Kitchen model No. K-20",
        "href": "/en/kitchen-k20-modern-beige-u-shaped",
        "image": {
         "id": "6abea6c76bbe6103844c2ed7",
@@ -249,7 +249,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-21",
+       "title": "Kitchen model No. K-21",
        "href": "/en/kitchen-k21-white-neoclassical-l-shaped",
        "image": {
         "id": "6abea6c04888499d2078526a",
@@ -257,7 +257,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-26",
+       "title": "Kitchen model No. K-26",
        "href": "/en/kitchen-k26-modern-brown-straight",
        "image": {
         "id": "6abea6acc8c59bb7c8398f78",
@@ -265,7 +265,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-28",
+       "title": "Kitchen model No. K-28",
        "href": "/en/modern-brown-u-shaped-kitchen-28",
        "image": {
         "id": "6abea6a06bbe6103844c2e47",
@@ -273,7 +273,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-30",
+       "title": "Kitchen model No. K-30",
        "href": "/en/modern-gray-corner-kitchen-30",
        "image": {
         "id": "6abea6937bf8b4294f3dec4c",
@@ -281,7 +281,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-31",
+       "title": "Kitchen model No. K-31",
        "href": "/en/modern-brown-corner-kitchen-31",
        "image": {
         "id": "6abea68dc8c59bb7c8398ef7",
@@ -289,7 +289,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-35",
+       "title": "Kitchen model No. K-35",
        "href": "/en/modern-gray-straight-kitchen-35",
        "image": {
         "id": "6abea6857bf8b4294f3debf6",
@@ -297,7 +297,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-36",
+       "title": "Kitchen model No. K-36",
        "href": "/en/modern-gray-corner-kitchen-36",
        "image": {
         "id": "6abea67dc8c59bb7c8398ea6",
@@ -305,7 +305,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-42",
+       "title": "Kitchen model No. K-42",
        "href": "/en/modern-blue-corner-kitchen-42",
        "image": {
         "id": "6abea66f6bbe6103844c2d7b",
@@ -313,7 +313,7 @@
        }
       },
       {
-       "title": "Kitchen Model K-43",
+       "title": "Kitchen model No. K-43",
        "href": "/en/modern-red-straight-kitchen-43",
        "image": {
         "id": "6abea6687bf8b4294f3deb73",
@@ -325,21 +325,21 @@
    ]
   },
   {
-   "id": "6884d35e53fd64883a42f09e",
+   "id": "67dd34eab62c1979aaf2b923",
    "blocks": [
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Furniture for residential spaces",
+       "text": "Furniture for residential properties",
        "href": "/en/custom-residential-furniture"
       },
       {
-       "text": "Furniture for commercial spaces",
+       "text": "Furniture for commercial properties",
        "href": "/en/commercial-furniture-design"
       },
       {
-       "text": "Order a kitchen",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       }
      ]
@@ -347,18 +347,18 @@
    ]
   },
   {
-   "id": "68850d684b23b0f3e0bc3452",
+   "id": "69cbf42dc4c90529feccfd5c",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -366,7 +366,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -390,7 +390,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Interior Design 52 m² | DUMSKAYA DESIGN",
- "description": "52 m² apartment: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
- "h1": "Apartment Interior Design, Custom Furniture & Turnkey Renovation, 52 m²",
+ "description": "52 m² apartment: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "h1": "Apartment interior design, custom furniture and turnkey renovation, 52 m²",
  "og_image": "6abd6aff68c5e81567a1c258",
  "alternates": {
   "ru": "/apartment-interior-design-52m",
@@ -14,35 +14,35 @@
  },
  "sections": [
   {
-   "id": "6884d35353fd64883a42eccb",
+   "id": "66d74ee7c97d636c5a8a01aa",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Apartment Interior Design, Custom Furniture & Turnkey Renovation, 52 m²"
+     "text": "Apartment interior design, custom furniture and turnkey renovation, 52 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a comprehensive project for a 52 m² apartment, covering interior design and technical documentation, custom furniture, turnkey renovation and final decoration."
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a comprehensive project for a 52 m² apartment — from developing the interior design and technical documentation to manufacturing custom furniture, carrying out a turnkey renovation, and decorating."
       },
       {
        "t": "p",
-       "html": "The design covers the main functional areas of the apartment: living room, bedroom, kitchen with individually planned storage and built-in appliances, dressing areas, entrance hall and bathroom. Custom wardrobes, shelving and storage systems were also integrated into the project."
+       "html": "The design covers the apartment’s main functional areas: the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom. Custom wardrobes, shelving, and storage systems are also integrated into the project."
       },
       {
        "t": "p",
-       "html": "Custom furniture solutions were developed for the individual areas based on the dimensions of the space, ergonomics and everyday requirements. Designing the furniture together with the interior makes it possible to use the available floor area efficiently while maintaining a consistent visual concept throughout the apartment."
+       "html": "Custom furniture solutions were developed for each area, taking into account the specifics of the space, ergonomics, and the owners’ everyday needs. Designing the furniture alongside the interior makes it possible to use the apartment’s floor area efficiently and preserve the visual cohesion of all the rooms."
       },
       {
        "t": "p",
-       "html": "Before implementation, a detailed project estimate was prepared covering renovation works, finishing materials, custom furniture and household appliances. This approach provides a clearer understanding of the overall implementation budget before the work begins."
+       "html": "Before implementation began, a detailed cost estimate was prepared covering renovation work, finishing materials, custom furniture, and appliances. This approach provides a more complete picture of the project’s implementation budget in advance."
       },
       {
        "t": "p",
-       "html": "The project is presented through photorealistic 3D visualizations, demonstrating the layout, interior concept and custom furniture solutions developed for the 52 m² apartment."
+       "html": "The project is presented as photorealistic 3D visualizations showcasing the layout, interior, and furniture solutions for this 52 m² apartment."
       }
      ]
     },
@@ -146,12 +146,7 @@
        "alt": "soft lighting in bathroom interior"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6890b5c94ebcf4b693369378",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -160,11 +155,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -172,18 +167,18 @@
    ]
   },
   {
-   "id": "68850f21db592016802d728a",
+   "id": "69cbf9800be71af42149cb65",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -191,7 +186,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -215,7 +210,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

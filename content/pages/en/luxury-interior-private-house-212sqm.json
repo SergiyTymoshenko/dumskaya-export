@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Private House Design 212 m², Kharkiv | DUMSKAYA DESIGN",
- "description": "212 m² private house in Kharkiv: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Private House Interior Design, Custom Furniture & Turnkey Renovation, 212 m²",
+ "description": "212 m² private house in Kharkiv: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Private house interior design in Kharkiv, custom furniture and turnkey renovation, 212 m²",
  "og_image": "6abd6a716bbe6103844833be",
  "alternates": {
   "ru": "/interior-design-private-house-kharkiv-212m",
@@ -14,39 +14,39 @@
  },
  "sections": [
   {
-   "id": "6884d36f53fd64883a42f7c8",
+   "id": "684a9566af15ec2d2f13144d",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Private House Interior Design, Custom Furniture & Turnkey Renovation, 212 m²"
+     "text": "Private house interior design in Kharkiv, custom furniture and turnkey renovation, 212 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed and completed a comprehensive interior project for a 212 m² private house. The project combined interior design, technical documentation, custom-made furniture and comprehensive turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a comprehensive project for a 212 m² private house in Kharkiv, Ukraine. The project combined interior design, technical documentation, custom furniture, and a full turnkey renovation of the house."
       },
       {
        "t": "p",
-       "html": "The design covers all key areas of the house, including the living room, bedrooms, children’s room, kitchen with integrated appliances, entrance hall, bathrooms and functional storage systems. The layout and interior solutions were developed as a unified concept focused on ergonomics, functionality and comfortable everyday living."
+       "html": "The design covers all the main rooms of the house: the living room, bedrooms, a children’s room, a kitchen with built-in appliances, an entrance hall, bathrooms, and functional storage systems. The layout and interior solutions were developed as a single concept with a focus on ergonomics, functionality, and comfortable everyday use of the space."
       },
       {
        "t": "p",
-       "html": "Custom-made furniture was designed and manufactured specifically for the project. The kitchen, built-in wardrobes, shelving and storage systems were developed according to the architecture of the house, room dimensions and functional requirements. This approach allowed the furniture to become an integral part of the interior while maximizing the efficient use of available space."
+       "html": "Custom furniture was designed and manufactured for the rooms. The kitchen, built-in wardrobes, shelving, and storage systems were designed around the architecture of the house, the room dimensions, and the client’s functional requirements. This approach made it possible to integrate the furniture directly into the interior and make the most of the available space."
       },
       {
        "t": "p",
-       "html": "Before implementation, a detailed estimate was prepared covering construction and finishing works, materials, custom furniture, household appliances, sanitary equipment, lighting and other elements specified in the project. Following the design stage, a comprehensive turnkey renovation was completed in accordance with the developed technical documentation."
+       "html": "Before implementation began, a detailed cost estimate was prepared covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, lighting, and other items specified in the project. Once the design stage was complete, a full turnkey renovation of the private house in Kharkiv was carried out in line with the developed technical documentation."
       },
       {
        "t": "p",
-       "html": "The project also included photorealistic 3D visualizations, allowing the future interior, materials, furniture, colour combinations and lighting solutions to be evaluated before implementation."
+       "html": "Photorealistic 3D visualizations were also prepared for the project, making it possible to preview the future interior and the combination of materials, furniture, color schemes, and lighting before implementation began."
       },
       {
        "t": "p",
-       "html": "This 212 m² private house project demonstrates <strong>DUMSKAYA DESIGN</strong>’s comprehensive approach to residential interiors — from interior design and technical documentation to custom furniture production and complete turnkey implementation."
+       "html": "This 212 m² private house project showcases <strong>DUMSKAYA DESIGN</strong>’s end-to-end approach — from the development of the interior design and technical solutions to the manufacture of custom furniture and full implementation of the interior."
       }
      ]
     },
@@ -258,12 +258,7 @@
        "alt": "smart lighting in children's space"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6890b6b74ebcf4b69336a198",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -272,11 +267,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -284,18 +279,18 @@
    ]
   },
   {
-   "id": "68851127cddeb0472c4ee769",
+   "id": "69cbfd7796e5151906220c30",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -303,7 +298,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -327,7 +322,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

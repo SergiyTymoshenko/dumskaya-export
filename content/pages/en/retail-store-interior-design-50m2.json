@@ -4,8 +4,8 @@
  "type": "project",
  "group": "commercial",
  "title": "Retail Store Interior Design 50 m² | DUMSKAYA DESIGN",
- "description": "50 m² retail store: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
- "h1": "Shop Interior Design & Custom Furniture, 50 m²",
+ "description": "50 m² retail store: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna — free consultation.",
+ "h1": "Store interior design and custom furniture, 50 m²",
  "og_image": "6abe047d4888499d2075a16a",
  "alternates": {
   "ru": "/shop-show-room-interior-design-50m",
@@ -14,37 +14,17 @@
  },
  "sections": [
   {
-   "id": "6884d35853fd64883a42eeb5",
+   "id": "66f5d962e881509f9a13c28f",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Shop Interior Design & Custom Furniture, 50 m²"
+     "text": "Store interior design and custom furniture, 50 m²"
     },
     {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed the interior design project for a 50 m² shop, including the design and production of custom furniture created specifically for the retail space."
-      },
-      {
-       "t": "p",
-       "html": "Particular attention was given to the functional organization of the compact floor area, customer and staff comfort, product presentation and the overall visual identity of the shop. The layout solutions make efficient use of the available space while providing convenient circulation for visitors."
-      },
-      {
-       "t": "p",
-       "html": "The project included custom retail furniture designed as an integral part of the interior concept. Tailor-made solutions make it possible to consider the dimensions of the premises, product display and storage requirements, everyday functionality and the company’s visual identity."
-      },
-      {
-       "t": "p",
-       "html": "The page features photorealistic 3D visualizations of the design project, providing a detailed view of the proposed layout, retail environment and custom furniture solutions before implementation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> provides shop, boutique, showroom and commercial interior design, as well as custom furniture design and production in Bratislava and Vienna. We develop individual interior solutions for retail spaces, showrooms, offices, beauty salons and other commercial environments."
-      }
-     ]
+     "type": "heading",
+     "level": 3,
+     "text": "DUMSKAYA DESIGN (Bratislava, Slovakia) developed an interior design project for a 50 m² store and also designed and manufactured custom furniture for the retail space. In developing the interior, particular attention was paid to the functional organization of a small floor area, convenience for customers and staff, product presentation, and creating a cohesive visual identity for the store. The layout solutions make efficient use of the available space and ensure comfortable customer flow. Custom retail furniture was designed for the project and integrated into the overall interior concept. Individual design makes it possible to account for the room dimensions, how products are displayed and stored, functional requirements, and the company’s visual style. This page features photorealistic 3D visualizations of the design project, showing the layout, the design of the retail space, and the furniture solutions developed for it. DUMSKAYA DESIGN offers interior design for stores, boutiques, showrooms, and other commercial spaces, as well as custom furniture design and manufacturing in Bratislava and Vienna. We create bespoke interior solutions for retail and commercial spaces, tailored to the specifics of the business and the premises."
     },
     {
      "type": "gallery",
@@ -78,25 +58,20 @@
        "alt": "showroom interior design vienna austria"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "688f53605a6566f77ee8363e",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
        "text": "Back",
-       "href": "/en/commercial-interior-design"
+       "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Price of available design service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -104,18 +79,18 @@
    ]
   },
   {
-   "id": "6885133834050975d3079bbb",
+   "id": "69cc02a500dc90997441926e",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -123,7 +98,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -147,7 +122,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

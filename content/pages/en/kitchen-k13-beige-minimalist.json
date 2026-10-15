@@ -5,7 +5,7 @@
  "group": null,
  "title": "Custom Kitchen K-13: Minimalist Beige | DUMSKAYA DESIGN",
  "description": "Kitchen K-13, minimalist beige. Made to your measurements, manufactured and installed in Bratislava and Vienna. Get a price quote and a free consultation.",
- "h1": "K-13 Beige Minimalist Kitchen with Island, Acrylic Cabinet Fronts and Compact Laminate Countertop",
+ "h1": "Beige K-13 kitchen with an island, acrylic fronts, and a compact laminate countertop",
  "og_image": "6abea6f87bf8b4294f3dee01",
  "alternates": {
   "ru": "/kuhni-pod-zakaz-k-13-cena-bratislava-slovakia",
@@ -14,12 +14,12 @@
  },
  "sections": [
   {
-   "id": "6884d36153fd64883a42f1bd",
+   "id": "67c8ced3eec91e6d74245411",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "K-13 Beige Minimalist Kitchen with Island, Acrylic Cabinet Fronts and Compact Laminate Countertop"
+     "text": "Beige K-13 kitchen with an island, acrylic fronts, and a compact laminate countertop"
     },
     {
      "type": "gallery",
@@ -52,31 +52,31 @@
      "parts": [
       {
        "t": "p",
-       "html": "The <strong>K-13 kitchen model</strong> combines warm beige tones, minimalist design, and a practical layout to create a refined and functional kitchen interior. Its light solid-color finish gives the composition a calm and elegant appearance, while the island adds both convenience and a stronger architectural presence."
+       "html": "<strong>The K-13 standard model</strong> is a contemporary beige minimalist kitchen that combines clean geometry, a soft color palette, and a functional use of space. The pale solid-color finish keeps the interior visually airy, while the island adds character to the kitchen and extra comfort in everyday use."
       },
       {
        "t": "p",
-       "html": "The beige palette creates a warm and welcoming atmosphere, making this kitchen well suited for contemporary apartments, private residences, and open-plan living spaces. This neutral tone pairs naturally with wood textures, light stone, decorative plaster, and modern interior materials."
+       "html": "The beige tone creates a calm, cozy atmosphere, allowing the kitchen to blend naturally into modern apartments, condos, and private homes. This palette pairs well with natural wood, light stone, decorative plaster, and neutral finishing materials."
       },
       {
        "t": "p",
-       "html": "A defining feature of the K-13 model is its straight-line kitchen layout combined with a separate island. The main kitchen run organizes work surfaces, built-in appliances, and storage along one wall, while the island provides an additional functional zone for food preparation and everyday use."
+       "html": "<strong>The defining feature of the K-13 model</strong> is the combination of a straight layout with a functional kitchen island. The main run of cabinets brings together the work surface, built-in appliances, and storage along one wall, while the island completes the composition, creating a separate zone for both food prep and socializing."
       },
       {
        "t": "p",
-       "html": "The upper cabinet fronts are made from acrylic-faced MDF panels, while the lower cabinet fronts use HPL panels on an MDF substrate. This combination creates a modern visual identity and also supports practical everyday use. The solid-color finish unifies all elements into one cohesive minimalist composition."
+       "html": "The upper fronts are made of acrylic-faced MDF board and the lower fronts of HPL-faced MDF board. This combination of materials gives the kitchen a contemporary look and makes it practical for everyday use. The solid-color finish unites all elements into a cohesive minimalist composition."
       },
       {
        "t": "p",
-       "html": "The compact laminate countertop reinforces the contemporary character of the model and provides a durable work surface. The cabinet construction uses 18 mm laminated particleboard. FREE FOLD Hafele lift mechanisms allow convenient access to the upper cabinets, while Muller Profi Line soft-close hinges ensure smooth door operation."
+       "html": "The compact laminate countertop emphasizes the kitchen’s contemporary character and provides a convenient work surface. The carcass is made of 18 mm laminated chipboard. FREE FOLD Hafele lift-up mechanisms make the upper cabinets easy to open, while Muller Profi Line soft-close hinges ensure the fronts close smoothly and quietly."
       },
       {
        "t": "p",
-       "html": "Muller Box Profi Line drawers complete the functional storage system and improve everyday comfort. The kitchen is designed for built-in appliances. Pull-out cargo storage is not included, and cabinet handles are part of the standard configuration."
+       "html": "Muller Box Profi Line drawers round out the kitchen’s functional hardware and make storage more convenient. The kitchen is designed for built-in appliances. This model does not include a cargo pull-out; cabinet handles are included."
       },
       {
        "t": "p",
-       "html": "<strong>K-13 Kitchen Specifications:</strong>"
+       "html": "<strong>K-13 kitchen specifications:</strong>"
       },
       {
        "t": "p",
@@ -88,7 +88,7 @@
       },
       {
        "t": "p",
-       "html": "Configuration: Straight-line kitchen"
+       "html": "Layout: Straight"
       },
       {
        "t": "p",
@@ -96,19 +96,19 @@
       },
       {
        "t": "p",
-       "html": "Dimensions: 7.6 × 2.4 × 0.6 m"
+       "html": "Overall dimensions: 7.6 × 2.4 × 0.6 m"
       },
       {
        "t": "p",
-       "html": "Lift mechanism: FREE FOLD Hafele"
+       "html": "Lift-up mechanism: FREE FOLD Hafele"
       },
       {
        "t": "p",
-       "html": "Appliances: Built-in"
+       "html": "Appliance installation: Built-in"
       },
       {
        "t": "p",
-       "html": "Cargo storage: No"
+       "html": "Cargo pull-out: No"
       },
       {
        "t": "p",
@@ -116,19 +116,19 @@
       },
       {
        "t": "p",
-       "html": "Upper cabinet fronts: Acrylic-faced MDF panels"
+       "html": "Upper cabinet fronts: Acrylic-faced MDF board"
       },
       {
        "t": "p",
-       "html": "Lower cabinet fronts: HPL panels on MDF substrate"
+       "html": "Lower cabinet fronts: HPL-faced MDF board"
       },
       {
        "t": "p",
-       "html": "Cabinet construction: 18 mm laminated particleboard"
+       "html": "Carcass type: 18 mm laminated chipboard"
       },
       {
        "t": "p",
-       "html": "Linear length: 7.6 m"
+       "html": "Length: 7.6 linear m"
       },
       {
        "t": "p",
@@ -140,7 +140,7 @@
       },
       {
        "t": "p",
-       "html": "Finish: Solid color"
+       "html": "Decor: Solid color"
       },
       {
        "t": "p",
@@ -148,40 +148,35 @@
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN, based in Bratislava, Slovakia, provides custom kitchen design and manufacturing services for apartments, private residences, and residential interiors in Bratislava and Vienna.</strong>"
+       "html": "<strong>DUMSKAYA DESIGN designs and makes custom kitchens for apartments, condos, and private homes in Bratislava and Vienna.</strong>"
       },
       {
        "t": "p",
-       "html": "The K-13 model can be adapted to individual room dimensions, architectural features, appliance requirements, and storage preferences."
+       "html": "The K-13 model can be adapted to the specific dimensions of your room, its layout, the location of utility connections, and the client’s preferences for built-in appliance placement and storage."
       },
       {
        "t": "p",
-       "html": "<strong>Our services include personalized kitchen planning, material selection, cabinet manufacturing, delivery, and professional installation.</strong>"
+       "html": "<strong>We take a comprehensive approach to kitchen furniture: design development, selection of materials and hardware, manufacturing, delivery, and professional installation.</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>Additional equipment, including kitchen sinks, built-in appliances, extractor hoods, and plumbing fixtures, can be selected according to the client’s requirements.</strong>"
+       "html": "<strong>At the client’s request, the kitchen can also be fitted with a sink, appliances, a range hood, and plumbing fixtures.</strong>"
       },
       {
        "t": "p",
-       "html": "<strong>Order your K-13 kitchen from DUMSKAYA DESIGN and create a stylish minimalist interior with practical island functionality.</strong>"
+       "html": "<strong>You can order the K-13 kitchen or get a personalized price quote from DUMSKAYA DESIGN.</strong>"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6894870b16cdc209db87aa72",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Catalog of standard kitchen collections",
+       "text": "Kitchen catalog",
        "href": "/en/custom-kitchens-bratislava-vienna"
       },
       {
-       "text": "Order your kitchen",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       }
      ]
@@ -189,18 +184,18 @@
    ]
   },
   {
-   "id": "68851554db592016802da835",
+   "id": "69cc14ec826baf64533e5df7",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -208,7 +203,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -232,7 +227,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

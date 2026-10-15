@@ -172,6 +172,10 @@
      {
       "label": "Кошторис на ремонт",
       "href": "/ua/smeta-na-remont-bratislava-vienna"
+     },
+     {
+      "label": "Для клієнтів зі США",
+      "href": "/ua/interior-custom-furniture-project-usa"
      }
     ]
    },
@@ -320,7 +324,7 @@
       "href": "/en/interior-small-apartment-transformation"
      },
      {
-      "label": "Bathroom organisation",
+      "label": "Bathroom organization",
       "href": "/en/interior-design-small-bathroom-organization"
      },
      {
@@ -333,23 +337,23 @@
     "label": "Prices",
     "children": [
      {
-      "label": "Peket Express",
+      "label": "Express Package",
       "href": "/en/express-interior-design-package-bratislava-vienna"
      },
      {
-      "label": "Peket Furniture",
+      "label": "Furniture Package",
       "href": "/en/custom-furniture-bratislava-design-production"
      },
      {
-      "label": "Peket Basic",
+      "label": "Basic Package",
       "href": "/en/basic-interior-design-package-bratislava-vienna"
      },
      {
-      "label": "Peket Premium",
+      "label": "Premium Package",
       "href": "/en/premium-interior-design-package-bratislava-vienna"
      },
      {
-      "label": "Peket Premium+",
+      "label": "Premium+ Package",
       "href": "/en/premium-plus-interior-design-package-bratislava-vienna"
      }
     ]

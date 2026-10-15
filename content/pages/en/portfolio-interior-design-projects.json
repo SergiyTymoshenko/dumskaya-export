@@ -4,8 +4,8 @@
  "type": "portfolio",
  "group": null,
  "title": "Interior Design Portfolio | DUMSKAYA DESIGN",
- "description": "Projects by DUMSKAYA DESIGN: apartments, private houses, villas, offices and salons. Photos and 3D visualisations. Studio in Bratislava and Vienna.",
- "h1": "Examples of Completed Interior Design Projects Worldwide",
+ "description": "Projects by DUMSKAYA DESIGN: apartments, private houses, villas, offices and salons. Photos and 3D visualizations. Studio in Bratislava and Vienna.",
+ "h1": "Examples of completed interior design projects",
  "og_image": "6abd6a8e6bbe610384483447",
  "alternates": {
   "ru": "/proekty-interior-design",
@@ -14,22 +14,22 @@
  },
  "sections": [
   {
-   "id": "689075b44f340ae790e004fe",
+   "id": "60046d9a8e229e00212eebaf",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Examples of Completed Interior Design Projects Worldwide"
+     "text": "Examples of completed interior design projects"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Metropolis apartment Bratislava 75 m²",
+       "title": "Metropolis apartment, Bratislava, 75 m²",
        "href": "/en/design-interior-studio-bratislava-metropolis-sk-75m",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",
-        "alt": "interior design project of an apartment bratislava"
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
        }
       },
       {
@@ -41,7 +41,7 @@
        }
       },
       {
-       "title": "Apartment in Eurovea City, Bratislava, 56 m²",
+       "title": "Eurovea apartment, Bratislava, 56 m²",
        "href": "/en/studio-interior-design-bratislava-eurovea-56m",
        "image": {
         "id": "6abd6a8168c5e81567a1bfb4",
@@ -49,7 +49,7 @@
        }
       },
       {
-       "title": "Apartment in Bratislava, 158 m² (20 m² terrace)",
+       "title": "Apartment in Bratislava, 158 m²",
        "href": "/en/luxury-158sqm-duplex-apartment-interior-design-bratislava",
        "image": {
         "id": "6abd6a8e6bbe610384483447",
@@ -81,7 +81,7 @@
        }
       },
       {
-       "title": "Private House, 212 m²",
+       "title": "Private house, 212 m²",
        "href": "/en/luxury-interior-private-house-212sqm",
        "image": {
         "id": "6abd6a716bbe6103844833be",
@@ -209,7 +209,7 @@
        }
       },
       {
-       "title": "Private house, 217 m²",
+       "title": "Private house in Kyiv, 217 m²",
        "href": "/en/luxury-interior-design-kiev-private-house-217sqm",
        "image": {
         "id": "6abd6b0561617a4443acb529",
@@ -217,7 +217,7 @@
        }
       },
       {
-       "title": "Private house in Munich, Germany, 160 m²",
+       "title": "Private house, Munich, Germany, 160 m²",
        "href": "/en/luxury-interior-design-private-house-munich-germany-160sqm",
        "image": {
         "id": "6abd6b3b4888499d2074560d",
@@ -225,7 +225,7 @@
        }
       },
       {
-       "title": "Private house in Berlin, Germany, 215 m²",
+       "title": "Private house, Berlin, 215 m²",
        "href": "/en/luxury-interior-private-house-berlin-germany-215sqm",
        "image": {
         "id": "6abd6aa461617a4443acb2fc",
@@ -273,7 +273,7 @@
        }
       },
       {
-       "title": "Apartment in Vienna, 115 m²",
+       "title": "Apartment, Vienna, Austria, 115 m²",
        "href": "/en/luxury-interior-design-apartment-vienna-austria-115sqm",
        "image": {
         "id": "6abd6b354888499d207455da",
@@ -281,11 +281,11 @@
        }
       },
       {
-       "title": "Apartment in Varna, 60 m²",
+       "title": "Apartment, Varna, Bulgaria, 60 m²",
        "href": "/en/premium-interior-design-apartment-varna-bulgaria-60sqm",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
-        "alt": "interior designer varna"
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
        }
       },
       {
@@ -305,7 +305,7 @@
        }
       },
       {
-       "title": "Villa in Burgas, 220 m²",
+       "title": "Villa, Burgas, Bulgaria, 220 m²",
        "href": "/en/luxury-interior-villa-burgas-bulgaria-220sqm",
        "image": {
         "id": "6abd6b434888499d20745636",
@@ -321,7 +321,7 @@
        }
       },
       {
-       "title": "Two-level apartment, 43 m²",
+       "title": "Duplex apartment, 43 m²",
        "href": "/en/interior-design-43sqm-duplex-apartment",
        "image": {
         "id": "6abd6acd6bbe6103844835b3",
@@ -333,18 +333,18 @@
    ]
   },
   {
-   "id": "68bca0fe074acc3c347640fd",
+   "id": "66c3dbcd60fbdf863e623e3f",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Examples of Interior Design Projects for Various Commercial Spaces"
+     "text": "Examples of design projects for a variety of commercial spaces"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Cosmetology Salon, 54 m²",
+       "title": "Skincare clinic, 54 m²",
        "href": "/en/luxury-interior-cosmetology-salon",
        "image": {
         "id": "6abe045b3ba7c7b833963e2b",
@@ -352,7 +352,7 @@
        }
       },
       {
-       "title": "Beauty Salon, 63 m²",
+       "title": "Beauty salon, 63 m²",
        "href": "/en/beauty-salon-interior-design-63m",
        "image": {
         "id": "6abe04846bbe610384497d7b",
@@ -363,12 +363,12 @@
        "title": "Office, 500 m²",
        "href": "/en/office-interior-design-500m",
        "image": {
-        "id": "6abe07964888499d2075ac31",
-        "alt": "office interior design, 500 m² office space, custom office furniture, turnkey office renovation, executive office design, modern office layout, workspace planning, DUMSKAYA DESIGN office project, commercial interior"
+        "id": "66f5d16697317fa68a804f5a",
+        "alt": "tailor-made reception desk with wall paneling"
        }
       },
       {
-       "title": "Photo Studio, 130 m²",
+       "title": "Photo studio, 130 m²",
        "href": "/en/photo-studio-interior-design-130m",
        "image": {
         "id": "6abe048a61617a4443adfce2",
@@ -376,15 +376,15 @@
        }
       },
       {
-       "title": "Women's Clothing Boutique, 140 m², Kyiv",
+       "title": "Women’s clothing boutique in Kyiv, 140 m²",
        "href": "/en/clothing-boutique-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
-        "alt": "women’s boutique interior design, 140 m² retail store Kyiv, custom boutique furniture, fashion store design Ukraine, clothing store layout planning, boutique renovation Kyiv, modern retail interior, DUMSKAYA DESIGN boutique project, high-end fashion boutiq"
+        "alt": "commercial interior design, Bratislava, Slovakia"
        }
       },
       {
-       "title": "Sauna (bathhouse), 120 m²",
+       "title": "Sauna and spa, 120 m²",
        "href": "/en/sauna-bathhouse-commercial-interior-design",
        "image": {
         "id": "6abe044a6bbe610384497c6d",
@@ -400,14 +400,6 @@
        }
       },
       {
-       "title": "Retail Store, 50 m²",
-       "href": "/en/retail-store-interior-design-50m2",
-       "image": {
-        "id": "6abe047d4888499d2075a16a",
-        "alt": "retail store interior design, 50 m² store layout, custom retail furniture, shop renovation, boutique fit-out, modern store design, commercial interior design, DUMSKAYA DESIGN retail project, small shop space planning"
-       }
-      },
-      {
        "title": "Office, 53 m², Poznań",
        "href": "/en/office-interior-design-53m",
        "image": {
@@ -416,11 +408,19 @@
        }
       },
       {
-       "title": "Executive Office, 7 m²",
+       "title": "Executive office, 7 m²",
        "href": "/en/boss-office-interior-design",
        "image": {
         "id": "6abe046261617a4443adfc3e",
         "alt": "executive office design, 7 m² office layout, small executive workspace, custom office furniture, compact office interior, modern director’s office, DUMSKAYA DESIGN executive project, bespoke office design, turnkey office fit-out"
+       }
+      },
+      {
+       "title": "Store, 50 m²",
+       "href": "/en/retail-store-interior-design-50m2",
+       "image": {
+        "id": "6abe047d4888499d2075a16a",
+        "alt": "retail store interior design, 50 m² store layout, custom retail furniture, shop renovation, boutique fit-out, modern store design, commercial interior design, DUMSKAYA DESIGN retail project, small shop space planning"
        }
       }
      ]
@@ -428,18 +428,18 @@
    ]
   },
   {
-   "id": "6890b09017e13d85708e3241",
+   "id": "66b61d8cd7827983548826fc",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Examples of architectural design projects with construction implementation"
+     "text": "Architectural projects: from design to construction"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Villa, Spain, Marbella",
+       "title": "Villa, Marbella, Spain",
        "href": "/en/luxury-interior-design-architectural-facade-villa-marbella-spain",
        "image": {
         "id": "66b619f623f9a34a612c9e7d",
@@ -447,23 +447,15 @@
        }
       },
       {
-       "title": "Private House",
+       "title": "3D modeling of a concept design for a house facade",
        "href": "/en/3d-visualization-interior-design-private-house-facade-landscaping",
-       "image": {
-        "id": "686bcfbe29b44dd96a3d2a5f",
-        "alt": "architectural design and construction of a private house"
-       }
-      },
-      {
-       "title": "3D Modeling of Conceptual House Facade Design",
-       "href": "/en/concept-interior-design-3d-visualization-building-facade",
        "image": {
         "id": "673a059eece0e84849b9e2cf",
         "alt": "3D visualization of a conceptual house facade project"
        }
       },
       {
-       "title": "Private House",
+       "title": "Private house",
        "href": "/en/private-house-architectural-design-facade",
        "image": {
         "id": "66a56e39d68a3eb051612386",
@@ -471,7 +463,7 @@
        }
       },
       {
-       "title": "Architectural Facade Design for a Barbershop, Kyiv, Ukraine",
+       "title": "Architectural design for a barbershop facade, Kyiv, Ukraine",
        "href": "/en/barbershop-facade-architectural-solution",
        "image": {
         "id": "66d313f8e6210d11a55d877c",
@@ -479,11 +471,11 @@
        }
       },
       {
-       "title": "Architectural Design of a Pergola Gazebo",
+       "title": "Architectural design: gazebo with a pergola",
        "href": "/en/gazebo-pergola-design-and-construction",
        "image": {
-        "id": "66d476c7e6210d11a55ff6ee",
-        "alt": "custom architectural concept of a pergola-style gazebo for outdoor space"
+        "id": "66d476c1e93b01287b01e50b",
+        "alt": "3D visualization of outdoor lounge area at private house Bratislava Slovakia"
        }
       }
      ]
@@ -491,17 +483,17 @@
    ]
   },
   {
-   "id": "6884d34453fd64883a42e6fc",
+   "id": "66a0fb2ca35d7b20d86ceec0",
    "blocks": [
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Price of available service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -509,18 +501,18 @@
    ]
   },
   {
-   "id": "68850de76a8709c50fe53171",
+   "id": "69cbba929b62c896a9fd05f0",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -528,7 +520,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -552,7 +544,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

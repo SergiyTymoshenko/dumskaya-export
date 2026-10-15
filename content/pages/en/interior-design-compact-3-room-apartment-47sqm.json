@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Three-room Apartment Interior Design 47 m² | DUMSKAYA DESIGN",
- "description": "47 m² three-room apartment: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Example of an interior design project for a compact 3-room apartment of 47 m²",
+ "description": "47 m² three-room apartment: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Interior design project example: a 3-room (two-bedroom) apartment in just 47 m²",
  "og_image": "66a181999313b53dae626968",
  "alternates": {
   "ru": "/interior-design-apartment-ukraine-47m",
@@ -14,35 +14,31 @@
  },
  "sections": [
   {
-   "id": "6884d34653fd64883a42e77f",
+   "id": "66a16f697b69a9a2be8ee96e",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Example of an interior design project for a compact 3-room apartment of 47 m²"
+     "text": "Interior design project example: a 3-room (two-bedroom) apartment in just 47 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "A story by <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong>"
+       "html": "A story from <strong>DUMSKAYA DESIGN</strong> (Bratislava, Slovakia)"
       },
       {
        "t": "p",
-       "html": "A client came to our studio with a challenging task — to create a functional interior for a young family in a space of just 47 m². The layout had to include a living room combined with a kitchen, a comfortable bathroom, a spacious children’s room with a study area, and a cozy bedroom."
+       "html": "A client came to our studio with a challenging task: to organize a living space for a young family in just 47 m². We needed to plan a living room combined with a kitchen, a convenient bathroom, a spacious children’s room with a study area, and a cozy bedroom."
       },
       {
        "t": "p",
-       "html": "We developed an open-plan concept where the kitchen and living room blend into one bright, inviting space — perfect for family life and entertaining guests. The bathroom was strategically placed for easy access from all rooms. In the children's room, we designed a cozy space for sleep, play, and study, using multifunctional furniture and smart storage solutions. The balcony was integrated into the living area to maximize usable space."
+       "html": "We developed an open-plan layout in which the living room and kitchen merge into a single bright space, perfect for spending time together and entertaining guests. The bathroom was positioned so that it is easily accessible from all rooms. In the children’s room, we created a cozy place for sleeping, playing, and studying, using multifunctional furniture and smart storage systems and incorporating the balcony into the living area. The parents’ bedroom, although compact, turned out very cozy and private thanks to careful zoning and the choice of color palette."
       },
       {
        "t": "p",
-       "html": "The parents' bedroom, though compact, feels cozy and private thanks to smart zoning and a carefully selected color palette."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> successfully turned 47 m² into a stylish, comfortable, and highly functional home tailored to the needs of a modern family."
+       "html": "<strong>DUMSKAYA DESIGN</strong> (Bratislava, Slovakia) rose to the challenge, transforming 47 m² into a convenient, stylish, and functional space for a young family."
       }
      ]
     },
@@ -126,12 +122,7 @@
        "alt": "wall-mounted sink and mirror in bathroom bratislava slovakia"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6890b5cf4ebcf4b693369497",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -140,11 +131,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -152,18 +143,18 @@
    ]
   },
   {
-   "id": "688510cf38ec9f6ebf528992",
+   "id": "69cbfcff96e515190621f84b",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -171,7 +162,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -195,7 +186,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

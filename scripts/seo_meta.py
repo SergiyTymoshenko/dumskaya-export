@@ -129,7 +129,7 @@ PROJECTS = {
 
 WORKS = {
     "design": {"ru": "дизайн-проект", "ua": "дизайн-проєкт", "en": "design project"},
-    "viz": {"ru": "3D-визуализация", "ua": "3D-візуалізація", "en": "3D visualisation"},
+    "viz": {"ru": "3D-визуализация", "ua": "3D-візуалізація", "en": "3D visualization"},
     "furn": {"ru": "мебель на заказ", "ua": "меблі на замовлення", "en": "custom furniture"},
     "reno": {"ru": "ремонт под ключ", "ua": "ремонт під ключ", "en": "turnkey renovation"},
 }
@@ -285,7 +285,7 @@ add("/proekty-interior-design",
     ("Портфоліо: проєкти дизайну інтер’єру | DUMSKAYA DESIGN",
      "Проєкти студії DUMSKAYA DESIGN: квартири, приватні будинки, вілли, офіси та салони. Фото й 3D-візуалізації інтер’єрів. Студія у Братиславі та Відні."),
     ("Interior Design Portfolio | DUMSKAYA DESIGN",
-     "Projects by DUMSKAYA DESIGN: apartments, private houses, villas, offices and salons. Photos and 3D visualisations. Studio in Bratislava and Vienna."))
+     "Projects by DUMSKAYA DESIGN: apartments, private houses, villas, offices and salons. Photos and 3D visualizations. Studio in Bratislava and Vienna."))
 add("/contact-studio-interior-design-bratislava-vienna",
     ("Контакты DUMSKAYA DESIGN — Братислава и Вена",
      "Телефоны в Братиславе и Вене, e-mail и форма заявки. Бесплатная консультация по дизайну интерьера, мебели на заказ и ремонту под ключ."),
@@ -320,7 +320,7 @@ add("/basic-interior-design-package-bratislava-vienna",
     ("Дизайн-пакет «Базовий» — 35–45 €/м² | DUMSKAYA DESIGN",
      "Повний дизайн-проєкт інтер’єру: планування, 3D-візуалізація, робочі креслення та специфікації. 35–45 €/м², від 2 000 €. Братислава та Відень."),
     ("Basic Interior Design Package — €35–45/m² | DUMSKAYA DESIGN",
-     "Complete interior design project: layout, 3D visualisation, working drawings and specifications. €35–45/m², from €2,000. Bratislava and Vienna."))
+     "Complete interior design project: layout, 3D visualization, working drawings and specifications. €35–45/m², from €2,000. Bratislava and Vienna."))
 add("/premium-interior-design-package-bratislava-vienna",
     ("Дизайн-пакет «Премиум» — 50 €/м² | DUMSKAYA DESIGN",
      "Расширенный дизайн-проект интерьера с детальной проработкой мебели, освещения и материалов. 50 €/м², от 2 500 €. Братислава и Вена."),
@@ -341,14 +341,14 @@ add("/interior-design-apartmens-bratislava",
     ("Дизайн інтер’єру квартир і будинків у Братиславі | DUMSKAYA",
      "Дизайн житлових інтер’єрів: квартири, приватні будинки та вілли. Планування, 3D-візуалізація, меблі на замовлення та ремонт під ключ у Братиславі й Відні."),
     ("Residential Interior Design in Bratislava | DUMSKAYA DESIGN",
-     "Interior design for apartments, private houses and villas: layout, 3D visualisation, custom furniture and turnkey renovation in Bratislava and Vienna."))
+     "Interior design for apartments, private houses and villas: layout, 3D visualization, custom furniture and turnkey renovation in Bratislava and Vienna."))
 add("/interior-design-office-bratislava-wien",
     ("Дизайн коммерческих интерьеров в Братиславе | DUMSKAYA",
      "Дизайн офисов, салонов, магазинов и бутиков: проект, 3D-визуализация и мебель для бизнеса на заказ. Братислава и Вена, бесплатная консультация."),
     ("Дизайн комерційних інтер’єрів у Братиславі | DUMSKAYA",
      "Дизайн офісів, салонів, магазинів і бутиків: проєкт, 3D-візуалізація та меблі для бізнесу на замовлення. Братислава й Відень, консультація безкоштовно."),
     ("Commercial Interior Design in Bratislava | DUMSKAYA DESIGN",
-     "Design of offices, salons, shops and boutiques: project, 3D visualisation and custom business furniture. Bratislava and Vienna, free consultation."))
+     "Design of offices, salons, shops and boutiques: project, 3D visualization and custom business furniture. Bratislava and Vienna, free consultation."))
 add("/kuhni-shkafi-bratislava",
     ("Мебель на заказ в Братиславе и Вене | DUMSKAYA DESIGN",
      "Проектирование и изготовление мебели на заказ: кухни, шкафы, гардеробные, прихожие и кабинеты. Замер, производство и монтаж в Братиславе и Вене."),
@@ -368,15 +368,15 @@ add("/kupkuhni-na-zakaz-vienna-bratislava",
      "Каталог кухонь на заказ: современные, классические и минималистичные модели. Проект по вашим размерам, изготовление и монтаж в Братиславе и Вене."),
     ("Кухні на замовлення у Братиславі та Відні — каталог | DUMSKAYA",
      "Каталог кухонь на замовлення: сучасні, класичні та мінімалістичні моделі. Проєкт за вашими розмірами, виготовлення та монтаж у Братиславі й Відні."),
-    ("Custom Kitchens in Bratislava & Vienna — Catalogue | DUMSKAYA",
-     "Catalogue of custom kitchens: modern, classic and minimalist models. Designed to your measurements, made and installed in Bratislava and Vienna."))
+    ("Custom Kitchens in Bratislava & Vienna — Catalog | DUMSKAYA",
+     "Catalog of custom kitchens: modern, classic and minimalist models. Designed to your measurements, made and installed in Bratislava and Vienna."))
 add("/kuhni-na-zakaz-bratislava",
     ("Кухни на заказ в Братиславе | DUMSKAYA DESIGN",
      "Дизайн, проектирование и изготовление кухонь на заказ в Братиславе: планировка, 3D-визуализация, производство и монтаж. Бесплатная консультация."),
     ("Кухні на замовлення у Братиславі | DUMSKAYA DESIGN",
      "Дизайн, проєктування та виготовлення кухонь на замовлення у Братиславі: планування, 3D-візуалізація, виробництво й монтаж. Консультація безкоштовно."),
     ("Custom Kitchens in Bratislava | DUMSKAYA DESIGN",
-     "Design and manufacture of custom kitchens in Bratislava: layout, 3D visualisation, production and installation. Free consultation."))
+     "Design and manufacture of custom kitchens in Bratislava: layout, 3D visualization, production and installation. Free consultation."))
 add("/stroitelstvo-remont-bratislava",
     ("Ремонт квартир и домов под ключ в Братиславе | DUMSKAYA",
      "Ремонт под ключ в Братиславе и Вене: квартиры, дома и коммерческие помещения. Дизайн-проект, смета, отделка, мебель и сдача объекта — одна команда."),
@@ -404,21 +404,21 @@ add("/architecture-design-bratislava",
     ("Архітектура та проєктування у Братиславі | DUMSKAYA DESIGN",
      "Архітектурні проєкти приватних будинків, фасадів і малих форм: ескіз, 3D-візуалізація, робоча документація. Братислава та Відень."),
     ("Architecture & Design in Bratislava | DUMSKAYA DESIGN",
-     "Architectural design of private houses, facades and garden structures: concept, 3D visualisation and working drawings. Bratislava and Vienna."))
+     "Architectural design of private houses, facades and garden structures: concept, 3D visualization and working drawings. Bratislava and Vienna."))
 add("/3d-vizualizaciya-fasada-zdaniya-cena",
     ("3D-визуализация фасада: цены от 75 € | DUMSKAYA DESIGN",
      "Фотореалистичная 3D-визуализация фасада здания и экстерьера: от 75 до 375 € в зависимости от сложности. Сроки и правки — на странице."),
     ("3D-візуалізація фасаду: ціни від 75 € | DUMSKAYA DESIGN",
      "Фотореалістична 3D-візуалізація фасаду будівлі та екстер’єру: від 75 до 375 € залежно від складності. Терміни та правки — на сторінці."),
-    ("3D Facade Visualisation: Prices from €75 | DUMSKAYA DESIGN",
-     "Photorealistic 3D visualisation of building facades and exteriors: €75–375 depending on complexity. Timing and revisions explained."))
+    ("3D Facade Visualization: Prices from €75 | DUMSKAYA DESIGN",
+     "Photorealistic 3D visualization of building facades and exteriors: €75–375 depending on complexity. Timing and revisions explained."))
 add("/3d-architecture-bratislava",
     ("Эскизный проект с 3D-визуализацией фасадов | DUMSKAYA",
      "Эскизный архитектурный проект здания с 3D-визуализацией фасадов и окружения: объём, материалы, озеленение. Студия в Братиславе и Вене."),
     ("Ескізний проєкт з 3D-візуалізацією фасадів | DUMSKAYA",
      "Ескізний архітектурний проєкт будівлі з 3D-візуалізацією фасадів і оточення: об’єм, матеріали, озеленення. Студія у Братиславі та Відні."),
-    ("Concept Design with 3D Facade Visualisation | DUMSKAYA",
-     "Architectural concept design with 3D visualisation of facades and surroundings: massing, materials and landscaping. Studio in Bratislava and Vienna."))
+    ("Concept Design with 3D Facade Visualization | DUMSKAYA",
+     "Architectural concept design with 3D visualization of facades and surroundings: massing, materials and landscaping. Studio in Bratislava and Vienna."))
 add("/furniture-private-house-design",
     ("Мебель на заказ и ремонт частного дома | DUMSKAYA DESIGN",
      "Проект студии DUMSKAYA DESIGN: дизайн и производство мебели на заказ и ремонт частного дома под ключ. Фото реализованного объекта."),
@@ -488,35 +488,35 @@ add("/architecture-villa-spain-marbella",
     ("Архітектурне рішення фасаду вілли, Марбелья | DUMSKAYA",
      "Проєкт реконструкції фасаду вілли в Марбельї, Іспанія: архітектурне рішення та 3D-візуалізація. Студія DUMSKAYA DESIGN у Братиславі та Відні."),
     ("Villa Facade Redesign, Marbella | DUMSKAYA DESIGN",
-     "Facade reconstruction project for a villa in Marbella, Spain: architectural solution and 3D visualisation. DUMSKAYA DESIGN, Bratislava and Vienna."))
+     "Facade reconstruction project for a villa in Marbella, Spain: architectural solution and 3D visualization. DUMSKAYA DESIGN, Bratislava and Vienna."))
 add("/3d-vizualizaciya-fasada-bratislava",
     ("3D-визуализация фасада частного дома | DUMSKAYA DESIGN",
      "Эскизный проект фасада частного дома и озеленения участка с фотореалистичной 3D-визуализацией. Студия DUMSKAYA DESIGN в Братиславе и Вене."),
     ("3D-візуалізація фасаду приватного будинку | DUMSKAYA",
      "Ескізний проєкт фасаду приватного будинку та озеленення ділянки з фотореалістичною 3D-візуалізацією. Студія DUMSKAYA DESIGN у Братиславі та Відні."),
-    ("3D Visualisation of a Private House Facade | DUMSKAYA",
-     "Concept design of a private house facade and landscaping with photorealistic 3D visualisation. DUMSKAYA DESIGN, Bratislava and Vienna."))
+    ("3D Visualization of a Private House Facade | DUMSKAYA",
+     "Concept design of a private house facade and landscaping with photorealistic 3D visualization. DUMSKAYA DESIGN, Bratislava and Vienna."))
 add("/architecture-private-house",
     ("Архитектурный проект фасадов частного дома | DUMSKAYA",
      "Архитектурный проект фасадов частного дома: решение фасадов, материалы и 3D-визуализация. Студия DUMSKAYA DESIGN в Братиславе и Вене."),
     ("Архітектурний проєкт фасадів приватного будинку | DUMSKAYA",
      "Архітектурний проєкт фасадів приватного будинку: рішення фасадів, матеріали та 3D-візуалізація. Студія DUMSKAYA DESIGN у Братиславі та Відні."),
     ("Private House Facade Design | DUMSKAYA DESIGN",
-     "Architectural facade design for a private house: facade solution, materials and 3D visualisation. DUMSKAYA DESIGN, Bratislava and Vienna."))
+     "Architectural facade design for a private house: facade solution, materials and 3D visualization. DUMSKAYA DESIGN, Bratislava and Vienna."))
 add("/architecture-facade-barbershop-kyiv",
     ("Фасад барбершопа в Киеве — архитектурное решение | DUMSKAYA",
      "Архитектурное решение фасада барбершопа в Киеве: концепция, материалы, вывеска и 3D-визуализация. Студия DUMSKAYA DESIGN."),
     ("Фасад барбершопу в Києві — архітектурне рішення | DUMSKAYA",
      "Архітектурне рішення фасаду барбершопу в Києві: концепція, матеріали, вивіска та 3D-візуалізація. Студія DUMSKAYA DESIGN."),
     ("Barbershop Facade Design in Kyiv | DUMSKAYA DESIGN",
-     "Architectural facade design for a barbershop in Kyiv: concept, materials, signage and 3D visualisation. DUMSKAYA DESIGN."))
+     "Architectural facade design for a barbershop in Kyiv: concept, materials, signage and 3D visualization. DUMSKAYA DESIGN."))
 add("/architecture-gazebo-pergola",
     ("Беседка с перголой: проект и реализация | DUMSKAYA",
      "Проект эксклюзивной беседки с перголой — от 3D-визуализации до реализации на участке. Архитектура малых форм от студии DUMSKAYA DESIGN."),
     ("Альтанка з перголою: проєкт і реалізація | DUMSKAYA DESIGN",
      "Проєкт ексклюзивної альтанки з перголою — від 3D-візуалізації до реалізації на ділянці. Архітектура малих форм від студії DUMSKAYA DESIGN."),
     ("Gazebo with Pergola: Design and Build | DUMSKAYA DESIGN",
-     "An exclusive gazebo with a pergola — from 3D visualisation to construction on site. Garden architecture by DUMSKAYA DESIGN."))
+     "An exclusive gazebo with a pergola — from 3D visualization to construction on site. Garden architecture by DUMSKAYA DESIGN."))
 add("/shop",
     ("Магазин мебели DUMSKAYA DESIGN — офисная мебель",
      "Мебель для кабинета руководителя из коллекции Executive Desk: столы, шкафы и стол для переговоров. Производство в Европе, доставка по Словакии и Австрии."),

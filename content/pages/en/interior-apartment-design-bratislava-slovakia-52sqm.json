@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Apartment Design 52 m², Bratislava | DUMSKAYA DESIGN",
- "description": "52 m² apartment in Bratislava: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Apartment Interior Design in Bratislava, Custom Furniture & Turnkey Renovation, 52 m²",
+ "description": "52 m² apartment in Bratislava: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Apartment interior design in Bratislava, custom furniture and turnkey renovation, 52 m²",
  "og_image": "6abd6b0c61617a4443acb569",
  "alternates": {
   "ru": "/apartment-interior-design-bratislava-52m",
@@ -14,35 +14,35 @@
  },
  "sections": [
   {
-   "id": "6884d35453fd64883a42ed1f",
+   "id": "66d79eb01af29dc098e6d494",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Apartment Interior Design in Bratislava, Custom Furniture & Turnkey Renovation, 52 m²"
+     "text": "Apartment interior design in Bratislava, custom furniture and turnkey renovation, 52 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a comprehensive project for a 52 m² apartment in Bratislava, including interior design, technical documentation, custom furniture design and manufacturing, and turnkey renovation."
+       "html": "<strong>DUMSKAYA DESIGN</strong> completed a comprehensive project for a 52 m² apartment in Bratislava, including interior design, technical documentation, the design and manufacture of custom furniture, and a turnkey renovation."
       },
       {
        "t": "p",
-       "html": "The project covers the main functional areas of the apartment: living room, bedroom, kitchen with individually planned storage and built-in appliances, dressing areas, entrance hall and bathroom. Custom wardrobes, shelving and integrated storage systems were also incorporated into the interior."
+       "html": "The project covers the apartment’s main functional areas: the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom. Custom wardrobes, shelving, and storage systems are also integrated into the interior."
       },
       {
        "t": "p",
-       "html": "Custom-made furniture was designed and manufactured for each area, taking into account the dimensions of the rooms, layout and functional requirements. Developing the interior and furniture as one integrated concept made it possible to use the available floor area efficiently while maintaining a consistent visual character throughout the apartment."
+       "html": "Custom furniture was designed and manufactured for each area, tailored to the room dimensions, the layout, and functional requirements. Designing the interior and furniture together made it possible to use the apartment’s floor area efficiently and maintain a unified visual character throughout the space."
       },
       {
        "t": "p",
-       "html": "Before renovation began, a detailed project estimate was prepared covering renovation works, construction and finishing materials, custom furniture, household appliances, sanitary equipment and lighting. The project was implemented as a comprehensive process — from the development of the interior concept and technical documentation to renovation, furniture manufacturing and installation."
+       "html": "Before the renovation began, a detailed cost estimate was prepared covering labor, construction and finishing materials, custom furniture, appliances, plumbing fixtures, and lighting. The project was delivered end to end — from developing the interior concept and technical documentation to the renovation and the manufacture and installation of the furniture."
       },
       {
        "t": "p",
-       "html": "The page features photorealistic 3D visualizations, photographs of the completed interior and custom-made furniture, providing a clear comparison between the developed design concept and the final result."
+       "html": "This page features photorealistic 3D visualizations alongside photographs of the completed interior and the manufactured furniture, allowing you to compare the original concept with the final result."
       }
      ]
     },
@@ -264,12 +264,7 @@
        "alt": "Apartment in Bratislava, 52 m² — photo 51"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6890b5ca4ebcf4b69336939f",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -278,11 +273,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -290,18 +285,18 @@
    ]
   },
   {
-   "id": "68850f9ed24f2d329e52adb7",
+   "id": "69cbfa54ac8617e413401cd9",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -309,7 +304,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -333,7 +328,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

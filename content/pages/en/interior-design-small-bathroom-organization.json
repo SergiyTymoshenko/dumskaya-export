@@ -5,7 +5,7 @@
  "group": null,
  "title": "Small Bathroom Layout: Designer Tips | DUMSKAYA DESIGN",
  "description": "Planning a bathroom: placement of fixtures, storage, lighting and materials. Practical advice from interior designer DUMSKAYA DESIGN.",
- "h1": "How to Plan and Organize Your Bathroom",
+ "h1": "How to organize your bathroom",
  "og_image": "66c512e357e040ebdd059c6f",
  "alternates": {
   "ru": "/kak-pravilno-organizovat-svoj-sanuzel",
@@ -14,146 +14,12 @@
  },
  "sections": [
   {
-   "id": "6893b2421e203a66d8dad1bb",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      },
-      {
-       "title": "Kitchen model №K-05",
-       "href": "/en/kitchen-k05-beige-classic",
-       "image": {
-        "id": "67d2ce3732bfd979ec7466ca",
-        "alt": "classic kitchen style with white cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-11",
-       "href": "/en/kitchen-k11-grey-modern",
-       "image": {
-        "id": "67d2d3d532bfd979ec747e9e",
-        "alt": "contemporary kitchen with island and bar stools"
-       }
-      },
-      {
-       "title": "Kitchen model №K-08",
-       "href": "/en/kitchen-k08-brown-minimalist",
-       "image": {
-        "id": "67d2cfa84385e682489fe2ff",
-        "alt": "small typical kitchen with efficient storage"
-       }
-      },
-      {
-       "title": "Kitchen model №K-03",
-       "href": "/en/kitchen-k03-black-modern",
-       "image": {
-        "id": "67d2c0e46ad366460788472f",
-        "alt": "open plan kitchen with dining area"
-       }
-      },
-      {
-       "title": "Kitchen model №K-04",
-       "href": "/en/kitchen-k04-grey-modern",
-       "image": {
-        "id": "67c8be7ee5449e0536081d2e",
-        "alt": "functional kitchen design with wooden accents"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6893b2691e203a66d8dad2f1",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      },
-      {
-       "title": "Kitchen model №K-05",
-       "href": "/en/kitchen-k05-beige-classic",
-       "image": {
-        "id": "67d2ce3732bfd979ec7466ca",
-        "alt": "classic kitchen style with white cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-11",
-       "href": "/en/kitchen-k11-grey-modern",
-       "image": {
-        "id": "67d2d3d532bfd979ec747e9e",
-        "alt": "contemporary kitchen with island and bar stools"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6893b2871e203a66d8dad3f7",
-   "blocks": [
-    {
-     "type": "cards",
-     "items": [
-      {
-       "title": "Kitchen model №K-41",
-       "href": "/en/modern-gray-straight-kitchen-41",
-       "image": {
-        "id": "67cb0bfd807a287f628edace",
-        "alt": "typical kitchen design with modern cabinets"
-       }
-      },
-      {
-       "title": "Kitchen model №K-06",
-       "href": "/en/kitchen-k06-white-minimalist",
-       "image": {
-        "id": "67c8c5edbc98e6d349021946",
-        "alt": "standard kitchen layout with built-in appliances"
-       }
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "6884d34653fd64883a42e7a7",
+   "id": "66a2274df93fed3ff5a11b67",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "How to Plan and Organize Your Bathroom"
+     "text": "How to organize your bathroom"
     },
     {
      "type": "gallery",
@@ -237,96 +103,94 @@
      "parts": [
       {
        "t": "p",
-       "html": "Consulting a professional interior designer can transform even the smallest bathroom. Here are some key ideas and features that can be implemented:"
+       "html": "Working with a professional interior designer can transform even the smallest bathroom. Here are some features and ideas that can be implemented:"
       },
       {
        "t": "p",
-       "html": "<strong>Space Optimization:</strong>"
+       "html": "<strong>1. Space optimization:</strong>"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Compact fixtures: Installing smaller sinks, toilets, and showers to make the most of the space.",
+        "Wall-hung elements: Wall-hung toilets and sinks create a sense of more space and make cleaning easier."
+       ]
       },
       {
        "t": "p",
-       "html": "Compact fixtures: Install smaller sinks, toilets, and showers to maximize usable space."
+       "html": "<strong>2. Color palette and lighting:</strong>"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Even dark colors, such as graphite, can visually expand the space.",
+        "Good lighting: Recessed lights, a backlit mirror, LED strips under the cabinets or around the perimeter of the ceiling."
+       ]
       },
       {
        "t": "p",
-       "html": "Wall-mounted elements: Wall-hung toilets and sinks create a sense of openness and make cleaning easier."
+       "html": "<strong>3. Mirrors:</strong>"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Large mirrors: Mirrors can significantly increase the sense of space. A full-wall mirror or large mirrored panels work especially well."
+       ]
       },
       {
        "t": "p",
-       "html": "<strong>Color Palette and Lighting:</strong>"
+       "html": "<strong>4. Storage:</strong>"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Built-in cabinets: Maximizing storage with built-in cabinets above the toilet."
+       ]
       },
       {
        "t": "p",
-       "html": "Dark tones: Even deep shades like graphite can visually enlarge a space."
+       "html": "<strong>5. Materials and finishes:</strong>"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "We all know that glossy surfaces and finishes reflect light and make a room feel more spacious. But what if we want to minimize cleaning? That’s right — we choose the right matte texture.",
+        "Mosaic and tile: Using small mosaics or tiles to create interesting accents that draw attention away from the size of the room."
+       ]
       },
       {
        "t": "p",
-       "html": "Proper lighting: Recessed lights, backlit mirrors, LED strips under cabinets, or along the ceiling perimeter enhance brightness and ambiance."
+       "html": "<strong>6. Decor:</strong>"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Minimalism: A minimal amount of decor to avoid clutter."
+       ]
       },
       {
        "t": "p",
-       "html": "<strong>Mirrors:</strong>"
+       "html": "An example of such a design might include a light color palette, a large mirrored wall, wall-hung fixtures, glossy tiles, and built-in cabinets, creating a sense of spaciousness and comfort even in the smallest bathroom."
       },
       {
        "t": "p",
-       "html": "Large mirrors: Full-wall mirrors or large mirrored panels significantly expand visual space."
+       "html": "Want a one-of-a-kind interior? Commission your interior design with us. A personalized approach, exclusive materials, and projects worldwide."
       },
       {
        "t": "p",
-       "html": "<strong>Storage:</strong>"
+       "html": "Get in touch and start transforming your home!"
       },
       {
        "t": "p",
-       "html": "Built-in cabinets: Maximize storage with custom-built units above the toilet or within walls."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Materials and Finishes:</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Gloss vs. matte: Glossy finishes reflect light and make the room feel larger, while matte textures minimize maintenance."
-      },
-      {
-       "t": "p",
-       "html": "Mosaic and tiles: Small-format mosaics or tiles create striking accents that distract from room size."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Décor:</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Minimalism: Keep decorations to a minimum to avoid clutter."
-      },
-      {
-       "t": "p",
-       "html": "Example implementation could include a light color palette, a large mirrored wall, wall-mounted fixtures, glossy tiles, and built-in storage — creating a sense of space and comfort even in the smallest bathroom."
-      },
-      {
-       "t": "p",
-       "html": "💎 Want a unique interior? Order your custom design project with us! We offer an individual approach, exclusive materials, and work worldwide."
-      },
-      {
-       "t": "p",
-       "html": "<strong>📩 Contact us and start transforming your home today</strong>!"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Over 15 years of experienc</strong>e."
+       "html": "<strong>Over 15 years of experience!</strong>"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6893a37152a5e72c94df7c03",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
@@ -334,7 +198,7 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Price of available service packages",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -342,18 +206,18 @@
    ]
   },
   {
-   "id": "6885138c53fd64883a4415ac",
+   "id": "69cc02c500dc9099744194c3",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -361,7 +225,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -385,7 +249,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

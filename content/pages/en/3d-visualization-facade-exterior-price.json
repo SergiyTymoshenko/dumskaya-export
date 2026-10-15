@@ -3,9 +3,9 @@
  "lang": "en",
  "type": "service",
  "group": null,
- "title": "3D Facade Visualisation: Prices from €75 | DUMSKAYA DESIGN",
- "description": "Photorealistic 3D visualisation of building facades and exteriors: €75–375 depending on complexity. Timing and revisions explained.",
- "h1": "3D Exterior Rendering Prices",
+ "title": "3D Facade Visualization: Prices from €75 | DUMSKAYA DESIGN",
+ "description": "Photorealistic 3D visualization of building facades and exteriors: €75–375 depending on complexity. Timing and revisions explained.",
+ "h1": "Prices for 3D visualization of building facades and exteriors",
  "og_image": "673a0573ece0e84849b9e248",
  "alternates": {
   "ru": "/3d-vizualizaciya-fasada-zdaniya-cena",
@@ -14,19 +14,19 @@
  },
  "sections": [
   {
-   "id": "6884d35b53fd64883a42ef58",
+   "id": "67370a6872bf7824004f4822",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "3D Exterior Rendering Prices"
+     "text": "Prices for 3D visualization of building facades and exteriors"
     },
     {
      "type": "gallery",
      "images": [
       {
        "id": "66d476c7e6210d11a55ff6ee",
-       "alt": "realistic 3D rendering of a renovated historical building facade"
+       "alt": "custom architectural concept of a pergola-style gazebo for outdoor space"
       },
       {
        "id": "66b61a228b4279408ae3e19f",
@@ -42,7 +42,7 @@
       },
       {
        "id": "673a059eece0e84849b9e2cf",
-       "alt": "3D rendering of a luxury villa with landscape design"
+       "alt": "3D visualization of a conceptual house facade project"
       },
       {
        "id": "673a0599550232c4543eaaad",
@@ -75,48 +75,27 @@
      "parts": [
       {
        "t": "p",
-       "html": "Creating a 3D visualization of a building facade involves several stages, each with its own features, possible revisions, and cost:"
+       "html": "Creating a 3D visualization of a building facade involves several stages, each with its own specifics, possible revisions, and cost:"
       }
      ]
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "1. Collection and analysis of the technical assignment (brief)"
+     "text": "1. Gathering and analyzing the technical brief"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "At this stage, drawings, plans, reference materials, and examples are provided to help form a clear understanding of the project."
+       "html": "At this stage, drawings, plans, materials, and reference examples are provided to help form a clear picture of the project."
       },
       {
        "t": "ul",
        "items": [
-        "Cost: </strong>Usually included in the overall project price. However, if the brief requires significant development, an additional fee may apply (approximately €50–125).",
-        "<strong> Revisions:</strong> No design revisions are made at this stage — only clarifications of details."
-       ]
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "2. Creation of the Basic 3D Model"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "A three-dimensional model of the building facade is developed based on drawings and plans."
-      },
-      {
-       "t": "ul",
-       "items": [
-        "Cost: </strong>€200–375 (depending on the complexity and facade area).",
-        "Revisions: </strong>Basic shape adjustments are free. Major changes that require reworking the model are subject to an additional fee (around €50 per revision)."
+        "Cost: Usually included in the overall project price, but if the technical brief needs significant refinement, an additional fee may apply (approximately €50–125).",
+        "Revisions: No revisions are provided at this stage, only clarification of details."
        ]
       }
      ]
@@ -124,20 +103,20 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "3. Applying Materials and Textures"
+     "text": "2. Creating the base 3D model"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "Materials and textures (e.g., stone, brick, glass) are applied to the model according to the technical brief."
+       "html": "A three-dimensional model of the building facade is developed based on the drawings and plans."
       },
       {
        "t": "ul",
        "items": [
-        "Cost:</strong> €125–250, depending on the number of textures and material complexity.",
-        "<strong> Revisions:</strong> 1–2 rounds of adjustments (e.g., color changes) are included for free. Full texture replacements are charged additionally (around €40 per round)."
+        "Cost: €200–375 (depending on the complexity of the building and the facade area).",
+        "Revisions: Basic changes to the shape are free of charge. Significant changes that require rework are charged extra (about €50 per change)."
        ]
       }
      ]
@@ -145,20 +124,20 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "4. Lighting and Environment Setup"
+     "text": "3. Adding materials and textures"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "Lighting and the building’s surroundings are modeled to create a realistic visualization."
+       "html": "Textures and materials (such as stone, brick, and glass) are applied to the model according to the technical brief."
       },
       {
        "t": "ul",
        "items": [
-        "Cost:</strong> €75–200, depending on complexity.",
-        "Revisions:</strong> One round of lighting adjustments is included; additional changes are charged at €25 per revision."
+        "Cost: €125–250, depending on the number of textures and the complexity of the materials.",
+        "Revisions: 1–2 rounds of adjustments (for example, changing a texture’s color) are free of charge. Replacing all textures is charged extra (about €40 per round)."
        ]
       }
      ]
@@ -166,20 +145,20 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "5. Initial Rendering (Draft Version)"
+     "text": "4. Setting up lighting and surroundings"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "A basic render is produced for preliminary review."
+       "html": "The lighting and surroundings of the building are modeled for a realistic visualization."
       },
       {
        "t": "ul",
        "items": [
-        "Cost:</strong> Usually included in the project price.",
-        "Revisions: </strong>Minor adjustments to the camera angle are free. More significant changes cost €25–50."
+        "Cost: €75–200, depending on complexity.",
+        "Revisions: One round of lighting adjustments is free of charge; further changes cost €25 per revision."
        ]
       }
      ]
@@ -187,20 +166,20 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "6. Final Rendering"
+     "text": "5. Initial rendering (draft version)"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "After the draft render is approved, a high-quality final visualization is created."
+       "html": "A basic render is created for preview."
       },
       {
        "t": "ul",
        "items": [
-        "Cost: </strong>€250–500 per view.",
-        "Revisions:</strong> No edits are included at this stage, as changes require re-rendering (€75–125 depending on complexity)."
+        "Cost: Usually included in the project.",
+        "Revisions: Minor camera angle adjustments are free of charge. More significant changes cost €25–50."
        ]
       }
      ]
@@ -208,20 +187,20 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "7. Revisions and Additional Adjustments"
+     "text": "6. Final rendering"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "Additional adjustments not specified in the initial brief."
+       "html": "Once the draft render is approved, a high-quality final visualization is created."
       },
       {
        "t": "ul",
        "items": [
-        "Cost: </strong>Evaluated individually (€40–125 per change).",
-        "<strong> Revisions: </strong>Billed separately if not included in the original agreement."
+        "Cost: €250–500 per view.",
+        "Revisions: Revisions to the final render are not included, as changes require re-rendering (€75–125, depending on complexity)."
        ]
       }
      ]
@@ -229,64 +208,20 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "8. Surrounding Environment and Landscape Design"
+     "text": "7. Refinements and additional revisions"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "Includes modeling and visualization of elements surrounding the facade (trees, pathways, lighting)."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Cost:</strong>"
+       "html": "Additional revisions not specified in the initial technical brief."
       },
       {
        "t": "ul",
        "items": [
-        "Basic environment: €125–250",
-        "Detailed landscape: €250–625"
-       ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>Revisions: </strong>One round of adjustments to the placement of key elements is included for free. Major changes cost €50–100 per round."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "9. Additional Areas"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Includes modeling of buildings, landscaping elements, and environment for adjacent lots."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Cost:</strong>"
-      },
-      {
-       "t": "ul",
-       "items": [
-        "<strong>Second lot:</strong> Basic modeling — €200–375. If detailed environment and landscaping are required, add €250–500. Final render (per view) — €250–500.",
-        "<strong>Third lot: </strong>Pricing is the same as for the second lot."
-       ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>Revisions:</strong>"
-      },
-      {
-       "t": "ul",
-       "items": [
-        "One round of minor adjustments (e.g., object positioning) is free.",
-        "Major changes (e.g., replacing design elements) are charged separately — €50–125 per lot."
+        "Cost: Assessed individually (€40–125 per change).",
+        "Revisions: Charged separately unless provided for in the contract."
        ]
       }
      ]
@@ -294,151 +229,209 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "10. Conceptual Facade Modeling"
+     "text": "8. Surroundings and landscape design"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "At this stage, a unique facade or site design concept is developed. The service includes an analysis of architectural trends, creation of several conceptual facade sketches, development of an overall style, and selection of materials and key forms. It’s ideal for clients who don't yet have a clear technical brief but want to see a creative solution."
+       "html": "Includes modeling and visualization of the surrounding elements around the facade (trees, pathways, lighting)."
       },
       {
        "t": "p",
-       "html": "<strong>Process:</strong>"
-      },
-      {
-       "t": "p",
-       "html": "1. Client preference analysis (questionnaire, discussion of ideas and references)"
-      },
-      {
-       "t": "p",
-       "html": "2. Creation of several conceptual facade sketches (2–3 options)"
-      },
-      {
-       "t": "p",
-       "html": "3. Refinement of the selected concept and its development into a 3D model"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Cost:</strong>"
+       "html": "Cost:"
       },
       {
        "t": "ul",
        "items": [
-        "Facade concept development: €375–750 per facade",
-        "Advanced concept (including lot and detailed surroundings): €500–1250"
+        "Basic surroundings: €125–250.",
+        "Detailed landscape: €250–625.",
+        "Revisions: One round of adjustments to the placement of main objects is free of charge. Significant changes cost €50–100 per round."
        ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>Revisions:</strong>"
-      },
-      {
-       "t": "ul",
-       "items": [
-        "Included: 1–2 rounds of revisions for the selected concept",
-        "Extra: Additional concept options or major redesigns — from €125 per round"
-       ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>Deliverables: </strong>After approval, the client receives the final 3D model and low-resolution renders for initial discussion."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Example Use Case: </strong>This service is ideal for clients who haven't yet decided on a specific facade style or want to explore modern and unique solutions. Once the concept is approved, a full 3D visualization is created based on it."
       }
      ]
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "11. Visualization of an Existing Project with Environmental Integration"
+     "text": "9. Additional plots"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "This service includes 3D visualization of an already developed building project (based on provided drawings or plans), with the goal of placing it within a realistic or simulated environment. The purpose is to demonstrate how the design will look within its surrounding context — including landscape, neighboring structures, and natural elements."
+       "html": "Includes modeling of buildings, site improvements, landscape, and surroundings for adjacent plots."
       },
       {
        "t": "p",
-       "html": "<strong>Workflow</strong>"
-      },
-      {
-       "t": "p",
-       "html": "1. Creation of a 3D model of the building from provided documentation"
-      },
-      {
-       "t": "p",
-       "html": "2. Development of the environment (landscape, roads, neighboring plots, trees, etc.)"
-      },
-      {
-       "t": "p",
-       "html": "3. Integration of the building into the scene and lighting setup"
-      },
-      {
-       "t": "p",
-       "html": "4. Final rendering from the selected camera angles"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Pricing</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Modeling of the building: €250–500 (depending on detail and complexity)"
-      },
-      {
-       "t": "p",
-       "html": "Environmental modeling:"
+       "html": "Cost:"
       },
       {
        "t": "ul",
        "items": [
-        "Basic environment (lawn, a few trees, simple elements): €125–250",
-        "Detailed landscaping and context: €250–750"
+        "Second plot: Basic modeling — €200–375. If detailed surroundings and landscaping are required, add €250–500. Final render (per view) — €250–500.",
+        "Third plot: The cost is the same as for the second plot."
        ]
       },
       {
        "t": "p",
-       "html": "Final rendering: €250–500 per angle"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Revisions</strong>"
-      },
-      {
-       "t": "p",
-       "html": "✅ Included: 1 round of adjustments for environment integration (e.g., object placement, minor landscaping edits)"
-      },
-      {
-       "t": "p",
-       "html": "🔁 Additional costs:"
+       "html": "Revisions:"
       },
       {
        "t": "ul",
        "items": [
-        "Major modifications to the building model: €75–125",
-        "Redesign of the environment or adding new elements: €50–125"
+        "One round of minor adjustments (for example, positioning objects) is free of charge.",
+        "Significant changes (for example, replacing design elements) are charged separately — €50–125 per plot."
        ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "10. Facade concept modeling"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "At this stage, a unique design concept for the facade or site is developed. The service includes an analysis of architectural trends, several sketch options for the facade, development of the overall style, and the selection of materials and main forms. It is suitable for clients who do not have a clear technical brief but want to see a creative solution."
       },
       {
        "t": "p",
-       "html": "<strong>Deliverables</strong>"
+       "html": "Process:"
+      },
+      {
+       "t": "p",
+       "html": "1. Analysis of the client’s preferences (questionnaire, discussion of ideas and references)."
+      },
+      {
+       "t": "p",
+       "html": "2. Creation of several conceptual facade sketches (2–3 options)."
+      },
+      {
+       "t": "p",
+       "html": "3. Refinement of one selected option and its development into a 3D model."
+      },
+      {
+       "t": "p",
+       "html": "Cost:"
       },
       {
        "t": "ul",
        "items": [
-        "High-resolution final renders from selected angles",
-        "Draft renders for client approval if needed"
+        "Facade concept development: €375–750 per facade.",
+        "Advanced concept (including the site and detailed surroundings): €500–1,250."
        ]
       },
       {
        "t": "p",
-       "html": "<strong>Example Use Case</strong>: This service is ideal for architects who need to demonstrate how a completed project will integrate into a specific location — whether for investor presentations, marketing purposes, or regulatory approvals."
+       "html": "Revisions:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Free of charge: 1–2 rounds of adjustments to the selected concept.",
+        "Paid: Additional concept options or rework of an existing design — from €125 per round."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Deliverables:"
+      },
+      {
+       "t": "p",
+       "html": "Once the concept is approved, the client receives the final 3D model and low-resolution renders for preliminary discussion."
+      },
+      {
+       "t": "p",
+       "html": "Use case:"
+      },
+      {
+       "t": "p",
+       "html": "This service is useful for clients who have not yet settled on an exact facade style or who want to propose something unique and contemporary. Once the concept is approved, a full 3D visualization is created based on it."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "11. Visualization of an existing project integrated into its surroundings"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "This service includes a 3D visualization of an existing building design (based on the drawings or plans provided), which is then placed in its surroundings. The goal is to show how the project will look in a real or modeled environment, including the landscape, neighboring buildings, and natural elements."
+      },
+      {
+       "t": "p",
+       "html": "Process:"
+      },
+      {
+       "t": "p",
+       "html": "1. Creating a 3D model of the building based on the data provided."
+      },
+      {
+       "t": "p",
+       "html": "2. Developing the surroundings (landscape, roads, adjacent plots, trees, etc.)."
+      },
+      {
+       "t": "p",
+       "html": "3. Integrating the building into its surroundings and setting up the lighting."
+      },
+      {
+       "t": "p",
+       "html": "4. Final render from the proposed camera angle."
+      },
+      {
+       "t": "p",
+       "html": "Cost:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Modeling the existing building: €250–500 (depending on the level of detail and complexity of the project).",
+        "Developing the surroundings:",
+        "Basic level (lawn, a few trees, simple elements): €125–250.",
+        "Detailed landscape and surroundings: €250–750.",
+        "Final render: €250–500 per view."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Revisions:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Free of charge: 1 round of adjustments to the integration into the surroundings (for example, moving the building or minor landscape changes).",
+        "Paid: Significant changes to the building model — €75–125.",
+        "Adjusting the entire surroundings or adding new objects — €50–125."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Deliverables:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "High-quality final images from the selected camera angles.",
+        "A draft render can be provided for preliminary approval if needed."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Use case:"
+      },
+      {
+       "t": "p",
+       "html": "This service is ideal for architects who want to show how an already designed project will fit into a real site, or for presenting a project to investors by highlighting its advantages within its surroundings."
       },
       {
        "t": "p",
@@ -446,7 +439,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>If the project includes a unified concept for all areas, part of the work can be optimized, which may reduce the total cost.</strong>"
+       "html": "<strong>If the project includes a single concept for all plots, part of the work can be streamlined, which will reduce the overall cost.</strong>"
       }
      ]
     },
@@ -454,7 +447,7 @@
      "type": "buttons",
      "items": [
       {
-       "text": "Order 3D Exterior Visualization",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       }
      ]
@@ -462,18 +455,18 @@
    ]
   },
   {
-   "id": "68908e1791c0f0b07f13f9c5",
+   "id": "673a0bf5766c487051cd6185",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Examples of Architectural Design Projects and 3D Visualizations"
+     "text": "Examples of architectural design and 3D visualization projects"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Villa, Spain, Marbella",
+       "title": "Villa, Marbella, Spain",
        "href": "/en/luxury-interior-design-architectural-facade-villa-marbella-spain",
        "image": {
         "id": "66b619f623f9a34a612c9e7d",
@@ -481,7 +474,7 @@
        }
       },
       {
-       "title": "Private House",
+       "title": "Private house",
        "href": "/en/3d-visualization-interior-design-private-house-facade-landscaping",
        "image": {
         "id": "686bcfbe29b44dd96a3d2a5f",
@@ -489,7 +482,7 @@
        }
       },
       {
-       "title": "3D Modeling of Conceptual House Facade Design",
+       "title": "3D modeling of a concept design for a house facade",
        "href": "/en/concept-interior-design-3d-visualization-building-facade",
        "image": {
         "id": "673a059eece0e84849b9e2cf",
@@ -497,7 +490,7 @@
        }
       },
       {
-       "title": "Private House",
+       "title": "Private house",
        "href": "/en/private-house-architectural-design-facade",
        "image": {
         "id": "66a56e39d68a3eb051612386",
@@ -505,7 +498,7 @@
        }
       },
       {
-       "title": "Architectural Facade Design for a Barbershop, Kyiv, Ukraine",
+       "title": "Architectural design for a barbershop facade, Kyiv, Ukraine",
        "href": "/en/barbershop-facade-architectural-solution",
        "image": {
         "id": "66d313f8e6210d11a55d877c",
@@ -513,7 +506,7 @@
        }
       },
       {
-       "title": "Architectural Design of a Pergola Gazebo",
+       "title": "Architectural design: gazebo with a pergola",
        "href": "/en/gazebo-pergola-design-and-construction",
        "image": {
         "id": "66d476c7e6210d11a55ff6ee",
@@ -525,18 +518,18 @@
    ]
   },
   {
-   "id": "68850a577efb52603c186a88",
+   "id": "69cbe20f36ccc5cb47fd4486",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -544,7 +537,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -568,7 +561,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",

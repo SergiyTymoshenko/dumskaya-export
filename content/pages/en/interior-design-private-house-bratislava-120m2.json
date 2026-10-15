@@ -4,8 +4,8 @@
  "type": "project",
  "group": "residential",
  "title": "Private House Design 120 m², Bratislava | DUMSKAYA DESIGN",
- "description": "120 m² private house in Bratislava: design project, 3D visualisation, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
- "h1": "Private House Interior Design in Bratislava, 120 m²",
+ "description": "120 m² private house in Bratislava: design project, 3D visualization, custom furniture and turnkey renovation. DUMSKAYA DESIGN, Bratislava and Vienna.",
+ "h1": "Private house interior design in Bratislava, 120 m²",
  "og_image": "6abd6a6a61617a4443acb201",
  "alternates": {
   "ru": "/interior-design-private-house-bratislava-120m2",
@@ -14,35 +14,35 @@
  },
  "sections": [
   {
-   "id": "69cab586574e8d135e591d6f",
+   "id": "69c9739422f50ceeb854f0a7",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Private House Interior Design in Bratislava, 120 m²"
+     "text": "Private house interior design in Bratislava, 120 m²"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed an interior design project for a 120 m² private house in Bratislava, Slovakia. The main objective was to create a contemporary, functional and comfortable living environment where the layout, furniture placement and lighting are carefully organized around the owners’ everyday needs."
+       "html": "<strong>DUMSKAYA DESIGN</strong> developed an interior design project for a 120 m² private house in Bratislava, Slovakia. The main goal was to create a contemporary, functional, and comfortable living space in which the layout, furniture, and lighting are organized around the owners’ everyday needs."
       },
       {
        "t": "p",
-       "html": "The central area of the house is a spacious open-plan kitchen and living room. The layout also includes an entrance hall with storage, a walk-in wardrobe, home office, guest bedroom, guest bathroom, master bedroom, second-floor bathroom and utility/boiler room."
+       "html": "The heart of the house is a spacious living room combined with the kitchen. The layout also includes an entrance hall with storage systems, a walk-in closet, a home office, a guest bedroom, a guest bathroom, a master bedroom, a second-floor bathroom, and a boiler room."
       },
       {
        "t": "p",
-       "html": "The project was developed within the <a href=\"/en/express-interior-design-package-bratislava-vienna\">Express Interior Design Package</a>, complemented by additional technical documentation for the electrical system. The scope included space planning and the interior concept, as well as a comprehensive electrical plan."
+       "html": "The project was completed under the <a href=\"/en/express-interior-design-package-bratislava-vienna\">“Express” design package</a>, with additional electrical technical documentation. The layout solutions and interior concept were developed, and a complete electrical wiring design was prepared."
       },
       {
        "t": "p",
-       "html": "The electrical documentation includes lighting layouts, locations of sockets and switches, and connection points for the required equipment. This approach allows the electrical system to be coordinated in advance with the floor plan, furniture arrangement and functional scenarios of each room."
+       "html": "The electrical documentation includes lighting plans, the placement of outlets and switches, and connection points for the necessary equipment. This approach makes it possible to coordinate the electrical systems in advance with the layout, the furniture placement, and the way each room will be used."
       },
       {
        "t": "p",
-       "html": "The house interior is designed in a contemporary style with a light neutral palette, clean forms and functional solutions. Particular attention was given to ergonomics, furniture placement and lighting, creating a calm and comfortable environment for everyday living."
+       "html": "The house is designed in a contemporary style with a light, neutral color palette, clean lines, and functional solutions. Particular attention was paid to ergonomics, the logic of furniture and lighting placement, and creating a calm, comfortable atmosphere for everyday life."
       }
      ]
     },
@@ -254,12 +254,12 @@
    ]
   },
   {
-   "id": "69cab586574e8d135e591d71",
+   "id": "69c973a222f50ceeb854f1de",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Technical documentation developed within the express interior design package + electrical technical documentation — 15 €/m²"
+     "text": "Technical documentation developed under the “Express” interior design package + electrical technical documentation — €15/m²"
     },
     {
      "type": "gallery",
@@ -573,12 +573,7 @@
        "alt": "interior design complete drawing set bratislava slovakia dumskaya design"
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "69caea9d6b0c582ca9a47735",
-   "blocks": [
+    },
     {
      "type": "buttons",
      "items": [
@@ -587,11 +582,11 @@
        "href": "/en/portfolio-interior-design-projects"
       },
       {
-       "text": "Order a design project",
+       "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "Interior design service prices",
+       "text": "View package pricing",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
       }
      ]
@@ -599,18 +594,18 @@
    ]
   },
   {
-   "id": "69cae92fe942c58d1a25b019",
+   "id": "69cab3f06b0c582ca9a3157b",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Interior design studio services"
+     "text": "Our interior design services"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Residential interior design",
+       "title": "Residential Interior Design",
        "href": "/en/interior-design",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
@@ -618,7 +613,7 @@
        }
       },
       {
-       "title": "Commercial interior design",
+       "title": "Commercial Interior Design",
        "href": "/en/commercial-interior-design",
        "image": {
         "id": "6abe046a3ba7c7b833963e82",
@@ -642,7 +637,7 @@
        }
       },
       {
-       "title": "Custom kitchens",
+       "title": "Custom Kitchens",
        "href": "/en/custom-kitchens-bratislava-vienna",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",
