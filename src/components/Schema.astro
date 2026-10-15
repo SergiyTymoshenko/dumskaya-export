@@ -27,7 +27,8 @@ const studio = {
   address: { '@type': 'PostalAddress', streetAddress: c.address.street, postalCode: c.address.postal, addressLocality: c.address.city, addressCountry: c.address.country },
   areaServed: [{ '@type': 'City', name: 'Bratislava' }, { '@type': 'City', name: 'Vienna' }],
   contactPoint: c.phones.map((p: any) => ({ '@type': 'ContactPoint', telephone: p.tel, contactType: 'customer service', areaServed: p.city.en, availableLanguage: ['ru', 'uk', 'en'] })),
-  sameAs: c.social.map((s: any) => s.href),
+  sameAs: [...c.social.map((s: any) => s.href), ...(c.maps ? [c.maps] : [])],
+  hasMap: c.maps || undefined,
   founder: { '@type': 'Person', name: 'Irina Dumskaya' },
 };
 const graph: any[] = [];

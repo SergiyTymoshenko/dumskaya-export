@@ -40,7 +40,7 @@
      "rows": [
       [
        "Адреса студії",
-       "Súkennícka 1, 821 09 Bratislava-Ružinov"
+       "<a href=\"https://maps.app.goo.gl/tiVyq6kmvewMGHsW9\" rel=\"noopener\" target=\"_blank\">Súkennícka 1, 821 09 Bratislava-Ružinov</a>"
       ],
       [
        "Телефон",
@@ -290,7 +290,7 @@
       },
       {
        "q": "Де розташована студія і чи можна приїхати?",
-       "a": "<p>Súkennícka 1, Bratislava-Ružinov. Приїжджайте до студії за попередньою домовленістю — покажемо зразки матеріалів і фурнітури, обговоримо проєкт. Ми є на Google Maps.</p>"
+       "a": "<p>Súkennícka 1, Bratislava-Ružinov — <a href=\"https://maps.app.goo.gl/tiVyq6kmvewMGHsW9\" rel=\"noopener\" target=\"_blank\">студія на Google Maps</a>. Приїжджайте за попередньою домовленістю — покажемо зразки матеріалів і фурнітури, обговоримо проєкт.</p>"
       },
       {
        "q": "Чи працюєте ви за межами Братислави?",

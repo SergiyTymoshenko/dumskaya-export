@@ -25,7 +25,7 @@ const c = site.contacts;
       ))}
       <div><dt>E-mail</dt><dd><a href={`mailto:${c.email}`}>{c.email}</a></dd></div>
       <div><dt>{T.messengers}</dt><dd>{c.messengers.map((m: any, i: number) => <>{i > 0 && ', '}<a href={m.href} rel="noopener">{m.name}</a></>)}</dd></div>
-      <div><dt>{T.address}</dt><dd>{c.address.label[lang]}</dd></div>
+      <div><dt>{T.address}</dt><dd>{c.maps ? <a href={c.maps} rel="noopener" target="_blank">{c.address.label[lang]}</a> : c.address.label[lang]}</dd></div>
     </dl>
   </div>
   <LeadForm lang={lang} />
