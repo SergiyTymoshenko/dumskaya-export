@@ -1,0 +1,306 @@
+{
+ "path": "/en/custom-furniture-warsaw",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Custom Furniture & Kitchens in Warsaw | DUMSKAYA DESIGN",
+ "description": "Custom kitchens, wardrobes and walk-in closets in Warsaw: designed by DUMSKAYA DESIGN, made at a partner workshop in Poland, delivered and installed.",
+ "h1": "Custom furniture and kitchens in Warsaw — design, manufacturing, and installation",
+ "og_image": "6abd6b6368c5e81567a1c463",
+ "alternates": {
+  "ru": "/kuhni-shkafi-warsaw",
+  "ua": "/ua/mebli-na-zamovlennia-varshava",
+  "en": "/en/custom-furniture-warsaw"
+ },
+ "sections": [
+  {
+   "id": "city-kuhni-shkafi-warsaw-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Custom furniture and kitchens in Warsaw — design, manufacturing, and installation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs cabinet furniture for apartments, houses, and commercial spaces in Warsaw. Manufacturing and installation are handled by a partner workshop in Poland that we worked with on our own projects while the studio was based in Warsaw. The design, specifications, and quality control remain on our side."
+      },
+      {
+       "t": "p",
+       "html": "We make kitchens, built-in wardrobes, walk-in closets, entrance hall furniture, TV units, and furniture for bedrooms, home offices, and bathrooms. Every piece is designed for its specific room — based on on-site measurements and taking into account utilities, appliances, and the style of the interior."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "Furniture for Warsaw",
+     "rows": [
+      [
+       "Design and specifications",
+       "DUMSKAYA DESIGN studio"
+      ],
+      [
+       "Production",
+       "partner workshop, Poland"
+      ],
+      [
+       "Measurement and installation",
+       "partners in Warsaw"
+      ],
+      [
+       "Quality control",
+       "the studio"
+      ],
+      [
+       "Quote",
+       "in Polish złoty, one total including installation"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Kitchen catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      },
+      {
+       "text": "Interior design in Warsaw",
+       "href": "/en/interior-design-apartmens-warsaw"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-shkafi-warsaw-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What we make"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Kitchens</strong> — straight, L-shaped, U-shaped, with an island, with built-in appliances; fully custom or based on one of the 32 models in our catalog.",
+        "<strong>Built-in wardrobes</strong> up to the ceiling, with hinged or sliding doors.",
+        "<strong>Walk-in closets</strong> and storage systems with lighting.",
+        "<strong>Entrance halls</strong> — cabinets, benches, shoe cabinets, mirrors, and wall panels.",
+        "<strong>Living room and bedroom furniture</strong> — TV units, wall panels, beds, nightstands, dressers.",
+        "<strong>Home offices</strong> and <strong>bathroom furniture</strong>.",
+        "<strong>Furniture for business</strong> — reception desks, offices, retail fixtures."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-shkafi-warsaw-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How to order"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Request.</strong> Send us a floor plan, photos, and examples of furniture you like — or choose a kitchen model from our catalog.",
+        "<strong>Design.</strong> We develop the construction drawings, 3D visualization, and material specifications. Measurements are taken by our partner in Warsaw.",
+        "<strong>Quote.</strong> An exact price in Polish złoty, including delivery and installation.",
+        "<strong>Production and installation.</strong> Manufactured in Poland, installed on site, with the appliances built in."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-shkafi-warsaw-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Examples of furniture made to our designs"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66b297074c04c27fce4d020c",
+       "alt": "stylish living room interior design warsaw"
+      },
+      {
+       "id": "66b297074c04c27fce4d0204",
+       "alt": "open concept kitchen and living room design warsaw"
+      },
+      {
+       "id": "66b9e66643d3e7af1c2165ae",
+       "alt": "stylish kitchen-living space interior warsaw"
+      },
+      {
+       "id": "66b29707c946cd9dbecef975",
+       "alt": "small apartment living room with multifunctional furniture"
+      },
+      {
+       "id": "67365cdb50632f4b6bfbb068",
+       "alt": "small apartment kitchen-living layout krakow"
+      },
+      {
+       "id": "67365cdc19b6516ec66a6142",
+       "alt": "bright kitchen and lounge area design krakow"
+      },
+      {
+       "id": "67365cddfad857a315aea0fa",
+       "alt": "functional open kitchen in modern flat krakow"
+      },
+      {
+       "id": "67365cdcfad857a315aea0f2",
+       "alt": "minimalist kitchen-living interior krakow"
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Apartment in Warsaw, 43 m²",
+       "href": "/en/modern-apartment-design-warsaw-43sqm",
+       "image": {
+        "id": "6abd6aaa6bbe6103844834dd",
+        "alt": "Apartment in Warsaw, 43 m²"
+       }
+      },
+      {
+       "title": "Apartment in Kraków, 63 m²",
+       "href": "/en/apartment-interior-design-krakow-63m",
+       "image": {
+        "id": "6abd6b4e68c5e81567a1c3f1",
+        "alt": "modern open-plan living room and kitchen krakow"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-shkafi-warsaw-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about custom furniture in Warsaw"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Where is the furniture for Warsaw made?",
+       "a": "<p>At a partner workshop in Poland, following DUMSKAYA DESIGN drawings and specifications. For projects in Slovakia, Austria, and Germany, we make the furniture at our own workshop in Bratislava.</p>"
+      },
+      {
+       "q": "Who takes the measurements and does the installation?",
+       "a": "<p>Our partners in Warsaw — the same specialists who installed the furniture on our projects in Poland.</p>"
+      },
+      {
+       "q": "What currency is the quote in?",
+       "a": "<p>The cost of furniture, delivery, and installation in Warsaw is quoted in Polish złoty — as one total. The interior design project, if you need one, is priced in euros according to the studio's uniform price list.</p>"
+      },
+      {
+       "q": "Can I order a kitchen from the catalog?",
+       "a": "<p>Yes. We adapt any of the 32 models to the dimensions of your kitchen, your appliances, and your budget, and manufacture it in Poland.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-shkafi-warsaw-5",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Get a furniture quote",
+     "text": "Send us a floor plan or the dimensions of the room and photos — we will prepare a preliminary proposal."
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-shkafi-warsaw-6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

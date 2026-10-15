@@ -31,6 +31,10 @@ export function pageMarkdown(p: Page): string {
           if (part.t === 'p') { const t = plain(part.html); if (t) out.push(t); }
           else out.push(part.items.map((i: string) => `- ${plain(i)}`).join('\n'));
         }
+      } else if (b.type === 'faq') {
+        for (const f of b.items) out.push(`**${plain(f.q)}**\n\n${plain(f.a)}`);
+      } else if (b.type === 'facts') {
+        out.push(b.rows.map(([k, v]: [string, string]) => `- ${plain(k)}: ${plain(v)}`).join('\n'));
       } else if (b.type === 'cards') {
         const items = b.items.filter((i: any) => i.title && i.href && i.href.startsWith('/'));
         if (items.length) out.push(items.map((i: any) => `- [${plain(i.title)}](${abs(i.href)})`).join('\n'));
@@ -70,6 +74,7 @@ export function llmsTxt(): string {
     L.push('');
   };
   section('Services', group('Services'));
+  section('Where we work', group('Where we work'));
   section('Design packages and prices', [{ label: 'All prices', href: '/en/interior-design-pricing-bratislava-wien-praha' }, ...group('Prices')]
     .map((i: any) => ({ label: en(i.href)?.title?.replace(/\s*\|\s*DUMSKAYA.*$/, '') || i.label, href: i.href })));
   const kitchens = pages.filter((p) => p.lang === 'en' && p.type === 'kitchen');

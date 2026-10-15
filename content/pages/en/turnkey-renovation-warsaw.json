@@ -1,0 +1,296 @@
+{
+ "path": "/en/turnkey-renovation-warsaw",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Turnkey Apartment & House Renovation in Warsaw | DUMSKAYA",
+ "description": "Turnkey renovation in Warsaw: design project, cost estimate, construction and finishing, furniture and handover. Trusted local crews, studio oversight.",
+ "h1": "Turnkey renovation of apartments and houses in Warsaw",
+ "og_image": "6abd6aaa6bbe6103844834dd",
+ "alternates": {
+  "ru": "/stroitelstvo-remont-warsaw",
+  "ua": "/ua/budivnytstvo-ta-remont-pid-kliuch-zhytlovykh-ta-komertsiinykh-prymishchen-varshava-polshcha-prais-lyst",
+  "en": "/en/turnkey-renovation-warsaw"
+ },
+ "sections": [
+  {
+   "id": "city-stroitelstvo-remont-warsaw-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Turnkey renovation of apartments and houses in Warsaw"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> carries out turnkey renovation of apartments, houses, and commercial spaces in Warsaw. Construction and finishing work is done by trusted local crews the studio has worked with on its own projects in Poland; the furniture is made by a partner workshop. The design, cost estimate, and control of compliance with the design remain with the studio."
+      },
+      {
+       "t": "p",
+       "html": "You can order the entire project — from the interior design project and cost estimate to furniture installation and handover — or individual stages, if you already have a design."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "Renovation in Warsaw",
+     "rows": [
+      [
+       "Design and cost estimate",
+       "DUMSKAYA DESIGN studio"
+      ],
+      [
+       "Construction work",
+       "trusted local crews"
+      ],
+      [
+       "Furniture",
+       "partner production facility in Poland"
+      ],
+      [
+       "Oversight",
+       "design supervision by the studio"
+      ],
+      [
+       "Cost of work",
+       "in Polish złoty, based on the cost estimate"
+      ],
+      [
+       "Cost estimate",
+       "€5/m², deducted from the renovation cost"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Renovation cost estimate",
+       "href": "/en/renovation-cost-estimate-bratislava-vienna"
+      },
+      {
+       "text": "Interior design in Warsaw",
+       "href": "/en/interior-design-apartmens-warsaw"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-stroitelstvo-remont-warsaw-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Types of work"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Demolition and preparation</strong> — partitions, floor and wall finishes, plumbing fixtures, debris removal.",
+        "<strong>General construction</strong> — block and drywall partitions, niches, pipe boxing, surface leveling.",
+        "<strong>Electrical</strong> — new wiring, outlets, distribution panels, connection points for appliances, lighting.",
+        "<strong>Plumbing and heating</strong> — water supply and drainage piping, concealed cistern frames, radiators, underfloor heating.",
+        "<strong>Plastering and painting</strong>, drywall ceilings and structures.",
+        "<strong>Tile and flooring</strong> — porcelain stoneware, parquet, engineered wood, laminate, SPC.",
+        "<strong>Doors, baseboards, panels</strong>, installation of lighting and plumbing fixtures.",
+        "<strong>Custom furniture</strong> — kitchens, wardrobes, walk-in closets, and the final fit-out."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-stroitelstvo-remont-warsaw-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How the renovation works"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Design and cost estimate.</strong> If you do not have a design yet, we develop the interior design project and technical documentation. Based on these, we prepare a detailed cost estimate in Polish złoty.",
+        "<strong>Contract and schedule.</strong> We fix the scope of work, the cost, and the deadlines.",
+        "<strong>Work.</strong> The crew carries out the renovation according to the drawings, and the studio monitors the key stages through photo reports and site visits.",
+        "<strong>Furniture and fit-out.</strong> In parallel, the furniture is manufactured and the materials, plumbing fixtures, and lighting are ordered.",
+        "<strong>Handover.</strong> Installation of furniture and lighting, cleaning, and handover of the finished property."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The cost of a renovation depends on the floor area, the condition of the property, and the scope of work. For a preliminary estimate, send us a floor plan, photos, and the design, if you have one. A <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">detailed cost estimate</a> costs €5/m² and is deducted from the contract amount if you order the renovation from us."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-stroitelstvo-remont-warsaw-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Completed projects in Poland"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Apartment in Warsaw, 43 m²",
+       "href": "/en/modern-apartment-design-warsaw-43sqm",
+       "image": {
+        "id": "6abd6aaa6bbe6103844834dd",
+        "alt": "Apartment in Warsaw, 43 m²"
+       }
+      },
+      {
+       "title": "Apartment in Kraków, 63 m²",
+       "href": "/en/apartment-interior-design-krakow-63m",
+       "image": {
+        "id": "6abd6b4e68c5e81567a1c3f1",
+        "alt": "modern open-plan living room and kitchen krakow"
+       }
+      },
+      {
+       "title": "Office in Poznań, 53 m²",
+       "href": "/en/office-interior-design-53m",
+       "image": {
+        "id": "6abe04546bbe610384497c98",
+        "alt": "office interior design Poznań, 53 m² office layout, custom office furniture, small office design, turnkey office renovation, workspace optimization Poznań, DUMSKAYA DESIGN office project, compact office fit-out, modern office interiors"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-stroitelstvo-remont-warsaw-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about renovation in Warsaw"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Who does the work?",
+       "a": "<p>Local crews in Warsaw, proven on the studio's own projects while it was based in Poland. The design, cost estimate, and supervision are handled by DUMSKAYA DESIGN.</p>"
+      },
+      {
+       "q": "How much does a turnkey renovation in Warsaw cost?",
+       "a": "<p>It is calculated from a cost estimate in Polish złoty and depends on the floor area, the condition of the premises, and the scope of work. We give a preliminary estimate based on the floor plan and photos, and an exact one based on the design.</p>"
+      },
+      {
+       "q": "Can you do a renovation without an interior design project?",
+       "a": "<p>Yes, if you already have a design. For properties without one, we recommend preparing at least the technical documentation first — this makes the cost estimate accurate and means the crew does not have to make decisions on the fly.</p>"
+      },
+      {
+       "q": "How do you supervise the work from Bratislava?",
+       "a": "<p>Through photo reports for each stage, video calls, and site visits at key moments: layout marking, rough-in work, and final inspection.</p>"
+      },
+      {
+       "q": "Do you make furniture for Warsaw?",
+       "a": "<p>Yes — at a partner workshop in Poland, following our drawings: <a href=\"/en/custom-furniture-warsaw\">custom furniture and kitchens in Warsaw</a>.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-stroitelstvo-remont-warsaw-5",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Request a renovation quote",
+     "text": "Send us a floor plan, photos, and a description of what you need — we will reply within one business day."
+    }
+   ]
+  },
+  {
+   "id": "city-stroitelstvo-remont-warsaw-6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

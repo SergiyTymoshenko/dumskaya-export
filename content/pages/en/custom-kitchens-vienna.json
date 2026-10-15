@@ -1,0 +1,330 @@
+{
+ "path": "/en/custom-kitchens-vienna",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Custom Kitchens in Vienna — Design, Production, Fitting",
+ "description": "Turnkey custom kitchens in Vienna: measurement, design, 3D visualization, production in Bratislava, delivery and installation. 32 catalog models and more.",
+ "h1": "Turnkey custom kitchens in Vienna — design, manufacturing, delivery, and installation",
+ "og_image": "66c511596549f3d91ef8764e",
+ "alternates": {
+  "ru": "/kuhni-pod-klyuch-vena",
+  "ua": "/ua/kukhni-pid-kliuch-viden",
+  "en": "/en/custom-kitchens-vienna"
+ },
+ "sections": [
+  {
+   "id": "city-kuhni-pod-klyuch-vena-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Turnkey custom kitchens in Vienna — design, manufacturing, delivery, and installation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> makes turnkey custom kitchens for apartments and houses in Vienna: measurement, design, 3D visualization, manufacturing at our own production facility in Bratislava, delivery, installation, and the fitting of appliances. Delivery to Vienna is included in the price, and the installation is carried out by our own crew."
+      },
+      {
+       "t": "p",
+       "html": "You can choose one of the 32 models in our <a href=\"/en/custom-kitchens-bratislava-vienna\">catalog</a> and adapt it to the dimensions of your kitchen, or order a fully bespoke design. Prices for Vienna are the same as for Bratislava."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "Kitchens for Vienna",
+     "rows": [
+      [
+       "Production",
+       "in-house, Bratislava"
+      ],
+      [
+       "Delivery and installation",
+       "included in the price, our own crew"
+      ],
+      [
+       "Measurement",
+       "on site in Vienna"
+      ],
+      [
+       "Models",
+       "32 in the catalog + bespoke designs"
+      ],
+      [
+       "Hardware",
+       "Hettich, Blum, Häfele"
+      ],
+      [
+       "Phone in Vienna",
+       "<a href=\"tel:+4367761430187\">+43 677 614 30 187</a>"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Kitchen catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      },
+      {
+       "text": "Custom furniture in Vienna",
+       "href": "/en/custom-furniture-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What a turnkey kitchen includes"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Site measurement</strong> of the room with the positions of utilities, windows, doors, and appliances.",
+        "<strong>Design and layout</strong> — straight, L-shaped, U-shaped, with an island or peninsula, or an open-plan kitchen and living area.",
+        "<strong>3D visualization</strong> — you see the kitchen in your interior before production starts.",
+        "<strong>Technical design</strong> — cabinet drawings, an appliance connection diagram, and a specification of materials and hardware.",
+        "<strong>Manufacturing</strong> at our own production facility in Bratislava.",
+        "<strong>Delivery and installation</strong> in Vienna by our own crew, with adjustment of the fronts and mechanisms.",
+        "<strong>Fitting of appliances</strong> — oven, cooktop, range hood, dishwasher, refrigerator."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materials, countertops, and hardware"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Fronts: laminated chipboard, foil-wrapped MDF, painted MDF, veneer, HPL, acrylic, glass. Countertops: laminate, compact laminate, engineered quartz, porcelain stoneware, acrylic stone, and natural stone. Hettich, Blum, and Häfele hardware: soft-close mechanisms, pull-out systems, lift-up mechanisms, cargo pull-outs, organizers, and waste sorting systems."
+      },
+      {
+       "t": "p",
+       "html": "The configuration is tailored to your budget — from standard to premium. Every catalog model lists the materials it is made of, and these can be changed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen examples"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66c511596549f3d91ef8764e",
+       "alt": "modern kitchen designed to client specifications"
+      },
+      {
+       "id": "69c86798ce29bfd07714ea68",
+       "alt": "custom-made kitchen and bedroom furniture"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87656",
+       "alt": "tailor-made kitchen layout with premium materials"
+      },
+      {
+       "id": "684a98176775d3727cd6e122",
+       "alt": "designer kitchen with custom cabinets and storage"
+      },
+      {
+       "id": "684a981fcbfab8d2b1b768ec",
+       "alt": "interior kitchen view with custom-made furniture"
+      },
+      {
+       "id": "684a9818cbfab8d2b1b768ba",
+       "alt": "custom kitchen furniture with glass elements"
+      },
+      {
+       "id": "684a98186775d3727cd6e12a",
+       "alt": "custom kitchen with built-in Miele appliances"
+      },
+      {
+       "id": "684a9818d82130a88ea83742",
+       "alt": "luxury kitchen furniture with integrated lighting"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All models in the catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How to order a kitchen in Vienna"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Inquiry.</strong> Send us a floor plan or the dimensions of your kitchen, photos, and examples of designs you like — or choose a model from the catalog.",
+        "<strong>Preliminary quote.</strong> Within a few days, we give you an approximate price.",
+        "<strong>Measurement and design.</strong> We come to Vienna to take measurements, develop the design and 3D visualization, and agree on the materials.",
+        "<strong>Final price and contract.</strong> One amount for the kitchen, including delivery and installation.",
+        "<strong>Production, delivery, installation.</strong> We manufacture in Bratislava, deliver and install in Vienna, and fit the appliances."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about custom kitchens in Vienna"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "How much does a turnkey kitchen cost in Vienna?",
+       "a": "<p>The price depends on the dimensions, the materials of the fronts and countertop, the hardware, and the appliances. We give you the exact price after the measurement and design — as one amount, including delivery to Vienna and installation. For a guide to model prices, see the <a href=\"/en/custom-kitchens-bratislava-vienna\">catalog</a>.</p>"
+      },
+      {
+       "q": "Is there a charge for delivery to Vienna?",
+       "a": "<p>No, delivery and installation are included in the price of the kitchen. There are no extra charges for the trip from Bratislava.</p>"
+      },
+      {
+       "q": "How long does manufacturing take?",
+       "a": "<p>The lead time depends on the scope, materials, and current production workload — we confirm it with the quote. It starts once the design is approved and the deposit is paid.</p>"
+      },
+      {
+       "q": "Can a catalog model be modified?",
+       "a": "<p>Yes. The dimensions, front color, countertop, interior fittings, and appliances are tailored to your kitchen — the catalog model serves as a starting point.</p>"
+      },
+      {
+       "q": "Do you connect the appliances?",
+       "a": "<p>During installation, we install and fit the appliances. Water, gas, and electrical connections are part of the renovation work — if our crew is doing the renovation, it is all handled as one project.</p>"
+      },
+      {
+       "q": "Do you make kitchens for houses outside Vienna?",
+       "a": "<p>Yes — in Lower Austria and Burgenland, within a comfortable travel radius of Bratislava.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Get a kitchen quote",
+     "text": "Send us your kitchen floor plan and photos — we will prepare a preliminary proposal."
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

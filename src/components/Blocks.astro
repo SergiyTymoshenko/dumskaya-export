@@ -5,16 +5,20 @@ import Img from './Img.astro';
 import Tile from './Tile.astro';
 import Parts from './Parts.astro';
 import { splitCaption, type Section } from '../lib/data';
-
-interface Props { sections: Section[]; skipH1?: boolean }
-const { sections, skipH1 = false } = Astro.props;
 import Caps from './Caps.astro';
+import LeadForm from './LeadForm.astro';
+import type { Lang } from '../lib/i18n';
+
+interface Props { sections: Section[]; skipH1?: boolean; lang?: Lang }
+const { sections, skipH1 = false, lang = 'ru' } = Astro.props;
+let formN = 0;
 ---
 {sections.map((s) => (
   <section class="blk">
     {s.blocks.map((b) => {
       if (b.type === 'heading') {
         if (b.level === 1) return skipH1 ? null : <h1 class="blk__h1 display wrap"><Caps text={b.text} /></h1>;
+        if (b.level >= 3) return <h3 class="blk__h3 wrap">{b.text}</h3>;
         return <h2 class="section-title blk__h wrap"><Caps text={b.text} /></h2>;
       }
       if (b.type === 'text') return <div class="wrap blk__text"><Parts parts={b.parts} /></div>;
@@ -39,6 +43,25 @@ import Caps from './Caps.astro';
           {b.items.map((x, i) => x.href && <a class:list={['btn', i === 0 && 'btn--solid']} href={x.href}>{x.text}</a>)}
         </div>
       );
+      if (b.type === 'faq') return (
+        <div class="wrap blk__faq">
+          {b.items.map((f) => (
+            <details class="faq">
+              <summary class="faq__q">{f.q}</summary>
+              <div class="faq__a prose" set:html={f.a} />
+            </details>
+          ))}
+        </div>
+      );
+      if (b.type === 'facts') return (
+        <div class="wrap blk__facts">
+          <table class="stamp">
+            {b.title && <caption class="stamp__head">{b.title}</caption>}
+            <tbody>{b.rows.map(([k, v]) => <tr><th scope="row">{k}</th><td set:html={v} /></tr>)}</tbody>
+          </table>
+        </div>
+      );
+      if (b.type === 'form') return <div class="wrap blk__form"><LeadForm lang={lang} id={`lead${formN++ ? formN : ''}`} title={(b as any).title} intro={(b as any).text} /></div>;
       return null;
     })}
   </section>
@@ -54,4 +77,21 @@ import Caps from './Caps.astro';
   .blk__gallery :global(img) { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
   .blk__gallery.is-single :global(img) { aspect-ratio: auto; max-height: 80svh; }
   .blk__btns { display: flex; flex-wrap: wrap; gap: 12px; margin-block: 16px; }
+  .blk__h3 { font: 500 17px/1.4 var(--body); color: var(--ink); margin: 28px 0 10px; max-width: var(--measure); }
+  .blk__faq { margin-block: 8px 24px; max-width: calc(var(--measure) + 2 * var(--pad)); }
+  .faq { border-top: 1px solid var(--line); }
+  .faq:last-child { border-bottom: 1px solid var(--line); }
+  .faq__q { cursor: pointer; list-style: none; padding: 16px 36px 16px 0; position: relative; font-weight: 500; color: var(--ink); }
+  .faq__q::-webkit-details-marker { display: none; }
+  .faq__q::after { content: '+'; position: absolute; right: 4px; top: 12px; font-size: 22px; font-weight: 300; color: var(--stone); }
+  .faq[open] .faq__q::after { content: '–'; }
+  .faq__a { padding: 0 0 18px; }
+  .faq__a :global(p:last-child) { margin-bottom: 0; }
+  .blk__facts { margin-block: 8px 28px; max-width: 640px; }
+  .stamp { width: 100%; border-collapse: collapse; border: 1px solid var(--ink); font-size: 14px; line-height: 1.4; }
+  .stamp__head { caption-side: top; text-align: left; border: 1px solid var(--ink); border-bottom: 0; padding: 8px 12px; font-family: var(--display); letter-spacing: 0.2em; text-transform: uppercase; font-size: 11px; color: var(--ink); }
+  .stamp th, .stamp td { border-top: 1px solid var(--ink); padding: 9px 12px; vertical-align: top; text-align: left; }
+  .stamp th { width: 38%; font-weight: 400; color: var(--stone); border-right: 1px solid var(--ink); font-size: 13px; }
+  .stamp td { color: var(--ink); }
+  .blk__form { margin-block: 16px 24px; max-width: 640px; }
 </style>

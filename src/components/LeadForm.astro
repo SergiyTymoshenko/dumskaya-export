@@ -2,13 +2,14 @@
 // Форма заявки. Отправляет на /api/lead (сервис на сервере пересылает в Telegram и на почту).
 import { ui, type Lang } from '../lib/i18n';
 import { localize } from '../lib/data';
-interface Props { lang: Lang; model?: string; id?: string }
-const { lang, model, id = 'lead' } = Astro.props;
+interface Props { lang: Lang; model?: string; id?: string; title?: string; intro?: string }
+const { lang, model, id = 'lead', title, intro } = Astro.props;
 const T = ui(lang);
 const privacy = lang === 'ru' ? '/privacy' : `/${lang}/privacy`;
 ---
 <form class="lead" id={id} action="/api/lead" method="post" data-lead novalidate>
-  <h2 class="lead__title">{T.form.title}</h2>
+  <h2 class="lead__title">{title || T.form.title}</h2>
+  {intro && <p class="lead__intro">{intro}</p>}
   <input type="hidden" name="lang" value={lang} />
   <input type="hidden" name="page" value="" data-page />
   <input type="hidden" name="model" value={model || ''} data-model />
@@ -65,6 +66,7 @@ const privacy = lang === 'ru' ? '/privacy' : `/${lang}/privacy`;
 
 <style>
   .lead { display: grid; gap: 16px; max-width: 560px; }
+  .lead__intro { margin: 0 0 14px; color: var(--text); }
   .lead__title { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.16em; font-size: clamp(16px, 1.7vw, 20px); line-height: 1.4; margin-bottom: 4px; }
   .lead__f { display: grid; gap: 6px; font-size: 14px; color: var(--stone); }
   .lead input, .lead textarea {

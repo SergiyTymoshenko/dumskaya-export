@@ -1,0 +1,340 @@
+{
+ "path": "/en/interior-design-apartmens-warsaw",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Interior Design in Warsaw — Apartments & Houses | DUMSKAYA",
+ "description": "Interior design in Warsaw: design project and 3D visualization by DUMSKAYA DESIGN, implementation by trusted local crews and a partner furniture workshop.",
+ "h1": "Interior design for apartments and houses in Warsaw",
+ "og_image": "6abd6aaa6bbe6103844834dd",
+ "alternates": {
+  "ru": "/interior-design-apartmens-warsaw",
+  "ua": "/ua/dyzain-interieru-varshava",
+  "en": "/en/interior-design-apartmens-warsaw"
+ },
+ "sections": [
+  {
+   "id": "city-interior-design-apartmens-warsaw-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Interior design for apartments and houses in Warsaw"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> worked in Warsaw before relocating to Bratislava, and we still have trusted partners in Poland: renovation crews, a furniture production facility, and installers. That is why we continue to deliver turnkey interiors for clients in Warsaw: the studio develops the project, and the implementation is carried out by local teams we have worked with on our own projects."
+      },
+      {
+       "t": "p",
+       "html": "Our completed projects in Poland include a 43 m² apartment in Warsaw, 63 m² and 64 m² apartments in Kraków, and an office in Poznań. We develop projects in Russian, Ukrainian, or English; documentation for Polish contractors is prepared with dimensions and specifications that are clear without translation."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "DUMSKAYA DESIGN in Warsaw",
+     "rows": [
+      [
+       "Design project",
+       "DUMSKAYA DESIGN studio"
+      ],
+      [
+       "Renovation and installation",
+       "trusted local crews in Warsaw"
+      ],
+      [
+       "Furniture production",
+       "partner production facility in Poland"
+      ],
+      [
+       "Oversight",
+       "design supervision by the studio"
+      ],
+      [
+       "Project prices",
+       "the same as in Bratislava and Vienna"
+      ],
+      [
+       "Languages",
+       "Russian, Ukrainian, English"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Turnkey renovation in Warsaw",
+       "href": "/en/turnkey-renovation-warsaw"
+      },
+      {
+       "text": "Furniture and kitchens in Warsaw",
+       "href": "/en/custom-furniture-warsaw"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-warsaw-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What we do for properties in Warsaw"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Interior design project</strong> for an apartment or house — layout, concept, and the selection of materials and furniture.",
+        "<strong>3D visualization</strong> of every room.",
+        "<strong>Technical documentation</strong> for the builders and the furniture production facility.",
+        "<strong>Custom furniture</strong> — kitchens, wardrobes, and walk-in closets made in Poland from our drawings.",
+        "<strong>Turnkey renovation</strong> by local crews under the studio’s supervision.",
+        "<strong>Procurement</strong> — selecting finishing materials, plumbing fixtures, and lighting from Polish suppliers."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-warsaw-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projects in Poland"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Apartment in Warsaw, 43 m²",
+       "href": "/en/modern-apartment-design-warsaw-43sqm",
+       "image": {
+        "id": "6abd6aaa6bbe6103844834dd",
+        "alt": "Apartment in Warsaw, 43 m²"
+       }
+      },
+      {
+       "title": "Apartment in Warsaw, 43 m²",
+       "href": "/en/contemporary-warsaw-apartment-43sqm",
+       "image": {
+        "id": "6abd6b6368c5e81567a1c463",
+        "alt": "designer kitchen"
+       }
+      },
+      {
+       "title": "Apartment in Kraków, 63 m²",
+       "href": "/en/apartment-interior-design-krakow-63m",
+       "image": {
+        "id": "6abd6b4e68c5e81567a1c3f1",
+        "alt": "modern open-plan living room and kitchen krakow"
+       }
+      },
+      {
+       "title": "Apartment in Kraków, 64 m²",
+       "href": "/en/apartment-interior-design-krakow-64m",
+       "image": {
+        "id": "6abd6b556bbe61038448383c",
+        "alt": "bedroom with built-in wardrobe krakow"
+       }
+      },
+      {
+       "title": "Office in Poznań, 53 m²",
+       "href": "/en/office-interior-design-53m",
+       "image": {
+        "id": "6abe04546bbe610384497c98",
+        "alt": "office interior design Poznań, 53 m² office layout, custom office furniture, small office design, turnkey office renovation, workspace optimization Poznań, DUMSKAYA DESIGN office project, compact office fit-out, modern office interiors"
+       }
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66b297074c04c27fce4d020c",
+       "alt": "stylish living room interior design warsaw"
+      },
+      {
+       "id": "66b297074c04c27fce4d0204",
+       "alt": "open concept kitchen and living room design warsaw"
+      },
+      {
+       "id": "66b9e66643d3e7af1c2165ae",
+       "alt": "stylish kitchen-living space interior warsaw"
+      },
+      {
+       "id": "66b29707c946cd9dbecef975",
+       "alt": "small apartment living room with multifunctional furniture"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-warsaw-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How the process works"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Consultation.</strong> Online or by phone, free of charge. You send us a floor plan, photos, and your wishes.",
+        "<strong>Site measurement.</strong> Taken by our partner in Warsaw or by you, following our instructions.",
+        "<strong>Project.</strong> Layout, concept, 3D visualizations, and drawings. Revisions are agreed remotely.",
+        "<strong>Implementation.</strong> Renovation and furniture — by local teams we have been working with for years. The studio checks that the work matches the project.",
+        "<strong>Handover.</strong> Final installation of the furniture, lighting, and decor according to the project."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Design project prices are the same in every city where we work: the <a href=\"/en/express-interior-design-package-bratislava-vienna\">“Express”</a> package — €20/m², <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic”</a> and <a href=\"/en/custom-furniture-bratislava-design-production\">“Furniture”</a> — €35–45/m², <a href=\"/en/premium-interior-design-package-bratislava-vienna\">“Premium”</a> — €50/m², <a href=\"/en/premium-plus-interior-design-package-bratislava-vienna\">“Premium+”</a> — €70/m². The first consultation is free."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-warsaw-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about interior design in Warsaw"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Do you work in Warsaw if the studio is in Bratislava?",
+       "a": "<p>Yes. We develop the project remotely — this is a standard format for design studios. Measurements, renovation, furniture production, and installation are handled by our partners in Warsaw, whom we know from our own projects.</p>"
+      },
+      {
+       "q": "Who is responsible for the result?",
+       "a": "<p>The DUMSKAYA DESIGN studio is responsible for the project and for making sure the implementation matches it. The work is carried out by crews we have completed projects with before; we check the key stages through photo reports and site visits.</p>"
+      },
+      {
+       "q": "How much does an interior design project cost in Warsaw?",
+       "a": "<p>The same as in Bratislava and Vienna: from €20/m² for “Express” to €70/m² for “Premium+”. The cost of the renovation and furniture is calculated in a cost estimate in Polish złoty.</p>"
+      },
+      {
+       "q": "Can I order just the project and do the renovation myself?",
+       "a": "<p>Yes. You will receive visualizations and a set of drawings that any contractor in Poland can work from.</p>"
+      },
+      {
+       "q": "Do you work in other cities in Poland?",
+       "a": "<p>Yes — we have completed projects in Kraków and Poznań. We confirm whether implementation with our partners is possible for each city individually.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-warsaw-5",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Request a free consultation",
+     "text": "Tell us about the property and what you need — we will reply within one business day."
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-warsaw-6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

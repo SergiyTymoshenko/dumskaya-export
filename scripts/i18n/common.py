@@ -39,6 +39,16 @@ def strings(p):
             elif t == 'cards':
                 for ii, it in enumerate(b['items']):
                     out.append((f'{k}.i{ii}', it['title']))
+            elif t == 'faq':
+                for ii, it in enumerate(b['items']):
+                    out.append((f'{k}.q{ii}', it['q'])); out.append((f'{k}.a{ii}', it['a']))
+            elif t == 'form':
+                if b.get('title'): out.append((f'{k}.title', b['title']))
+                if b.get('text'): out.append((f'{k}.text', b['text']))
+            elif t == 'facts':
+                if b.get('title'): out.append((f'{k}.title', b['title']))
+                for ii, (kk, vv) in enumerate(b['rows']):
+                    out.append((f'{k}.k{ii}', kk)); out.append((f'{k}.v{ii}', vv))
     return [(k, v) for k, v in out if isinstance(v, str) and v.strip()]
 
 def images(p):

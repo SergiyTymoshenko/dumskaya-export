@@ -1,0 +1,335 @@
+{
+ "path": "/en/interior-design-germany",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Interior Design & Custom Furniture for Clients in Germany",
+ "description": "Interior design for clients in Germany: remote design project, custom furniture from Bratislava, delivery included, installed by our crew. Munich, Berlin.",
+ "h1": "Interior design and custom furniture for clients in Germany",
+ "og_image": "6abd6aa461617a4443acb2fc",
+ "alternates": {
+  "ru": "/dizajn-interera-germaniya",
+  "ua": "/ua/dyzain-interieru-nimechchyna",
+  "en": "/en/interior-design-germany"
+ },
+ "sections": [
+  {
+   "id": "city-dizajn-interera-germaniya-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Interior design and custom furniture for clients in Germany"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> is an interior design studio and furniture manufacturer based in Bratislava. For clients in Germany, we develop interior design projects remotely, make the furniture at our own production facility, and deliver it anywhere in Germany. Delivery is included in the price: you get a single all-in price for the furniture, installation included."
+      },
+      {
+       "t": "p",
+       "html": "Completed projects include a 160 m² private house in Munich and a 215 m² house in Berlin: interior design, technical documentation, custom furniture, and turnkey renovation. We communicate in Russian, Ukrainian, or English."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "For clients in Germany",
+     "rows": [
+      [
+       "Design project",
+       "remotely, from a floor plan and photos"
+      ],
+      [
+       "Furniture production",
+       "in-house, Bratislava"
+      ],
+      [
+       "Delivery across Germany",
+       "included in the price"
+      ],
+      [
+       "Installation",
+       "our own crew from Bratislava"
+      ],
+      [
+       "Prices",
+       "the same as in Bratislava and Vienna"
+      ],
+      [
+       "Completed projects",
+       "Munich 160 m², Berlin 215 m²"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      },
+      {
+       "text": "Kitchen catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How we work on properties in Germany"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Online consultation.</strong> We discuss your project by video call or messenger. You send us a floor plan, photos, and your wishes.",
+        "<strong>Design project.</strong> Layout, concept, 3D visualizations, and technical documentation — everything is approved remotely, and revisions are made based on your comments.",
+        "<strong>Furniture.</strong> Based on the project, we make kitchens, wardrobes, walk-in closets, and other furniture in Bratislava. Before production, we confirm the dimensions — from your measurements or with a site visit by our specialist.",
+        "<strong>Delivery and installation.</strong> We bring the furniture to any city in Germany and install it with our own crew. Delivery is already included in the price.",
+        "<strong>Turnkey renovation.</strong> For larger properties, our crews can carry out the full implementation — as in our projects in Munich and Berlin."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What you can order from Germany"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Interior design project</strong> for an apartment or house — from the layout to working drawings.",
+        "<strong>3D visualization</strong> of an interior or a house facade.",
+        "<strong>A custom kitchen</strong> — a bespoke design or one of the 32 models in our catalog, with delivery and installation.",
+        "<strong>Custom furniture</strong> — wardrobes, walk-in closets, entrance hall furniture, TV walls, and furniture for bedrooms and home offices.",
+        "<strong>Complete implementation</strong> — design, furniture, and renovation by one team."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Interior design packages cost the same as for Bratislava and Vienna: from €20/m². Furniture is priced based on the project, and delivery to Germany is already included."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projects in Germany"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Private house in Munich, 160 m²",
+       "href": "/en/luxury-interior-design-private-house-munich-germany-160sqm",
+       "image": {
+        "id": "6abd6b3b4888499d2074560d",
+        "alt": "interior design project house munich germany"
+       }
+      },
+      {
+       "title": "Private house in Berlin, 215 m²",
+       "href": "/en/luxury-interior-private-house-berlin-germany-215sqm",
+       "image": {
+        "id": "6abd6aa461617a4443acb2fc",
+        "alt": "interior design project house berlin germany"
+       }
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d9d4433765af67caf6606f",
+       "alt": "luxury kitchen with marble island munich germany"
+      },
+      {
+       "id": "66d9d44a3765af67caf660b1",
+       "alt": "modern villa lounge with custom furniture munich"
+      },
+      {
+       "id": "66d9d443390d05681a768358",
+       "alt": "panoramic windows in luxury living room munich"
+      },
+      {
+       "id": "66d9d4423765af67caf6605d",
+       "alt": "bespoke sofa in premium house lounge munich"
+      },
+      {
+       "id": "66b176674c04c27fce4a38d0",
+       "alt": "premium villa lounge with panoramic windows berlin"
+      },
+      {
+       "id": "66b1766422400dcb00b4ba14",
+       "alt": "bespoke sofa and coffee table in living room berlin"
+      },
+      {
+       "id": "66b17663041394c5217ec62e",
+       "alt": "luxury kitchen with marble island berlin germany"
+      },
+      {
+       "id": "66b1766358abfced792fc3ea",
+       "alt": "modern fireplace in luxury lounge berlin germany"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All studio projects",
+       "href": "/en/portfolio-interior-design-projects"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about working with clients in Germany"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "How much does furniture delivery to Germany cost?",
+       "a": "<p>Delivery is included in the price of the furniture regardless of the city — Berlin, Munich, Hamburg, Frankfurt, or a small town. You get one all-in price for the pieces, including delivery and installation.</p>"
+      },
+      {
+       "q": "How do you take measurements if you are in Bratislava?",
+       "a": "<p>For the design project, a floor plan and photos are enough. Before furniture production, we confirm the dimensions either from your own measurements taken according to our instructions or with a site visit by our specialist.</p>"
+      },
+      {
+       "q": "Who installs the furniture?",
+       "a": "<p>Our own crew from Bratislava. We schedule the installation for the delivery date so that everything is installed in a single visit.</p>"
+      },
+      {
+       "q": "Can I order just the design project?",
+       "a": "<p>Yes. You will receive a complete set of visualizations and drawings that a local contractor in Germany can work from.</p>"
+      },
+      {
+       "q": "What are the lead times?",
+       "a": "<p>The design project takes from 14 days for the “Express” package; a full project usually takes 4–8 weeks. Furniture production time depends on the scope of the order and is confirmed with the quote.</p>"
+      },
+      {
+       "q": "What languages do you work in?",
+       "a": "<p>Russian, Ukrainian, and English. Documentation for German contractors is prepared with dimensions and specifications that are clear without translation.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-5",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Request a free consultation",
+     "text": "Tell us where the property is and what you need — we will reply within one business day."
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -18,7 +18,7 @@ const crumbs = [{ label: T.home, href: homePath(lang) }, ...(group ? [{ label: g
   <Crumbs items={crumbs} />
 </div>
 {!hasH1 && <h1 class="display wrap gh1">{page.h1}</h1>}
-<Blocks sections={page.sections} />
+<Blocks sections={page.sections} lang={lang} />
 <style>
   .gh1 { font-size: clamp(20px, 2.4vw, 30px); margin-block: 32px 16px; max-width: 30ch; }
 </style>

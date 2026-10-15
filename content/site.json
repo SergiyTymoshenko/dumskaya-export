@@ -92,6 +92,27 @@
     ]
    },
    {
+    "label": "Где мы работаем",
+    "children": [
+     {
+      "label": "Братислава",
+      "href": "/interior-design-apartmens-bratislava"
+     },
+     {
+      "label": "Вена",
+      "href": "/dizajn-interera-vena"
+     },
+     {
+      "label": "Варшава",
+      "href": "/interior-design-apartmens-warsaw"
+     },
+     {
+      "label": "Германия",
+      "href": "/dizajn-interera-germaniya"
+     }
+    ]
+   },
+   {
     "label": "Цены",
     "children": [
      {
@@ -213,6 +234,27 @@
     ]
    },
    {
+    "label": "Де ми працюємо",
+    "children": [
+     {
+      "label": "Братислава",
+      "href": "/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku"
+     },
+     {
+      "label": "Відень",
+      "href": "/ua/dyzain-interieru-viden"
+     },
+     {
+      "label": "Варшава",
+      "href": "/ua/dyzain-interieru-varshava"
+     },
+     {
+      "label": "Німеччина",
+      "href": "/ua/dyzain-interieru-nimechchyna"
+     }
+    ]
+   },
+   {
     "label": "Ціни",
     "children": [
      {
@@ -330,6 +372,27 @@
      {
       "label": "Cozy balcony",
       "href": "/en/perfect-balcony-design"
+     }
+    ]
+   },
+   {
+    "label": "Where we work",
+    "children": [
+     {
+      "label": "Bratislava",
+      "href": "/en/interior-design"
+     },
+     {
+      "label": "Vienna",
+      "href": "/en/interior-design-vienna"
+     },
+     {
+      "label": "Warsaw",
+      "href": "/en/interior-design-apartmens-warsaw"
+     },
+     {
+      "label": "Germany",
+      "href": "/en/interior-design-germany"
      }
     ]
    },

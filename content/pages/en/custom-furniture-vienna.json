@@ -1,0 +1,340 @@
+{
+ "path": "/en/custom-furniture-vienna",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Custom Furniture in Vienna — Made to Order | DUMSKAYA DESIGN",
+ "description": "Custom kitchens, wardrobes, walk-in closets and furniture for Vienna: design, our own workshop in Bratislava, delivery included, installation by our crew.",
+ "h1": "Custom furniture in Vienna — design, manufacturing, and installation",
+ "og_image": "66c511596549f3d91ef8764e",
+ "alternates": {
+  "ru": "/mebel-na-zakaz-vena",
+  "ua": "/ua/mebli-na-zamovlennia-viden",
+  "en": "/en/custom-furniture-vienna"
+ },
+ "sections": [
+  {
+   "id": "city-mebel-na-zakaz-vena-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Custom furniture in Vienna — design, manufacturing, and installation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> designs and manufactures custom cabinet furniture for apartments, houses, and commercial spaces in Vienna. We have our own workshop in Bratislava, 60 km from Vienna. Delivery and installation are carried out by our own team, and the cost of delivery is already included in the price."
+      },
+      {
+       "t": "p",
+       "html": "We make furniture as part of the interior: kitchens, built-in wardrobes, walk-in closets, entrance hall furniture, TV units, and furniture for bedrooms, home offices, and bathrooms. Every piece is designed for its specific room — based on on-site measurements and taking into account utilities, appliances, and the style of the interior."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "Furniture for Vienna",
+     "rows": [
+      [
+       "Production",
+       "in-house, Bratislava"
+      ],
+      [
+       "Delivery to Vienna",
+       "included in the price"
+      ],
+      [
+       "Installation",
+       "our own team"
+      ],
+      [
+       "Measurement",
+       "on site in Vienna"
+      ],
+      [
+       "Prices",
+       "the same for Bratislava and Vienna"
+      ],
+      [
+       "Phone in Vienna",
+       "<a href=\"tel:+4367761430187\">+43 677 614 30 187</a>"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Custom kitchens in Vienna",
+       "href": "/en/custom-kitchens-vienna"
+      },
+      {
+       "text": "Kitchen catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What we make"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Kitchens</strong> — straight, L-shaped, U-shaped, with an island, with built-in appliances.",
+        "<strong>Built-in wardrobes</strong> up to the ceiling, with hinged or sliding doors and interiors organized around your belongings.",
+        "<strong>Walk-in closets</strong> and storage systems with lighting.",
+        "<strong>Entrance halls</strong> — wardrobes, benches, shoe cabinets, mirrors, and panels.",
+        "<strong>Living room and bedroom furniture</strong> — TV units, wall panels, beds with headboards, nightstands, dressers.",
+        "<strong>Home offices</strong> — desks, shelving units, home libraries.",
+        "<strong>Bathroom furniture</strong> — vanity units, mirrored cabinets, tall cabinets.",
+        "<strong>Furniture for business</strong> — reception desks, offices, meeting rooms, retail fixtures."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materials and hardware"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Fronts — laminated chipboard, MDF with a film or lacquer finish, veneer, HPL, acrylic, glass. Countertops — laminate, compact laminate, quartz, porcelain stoneware, acrylic stone, and natural stone. Hardware — Hettich, Blum, Häfele: soft-close mechanisms, drawer systems, lift-up mechanisms, cargo pull-outs, and interior organizers."
+      },
+      {
+       "t": "p",
+       "html": "We select the materials and hardware to fit your budget, from standard to premium. For every piece, we prepare a technical specification, and that is exactly what it is manufactured to."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How to order furniture in Vienna"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Request.</strong> Send us a floor plan of the room, photos, and examples of furniture you like. We will give you a preliminary estimate based on this information.",
+        "<strong>Measurement and design.</strong> We visit your site in Vienna, then develop the construction drawings, 3D visualization, and material specifications.",
+        "<strong>Quote.</strong> We give you the exact price of the pieces, including delivery and installation — as one total.",
+        "<strong>Production.</strong> The furniture is made in Bratislava. The lead time depends on the scope and materials, and we confirm it together with the quote.",
+        "<strong>Delivery and installation.</strong> Our own team delivers and installs the furniture, builds in the appliances, and adjusts the fronts."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Examples of custom furniture"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66c511596549f3d91ef8764e",
+       "alt": "modern kitchen designed to client specifications"
+      },
+      {
+       "id": "69c86798ce29bfd07714ea68",
+       "alt": "custom-made kitchen and bedroom furniture"
+      },
+      {
+       "id": "685a680d6458fdbb26b47ae1",
+       "alt": "bespoke kitchen with built-in appliances"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87656",
+       "alt": "tailor-made kitchen layout with premium materials"
+      },
+      {
+       "id": "684a98176775d3727cd6e122",
+       "alt": "designer kitchen with custom cabinets and storage"
+      },
+      {
+       "id": "684a981fcbfab8d2b1b768ec",
+       "alt": "interior kitchen view with custom-made furniture"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The furniture for these 58 m² and 115 m² apartments in Vienna was made at our own workshop to the studio's design:"
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Apartment in Vienna, 58 m²",
+       "href": "/en/apartmens-vienna-luxury-interior-design-58m",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "modern living room interior vienna austria"
+       }
+      },
+      {
+       "title": "Apartment in Vienna, 115 m²",
+       "href": "/en/luxury-interior-design-apartment-vienna-austria-115sqm",
+       "image": {
+        "id": "6abd6b354888499d207455da",
+        "alt": "dumskaya interior design apartment wien"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about custom furniture in Vienna"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "How much does furniture delivery to Vienna cost?",
+       "a": "<p>Nothing beyond the price of the furniture: delivery and the installation team's visit are included in the cost. You get one total price for “turnkey” furniture.</p>"
+      },
+      {
+       "q": "Who takes the measurements and does the installation?",
+       "a": "<p>Our own specialists from Bratislava. We take the measurements before production starts and install after delivery, usually within one to two days depending on the scope.</p>"
+      },
+      {
+       "q": "Can I order just one wardrobe or a kitchen, without an interior design project?",
+       "a": "<p>Yes. We design a standalone piece based on measurements and your wishes. If you need the whole interior, it is easier to start with an <a href=\"/en/interior-design-vienna\">interior design project</a> — then all the furniture will be in one consistent style.</p>"
+      },
+      {
+       "q": "Do you build in household appliances?",
+       "a": "<p>Yes. We design kitchens around the appliances you have chosen, and during installation we fit the oven, cooktop, range hood, dishwasher, and refrigerator. You can buy the appliances yourself or order them through us.</p>"
+      },
+      {
+       "q": "How does custom furniture differ from ready-made furniture?",
+       "a": "<p>In its dimensions and interior layout: the furniture is made to fit your walls, niches, and ceiling height exactly, with precisely the drawers and shelves you need. Visually, it becomes part of the room's architecture rather than a separate object.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Get a furniture quote",
+     "text": "Send us a floor plan or the dimensions of the room and photos — we will prepare a preliminary proposal."
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

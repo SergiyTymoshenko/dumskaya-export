@@ -3,9 +3,9 @@
  "lang": "en",
  "type": "service",
  "group": null,
- "title": "Custom Kitchens in Bratislava | DUMSKAYA DESIGN",
- "description": "Design and manufacture of custom kitchens in Bratislava: layout, 3D visualization, production and installation. Free consultation.",
- "h1": "Custom kitchens in Bratislava — design, planning, and manufacturing",
+ "title": "Custom Kitchens in Bratislava — Turnkey | DUMSKAYA DESIGN",
+ "description": "Turnkey custom kitchens in Bratislava: design, 3D visualization, our own workshop, delivery and installation. 32 catalog models and bespoke projects.",
+ "h1": "Turnkey custom kitchens in Bratislava — design, manufacturing, and installation",
  "og_image": "6ab67175ec4560aaaa6e605d",
  "alternates": {
   "ru": "/kuhni-na-zakaz-bratislava",
@@ -14,159 +14,257 @@
  },
  "sections": [
   {
-   "id": "6ab6686a359e8d9540966631",
+   "id": "city-kuhni-na-zakaz-bratislava-0",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Custom kitchens in Bratislava — design, planning, and manufacturing"
-    },
-    {
-     "type": "gallery",
-     "images": [
-      {
-       "id": "6abd6b6f4888499d207456f0",
-       "alt": "Custom Kitchens in Bratislava"
-      }
-     ]
+     "text": "Turnkey custom kitchens in Bratislava — design, manufacturing, and installation"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> is a design studio in Bratislava, Slovakia. We design and build custom kitchens for apartments, houses, and condos in Bratislava."
+       "html": "<strong>DUMSKAYA DESIGN</strong> is a design studio and furniture manufacturer in Bratislava. We make turnkey custom kitchens for apartments, new builds, and private houses: measurement, design, 3D visualization, technical design, manufacturing, delivery, installation, and the fitting of appliances. Everything is done in-house, with no intermediaries."
       },
       {
        "t": "p",
-       "html": "We handle the entire process: kitchen design, layout, 3D visualization, technical development, selection of materials and hardware, manufacturing, delivery, and professional installation."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Custom kitchen design in Bratislava</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Each kitchen is designed for a specific room and the client’s lifestyle. We take into account the room’s dimensions, the location of utility lines, built-in appliances, the amount of storage needed, the ergonomics of the work zones, and the overall interior style."
-      },
-      {
-       "t": "p",
-       "html": "We design straight, L-shaped, and U-shaped kitchens, kitchens with an island, open-plan kitchen and living areas, and floor-to-ceiling built-in kitchens."
-      },
-      {
-       "t": "p",
-       "html": "<strong>3D visualization and technical development</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Before production begins, you can see your future kitchen in a realistic 3D visualization. This lets you agree in advance on the color of the fronts, the countertop, the lighting, the appliance placement, and the overall composition of the interior."
-      },
-      {
-       "t": "p",
-       "html": "Once the design is approved, we prepare the technical documentation for production: the dimensions of the furniture modules, opening systems, interior fittings, and the placement of appliances, electrical wiring, plumbing, and accent lighting."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Custom kitchen manufacturing</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Kitchens are made to custom dimensions. Fronts can be made of laminated chipboard, MDF, painted MDF, veneer, and other decorative materials."
-      },
-      {
-       "t": "p",
-       "html": "Countertops are available in laminate, compact laminate, engineered quartz, ceramic, and artificial or natural stone."
-      },
-      {
-       "t": "p",
-       "html": "The kitchen’s components are selected to suit the client’s requirements and budget. You can choose standard or more advanced furniture hardware, as well as materials ranging from more affordable to premium."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Built-in appliances and storage systems</strong>"
-      },
-      {
-       "t": "p",
-       "html": "From the outset, the kitchen design accounts for the refrigerator, oven, cooktop, dishwasher, range hood, and other built-in appliances."
-      },
-      {
-       "t": "p",
-       "html": "We also include pull-out systems, cargo pull-outs, interior organizers, waste sorting systems, lift-up mechanisms, and other solutions for convenient storage."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Kitchens for apartments and houses in Bratislava</strong>"
-      },
-      {
-       "t": "p",
-       "html": "We create kitchens for modern apartments, new developments, and private homes in Bratislava. We pay special attention to open-plan kitchen and living areas, where the kitchen furniture needs to work together with the TV area, wall panels, cabinets, and other built-in furniture."
-      },
-      {
-       "t": "p",
-       "html": "If needed, DUMSKAYA DESIGN can design all of the apartment’s built-in furniture in a single, cohesive style."
-      },
-      {
-       "t": "p",
-       "html": "<strong>How the ordering process works</strong>"
-      },
-      {
-       "t": "p",
-       "html": "First, we discuss the client’s wishes and the existing conditions of the room. Then we take measurements, develop the kitchen layout and design, and select materials and hardware."
-      },
-      {
-       "t": "p",
-       "html": "Once everything is approved, a technical design is prepared and the cost is calculated. The kitchen then goes into production, after which delivery and installation are arranged in Bratislava."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN Bratislava</strong>"
-      },
-      {
-       "t": "p",
-       "html": "We combine interior design and custom furniture manufacturing in a single project."
-      },
-      {
-       "t": "p",
-       "html": "You can order just a kitchen or a complete solution for your apartment or house: interior design, a kitchen, built-in wardrobes, walk-in closets, wall panels, and other custom furniture."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Order a kitchen in Bratislava</strong>"
-      },
-      {
-       "t": "p",
-       "html": "Send us the floor plan or room dimensions, photos of the kitchen, and a few examples of designs you like. We will prepare a preliminary proposal and suggest a suitable way to bring it to life."
+       "html": "You can choose one of the 32 models in our <a href=\"/en/custom-kitchens-bratislava-vienna\">catalog</a> and adapt it to your kitchen, or order a fully bespoke design. We pay special attention to open-plan kitchen and living areas, where the kitchen furniture becomes part of the overall interior."
       }
      ]
-    }
-   ]
-  },
-  {
-   "id": "6ab6686a359e8d954096663f",
-   "blocks": [
+    },
+    {
+     "type": "facts",
+     "title": "Kitchens in Bratislava",
+     "rows": [
+      [
+       "Production",
+       "in-house, Bratislava"
+      ],
+      [
+       "Measurement, delivery, installation",
+       "our own team, included in the price"
+      ],
+      [
+       "Models",
+       "32 in the catalog + bespoke designs"
+      ],
+      [
+       "Hardware",
+       "Hettich, Blum, Häfele"
+      ],
+      [
+       "Studio and samples",
+       "Súkennícka 1, Bratislava-Ružinov"
+      ],
+      [
+       "Phone",
+       "<a href=\"tel:+421918177785\">+421 918 17 77 85</a>"
+      ]
+     ]
+    },
     {
      "type": "buttons",
      "items": [
       {
        "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Kitchen catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      },
+      {
+       "text": "Custom furniture in Bratislava",
+       "href": "/en/custom-residential-furniture"
       }
      ]
     }
    ]
   },
   {
-   "id": "6a709adceb26919a940420df",
+   "id": "city-kuhni-na-zakaz-bratislava-1",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Frequently asked questions"
+     "text": "What a turnkey kitchen includes"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Site measurement</strong> with the positions of utilities, windows, doors, and appliances.",
+        "<strong>Design and layout</strong> — straight, L-shaped, U-shaped, with an island or peninsula, built in up to the ceiling, or an open-plan kitchen and living area.",
+        "<strong>3D visualization</strong> — the color of the fronts, the countertop, the backsplash, lighting, and appliances in your interior before production starts.",
+        "<strong>Technical design</strong> — cabinet drawings, a connection diagram, and a specification of materials and hardware.",
+        "<strong>Manufacturing</strong> at our own production facility in Bratislava.",
+        "<strong>Delivery and installation</strong>, with adjustment of the fronts and mechanisms.",
+        "<strong>Fitting of appliances</strong> — oven, cooktop, range hood, dishwasher, refrigerator. Miele appliances can be supplied on request."
+       ]
+      }
+     ]
     }
    ]
   },
   {
-   "id": "6ab6686a359e8d9540966641",
+   "id": "city-kuhni-na-zakaz-bratislava-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materials, countertops, and hardware"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Fronts: laminated chipboard, foil-wrapped MDF, painted MDF, veneer, HPL, acrylic, glass. Countertops: laminate, compact laminate, engineered quartz, porcelain stoneware, acrylic stone, and natural stone. Hettich, Blum, and Häfele hardware: soft-close mechanisms, pull-out systems, lift-up mechanisms, cargo pull-outs, interior organizers, and waste sorting systems."
+      },
+      {
+       "t": "p",
+       "html": "The configuration is tailored to your requirements and budget — from standard to premium. Samples of fronts, countertops, and hardware can be viewed at the studio."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-na-zakaz-bratislava-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Examples of kitchens we have made"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "69c86798ce29bfd07714ea68",
+       "alt": "custom-made kitchen and bedroom furniture"
+      },
+      {
+       "id": "66c511596549f3d91ef8764e",
+       "alt": "modern kitchen designed to client specifications"
+      },
+      {
+       "id": "685a680d6458fdbb26b47ae1",
+       "alt": "bespoke kitchen with built-in appliances"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87656",
+       "alt": "tailor-made kitchen layout with premium materials"
+      },
+      {
+       "id": "684a98176775d3727cd6e122",
+       "alt": "designer kitchen with custom cabinets and storage"
+      },
+      {
+       "id": "684a981fcbfab8d2b1b768ec",
+       "alt": "interior kitchen view with custom-made furniture"
+      },
+      {
+       "id": "684a9818cbfab8d2b1b768ba",
+       "alt": "custom kitchen furniture with glass elements"
+      },
+      {
+       "id": "684a98186775d3727cd6e12a",
+       "alt": "custom kitchen with built-in Miele appliances"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All models in the catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-na-zakaz-bratislava-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How to order a kitchen in Bratislava"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Inquiry.</strong> Send us a floor plan or the dimensions of your kitchen, photos, and examples of designs you like — or choose a model from the catalog.",
+        "<strong>Preliminary quote.</strong> Within a few days, we give you an approximate price.",
+        "<strong>Measurement and design.</strong> We visit the property, develop the design and 3D visualization, and agree on the materials and appliances.",
+        "<strong>Final price and contract.</strong> One amount for the kitchen, including delivery and installation.",
+        "<strong>Production and installation.</strong> We manufacture, deliver, install, and fit the appliances."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-na-zakaz-bratislava-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about custom kitchens in Bratislava"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "How much does a custom kitchen cost in Bratislava?",
+       "a": "<p>The price depends on the length and configuration, the materials of the fronts and countertop, the hardware, and the appliances. We give you the exact price after the measurement and design — as one amount including delivery and installation. For a guide to model prices, see the <a href=\"/en/custom-kitchens-bratislava-vienna\">catalog</a>.</p>"
+      },
+      {
+       "q": "How long does it take to make a kitchen?",
+       "a": "<p>The lead time depends on the scope, materials, and current production workload — we confirm it with the quote. It starts once the design is approved and the deposit is paid.</p>"
+      },
+      {
+       "q": "Can a catalog model be modified?",
+       "a": "<p>Yes. The dimensions, front color, countertop, interior fittings, and appliances are tailored to your kitchen — the model serves as a starting point.</p>"
+      },
+      {
+       "q": "Do you connect the appliances?",
+       "a": "<p>During installation, we install and fit the appliances. Water, gas, and electrical connections are part of the renovation work — if our crew is doing the renovation, it is all handled as one project.</p>"
+      },
+      {
+       "q": "Do you make kitchens for Vienna?",
+       "a": "<p>Yes, with delivery and installation by our own crew; delivery is included in the price. Learn more: <a href=\"/en/custom-kitchens-vienna\">custom kitchens in Vienna</a>.</p>"
+      },
+      {
+       "q": "Can I see samples?",
+       "a": "<p>Yes, at the studio at Súkennícka 1 by appointment: fronts, countertops, hardware, and examples of completed kitchens.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-na-zakaz-bratislava-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Get a kitchen quote",
+     "text": "Send us your kitchen floor plan and photos — we will prepare a preliminary proposal."
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-na-zakaz-bratislava-7",
    "blocks": [
     {
      "type": "heading",

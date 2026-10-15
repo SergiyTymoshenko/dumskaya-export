@@ -8,7 +8,9 @@ export type Block =
   | { type: 'gallery'; images: Img[] }
   | { type: 'cards'; items: { title: string; href: string | null; image: Img | null }[] }
   | { type: 'buttons'; items: { text: string; href: string | null }[] }
-  | { type: 'form' };
+  | { type: 'faq'; items: { q: string; a: string }[] }
+  | { type: 'facts'; title?: string; rows: [string, string][] }
+  | { type: 'form'; title?: string; text?: string };
 export type Section = { id: string; blocks: Block[] };
 export type Page = {
   path: string; lang: Lang; type: string; group: string | null;

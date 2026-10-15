@@ -3,9 +3,9 @@
  "lang": "en",
  "type": "service",
  "group": null,
- "title": "Residential Interior Design in Bratislava | DUMSKAYA DESIGN",
- "description": "Interior design for apartments, private houses and villas: layout, 3D visualization, custom furniture and turnkey renovation in Bratislava and Vienna.",
- "h1": "Residential interior design",
+ "title": "Interior Design in Bratislava — Apartments | DUMSKAYA DESIGN",
+ "description": "Interior design studio in Bratislava (Ružinov): design project, 3D visualization, furniture from our own workshop, turnkey renovation. Free consultation.",
+ "h1": "Interior design for apartments and houses in Bratislava",
  "og_image": "685a680d6748ab4ac41cca0b",
  "alternates": {
   "ru": "/interior-design-apartmens-bratislava",
@@ -14,156 +14,54 @@
  },
  "sections": [
   {
-   "id": "5d9dd7bbb12dfe00269327dd",
+   "id": "city-interior-design-apartmens-bratislava-0",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Residential interior design"
+     "text": "Interior design for apartments and houses in Bratislava"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> creates contemporary, functional interiors for apartments, houses, and private residences. We design individual spaces where aesthetics, comfort, ergonomics, and practicality come together in a single concept."
+       "html": "<strong>DUMSKAYA DESIGN</strong> is an interior design studio in Bratislava. Our office and furniture production facility are located in the Ružinov district, and renovation and installation are carried out by our own crews. We design apartments, houses, and residences and deliver them turnkey: from the first consultation to handing over the keys."
       },
       {
        "t": "p",
-       "html": "<strong>For us, residential interior design</strong> is more than choosing colors, furniture, and finishing materials. We approach the space as a whole: from the layout and functional zoning to lighting, custom furniture, materials, and decorative elements."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Our goal</strong> is to create an interior that suits the architecture of the property and the owners’ lifestyle and stays relevant for many years."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Custom apartment or house design </strong>Every <strong>DUMSKAYA DESIGN</strong> project is developed individually."
-      },
-      {
-       "t": "p",
-       "html": "Before we start designing, we analyze the features of the space, the layout, natural light, the client’s wishes, the required functionality, and how the space will be used."
-      },
-      {
-       "t": "p",
-       "html": "Based on this information, we develop a cohesive interior concept for the apartment or private house."
-      },
-      {
-       "t": "p",
-       "html": "Special attention is paid to ergonomics, proportions, storage systems, and the placement of furniture and lighting so that the interior is not only visually appealing but also comfortable for everyday living."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Contemporary interior design </strong>We create contemporary interiors with an emphasis on clean spatial architecture, well-considered functionality, quality materials, and individual details."
-      },
-      {
-       "t": "p",
-       "html": "When developing the project, we take into account:"
-      },
-      {
-       "t": "p",
-       "html": "— layout and functional zoning;"
-      },
-      {
-       "t": "p",
-       "html": "— the interior color concept;"
-      },
-      {
-       "t": "p",
-       "html": "— finishing materials;"
-      },
-      {
-       "t": "p",
-       "html": "— lighting scenarios;"
-      },
-      {
-       "t": "p",
-       "html": "— furniture placement;"
-      },
-      {
-       "t": "p",
-       "html": "— built-in storage systems;"
-      },
-      {
-       "t": "p",
-       "html": "— custom cabinet furniture;"
-      },
-      {
-       "t": "p",
-       "html": "— plumbing fixtures and equipment;"
-      },
-      {
-       "t": "p",
-       "html": "— textiles, decor, and interior accents."
-      },
-      {
-       "t": "p",
-       "html": "All elements come together in a single concept, making the interior look cohesive and harmonious."
-      },
-      {
-       "t": "p",
-       "html": "<strong>3D interior visualization </strong>Photorealistic 3D visualizations are created for the future interior, letting you see the design of your apartment or house before the project is implemented."
-      },
-      {
-       "t": "p",
-       "html": "The visualizations show the layout, furniture, materials, color combinations, lighting, and decorative solutions."
-      },
-      {
-       "t": "p",
-       "html": "This makes it possible to evaluate the future interior in advance, agree on the key decisions, and make any necessary changes before renovation work begins."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Technical documentation </strong>Depending on the selected project scope, <strong>DUMSKAYA DESIGN</strong> develops the set of technical documentation needed to implement the approved design concept."
-      },
-      {
-       "t": "p",
-       "html": "Working drawings help transfer the interior design solutions to the site accurately and serve as the basis for the work of construction specialists, furniture makers, and other contractors."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Custom furniture </strong>Custom furniture makes the most efficient use of space and is an important part of a contemporary residential interior."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designs kitchens, wardrobes, walk-in closets, built-in storage systems, and furniture for living rooms, bedrooms, entrance halls, home offices, and other rooms."
-      },
-      {
-       "t": "p",
-       "html": "Detailed furniture drawings and technical specifications for manufacturing can be prepared for custom furniture."
-      },
-      {
-       "t": "p",
-       "html": "Complete manufacturing, delivery, and installation of furniture based on the developed design are also available."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Selection of materials, furniture, and lighting </strong>To bring the design concept to life, we select finishing materials, furniture, plumbing fixtures, lighting, and decorative elements."
-      },
-      {
-       "t": "p",
-       "html": "A comprehensive approach helps preserve the original interior concept and achieve visual unity across all elements of the space."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Interior design and project delivery: DUMSKAYA DESIGN</strong> offers a comprehensive approach to creating residential interiors — from the initial idea and layout to 3D visualization, technical documentation, and the selection of materials and furniture."
-      },
-      {
-       "t": "p",
-       "html": "Depending on the project, implementation support, custom furniture manufacturing, and a comprehensive interior renovation are available."
-      },
-      {
-       "t": "p",
-       "html": "We work with apartments, condos, private houses, and other residential properties, creating individual solutions tailored to the features of each space."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) — apartment and private house interior design, 3D visualization, technical documentation, custom furniture, and full-service delivery of residential interiors.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>Commission a design for your apartment or house, and we’ll create an interior considered down to the last detail.</strong>"
+       "html": "Completed projects in Bratislava include apartments in Metropolis and Eurovea City, a 158 m² duplex apartment, and a 120 m² private house. Every project is developed individually — around the layout, the lighting, the owners’ lifestyle, and the budget."
       }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "DUMSKAYA DESIGN in Bratislava",
+     "rows": [
+      [
+       "Studio address",
+       "Súkennícka 1, 821 09 Bratislava-Ružinov"
+      ],
+      [
+       "Phone",
+       "<a href=\"tel:+421918177785\">+421 918 17 77 85</a>"
+      ],
+      [
+       "Furniture production",
+       "in-house, Bratislava"
+      ],
+      [
+       "Renovation and installation",
+       "our own crews"
+      ],
+      [
+       "Consultation",
+       "free — at the studio, on site, or online"
+      ],
+      [
+       "Languages",
+       "Russian, Ukrainian, English"
+      ]
      ]
     },
     {
@@ -174,26 +72,65 @@
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
       },
       {
-       "text": "View package pricing",
-       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+       "text": "Custom furniture in Bratislava",
+       "href": "/en/custom-residential-furniture"
+      },
+      {
+       "text": "Custom kitchens in Bratislava",
+       "href": "/en/custom-kitchens-bratislava"
       }
      ]
     }
    ]
   },
   {
-   "id": "679cadc8b48fa9797ec1b5c1",
+   "id": "city-interior-design-apartmens-bratislava-1",
    "blocks": [
     {
      "type": "heading",
      "level": 2,
-     "text": "Examples of completed interior design projects"
+     "text": "What the design project includes"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Layout and zoning</strong> — layout options with furniture placement and lighting scenarios.",
+        "<strong>Interior concept</strong> — style, color scheme, finishing materials, furniture, lighting, textiles, and decor.",
+        "<strong>3D visualization</strong> — photorealistic images of every room.",
+        "<strong>Technical documentation</strong> — measured floor plan, demolition and construction plans, electrical, plumbing, floors, ceilings, wall elevations, and specifications.",
+        "<strong>Custom furniture</strong> — production drawings for kitchens, wardrobes, walk-in closets, and built-in storage systems.",
+        "<strong>Procurement and design supervision</strong> — selecting and ordering materials, and checking that the renovation matches the project."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The scope of the project depends on the package you choose: from “Express” with a layout and visualizations to “Premium+” with a full set of documentation and support through to the handover of the property."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projects in Bratislava"
     },
     {
      "type": "cards",
      "items": [
       {
-       "title": "Metropolis apartment, Bratislava, 75 m²",
+       "title": "Metropolis apartment in Bratislava, 75 m²",
        "href": "/en/design-interior-studio-bratislava-metropolis-sk-75m",
        "image": {
         "id": "6abd6a8768c5e81567a1bfe0",
@@ -201,15 +138,7 @@
        }
       },
       {
-       "title": "Apartment in Kyiv, 80 m²",
-       "href": "/en/luxury-80sqm-apartment-interior-design-kyiv",
-       "image": {
-        "id": "6abd0a7d61617a4443ab2567",
-        "alt": "interior design project of an apartment kyiv"
-       }
-      },
-      {
-       "title": "Eurovea apartment, Bratislava, 56 m²",
+       "title": "Eurovea City apartment in Bratislava, 56 m²",
        "href": "/en/studio-interior-design-bratislava-eurovea-56m",
        "image": {
         "id": "6abd6a8168c5e81567a1bfb4",
@@ -217,7 +146,7 @@
        }
       },
       {
-       "title": "Apartment in Bratislava, 158 m²",
+       "title": "Duplex apartment in Bratislava, 158 m²",
        "href": "/en/luxury-158sqm-duplex-apartment-interior-design-bratislava",
        "image": {
         "id": "6abd6a8e6bbe610384483447",
@@ -225,83 +154,11 @@
        }
       },
       {
-       "title": "Private house, 120 m²",
+       "title": "Private house in Bratislava, 120 m²",
        "href": "/en/interior-design-private-house-bratislava-120m2",
        "image": {
         "id": "6abd6a6a61617a4443acb201",
         "alt": "luxury interior design project bratislava slovakia"
-       }
-      },
-      {
-       "title": "Apartment in Vienna, 58 m²",
-       "href": "/en/apartmens-vienna-luxury-interior-design-58m",
-       "image": {
-        "id": "6abd6a794888499d20745202",
-        "alt": "luxury interior design project apartment vienna"
-       }
-      },
-      {
-       "title": "Private house, 140 m²",
-       "href": "/en/interior-design-private-house-dunajska-streda-140m",
-       "image": {
-        "id": "6abd6a9d68c5e81567a1c052",
-        "alt": "Interior Design Project for a Private House in Dunajská Streda, Slovakia by DUMSKAYA DESIGN"
-       }
-      },
-      {
-       "title": "Private house, 212 m²",
-       "href": "/en/luxury-interior-private-house-212sqm",
-       "image": {
-        "id": "6abd6a716bbe6103844833be",
-        "alt": "Interior design project of a private house Kharkiv, Ukraine"
-       }
-      },
-      {
-       "title": "Apartment in Warsaw, 43 m²",
-       "href": "/en/contemporary-warsaw-apartment-43sqm",
-       "image": {
-        "id": "6abd6b6368c5e81567a1c463",
-        "alt": "Apartment in Warsaw, 43 m²"
-       }
-      },
-      {
-       "title": "Apartment in Kraków, 63 m²",
-       "href": "/en/apartment-interior-design-krakow-63m",
-       "image": {
-        "id": "6abd6b4e68c5e81567a1c3f1",
-        "alt": "custom furniture kraków"
-       }
-      },
-      {
-       "title": "Apartment, 60 m² (18 m² terrace)",
-       "href": "/en/apartment-interior-design-60m",
-       "image": {
-        "id": "6abd6ab34888499d20745304",
-        "alt": "interior design project apartment"
-       }
-      },
-      {
-       "title": "Apartment, 54 m²",
-       "href": "/en/luxury-54sqm-apartment-interior-design-bratislava",
-       "image": {
-        "id": "6abd6b143ba7c7b83394fb01",
-        "alt": "apartment interior design by dumskaya design"
-       }
-      },
-      {
-       "title": "Apartment, 45 m²",
-       "href": "/en/modern-apartment-design-45sqm",
-       "image": {
-        "id": "6abd6b5c3ba7c7b83394fc44",
-        "alt": "luxury interior design project apartment"
-       }
-      },
-      {
-       "title": "Apartment, 48 m²",
-       "href": "/en/48sqm-luxury-apartment-interior-design",
-       "image": {
-        "id": "6abd6ac73ba7c7b83394f91e",
-        "alt": "interior design project apartment"
        }
       },
       {
@@ -313,195 +170,148 @@
        }
       },
       {
-       "title": "Apartment, 52 m²",
-       "href": "/en/modern-apartment-design-52sqm",
-       "image": {
-        "id": "6abd6aff68c5e81567a1c258",
-        "alt": "interior design project apartment"
-       }
-      },
-      {
-       "title": "Apartment in Warsaw, 43 m²",
-       "href": "/en/modern-apartment-design-warsaw-43sqm",
-       "image": {
-        "id": "6abd6aaa6bbe6103844834dd",
-        "alt": "Apartment in Warsaw, 43 m²"
-       }
-      },
-      {
        "title": "Apartment in Bratislava, 52 m²",
        "href": "/en/interior-apartment-design-bratislava-slovakia-52sqm",
        "image": {
         "id": "6abd6b0c61617a4443acb569",
         "alt": "interior design project apartment bratislava"
        }
-      },
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
       {
-       "title": "Apartment in Dubai, 160 m²",
-       "href": "/en/premium-interior-design-apartment-dubai-uae-160sqm",
-       "image": {
-        "id": "6abd6aba3ba7c7b83394f8d8",
-        "alt": "luxury interior design Dubai EAU"
-       }
-      },
+       "t": "p",
+       "html": "Also — a 140 m² private house in Dunajská Streda and projects in Vienna, Prague, and other cities."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
       {
-       "title": "Apartment in Los Angeles, 140 m²",
-       "href": "/en/premium-interior-design-apartment-los-angeles-california-usa-140sqm",
-       "image": {
-        "id": "6abd6ac168c5e81567a1c102",
-        "alt": "luxury interior design los-angeles usa"
-       }
-      },
-      {
-       "title": "Apartment in Prague, 90 m²",
-       "href": "/en/apartment-interior-design-prague-czech-republic-90sqm",
-       "image": {
-        "id": "6abd6aea61617a4443acb472",
-        "alt": "luxury interior dumskaya design Praha"
-       }
-      },
-      {
-       "title": "Apartment in New York, 57 m²",
-       "href": "/en/luxury-interior-design-apartment-new-york-usa-57sqm",
-       "image": {
-        "id": "6abd6af268c5e81567a1c21a",
-        "alt": "luxury apartments interior design NY"
-       }
-      },
-      {
-       "title": "Apartment in Kraków, 64 m²",
-       "href": "/en/apartment-interior-design-krakow-64m",
-       "image": {
-        "id": "6abd6b556bbe61038448383c",
-        "alt": "custom furniture kraków"
-       }
-      },
-      {
-       "title": "Private house in Kyiv, 217 m²",
-       "href": "/en/luxury-interior-design-kiev-private-house-217sqm",
-       "image": {
-        "id": "6abd6b0561617a4443acb529",
-        "alt": "interior design project house"
-       }
-      },
-      {
-       "title": "Private house, Munich, Germany, 160 m²",
-       "href": "/en/luxury-interior-design-private-house-munich-germany-160sqm",
-       "image": {
-        "id": "6abd6b3b4888499d2074560d",
-        "alt": "interior design project house munich germany"
-       }
-      },
-      {
-       "title": "Private house, Berlin, 215 m²",
-       "href": "/en/luxury-interior-private-house-berlin-germany-215sqm",
-       "image": {
-        "id": "6abd6aa461617a4443acb2fc",
-        "alt": "interior design project house berlin germany"
-       }
-      },
-      {
-       "title": "Apartment in Kyiv, 119 m² (30 m² terrace)",
-       "href": "/en/luxury-119sqm-apartment-interior-design-kyiv",
-       "image": {
-        "id": "6abd6a956bbe610384483468",
-        "alt": "luxury interior design project apartment"
-       }
-      },
-      {
-       "title": "Modern classic, London, 120 m²",
-       "href": "/en/luxury-interior-modern-classic-apartment-london-united-kingdom-120sqm",
-       "image": {
-        "id": "6abceda061617a4443aa9440",
-        "alt": "interior design london united kingdom"
-       }
-      },
-      {
-       "title": "Apartment, Madrid, Spain, 107 m²",
-       "href": "/en/luxury-interior-design-madrid-spain-107m",
-       "image": {
-        "id": "6abd6ad368c5e81567a1c165",
-        "alt": "dumskaya interior design apartment Madrid, Spain"
-       }
-      },
-      {
-       "title": "Apartment, Barcelona, Spain, 108 m²",
-       "href": "/en/luxury-108sqm-apartment-interior-design-barcelona-spain",
-       "image": {
-        "id": "6abd6ae14888499d20745418",
-        "alt": "dumskaya interior design apartment barcelona"
-       }
-      },
-      {
-       "title": "Apartment, 51 m²",
-       "href": "/en/51sqm-luxury-apartment-interior-design-bratislava",
-       "image": {
-        "id": "6abd6b1b68c5e81567a1c2e1",
-        "alt": "dumskaya interior design apartment"
-       }
-      },
-      {
-       "title": "Apartment, Vienna, Austria, 115 m²",
-       "href": "/en/luxury-interior-design-apartment-vienna-austria-115sqm",
-       "image": {
-        "id": "6abd6b354888499d207455da",
-        "alt": "dumskaya interior design apartment wien"
-       }
-      },
-      {
-       "title": "Apartment, Varna, Bulgaria, 60 m²",
-       "href": "/en/premium-interior-design-apartment-varna-bulgaria-60sqm",
-       "image": {
-        "id": "6abd6ad93ba7c7b83394f9b9",
-        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
-       }
-      },
-      {
-       "title": "Apartment, 47 m²",
-       "href": "/en/interior-design-compact-3-room-apartment-47sqm",
-       "image": {
-        "id": "6abd6b696bbe610384483889",
-        "alt": "interior design project apartment"
-       }
-      },
-      {
-       "title": "Villa, Madrid, Spain, 179 m²",
-       "href": "/en/luxury-interior-villa-179sqm-madrid-spain",
-       "image": {
-        "id": "6abd6b2668c5e81567a1c33b",
-        "alt": "interior design project villa madrid"
-       }
-      },
-      {
-       "title": "Villa, Burgas, Bulgaria, 220 m²",
-       "href": "/en/luxury-interior-villa-burgas-bulgaria-220sqm",
-       "image": {
-        "id": "6abd6b434888499d20745636",
-        "alt": "interior design project villa burgas bulgaria"
-       }
-      },
-      {
-       "title": "Private house, 230 m²",
-       "href": "/en/luxury-interior-design-private-house-230sqm",
-       "image": {
-        "id": "6abd6b2e4888499d207455b1",
-        "alt": "interior design project villa"
-       }
-      },
-      {
-       "title": "Duplex apartment, 43 m²",
-       "href": "/en/interior-design-43sqm-duplex-apartment",
-       "image": {
-        "id": "6abd6acd6bbe6103844835b3",
-        "alt": "interior design project duplex apartment"
-       }
+       "text": "All studio projects",
+       "href": "/en/portfolio-interior-design-projects"
       }
      ]
     }
    ]
   },
   {
-   "id": "69caae64a935e5d0623da47d",
+   "id": "city-interior-design-apartmens-bratislava-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How we work"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Consultation.</strong> At the studio at Súkennícka 1, on site, or online. We discuss your project, budget, and timeline — free of charge.",
+        "<strong>Site measurement.</strong> We record the dimensions, utilities, windows, and heights — the basis for all the drawings.",
+        "<strong>Layout and concept.</strong> We propose layout options, a style, and materials. We make revisions.",
+        "<strong>3D visualization.</strong> We show you the future interior before the renovation begins.",
+        "<strong>Documentation.</strong> A set of drawings for the builders and for furniture production.",
+        "<strong>Implementation.</strong> Renovation, furniture from our own production, procurement, and handover — all by one team."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design project prices in Bratislava"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Design project prices depend on the scope of work: the <a href=\"/en/express-interior-design-package-bratislava-vienna\">“Express”</a> package — €20/m², <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic”</a> and <a href=\"/en/custom-furniture-bratislava-design-production\">“Furniture”</a> — €35–45/m², <a href=\"/en/premium-interior-design-package-bratislava-vienna\">“Premium”</a> — €50/m², <a href=\"/en/premium-plus-interior-design-package-bratislava-vienna\">“Premium+”</a> — €70/m². The first consultation is free."
+      },
+      {
+       "t": "p",
+       "html": "Renovation and furniture costs are calculated based on the project. For the renovation, we prepare a <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">detailed cost estimate</a> — €5/m²; if you order the renovation from us, its cost is deducted from the contract amount."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      },
+      {
+       "text": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about interior design in Bratislava"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "How much does an apartment interior design project cost in Bratislava?",
+       "a": "<p>From €20/m² for the “Express” package to €70/m² for “Premium+”. For a 60 m² apartment, a full project under the “Basic” package comes to €2,100–2,700. The minimum project price is €1,500. See the <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">prices page</a> for details.</p>"
+      },
+      {
+       "q": "How long does a project take?",
+       "a": "<p>“Express” — from 14 days after the layout is approved. A full project with technical documentation usually takes 4–8 weeks, depending on the floor area and the number of revisions.</p>"
+      },
+      {
+       "q": "Do you carry out the renovation based on your own project?",
+       "a": "<p>Yes. Our crews carry out the renovation, we make the furniture at our own production facility in Bratislava, and we take care of procurement and design supervision. You can also order just the project.</p>"
+      },
+      {
+       "q": "Do you work with apartments bought from a developer?",
+       "a": "<p>Yes, most of our projects in Bratislava are new builds with a basic finish or none at all. We also carry out an <a href=\"/en/apartment-handover-inspection-bratislava\">apartment handover inspection</a> before you sign the handover certificate.</p>"
+      },
+      {
+       "q": "Where is the studio, and can I visit?",
+       "a": "<p>Súkennícka 1, Bratislava-Ružinov. Visit the studio by appointment — we will show you samples of materials and hardware and discuss your project. You can find us on Google Maps.</p>"
+      },
+      {
+       "q": "Do you work outside Bratislava?",
+       "a": "<p>Yes — throughout Slovakia, in Vienna and Lower Austria, and remotely: we have completed projects in Prague, Munich, Berlin, Warsaw, Kraków, and other cities.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Request a free consultation",
+     "text": "Tell us about the property and what you need — we will reply within one business day."
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-7",
    "blocks": [
     {
      "type": "heading",

@@ -26,9 +26,16 @@ class P(HTMLParser):
         self._t = self._ld = False
         self.text = []
         self._skip = 0
+        self._depth, self._navstack = 0, []   # шапка, меню и подвал не считаются текстом страницы
+
+    VOID = {"img", "input", "br", "meta", "link", "hr", "source", "wbr"}
 
     def handle_starttag(self, tag, a):
         a = dict(a)
+        if tag not in self.VOID:
+            self._depth += 1
+            if tag in ("header", "nav", "footer") or (a.get("class") or "").split()[:1] == ["menu"]:
+                self._navstack.append(self._depth)
         if tag in ("script", "style"):
             self._skip += 1
             if tag == "script" and a.get("type") == "application/ld+json":
@@ -45,10 +52,14 @@ class P(HTMLParser):
             self.alts[a["hreflang"]] = a["href"]
         if tag == "meta" and a.get("name") == "description":
             self.desc = a.get("content")
-        if tag == "img" and a.get("alt") is not None:
+        if tag == "img" and a.get("alt") is not None and not self._navstack:
             self.text.append(a.get("alt"))
 
     def handle_endtag(self, tag):
+        if tag not in self.VOID:
+            if self._navstack and self._navstack[-1] == self._depth:
+                self._navstack.pop()
+            self._depth -= 1
         if tag in ("script", "style"):
             self._skip -= 1
             self._ld = False
@@ -60,7 +71,7 @@ class P(HTMLParser):
             self.title += d
         if self._ld:
             self.ld.append(d)
-        elif not self._skip:
+        elif not self._skip and not self._navstack:
             self.text.append(d)
 
 
@@ -77,6 +88,7 @@ def main():
     redirects = json.load(open(os.path.join(ROOT, "content", "redirects.json"), encoding="utf-8"))
     projects = json.load(open(os.path.join(ROOT, "content", "projects.json"), encoding="utf-8"))
     explicit = {v for p in projects if p.get("explicit_warsaw") for v in p["alternates"].values()}
+    explicit |= {u for u in pages if re.search(r"warsaw|varshav|germany|germaniya|nimechch", u)}
     errs, warn = [], []
     parsed = {}
     for u, f in pages.items():

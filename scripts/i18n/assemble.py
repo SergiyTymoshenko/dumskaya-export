@@ -88,6 +88,15 @@ for lang in LANGS:
                 elif t == 'cards':
                     for it in b['items']:
                         it['title'] = tr(lang, it['title'], tm); it['href'] = localize(it.get('href'), lang)
+                elif t == 'faq':
+                    for it in b['items']:
+                        it['q'] = tr(lang, it['q'], tm); it['a'] = localize_html(tr(lang, it['a'], tm), lang)
+                elif t == 'form':
+                    if b.get('title'): b['title'] = tr(lang, b['title'], tm)
+                    if b.get('text'): b['text'] = tr(lang, b['text'], tm)
+                elif t == 'facts':
+                    if b.get('title'): b['title'] = tr(lang, b['title'], tm)
+                    b['rows'] = [[tr(lang, kk, tm), localize_html(tr(lang, vv, tm), lang)] for kk, vv in b['rows']]
         GEO = re.compile(r'варшав|warsaw|москв|moscow', re.I)
         for im in images(new):
             ru_alt = im.get('alt', '')

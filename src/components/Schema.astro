@@ -63,6 +63,14 @@ if (page.type === 'project' || page.type === 'kitchen') {
     })),
   });
 }
+const faq = page.sections.flatMap((s) => s.blocks).filter((b: any) => b.type === 'faq').flatMap((b: any) => b.items);
+if (faq.length) {
+  const txt = (h: string) => h.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+  graph.push({
+    '@type': 'FAQPage',
+    mainEntity: faq.map((f: any) => ({ '@type': 'Question', name: txt(f.q), acceptedAnswer: { '@type': 'Answer', text: txt(f.a) } })),
+  });
+}
 const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
 ---
 <script type="application/ld+json" set:html={json} />
