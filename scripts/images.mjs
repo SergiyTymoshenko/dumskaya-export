@@ -72,4 +72,12 @@ async function work() {
 }
 await Promise.all(Array.from({ length: Math.max(1, os.cpus().length - 1) }, work));
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 0));
+// убрать файлы фото, которые больше нигде не используются (фото удалено или заменено на новое)
+const valid = new Set(Object.values(names));
+let removed = 0;
+for (const f of fs.readdirSync(OUT)) {
+  const m = f.match(/^(.+)-\d+\.webp$/);
+  if (m && !valid.has(m[1])) { fs.unlinkSync(path.join(OUT, f)); removed++; }
+}
+if (removed) console.log(`удалено старых файлов: ${removed}`);
 console.log(`готово: ${done} фото, новых файлов ${made}` + (missing.length ? `, нет оригиналов: ${missing.length}` : ''));
