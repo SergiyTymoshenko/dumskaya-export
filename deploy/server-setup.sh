@@ -44,7 +44,7 @@ if [ "$MODE" = live ]; then
   WWW="www.dumskaya-design.com {\n\tredir https://dumskaya-design.com{uri} 301\n}"
   BIND=""
 else
-  SITE="http://127.0.0.1:8088"
+  SITE="http://:8088"
   WWW=""
   BIND="bind 127.0.0.1"
 fi
