@@ -14,7 +14,7 @@ const lang = page.lang as Lang;
 const SITE = 'https://dumskaya-design.com';
 const url = (p: string) => SITE + (p === '/' ? '/' : p);
 const xDefault = page.alternates.en || page.alternates.ru || page.path;
-const ogId = [page.og_image, firstGallery(page)[0]?.id, home.hero].find((id) => id && manifest[id]);
+const ogId = [page.type === 'home' ? home.hero : null, page.og_image, firstGallery(page)[0]?.id, home.hero].find((id) => id && manifest[id]);
 const og = ogId ? manifest[ogId] : null;
 const ogUrl = og ? `${SITE}/img/${(og.files.find(([w]) => w >= 1200) || og.files[og.files.length - 1])[1]}` : undefined;
 const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';

@@ -2,6 +2,7 @@
 // Разметка schema.org (JSON-LD): студия, сайт, хлебные крошки, статьи, фото проектов.
 import { site, manifest, crumbsFor, allGalleryImages, type Page } from '../lib/data';
 import { HREFLANG } from '../lib/i18n';
+import home from '../../content/home.json';
 interface Props { page: Page }
 const { page } = Astro.props;
 const SITE = 'https://dumskaya-design.com';
@@ -19,7 +20,7 @@ const studio = {
   description: 'Interior design studio: residential and commercial interiors, custom furniture and turnkey renovation in Bratislava and Vienna.',
   url: `${SITE}/`,
   logo: `${SITE}/logo.png`,
-  image: img('6abd6a8768c5e81567a1bfe0'),
+  image: img(home.hero),
   email: c.email,
   telephone: c.phones[0].tel,
   priceRange: '€€',
