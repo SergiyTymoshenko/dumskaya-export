@@ -1,0 +1,218 @@
+{
+ "path": "/en/interior-design-compact-3-room-apartment-47sqm",
+ "lang": "en",
+ "type": "project",
+ "group": "residential",
+ "title": "47 m² Apartment Design Bratislava | DUMSKAYA DESIGN",
+ "description": "Compact 47 m² apartment design by DUMSKAYA DESIGN. Smart layout for a young family: kitchen-living area, kids' room, cozy bedroom, and custom furniture. We deliver interiors across Europe.",
+ "h1": "Example of an interior design project for a compact 3-room apartment of 47 m²",
+ "og_image": "66a181999313b53dae626968",
+ "alternates": {
+  "ru": "/interior-design-apartment-ukraine-47m",
+  "ua": "/ua/dyzain-proekt-interieru-malohabarytnoi-kvartyry-47-m2-varshava-polsha",
+  "en": "/en/interior-design-compact-3-room-apartment-47sqm"
+ },
+ "sections": [
+  {
+   "id": "6884d34653fd64883a42e77f",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Example of an interior design project for a compact 3-room apartment of 47 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "A story by <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong>"
+      },
+      {
+       "t": "p",
+       "html": "A client came to our studio with a challenging task — to create a functional interior for a young family in a space of just 47 m². The layout had to include a living room combined with a kitchen, a comfortable bathroom, a spacious children’s room with a study area, and a cozy bedroom."
+      },
+      {
+       "t": "p",
+       "html": "We developed an open-plan concept where the kitchen and living room blend into one bright, inviting space — perfect for family life and entertaining guests. The bathroom was strategically placed for easy access from all rooms. In the children's room, we designed a cozy space for sleep, play, and study, using multifunctional furniture and smart storage solutions. The balcony was integrated into the living area to maximize usable space."
+      },
+      {
+       "t": "p",
+       "html": "The parents' bedroom, though compact, feels cozy and private thanks to smart zoning and a carefully selected color palette."
+      },
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> successfully turned 47 m² into a stylish, comfortable, and highly functional home tailored to the needs of a modern family."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66a17fa8138461b805e71e2e",
+       "alt": "compact kitchen interior design by dumskaya design studio in bratislava slovakia"
+      },
+      {
+       "id": "66a17fed138461b805e71e89",
+       "alt": "compact living room with neutral decor — interior design by dumskaya design studio in bratislava slovakia"
+      },
+      {
+       "id": "66a180179313b53dae626764",
+       "alt": "modern bedroom with soft color palette by dumskaya design interior studio in bratislava slovakia"
+      },
+      {
+       "id": "66a1801ac2c64781790f73c2",
+       "alt": "simple bed with textile headboard bratislava slovakia"
+      },
+      {
+       "id": "66a18038c2c64781790f73f5",
+       "alt": "compact children’s bedroom with neutral tones bratislava slovakia"
+      },
+      {
+       "id": "66a18057dda6fd4a210a0595",
+       "alt": "small bathroom with white tiles bratislava slovakia"
+      },
+      {
+       "id": "66a2d83404b4e41540715a08",
+       "alt": "neutral bathroom with minimalist fixtures bratislava slovakia"
+      },
+      {
+       "id": "66a17fc4dda6fd4a210a04e4",
+       "alt": "open-plan dining interior design by dumskaya design studio in bratislava slovakia"
+      },
+      {
+       "id": "66a17fdd7f338cb9ad5d8750",
+       "alt": "living space with minimalist furniture design — interior design by dumskaya design studio in bratislava slovakia"
+      },
+      {
+       "id": "66a1801adda6fd4a210a0554",
+       "alt": "apartment bedroom with built-in wardrobe by dumskaya design interior studio in bratislava slovakia"
+      },
+      {
+       "id": "66a18037138461b805e71eea",
+       "alt": "custom furniture for functional space bratislava slovakia"
+      },
+      {
+       "id": "66a180379313b53dae6267ac",
+       "alt": "bed with built-in drawers in kids room bratislava slovakia"
+      },
+      {
+       "id": "66a18059c2c64781790f7439",
+       "alt": "clean bathroom design with built-in vanity bratislava slovakia"
+      },
+      {
+       "id": "66a181999313b53dae626968",
+       "alt": "modern living room interior with open layout — interior design by dumskaya design studio in bratislava slovakia"
+      },
+      {
+       "id": "66a17ff8c2c64781790f738b",
+       "alt": "apartment lounge with simple furnishings by dumskaya design interior studio in bratislava slovakia"
+      },
+      {
+       "id": "66a180199313b53dae62676a",
+       "alt": "compact bedroom with neutral decor bratislava slovakia"
+      },
+      {
+       "id": "66a180397f338cb9ad5d87cb",
+       "alt": "modern kids room with open shelves bratislava slovakia"
+      },
+      {
+       "id": "66a18055c2c64781790f741c",
+       "alt": "modern bathroom with walk-in shower bratislava slovakia"
+      },
+      {
+       "id": "66a18056c2c64781790f742c",
+       "alt": "wall-mounted sink and mirror in bathroom bratislava slovakia"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6890b5cf4ebcf4b693369497",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Back",
+       "href": "/en/portfolio-interior-design-projects"
+      },
+      {
+       "text": "Order a design project",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Interior design service prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "688510cf38ec9f6ebf528992",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

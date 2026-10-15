@@ -1,0 +1,413 @@
+{
+ "path": "/kupkuhni-na-zakaz-vienna-bratislava",
+ "lang": "ru",
+ "type": "service",
+ "group": null,
+ "title": "Кухни на заказ в Братиславе и Вене — изготовление и монтаж | DUMSKAYA DESIGN",
+ "description": "Кухни на заказ в Братиславе и Вене от DUMSKAYA DESIGN. Выбор модели из каталога, индивидуальная адаптация размеров и комплектации, материалы и фурнитура разных ценовых категорий, изготовление, доставка и профессиональный монтаж.",
+ "h1": "Кухни на заказ в Братиславе и Вене",
+ "og_image": "6abea7264888499d2078543f",
+ "alternates": {
+  "ru": "/kupkuhni-na-zakaz-vienna-bratislava",
+  "ua": "/ua/custom-kitchens-bratislava-vienna",
+  "en": "/en/custom-kitchens-bratislava-vienna"
+ },
+ "sections": [
+  {
+   "id": "67c88f63eec91e6d7422a7f9",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Кухни на заказ в Братиславе и Вене"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Мебельный отдел <strong>DUMSKAYA DESIGN (Братислава, Словакия)</strong> предлагает кухни на заказ для квартир и частных домов. Выберите подходящую модель из нашего каталога, и мы подготовим ценовое предложение с учетом выбранной комплектации и параметров помещения."
+      },
+      {
+       "t": "p",
+       "html": "Каждая модель может быть адаптирована под размеры, планировку и особенности вашего помещения. Мы можем изменить конфигурацию кухни, размеры отдельных элементов, материалы, цветовые решения, мебельную фурнитуру и внутреннее наполнение."
+      },
+      {
+       "t": "p",
+       "html": "В зависимости от бюджета и требований заказчика возможна комплектация материалами и фурнитурой различных ценовых категорий — от более доступных решений до премиального уровня."
+      },
+      {
+       "t": "p",
+       "html": "Мы также предлагаем профессиональную доставку и монтаж кухни. По желанию заказчика кухню можно дополнительно укомплектовать мойкой, бытовой техникой, вытяжкой и сантехническим оборудованием."
+      },
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN предлагает кухни на заказ в Братиславе и Вене — от выбора модели, индивидуальной адаптации и расчета стоимости до изготовления, комплектации, доставки и установки.</strong>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67c88f63eec91e6d7422a7fb",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Каталог серийных моделей кухонь"
+    }
+   ]
+  },
+  {
+   "id": "67c88f63eec91e6d7422a801",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Модель кухни №K-45",
+       "href": "/kuhni-pod-zakaz-k-45-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea65b4888499d20785099",
+        "alt": "п-образная кухня k-45 с каменной столешницей, древесными колоннами и барной зоной, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-44",
+       "href": "/kuhni-pod-zakaz-k-44-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6624888499d207850c8",
+        "alt": "угловая кухня k-44 в серо-бежевой гамме с верхними шкафами под дерево и каменным декором, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-06",
+       "href": "/kuhni-pod-zakaz-k-06-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea7264888499d2078543f",
+        "alt": "белая прямая кухня k-06 в стиле минимализм с лаконичными фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-05",
+       "href": "/kuhni-pod-zakaz-k-05-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea72ec8c59bb7c8399171",
+        "alt": "бежевая классическая угловая кухня k-05 со светлыми фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-11",
+       "href": "/kuhni-pod-zakaz-k-11-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea7047bf8b4294f3dee4b",
+        "alt": "серая прямая кухня k-11 с каменным декором и современной мебельной композицией, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-08",
+       "href": "/kuhni-pod-zakaz-k-08-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea7187bf8b4294f3deea9",
+        "alt": "коричневая прямая кухня k-08 с древесным декором фасадов, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-03",
+       "href": "/kuhni-pod-zakaz-k-03-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea73d4888499d207854b2",
+        "alt": "чёрная прямая кухня k-03 с островом и древесным декором, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-04",
+       "href": "/kuhni-pod-zakaz-k-04-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea73568c5e81567a5bd3f",
+        "alt": "серая современная угловая кухня k-04 с каменной рабочей поверхностью, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-41",
+       "href": "/kuhni-pod-zakaz-k-41-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea9327bf8b4294f3df680",
+        "alt": "прямая кухня k-41 с графитовыми верхними шкафами, светлыми фасадами и столешницей под мрамор, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-07",
+       "href": "/kuhni-pod-zakaz-k-07-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea71f6bbe6103844c303f",
+        "alt": "белая п-образная кухня k-07 в современном стиле, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-09",
+       "href": "/kuhni-pod-zakaz-k-09-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea7116bbe6103844c2ffa",
+        "alt": "серая прямая кухня k-09 со стеклянными верхними фасадами и островом, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-12",
+       "href": "/kuhni-pod-zakaz-k-12-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6ff7bf8b4294f3dee2c",
+        "alt": "бежевая угловая кухня k-12 с древесным декором и комбинированными фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-02",
+       "href": "/kuhni-pod-zakaz-k-02-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea7437bf8b4294f3def6e",
+        "alt": "бежевая угловая кухня k-02 в стиле минимализм с островом и шпонированными фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-01",
+       "href": "/kuhni-pod-zakaz-k-01-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea74a68c5e81567a5bda9",
+        "alt": "зелёная классическая угловая кухня k-01 с крашеными фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-10",
+       "href": "/kuhni-pod-zakaz-k-10-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea70ac8c59bb7c83990fd",
+        "alt": "коричневая угловая кухня k-10 в стиле лофт со стеклом и древесным декором, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-13",
+       "href": "/kuhni-pod-zakaz-k-13-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6f87bf8b4294f3dee01",
+        "alt": "бежевая прямая кухня k-13 в стиле минимализм с островом, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-14",
+       "href": "/kuhni-pod-zakaz-k-14-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6f37bf8b4294f3dedd3",
+        "alt": "бежевая прямая кухня k-14 с островом и комбинированными современными фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-15",
+       "href": "/kuhni-pod-zakaz-k-15-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6ea6bbe6103844c2f6e",
+        "alt": "красная прямая кухня k-15 с островом и современной каменной рабочей поверхностью, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-16",
+       "href": "/kuhni-pod-zakaz-k-16-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6e44888499d207852fb",
+        "alt": "зелёная неоклассическая угловая кухня k-16 с филёнчатыми фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-17",
+       "href": "/kuhni-pod-zakaz-k-17-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6dd7bf8b4294f3ded6d",
+        "alt": "серая п-образная кухня k-17 в стиле неоклассика, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-18",
+       "href": "/kuhni-pod-zakaz-k-18-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6d568c5e81567a5bbb3",
+        "alt": "серая современная угловая кухня k-18 с ламинированными фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-19",
+       "href": "/kuhni-pod-zakaz-k-19-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6cf6bbe6103844c2f08",
+        "alt": "бежевая прямая кухня k-19 с лаконичными ламинированными фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-20",
+       "href": "/kuhni-pod-zakaz-k-20-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6c76bbe6103844c2ed7",
+        "alt": "бежевая п-образная кухня k-20 с тремя рабочими сторонами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-21",
+       "href": "/kuhni-pod-zakaz-k-21-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6c04888499d2078526a",
+        "alt": "белая неоклассическая угловая кухня k-21 с плёночными фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-26",
+       "href": "/kuhni-pod-zakaz-k-26-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6acc8c59bb7c8398f78",
+        "alt": "коричневая прямая кухня k-26 с древесным декором и современной геометрией, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-28",
+       "href": "/kuhni-pod-zakaz-k-28-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6a06bbe6103844c2e47",
+        "alt": "коричневая п-образная кухня k-28 с верхними шкафами под дерево и однотонными фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-30",
+       "href": "/kuhni-pod-zakaz-k-30-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6937bf8b4294f3dec4c",
+        "alt": "угловая кухня k-30 с белыми верхними и серыми нижними фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-31",
+       "href": "/kuhni-pod-zakaz-k-31-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea68dc8c59bb7c8398ef7",
+        "alt": "угловая кухня k-31 со светло-салатовыми верхними шкафами и коричневым низом под дерево, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-35",
+       "href": "/kuhni-pod-zakaz-k-35-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6857bf8b4294f3debf6",
+        "alt": "прямая кухня k-35 со светлыми верхними шкафами под дерево и тёмными серо-коричневыми фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-36",
+       "href": "/kuhni-pod-zakaz-k-36-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea67dc8c59bb7c8398ea6",
+        "alt": "угловая кухня k-36 с графитовыми верхними и светло-серыми нижними фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-42",
+       "href": "/kuhni-pod-zakaz-k-42-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea66f6bbe6103844c2d7b",
+        "alt": "угловая кухня k-42 со светлыми верхними и тёмно-синими нижними фасадами, братислава и вена"
+       }
+      },
+      {
+       "title": "Модель кухни №K-43",
+       "href": "/kuhni-pod-zakaz-k-43-cena-bratislava-slovakia",
+       "image": {
+        "id": "6abea6687bf8b4294f3deb73",
+        "alt": "прямая кухня k-43 с тёмно-бордовыми фасадами и графитовым рифлёным верхом, братислава и вена"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67dd34eab62c1979aaf2b923",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Мебель для жилых объектов",
+       "href": "/kuhni-shkafi-bratislava"
+      },
+      {
+       "text": "Мебель для коммерческих объектов",
+       "href": "/izgotovlenie-mebeli-pod-zakaz-dlya-kommercheskih-obektov-ofis-resepshen-peregovornaya-kabinet-kuhnya-bratislava"
+      },
+      {
+       "text": "Заказать бесплатную консультацию",
+       "href": "/contact-studio-interior-design-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbf42dc4c90529feccfd5c",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Услуги студии дизайна интерьеров"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Дизайн жилых интерьеров",
+       "href": "/interior-design-apartmens-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "дизайнер интерьера, братислава, вена"
+       }
+      },
+      {
+       "title": "Дизайн коммерческих интерьеров",
+       "href": "/interior-design-office-bratislava-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "дизайн коммерческих интерьеров, братислава, вена"
+       }
+      },
+      {
+       "title": "Мебель на заказ",
+       "href": "/kuhni-shkafi-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "изготовление мебели под заказ, братислава, вена"
+       }
+      },
+      {
+       "title": "Мебель на заказ для бизнеса",
+       "href": "/izgotovlenie-mebeli-pod-zakaz-dlya-kommercheskih-obektov-ofis-resepshen-peregovornaya-kabinet-kuhnya-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "изготовление офисной мебели под заказ, братислава, вена"
+       }
+      },
+      {
+       "title": "Кухни под заказ",
+       "href": "/kupkuhni-na-zakaz-vienna-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "кухня под заказ, братислава, вена"
+       }
+      },
+      {
+       "title": "Ремонт под ключ",
+       "href": "/stroitelstvo-remont-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "ремонт под ключ цена, братислава, вена"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

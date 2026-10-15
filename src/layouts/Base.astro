@@ -1,0 +1,56 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { HREFLANG, LANGS, type Lang } from '../lib/i18n';
+import { site, manifest, type Page } from '../lib/data';
+
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang = page.lang as Lang;
+const SITE = 'https://dumskaya-design.com';
+const url = (p: string) => SITE + (p === '/' ? '/' : p);
+const xDefault = page.alternates.en || page.alternates.ru || page.path;
+const og = page.og_image && manifest[page.og_image];
+const ogUrl = og ? `${SITE}/img/${og.files[og.files.length - 1][1]}` : undefined;
+const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
+---
+<!doctype html>
+<html lang={HREFLANG[lang]}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{page.title}</title>
+  {page.description && <meta name="description" content={page.description} />}
+  <link rel="canonical" href={url(page.path)} />
+  {LANGS.filter((l) => page.alternates[l]).map((l) => (
+    <link rel="alternate" hreflang={HREFLANG[l]} href={url(page.alternates[l]!)} />
+  ))}
+  <link rel="alternate" hreflang="x-default" href={url(xDefault)} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="DUMSKAYA DESIGN" />
+  <meta property="og:title" content={page.title} />
+  {page.description && <meta property="og:description" content={page.description} />}
+  <meta property="og:url" content={url(page.path)} />
+  {ogUrl && <meta property="og:image" content={ogUrl} />}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="google-site-verification" content={site.verification.google} />
+  <meta name="yandex-verification" content={site.verification.yandex} />
+  <link rel="icon" href="/favicon.png" />
+  <meta name="theme-color" content="#ffffff" />
+  {analytics && (
+    <script is:inline define:vars={{ gtm: site.analytics.gtm }}>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtm);
+    </script>
+  )}
+  <slot name="head" />
+</head>
+<body>
+  <a class="visually-hidden" href="#main">↓</a>
+  <Header page={page} />
+  <main id="main">
+    <slot />
+  </main>
+  <Footer page={page} />
+</body>
+</html>

@@ -1,0 +1,14 @@
+---
+// Временный общий шаблон для страниц, у которых пока нет своего (услуги, кухни, цены, статьи).
+import Blocks from '../components/Blocks.astro';
+import { ui, type Lang } from '../lib/i18n';
+import type { Page } from '../lib/data';
+interface Props { page: Page }
+const { page } = Astro.props;
+const T = ui(page.lang as Lang);
+const home = page.lang === 'ru' ? '/' : `/${page.lang}`;
+---
+<div class="wrap" style="padding-top:20px">
+  <nav class="crumbs" aria-label="breadcrumbs"><a href={home}>{T.home}</a> / <span aria-current="page">{page.h1}</span></nav>
+</div>
+<Blocks sections={page.sections} />

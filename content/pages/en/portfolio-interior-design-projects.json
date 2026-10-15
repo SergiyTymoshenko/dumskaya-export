@@ -1,0 +1,575 @@
+{
+ "path": "/en/portfolio-interior-design-projects",
+ "lang": "en",
+ "type": "portfolio",
+ "group": null,
+ "title": "Completed Interior Design Projects in Bratislava & Vienna | DUMSKAYA DESIGN Portfolio",
+ "description": "Explore completed interior design projects by DUMSKAYA DESIGN: apartments, houses, offices, retail stores, boutiques and other residential and commercial spaces. View interior design examples, 3D visualizations and photos of completed projects in Bratislava, Vienna and other cities.",
+ "h1": "Examples of Completed Interior Design Projects Worldwide",
+ "og_image": "6abd6a8e6bbe610384483447",
+ "alternates": {
+  "ru": "/proekty-interior-design",
+  "ua": "/ua/realizovani-dyzain-proekty-ta-arkhitekturni-rishennia",
+  "en": "/en/portfolio-interior-design-projects"
+ },
+ "sections": [
+  {
+   "id": "689075b44f340ae790e004fe",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Examples of Completed Interior Design Projects Worldwide"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Metropolis apartment Bratislava 75 m²",
+       "href": "/en/design-interior-studio-bratislava-metropolis-sk-75m",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "interior design project of an apartment bratislava"
+       }
+      },
+      {
+       "title": "Apartment in Kyiv, 80 m²",
+       "href": "/en/luxury-80sqm-apartment-interior-design-kyiv",
+       "image": {
+        "id": "6abd0a7d61617a4443ab2567",
+        "alt": "interior design project of an apartment kyiv"
+       }
+      },
+      {
+       "title": "Apartment in Eurovea City, Bratislava, 56 m²",
+       "href": "/en/studio-interior-design-bratislava-eurovea-56m",
+       "image": {
+        "id": "6abd6a8168c5e81567a1bfb4",
+        "alt": "interior design project of an apartment bratislava"
+       }
+      },
+      {
+       "title": "Apartment in Bratislava, 158 m² (20 m² terrace)",
+       "href": "/en/luxury-158sqm-duplex-apartment-interior-design-bratislava",
+       "image": {
+        "id": "6abd6a8e6bbe610384483447",
+        "alt": "Luxury interior design project of an apartment in bratislava"
+       }
+      },
+      {
+       "title": "Private house, 120 m²",
+       "href": "/en/interior-design-private-house-bratislava-120m2",
+       "image": {
+        "id": "6abd6a6a61617a4443acb201",
+        "alt": "luxury interior design project bratislava"
+       }
+      },
+      {
+       "title": "Apartment in Vienna, 58 m²",
+       "href": "/en/apartmens-vienna-luxury-interior-design-58m",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "luxury interior design project apartment vienna"
+       }
+      },
+      {
+       "title": "Private house, 140 m²",
+       "href": "/en/interior-design-private-house-dunajska-streda-140m",
+       "image": {
+        "id": "6abd6a9d68c5e81567a1c052",
+        "alt": "Interior Design Project for a Private House in Dunajská Streda, Slovakia by DUMSKAYA DESIGN"
+       }
+      },
+      {
+       "title": "Private House, 212 m²",
+       "href": "/en/luxury-interior-private-house-212sqm",
+       "image": {
+        "id": "6abd6a716bbe6103844833be",
+        "alt": "Interior design project of a private house Kharkiv, Ukraine"
+       }
+      },
+      {
+       "title": "Apartment in Warsaw, 43 m²",
+       "href": "/en/contemporary-warsaw-apartment-43sqm",
+       "image": {
+        "id": "6abd6b6368c5e81567a1c463",
+        "alt": "luxury interior design project apartment warsaw"
+       }
+      },
+      {
+       "title": "Apartment in Kraków, 63 m²",
+       "href": "/en/apartment-interior-design-krakow-63m",
+       "image": {
+        "id": "6abd6b4e68c5e81567a1c3f1",
+        "alt": "custom furniture kraków"
+       }
+      },
+      {
+       "title": "Apartment in Warsaw, 60 m² (18 m² terrace)",
+       "href": "/en/apartment-interior-design-warsaw-60m",
+       "image": {
+        "id": "6abd6ab34888499d20745304",
+        "alt": "interior design project apartment warsaw"
+       }
+      },
+      {
+       "title": "Apartment in Warsaw, 54 m²",
+       "href": "/en/luxury-54sqm-apartment-interior-design-bratislava",
+       "image": {
+        "id": "6abd6b143ba7c7b83394fb01",
+        "alt": "apartment interior design by dumskaya design in warsaw"
+       }
+      },
+      {
+       "title": "Apartment in Warsaw, 45 m²",
+       "href": "/en/warsaw-modern-apartment-45sqm",
+       "image": {
+        "id": "6abd6b5c3ba7c7b83394fc44",
+        "alt": "luxury interior design project apartment warsaw poland"
+       }
+      },
+      {
+       "title": "Apartment in Warsaw, 48 m²",
+       "href": "/en/48sqm-luxury-apartment-interior-design-warsaw",
+       "image": {
+        "id": "6abd6ac73ba7c7b83394f91e",
+        "alt": "interior design project apartment warsaw"
+       }
+      },
+      {
+       "title": "Apartment in Bratislava, 58 m²",
+       "href": "/en/apartment-interior-design-bratislava-58m2",
+       "image": {
+        "id": "6abd6af84888499d20745492",
+        "alt": "interior design project apartment bratislava"
+       }
+      },
+      {
+       "title": "Apartment in Warsaw, 52 m²",
+       "href": "/en/52sqm-apartment-design-warsaw",
+       "image": {
+        "id": "6abd6aff68c5e81567a1c258",
+        "alt": "interior design project apartment poland warsaw"
+       }
+      },
+      {
+       "title": "Apartment in Warsaw, 43 m²",
+       "href": "/en/modern-apartment-design-warsaw-43sqm",
+       "image": {
+        "id": "6abd6aaa6bbe6103844834dd",
+        "alt": "interior design project apartment warsaw"
+       }
+      },
+      {
+       "title": "Apartment in Bratislava, 52 m²",
+       "href": "/en/interior-apartment-design-bratislava-slovakia-52sqm",
+       "image": {
+        "id": "6abd6b0c61617a4443acb569",
+        "alt": "interior design project apartment bratislava"
+       }
+      },
+      {
+       "title": "Apartment in Dubai, 160 m²",
+       "href": "/en/premium-interior-design-apartment-dubai-uae-160sqm",
+       "image": {
+        "id": "6abd6aba3ba7c7b83394f8d8",
+        "alt": "luxury interior design Dubai EAU"
+       }
+      },
+      {
+       "title": "Apartment in Los Angeles, 140 m²",
+       "href": "/en/premium-interior-design-apartment-los-angeles-california-usa-140sqm",
+       "image": {
+        "id": "6abd6ac168c5e81567a1c102",
+        "alt": "luxury interior design los-angeles usa"
+       }
+      },
+      {
+       "title": "Apartment in Prague, 90 m²",
+       "href": "/en/apartment-interior-design-prague-czech-republic-90sqm",
+       "image": {
+        "id": "6abd6aea61617a4443acb472",
+        "alt": "luxury interior dumskaya design Praha"
+       }
+      },
+      {
+       "title": "Apartment in New York, 57 m²",
+       "href": "/en/luxury-interior-design-apartment-new-york-usa-57sqm",
+       "image": {
+        "id": "6abd6af268c5e81567a1c21a",
+        "alt": "luxury apartments interior design NY"
+       }
+      },
+      {
+       "title": "Apartment in Kraków, 64 m²",
+       "href": "/en/apartment-interior-design-krakow-64m",
+       "image": {
+        "id": "6abd6b556bbe61038448383c",
+        "alt": "custom furniture kraków poland"
+       }
+      },
+      {
+       "title": "Private house, 217 m²",
+       "href": "/en/luxury-interior-design-kiev-private-house-217sqm",
+       "image": {
+        "id": "6abd6b0561617a4443acb529",
+        "alt": "interior design project house"
+       }
+      },
+      {
+       "title": "Private house in Munich, Germany, 160 m²",
+       "href": "/en/luxury-interior-design-private-house-munich-germany-160sqm",
+       "image": {
+        "id": "6abd6b3b4888499d2074560d",
+        "alt": "interior design project house munich germany"
+       }
+      },
+      {
+       "title": "Private house in Berlin, Germany, 215 m²",
+       "href": "/en/luxury-interior-private-house-berlin-germany-215sqm",
+       "image": {
+        "id": "6abd6aa461617a4443acb2fc",
+        "alt": "interior design project house berlin germany"
+       }
+      },
+      {
+       "title": "Apartment in Kyiv, 119 m² (30 m² terrace)",
+       "href": "/en/luxury-119sqm-apartment-interior-design-kyiv",
+       "image": {
+        "id": "6abd6a956bbe610384483468",
+        "alt": "luxury interior design project apartment"
+       }
+      },
+      {
+       "title": "Modern classic, London, 120 m²",
+       "href": "/en/luxury-interior-modern-classic-apartment-london-united-kingdom-120sqm",
+       "image": {
+        "id": "6abceda061617a4443aa9440",
+        "alt": "interior design london united kingdom"
+       }
+      },
+      {
+       "title": "Apartment, Madrid, Spain, 107 m²",
+       "href": "/en/luxury-interior-design-madrid-spain-107m",
+       "image": {
+        "id": "6abd6ad368c5e81567a1c165",
+        "alt": "dumskaya interior design apartment Madrid, Spain"
+       }
+      },
+      {
+       "title": "Apartment, Barcelona, Spain, 108 m²",
+       "href": "/en/luxury-108sqm-apartment-interior-design-barcelona-spain",
+       "image": {
+        "id": "6abd6ae14888499d20745418",
+        "alt": "interior design barcelona"
+       }
+      },
+      {
+       "title": "Apartment in Warsaw, 51 m²",
+       "href": "/en/51sqm-luxury-apartment-interior-design-bratislava",
+       "image": {
+        "id": "6abd6b1b68c5e81567a1c2e1",
+        "alt": "dumskaya interior design apartment"
+       }
+      },
+      {
+       "title": "Apartment in Vienna, 115 m²",
+       "href": "/en/luxury-interior-design-apartment-vienna-austria-115sqm",
+       "image": {
+        "id": "6abd6b354888499d207455da",
+        "alt": "dumskaya interior design apartment wien"
+       }
+      },
+      {
+       "title": "Apartment in Varna, 60 m²",
+       "href": "/en/premium-interior-design-apartment-varna-bulgaria-60sqm",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer varna"
+       }
+      },
+      {
+       "title": "Apartment, 47 m²",
+       "href": "/en/interior-design-compact-3-room-apartment-47sqm",
+       "image": {
+        "id": "6abd6b696bbe610384483889",
+        "alt": "interior design project apartment"
+       }
+      },
+      {
+       "title": "Villa, Madrid, Spain, 179 m²",
+       "href": "/en/luxury-interior-villa-179sqm-madrid-spain",
+       "image": {
+        "id": "6abd6b2668c5e81567a1c33b",
+        "alt": "interior design project villa madrid spain"
+       }
+      },
+      {
+       "title": "Villa in Burgas, 220 m²",
+       "href": "/en/luxury-interior-villa-burgas-bulgaria-220sqm",
+       "image": {
+        "id": "6abd6b434888499d20745636",
+        "alt": "interior design project villa burgas bulgaria"
+       }
+      },
+      {
+       "title": "Private house, 230 m²",
+       "href": "/en/luxury-interior-design-private-house-moscow-230sqm",
+       "image": {
+        "id": "6abd6b2e4888499d207455b1",
+        "alt": "interior design project villa"
+       }
+      },
+      {
+       "title": "Two-level apartment, 43 m²",
+       "href": "/en/interior-design-43sqm-duplex-apartment",
+       "image": {
+        "id": "6abd6acd6bbe6103844835b3",
+        "alt": "interior design project duplex apartment"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "68bca0fe074acc3c347640fd",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Examples of Interior Design Projects for Various Commercial Spaces"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Cosmetology Salon, 54 m², Warsaw",
+       "href": "/en/luxury-interior-cosmetology-salon-warsaw",
+       "image": {
+        "id": "6abe045b3ba7c7b833963e2b",
+        "alt": "cosmetology salon interior design Warsaw, salon layout, custom beauty salon furniture, turnkey beauty salon Warsaw, modern beauty studio design, DUMSKAYA DESIGN beauty salon project, small salon space optimization, salon fit-out Warsaw, professional salon"
+       }
+      },
+      {
+       "title": "Beauty Salon, 63 m², Warsaw",
+       "href": "/en/beauty-salon-interior-design-63m",
+       "image": {
+        "id": "6abe04846bbe610384497d7b",
+        "alt": "beauty salon interior design Warsaw, 63 m² salon layout, custom beauty salon furniture, turnkey beauty salon Warsaw, modern beauty studio design, DUMSKAYA DESIGN beauty salon project, small salon space optimization, salon fit-out Warsaw, professional salon"
+       }
+      },
+      {
+       "title": "Office, 500 m², Warsaw",
+       "href": "/en/office-interior-design-warsaw-500m",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office interior design Warsaw, 500 m² office space, custom office furniture Warsaw, turnkey office renovation, executive office design, modern office layout Poland, workspace planning Warsaw, DUMSKAYA DESIGN office project, commercial interior Warsaw"
+       }
+      },
+      {
+       "title": "Photo Studio, 130 m², Warsaw",
+       "href": "/en/photo-studio-interior-design-130m",
+       "image": {
+        "id": "6abe048a61617a4443adfce2",
+        "alt": "photo studio interior design Warsaw, 130 m² studio layout, custom studio furniture, turnkey photo studio renovation, cyclorama room design, makeup area for photo studio, creative studio fit-out Poland, professional photography space design, DUMSKAYA DESIGN"
+       }
+      },
+      {
+       "title": "Women's Clothing Boutique, 140 m², Kyiv",
+       "href": "/en/clothing-boutique-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "women’s boutique interior design, 140 m² retail store Kyiv, custom boutique furniture, fashion store design Ukraine, clothing store layout planning, boutique renovation Kyiv, modern retail interior, DUMSKAYA DESIGN boutique project, high-end fashion boutiq"
+       }
+      },
+      {
+       "title": "Sauna (bathhouse), 120 m², Warsaw",
+       "href": "/en/sauna-bathhouse-commercial-interior-design-warsaw",
+       "image": {
+        "id": "6abe044a6bbe610384497c6d",
+        "alt": "sauna interior design warsaw"
+       }
+      },
+      {
+       "title": "Office, 140 m²",
+       "href": "/en/office-interior-design-140m",
+       "image": {
+        "id": "6abe04703ba7c7b833963eaa",
+        "alt": "office interior design, 140 m² office space, custom office furniture, turnkey office renovation, workspace planning, executive office fit-out, commercial interior design, DUMSKAYA DESIGN office project, legal office design, office layout optimization"
+       }
+      },
+      {
+       "title": "Retail Store, 50 m², Warsaw",
+       "href": "/en/retail-store-interior-design-50m2",
+       "image": {
+        "id": "6abe047d4888499d2075a16a",
+        "alt": "retail store interior design Warsaw, 50 m² store layout, custom retail furniture, shop renovation Warsaw, boutique fit-out Poland, modern store design, commercial interior design Warsaw, DUMSKAYA DESIGN retail project, small shop space planning"
+       }
+      },
+      {
+       "title": "Office, 53 m², Poznań",
+       "href": "/en/office-interior-design-53m",
+       "image": {
+        "id": "6abe04546bbe610384497c98",
+        "alt": "office interior design Poznań, 53 m² office layout, custom office furniture, small office design Poland, turnkey office renovation, workspace optimization Poznań, DUMSKAYA DESIGN office project, compact office fit-out, modern office interiors Poland"
+       }
+      },
+      {
+       "title": "Executive Office, 7 m², Warsaw",
+       "href": "/en/boss-office-interior-design",
+       "image": {
+        "id": "6abe046261617a4443adfc3e",
+        "alt": "executive office design Warsaw, 7 m² office layout, small executive workspace, custom office furniture Warsaw, compact office interior, modern director’s office, DUMSKAYA DESIGN executive project, bespoke office design Poland, turnkey office fit-out"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6890b09017e13d85708e3241",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Examples of architectural design projects with construction implementation"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Villa, Spain, Marbella",
+       "href": "/en/luxury-interior-design-architectural-facade-villa-marbella-spain",
+       "image": {
+        "id": "66b619f623f9a34a612c9e7d",
+        "alt": "custom architectural design of a modern villa in Marbella, Spain"
+       }
+      },
+      {
+       "title": "Private House, Warsaw, Poland",
+       "href": "/en/3d-visualization-interior-design-private-house-facade-landscaping",
+       "image": {
+        "id": "686bcfbe29b44dd96a3d2a5f",
+        "alt": "architectural design and construction of a private house in Warsaw, Poland"
+       }
+      },
+      {
+       "title": "3D Modeling of Conceptual House Facade Design, Warsaw, Poland",
+       "href": "/en/concept-interior-design-3d-visualization-building-facade",
+       "image": {
+        "id": "673a059eece0e84849b9e2cf",
+        "alt": "3D visualization of a conceptual house facade project in Warsaw, Poland"
+       }
+      },
+      {
+       "title": "Private House",
+       "href": "/en/private-house-architectural-design-facade",
+       "image": {
+        "id": "66a56e39d68a3eb051612386",
+        "alt": "custom architectural design of a modern private house"
+       }
+      },
+      {
+       "title": "Architectural Facade Design for a Barbershop, Kyiv, Ukraine",
+       "href": "/en/barbershop-facade-architectural-solution",
+       "image": {
+        "id": "66d313f8e6210d11a55d877c",
+        "alt": "custom facade concept for a modern barbershop in Kyiv, Ukraine"
+       }
+      },
+      {
+       "title": "Architectural Design of a Pergola Gazebo",
+       "href": "/en/gazebo-pergola-design-and-construction",
+       "image": {
+        "id": "66d476c7e6210d11a55ff6ee",
+        "alt": "custom architectural concept of a pergola-style gazebo for outdoor space"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6884d34453fd64883a42e6fc",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Order a design project",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Price of available service packages",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "68850de76a8709c50fe53171",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

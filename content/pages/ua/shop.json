@@ -1,0 +1,148 @@
+{
+ "path": "/ua/shop",
+ "lang": "ua",
+ "type": "shop",
+ "group": null,
+ "title": "Store homepage",
+ "description": "",
+ "h1": "",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop",
+  "ua": "/ua/shop",
+  "en": "/en/shop"
+ },
+ "sections": [
+  {
+   "id": "69affc7f76f85229521945c9",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "1b175855-aae0-41f1-b54e-6d6a3a368e7d",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Executive desk 2025"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Exclusive executive office cabinet (size XXL)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Executive conference table"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Executive desk boss (size L)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Executive desk boss (size M)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Executive desk boss (size S)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Exclusive executive cabinet (size S)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      },
+      {
+       "text": "1",
+       "href": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

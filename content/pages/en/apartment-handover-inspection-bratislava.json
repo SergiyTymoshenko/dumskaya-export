@@ -1,0 +1,188 @@
+{
+ "path": "/en/apartment-handover-inspection-bratislava",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Apartment Handover Inspection | Bratislava | DUMSKAYA DESIGN",
+ "description": "Professional apartment handover inspection service in Bratislava. Ensure your new home meets quality standards. Includes defect detection, utility checks, and formal report preparation. From €200.",
+ "h1": "Apartment Handover Inspection from Developer in Bratislava",
+ "og_image": "65d3cb0956ff01000f891f5c",
+ "alternates": {
+  "ru": "/priemka-kvartiry-ot-zastrojshchika",
+  "ua": "/ua/pryimannia-kvartyry-vid-zabudovnyka-bratislava",
+  "en": "/en/apartment-handover-inspection-bratislava"
+ },
+ "sections": [
+  {
+   "id": "6884d36e53fd64883a42f71f",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Apartment Handover Inspection from Developer in Bratislava"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The handover of a newly built apartment is a critical step before moving in — it helps you avoid hidden defects and unnecessary repair costs. <strong>DUMSKAYA DESIGN</strong> (Bratislava, Slovakia) offers a professional apartment inspection service to ensure that your new home meets all declared quality standards."
+      },
+      {
+       "t": "p",
+       "html": "<strong>What’s included in the service?</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✔️ Verification of compliance with construction plans and specifications</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✔️ Inspection of wall, ceiling, and floor finishes for defects</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✔️ Checking of windows, doors, and balcony structures</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✔️ Functionality check of all utility systems (electricity, plumbing, ventilation)</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✔️ Evaluation of sanitary ware and installed equipment</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✔️ Laser level check of wall angles and floor flatness</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✔️ Documentation of all detected issues and preparation of a defect report for the developer</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✔️ Consultation on next steps in case of construction faults</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Service price:</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>📌 €200 – apartment up to 50 m</strong>²"
+      },
+      {
+       "t": "p",
+       "html": "<strong>📌 €300 – apartment over 50 m</strong>²"
+      },
+      {
+       "t": "p",
+       "html": "<strong>📌 €125 – follow-up inspection after the developer resolves def</strong>ects"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Why choose DUMSKAYA DESIGN?</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✅ Years of experience in interior design and renovation — we know what to look for</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✅ We work in your interest, not the developer’s</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>✅ We help you issue formal defect reports for the developer</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Book a professional apartment handover inspection with DUMSKAYA DESIGN and move into your new home with confidence! </strong>"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Contact us to schedule your apartment handover inspection",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Estimate Preparation Service",
+       "href": "/en/renovation-cost-estimate-bratislava-vienna"
+      },
+      {
+       "text": "Prices for Interior Design Services",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "68850a9f7efb52603c186bec",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,188 @@
+{
+ "path": "/en/renovation-cost-estimate-bratislava-vienna",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Renovation Cost Estimates in Bratislava & Vienna — €5/m² | DUMSKAYA DESIGN",
+ "description": "Detailed renovation cost estimates for apartments and houses in Bratislava and Vienna from €5/m². Property measurements, construction and finishing work calculations, and materials specifications. Estimate fee deducted when commissioning renovation works.",
+ "h1": "Renovation Cost Estimates for Apartments & Houses in Bratislava and Vienna",
+ "og_image": "65d3cb0956ff01000f891f5c",
+ "alternates": {
+  "ru": "/smeta-na-remont-bratislava-vienna",
+  "ua": "/ua/smeta-na-remont-bratislava-vienna",
+  "en": "/en/renovation-cost-estimate-bratislava-vienna"
+ },
+ "sections": [
+  {
+   "id": "6884d36f53fd64883a42f797",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Renovation Cost Estimates for Apartments & Houses in Bratislava and Vienna"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> provides detailed renovation cost estimates for construction and finishing works, as well as the materials required for apartment, private house and other property renovations in Bratislava and Vienna. A detailed estimate helps property owners understand the expected renovation budget, evaluate the scope of work and plan expenses before construction begins."
+      },
+      {
+       "t": "p",
+       "html": "The cost of preparing a renovation estimate is €5/m² of property area. Calculations take into account the characteristics of the property, actual room dimensions, surface conditions and the planned renovation works."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Property Measurements and Condition Assessment</strong>"
+      },
+      {
+       "t": "p",
+       "html": "Preparing a renovation estimate includes measuring the actual dimensions of walls, floors and ceilings, as well as identifying geometric deviations and uneven surfaces. The collected measurements are used to calculate the scope of construction and finishing works and the required quantities of materials."
+      },
+      {
+       "t": "p",
+       "html": "This approach helps account for the actual condition of the property and reduces the risk of significant differences between preliminary calculations and real renovation expenses."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Construction and Finishing Work Cost Calculation</strong>"
+      },
+      {
+       "t": "p",
+       "html": "The estimate provides a detailed breakdown of the planned construction and finishing works, including their quantities and associated costs. Depending on the property's condition and renovation requirements, the calculation may cover preparation, construction and finishing activities."
+      },
+      {
+       "t": "p",
+       "html": "A structured renovation estimate allows clients to understand how the total budget is formed, compare contractor quotations and monitor expenditure at different stages of the project."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Construction and Finishing Materials Specification</strong>"
+      },
+      {
+       "t": "p",
+       "html": "A separate section of the estimate covers the materials required for the planned works. The calculation includes material quantities and estimated costs for construction and finishing activities."
+      },
+      {
+       "t": "p",
+       "html": "The materials specification helps organise purchasing, evaluate expected expenses and agree on the renovation budget before work begins. Changes to selected materials or the scope of work may require the estimate to be updated."
+      },
+      {
+       "t": "p",
+       "html": "<strong>What the Client Receives</strong>"
+      },
+      {
+       "t": "p",
+       "html": "The result is a detailed renovation cost estimate containing a breakdown of work quantities and costs, a list of required construction and finishing materials, their quantities and estimated prices."
+      },
+      {
+       "t": "p",
+       "html": "The document can be used for preliminary budgeting, agreeing on renovation works, planning material purchases and monitoring expenses during project implementation."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Service Price and Conditions</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Renovation cost estimate preparation: €5/m² of property area.</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>When clients commission renovation works from DUMSKAYA DESIGN, the cost of preparing the estimate is deducted from the renovation works price.</strong>"
+      },
+      {
+       "t": "p",
+       "html": "The estimate is prepared using the available property information and the agreed scope of work. Final renovation expenses may change if hidden defects are discovered, design decisions are modified, work quantities change or material prices fluctuate."
+      },
+      {
+       "t": "p",
+       "html": "A detailed cost estimate is an important part of planning an apartment or house renovation. It helps property owners assess expected expenses in advance and organise the renovation process with greater financial transparency."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Order an Estimate",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Construction and Renovation (Price List)",
+       "href": "/en/renovation-construction-price-list"
+      },
+      {
+       "text": "Interior Design Services Pricing",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "68850ac47efb52603c186c96",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

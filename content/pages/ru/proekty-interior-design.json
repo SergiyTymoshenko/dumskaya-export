@@ -1,0 +1,567 @@
+{
+ "path": "/proekty-interior-design",
+ "lang": "ru",
+ "type": "portfolio",
+ "group": null,
+ "title": "Реализованные дизайн-проекты интерьера в Братиславе и Вене | Портфолио DUMSKAYA DESIGN",
+ "description": "Реализованные проекты интерьеров DUMSKAYA DESIGN: квартиры, дома, офисы, магазины, бутики и другие жилые и коммерческие объекты. Посмотрите примеры дизайна интерьера, 3D-визуализации и фотографии реализованных проектов в Братиславе, Вене и других городах.",
+ "h1": "Примеры реализованных дизайн-проектов интерьера",
+ "og_image": "6abd6a8e6bbe610384483447",
+ "alternates": {
+  "ru": "/proekty-interior-design",
+  "ua": "/ua/realizovani-dyzain-proekty-ta-arkhitekturni-rishennia",
+  "en": "/en/portfolio-interior-design-projects"
+ },
+ "sections": [
+  {
+   "id": "60046d9a8e229e00212eebaf",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Примеры реализованных дизайн-проектов интерьера"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Квартира Metropolis Братислава 75 м²",
+       "href": "/design-interior-studio-bratislava-metropolis-sk-75m",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "дизайнер интерьера братислава"
+       }
+      },
+      {
+       "title": "Квартира в Киеве 80 м²",
+       "href": "/studio-interior-design-disain-proekt-kvartira-kiev-80m",
+       "image": {
+        "id": "6abd0a7d61617a4443ab2567",
+        "alt": "дизайнер интерьера киев"
+       }
+      },
+      {
+       "title": "Квартира Eurovea Братислава 56 м²",
+       "href": "/studio-interior-design-bratislava-eurovea-56m",
+       "image": {
+        "id": "6abd6a8168c5e81567a1bfb4",
+        "alt": "дизайнер интерьера братислава"
+       }
+      },
+      {
+       "title": "Квартира в Братиславе 158 м²",
+       "href": "/interior-design-apartment-bratislava-158m",
+       "image": {
+        "id": "6abd6a8e6bbe610384483447",
+        "alt": "Дизайнер интерьера квартиры Варшава"
+       }
+      },
+      {
+       "title": "Частный дом 120 м²",
+       "href": "/interior-design-private-house-bratislava-120m2",
+       "image": {
+        "id": "6abd6a6a61617a4443acb201",
+        "alt": "дизайнер интерьера частного дома братислава"
+       }
+      },
+      {
+       "title": "Квартира в Вене 58 м²",
+       "href": "/apartmens-vienna-luxury-interior-design-58m",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "дизайнер интерьера вена"
+       }
+      },
+      {
+       "title": "Частный дом 140 м²",
+       "href": "/interior-design-private-house-dunajska-streda-140m",
+       "image": {
+        "id": "6abd6a9d68c5e81567a1c052",
+        "alt": "Дизайн интерьера частного дома в Дунайска-Стреде, Словакия — проект студии DUMSKAYA DESIGN"
+       }
+      },
+      {
+       "title": "Частный дом 212 м²",
+       "href": "/interior-design-private-house-kharkiv-212m",
+       "image": {
+        "id": "6abd6a716bbe6103844833be",
+        "alt": "дизайн интерьеров частных домов братислава"
+       }
+      },
+      {
+       "title": "Квартира в Варшаве 43 м²",
+       "href": "/apartment-interior-design-warsaw-43m2",
+       "image": {
+        "id": "6abd6b6368c5e81567a1c463",
+        "alt": "Дизайн проект интерьера квартиры Варшаве"
+       }
+      },
+      {
+       "title": "Квартира в Кракове 63 м²",
+       "href": "/apartment-interior-design-krakow-63m",
+       "image": {
+        "id": "6abd6b4e68c5e81567a1c3f1",
+        "alt": "Мебель под заказ, Варшава, Краков, Познань"
+       }
+      },
+      {
+       "title": "Квартира в Варшаве 60 м² (терраса 18 м²)",
+       "href": "/apartment-interior-design-warsaw-60m",
+       "image": {
+        "id": "6abd6ab34888499d20745304",
+        "alt": "Дизайн проект интерьера квартиры Варшава Польша"
+       }
+      },
+      {
+       "title": "Квартира в Варшаве 54 м²",
+       "href": "/apartment-interior-design-warsaw-54m",
+       "image": {
+        "id": "6abd6b143ba7c7b83394fb01",
+        "alt": "Дизайн интерьера квартиры, дизайнер интерьера, Варшава"
+       }
+      },
+      {
+       "title": "Квартира в Варшаве 45 м²",
+       "href": "/apartment-furniture-interior-design-warsaw-45m",
+       "image": {
+        "id": "6abd6b5c3ba7c7b83394fc44",
+        "alt": "дизайн проект заказать Варшава"
+       }
+      },
+      {
+       "title": "Квартира в Варшаве 48 м²",
+       "href": "/apartment-interior-design-warsaw-48m",
+       "image": {
+        "id": "6abd6ac73ba7c7b83394f91e",
+        "alt": "дизайнер интерьера, Польша"
+       }
+      },
+      {
+       "title": "Квартира в Братиславе 58 м²",
+       "href": "/apartment-interior-design-bratislava-58m",
+       "image": {
+        "id": "6abd6af84888499d20745492",
+        "alt": "Дизайн проект интерьера квартиры братислава"
+       }
+      },
+      {
+       "title": "Квартира в Варшаве 52 м²",
+       "href": "/apartment-interior-design-warsaw-52m",
+       "image": {
+        "id": "6abd6aff68c5e81567a1c258",
+        "alt": "дизайн-проект цена Варшава"
+       }
+      },
+      {
+       "title": "Квартира в Варшаве 43 м²",
+       "href": "/apartment-interior-design-warsaw-43m",
+       "image": {
+        "id": "6abd6aaa6bbe6103844834dd",
+        "alt": "студия дизайна интерьеров варшава"
+       }
+      },
+      {
+       "title": "Квартира в Братиславе 52 м²",
+       "href": "/apartment-interior-design-bratislava-52m",
+       "image": {
+        "id": "6abd6b0c61617a4443acb569",
+        "alt": "дизайнер интерьера братислава"
+       }
+      },
+      {
+       "title": "Апартаменты в Дубаи 160 м²",
+       "href": "/apartmens-dubai-luxury-interior-design-160",
+       "image": {
+        "id": "6abd6aba3ba7c7b83394f8d8",
+        "alt": "дизайн проект апартаментов дубаи"
+       }
+      },
+      {
+       "title": "Апартаменты в Лос-Анджелес 140 м²",
+       "href": "/apartmens-los-angeles-interior-design-140",
+       "image": {
+        "id": "6abd6ac168c5e81567a1c102",
+        "alt": "дизайнер интерьера лос анджелес"
+       }
+      },
+      {
+       "title": "Апартаменты в Праге 90 м²",
+       "href": "/apartmens-praha-luxury-interior-design-90m",
+       "image": {
+        "id": "6abd6aea61617a4443acb472",
+        "alt": "дизайнер интерьера прага"
+       }
+      },
+      {
+       "title": "Апартаменты в Нью-Йорке 57 м²",
+       "href": "/apartmens-ny-luxury-interior-design-57m",
+       "image": {
+        "id": "6abd6af268c5e81567a1c21a",
+        "alt": "дизайн проект нью йорк сша"
+       }
+      },
+      {
+       "title": "Квартира в Кракове 64 м²",
+       "href": "/apartment-interior-design-krakow-64m",
+       "image": {
+        "id": "6abd6b556bbe61038448383c",
+        "alt": "изготовление мебели под заказ краков, варшава, марки"
+       }
+      },
+      {
+       "title": "Частный дом в Киеве 217 м²",
+       "href": "/dizainer-interierov-kiev",
+       "image": {
+        "id": "6abd6b0561617a4443acb529",
+        "alt": "Дизайн проект интерьера дома Варшава"
+       }
+      },
+      {
+       "title": "Частный дом, Мюнхен, Германия, 160 м²",
+       "href": "/villa-interior-design-160m",
+       "image": {
+        "id": "6abd6b3b4888499d2074560d",
+        "alt": "дизайн интерьера дома мюнхен, германия"
+       }
+      },
+      {
+       "title": "Частный дом, Берлин, 215 м²",
+       "href": "/interior-design-private-house-215m",
+       "image": {
+        "id": "6abd6aa461617a4443acb2fc",
+        "alt": "дизайнер интерьера дома варшава"
+       }
+      },
+      {
+       "title": "Квартира в Киеве 119 м² (терраса 30 м²)",
+       "href": "/interior-design-apartment-luxury-kyiv-119m",
+       "image": {
+        "id": "6abd6a956bbe610384483468",
+        "alt": "Дизайн проект интерьера квартиры"
+       }
+      },
+      {
+       "title": "Современная классика, Лондон, 120 м²",
+       "href": "/interior-design-furniture-classic-120m-london",
+       "image": {
+        "id": "6abceda061617a4443aa9440",
+        "alt": "дизайн квартиры лондон, великобритания"
+       }
+      },
+      {
+       "title": "Апартаменты, Мадрид, Испания, 107 м²",
+       "href": "/apartment-luxury-interior-design-madrid-spain-107m",
+       "image": {
+        "id": "6abd6ad368c5e81567a1c165",
+        "alt": "дизайн под ключ мадрид"
+       }
+      },
+      {
+       "title": "Апартаменты, Барселона, Испания, 108 м²",
+       "href": "/luxury-interior-design-barcelona-spain-108m",
+       "image": {
+        "id": "6abd6ae14888499d20745418",
+        "alt": "дизайнер апартаментов испания"
+       }
+      },
+      {
+       "title": "Квартира в Варшаве 51 м²",
+       "href": "/apartment-interior-design-warsaw-51m",
+       "image": {
+        "id": "6abd6b1b68c5e81567a1c2e1",
+        "alt": "заказать дизайн интерьера"
+       }
+      },
+      {
+       "title": "Квартира, Вена, Австрия, 115 м²",
+       "href": "/apartmens-wien-luxury-interior-design-115m",
+       "image": {
+        "id": "6abd6b354888499d207455da",
+        "alt": "заказать дизайн проект варшава"
+       }
+      },
+      {
+       "title": "Квартира, Варна, Болгария, 60 м²",
+       "href": "/interior-design-furniture-60m",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "дизайнер интерьера варна"
+       }
+      },
+      {
+       "title": "Квартира 47 м²",
+       "href": "/interior-design-apartment-ukraine-47m",
+       "image": {
+        "id": "6abd6b696bbe610384483889",
+        "alt": "Дизайн проект интерьера квартиры"
+       }
+      },
+      {
+       "title": "Вилла, Мадрид, Испания, 179 м²",
+       "href": "/interior-design-villa-179m-madrid-spain",
+       "image": {
+        "id": "6abd6b2668c5e81567a1c33b",
+        "alt": "дизайн проект интерьера виллы мадрид"
+       }
+      },
+      {
+       "title": "Вилла, Бургас, Болгария, 220 м²",
+       "href": "/dumskaya-interior-design-villa-220m",
+       "image": {
+        "id": "6abd6b434888499d20745636",
+        "alt": "дизайн интерьера бургас"
+       }
+      },
+      {
+       "title": "Частный дом 230 м²",
+       "href": "/dumskaya-interior-design-villa-230m",
+       "image": {
+        "id": "6abd6b2e4888499d207455b1",
+        "alt": "Дизайн проект интерьера квартиры варшава"
+       }
+      },
+      {
+       "title": "Двухуровневая квартира 43 м²",
+       "href": "/furniture-interior-design-43m",
+       "image": {
+        "id": "6abd6acd6bbe6103844835b3",
+        "alt": "Дизайн проект интерьера квартиры познань"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66c3dbcd60fbdf863e623e3f",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Примеры дизайн проектов разнообразных коммерческих помещений"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Косметологический салон 54 м² Варшава",
+       "href": "/interior-design-cosmetology-salon-warsaw",
+       "image": {
+        "id": "6abe045b3ba7c7b833963e2b",
+        "alt": "косметологический салон, варшава, дизайн интерьера"
+       }
+      },
+      {
+       "title": "Салон красоты 63 м² Варшава",
+       "href": "/beauty-salon-interior-design-warsaw-63m",
+       "image": {
+        "id": "6abe04846bbe610384497d7b",
+        "alt": "салон красоты, Варшава, дизайн интерьера"
+       }
+      },
+      {
+       "title": "Офис в Варшаве 500 м²",
+       "href": "/office-interior-design-warsaw-500m",
+       "image": {
+        "id": "66f5d16697317fa68a804f5a",
+        "alt": "дизайн проект интерьера офиса Варшава"
+       }
+      },
+      {
+       "title": "Фотостудия в Варшаве 130 м²",
+       "href": "/photo-studio-interior-design-custom-furniture-130m2-bratislava",
+       "image": {
+        "id": "6abe048a61617a4443adfce2",
+        "alt": "дизайн проект интерьера фотостудии Варшава"
+       }
+      },
+      {
+       "title": "Бутик женской одежды в Киеве 140 м²",
+       "href": "/clothing-boutique-interior-design-kyiv-140",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Дизайн проект интерьера бутика женской одежды"
+       }
+      },
+      {
+       "title": "Баня (сауна), Варшава, 120 м²",
+       "href": "/dizayn-kommercheskogo-interyera-sauna-banya-varshava",
+       "image": {
+        "id": "6abe044a6bbe610384497c6d",
+        "alt": "дизайн коммерческих интерьеров варшава"
+       }
+      },
+      {
+       "title": "Офис 140 м²",
+       "href": "/office-interior-design-140m",
+       "image": {
+        "id": "6abe04703ba7c7b833963eaa",
+        "alt": "дизайн интерьера офиса Варшава"
+       }
+      },
+      {
+       "title": "Офис 53 м², Познань",
+       "href": "/office-interior-design-53m",
+       "image": {
+        "id": "6abe04546bbe610384497c98",
+        "alt": "дизайн интерьера офиса познань"
+       }
+      },
+      {
+       "title": "Кабинет руководителя в Варшаве 7 м²",
+       "href": "/boss-office-interior-design-warsaw",
+       "image": {
+        "id": "6abe046261617a4443adfc3e",
+        "alt": "дизайн проект интерьера кабинета руководителя Варшава"
+       }
+      },
+      {
+       "title": "Магазин в Варшаве 50 м²",
+       "href": "/shop-show-room-interior-design-warsaw-50m",
+       "image": {
+        "id": "6abe047d4888499d2075a16a",
+        "alt": "Дизайн проект интерьера магазина Варшава"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66b61d8cd7827983548826fc",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Примеры проектов по архитектурному проектированию с выполнением строительных работ"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Вилла, Испания, Марбелья",
+       "href": "/architecture-villa-spain-marbella",
+       "image": {
+        "id": "66b619f623f9a34a612c9e7d",
+        "alt": "архитектурное решение вилла"
+       }
+      },
+      {
+       "title": "3D моделирование эскизного проекта фасада дома в Варшаве",
+       "href": "/3d-vizualizaciya-fasada-bratislava",
+       "image": {
+        "id": "673a059eece0e84849b9e2cf",
+        "alt": "3d визуализация фасада здания"
+       }
+      },
+      {
+       "title": "Частный дом",
+       "href": "/architecture-private-house",
+       "image": {
+        "id": "66a56e39d68a3eb051612386",
+        "alt": "Частный дом архитектурные решения"
+       }
+      },
+      {
+       "title": "Архитектурное решение для фасада барбершопа, Украина, Киев",
+       "href": "/architecture-facade-barbershop-kyiv",
+       "image": {
+        "id": "66d313f8e6210d11a55d877c",
+        "alt": "Архитектурное решение для фасада барбершопа Киев"
+       }
+      },
+      {
+       "title": "Архитектурное решение беседка с перголой",
+       "href": "/architecture-gazebo-pergola",
+       "image": {
+        "id": "66d476c1e93b01287b01e50b",
+        "alt": "Архитектурное решение для частного дома"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66a0fb2ca35d7b20d86ceec0",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Заказать бесплатную консультацию",
+       "href": "/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Цена доступных пакетов услуг",
+       "href": "/price-interior-design-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbba929b62c896a9fd05f0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Услуги студии дизайна интерьеров"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Дизайн жилых интерьеров",
+       "href": "/interior-design-apartmens-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "дизайнер интерьера, братислава, вена"
+       }
+      },
+      {
+       "title": "Дизайн коммерческих интерьеров",
+       "href": "/interior-design-office-bratislava-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "дизайн коммерческих интерьеров, братислава, вена"
+       }
+      },
+      {
+       "title": "Мебель на заказ",
+       "href": "/kuhni-shkafi-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "изготовление мебели под заказ, братислава, вена"
+       }
+      },
+      {
+       "title": "Мебель на заказ для бизнеса",
+       "href": "/izgotovlenie-mebeli-pod-zakaz-dlya-kommercheskih-obektov-ofis-resepshen-peregovornaya-kabinet-kuhnya-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "изготовление офисной мебели под заказ, братислава, вена"
+       }
+      },
+      {
+       "title": "Кухни под заказ",
+       "href": "/kupkuhni-na-zakaz-vienna-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "кухня под заказ, братислава, вена"
+       }
+      },
+      {
+       "title": "Ремонт под ключ",
+       "href": "/stroitelstvo-remont-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "ремонт под ключ цена, братислава, вена"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

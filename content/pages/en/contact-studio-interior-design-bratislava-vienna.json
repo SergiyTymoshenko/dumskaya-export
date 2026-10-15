@@ -1,0 +1,160 @@
+{
+ "path": "/en/contact-studio-interior-design-bratislava-vienna",
+ "lang": "en",
+ "type": "contact",
+ "group": null,
+ "title": "Contact DUMSKAYA DESIGN | Interior Design in Bratislava & Vienna",
+ "description": "Contact DUMSKAYA DESIGN, an interior design studio based in Bratislava. Interior design for apartments, houses and commercial spaces in Bratislava and Vienna, custom furniture, 3D visualization and project implementation support in Slovakia and Austria.",
+ "h1": "Interior Design Studio Contact Information",
+ "og_image": "655410c220a5eb000f971701",
+ "alternates": {
+  "ru": "/contact-studio-interior-design-bratislava-vienna",
+  "ua": "/ua/contact-studio-interior-design-bratislava-vienna",
+  "en": "/en/contact-studio-interior-design-bratislava-vienna"
+ },
+ "sections": [
+  {
+   "id": "6884d34153fd64883a42e588",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Interior Design Studio Contact Information"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "You can call us, message us via <strong>Telegram</strong> or <strong>WhatsApp</strong>, or submit a request through the contact form."
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Design Studio Bratislava, Slovakia Súkennícka 1, 821 09 Ružinov, Bratislava +421 918 17 77 85 Design Studio Vienna, Austria +43 677 61430187 Design Studio Kyiv, Ukraine +38 095 366 25 75",
+       "href": "tel:+421918177785",
+       "image": null
+      },
+      {
+       "title": "moc.liamg%40ngised.ayaksmud",
+       "href": "mailto:moc.liamg%40ngised.ayaksmud?subject=Заказ дизайн проекта",
+       "image": null
+      },
+      {
+       "title": "https://dumskaya-design.com",
+       "href": "/",
+       "image": null
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Free consultation booking form"
+      }
+     ]
+    },
+    {
+     "type": "form"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Thank you!"
+      },
+      {
+       "t": "p",
+       "html": "We will contact you shortly."
+      },
+      {
+       "t": "p",
+       "html": "Ok"
+      },
+      {
+       "t": "p",
+       "html": "Can't send form"
+      },
+      {
+       "t": "p",
+       "html": "Please try again later."
+      },
+      {
+       "t": "p",
+       "html": "Ok"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "68850d36169322ffe366915d",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

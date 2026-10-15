@@ -1,0 +1,160 @@
+{
+ "path": "/contact-studio-interior-design-bratislava-vienna",
+ "lang": "ru",
+ "type": "contact",
+ "group": null,
+ "title": "Контакты DUMSKAYA DESIGN | Дизайн интерьера в Братиславе и Вене",
+ "description": "Контакты DUMSKAYA DESIGN — студии дизайна интерьера в Братиславе. Дизайн квартир, домов и коммерческих помещений в Братиславе и Вене, мебель на заказ, 3D-визуализация и сопровождение реализации проектов в Словакии и Австрии.",
+ "h1": "Контакты студии дизайна интерьеров",
+ "og_image": "655410c220a5eb000f971701",
+ "alternates": {
+  "ru": "/contact-studio-interior-design-bratislava-vienna",
+  "ua": "/ua/contact-studio-interior-design-bratislava-vienna",
+  "en": "/en/contact-studio-interior-design-bratislava-vienna"
+ },
+ "sections": [
+  {
+   "id": "5d6533289ad68b0023dd3cd6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Контакты студии дизайна интерьеров"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Вы можете позвонить нам, написать <strong>Telegram </strong>или <strong>WhatsApp, </strong>оставить заявку через форму."
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Дизайн студия Братислава, Словакия Súkennícka 1, 821 09 Ružinov, Bratislava +421 918 17 77 85 Дизайн студия Вена, Австрия +43 677 61430187 Дизайн студия Киев, Украина +38 095 366 25 75",
+       "href": "tel:+421918177785",
+       "image": null
+      },
+      {
+       "title": "moc.liamg%40ngised.ayaksmud",
+       "href": "mailto:moc.liamg%40ngised.ayaksmud?subject=Заказ дизайн проекта",
+       "image": null
+      },
+      {
+       "title": "https://dumskaya-design.com",
+       "href": "/",
+       "image": null
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Форма записи на бесплатную консультацию"
+      }
+     ]
+    },
+    {
+     "type": "form"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Thank you!"
+      },
+      {
+       "t": "p",
+       "html": "We will contact you shortly."
+      },
+      {
+       "t": "p",
+       "html": "Ok"
+      },
+      {
+       "t": "p",
+       "html": "Can't send form"
+      },
+      {
+       "t": "p",
+       "html": "Please try again later."
+      },
+      {
+       "t": "p",
+       "html": "Ok"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbf403c4c90529feccfb79",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Услуги студии дизайна интерьеров"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Дизайн жилых интерьеров",
+       "href": "/interior-design-apartmens-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "дизайнер интерьера, братислава, вена"
+       }
+      },
+      {
+       "title": "Дизайн коммерческих интерьеров",
+       "href": "/interior-design-office-bratislava-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "дизайн коммерческих интерьеров, братислава, вена"
+       }
+      },
+      {
+       "title": "Мебель на заказ",
+       "href": "/kuhni-shkafi-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "изготовление мебели под заказ, братислава, вена"
+       }
+      },
+      {
+       "title": "Мебель на заказ для бизнеса",
+       "href": "/izgotovlenie-mebeli-pod-zakaz-dlya-kommercheskih-obektov-ofis-resepshen-peregovornaya-kabinet-kuhnya-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "изготовление офисной мебели под заказ, братислава, вена"
+       }
+      },
+      {
+       "title": "Кухни под заказ",
+       "href": "/kupkuhni-na-zakaz-vienna-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "кухня под заказ, братислава, вена"
+       }
+      },
+      {
+       "title": "Ремонт под ключ",
+       "href": "/stroitelstvo-remont-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "ремонт под ключ цена, братислава, вена"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

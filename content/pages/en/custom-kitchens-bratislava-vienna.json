@@ -1,0 +1,413 @@
+{
+ "path": "/en/custom-kitchens-bratislava-vienna",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Custom Kitchens in Bratislava & Vienna — Design & Installation | DUMSKAYA DESIGN",
+ "description": "Custom kitchens in Bratislava and Vienna by DUMSKAYA DESIGN. Choose a model from our catalogue and customize dimensions, configuration, materials and hardware. Kitchen design, manufacturing, delivery and professional installation.",
+ "h1": "Custom Kitchens in Bratislava & Vienna",
+ "og_image": "6abea7264888499d2078543f",
+ "alternates": {
+  "ru": "/kupkuhni-na-zakaz-vienna-bratislava",
+  "ua": "/ua/custom-kitchens-bratislava-vienna",
+  "en": "/en/custom-kitchens-bratislava-vienna"
+ },
+ "sections": [
+  {
+   "id": "6884d35e53fd64883a42f098",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Custom Kitchens in Bratislava & Vienna"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The furniture division of <strong>DUMSKAYA DESIGN (Bratislava, Slovakia) </strong>offers custom kitchens for apartments and private houses in Bratislava and Vienna. Choose a kitchen model from our catalogue, and we will prepare a price proposal based on the selected configuration and the dimensions of your space."
+      },
+      {
+       "t": "p",
+       "html": "Each kitchen model can be adapted to the dimensions, layout and specific requirements of your interior. We can modify the kitchen configuration, dimensions of individual elements, materials, colors, furniture hardware and internal storage solutions."
+      },
+      {
+       "t": "p",
+       "html": "Depending on the client’s budget and requirements, materials and hardware can be selected from different price categories — from more affordable solutions to premium options. This allows you to use a preferred kitchen model as a starting point while creating an individual solution that matches your interior, functional needs and planned budget."
+      },
+      {
+       "t": "p",
+       "html": "We provide kitchen design, manufacturing, delivery and professional installation. Upon request, the kitchen can also be equipped with a sink, household appliances, extractor hood and plumbing equipment."
+      },
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> provides custom kitchens in Bratislava and Vienna — from selecting a model, individual adaptation and cost calculation to manufacturing, equipment, delivery and professional installation."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6884d35e53fd64883a42f09a",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Mass-produced kitchen catalog"
+    }
+   ]
+  },
+  {
+   "id": "6884d35e53fd64883a42f09c",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Kitchen Model K-45",
+       "href": "/en/modern-red-straight-kitchen-45-slovakia-bratislava-austria-vienna",
+       "image": {
+        "id": "6abea65b4888499d20785099",
+        "alt": "u-shaped kitchen k-45 with stone countertop, wood-effect tall units and bar area, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-44",
+       "href": "/en/modern-red-straight-kitchen-44-slovakia-bratislava-austria-vienna",
+       "image": {
+        "id": "6abea6624888499d207850c8",
+        "alt": "corner kitchen k-44 in a greige palette with wood-effect upper cabinets and stone decor, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-06",
+       "href": "/en/kitchen-k06-white-minimalist",
+       "image": {
+        "id": "6abea7264888499d2078543f",
+        "alt": "white straight-line kitchen k-06 in minimalist style with clean-lined fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-05",
+       "href": "/en/kitchen-k05-beige-classic",
+       "image": {
+        "id": "6abea72ec8c59bb7c8399171",
+        "alt": "beige classic corner kitchen k-05 with light cabinet fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-11",
+       "href": "/en/kitchen-k11-grey-modern",
+       "image": {
+        "id": "6abea7047bf8b4294f3dee4b",
+        "alt": "grey straight-line kitchen k-11 with stone-effect decor and contemporary furniture composition, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-08",
+       "href": "/en/kitchen-k08-brown-minimalist",
+       "image": {
+        "id": "6abea7187bf8b4294f3deea9",
+        "alt": "brown straight-line kitchen k-08 with wood-effect cabinet fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-03",
+       "href": "/en/kitchen-k03-black-modern",
+       "image": {
+        "id": "6abea73d4888499d207854b2",
+        "alt": "black straight-line kitchen k-03 with island and wood-effect decor, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-04",
+       "href": "/en/kitchen-k04-grey-modern",
+       "image": {
+        "id": "6abea73568c5e81567a5bd3f",
+        "alt": "grey contemporary corner kitchen k-04 with stone-effect work surface, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-41",
+       "href": "/en/modern-gray-straight-kitchen-41",
+       "image": {
+        "id": "6abea9327bf8b4294f3df680",
+        "alt": "straight-line kitchen k-41 with graphite upper cabinets, light fronts and marble-effect countertop, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-07",
+       "href": "/en/kitchen-k07-white-modern",
+       "image": {
+        "id": "6abea71f6bbe6103844c303f",
+        "alt": "white u-shaped kitchen k-07 in contemporary style, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-09",
+       "href": "/en/kitchen-k09-grey-modern",
+       "image": {
+        "id": "6abea7116bbe6103844c2ffa",
+        "alt": "grey straight-line kitchen k-09 with glass upper fronts and island, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-12",
+       "href": "/en/kitchen-k12-beige-modern",
+       "image": {
+        "id": "6abea6ff7bf8b4294f3dee2c",
+        "alt": "beige corner kitchen k-12 with wood-effect decor and mixed cabinet fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-02",
+       "href": "/en/kitchen-k02-beige-minimalist",
+       "image": {
+        "id": "6abea7437bf8b4294f3def6e",
+        "alt": "beige corner kitchen k-02 in minimalist style with island and veneered fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-01",
+       "href": "/en/kitchen-k01-green-classic",
+       "image": {
+        "id": "6abea74a68c5e81567a5bda9",
+        "alt": "green classic corner kitchen k-01 with painted fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-10",
+       "href": "/en/kitchen-k10-brown-loft",
+       "image": {
+        "id": "6abea70ac8c59bb7c83990fd",
+        "alt": "brown corner kitchen k-10 in loft style with glass and wood-effect decor, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-13",
+       "href": "/en/kitchen-k13-beige-minimalist",
+       "image": {
+        "id": "6abea6f87bf8b4294f3dee01",
+        "alt": "beige straight-line kitchen k-13 in minimalist style with island, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-14",
+       "href": "/en/kitchen-k14-beige-minimalist",
+       "image": {
+        "id": "6abea6f37bf8b4294f3dedd3",
+        "alt": "beige straight-line kitchen k-14 with island and mixed contemporary cabinet fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-15",
+       "href": "/en/kitchen-k15-red-modern",
+       "image": {
+        "id": "6abea6ea6bbe6103844c2f6e",
+        "alt": "red straight-line kitchen k-15 with island and contemporary stone-effect work surface, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-16",
+       "href": "/en/kitchen-k16-green-neoclassical",
+       "image": {
+        "id": "6abea6e44888499d207852fb",
+        "alt": "green neoclassical corner kitchen k-16 with framed cabinet fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-17",
+       "href": "/en/kitchen-k17-grey-neoclassical",
+       "image": {
+        "id": "6abea6dd7bf8b4294f3ded6d",
+        "alt": "grey u-shaped kitchen k-17 in neoclassical style, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-18",
+       "href": "/en/kitchen-k18-modern-gray-corner",
+       "image": {
+        "id": "6abea6d568c5e81567a5bbb3",
+        "alt": "grey contemporary corner kitchen k-18 with laminated cabinet fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-19",
+       "href": "/en/kitchen-k19-modern-beige-straight",
+       "image": {
+        "id": "6abea6cf6bbe6103844c2f08",
+        "alt": "beige straight-line kitchen k-19 with clean laminated cabinet fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-20",
+       "href": "/en/kitchen-k20-modern-beige-u-shaped",
+       "image": {
+        "id": "6abea6c76bbe6103844c2ed7",
+        "alt": "beige u-shaped kitchen k-20 with three working sides, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-21",
+       "href": "/en/kitchen-k21-white-neoclassical-l-shaped",
+       "image": {
+        "id": "6abea6c04888499d2078526a",
+        "alt": "white neoclassical corner kitchen k-21 with foil-wrapped cabinet fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-26",
+       "href": "/en/kitchen-k26-modern-brown-straight",
+       "image": {
+        "id": "6abea6acc8c59bb7c8398f78",
+        "alt": "brown straight-line kitchen k-26 with wood-effect decor and contemporary geometry, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-28",
+       "href": "/en/modern-brown-u-shaped-kitchen-28",
+       "image": {
+        "id": "6abea6a06bbe6103844c2e47",
+        "alt": "brown u-shaped kitchen k-28 with wood-effect upper cabinets and solid-color fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-30",
+       "href": "/en/modern-gray-corner-kitchen-30",
+       "image": {
+        "id": "6abea6937bf8b4294f3dec4c",
+        "alt": "corner kitchen k-30 with white upper cabinets and grey lower fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-31",
+       "href": "/en/modern-brown-corner-kitchen-31",
+       "image": {
+        "id": "6abea68dc8c59bb7c8398ef7",
+        "alt": "corner kitchen k-31 with light lime green upper cabinets and brown wood-effect lower fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-35",
+       "href": "/en/modern-gray-straight-kitchen-35",
+       "image": {
+        "id": "6abea6857bf8b4294f3debf6",
+        "alt": "straight-line kitchen k-35 with light wood-effect upper cabinets and dark grey-brown fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-36",
+       "href": "/en/modern-gray-corner-kitchen-36",
+       "image": {
+        "id": "6abea67dc8c59bb7c8398ea6",
+        "alt": "corner kitchen k-36 with graphite upper cabinets and light grey lower fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-42",
+       "href": "/en/modern-blue-corner-kitchen-42",
+       "image": {
+        "id": "6abea66f6bbe6103844c2d7b",
+        "alt": "corner kitchen k-42 with light upper cabinets and dark blue lower fronts, bratislava and vienna"
+       }
+      },
+      {
+       "title": "Kitchen Model K-43",
+       "href": "/en/modern-red-straight-kitchen-43",
+       "image": {
+        "id": "6abea6687bf8b4294f3deb73",
+        "alt": "straight-line kitchen k-43 with dark burgundy fronts and graphite ribbed upper cabinets, bratislava and vienna"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6884d35e53fd64883a42f09e",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Furniture for residential spaces",
+       "href": "/en/custom-residential-furniture"
+      },
+      {
+       "text": "Furniture for commercial spaces",
+       "href": "/en/commercial-furniture-design"
+      },
+      {
+       "text": "Order a kitchen",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "68850d684b23b0f3e0bc3452",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

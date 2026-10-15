@@ -1,0 +1,413 @@
+{
+ "path": "/ua/custom-kitchens-bratislava-vienna",
+ "lang": "ua",
+ "type": "service",
+ "group": null,
+ "title": "Кухні на замовлення у Братиславі та Відні — виготовлення та монтаж | DUMSKAYA DESIGN",
+ "description": "Кухні на замовлення у Братиславі та Відні від DUMSKAYA DESIGN. Вибір моделі з каталогу, індивідуальна адаптація розмірів і комплектації, матеріали та фурнітура різних цінових категорій, виготовлення, доставка та професійний монтаж.",
+ "h1": "Кухні на замовлення у Братиславі та Відні",
+ "og_image": "6abea7264888499d2078543f",
+ "alternates": {
+  "ru": "/kupkuhni-na-zakaz-vienna-bratislava",
+  "ua": "/ua/custom-kitchens-bratislava-vienna",
+  "en": "/en/custom-kitchens-bratislava-vienna"
+ },
+ "sections": [
+  {
+   "id": "67e54dd7c642222271732562",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Кухні на замовлення у Братиславі та Відні"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Меблевий відділ <strong>DUMSKAYA DESIGN (Братислава, Словаччина)</strong> пропонує кухні на замовлення для квартир і приватних будинків у Братиславі та Відні. Оберіть відповідну модель з нашого каталогу, і ми підготуємо цінову пропозицію з урахуванням обраної комплектації та параметрів приміщення."
+      },
+      {
+       "t": "p",
+       "html": "Кожна представлена модель може бути адаптована під розміри, планування та особливості конкретного приміщення. Ми можемо змінити конфігурацію кухні, розміри окремих елементів, матеріали, кольорові рішення, меблеву фурнітуру та внутрішнє наповнення."
+      },
+      {
+       "t": "p",
+       "html": "Залежно від бюджету та вимог замовника можливий вибір матеріалів і фурнітури різних цінових категорій — від доступніших рішень до преміального рівня. Це дозволяє використовувати обрану модель як основу та створити кухню, що відповідає інтер’єру, функціональним вимогам і запланованому бюджету."
+      },
+      {
+       "t": "p",
+       "html": "Ми пропонуємо проєктування, виготовлення, доставку та професійний монтаж кухонних меблів. За бажанням замовника кухню можна додатково укомплектувати мийкою, побутовою технікою, витяжкою та сантехнічним обладнанням."
+      },
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN пропонує кухні на замовлення у Братиславі та Відні — від вибору моделі, індивідуальної адаптації та розрахунку вартості до виготовлення, комплектації, доставки й монтажу.</strong>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e54dd7c642222271732564",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Каталог серійних моделей кухонь"
+    }
+   ]
+  },
+  {
+   "id": "67e54dd7c642222271732566",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Модель кухні №K-45",
+       "href": "/ua/kuhni-pod-zakaz-k-45-cena-slovakia-bratislava-austria-vienna",
+       "image": {
+        "id": "6abea65b4888499d20785099",
+        "alt": "п-подібна кухня k-45 з кам’яною стільницею, деревними колонами та барною зоною, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-44",
+       "href": "/ua/kuhni-pod-zakaz-k-44-cena-slovakia-bratislava-austria-vienna",
+       "image": {
+        "id": "6abea6624888499d207850c8",
+        "alt": "кутова кухня k-44 у сіро-бежевій гамі з верхніми шафами під дерево та кам’яним декором, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-06",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-06-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea7264888499d2078543f",
+        "alt": "біла пряма кухня k-06 у стилі мінімалізм з лаконічними фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-05",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-05-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea72ec8c59bb7c8399171",
+        "alt": "бежева класична кутова кухня k-05 зі світлими фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-11",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-11-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea7047bf8b4294f3dee4b",
+        "alt": "сіра пряма кухня k-11 з кам’яним декором і сучасною меблевою композицією, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-08",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-08-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea7187bf8b4294f3deea9",
+        "alt": "коричнева пряма кухня k-08 з деревним декором фасадів, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-03",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-03-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea73d4888499d207854b2",
+        "alt": "чорна пряма кухня k-03 з островом і деревним декором, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-04",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-04-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea73568c5e81567a5bd3f",
+        "alt": "сіра сучасна кутова кухня k-04 з кам’яною робочою поверхнею, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-41",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-41-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea9327bf8b4294f3df680",
+        "alt": "пряма кухня k-41 з графітовими верхніми шафами, світлими фасадами та стільницею під мармур, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-07",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-07-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea71f6bbe6103844c303f",
+        "alt": "біла п-подібна кухня k-07 у сучасному стилі, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-09",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-09-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea7116bbe6103844c2ffa",
+        "alt": "сіра пряма кухня k-09 зі скляними верхніми фасадами та островом, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-12",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-12-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6ff7bf8b4294f3dee2c",
+        "alt": "бежева кутова кухня k-12 з деревним декором і комбінованими фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-02",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-02-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea7437bf8b4294f3def6e",
+        "alt": "бежева кутова кухня k-02 у стилі мінімалізм з островом і шпонованими фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-01",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-01-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea74a68c5e81567a5bda9",
+        "alt": "зелена класична кутова кухня k-01 з фарбованими фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-10",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-10-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea70ac8c59bb7c83990fd",
+        "alt": "коричнева кутова кухня k-10 у стилі лофт зі склом і деревним декором, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-13",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-13-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6f87bf8b4294f3dee01",
+        "alt": "бежева пряма кухня k-13 у стилі мінімалізм з островом, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-14",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-14-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6f37bf8b4294f3dedd3",
+        "alt": "бежева пряма кухня k-14 з островом і комбінованими сучасними фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-15",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-15-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6ea6bbe6103844c2f6e",
+        "alt": "червона пряма кухня k-15 з островом і сучасною кам’яною робочою поверхнею, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-16",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-16-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6e44888499d207852fb",
+        "alt": "зелена неокласична кутова кухня k-16 з фільончастими фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-17",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-17-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6dd7bf8b4294f3ded6d",
+        "alt": "сіра п-подібна кухня k-17 у стилі неокласика, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-18",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-18-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6d568c5e81567a5bbb3",
+        "alt": "сіра сучасна кутова кухня k-18 з ламінованими фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-19",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-19-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6cf6bbe6103844c2f08",
+        "alt": "бежева пряма кухня k-19 з лаконічними ламінованими фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-20",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-20-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6c76bbe6103844c2ed7",
+        "alt": "бежева п-подібна кухня k-20 з трьома робочими сторонами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-21",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-21-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6c04888499d2078526a",
+        "alt": "біла неокласична кутова кухня k-21 з плівковими фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-26",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-26-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6acc8c59bb7c8398f78",
+        "alt": "коричнева пряма кухня k-26 з деревним декором і сучасною геометрією, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-28",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-28-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6a06bbe6103844c2e47",
+        "alt": "коричнева п-подібна кухня k-28 з верхніми шафами під дерево та однотонними фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-30",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-30-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6937bf8b4294f3dec4c",
+        "alt": "кутова кухня k-30 з білими верхніми та сірими нижніми фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-31",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-31-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea68dc8c59bb7c8398ef7",
+        "alt": "кутова кухня k-31 зі світло-салатовими верхніми шафами та коричневим низом під дерево, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-35",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-35-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6857bf8b4294f3debf6",
+        "alt": "пряма кухня k-35 зі світлими верхніми шафами під дерево та темними сіро-коричневими фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-36",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-36-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea67dc8c59bb7c8398ea6",
+        "alt": "кутова кухня k-36 з графітовими верхніми та світло-сірими нижніми фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-42",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-42-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea66f6bbe6103844c2d7b",
+        "alt": "кутова кухня k-42 зі світлими верхніми та темно-синіми нижніми фасадами, братислава та відень"
+       }
+      },
+      {
+       "title": "Модель кухні №K-43",
+       "href": "/ua/kuhnya-pid-zamovlennya-k-43-cena-poland-germany-austria-spain",
+       "image": {
+        "id": "6abea6687bf8b4294f3deb73",
+        "alt": "пряма кухня k-43 з темно-бордовими фасадами та графітовим рифленим верхом, братислава та відень"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e54dd7c642222271732568",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Меблі для житлових об’єктів",
+       "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-kukhnia-kabinet-harderobna-peredpokii"
+      },
+      {
+       "text": "Меблі для комерційних об’єктів",
+       "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-dlia-komertsiinykh-obiektiv"
+      },
+      {
+       "text": "Записатися на безкоштовну консультацію",
+       "href": "/ua/contact-studio-interior-design-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cd3185d5350b8046aab43d",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Послуги студії дизайну інтер’єрів"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Дизайн житлових інтер’єрів",
+       "href": "/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "дизайнер інтер'єру, студія дизайну інтер'єру, квартири, будинки, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Дизайн комерційних інтер’єрів",
+       "href": "/ua/dyzain-interieriv-komertsiinykh-prymishchen-bratislava-slovakia",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "дизайнер інтер'єрів, офісу, салону краси, бутика жіночого одягу, магазину, ресепшн, ресторанів, готелів, кабінету керівника, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Меблі на замовлення",
+       "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-kukhnia-kabinet-harderobna-peredpokii",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "меблі на замовлення, кухня на замовлення, шафа, кухня на замовлення, купити кухню, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Меблі для бізнесу на замовлення",
+       "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-dlia-komertsiinykh-obiektiv",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "офісні меблі на замовлення, кабінет керівника під замовлення, ресепшен з меблями на замовлення, братислава, словакія, відень, австрія"
+       }
+      },
+      {
+       "title": "Кухні на замовлення",
+       "href": "/ua/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "кухня на замовлення, купити кухню, виготовлення кухні, ціна, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Ремонт під ключ",
+       "href": "/ua/budivnytstvo-ta-remont-pid-kliuch-zhytlovykh-ta-komertsiinykh-prymishchen-bratislava-slovakia-prais-lyst",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "ремонт під ключ, прайс-лист, ціна, вартість, оздоблювальні роботи, ремонт квартири, ремонт офісу, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

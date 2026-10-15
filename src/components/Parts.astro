@@ -1,0 +1,15 @@
+---
+// Абзацы и списки текста страницы (разметка — только <strong>, <em>, <a>).
+import type { Part } from '../lib/data';
+interface Props { parts: Part[]; class?: string }
+const { parts, class: cls } = Astro.props;
+---
+<div class:list={['prose', cls]}>
+  {parts.map((p) =>
+    p.t === 'p'
+      ? <p set:html={p.html.replace(/\n/g, '<br>')} />
+      : p.t === 'ol'
+        ? <ol>{p.items.map((i) => <li set:html={i} />)}</ol>
+        : <ul>{p.items.map((i) => <li set:html={i} />)}</ul>
+  )}
+</div>

@@ -1,0 +1,114 @@
+@import '@fontsource/tenor-sans/400.css';
+@import '@fontsource/commissioner/400.css';
+@import '@fontsource/commissioner/500.css';
+
+:root {
+  /* Цвета: белая бумага, чёрный для заголовков, тёплый графит для текста,
+     серый камень для служебного, светлая линия и дуб — единственный акцент. */
+  --paper: #ffffff;
+  --ink: #000000;
+  --text: #2b2a27;
+  --stone: #857f76;
+  --line: #e2ded6;
+  --oak: #8a6e4b;
+  --veil: rgba(0, 0, 0, 0.42);
+
+  --display: 'Tenor Sans', 'Commissioner', Georgia, serif;
+  --body: 'Commissioner', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --pad: clamp(16px, 4.5vw, 56px);
+  --gap: 4px;
+  --header: 64px;
+  --measure: 66ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: calc(var(--header) + 16px); }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font: 400 16px/1.65 var(--body);
+  font-feature-settings: 'kern', 'liga';
+  text-rendering: optimizeLegibility;
+}
+@media (min-width: 768px) { body { font-size: 17px; } }
+
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a:hover { color: var(--oak); }
+:focus-visible { outline: 2px solid var(--oak); outline-offset: 3px; }
+button { font: inherit; color: inherit; }
+
+/* Типографика */
+.display {
+  font-family: var(--display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+h1, h2, h3 { color: var(--ink); font-weight: 400; margin: 0; }
+h2.section-title {
+  font-family: var(--display);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.25;
+}
+.prose { max-width: var(--measure); }
+.prose p { margin: 0 0 1em; }
+.prose ul { margin: 0 0 1em; padding-left: 1.1em; }
+.prose li { margin: 0 0 0.4em; }
+.prose strong { font-weight: 500; color: var(--ink); }
+.muted { color: var(--stone); }
+
+.wrap { padding-inline: var(--pad); }
+.section { padding-block: clamp(48px, 8vw, 112px); }
+
+/* Кнопки: одна основная, одна второстепенная */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 12px 24px;
+  border: 1px solid var(--ink);
+  font: 500 15px/1.2 var(--body); letter-spacing: 0.02em;
+  text-decoration: none; color: var(--ink); background: transparent;
+  transition: background-color .2s, color .2s;
+}
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn--solid { background: var(--ink); color: var(--paper); }
+.btn--solid:hover { background: var(--oak); border-color: var(--oak); color: var(--paper); }
+
+/* Плитки с фото: встык, подпись поверх фото */
+.tiles { display: grid; gap: var(--gap); grid-template-columns: 1fr; }
+@media (min-width: 720px) { .tiles { grid-template-columns: 1fr 1fr; } }
+.tiles--3 { grid-template-columns: 1fr 1fr; }
+@media (min-width: 960px) { .tiles--3 { grid-template-columns: repeat(3, 1fr); } }
+
+.tile { position: relative; display: block; overflow: hidden; color: #fff; text-decoration: none; background: #e9e6e0; }
+.tile img, .tile .ph { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .8s cubic-bezier(.2,.6,.2,1); }
+.tile::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.55) 0%, rgba(0,0,0,.18) 32%, rgba(0,0,0,0) 55%);
+  pointer-events: none;
+}
+.tile__cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 20px 16px 22px; text-align: center; }
+.tile__title { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.14em; font-size: clamp(17px, 1.9vw, 24px); line-height: 1.2; }
+.tile__sub { margin-top: 6px; font-size: 13px; letter-spacing: 0.04em; opacity: .9; }
+.tiles--3 .tile__title { font-size: clamp(13px, 1.5vw, 18px); }
+.tiles--3 .tile__cap { padding: 14px 10px 16px; }
+@media (hover: hover) { .tile:hover img { transform: scale(1.025); } .tile:hover { color: #fff; } }
+
+.ph { display: block; background: repeating-linear-gradient(135deg, #ece9e3 0 12px, #e5e1da 12px 24px); }
+
+.crumbs { font-size: 13px; color: var(--stone); }
+.crumbs a { text-decoration: none; }
+.crumbs a:hover { text-decoration: underline; }
+.crumbs span[aria-current] { color: var(--ink); }
+
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

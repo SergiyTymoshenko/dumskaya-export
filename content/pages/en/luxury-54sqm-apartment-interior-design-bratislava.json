@@ -1,0 +1,214 @@
+{
+ "path": "/en/luxury-54sqm-apartment-interior-design-bratislava",
+ "lang": "en",
+ "type": "project",
+ "group": "residential",
+ "title": "54 m² Apartment Design, Custom Furniture & Turnkey Renovation | Bratislava & Vienna",
+ "description": "Comprehensive 54 m² apartment project by DUMSKAYA DESIGN: interior design, custom furniture, turnkey renovation and decoration. Technical documentation, detailed estimate and photorealistic 3D visualizations. Interior design, furniture and renovation in Bratislava and Vienna.",
+ "h1": "Apartment Interior Design, Custom Furniture & Turnkey Renovation, 54 m²",
+ "og_image": "6abd6b143ba7c7b83394fb01",
+ "alternates": {
+  "ru": "/apartment-interior-design-warsaw-54m",
+  "ua": "/ua/apartment-interior-design-custom-furniture-54m2",
+  "en": "/en/luxury-54sqm-apartment-interior-design-bratislava"
+ },
+ "sections": [
+  {
+   "id": "6884d35453fd64883a42ed47",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Apartment Interior Design, Custom Furniture & Turnkey Renovation, 54 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a comprehensive project for a 54 m² apartment, including interior design and technical documentation, custom furniture manufacturing, turnkey renovation and final decoration."
+      },
+      {
+       "t": "p",
+       "html": "The project covers all the main functional areas of the apartment: living room, bedroom, kitchen with carefully planned storage and built-in appliances, dressing areas, entrance hall and bathroom. Custom wardrobes, shelving and integrated storage systems were also incorporated into the interior."
+      },
+      {
+       "t": "p",
+       "html": "Custom-made furniture solutions were designed and manufactured for each area, taking into account the dimensions and specific characteristics of the rooms. Developing the interior and furniture as one integrated concept makes it possible to use the available floor area efficiently, provide practical storage and maintain a consistent visual style throughout the apartment."
+      },
+      {
+       "t": "p",
+       "html": "The project was implemented as a comprehensive process — from the development of the interior concept and technical documentation to renovation works, custom furniture manufacturing and installation, and professional interior decoration. Before construction began, a detailed estimate was prepared covering renovation works, finishing materials, custom furniture and household appliances."
+      },
+      {
+       "t": "p",
+       "html": "The project is presented through photorealistic 3D visualizations, demonstrating the layout, interior concept and custom furniture solutions developed for the 54 m² apartment."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6abd6b143ba7c7b83394fb01",
+       "alt": "luxury living room interior design warsaw"
+      },
+      {
+       "id": "66d85a7e9e6db68edb767555",
+       "alt": "modern luxury lounge space in apartment warsaw"
+      },
+      {
+       "id": "66d85a964c363b1c50cc1959",
+       "alt": "high-end living room with designer furniture warsaw"
+      },
+      {
+       "id": "66d85a804c363b1c50cc18c2",
+       "alt": "premium living room with neutral tones warsaw"
+      },
+      {
+       "id": "66d85b07691bf08b5b134f78",
+       "alt": "exclusive living room decor in warsaw apartment"
+      },
+      {
+       "id": "66d85a809e6db68edb767568",
+       "alt": "luxury open-plan kitchen living room warsaw"
+      },
+      {
+       "id": "66d85a819e6db68edb767572",
+       "alt": "luxury kitchen design with custom cabinets warsaw"
+      },
+      {
+       "id": "66d85a804c363b1c50cc18c3",
+       "alt": "luxury hallway interior design warsaw"
+      },
+      {
+       "id": "66d85a874c363b1c50cc18eb",
+       "alt": "premium custom wardrobe in entryway warsaw"
+      },
+      {
+       "id": "66d85a8d9e6db68edb7675bd",
+       "alt": "high-end hallway lighting and finishes warsaw"
+      },
+      {
+       "id": "66d85a9175a72dff1bdea685",
+       "alt": "elegant entrance design in apartment warsaw"
+      },
+      {
+       "id": "66d85a8975a72dff1bdea65b",
+       "alt": "luxury bedroom interior design warsaw"
+      },
+      {
+       "id": "66d85a8c3765af67caf2a752",
+       "alt": "high-end master bedroom design warsaw"
+      },
+      {
+       "id": "66d85a8d4c363b1c50cc191d",
+       "alt": "designer headboard in luxury bedroom warsaw"
+      },
+      {
+       "id": "66d85a903765af67caf2a773",
+       "alt": "luxury bathroom interior design warsaw"
+      },
+      {
+       "id": "66d85b224c363b1c50cc1b55",
+       "alt": "marble-finished bathroom in upscale apartment warsaw"
+      },
+      {
+       "id": "66d85a933765af67caf2a787",
+       "alt": "high-end bathroom fixtures design warsaw"
+      },
+      {
+       "id": "66d85b12691bf08b5b134f97",
+       "alt": "modern balcony design warsaw"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6890b5cb4ebcf4b6933693dd",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Back",
+       "href": "/en/portfolio-interior-design-projects"
+      },
+      {
+       "text": "Order a design project",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Interior design service prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "68850f87d24f2d329e52aa76",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

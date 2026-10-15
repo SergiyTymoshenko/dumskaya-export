@@ -1,0 +1,170 @@
+{
+ "path": "/en/premium-interior-design-apartment-dubai-uae-160sqm",
+ "lang": "en",
+ "type": "project",
+ "group": "residential",
+ "title": "Premium apartment interior design project in Dubai, UAE, 160 m² | DUMSKAYA DESIGN",
+ "description": "Premium interior design project by DUMSKAYA DESIGN for a 160 m² apartment in Dubai, UAE. The project includes concept development, custom furniture production, turnkey renovation, detailed cost estimation, and photorealistic 3D visualizations.",
+ "h1": "Premium apartment interior design project, Dubai, UAE, 160 m²",
+ "og_image": "66b92fb98acd8b217ebcf386",
+ "alternates": {
+  "ru": "/apartmens-dubai-luxury-interior-design-160",
+  "ua": "/ua/dyzain-proekt-interieru-apartamentiv-dubai-160-m2",
+  "en": "/en/premium-interior-design-apartment-dubai-uae-160sqm"
+ },
+ "sections": [
+  {
+   "id": "6884d34d53fd64883a42ea85",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Premium apartment interior design project, Dubai, UAE, 160 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In this project, the interior design studio <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a full-scope premium interior design project in Dubai, UAE, including concept development, custom furniture production, and turnkey renovation."
+      },
+      {
+       "t": "p",
+       "html": "The design covered all areas of the 160 m² apartment in Dubai: living room, bedrooms, kitchen with custom storage and built-in appliances, walk-in closets, entryway, bathrooms, cabinets, and shelving."
+      },
+      {
+       "t": "p",
+       "html": "Bespoke furniture was created for each zone, tailored to the client’s requests, lifestyle, and the architecture of the space."
+      },
+      {
+       "t": "p",
+       "html": "Before the work began, the client received a detailed cost estimate covering all stages of the project, including construction and finishing works, custom furniture, appliances, plumbing, lighting, and other elements."
+      },
+      {
+       "t": "p",
+       "html": "The project is presented with photorealistic 3D visualizations, providing a detailed view of the planned interior and its design solutions."
+      },
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> successfully implements projects in Slovakia, across Europe, and internationally, including Dubai and other destinations in the Middle East. We offer a full cycle of interior design services, from concept development and custom furniture to renovation and complete interior realization."
+      },
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> — interiors that come to life."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66b92fb98acd8b217ebcf386",
+       "alt": "premium apartment interior design dubai uae"
+      },
+      {
+       "id": "66b92fb88b4279408ae9b248",
+       "alt": "turnkey renovation of premium apartment dubai uae"
+      },
+      {
+       "id": "66b92fb843d3e7af1c202576",
+       "alt": "premium home interior by DUMSKAYA DESIGN dubai uae"
+      },
+      {
+       "id": "66b92fb8d81b3096fdcf6970",
+       "alt": "bespoke furniture in luxury flat dubai uae"
+      },
+      {
+       "id": "66b92fb81161d657dc8d2ab1",
+       "alt": "high-end finishes in modern apartment dubai uae"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6890b5c64ebcf4b69336930f",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Back",
+       "href": "/en/portfolio-interior-design-projects"
+      },
+      {
+       "text": "Order a design project",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Interior design service prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "68851013d3e167d721b57f3f",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

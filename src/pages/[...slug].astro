@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import Home from '../templates/Home.astro';
+import Portfolio from '../templates/Portfolio.astro';
+import Project from '../templates/Project.astro';
+import Generic from '../templates/Generic.astro';
+import { pages, type Page } from '../lib/data';
+
+export function getStaticPaths() {
+  return pages.map((page) => ({
+    params: { slug: page.path === '/' ? undefined : page.path.replace(/^\//, '') },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props as { page: Page };
+const T = { home: Home, portfolio: Portfolio, project: Project }[page.type as 'home'] || Generic;
+---
+<Base page={page}>
+  <T page={page} />
+</Base>

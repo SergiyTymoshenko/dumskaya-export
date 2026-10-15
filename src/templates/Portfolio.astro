@@ -1,0 +1,54 @@
+---
+import Tile from '../components/Tile.astro';
+import { ui, type Lang } from '../lib/i18n';
+import { projectsFor, splitCaption, type Page } from '../lib/data';
+
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang = page.lang as Lang;
+const T = ui(lang);
+const all = projectsFor(lang);
+const groups = (['residential', 'commercial', 'architecture'] as const)
+  .map((g) => ({ key: g, label: T.groups[g], items: all.filter((p) => p.group === g) }))
+  .filter((g) => g.items.length);
+const buttons = (page.sections.flatMap((s) => s.blocks).find((b) => b.type === 'buttons') as any)?.items || [];
+const home = lang === 'ru' ? '/' : `/${lang}`;
+---
+<div class="intro wrap">
+  <nav class="crumbs" aria-label="breadcrumbs"><a href={home}>{T.home}</a> / <span aria-current="page">{T.projects}</span></nav>
+  <h1 class="intro__h1 display">{page.h1}</h1>
+  <nav class="intro__groups" aria-label={T.projects}>
+    {groups.map((g) => <a href={`#${g.key}`}>{g.label} <span class="muted">{g.items.length}</span></a>)}
+  </nav>
+</div>
+
+{groups.map((g, gi) => (
+  <section id={g.key} class="group" aria-labelledby={`${g.key}-h`}>
+    <h2 id={`${g.key}-h`} class="section-title group__h wrap">{g.label}</h2>
+    <div class="tiles">
+      {g.items.map((p, i) => {
+        const [name, area] = splitCaption(p.label);
+        return <Tile href={p.href} image={p.cover} title={name} sub={area} eager={gi === 0 && i < 2} />;
+      })}
+    </div>
+  </section>
+))}
+
+{buttons.length > 0 && (
+  <div class="cta section wrap">
+    {buttons.slice(0, 2).map((b: any, i: number) => b.href && <a class:list={['btn', i === 0 && 'btn--solid']} href={b.href}>{b.text}</a>)}
+  </div>
+)}
+
+<style>
+  .intro { padding-block: 20px clamp(32px, 5vw, 56px); text-align: center; }
+  .intro .crumbs { text-align: left; }
+  .intro__h1 { font-size: clamp(22px, 2.6vw, 34px); max-width: 32ch; margin: clamp(24px, 4vw, 48px) auto 24px; }
+  .intro__groups { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; font-size: 15px; }
+  .intro__groups a { text-decoration: none; border-bottom: 1px solid var(--line); padding-bottom: 2px; }
+  .intro__groups a:hover { border-color: var(--oak); }
+  .group { padding-bottom: 4px; }
+  .group__h { padding-block: clamp(32px, 5vw, 64px) 24px; text-align: center; }
+  .group:first-of-type .group__h { padding-top: 0; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+</style>

@@ -1,0 +1,170 @@
+{
+ "path": "/en/retail-store-interior-design-50m2",
+ "lang": "en",
+ "type": "project",
+ "group": "commercial",
+ "title": "Shop Design & Custom Furniture in Bratislava & Vienna | DUMSKAYA DESIGN",
+ "description": "50 m² shop interior design project by DUMSKAYA DESIGN featuring functional space planning, photorealistic 3D visualization and custom retail furniture. Shop and showroom interior design and custom furniture services in Bratislava and Vienna.",
+ "h1": "Shop Interior Design & Custom Furniture, 50 m²",
+ "og_image": "6abe047d4888499d2075a16a",
+ "alternates": {
+  "ru": "/shop-show-room-interior-design-warsaw-50m",
+  "ua": "/ua/dyzain-proekt-interieru-mahazynu-50-m2-varshava-vyhotovlennia-mebliv-na-zamovlennia",
+  "en": "/en/retail-store-interior-design-50m2"
+ },
+ "sections": [
+  {
+   "id": "6884d35853fd64883a42eeb5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Shop Interior Design & Custom Furniture, 50 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed the interior design project for a 50 m² shop, including the design and production of custom furniture created specifically for the retail space."
+      },
+      {
+       "t": "p",
+       "html": "Particular attention was given to the functional organization of the compact floor area, customer and staff comfort, product presentation and the overall visual identity of the shop. The layout solutions make efficient use of the available space while providing convenient circulation for visitors."
+      },
+      {
+       "t": "p",
+       "html": "The project included custom retail furniture designed as an integral part of the interior concept. Tailor-made solutions make it possible to consider the dimensions of the premises, product display and storage requirements, everyday functionality and the company’s visual identity."
+      },
+      {
+       "t": "p",
+       "html": "The page features photorealistic 3D visualizations of the design project, providing a detailed view of the proposed layout, retail environment and custom furniture solutions before implementation."
+      },
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> provides shop, boutique, showroom and commercial interior design, as well as custom furniture design and production in Bratislava and Vienna. We develop individual interior solutions for retail spaces, showrooms, offices, beauty salons and other commercial environments."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6abe047d4888499d2075a16a",
+       "alt": "shop interior design bratislava slovakia"
+      },
+      {
+       "id": "66f5d9fe97317fa68a805ed8",
+       "alt": "shop interior with custom furniture bratislava slovakia"
+      },
+      {
+       "id": "6705a615464ad9c9b3f5f79f",
+       "alt": "modern shop interior design vienna austria"
+      },
+      {
+       "id": "66f5da0878b42fbcaa4569d9",
+       "alt": "retail interior with custom furniture vienna austria"
+      },
+      {
+       "id": "6705a5e661fdd39c47061c81",
+       "alt": "retail store interior design bratislava slovakia"
+      },
+      {
+       "id": "66f5d9fe1959d0d980a2ca43",
+       "alt": "custom retail furniture bratislava slovakia"
+      },
+      {
+       "id": "66f5da0597317fa68a805efa",
+       "alt": "showroom interior design vienna austria"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "688f53605a6566f77ee8363e",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Back",
+       "href": "/en/commercial-interior-design"
+      },
+      {
+       "text": "Order a design project",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Price of available design service packages",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6885133834050975d3079bbb",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

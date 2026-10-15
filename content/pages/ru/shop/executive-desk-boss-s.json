@@ -1,0 +1,147 @@
+{
+ "path": "/shop/executive-desk-boss-s",
+ "lang": "ru",
+ "type": "shop",
+ "group": null,
+ "title": "Executive desk from the 2025 Executive Desk collection (size S)",
+ "description": "Executive desk from the exclusive 2025 Executive Desk series by DUMSKAYA DESIGN, produced in a limited edition. Size: 1460×655×764 mm",
+ "h1": "Executive desk boss (size S) (TDD-003)",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop/executive-desk-boss-s",
+  "ua": "/ua/shop/executive-desk-boss-s",
+  "en": "/en/shop/executive-desk-boss-s"
+ },
+ "sections": [
+  {
+   "id": "6024de14c45c670022b523f6",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Executive desk boss (size S)"
+      },
+      {
+       "id": "20eee93b-91a1-4a2d-a50d-7ea5809bdbbe",
+       "alt": ""
+      },
+      {
+       "id": "1cd18238-7532-4ccd-8b2f-e401fc53e751",
+       "alt": ""
+      },
+      {
+       "id": "598298cf-934b-49d0-b5c0-c782aad3c499",
+       "alt": ""
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Executive desk boss (size S) (TDD-003)"
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Add to cart",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Executive desk boss (size L)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy now",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Exclusive executive office cabinet (size XXL)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy now",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Exclusive executive cabinet (size S)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy now",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Executive conference table"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy now",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Executive desk boss (size M)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy now",
+       "href": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

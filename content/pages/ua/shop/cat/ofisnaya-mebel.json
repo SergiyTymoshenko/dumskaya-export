@@ -1,0 +1,139 @@
+{
+ "path": "/ua/shop/cat/ofisnaya-mebel",
+ "lang": "ua",
+ "type": "shop",
+ "group": null,
+ "title": "Кабинет руководителя Executive desk 2025",
+ "description": "Executive desk 2025. Эксклюзивная коллекция авторской мебели для кабинета руководителя от студии DUMSKAYA DESIGN выполняемый в ограниченной серии.",
+ "h1": "Executive desk 2025",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop/cat/ofisnaya-mebel",
+  "ua": "/ua/shop/cat/ofisnaya-mebel",
+  "en": "/en/shop/cat/ofisnaya-mebel"
+ },
+ "sections": [
+  {
+   "id": "69affc7c2e4f2c0dbc77871a",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Executive desk 2025"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Exclusive executive office cabinet (size XXL)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Executive conference table"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Executive desk boss (size L)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Executive desk boss (size M)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Executive desk boss (size S)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Exclusive executive cabinet (size S)"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Buy",
+       "href": null
+      },
+      {
+       "text": "1",
+       "href": null
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

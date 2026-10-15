@@ -1,0 +1,421 @@
+{
+ "menu": {
+  "ru": [
+   {
+    "label": "О студии",
+    "href": "/"
+   },
+   {
+    "label": "Портфолио",
+    "href": "/proekty-interior-design"
+   },
+   {
+    "label": "Кухни",
+    "href": "/kupkuhni-na-zakaz-vienna-bratislava"
+   },
+   {
+    "label": "Услуги",
+    "children": [
+     {
+      "label": "Дизайн жилых интерьеров",
+      "href": "/interior-design-apartmens-bratislava"
+     },
+     {
+      "label": "Дизайн коммерческих интерьеров",
+      "href": "/interior-design-office-bratislava-wien"
+     },
+     {
+      "label": "Мебель на заказ",
+      "href": "/kuhni-shkafi-bratislava"
+     },
+     {
+      "label": "Мебель на заказ для бизнеса",
+      "href": "/izgotovlenie-mebeli-pod-zakaz-dlya-kommercheskih-obektov-ofis-resepshen-peregovornaya-kabinet-kuhnya-bratislava"
+     },
+     {
+      "label": "Архитектура и проектирование",
+      "href": "/architecture-design-bratislava"
+     },
+     {
+      "label": "3D визуализация фасадов",
+      "href": "/3d-vizualizaciya-fasada-zdaniya-cena"
+     },
+     {
+      "label": "Приемка квартиры",
+      "href": "/priemka-kvartiry-ot-zastrojshchika"
+     },
+     {
+      "label": "Ремонт под ключ",
+      "href": "/stroitelstvo-remont-bratislava"
+     },
+     {
+      "label": "Смета на ремонт",
+      "href": "/smeta-na-remont-bratislava-vienna"
+     },
+     {
+      "label": "Для клиентов из США",
+      "href": "/interior-custom-furniture-project-usa"
+     }
+    ]
+   },
+   {
+    "label": "Советы",
+    "children": [
+     {
+      "label": "Почему нужен дизайнер интерьера",
+      "href": "/why-you-need-an-interior-designer"
+     },
+     {
+      "label": "Принципы расстановки мебели на кухне",
+      "href": "/kak-pravilno-organizovat-udobnuyu-i-funkcionalnuyu-kuhnyu-warsaw-poland"
+     },
+     {
+      "label": "Проектирование детской комнаты",
+      "href": "/osnovnye-principy-i-pravila-pri-proektirovanie-dizajna-interera-detskoj-komnaty-warsaw-poland"
+     },
+     {
+      "label": "Рабочее место в спальне",
+      "href": "/kak-pravilno-organizovat-rabochee-mesto-v-spalne-warsaw-poland"
+     },
+     {
+      "label": "Малогабаритные квартиры",
+      "href": "/transformaciya-malenkoj-kvartiry-prakticheskie-sovety-dlya-maksimalnogo-ispolzovaniya-prostranstva-warsaw-poland"
+     },
+     {
+      "label": "Организация санузла",
+      "href": "/kak-pravilno-organizovat-svoj-sanuzel-warsaw-poland"
+     },
+     {
+      "label": "Уютный балкон",
+      "href": "/kak-pravilno-organizovat-udobnyj-i-funkcionalnyj-balkon-warsaw-poland"
+     }
+    ]
+   },
+   {
+    "label": "Цены",
+    "children": [
+     {
+      "label": "Пакет Экспресс",
+      "href": "/express-interior-design-package-bratislava-vienna"
+     },
+     {
+      "label": "Пакет Мебель",
+      "href": "/custom-furniture-bratislava-design-production"
+     },
+     {
+      "label": "Пакет Базовый",
+      "href": "/basic-interior-design-package-bratislava-vienna"
+     },
+     {
+      "label": "Пакет Премиум",
+      "href": "/premium-interior-design-package-bratislava-vienna"
+     },
+     {
+      "label": "Пакет Премиум+",
+      "href": "/premium-plus-interior-design-package-bratislava-vienna"
+     }
+    ]
+   },
+   {
+    "label": "Контакты",
+    "href": "/contact-studio-interior-design-bratislava-vienna"
+   }
+  ],
+  "ua": [
+   {
+    "label": "Про студію",
+    "href": "/ua"
+   },
+   {
+    "label": "Портфоліо",
+    "href": "/ua/realizovani-dyzain-proekty-ta-arkhitekturni-rishennia"
+   },
+   {
+    "label": "Кухні",
+    "href": "/ua/custom-kitchens-bratislava-vienna"
+   },
+   {
+    "label": "Послуги",
+    "children": [
+     {
+      "label": "Дизайн житлових інтер’єрів",
+      "href": "/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku"
+     },
+     {
+      "label": "Дизайн комерційних інтер’єрів",
+      "href": "/ua/dyzain-interieriv-komertsiinykh-prymishchen-bratislava-slovakia"
+     },
+     {
+      "label": "Меблі на замовлення",
+      "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-kukhnia-kabinet-harderobna-peredpokii"
+     },
+     {
+      "label": "Меблі на замовлення для бізнесу",
+      "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-dlia-komertsiinykh-obiektiv"
+     },
+     {
+      "label": "Архітектура та проєктування",
+      "href": "/ua/arkhitektura-ta-proektuvannia"
+     },
+     {
+      "label": "3D-візуалізація фасадів",
+      "href": "/ua/3d-vizualizatsiia-fasadu-budivli-ta-navkolyshnoho-seredovyshcha"
+     },
+     {
+      "label": "Приймання квартири",
+      "href": "/ua/pryimannia-kvartyry-vid-zabudovnyka-bratislava"
+     },
+     {
+      "label": "Ремонт під ключ",
+      "href": "/ua/budivnytstvo-ta-remont-pid-kliuch-zhytlovykh-ta-komertsiinykh-prymishchen-bratislava-slovakia-prais-lyst"
+     },
+     {
+      "label": "Кошторис на ремонт",
+      "href": "/ua/smeta-na-remont-bratislava-vienna"
+     }
+    ]
+   },
+   {
+    "label": "Поради",
+    "children": [
+     {
+      "label": "Чому потрібен дизайнер інтер’єру",
+      "href": "/ua/chomu-vam-potribnyi-dyzainer-interieru-dumskaya-design-varshava-polshcha-vyhotovlennia-mebliv-na-zamovlennia"
+     },
+     {
+      "label": "Принципи розташування меблів на кухні",
+      "href": "/ua/dyzain-proekt-interieru-pryntsypy-rozmishchennia-mebliv-na-kukhni-varshavi-polshcha-vyhotovlennia-mebliv-na-zamovlennia"
+     },
+     {
+      "label": "Проєктування дитячої кімнати",
+      "href": "/ua/dyzain-proekt-interieru-proektuvannia-dytiachoi-kimnaty-varshava-polshcha-vyhotovlennia-mebliv-na-zamovlennia"
+     },
+     {
+      "label": "Робоче місце у спальні",
+      "href": "/ua/dyzain-proekt-interieru-orhanizatsiia-robochoho-mistsia-u-spalni-varshava-polsha-vyhotovlennia-mebliv-na-zamovlennia"
+     },
+     {
+      "label": "Малогабаритні квартири",
+      "href": "/ua/malohabarytni-kvartyry-dyzainer-interieru-dumskaya-design-varshava-polshcha-vyhotovlennia-mebliv-na-zamovlennia"
+     },
+     {
+      "label": "Організація санвузла",
+      "href": "/ua/dyzain-proekt-interieru-orhanizatsiia-vannoi-kimnaty-varshava-polshcha-vyhotovlennia-mebliv-na-zamovlennia"
+     },
+     {
+      "label": "Затишний балкон",
+      "href": "/ua/dyzain-proekt-interieru-orhanizatsiia-balkona-varshava-polshcha-vyhotovlennia-mebliv-na-zamovlennia"
+     }
+    ]
+   },
+   {
+    "label": "Ціни",
+    "children": [
+     {
+      "label": "Пакет Експрес",
+      "href": "/ua/express-interior-design-package-bratislava-vienna"
+     },
+     {
+      "label": "Пакет Меблі",
+      "href": "/ua/custom-furniture-bratislava-design-production"
+     },
+     {
+      "label": "Пакет Базовий",
+      "href": "/ua/basic-interior-design-package-bratislava-vienna"
+     },
+     {
+      "label": "Пакет Преміум",
+      "href": "/ua/premium-interior-design-package-bratislava-vienna"
+     },
+     {
+      "label": "Пакет Преміум+",
+      "href": "/ua/premium-plus-interior-design-package-bratislava-vienna"
+     }
+    ]
+   },
+   {
+    "label": "Контакти",
+    "href": "/ua/contact-studio-interior-design-bratislava-vienna"
+   }
+  ],
+  "en": [
+   {
+    "label": "About",
+    "href": "/en"
+   },
+   {
+    "label": "Portfolio",
+    "href": "/en/portfolio-interior-design-projects"
+   },
+   {
+    "label": "Kitchens",
+    "href": "/en/custom-kitchens-bratislava-vienna"
+   },
+   {
+    "label": "Services",
+    "children": [
+     {
+      "label": "Residential Interior Design",
+      "href": "/en/interior-design"
+     },
+     {
+      "label": "Commercial Interior Design",
+      "href": "/en/commercial-interior-design"
+     },
+     {
+      "label": "Custom Furniture",
+      "href": "/en/custom-residential-furniture"
+     },
+     {
+      "label": "Custom Furniture for Business",
+      "href": "/en/commercial-furniture-design"
+     },
+     {
+      "label": "Architecture & Design",
+      "href": "/en/architecture-and-design"
+     },
+     {
+      "label": "3D Facade Visualization",
+      "href": "/en/3d-visualization-facade-exterior-price"
+     },
+     {
+      "label": "Apartment Handover Inspection",
+      "href": "/en/apartment-handover-inspection-bratislava"
+     },
+     {
+      "label": "Turnkey Renovation",
+      "href": "/en/renovation-construction-price-list"
+     },
+     {
+      "label": "Renovation Cost Estimate",
+      "href": "/en/renovation-cost-estimate-bratislava-vienna"
+     },
+     {
+      "label": "For US Clients",
+      "href": "/en/interior-custom-furniture-project-usa"
+     }
+    ]
+   },
+   {
+    "label": "Tips",
+    "children": [
+     {
+      "label": "Why you need an interior designer",
+      "href": "/en/why-hire-interior-designer"
+     },
+     {
+      "label": "Principles of arranging furniture in the kitchen",
+      "href": "/en/kitchen-layout-rules"
+     },
+     {
+      "label": "Designing a child’s room",
+      "href": "/en/interior-design-childrens-bedroom-principles"
+     },
+     {
+      "label": "Workspace in the bedroom",
+      "href": "/en/interior-design-bedroom-workspace-organization"
+     },
+     {
+      "label": "Small apartments",
+      "href": "/en/interior-small-apartment-transformation"
+     },
+     {
+      "label": "Bathroom organisation",
+      "href": "/en/interior-design-small-bathroom-organization"
+     },
+     {
+      "label": "Cozy balcony",
+      "href": "/en/perfect-balcony-design"
+     }
+    ]
+   },
+   {
+    "label": "Prices",
+    "children": [
+     {
+      "label": "Peket Express",
+      "href": "/en/express-interior-design-package-bratislava-vienna"
+     },
+     {
+      "label": "Peket Furniture",
+      "href": "/en/custom-furniture-bratislava-design-production"
+     },
+     {
+      "label": "Peket Basic",
+      "href": "/en/basic-interior-design-package-bratislava-vienna"
+     },
+     {
+      "label": "Peket Premium",
+      "href": "/en/premium-interior-design-package-bratislava-vienna"
+     },
+     {
+      "label": "Peket Premium+",
+      "href": "/en/premium-plus-interior-design-package-bratislava-vienna"
+     }
+    ]
+   },
+   {
+    "label": "Contact",
+    "href": "/en/contact-studio-interior-design-bratislava-vienna"
+   }
+  ]
+ },
+ "contacts": {
+  "phones": [
+   {
+    "tel": "+421918177785",
+    "text": "+421 918 17 77 85",
+    "city": {
+     "ru": "Братислава",
+     "ua": "Братислава",
+     "en": "Bratislava"
+    }
+   },
+   {
+    "tel": "+4367761430187",
+    "text": "+43 677 614 30 187",
+    "city": {
+     "ru": "Вена",
+     "ua": "Відень",
+     "en": "Vienna"
+    }
+   },
+   {
+    "tel": "+380953662575",
+    "text": "+380 95 366 25 75",
+    "city": {
+     "ru": "Киев",
+     "ua": "Київ",
+     "en": "Kyiv"
+    }
+   }
+  ],
+  "email": "dumskaya.design@gmail.com",
+  "social": [
+   {
+    "name": "Instagram",
+    "href": "https://www.instagram.com/dumskaya_design"
+   },
+   {
+    "name": "Facebook",
+    "href": "https://www.facebook.com/DUMSKAYAdesign"
+   },
+   {
+    "name": "TikTok",
+    "href": "https://tiktok.com/@dumskaya_design"
+   },
+   {
+    "name": "YouTube",
+    "href": "https://www.youtube.com/@DUMSKAYADESIGN"
+   }
+  ]
+ },
+ "analytics": {
+  "gtm": "GTM-P94H44VP",
+  "ga4": "G-23669WVTEG"
+ },
+ "verification": {
+  "google": "hkM2OL42d2zA2UTxPKWKPvWX4kvx5UNz8sqkaWGz7NE",
+  "yandex": "f4f337792bf40bdb"
+ }
+}

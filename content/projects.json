@@ -1,0 +1,922 @@
+[
+ {
+  "path": "/design-interior-studio-bratislava-metropolis-sk-75m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/design-interior-studio-bratislava-metropolis-sk-75m",
+   "ua": "/ua/luxury-interior-design-apartment-metropolis-bratislava-slovakia",
+   "en": "/en/design-interior-studio-bratislava-metropolis-sk-75m"
+  },
+  "cover": "6abd6a8768c5e81567a1bfe0",
+  "title": {
+   "ru": "Квартира Metropolis Братислава 75 м²",
+   "ua": "Квартира Metropolis Братислава 75 м²",
+   "en": "Metropolis apartment Bratislava 75 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 75
+ },
+ {
+  "path": "/studio-interior-design-disain-proekt-kvartira-kiev-80m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/studio-interior-design-disain-proekt-kvartira-kiev-80m",
+   "ua": "/ua/studiya-dizajnu-intereru-kvartiri-kiev-ukraina-80m",
+   "en": "/en/luxury-80sqm-apartment-interior-design-kyiv"
+  },
+  "cover": "6abd0a7d61617a4443ab2567",
+  "title": {
+   "ru": "Квартира в Киеве 80 м²",
+   "ua": "Квартира у Києві, 80 м²",
+   "en": "Apartment in Kyiv, 80 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 80
+ },
+ {
+  "path": "/studio-interior-design-bratislava-eurovea-56m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/studio-interior-design-bratislava-eurovea-56m",
+   "ua": "/ua/studio-interior-design-bratislava-eurovea-56m",
+   "en": "/en/studio-interior-design-bratislava-eurovea-56m"
+  },
+  "cover": "6abd6a8168c5e81567a1bfb4",
+  "title": {
+   "ru": "Квартира Eurovea Братислава 56 м²",
+   "ua": "Квартира Eurovea City, Братислава, 56 м²",
+   "en": "Apartment in Eurovea City, Bratislava, 56 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 56
+ },
+ {
+  "path": "/interior-design-apartment-bratislava-158m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-apartment-bratislava-158m",
+   "ua": "/ua/interior-design-duplex-apartment-bratislava-158m2",
+   "en": "/en/luxury-158sqm-duplex-apartment-interior-design-bratislava"
+  },
+  "cover": "6abd6a8e6bbe610384483447",
+  "title": {
+   "ru": "Квартира в Братиславе 158 м²",
+   "ua": "Квартира у Братиславі, 158 м² (тераса 20 м²)",
+   "en": "Apartment in Bratislava, 158 m² (20 m² terrace)"
+  },
+  "explicit_warsaw": false,
+  "area": 158
+ },
+ {
+  "path": "/interior-design-private-house-bratislava-120m2",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-private-house-bratislava-120m2",
+   "ua": "/ua/interior-design-private-house-bratislava-120m2",
+   "en": "/en/interior-design-private-house-bratislava-120m2"
+  },
+  "cover": "6abd6a6a61617a4443acb201",
+  "title": {
+   "ru": "Частный дом 120 м²",
+   "ua": "Приватний будинок 120 м²",
+   "en": "Private house, 120 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 120
+ },
+ {
+  "path": "/apartmens-vienna-luxury-interior-design-58m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartmens-vienna-luxury-interior-design-58m",
+   "ua": "/ua/interior-apartments-vienna-austria-58m2",
+   "en": "/en/apartmens-vienna-luxury-interior-design-58m"
+  },
+  "cover": "6abd6a794888499d20745202",
+  "title": {
+   "ru": "Квартира в Вене 58 м²",
+   "ua": "Квартира у Відні 58 м²",
+   "en": "Apartment in Vienna, 58 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 58
+ },
+ {
+  "path": "/interior-design-private-house-dunajska-streda-140m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-private-house-dunajska-streda-140m",
+   "ua": "/ua/interior-design-private-house-dunajska-streda-140m",
+   "en": "/en/interior-design-private-house-dunajska-streda-140m"
+  },
+  "cover": "6abd6a9d68c5e81567a1c052",
+  "title": {
+   "ru": "Частный дом 140 м²",
+   "ua": "Приватний будинок 140 м²",
+   "en": "Private house, 140 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 140
+ },
+ {
+  "path": "/interior-design-private-house-kharkiv-212m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-private-house-kharkiv-212m",
+   "ua": "/ua/interior-design-private-house-kharkiv-212m",
+   "en": "/en/luxury-interior-private-house-212sqm"
+  },
+  "cover": "6abd6a716bbe6103844833be",
+  "title": {
+   "ru": "Частный дом 212 м²",
+   "ua": "Приватний будинок Харків, 212 м²",
+   "en": "Private House, 212 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 212
+ },
+ {
+  "path": "/apartment-interior-design-warsaw-43m2",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-warsaw-43m2",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-43-m2-varshava",
+   "en": "/en/contemporary-warsaw-apartment-43sqm"
+  },
+  "cover": "6abd6b6368c5e81567a1c463",
+  "title": {
+   "ru": "Квартира в Варшаве 43 м²",
+   "ua": "Квартира в Варшаві 43 м²",
+   "en": "Apartment in Warsaw, 43 m²"
+  },
+  "explicit_warsaw": true,
+  "area": 43
+ },
+ {
+  "path": "/apartment-interior-design-krakow-63m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-krakow-63m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-63-m2-krakiv-polshcha",
+   "en": "/en/apartment-interior-design-krakow-63m"
+  },
+  "cover": "6abd6b4e68c5e81567a1c3f1",
+  "title": {
+   "ru": "Квартира в Кракове 63 м²",
+   "ua": "Квартира в Кракові 63 м²",
+   "en": "Apartment in Kraków, 63 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 63
+ },
+ {
+  "path": "/apartment-interior-design-warsaw-60m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-warsaw-60m",
+   "ua": "/ua/dyzain-proekt-interieru-apartamentiv-60-m2-varshava-polshcha",
+   "en": "/en/apartment-interior-design-warsaw-60m"
+  },
+  "cover": "6abd6ab34888499d20745304",
+  "title": {
+   "ru": "Квартира 60 м² (терраса 18 м²)",
+   "ua": "Квартира 60 м² (тераса 18 м²)",
+   "en": "Apartment, 60 m² (18 m² terrace)"
+  },
+  "explicit_warsaw": false,
+  "area": 60
+ },
+ {
+  "path": "/apartment-interior-design-warsaw-54m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-warsaw-54m",
+   "ua": "/ua/apartment-interior-design-custom-furniture-54m2",
+   "en": "/en/luxury-54sqm-apartment-interior-design-bratislava"
+  },
+  "cover": "6abd6b143ba7c7b83394fb01",
+  "title": {
+   "ru": "Квартира 54 м²",
+   "ua": "Квартира 54 м²",
+   "en": "Apartment, 54 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 54
+ },
+ {
+  "path": "/apartment-furniture-interior-design-warsaw-45m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-furniture-interior-design-warsaw-45m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-45-m2-varshava-polshcha",
+   "en": "/en/warsaw-modern-apartment-45sqm"
+  },
+  "cover": "6abd6b5c3ba7c7b83394fc44",
+  "title": {
+   "ru": "Квартира 45 м²",
+   "ua": "Квартира 45 м²",
+   "en": "Apartment, 45 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 45
+ },
+ {
+  "path": "/apartment-interior-design-warsaw-48m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-warsaw-48m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-48-m2-varshava-polshcha",
+   "en": "/en/48sqm-luxury-apartment-interior-design-warsaw"
+  },
+  "cover": "6abd6ac73ba7c7b83394f91e",
+  "title": {
+   "ru": "Квартира 48 м²",
+   "ua": "Квартира 48 м²",
+   "en": "Apartment, 48 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 48
+ },
+ {
+  "path": "/apartment-interior-design-bratislava-58m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-bratislava-58m",
+   "ua": "/ua/apartment-interior-design-bratislava-58m2",
+   "en": "/en/apartment-interior-design-bratislava-58m2"
+  },
+  "cover": "6abd6af84888499d20745492",
+  "title": {
+   "ru": "Квартира в Братиславе 58 м²",
+   "ua": "Квартира Братислава 58 м²",
+   "en": "Apartment in Bratislava, 58 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 58,
+  "facts": {
+   "ru": {
+    "object": "Квартира",
+    "area": "58 м²",
+    "city": "Братислава",
+    "works": "Дизайн-проект, техническая документация, мебель на заказ, ремонт под ключ"
+   },
+   "ua": {
+    "object": "Квартира",
+    "area": "58 м²",
+    "city": "Братислава",
+    "works": "Дизайн-проєкт, технічна документація, меблі на замовлення, ремонт під ключ"
+   },
+   "en": {
+    "object": "Apartment",
+    "area": "58 m²",
+    "city": "Bratislava",
+    "works": "Design project, technical drawings, custom furniture, turnkey renovation"
+   }
+  }
+ },
+ {
+  "path": "/apartment-interior-design-warsaw-52m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-warsaw-52m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-52-m2-varshava-polshcha",
+   "en": "/en/52sqm-apartment-design-warsaw"
+  },
+  "cover": "6abd6aff68c5e81567a1c258",
+  "title": {
+   "ru": "Квартира 52 м²",
+   "ua": "Квартира 52 м²",
+   "en": "Apartment, 52 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 52
+ },
+ {
+  "path": "/apartment-interior-design-warsaw-43m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-warsaw-43m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-43-m2-varshava-polshcha",
+   "en": "/en/modern-apartment-design-warsaw-43sqm"
+  },
+  "cover": "6abd6aaa6bbe6103844834dd",
+  "title": {
+   "ru": "Квартира в Варшаве 43 м²",
+   "ua": "Квартира в Варшаві 43 м²",
+   "en": "Apartment in Warsaw, 43 m²"
+  },
+  "explicit_warsaw": true,
+  "area": 43
+ },
+ {
+  "path": "/apartment-interior-design-bratislava-52m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-bratislava-52m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-52-m2-bratyslavi-slovachchyna",
+   "en": "/en/interior-apartment-design-bratislava-slovakia-52sqm"
+  },
+  "cover": "6abd6b0c61617a4443acb569",
+  "title": {
+   "ru": "Квартира в Братиславе 52 м²",
+   "ua": "Квартира в Братиславі 52 м²",
+   "en": "Apartment in Bratislava, 52 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 52
+ },
+ {
+  "path": "/apartmens-dubai-luxury-interior-design-160",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartmens-dubai-luxury-interior-design-160",
+   "ua": "/ua/dyzain-proekt-interieru-apartamentiv-dubai-160-m2",
+   "en": "/en/premium-interior-design-apartment-dubai-uae-160sqm"
+  },
+  "cover": "6abd6aba3ba7c7b83394f8d8",
+  "title": {
+   "ru": "Апартаменты в Дубаи 160 м²",
+   "ua": "Апартаменти в Дубаї 160 м²",
+   "en": "Apartment in Dubai, 160 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 160
+ },
+ {
+  "path": "/apartmens-los-angeles-interior-design-140",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartmens-los-angeles-interior-design-140",
+   "ua": "/ua/dyzain-proekt-interieru-apartamentiv-los-andzheles-140-m2",
+   "en": "/en/premium-interior-design-apartment-los-angeles-california-usa-140sqm"
+  },
+  "cover": "6abd6ac168c5e81567a1c102",
+  "title": {
+   "ru": "Апартаменты в Лос-Анджелес 140 м²",
+   "ua": "Апартаменти в Лос-Анджелесі 140 м²",
+   "en": "Apartment in Los Angeles, 140 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 140
+ },
+ {
+  "path": "/apartmens-praha-luxury-interior-design-90m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartmens-praha-luxury-interior-design-90m",
+   "ua": "/ua/dyzain-proekt-interieru-apartamentiv-praha-chekhiia-90-m2",
+   "en": "/en/apartment-interior-design-prague-czech-republic-90sqm"
+  },
+  "cover": "6abd6aea61617a4443acb472",
+  "title": {
+   "ru": "Апартаменты в Праге 90 м²",
+   "ua": "Апартаменти в Празі 90 м²",
+   "en": "Apartment in Prague, 90 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 90
+ },
+ {
+  "path": "/apartmens-ny-luxury-interior-design-57m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartmens-ny-luxury-interior-design-57m",
+   "ua": "/ua/dyzain-proekt-interieru-apartamentiv-niu-york-usa",
+   "en": "/en/luxury-interior-design-apartment-new-york-usa-57sqm"
+  },
+  "cover": "6abd6af268c5e81567a1c21a",
+  "title": {
+   "ru": "Апартаменты в Нью-Йорке 57 м²",
+   "ua": "Апартаменти в Нью-Йорку 57 м²",
+   "en": "Apartment in New York, 57 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 57
+ },
+ {
+  "path": "/apartment-interior-design-krakow-64m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-krakow-64m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-64-m2-krakiv-polshcha",
+   "en": "/en/apartment-interior-design-krakow-64m"
+  },
+  "cover": "6abd6b556bbe61038448383c",
+  "title": {
+   "ru": "Квартира в Кракове 64 м²",
+   "ua": "Квартира в Кракові 64 м²",
+   "en": "Apartment in Kraków, 64 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 64
+ },
+ {
+  "path": "/dizainer-interierov-kiev",
+  "group": "residential",
+  "alternates": {
+   "ru": "/dizainer-interierov-kiev",
+   "ua": "/ua/dyzain-proekt-interieru-pryvatnoho-budynku-217-m-kyiv-ukraine",
+   "en": "/en/luxury-interior-design-kiev-private-house-217sqm"
+  },
+  "cover": "6abd6b0561617a4443acb529",
+  "title": {
+   "ru": "Частный дом в Киеве 217 м²",
+   "ua": "Частний будинок в Києві 217 м²",
+   "en": "Private house, 217 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 217
+ },
+ {
+  "path": "/villa-interior-design-160m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/villa-interior-design-160m",
+   "ua": "/ua/dyzain-interieru-budynku-160-m2-vid-dumskaya-design",
+   "en": "/en/luxury-interior-design-private-house-munich-germany-160sqm"
+  },
+  "cover": "6abd6b3b4888499d2074560d",
+  "title": {
+   "ru": "Частный дом, Мюнхен, Германия, 160 м²",
+   "ua": "Приватний будинок, Мюнхен, 160 м²",
+   "en": "Private house in Munich, Germany, 160 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 160
+ },
+ {
+  "path": "/interior-design-private-house-215m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-private-house-215m",
+   "ua": "/ua/dyzain-proekt-interieru-pryvatnoho-budynku-215-m-berlin-nimetchina",
+   "en": "/en/luxury-interior-private-house-berlin-germany-215sqm"
+  },
+  "cover": "6abd6aa461617a4443acb2fc",
+  "title": {
+   "ru": "Частный дом, Берлин, 215 м²",
+   "ua": "Частний будинок, Берлін, 215 м²",
+   "en": "Private house in Berlin, Germany, 215 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 215
+ },
+ {
+  "path": "/interior-design-apartment-luxury-kyiv-119m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-apartment-luxury-kyiv-119m",
+   "ua": "/ua/dyzain-interieru-apartamentiv-z-terasoiu-u-kyievi-119-m2",
+   "en": "/en/luxury-119sqm-apartment-interior-design-kyiv"
+  },
+  "cover": "6abd6a956bbe610384483468",
+  "title": {
+   "ru": "Квартира в Киеве 119 м² (терраса 30 м²)",
+   "ua": "Квартира в Києві 119 м² (тераса 30 м²)",
+   "en": "Apartment in Kyiv, 119 m² (30 m² terrace)"
+  },
+  "explicit_warsaw": false,
+  "area": 119
+ },
+ {
+  "path": "/interior-design-furniture-classic-120m-london",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-furniture-classic-120m-london",
+   "ua": "/ua/dyzain-proekt-kvartyra-suchasna-klasyka-120-m-london",
+   "en": "/en/luxury-interior-modern-classic-apartment-london-united-kingdom-120sqm"
+  },
+  "cover": "6abceda061617a4443aa9440",
+  "title": {
+   "ru": "Современная классика, Лондон, 120 м²",
+   "ua": "Квартира сучасна класика, Лондон, 120 м²",
+   "en": "Modern classic, London, 120 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 120
+ },
+ {
+  "path": "/apartment-luxury-interior-design-madrid-spain-107m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-luxury-interior-design-madrid-spain-107m",
+   "ua": "/ua/dyzain-interieru-madrid-spain-107",
+   "en": "/en/luxury-interior-design-madrid-spain-107m"
+  },
+  "cover": "6abd6ad368c5e81567a1c165",
+  "title": {
+   "ru": "Апартаменты, Мадрид, Испания, 107 м²",
+   "ua": "Квартира 107 м²",
+   "en": "Apartment, Madrid, Spain, 107 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 107
+ },
+ {
+  "path": "/luxury-interior-design-barcelona-spain-108m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/luxury-interior-design-barcelona-spain-108m",
+   "ua": "/ua/dyzain-proekt-interieru-barcelona-spain-108",
+   "en": "/en/luxury-108sqm-apartment-interior-design-barcelona-spain"
+  },
+  "cover": "6abd6ae14888499d20745418",
+  "title": {
+   "ru": "Апартаменты, Барселона, Испания, 108 м²",
+   "ua": "Квартира 108 м²",
+   "en": "Apartment, Barcelona, Spain, 108 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 108
+ },
+ {
+  "path": "/apartment-interior-design-warsaw-51m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartment-interior-design-warsaw-51m",
+   "ua": "/ua/apartment-interior-design-custom-furniture-51m2",
+   "en": "/en/51sqm-luxury-apartment-interior-design-bratislava"
+  },
+  "cover": "6abd6b1b68c5e81567a1c2e1",
+  "title": {
+   "ru": "Квартира 51 м²",
+   "ua": "Квартира 51 м²",
+   "en": "Apartment, 51 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 51
+ },
+ {
+  "path": "/apartmens-wien-luxury-interior-design-115m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/apartmens-wien-luxury-interior-design-115m",
+   "ua": "/ua/dyzain-interieru-apartamentiv-viden-avstriia-115-m2-vid-dumskaya-design",
+   "en": "/en/luxury-interior-design-apartment-vienna-austria-115sqm"
+  },
+  "cover": "6abd6b354888499d207455da",
+  "title": {
+   "ru": "Квартира, Вена, Австрия, 115 м²",
+   "ua": "Квартира у Відні 115 м²",
+   "en": "Apartment in Vienna, 115 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 115
+ },
+ {
+  "path": "/interior-design-furniture-60m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-furniture-60m",
+   "ua": "/ua/apartment-interior-design-renovation-varna-60m2",
+   "en": "/en/premium-interior-design-apartment-varna-bulgaria-60sqm"
+  },
+  "cover": "6abd6ad93ba7c7b83394f9b9",
+  "title": {
+   "ru": "Квартира, Варна, Болгария, 60 м²",
+   "ua": "Квартира у Варні 60 м²",
+   "en": "Apartment in Varna, 60 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 60
+ },
+ {
+  "path": "/interior-design-apartment-ukraine-47m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-apartment-ukraine-47m",
+   "ua": "/ua/dyzain-proekt-interieru-malohabarytnoi-kvartyry-47-m2-varshava-polsha",
+   "en": "/en/interior-design-compact-3-room-apartment-47sqm"
+  },
+  "cover": "6abd6b696bbe610384483889",
+  "title": {
+   "ru": "Квартира 47 м²",
+   "ua": "Квартира 47 м²",
+   "en": "Apartment, 47 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 47
+ },
+ {
+  "path": "/interior-design-villa-179m-madrid-spain",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-villa-179m-madrid-spain",
+   "ua": "/ua/dyzain-proekt-interieru-villa-179-m-madrid-spain",
+   "en": "/en/luxury-interior-villa-179sqm-madrid-spain"
+  },
+  "cover": "6abd6b2668c5e81567a1c33b",
+  "title": {
+   "ru": "Вилла, Мадрид, Испания, 179 м²",
+   "ua": "Вілла, Мадрид, Іспанія, 179 м²",
+   "en": "Villa, Madrid, Spain, 179 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 179
+ },
+ {
+  "path": "/dumskaya-interior-design-villa-220m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/dumskaya-interior-design-villa-220m",
+   "ua": "/ua/dyzain-interieru-burgas-villa-220m",
+   "en": "/en/luxury-interior-villa-burgas-bulgaria-220sqm"
+  },
+  "cover": "6abd6b434888499d20745636",
+  "title": {
+   "ru": "Вилла, Бургас, Болгария, 220 м²",
+   "ua": "Вілла Бургас, 220 м²",
+   "en": "Villa in Burgas, 220 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 220
+ },
+ {
+  "path": "/dumskaya-interior-design-villa-230m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/dumskaya-interior-design-villa-230m",
+   "ua": "/ua/dyzain-proekt-interieru-pryvatnoho-budynku-230-m-vienna",
+   "en": "/en/luxury-interior-design-private-house-moscow-230sqm"
+  },
+  "cover": "6abd6b2e4888499d207455b1",
+  "title": {
+   "ru": "Частный дом 230 м²",
+   "ua": "Частний будинок 230 м²",
+   "en": "Private house, 230 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 230
+ },
+ {
+  "path": "/furniture-interior-design-43m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/furniture-interior-design-43m",
+   "ua": "/ua/realizatsiia-dyzain-proektu-interieru-ta-remontu-pid-kliuch-43m-varshava-polshcha",
+   "en": "/en/interior-design-43sqm-duplex-apartment"
+  },
+  "cover": "6abd6acd6bbe6103844835b3",
+  "title": {
+   "ru": "Двухуровневая квартира 43 м²",
+   "ua": "Двоповерхова квартира 43 м²",
+   "en": "Two-level apartment, 43 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 43
+ },
+ {
+  "path": "/interior-design-cosmetology-salon-warsaw",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/interior-design-cosmetology-salon-warsaw",
+   "ua": "/ua/luxury-interior-cosmetology-salon-warsaw",
+   "en": "/en/luxury-interior-cosmetology-salon-warsaw"
+  },
+  "cover": "6abe045b3ba7c7b833963e2b",
+  "title": {
+   "ru": "Косметологический салон 54 м²",
+   "ua": "Косметологічний салон 54 м²",
+   "en": "Cosmetology Salon, 54 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 54
+ },
+ {
+  "path": "/beauty-salon-interior-design-warsaw-63m",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/beauty-salon-interior-design-warsaw-63m",
+   "ua": "/ua/dyzain-interieru-salonu-krasy-63-m2-varshava-polsha-vyhotovlennia-mebliv-na-zamovlennia",
+   "en": "/en/beauty-salon-interior-design-63m"
+  },
+  "cover": "6abe04846bbe610384497d7b",
+  "title": {
+   "ru": "Салон красоты 63 м²",
+   "ua": "Салон краси 63 м²",
+   "en": "Beauty Salon, 63 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 63
+ },
+ {
+  "path": "/office-interior-design-warsaw-500m",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/office-interior-design-warsaw-500m",
+   "ua": "/ua/dyzain-interieru-ofisu-500-m-vyhotovlennia-mebliv-na-zamovlennia-vid-dumskaya-design-varshava",
+   "en": "/en/office-interior-design-warsaw-500m"
+  },
+  "cover": "66f5d16697317fa68a804f5a",
+  "title": {
+   "ru": "Офис 500 м²",
+   "ua": "Офіс 500 м²",
+   "en": "Office, 500 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 500
+ },
+ {
+  "path": "/photo-studio-interior-design-custom-furniture-130m2-bratislava",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/photo-studio-interior-design-custom-furniture-130m2-bratislava",
+   "ua": "/ua/dyzain-proekt-interieru-fotostudii-u-varshavi-polsha-vyhotovlennia-mebliv-na-zamovlennia",
+   "en": "/en/photo-studio-interior-design-130m"
+  },
+  "cover": "6abe048a61617a4443adfce2",
+  "title": {
+   "ru": "Фотостудия 130 м²",
+   "ua": "Фотостудія 130 м²",
+   "en": "Photo Studio, 130 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 130
+ },
+ {
+  "path": "/clothing-boutique-interior-design-kyiv-140",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/clothing-boutique-interior-design-kyiv-140",
+   "ua": "/ua/womens-clothing-boutique-interior-design-kyiv-ukraine",
+   "en": "/en/clothing-boutique-interior-design"
+  },
+  "cover": "6abe046a3ba7c7b833963e82",
+  "title": {
+   "ru": "Бутик женской одежды в Киеве 140 м²",
+   "ua": "Бутик жіночого одягу Київ 140 м²",
+   "en": "Women's Clothing Boutique, 140 m², Kyiv"
+  },
+  "explicit_warsaw": false,
+  "area": 140
+ },
+ {
+  "path": "/dizayn-kommercheskogo-interyera-sauna-banya-varshava",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/dizayn-kommercheskogo-interyera-sauna-banya-varshava",
+   "ua": "/ua/dizayn-proekt-interyeru-lazni-sauny-kyiv-varshava",
+   "en": "/en/sauna-bathhouse-commercial-interior-design-warsaw"
+  },
+  "cover": "6abe044a6bbe610384497c6d",
+  "title": {
+   "ru": "Баня (сауна), 120 м²",
+   "ua": "Лазня (сауна), 120 м²",
+   "en": "Sauna (bathhouse), 120 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 120
+ },
+ {
+  "path": "/office-interior-design-140m",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/office-interior-design-140m",
+   "ua": "/ua/office-interior-design-custom-furniture-140m2-bratislava",
+   "en": "/en/office-interior-design-140m"
+  },
+  "cover": "6abe04703ba7c7b833963eaa",
+  "title": {
+   "ru": "Офис 140 м²",
+   "ua": "Офіс 140 м²",
+   "en": "Office, 140 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 140
+ },
+ {
+  "path": "/office-interior-design-53m",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/office-interior-design-53m",
+   "ua": "/ua/dyzain-interieru-ofisu-53-m-vyhotovlennia-mebliv-na-zamovlennia-vid-dumskaya-design-varshava",
+   "en": "/en/office-interior-design-53m"
+  },
+  "cover": "6abe04546bbe610384497c98",
+  "title": {
+   "ru": "Офис 53 м², Познань",
+   "ua": "Офіс Познань 53 м²",
+   "en": "Office, 53 m², Poznań"
+  },
+  "explicit_warsaw": false,
+  "area": 53
+ },
+ {
+  "path": "/boss-office-interior-design-warsaw",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/boss-office-interior-design-warsaw",
+   "ua": "/ua/kabinet-kerivnyka-vyhotovlennia-mebliv-na-zamovlennia-varshava-polshcha",
+   "en": "/en/boss-office-interior-design"
+  },
+  "cover": "6abe046261617a4443adfc3e",
+  "title": {
+   "ru": "Кабинет руководителя 7 м²",
+   "ua": "Кабінет керівника 7 м²",
+   "en": "Executive Office, 7 m²"
+  },
+  "explicit_warsaw": false,
+  "area": null
+ },
+ {
+  "path": "/shop-show-room-interior-design-warsaw-50m",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/shop-show-room-interior-design-warsaw-50m",
+   "ua": "/ua/dyzain-proekt-interieru-mahazynu-50-m2-varshava-vyhotovlennia-mebliv-na-zamovlennia",
+   "en": "/en/retail-store-interior-design-50m2"
+  },
+  "cover": "6abe047d4888499d2075a16a",
+  "title": {
+   "ru": "Магазин 50 м²",
+   "ua": "Магазин 50 м²",
+   "en": "Retail Store, 50 m²"
+  },
+  "explicit_warsaw": false,
+  "area": 50
+ },
+ {
+  "path": "/architecture-villa-spain-marbella",
+  "group": "architecture",
+  "alternates": {
+   "ru": "/architecture-villa-spain-marbella",
+   "ua": "/ua/arkhitekturni-rishennia-dlia-fasadu-pryvatnoho-budynku-ispaniia-marbelia",
+   "en": "/en/luxury-interior-design-architectural-facade-villa-marbella-spain"
+  },
+  "cover": "66b619f623f9a34a612c9e7d",
+  "title": {
+   "ru": "Вилла, Испания, Марбелья",
+   "ua": "Вілла, Іспанія, Марбелья.",
+   "en": "Villa, Spain, Marbella"
+  },
+  "explicit_warsaw": false,
+  "area": null
+ },
+ {
+  "path": "/3d-vizualizaciya-fasada-bratislava",
+  "group": "architecture",
+  "alternates": {
+   "ru": "/3d-vizualizaciya-fasada-bratislava",
+   "ua": "/ua/3d-vizualizaciya-fasadu-kyiv",
+   "en": "/en/3d-visualization-interior-design-private-house-facade-landscaping"
+  },
+  "cover": "673a059eece0e84849b9e2cf",
+  "title": {
+   "ru": "3D моделирование эскизного проекта фасада дома",
+   "en": "Private House"
+  },
+  "explicit_warsaw": false,
+  "area": null
+ },
+ {
+  "path": "/architecture-private-house",
+  "group": "architecture",
+  "alternates": {
+   "ru": "/architecture-private-house",
+   "ua": "/ua/architectural-design-private-house-facades-bratislava",
+   "en": "/en/private-house-architectural-design-facade"
+  },
+  "cover": "66a56e39d68a3eb051612386",
+  "title": {
+   "ru": "Частный дом",
+   "ua": "Частний будинок",
+   "en": "Private House"
+  },
+  "explicit_warsaw": false,
+  "area": null
+ },
+ {
+  "path": "/architecture-facade-barbershop-kyiv",
+  "group": "architecture",
+  "alternates": {
+   "ru": "/architecture-facade-barbershop-kyiv",
+   "ua": "/ua/barbershop-facade-design-kyiv-ukraine",
+   "en": "/en/barbershop-facade-architectural-solution"
+  },
+  "cover": "66d313f8e6210d11a55d877c",
+  "title": {
+   "ru": "Архитектурное решение для фасада барбершопа, Украина, Киев",
+   "ua": "Архітектурне рішення для фасаду барбершопу, Україна, Київ",
+   "en": "Architectural Facade Design for a Barbershop, Kyiv, Ukraine"
+  },
+  "explicit_warsaw": false,
+  "area": null
+ },
+ {
+  "path": "/architecture-gazebo-pergola",
+  "group": "architecture",
+  "alternates": {
+   "ru": "/architecture-gazebo-pergola",
+   "ua": "/ua/pergola-gazebo-design-built-project-bratislava",
+   "en": "/en/gazebo-pergola-design-and-construction"
+  },
+  "cover": "66d476c1e93b01287b01e50b",
+  "title": {
+   "ru": "Архитектурное решение беседка с перголой",
+   "ua": "Архітектурне рішення для бесідки з перголою",
+   "en": "Architectural Design of a Pergola Gazebo"
+  },
+  "explicit_warsaw": false,
+  "area": null
+ }
+]

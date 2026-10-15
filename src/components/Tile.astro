@@ -1,0 +1,21 @@
+---
+import Img from './Img.astro';
+interface Props {
+  href: string | null;
+  image: string | null | undefined;
+  alt?: string;
+  title: string;
+  sub?: string;
+  sizes?: string;
+  eager?: boolean;
+}
+const { href, image, alt = '', title, sub, sizes = '(min-width: 720px) 50vw, 100vw', eager = false } = Astro.props;
+const Tag = href ? 'a' : 'div';
+---
+<Tag class="tile" href={href || undefined}>
+  <Img id={image} alt={alt || title} sizes={sizes} eager={eager} />
+  <span class="tile__cap">
+    <span class="tile__title">{title}</span>
+    {sub && <span class="tile__sub" style="display:block">{sub}</span>}
+  </span>
+</Tag>

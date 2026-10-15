@@ -1,0 +1,160 @@
+{
+ "path": "/ua/contact-studio-interior-design-bratislava-vienna",
+ "lang": "ua",
+ "type": "contact",
+ "group": null,
+ "title": "Контакти DUMSKAYA DESIGN | Дизайн інтер’єру у Братиславі та Відні",
+ "description": "Контакти DUMSKAYA DESIGN — студії дизайну інтер’єру у Братиславі. Дизайн квартир, будинків і комерційних приміщень у Братиславі та Відні, меблі на замовлення, 3D-візуалізація та супровід реалізації проєктів у Словаччині й Австрії.",
+ "h1": "Контакти студії дизайну інтер’єрів",
+ "og_image": "655410c220a5eb000f971701",
+ "alternates": {
+  "ru": "/contact-studio-interior-design-bratislava-vienna",
+  "ua": "/ua/contact-studio-interior-design-bratislava-vienna",
+  "en": "/en/contact-studio-interior-design-bratislava-vienna"
+ },
+ "sections": [
+  {
+   "id": "67e54da8c64222227173185d",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Контакти студії дизайну інтер’єрів"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ви можете зателефонувати нам, написати в <strong>Telegram</strong> або <strong>WhatsApp</strong>, або залишити заявку через форму."
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Дизайн студія Братислава, Словаччина Súkennícka 1, 821 09 Ružinov, Bratislava +421 918 17 77 85 Дизайн студія Відень, Австрія +43 677 61430187 Дизайн студія Київ, Україна +38 095 366 25 75",
+       "href": "tel:+421918177785",
+       "image": null
+      },
+      {
+       "title": "moc.liamg%40ngised.ayaksmud",
+       "href": "mailto:moc.liamg%40ngised.ayaksmud?subject=Заказ дизайн проекта",
+       "image": null
+      },
+      {
+       "title": "https://dumskaya-design.com",
+       "href": "/",
+       "image": null
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Форма запису на безкоштовну консультацію"
+      }
+     ]
+    },
+    {
+     "type": "form"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Thank you!"
+      },
+      {
+       "t": "p",
+       "html": "We will contact you shortly."
+      },
+      {
+       "t": "p",
+       "html": "Ok"
+      },
+      {
+       "t": "p",
+       "html": "Can't send form"
+      },
+      {
+       "t": "p",
+       "html": "Please try again later."
+      },
+      {
+       "t": "p",
+       "html": "Ok"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cd31c16606c54c65538c3b",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Послуги студії дизайну інтер’єрів"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Дизайн житлових інтер’єрів",
+       "href": "/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "дизайнер інтер'єру, студія дизайну інтер'єру, квартири, будинки, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Дизайн комерційних інтер’єрів",
+       "href": "/ua/dyzain-interieriv-komertsiinykh-prymishchen-bratislava-slovakia",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "дизайнер інтер'єрів, офісу, салону краси, бутика жіночого одягу, магазину, ресепшн, ресторанів, готелів, кабінету керівника, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Меблі на замовлення",
+       "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-kukhnia-kabinet-harderobna-peredpokii",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "меблі на замовлення, кухня на замовлення, шафа, кухня на замовлення, купити кухню, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Меблі для бізнесу на замовлення",
+       "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-dlia-komertsiinykh-obiektiv",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "офісні меблі на замовлення, кабінет керівника під замовлення, ресепшен з меблями на замовлення, братислава, словакія, відень, австрія"
+       }
+      },
+      {
+       "title": "Кухні на замовлення",
+       "href": "/ua/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "кухня на замовлення, купити кухню, виготовлення кухні, ціна, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Ремонт під ключ",
+       "href": "/ua/budivnytstvo-ta-remont-pid-kliuch-zhytlovykh-ta-komertsiinykh-prymishchen-bratislava-slovakia-prais-lyst",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "ремонт під ключ, прайс-лист, ціна, вартість, оздоблювальні роботи, ремонт квартири, ремонт офісу, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+---
+// Фото из public/img: адаптивные размеры WebP, ширина/высота для отсутствия «прыжков».
+import { manifest } from '../lib/data';
+
+interface Props {
+  id: string | null | undefined;
+  alt?: string;
+  sizes?: string;
+  class?: string;
+  eager?: boolean;
+  style?: string;
+}
+const { id, alt = '', sizes = '100vw', class: cls, eager = false, style } = Astro.props;
+const m = id ? manifest[id] : undefined;
+const srcset = m?.files.map(([w, f]) => `/img/${f} ${w}w`).join(', ');
+const fallback = m ? m.files[Math.min(1, m.files.length - 1)][1] : null;
+---
+{m ? (
+  <img
+    src={`/img/${fallback}`}
+    srcset={srcset}
+    sizes={sizes}
+    width={m.width}
+    height={m.height}
+    alt={alt}
+    class={cls}
+    style={style}
+    loading={eager ? 'eager' : 'lazy'}
+    decoding={eager ? 'sync' : 'async'}
+    fetchpriority={eager ? 'high' : undefined}
+  />
+) : (
+  <span class:list={['ph', cls]} role="img" aria-label={alt} style={style}></span>
+)}

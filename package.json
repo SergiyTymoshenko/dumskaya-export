@@ -1,0 +1,17 @@
+{
+  "name": "dumskaya-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "images": "node scripts/images.mjs",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource/commissioner": "^5.3.0",
+    "@fontsource/tenor-sans": "^5.3.0",
+    "astro": "^5.18.2",
+    "sharp": "^0.35.5"
+  }
+}

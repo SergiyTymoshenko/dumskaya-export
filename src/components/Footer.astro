@@ -1,0 +1,57 @@
+---
+import { ui, LANGS, LANG_LABEL, type Lang } from '../lib/i18n';
+import { site, type Page, altPath, localize } from '../lib/data';
+
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang = page.lang as Lang;
+const T = ui(lang);
+const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
+const year = new Date().getFullYear();
+---
+<footer class="ftr wrap">
+  <div class="ftr__brand">
+    <p class="ftr__logo">DUMSKAYA DESIGN</p>
+    <p class="muted">{T.city}</p>
+  </div>
+  <div class="ftr__contacts">
+    <h2 class="visually-hidden">{T.contacts}</h2>
+    <ul>
+      {site.contacts.phones.map((p: any) => (
+        <li><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{p.city[lang]}</span></li>
+      ))}
+      <li><a href={`mailto:${site.contacts.email}`}>{site.contacts.email}</a></li>
+    </ul>
+  </div>
+  <div class="ftr__aside">
+    <ul class="ftr__social">
+      {site.contacts.social.map((s: any) => <li><a href={s.href} rel="noopener" target="_blank">{s.name}</a></li>)}
+    </ul>
+    <p class="ftr__langs">
+      {LANGS.map((l) => l === lang
+        ? <span aria-current="true">{LANG_LABEL[l]}</span>
+        : <a href={altPath(page, l)} hreflang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</a>)}
+    </p>
+  </div>
+  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}.</p>
+</footer>
+
+<style>
+  .ftr {
+    display: grid; gap: 32px; padding-block: 56px 32px;
+    border-top: 1px solid var(--line); font-size: 15px;
+  }
+  @media (min-width: 960px) { .ftr { grid-template-columns: 1fr 1.4fr 1fr; } }
+  .ftr p { margin: 0; }
+  .ftr ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .ftr a { text-decoration: none; }
+  .ftr a:hover { text-decoration: underline; }
+  .ftr__logo { font-family: var(--display); letter-spacing: 0.3em; text-transform: uppercase; color: var(--ink); margin-bottom: 6px !important; }
+  .ftr__contacts { display: grid; gap: 20px; align-content: start; justify-items: start; }
+  .ftr__contacts .btn:hover { text-decoration: none; }
+  .ftr__aside { display: grid; gap: 20px; align-content: start; }
+  .ftr__social { grid-auto-flow: column; justify-content: start; gap: 20px !important; }
+  .ftr__langs { display: flex; gap: 14px; letter-spacing: 0.06em; }
+  .ftr__langs a { color: var(--stone); }
+  .ftr__copy { grid-column: 1 / -1; font-size: 13px; }
+</style>

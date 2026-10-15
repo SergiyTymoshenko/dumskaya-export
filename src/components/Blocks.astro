@@ -1,0 +1,48 @@
+---
+// Общий вывод блоков страницы: заголовки, текст, фото, карточки, кнопки.
+import Img from './Img.astro';
+import Tile from './Tile.astro';
+import Parts from './Parts.astro';
+import type { Section } from '../lib/data';
+
+interface Props { sections: Section[]; skipH1?: boolean }
+const { sections, skipH1 = false } = Astro.props;
+---
+{sections.map((s) => (
+  <section class="blk">
+    {s.blocks.map((b) => {
+      if (b.type === 'heading') {
+        if (b.level === 1) return skipH1 ? null : <h1 class="blk__h1 display wrap">{b.text}</h1>;
+        return <h2 class="section-title blk__h wrap">{b.text}</h2>;
+      }
+      if (b.type === 'text') return <div class="wrap blk__text"><Parts parts={b.parts} /></div>;
+      if (b.type === 'gallery') return (
+        <div class:list={['blk__gallery', b.images.length === 1 && 'is-single']}>
+          {b.images.map((i) => <Img id={i.id} alt={i.alt} sizes={b.images.length === 1 ? '100vw' : '(min-width: 720px) 50vw, 100vw'} />)}
+        </div>
+      );
+      if (b.type === 'cards') return (
+        <div class:list={['tiles', b.items.length > 4 && b.items.length % 3 === 0 && 'tiles--3']}>
+          {b.items.map((c) => <Tile href={c.href} image={c.image?.id} alt={c.image?.alt} title={c.title} sizes="(min-width: 960px) 33vw, 50vw" />)}
+        </div>
+      );
+      if (b.type === 'buttons') return (
+        <div class="wrap blk__btns">
+          {b.items.map((x, i) => x.href && <a class:list={['btn', i === 0 && 'btn--solid']} href={x.href}>{x.text}</a>)}
+        </div>
+      );
+      return null;
+    })}
+  </section>
+))}
+
+<style>
+  .blk { padding-block: clamp(24px, 4vw, 48px); }
+  .blk__h1 { font-size: clamp(24px, 3.4vw, 40px); margin-block: 8px 24px; max-width: 30ch; }
+  .blk__h { margin-block: 8px 24px; }
+  .blk__text { margin-block: 8px 24px; }
+  .blk__gallery { display: grid; gap: var(--gap); grid-template-columns: 1fr; margin-block: 16px; }
+  @media (min-width: 720px) { .blk__gallery { grid-template-columns: 1fr 1fr; } .blk__gallery.is-single { grid-template-columns: 1fr; } }
+  .blk__gallery :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .blk__btns { display: flex; flex-wrap: wrap; gap: 12px; margin-block: 16px; }
+</style>

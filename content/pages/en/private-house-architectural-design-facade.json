@@ -1,0 +1,150 @@
+{
+ "path": "/en/private-house-architectural-design-facade",
+ "lang": "en",
+ "type": "project",
+ "group": "architecture",
+ "title": "Architectural facade design for a private house | DUMSKAYA DESIGN Bratislava",
+ "description": "Architectural facade design for a private house by DUMSKAYA DESIGN (Bratislava, Slovakia). Exterior concept development, facade solutions, selection of finishing materials, color schemes, architectural details, and photorealistic 3D exterior visualization.",
+ "h1": "Architectural design project for private house facades",
+ "og_image": "66a5977995243fd68a52be91",
+ "alternates": {
+  "ru": "/architecture-private-house",
+  "ua": "/ua/architectural-design-private-house-facades-bratislava",
+  "en": "/en/private-house-architectural-design-facade"
+ },
+ "sections": [
+  {
+   "id": "6884d34b53fd64883a42e9be",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Architectural design project for private house facades"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "DUMSKAYA DESIGN (Bratislava, Slovakia) completed the architectural design of the facades for a private house. The project included the development of an architectural concept for the exterior appearance of the building, taking into account its existing architecture, proportions, and overall style. The main focus was on creating a modern, harmonious, and visually balanced appearance for the private house. The project involved the development of facade solutions, combinations of finishing materials, color schemes, architectural elements, and exterior details. Particular attention was given to the proportions of the facades and the visual relationship between different parts of the building. Photorealistic 3D visualizations of the facades were created to present the future appearance of the house and allow the architectural concept, materials, colors, and exterior solutions to be evaluated before implementation. DUMSKAYA DESIGN (Bratislava, Slovakia) provides architectural facade design and photorealistic 3D exterior visualization services for private houses in Slovakia and across Europe."
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66a56e39d68a3eb051612386",
+       "alt": "architectural facade design of a private house Bratislava Slovakia"
+      },
+      {
+       "id": "66a5976bbf0595cc9c125592",
+       "alt": "contemporary house facade architectural design Bratislava Slovakia"
+      },
+      {
+       "id": "66a5979ca46c4d9eda288e4d",
+       "alt": "architectural visualization of residential house facade Bratislava Slovakia"
+      },
+      {
+       "id": "66a5972ba46c4d9eda288dcc",
+       "alt": "modern private house exterior architecture Bratislava Slovakia"
+      },
+      {
+       "id": "66a5977995243fd68a52be91",
+       "alt": "photorealistic 3D visualization of private house facade Bratislava Slovakia"
+      },
+      {
+       "id": "66a5975ca46c4d9eda288e10",
+       "alt": "private house facade concept and materials Bratislava Slovakia"
+      },
+      {
+       "id": "66a5979195243fd68a52beb8",
+       "alt": "modern exterior design of a private house Bratislava Slovakia"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "689385311bd656ece2d2c88c",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Back",
+       "href": "/en/architecture-and-design"
+      },
+      {
+       "text": "Order an architectural project",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Price of available service packages",
+       "href": "/en/3d-visualization-facade-exterior-price"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "688511ff6a8709c50fe542bb",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

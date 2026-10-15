@@ -1,0 +1,130 @@
+---
+import Img from '../components/Img.astro';
+import Tile from '../components/Tile.astro';
+import Parts from '../components/Parts.astro';
+import { ui, type Lang } from '../lib/i18n';
+import { projectsFor, splitCaption, localize, allGalleryImages, isServicesSection, type Page, type Part } from '../lib/data';
+
+interface Props { page: Page }
+const { page } = Astro.props;
+const lang = page.lang as Lang;
+const T = ui(lang);
+
+const list = projectsFor(lang);
+const idx = list.findIndex((p) => p.href === page.path);
+const project = list[idx];
+const [name, area] = splitCaption(project?.label || page.h1);
+const images = allGalleryImages(page);
+const [hero, ...photos] = images;
+const parts: Part[] = page.sections.filter((s) => !isServicesSection(s))
+  .flatMap((s) => s.blocks).filter((b) => b.type === 'text').flatMap((b: any) => b.parts);
+const services = page.sections.find(isServicesSection);
+const serviceLinks = ((services?.blocks.find((b) => b.type === 'cards') as any)?.items || []).filter((c: any) => c.href);
+
+const f = (project as any)?.facts?.[lang] || {};
+const facts = [
+  [T.facts.object, f.object || name],
+  [T.facts.area, f.area || area],
+  [T.facts.city, f.city],
+  [T.facts.works, f.works],
+].filter(([, v]) => v);
+
+const next = list.length > 1 ? list[(idx + 1) % list.length] : null;
+const prev = list.length > 1 ? list[(idx - 1 + list.length) % list.length] : null;
+const portfolio = localize('/proekty-interior-design', lang);
+const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
+const prices = localize('/price-interior-design-bratislava-wien-praha', lang);
+const home = lang === 'ru' ? '/' : `/${lang}`;
+---
+<section class="phero">
+  <Img id={hero?.id} alt={hero?.alt || name} sizes="100vw" eager class="phero__img" />
+  <div class="phero__cap">
+    <p class="phero__title display">{name}</p>
+    {area && <p class="phero__sub">{area}</p>}
+  </div>
+</section>
+
+<div class="pbody wrap">
+  <aside class="pside">
+    <div class="pside__inner">
+      <nav class="crumbs" aria-label="breadcrumbs">
+        <a href={home}>{T.home}</a> / {portfolio ? <a href={portfolio}>{T.projects}</a> : T.projects}
+      </nav>
+      <h1 class="pside__h1">{page.h1}</h1>
+      <table class="stamp">
+        <caption class="stamp__head">DUMSKAYA DESIGN</caption>
+        <tbody>
+          {facts.map(([k, v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}
+        </tbody>
+      </table>
+      <div class="pside__btns">
+        {contact && <a class="btn btn--solid" href={contact}>{T.consult}</a>}
+        {prices && <a class="btn" href={prices}>{T.prices}</a>}
+      </div>
+    </div>
+  </aside>
+
+  <div class="pmain">
+    {parts.length > 0 && <Parts parts={parts} class="pmain__text" />}
+    <div class="pgallery">
+      {photos.map((i) => <Img id={i.id} alt={i.alt} sizes="(min-width: 960px) 60vw, 100vw" />)}
+    </div>
+  </div>
+</div>
+
+{(prev || next) && (
+  <nav class="pnav" aria-label={T.projects}>
+    <div class="tiles">
+      {prev && (() => { const [n, a] = splitCaption(prev.label); return <Tile href={prev.href} image={prev.cover} title={n} sub={`${T.prev}${a ? ', ' + a : ''}`} />; })()}
+      {next && (() => { const [n, a] = splitCaption(next.label); return <Tile href={next.href} image={next.cover} title={n} sub={`${T.next}${a ? ', ' + a : ''}`} />; })()}
+    </div>
+    {portfolio && <p class="pnav__all"><a class="btn" href={portfolio}>{T.allProjects}</a></p>}
+  </nav>
+)}
+
+{serviceLinks.length > 0 && (
+  <section class="psvc wrap" aria-labelledby="svc">
+    <h2 id="svc" class="psvc__h">{T.services}</h2>
+    <ul>{serviceLinks.map((c: any) => <li><a href={c.href}>{c.title}</a></li>)}</ul>
+  </section>
+)}
+
+<style>
+  .phero { position: relative; height: calc(100svh - var(--header)); min-height: 380px; max-height: 1000px; overflow: hidden; background: #ddd; }
+  .phero :global(.phero__img) { width: 100%; height: 100%; object-fit: cover; }
+  .phero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0) 50%); }
+  .phero__cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 0 var(--pad) clamp(28px, 6vh, 64px); text-align: center; color: #fff; }
+  .phero__title { color: #fff; margin: 0; font-size: clamp(26px, 4.4vw, 56px); }
+  .phero__sub { margin: 10px 0 0; font-size: 14px; letter-spacing: 0.08em; }
+
+  .pbody { display: grid; gap: 40px; padding-block: clamp(32px, 6vw, 88px); }
+  @media (min-width: 960px) { .pbody { grid-template-columns: minmax(280px, 4fr) 8fr; gap: clamp(40px, 5vw, 88px); } }
+  @media (min-width: 960px) { .pside__inner { position: sticky; top: calc(var(--header) + 24px); } }
+  .pside__h1 { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.1em; font-size: clamp(18px, 1.7vw, 22px); line-height: 1.35; margin: 20px 0 28px; }
+
+  /* Штамп как на чертеже: рамка, строки, название студии в шапке */
+  .stamp { width: 100%; border-collapse: collapse; border: 1px solid var(--ink); font-size: 14px; line-height: 1.4; }
+  .stamp__head { caption-side: top; text-align: left; border: 1px solid var(--ink); border-bottom: 0; padding: 8px 12px; font-family: var(--display); letter-spacing: 0.24em; font-size: 12px; color: var(--ink); }
+  .stamp th, .stamp td { border-top: 1px solid var(--ink); padding: 9px 12px; vertical-align: top; text-align: left; }
+  .stamp th { width: 36%; font-weight: 400; color: var(--stone); border-right: 1px solid var(--ink); font-size: 13px; }
+  .stamp td { color: var(--ink); }
+  .pside__btns { display: grid; gap: 10px; margin-top: 28px; }
+  @media (min-width: 560px) and (max-width: 959px) { .pside__btns { grid-template-columns: 1fr 1fr; } }
+
+  :global(.pmain__text) { margin-bottom: clamp(32px, 5vw, 56px); }
+  .pgallery { display: grid; gap: var(--gap); grid-template-columns: 1fr 1fr; }
+  .pgallery :global(img) { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+  .pgallery :global(img:nth-child(3n+1)) { grid-column: 1 / -1; }
+  @media (max-width: 719px) {
+    .pgallery { grid-template-columns: 1fr; margin-inline: calc(var(--pad) * -1); }
+    .pgallery :global(img) { aspect-ratio: auto; }
+  }
+
+  .pnav { padding-top: clamp(24px, 4vw, 48px); }
+  .pnav__all { text-align: center; margin: 32px 0 0; }
+  .psvc { padding-block: clamp(48px, 7vw, 96px); }
+  .psvc__h { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.12em; font-size: 15px; margin-bottom: 16px; }
+  .psvc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 28px; }
+  .psvc a { text-decoration: none; border-bottom: 1px solid var(--line); }
+  .psvc a:hover { border-color: var(--oak); }
+</style>

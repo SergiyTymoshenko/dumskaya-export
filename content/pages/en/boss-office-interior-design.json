@@ -1,0 +1,153 @@
+{
+ "path": "/en/boss-office-interior-design",
+ "lang": "en",
+ "type": "project",
+ "group": "commercial",
+ "title": "Executive Office Design & Custom Furniture in Bratislava and Vienna | DUMSKAYA DESIGN",
+ "description": "Executive office interior design and custom furniture in Bratislava and Vienna by DUMSKAYA DESIGN. Bespoke office desks, cabinets and storage solutions, functional workspace planning and professional 3D interior visualization.",
+ "h1": "",
+ "og_image": "66c3d91eef7f2fa45041f5e0",
+ "alternates": {
+  "ru": "/boss-office-interior-design-warsaw",
+  "ua": "/ua/kabinet-kerivnyka-vyhotovlennia-mebliv-na-zamovlennia-varshava-polshcha",
+  "en": "/en/boss-office-interior-design"
+ },
+ "sections": [
+  {
+   "id": "6884d34e53fd64883a42eafe",
+   "blocks": [
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Executive Office Interior Design &amp; Custom Furniture, 7 m²"
+      },
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia) </strong>developed the interior design and custom furniture for a 7 m² executive office."
+      },
+      {
+       "t": "p",
+       "html": "The main objective was to create a functional workspace within a compact area. The interior and furniture were designed as a unified composition, with careful attention to ergonomics, workplace organization, and efficient use of space."
+      },
+      {
+       "t": "p",
+       "html": "Custom-made office furniture was designed to individual dimensions and adapted to the room layout and overall interior concept."
+      },
+      {
+       "t": "p",
+       "html": "The page features 3D visualizations of the executive office, presenting the interior concept and bespoke furniture solutions."
+      },
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN provides commercial interior design and custom furniture solutions for executive offices, workplaces, retail stores, boutiques, and beauty salons in Bratislava and Vienna.</strong>"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6abe046261617a4443adfc3e",
+       "alt": "executive office interior design with custom furniture in Warsaw"
+      },
+      {
+       "id": "66c3d91826c36d8c4f4d0f04",
+       "alt": "tailor-made furniture for a compact executive workspace"
+      },
+      {
+       "id": "66c3d92526c36d8c4f4d0f2d",
+       "alt": "DUMSKAYA DESIGN project of a 7 m² executive office in Poland"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "688f53625a6566f77ee836a6",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Back",
+       "href": "/en/commercial-interior-design"
+      },
+      {
+       "text": "Order a design project",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Price of available design service packages",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "688512cfdcb134e613a27565",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
