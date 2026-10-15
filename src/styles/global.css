@@ -1,6 +1,7 @@
 @import '@fontsource/tenor-sans/400.css';
 @import '@fontsource/commissioner/400.css';
 @import '@fontsource/commissioner/500.css';
+@import '@fontsource/montserrat/400.css';
 
 :root {
   /* Цвета: белая бумага, чёрный для заголовков, тёплый графит для текста,
@@ -15,6 +16,7 @@
 
   --display: 'Tenor Sans', 'Commissioner', Georgia, serif;
   --body: 'Commissioner', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --caption: 'Montserrat', 'Commissioner', system-ui, sans-serif; /* подписи на фото */
 
   --pad: clamp(16px, 4.5vw, 56px);
   --gap: 4px;
@@ -94,9 +96,10 @@ h2.section-title {
   pointer-events: none;
 }
 .tile__cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 20px 16px 22px; text-align: center; }
-.tile__title { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.14em; font-size: clamp(17px, 1.9vw, 24px); line-height: 1.2; }
+/* подписи на фото: мелкие заглавные с разрядкой; padding-left уравновешивает разрядку после последней буквы */
+.tile__title { display: block; padding-left: 0.22em; font: 400 clamp(12px, 1.05vw, 15px)/1.5 var(--caption); text-transform: uppercase; letter-spacing: 0.22em; }
 .tile__sub { margin-top: 6px; font-size: 13px; letter-spacing: 0.04em; opacity: .9; }
-.tiles--3 .tile__title { font-size: clamp(13px, 1.5vw, 18px); }
+.tiles--3 .tile__title { font-size: clamp(11px, 0.9vw, 13px); letter-spacing: 0.2em; padding-left: 0.2em; }
 .tiles--3 .tile__cap { padding: 14px 10px 16px; }
 @media (hover: hover) { .tile:hover img { transform: scale(1.025); } .tile:hover { color: #fff; } }
 
