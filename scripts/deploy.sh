@@ -10,8 +10,20 @@ cd "$(dirname "$0")/.."
 HOST="${DEPLOY_HOST:-eurox}"
 export IMAGES_DIR="${IMAGES_DIR:-$HOME/Documents/dumskaya-export/images}"
 
+if ! node -e 'const [a,b]=process.versions.node.split(".").map(Number); process.exit(a>22||(a===22&&b>=19)?0:1)' 2>/dev/null; then
+  echo "Нужен Node.js 22.19 или новее, сейчас: $(node -v 2>/dev/null || echo 'не установлен')."
+  echo "Поставьте версию LTS с https://nodejs.org (или: brew upgrade node / nvm install --lts) и запустите снова."
+  exit 1
+fi
 [ -d "$IMAGES_DIR" ] || { echo "Не найдена папка с оригиналами фото: $IMAGES_DIR"; exit 1; }
-[ -d node_modules ] || npm install
+# пакеты ставятся заново, если их нет, если обновился package-lock.json или сменилась версия Node
+STAMP="$(node -v) $(shasum package-lock.json 2>/dev/null || sha1sum package-lock.json)"
+if [ ! -d node_modules ] || [ "$(cat node_modules/.dd-stamp 2>/dev/null)" != "$STAMP" ]; then
+  echo "▸ Установка пакетов"
+  rm -rf node_modules
+  npm install --no-audit --no-fund --loglevel=error
+  echo "$STAMP" > node_modules/.dd-stamp
+fi
 
 echo "▸ 1/5 Фото"
 node scripts/images.mjs

@@ -27,7 +27,7 @@ npm install
 npm run deploy          # первый раз фото обрабатываются долго (около 2 300 штук), потом — только новые
 ```
 
-Нужны Node.js 18.20+ (`node -v`), python3 и ssh-доступ `ssh eurox`.
+Нужны Node.js 22.19+ (лучше актуальная LTS с nodejs.org; проверить: `node -v`), python3 и ssh-доступ `ssh eurox`.
 Оригиналы фото берутся из `~/Documents/dumskaya-export/images` (другая папка: `IMAGES_DIR=... npm run deploy`).
 
 ## Заявки с сайта
