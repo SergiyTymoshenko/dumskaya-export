@@ -1,9 +1,24 @@
 {
-  "/apartment-interior-design-bratislava-58m": {
-    "facts": {
-      "ru": { "object": "Квартира", "area": "58 м²", "city": "Братислава", "works": "Дизайн-проект, техническая документация, мебель на заказ, ремонт под ключ" },
-      "ua": { "object": "Квартира", "area": "58 м²", "city": "Братислава", "works": "Дизайн-проєкт, технічна документація, меблі на замовлення, ремонт під ключ" },
-      "en": { "object": "Apartment", "area": "58 m²", "city": "Bratislava", "works": "Design project, technical drawings, custom furniture, turnkey renovation" }
-    }
+ "/apartment-interior-design-bratislava-58m": {
+  "facts": {
+   "ru": {
+    "object": "Квартира",
+    "area": "58 м²",
+    "city": "Братислава",
+    "works": "Дизайн-проект, техническая документация, мебель на заказ, ремонт под ключ"
+   },
+   "ua": {
+    "object": "Квартира",
+    "area": "58 м²",
+    "city": "Братислава",
+    "works": "Дизайн-проєкт, технічна документація, меблі на замовлення, ремонт під ключ"
+   },
+   "en": {
+    "object": "Apartment",
+    "area": "58 m²",
+    "city": "Bratislava",
+    "works": "Design project, technical drawings, custom furniture, turnkey renovation"
+   }
   }
+ }
 }

@@ -170,12 +170,12 @@
   "area": 63
  },
  {
-  "path": "/apartment-interior-design-warsaw-60m",
+  "path": "/apartment-interior-design-60m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartment-interior-design-warsaw-60m",
-   "ua": "/ua/dyzain-proekt-interieru-apartamentiv-60-m2-varshava-polshcha",
-   "en": "/en/apartment-interior-design-warsaw-60m"
+   "ru": "/apartment-interior-design-60m",
+   "ua": "/ua/dyzain-proekt-interieru-apartamentiv-60-m2",
+   "en": "/en/apartment-interior-design-60m"
   },
   "cover": "6abd6ab34888499d20745304",
   "title": {
@@ -187,10 +187,10 @@
   "area": 60
  },
  {
-  "path": "/apartment-interior-design-warsaw-54m",
+  "path": "/apartment-interior-design-54m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartment-interior-design-warsaw-54m",
+   "ru": "/apartment-interior-design-54m",
    "ua": "/ua/apartment-interior-design-custom-furniture-54m2",
    "en": "/en/luxury-54sqm-apartment-interior-design-bratislava"
   },
@@ -204,12 +204,12 @@
   "area": 54
  },
  {
-  "path": "/apartment-furniture-interior-design-warsaw-45m",
+  "path": "/apartment-furniture-interior-design-45m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartment-furniture-interior-design-warsaw-45m",
-   "ua": "/ua/dyzain-proekt-interieru-kvartyry-45-m2-varshava-polshcha",
-   "en": "/en/warsaw-modern-apartment-45sqm"
+   "ru": "/apartment-furniture-interior-design-45m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-45-m2",
+   "en": "/en/modern-apartment-design-45sqm"
   },
   "cover": "6abd6b5c3ba7c7b83394fc44",
   "title": {
@@ -221,12 +221,12 @@
   "area": 45
  },
  {
-  "path": "/apartment-interior-design-warsaw-48m",
+  "path": "/apartment-interior-design-48m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartment-interior-design-warsaw-48m",
-   "ua": "/ua/dyzain-proekt-interieru-kvartyry-48-m2-varshava-polshcha",
-   "en": "/en/48sqm-luxury-apartment-interior-design-warsaw"
+   "ru": "/apartment-interior-design-48m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-48-m2",
+   "en": "/en/48sqm-luxury-apartment-interior-design"
   },
   "cover": "6abd6ac73ba7c7b83394f91e",
   "title": {
@@ -275,12 +275,12 @@
   }
  },
  {
-  "path": "/apartment-interior-design-warsaw-52m",
+  "path": "/apartment-interior-design-52m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartment-interior-design-warsaw-52m",
-   "ua": "/ua/dyzain-proekt-interieru-kvartyry-52-m2-varshava-polshcha",
-   "en": "/en/52sqm-apartment-design-warsaw"
+   "ru": "/apartment-interior-design-52m",
+   "ua": "/ua/dyzain-proekt-interieru-kvartyry-52-m2",
+   "en": "/en/modern-apartment-design-52sqm"
   },
   "cover": "6abd6aff68c5e81567a1c258",
   "title": {
@@ -530,10 +530,10 @@
   "area": 108
  },
  {
-  "path": "/apartment-interior-design-warsaw-51m",
+  "path": "/apartment-interior-design-51m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartment-interior-design-warsaw-51m",
+   "ru": "/apartment-interior-design-51m",
    "ua": "/ua/apartment-interior-design-custom-furniture-51m2",
    "en": "/en/51sqm-luxury-apartment-interior-design-bratislava"
   },
@@ -585,7 +585,7 @@
   "group": "residential",
   "alternates": {
    "ru": "/interior-design-apartment-ukraine-47m",
-   "ua": "/ua/dyzain-proekt-interieru-malohabarytnoi-kvartyry-47-m2-varshava-polsha",
+   "ua": "/ua/dyzain-proekt-interieru-malohabarytnoi-kvartyry-47-m2",
    "en": "/en/interior-design-compact-3-room-apartment-47sqm"
   },
   "cover": "6abd6b696bbe610384483889",
@@ -637,7 +637,7 @@
   "alternates": {
    "ru": "/dumskaya-interior-design-villa-230m",
    "ua": "/ua/dyzain-proekt-interieru-pryvatnoho-budynku-230-m-vienna",
-   "en": "/en/luxury-interior-design-private-house-moscow-230sqm"
+   "en": "/en/luxury-interior-design-private-house-230sqm"
   },
   "cover": "6abd6b2e4888499d207455b1",
   "title": {
@@ -653,7 +653,7 @@
   "group": "residential",
   "alternates": {
    "ru": "/furniture-interior-design-43m",
-   "ua": "/ua/realizatsiia-dyzain-proektu-interieru-ta-remontu-pid-kliuch-43m-varshava-polshcha",
+   "ua": "/ua/realizatsiia-dyzain-proektu-interieru-ta-remontu-pid-kliuch-43m",
    "en": "/en/interior-design-43sqm-duplex-apartment"
   },
   "cover": "6abd6acd6bbe6103844835b3",
@@ -666,12 +666,12 @@
   "area": 43
  },
  {
-  "path": "/interior-design-cosmetology-salon-warsaw",
+  "path": "/interior-design-cosmetology-salon",
   "group": "commercial",
   "alternates": {
-   "ru": "/interior-design-cosmetology-salon-warsaw",
-   "ua": "/ua/luxury-interior-cosmetology-salon-warsaw",
-   "en": "/en/luxury-interior-cosmetology-salon-warsaw"
+   "ru": "/interior-design-cosmetology-salon",
+   "ua": "/ua/dyzain-interieru-kosmetolohichnoho-salonu-54-m2",
+   "en": "/en/luxury-interior-cosmetology-salon"
   },
   "cover": "6abe045b3ba7c7b833963e2b",
   "title": {
@@ -683,11 +683,11 @@
   "area": 54
  },
  {
-  "path": "/beauty-salon-interior-design-warsaw-63m",
+  "path": "/beauty-salon-interior-design-63m",
   "group": "commercial",
   "alternates": {
-   "ru": "/beauty-salon-interior-design-warsaw-63m",
-   "ua": "/ua/dyzain-interieru-salonu-krasy-63-m2-varshava-polsha-vyhotovlennia-mebliv-na-zamovlennia",
+   "ru": "/beauty-salon-interior-design-63m",
+   "ua": "/ua/dyzain-interieru-salonu-krasy-63-m2",
    "en": "/en/beauty-salon-interior-design-63m"
   },
   "cover": "6abe04846bbe610384497d7b",
@@ -700,12 +700,12 @@
   "area": 63
  },
  {
-  "path": "/office-interior-design-warsaw-500m",
+  "path": "/office-interior-design-500m",
   "group": "commercial",
   "alternates": {
-   "ru": "/office-interior-design-warsaw-500m",
-   "ua": "/ua/dyzain-interieru-ofisu-500-m-vyhotovlennia-mebliv-na-zamovlennia-vid-dumskaya-design-varshava",
-   "en": "/en/office-interior-design-warsaw-500m"
+   "ru": "/office-interior-design-500m",
+   "ua": "/ua/dyzain-interieru-ofisu-500-m2",
+   "en": "/en/office-interior-design-500m"
   },
   "cover": "66f5d16697317fa68a804f5a",
   "title": {
@@ -721,7 +721,7 @@
   "group": "commercial",
   "alternates": {
    "ru": "/photo-studio-interior-design-custom-furniture-130m2-bratislava",
-   "ua": "/ua/dyzain-proekt-interieru-fotostudii-u-varshavi-polsha-vyhotovlennia-mebliv-na-zamovlennia",
+   "ua": "/ua/dyzain-interieru-fotostudii-130-m2",
    "en": "/en/photo-studio-interior-design-130m"
   },
   "cover": "6abe048a61617a4443adfce2",
@@ -751,12 +751,12 @@
   "area": 140
  },
  {
-  "path": "/dizayn-kommercheskogo-interyera-sauna-banya-varshava",
+  "path": "/dizayn-kommercheskogo-interyera-sauna-banya",
   "group": "commercial",
   "alternates": {
-   "ru": "/dizayn-kommercheskogo-interyera-sauna-banya-varshava",
-   "ua": "/ua/dizayn-proekt-interyeru-lazni-sauny-kyiv-varshava",
-   "en": "/en/sauna-bathhouse-commercial-interior-design-warsaw"
+   "ru": "/dizayn-kommercheskogo-interyera-sauna-banya",
+   "ua": "/ua/dyzain-interieru-lazni-sauny-120-m2",
+   "en": "/en/sauna-bathhouse-commercial-interior-design"
   },
   "cover": "6abe044a6bbe610384497c6d",
   "title": {
@@ -789,7 +789,7 @@
   "group": "commercial",
   "alternates": {
    "ru": "/office-interior-design-53m",
-   "ua": "/ua/dyzain-interieru-ofisu-53-m-vyhotovlennia-mebliv-na-zamovlennia-vid-dumskaya-design-varshava",
+   "ua": "/ua/dyzain-interieru-ofisu-53-m2",
    "en": "/en/office-interior-design-53m"
   },
   "cover": "6abe04546bbe610384497c98",
@@ -802,11 +802,11 @@
   "area": 53
  },
  {
-  "path": "/boss-office-interior-design-warsaw",
+  "path": "/boss-office-interior-design",
   "group": "commercial",
   "alternates": {
-   "ru": "/boss-office-interior-design-warsaw",
-   "ua": "/ua/kabinet-kerivnyka-vyhotovlennia-mebliv-na-zamovlennia-varshava-polshcha",
+   "ru": "/boss-office-interior-design",
+   "ua": "/ua/kabinet-kerivnyka-mebli-na-zamovlennia",
    "en": "/en/boss-office-interior-design"
   },
   "cover": "6abe046261617a4443adfc3e",
@@ -819,11 +819,11 @@
   "area": null
  },
  {
-  "path": "/shop-show-room-interior-design-warsaw-50m",
+  "path": "/shop-show-room-interior-design-50m",
   "group": "commercial",
   "alternates": {
-   "ru": "/shop-show-room-interior-design-warsaw-50m",
-   "ua": "/ua/dyzain-proekt-interieru-mahazynu-50-m2-varshava-vyhotovlennia-mebliv-na-zamovlennia",
+   "ru": "/shop-show-room-interior-design-50m",
+   "ua": "/ua/dyzain-interieru-mahazynu-50-m2",
    "en": "/en/retail-store-interior-design-50m2"
   },
   "cover": "6abe047d4888499d2075a16a",

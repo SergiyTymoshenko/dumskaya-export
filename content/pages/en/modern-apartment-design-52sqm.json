@@ -1,0 +1,238 @@
+{
+ "path": "/en/modern-apartment-design-52sqm",
+ "lang": "en",
+ "type": "project",
+ "group": "residential",
+ "title": "52 m² Apartment Design, Custom Furniture & Turnkey Renovation | Bratislava & Vienna",
+ "description": "52 m² apartment project by DUMSKAYA DESIGN featuring interior design, technical documentation, custom furniture, turnkey renovation and decoration. Comprehensive apartment design, furniture manufacturing and renovation services in Bratislava and Vienna.",
+ "h1": "Apartment Interior Design, Custom Furniture & Turnkey Renovation, 52 m²",
+ "og_image": "6abd6aff68c5e81567a1c258",
+ "alternates": {
+  "ru": "/apartment-interior-design-52m",
+  "ua": "/ua/dyzain-proekt-interieru-kvartyry-52-m2",
+  "en": "/en/modern-apartment-design-52sqm"
+ },
+ "sections": [
+  {
+   "id": "6884d35353fd64883a42eccb",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Apartment Interior Design, Custom Furniture & Turnkey Renovation, 52 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a comprehensive project for a 52 m² apartment, covering interior design and technical documentation, custom furniture, turnkey renovation and final decoration."
+      },
+      {
+       "t": "p",
+       "html": "The design covers the main functional areas of the apartment: living room, bedroom, kitchen with individually planned storage and built-in appliances, dressing areas, entrance hall and bathroom. Custom wardrobes, shelving and storage systems were also integrated into the project."
+      },
+      {
+       "t": "p",
+       "html": "Custom furniture solutions were developed for the individual areas based on the dimensions of the space, ergonomics and everyday requirements. Designing the furniture together with the interior makes it possible to use the available floor area efficiently while maintaining a consistent visual concept throughout the apartment."
+      },
+      {
+       "t": "p",
+       "html": "Before implementation, a detailed project estimate was prepared covering renovation works, finishing materials, custom furniture and household appliances. This approach provides a clearer understanding of the overall implementation budget before the work begins."
+      },
+      {
+       "t": "p",
+       "html": "The project is presented through photorealistic 3D visualizations, demonstrating the layout, interior concept and custom furniture solutions developed for the 52 m² apartment."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6abd6aff68c5e81567a1c258",
+       "alt": "stylish kitchen-living space interior"
+      },
+      {
+       "id": "66d74f596b7edfc3aa14eac7",
+       "alt": "open concept kitchen and living room design"
+      },
+      {
+       "id": "66d74f5abc41733b4b3c25d6",
+       "alt": "stylish living room interior design"
+      },
+      {
+       "id": "66d74f59b962fab2515b58a5",
+       "alt": "neutral tone living room design"
+      },
+      {
+       "id": "66d74f5d34085faf9b349cf5",
+       "alt": "modern lounge area with soft furnishings"
+      },
+      {
+       "id": "66d74f58155aff1223913027",
+       "alt": "simple and elegant corridor layout"
+      },
+      {
+       "id": "66d74f5934085faf9b349cda",
+       "alt": "modern entryway with custom furniture"
+      },
+      {
+       "id": "66d74f5fbc41733b4b3c25f6",
+       "alt": "hallway with mirror and storage"
+      },
+      {
+       "id": "66d74f60bc41733b4b3c25fe",
+       "alt": "functional entryway layout"
+      },
+      {
+       "id": "66d74f986b7edfc3aa14ec09",
+       "alt": "bedroom interior with natural textures"
+      },
+      {
+       "id": "66d74f6234085faf9b349d16",
+       "alt": "built-in wardrobe in bedroom"
+      },
+      {
+       "id": "66d74f626b7edfc3aa14eae4",
+       "alt": "scandinavian style bedroom"
+      },
+      {
+       "id": "66d74f656b7edfc3aa14eaf9",
+       "alt": "luxury bedroom interior by DUMSKAYA DESIGN"
+      },
+      {
+       "id": "66d74f666b7edfc3aa14eb05",
+       "alt": "small bedroom design in modern apartment"
+      },
+      {
+       "id": "66d74f67b962fab2515b58d4",
+       "alt": "interior design of bedroom apartment"
+      },
+      {
+       "id": "66d74f69155aff122391305c",
+       "alt": "terrace with wood flooring and decor"
+      },
+      {
+       "id": "66d74f6ebc41733b4b3c2636",
+       "alt": "cozy balcony for city apartment"
+      },
+      {
+       "id": "66d74f6f6b7edfc3aa14eb31",
+       "alt": "bathroom with custom vanity cabinet"
+      },
+      {
+       "id": "66d74f71155aff1223913075",
+       "alt": "bathroom tiles and fixtures design"
+      },
+      {
+       "id": "66d74f716b7edfc3aa14eb4d",
+       "alt": "bathroom design by DUMSKAYA DESIGN"
+      },
+      {
+       "id": "66d74f746b7edfc3aa14eb69",
+       "alt": "small bathroom interior design"
+      },
+      {
+       "id": "66d74f75bc41733b4b3c2659",
+       "alt": "light and clean bathroom interior"
+      },
+      {
+       "id": "66d74f776b7edfc3aa14eb81",
+       "alt": "bathroom design in neutral colors"
+      },
+      {
+       "id": "66d74f786b7edfc3aa14eb88",
+       "alt": "soft lighting in bathroom interior"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6890b5c94ebcf4b693369378",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Back",
+       "href": "/en/portfolio-interior-design-projects"
+      },
+      {
+       "text": "Order a design project",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Interior design service prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "68850f21db592016802d728a",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior design studio services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential interior design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial interior design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom Furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
