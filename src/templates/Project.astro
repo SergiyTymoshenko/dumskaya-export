@@ -5,8 +5,9 @@ import Tile from '../components/Tile.astro';
 import Parts from '../components/Parts.astro';
 import Crumbs from '../components/Crumbs.astro';
 import Img from '../components/Img.astro';
+import Video from '../components/Video.astro';
 import { ui, type Lang } from '../lib/i18n';
-import { projectsFor, splitCaption, localize, allGalleryImages, isServicesSection, type Page, type Part, type Img as Pic } from '../lib/data';
+import { projectsFor, splitCaption, localize, allGalleryImages, isServicesSection, productCards, type Page, type Part, type Img as Pic } from '../lib/data';
 
 interface Props { page: Page }
 const { page } = Astro.props;
@@ -30,6 +31,16 @@ for (const s of page.sections) s.blocks.forEach((b, k) => {
   docs.push({ title: h && h.type === 'heading' ? h.text : '', images: b.images });
 });
 if (!shots.length) docs.length = 0;            // на странице одни чертежи — показываем их как обычную ленту
+// видео и карточки товаров — после фото, каждое под заголовком своей секции
+const videos: { title: string; id: string; poster?: string }[] = [];
+const prods: { title: string; items: string[] }[] = [];
+for (const s of page.sections) s.blocks.forEach((b, k) => {
+  if (b.type !== 'video' && b.type !== 'products') return;
+  const h = s.blocks.slice(0, k).reverse().find((x) => x.type === 'heading');
+  const title = h && h.type === 'heading' && h.level > 1 ? h.text : '';
+  if (b.type === 'video') videos.push({ title, id: b.youtube, poster: b.poster });
+  else prods.push({ title, items: b.items });
+});
 const images = shots.length ? shots : allGalleryImages(page);
 const [hero, ...photos] = images;
 // текст проекта по порядку; подзаголовок выводится, только если за ним идёт текст
@@ -107,6 +118,20 @@ import { typo } from '../lib/typo';
       </figure>
     ))}
     {photos.length > 0 && <Gallery images={photos} class="pgallery" />}
+    {videos.map((v) => (
+      <section class="pextra">
+        {v.title && <h2 class="ph2">{typo(v.title)}</h2>}
+        <Video id={v.id} poster={v.poster} title={v.title || page.h1} lang={lang} />
+      </section>
+    ))}
+    {prods.map((p) => (
+      <section class="pextra">
+        {p.title && <h2 class="ph2">{typo(p.title)}</h2>}
+        <div class="tiles tiles--3">
+          {productCards(p.items, lang).map((c) => <Tile href={c.href} image={c.image} title={c.title} sub={c.sub} below sizes="(min-width: 960px) 20vw, (min-width: 720px) 50vw, 100vw" />)}
+        </div>
+      </section>
+    ))}
     {docs.map((d) => (
       <section class="pdocs">
         {d.title && <h2 class="ph2">{typo(d.title)}</h2>}
@@ -161,8 +186,8 @@ import { typo } from '../lib/typo';
   .pfig__cap { margin-top: 10px; font-size: 13px; letter-spacing: 0.06em; color: var(--stone); }
   .ph2 { font: 500 clamp(17px, 1.5vw, 19px)/1.35 var(--body); color: var(--ink); margin: 1.6em 0 0.6em; max-width: var(--measure); }
   .ph2:first-child { margin-top: 0; }
-  .pdocs { margin-top: clamp(48px, 7vw, 88px); }
-  .pdocs .ph2 { margin-bottom: clamp(16px, 2vw, 24px); }
+  .pdocs, .pextra { margin-top: clamp(48px, 7vw, 88px); }
+  .pdocs .ph2, .pextra .ph2 { margin-bottom: clamp(16px, 2vw, 24px); }
   @media (max-width: 719px) { :global(.pgallery) { margin-inline: calc(var(--pad) * -1); } }
 
   .pnav { padding-top: clamp(24px, 4vw, 48px); }

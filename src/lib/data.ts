@@ -12,7 +12,11 @@ export type Block =
   | { type: 'faq'; items: { q: string; a: string }[] }
   | { type: 'facts'; title?: string; rows: [string, string][] }
   | { type: 'form'; title?: string; text?: string }
-  | { type: 'figure'; image: Img; caption?: string };
+  | { type: 'figure'; image: Img; caption?: string }
+  /** видео с YouTube: превью — фото проекта (poster — id картинки), плеер грузится только по нажатию */
+  | { type: 'video'; youtube: string; poster?: string }
+  /** карточки товаров магазина (русские адреса; на других языках — те же товары на языке страницы) */
+  | { type: 'products'; items: string[] };
 export type Section = { id: string; blocks: Block[] };
 export type Page = {
   path: string; lang: Lang; type: string; group: string | null;
@@ -172,4 +176,15 @@ export function crumbsFor(page: Page): { label: string; href: string | null }[] 
       return [home, ...(group ? [{ label: group.label, href: prices ? L('/price-interior-design-bratislava-wien-praha') : null }] : []), last(page.h1)];
     }
   }
+}
+
+/** Карточки товаров магазина для блока products: страница товара на языке lang, название, артикул, первое фото. */
+export function productCards(ruPaths: string[], lang: Lang) {
+  return ruPaths.flatMap((ru) => {
+    const href = localize(ru, lang);
+    const p = href ? pageByPath.get(href) : undefined;
+    if (!p) return [];
+    const code = p.title.match(/\((TDD-[^)]+)\)/)?.[1] || '';
+    return [{ href: p.path, title: shopName(p), sub: code, image: firstGallery(p)[0]?.id || null }];
+  });
 }

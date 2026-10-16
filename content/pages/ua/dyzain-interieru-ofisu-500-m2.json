@@ -232,9 +232,19 @@
      "text": "Відео реалізованого дизайну інтер’єру та виготовлених на замовлення меблів для кабінету керівника"
     },
     {
+     "type": "video",
+     "youtube": "Su-U6k1rxTQ",
+     "poster": "66f5d29b78b42fbcaa455c2e"
+    },
+    {
      "type": "heading",
      "level": 2,
      "text": "Відео реалізованого дизайну інтер’єру та виготовлених на замовлення меблів для зони ресепшн"
+    },
+    {
+     "type": "video",
+     "youtube": "9GtsQTuFEBo",
+     "poster": "66f5d1661959d0d980a2ba7c"
     },
     {
      "type": "buttons",
@@ -262,6 +272,17 @@
      "type": "heading",
      "level": 2,
      "text": "Серія преміальних авторських меблів для кабінету керівника"
+    },
+    {
+     "type": "products",
+     "items": [
+      "/shop/exclusive-executive-office-cabinet",
+      "/shop/executive-conference-table",
+      "/shop/executive-desk-boss-l",
+      "/shop/executive-desk-boss-m",
+      "/shop/executive-desk-boss-s",
+      "/shop/exclusive-executive-office-cabinet-1"
+     ]
     }
    ]
   },

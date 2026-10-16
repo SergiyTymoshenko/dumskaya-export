@@ -5,10 +5,11 @@ import Gallery from './Gallery.astro';
 import Img from './Img.astro';
 import Tile from './Tile.astro';
 import Parts from './Parts.astro';
-import { splitCaption, pageByPath, type Section, type Phone } from '../lib/data';
+import { splitCaption, pageByPath, productCards, type Section, type Phone } from '../lib/data';
 import { typo } from '../lib/typo';
 import Caps from './Caps.astro';
 import LeadForm from './LeadForm.astro';
+import Video from './Video.astro';
 import type { Lang } from '../lib/i18n';
 
 // phone — телефон региона посадочной страницы: выводится сразу под H1, чтобы был виден на любом экране
@@ -33,7 +34,7 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
 ---
 {sections.map((s) => (
   <section class="blk">
-    {s.blocks.map((b) => {
+    {s.blocks.map((b, k) => {
       if (b.type === 'heading') {
         if (b.level === 1) return skipH1 ? null : (
           <>
@@ -52,6 +53,15 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
       }
       if (b.type === 'text') return <div class="wrap blk__text"><Parts parts={b.parts} /></div>;
       if (b.type === 'gallery') return <Gallery images={b.images} start="pair" class="blk__gallery" sizes="100vw" />;
+      if (b.type === 'video') {
+        const h = s.blocks.slice(0, k).reverse().find((x) => x.type === 'heading') as any;
+        return <div class="wrap blk__video"><Video id={b.youtube} poster={b.poster} title={h?.text || 'YouTube'} lang={lang} /></div>;
+      }
+      if (b.type === 'products') return (
+        <div class="wrap blk__products tiles tiles--3">
+          {productCards(b.items, lang).map((c) => <Tile href={c.href} image={c.image} title={c.title} sub={c.sub} below sizes="(min-width: 960px) 33vw, (min-width: 720px) 50vw, 100vw" />)}
+        </div>
+      );
       if (b.type === 'figure') return (
         <figure class="wrap blk__fig" data-zoom>
           <Img id={b.image.id} alt={b.image.alt} sizes="100vw" />
@@ -116,6 +126,8 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
   .regph__num:hover { color: var(--oak); }
   .blk__h { margin-block: 24px 20px; max-width: 34em; }
   .blk__text { margin-block: 8px 24px; }
+  .blk__video { margin-block: 16px 32px; max-width: 1200px; }
+  .blk__products { margin-block: 16px 32px; }
   .blk :global(.blk__gallery) { margin-block: 16px; }
   .blk__btns { display: flex; flex-wrap: wrap; gap: 12px; margin-block: 16px; }
   .blk__h3 { font: 500 17px/1.4 var(--body); color: var(--ink); margin: 28px 0 10px; max-width: var(--measure); }

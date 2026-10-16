@@ -5,7 +5,7 @@ export const LANG_LABEL: Record<Lang, string> = { ru: 'RU', ua: 'UA', en: 'EN' }
 
 const t = {
   ru: {
-    menu: 'Меню', close: 'Закрыть', call: 'Позвонить', phone: 'Телефон', home: 'Главная',
+    video: 'Смотреть видео', videoNote: 'Видео на YouTube', menu: 'Меню', close: 'Закрыть', call: 'Позвонить', phone: 'Телефон', home: 'Главная',
     city: 'Братислава и Вена',
     projects: 'Проекты', allProjects: 'Все проекты',
     groups: { residential: 'Жилые интерьеры', commercial: 'Коммерческие интерьеры', architecture: 'Архитектура' },
@@ -25,7 +25,7 @@ const t = {
     notFound: { title: 'Страница не найдена', text: 'Возможно, адрес изменился. Начните с главной или посмотрите проекты.' },
   },
   ua: {
-    menu: 'Меню', close: 'Закрити', call: 'Зателефонувати', phone: 'Телефон', home: 'Головна',
+    video: 'Дивитися відео', videoNote: 'Відео на YouTube', menu: 'Меню', close: 'Закрити', call: 'Зателефонувати', phone: 'Телефон', home: 'Головна',
     city: 'Братислава і Відень',
     projects: 'Проєкти', allProjects: 'Усі проєкти',
     groups: { residential: 'Житлові інтер’єри', commercial: 'Комерційні інтер’єри', architecture: 'Архітектура' },
@@ -45,7 +45,7 @@ const t = {
     notFound: { title: 'Сторінку не знайдено', text: 'Можливо, адреса змінилася. Почніть з головної або перегляньте проєкти.' },
   },
   en: {
-    menu: 'Menu', close: 'Close', call: 'Call', phone: 'Phone', home: 'Home',
+    video: 'Watch video', videoNote: 'Video on YouTube', menu: 'Menu', close: 'Close', call: 'Call', phone: 'Phone', home: 'Home',
     city: 'Bratislava and Vienna',
     projects: 'Projects', allProjects: 'All projects',
     groups: { residential: 'Residential interiors', commercial: 'Commercial interiors', architecture: 'Architecture' },
