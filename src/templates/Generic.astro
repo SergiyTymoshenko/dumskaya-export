@@ -21,7 +21,9 @@ const crumbs = [{ label: T.home, href: homePath(lang) }, ...(group ? [{ label: g
 
 const pack = packFor(page);
 const reg = phoneFor(page);
-const regPhone = reg.regional ? reg.phone : undefined;
+const regPhone = reg.regional
+  ? (reg.plain ? { ...reg.phone, label: { ru: ui('ru').phone, ua: ui('ua').phone, en: ui('en').phone } } : reg.phone)
+  : undefined;
 const main = page.sections.filter((s) => !isServicesSection(s));
 const services = page.sections.filter(isServicesSection);
 const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);

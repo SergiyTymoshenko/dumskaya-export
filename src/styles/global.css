@@ -98,6 +98,8 @@ h2.section-title {
 /* Плитки с фото: встык, подпись поверх фото */
 .tiles { display: grid; gap: var(--gap); grid-template-columns: 1fr; }
 @media (min-width: 720px) { .tiles { grid-template-columns: 1fr 1fr; } }
+/* одна карточка в ряду из двух — по центру, а не прижата влево с пустой половиной */
+@media (min-width: 720px) { .tiles:not(.tiles--3) > :only-child { grid-column: 1 / -1; justify-self: center; width: calc((100% - var(--gap)) / 2); } }
 .tiles--3 { grid-template-columns: 1fr 1fr; }
 @media (min-width: 960px) { .tiles--3 { grid-template-columns: repeat(3, 1fr); } }
 

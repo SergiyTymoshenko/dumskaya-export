@@ -1,0 +1,367 @@
+{
+ "path": "/en/interior-design-spain",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Interior Design in Spain — Madrid, Barcelona | DUMSKAYA",
+ "description": "Interior design for clients in Spain: remote design project, custom furniture from Bratislava, turnkey implementation. Madrid, Barcelona, Marbella.",
+ "h1": "Interior design and custom furniture for clients in Spain",
+ "og_image": "6abd6ae14888499d20745418",
+ "alternates": {
+  "ru": "/dizajn-interera-ispaniya",
+  "ua": "/ua/dyzain-interieru-ispaniia",
+  "en": "/en/interior-design-spain"
+ },
+ "phone": "ua",
+ "phone_plain": true,
+ "sections": [
+  {
+   "id": "city-dizajn-interera-ispaniya-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Interior design and custom furniture for clients in Spain"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> is an interior design studio with its own furniture production in Bratislava. For clients in Spain, we create design projects remotely, make custom furniture, and deliver projects on a turnkey basis."
+      },
+      {
+       "t": "p",
+       "html": "In Spain, we have completed apartments in Madrid (107 m²) and Barcelona (108 m²) and a 179 m² villa in Madrid — interior design, technical documentation, custom furniture, and turnkey renovation — as well as the architectural design of a villa facade in Marbella."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "For clients in Spain",
+     "rows": [
+      [
+       "Design project",
+       "remotely, from a floor plan and photos"
+      ],
+      [
+       "Furniture production",
+       "in-house, Bratislava"
+      ],
+      [
+       "Delivery and installation",
+       "arranged on site in Spain"
+      ],
+      [
+       "Design project prices",
+       "the same as in Bratislava and Vienna"
+      ],
+      [
+       "Projects",
+       "Madrid, Barcelona, Marbella"
+      ],
+      [
+       "Languages",
+       "Russian, Ukrainian, English"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      },
+      {
+       "text": "Kitchen catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ispaniya-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How we work on properties in Spain"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Online consultation.</strong> We discuss your project by phone, video call, or messenger. You send us a floor plan, photos, and your wishes.",
+        "<strong>Design project.</strong> Layout, concept, 3D visualizations, and technical documentation — everything is approved remotely, and revisions are made based on your comments.",
+        "<strong>Furniture.</strong> Based on the project, we make kitchens, wardrobes, walk-in closets, and other furniture at our own facility in Bratislava. Before production, we confirm the dimensions using your measurements, taken according to our instructions.",
+        "<strong>Delivery and installation.</strong> We ship the furniture to Spain and arrange installation on site.",
+        "<strong>Turnkey implementation.</strong> The whole project can be delivered for you — like the apartments in Madrid and Barcelona: design, custom furniture, and renovation."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ispaniya-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What you can order from Spain"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Interior design project</strong> for an apartment, house, or villa — from the layout to working drawings.",
+        "<strong>3D visualization</strong> of an interior or a house facade.",
+        "<strong>Architectural facade design</strong> — like the one for the villa in Marbella.",
+        "<strong>A custom kitchen</strong> — a bespoke design or one of the 32 models in our catalog.",
+        "<strong>Custom furniture</strong> — wardrobes, walk-in closets, entrance hall furniture, TV walls, and furniture for bedrooms and home offices.",
+        "<strong>Complete implementation</strong> — design, furniture, and renovation."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Interior design packages cost the same as for Bratislava and Vienna: from €20/m². Furniture with delivery to Spain is priced based on the project."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ispaniya-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projects in Spain"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Apartment in Madrid, 107 m²",
+       "href": "/en/luxury-interior-design-madrid-spain-107m",
+       "image": {
+        "id": "6abd6ad368c5e81567a1c165",
+        "alt": "luxury interior design madrid, spain"
+       }
+      },
+      {
+       "title": "Apartment in Barcelona, 108 m²",
+       "href": "/en/luxury-108sqm-apartment-interior-design-barcelona-spain",
+       "image": {
+        "id": "6abd6ae14888499d20745418",
+        "alt": "luxury living room with statement lighting fixture barcelona, spain"
+       }
+      },
+      {
+       "title": "Villa in Madrid, 179 m²",
+       "href": "/en/luxury-interior-villa-179sqm-madrid-spain",
+       "image": {
+        "id": "6abd6b2668c5e81567a1c33b",
+        "alt": "interior design project villa madrid spain"
+       }
+      },
+      {
+       "title": "Villa facade in Marbella",
+       "href": "/en/luxury-interior-design-architectural-facade-villa-marbella-spain",
+       "image": {
+        "id": "66b619f623f9a34a612c9e7d",
+        "alt": "custom architectural design of a modern villa in Marbella, Spain"
+       }
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d481545339d71adfe414d9",
+       "alt": "luxury apartment interior with minimalist style madrid, spain"
+      },
+      {
+       "id": "66d48155fe31c0a8ebcfe2f6",
+       "alt": "soft neutral color palette in luxury design madrid, spain"
+      },
+      {
+       "id": "66d48155fe31c0a8ebcfe302",
+       "alt": "luxury living room with statement lighting fixture madrid, spain"
+      },
+      {
+       "id": "66d85e334c363b1c50cc2550",
+       "alt": "modern sofa and neutral tones in apartment lounge madrid, spain"
+      },
+      {
+       "id": "66d4c78ffe31c0a8ebd08b62",
+       "alt": "luxury open-plan living room and kitchen design barcelona, spain"
+      },
+      {
+       "id": "66d4c79efe31c0a8ebd08b94",
+       "alt": "high-end apartment kitchen-lounge interior barcelona, spain"
+      },
+      {
+       "id": "66d4c7b9e93b01287b02a75d",
+       "alt": "custom kitchen island with designer lighting barcelona, spain"
+      },
+      {
+       "id": "66d4c7b8e93b01287b02a74c",
+       "alt": "marble countertops in luxury kitchen barcelona, spain"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All studio projects",
+       "href": "/en/portfolio-interior-design-projects"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ispaniya-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about working with clients in Spain"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Can I get a design project without traveling to Bratislava?",
+       "a": "<p>Yes. Every stage happens online: consultations, approval of the concept and 3D visualizations, and revisions. You receive the visualizations and drawings electronically.</p>"
+      },
+      {
+       "q": "How are measurements taken?",
+       "a": "<p>A floor plan and photos are enough for the design project. Before furniture production, we confirm the dimensions using your measurements, following our detailed instructions.</p>"
+      },
+      {
+       "q": "How does the furniture get to Spain?",
+       "a": "<p>We make the furniture at our own facility in Bratislava, pack it, and deliver it to your property. Installation is arranged for the delivery date.</p>"
+      },
+      {
+       "q": "Can I order just the design project?",
+       "a": "<p>Yes. You will receive a complete set of visualizations and drawings that a local contractor in Spain can work from.</p>"
+      },
+      {
+       "q": "Do you design architecture and facades?",
+       "a": "<p>Yes. For example, we created the architectural facade design for a villa in Marbella, with photorealistic 3D visualizations.</p>"
+      },
+      {
+       "q": "What are the lead times?",
+       "a": "<p>The design project takes from 14 days for the “Express” package; a full project usually takes 4–8 weeks. Furniture production time depends on the scope of the order and is confirmed with the quote.</p>"
+      },
+      {
+       "q": "What languages do you work in?",
+       "a": "<p>Russian, Ukrainian, and English.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ispaniya-5",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Request a free consultation",
+     "text": "Tell us where the property is and what you need — we will reply within one business day."
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ispaniya-6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

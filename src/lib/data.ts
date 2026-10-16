@@ -19,6 +19,8 @@ export type Page = {
   sections: Section[];
   /** посадочная страница региона: ключ телефона из site.json (sk, at, ua, us) — он стоит в шапке и под заголовком */
   phone?: string;
+  /** телефон другого региона (например, украинский на странице Праги): подпись «Телефон» без города */
+  phone_plain?: boolean;
 };
 export type Project = {
   path: string; group: 'residential' | 'commercial' | 'architecture';
@@ -44,10 +46,10 @@ export const site = siteJson as any;
 
 export type Phone = { tel: string; text: string; key: string; city: Record<Lang, string>; label: Record<Lang, string> };
 /** Телефон страницы: телефон региона у посадочных страниц, иначе основной (Братислава). */
-export function phoneFor(page: Page): { phone: Phone; regional: boolean } {
+export function phoneFor(page: Page): { phone: Phone; regional: boolean; plain: boolean } {
   const all = site.contacts.phones as Phone[];
   const own = page.phone ? all.find((p) => p.key === page.phone) : undefined;
-  return { phone: own || all[0], regional: !!own };
+  return { phone: own || all[0], regional: !!own, plain: !!own && !!page.phone_plain };
 }
 
 /** Адрес той же страницы на другом языке (или главная этого языка, если перевода нет). */

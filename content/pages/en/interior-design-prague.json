@@ -1,0 +1,351 @@
+{
+ "path": "/en/interior-design-prague",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Interior Design in Prague — Apartments & Houses | DUMSKAYA",
+ "description": "Interior design in Prague: design project, 3D visualization, custom furniture from Bratislava with delivery and installation, turnkey renovation.",
+ "h1": "Interior design and custom furniture in Prague",
+ "og_image": "6abd6aea61617a4443acb472",
+ "alternates": {
+  "ru": "/dizajn-interera-praga",
+  "ua": "/ua/dyzain-interieru-praha",
+  "en": "/en/interior-design-prague"
+ },
+ "phone": "ua",
+ "phone_plain": true,
+ "sections": [
+  {
+   "id": "city-dizajn-interera-praga-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Interior design and custom furniture in Prague"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> is an interior design studio with its own furniture production in Bratislava. For clients in Prague, we create design projects, make custom furniture, and deliver projects on a turnkey basis. In Prague, the studio has already completed a 90 m² apartment from start to finish: interior design, technical documentation, custom furniture, and renovation."
+      },
+      {
+       "t": "p",
+       "html": "The design project can be managed remotely — based on a floor plan, photos, and video calls. We make the furniture in Bratislava, delivery to Prague is included in the price, and our own crew handles installation. Prices are the same as in Bratislava and Vienna."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "For clients in Prague",
+     "rows": [
+      [
+       "Design project",
+       "remotely, from a floor plan and photos"
+      ],
+      [
+       "Furniture production",
+       "in-house, Bratislava"
+      ],
+      [
+       "Delivery to Prague",
+       "included in the price"
+      ],
+      [
+       "Installation",
+       "our own crew from Bratislava"
+      ],
+      [
+       "Prices",
+       "the same as in Bratislava and Vienna"
+      ],
+      [
+       "Completed project",
+       "apartment in Prague, 90 m²"
+      ],
+      [
+       "Languages",
+       "Russian, Ukrainian, English"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      },
+      {
+       "text": "Kitchen catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-praga-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How we work on properties in Prague"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Online consultation.</strong> We discuss your project by phone, video call, or messenger. You send us a floor plan, photos, and your wishes.",
+        "<strong>Design project.</strong> Layout, concept, 3D visualizations, and technical documentation — everything is approved remotely, and revisions are made based on your comments.",
+        "<strong>Furniture.</strong> Based on the project, we make kitchens, wardrobes, walk-in closets, and other furniture in Bratislava. Before production, we confirm the dimensions — from your measurements or with a site visit by our specialist.",
+        "<strong>Delivery and installation.</strong> We bring the furniture to Prague and install it with our own crew. Delivery is already included in the price.",
+        "<strong>Turnkey renovation.</strong> The whole project can be delivered for you — like the 90 m² apartment in Prague: design, custom furniture, and renovation."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-praga-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What you can order in Prague"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Interior design project</strong> for an apartment or house — from the layout to working drawings.",
+        "<strong>3D visualization</strong> of an interior or a house facade.",
+        "<strong>A custom kitchen</strong> — a bespoke design or one of the 32 models in our catalog, with delivery and installation.",
+        "<strong>Custom furniture</strong> — wardrobes, walk-in closets, entrance hall furniture, TV walls, and furniture for bedrooms and home offices.",
+        "<strong>Complete implementation</strong> — design, furniture, and renovation by one team."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Interior design packages cost the same as for Bratislava and Vienna: from €20/m². Furniture is priced based on the project, and delivery to Prague is already included."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-praga-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Project in Prague"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The 90 m² apartment was completed on a turnkey basis: living room, bedrooms, kitchen with built-in appliances, walk-in closets, entrance hall, and bathrooms. The kitchen, wardrobes, and storage systems were made to order."
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Apartment in Prague, 90 m²",
+       "href": "/en/apartment-interior-design-prague-czech-republic-90sqm",
+       "image": {
+        "id": "6abd6aea61617a4443acb472",
+        "alt": "modern kitchen living room design prague czech republic"
+       }
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d7246e3d91c6e0c00a4508",
+       "alt": "open-plan kitchen lounge prague czech republic"
+      },
+      {
+       "id": "66d72478b962fab2515ac860",
+       "alt": "bespoke cabinetry in kitchen living space prague"
+      },
+      {
+       "id": "66d7246df5c3d5fbe629065c",
+       "alt": "premium finishes in kitchen lounge prague czech republic"
+      },
+      {
+       "id": "66d7246eb962fab2515ac810",
+       "alt": "marble island in open kitchen living area prague"
+      },
+      {
+       "id": "66d7246eb962fab2515ac813",
+       "alt": "built-in appliances in kitchen lounge prague czech republic"
+      },
+      {
+       "id": "66d724723d91c6e0c00a4536",
+       "alt": "custom furniture in kitchen living room prague"
+      },
+      {
+       "id": "66d724783d91c6e0c00a455d",
+       "alt": "elegant lighting in open-plan kitchen prague czech republic"
+      },
+      {
+       "id": "66d726abc451dac77cfcf2b5",
+       "alt": "neutral tones in kitchen lounge interior prague"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All studio projects",
+       "href": "/en/portfolio-interior-design-projects"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-praga-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about working in Prague"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "How much does furniture delivery to Prague cost?",
+       "a": "<p>Delivery is included in the price of the furniture. You get one total price for the pieces with delivery and installation.</p>"
+      },
+      {
+       "q": "How are measurements taken?",
+       "a": "<p>For the design project, a floor plan and photos are enough. Before furniture production, we confirm the dimensions either from your own measurements taken according to our instructions or with a site visit by our specialist.</p>"
+      },
+      {
+       "q": "Who installs the furniture?",
+       "a": "<p>Our own crew from Bratislava. We schedule the installation for the delivery date so that everything is installed in a single visit.</p>"
+      },
+      {
+       "q": "Can I order just the design project?",
+       "a": "<p>Yes. You will receive a complete set of visualizations and drawings that a local contractor in Prague can work from.</p>"
+      },
+      {
+       "q": "What are the lead times?",
+       "a": "<p>The design project takes from 14 days for the “Express” package; a full project usually takes 4–8 weeks. Furniture production time depends on the scope of the order and is confirmed with the quote.</p>"
+      },
+      {
+       "q": "What languages do you work in?",
+       "a": "<p>Russian, Ukrainian, and English.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-praga-5",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Request a free consultation",
+     "text": "Tell us where the property is and what you need — we will reply within one business day."
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-praga-6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
