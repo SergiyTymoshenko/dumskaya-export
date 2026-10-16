@@ -18,7 +18,7 @@ const home = lang === 'ru' ? '/' : `/${lang}`;
   <nav class="crumbs" aria-label="breadcrumbs"><a href={home}>{T.home}</a> / <span aria-current="page">{T.projects}</span></nav>
   <h1 class="intro__h1 display">{page.h1}</h1>
   <nav class="intro__groups" aria-label={T.projects}>
-    {groups.map((g) => <a href={`#${g.key}`}>{g.label} <span class="muted">{g.items.length}</span></a>)}
+    {groups.map((g) => <a href={`#${g.key}`}>{g.label}</a>)}
   </nav>
 </div>
 
