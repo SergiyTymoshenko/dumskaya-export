@@ -1,7 +1,8 @@
 ---
-// Просмотр фото крупно: нажатие на любое фото внутри [data-zoom] открывает его во весь экран
-// в максимальном размере. Листание — стрелками на экране и клавиатуре, свайпом на телефоне;
-// закрыть — крестик, Esc, нажатие на тёмный фон. Фото страницы листаются по порядку.
+// Просмотр фото крупно: нажатие на любое фото внутри [data-zoom] открывает его на весь экран
+// (в любой ориентации телефона фото занимает всю ширину или всю высоту экрана). Сверху — только
+// номер фото «4 / 47», кнопки лежат поверх фото. Листание — стрелками на экране и клавиатуре,
+// свайпом на телефоне; закрыть — крестик, Esc, нажатие на фон, смахивание вниз.
 import { ui, type Lang } from '../lib/i18n';
 interface Props { lang: Lang }
 const T = ui(Astro.props.lang);
@@ -15,8 +16,8 @@ const T = ui(Astro.props.lang);
   </button>
   <figure class="lb__fig">
     <img class="lb__img" alt="" data-lb-img />
-    <figcaption class="lb__cap"><span data-lb-count class="lb__count"></span><span data-lb-cap></span></figcaption>
   </figure>
+  <p class="lb__count" data-lb-count aria-live="polite"></p>
   <button type="button" class="lb__btn lb__nav lb__next" data-lb-next aria-label={T.photoNext}>
     <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M9 4l8 8-8 8" stroke="currentColor" stroke-width="1.3" fill="none"/></svg>
   </button>
@@ -26,7 +27,6 @@ const T = ui(Astro.props.lang);
   const dlg = document.querySelector<HTMLDialogElement>('[data-lb]');
   if (dlg && typeof dlg.showModal === 'function') {
     const view = dlg.querySelector<HTMLImageElement>('[data-lb-img]')!;
-    const cap = dlg.querySelector<HTMLElement>('[data-lb-cap]')!;
     const count = dlg.querySelector<HTMLElement>('[data-lb-count]')!;
     const prev = dlg.querySelector<HTMLButtonElement>('[data-lb-prev]')!;
     const next = dlg.querySelector<HTMLButtonElement>('[data-lb-next]')!;
@@ -57,8 +57,7 @@ const T = ui(Astro.props.lang);
         pre.onload = () => { if (list[i] === im) view.src = big; };
         pre.src = big;
       }
-      cap.textContent = im.alt || '';
-      count.textContent = list.length > 1 ? `${i + 1} / ${list.length}  ` : '';
+      count.textContent = list.length > 1 ? `${i + 1} / ${list.length}` : '';
       prev.hidden = next.hidden = list.length < 2;
       preload(list[(i + 1) % list.length]);
     }
@@ -86,7 +85,7 @@ const T = ui(Astro.props.lang);
     prev.addEventListener('click', () => show(i - 1));
     next.addEventListener('click', () => show(i + 1));
     dlg.querySelector('[data-lb-close]')!.addEventListener('click', () => dlg.close());
-    dlg.addEventListener('click', (e) => { if (e.target === dlg || (e.target as Element).classList.contains('lb__fig')) dlg.close(); });
+    dlg.addEventListener('click', (e) => { const t = e.target as Element; if (t === dlg || t.classList.contains('lb__fig')) dlg.close(); });
     dlg.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') show(i - 1);
       if (e.key === 'ArrowRight') show(i + 1);
@@ -106,29 +105,42 @@ const T = ui(Astro.props.lang);
 </script>
 
 <style>
+  /* весь экран: 100dvh — реальная видимая высота (на телефоне в горизонтальном положении тоже) */
   .lb {
     position: fixed; inset: 0; margin: 0; padding: 0; border: 0;
-    width: 100vw; height: 100svh; max-width: none; max-height: none;
-    background: rgba(14, 13, 12, 0.96); color: #fff; overflow: hidden;
+    width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none;
+    background: #0e0d0c; color: #fff; overflow: hidden;
   }
-  .lb[open] { display: grid; place-items: center; }
-  .lb::backdrop { background: rgba(0, 0, 0, 0.6); }
-  .lb__fig { margin: 0; width: 100%; height: 100%; display: grid; place-items: center; align-content: center; gap: 12px; padding: 56px 72px 20px; box-sizing: border-box; }
-  .lb__img { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(100svh - 120px); object-fit: contain; user-select: none; }
-  .lb__cap { font-size: 13px; line-height: 1.5; color: rgba(255, 255, 255, 0.72); text-align: center; max-width: 70ch; min-height: 1.5em; }
-  .lb__count { letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.9); white-space: pre; }
-  .lb__btn { position: absolute; z-index: 1; display: grid; place-items: center; border: 0; background: none; color: #fff; cursor: pointer; opacity: 0.85; }
-  .lb__btn:hover, .lb__btn:focus-visible { opacity: 1; }
-  .lb__close { top: 8px; right: 8px; width: 52px; height: 52px; }
-  .lb__nav { top: 50%; width: 64px; height: 96px; transform: translateY(-50%); }
-  .lb__prev { left: 4px; }
-  .lb__next { right: 4px; }
+  .lb[open] { display: block; }
+  .lb::backdrop { background: #0e0d0c; }
+  .lb__fig { position: absolute; inset: 0; margin: 0; display: grid; place-items: center; }
+  .lb__img {
+    display: block; width: auto; height: auto;
+    max-width: 100vw; max-height: 100vh; max-height: 100dvh;
+    object-fit: contain; user-select: none; -webkit-user-select: none;
+  }
+  /* номер фото и кнопки — поверх фото, на полупрозрачной подложке, чтобы читались на светлых кадрах */
+  .lb__count {
+    position: absolute; z-index: 1; margin: 0;
+    top: max(12px, env(safe-area-inset-top)); left: max(12px, env(safe-area-inset-left));
+    padding: 6px 12px; background: rgba(0, 0, 0, 0.42); border-radius: 18px;
+    font-size: 13px; line-height: 1.4; letter-spacing: 0.08em; color: #fff;
+  }
+  .lb__count:empty { display: none; }
+  .lb__btn {
+    position: absolute; z-index: 1; display: grid; place-items: center;
+    border: 0; border-radius: 50%; background: rgba(0, 0, 0, 0.42); color: #fff; cursor: pointer;
+    transition: background-color .2s;
+  }
+  .lb__btn:hover, .lb__btn:focus-visible { background: rgba(0, 0, 0, 0.7); }
+  .lb__close { top: max(8px, env(safe-area-inset-top)); right: max(8px, env(safe-area-inset-right)); width: 48px; height: 48px; }
+  .lb__nav { top: 50%; width: 56px; height: 56px; transform: translateY(-50%); }
+  .lb__prev { left: max(10px, env(safe-area-inset-left)); }
+  .lb__next { right: max(10px, env(safe-area-inset-right)); }
   .lb__nav[hidden] { display: none; }
-  @media (max-width: 719px) {
-    .lb__fig { padding: 56px 0 16px; }
-    .lb__img { max-height: calc(100svh - 130px); }
-    .lb__cap { padding-inline: 64px; }
-    .lb__nav { top: auto; bottom: 4px; transform: none; width: 56px; height: 56px; }
+  @media (max-width: 719px), (max-height: 500px) {
+    .lb__nav { width: 44px; height: 44px; }
+    .lb__nav svg { width: 26px; height: 26px; }
   }
   :global(html.lb-open) { overflow: hidden; }
   :global([data-zoom] img:not([aria-hidden])) { cursor: zoom-in; }
