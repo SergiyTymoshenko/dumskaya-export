@@ -32,6 +32,9 @@ cd ~/dumskaya-site && git fetch origin && git reset --hard origin/main && bash s
 
 Нужны python3 и ssh-доступ `ssh eurox`.
 Оригиналы фото берутся из `~/Documents/dumskaya-export/images` (другая папка: `IMAGES_DIR=... npm run deploy`).
+Исправленные копии старых фото лежат там же в `images/fixed/` (в `images.json` — путь `images/fixed/<id>.png`),
+сами оригиналы не трогаем. Если картинку заменили — имя файла в `image-names.json` меняется (например, `-v2`):
+фото на сайте кешируются на год, под старым именем посетители увидели бы старую версию.
 
 ## Заявки с сайта и бот студии
 

@@ -20724,10 +20724,10 @@
 }
 },
 "694455c5e131d3b1ecf1478f": {
-"file": "images/694455c5e131d3b1ecf1478f.png",
+"file": "images/fixed/694455c5e131d3b1ecf1478f.png",
 "width": 2177,
 "height": 1539,
-"bytes": 319263,
+"bytes": 246577,
 "type": "image/png",
 "alt": {
 "ru": "обмерный план квартиры с привязкой стен и проемов",
@@ -20736,10 +20736,10 @@
 }
 },
 "694456a4669805ebfa39ccd1": {
-"file": "images/694456a4669805ebfa39ccd1.png",
+"file": "images/fixed/694456a4669805ebfa39ccd1.png",
 "width": 2179,
 "height": 1541,
-"bytes": 431882,
+"bytes": 368182,
 "type": "image/png",
 "alt": {
 "ru": "план демонтажа и возведения перегородок в квартире",
@@ -20748,10 +20748,10 @@
 }
 },
 "694456ffc7a60f173ac4621b": {
-"file": "images/694456ffc7a60f173ac4621b.png",
+"file": "images/fixed/694456ffc7a60f173ac4621b.png",
 "width": 2181,
 "height": 1543,
-"bytes": 2090118,
+"bytes": 1722201,
 "type": "image/png",
 "alt": {
 "ru": "рабочий чертеж перепланировки квартиры",
@@ -20760,10 +20760,10 @@
 }
 },
 "69445711dba00c1979cb6c88": {
-"file": "images/69445711dba00c1979cb6c88.png",
+"file": "images/fixed/69445711dba00c1979cb6c88.png",
 "width": 2184,
 "height": 1542,
-"bytes": 636627,
+"bytes": 570768,
 "type": "image/png",
 "alt": {
 "ru": "план зонирования квартиры по функциональным зонам",
@@ -20772,10 +20772,10 @@
 }
 },
 "69445725c7a60f173ac462c3": {
-"file": "images/69445725c7a60f173ac462c3.png",
+"file": "images/fixed/69445725c7a60f173ac462c3.png",
 "width": 2173,
 "height": 1544,
-"bytes": 355766,
+"bytes": 274377,
 "type": "image/png",
 "alt": {
 "ru": "технический план расстановки мебели в квартире",
@@ -20784,10 +20784,10 @@
 }
 },
 "69445736dba00c1979cb6d08": {
-"file": "images/69445736dba00c1979cb6d08.png",
+"file": "images/fixed/69445736dba00c1979cb6d08.png",
 "width": 2175,
 "height": 1538,
-"bytes": 459970,
+"bytes": 380545,
 "type": "image/png",
 "alt": {
 "ru": "чертеж мебели с точными габаритами и привязками",
@@ -20796,10 +20796,10 @@
 }
 },
 "69445745e131d3b1ecf14bf5": {
-"file": "images/69445745e131d3b1ecf14bf5.png",
+"file": "images/fixed/69445745e131d3b1ecf14bf5.png",
 "width": 2173,
 "height": 1537,
-"bytes": 281928,
+"bytes": 205329,
 "type": "image/png",
 "alt": {
 "ru": "план размещения встроенной мебели в квартире",
@@ -20808,10 +20808,10 @@
 }
 },
 "69445754669805ebfa39cee9": {
-"file": "images/69445754669805ebfa39cee9.png",
+"file": "images/fixed/69445754669805ebfa39cee9.png",
 "width": 2170,
 "height": 1534,
-"bytes": 334284,
+"bytes": 252610,
 "type": "image/png",
 "alt": {
 "ru": "рабочий чертеж кухни с размерами и коммуникациями",
@@ -20820,10 +20820,10 @@
 }
 },
 "69445760e131d3b1ecf14c3f": {
-"file": "images/69445760e131d3b1ecf14c3f.png",
+"file": "images/fixed/69445760e131d3b1ecf14c3f.png",
 "width": 2174,
 "height": 1536,
-"bytes": 296494,
+"bytes": 222474,
 "type": "image/png",
 "alt": {
 "ru": "технический план санузла с сантехническими точками",
@@ -20832,10 +20832,10 @@
 }
 },
 "69445958b86e63a757547fa8": {
-"file": "images/69445958b86e63a757547fa8.png",
+"file": "images/fixed/69445958b86e63a757547fa8.png",
 "width": 2171,
 "height": 1537,
-"bytes": 317838,
+"bytes": 241018,
 "type": "image/png",
 "alt": {
 "ru": "план разводки водоснабжения и канализации",
@@ -20844,10 +20844,10 @@
 }
 },
 "69445968b86e63a757547fd7": {
-"file": "images/69445968b86e63a757547fd7.png",
+"file": "images/fixed/69445968b86e63a757547fd7.png",
 "width": 2171,
 "height": 1537,
-"bytes": 364202,
+"bytes": 282511,
 "type": "image/png",
 "alt": {
 "ru": "чертеж размещения сантехнического оборудования",
@@ -20856,10 +20856,10 @@
 }
 },
 "694459a7b86e63a7575480a5": {
-"file": "images/694459a7b86e63a7575480a5.png",
+"file": "images/fixed/694459a7b86e63a7575480a5.png",
 "width": 2169,
 "height": 1536,
-"bytes": 420147,
+"bytes": 323114,
 "type": "image/png",
 "alt": {
 "ru": "план электрики квартиры с розетками и выключателями",
@@ -20868,10 +20868,10 @@
 }
 },
 "694459b8669805ebfa39d689": {
-"file": "images/694459b8669805ebfa39d689.png",
+"file": "images/fixed/694459b8669805ebfa39d689.png",
 "width": 2173,
 "height": 1536,
-"bytes": 396948,
+"bytes": 313756,
 "type": "image/png",
 "alt": {
 "ru": "схема электрических выводов по дизайн-проекту",
@@ -20880,10 +20880,10 @@
 }
 },
 "694459c6c7a60f173ac46b93": {
-"file": "images/694459c6c7a60f173ac46b93.png",
+"file": "images/fixed/694459c6c7a60f173ac46b93.png",
 "width": 2172,
 "height": 1537,
-"bytes": 473782,
+"bytes": 371033,
 "type": "image/png",
 "alt": {
 "ru": "план освещения квартиры с группами светильников",
@@ -20892,10 +20892,10 @@
 }
 },
 "694459d6b86e63a75754814c": {
-"file": "images/694459d6b86e63a75754814c.png",
+"file": "images/fixed/694459d6b86e63a75754814c.png",
 "width": 2173,
 "height": 1538,
-"bytes": 154883,
+"bytes": 85878,
 "type": "image/png",
 "alt": {
 "ru": "схема потолочного освещения по помещениям",
@@ -20904,10 +20904,10 @@
 }
 },
 "694459e6e131d3b1ecf15482": {
-"file": "images/694459e6e131d3b1ecf15482.png",
+"file": "images/fixed/694459e6e131d3b1ecf15482.png",
 "width": 2173,
 "height": 1536,
-"bytes": 456437,
+"bytes": 388829,
 "type": "image/png",
 "alt": {
 "ru": "технический чертеж потолков с уровнями и отметками",
@@ -20916,10 +20916,10 @@
 }
 },
 "694459f4b86e63a7575481c9": {
-"file": "images/694459f4b86e63a7575481c9.png",
+"file": "images/fixed/694459f4b86e63a7575481c9.png",
 "width": 2172,
 "height": 1535,
-"bytes": 521405,
+"bytes": 424579,
 "type": "image/png",
 "alt": {
 "ru": "план потолков с встроенным освещением",
@@ -20928,10 +20928,10 @@
 }
 },
 "69445a0ab86e63a75754821f": {
-"file": "images/69445a0ab86e63a75754821f.png",
+"file": "images/fixed/69445a0ab86e63a75754821f.png",
 "width": 2173,
 "height": 1537,
-"bytes": 449330,
+"bytes": 372028,
 "type": "image/png",
 "alt": {
 "ru": "чертеж гипсокартонных конструкций потолка",
@@ -20940,10 +20940,10 @@
 }
 },
 "69445a27669805ebfa39d7da": {
-"file": "images/69445a27669805ebfa39d7da.png",
+"file": "images/fixed/69445a27669805ebfa39d7da.png",
 "width": 2171,
 "height": 1535,
-"bytes": 351379,
+"bytes": 289148,
 "type": "image/png",
 "alt": {
 "ru": "план теплого пола в квартире",
@@ -20952,10 +20952,10 @@
 }
 },
 "69445a35c7a60f173ac46cb6": {
-"file": "images/69445a35c7a60f173ac46cb6.png",
+"file": "images/fixed/69445a35c7a60f173ac46cb6.png",
 "width": 2172,
 "height": 1534,
-"bytes": 384662,
+"bytes": 324309,
 "type": "image/png",
 "alt": {
 "ru": "схема размещения радиаторов отопления",
@@ -20964,10 +20964,10 @@
 }
 },
 "69445a4cb86e63a75754834c": {
-"file": "images/69445a4cb86e63a75754834c.png",
+"file": "images/fixed/69445a4cb86e63a75754834c.png",
 "width": 2175,
 "height": 1538,
-"bytes": 210852,
+"bytes": 142067,
 "type": "image/png",
 "alt": {
 "ru": "план напольных покрытий с указанием материалов",
@@ -20976,10 +20976,10 @@
 }
 },
 "69445a5c669805ebfa39d8a2": {
-"file": "images/69445a5c669805ebfa39d8a2.png",
+"file": "images/fixed/69445a5c669805ebfa39d8a2.png",
 "width": 2167,
 "height": 1534,
-"bytes": 402150,
+"bytes": 333965,
 "type": "image/png",
 "alt": {
 "ru": "технический чертеж укладки плитки в санузле",
@@ -20988,10 +20988,10 @@
 }
 },
 "69445a6bb86e63a7575483cf": {
-"file": "images/69445a6bb86e63a7575483cf.png",
+"file": "images/fixed/69445a6bb86e63a7575483cf.png",
 "width": 2169,
 "height": 1534,
-"bytes": 315335,
+"bytes": 222781,
 "type": "image/png",
 "alt": {
 "ru": "схема раскладки плитки на стенах ванной комнаты",
@@ -21000,10 +21000,10 @@
 }
 },
 "69445b2d669805ebfa39dc02": {
-"file": "images/69445b2d669805ebfa39dc02.png",
+"file": "images/fixed/69445b2d669805ebfa39dc02.png",
 "width": 2168,
 "height": 1535,
-"bytes": 457365,
+"bytes": 369894,
 "type": "image/png",
 "alt": {
 "ru": "план отделки стен по дизайн-проекту",
@@ -21012,10 +21012,10 @@
 }
 },
 "69445b43c7a60f173ac470d5": {
-"file": "images/69445b43c7a60f173ac470d5.png",
+"file": "images/fixed/69445b43c7a60f173ac470d5.png",
 "width": 2171,
 "height": 1536,
-"bytes": 285006,
+"bytes": 204021,
 "type": "image/png",
 "alt": {
 "ru": "чертеж декоративных панелей и стеновых элементов",
@@ -21024,10 +21024,10 @@
 }
 },
 "69445b57b86e63a7575486f7": {
-"file": "images/69445b57b86e63a7575486f7.png",
+"file": "images/fixed/69445b57b86e63a7575486f7.png",
 "width": 2168,
 "height": 1534,
-"bytes": 493354,
+"bytes": 368229,
 "type": "image/png",
 "alt": {
 "ru": "рабочий чертеж дверных проемов и дверей",
@@ -21036,10 +21036,10 @@
 }
 },
 "69445b6dc7a60f173ac47152": {
-"file": "images/69445b6dc7a60f173ac47152.png",
+"file": "images/fixed/69445b6dc7a60f173ac47152.png",
 "width": 2173,
 "height": 1530,
-"bytes": 347689,
+"bytes": 267059,
 "type": "image/png",
 "alt": {
 "ru": "схема открывания дверей в квартире",
@@ -21048,10 +21048,10 @@
 }
 },
 "69445b7ce131d3b1ecf15a44": {
-"file": "images/69445b7ce131d3b1ecf15a44.png",
+"file": "images/fixed/69445b7ce131d3b1ecf15a44.png",
 "width": 2170,
 "height": 1535,
-"bytes": 404080,
+"bytes": 313012,
 "type": "image/png",
 "alt": {
 "ru": "чертеж оконных проемов с размерами",
@@ -21060,10 +21060,10 @@
 }
 },
 "69445b8bb86e63a7575487e2": {
-"file": "images/69445b8bb86e63a7575487e2.png",
+"file": "images/fixed/69445b8bb86e63a7575487e2.png",
 "width": 2170,
 "height": 1536,
-"bytes": 561292,
+"bytes": 461208,
 "type": "image/png",
 "alt": {
 "ru": "план кондиционирования и вентиляции квартиры",
@@ -21072,10 +21072,10 @@
 }
 },
 "69445b9ae131d3b1ecf15aa1": {
-"file": "images/69445b9ae131d3b1ecf15aa1.png",
+"file": "images/fixed/69445b9ae131d3b1ecf15aa1.png",
 "width": 2172,
 "height": 1535,
-"bytes": 419108,
+"bytes": 330066,
 "type": "image/png",
 "alt": {
 "ru": "схема размещения внутренних блоков кондиционеров",
@@ -21084,10 +21084,10 @@
 }
 },
 "69445badc7a60f173ac4720a": {
-"file": "images/69445badc7a60f173ac4720a.png",
+"file": "images/fixed/69445badc7a60f173ac4720a.png",
 "width": 2168,
 "height": 1530,
-"bytes": 454908,
+"bytes": 363919,
 "type": "image/png",
 "alt": {
 "ru": "технический план вентиляционных каналов",
@@ -21096,10 +21096,10 @@
 }
 },
 "69445bbec7a60f173ac47268": {
-"file": "images/69445bbec7a60f173ac47268.png",
+"file": "images/fixed/69445bbec7a60f173ac47268.png",
 "width": 2170,
 "height": 1534,
-"bytes": 2070496,
+"bytes": 1601272,
 "type": "image/png",
 "alt": {
 "ru": "чертеж кухни с привязкой техники",
@@ -21108,10 +21108,10 @@
 }
 },
 "69445bd7dba00c1979cb7c0a": {
-"file": "images/69445bd7dba00c1979cb7c0a.png",
+"file": "images/fixed/69445bd7dba00c1979cb7c0a.png",
 "width": 2167,
 "height": 1532,
-"bytes": 968433,
+"bytes": 777744,
 "type": "image/png",
 "alt": {
 "ru": "схема подключения бытовой техники",
@@ -21120,10 +21120,10 @@
 }
 },
 "69445bfeb86e63a7575489ac": {
-"file": "images/69445bfeb86e63a7575489ac.png",
+"file": "images/fixed/69445bfeb86e63a7575489ac.png",
 "width": 2167,
 "height": 1533,
-"bytes": 1767006,
+"bytes": 1212582,
 "type": "image/png",
 "alt": {
 "ru": "рабочий чертеж гардеробной системы",
@@ -21132,10 +21132,10 @@
 }
 },
 "69445c11b86e63a757548a09": {
-"file": "images/69445c11b86e63a757548a09.png",
+"file": "images/fixed/69445c11b86e63a757548a09.png",
 "width": 2173,
 "height": 1534,
-"bytes": 1422090,
+"bytes": 942240,
 "type": "image/png",
 "alt": {
 "ru": "план встроенных шкафов по дизайн-проекту",
@@ -21144,10 +21144,10 @@
 }
 },
 "69445c29669805ebfa39df7d": {
-"file": "images/69445c29669805ebfa39df7d.png",
+"file": "images/fixed/69445c29669805ebfa39df7d.png",
 "width": 2173,
 "height": 1537,
-"bytes": 1653690,
+"bytes": 1125514,
 "type": "image/png",
 "alt": {
 "ru": "технический чертеж лестницы в двухуровневой квартире",
@@ -21156,10 +21156,10 @@
 }
 },
 "69445c3b669805ebfa39dfc7": {
-"file": "images/69445c3b669805ebfa39dfc7.png",
+"file": "images/fixed/69445c3b669805ebfa39dfc7.png",
 "width": 2170,
 "height": 1533,
-"bytes": 1953515,
+"bytes": 1359428,
 "type": "image/png",
 "alt": {
 "ru": "схема уровней пола и перепадов высот",
@@ -21168,10 +21168,10 @@
 }
 },
 "69445c4edba00c1979cb7d91": {
-"file": "images/69445c4edba00c1979cb7d91.png",
+"file": "images/fixed/69445c4edba00c1979cb7d91.png",
 "width": 2173,
 "height": 1535,
-"bytes": 1788823,
+"bytes": 1241290,
 "type": "image/png",
 "alt": {
 "ru": "план шумоизоляции помещений квартиры",
@@ -21180,10 +21180,10 @@
 }
 },
 "69445cc6b86e63a757548c83": {
-"file": "images/69445cc6b86e63a757548c83.png",
+"file": "images/fixed/69445cc6b86e63a757548c83.png",
 "width": 2171,
 "height": 1533,
-"bytes": 1849238,
+"bytes": 1285941,
 "type": "image/png",
 "alt": {
 "ru": "технический чертеж ниш и декоративных элементов",
@@ -21192,10 +21192,10 @@
 }
 },
 "69445cf7c7a60f173ac47633": {
-"file": "images/69445cf7c7a60f173ac47633.png",
+"file": "images/fixed/69445cf7c7a60f173ac47633.png",
 "width": 2169,
 "height": 1533,
-"bytes": 2018729,
+"bytes": 1398503,
 "type": "image/png",
 "alt": {
 "ru": "схема размещения карнизов и штор",
@@ -21204,10 +21204,10 @@
 }
 },
 "69445d10c7a60f173ac476e1": {
-"file": "images/69445d10c7a60f173ac476e1.png",
+"file": "images/fixed/69445d10c7a60f173ac476e1.png",
 "width": 2175,
 "height": 1536,
-"bytes": 1923862,
+"bytes": 1331003,
 "type": "image/png",
 "alt": {
 "ru": "план оконного декора с размерами",
@@ -21216,10 +21216,10 @@
 }
 },
 "69445d31b86e63a757548e13": {
-"file": "images/69445d31b86e63a757548e13.png",
+"file": "images/fixed/69445d31b86e63a757548e13.png",
 "width": 2167,
 "height": 1528,
-"bytes": 2245310,
+"bytes": 1612368,
 "type": "image/png",
 "alt": {
 "ru": "чертеж авторских мебельных изделий",
@@ -21228,10 +21228,10 @@
 }
 },
 "69445d46dba00c1979cb8117": {
-"file": "images/69445d46dba00c1979cb8117.png",
+"file": "images/fixed/69445d46dba00c1979cb8117.png",
 "width": 2167,
 "height": 1532,
-"bytes": 2300026,
+"bytes": 1706531,
 "type": "image/png",
 "alt": {
 "ru": "рабочий чертеж тумб и консолей по проекту",
@@ -21240,10 +21240,10 @@
 }
 },
 "69445d8e669805ebfa39e4bc": {
-"file": "images/69445d8e669805ebfa39e4bc.png",
+"file": "images/fixed/69445d8e669805ebfa39e4bc.png",
 "width": 2167,
 "height": 1533,
-"bytes": 2400012,
+"bytes": 1806150,
 "type": "image/png",
 "alt": {
 "ru": "схема привязки мебели к электрическим точкам",
@@ -21252,10 +21252,10 @@
 }
 },
 "69445da3dba00c1979cb827a": {
-"file": "images/69445da3dba00c1979cb827a.png",
+"file": "images/fixed/69445da3dba00c1979cb827a.png",
 "width": 2168,
 "height": 1532,
-"bytes": 2429935,
+"bytes": 1753615,
 "type": "image/png",
 "alt": {
 "ru": "план инженерных коммуникаций квартиры",
@@ -21264,10 +21264,10 @@
 }
 },
 "69445db7669805ebfa39e582": {
-"file": "images/69445db7669805ebfa39e582.png",
+"file": "images/fixed/69445db7669805ebfa39e582.png",
 "width": 2169,
 "height": 1533,
-"bytes": 1912381,
+"bytes": 1351994,
 "type": "image/png",
 "alt": {
 "ru": "комплекс технических чертежей дизайн-проекта квартиры",
@@ -21276,10 +21276,10 @@
 }
 },
 "69445dcbdba00c1979cb82f5": {
-"file": "images/69445dcbdba00c1979cb82f5.png",
+"file": "images/fixed/69445dcbdba00c1979cb82f5.png",
 "width": 2171,
 "height": 1533,
-"bytes": 1917974,
+"bytes": 1401096,
 "type": "image/png",
 "alt": {
 "ru": "рабочая документация для реализации дизайн-проекта",
@@ -21288,10 +21288,10 @@
 }
 },
 "69445de3b86e63a7575490c0": {
-"file": "images/69445de3b86e63a7575490c0.png",
+"file": "images/fixed/69445de3b86e63a7575490c0.png",
 "width": 2172,
 "height": 1534,
-"bytes": 2040244,
+"bytes": 1542564,
 "type": "image/png",
 "alt": {
 "ru": "технические чертежи для ремонта квартиры",
@@ -21300,10 +21300,10 @@
 }
 },
 "69445df7e131d3b1ecf16344": {
-"file": "images/69445df7e131d3b1ecf16344.png",
+"file": "images/fixed/69445df7e131d3b1ecf16344.png",
 "width": 2168,
 "height": 1534,
-"bytes": 2300551,
+"bytes": 1669100,
 "type": "image/png",
 "alt": {
 "ru": "строительные чертежи по дизайн-проекту интерьера",
@@ -21312,10 +21312,10 @@
 }
 },
 "69445e1fe131d3b1ecf163b4": {
-"file": "images/69445e1fe131d3b1ecf163b4.png",
+"file": "images/fixed/69445e1fe131d3b1ecf163b4.png",
 "width": 2169,
 "height": 1533,
-"bytes": 1494736,
+"bytes": 1029056,
 "type": "image/png",
 "alt": {
 "ru": "комплект рабочих чертежей для квартиры",
@@ -21936,10 +21936,10 @@
 }
 },
 "694c3e47080a9d0140fb6884": {
-"file": "images/694c3e47080a9d0140fb6884.png",
+"file": "images/fixed/694c3e47080a9d0140fb6884.png",
 "width": 2178,
 "height": 1540,
-"bytes": 458535,
+"bytes": 318772,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры с террасой eurovea",
@@ -21948,10 +21948,10 @@
 }
 },
 "694c3e47750ddbf2991887cf": {
-"file": "images/694c3e47750ddbf2991887cf.png",
+"file": "images/fixed/694c3e47750ddbf2991887cf.png",
 "width": 2178,
 "height": 1540,
-"bytes": 572709,
+"bytes": 414471,
 "type": "image/png",
 "alt": {
 "ru": "дизайнерская квартира братислава eurovea",
@@ -21960,10 +21960,10 @@
 }
 },
 "694c3e47dc0acba3c587a255": {
-"file": "images/694c3e47dc0acba3c587a255.png",
+"file": "images/fixed/694c3e47dc0acba3c587a255.png",
 "width": 2178,
 "height": 1540,
-"bytes": 382708,
+"bytes": 278968,
 "type": "image/png",
 "alt": {
 "ru": "минималистичный интерьер братислава",
@@ -21972,10 +21972,10 @@
 }
 },
 "694c3e47dc0acba3c587a25b": {
-"file": "images/694c3e47dc0acba3c587a25b.png",
+"file": "images/fixed/694c3e47dc0acba3c587a25b.png",
 "width": 2178,
 "height": 1540,
-"bytes": 506730,
+"bytes": 370452,
 "type": "image/png",
 "alt": {
 "ru": "интерьер с натуральными материалами братислава",
@@ -21996,10 +21996,10 @@
 }
 },
 "694c3e48080a9d0140fb6889": {
-"file": "images/694c3e48080a9d0140fb6889.png",
+"file": "images/fixed/694c3e48080a9d0140fb6889.png",
 "width": 2178,
 "height": 1540,
-"bytes": 486575,
+"bytes": 352633,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера от студии dumskaya design братислава",
@@ -22008,10 +22008,10 @@
 }
 },
 "694c3e56750ddbf29918880e": {
-"file": "images/694c3e56750ddbf29918880e.png",
+"file": "images/fixed/694c3e56750ddbf29918880e.png",
 "width": 2178,
 "height": 1540,
-"bytes": 825237,
+"bytes": 578174,
 "type": "image/png",
 "alt": {
 "ru": "дизайнер интерьера eurovea city братислава",
@@ -22020,10 +22020,10 @@
 }
 },
 "694c3e56c2c73c4433efe4a1": {
-"file": "images/694c3e56c2c73c4433efe4a1.png",
+"file": "images/fixed/694c3e56c2c73c4433efe4a1.png",
 "width": 2178,
 "height": 1540,
-"bytes": 515966,
+"bytes": 371828,
 "type": "image/png",
 "alt": {
 "ru": "авторский дизайн интерьера братислава",
@@ -22032,10 +22032,10 @@
 }
 },
 "694c3e57080a9d0140fb68e6": {
-"file": "images/694c3e57080a9d0140fb68e6.png",
+"file": "images/fixed/694c3e57080a9d0140fb68e6.png",
 "width": 2178,
 "height": 1540,
-"bytes": 936922,
+"bytes": 807315,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера с террасой братислава",
@@ -22044,10 +22044,10 @@
 }
 },
 "694c3e57080a9d0140fb68e7": {
-"file": "images/694c3e57080a9d0140fb68e7.png",
+"file": "images/fixed/694c3e57080a9d0140fb68e7.png",
 "width": 2178,
 "height": 1540,
-"bytes": 642251,
+"bytes": 503490,
 "type": "image/png",
 "alt": {
 "ru": "современный минимализм интерьер братислава",
@@ -22056,10 +22056,10 @@
 }
 },
 "694c3e58dc0acba3c587a2ab": {
-"file": "images/694c3e58dc0acba3c587a2ab.png",
+"file": "images/fixed/694c3e58dc0acba3c587a2ab.png",
 "width": 2178,
 "height": 1540,
-"bytes": 484971,
+"bytes": 347963,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры бизнес класса братислава",
@@ -22068,10 +22068,10 @@
 }
 },
 "694c3e59c2c73c4433efe4b6": {
-"file": "images/694c3e59c2c73c4433efe4b6.png",
+"file": "images/fixed/694c3e59c2c73c4433efe4b6.png",
 "width": 2178,
 "height": 1540,
-"bytes": 718533,
+"bytes": 567023,
 "type": "image/png",
 "alt": {
 "ru": "интерьер городской квартиры братислава",
@@ -22080,10 +22080,10 @@
 }
 },
 "694c3e5c750ddbf299188841": {
-"file": "images/694c3e5c750ddbf299188841.png",
+"file": "images/fixed/694c3e5c750ddbf299188841.png",
 "width": 2182,
 "height": 1542,
-"bytes": 474149,
+"bytes": 352565,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера для жизни братислава",
@@ -22092,10 +22092,10 @@
 }
 },
 "694c3e60c2c73c4433efe4de": {
-"file": "images/694c3e60c2c73c4433efe4de.png",
+"file": "images/fixed/694c3e60c2c73c4433efe4de.png",
 "width": 2178,
 "height": 1540,
-"bytes": 500519,
+"bytes": 357165,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры для инвестиций братислава",
@@ -22104,10 +22104,10 @@
 }
 },
 "694c3e61dc0acba3c587a2d9": {
-"file": "images/694c3e61dc0acba3c587a2d9.png",
+"file": "images/fixed/694c3e61dc0acba3c587a2d9.png",
 "width": 2178,
 "height": 1540,
-"bytes": 357122,
+"bytes": 266325,
 "type": "image/png",
 "alt": {
 "ru": "современный интерьер центр братиславы",
@@ -22116,10 +22116,10 @@
 }
 },
 "694c3e66750ddbf29918885e": {
-"file": "images/694c3e66750ddbf29918885e.png",
+"file": "images/fixed/694c3e66750ddbf29918885e.png",
 "width": 2178,
 "height": 1540,
-"bytes": 979503,
+"bytes": 705889,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры словакия братислава",
@@ -22128,10 +22128,10 @@
 }
 },
 "694c3e66c2c73c4433efe504": {
-"file": "images/694c3e66c2c73c4433efe504.png",
+"file": "images/fixed/694c3e66c2c73c4433efe504.png",
 "width": 2178,
 "height": 1540,
-"bytes": 606790,
+"bytes": 463345,
 "type": "image/png",
 "alt": {
 "ru": "dumskaya design интерьер квартиры братислава",
@@ -22140,10 +22140,10 @@
 }
 },
 "694c3e67dc0acba3c587a2fa": {
-"file": "images/694c3e67dc0acba3c587a2fa.png",
+"file": "images/fixed/694c3e67dc0acba3c587a2fa.png",
 "width": 2178,
 "height": 1540,
-"bytes": 573011,
+"bytes": 430039,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера евроа city словакия",
@@ -22152,10 +22152,10 @@
 }
 },
 "694c3e6bc2c73c4433efe520": {
-"file": "images/694c3e6bc2c73c4433efe520.png",
+"file": "images/fixed/694c3e6bc2c73c4433efe520.png",
 "width": 2178,
 "height": 1540,
-"bytes": 901892,
+"bytes": 645079,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры с авторским надзором братислава",
@@ -22164,10 +22164,10 @@
 }
 },
 "694c3e6c080a9d0140fb694e": {
-"file": "images/694c3e6c080a9d0140fb694e.png",
+"file": "images/fixed/694c3e6c080a9d0140fb694e.png",
 "width": 2178,
 "height": 1540,
-"bytes": 944043,
+"bytes": 654488,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера пакет мебельный братислава",
@@ -22176,10 +22176,10 @@
 }
 },
 "694c3e6d750ddbf299188888": {
-"file": "images/694c3e6d750ddbf299188888.png",
+"file": "images/fixed/694c3e6d750ddbf299188888.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1269358,
+"bytes": 883212,
 "type": "image/png",
 "alt": {
 "ru": "дизайнерская мебель в интерьере братислава",
@@ -22188,10 +22188,10 @@
 }
 },
 "694c3e72dc4fd58c318a7829": {
-"file": "images/694c3e72dc4fd58c318a7829.png",
+"file": "images/fixed/694c3e72dc4fd58c318a7829.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1419961,
+"bytes": 976432,
 "type": "image/png",
 "alt": {
 "ru": "дизайн мебели для квартиры братислава",
@@ -22200,10 +22200,10 @@
 }
 },
 "694c3e74c2c73c4433efe555": {
-"file": "images/694c3e74c2c73c4433efe555.png",
+"file": "images/fixed/694c3e74c2c73c4433efe555.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1550309,
+"bytes": 982576,
 "type": "image/png",
 "alt": {
 "ru": "корпусная мебель на заказ братислава интерьер",
@@ -22212,10 +22212,10 @@
 }
 },
 "694c3e75080a9d0140fb6994": {
-"file": "images/694c3e75080a9d0140fb6994.png",
+"file": "images/fixed/694c3e75080a9d0140fb6994.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1237916,
+"bytes": 854998,
 "type": "image/png",
 "alt": {
 "ru": "интерьер кухни на заказ братислава",
@@ -22224,10 +22224,10 @@
 }
 },
 "694c3e7adc4fd58c318a7845": {
-"file": "images/694c3e7adc4fd58c318a7845.png",
+"file": "images/fixed/694c3e7adc4fd58c318a7845.png",
 "width": 2182,
 "height": 1542,
-"bytes": 1422796,
+"bytes": 1015454,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры 56 м² словакия",
@@ -22236,10 +22236,10 @@
 }
 },
 "694c3e7cdc0acba3c587a37c": {
-"file": "images/694c3e7cdc0acba3c587a37c.png",
+"file": "images/fixed/694c3e7cdc0acba3c587a37c.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1260147,
+"bytes": 878455,
 "type": "image/png",
 "alt": {
 "ru": "современный интерьер eurovea словакия",
@@ -22248,10 +22248,10 @@
 }
 },
 "694c3e82750ddbf2991888d4": {
-"file": "images/694c3e82750ddbf2991888d4.png",
+"file": "images/fixed/694c3e82750ddbf2991888d4.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1066691,
+"bytes": 756170,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера квартиры в братиславе",
@@ -22260,10 +22260,10 @@
 }
 },
 "694c3e84dc0acba3c587a3ac": {
-"file": "images/694c3e84dc0acba3c587a3ac.png",
+"file": "images/fixed/694c3e84dc0acba3c587a3ac.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1187313,
+"bytes": 844370,
 "type": "image/png",
 "alt": {
 "ru": "интерьер кухни гостиной eurovea братислава",
@@ -22272,10 +22272,10 @@
 }
 },
 "694c3e85dc0acba3c587a3ba": {
-"file": "images/694c3e85dc0acba3c587a3ba.png",
+"file": "images/fixed/694c3e85dc0acba3c587a3ba.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1429538,
+"bytes": 844238,
 "type": "image/png",
 "alt": {
 "ru": "дизайнерский интерьер eurovea city братислава",
@@ -22284,10 +22284,10 @@
 }
 },
 "694c3e89c2c73c4433efe5a7": {
-"file": "images/694c3e89c2c73c4433efe5a7.png",
+"file": "images/fixed/694c3e89c2c73c4433efe5a7.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1669957,
+"bytes": 1174057,
 "type": "image/png",
 "alt": {
 "ru": "дизайнерское освещение в интерьере братислава",
@@ -22296,10 +22296,10 @@
 }
 },
 "694c3e89c2c73c4433efe5ad": {
-"file": "images/694c3e89c2c73c4433efe5ad.png",
+"file": "images/fixed/694c3e89c2c73c4433efe5ad.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1586932,
+"bytes": 1088051,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры dumskaya design словакия",
@@ -22308,10 +22308,10 @@
 }
 },
 "694c3e8cdc4fd58c318a788b": {
-"file": "images/694c3e8cdc4fd58c318a788b.png",
+"file": "images/fixed/694c3e8cdc4fd58c318a788b.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1628422,
+"bytes": 934462,
 "type": "image/png",
 "alt": {
 "ru": "дизайнер интерьера словакия братислава",
@@ -22320,10 +22320,10 @@
 }
 },
 "694c3e8ddc0acba3c587a3ff": {
-"file": "images/694c3e8ddc0acba3c587a3ff.png",
+"file": "images/fixed/694c3e8ddc0acba3c587a3ff.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1887288,
+"bytes": 1008744,
 "type": "image/png",
 "alt": {
 "ru": "современный интерьер евроа city братислава",
@@ -22332,10 +22332,10 @@
 }
 },
 "694c3e98c2c73c4433efe5ef": {
-"file": "images/694c3e98c2c73c4433efe5ef.png",
+"file": "images/fixed/694c3e98c2c73c4433efe5ef.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1942540,
+"bytes": 1124028,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры евроа city братислава",
@@ -22344,10 +22344,10 @@
 }
 },
 "694c3e98dc4fd58c318a78c8": {
-"file": "images/694c3e98dc4fd58c318a78c8.png",
+"file": "images/fixed/694c3e98dc4fd58c318a78c8.png",
 "width": 2178,
 "height": 1540,
-"bytes": 1926075,
+"bytes": 1148624,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера квартиры словакия",
@@ -22356,10 +22356,10 @@
 }
 },
 "694c3e9ac2c73c4433efe604": {
-"file": "images/694c3e9ac2c73c4433efe604.png",
+"file": "images/fixed/694c3e9ac2c73c4433efe604.png",
 "width": 2178,
 "height": 1540,
-"bytes": 2047536,
+"bytes": 1193292,
 "type": "image/png",
 "alt": {
 "ru": "интерьер современной квартиры братислава",
@@ -22368,10 +22368,10 @@
 }
 },
 "694c3e9bc2c73c4433efe614": {
-"file": "images/694c3e9bc2c73c4433efe614.png",
+"file": "images/fixed/694c3e9bc2c73c4433efe614.png",
 "width": 2182,
 "height": 1542,
-"bytes": 2150032,
+"bytes": 1236499,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры с островом братислава",
@@ -22380,10 +22380,10 @@
 }
 },
 "694c3e9edc4fd58c318a78f0": {
-"file": "images/694c3e9edc4fd58c318a78f0.png",
+"file": "images/fixed/694c3e9edc4fd58c318a78f0.png",
 "width": 2178,
 "height": 1540,
-"bytes": 2425396,
+"bytes": 1453291,
 "type": "image/png",
 "alt": {
 "ru": "студия дизайна интерьера словакия",
@@ -23652,10 +23652,10 @@
 }
 },
 "69c9772197f2c44cce96b6d5": {
-"file": "images/69c9772197f2c44cce96b6d5.png",
+"file": "images/fixed/69c9772197f2c44cce96b6d5.png",
 "width": 2172,
 "height": 1536,
-"bytes": 380293,
+"bytes": 236718,
 "type": "image/png",
 "alt": {
 "ru": "рабочие чертежи интерьера частного дома братислава словакия",
@@ -23664,10 +23664,10 @@
 }
 },
 "69c9772197f2c44cce96b6df": {
-"file": "images/69c9772197f2c44cce96b6df.png",
+"file": "images/fixed/69c9772197f2c44cce96b6df.png",
 "width": 2172,
 "height": 1536,
-"bytes": 831711,
+"bytes": 695288,
 "type": "image/png",
 "alt": {
 "ru": "архитектурные чертежи интерьера дома братислава словакия",
@@ -23676,10 +23676,10 @@
 }
 },
 "69c977219c961368b180ca65": {
-"file": "images/69c977219c961368b180ca65.png",
+"file": "images/fixed/69c977219c961368b180ca65.png",
 "width": 2172,
 "height": 1536,
-"bytes": 552986,
+"bytes": 403465,
 "type": "image/png",
 "alt": {
 "ru": "комплект чертежей интерьера дома братислава словакия",
@@ -23688,10 +23688,10 @@
 }
 },
 "69c97721b46cdc77b0cadff0": {
-"file": "images/69c97721b46cdc77b0cadff0.png",
+"file": "images/fixed/69c97721b46cdc77b0cadff0.png",
 "width": 2172,
 "height": 1536,
-"bytes": 554119,
+"bytes": 394625,
 "type": "image/png",
 "alt": {
 "ru": "рабочая документация дизайн проекта дома братислава словакия",
@@ -23700,10 +23700,10 @@
 }
 },
 "69c97721b46cdc77b0cadffe": {
-"file": "images/69c97721b46cdc77b0cadffe.png",
+"file": "images/fixed/69c97721b46cdc77b0cadffe.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2343309,
+"bytes": 1595875,
 "type": "image/png",
 "alt": {
 "ru": "техническая документация дизайн проекта дома братислава словакия DUMSKAYA DESIGN",
@@ -23712,10 +23712,10 @@
 }
 },
 "69c977299c961368b180caa8": {
-"file": "images/69c977299c961368b180caa8.png",
+"file": "images/fixed/69c977299c961368b180caa8.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1003121,
+"bytes": 890422,
 "type": "image/png",
 "alt": {
 "ru": "планировочные решения дизайн проекта дома братислава словакия",
@@ -23724,10 +23724,10 @@
 }
 },
 "69c97730b46cdc77b0cae068": {
-"file": "images/69c97730b46cdc77b0cae068.png",
+"file": "images/fixed/69c97730b46cdc77b0cae068.png",
 "width": 2172,
 "height": 1536,
-"bytes": 420056,
+"bytes": 313201,
 "type": "image/png",
 "alt": {
 "ru": "план помещений частного дома братислава словакия дизайн проект",
@@ -23736,10 +23736,10 @@
 }
 },
 "69c977335dfdd428517e8229": {
-"file": "images/69c977335dfdd428517e8229.png",
+"file": "images/fixed/69c977335dfdd428517e8229.png",
 "width": 2172,
 "height": 1536,
-"bytes": 550987,
+"bytes": 388311,
 "type": "image/png",
 "alt": {
 "ru": "комплект технической документации дизайн проекта дома братислава словакия",
@@ -23748,10 +23748,10 @@
 }
 },
 "69c977338cc6c465849a2f3f": {
-"file": "images/69c977338cc6c465849a2f3f.png",
+"file": "images/fixed/69c977338cc6c465849a2f3f.png",
 "width": 2172,
 "height": 1536,
-"bytes": 330050,
+"bytes": 208740,
 "type": "image/png",
 "alt": {
 "ru": "план расстановки мебели дом братислава словакия дизайн проект",
@@ -23760,10 +23760,10 @@
 }
 },
 "69c977345dfdd428517e823b": {
-"file": "images/69c977345dfdd428517e823b.png",
+"file": "images/fixed/69c977345dfdd428517e823b.png",
 "width": 2172,
 "height": 1536,
-"bytes": 336088,
+"bytes": 216515,
 "type": "image/png",
 "alt": {
 "ru": "план размещения мебели интерьер дома братислава словакия",
@@ -23772,10 +23772,10 @@
 }
 },
 "69c97734b46cdc77b0cae07e": {
-"file": "images/69c97734b46cdc77b0cae07e.png",
+"file": "images/fixed/69c97734b46cdc77b0cae07e.png",
 "width": 2172,
 "height": 1536,
-"bytes": 336303,
+"bytes": 212490,
 "type": "image/png",
 "alt": {
 "ru": "общий план дома дизайн проекта братислава словакия",
@@ -23784,10 +23784,10 @@
 }
 },
 "69c97735b46cdc77b0cae09c": {
-"file": "images/69c97735b46cdc77b0cae09c.png",
+"file": "images/fixed/69c97735b46cdc77b0cae09c.png",
 "width": 2172,
 "height": 1536,
-"bytes": 217081,
+"bytes": 137407,
 "type": "image/png",
 "alt": {
 "ru": "план меблировки дома братислава словакия дизайн интерьера",
@@ -23796,10 +23796,10 @@
 }
 },
 "69c9773b8cc6c465849a2f73": {
-"file": "images/69c9773b8cc6c465849a2f73.png",
+"file": "images/fixed/69c9773b8cc6c465849a2f73.png",
 "width": 2172,
 "height": 1536,
-"bytes": 441095,
+"bytes": 334300,
 "type": "image/png",
 "alt": {
 "ru": "план мебели частный дом братислава словакия дизайн проект",
@@ -23808,10 +23808,10 @@
 }
 },
 "69c9774197f2c44cce96b769": {
-"file": "images/69c9774197f2c44cce96b769.png",
+"file": "images/fixed/69c9774197f2c44cce96b769.png",
 "width": 2172,
 "height": 1536,
-"bytes": 318169,
+"bytes": 196282,
 "type": "image/png",
 "alt": {
 "ru": "план мебели гостиная кухня дом братислава словакия",
@@ -23820,10 +23820,10 @@
 }
 },
 "69c977435dfdd428517e827c": {
-"file": "images/69c977435dfdd428517e827c.png",
+"file": "images/fixed/69c977435dfdd428517e827c.png",
 "width": 2172,
 "height": 1536,
-"bytes": 319338,
+"bytes": 197141,
 "type": "image/png",
 "alt": {
 "ru": "план мебели кабинет дом братислава словакия",
@@ -23832,10 +23832,10 @@
 }
 },
 "69c977438cc6c465849a2fae": {
-"file": "images/69c977438cc6c465849a2fae.png",
+"file": "images/fixed/69c977438cc6c465849a2fae.png",
 "width": 2172,
 "height": 1536,
-"bytes": 330327,
+"bytes": 211843,
 "type": "image/png",
 "alt": {
 "ru": "план мебели гостевая спальня дом братислава словакия",
@@ -23844,10 +23844,10 @@
 }
 },
 "69c97746b46cdc77b0cae0d9": {
-"file": "images/69c97746b46cdc77b0cae0d9.png",
+"file": "images/fixed/69c97746b46cdc77b0cae0d9.png",
 "width": 2172,
 "height": 1536,
-"bytes": 352956,
+"bytes": 229642,
 "type": "image/png",
 "alt": {
 "ru": "план мебели мастер спальня дом братислава словакия",
@@ -23856,10 +23856,10 @@
 }
 },
 "69c977498cc6c465849a2fdb": {
-"file": "images/69c977498cc6c465849a2fdb.png",
+"file": "images/fixed/69c977498cc6c465849a2fdb.png",
 "width": 2172,
 "height": 1536,
-"bytes": 213166,
+"bytes": 132151,
 "type": "image/png",
 "alt": {
 "ru": "план мебели прихожая дом братислава словакия",
@@ -23868,10 +23868,10 @@
 }
 },
 "69c9774a5dfdd428517e82b8": {
-"file": "images/69c9774a5dfdd428517e82b8.png",
+"file": "images/fixed/69c9774a5dfdd428517e82b8.png",
 "width": 2172,
 "height": 1536,
-"bytes": 488012,
+"bytes": 318471,
 "type": "image/png",
 "alt": {
 "ru": "план электрики интерьер дома братислава словакия",
@@ -23880,10 +23880,10 @@
 }
 },
 "69c9774b8cc6c465849a2fe8": {
-"file": "images/69c9774b8cc6c465849a2fe8.png",
+"file": "images/fixed/69c9774b8cc6c465849a2fe8.png",
 "width": 2172,
 "height": 1536,
-"bytes": 598135,
+"bytes": 430096,
 "type": "image/png",
 "alt": {
 "ru": "схема расстановки мебели дом братислава словакия",
@@ -23892,10 +23892,10 @@
 }
 },
 "69c9774d8cc6c465849a3012": {
-"file": "images/69c9774d8cc6c465849a3012.png",
+"file": "images/fixed/69c9774d8cc6c465849a3012.png",
 "width": 2172,
 "height": 1536,
-"bytes": 508552,
+"bytes": 333125,
 "type": "image/png",
 "alt": {
 "ru": "схема электрики частный дом братислава словакия",
@@ -23904,10 +23904,10 @@
 }
 },
 "69c9774e9c961368b180cb5c": {
-"file": "images/69c9774e9c961368b180cb5c.png",
+"file": "images/fixed/69c9774e9c961368b180cb5c.png",
 "width": 2172,
 "height": 1536,
-"bytes": 519101,
+"bytes": 344875,
 "type": "image/png",
 "alt": {
 "ru": "схема размещения розеток интерьер дома братислава словакия",
@@ -23916,10 +23916,10 @@
 }
 },
 "69c9774fb46cdc77b0cae12d": {
-"file": "images/69c9774fb46cdc77b0cae12d.png",
+"file": "images/fixed/69c9774fb46cdc77b0cae12d.png",
 "width": 2172,
 "height": 1536,
-"bytes": 449837,
+"bytes": 306921,
 "type": "image/png",
 "alt": {
 "ru": "план выключателей дом братислава словакия дизайн проект",
@@ -23928,10 +23928,10 @@
 }
 },
 "69c977569c961368b180cb89": {
-"file": "images/69c977569c961368b180cb89.png",
+"file": "images/fixed/69c977569c961368b180cb89.png",
 "width": 2172,
 "height": 1536,
-"bytes": 645597,
+"bytes": 456488,
 "type": "image/png",
 "alt": {
 "ru": "план розеток дом братислава словакия дизайн проект",
@@ -23940,10 +23940,10 @@
 }
 },
 "69c97757b46cdc77b0cae165": {
-"file": "images/69c97757b46cdc77b0cae165.png",
+"file": "images/fixed/69c97757b46cdc77b0cae165.png",
 "width": 2172,
 "height": 1536,
-"bytes": 591462,
+"bytes": 403321,
 "type": "image/png",
 "alt": {
 "ru": "схема выключателей интерьер дома братислава словакия",
@@ -23952,10 +23952,10 @@
 }
 },
 "69c977588cc6c465849a305d": {
-"file": "images/69c977588cc6c465849a305d.png",
+"file": "images/fixed/69c977588cc6c465849a305d.png",
 "width": 2172,
 "height": 1536,
-"bytes": 545381,
+"bytes": 366776,
 "type": "image/png",
 "alt": {
 "ru": "электрический план дизайн проекта дома братислава словакия",
@@ -23964,10 +23964,10 @@
 }
 },
 "69c9775db46cdc77b0cae188": {
-"file": "images/69c9775db46cdc77b0cae188.png",
+"file": "images/fixed/69c9775db46cdc77b0cae188.png",
 "width": 2172,
 "height": 1536,
-"bytes": 766771,
+"bytes": 517469,
 "type": "image/png",
 "alt": {
 "ru": "электрическая схема дома дизайн проект братислава словакия",
@@ -23976,10 +23976,10 @@
 }
 },
 "69c9775eb46cdc77b0cae194": {
-"file": "images/69c9775eb46cdc77b0cae194.png",
+"file": "images/fixed/69c9775eb46cdc77b0cae194.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1529804,
+"bytes": 889543,
 "type": "image/png",
 "alt": {
 "ru": "техническая схема электрики интерьер дома братислава словакия",
@@ -23988,10 +23988,10 @@
 }
 },
 "69c9775f97f2c44cce96b7fd": {
-"file": "images/69c9775f97f2c44cce96b7fd.png",
+"file": "images/fixed/69c9775f97f2c44cce96b7fd.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1383083,
+"bytes": 885713,
 "type": "image/png",
 "alt": {
 "ru": "план освещения интерьер дома братислава словакия",
@@ -24000,10 +24000,10 @@
 }
 },
 "69c977655dfdd428517e8339": {
-"file": "images/69c977655dfdd428517e8339.png",
+"file": "images/fixed/69c977655dfdd428517e8339.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1312244,
+"bytes": 763529,
 "type": "image/png",
 "alt": {
 "ru": "схема потолочного освещения дом братислава словакия",
@@ -24012,10 +24012,10 @@
 }
 },
 "69c977659c961368b180cbcc": {
-"file": "images/69c977659c961368b180cbcc.png",
+"file": "images/fixed/69c977659c961368b180cbcc.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1289609,
+"bytes": 812411,
 "type": "image/png",
 "alt": {
 "ru": "план освещения гостиная кухня дом братислава словакия",
@@ -24024,10 +24024,10 @@
 }
 },
 "69c9776d5dfdd428517e8361": {
-"file": "images/69c9776d5dfdd428517e8361.png",
+"file": "images/fixed/69c9776d5dfdd428517e8361.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1439021,
+"bytes": 951613,
 "type": "image/png",
 "alt": {
 "ru": "план уровней потолка дом братислава словакия",
@@ -24036,10 +24036,10 @@
 }
 },
 "69c9776db46cdc77b0cae1e1": {
-"file": "images/69c9776db46cdc77b0cae1e1.png",
+"file": "images/fixed/69c9776db46cdc77b0cae1e1.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1119904,
+"bytes": 725875,
 "type": "image/png",
 "alt": {
 "ru": "план освещения мастер спальня дом братислава словакия",
@@ -24048,10 +24048,10 @@
 }
 },
 "69c9776f8cc6c465849a30d6": {
-"file": "images/69c9776f8cc6c465849a30d6.png",
+"file": "images/fixed/69c9776f8cc6c465849a30d6.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2037014,
+"bytes": 1316615,
 "type": "image/png",
 "alt": {
 "ru": "план светильников дом братислава словакия дизайн проект",
@@ -24060,10 +24060,10 @@
 }
 },
 "69c9776f9c961368b180cc0d": {
-"file": "images/69c9776f9c961368b180cc0d.png",
+"file": "images/fixed/69c9776f9c961368b180cc0d.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1605759,
+"bytes": 985258,
 "type": "image/png",
 "alt": {
 "ru": "план электропроводки дом братислава словакия",
@@ -24072,10 +24072,10 @@
 }
 },
 "69c9776fb46cdc77b0cae1ed": {
-"file": "images/69c9776fb46cdc77b0cae1ed.png",
+"file": "images/fixed/69c9776fb46cdc77b0cae1ed.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1561190,
+"bytes": 974272,
 "type": "image/png",
 "alt": {
 "ru": "схема потолочных конструкций дом братислава словакия",
@@ -24084,10 +24084,10 @@
 }
 },
 "69c97770b46cdc77b0cae204": {
-"file": "images/69c97770b46cdc77b0cae204.png",
+"file": "images/fixed/69c97770b46cdc77b0cae204.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1969944,
+"bytes": 1247622,
 "type": "image/png",
 "alt": {
 "ru": "схема освещения частный дом братислава словакия",
@@ -24096,10 +24096,10 @@
 }
 },
 "69c977785dfdd428517e83b4": {
-"file": "images/69c977785dfdd428517e83b4.png",
+"file": "images/fixed/69c977785dfdd428517e83b4.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1518631,
+"bytes": 1129106,
 "type": "image/png",
 "alt": {
 "ru": "план потолка кабинет дом братислава словакия",
@@ -24108,10 +24108,10 @@
 }
 },
 "69c97779b46cdc77b0cae23f": {
-"file": "images/69c97779b46cdc77b0cae23f.png",
+"file": "images/fixed/69c97779b46cdc77b0cae23f.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1570458,
+"bytes": 1071324,
 "type": "image/png",
 "alt": {
 "ru": "план потолка прихожая дом братислава словакия",
@@ -24120,10 +24120,10 @@
 }
 },
 "69c9777b5dfdd428517e83cd": {
-"file": "images/69c9777b5dfdd428517e83cd.png",
+"file": "images/fixed/69c9777b5dfdd428517e83cd.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1345711,
+"bytes": 873825,
 "type": "image/png",
 "alt": {
 "ru": "план полов интерьер дома братислава словакия",
@@ -24132,10 +24132,10 @@
 }
 },
 "69c9778197f2c44cce96b879": {
-"file": "images/69c9778197f2c44cce96b879.png",
+"file": "images/fixed/69c9778197f2c44cce96b879.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1570596,
+"bytes": 1060084,
 "type": "image/png",
 "alt": {
 "ru": "план пола дизайн проект дома братислава словакия",
@@ -24144,10 +24144,10 @@
 }
 },
 "69c977869c961368b180cc82": {
-"file": "images/69c977869c961368b180cc82.png",
+"file": "images/fixed/69c977869c961368b180cc82.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1215819,
+"bytes": 786169,
 "type": "image/png",
 "alt": {
 "ru": "план полов мастер спальня дом братислава словакия",
@@ -24156,10 +24156,10 @@
 }
 },
 "69c9778997f2c44cce96b8a9": {
-"file": "images/69c9778997f2c44cce96b8a9.png",
+"file": "images/fixed/69c9778997f2c44cce96b8a9.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1196110,
+"bytes": 775726,
 "type": "image/png",
 "alt": {
 "ru": "план полов кабинет дом братислава словакия",
@@ -24168,10 +24168,10 @@
 }
 },
 "69c9778a5dfdd428517e8428": {
-"file": "images/69c9778a5dfdd428517e8428.png",
+"file": "images/fixed/69c9778a5dfdd428517e8428.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1996485,
+"bytes": 1259993,
 "type": "image/png",
 "alt": {
 "ru": "план освещения коридор дом братислава словакия",
@@ -24180,10 +24180,10 @@
 }
 },
 "69c9778ab46cdc77b0cae295": {
-"file": "images/69c9778ab46cdc77b0cae295.png",
+"file": "images/fixed/69c9778ab46cdc77b0cae295.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1168955,
+"bytes": 726598,
 "type": "image/png",
 "alt": {
 "ru": "план полов коридор дом братислава словакия",
@@ -24192,10 +24192,10 @@
 }
 },
 "69c9778f5dfdd428517e8459": {
-"file": "images/69c9778f5dfdd428517e8459.png",
+"file": "images/fixed/69c9778f5dfdd428517e8459.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1835190,
+"bytes": 1204814,
 "type": "image/png",
 "alt": {
 "ru": "план потолков интерьер дома братислава словакия",
@@ -24204,10 +24204,10 @@
 }
 },
 "69c9778fb46cdc77b0cae2bc": {
-"file": "images/69c9778fb46cdc77b0cae2bc.png",
+"file": "images/fixed/69c9778fb46cdc77b0cae2bc.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1761571,
+"bytes": 1012935,
 "type": "image/png",
 "alt": {
 "ru": "чертеж потолков интерьер дома братислава словакия",
@@ -24216,10 +24216,10 @@
 }
 },
 "69c9779597f2c44cce96b8ef": {
-"file": "images/69c9779597f2c44cce96b8ef.png",
+"file": "images/fixed/69c9779597f2c44cce96b8ef.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2041292,
+"bytes": 1353828,
 "type": "image/png",
 "alt": {
 "ru": "план потолка гостиная кухня дом братислава словакия",
@@ -24228,10 +24228,10 @@
 }
 },
 "69c977969c961368b180cce9": {
-"file": "images/69c977969c961368b180cce9.png",
+"file": "images/fixed/69c977969c961368b180cce9.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1792791,
+"bytes": 1337091,
 "type": "image/png",
 "alt": {
 "ru": "план потолка спальня дом братислава словакия",
@@ -24240,10 +24240,10 @@
 }
 },
 "69c9779c5dfdd428517e84c3": {
-"file": "images/69c9779c5dfdd428517e84c3.png",
+"file": "images/fixed/69c9779c5dfdd428517e84c3.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1990568,
+"bytes": 1340920,
 "type": "image/png",
 "alt": {
 "ru": "план потолка коридор дом братислава словакия",
@@ -24252,10 +24252,10 @@
 }
 },
 "69c977a097f2c44cce96b953": {
-"file": "images/69c977a097f2c44cce96b953.png",
+"file": "images/fixed/69c977a097f2c44cce96b953.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2158540,
+"bytes": 1403181,
 "type": "image/png",
 "alt": {
 "ru": "план освещения кабинет дом братислава словакия",
@@ -24264,10 +24264,10 @@
 }
 },
 "69c977a15dfdd428517e84ee": {
-"file": "images/69c977a15dfdd428517e84ee.png",
+"file": "images/fixed/69c977a15dfdd428517e84ee.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1657049,
+"bytes": 1216791,
 "type": "image/png",
 "alt": {
 "ru": "схема напольных покрытий дом братислава словакия",
@@ -24276,10 +24276,10 @@
 }
 },
 "69c977a35dfdd428517e851a": {
-"file": "images/69c977a35dfdd428517e851a.png",
+"file": "images/fixed/69c977a35dfdd428517e851a.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2017419,
+"bytes": 1298956,
 "type": "image/png",
 "alt": {
 "ru": "развертки стен интерьер дома братислава словакия",
@@ -24288,10 +24288,10 @@
 }
 },
 "69c977a397f2c44cce96b977": {
-"file": "images/69c977a397f2c44cce96b977.png",
+"file": "images/fixed/69c977a397f2c44cce96b977.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2010829,
+"bytes": 1388622,
 "type": "image/png",
 "alt": {
 "ru": "план полов прихожая дом братислава словакия",
@@ -24300,10 +24300,10 @@
 }
 },
 "69c977a45dfdd428517e8527": {
-"file": "images/69c977a45dfdd428517e8527.png",
+"file": "images/fixed/69c977a45dfdd428517e8527.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1836746,
+"bytes": 1026128,
 "type": "image/png",
 "alt": {
 "ru": "развертка стен прихожая дом братислава словакия",
@@ -24312,10 +24312,10 @@
 }
 },
 "69c977b29c961368b180cda8": {
-"file": "images/69c977b29c961368b180cda8.png",
+"file": "images/fixed/69c977b29c961368b180cda8.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2264491,
+"bytes": 1474295,
 "type": "image/png",
 "alt": {
 "ru": "схема декоративного освещения дом братислава словакия",
@@ -24324,10 +24324,10 @@
 }
 },
 "69c977b5b46cdc77b0cae3d1": {
-"file": "images/69c977b5b46cdc77b0cae3d1.png",
+"file": "images/fixed/69c977b5b46cdc77b0cae3d1.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1915605,
+"bytes": 1199329,
 "type": "image/png",
 "alt": {
 "ru": "схема отделки стен дом братислава словакия",
@@ -24336,10 +24336,10 @@
 }
 },
 "69c977bd97f2c44cce96b9e7": {
-"file": "images/69c977bd97f2c44cce96b9e7.png",
+"file": "images/fixed/69c977bd97f2c44cce96b9e7.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2183786,
+"bytes": 1437407,
 "type": "image/png",
 "alt": {
 "ru": "схема потолков дизайн проект дома братислава словакия",
@@ -24348,10 +24348,10 @@
 }
 },
 "69c977be9c961368b180cdf5": {
-"file": "images/69c977be9c961368b180cdf5.png",
+"file": "images/fixed/69c977be9c961368b180cdf5.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2021618,
+"bytes": 1290150,
 "type": "image/png",
 "alt": {
 "ru": "чертеж кухни дом братислава словакия дизайн проект",
@@ -24360,10 +24360,10 @@
 }
 },
 "69c977bf5dfdd428517e85d2": {
-"file": "images/69c977bf5dfdd428517e85d2.png",
+"file": "images/fixed/69c977bf5dfdd428517e85d2.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1872029,
+"bytes": 1200640,
 "type": "image/png",
 "alt": {
 "ru": "проект встроенной мебели интерьер дома братислава словакия",
@@ -24372,10 +24372,10 @@
 }
 },
 "69c977c797f2c44cce96ba27": {
-"file": "images/69c977c797f2c44cce96ba27.png",
+"file": "images/fixed/69c977c797f2c44cce96ba27.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2044925,
+"bytes": 1243743,
 "type": "image/png",
 "alt": {
 "ru": "Частный дом 120 м² — фото 127",
@@ -24384,10 +24384,10 @@
 }
 },
 "69c977c79c961368b180ce39": {
-"file": "images/69c977c79c961368b180ce39.png",
+"file": "images/fixed/69c977c79c961368b180ce39.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1895888,
+"bytes": 1314680,
 "type": "image/png",
 "alt": {
 "ru": "чертеж мебели гостиная дом братислава словакия DUMSKAYA DESIGN",
@@ -24396,10 +24396,10 @@
 }
 },
 "69c977c7b46cdc77b0cae44e": {
-"file": "images/69c977c7b46cdc77b0cae44e.png",
+"file": "images/fixed/69c977c7b46cdc77b0cae44e.png",
 "width": 2172,
 "height": 1536,
-"bytes": 1982382,
+"bytes": 1221475,
 "type": "image/png",
 "alt": {
 "ru": "чертеж шкафа гардеробной дом братислава словакия",
@@ -24408,10 +24408,10 @@
 }
 },
 "69c977cbb46cdc77b0cae46e": {
-"file": "images/69c977cbb46cdc77b0cae46e.png",
+"file": "images/fixed/69c977cbb46cdc77b0cae46e.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2284981,
+"bytes": 1549395,
 "type": "image/png",
 "alt": {
 "ru": "схема укладки напольных покрытий дом братислава словакия",
@@ -24420,10 +24420,10 @@
 }
 },
 "69c977cc97f2c44cce96ba47": {
-"file": "images/69c977cc97f2c44cce96ba47.png",
+"file": "images/fixed/69c977cc97f2c44cce96ba47.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2315704,
+"bytes": 1542570,
 "type": "image/png",
 "alt": {
 "ru": "план полов гостевая спальня дом братислава словакия",
@@ -24432,10 +24432,10 @@
 }
 },
 "69c977d08cc6c465849a32a6": {
-"file": "images/69c977d08cc6c465849a32a6.png",
+"file": "images/fixed/69c977d08cc6c465849a32a6.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2167643,
+"bytes": 1332922,
 "type": "image/png",
 "alt": {
 "ru": "развертка стен гостиная кухня дом братислава словакия",
@@ -24444,10 +24444,10 @@
 }
 },
 "69c977d35dfdd428517e862d": {
-"file": "images/69c977d35dfdd428517e862d.png",
+"file": "images/fixed/69c977d35dfdd428517e862d.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2571321,
+"bytes": 1612926,
 "type": "image/png",
 "alt": {
 "ru": "развертка стен мастер спальня дом братислава словакия",
@@ -24456,10 +24456,10 @@
 }
 },
 "69c977d45dfdd428517e8636": {
-"file": "images/69c977d45dfdd428517e8636.png",
+"file": "images/fixed/69c977d45dfdd428517e8636.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2565118,
+"bytes": 1539670,
 "type": "image/png",
 "alt": {
 "ru": "развертка стен кабинет дом братислава словакия",
@@ -24468,10 +24468,10 @@
 }
 },
 "69c977d58cc6c465849a32ce": {
-"file": "images/69c977d58cc6c465849a32ce.png",
+"file": "images/fixed/69c977d58cc6c465849a32ce.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2553899,
+"bytes": 1431309,
 "type": "image/png",
 "alt": {
 "ru": "развертка стен гостевая спальня дом братислава словакия",
@@ -24480,10 +24480,10 @@
 }
 },
 "69c977db9c961368b180ce8c": {
-"file": "images/69c977db9c961368b180ce8c.png",
+"file": "images/fixed/69c977db9c961368b180ce8c.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2447709,
+"bytes": 1545441,
 "type": "image/png",
 "alt": {
 "ru": "чертежи стен интерьер дома братислава словакия",
@@ -24492,10 +24492,10 @@
 }
 },
 "69c977de5dfdd428517e866f": {
-"file": "images/69c977de5dfdd428517e866f.png",
+"file": "images/fixed/69c977de5dfdd428517e866f.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2387496,
+"bytes": 1371685,
 "type": "image/png",
 "alt": {
 "ru": "развертка стен коридор дом братислава словакия",
@@ -24504,10 +24504,10 @@
 }
 },
 "69c977e09c961368b180cea9": {
-"file": "images/69c977e09c961368b180cea9.png",
+"file": "images/fixed/69c977e09c961368b180cea9.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2223291,
+"bytes": 1425051,
 "type": "image/png",
 "alt": {
 "ru": "план отделки стен интерьер дома братислава словакия",
@@ -24516,10 +24516,10 @@
 }
 },
 "69c977e6b46cdc77b0cae4ed": {
-"file": "images/69c977e6b46cdc77b0cae4ed.png",
+"file": "images/fixed/69c977e6b46cdc77b0cae4ed.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2176685,
+"bytes": 1433207,
 "type": "image/png",
 "alt": {
 "ru": "чертеж корпусной мебели дом братислава словакия",
@@ -24528,10 +24528,10 @@
 }
 },
 "69c977e8b46cdc77b0cae501": {
-"file": "images/69c977e8b46cdc77b0cae501.png",
+"file": "images/fixed/69c977e8b46cdc77b0cae501.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2394732,
+"bytes": 1545972,
 "type": "image/png",
 "alt": {
 "ru": "чертеж мебели кабинет дом братислава словакия",
@@ -24540,10 +24540,10 @@
 }
 },
 "69c977ea5dfdd428517e869d": {
-"file": "images/69c977ea5dfdd428517e869d.png",
+"file": "images/fixed/69c977ea5dfdd428517e869d.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2645341,
+"bytes": 1876031,
 "type": "image/png",
 "alt": {
 "ru": "план полов гостиная кухня дом братислава словакия",
@@ -24552,10 +24552,10 @@
 }
 },
 "69c977f0b46cdc77b0cae53b": {
-"file": "images/69c977f0b46cdc77b0cae53b.png",
+"file": "images/fixed/69c977f0b46cdc77b0cae53b.png",
 "width": 2172,
 "height": 1536,
-"bytes": 2680955,
+"bytes": 1753738,
 "type": "image/png",
 "alt": {
 "ru": "чертеж мебели мастер спальня дом братислава словакия",
@@ -24564,10 +24564,10 @@
 }
 },
 "69f9f4bd712d2bf4c2ffb88b": {
-"file": "images/69f9f4bd712d2bf4c2ffb88b.png",
+"file": "images/fixed/69f9f4bd712d2bf4c2ffb88b.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1929185,
+"bytes": 1437420,
 "type": "image/png",
 "alt": {
 "ru": "интерьер с мрамором братислава словакия премиум дизайн dumskaya design",
@@ -24576,10 +24576,10 @@
 }
 },
 "69f9f4d45814261fbebb2199": {
-"file": "images/69f9f4d45814261fbebb2199.png",
+"file": "images/fixed/69f9f4d45814261fbebb2199.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2040901,
+"bytes": 1406581,
 "type": "image/png",
 "alt": {
 "ru": "интерьер с декоративными панелями братислава словакия dumskaya design",
@@ -24588,10 +24588,10 @@
 }
 },
 "69f9f4e5c0c9045d3cefe801": {
-"file": "images/69f9f4e5c0c9045d3cefe801.png",
+"file": "images/fixed/69f9f4e5c0c9045d3cefe801.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2095746,
+"bytes": 1485033,
 "type": "image/png",
 "alt": {
 "ru": "интерьер с подсветкой братислава словакия современный стиль dumskaya design",
@@ -24600,10 +24600,10 @@
 }
 },
 "69f9f4f34c314ab6cf42fa51": {
-"file": "images/69f9f4f34c314ab6cf42fa51.png",
+"file": "images/fixed/69f9f4f34c314ab6cf42fa51.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1591097,
+"bytes": 981504,
 "type": "image/png",
 "alt": {
 "ru": "ванная с душем братислава словакия современный дизайн dumskaya design",
@@ -24612,10 +24612,10 @@
 }
 },
 "69f9f501c0c9045d3cefe8aa": {
-"file": "images/69f9f501c0c9045d3cefe8aa.png",
+"file": "images/fixed/69f9f501c0c9045d3cefe8aa.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1892673,
+"bytes": 1217530,
 "type": "image/png",
 "alt": {
 "ru": "спальня с гардеробной братислава словакия дизайн проект dumskaya design",
@@ -24624,10 +24624,10 @@
 }
 },
 "69f9f50eafaa7d2c3d7c7658": {
-"file": "images/69f9f50eafaa7d2c3d7c7658.png",
+"file": "images/fixed/69f9f50eafaa7d2c3d7c7658.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1752181,
+"bytes": 1134855,
 "type": "image/png",
 "alt": {
 "ru": "кухня гостиная open space братислава словакия интерьер dumskaya design",
@@ -24636,10 +24636,10 @@
 }
 },
 "69f9f518afaa7d2c3d7c768c": {
-"file": "images/69f9f518afaa7d2c3d7c768c.png",
+"file": "images/fixed/69f9f518afaa7d2c3d7c768c.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1607222,
+"bytes": 986690,
 "type": "image/png",
 "alt": {
 "ru": "современная кухня гостиная братислава словакия дизайн dumskaya design",
@@ -24648,10 +24648,10 @@
 }
 },
 "69f9f524c0c9045d3cefe95f": {
-"file": "images/69f9f524c0c9045d3cefe95f.png",
+"file": "images/fixed/69f9f524c0c9045d3cefe95f.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1827480,
+"bytes": 1148961,
 "type": "image/png",
 "alt": {
 "ru": "комплектация интерьера братислава словакия мебель и материалы dumskaya design",
@@ -24660,10 +24660,10 @@
 }
 },
 "69f9f52fc0c9045d3cefe9ad": {
-"file": "images/69f9f52fc0c9045d3cefe9ad.png",
+"file": "images/fixed/69f9f52fc0c9045d3cefe9ad.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2053446,
+"bytes": 1371901,
 "type": "image/png",
 "alt": {
 "ru": "авторский надзор братислава словакия дизайн студия dumskaya design",
@@ -24672,10 +24672,10 @@
 }
 },
 "69f9f53d712d2bf4c2ffbb31": {
-"file": "images/69f9f53d712d2bf4c2ffbb31.png",
+"file": "images/fixed/69f9f53d712d2bf4c2ffbb31.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1965114,
+"bytes": 1359231,
 "type": "image/png",
 "alt": {
 "ru": "чертежи интерьера братислава словакия рабочая документация dumskaya design",
@@ -24684,10 +24684,10 @@
 }
 },
 "69f9f551c0c9045d3cefea3d": {
-"file": "images/69f9f551c0c9045d3cefea3d.png",
+"file": "images/fixed/69f9f551c0c9045d3cefea3d.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1895585,
+"bytes": 1307049,
 "type": "image/png",
 "alt": {
 "ru": "3d визуализация интерьера братислава словакия реалистичный рендер dumskaya design",
@@ -24696,10 +24696,10 @@
 }
 },
 "69f9f562c0c9045d3cefeaa6": {
-"file": "images/69f9f562c0c9045d3cefeaa6.png",
+"file": "images/fixed/69f9f562c0c9045d3cefeaa6.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1762036,
+"bytes": 1094970,
 "type": "image/png",
 "alt": {
 "ru": "дизайн проект дома братислава словакия премиум уровень dumskaya design",
@@ -24708,10 +24708,10 @@
 }
 },
 "69f9f577c0c9045d3cefeb10": {
-"file": "images/69f9f577c0c9045d3cefeb10.png",
+"file": "images/fixed/69f9f577c0c9045d3cefeb10.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1740685,
+"bytes": 1025827,
 "type": "image/png",
 "alt": {
 "ru": "дизайн проект квартиры братислава словакия современный стиль dumskaya design",
@@ -24720,10 +24720,10 @@
 }
 },
 "69f9f587712d2bf4c2ffbd1f": {
-"file": "images/69f9f587712d2bf4c2ffbd1f.png",
+"file": "images/fixed/69f9f587712d2bf4c2ffbd1f.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1989031,
+"bytes": 1452302,
 "type": "image/png",
 "alt": {
 "ru": "полный цикл интерьерного проекта братислава словакия dumskaya design",
@@ -24732,10 +24732,10 @@
 }
 },
 "69f9f5975814261fbebb24fe": {
-"file": "images/69f9f5975814261fbebb24fe.png",
+"file": "images/fixed/69f9f5975814261fbebb24fe.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2130373,
+"bytes": 1418191,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера и изготовление мебели братислава словакия dumskaya design",
@@ -24744,10 +24744,10 @@
 }
 },
 "69f9f5a8afaa7d2c3d7c791f": {
-"file": "images/69f9f5a8afaa7d2c3d7c791f.png",
+"file": "images/fixed/69f9f5a8afaa7d2c3d7c791f.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1982345,
+"bytes": 1344156,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера и ремонт под ключ братислава словакия dumskaya design",
@@ -24756,10 +24756,10 @@
 }
 },
 "69f9f5b44c314ab6cf42fdbf": {
-"file": "images/69f9f5b44c314ab6cf42fdbf.png",
+"file": "images/fixed/69f9f5b44c314ab6cf42fdbf.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2310371,
+"bytes": 1682577,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера с мебелью на заказ братислава словакия dumskaya design",
@@ -24768,10 +24768,10 @@
 }
 },
 "69f9f5bfafaa7d2c3d7c7980": {
-"file": "images/69f9f5bfafaa7d2c3d7c7980.png",
+"file": "images/fixed/69f9f5bfafaa7d2c3d7c7980.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2192617,
+"bytes": 1500432,
 "type": "image/png",
 "alt": {
 "ru": "интерьер апартаментов братислава словакия премиум стиль dumskaya design",
@@ -24780,10 +24780,10 @@
 }
 },
 "69f9f5cfafaa7d2c3d7c79ee": {
-"file": "images/69f9f5cfafaa7d2c3d7c79ee.png",
+"file": "images/fixed/69f9f5cfafaa7d2c3d7c79ee.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2045652,
+"bytes": 1372852,
 "type": "image/png",
 "alt": {
 "ru": "интерьер студии братислава словакия компактный дизайн dumskaya design",
@@ -24792,10 +24792,10 @@
 }
 },
 "69f9f5e7c0c9045d3cefecbd": {
-"file": "images/69f9f5e7c0c9045d3cefecbd.png",
+"file": "images/fixed/69f9f5e7c0c9045d3cefecbd.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2097446,
+"bytes": 1398509,
 "type": "image/png",
 "alt": {
 "ru": "интерьер салона красоты братислава словакия дизайн проект dumskaya design",
@@ -24804,10 +24804,10 @@
 }
 },
 "69f9f5f25814261fbebb266c": {
-"file": "images/69f9f5f25814261fbebb266c.png",
+"file": "images/fixed/69f9f5f25814261fbebb266c.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2227620,
+"bytes": 1564554,
 "type": "image/png",
 "alt": {
 "ru": "интерьер офиса братислава словакия современный бизнес стиль dumskaya design",
@@ -24816,10 +24816,10 @@
 }
 },
 "69f9f601afaa7d2c3d7c7ae1": {
-"file": "images/69f9f601afaa7d2c3d7c7ae1.png",
+"file": "images/fixed/69f9f601afaa7d2c3d7c7ae1.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1602971,
+"bytes": 1128214,
 "type": "image/png",
 "alt": {
 "ru": "интерьер дома братислава словакия дизайн под ключ dumskaya design",
@@ -24828,10 +24828,10 @@
 }
 },
 "69f9f60c5814261fbebb26ff": {
-"file": "images/69f9f60c5814261fbebb26ff.png",
+"file": "images/fixed/69f9f60c5814261fbebb26ff.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2137722,
+"bytes": 1595886,
 "type": "image/png",
 "alt": {
 "ru": "интерьер квартиры братислава словакия современный стиль dumskaya design",
@@ -24840,10 +24840,10 @@
 }
 },
 "69f9f628afaa7d2c3d7c7bba": {
-"file": "images/69f9f628afaa7d2c3d7c7bba.png",
+"file": "images/fixed/69f9f628afaa7d2c3d7c7bba.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1853586,
+"bytes": 1146067,
 "type": "image/png",
 "alt": {
 "ru": "элитный интерьер братислава словакия дорогой дизайн dumskaya design",
@@ -24852,10 +24852,10 @@
 }
 },
 "69f9f647afaa7d2c3d7c7c58": {
-"file": "images/69f9f647afaa7d2c3d7c7c58.png",
+"file": "images/fixed/69f9f647afaa7d2c3d7c7c58.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1931361,
+"bytes": 1323522,
 "type": "image/png",
 "alt": {
 "ru": "luxury интерьер братислава словакия премиум дизайн dumskaya design",
@@ -24864,10 +24864,10 @@
 }
 },
 "69f9f659712d2bf4c2ffc03e": {
-"file": "images/69f9f659712d2bf4c2ffc03e.png",
+"file": "images/fixed/69f9f659712d2bf4c2ffc03e.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1656925,
+"bytes": 1151216,
 "type": "image/png",
 "alt": {
 "ru": "минимализм интерьер братислава словакия кухня и гостиная dumskaya design",
@@ -24876,10 +24876,10 @@
 }
 },
 "69f9f6675814261fbebb28c6": {
-"file": "images/69f9f6675814261fbebb28c6.png",
+"file": "images/fixed/69f9f6675814261fbebb28c6.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1832392,
+"bytes": 1293961,
 "type": "image/png",
 "alt": {
 "ru": "современный интерьер братислава словакия дизайн квартиры dumskaya design",
@@ -24888,10 +24888,10 @@
 }
 },
 "69f9f6785814261fbebb2915": {
-"file": "images/69f9f6785814261fbebb2915.png",
+"file": "images/fixed/69f9f6785814261fbebb2915.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1976686,
+"bytes": 1280930,
 "type": "image/png",
 "alt": {
 "ru": "ремонт коммерческого помещения братислава словакия под ключ dumskaya design",
@@ -24900,10 +24900,10 @@
 }
 },
 "69f9f68e5814261fbebb2984": {
-"file": "images/69f9f68e5814261fbebb2984.png",
+"file": "images/fixed/69f9f68e5814261fbebb2984.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1952955,
+"bytes": 1120868,
 "type": "image/png",
 "alt": {
 "ru": "ремонт вторичного жилья братислава словакия современный стиль dumskaya design",
@@ -24912,10 +24912,10 @@
 }
 },
 "69f9f6b8afaa7d2c3d7c7eab": {
-"file": "images/69f9f6b8afaa7d2c3d7c7eab.png",
+"file": "images/fixed/69f9f6b8afaa7d2c3d7c7eab.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1787618,
+"bytes": 1147965,
 "type": "image/png",
 "alt": {
 "ru": "ремонт новостройки братислава словакия дизайн проект dumskaya design",
@@ -24924,10 +24924,10 @@
 }
 },
 "69f9f6c44c314ab6cf430270": {
-"file": "images/69f9f6c44c314ab6cf430270.png",
+"file": "images/fixed/69f9f6c44c314ab6cf430270.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1259079,
+"bytes": 761250,
 "type": "image/png",
 "alt": {
 "ru": "ремонт апартаментов братислава словакия полный цикл dumskaya design",
@@ -24936,10 +24936,10 @@
 }
 },
 "69f9f6cec0c9045d3ceff0dd": {
-"file": "images/69f9f6cec0c9045d3ceff0dd.png",
+"file": "images/fixed/69f9f6cec0c9045d3ceff0dd.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1702234,
+"bytes": 1156273,
 "type": "image/png",
 "alt": {
 "ru": "ремонт салона под ключ братислава словакия коммерческий дизайн dumskaya design",
@@ -24948,10 +24948,10 @@
 }
 },
 "69f9f6e1712d2bf4c2ffc2d3": {
-"file": "images/69f9f6e1712d2bf4c2ffc2d3.png",
+"file": "images/fixed/69f9f6e1712d2bf4c2ffc2d3.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2054202,
+"bytes": 1416602,
 "type": "image/png",
 "alt": {
 "ru": "ремонт офиса под ключ братислава словакия современный офис dumskaya design",
@@ -24960,10 +24960,10 @@
 }
 },
 "69f9f6fb5814261fbebb2bd3": {
-"file": "images/69f9f6fb5814261fbebb2bd3.png",
+"file": "images/fixed/69f9f6fb5814261fbebb2bd3.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1658570,
+"bytes": 928376,
 "type": "image/png",
 "alt": {
 "ru": "ремонт ванной под ключ братислава словакия плитка премиум dumskaya design",
@@ -24972,10 +24972,10 @@
 }
 },
 "69f9f70bafaa7d2c3d7c8016": {
-"file": "images/69f9f70bafaa7d2c3d7c8016.png",
+"file": "images/fixed/69f9f70bafaa7d2c3d7c8016.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1968249,
+"bytes": 1193283,
 "type": "image/png",
 "alt": {
 "ru": "ремонт кухни под ключ братислава словакия кухня с мебелью dumskaya design",
@@ -24984,10 +24984,10 @@
 }
 },
 "69f9f716c0c9045d3ceff256": {
-"file": "images/69f9f716c0c9045d3ceff256.png",
+"file": "images/fixed/69f9f716c0c9045d3ceff256.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1535318,
+"bytes": 942733,
 "type": "image/png",
 "alt": {
 "ru": "ремонт дома под ключ братислава словакия дизайн и реализация dumskaya design",
@@ -24996,10 +24996,10 @@
 }
 },
 "69f9f721712d2bf4c2ffc475": {
-"file": "images/69f9f721712d2bf4c2ffc475.png",
+"file": "images/fixed/69f9f721712d2bf4c2ffc475.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1361758,
+"bytes": 818496,
 "type": "image/png",
 "alt": {
 "ru": "ремонт квартиры под ключ братислава словакия современный интерьер dumskaya design",
@@ -25008,10 +25008,10 @@
 }
 },
 "69f9f72c5814261fbebb2cc3": {
-"file": "images/69f9f72c5814261fbebb2cc3.png",
+"file": "images/fixed/69f9f72c5814261fbebb2cc3.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1817668,
+"bytes": 1081017,
 "type": "image/png",
 "alt": {
 "ru": "мебель на заказ братислава словакия премиум качество dumskaya design",
@@ -25020,10 +25020,10 @@
 }
 },
 "69f9f73c5814261fbebb2d29": {
-"file": "images/69f9f73c5814261fbebb2d29.png",
+"file": "images/fixed/69f9f73c5814261fbebb2d29.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1351731,
+"bytes": 800580,
 "type": "image/png",
 "alt": {
 "ru": "мебель для салона на заказ братислава словакия коммерческий интерьер dumskaya design",
@@ -25032,10 +25032,10 @@
 }
 },
 "69f9f74c712d2bf4c2ffc57a": {
-"file": "images/69f9f74c712d2bf4c2ffc57a.png",
+"file": "images/fixed/69f9f74c712d2bf4c2ffc57a.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1552806,
+"bytes": 905530,
 "type": "image/png",
 "alt": {
 "ru": "мебель для офиса на заказ братислава словакия современный офис dumskaya design",
@@ -25044,10 +25044,10 @@
 }
 },
 "69f9f755c0c9045d3ceff386": {
-"file": "images/69f9f755c0c9045d3ceff386.png",
+"file": "images/fixed/69f9f755c0c9045d3ceff386.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1593228,
+"bytes": 886744,
 "type": "image/png",
 "alt": {
 "ru": "дизайнерская мебель братислава словакия индивидуальный проект dumskaya design",
@@ -25056,10 +25056,10 @@
 }
 },
 "69f9f762afaa7d2c3d7c81d1": {
-"file": "images/69f9f762afaa7d2c3d7c81d1.png",
+"file": "images/fixed/69f9f762afaa7d2c3d7c81d1.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1755960,
+"bytes": 1008448,
 "type": "image/png",
 "alt": {
 "ru": "встроенная мебель на заказ братислава словакия современный интерьер dumskaya design",
@@ -25068,10 +25068,10 @@
 }
 },
 "69f9f76cafaa7d2c3d7c820f": {
-"file": "images/69f9f76cafaa7d2c3d7c820f.png",
+"file": "images/fixed/69f9f76cafaa7d2c3d7c820f.png",
 "width": 2170,
 "height": 1536,
-"bytes": 625534,
+"bytes": 468094,
 "type": "image/png",
 "alt": {
 "ru": "мебель для спальни на заказ братислава словакия кровать панели dumskaya design",
@@ -25080,10 +25080,10 @@
 }
 },
 "69f9f774712d2bf4c2ffc628": {
-"file": "images/69f9f774712d2bf4c2ffc628.png",
+"file": "images/fixed/69f9f774712d2bf4c2ffc628.png",
 "width": 2170,
 "height": 1536,
-"bytes": 999628,
+"bytes": 723457,
 "type": "image/png",
 "alt": {
 "ru": "мебель для гостиной на заказ братислава словакия тв зона dumskaya design",
@@ -25092,10 +25092,10 @@
 }
 },
 "69f9f77d5814261fbebb2e0d": {
-"file": "images/69f9f77d5814261fbebb2e0d.png",
+"file": "images/fixed/69f9f77d5814261fbebb2e0d.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1103430,
+"bytes": 745470,
 "type": "image/png",
 "alt": {
 "ru": "мебель для ванной на заказ братислава словакия шкаф под раковину dumskaya design",
@@ -25104,10 +25104,10 @@
 }
 },
 "69f9f78c4c314ab6cf4305ac": {
-"file": "images/69f9f78c4c314ab6cf4305ac.png",
+"file": "images/fixed/69f9f78c4c314ab6cf4305ac.png",
 "width": 2170,
 "height": 1536,
-"bytes": 674121,
+"bytes": 516649,
 "type": "image/png",
 "alt": {
 "ru": "гардеробная на заказ братислава словакия современный гардероб dumskaya design",
@@ -25116,10 +25116,10 @@
 }
 },
 "69f9f794afaa7d2c3d7c82ab": {
-"file": "images/69f9f794afaa7d2c3d7c82ab.png",
+"file": "images/fixed/69f9f794afaa7d2c3d7c82ab.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1508420,
+"bytes": 994017,
 "type": "image/png",
 "alt": {
 "ru": "шкаф на заказ братислава словакия встроенный шкаф дизайн dumskaya design",
@@ -25128,10 +25128,10 @@
 }
 },
 "69f9f79f5814261fbebb2e8e": {
-"file": "images/69f9f79f5814261fbebb2e8e.png",
+"file": "images/fixed/69f9f79f5814261fbebb2e8e.png",
 "width": 2170,
 "height": 1536,
-"bytes": 855263,
+"bytes": 618360,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия luxury кухня dumskaya design",
@@ -25140,10 +25140,10 @@
 }
 },
 "69f9f7b04c314ab6cf430646": {
-"file": "images/69f9f7b04c314ab6cf430646.png",
+"file": "images/fixed/69f9f7b04c314ab6cf430646.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1367400,
+"bytes": 1014940,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия темная кухня стиль dumskaya design",
@@ -25152,10 +25152,10 @@
 }
 },
 "69f9f7ba5814261fbebb2ef7": {
-"file": "images/69f9f7ba5814261fbebb2ef7.png",
+"file": "images/fixed/69f9f7ba5814261fbebb2ef7.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1347857,
+"bytes": 929597,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия светлая кухня dumskaya design",
@@ -25164,10 +25164,10 @@
 }
 },
 "69f9f7cb4c314ab6cf4306a3": {
-"file": "images/69f9f7cb4c314ab6cf4306a3.png",
+"file": "images/fixed/69f9f7cb4c314ab6cf4306a3.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1214424,
+"bytes": 854116,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия кухня под потолок dumskaya design",
@@ -25176,10 +25176,10 @@
 }
 },
 "69f9f7d4c0c9045d3ceff56a": {
-"file": "images/69f9f7d4c0c9045d3ceff56a.png",
+"file": "images/fixed/69f9f7d4c0c9045d3ceff56a.png",
 "width": 2170,
 "height": 1536,
-"bytes": 952307,
+"bytes": 694910,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия современная планировка dumskaya design",
@@ -25188,10 +25188,10 @@
 }
 },
 "69f9f7de4c314ab6cf430710": {
-"file": "images/69f9f7de4c314ab6cf430710.png",
+"file": "images/fixed/69f9f7de4c314ab6cf430710.png",
 "width": 2170,
 "height": 1536,
-"bytes": 963518,
+"bytes": 685662,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия премиум кухня дизайн dumskaya design",
@@ -25200,10 +25200,10 @@
 }
 },
 "69f9f7e95814261fbebb2fbf": {
-"file": "images/69f9f7e95814261fbebb2fbf.png",
+"file": "images/fixed/69f9f7e95814261fbebb2fbf.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1491946,
+"bytes": 1045761,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия встроенная техника dumskaya design",
@@ -25212,10 +25212,10 @@
 }
 },
 "69f9f802712d2bf4c2ffc82f": {
-"file": "images/69f9f802712d2bf4c2ffc82f.png",
+"file": "images/fixed/69f9f802712d2bf4c2ffc82f.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1159925,
+"bytes": 949876,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия минимализм без ручек dumskaya design",
@@ -25224,10 +25224,10 @@
 }
 },
 "69f9f80e5814261fbebb3075": {
-"file": "images/69f9f80e5814261fbebb3075.png",
+"file": "images/fixed/69f9f80e5814261fbebb3075.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1180964,
+"bytes": 858463,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия фасады мдф эмаль dumskaya design",
@@ -25236,10 +25236,10 @@
 }
 },
 "69f9f81b4c314ab6cf430808": {
-"file": "images/69f9f81b4c314ab6cf430808.png",
+"file": "images/fixed/69f9f81b4c314ab6cf430808.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1207827,
+"bytes": 872427,
 "type": "image/png",
 "alt": {
 "ru": "кухня на заказ братислава словакия современная кухня с островом dumskaya design",
@@ -25248,10 +25248,10 @@
 }
 },
 "69f9f825afaa7d2c3d7c84da": {
-"file": "images/69f9f825afaa7d2c3d7c84da.png",
+"file": "images/fixed/69f9f825afaa7d2c3d7c84da.png",
 "width": 2170,
 "height": 1536,
-"bytes": 653966,
+"bytes": 492090,
 "type": "image/png",
 "alt": {
 "ru": "дизайн коридора братислава словакия современный интерьер dumskaya design",
@@ -25260,10 +25260,10 @@
 }
 },
 "69f9f82eafaa7d2c3d7c8524": {
-"file": "images/69f9f82eafaa7d2c3d7c8524.png",
+"file": "images/fixed/69f9f82eafaa7d2c3d7c8524.png",
 "width": 2170,
 "height": 1536,
-"bytes": 775787,
+"bytes": 522480,
 "type": "image/png",
 "alt": {
 "ru": "дизайн столовой братислава словакия интерьер с мебелью на заказ dumskaya design",
@@ -25272,10 +25272,10 @@
 }
 },
 "69f9f837afaa7d2c3d7c854f": {
-"file": "images/69f9f837afaa7d2c3d7c854f.png",
+"file": "images/fixed/69f9f837afaa7d2c3d7c854f.png",
 "width": 2170,
 "height": 1536,
-"bytes": 417563,
+"bytes": 309503,
 "type": "image/png",
 "alt": {
 "ru": "дизайн детской комнаты братислава словакия современный стиль dumskaya design",
@@ -25284,10 +25284,10 @@
 }
 },
 "69f9f83e5814261fbebb3190": {
-"file": "images/69f9f83e5814261fbebb3190.png",
+"file": "images/fixed/69f9f83e5814261fbebb3190.png",
 "width": 2170,
 "height": 1536,
-"bytes": 632290,
+"bytes": 478986,
 "type": "image/png",
 "alt": {
 "ru": "дизайн гардеробной братислава словакия гардероб на заказ dumskaya design",
@@ -25296,10 +25296,10 @@
 }
 },
 "69f9f84d5814261fbebb31d4": {
-"file": "images/69f9f84d5814261fbebb31d4.png",
+"file": "images/fixed/69f9f84d5814261fbebb31d4.png",
 "width": 2170,
 "height": 1536,
-"bytes": 652507,
+"bytes": 470133,
 "type": "image/png",
 "alt": {
 "ru": "дизайн кабинета братислава словакия домашний офис dumskaya design",
@@ -25308,10 +25308,10 @@
 }
 },
 "69f9f85aafaa7d2c3d7c85ec": {
-"file": "images/69f9f85aafaa7d2c3d7c85ec.png",
+"file": "images/fixed/69f9f85aafaa7d2c3d7c85ec.png",
 "width": 2170,
 "height": 1536,
-"bytes": 724370,
+"bytes": 570605,
 "type": "image/png",
 "alt": {
 "ru": "дизайн прихожей братислава словакия встроенная мебель dumskaya design",
@@ -25320,10 +25320,10 @@
 }
 },
 "69f9f867afaa7d2c3d7c864c": {
-"file": "images/69f9f867afaa7d2c3d7c864c.png",
+"file": "images/fixed/69f9f867afaa7d2c3d7c864c.png",
 "width": 2170,
 "height": 1536,
-"bytes": 2725482,
+"bytes": 1779216,
 "type": "image/png",
 "alt": {
 "ru": "дизайн ванной комнаты братислава словакия премиум ремонт dumskaya design",
@@ -25332,10 +25332,10 @@
 }
 },
 "69f9f875712d2bf4c2ffca3b": {
-"file": "images/69f9f875712d2bf4c2ffca3b.png",
+"file": "images/fixed/69f9f875712d2bf4c2ffca3b.png",
 "width": 2170,
 "height": 1536,
-"bytes": 720466,
+"bytes": 515749,
 "type": "image/png",
 "alt": {
 "ru": "дизайн спальни братислава словакия современный интерьер dumskaya design",
@@ -25356,10 +25356,10 @@
 }
 },
 "69fa2a7cafaa7d2c3d7d5483": {
-"file": "images/69fa2a7cafaa7d2c3d7d5483.png",
+"file": "images/fixed/69fa2a7cafaa7d2c3d7d5483.png",
 "width": 2170,
 "height": 1536,
-"bytes": 1410460,
+"bytes": 1177661,
 "type": "image/png",
 "alt": {
 "ru": "дизайн интерьера гостиной братислава словакия современный стиль dumskaya design",
