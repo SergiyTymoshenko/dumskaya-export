@@ -27898,5 +27898,281 @@
 "ua": "Планувальне рішення квартири 127 м² у Братиславі з розстановкою меблів",
 "en": "Layout of a 127 m² apartment in Bratislava with furniture plan"
 }
+},
+"bra127-d01": {
+"file": "assets/photos/bratislava-127m/docs/01.png",
+"width": 2400,
+"height": 1698,
+"bytes": 215376,
+"type": "image/png",
+"alt": {
+"ru": "Обмерный план после демонтажа — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "Обмірний план після демонтажу — технічне креслення квартири 127 м² у Братиславі",
+"en": "Measured plan after demolition — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d02": {
+"file": "assets/photos/bratislava-127m/docs/02.png",
+"width": 2400,
+"height": 1698,
+"bytes": 378405,
+"type": "image/png",
+"alt": {
+"ru": "План расстановки мебели — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План розстановки меблів — технічне креслення квартири 127 м² у Братиславі",
+"en": "Furniture layout plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d03": {
+"file": "assets/photos/bratislava-127m/docs/03.png",
+"width": 2400,
+"height": 1698,
+"bytes": 298259,
+"type": "image/png",
+"alt": {
+"ru": "План заказной мебели — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План меблів на замовлення — технічне креслення квартири 127 м² у Братиславі",
+"en": "Custom furniture plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d04": {
+"file": "assets/photos/bratislava-127m/docs/04.png",
+"width": 2400,
+"height": 1698,
+"bytes": 352951,
+"type": "image/png",
+"alt": {
+"ru": "План монтажа перегородок — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План монтажу перегородок — технічне креслення квартири 127 м² у Братиславі",
+"en": "Partition installation plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d05": {
+"file": "assets/photos/bratislava-127m/docs/05.png",
+"width": 2400,
+"height": 1698,
+"bytes": 333590,
+"type": "image/png",
+"alt": {
+"ru": "План монтажа перегородок в 3D — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План монтажу перегородок у 3D — технічне креслення квартири 127 м² у Братиславі",
+"en": "Partition installation plan in 3D — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d06": {
+"file": "assets/photos/bratislava-127m/docs/06.png",
+"width": 2400,
+"height": 1698,
+"bytes": 247852,
+"type": "image/png",
+"alt": {
+"ru": "Монтаж конструкций из гипсокартона в санузле — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "Монтаж конструкцій з гіпсокартону в санвузлі — технічне креслення квартири 127 м² у Братиславі",
+"en": "Plasterboard structures in the bathroom — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d07": {
+"file": "assets/photos/bratislava-127m/docs/07.png",
+"width": 2400,
+"height": 1698,
+"bytes": 306102,
+"type": "image/png",
+"alt": {
+"ru": "План привязки радиаторов и конвекторов — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План прив’язки радіаторів і конвекторів — технічне креслення квартири 127 м² у Братиславі",
+"en": "Radiator and convector placement plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d08": {
+"file": "assets/photos/bratislava-127m/docs/08.png",
+"width": 2400,
+"height": 1698,
+"bytes": 362115,
+"type": "image/png",
+"alt": {
+"ru": "План привязки кондиционеров — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План прив’язки кондиціонерів — технічне креслення квартири 127 м² у Братиславі",
+"en": "Air conditioner placement plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d09": {
+"file": "assets/photos/bratislava-127m/docs/09.png",
+"width": 2400,
+"height": 1698,
+"bytes": 551299,
+"type": "image/png",
+"alt": {
+"ru": "План привязки сантехнических приборов — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План прив’язки сантехнічних приладів — технічне креслення квартири 127 м² у Братиславі",
+"en": "Plumbing fixture placement plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d10": {
+"file": "assets/photos/bratislava-127m/docs/10.png",
+"width": 2400,
+"height": 1698,
+"bytes": 431085,
+"type": "image/png",
+"alt": {
+"ru": "Спецификация сантехнического оборудования — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "Специфікація сантехнічного обладнання — технічне креслення квартири 127 м² у Братиславі",
+"en": "Plumbing equipment specification — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d11": {
+"file": "assets/photos/bratislava-127m/docs/11.png",
+"width": 2400,
+"height": 1698,
+"bytes": 419531,
+"type": "image/png",
+"alt": {
+"ru": "Развертка сантехнических приборов санузла — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "Розгортка сантехнічних приладів санвузла — технічне креслення квартири 127 м² у Братиславі",
+"en": "Bathroom plumbing elevations — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d12": {
+"file": "assets/photos/bratislava-127m/docs/12.png",
+"width": 2400,
+"height": 1698,
+"bytes": 547869,
+"type": "image/png",
+"alt": {
+"ru": "План розеток, выключателей и электрооборудования — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План розеток, вимикачів і електрообладнання — технічне креслення квартири 127 м² у Братиславі",
+"en": "Sockets, switches and electrical equipment plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d13": {
+"file": "assets/photos/bratislava-127m/docs/13.png",
+"width": 2400,
+"height": 1698,
+"bytes": 389704,
+"type": "image/png",
+"alt": {
+"ru": "План привязки осветительных приборов — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План прив’язки освітлювальних приладів — технічне креслення квартири 127 м² у Братиславі",
+"en": "Lighting fixture placement plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d14": {
+"file": "assets/photos/bratislava-127m/docs/14.png",
+"width": 2400,
+"height": 1698,
+"bytes": 395572,
+"type": "image/png",
+"alt": {
+"ru": "План связи выключателей и осветительных приборов — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План зв’язку вимикачів і освітлювальних приладів — технічне креслення квартири 127 м² у Братиславі",
+"en": "Switch-to-lighting connection plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d15": {
+"file": "assets/photos/bratislava-127m/docs/15.png",
+"width": 2400,
+"height": 1698,
+"bytes": 337488,
+"type": "image/png",
+"alt": {
+"ru": "План привязки вытяжных устройств — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План прив’язки витяжних пристроїв — технічне креслення квартири 127 м² у Братиславі",
+"en": "Extraction fan placement plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d16": {
+"file": "assets/photos/bratislava-127m/docs/16.png",
+"width": 2400,
+"height": 1698,
+"bytes": 375332,
+"type": "image/png",
+"alt": {
+"ru": "План раскладки напольного покрытия — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План розкладки підлогового покриття — технічне креслення квартири 127 м² у Братиславі",
+"en": "Floor covering layout plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d17": {
+"file": "assets/photos/bratislava-127m/docs/17.png",
+"width": 2400,
+"height": 1698,
+"bytes": 439389,
+"type": "image/png",
+"alt": {
+"ru": "План потолка — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План стелі — технічне креслення квартири 127 м² у Братиславі",
+"en": "Ceiling plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d18": {
+"file": "assets/photos/bratislava-127m/docs/18.png",
+"width": 2400,
+"height": 1698,
+"bytes": 332323,
+"type": "image/png",
+"alt": {
+"ru": "3D-виды к разрезам потолка — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "3D-види до розрізів стелі — технічне креслення квартири 127 м² у Братиславі",
+"en": "3D views of ceiling sections — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d19": {
+"file": "assets/photos/bratislava-127m/docs/19.png",
+"width": 2400,
+"height": 1698,
+"bytes": 392015,
+"type": "image/png",
+"alt": {
+"ru": "План-схема отделки стен — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "План-схема оздоблення стін — технічне креслення квартири 127 м² у Братиславі",
+"en": "Wall finishing plan — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d20": {
+"file": "assets/photos/bratislava-127m/docs/20.png",
+"width": 2400,
+"height": 1698,
+"bytes": 795587,
+"type": "image/png",
+"alt": {
+"ru": "Развертка кухни — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "Розгортка кухні — технічне креслення квартири 127 м² у Братиславі",
+"en": "Kitchen elevations — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d21": {
+"file": "assets/photos/bratislava-127m/docs/21.png",
+"width": 2400,
+"height": 1698,
+"bytes": 602973,
+"type": "image/png",
+"alt": {
+"ru": "Развертка гостиной — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "Розгортка вітальні — технічне креслення квартири 127 м² у Братиславі",
+"en": "Living room elevation — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d22": {
+"file": "assets/photos/bratislava-127m/docs/22.png",
+"width": 2400,
+"height": 1698,
+"bytes": 645033,
+"type": "image/png",
+"alt": {
+"ru": "Разрез детской — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "Розріз дитячої — технічне креслення квартири 127 м² у Братиславі",
+"en": "Children’s room section — technical drawing, 127 m² apartment in Bratislava"
+}
+},
+"bra127-d23": {
+"file": "assets/photos/bratislava-127m/docs/23.png",
+"width": 2400,
+"height": 1698,
+"bytes": 763310,
+"type": "image/png",
+"alt": {
+"ru": "Развертка санузла — технический чертёж квартиры 127 м² в Братиславе",
+"ua": "Розгортка санвузла — технічне креслення квартири 127 м² у Братиславі",
+"en": "Bathroom elevations — technical drawing, 127 m² apartment in Bratislava"
+}
 }
 }

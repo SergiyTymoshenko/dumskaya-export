@@ -305,6 +305,114 @@
    ]
   },
   {
+   "id": "2f50a8dc85bab9dc8f8a3781",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Sample technical documentation developed under the “Basic” design package"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "bra127-d01",
+       "alt": "Measured plan after demolition — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d02",
+       "alt": "Furniture layout plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d03",
+       "alt": "Custom furniture plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d04",
+       "alt": "Partition installation plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d05",
+       "alt": "Partition installation plan in 3D — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d06",
+       "alt": "Plasterboard structures in the bathroom — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d07",
+       "alt": "Radiator and convector placement plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d08",
+       "alt": "Air conditioner placement plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d09",
+       "alt": "Plumbing fixture placement plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d10",
+       "alt": "Plumbing equipment specification — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d11",
+       "alt": "Bathroom plumbing elevations — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d12",
+       "alt": "Sockets, switches and electrical equipment plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d13",
+       "alt": "Lighting fixture placement plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d14",
+       "alt": "Switch-to-lighting connection plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d15",
+       "alt": "Extraction fan placement plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d16",
+       "alt": "Floor covering layout plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d17",
+       "alt": "Ceiling plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d18",
+       "alt": "3D views of ceiling sections — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d19",
+       "alt": "Wall finishing plan — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d20",
+       "alt": "Kitchen elevations — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d21",
+       "alt": "Living room elevation — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d22",
+       "alt": "Children’s room section — technical drawing, 127 m² apartment in Bratislava"
+      },
+      {
+       "id": "bra127-d23",
+       "alt": "Bathroom elevations — technical drawing, 127 m² apartment in Bratislava"
+      }
+     ],
+     "docs": true
+    }
+   ]
+  },
+  {
    "id": "69cbfcd996e515190621f6e5",
    "blocks": [
     {
