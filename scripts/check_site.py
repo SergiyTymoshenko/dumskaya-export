@@ -7,7 +7,10 @@
   • ровно один H1, есть title ≤ 60 и description ≤ 155;
   • JSON-LD парсится;
   • ни одна страница не попала в список редиректов (иначе она была бы недоступна);
-  • Варшава/Москва не встречаются в видимом тексте страниц, кроме явно варшавских проектов.
+  • Варшава/Москва не встречаются в видимом тексте страниц, кроме явно варшавских проектов;
+  • хлебные крошки на каждой странице (кроме главных): начинаются с главной своего языка, кончаются
+    текущей страницей (без ссылки), на языке страницы; разметка BreadcrumbList для Google с ними совпадает,
+    у каждого звена, кроме последнего, есть ссылка на существующую страницу.
   python3 scripts/check_site.py
 """
 import glob, json, os, re, sys
@@ -27,6 +30,7 @@ class P(HTMLParser):
         self.text = []
         self._skip = 0
         self._depth, self._navstack = 0, []   # шапка, меню и подвал не считаются текстом страницы
+        self.crumbs, self._cr, self._cri = [], None, None   # видимые хлебные крошки: [[текст, href, текущая]]
 
     VOID = {"img", "input", "br", "meta", "link", "hr", "source", "wbr"}
 
@@ -40,6 +44,12 @@ class P(HTMLParser):
             self._skip += 1
             if tag == "script" and a.get("type") == "application/ld+json":
                 self._ld = True
+        if tag == "nav" and "crumbs" in (a.get("class") or "").split():
+            self._cr = self._depth
+            self.crumbs.append([])
+        if self._cr is not None and tag in ("a", "span"):
+            self.crumbs[-1].append(["", a.get("href") if tag == "a" else None, a.get("aria-current") == "page"])
+            self._cri = self._depth
         if tag == "a" and a.get("href"):
             self.links.append(a["href"])
         if tag == "h1":
@@ -57,6 +67,10 @@ class P(HTMLParser):
 
     def handle_endtag(self, tag):
         if tag not in self.VOID:
+            if self._cri == self._depth:
+                self._cri = None
+            if self._cr == self._depth:
+                self._cr = None
             if self._navstack and self._navstack[-1] == self._depth:
                 self._navstack.pop()
             self._depth -= 1
@@ -67,12 +81,72 @@ class P(HTMLParser):
             self._t = False
 
     def handle_data(self, d):
+        if self._cri is not None and self.crumbs and self.crumbs[-1]:
+            self.crumbs[-1][-1][0] += d
         if self._t:
             self.title += d
         if self._ld:
             self.ld.append(d)
         elif not self._skip and not self._navstack:
             self.text.append(d)
+
+
+HOME = {"ru": "/", "ua": "/ua", "en": "/en"}
+HOME_LABEL = {"ru": "Главная", "ua": "Головна", "en": "Home"}
+
+
+def lang_of(u):
+    return "ua" if u == "/ua" or u.startswith("/ua/") else "en" if u == "/en" or u.startswith("/en/") else "ru"
+
+
+def check_crumbs(u, p, parsed, errs):
+    """Хлебные крошки: видимые и в разметке BreadcrumbList (Google требует ссылку у каждого звена, кроме последнего)."""
+    lang = lang_of(u)
+    if u in HOME.values():
+        return
+    if len(p.crumbs) != 1:
+        errs.append(f"крошки: {'нет' if not p.crumbs else 'несколько блоков'}: {u}")
+        return
+    vis = [[" ".join(t.split()), h, cur] for t, h, cur in p.crumbs[0]]
+    if len(vis) < 2:
+        errs.append(f"крошки: одно звено: {u}")
+        return
+    if vis[0][1] != HOME[lang] or vis[0][0] != HOME_LABEL[lang]:
+        errs.append(f"крошки: первое звено не «{HOME_LABEL[lang]}» ({vis[0][0]} → {vis[0][1]}): {u}")
+    last = vis[-1]
+    if last[1] is not None or not last[2] or not last[0]:
+        errs.append(f"крошки: последнее звено должно быть текущей страницей без ссылки ({last[0] or 'пусто'}): {u}")
+    for t, h, cur in vis[1:-1]:
+        if not t:
+            errs.append(f"крошки: пустое звено: {u}")
+    labels = " ".join(t for t, _, _ in vis)
+    if (lang == "en" and re.search(r"[а-яёіїєґ]", labels, re.I)) or (lang == "ua" and re.search(r"[ыэъё]", labels, re.I)):
+        errs.append(f"крошки не на языке страницы ({labels}): {u}")
+    bl = []
+    for block in p.ld:
+        try:
+            d = json.loads(block)
+        except Exception:
+            continue
+        bl += [x for x in d.get("@graph", [d]) if x.get("@type") == "BreadcrumbList"]
+    if len(bl) != 1:
+        errs.append(f"крошки: в разметке BreadcrumbList {len(bl)} шт.: {u}")
+        return
+    items = bl[0].get("itemListElement", [])
+    if [i.get("position") for i in items] != list(range(1, len(items) + 1)):
+        errs.append(f"крошки: позиции в разметке не по порядку: {u}")
+    for i in items[:-1]:
+        if not i.get("item"):
+            errs.append(f"крошки: в разметке звено без ссылки «{i.get('name')}»: {u}")
+        elif (urlparse(i["item"]).path or "/") not in parsed:
+            errs.append(f"крошки: в разметке ссылка на несуществующую страницу {i['item']}: {u}")
+    if items and items[-1].get("item") and items[-1]["item"] != SITE + u:
+        errs.append(f"крошки: последнее звено разметки ведёт не на эту страницу ({items[-1]['item']}): {u}")
+    # разметка = видимые звенья со ссылкой + текущая страница
+    want = [t for t, h, _ in vis[:-1] if h] + [last[0]]
+    got = [" ".join(str(i.get("name", "")).split()) for i in items]
+    if got != want:
+        errs.append(f"крошки: разметка {got} не совпадает с видимыми {want}: {u}")
 
 
 def url_of(f):
@@ -128,6 +202,7 @@ def main():
                 json.loads(block)
             except Exception as e:
                 errs.append(f"JSON-LD не читается: {u}: {e}")
+        check_crumbs(u, p, parsed, errs)
         if u not in explicit:
             txt = " ".join(p.text)
             m = re.search(r"\w*(Варшав|Warsaw|Warszaw|Москв|Moscow|Польш|Польщ|Poland)\w*", txt)

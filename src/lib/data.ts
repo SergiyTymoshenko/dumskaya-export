@@ -129,6 +129,11 @@ export function homePath(lang: Lang) {
 export const plain = (h: string) => h.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim();
 
 /** Хлебные крошки страницы (видимые и для разметки BreadcrumbList). */
+/** Название товара или раздела магазина — как в заголовке страницы (без «| DUMSKAYA DESIGN» и артикула в скобках). */
+export function shopName(page: Page): string {
+  return page.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '').replace(/\s*\([^)]*\)\s*$/, '');
+}
+
 export function crumbsFor(page: Page): { label: string; href: string | null }[] {
   const lang = page.lang;
   const t: any = {
@@ -155,7 +160,7 @@ export function crumbsFor(page: Page): { label: string; href: string | null }[] 
     case 'shop': {
       const ru = page.alternates.ru || page.path;
       if (ru === '/shop') return [home, last(t.shop)];
-      return [home, { label: t.shop, href: L('/shop') }, last(page.h1 || page.title.split('|')[0].trim())];
+      return [home, { label: t.shop, href: L('/shop') }, last(shopName(page))];
     }
     default: {
       const ru = page.alternates.ru || page.path;
