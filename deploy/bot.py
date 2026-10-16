@@ -5,43 +5,60 @@ Telegram-бот студии DUMSKAYA DESIGN — внутренний инстр
 (lead_service.py), только стандартная библиотека Python 3.
 
 Пользователи и роли:
-  • разработчик (BOT_OWNER_ID в lead.env) — получает все уведомления, принимает пользователей;
-  • дизайнер студии — получает заявки с сайта и уведомления о заявках партнёрам, принимает пользователей;
-    назначить дизайнера может только разработчик;
-  • партнёры: поставщик, изготовитель мебели, прораб — привязаны к компании (партнёру).
-    Поставщику (и любому пользователю компании) приходят заявки с сайта на товары этой компании.
+  1) разработчик (BOT_OWNER_ID в lead.env) — получает все уведомления, принимает пользователей;
+  2) дизайнер студии — получает заявки с сайта и уведомления о заявках партнёрам, принимает пользователей;
+     назначить дизайнера может только разработчик;
+  3) партнёры: поставщик, изготовитель мебели, прораб, независимый подрядчик — привязаны к компании
+     (частное лицо — компания с его именем). Людям компании приходят заявки с сайта на её товары;
+  4) сотрудники поставщиков — их добавляет сам поставщик: /invite даёт одноразовую ссылку,
+     сотрудник открывает её и нажимает «Старт», поставщик подтверждает. Сотрудникам приходят заявки
+     на товары компании, как и поставщику. Студия видит их в /users и может закрыть доступ.
 
 Попасть в бот можно только по одобрению: человек нажимает «Старт», разработчику и дизайнерам приходит
-запрос с кнопками ролей. Данные — в SQLite (BOT_DB, по умолчанию ~/dumskaya/bot.db).
-Сообщения получаем long polling'ом (getUpdates) — входящих подключений к серверу не нужно.
+запрос с кнопками ролей (или, по ссылке-приглашению, — поставщику). Данные — в SQLite (BOT_DB, по умолчанию
+~/dumskaya/bot.db). Сообщения получаем long polling'ом (getUpdates) — входящих подключений к серверу не нужно.
 """
 import html
 import json
 import os
+import secrets
 import sqlite3
 import threading
 import urllib.error
 import urllib.request
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 SITE = "https://dumskaya-design.com"
 ROLES = {
     "owner": "Разработчик",
     "designer": "Дизайнер студии",
     "supplier": "Поставщик",
+    "staff": "Сотрудник поставщика",
     "maker": "Изготовитель мебели",
     "foreman": "Прораб",
+    "contractor": "Независимый подрядчик",
 }
+ROLE_ORDER = list(ROLES)
 ADMIN_ROLES = ("owner", "designer")
-PARTNER_ROLES = ("supplier", "maker", "foreman")
+PARTNER_ROLES = ("supplier", "maker", "foreman", "contractor")   # партнёры студии
+COMPANY_ROLES = PARTNER_ROLES + ("staff",)                         # привязаны к компании-партнёру
+INVITE_DAYS = 7
+
+ADMIN_COMMANDS = [{"command": "users", "description": "Пользователи и запросы"},
+                  {"command": "partners", "description": "Партнёры и их товары"},
+                  {"command": "help", "description": "Что умеет бот"},
+                  {"command": "cancel", "description": "Отменить ввод"}]
+SUPPLIER_COMMANDS = [{"command": "team", "description": "Мои сотрудники"},
+                     {"command": "invite", "description": "Пригласить сотрудника"},
+                     {"command": "help", "description": "Что умеет бот"}]
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS users (
   tg_id INTEGER PRIMARY KEY,
   name TEXT, username TEXT,
-  role TEXT,                    -- owner, designer, supplier, maker, foreman
+  role TEXT,                    -- owner, designer, supplier, staff, maker, foreman, contractor
   status TEXT NOT NULL,         -- pending, active, rejected, removed
-  partner_id INTEGER,           -- компания-партнёр (для партнёрских ролей)
+  partner_id INTEGER,           -- компания-партнёр (для партнёров и сотрудников поставщиков)
   added_by INTEGER, created TEXT, updated TEXT
 );
 CREATE TABLE IF NOT EXISTS partners (
@@ -49,12 +66,19 @@ CREATE TABLE IF NOT EXISTS partners (
   name TEXT NOT NULL UNIQUE COLLATE NOCASE,
   created TEXT
 );
+CREATE TABLE IF NOT EXISTS invites (  -- одноразовые ссылки поставщиков для сотрудников
+  token TEXT PRIMARY KEY,
+  partner_id INTEGER NOT NULL,
+  created_by INTEGER NOT NULL,
+  created TEXT, expires TEXT,
+  used_by INTEGER, used TEXT
+);
 CREATE TABLE IF NOT EXISTS state (key TEXT PRIMARY KEY, value TEXT);
 """
 
 
-def now():
-    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+def now(days=0):
+    return (datetime.now(timezone.utc) + timedelta(days=days)).isoformat(timespec="seconds")
 
 
 def esc(s):
@@ -87,6 +111,11 @@ class Store:
         with self.lock:
             return self.db.execute(sql, a).lastrowid
 
+    def count(self, sql, *a):
+        """Выполнить изменение и вернуть число затронутых строк."""
+        with self.lock:
+            return self.db.execute(sql, a).rowcount
+
     def get(self, key, default=None):
         r = self.one("SELECT value FROM state WHERE key=?", key)
         return r["value"] if r else default
@@ -112,7 +141,8 @@ class Bot:
                 self.s.run("INSERT INTO users(tg_id, name, role, status, created, updated) VALUES(?, ?, 'owner', 'active', ?, ?)",
                            self.owner, "Разработчик", now(), now())
             elif u["role"] != "owner" or u["status"] != "active":
-                self.s.run("UPDATE users SET role='owner', status='active', updated=? WHERE tg_id=?", now(), self.owner)
+                self.s.run("UPDATE users SET role='owner', status='active', partner_id=NULL, updated=? WHERE tg_id=?",
+                           now(), self.owner)
 
     # ---------- Telegram API ----------
     def api(self, method, **params):
@@ -158,8 +188,15 @@ class Bot:
     def is_admin(self, u):
         return bool(u) and u["status"] == "active" and u["role"] in ADMIN_ROLES
 
+    def is_supplier(self, u):
+        return bool(u) and u["status"] == "active" and u["role"] == "supplier" and bool(u["partner_id"])
+
     def partner(self, pid):
         return self.s.one("SELECT * FROM partners WHERE id=?", pid) if pid else None
+
+    def company(self, u):
+        p = self.partner(u["partner_id"]) if u else None
+        return p["name"] if p else "—"
 
     def label(self, u):
         if not u:
@@ -237,19 +274,17 @@ class Bot:
         self.api("setMyShortDescription", short_description="Внутренний бот студии DUMSKAYA DESIGN")
         self.api("setMyCommands", commands=[{"command": "start", "description": "Начать"},
                                             {"command": "help", "description": "Что умеет бот"}])
-        for u in self.active(ADMIN_ROLES):
-            self.admin_commands(u["tg_id"])
+        for u in self.active(ADMIN_ROLES + ("supplier",)):
+            self.set_commands(u)
 
-    def admin_commands(self, tg_id, on=True):
-        scope = {"type": "chat", "chat_id": tg_id}
-        if not on:
+    def set_commands(self, u):
+        """Меню команд конкретного человека: у студии — /users, /partners; у поставщика — /team, /invite."""
+        scope = {"type": "chat", "chat_id": u["tg_id"]}
+        cmds = ADMIN_COMMANDS if self.is_admin(u) else SUPPLIER_COMMANDS if self.is_supplier(u) else None
+        if cmds:
+            self.api("setMyCommands", scope=scope, commands=cmds)
+        else:
             self.api("deleteMyCommands", scope=scope)
-            return
-        self.api("setMyCommands", scope=scope, commands=[
-            {"command": "users", "description": "Пользователи и запросы"},
-            {"command": "partners", "description": "Партнёры и их товары"},
-            {"command": "help", "description": "Что умеет бот"},
-            {"command": "cancel", "description": "Отменить ввод"}])
 
     def handle(self, upd):
         if "callback_query" in upd:
@@ -268,7 +303,10 @@ class Bot:
             u = self.user(uid)
         text = (m.get("text") or "").strip()
         cmd = text.split()[0].split("@")[0].lower() if text.startswith("/") else ""
+        arg = text.split(maxsplit=1)[1].strip() if cmd and len(text.split(maxsplit=1)) > 1 else ""
 
+        if cmd == "/start" and arg.startswith("inv_"):     # ссылка-приглашение от поставщика
+            return self.join_invite(uid, name, f.get("username"), u, arg[4:])
         if not u or u["status"] != "active":
             return self.stranger(uid, name, f.get("username"), u)
         if cmd == "/cancel":
@@ -282,11 +320,15 @@ class Bot:
             return self.users_list(uid)
         if cmd == "/partners" and self.is_admin(u):
             return self.partners_list(uid)
+        if cmd == "/team" and self.is_supplier(u):
+            return self.team_list(u)
+        if cmd == "/invite" and self.is_supplier(u):
+            return self.make_invite(u)
         self.send(uid, "Команды — в меню слева от поля ввода или /help.")
 
     def stranger(self, uid, name, username, u):
         if u and u["status"] == "pending":
-            return self.send(uid, "Запрос на доступ уже отправлен. Как только студия его одобрит, бот напишет вам.")
+            return self.send(uid, "Запрос на доступ уже отправлен. Как только его одобрят, бот напишет вам.")
         if u and u["status"] == "rejected":
             return self.send(uid, "Доступ к боту не предоставлен. Если это ошибка — свяжитесь со студией DUMSKAYA DESIGN.")
         if u:
@@ -305,8 +347,9 @@ class Bot:
         rows = []
         if admin["role"] == "owner":
             rows.append([(ROLES["designer"], f"ro:{mode}:{uid}:designer")])
-        rows.append([(ROLES["supplier"], f"ro:{mode}:{uid}:supplier"), (ROLES["maker"], f"ro:{mode}:{uid}:maker")])
-        rows.append([(ROLES["foreman"], f"ro:{mode}:{uid}:foreman")])
+        rows.append([(ROLES["supplier"], f"ro:{mode}:{uid}:supplier"), (ROLES["staff"], f"ro:{mode}:{uid}:staff")])
+        rows.append([(ROLES["maker"], f"ro:{mode}:{uid}:maker"), (ROLES["foreman"], f"ro:{mode}:{uid}:foreman")])
+        rows.append([(ROLES["contractor"], f"ro:{mode}:{uid}:contractor")])
         rows.append([("Отклонить", f"x:{uid}")] if mode == "a" else [("← Назад", f"u:{uid}")])
         return rows
 
@@ -320,56 +363,70 @@ class Bot:
             return head + ("Сюда приходят заявки с сайта, уведомления о заявках партнёрам и запросы на доступ к боту.\n\n"
                            "/users — пользователи и запросы\n/partners — партнёры и их товары")
         if role == "supplier":
-            return head + "Сюда будут приходить заявки с сайта dumskaya-design.com на ваши товары."
+            return head + ("Сюда будут приходить заявки с сайта dumskaya-design.com на ваши товары — вам "
+                           "и вашим сотрудникам в боте.\n\n/team — ваши сотрудники в боте\n/invite — пригласить сотрудника")
+        if role == "staff":
+            return head + "Сюда будут приходить заявки с сайта dumskaya-design.com на товары вашей компании."
         return head + "Уведомления для вашей роли появятся позже — студия сообщит об этом."
 
     # ---------- кнопки ----------
     def on_button(self, cq):
         self.api("answerCallbackQuery", callback_query_id=cq["id"])
-        admin = self.user(cq["from"]["id"])
+        who = self.user(cq["from"]["id"])
         msg = cq.get("message")
-        if not self.is_admin(admin) or not msg:
+        if not who or who["status"] != "active" or not msg:
             return
         parts = (cq.get("data") or "").split(":")
-        act = parts[0]
         try:
-            if act == "ro":                            # ro:режим:uid:роль — выбрана роль
-                mode, uid, role = parts[1], int(parts[2]), parts[3]
-                return self.pick_role(admin, msg, mode, uid, role)
-            if act == "pt":                            # pt:режим:uid:роль:партнёр — выбрана компания
-                mode, uid, role, pid = parts[1], int(parts[2]), parts[3], int(parts[4])
-                if not self.check_target(admin, msg, mode, uid):
-                    return
-                return self.approve(admin, uid, role, pid, msg)
-            if act == "np":                            # np:режим:uid:роль — новая компания
-                mode, uid, role = parts[1], int(parts[2]), parts[3]
-                if not self.check_target(admin, msg, mode, uid):
-                    return
-                self.s.put(f"await:{admin['tg_id']}", json.dumps({"uid": uid, "role": role, "mode": mode}))
-                return self.send(admin["tg_id"], f"Напишите название компании для {esc(self.label(self.user(uid)))} "
-                                                 f"(или имя, если это частный мастер). /cancel — отменить.",
-                                 reply_markup={"force_reply": True, "input_field_placeholder": "Название компании"})
-            if act == "x":                             # отклонить запрос
-                return self.reject(admin, int(parts[1]), msg)
-            if act == "u":                             # карточка пользователя
-                return self.user_card(admin, int(parts[1]), msg)
-            if act == "cr":                            # сменить роль — выбор новой роли
-                uid = int(parts[1])
-                if not self.check_target(admin, msg, "c", uid):
-                    return
-                return self.edit(msg, f"{esc(self.label(self.user(uid)))} — новая роль:", self.role_rows("c", uid, admin))
-            if act == "rm":                            # удалить — подтверждение
-                uid = int(parts[1])
-                if not self.can_manage(admin, self.user(uid)):
-                    return self.edit(msg, "Этого пользователя может изменить только разработчик.")
-                return self.edit(msg, f"Закрыть доступ к боту для {esc(self.label(self.user(uid)))}?",
-                                 [[("Да, закрыть доступ", f"rm2:{uid}"), ("Отмена", f"u:{uid}")]])
-            if act == "rm2":
-                return self.remove(admin, int(parts[1]), msg)
-            if act == "users":
-                return self.users_list(admin["tg_id"], msg)
+            if self.is_admin(who):
+                return self.admin_button(who, msg, parts)
+            if self.is_supplier(who):
+                return self.supplier_button(who, msg, parts)
         except (IndexError, ValueError):
             return
+
+    def admin_button(self, admin, msg, parts):
+        act = parts[0]
+        if act == "ro":                            # ro:режим:uid:роль — выбрана роль
+            mode, uid, role = parts[1], int(parts[2]), parts[3]
+            return self.pick_role(admin, msg, mode, uid, role)
+        if act == "pt":                            # pt:режим:uid:роль:партнёр — выбрана компания
+            mode, uid, role, pid = parts[1], int(parts[2]), parts[3], int(parts[4])
+            if role not in COMPANY_ROLES or not self.partner(pid) or not self.check_target(admin, msg, mode, uid):
+                return
+            return self.approve(admin, uid, role, pid, msg)
+        if act == "pp":                            # pp:режим:uid:роль — частное лицо (компания с его именем)
+            mode, uid, role = parts[1], int(parts[2]), parts[3]
+            if role not in PARTNER_ROLES or not self.check_target(admin, msg, mode, uid):
+                return
+            return self.approve(admin, uid, role, self.partner_by_name(self.user(uid)["name"]), msg)
+        if act == "np":                            # np:режим:uid:роль — новая компания
+            mode, uid, role = parts[1], int(parts[2]), parts[3]
+            if role not in PARTNER_ROLES or not self.check_target(admin, msg, mode, uid):
+                return
+            self.s.put(f"await:{admin['tg_id']}", json.dumps({"uid": uid, "role": role, "mode": mode}))
+            return self.send(admin["tg_id"], f"Напишите название компании для {esc(self.label(self.user(uid)))}. "
+                                             f"/cancel — отменить.",
+                             reply_markup={"force_reply": True, "input_field_placeholder": "Название компании"})
+        if act == "x":                             # отклонить запрос
+            return self.reject(admin, int(parts[1]), msg)
+        if act == "u":                             # карточка пользователя
+            return self.user_card(admin, int(parts[1]), msg)
+        if act == "cr":                            # сменить роль — выбор новой роли
+            uid = int(parts[1])
+            if not self.check_target(admin, msg, "c", uid):
+                return
+            return self.edit(msg, f"{esc(self.label(self.user(uid)))} — новая роль:", self.role_rows("c", uid, admin))
+        if act == "rm":                            # удалить — подтверждение
+            uid = int(parts[1])
+            if not self.can_manage(admin, self.user(uid)):
+                return self.edit(msg, "Этого пользователя может изменить только разработчик.")
+            return self.edit(msg, f"Закрыть доступ к боту для {esc(self.label(self.user(uid)))}?",
+                             [[("Да, закрыть доступ", f"rm2:{uid}"), ("Отмена", f"u:{uid}")]])
+        if act == "rm2":
+            return self.remove(admin, int(parts[1]), msg)
+        if act == "users":
+            return self.users_list(admin["tg_id"], msg)
 
     def check_target(self, admin, msg, mode, uid):
         u = self.user(uid)
@@ -378,7 +435,7 @@ class Bot:
             return False
         if mode == "a" and u["status"] != "pending":
             self.edit(msg, f"Запрос уже обработан: {esc(self.label(u))} — "
-                           f"{esc(self.role_line(u)) if u['status'] == 'active' else 'отклонён'}.")
+                           f"{esc(self.role_line(u)) if u['status'] == 'active' else 'не принят'}.")
             return False
         if mode == "c" and not self.can_manage(admin, u):
             self.edit(msg, "Этого пользователя может изменить только разработчик.")
@@ -390,6 +447,10 @@ class Bot:
             return False
         return admin["role"] == "owner" or u["role"] not in ADMIN_ROLES
 
+    def partner_by_name(self, name):
+        p = self.s.one("SELECT * FROM partners WHERE name=?", name)
+        return p["id"] if p else self.s.run("INSERT INTO partners(name, created) VALUES(?, ?)", name, now())
+
     def pick_role(self, admin, msg, mode, uid, role):
         if role not in ROLES or role == "owner" or not self.check_target(admin, msg, mode, uid):
             return
@@ -397,11 +458,22 @@ class Bot:
             if admin["role"] != "owner":
                 return self.edit(msg, "Назначить дизайнера студии может только разработчик.")
             return self.approve(admin, uid, role, None, msg)
+        u = self.user(uid)
+        if role == "staff":                         # сотрудник — только в компанию, где есть поставщик
+            partners = self.s.all("SELECT DISTINCT p.* FROM partners p JOIN users s ON s.partner_id=p.id "
+                                  "AND s.role='supplier' AND s.status='active' ORDER BY p.name LIMIT 30")
+            rows = [[(p["name"], f"pt:{mode}:{uid}:{role}:{p['id']}")] for p in partners]
+            rows.append([("← Назад", f"u:{uid}")])
+            if not partners:
+                return self.edit(msg, "Сотрудника можно добавить только в компанию поставщика, а поставщиков в боте "
+                                      "пока нет. Сначала примите поставщика.", rows)
+            return self.edit(msg, f"{esc(self.label(u))} — {esc(ROLES[role])}.\nЧей сотрудник?", rows)
         partners = self.s.all("SELECT * FROM partners ORDER BY name LIMIT 30")
-        rows = [[(p["name"], f"pt:{mode}:{uid}:{role}:{p['id']}")] for p in partners]
+        rows = [[(p["name"], f"pt:{mode}:{uid}:{role}:{p['id']}")] for p in partners if p["name"] != u["name"]]
+        rows.append([(f"👤 Без компании — {u['name']}", f"pp:{mode}:{uid}:{role}")])
         rows.append([("➕ Новая компания", f"np:{mode}:{uid}:{role}")])
         rows.append([("← Назад", f"u:{uid}")])
-        self.edit(msg, f"{esc(self.label(self.user(uid)))} — {esc(ROLES[role])}.\nИз какой компании?", rows)
+        self.edit(msg, f"{esc(self.label(u))} — {esc(ROLES[role])}.\nИз какой компании?", rows)
 
     def admin_input(self, admin, text):
         st = json.loads(self.s.get(f"await:{admin['tg_id']}") or "{}")
@@ -413,15 +485,14 @@ class Bot:
         if not u or role not in PARTNER_ROLES or (mode == "a" and u["status"] != "pending"):
             self.s.drop(f"await:{admin['tg_id']}")
             return self.send(admin["tg_id"], "Запрос уже обработан.")
-        p = self.s.one("SELECT * FROM partners WHERE name=?", name)
-        pid = p["id"] if p else self.s.run("INSERT INTO partners(name, created) VALUES(?, ?)", name, now())
+        pid = self.partner_by_name(name)
         self.s.drop(f"await:{admin['tg_id']}")
         self.approve(admin, uid, role, pid, None)
 
     def approve(self, admin, uid, role, pid, msg):
         was = self.user(uid)
         self.s.run("UPDATE users SET role=?, status='active', partner_id=?, added_by=?, updated=? WHERE tg_id=?",
-                   role, pid if role in PARTNER_ROLES else None, admin["tg_id"], now(), uid)
+                   role, pid if role in COMPANY_ROLES else None, admin["tg_id"], now(), uid)
         u = self.user(uid)
         result = f"✅ {esc(self.label(u))} — {esc(self.role_line(u))}"
         if msg:
@@ -430,7 +501,7 @@ class Bot:
             self.send(admin["tg_id"], result)
         changed = was and was["status"] == "active"
         self.send(uid, ("Ваша роль в боте изменена.\n\n" if changed else "Доступ к боту открыт.\n\n") + self.welcome(u))
-        self.admin_commands(uid, role in ADMIN_ROLES)
+        self.set_commands(u)
         verb = "изменил(а) роль" if changed else "принял(а)"
         self.notify(f"{esc(self.label(admin))} {verb}: {esc(self.label(u))} — {esc(self.role_line(u))}", skip=(admin["tg_id"],))
 
@@ -447,19 +518,130 @@ class Bot:
         if not self.can_manage(admin, u):
             return self.edit(msg, "Этого пользователя может изменить только разработчик.")
         self.s.run("UPDATE users SET status='removed', updated=? WHERE tg_id=?", now(), uid)
-        self.admin_commands(uid, False)
+        self.set_commands(self.user(uid))
         self.edit(msg, f"Доступ закрыт: {esc(self.label(u))}", [[("Пользователи", "users")]])
         self.send(uid, "Доступ к боту студии DUMSKAYA DESIGN закрыт.")
         self.notify(f"{esc(self.label(admin))} закрыл(а) доступ: {esc(self.label(u))}", skip=(admin["tg_id"],))
 
+    # ---------- сотрудники поставщика ----------
+    def make_invite(self, sup):
+        if not self.username:
+            return self.send(sup["tg_id"], "Не получилось создать ссылку — попробуйте через минуту.")
+        self.s.run("DELETE FROM invites WHERE expires < ?", now(-30))
+        token = secrets.token_urlsafe(12)
+        self.s.run("INSERT INTO invites(token, partner_id, created_by, created, expires) VALUES(?, ?, ?, ?, ?)",
+                   token, sup["partner_id"], sup["tg_id"], now(), now(INVITE_DAYS))
+        company = esc(self.company(sup))
+        self.send(sup["tg_id"], f"Ссылка для сотрудника «{company}» — в следующем сообщении. Перешлите его сотруднику.\n\n"
+                                f"Он откроет ссылку и нажмёт «Старт» — вам придёт запрос, нажмите «Принять».\n"
+                                f"Ссылка одноразовая (один сотрудник), действует {INVITE_DAYS} дней.")
+        self.send(sup["tg_id"], f"Приглашение в бот студии DUMSKAYA DESIGN для сотрудников «{company}»:\n"
+                                f"https://t.me/{self.username}?start=inv_{token}")
+
+    def join_invite(self, uid, name, username, u, token):
+        if u and u["status"] == "active":
+            return self.send(uid, f"Вы уже подключены к боту: {esc(self.role_line(u))}.\n\n/help — что умеет бот")
+        if u and u["status"] == "rejected":
+            return self.send(uid, "Доступ к боту не предоставлен. Если это ошибка — свяжитесь со студией DUMSKAYA DESIGN.")
+        if u and u["status"] == "pending" and u["role"] == "staff":
+            return self.send(uid, "Запрос уже отправлен поставщику. Как только он подтвердит, бот напишет вам.")
+        inv = self.s.one("SELECT * FROM invites WHERE token=?", token)
+        sup = self.user(inv["created_by"]) if inv else None
+        if (not inv or inv["used_by"] or inv["expires"] < now() or not self.is_supplier(sup)
+                or sup["partner_id"] != inv["partner_id"]
+                or not self.s.count("UPDATE invites SET used_by=?, used=? WHERE token=? AND used_by IS NULL", uid, now(), token)):
+            return self.send(uid, "Ссылка-приглашение недействительна: она уже использована или устарела. "
+                                  "Попросите у поставщика новую.")
+        if u:
+            self.s.run("UPDATE users SET status='pending', role='staff', partner_id=?, added_by=?, updated=? WHERE tg_id=?",
+                       inv["partner_id"], sup["tg_id"], now(), uid)
+        else:
+            self.s.run("INSERT INTO users(tg_id, name, username, role, status, partner_id, added_by, created, updated) "
+                       "VALUES(?, ?, ?, 'staff', 'pending', ?, ?, ?, ?)",
+                       uid, name, username, inv["partner_id"], sup["tg_id"], now(), now())
+        u = self.user(uid)
+        company = esc(self.company(sup))
+        self.send(uid, f"Здравствуйте! Это внутренний бот студии DUMSKAYA DESIGN.\n\n"
+                       f"Запрос отправлен: {esc(self.label(sup))} («{company}»). Как только он подтвердит, бот напишет вам.")
+        self.send(sup["tg_id"], f"<b>Сотрудник по вашему приглашению</b>\n{esc(self.label(u))}\nTelegram ID: <code>{uid}</code>"
+                                f"\n\nПринять сотрудником «{company}»? Ему будут приходить заявки на товары компании.",
+                  [[("Принять", f"sa:{uid}"), ("Отклонить", f"sx:{uid}")]])
+
+    def own_staff(self, sup, u, statuses=("active", "pending")):
+        return bool(u) and u["role"] == "staff" and u["partner_id"] == sup["partner_id"] and u["status"] in statuses
+
+    def supplier_button(self, sup, msg, parts):
+        act = parts[0]
+        if act == "team":
+            return self.team_list(sup, msg)
+        if act == "inv":
+            return self.make_invite(sup)
+        if act not in ("sa", "sx", "su", "srm", "srm2"):
+            return
+        uid = int(parts[1])
+        u = self.user(uid)
+        back = [[("← Мои сотрудники", "team")]]
+        if act in ("sa", "sx") and not self.own_staff(sup, u, ("pending",)):
+            return self.edit(msg, "Запрос уже обработан.", back)
+        if act in ("su", "srm", "srm2") and not self.own_staff(sup, u):
+            return self.edit(msg, "Этого человека уже нет среди ваших сотрудников в боте.", back)
+        company = esc(self.company(sup))
+        who = esc(self.label(u))
+        if act == "sa":
+            self.s.run("UPDATE users SET status='active', added_by=?, updated=? WHERE tg_id=?", sup["tg_id"], now(), uid)
+            u = self.user(uid)
+            self.edit(msg, f"✅ {who} — ваш сотрудник в боте.", back)
+            self.send(uid, "Доступ к боту открыт.\n\n" + self.welcome(u))
+            return self.notify(f"{esc(self.label(sup))} («{company}») добавил(а) сотрудника: {who}")
+        if act == "sx":
+            self.s.run("UPDATE users SET status='removed', role=NULL, partner_id=NULL, updated=? WHERE tg_id=?", now(), uid)
+            self.edit(msg, f"Отклонено: {who}", back)
+            return self.send(uid, "Поставщик не подтвердил ваш доступ к боту.")
+        if act == "su":
+            if u["status"] == "pending":
+                return self.edit(msg, f"<b>Запрос по приглашению</b>\n{who}\nTelegram ID: <code>{uid}</code>\n\n"
+                                      f"Принять сотрудником «{company}»?",
+                                 [[("Принять", f"sa:{uid}"), ("Отклонить", f"sx:{uid}")]] + back)
+            return self.edit(msg, f"<b>{who}</b>\nСотрудник «{company}»\nTelegram ID: <code>{uid}</code>",
+                             [[("Закрыть доступ", f"srm:{uid}")]] + back)
+        if act == "srm":
+            return self.edit(msg, f"Закрыть доступ к боту для {who}?",
+                             [[("Да, закрыть доступ", f"srm2:{uid}"), ("Отмена", f"su:{uid}")]])
+        if act == "srm2":
+            self.s.run("UPDATE users SET status='removed', updated=? WHERE tg_id=?", now(), uid)
+            self.edit(msg, f"Доступ закрыт: {who}", back)
+            self.send(uid, "Доступ к боту студии DUMSKAYA DESIGN закрыт.")
+            return self.notify(f"{esc(self.label(sup))} («{company}») закрыл(а) доступ сотруднику: {who}")
+
+    def team_list(self, sup, msg=None):
+        staff = self.s.all("SELECT * FROM users WHERE role='staff' AND partner_id=? AND status IN ('active','pending') "
+                           "ORDER BY status='pending' DESC, name", sup["partner_id"])
+        lines, rows = [f"<b>Сотрудники «{esc(self.company(sup))}» в боте</b>"], []
+        for u in staff:
+            if u["status"] == "pending":
+                lines.append(f"⏳ {esc(self.label(u))} — ждёт подтверждения")
+                rows.append([(f"⏳ {self.label(u)}", f"su:{u['tg_id']}")])
+            else:
+                lines.append(f"• {esc(self.label(u))}")
+                rows.append([(self.label(u), f"su:{u['tg_id']}")])
+        if not staff:
+            lines.append("Пока никого.")
+        lines.append("\nСотрудникам приходят заявки с сайта на товары компании. Нажмите на человека, чтобы закрыть доступ.")
+        rows.append([("➕ Пригласить сотрудника", "inv")])
+        text = "\n".join(lines)
+        return self.edit(msg, text, rows) if msg else self.send(sup["tg_id"], text, rows)
+
     # ---------- списки ----------
     def users_list(self, chat_id, msg=None):
-        users = self.s.all("SELECT * FROM users WHERE status IN ('active','pending') "
-                           "ORDER BY status='pending' DESC, role, name")
+        users = self.s.all("SELECT u.*, p.name AS company FROM users u LEFT JOIN partners p ON p.id=u.partner_id "
+                           "WHERE u.status IN ('active','pending')")
+        users = sorted(users, key=lambda u: (u["status"] != "pending", u["role"] not in ADMIN_ROLES, (u["company"] or "").lower(),
+                                             ROLE_ORDER.index(u["role"]) if u["role"] in ROLE_ORDER else 99, u["name"] or ""))
         lines, rows = ["<b>Пользователи бота</b>"], []
         for u in users:
             if u["status"] == "pending":
-                lines.append(f"⏳ {esc(self.label(u))} — ждёт одобрения")
+                by = f" (по приглашению поставщика, {esc(self.role_line(u))})" if u["role"] == "staff" else ""
+                lines.append(f"⏳ {esc(self.label(u))} — ждёт одобрения{by}")
                 rows.append([(f"⏳ {self.label(u)}", f"u:{u['tg_id']}")])
             else:
                 lines.append(f"• {esc(self.label(u))} — {esc(self.role_line(u))}")
@@ -474,8 +656,10 @@ class Bot:
         if not u:
             return self.edit(msg, "Пользователь не найден.")
         if u["status"] == "pending":
-            return self.edit(msg, f"<b>Запрос доступа</b>\n{esc(self.label(u))}\nTelegram ID: <code>{uid}</code>\n\nКем принять?",
-                             self.role_rows("a", uid, admin))
+            note = (f"\nЖдёт подтверждения поставщика: {esc(self.label(self.user(u['added_by'])))} "
+                    f"({esc(self.role_line(u))})" if u["role"] == "staff" else "")
+            return self.edit(msg, f"<b>Запрос доступа</b>\n{esc(self.label(u))}\nTelegram ID: <code>{uid}</code>{note}"
+                                  f"\n\nКем принять?", self.role_rows("a", uid, admin))
         text = (f"<b>{esc(self.label(u))}</b>\nРоль: {esc(self.role_line(u))}\nTelegram ID: <code>{uid}</code>"
                 + (f"\nПринял(а): {esc(self.label(self.user(u['added_by'])))}" if u["added_by"] else ""))
         if self.can_manage(admin, u):
@@ -488,21 +672,23 @@ class Bot:
         products = products if products is not None else load_products()
         lines = ["<b>Партнёры</b>"]
         for p in self.s.all("SELECT * FROM partners ORDER BY name"):
-            people = [self.label(u) for u in self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", p["id"])]
+            people = sorted(self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", p["id"]),
+                            key=lambda u: (ROLE_ORDER.index(u["role"]) if u["role"] in ROLE_ORDER else 99, u["name"] or ""))
+            people = [f"{self.label(u)} ({ROLES.get(u['role'], '—').lower()})" for u in people]
             goods = sorted(code for code, it in products.items() if str(it.get("partner") or "") == str(p["id"]))
             lines.append(f"\n<b>№{p['id']} {esc(p['name'])}</b>\n"
                          f"Люди: {esc(', '.join(people)) if people else 'никого — заявки придут вам'}\n"
                          f"Товары на сайте: {esc(', '.join(goods)) if goods else 'нет'}")
         if len(lines) == 1:
             lines.append("Пока нет. Партнёр появляется, когда вы принимаете человека в роли поставщика, "
-                         "изготовителя или прораба и указываете его компанию.")
+                         "изготовителя, прораба или подрядчика и указываете его компанию.")
         lines.append("\nНомер партнёра (№) нужен, чтобы привязать к нему товар в магазине на сайте.")
         self.send(chat_id, "\n".join(lines))
 
     # ---------- заявки с сайта ----------
     def route_lead(self, lead, products=None):
-        """Заявку — разработчику и дизайнерам; если это товар партнёра — ещё и людям этого партнёра.
-        Возвращает список Telegram ID, кому доставлено."""
+        """Заявку — разработчику и дизайнерам; если это товар партнёра — ещё и людям этого партнёра
+        (поставщику и его сотрудникам). Возвращает список Telegram ID, кому доставлено."""
         products = products if products is not None else load_products()
         model = (lead.get("model") or "").strip()
         prod = products.get(model.upper()) if model else None
@@ -550,4 +736,3 @@ def load_products(path=PRODUCTS_FILE):
         return {str(k).upper(): v for k, v in data.items()} if isinstance(data, dict) else {}
     except (OSError, ValueError):
         return {}
-
