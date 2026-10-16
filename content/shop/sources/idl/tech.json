@@ -1,0 +1,10438 @@
+{
+ "672/1A": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 2 W",
+  "max": "",
+  "lumen": "200 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "672/1A",
+   "•",
+   "1 x LED 2 W",
+   "29",
+   "200 lumen - 3000K",
+   "•",
+   "22",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_1A.png",
+   "width": 434,
+   "height": 205,
+   "bytes": 6672
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/1L": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 2 W",
+  "max": "",
+  "lumen": "200 lumen - 3000K",
+  "dimming": "A",
+  "lines": [
+   "672/1L •",
+   "1 x LED 2 W",
+   "47",
+   "200 lumen - 3000K",
+   "•",
+   "•",
+   "A",
+   "28",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_1L.png",
+   "width": 389,
+   "height": 220,
+   "bytes": 6791
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/2A": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x LED 2 W",
+  "max": "",
+  "lumen": "400 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "672/2A",
+   "•",
+   "2 x LED 2 W",
+   "30",
+   "400 lumen - 3000K",
+   "•",
+   "33",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_2A.png",
+   "width": 475,
+   "height": 204,
+   "bytes": 8571
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/3": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 2 W",
+  "max": "",
+  "lumen": "600 lumen - 3000K",
+  "dimming": "",
+  "lines": [
+   "672/3",
+   "3 x LED 2 W",
+   "600 lumen - 3000K",
+   "•",
+   "48",
+   "A •",
+   "•",
+   "•",
+   "39",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_3.png",
+   "width": 425,
+   "height": 312,
+   "bytes": 10079
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/3L": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 2 W",
+  "max": "",
+  "lumen": "600 lumen - 3000K",
+  "dimming": "A",
+  "lines": [
+   "672/3L",
+   "•",
+   "3 x LED 2 W",
+   "48",
+   "600 lumen - 3000K",
+   "•",
+   "•",
+   "A",
+   "46",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_3L.png",
+   "width": 418,
+   "height": 275,
+   "bytes": 9399
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/5": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x LED 2 W",
+  "max": "",
+  "lumen": "1000 lumen - 3000K",
+  "dimming": "A",
+  "lines": [
+   "672/5",
+   "5 x LED 2 W",
+   "•",
+   "1000 lumen - 3000K",
+   "63",
+   "A",
+   "•",
+   "•",
+   "•",
+   "43"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_5.png",
+   "width": 434,
+   "height": 324,
+   "bytes": 10942
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/5P": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x LED 2 W",
+  "max": "",
+  "lumen": "1000 lumen - 3000K",
+  "dimming": "A",
+  "lines": [
+   "672/5P",
+   "5 x LED 2 W",
+   "1000 lumen - 3000K",
+   "A",
+   "•",
+   "43",
+   "•",
+   "72",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_5P.png",
+   "width": 430,
+   "height": 319,
+   "bytes": 9194
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/9": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "9 x LED 2 W",
+  "max": "",
+  "lumen": "1800 lumen - 3000K •",
+  "dimming": "A",
+  "lines": [
+   "672/9",
+   "9 x LED 2 W",
+   "1800 lumen - 3000K •",
+   "49",
+   "•",
+   "•",
+   "•",
+   "A",
+   "98",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_9.png",
+   "width": 414,
+   "height": 278,
+   "bytes": 11902
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/9PF": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "9 x LED 2 W",
+  "max": "",
+  "lumen": "1800 lumen - 3000K",
+  "dimming": "",
+  "lines": [
+   "672/9PF",
+   "•",
+   "9 x LED 2 W",
+   "49",
+   "1800 lumen - 3000K",
+   "•",
+   "•",
+   "•",
+   "A 74",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_9PF.png",
+   "width": 419,
+   "height": 243,
+   "bytes": 10973
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/15": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "15 x LED 2 W",
+  "max": "",
+  "lumen": "3000 lumen - 3000K •",
+  "dimming": "",
+  "lines": [
+   "672/15",
+   "15 x LED 2 W",
+   "3000 lumen - 3000K •",
+   "68",
+   "•",
+   "B - C •",
+   "•",
+   "98",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_15.png",
+   "width": 436,
+   "height": 325,
+   "bytes": 16224
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/15PF": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "15 x LED 2 W",
+  "max": "",
+  "lumen": "3000 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "672/15PF",
+   "•",
+   "15 x LED 2 W",
+   "68",
+   "3000 lumen - 3000K",
+   "•",
+   "•",
+   "•",
+   "B - C",
+   "98"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_15PF.png",
+   "width": 430,
+   "height": 287,
+   "bytes": 15153
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/16": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "16 x LED 2 W",
+  "max": "",
+  "lumen": "3200 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "672/16",
+   "16 x LED 2 W",
+   "3200 lumen - 3000K",
+   "B - C",
+   "•",
+   "43",
+   "•",
+   "72",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_16.png",
+   "width": 438,
+   "height": 318,
+   "bytes": 15148
+  },
+  "catalog": "IDL 2024"
+ },
+ "672/16P": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "16 x LED 2 W",
+  "max": "",
+  "lumen": "3200 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "672/16P",
+   "16 x LED 2 W",
+   "3200 lumen - 3000K",
+   "B - C",
+   "•",
+   "43",
+   "•",
+   "72",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/672_16P.png",
+   "width": 550,
+   "height": 365,
+   "bytes": 16590
+  },
+  "catalog": "IDL 2024"
+ },
+ "673/9": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "9 x LED 2 W",
+  "max": "",
+  "lumen": "1800 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "673/9 •",
+   "9 x LED 2 W",
+   "1800 lumen - 3000K",
+   "102",
+   "B - C",
+   "•",
+   "•",
+   "•",
+   "52",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/673_9.png",
+   "width": 468,
+   "height": 324,
+   "bytes": 14665
+  },
+  "catalog": "IDL 2024"
+ },
+ "673/12": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x LED 2 W",
+  "max": "",
+  "lumen": "2400 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "673/12",
+   "12 x LED 2 W",
+   "•",
+   "2400 lumen - 3000K",
+   "54",
+   "•",
+   "•",
+   "B - C",
+   "•",
+   "58"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/673_12.png",
+   "width": 486,
+   "height": 302,
+   "bytes": 15641
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/1LM": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1,42W",
+  "max": "",
+  "lumen": "200 lumen - 3000K",
+  "dimming": "B",
+  "lines": [
+   "668/1LM",
+   "1 x LED 1,42W",
+   "200 lumen - 3000K",
+   "B",
+   "Ricaricable with",
+   "Micro USB"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_1LM.png",
+   "width": 432,
+   "height": 354,
+   "bytes": 7609
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/1LP": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1,42W",
+  "max": "",
+  "lumen": "200 lumen - 3000K",
+  "dimming": "B",
+  "lines": [
+   "668/1LP",
+   "1 x LED 1,42W",
+   "200 lumen - 3000K",
+   "B",
+   "Ricaricable with",
+   "Micro USB"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_1LP.png",
+   "width": 437,
+   "height": 355,
+   "bytes": 7903
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/1P": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1,42W",
+  "max": "",
+  "lumen": "200 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "668/1P",
+   "1 x LED 1,42W",
+   "200 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_1P.png",
+   "width": 537,
+   "height": 843,
+   "bytes": 6830
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/2A": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x LED 1,42W",
+  "max": "",
+  "lumen": "400 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "668/2A •",
+   "2 x LED 1,42W",
+   "400 lumen - 3000K",
+   "9",
+   "4",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_2A.png",
+   "width": 478,
+   "height": 324,
+   "bytes": 6402
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/3L": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 1,42W",
+  "max": "",
+  "lumen": "600 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "668/3L",
+   "3 x LED 1,42W",
+   "600 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_3L.png",
+   "width": 446,
+   "height": 355,
+   "bytes": 6028
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/4A": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x LED 1,42W",
+  "max": "",
+  "lumen": "800 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "668/4A",
+   "4 x LED 1,42W",
+   "800 lumen - 3000K",
+   "9",
+   "4",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_4A.png",
+   "width": 500,
+   "height": 355,
+   "bytes": 6709
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/6A": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x LED 1,42W",
+  "max": "",
+  "lumen": "1200 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "668/6A •",
+   "6 x LED 1,42W",
+   "1200 lumen - 3000K",
+   "D",
+   "4",
+   "6",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_6A.png",
+   "width": 487,
+   "height": 380,
+   "bytes": 7664
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/6P": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x LED 1,42W",
+  "max": "",
+  "lumen": "1200 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "•",
+   "668/6P",
+   "6 x LED 1,42W",
+   "1200 lumen - 3000K",
+   "D",
+   "5",
+   "5",
+   "1",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_6P.png",
+   "width": 454,
+   "height": 738,
+   "bytes": 7453
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/12P": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x LED 1,42W",
+  "max": "",
+  "lumen": "2400 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "668/12P •",
+   "12 x LED 1,42W",
+   "2400 lumen - 3000K",
+   "B - C",
+   "5",
+   "7",
+   "1",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_12P.png",
+   "width": 474,
+   "height": 845,
+   "bytes": 8874
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/12PF": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x LED 1,42W",
+  "max": "",
+  "lumen": "2400 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "668/12PF",
+   "•",
+   "12 x LED 1,42W",
+   "2400 lumen - 3000K",
+   "2",
+   "4",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_12PF.png",
+   "width": 482,
+   "height": 282,
+   "bytes": 7616
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/60PF": {
+  "page": 126,
+  "dup": 1,
+  "shared": [],
+  "light": "2 STRIP LED",
+  "max": "MAX 37W",
+  "lumen": "5122 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "642/60PF",
+   "2 STRIP LED",
+   "MAX 37W",
+   "5122 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_60PF.png",
+   "width": 550,
+   "height": 390,
+   "bytes": 22420
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/90PF": {
+  "page": 126,
+  "dup": 1,
+  "shared": [],
+  "light": "2 STRIP LED",
+  "max": "MAX 55W",
+  "lumen": "7486 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "642/90PF",
+   "2 STRIP LED",
+   "MAX 55W",
+   "7486 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_90PF.png",
+   "width": 550,
+   "height": 478,
+   "bytes": 28076
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/115": {
+  "page": 126,
+  "dup": 1,
+  "shared": [],
+  "light": "10 x LED 3,6W",
+  "max": "",
+  "lumen": "3850 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "642/115",
+   "10 x LED 3,6W",
+   "3850 lumen - 3000 K",
+   "•",
+   "40",
+   "D",
+   "•",
+   "•",
+   "21",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_115.png",
+   "width": 550,
+   "height": 330,
+   "bytes": 16109
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/150": {
+  "page": 126,
+  "dup": 1,
+  "shared": [],
+  "light": "14 x LED 3,6W",
+  "max": "",
+  "lumen": "5390 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "642/150",
+   "14 x LED 3,6W",
+   "5390 lumen - 3000 K",
+   "•",
+   "40",
+   "D",
+   "•",
+   "•",
+   "21",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_150.png",
+   "width": 550,
+   "height": 329,
+   "bytes": 14731
+  },
+  "catalog": "IDL 2024"
+ },
+ "643/10": {
+  "page": 126,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x LED 3,6W",
+  "max": "",
+  "lumen": "3080 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "643/10",
+   "8 x LED 3,6W",
+   "3080 lumen - 3000 K",
+   "•",
+   "40",
+   "D",
+   "•",
+   "•",
+   "21",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/643_10.png",
+   "width": 550,
+   "height": 330,
+   "bytes": 11749
+  },
+  "catalog": "IDL 2024"
+ },
+ "643/12": {
+  "page": 126,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x LED 3,6W",
+  "max": "",
+  "lumen": "4620 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "643/12",
+   "12 x LED 3,6W",
+   "4620 lumen - 3000 K",
+   "•",
+   "40",
+   "D",
+   "•",
+   "•",
+   "21",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/643_12.png",
+   "width": 550,
+   "height": 338,
+   "bytes": 12023
+  },
+  "catalog": "IDL 2024"
+ },
+ "463/1A": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "2xLED",
+  "max": "",
+  "lumen": "5W 1150 lumen",
+  "dimming": "D",
+  "lines": [
+   "463/1A",
+   "2xLED",
+   "•",
+   "5W 1150 lumen",
+   "50",
+   "•",
+   "41",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/463_1A.png",
+   "width": 405,
+   "height": 203,
+   "bytes": 9627
+  },
+  "catalog": "IDL 2024"
+ },
+ "463/1L": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E14",
+  "max": "MAX 60W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "463/1L",
+   "• 31",
+   "1 x E14",
+   "•",
+   "MAX 60W",
+   "48",
+   "D",
+   "•",
+   "18",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/463_1L.png",
+   "width": 405,
+   "height": 226,
+   "bytes": 7136
+  },
+  "catalog": "IDL 2024"
+ },
+ "463/1P": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "463/1P",
+   "•",
+   "1 x E27",
+   "MAX 77W",
+   "D",
+   "180",
+   "•",
+   "50",
+   "•",
+   "groovy"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/463_1P.png",
+   "width": 404,
+   "height": 1290,
+   "bytes": 9870
+  },
+  "catalog": "IDL 2024"
+ },
+ "463/2AP": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "463/2AP",
+   "•",
+   "2 x G9",
+   "MAX 33W",
+   "40",
+   "•",
+   "30",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/463_2AP.png",
+   "width": 403,
+   "height": 203,
+   "bytes": 9494
+  },
+  "catalog": "IDL 2024"
+ },
+ "463/6": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "463/6 •",
+   "45/90",
+   "6 x G9",
+   "MAX 33W",
+   "•",
+   "•",
+   "40",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/463_6.png",
+   "width": 406,
+   "height": 288,
+   "bytes": 11774
+  },
+  "catalog": "IDL 2024"
+ },
+ "463/8PF": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W 50",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "463/8PF",
+   "•",
+   "8 x G9",
+   "MAX 33W 50",
+   "•",
+   "50",
+   "D •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/463_8PF.png",
+   "width": 405,
+   "height": 205,
+   "bytes": 12423
+  },
+  "catalog": "IDL 2024"
+ },
+ "463/10": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "10 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "463/10",
+   "•",
+   "45/90",
+   "10 x G9",
+   "MAX 33W",
+   "•",
+   "•",
+   "60",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/463_10.png",
+   "width": 404,
+   "height": 257,
+   "bytes": 12065
+  },
+  "catalog": "IDL 2024"
+ },
+ "463/10PF": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "10 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "463/10PF",
+   "•",
+   "10 x G9",
+   "MAX 33W",
+   "50",
+   "•",
+   "D",
+   "• 80"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/463_10PF.png",
+   "width": 406,
+   "height": 207,
+   "bytes": 16222
+  },
+  "catalog": "IDL 2024"
+ },
+ "463/12": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "463/12",
+   "•",
+   "12 x G9",
+   "140",
+   "MAX 33W",
+   "max",
+   "D",
+   "•",
+   "120",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/463_12.png",
+   "width": 351,
+   "height": 369,
+   "bytes": 16739
+  },
+  "catalog": "IDL 2024"
+ },
+ "464/6": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W max",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "464/6",
+   "•",
+   "140",
+   "6 x G9",
+   "MAX 33W max",
+   "•",
+   "50",
+   "D",
+   "•",
+   "80x25"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/464_6.png",
+   "width": 404,
+   "height": 269,
+   "bytes": 14525
+  },
+  "catalog": "IDL 2024"
+ },
+ "464/12": {
+  "page": 165,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 33W max",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "464/12",
+   "•",
+   "140",
+   "12 x G9",
+   "MAX 33W max",
+   "•",
+   "60",
+   "D",
+   "•",
+   "130x45"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/464_12.png",
+   "width": 416,
+   "height": 276,
+   "bytes": 18314
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/3": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/3",
+   "3 x G9",
+   "•",
+   "MAX 33W",
+   "• 18",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_3.png",
+   "width": 339,
+   "height": 180,
+   "bytes": 5939
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/3+3": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX",
+  "lumen": "369 lumen",
+  "dimming": "",
+  "lines": [
+   "448/3+3",
+   "doppia accensione",
+   "switch",
+   "double 120",
+   "3 x G9",
+   "MAX",
+   "MAX 33W",
+   "+ 3 LED x 1 W",
+   "369 lumen",
+   "2700 K"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_3+3.png",
+   "width": 337,
+   "height": 237,
+   "bytes": 11313
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/5": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/5 66",
+   "5 x G9",
+   "MAX 33W",
+   "•",
+   "• 20",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_5.png",
+   "width": 349,
+   "height": 180,
+   "bytes": 7850
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/5+3": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W MAX",
+  "lumen": "369 lumen",
+  "dimming": "",
+  "lines": [
+   "•",
+   "448/5+3",
+   "doppia accensione",
+   "switch",
+   "double",
+   "120",
+   "5 x G9",
+   "MAX 33W MAX",
+   "+ 3 LED x 1 W",
+   "369 lumen"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_5+3.png",
+   "width": 337,
+   "height": 237,
+   "bytes": 11261
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/6": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9 100",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/6",
+   "6 x G9 100",
+   "MAX 33W",
+   "D",
+   "•",
+   "• 19"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_6.png",
+   "width": 344,
+   "height": 203,
+   "bytes": 9817
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/6+3": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W MAX",
+  "lumen": "369 lumen",
+  "dimming": "",
+  "lines": [
+   "448/6+3 •",
+   "doppia accensione",
+   "switch",
+   "double",
+   "120",
+   "6 x G9",
+   "MAX 33W MAX",
+   "+ 3 LED x 1W",
+   "369 lumen",
+   "2700 K"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_6+3.png",
+   "width": 343,
+   "height": 234,
+   "bytes": 10768
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/8": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/8",
+   "8 x G9",
+   "90",
+   "MAX 33W",
+   "D",
+   "•",
+   "28",
+   "•",
+   "206 | chrysalis"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_8.png",
+   "width": 351,
+   "height": 278,
+   "bytes": 11813
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/8SLED": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "8 LED x 2W",
+  "max": "",
+  "lumen": "1552 lumen",
+  "dimming": "D",
+  "lines": [
+   "448/8SLED",
+   "8 LED x 2W",
+   "1552 lumen",
+   "2700 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_8SLED.png",
+   "width": 550,
+   "height": 387,
+   "bytes": 13760
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/8+3": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "369 lumen",
+  "dimming": "",
+  "lines": [
+   "448/8+3 •",
+   "doppia accensione",
+   "switch",
+   "double",
+   "120",
+   "8 x G9",
+   "MAX 33W",
+   "MAX",
+   "+ 3 LED x 1W",
+   "369 lumen"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_8+3.png",
+   "width": 336,
+   "height": 235,
+   "bytes": 11276
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/27": {
+  "page": 206,
+  "dup": 1,
+  "shared": [],
+  "light": "27 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "•",
+   "448/27",
+   "27 x G9",
+   "MAX 33W",
+   "D",
+   "310",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_27.png",
+   "width": 486,
+   "height": 606,
+   "bytes": 17138
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/2000LED": {
+  "page": 206,
+  "dup": 2,
+  "shared": [],
+  "light": "2 x LED",
+  "max": "",
+  "lumen": "3456 lumen",
+  "dimming": "",
+  "lines": [
+   "448/2000LED",
+   "striscia",
+   "2 x LED",
+   "3456 lumen",
+   "3200 K",
+   "• 33 •",
+   "•",
+   "120"
+  ],
+  "note": "small cell 339,241,388,658",
+  "catalog": "IDL 2024"
+ },
+ "359/1L": {
+  "page": 233,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "359/1L",
+   "•",
+   "1 x E27",
+   "MAX 77W",
+   "50",
+   "•",
+   "21",
+   "• • •",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/359_1L.png",
+   "width": 550,
+   "height": 257,
+   "bytes": 8367
+  },
+  "catalog": "IDL 2024"
+ },
+ "359/1SP": {
+  "page": 233,
+  "dup": 1,
+  "shared": [],
+  "light": "1x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "359/1SP",
+   "1x E27",
+   "MAX 77W",
+   "•",
+   "28",
+   "•",
+   "• 28 •",
+   "D",
+   "•",
+   "28"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/359_1SP.png",
+   "width": 404,
+   "height": 278,
+   "bytes": 7872
+  },
+  "catalog": "IDL 2024"
+ },
+ "359/2A": {
+  "page": 233,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "359/2A",
+   "•",
+   "2 x G9",
+   "28",
+   "MAX 33W",
+   "•",
+   "• 28 •",
+   "D",
+   "incisione",
+   "engraving"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/359_2A.png",
+   "width": 404,
+   "height": 892,
+   "bytes": 12236
+  },
+  "catalog": "IDL 2024"
+ },
+ "359/4A": {
+  "page": 233,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "359/4A",
+   "•",
+   "4 x G9",
+   "MAX 33W",
+   "44",
+   "•",
+   "37",
+   "• •",
+   "D",
+   "vetro senza incisione"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/359_4A.png",
+   "width": 407,
+   "height": 893,
+   "bytes": 18178
+  },
+  "catalog": "IDL 2024"
+ },
+ "359/5R": {
+  "page": 233,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "359/5R",
+   "5 x G9",
+   "MAX 33W",
+   "•",
+   "28",
+   "•",
+   "D",
+   "60",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/359_5R.png",
+   "width": 405,
+   "height": 210,
+   "bytes": 6910
+  },
+  "catalog": "IDL 2024"
+ },
+ "359/5SP": {
+  "page": 233,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "359/5SP",
+   "5 x G9",
+   "MAX 33W",
+   "•",
+   "D",
+   "18",
+   "•",
+   "93",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/359_5SP.png",
+   "width": 405,
+   "height": 339,
+   "bytes": 10967
+  },
+  "catalog": "IDL 2024"
+ },
+ "359/14": {
+  "page": 233,
+  "dup": 1,
+  "shared": [],
+  "light": "14 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "359/14",
+   "14 x G9",
+   "MAX 33W",
+   "•",
+   "D",
+   "45",
+   "•",
+   "76",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/359_14.png",
+   "width": 405,
+   "height": 297,
+   "bytes": 8569
+  },
+  "catalog": "IDL 2024"
+ },
+ "359/22": {
+  "page": 233,
+  "dup": 1,
+  "shared": [],
+  "light": "22 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "359/22",
+   "22 x G9",
+   "MAX 33W",
+   "•",
+   "D",
+   "63",
+   "•",
+   "100",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/359_22.png",
+   "width": 405,
+   "height": 355,
+   "bytes": 10331
+  },
+  "catalog": "IDL 2024"
+ },
+ "359/42": {
+  "page": 233,
+  "dup": 1,
+  "shared": [],
+  "light": "42 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "359/42",
+   "•",
+   "42 x G9",
+   "MAX 33W",
+   "D",
+   "450",
+   "•",
+   "75",
+   "•",
+   "roma"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/359_42.png",
+   "width": 405,
+   "height": 1759,
+   "bytes": 17282
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/1A": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "512/1A",
+   "•",
+   "1 x G9",
+   "MAX 33W",
+   "39",
+   "D •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_1A.png",
+   "width": 449,
+   "height": 220,
+   "bytes": 7264
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/1L": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/1L",
+   "•",
+   "1 x G9",
+   "MAX 33W",
+   "38",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_1L.png",
+   "width": 403,
+   "height": 217,
+   "bytes": 7023
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/2A": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/2A",
+   "•",
+   "2 x G9",
+   "21",
+   "MAX 33W",
+   "•",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_2A.png",
+   "width": 488,
+   "height": 201,
+   "bytes": 8121
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/2L": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/2L",
+   "•",
+   "2 x G9",
+   "MAX 33W",
+   "50",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_2L.png",
+   "width": 488,
+   "height": 257,
+   "bytes": 10626
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/3A": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/3A",
+   "•",
+   "3 x G9",
+   "MAX 33W",
+   "32",
+   "•",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_3A.png",
+   "width": 472,
+   "height": 203,
+   "bytes": 11820
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/5P": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/5P",
+   "•",
+   "5 x G9",
+   "•",
+   "MAX 33W",
+   "D",
+   "190",
+   "•",
+   "•",
+   "crystal"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_5P.png",
+   "width": 540,
+   "height": 1059,
+   "bytes": 14802
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/5SG": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/5SG",
+   "•",
+   "5 x G9",
+   "MAX 33W",
+   "100",
+   "D",
+   "•",
+   "63",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_5SG.png",
+   "width": 409,
+   "height": 320,
+   "bytes": 9105
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/6": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/6",
+   "•",
+   "6 x G9",
+   "100",
+   "MAX 33W",
+   "•",
+   "D",
+   "60",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_6.png",
+   "width": 441,
+   "height": 290,
+   "bytes": 10766
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/6+3": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "9 x G9 100",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/6+3 •",
+   "9 x G9 100",
+   "MAX 33W",
+   "•",
+   "D",
+   "70",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_6+3.png",
+   "width": 462,
+   "height": 308,
+   "bytes": 13000
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/8": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9 100",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/8",
+   "•",
+   "8 x G9 100",
+   "MAX 33W",
+   "•",
+   "D",
+   "70",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_8.png",
+   "width": 459,
+   "height": 301,
+   "bytes": 11420
+  },
+  "catalog": "IDL 2024"
+ },
+ "512/120": {
+  "page": 267,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "512/120",
+   "•",
+   "100",
+   "8 x G9",
+   "MAX 33W",
+   "•",
+   "60",
+   "•",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/512_120.png",
+   "width": 442,
+   "height": 291,
+   "bytes": 15025
+  },
+  "catalog": "IDL 2024"
+ },
+ "584/1L": {
+  "page": 299,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W •",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "584/1L",
+   "•",
+   "1 x E27",
+   "MAX 77W •",
+   "D",
+   "66",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/584_1L.png",
+   "width": 468,
+   "height": 349,
+   "bytes": 7008
+  },
+  "catalog": "IDL 2024"
+ },
+ "585/1L": {
+  "page": 299,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W •",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "585/1L",
+   "•",
+   "1 x E27",
+   "MAX 77W •",
+   "D",
+   "62",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/585_1L.png",
+   "width": 467,
+   "height": 349,
+   "bytes": 13033
+  },
+  "catalog": "IDL 2024"
+ },
+ "476/2L": {
+  "page": 331,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "476/2L",
+   "•",
+   "2 x G9",
+   "MAX 33W",
+   "48",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/476_2L.png",
+   "width": 402,
+   "height": 202,
+   "bytes": 8517
+  },
+  "catalog": "IDL 2024"
+ },
+ "476/3": {
+  "page": 331,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "476/3",
+   "3 x G9",
+   "MAX 33W",
+   "•",
+   "D",
+   "46",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/476_3.png",
+   "width": 409,
+   "height": 286,
+   "bytes": 9342
+  },
+  "catalog": "IDL 2024"
+ },
+ "476/3L": {
+  "page": 331,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "476/3L",
+   "•",
+   "3 x G9",
+   "MAX 33W",
+   "58",
+   "•",
+   "D",
+   "crystal"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/476_3L.png",
+   "width": 542,
+   "height": 1402,
+   "bytes": 11549
+  },
+  "catalog": "IDL 2024"
+ },
+ "476/4": {
+  "page": 331,
+  "dup": 1,
+  "shared": [],
+  "light": "4 X G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "476/4",
+   "4 X G9",
+   "MAX 33W",
+   "•",
+   "D 58",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/476_4.png",
+   "width": 411,
+   "height": 288,
+   "bytes": 9409
+  },
+  "catalog": "IDL 2024"
+ },
+ "476/4A": {
+  "page": 331,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "476/4A",
+   "•",
+   "4 x G9",
+   "MAX 33W",
+   "46",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/476_4A.png",
+   "width": 440,
+   "height": 201,
+   "bytes": 8412
+  },
+  "catalog": "IDL 2024"
+ },
+ "476/4PF": {
+  "page": 331,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "476/4PF",
+   "4 x G9",
+   "•",
+   "MAX 33W",
+   "58",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/476_4PF.png",
+   "width": 408,
+   "height": 205,
+   "bytes": 8818
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/1S": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/1S",
+   "1 x G9",
+   "MAX 20W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_1S.png",
+   "width": 428,
+   "height": 216,
+   "bytes": 6619
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/3": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/3",
+   "3 x G9",
+   "MAX 20W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_3.png",
+   "width": 429,
+   "height": 279,
+   "bytes": 8900
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/3PF": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 20W 57",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/3PF",
+   "3 x G9",
+   "MAX 20W 57",
+   "D",
+   "22",
+   "380 | bamboo"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_3PF.png",
+   "width": 404,
+   "height": 365,
+   "bytes": 8799
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/6": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "423/6",
+   "6 x G9",
+   "MAX 20W",
+   "•",
+   "64",
+   "D •",
+   "•",
+   "30",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_6.png",
+   "width": 422,
+   "height": 281,
+   "bytes": 10095
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/6PF": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/6PF",
+   "6 x G9",
+   "68",
+   "MAX 20W",
+   "D",
+   "30"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_6PF.png",
+   "width": 404,
+   "height": 238,
+   "bytes": 9537
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/8": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/8",
+   "8 x G9",
+   "MAX 20W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_8.png",
+   "width": 432,
+   "height": 297,
+   "bytes": 11065
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/8PF": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/8PF",
+   "8 x G9",
+   "MAX 20W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_8PF.png",
+   "width": 411,
+   "height": 259,
+   "bytes": 10357
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/10PF": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "10 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/10PF",
+   "10 x G9",
+   "MAX 20W",
+   "D",
+   "•",
+   "50",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_10PF.png",
+   "width": 444,
+   "height": 327,
+   "bytes": 13467
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/12": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/12",
+   "12 x G9",
+   "•",
+   "MAX 20W",
+   "73",
+   "D",
+   "•",
+   "•",
+   "60",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_12.png",
+   "width": 467,
+   "height": 324,
+   "bytes": 14755
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/12PF": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/12PF",
+   "•",
+   "12 x G9",
+   "77",
+   "MAX 20W",
+   "•",
+   "D",
+   "•",
+   "60",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_12PF.png",
+   "width": 427,
+   "height": 300,
+   "bytes": 14111
+  },
+  "catalog": "IDL 2024"
+ },
+ "496/8": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "496/8",
+   "8 x G9",
+   "MAX 20W",
+   "•",
+   "41",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/496_8.png",
+   "width": 486,
+   "height": 223,
+   "bytes": 10658
+  },
+  "catalog": "IDL 2024"
+ },
+ "497/8": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "497/8",
+   "8 x G9",
+   "MAX 20W",
+   "•",
+   "41",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/497_8.png",
+   "width": 460,
+   "height": 222,
+   "bytes": 10959
+  },
+  "catalog": "IDL 2024"
+ },
+ "497/8+8": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "16 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "497/8+8",
+   "16 x G9",
+   "MAX 20W",
+   "•",
+   "63",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/497_8+8.png",
+   "width": 480,
+   "height": 220,
+   "bytes": 11946
+  },
+  "catalog": "IDL 2024"
+ },
+ "497/12": {
+  "page": 380,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "497/12",
+   "12 x G9",
+   "MAX 20W",
+   "•",
+   "41",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/497_12.png",
+   "width": 473,
+   "height": 224,
+   "bytes": 12384
+  },
+  "catalog": "IDL 2024"
+ },
+ "674/3S": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 100 W",
+  "max": "",
+  "lumen": "13000 lumen - 3000K",
+  "dimming": "",
+  "lines": [
+   "674/3S",
+   "Strip LED 100 W",
+   "3,2",
+   "13000 lumen - 3000K",
+   "•",
+   "3,2",
+   "•",
+   "•",
+   "3,2",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/674_3S.png",
+   "width": 467,
+   "height": 325,
+   "bytes": 16404
+  },
+  "catalog": "IDL 2024"
+ },
+ "674/50": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 20 W",
+  "max": "",
+  "lumen": "2600 lumen - 3000K",
+  "dimming": "C",
+  "lines": [
+   "674/50",
+   "Strip LED 20 W",
+   "3,2",
+   "2600 lumen - 3000K",
+   "C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/674_50.png",
+   "width": 435,
+   "height": 206,
+   "bytes": 8679
+  },
+  "catalog": "IDL 2024"
+ },
+ "674/78": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 33 W",
+  "max": "",
+  "lumen": "4290 lumen - 3000K",
+  "dimming": "C",
+  "lines": [
+   "674/78",
+   "Strip LED 33 W",
+   "4290 lumen - 3000K",
+   "3,2",
+   "•",
+   "C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/674_78.png",
+   "width": 451,
+   "height": 239,
+   "bytes": 10794
+  },
+  "catalog": "IDL 2024"
+ },
+ "674/110": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 47 W",
+  "max": "",
+  "lumen": "6110 lumen - 3000K",
+  "dimming": "C",
+  "lines": [
+   "674/110",
+   "Strip LED 47 W",
+   "6110 lumen - 3000K",
+   "3,2",
+   "•",
+   "•",
+   "C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/674_110.png",
+   "width": 474,
+   "height": 287,
+   "bytes": 12242
+  },
+  "catalog": "IDL 2024"
+ },
+ "675/50": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 20 W",
+  "max": "",
+  "lumen": "2600 lumen - 3000K",
+  "dimming": "C",
+  "lines": [
+   "675/50",
+   "Strip LED 20 W",
+   "7",
+   "2600 lumen - 3000K",
+   "C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/675_50.png",
+   "width": 431,
+   "height": 206,
+   "bytes": 8576
+  },
+  "catalog": "IDL 2024"
+ },
+ "675/78": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 33 W",
+  "max": "",
+  "lumen": "4290 lumen - 3000K",
+  "dimming": "C",
+  "lines": [
+   "675/78",
+   "Strip LED 33 W",
+   "4290 lumen - 3000K",
+   "8,5",
+   "•",
+   "•",
+   "C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/675_78.png",
+   "width": 451,
+   "height": 238,
+   "bytes": 11048
+  },
+  "catalog": "IDL 2024"
+ },
+ "675/110": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 47 W",
+  "max": "",
+  "lumen": "6110 lumen - 3000K",
+  "dimming": "C",
+  "lines": [
+   "675/110",
+   "Strip LED 47 W",
+   "6110 lumen - 3000K",
+   "8,5",
+   "•",
+   "•",
+   "•",
+   "C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/675_110.png",
+   "width": 475,
+   "height": 287,
+   "bytes": 12574
+  },
+  "catalog": "IDL 2024"
+ },
+ "676/110": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 100 W",
+  "max": "",
+  "lumen": "13000 lumen - 3000K 8,5",
+  "dimming": "",
+  "lines": [
+   "676/110",
+   "Strip LED 100 W",
+   "13000 lumen - 3000K 8,5",
+   "•",
+   "•",
+   "7 •",
+   "•",
+   "8,5",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/676_110.png",
+   "width": 475,
+   "height": 326,
+   "bytes": 17312
+  },
+  "catalog": "IDL 2024"
+ },
+ "677/2L": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 20 W",
+  "max": "",
+  "lumen": "1210 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "677/2L •",
+   "Strip LED 20 W",
+   "39",
+   "1210 lumen - 3000K",
+   "•",
+   "•",
+   "B - C",
+   "17",
+   "•",
+   "NOTA: Per l'installazione"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/677_2L.png",
+   "width": 540,
+   "height": 714,
+   "bytes": 27056
+  },
+  "catalog": "IDL 2024"
+ },
+ "677/3": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 20 W",
+  "max": "",
+  "lumen": "1210 lumen - 3000K 17",
+  "dimming": "B - C",
+  "lines": [
+   "677/3",
+   "Strip LED 20 W",
+   "•",
+   "1210 lumen - 3000K 17",
+   "•",
+   "•",
+   "•",
+   "21",
+   "B - C",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/677_3.png",
+   "width": 484,
+   "height": 209,
+   "bytes": 8347
+  },
+  "catalog": "IDL 2024"
+ },
+ "677/5PF": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 30 W",
+  "max": "",
+  "lumen": "1815 lumen - 3000K •",
+  "dimming": "",
+  "lines": [
+   "677/5PF",
+   "•",
+   "17",
+   "Strip LED 30 W",
+   "•",
+   "•",
+   "1815 lumen - 3000K •",
+   "49",
+   "B - C •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/677_5PF.png",
+   "width": 479,
+   "height": 205,
+   "bytes": 7728
+  },
+  "catalog": "IDL 2024"
+ },
+ "677/6": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 40 W",
+  "max": "",
+  "lumen": "2420 lumen - 3000K •",
+  "dimming": "B - C",
+  "lines": [
+   "677/6",
+   "Strip LED 40 W",
+   "2420 lumen - 3000K •",
+   "24",
+   "•",
+   "•",
+   "•",
+   "B - C",
+   "41",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/677_6.png",
+   "width": 513,
+   "height": 244,
+   "bytes": 9247
+  },
+  "catalog": "IDL 2024"
+ },
+ "677/AG": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 10 W",
+  "max": "",
+  "lumen": "605 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "677/AG",
+   "Strip LED 10 W",
+   "•",
+   "605 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/677_AG.png",
+   "width": 459,
+   "height": 206,
+   "bytes": 6210
+  },
+  "catalog": "IDL 2024"
+ },
+ "677/AP": {
+  "page": 45,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 5 W",
+  "max": "",
+  "lumen": "605 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "677/AP",
+   "Strip LED 5 W",
+   "•",
+   "605 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/677_AP.png",
+   "width": 452,
+   "height": 206,
+   "bytes": 6031
+  },
+  "catalog": "IDL 2024"
+ },
+ "650/1L": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1W",
+  "max": "",
+  "lumen": "150 lumen -",
+  "dimming": "D",
+  "lines": [
+   "650/1L",
+   "1 x LED 1W",
+   "150 lumen -",
+   "3000 K",
+   "•",
+   "16",
+   "•",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/650_1L.png",
+   "width": 540,
+   "height": 235,
+   "bytes": 6610
+  },
+  "catalog": "IDL 2024"
+ },
+ "650/3": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 1W",
+  "max": "",
+  "lumen": "450 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "650/3",
+   "3 x LED 1W",
+   "450 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/650_3.png",
+   "width": 542,
+   "height": 338,
+   "bytes": 10392
+  },
+  "catalog": "IDL 2024"
+ },
+ "650/4A": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x LED 1W",
+  "max": "",
+  "lumen": "500 lumen -",
+  "dimming": "D",
+  "lines": [
+   "650/4A",
+   "•",
+   "4 x LED 1W",
+   "500 lumen -",
+   "3000 K 46",
+   "•",
+   "42",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/650_4A.png",
+   "width": 542,
+   "height": 236,
+   "bytes": 10626
+  },
+  "catalog": "IDL 2024"
+ },
+ "650/5L": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x LED 1W",
+  "max": "",
+  "lumen": "650 lumen -",
+  "dimming": "B",
+  "lines": [
+   "650/5L",
+   "5 x LED 1W",
+   "650 lumen -",
+   "3000 K",
+   "42",
+   "•",
+   "B"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/650_5L.png",
+   "width": 543,
+   "height": 235,
+   "bytes": 9451
+  },
+  "catalog": "IDL 2024"
+ },
+ "650/8PF": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x LED 1W 19",
+  "max": "",
+  "lumen": "1000 lumen - 3000 K",
+  "dimming": "B - C",
+  "lines": [
+   "650/8PF",
+   "•",
+   "8 x LED 1W 19",
+   "1000 lumen - 3000 K",
+   "•",
+   "•",
+   "•",
+   "56",
+   "B - C",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/650_8PF.png",
+   "width": 541,
+   "height": 234,
+   "bytes": 12900
+  },
+  "catalog": "IDL 2024"
+ },
+ "650/20": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "20 x LED 1W",
+  "max": "",
+  "lumen": "2500 lumen - 3000 K",
+  "dimming": "B - C",
+  "lines": [
+   "650/20",
+   "•",
+   "20 x LED 1W",
+   "52",
+   "2500 lumen - 3000 K",
+   "•",
+   "•",
+   "•",
+   "B - C",
+   "52"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/650_20.png",
+   "width": 517,
+   "height": 231,
+   "bytes": 15212
+  },
+  "catalog": "IDL 2024"
+ },
+ "650/28": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "28 x LED 1W",
+  "max": "",
+  "lumen": "3500 lumen - 3000 K",
+  "dimming": "B - C",
+  "lines": [
+   "650/28",
+   "28 x LED 1W",
+   "3500 lumen - 3000 K",
+   "•",
+   "70",
+   "B - C",
+   "•",
+   "•",
+   "•",
+   "68"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/650_28.png",
+   "width": 546,
+   "height": 373,
+   "bytes": 27300
+  },
+  "catalog": "IDL 2024"
+ },
+ "651/9": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "9 x LED 1W",
+  "max": "",
+  "lumen": "1200 lumen - 3000 K",
+  "dimming": "B - C",
+  "lines": [
+   "651/9",
+   "9 x LED 1W",
+   "1200 lumen - 3000 K",
+   "•",
+   "B - C",
+   "51",
+   "•",
+   "54",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/651_9.png",
+   "width": 546,
+   "height": 297,
+   "bytes": 14128
+  },
+  "catalog": "IDL 2024"
+ },
+ "651/9PF": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "9 x LED 1W",
+  "max": "",
+  "lumen": "1200 lumen - 3000 K",
+  "dimming": "B - C",
+  "lines": [
+   "651/9PF",
+   "9 x LED 1W",
+   "•",
+   "1200 lumen - 3000 K",
+   "51",
+   "B - C",
+   "•",
+   "54",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/651_9PF.png",
+   "width": 547,
+   "height": 247,
+   "bytes": 13848
+  },
+  "catalog": "IDL 2024"
+ },
+ "651/14": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "14 x LED 1W",
+  "max": "",
+  "lumen": "1750 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "651/14",
+   "14 x LED 1W",
+   "1750 lumen - 3000 K",
+   "•",
+   "76",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/651_14.png",
+   "width": 550,
+   "height": 286,
+   "bytes": 17296
+  },
+  "catalog": "IDL 2024"
+ },
+ "651/15P": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "15 x LED 1W",
+  "max": "",
+  "lumen": "1900 lumen - 3000 K",
+  "dimming": "B - C",
+  "lines": [
+   "651/15P",
+   "•",
+   "15 x LED 1W",
+   "1900 lumen - 3000 K",
+   "B - C",
+   "188",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/651_15P.png",
+   "width": 541,
+   "height": 511,
+   "bytes": 14851
+  },
+  "catalog": "IDL 2024"
+ },
+ "651/60": {
+  "page": 95,
+  "dup": 1,
+  "shared": [],
+  "light": "60 x LED 1W",
+  "max": "",
+  "lumen": "8000 lumen - 3000 K",
+  "dimming": "B - C",
+  "lines": [
+   "•",
+   "651/60",
+   "60 x LED 1W",
+   "8000 lumen - 3000 K",
+   "B - C",
+   "330",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/651_60.png",
+   "width": 540,
+   "height": 1287,
+   "bytes": 31697
+  },
+  "catalog": "IDL 2024"
+ },
+ "641/90": {
+  "page": 127,
+  "dup": 1,
+  "shared": [],
+  "light": "4 STRIP LED",
+  "max": "MAX 75W",
+  "lumen": "10047 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "641/90",
+   "4 STRIP LED",
+   "MAX 75W",
+   "10047 lumen - 3000 K",
+   "•",
+   "D",
+   "80",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/641_90.png",
+   "width": 530,
+   "height": 419,
+   "bytes": 13432
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/3ADX": {
+  "page": 127,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 3,6W",
+  "max": "",
+  "lumen": "1155 lumen - 45",
+  "dimming": "D",
+  "lines": [
+   "642/3ADX",
+   "•",
+   "3 x LED 3,6W",
+   "1155 lumen - 45",
+   "3000 K",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_3ADX.png",
+   "width": 454,
+   "height": 231,
+   "bytes": 7176
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/3ASX": {
+  "page": 127,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 3,6W",
+  "max": "",
+  "lumen": "1155 lumen -",
+  "dimming": "D",
+  "lines": [
+   "642/3ASX",
+   "3 x LED 3,6W",
+   "1155 lumen -",
+   "3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_3ASX.png",
+   "width": 550,
+   "height": 1243,
+   "bytes": 86435
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/50": {
+  "page": 126,
+  "dup": 1,
+  "shared": [],
+  "light": "1 STRIP LED",
+  "max": "MAX 15W",
+  "lumen": "1970 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "642/50",
+   "1 STRIP LED",
+   "MAX 15W",
+   "1970 lumen - 3000 K",
+   "•",
+   "40",
+   "D",
+   "•",
+   "126 | artic"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_50.png",
+   "width": 503,
+   "height": 359,
+   "bytes": 10312
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/70": {
+  "page": 126,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x STRIP LED",
+  "max": "MAX 25W",
+  "lumen": "3349 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "642/70",
+   "1 x STRIP LED",
+   "MAX 25W",
+   "3349 lumen - 3000 K",
+   "•",
+   "40",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_70.png",
+   "width": 545,
+   "height": 294,
+   "bytes": 11570
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/90": {
+  "page": 127,
+  "dup": 1,
+  "shared": [],
+  "light": "1 STRIP LED",
+  "max": "MAX 35W",
+  "lumen": "4728 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "642/90",
+   "1 STRIP LED",
+   "MAX 35W",
+   "4728 lumen - 3000 K",
+   "•",
+   "D",
+   "40",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_90.png",
+   "width": 540,
+   "height": 344,
+   "bytes": 13791
+  },
+  "catalog": "IDL 2024"
+ },
+ "642/L": {
+  "page": 127,
+  "dup": 1,
+  "shared": [],
+  "light": "1 STRIP LED",
+  "max": "MAX 6W",
+  "lumen": "788 lumen -",
+  "dimming": "D",
+  "lines": [
+   "642/L",
+   "1 STRIP LED",
+   "MAX 6W",
+   "788 lumen -",
+   "3000 K",
+   "D",
+   "applique"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/642_L.png",
+   "width": 540,
+   "height": 1745,
+   "bytes": 171651
+  },
+  "catalog": "IDL 2024"
+ },
+ "643/4": {
+  "page": 126,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x LED 3,6W",
+  "max": "",
+  "lumen": "1540 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "643/4",
+   "4 x LED 3,6W",
+   "1540 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/643_4.png",
+   "width": 502,
+   "height": 329,
+   "bytes": 10508
+  },
+  "catalog": "IDL 2024"
+ },
+ "511/3": {
+  "page": 180,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "511/3",
+   "3 x G9",
+   "MAX 33W",
+   "D",
+   "180 | weave"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/511_3.png",
+   "width": 461,
+   "height": 879,
+   "bytes": 13083
+  },
+  "catalog": "IDL 2024"
+ },
+ "511/4": {
+  "page": 180,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "511/4",
+   "4 x G9",
+   "MAX 33W",
+   "D",
+   "40"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/511_4.png",
+   "width": 464,
+   "height": 296,
+   "bytes": 14884
+  },
+  "catalog": "IDL 2024"
+ },
+ "511/6": {
+  "page": 180,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "511/6",
+   "6 x G9",
+   "MAX 33W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/511_6.png",
+   "width": 496,
+   "height": 337,
+   "bytes": 18320
+  },
+  "catalog": "IDL 2024"
+ },
+ "513/6": {
+  "page": 180,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "513/6",
+   "6 x G9",
+   "MAX 33W",
+   "•",
+   "30",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/513_6.png",
+   "width": 495,
+   "height": 238,
+   "bytes": 19051
+  },
+  "catalog": "IDL 2024"
+ },
+ "513/8": {
+  "page": 180,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "513/8",
+   "8 x G9",
+   "MAX 33W",
+   "•",
+   "36",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/513_8.png",
+   "width": 497,
+   "height": 267,
+   "bytes": 23612
+  },
+  "catalog": "IDL 2024"
+ },
+ "513/12": {
+  "page": 180,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "513/12",
+   "12 x G9",
+   "MAX 33W",
+   "•",
+   "D",
+   "52",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/513_12.png",
+   "width": 546,
+   "height": 312,
+   "bytes": 30460
+  },
+  "catalog": "IDL 2024"
+ },
+ "513/16": {
+  "page": 180,
+  "dup": 1,
+  "shared": [],
+  "light": "16 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "513/16",
+   "16 x G9",
+   "MAX 33W",
+   "•",
+   "D",
+   "59",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/513_16.png",
+   "width": 539,
+   "height": 331,
+   "bytes": 34365
+  },
+  "catalog": "IDL 2024"
+ },
+ "513/26": {
+  "page": 180,
+  "dup": 1,
+  "shared": [],
+  "light": "26 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "513/26",
+   "26 x G9",
+   "MAX 33W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/513_26.png",
+   "width": 487,
+   "height": 509,
+   "bytes": 19287
+  },
+  "catalog": "IDL 2024"
+ },
+ "514/6": {
+  "page": 180,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "514/6",
+   "6 x G9",
+   "MAX 33W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/514_6.png",
+   "width": 538,
+   "height": 329,
+   "bytes": 20352
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/1LG": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/1LG",
+   "1 x E27",
+   "MAX 77W",
+   "•",
+   "D",
+   "87",
+   "•",
+   "40",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_1LG.png",
+   "width": 359,
+   "height": 387,
+   "bytes": 8695
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/3ADX": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "•",
+   "448/3ADX",
+   "3 x G9",
+   "58",
+   "MAX 33W",
+   "•",
+   "18",
+   "D •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_3ADX.png",
+   "width": 382,
+   "height": 199,
+   "bytes": 8313
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/3ASX": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "•",
+   "448/3ASX",
+   "3 x G9",
+   "58",
+   "MAX 33W",
+   "•",
+   "18",
+   "D •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_3ASX.png",
+   "width": 381,
+   "height": 199,
+   "bytes": 8379
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/3L": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/3L",
+   "3 x G9",
+   "MAX 33W",
+   "D",
+   "•",
+   "58",
+   "•",
+   "18",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_3L.png",
+   "width": 466,
+   "height": 381,
+   "bytes": 8360
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/3PF": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/3PF",
+   "3 x G9",
+   "MAX 33W",
+   "D"
+  ],
+  "note": "no drawing in cell",
+  "catalog": "IDL 2024"
+ },
+ "448/3+3PF": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "369 lumen •",
+  "dimming": "",
+  "lines": [
+   "448/3+3PF",
+   "doppia accensione",
+   "switch",
+   "double 58",
+   "3 x G9",
+   "MAX 33W",
+   "+ 3 LED x 1W •",
+   "18",
+   "369 lumen •",
+   "2700 K"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_3+3PF.png",
+   "width": 346,
+   "height": 222,
+   "bytes": 10864
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/5L": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/5L",
+   "5 x G9",
+   "MAX 33W",
+   "D",
+   "•",
+   "70",
+   "•",
+   "• 20"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_5L.png",
+   "width": 344,
+   "height": 379,
+   "bytes": 9294
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/5PF": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/5PF",
+   "5 x G9",
+   "MAX 33W",
+   "D"
+  ],
+  "note": "no drawing in cell",
+  "catalog": "IDL 2024"
+ },
+ "448/5+3PF": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "369 lumen",
+  "dimming": "",
+  "lines": [
+   "448/5+3PF •",
+   "doppia accensione",
+   "switch",
+   "double",
+   "70",
+   "5 x G9",
+   "MAX 33W",
+   "+ 3 LED x 1W",
+   "369 lumen",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_5+3PF.png",
+   "width": 346,
+   "height": 226,
+   "bytes": 13345
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/6P": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "448/6P",
+   "6 x G9",
+   "MAX 33W",
+   "•",
+   "33",
+   "•",
+   "D",
+   "chrysalis"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_6P.png",
+   "width": 404,
+   "height": 887,
+   "bytes": 8385
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/6+5P": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "615 lumen 170",
+  "dimming": "",
+  "lines": [
+   "448/6+5P •",
+   "doppia accensione",
+   "swich",
+   "double",
+   "6 x G9",
+   "MAX 33W",
+   "+ 5 LED x 1W",
+   "615 lumen 170",
+   "2700 K"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_6+5P.png",
+   "width": 353,
+   "height": 231,
+   "bytes": 17983
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/8PF": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "•",
+   "448/8PF",
+   "8 x G9",
+   "MAX 33W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_8PF.png",
+   "width": 367,
+   "height": 191,
+   "bytes": 4390
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/8+3PF": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "369 lumen",
+  "dimming": "",
+  "lines": [
+   "448/8+3PF •",
+   "doppia accensione",
+   "switch",
+   "double",
+   "8 x G9",
+   "MAX 33W",
+   "94",
+   "+ 3 LED x 1W",
+   "369 lumen",
+   "2700 K"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_8+3PF.png",
+   "width": 354,
+   "height": 224,
+   "bytes": 16098
+  },
+  "catalog": "IDL 2024"
+ },
+ "448/84PF": {
+  "page": 207,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "•",
+   "448/84PF",
+   "40",
+   "8 x G9",
+   "•",
+   "MAX 33W",
+   "84",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/448_84PF.png",
+   "width": 394,
+   "height": 200,
+   "bytes": 8881
+  },
+  "catalog": "IDL 2024"
+ },
+ "493/2A": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x LED 2,3W",
+  "max": "",
+  "lumen": "540 lumen",
+  "dimming": "",
+  "lines": [
+   "493/2A",
+   "•",
+   "2 x LED 2,3W",
+   "540 lumen",
+   "3000K",
+   "46",
+   "22",
+   "D •",
+   "• 22 •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/493_2A.png",
+   "width": 404,
+   "height": 247,
+   "bytes": 9908
+  },
+  "catalog": "IDL 2024"
+ },
+ "493/3L": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 2,3W",
+  "max": "",
+  "lumen": "810 lumen",
+  "dimming": "",
+  "lines": [
+   "493/3L",
+   "•",
+   "3 x LED 2,3W",
+   "810 lumen",
+   "3000K",
+   "48",
+   "D •",
+   "22x22",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/493_3L.png",
+   "width": 407,
+   "height": 244,
+   "bytes": 8944
+  },
+  "catalog": "IDL 2024"
+ },
+ "493/6": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "493/6",
+   "6 x G9",
+   "MAX 33W",
+   "D",
+   "•",
+   "78",
+   "•",
+   "Ø46",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/493_6.png",
+   "width": 404,
+   "height": 375,
+   "bytes": 12174
+  },
+  "catalog": "IDL 2024"
+ },
+ "493/6P": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "493/6P",
+   "6 x G9",
+   "MAX 33W",
+   "D",
+   "• 46 • 28"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/493_6P.png",
+   "width": 403,
+   "height": 507,
+   "bytes": 17024
+  },
+  "catalog": "IDL 2024"
+ },
+ "493/10": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "10 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "493/10",
+   "10 x G9",
+   "MAX 33W",
+   "•",
+   "D",
+   "84",
+   "•",
+   "Ø63",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/493_10.png",
+   "width": 406,
+   "height": 782,
+   "bytes": 28343
+  },
+  "catalog": "IDL 2024"
+ },
+ "493/10PF": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "10 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "493/10PF",
+   "•",
+   "10 x G9",
+   "MAX 33W",
+   "62",
+   "•",
+   "D",
+   "63",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/493_10PF.png",
+   "width": 406,
+   "height": 218,
+   "bytes": 9653
+  },
+  "catalog": "IDL 2024"
+ },
+ "493/16": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "16 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "493/16",
+   "•",
+   "16 x G9",
+   "MAX 33W",
+   "D",
+   "165",
+   "•",
+   "Ø63",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/493_16.png",
+   "width": 403,
+   "height": 499,
+   "bytes": 17630
+  },
+  "catalog": "IDL 2024"
+ },
+ "493/16+16": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "32 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "493/16+16",
+   "•",
+   "32 x G9",
+   "MAX 33W",
+   "D",
+   "330",
+   "•",
+   "Ø63",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/493_16+16.png",
+   "width": 404,
+   "height": 662,
+   "bytes": 22085
+  },
+  "catalog": "IDL 2024"
+ },
+ "493/80PF": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "14 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "493/80PF",
+   "•",
+   "14 x G9",
+   "MAX 33W",
+   "67",
+   "•",
+   "80",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/493_80PF.png",
+   "width": 404,
+   "height": 207,
+   "bytes": 11488
+  },
+  "catalog": "IDL 2024"
+ },
+ "494/12": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "494/12",
+   "•",
+   "12 x G9",
+   "MAX 33W",
+   "180",
+   "D",
+   "•",
+   "27",
+   "•",
+   "• • 88"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/494_12.png",
+   "width": 404,
+   "height": 1241,
+   "bytes": 18841
+  },
+  "catalog": "IDL 2024"
+ },
+ "494/24": {
+  "page": 243,
+  "dup": 1,
+  "shared": [],
+  "light": "24 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "494/24",
+   "•",
+   "24 x G9",
+   "MAX 33W",
+   "80",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/494_24.png",
+   "width": 550,
+   "height": 264,
+   "bytes": 20744
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/1L": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/1L",
+   "1 x E27",
+   "MAX 77W",
+   "•",
+   "50",
+   "D",
+   "•",
+   "35",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_1L.png",
+   "width": 324,
+   "height": 279,
+   "bytes": 8937
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/1P": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/1P",
+   "1 x E27",
+   "MAX 77W",
+   "•",
+   "D",
+   "185",
+   "•",
+   "35",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_1P.png",
+   "width": 324,
+   "height": 431,
+   "bytes": 7671
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/2ADX": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/2ADX",
+   "•",
+   "11",
+   "2 x G9",
+   "•",
+   "MAX 33W",
+   "•",
+   "43",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_2ADX.png",
+   "width": 403,
+   "height": 925,
+   "bytes": 8075
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/2ASX": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9 •",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/2ASX •",
+   "11",
+   "2 x G9 •",
+   "MAX 33W",
+   "•",
+   "43",
+   "D",
+   "•",
+   "• 17 •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_2ASX.png",
+   "width": 319,
+   "height": 229,
+   "bytes": 6524
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/4A": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/4A",
+   "•",
+   "17",
+   "4 x G9",
+   "•",
+   "MAX 33W",
+   "•",
+   "64",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_4A.png",
+   "width": 326,
+   "height": 266,
+   "bytes": 7908
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/20": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/20",
+   "•",
+   "15/45",
+   "1 x E27",
+   "MAX 77W",
+   "•",
+   "62",
+   "D",
+   "•",
+   "• 24 •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_20.png",
+   "width": 326,
+   "height": 353,
+   "bytes": 9175
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/42": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/42",
+   "•",
+   "15/45",
+   "1 x E27",
+   "MAX 77W",
+   "•",
+   "•",
+   "62",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_42.png",
+   "width": 342,
+   "height": 355,
+   "bytes": 11955
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/42PF": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/42PF",
+   "•",
+   "1 x E27",
+   "62",
+   "MAX 77W",
+   "•",
+   "D",
+   "44",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_42PF.png",
+   "width": 337,
+   "height": 287,
+   "bytes": 10930
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/62": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "10 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "430/62 •",
+   "15/45",
+   "10 x G9",
+   "MAX 33W",
+   "••",
+   "62",
+   "D •",
+   "62",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_62.png",
+   "width": 341,
+   "height": 346,
+   "bytes": 12403
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/65PF": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/65PF",
+   "•",
+   "20",
+   "6 x G9",
+   "•",
+   "MAX 33W",
+   "D",
+   "65",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_65PF.png",
+   "width": 346,
+   "height": 276,
+   "bytes": 9463
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/90PF": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/90PF",
+   "•",
+   "•24",
+   "12 x G9",
+   "MAX 33W",
+   "D",
+   "90",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_90PF.png",
+   "width": 360,
+   "height": 278,
+   "bytes": 12537
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/100": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "18 x G9",
+  "max": "MAX 33W •",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/100 •",
+   "70",
+   "18 x G9",
+   "MAX 33W •",
+   "•",
+   "85",
+   "•",
+   "D",
+   "100",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_100.png",
+   "width": 351,
+   "height": 351,
+   "bytes": 14227
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/120": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "18 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/120",
+   "70",
+   "18 x G9",
+   "MAX 33W",
+   "••",
+   "95",
+   "D",
+   "•",
+   "• 120"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_120.png",
+   "width": 364,
+   "height": 399,
+   "bytes": 18952
+  },
+  "catalog": "IDL 2024"
+ },
+ "430/120PF": {
+  "page": 281,
+  "dup": 1,
+  "shared": [],
+  "light": "16 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "430/120PF",
+   "•",
+   "36",
+   "16 x G9",
+   "•",
+   "MAX 33W",
+   "D",
+   "• 120"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/430_120PF.png",
+   "width": 375,
+   "height": 304,
+   "bytes": 16243
+  },
+  "catalog": "IDL 2024"
+ },
+ "436/4+1A": {
+  "page": 307,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "93 lumen",
+  "dimming": "D",
+  "lines": [
+   "436/4+1A",
+   "•",
+   "4 x G9",
+   "MAX 33W",
+   "+ 1 LED x 1W 50",
+   "93 lumen",
+   "2800 K",
+   "•",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/436_4+1A.png",
+   "width": 541,
+   "height": 284,
+   "bytes": 15900
+  },
+  "catalog": "IDL 2024"
+ },
+ "436/5L": {
+  "page": 307,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G4",
+  "max": "MAX 10W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "436/5L",
+   "•",
+   "5 x G4",
+   "MAX 10W",
+   "62",
+   "•",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/436_5L.png",
+   "width": 540,
+   "height": 212,
+   "bytes": 11859
+  },
+  "catalog": "IDL 2024"
+ },
+ "436/5P": {
+  "page": 307,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "436/5P",
+   "•",
+   "5 x G9",
+   "MAX 33W",
+   "D",
+   "190",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/436_5P.png",
+   "width": 541,
+   "height": 1749,
+   "bytes": 23703
+  },
+  "catalog": "IDL 2024"
+ },
+ "436/10+1": {
+  "page": 307,
+  "dup": 1,
+  "shared": [],
+  "light": "11 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "436/10+1",
+   "•",
+   "11 x G9",
+   "MAX 33W",
+   "100",
+   "D •",
+   "50",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/436_10+1.png",
+   "width": 473,
+   "height": 329,
+   "bytes": 16115
+  },
+  "catalog": "IDL 2024"
+ },
+ "436/10+1PF": {
+  "page": 307,
+  "dup": 1,
+  "shared": [],
+  "light": "11 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "436/10+1PF",
+   "11 x G9",
+   "MAX 33W",
+   "•",
+   "70",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/436_10+1PF.png",
+   "width": 468,
+   "height": 237,
+   "bytes": 14048
+  },
+  "catalog": "IDL 2024"
+ },
+ "436/18+1": {
+  "page": 307,
+  "dup": 1,
+  "shared": [],
+  "light": "19 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "436/18+1",
+   "•",
+   "19 x G9",
+   "MAX 33W",
+   "100",
+   "D •",
+   "70",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/436_18+1.png",
+   "width": 495,
+   "height": 371,
+   "bytes": 21789
+  },
+  "catalog": "IDL 2024"
+ },
+ "436/18+1PF": {
+  "page": 307,
+  "dup": 1,
+  "shared": [],
+  "light": "19 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "436/18+1PF",
+   "19 x G9",
+   "MAX 33W",
+   "•",
+   "80",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/436_18+1PF.png",
+   "width": 497,
+   "height": 276,
+   "bytes": 22439
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/1LED": {
+  "page": 350,
+  "dup": 1,
+  "shared": [
+   "469/6"
+  ],
+  "light": "6xLED 2,3W 1782 lumen",
+  "max": "",
+  "lumen": "6xLED 2,3W 1782 lumen",
+  "dimming": "",
+  "lines": [
+   "468/1LED",
+   "6xLED 2,3W 1782 lumen",
+   "+ 1 LED 2,2W 3000K",
+   "•",
+   "52"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_1LED.png",
+   "width": 479,
+   "height": 355,
+   "bytes": 16600
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/2LED": {
+  "page": 350,
+  "dup": 1,
+  "shared": [
+   "469/12"
+  ],
+  "light": "12xLED 2,3W",
+  "max": "",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "468/2LED",
+   "12xLED 2,3W",
+   "+ 2 LED 2,2W",
+   "•",
+   "65"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_2LED.png",
+   "width": 502,
+   "height": 355,
+   "bytes": 19360
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/35/E": {
+  "page": 350,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "468/35/E",
+   "1 x E27",
+   "MAX 77W",
+   "•",
+   "D",
+   "18",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_35_E.png",
+   "width": 450,
+   "height": 265,
+   "bytes": 9198
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/35PF/E": {
+  "page": 350,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27 18",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "468/35PF/E",
+   "•",
+   "1 x E27 18",
+   "MAX 77W",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_35PF_E.png",
+   "width": 445,
+   "height": 202,
+   "bytes": 7407
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/50/E": {
+  "page": 350,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "468/50/E",
+   "2 x E27",
+   "MAX 77W",
+   "•",
+   "D",
+   "25",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_50_E.png",
+   "width": 461,
+   "height": 265,
+   "bytes": 10671
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/50PF/E": {
+  "page": 350,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "468/50PF/E",
+   "•",
+   "2 x E27",
+   "25",
+   "MAX 77W",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_50PF_E.png",
+   "width": 459,
+   "height": 204,
+   "bytes": 8898
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/72/E": {
+  "page": 350,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "468/72/E",
+   "3 x E27",
+   "MAX 77W",
+   "•",
+   "D 36",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_72_E.png",
+   "width": 479,
+   "height": 265,
+   "bytes": 12707
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/72PF/E": {
+  "page": 350,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "468/72PF/E",
+   "•",
+   "3 x E27",
+   "36",
+   "MAX 77W",
+   "•",
+   "•",
+   "D",
+   "350 | corten"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_72PF_E.png",
+   "width": 477,
+   "height": 533,
+   "bytes": 12039
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/120LED": {
+  "page": 350,
+  "dup": 1,
+  "shared": [
+   "469/120"
+  ],
+  "light": "4 x striscia LED 46W",
+  "max": "",
+  "lumen": "3456 lumen - 3200 K",
+  "dimming": "",
+  "lines": [
+   "468/120LED",
+   "4 x striscia LED 46W",
+   "3456 lumen - 3200 K",
+   "•",
+   "65"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_120LED.png",
+   "width": 508,
+   "height": 357,
+   "bytes": 20617
+  },
+  "catalog": "IDL 2024"
+ },
+ "469/6": {
+  "page": 350,
+  "dup": 1,
+  "shared": [
+   "468/1LED"
+  ],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "469/6",
+   "6 x G9",
+   "•",
+   "MAX 33W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/469_6.png",
+   "width": 477,
+   "height": 355,
+   "bytes": 16603
+  },
+  "catalog": "IDL 2024"
+ },
+ "469/120": {
+  "page": 350,
+  "dup": 1,
+  "shared": [
+   "468/120LED"
+  ],
+  "light": "12 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "469/120",
+   "12 x G9",
+   "•",
+   "MAX 33W",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/469_120.png",
+   "width": 508,
+   "height": 357,
+   "bytes": 20617
+  },
+  "catalog": "IDL 2024"
+ },
+ "509/4": {
+  "page": 350,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "509/4",
+   "4 x G9",
+   "MAX 33W",
+   "D",
+   "•",
+   "35",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/509_4.png",
+   "width": 446,
+   "height": 353,
+   "bytes": 11973
+  },
+  "catalog": "IDL 2024"
+ },
+ "509/6": {
+  "page": 350,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "509/6",
+   "6 x G9",
+   "MAX 33W",
+   "D",
+   "•",
+   "50",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/509_6.png",
+   "width": 456,
+   "height": 379,
+   "bytes": 14669
+  },
+  "catalog": "IDL 2024"
+ },
+ "509/8": {
+  "page": 350,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "509/8",
+   "8 x G9",
+   "MAX 33W",
+   "D",
+   "•",
+   "72",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/509_8.png",
+   "width": 482,
+   "height": 408,
+   "bytes": 17505
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/1A": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/1A",
+   "•",
+   "1 x G9",
+   "41",
+   "MAX 20W",
+   "•",
+   "6",
+   "• • •",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_1A.png",
+   "width": 362,
+   "height": 205,
+   "bytes": 6668
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/1L": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/1L",
+   "1 x G9",
+   "•",
+   "MAX 20W",
+   "60",
+   "D",
+   "•",
+   "50",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_1L.png",
+   "width": 326,
+   "height": 286,
+   "bytes": 6762
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/2ADX": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/2ADX",
+   "•",
+   "2 x G9",
+   "45",
+   "MAX 20W",
+   "•",
+   "22",
+   "• •",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_2ADX.png",
+   "width": 354,
+   "height": 205,
+   "bytes": 8344
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/2ASX": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/2ASX",
+   "•",
+   "2 x G9",
+   "45",
+   "MAX 20W",
+   "•",
+   "22",
+   "• •",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_2ASX.png",
+   "width": 355,
+   "height": 205,
+   "bytes": 8419
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/3A": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 20W 50",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/3A",
+   "•",
+   "3 x G9",
+   "MAX 20W 50",
+   "•",
+   "22,5",
+   "• • •",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_3A.png",
+   "width": 360,
+   "height": 205,
+   "bytes": 9278
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/3L": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/3L",
+   "•",
+   "3 x G9",
+   "MAX 20W",
+   "68",
+   "D",
+   "•",
+   "22",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_3L.png",
+   "width": 330,
+   "height": 311,
+   "bytes": 8913
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/3P": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 20W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/3P",
+   "3 x G9",
+   "MAX 20W",
+   "178",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_3P.png",
+   "width": 398,
+   "height": 325,
+   "bytes": 6943
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/35": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x GU10 LED",
+  "max": "MAX 4,6W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/35",
+   "•",
+   "6 x GU10 LED",
+   "MAX 4,6W",
+   "2700K",
+   "D",
+   "230",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_35.png",
+   "width": 411,
+   "height": 587,
+   "bytes": 23144
+  },
+  "catalog": "IDL 2024"
+ },
+ "423/66": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "9 x GU10 LED",
+  "max": "MAX 4,6W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423/66",
+   "•",
+   "9 x GU10 LED",
+   "MAX 4,6W",
+   "2700K",
+   "D",
+   "320",
+   "•",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423_66.png",
+   "width": 452,
+   "height": 708,
+   "bytes": 45049
+  },
+  "catalog": "IDL 2024"
+ },
+ "423B/1LG": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27 •",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "40",
+   "423B/1LG • •",
+   "1 x E27 •",
+   "MAX 77W",
+   "108",
+   "D",
+   "•",
+   "45",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423B_1LG.png",
+   "width": 349,
+   "height": 246,
+   "bytes": 6918
+  },
+  "catalog": "IDL 2024"
+ },
+ "423B/1LP": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423B/1LP",
+   "1 x E27",
+   "28",
+   "• •",
+   "MAX 77W",
+   "•",
+   "67",
+   "D",
+   "•",
+   "32"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423B_1LP.png",
+   "width": 402,
+   "height": 1404,
+   "bytes": 11590
+  },
+  "catalog": "IDL 2024"
+ },
+ "423B/4P": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423B/4P",
+   "1 x E27",
+   "MAX 77W",
+   "168",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423B_4P.png",
+   "width": 539,
+   "height": 1058,
+   "bytes": 9119
+  },
+  "catalog": "IDL 2024"
+ },
+ "423B/5P": {
+  "page": 381,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "423B/5P",
+   "1 x E27",
+   "MAX 77W",
+   "198",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/423B_5P.png",
+   "width": 425,
+   "height": 300,
+   "bytes": 7561
+  },
+  "catalog": "IDL 2024"
+ },
+ "679/1A": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 2 W",
+  "max": "",
+  "lumen": "200 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "679/1A",
+   "1 x LED 2 W",
+   "200 lumen - 3000K",
+   "10",
+   "•",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/679_1A.png",
+   "width": 550,
+   "height": 502,
+   "bytes": 16864
+  },
+  "catalog": "IDL 2024"
+ },
+ "679/1L": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 2 W",
+  "max": "",
+  "lumen": "200 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "679/1L",
+   "1 x LED 2 W",
+   "200 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/679_1L.png",
+   "width": 405,
+   "height": 205,
+   "bytes": 5197
+  },
+  "catalog": "IDL 2024"
+ },
+ "679/2": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x LED 2 W",
+  "max": "",
+  "lumen": "400 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "679/2",
+   "2 x LED 2 W",
+   "400 lumen - 3000K",
+   "•",
+   "•",
+   "24",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/679_2.png",
+   "width": 473,
+   "height": 206,
+   "bytes": 7616
+  },
+  "catalog": "IDL 2024"
+ },
+ "679/2A": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x LED 2 W",
+  "max": "",
+  "lumen": "400 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "679/2A",
+   "2 x LED 2 W",
+   "400 lumen - 3000K",
+   "B - C",
+   "10",
+   "•",
+   "0°",
+   "Dettaglio",
+   "Detail"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/679_2A.png",
+   "width": 533,
+   "height": 1015,
+   "bytes": 59181
+  },
+  "catalog": "IDL 2024"
+ },
+ "679/6": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x LED 2 W •",
+  "max": "",
+  "lumen": "1200 lumen - 3000K 48",
+  "dimming": "B - C",
+  "lines": [
+   "679/6",
+   "6 x LED 2 W •",
+   "1200 lumen - 3000K 48",
+   "•",
+   "•",
+   "B - C",
+   "•",
+   "65",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/679_6.png",
+   "width": 466,
+   "height": 281,
+   "bytes": 11432
+  },
+  "catalog": "IDL 2024"
+ },
+ "680/1A": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 2 W",
+  "max": "",
+  "lumen": "200 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "680/1A",
+   "1 x LED 2 W",
+   "200 lumen - 3000K",
+   "•",
+   "B - C",
+   "+/-30°",
+   "dei bracci (+/- 30°)",
+   "of the arms (+/- 30°)"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/680_1A.png",
+   "width": 550,
+   "height": 1058,
+   "bytes": 61322
+  },
+  "catalog": "IDL 2024"
+ },
+ "680/3": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 2 W",
+  "max": "",
+  "lumen": "600 lumen - 3000K",
+  "dimming": "",
+  "lines": [
+   "680/3",
+   "•",
+   "100 max",
+   "3 x LED 2 W",
+   "600 lumen - 3000K",
+   "min",
+   "60",
+   "•",
+   "•",
+   "B - C •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/680_3.png",
+   "width": 456,
+   "height": 271,
+   "bytes": 10200
+  },
+  "catalog": "IDL 2024"
+ },
+ "680/6": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x LED 2 W",
+  "max": "",
+  "lumen": "1200 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "680/6",
+   "•",
+   "100 max",
+   "6 x LED 2 W",
+   "1200 lumen - 3000K",
+   "60 min",
+   "•",
+   "•",
+   "•",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/680_6.png",
+   "width": 471,
+   "height": 293,
+   "bytes": 12446
+  },
+  "catalog": "IDL 2024"
+ },
+ "680/8": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x LED 2 W",
+  "max": "",
+  "lumen": "1600 lumen - 3000K min",
+  "dimming": "B - C",
+  "lines": [
+   "680/8",
+   "•",
+   "100 max",
+   "8 x LED 2 W",
+   "1600 lumen - 3000K min",
+   "60",
+   "•",
+   "•",
+   "B - C",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/680_8.png",
+   "width": 490,
+   "height": 311,
+   "bytes": 13547
+  },
+  "catalog": "IDL 2024"
+ },
+ "680/10": {
+  "page": 57,
+  "dup": 1,
+  "shared": [],
+  "light": "10 x LED 2 W",
+  "max": "",
+  "lumen": "2000 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "680/10",
+   "10 x LED 2 W",
+   "2000 lumen - 3000K",
+   "B - C",
+   "50",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/680_10.png",
+   "width": 419,
+   "height": 272,
+   "bytes": 10552
+  },
+  "catalog": "IDL 2024"
+ },
+ "656/1SG": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1W",
+  "max": "",
+  "lumen": "123 lumen -",
+  "dimming": "D",
+  "lines": [
+   "656/1SG",
+   "1 x LED 1W",
+   "200",
+   "123 lumen -",
+   "3000 K",
+   "•",
+   "D",
+   "59",
+   "•",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/656_1SG.png",
+   "width": 352,
+   "height": 410,
+   "bytes": 6405
+  },
+  "catalog": "IDL 2024"
+ },
+ "656/1SM": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1W",
+  "max": "",
+  "lumen": "123 lumen -",
+  "dimming": "D",
+  "lines": [
+   "656/1SM",
+   "1 x LED 1W",
+   "200",
+   "123 lumen -",
+   "3000 K •",
+   "D",
+   "47",
+   "•",
+   "• •",
+   "1,5"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/656_1SM.png",
+   "width": 353,
+   "height": 357,
+   "bytes": 6275
+  },
+  "catalog": "IDL 2024"
+ },
+ "656/1SP": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1W",
+  "max": "",
+  "lumen": "123 lumen -",
+  "dimming": "D",
+  "lines": [
+   "656/1SP",
+   "1 x LED 1W",
+   "123 lumen -",
+   "3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/656_1SP.png",
+   "width": 541,
+   "height": 316,
+   "bytes": 6468
+  },
+  "catalog": "IDL 2024"
+ },
+ "656/2A": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x LED 1W",
+  "max": "",
+  "lumen": "492 lumen -",
+  "dimming": "D",
+  "lines": [
+   "656/2A",
+   "•",
+   "4 x LED 1W",
+   "492 lumen -",
+   "3000 K",
+   "55",
+   "D",
+   "•",
+   "• •",
+   "20"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/656_2A.png",
+   "width": 404,
+   "height": 310,
+   "bytes": 6256
+  },
+  "catalog": "IDL 2024"
+ },
+ "656/3A": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x LED 1W",
+  "max": "",
+  "lumen": "738 lumen -",
+  "dimming": "D",
+  "lines": [
+   "656/3A",
+   "•",
+   "6 x LED 1W",
+   "738 lumen -",
+   "3000 K",
+   "55",
+   "D",
+   "•",
+   "• •",
+   "20"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/656_3A.png",
+   "width": 405,
+   "height": 317,
+   "bytes": 6638
+  },
+  "catalog": "IDL 2024"
+ },
+ "656/7SL": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "14 x LED 1W",
+  "max": "",
+  "lumen": "1722 lumen -",
+  "dimming": "B - C",
+  "lines": [
+   "656/7SL",
+   "14 x LED 1W",
+   "1722 lumen -",
+   "3000 K",
+   "•",
+   "B - C",
+   "48",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/656_7SL.png",
+   "width": 540,
+   "height": 388,
+   "bytes": 10084
+  },
+  "catalog": "IDL 2024"
+ },
+ "656/9": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "17 x LED 1W",
+  "max": "",
+  "lumen": "2091 lumen -",
+  "dimming": "B - C",
+  "lines": [
+   "656/9",
+   "17 x LED 1W",
+   "2091 lumen -",
+   "•",
+   "3000 K",
+   "65",
+   "B - C",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/656_9.png",
+   "width": 542,
+   "height": 357,
+   "bytes": 9312
+  },
+  "catalog": "IDL 2024"
+ },
+ "657/1SG": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1W",
+  "max": "",
+  "lumen": "123 lumen -",
+  "dimming": "D",
+  "lines": [
+   "657/1SG",
+   "1 x LED 1W",
+   "200",
+   "123 lumen -",
+   "3000 K",
+   "•",
+   "D",
+   "59",
+   "•",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/657_1SG.png",
+   "width": 404,
+   "height": 433,
+   "bytes": 6724
+  },
+  "catalog": "IDL 2024"
+ },
+ "657/1SM": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1W",
+  "max": "",
+  "lumen": "123 lumen -",
+  "dimming": "D",
+  "lines": [
+   "657/1SM",
+   "1 x LED 1W",
+   "123 lumen -",
+   "3000 K •",
+   "D",
+   "47",
+   "•",
+   "• •",
+   "1,5",
+   "miu"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/657_1SM.png",
+   "width": 406,
+   "height": 1296,
+   "bytes": 8105
+  },
+  "catalog": "IDL 2024"
+ },
+ "657/1SP": {
+  "page": 101,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 1W",
+  "max": "",
+  "lumen": "123 lumen -",
+  "dimming": "D",
+  "lines": [
+   "657/1SP",
+   "1 x LED 1W",
+   "200",
+   "123 lumen -",
+   "3000 K •",
+   "35",
+   "D",
+   "•",
+   "• •",
+   "1,5"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/657_1SP.png",
+   "width": 405,
+   "height": 314,
+   "bytes": 6272
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/3A": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "3 LED - MAX 2,3W •",
+  "max": "",
+  "lumen": "810 lumen 45",
+  "dimming": "D",
+  "lines": [
+   "507/3A",
+   "3 LED - MAX 2,3W •",
+   "810 lumen 45",
+   "2800 K",
+   "•",
+   "D",
+   "ice rain"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_3A.png",
+   "width": 404,
+   "height": 718,
+   "bytes": 9291
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/4L": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "4 LED - MAX 2,3W",
+  "max": "",
+  "lumen": "1080 lumen",
+  "dimming": "D",
+  "lines": [
+   "507/4L •",
+   "4 LED - MAX 2,3W",
+   "1080 lumen",
+   "2800 K",
+   "60",
+   "D",
+   "•",
+   "21",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_4L.png",
+   "width": 403,
+   "height": 265,
+   "bytes": 10266
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/6A": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "6 LED - MAX 2,3W",
+  "max": "",
+  "lumen": "1620 lumen",
+  "dimming": "D",
+  "lines": [
+   "507/6A",
+   "•",
+   "6 LED - MAX 2,3W",
+   "1620 lumen",
+   "60",
+   "2800 K",
+   "•",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_6A.png",
+   "width": 404,
+   "height": 230,
+   "bytes": 9887
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/6P": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "6 LED - MAX 2,3W",
+  "max": "",
+  "lumen": "1620 lumen",
+  "dimming": "",
+  "lines": [
+   "507/6P",
+   "•",
+   "6 LED - MAX 2,3W",
+   "1620 lumen",
+   "2800 K",
+   "D 183",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_6P.png",
+   "width": 404,
+   "height": 380,
+   "bytes": 12128
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/6S": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "6 LED - MAX 2,3W",
+  "max": "",
+  "lumen": "1782 lumen",
+  "dimming": "D",
+  "lines": [
+   "507/6S",
+   "6 LED - MAX 2,3W",
+   "1782 lumen",
+   "•",
+   "2800 K",
+   "30/60",
+   "•",
+   "D",
+   "45",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_6S.png",
+   "width": 404,
+   "height": 375,
+   "bytes": 12188
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/10": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "10 LED - MAX 2,3W",
+  "max": "",
+  "lumen": "2970 lumen",
+  "dimming": "D",
+  "lines": [
+   "507/10",
+   "10 LED - MAX 2,3W",
+   "2970 lumen",
+   "•",
+   "2800 K",
+   "30/60",
+   "•",
+   "D",
+   "70",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_10.png",
+   "width": 405,
+   "height": 395,
+   "bytes": 15389
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/10PF": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "10 LED - MAX 2,3W",
+  "max": "",
+  "lumen": "2700 lumen",
+  "dimming": "D",
+  "lines": [
+   "507/10PF",
+   "•",
+   "10 LED - MAX 2,3W",
+   "2700 lumen",
+   "2800 K",
+   "75",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_10PF.png",
+   "width": 405,
+   "height": 277,
+   "bytes": 14382
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/12": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "12 LED - MAX 2,3W",
+  "max": "",
+  "lumen": "3564 lumen",
+  "dimming": "D",
+  "lines": [
+   "507/12",
+   "12 LED - MAX 2,3W",
+   "3564 lumen",
+   "•",
+   "2800 K",
+   "30/60",
+   "•",
+   "D",
+   "100",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_12.png",
+   "width": 404,
+   "height": 452,
+   "bytes": 17034
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/12PF": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "12 LED - MAX 2,3W",
+  "max": "",
+  "lumen": "3270 lumen",
+  "dimming": "D",
+  "lines": [
+   "507/12PF",
+   "•",
+   "12 LED - MAX 2,3W",
+   "3270 lumen",
+   "2800 K",
+   "80",
+   "D",
+   "•",
+   "• 68"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_12PF.png",
+   "width": 403,
+   "height": 269,
+   "bytes": 17157
+  },
+  "catalog": "IDL 2024"
+ },
+ "507/18": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "18 LED - MAX 2,3W",
+  "max": "",
+  "lumen": "5346 lumen",
+  "dimming": "D",
+  "lines": [
+   "507/18",
+   "18 LED - MAX 2,3W",
+   "5346 lumen",
+   "•",
+   "2800 K",
+   "30/60",
+   "•",
+   "D",
+   "100",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/507_18.png",
+   "width": 404,
+   "height": 453,
+   "bytes": 19097
+  },
+  "catalog": "IDL 2024"
+ },
+ "508/10": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "10 LED - MAX 2,3W",
+  "max": "max",
+  "lumen": "2970 lumen",
+  "dimming": "D",
+  "lines": [
+   "508/10",
+   "D",
+   "10 LED - MAX 2,3W",
+   "2970 lumen",
+   "2800 K",
+   "•",
+   "140",
+   "max",
+   "•",
+   "35/40"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/508_10.png",
+   "width": 406,
+   "height": 458,
+   "bytes": 16779
+  },
+  "catalog": "IDL 2024"
+ },
+ "508/12": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "12 LED - MAX 2,3W",
+  "max": "max",
+  "lumen": "3564 lumen",
+  "dimming": "D",
+  "lines": [
+   "508/12",
+   "D",
+   "12 LED - MAX 2,3W",
+   "3564 lumen",
+   "2800 K",
+   "•",
+   "140",
+   "max",
+   "•",
+   "35/40"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/508_12.png",
+   "width": 403,
+   "height": 458,
+   "bytes": 18963
+  },
+  "catalog": "IDL 2024"
+ },
+ "508/80": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "2xSTRIP LED 14.4W",
+  "max": "MAX 58W",
+  "lumen": "7600 lumen 3000K",
+  "dimming": "D",
+  "lines": [
+   "508/80",
+   "2xSTRIP LED 14.4W",
+   "MAX 58W",
+   "7600 lumen 3000K",
+   "D",
+   "•",
+   "140",
+   "max",
+   "•",
+   "38"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/508_80.png",
+   "width": 405,
+   "height": 447,
+   "bytes": 21531
+  },
+  "catalog": "IDL 2024"
+ },
+ "508/120": {
+  "page": 141,
+  "dup": 1,
+  "shared": [],
+  "light": "2xSTRIP LED 14.4W",
+  "max": "MAX 92W",
+  "lumen": "12350 lumen 3000K",
+  "dimming": "D",
+  "lines": [
+   "508/120",
+   "2xSTRIP LED 14.4W",
+   "MAX 92W",
+   "12350 lumen 3000K",
+   "D",
+   "•",
+   "140",
+   "max",
+   "•",
+   "38"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/508_120.png",
+   "width": 407,
+   "height": 457,
+   "bytes": 20949
+  },
+  "catalog": "IDL 2024"
+ },
+ "511/1L": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "511/1L",
+   "•",
+   "1 x E27",
+   "•",
+   "MAX 77W",
+   "62",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/511_1L.png",
+   "width": 482,
+   "height": 303,
+   "bytes": 13125
+  },
+  "catalog": "IDL 2024"
+ },
+ "511/2A": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "511/2A",
+   "•",
+   "2 x G9",
+   "MAX 33W",
+   "30",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/511_2A.png",
+   "width": 486,
+   "height": 202,
+   "bytes": 15883
+  },
+  "catalog": "IDL 2024"
+ },
+ "511/2L": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9 •",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "511/2L",
+   "2 x G9 •",
+   "MAX 33W",
+   "26",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/511_2L.png",
+   "width": 423,
+   "height": 202,
+   "bytes": 9638
+  },
+  "catalog": "IDL 2024"
+ },
+ "511/3L": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "511/3L",
+   "•",
+   "3 x G9",
+   "MAX 33W",
+   "36",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/511_3L.png",
+   "width": 434,
+   "height": 202,
+   "bytes": 12107
+  },
+  "catalog": "IDL 2024"
+ },
+ "511/4L": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "511/4L",
+   "4 x G9",
+   "MAX 33W",
+   "•",
+   "D",
+   "53",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/511_4L.png",
+   "width": 539,
+   "height": 1311,
+   "bytes": 26258
+  },
+  "catalog": "IDL 2024"
+ },
+ "513/3A": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "513/3A",
+   "•",
+   "3 x G9",
+   "27",
+   "MAX 33W",
+   "•",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/513_3A.png",
+   "width": 503,
+   "height": 203,
+   "bytes": 15125
+  },
+  "catalog": "IDL 2024"
+ },
+ "513/6PF": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "513/6PF",
+   "•",
+   "6 x G9",
+   "MAX 33W",
+   "30",
+   "•",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/513_6PF.png",
+   "width": 464,
+   "height": 208,
+   "bytes": 17527
+  },
+  "catalog": "IDL 2024"
+ },
+ "513/8PF": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "513/8PF",
+   "•",
+   "8 x G9",
+   "MAX 33W",
+   "36",
+   "•",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/513_8PF.png",
+   "width": 486,
+   "height": 221,
+   "bytes": 22095
+  },
+  "catalog": "IDL 2024"
+ },
+ "590/1L": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "590/1L",
+   "•",
+   "1 x E27",
+   "•",
+   "MAX 77W",
+   "62",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/590_1L.png",
+   "width": 478,
+   "height": 285,
+   "bytes": 16876
+  },
+  "catalog": "IDL 2024"
+ },
+ "591/1L": {
+  "page": 181,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "591/1L",
+   "•",
+   "1 x E27",
+   "•",
+   "MAX 77W",
+   "64",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/591_1L.png",
+   "width": 475,
+   "height": 297,
+   "bytes": 5704
+  },
+  "catalog": "IDL 2024"
+ },
+ "605/1S": {
+  "page": 217,
+  "dup": 1,
+  "shared": [],
+  "light": "1 LED x 2,3W",
+  "max": "",
+  "lumen": "150 lumen 2800K",
+  "dimming": "D",
+  "lines": [
+   "605/1S",
+   "1 LED x 2,3W",
+   "150 lumen 2800K",
+   "D",
+   "•",
+   "30",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/605_1S.png",
+   "width": 550,
+   "height": 383,
+   "bytes": 10554
+  },
+  "catalog": "IDL 2024"
+ },
+ "605/5A": {
+  "page": 217,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "605/5A",
+   "5 x G9",
+   "MAX 33W",
+   "66",
+   "D",
+   "• 35 •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/605_5A.png",
+   "width": 468,
+   "height": 212,
+   "bytes": 12073
+  },
+  "catalog": "IDL 2024"
+ },
+ "605/5PF": {
+  "page": 217,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9 35",
+  "max": "MAX 33W •",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "605/5PF",
+   "•",
+   "5 x G9 35",
+   "MAX 33W •",
+   "• 66",
+   "•",
+   "51",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/605_5PF.png",
+   "width": 542,
+   "height": 707,
+   "bytes": 13112
+  },
+  "catalog": "IDL 2024"
+ },
+ "605/8": {
+  "page": 217,
+  "dup": 1,
+  "shared": [],
+  "light": "8 LED x 2,3W",
+  "max": "",
+  "lumen": "1200 lumen 2800K",
+  "dimming": "D",
+  "lines": [
+   "605/8",
+   "8 LED x 2,3W",
+   "1200 lumen 2800K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/605_8.png",
+   "width": 550,
+   "height": 381,
+   "bytes": 12263
+  },
+  "catalog": "IDL 2024"
+ },
+ "605/10": {
+  "page": 217,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W and",
+  "lumen": "600 lumen 2800K",
+  "dimming": "D",
+  "lines": [
+   "605/10",
+   "5 x G9",
+   "MAX 33W and",
+   "5 LED x 1W",
+   "600 lumen 2800K",
+   "D",
+   "606/10",
+   "Single fastening"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/605_10.png",
+   "width": 550,
+   "height": 502,
+   "bytes": 21082
+  },
+  "catalog": "IDL 2024"
+ },
+ "605/10PF": {
+  "page": 217,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x G9",
+  "max": "MAX 33W and",
+  "lumen": "600 lumen",
+  "dimming": "D",
+  "lines": [
+   "605/10PF",
+   "5 x G9",
+   "•",
+   "35",
+   "MAX 33W and",
+   "5 LED x 1W",
+   "•",
+   "•",
+   "600 lumen",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/605_10PF.png",
+   "width": 490,
+   "height": 289,
+   "bytes": 21811
+  },
+  "catalog": "IDL 2024"
+ },
+ "605/16": {
+  "page": 217,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W and",
+  "lumen": "960 lumen 2800K",
+  "dimming": "D",
+  "lines": [
+   "605/16",
+   "8 x G9",
+   "MAX 33W and",
+   "8 LED x 1W",
+   "960 lumen 2800K",
+   "D",
+   "606/16",
+   "Single fastening"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/605_16.png",
+   "width": 550,
+   "height": 504,
+   "bytes": 23617
+  },
+  "catalog": "IDL 2024"
+ },
+ "605/16PF": {
+  "page": 217,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9 35",
+  "max": "MAX 33W and",
+  "lumen": "960 lumen •",
+  "dimming": "D",
+  "lines": [
+   "605/16PF",
+   "•",
+   "8 x G9 35",
+   "MAX 33W and",
+   "•",
+   "8 LED x 1W",
+   "•",
+   "960 lumen •",
+   "2800K",
+   "95"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/605_16PF.png",
+   "width": 524,
+   "height": 276,
+   "bytes": 25773
+  },
+  "catalog": "IDL 2024"
+ },
+ "628/50": {
+  "page": 249,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x STRIP LED",
+  "max": "MAX 20W",
+  "lumen": "2660 lumen 3000K",
+  "dimming": "D",
+  "lines": [
+   "628/50",
+   "1 x STRIP LED",
+   "MAX 20W",
+   "2660 lumen 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/628_50.png",
+   "width": 550,
+   "height": 430,
+   "bytes": 10728
+  },
+  "catalog": "IDL 2024"
+ },
+ "628/70": {
+  "page": 249,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x STRIP LED",
+  "max": "MAX 29W",
+  "lumen": "3857 lumen 3000K",
+  "dimming": "D",
+  "lines": [
+   "628/70",
+   "1 x STRIP LED",
+   "MAX 29W",
+   "3857 lumen 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/628_70.png",
+   "width": 550,
+   "height": 416,
+   "bytes": 10699
+  },
+  "catalog": "IDL 2024"
+ },
+ "628/90": {
+  "page": 249,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x STRIP LED",
+  "max": "MAX 37W",
+  "lumen": "4921 lumen 3000K",
+  "dimming": "D",
+  "lines": [
+   "628/90",
+   "•",
+   "1 x STRIP LED",
+   "MAX 37W",
+   "4921 lumen 3000K",
+   "220",
+   "D",
+   "max",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/628_90.png",
+   "width": 550,
+   "height": 430,
+   "bytes": 14712
+  },
+  "catalog": "IDL 2024"
+ },
+ "628/A": {
+  "page": 249,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x Strip LED",
+  "max": "",
+  "lumen": "665 lumen",
+  "dimming": "D",
+  "lines": [
+   "628/A",
+   "1 x Strip LED",
+   "• 35,5",
+   "5 W",
+   "665 lumen",
+   "3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/628_A.png",
+   "width": 405,
+   "height": 263,
+   "bytes": 7141
+  },
+  "catalog": "IDL 2024"
+ },
+ "628/L": {
+  "page": 249,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x Strip LED 9 W",
+  "max": "",
+  "lumen": "1197 lumen - 3000K 45",
+  "dimming": "",
+  "lines": [
+   "628/L",
+   "•",
+   "1 x Strip LED 9 W",
+   "1197 lumen - 3000K 45",
+   "•",
+   "B 27",
+   "•",
+   "diamante"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/628_L.png",
+   "width": 397,
+   "height": 1225,
+   "bytes": 8401
+  },
+  "catalog": "IDL 2024"
+ },
+ "653/1AP": {
+  "page": 287,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED",
+  "max": "MAX 6W",
+  "lumen": "867 lumen -",
+  "dimming": "D",
+  "lines": [
+   "653/1AP",
+   "1 x LED",
+   "MAX 6W",
+   "867 lumen -",
+   "38",
+   "3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/653_1AP.png",
+   "width": 456,
+   "height": 253,
+   "bytes": 9108
+  },
+  "catalog": "IDL 2024"
+ },
+ "653/1LG": {
+  "page": 287,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED",
+  "max": "MAX 10W",
+  "lumen": "1320 lumen -",
+  "dimming": "",
+  "lines": [
+   "653/1LG",
+   "•",
+   "1 x LED",
+   "MAX 10W",
+   "1320 lumen -",
+   "68",
+   "3000 K",
+   "D •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/653_1LG.png",
+   "width": 448,
+   "height": 256,
+   "bytes": 8757
+  },
+  "catalog": "IDL 2024"
+ },
+ "653/1LP": {
+  "page": 287,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED",
+  "max": "MAX 6W",
+  "lumen": "867 lumen - 42",
+  "dimming": "D",
+  "lines": [
+   "653/1LP",
+   "•",
+   "1 x LED",
+   "MAX 6W",
+   "867 lumen - 42",
+   "3000 K",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/653_1LP.png",
+   "width": 542,
+   "height": 1358,
+   "bytes": 10777
+  },
+  "catalog": "IDL 2024"
+ },
+ "653/1SG": {
+  "page": 287,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x STRIP LED 140",
+  "max": "MAX 10W",
+  "lumen": "1320 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "653/1SG",
+   "1 x STRIP LED 140",
+   "MAX 10W",
+   "MAX",
+   "1320 lumen - 3000 K",
+   "63",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/653_1SG.png",
+   "width": 444,
+   "height": 319,
+   "bytes": 9802
+  },
+  "catalog": "IDL 2024"
+ },
+ "653/1SP": {
+  "page": 287,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x STRIP LED",
+  "max": "MAX 6W",
+  "lumen": "867 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "653/1SP",
+   "1 x STRIP LED",
+   "MAX 6W",
+   "867 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/653_1SP.png",
+   "width": 429,
+   "height": 299,
+   "bytes": 8943
+  },
+  "catalog": "IDL 2024"
+ },
+ "653/2+1S": {
+  "page": 287,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x STRIP LED",
+  "max": "MAX 26W",
+  "lumen": "3506 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "653/2+1S",
+   "3 x STRIP LED",
+   "MAX 26W",
+   "3506 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/653_2+1S.png",
+   "width": 507,
+   "height": 316,
+   "bytes": 11066
+  },
+  "catalog": "IDL 2024"
+ },
+ "653/6+6": {
+  "page": 287,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x STRIP LED 150",
+  "max": "MAX 96W",
+  "lumen": "13120 lumen - 3000 K",
+  "dimming": "",
+  "lines": [
+   "653/6+6 •",
+   "12 x STRIP LED 150",
+   "MAX 96W",
+   "•",
+   "13120 lumen - 3000 K",
+   "26",
+   "D •",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/653_6+6.png",
+   "width": 533,
+   "height": 247,
+   "bytes": 11601
+  },
+  "catalog": "IDL 2024"
+ },
+ "600/1LG": {
+  "page": 319,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "600/1LG",
+   "•",
+   "1 x E27",
+   "•",
+   "MAX 77W",
+   "64",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/600_1LG.png",
+   "width": 463,
+   "height": 321,
+   "bytes": 7004
+  },
+  "catalog": "IDL 2024"
+ },
+ "600/1LM": {
+  "page": 319,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "600/1LM",
+   "•",
+   "1 x E27",
+   "•",
+   "MAX 77W",
+   "49",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/600_1LM.png",
+   "width": 444,
+   "height": 273,
+   "bytes": 6465
+  },
+  "catalog": "IDL 2024"
+ },
+ "600/1LP": {
+  "page": 319,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E14",
+  "max": "MAX 30W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "600/1LP",
+   "1 x E14",
+   "MAX 30W",
+   "•",
+   "32",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/600_1LP.png",
+   "width": 545,
+   "height": 284,
+   "bytes": 6075
+  },
+  "catalog": "IDL 2024"
+ },
+ "601/1LG": {
+  "page": 319,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "601/1LG",
+   "•",
+   "1 x E27",
+   "•",
+   "MAX 77W",
+   "69",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/601_1LG.png",
+   "width": 455,
+   "height": 321,
+   "bytes": 11578
+  },
+  "catalog": "IDL 2024"
+ },
+ "601/1LM": {
+  "page": 319,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "601/1LM",
+   "•",
+   "1 x E27",
+   "•",
+   "MAX 77W",
+   "60",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/601_1LM.png",
+   "width": 452,
+   "height": 325,
+   "bytes": 10714
+  },
+  "catalog": "IDL 2024"
+ },
+ "600/7P": {
+  "page": 319,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "600/7P",
+   "•",
+   "1 x E27",
+   "•",
+   "MAX 77W",
+   "180",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/600_7P.png",
+   "width": 419,
+   "height": 355,
+   "bytes": 6945
+  },
+  "catalog": "IDL 2024"
+ },
+ "600/9P": {
+  "page": 319,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27 •",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "600/9P",
+   "•",
+   "1 x E27 •",
+   "MAX 77W",
+   "180",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/600_9P.png",
+   "width": 421,
+   "height": 355,
+   "bytes": 7348
+  },
+  "catalog": "IDL 2024"
+ },
+ "600/13P": {
+  "page": 319,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27 •",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "600/13P",
+   "•",
+   "1 x E27 •",
+   "MAX 77W",
+   "180",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/600_13P.png",
+   "width": 539,
+   "height": 969,
+   "bytes": 9478
+  },
+  "catalog": "IDL 2024"
+ },
+ "468/1PFLED": {
+  "page": 351,
+  "dup": 1,
+  "shared": [
+   "469/6PFG"
+  ],
+  "light": "6xLED 2,3W 1782 lumen",
+  "max": "",
+  "lumen": "6xLED 2,3W 1782 lumen",
+  "dimming": "",
+  "lines": [
+   "468/1PFLED",
+   "•",
+   "6xLED 2,3W 1782 lumen",
+   "+ 1 LED 2,2W 3000K",
+   "55"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/468_1PFLED.png",
+   "width": 494,
+   "height": 351,
+   "bytes": 19992
+  },
+  "catalog": "IDL 2024"
+ },
+ "469/1L": {
+  "page": 351,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "469/1L",
+   "1 x G9",
+   "MAX 33W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/469_1L.png",
+   "width": 447,
+   "height": 220,
+   "bytes": 8746
+  },
+  "catalog": "IDL 2024"
+ },
+ "469/3A": {
+  "page": 351,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "469/3A",
+   "•",
+   "3 x G9",
+   "MAX 33W",
+   "49",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/469_3A.png",
+   "width": 482,
+   "height": 202,
+   "bytes": 10705
+  },
+  "catalog": "IDL 2024"
+ },
+ "469/3AG": {
+  "page": 351,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "469/3AG",
+   "•",
+   "3 x G9",
+   "MAX 33W",
+   "90",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/469_3AG.png",
+   "width": 475,
+   "height": 267,
+   "bytes": 12181
+  },
+  "catalog": "IDL 2024"
+ },
+ "469/6PF": {
+  "page": 351,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "469/6PF",
+   "•",
+   "6 x G9",
+   "49",
+   "MAX 33W",
+   "•",
+   "•",
+   "D",
+   "30",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/469_6PF.png",
+   "width": 466,
+   "height": 256,
+   "bytes": 18100
+  },
+  "catalog": "IDL 2024"
+ },
+ "469/6PFG": {
+  "page": 351,
+  "dup": 1,
+  "shared": [
+   "468/1PFLED"
+  ],
+  "light": "6 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "469/6PFG •",
+   "6 x G9",
+   "MAX 33W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/469_6PFG.png",
+   "width": 494,
+   "height": 351,
+   "bytes": 19992
+  },
+  "catalog": "IDL 2024"
+ },
+ "509/3L": {
+  "page": 351,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x G9",
+  "max": "MAX 33W •",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "509/3L",
+   "3 x G9",
+   "MAX 33W •",
+   "35",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/509_3L.png",
+   "width": 447,
+   "height": 222,
+   "bytes": 10472
+  },
+  "catalog": "IDL 2024"
+ },
+ "509/4A-G": {
+  "page": 351,
+  "dup": 1,
+  "shared": [],
+  "light": "",
+  "max": "",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "509/4A-G",
+   "glass"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/509_4A-G.png",
+   "width": 458,
+   "height": 302,
+   "bytes": 11809
+  },
+  "catalog": "IDL 2024"
+ },
+ "509/4A-M": {
+  "page": 351,
+  "dup": 1,
+  "shared": [
+   "509/4A-G"
+  ],
+  "light": "4 LED max 2,3W",
+  "max": "",
+  "lumen": "1440 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "32",
+   "509/4A-M",
+   "metal",
+   "4 LED max 2,3W",
+   "1440 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/509_4A-M.png",
+   "width": 458,
+   "height": 302,
+   "bytes": 11809
+  },
+  "catalog": "IDL 2024"
+ },
+ "509/4L": {
+  "page": 351,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "509/4L",
+   "•",
+   "4 x G9",
+   "MAX 33W",
+   "50",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/509_4L.png",
+   "width": 460,
+   "height": 216,
+   "bytes": 13260
+  },
+  "catalog": "IDL 2024"
+ },
+ "509/16A-G": {
+  "page": 351,
+  "dup": 1,
+  "shared": [],
+  "light": "",
+  "max": "",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "509/16A-G",
+   "glass"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/509_16A-G.png",
+   "width": 504,
+   "height": 352,
+   "bytes": 19527
+  },
+  "catalog": "IDL 2024"
+ },
+ "509/16A-M": {
+  "page": 351,
+  "dup": 1,
+  "shared": [
+   "509/16A-G"
+  ],
+  "light": "16 LED max 2,3W",
+  "max": "",
+  "lumen": "3840 lumen - 3000 K •",
+  "dimming": "D",
+  "lines": [
+   "509/16A-M",
+   "metal",
+   "16 LED max 2,3W",
+   "3840 lumen - 3000 K •",
+   "32",
+   "•",
+   "Punto di connessione •",
+   "solo in A e B",
+   "Electrical connection in or",
+   "A B"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/509_16A-M.png",
+   "width": 504,
+   "height": 352,
+   "bytes": 19527
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/6": {
+  "page": 82,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x LED 1,42W",
+  "max": "",
+  "lumen": "1200 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "668/6",
+   "6 x LED 1,42W",
+   "1200 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_6.png",
+   "width": 465,
+   "height": 410,
+   "bytes": 6592
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/12": {
+  "page": 82,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x LED 1,42W",
+  "max": "",
+  "lumen": "2400 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "668/12",
+   "12 x LED 1,42W",
+   "2400 lumen - 3000K",
+   "B - C",
+   "•",
+   "3",
+   "6",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_12.png",
+   "width": 454,
+   "height": 415,
+   "bytes": 8076
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/16": {
+  "page": 82,
+  "dup": 1,
+  "shared": [],
+  "light": "16 x LED 1,42W",
+  "max": "",
+  "lumen": "3200 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "668/16",
+   "16 x LED 1,42W",
+   "3200 lumen - 3000K",
+   "B - C",
+   "•",
+   "3",
+   "6",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_16.png",
+   "width": 476,
+   "height": 401,
+   "bytes": 8192
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/16PF": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "16 x LED 1,42W",
+  "max": "",
+  "lumen": "3200 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "668/16PF •",
+   "16 x LED 1,42W",
+   "3200 lumen - 3000K",
+   "2",
+   "4",
+   "B - C",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_16PF.png",
+   "width": 509,
+   "height": 281,
+   "bytes": 8059
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/20": {
+  "page": 82,
+  "dup": 1,
+  "shared": [],
+  "light": "20 x LED 1,42W",
+  "max": "",
+  "lumen": "4000 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "668/20",
+   "20 x LED 1,42W",
+   "4000 lumen - 3000K",
+   "•",
+   "B - C",
+   "3",
+   "6",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_20.png",
+   "width": 517,
+   "height": 360,
+   "bytes": 9069
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/20+16": {
+  "page": 82,
+  "dup": 1,
+  "shared": [],
+  "light": "36 x LED 1,42W",
+  "max": "",
+  "lumen": "7200 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "668/20+16 •",
+   "36 x LED 1,42W",
+   "7200 lumen - 3000K",
+   "B - C",
+   "7",
+   "4",
+   "1",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_20+16.png",
+   "width": 502,
+   "height": 410,
+   "bytes": 9592
+  },
+  "catalog": "IDL 2024"
+ },
+ "668/24": {
+  "page": 82,
+  "dup": 1,
+  "shared": [],
+  "light": "24 x LED 1,42W",
+  "max": "",
+  "lumen": "4800 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "668/24",
+   "24 x LED 1,42W",
+   "4800 lumen - 3000K",
+   "•",
+   "B - C",
+   "3",
+   "6",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/668_24.png",
+   "width": 502,
+   "height": 363,
+   "bytes": 8397
+  },
+  "catalog": "IDL 2024"
+ },
+ "669/20": {
+  "page": 82,
+  "dup": 1,
+  "shared": [],
+  "light": "20 x LED 1,42W",
+  "max": "",
+  "lumen": "4000 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "669/20",
+   "20 x LED 1,42W",
+   "4000 lumen - 3000K",
+   "B - C",
+   "•",
+   "3",
+   "6",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/669_20.png",
+   "width": 543,
+   "height": 410,
+   "bytes": 10725
+  },
+  "catalog": "IDL 2024"
+ },
+ "670/16PF": {
+  "page": 83,
+  "dup": 1,
+  "shared": [],
+  "light": "16 x LED 1,42W",
+  "max": "",
+  "lumen": "3200 lumen - 3000K 8",
+  "dimming": "B - C",
+  "lines": [
+   "670/16PF",
+   "•",
+   "16 x LED 1,42W",
+   "3200 lumen - 3000K 8",
+   "2",
+   "•",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/670_16PF.png",
+   "width": 465,
+   "height": 247,
+   "bytes": 6947
+  },
+  "catalog": "IDL 2024"
+ },
+ "670/20": {
+  "page": 82,
+  "dup": 1,
+  "shared": [],
+  "light": "20 x LED 1,42W",
+  "max": "",
+  "lumen": "lume 4000 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "670/20",
+   "20 x LED 1,42W",
+   "lume 4000 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/670_20.png",
+   "width": 459,
+   "height": 579,
+   "bytes": 9720
+  },
+  "catalog": "IDL 2024"
+ },
+ "671/3S": {
+  "page": 82,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 1,42W",
+  "max": "",
+  "lumen": "600 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "671/3S •",
+   "3 x LED 1,42W",
+   "600 lumen - 3000K",
+   "D",
+   "1",
+   "1",
+   "1",
+   "•",
+   "82 | eklè"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/671_3S.png",
+   "width": 415,
+   "height": 846,
+   "bytes": 7485
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/1A": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x LED 1W",
+  "max": "",
+  "lumen": "492 lumen -",
+  "dimming": "D",
+  "lines": [
+   "655/1A",
+   "4 x LED 1W",
+   "492 lumen -",
+   "•",
+   "3000 K",
+   "47",
+   "D",
+   "•",
+   "9",
+   "• • •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_1A.png",
+   "width": 358,
+   "height": 292,
+   "bytes": 7892
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/1SG": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x LED 1W",
+  "max": "max",
+  "lumen": "615 lumen -",
+  "dimming": "D",
+  "lines": [
+   "655/1SG",
+   "•",
+   "max",
+   "200",
+   "5 x LED 1W",
+   "615 lumen -",
+   "• •",
+   "3000 K",
+   "80",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_1SG.png",
+   "width": 331,
+   "height": 328,
+   "bytes": 7484
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/1SM": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x LED 1W",
+  "max": "",
+  "lumen": "492 lumen -",
+  "dimming": "D",
+  "lines": [
+   "655/1SM",
+   "4 x LED 1W",
+   "•",
+   "492 lumen -",
+   "3000 K",
+   "59",
+   "D",
+   "•",
+   "•",
+   "15"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_1SM.png",
+   "width": 389,
+   "height": 269,
+   "bytes": 7469
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/1SP": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 1W",
+  "max": "",
+  "lumen": "369 lumen -",
+  "dimming": "D",
+  "lines": [
+   "655/1SP",
+   "3 x LED 1W",
+   "369 lumen -",
+   "•",
+   "3000 K",
+   "47",
+   "D",
+   "•",
+   "• •",
+   "15"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_1SP.png",
+   "width": 364,
+   "height": 249,
+   "bytes": 6789
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/2A": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x LED 1W",
+  "max": "",
+  "lumen": "984 lumen -",
+  "dimming": "D",
+  "lines": [
+   "655/2A",
+   "8 x LED 1W",
+   "•",
+   "984 lumen -",
+   "3000 K",
+   "55",
+   "D",
+   "•",
+   "20",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_2A.png",
+   "width": 376,
+   "height": 290,
+   "bytes": 9763
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/3P": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "15 x LED 1W",
+  "max": "",
+  "lumen": "1845 lumen -",
+  "dimming": "B - C",
+  "lines": [
+   "655/3P",
+   "•",
+   "15 x LED 1W",
+   "1845 lumen -",
+   "3000 K",
+   "180",
+   "B - C",
+   "•",
+   "31",
+   "• •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_3P.png",
+   "width": 405,
+   "height": 363,
+   "bytes": 7781
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/3+3": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "15 x LED 1W",
+  "max": "",
+  "lumen": "1845 lumen -",
+  "dimming": "B - C",
+  "lines": [
+   "655/3+3",
+   "15 x LED 1W",
+   "1845 lumen -",
+   "3000 K",
+   "B - C",
+   "52",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_3+3.png",
+   "width": 543,
+   "height": 314,
+   "bytes": 11082
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/4": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "11 x LED 1W",
+  "max": "",
+  "lumen": "1353 lumen -",
+  "dimming": "B - C",
+  "lines": [
+   "655/4",
+   "11 x LED 1W",
+   "1353 lumen -",
+   "•",
+   "3000 K",
+   "59",
+   "B - C",
+   "•",
+   "36 36",
+   "• • •"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_4.png",
+   "width": 370,
+   "height": 242,
+   "bytes": 9517
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/7": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "17 x LED 1W",
+  "max": "",
+  "lumen": "2091 lumen -",
+  "dimming": "B - C",
+  "lines": [
+   "655/7",
+   "17 x LED 1W",
+   "2091 lumen -",
+   "•",
+   "3000 K",
+   "45",
+   "•",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_7.png",
+   "width": 543,
+   "height": 231,
+   "bytes": 11495
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/9SL": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "27 x LED 1W",
+  "max": "",
+  "lumen": "3321 lumen -",
+  "dimming": "B - C",
+  "lines": [
+   "655/9SL",
+   "27 x LED 1W",
+   "3321 lumen -",
+   "3000 K •",
+   "59",
+   "•",
+   "•",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_9SL.png",
+   "width": 541,
+   "height": 311,
+   "bytes": 12445
+  },
+  "catalog": "IDL 2024"
+ },
+ "655/LP": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 1W",
+  "max": "",
+  "lumen": "369 lumen -",
+  "dimming": "D",
+  "lines": [
+   "655/LP",
+   "3 x LED 1W",
+   "369 lumen -",
+   "•",
+   "3000 K",
+   "38",
+   "D",
+   "•",
+   "13",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/655_LP.png",
+   "width": 402,
+   "height": 296,
+   "bytes": 6169
+  },
+  "catalog": "IDL 2024"
+ },
+ "658/1SG": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x LED 1W",
+  "max": "",
+  "lumen": "615 lumen -",
+  "dimming": "D",
+  "lines": [
+   "658/1SG",
+   "5 x LED 1W",
+   "615 lumen -",
+   "•",
+   "3000 K",
+   "80",
+   "D",
+   "•",
+   "•",
+   "15"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/658_1SG.png",
+   "width": 405,
+   "height": 341,
+   "bytes": 7656
+  },
+  "catalog": "IDL 2024"
+ },
+ "658/1SM": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x LED 1W",
+  "max": "",
+  "lumen": "492 lumen - •",
+  "dimming": "D",
+  "lines": [
+   "658/1SM",
+   "4 x LED 1W",
+   "492 lumen - •",
+   "3000 K",
+   "59",
+   "D",
+   "•",
+   "• •",
+   "15"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/658_1SM.png",
+   "width": 405,
+   "height": 281,
+   "bytes": 7369
+  },
+  "catalog": "IDL 2024"
+ },
+ "658/1SP": {
+  "page": 111,
+  "dup": 1,
+  "shared": [],
+  "light": "3 x LED 1W 200",
+  "max": "",
+  "lumen": "369 lumen -",
+  "dimming": "D",
+  "lines": [
+   "658/1SP",
+   "3 x LED 1W 200",
+   "369 lumen -",
+   "•",
+   "3000 K",
+   "47",
+   "D",
+   "•",
+   "• •",
+   "15"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/658_1SP.png",
+   "width": 357,
+   "height": 253,
+   "bytes": 6684
+  },
+  "catalog": "IDL 2024"
+ },
+ "596/2+1A": {
+  "page": 151,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x G9",
+  "max": "MAX 33W",
+  "lumen": "160 lumen 50",
+  "dimming": "D",
+  "lines": [
+   "596/2+1A",
+   "•",
+   "2 x G9",
+   "MAX 33W",
+   "+ 1 LED x 2W",
+   "160 lumen 50",
+   "2800 K",
+   "•",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/596_2+1A.png",
+   "width": 541,
+   "height": 490,
+   "bytes": 28379
+  },
+  "catalog": "IDL 2024"
+ },
+ "596/4+1": {
+  "page": 151,
+  "dup": 1,
+  "shared": [],
+  "light": "4 x G9",
+  "max": "MAX 33W",
+  "lumen": "160 lumen",
+  "dimming": "D",
+  "lines": [
+   "596/4+1",
+   "4 x G9",
+   "MAX 33W",
+   "+ 1 LED x 2W",
+   "160 lumen",
+   "2800 K •",
+   "D",
+   "55",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/596_4+1.png",
+   "width": 523,
+   "height": 429,
+   "bytes": 22845
+  },
+  "catalog": "IDL 2024"
+ },
+ "596/8+1": {
+  "page": 151,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "160 lumen",
+  "dimming": "D",
+  "lines": [
+   "596/8+1",
+   "•",
+   "8 x G9",
+   "MAX 33W",
+   "+ 1 LED x 2W",
+   "100",
+   "160 lumen",
+   "2800 K",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/596_8+1.png",
+   "width": 502,
+   "height": 497,
+   "bytes": 22147
+  },
+  "catalog": "IDL 2024"
+ },
+ "596/8+1PF": {
+  "page": 151,
+  "dup": 1,
+  "shared": [],
+  "light": "8 x G9",
+  "max": "MAX 33W",
+  "lumen": "160 lumen",
+  "dimming": "D",
+  "lines": [
+   "596/8+1PF •",
+   "8 x G9",
+   "MAX 33W",
+   "+ 1 LED x 2W",
+   "65",
+   "160 lumen",
+   "2800 K",
+   "•",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/596_8+1PF.png",
+   "width": 510,
+   "height": 283,
+   "bytes": 18311
+  },
+  "catalog": "IDL 2024"
+ },
+ "596/28+3": {
+  "page": 151,
+  "dup": 1,
+  "shared": [],
+  "light": "28 x G9",
+  "max": "MAX 33W",
+  "lumen": "480 lumen",
+  "dimming": "D",
+  "lines": [
+   "596/28+3",
+   "•",
+   "28 x G9",
+   "MAX 33W",
+   "+ 3 LED x 2W",
+   "480 lumen",
+   "2800 K",
+   "D",
+   "320",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/596_28+3.png",
+   "width": 495,
+   "height": 680,
+   "bytes": 41136
+  },
+  "catalog": "IDL 2024"
+ },
+ "596/34+3": {
+  "page": 151,
+  "dup": 1,
+  "shared": [],
+  "light": "34 x G9",
+  "max": "MAX 33W",
+  "lumen": "480 lumen",
+  "dimming": "D",
+  "lines": [
+   "596/34+3",
+   "•",
+   "34 x G9",
+   "MAX 33W",
+   "+ 3 LED x 2W",
+   "480 lumen",
+   "2800 K",
+   "D",
+   "400",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/596_34+3.png",
+   "width": 493,
+   "height": 681,
+   "bytes": 29221
+  },
+  "catalog": "IDL 2024"
+ },
+ "596/41+6": {
+  "page": 151,
+  "dup": 1,
+  "shared": [],
+  "light": "41 x G9",
+  "max": "MAX 33W",
+  "lumen": "960 lumen",
+  "dimming": "D",
+  "lines": [
+   "596/41+6",
+   "•",
+   "41 x G9",
+   "MAX 33W",
+   "+ 6 LED x 2W",
+   "960 lumen",
+   "2800 K",
+   "D",
+   "400",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/596_41+6.png",
+   "width": 543,
+   "height": 1133,
+   "bytes": 60055
+  },
+  "catalog": "IDL 2024"
+ },
+ "596/150": {
+  "page": 151,
+  "dup": 1,
+  "shared": [],
+  "light": "14 x G9",
+  "max": "MAX 33W",
+  "lumen": "970 lumen",
+  "dimming": "",
+  "lines": [
+   "596/150",
+   "14 x G9",
+   "MAX 33W",
+   "+ 5 LED x 2W",
+   "970 lumen",
+   "2800 K",
+   "•",
+   "D 60",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/596_150.png",
+   "width": 550,
+   "height": 403,
+   "bytes": 37946
+  },
+  "catalog": "IDL 2024"
+ },
+ "660/1A": {
+  "page": 191,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 3,6W",
+  "max": "",
+  "lumen": "385 lumen -",
+  "dimming": "D",
+  "lines": [
+   "660/1A",
+   "1 x LED 3,6W",
+   "385 lumen -",
+   "D",
+   "17",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/660_1A.png",
+   "width": 466,
+   "height": 230,
+   "bytes": 8734
+  },
+  "catalog": "IDL 2024"
+ },
+ "660/2A": {
+  "page": 191,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x LED 3,6W",
+  "max": "",
+  "lumen": "770 lumen -",
+  "dimming": "D",
+  "lines": [
+   "660/2A",
+   "2 x LED 3,6W",
+   "770 lumen -",
+   "D",
+   "• 23"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/660_2A.png",
+   "width": 471,
+   "height": 271,
+   "bytes": 9693
+  },
+  "catalog": "IDL 2024"
+ },
+ "660/10": {
+  "page": 191,
+  "dup": 1,
+  "shared": [],
+  "light": "10 x LED 3,6W",
+  "max": "",
+  "lumen": "3850 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "660/10",
+   "10 x LED 3,6W",
+   "3850 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/660_10.png",
+   "width": 550,
+   "height": 384,
+   "bytes": 10072
+  },
+  "catalog": "IDL 2024"
+ },
+ "661/1A": {
+  "page": 191,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x LED 3,6W",
+  "max": "",
+  "lumen": "385 lumen -",
+  "dimming": "D",
+  "lines": [
+   "661/1A",
+   "1 x LED 3,6W",
+   "385 lumen -",
+   "D",
+   "17",
+   "•",
+   "661"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/661_1A.png",
+   "width": 542,
+   "height": 1314,
+   "bytes": 26011
+  },
+  "catalog": "IDL 2024"
+ },
+ "661/2A": {
+  "page": 191,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x LED 3,6W",
+  "max": "",
+  "lumen": "770 lumen -",
+  "dimming": "D",
+  "lines": [
+   "661/2A",
+   "2 x LED 3,6W",
+   "770 lumen -",
+   "D",
+   "23",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/661_2A.png",
+   "width": 477,
+   "height": 271,
+   "bytes": 9831
+  },
+  "catalog": "IDL 2024"
+ },
+ "661/2L": {
+  "page": 191,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x LED 3,6W",
+  "max": "",
+  "lumen": "770 lumen -",
+  "dimming": "B",
+  "lines": [
+   "661/2L",
+   "•",
+   "2 x LED 3,6W",
+   "770 lumen -",
+   "63",
+   "B",
+   "•",
+   "23",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/661_2L.png",
+   "width": 437,
+   "height": 274,
+   "bytes": 8923
+  },
+  "catalog": "IDL 2024"
+ },
+ "632/50": {
+  "page": 223,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip led 36W",
+  "max": "",
+  "lumen": "lumen",
+  "dimming": "D",
+  "lines": [
+   "632/50",
+   "Strip led 36W",
+   "lumen",
+   "2400 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/632_50.png",
+   "width": 550,
+   "height": 363,
+   "bytes": 7611
+  },
+  "catalog": "IDL 2024"
+ },
+ "632/76": {
+  "page": 223,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip led 55W",
+  "max": "",
+  "lumen": "lumen",
+  "dimming": "D",
+  "lines": [
+   "632/76",
+   "Strip led 55W",
+   "lumen",
+   "3800 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/632_76.png",
+   "width": 550,
+   "height": 357,
+   "bytes": 7579
+  },
+  "catalog": "IDL 2024"
+ },
+ "632/110": {
+  "page": 223,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip led 79W",
+  "max": "max",
+  "lumen": "lumen 180",
+  "dimming": "",
+  "lines": [
+   "632/110",
+   "•",
+   "Strip led 79W",
+   "lumen 180",
+   "5500 3000K",
+   "max",
+   "D •",
+   "28",
+   "•",
+   "vetro senza incisione"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/632_110.png",
+   "width": 550,
+   "height": 1311,
+   "bytes": 23516
+  },
+  "catalog": "IDL 2024"
+ },
+ "664/5": {
+  "page": 255,
+  "dup": 1,
+  "shared": [],
+  "light": "5 x LED 3,6W",
+  "max": "",
+  "lumen": "1925 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "664/5",
+   "5 x LED 3,6W",
+   "1925 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/664_5.png",
+   "width": 550,
+   "height": 429,
+   "bytes": 14063
+  },
+  "catalog": "IDL 2024"
+ },
+ "664/9": {
+  "page": 255,
+  "dup": 1,
+  "shared": [],
+  "light": "9 x LED 3,6W",
+  "max": "",
+  "lumen": "3465 lumen - 3000 K",
+  "dimming": "D",
+  "lines": [
+   "664/9",
+   "9 x LED 3,6W",
+   "3465 lumen - 3000 K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/664_9.png",
+   "width": 550,
+   "height": 439,
+   "bytes": 20934
+  },
+  "catalog": "IDL 2024"
+ },
+ "475/1AG-PFG": {
+  "page": 295,
+  "dup": 1,
+  "shared": [],
+  "light": "4XLED 5W",
+  "max": "",
+  "lumen": "2300 lumen 2700K",
+  "dimming": "D",
+  "lines": [
+   "475/1AG-PFG",
+   "4XLED 5W",
+   "2300 lumen 2700K",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/475_1AG-PFG.png",
+   "width": 470,
+   "height": 206,
+   "bytes": 7567
+  },
+  "catalog": "IDL 2024"
+ },
+ "475/1AP-PFP": {
+  "page": 295,
+  "dup": 1,
+  "shared": [],
+  "light": "2xLED 5W",
+  "max": "",
+  "lumen": "1150 lumen 2700K",
+  "dimming": "D",
+  "lines": [
+   "475/1AP-PFP",
+   "2xLED 5W",
+   "1150 lumen 2700K",
+   "•",
+   "D",
+   "crystal"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/475_1AP-PFP.png",
+   "width": 542,
+   "height": 1315,
+   "bytes": 9404
+  },
+  "catalog": "IDL 2024"
+ },
+ "475/1L": {
+  "page": 295,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "475/1L",
+   "•",
+   "1 x E27",
+   "MAX 77W",
+   "63",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/475_1L.png",
+   "width": 542,
+   "height": 215,
+   "bytes": 6202
+  },
+  "catalog": "IDL 2024"
+ },
+ "475/1SG": {
+  "page": 295,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "",
+  "lines": [
+   "475/1SG",
+   "1 x E27",
+   "MAX 77W",
+   "•",
+   "D 79",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/475_1SG.png",
+   "width": 388,
+   "height": 307,
+   "bytes": 7041
+  },
+  "catalog": "IDL 2024"
+ },
+ "475/1SP": {
+  "page": 295,
+  "dup": 1,
+  "shared": [],
+  "light": "1 x E27",
+  "max": "MAX 77W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "475/1SP",
+   "1 x E27",
+   "MAX 77W",
+   "•",
+   "58",
+   "D",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/475_1SP.png",
+   "width": 386,
+   "height": 287,
+   "bytes": 6927
+  },
+  "catalog": "IDL 2024"
+ },
+ "475/12": {
+  "page": 295,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "475/12",
+   "12 x G9",
+   "MAX 33W",
+   "•",
+   "D",
+   "90",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/475_12.png",
+   "width": 412,
+   "height": 385,
+   "bytes": 12230
+  },
+  "catalog": "IDL 2024"
+ },
+ "475/12PF": {
+  "page": 295,
+  "dup": 1,
+  "shared": [],
+  "light": "12 x G9",
+  "max": "MAX 33W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "475/12PF •",
+   "12 x G9",
+   "MAX 33W",
+   "51",
+   "•",
+   "•",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/475_12PF.png",
+   "width": 435,
+   "height": 210,
+   "bytes": 8742
+  },
+  "catalog": "IDL 2024"
+ },
+ "530/2A": {
+  "page": 323,
+  "dup": 1,
+  "shared": [],
+  "light": "2 x E14",
+  "max": "MAX 30W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "530/2A",
+   "2 x E14",
+   "MAX 30W",
+   "29",
+   "• •",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/530_2A.png",
+   "width": 498,
+   "height": 199,
+   "bytes": 7944
+  },
+  "catalog": "IDL 2024"
+ },
+ "530/6": {
+  "page": 323,
+  "dup": 1,
+  "shared": [],
+  "light": "6 x E14",
+  "max": "MAX 30W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "530/6",
+   "6 x E14",
+   "MAX 30W",
+   "•",
+   "50",
+   "D",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/530_6.png",
+   "width": 539,
+   "height": 1749,
+   "bytes": 13502
+  },
+  "catalog": "IDL 2024"
+ },
+ "530/6+3": {
+  "page": 323,
+  "dup": 1,
+  "shared": [],
+  "light": "9 x E14",
+  "max": "MAX 30W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "530/6+3",
+   "9 x E14",
+   "MAX 30W",
+   "•",
+   "D",
+   "53",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/530_6+3.png",
+   "width": 492,
+   "height": 327,
+   "bytes": 13348
+  },
+  "catalog": "IDL 2024"
+ },
+ "530/10+5": {
+  "page": 323,
+  "dup": 1,
+  "shared": [],
+  "light": "15 x E14",
+  "max": "MAX 30W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "530/10+5",
+   "15 x E14",
+   "MAX 30W",
+   "•",
+   "D",
+   "70",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/530_10+5.png",
+   "width": 492,
+   "height": 329,
+   "bytes": 14080
+  },
+  "catalog": "IDL 2024"
+ },
+ "478/35/E": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "482/35"
+  ],
+  "light": "1 x E27",
+  "max": "MAX 30W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "478/35/E",
+   "•",
+   "1 x E27",
+   "•",
+   "MAX 30W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/478_35_E.png",
+   "width": 413,
+   "height": 355,
+   "bytes": 10980
+  },
+  "catalog": "IDL 2024"
+ },
+ "478/35PF/E": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "482/35PF"
+  ],
+  "light": "1 x E27",
+  "max": "MAX 30W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "478/35PF/E",
+   "1 x E27",
+   "MAX 30W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/478_35PF_E.png",
+   "width": 410,
+   "height": 361,
+   "bytes": 10278
+  },
+  "catalog": "IDL 2024"
+ },
+ "478/50/E": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "482/50"
+  ],
+  "light": "2 x E27",
+  "max": "MAX 30W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "478/50/E",
+   "•",
+   "2 x E27",
+   "•",
+   "MAX 30W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/478_50_E.png",
+   "width": 427,
+   "height": 359,
+   "bytes": 11527
+  },
+  "catalog": "IDL 2024"
+ },
+ "478/50PF/E": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "482/50PF"
+  ],
+  "light": "2 x E27",
+  "max": "MAX 30W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "478/50PF/E",
+   "2 x E27",
+   "MAX 30W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/478_50PF_E.png",
+   "width": 539,
+   "height": 368,
+   "bytes": 11056
+  },
+  "catalog": "IDL 2024"
+ },
+ "478/72/E": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "482/72"
+  ],
+  "light": "3 x E27",
+  "max": "MAX 46W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "478/72/E",
+   "•",
+   "3 x E27",
+   "•",
+   "MAX 46W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/478_72_E.png",
+   "width": 443,
+   "height": 359,
+   "bytes": 11361
+  },
+  "catalog": "IDL 2024"
+ },
+ "478/72PF/E": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "482/72PF"
+  ],
+  "light": "3 x E27",
+  "max": "MAX 46W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "478/72PF/E",
+   "3 x E27",
+   "MAX 46W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/478_72PF_E.png",
+   "width": 540,
+   "height": 1325,
+   "bytes": 13145
+  },
+  "catalog": "IDL 2024"
+ },
+ "478/90/E": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "482/90"
+  ],
+  "light": "4 x E27 •",
+  "max": "MAX 46W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "478/90/E",
+   "4 x E27 •",
+   "•",
+   "MAX 46W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/478_90_E.png",
+   "width": 453,
+   "height": 359,
+   "bytes": 11753
+  },
+  "catalog": "IDL 2024"
+ },
+ "478/90PF/E": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "482/90PF"
+  ],
+  "light": "4 x E27",
+  "max": "MAX 46W",
+  "lumen": "",
+  "dimming": "D",
+  "lines": [
+   "478/90PF/E",
+   "4 x E27",
+   "MAX 46W",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/478_90PF_E.png",
+   "width": 451,
+   "height": 357,
+   "bytes": 11229
+  },
+  "catalog": "IDL 2024"
+ },
+ "482/35": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "478/35/E"
+  ],
+  "light": "4 x LED 2,3W",
+  "max": "",
+  "lumen": "1188 lumen - 27",
+  "dimming": "",
+  "lines": [
+   "482/35",
+   "4 x LED 2,3W",
+   "1188 lumen - 27",
+   "•",
+   "31"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/482_35.png",
+   "width": 414,
+   "height": 355,
+   "bytes": 10985
+  },
+  "catalog": "IDL 2024"
+ },
+ "482/35PF": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "478/35PF/E"
+  ],
+  "light": "4 x LED 2,3W",
+  "max": "",
+  "lumen": "1188 lumen - 2700K •",
+  "dimming": "",
+  "lines": [
+   "482/35PF",
+   "•",
+   "18",
+   "4 x LED 2,3W",
+   "1188 lumen - 2700K •",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/482_35PF.png",
+   "width": 408,
+   "height": 361,
+   "bytes": 10273
+  },
+  "catalog": "IDL 2024"
+ },
+ "482/50": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "478/50/E"
+  ],
+  "light": "8 x LED 2,3W",
+  "max": "",
+  "lumen": "2376 lumen - 2700K",
+  "dimming": "",
+  "lines": [
+   "482/50",
+   "8 x LED 2,3W",
+   "2376 lumen - 2700K",
+   "•",
+   "38"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/482_50.png",
+   "width": 427,
+   "height": 359,
+   "bytes": 11527
+  },
+  "catalog": "IDL 2024"
+ },
+ "482/50PF": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "478/50PF/E"
+  ],
+  "light": "8 x LED 2,3W",
+  "max": "",
+  "lumen": "2376 lumen - 2700K",
+  "dimming": "",
+  "lines": [
+   "482/50PF",
+   "•",
+   "8 x LED 2,3W",
+   "26",
+   "2376 lumen - 2700K",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/482_50PF.png",
+   "width": 541,
+   "height": 368,
+   "bytes": 11067
+  },
+  "catalog": "IDL 2024"
+ },
+ "482/72": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "478/72/E"
+  ],
+  "light": "10 x LED 2,3W",
+  "max": "",
+  "lumen": "2970 lumen - 2700K",
+  "dimming": "",
+  "lines": [
+   "482/72",
+   "10 x LED 2,3W",
+   "2970 lumen - 2700K",
+   "•",
+   "49"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/482_72.png",
+   "width": 442,
+   "height": 359,
+   "bytes": 11362
+  },
+  "catalog": "IDL 2024"
+ },
+ "482/72PF": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "478/72PF/E"
+  ],
+  "light": "10 x LED 2,3W",
+  "max": "",
+  "lumen": "2970 lumen - 2700K",
+  "dimming": "",
+  "lines": [
+   "482/72PF",
+   "•",
+   "10 x LED 2,3W",
+   "37",
+   "2970 lumen - 2700K",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/482_72PF.png",
+   "width": 541,
+   "height": 1325,
+   "bytes": 13141
+  },
+  "catalog": "IDL 2024"
+ },
+ "482/90": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "478/90/E"
+  ],
+  "light": "12 x LED 2,3W",
+  "max": "",
+  "lumen": "3564 lumen - 2700K",
+  "dimming": "",
+  "lines": [
+   "482/90",
+   "12 x LED 2,3W",
+   "3564 lumen - 2700K",
+   "•",
+   "67"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/482_90.png",
+   "width": 452,
+   "height": 359,
+   "bytes": 11751
+  },
+  "catalog": "IDL 2024"
+ },
+ "482/90PF": {
+  "page": 359,
+  "dup": 1,
+  "shared": [
+   "478/90PF/E"
+  ],
+  "light": "12 x LED 2,3W",
+  "max": "",
+  "lumen": "3564 lumen - 2700K",
+  "dimming": "",
+  "lines": [
+   "482/90PF",
+   "•",
+   "12 x LED 2,3W",
+   "46",
+   "3564 lumen - 2700K",
+   "•",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/482_90PF.png",
+   "width": 450,
+   "height": 357,
+   "bytes": 11226
+  },
+  "catalog": "IDL 2024"
+ },
+ "691/6+6": {
+  "page": 10,
+  "dup": 1,
+  "shared": [],
+  "light": "12 LED 2 W",
+  "max": "",
+  "lumen": "3600 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "691/6+6",
+   "12 LED 2 W",
+   "3600 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/691_6+6.png",
+   "width": 550,
+   "height": 265,
+   "bytes": 13972
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "691/6": {
+  "page": 10,
+  "dup": 1,
+  "shared": [],
+  "light": "6 LED 2 W",
+  "max": "",
+  "lumen": "1800 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "691/6",
+   "6 LED 2 W",
+   "1800 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/691_6.png",
+   "width": 550,
+   "height": 258,
+   "bytes": 11065
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "691/1A": {
+  "page": 10,
+  "dup": 1,
+  "shared": [],
+  "light": "1 LED 2 W",
+  "max": "",
+  "lumen": "300 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "691/1A",
+   "1 LED 2 W",
+   "300 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/691_1A.png",
+   "width": 521,
+   "height": 197,
+   "bytes": 6543
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "691/3A": {
+  "page": 10,
+  "dup": 1,
+  "shared": [],
+  "light": "3 LED 2 W",
+  "max": "",
+  "lumen": "900 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "691/3A",
+   "3 LED 2 W",
+   "900 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/691_3A.png",
+   "width": 520,
+   "height": 203,
+   "bytes": 8363
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "691/2A": {
+  "page": 10,
+  "dup": 1,
+  "shared": [],
+  "light": "2 LED 2 W",
+  "max": "",
+  "lumen": "600 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "691/2A",
+   "2 LED 2 W",
+   "600 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/691_2A.png",
+   "width": 550,
+   "height": 204,
+   "bytes": 7649
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "691/13": {
+  "page": 10,
+  "dup": 1,
+  "shared": [],
+  "light": "13 LED 2 W",
+  "max": "Max",
+  "lumen": "3900 lumen - 3000K 140",
+  "dimming": "B - C",
+  "lines": [
+   "691/13",
+   "13 LED 2 W",
+   "Max",
+   "3900 lumen - 3000K 140",
+   "B - C",
+   "50"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/691_13.png",
+   "width": 550,
+   "height": 260,
+   "bytes": 14975
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "692/13": {
+  "page": 10,
+  "dup": 1,
+  "shared": [],
+  "light": "13 LED 2 W",
+  "max": "",
+  "lumen": "3900 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "692/13",
+   "13 LED 2 W",
+   "3900 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/692_13.png",
+   "width": 550,
+   "height": 291,
+   "bytes": 13867
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "697/10": {
+  "page": 17,
+  "dup": 1,
+  "shared": [],
+  "light": "10 LED 53 W",
+  "max": "",
+  "lumen": "3688 lumen - 3000K Max 140",
+  "dimming": "A - B",
+  "lines": [
+   "697/10 •",
+   "10 LED 53 W",
+   "3688 lumen - 3000K Max 140",
+   "•",
+   "A - B"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/697_10.png",
+   "width": 531,
+   "height": 202,
+   "bytes": 7741
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "697/2": {
+  "page": 17,
+  "dup": 1,
+  "shared": [],
+  "light": "2 LED 9 W",
+  "max": "",
+  "lumen": "610 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "697/2",
+   "2 LED 9 W",
+   "610 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/697_2.png",
+   "width": 535,
+   "height": 259,
+   "bytes": 8196
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "697/3A": {
+  "page": 17,
+  "dup": 1,
+  "shared": [],
+  "light": "3 LED 16 W",
+  "max": "",
+  "lumen": "1186 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "697/3A",
+   "3 LED 16 W",
+   "1186 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/697_3A.png",
+   "width": 478,
+   "height": 202,
+   "bytes": 6605
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "697/2P": {
+  "page": 17,
+  "dup": 1,
+  "shared": [],
+  "light": "2 LED 23 W",
+  "max": "",
+  "lumen": "1602 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "697/2P",
+   "2 LED 23 W",
+   "1602 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/697_2P.png",
+   "width": 486,
+   "height": 239,
+   "bytes": 7447
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "684/2": {
+  "page": 24,
+  "dup": 7,
+  "shared": [],
+  "light": "Strip LED 48,4 W",
+  "max": "Max 140",
+  "lumen": "3388 lumen - 3000K",
+  "dimming": "A - B - C",
+  "lines": [
+   "684/2",
+   "Strip LED 48,4 W",
+   "3388 lumen - 3000K",
+   "•",
+   "Max 140",
+   "A - B - C",
+   "•",
+   "15",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/684_2.png",
+   "width": 550,
+   "height": 278,
+   "bytes": 9898
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "686/250": {
+  "page": 24,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 27,5 W",
+  "max": "Max",
+  "lumen": "1925 lumen - 3000K 5 •",
+  "dimming": "A - B - C",
+  "lines": [
+   "686/250 •",
+   "5",
+   "•",
+   "Strip LED 27,5 W",
+   "1925 lumen - 3000K 5 •",
+   "•",
+   "•",
+   "12",
+   "•",
+   "A - B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/686_250.png",
+   "width": 550,
+   "height": 710,
+   "bytes": 18426
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "685/140PF": {
+  "page": 24,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 15,4 W",
+  "max": "",
+  "lumen": "1078 lumen - 3000K",
+  "dimming": "A - B - C",
+  "lines": [
+   "685/140PF 5",
+   "Strip LED 15,4 W",
+   "1078 lumen - 3000K",
+   "12",
+   "A - B - C",
+   "• 93",
+   "360°",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/685_140PF.png",
+   "width": 550,
+   "height": 598,
+   "bytes": 14392
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/19": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 4,4 W",
+  "max": "Max 140",
+  "lumen": "308 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "683/19 •",
+   "Strip LED 4,4 W",
+   "Max 140",
+   "308 lumen - 3000K",
+   "•",
+   "D",
+   "•",
+   "19"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_19.png",
+   "width": 454,
+   "height": 248,
+   "bytes": 7991
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/30": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 7,7 W",
+  "max": "Max 140",
+  "lumen": "539 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "683/30 •",
+   "Strip LED 7,7 W",
+   "Max 140",
+   "539 lumen - 3000K",
+   "•",
+   "D",
+   "•",
+   "30"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_30.png",
+   "width": 436,
+   "height": 278,
+   "bytes": 9072
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/6": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 26,4 W",
+  "max": "Max 140",
+  "lumen": "1848 lumen - 3000K",
+  "dimming": "A - B - C",
+  "lines": [
+   "683/6",
+   "•",
+   "Max 140",
+   "Strip LED 26,4 W",
+   "1848 lumen - 3000K",
+   "•",
+   "A - B - C",
+   "•",
+   "21",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_6.png",
+   "width": 495,
+   "height": 261,
+   "bytes": 10534
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/1LP": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 4,4 W",
+  "max": "",
+  "lumen": "308 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "683/1LP",
+   "Strip LED 4,4 W",
+   "308 lumen - 3000K",
+   "•",
+   "19",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_1LP.png",
+   "width": 458,
+   "height": 200,
+   "bytes": 7061
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/1LG": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 7,7 W",
+  "max": "",
+  "lumen": "539 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "683/1LG",
+   "Strip LED 7,7 W",
+   "539 lumen - 3000K",
+   "•",
+   "30",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_1LG.png",
+   "width": 433,
+   "height": 199,
+   "bytes": 8058
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/2A": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 12,1 W",
+  "max": "",
+  "lumen": "847 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "683/2A",
+   "Strip LED 12,1 W",
+   "847 lumen - 3000K",
+   "•",
+   "30",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_2A.png",
+   "width": 434,
+   "height": 200,
+   "bytes": 9205
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/1AG": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 7,7 W",
+  "max": "",
+  "lumen": "539 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "683/1AG",
+   "Strip LED 7,7 W",
+   "539 lumen - 3000K",
+   "•",
+   "30",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_1AG.png",
+   "width": 436,
+   "height": 199,
+   "bytes": 8276
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/2P": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 12,1 W",
+  "max": "",
+  "lumen": "847 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "683/2P",
+   "Strip LED 12,1 W",
+   "847 lumen - 3000K",
+   "D",
+   "•",
+   "33"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_2P.png",
+   "width": 444,
+   "height": 364,
+   "bytes": 8198
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/2": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 12,1 W",
+  "max": "Max 140",
+  "lumen": "847 lumen - 3000K",
+  "dimming": "A - B - C",
+  "lines": [
+   "683/2 •",
+   "Strip LED 12,1 W",
+   "Max 140",
+   "847 lumen - 3000K",
+   "•",
+   "A - B - C",
+   "•",
+   "30"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_2.png",
+   "width": 432,
+   "height": 278,
+   "bytes": 10500
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/6+3": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 26,4 W",
+  "max": "Max 140",
+  "lumen": "2772 lumen - 3000K",
+  "dimming": "A - B - C",
+  "lines": [
+   "683/6+3",
+   "•",
+   "Max 140",
+   "Strip LED 26,4 W",
+   "2772 lumen - 3000K",
+   "•",
+   "•",
+   "45",
+   "A - B - C",
+   "•"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_6+3.png",
+   "width": 498,
+   "height": 261,
+   "bytes": 12302
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "684/1A": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 4,4 W",
+  "max": "",
+  "lumen": "308 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "684/1A",
+   "Strip LED 4,4 W",
+   "308 lumen - 3000K",
+   "•",
+   "19",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/684_1A.png",
+   "width": 453,
+   "height": 199,
+   "bytes": 7661
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/1AP": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 4,4 W",
+  "max": "",
+  "lumen": "308 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "683/1AP",
+   "Strip LED 4,4 W",
+   "308 lumen - 3000K",
+   "•",
+   "19",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_1AP.png",
+   "width": 454,
+   "height": 200,
+   "bytes": 7320
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "683/2PF": {
+  "page": 31,
+  "dup": 1,
+  "shared": [],
+  "light": "Strip LED 12,1 W 19",
+  "max": "",
+  "lumen": "847 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "683/2PF",
+   "•",
+   "Strip LED 12,1 W 19",
+   "847 lumen - 3000K",
+   "•",
+   "D",
+   "•",
+   "30"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/683_2PF.png",
+   "width": 430,
+   "height": 227,
+   "bytes": 9795
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "694/9": {
+  "page": 37,
+  "dup": 1,
+  "shared": [],
+  "light": "9 LED 2 W",
+  "max": "",
+  "lumen": "2700 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "694/9",
+   "9 LED 2 W",
+   "2700 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/694_9.png",
+   "width": 550,
+   "height": 220,
+   "bytes": 9232
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "694/9PF": {
+  "page": 37,
+  "dup": 1,
+  "shared": [],
+  "light": "9 LED 2 W",
+  "max": "",
+  "lumen": "2700 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "694/9PF",
+   "9 LED 2 W",
+   "2700 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/694_9PF.png",
+   "width": 550,
+   "height": 201,
+   "bytes": 8983
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "695/10": {
+  "page": 37,
+  "dup": 1,
+  "shared": [],
+  "light": "10 LED 2 W",
+  "max": "",
+  "lumen": "3000 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "695/10",
+   "10 LED 2 W",
+   "3000 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/695_10.png",
+   "width": 550,
+   "height": 237,
+   "bytes": 9573
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "694/9P": {
+  "page": 37,
+  "dup": 1,
+  "shared": [],
+  "light": "9 LED 2 W",
+  "max": "",
+  "lumen": "2700 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "694/9P",
+   "9 LED 2 W",
+   "2700 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/694_9P.png",
+   "width": 550,
+   "height": 283,
+   "bytes": 9861
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "694/3A": {
+  "page": 37,
+  "dup": 1,
+  "shared": [],
+  "light": "3 LED 2 W",
+  "max": "",
+  "lumen": "900 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "694/3A",
+   "3 LED 2 W",
+   "900 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/694_3A.png",
+   "width": 532,
+   "height": 200,
+   "bytes": 6989
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "688/20": {
+  "page": 46,
+  "dup": 1,
+  "shared": [],
+  "light": "20 LED 1,42 W",
+  "max": "Max",
+  "lumen": "4000 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "688/20",
+   "Max",
+   "20 LED 1,42 W",
+   "4000 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/688_20.png",
+   "width": 550,
+   "height": 250,
+   "bytes": 10799
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "689/16": {
+  "page": 46,
+  "dup": 1,
+  "shared": [],
+  "light": "16 LED 1,42 W",
+  "max": "",
+  "lumen": "3200 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "689/16",
+   "16 LED 1,42 W",
+   "3200 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/689_16.png",
+   "width": 540,
+   "height": 263,
+   "bytes": 10032
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "688/15P": {
+  "page": 46,
+  "dup": 1,
+  "shared": [],
+  "light": "15 LED 1,42 W",
+  "max": "",
+  "lumen": "3000 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "688/15P",
+   "15 LED 1,42 W",
+   "3000 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/688_15P.png",
+   "width": 550,
+   "height": 292,
+   "bytes": 9074
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "688/4A": {
+  "page": 46,
+  "dup": 1,
+  "shared": [],
+  "light": "4 LED 1,42 W",
+  "max": "",
+  "lumen": "800 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "688/4A",
+   "4 LED 1,42 W",
+   "800 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/688_4A.png",
+   "width": 549,
+   "height": 197,
+   "bytes": 6302
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "688/4L": {
+  "page": 46,
+  "dup": 1,
+  "shared": [],
+  "light": "4 LED 1,42 W",
+  "max": "",
+  "lumen": "800 lumen - 3000K",
+  "dimming": "D",
+  "lines": [
+   "688/4L",
+   "4 LED 1,42 W",
+   "800 lumen - 3000K",
+   "D"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/688_4L.png",
+   "width": 512,
+   "height": 198,
+   "bytes": 6364
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "688/4": {
+  "page": 46,
+  "dup": 1,
+  "shared": [],
+  "light": "4 LED 1,42 W",
+  "max": "",
+  "lumen": "800 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "688/4",
+   "4 LED 1,42 W",
+   "800 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/688_4.png",
+   "width": 550,
+   "height": 233,
+   "bytes": 7172
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "690/12": {
+  "page": 46,
+  "dup": 1,
+  "shared": [],
+  "light": "12 LED 1,42 W",
+  "max": "",
+  "lumen": "2400 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "690/12",
+   "12 LED 1,42 W",
+   "2400 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/690_12.png",
+   "width": 486,
+   "height": 237,
+   "bytes": 7941
+  },
+  "catalog": "IDL Novelties 2025"
+ },
+ "689/12": {
+  "page": 46,
+  "dup": 1,
+  "shared": [],
+  "light": "12 LED 1,42 W",
+  "max": "",
+  "lumen": "2400 lumen - 3000K",
+  "dimming": "B - C",
+  "lines": [
+   "689/12",
+   "12 LED 1,42 W",
+   "2400 lumen - 3000K",
+   "B - C"
+  ],
+  "drawing": {
+   "file": "images/shop/idl/tech/689_12.png",
+   "width": 550,
+   "height": 202,
+   "bytes": 8598
+  },
+  "catalog": "IDL Novelties 2025"
+ }
+}
