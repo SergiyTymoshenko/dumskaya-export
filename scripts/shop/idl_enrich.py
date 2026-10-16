@@ -120,9 +120,14 @@ for ph in catph:
 # варианты, нарисованные в ячейке другого артикула (в каталоге у них нет своей ячейки)
 ALIAS = {'606/10': '605/10', '606/16': '605/16'}
 ALIAS_NOTE = {k: f'вариант с одной точкой крепления (single fastening); свет и чертёж — в ячейке {v}' for k, v in ALIAS.items()}
+# поправки страниц из первичного указателя (проверено по тексту страниц: на старой странице артикула нет)
+PAGE_FIX = {'642/50': {127: 126}, '642/70': {127: 126}, '643/4': {127: 126}, '668/16PF': {82: 83}, '670/16PF': {82: 83},
+            '655/1LG': {111: 13}, '448/SPOT': {207: 12}, '468/P': {351: 348}}
 stats = defaultdict(int)
 for p in cat['products']:
     code = p['mfr_code']
+    if code in PAGE_FIX:
+        p['catalog_pages'] = sorted({PAGE_FIX[code].get(n, n) for n in p['catalog_pages']})
     imgs = list({i['file']: i for i in prod_imgs.get(code, [])}.values()) + cat_imgs.get(code, [])
     if imgs: p['images'] = imgs; stats['photo'] += 1
     # техданные: Novelties 2025 новее каталога 2024
@@ -140,7 +145,14 @@ for p in cat['products']:
     for k in ('images', 'tech'):
         if k in p and not p[k]: del p[k]
 
-cat['sources'] = [s for s in cat['sources'] if 'сайте' not in s['title']] + [
+# каталоги: id — как в поле "catalog" товаров; catalog_pages и tech.source.page — номера страниц PDF.
+# В Novelties 2025 страница PDF — разворот из двух страниц каталога (стр. PDF 12 = стр. 22–23).
+# Копии PDF — в папке выгрузки на Mac (file).
+cat['sources'] = [
+    {'id': 'IDL 2024', 'title': 'IDL — каталог 2024 (388 стр.)', 'url': 'https://www.idl1987.it/file-download/IDL-luce1987-2024.pdf',
+     'file': 'catalogs/idl/IDL-luce1987-2024.pdf', 'index_pages': [12, 13]},
+    {'id': 'IDL Novelties 2025', 'title': 'IDL — Novelties 2025 (49 стр. PDF, развороты)', 'url': 'https://www.idl1987.it/wp-content/uploads/2025/04/IDL-2025-novelties-1.pdf',
+     'file': 'catalogs/idl/IDL-2025-novelties.pdf', 'spreads': True},
     {'title': 'IDL — коллекции на сайте фабрики (тексты ru/en/it, фото, видео)', 'url': 'https://www.idl1987.it/ru/collezioni/illuminazione/'},
 ]
 cat['status'] = ('черновик: номенклатура и артикулы; с сайта и из каталогов фабрики — фото, видео, тексты коллекций (исходник), '

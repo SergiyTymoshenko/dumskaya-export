@@ -32,10 +32,25 @@ for f in sorted(glob.glob(os.path.join(ROOT, "content/pages/ru/shop/*.json"))):
 # каталоги партнёрских фабрик
 TYPE_RU = {"suspension": "Подвесной светильник", "ceiling": "Потолочный светильник", "wall": "Бра",
            "table": "Настольная лампа", "floor": "Торшер", "spot": "Спот"}
+def catalog_ref(it, sources):
+    """Где товар в каталоге фабрики: {catalog, url, pages: [[страница PDF, номер в каталоге, что на ней]]}.
+    Номера в каталоге — как напечатаны (у разворотов Novelties 2025 — «22–23»), ссылка ведёт на страницу PDF."""
+    src = sources.get(it.get("catalog"))
+    if not src:
+        return None
+    tech = (it.get("tech") or {}).get("source", {}).get("page")
+    nums = sorted(set(it.get("catalog_pages") or []) | ({tech} if tech else set()))
+    label = (lambda n: f"{2 * n - 2}–{2 * n - 1}") if src.get("spreads") else str
+    index = set(src.get("index_pages") or [])
+    pages = [[n, label(n), "чертёж и свет" if n == tech else "указатель" if n in index else "фото"] for n in nums]
+    return {"catalog": src["id"], "url": src.get("url"), "pages": pages}
+
+
 mfrs = json.load(open(os.path.join(ROOT, "content/shop/manufacturers.json"), encoding="utf-8"))
 for key, mf in mfrs.items():
     cat = json.load(open(os.path.join(ROOT, mf["catalog"]), encoding="utf-8"))
     cols = cat["collections"]
+    sources = {s["id"]: s for s in cat.get("sources", []) if s.get("id")}
     for it in cat["products"]:
         code = it["sku"].upper()
         if code in out:
@@ -45,6 +60,9 @@ for key, mf in mfrs.items():
         out[code] = {"name": f"{TYPE_RU.get(it['type'], 'Светильник')} {col}", "path": it.get("path"),
                      "partner": mf.get("partner"), "mfr": f"{mf['name']} ({mf['country']})",
                      "mfr_code": it["mfr_code"], "collection": col}
+        ref = catalog_ref(it, sources)
+        if ref:
+            out[code]["catalog"] = ref
 dst = os.path.join(ROOT, "deploy", "shop-products.json")
 json.dump(out, open(dst, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 own = sum(1 for v in out.values() if v["partner"])

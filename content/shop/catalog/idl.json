@@ -2,12 +2,21 @@
  "manufacturer": "idl",
  "sources": [
   {
+   "id": "IDL 2024",
    "title": "IDL — каталог 2024 (388 стр.)",
-   "url": "https://www.idl1987.it/file-download/IDL-luce1987-2024.pdf"
+   "url": "https://www.idl1987.it/file-download/IDL-luce1987-2024.pdf",
+   "file": "catalogs/idl/IDL-luce1987-2024.pdf",
+   "index_pages": [
+    12,
+    13
+   ]
   },
   {
-   "title": "IDL — Novelties 2025 (49 стр.)",
-   "url": "https://www.idl1987.it/wp-content/uploads/2025/04/IDL-2025-novelties-1.pdf"
+   "id": "IDL Novelties 2025",
+   "title": "IDL — Novelties 2025 (49 стр. PDF, развороты)",
+   "url": "https://www.idl1987.it/wp-content/uploads/2025/04/IDL-2025-novelties-1.pdf",
+   "file": "catalogs/idl/IDL-2025-novelties.pdf",
+   "spreads": true
   },
   {
    "title": "IDL — коллекции на сайте фабрики (тексты ru/en/it, фото, видео)",
@@ -6890,7 +6899,7 @@
    "type": "suspension",
    "catalog": "IDL 2024",
    "catalog_pages": [
-    127
+    126
    ],
    "tech": {
     "light": "1 STRIP LED",
@@ -6962,7 +6971,7 @@
    "catalog": "IDL 2024",
    "catalog_pages": [
     114,
-    127
+    126
    ],
    "images": [
     {
@@ -7221,7 +7230,7 @@
    "catalog": "IDL 2024",
    "catalog_pages": [
     121,
-    127
+    126
    ],
    "tech": {
     "light": "4 x LED 3,6W",
@@ -9981,7 +9990,7 @@
    "type": "ceiling",
    "catalog": "IDL 2024",
    "catalog_pages": [
-    82
+    83
    ],
    "tech": {
     "light": "16 x LED 1,42W",
@@ -10205,7 +10214,7 @@
    "type": "ceiling",
    "catalog": "IDL 2024",
    "catalog_pages": [
-    82
+    83
    ],
    "tech": {
     "light": "16 x LED 1,42W",
@@ -10953,7 +10962,7 @@
    "type": "table",
    "catalog": "IDL 2024",
    "catalog_pages": [
-    111
+    13
    ]
   },
   {
@@ -16272,7 +16281,7 @@
    "type": "spot",
    "catalog": "IDL 2024",
    "catalog_pages": [
-    207
+    12
    ]
   },
   {
@@ -16592,8 +16601,7 @@
    "type": "floor",
    "catalog": "IDL 2024",
    "catalog_pages": [
-    348,
-    351
+    348
    ],
    "images": [
     {
