@@ -85,6 +85,16 @@ export function firstGallery(page: Page): Img[] {
   return [];
 }
 
+/** Все фото страницы для поисковиков: галереи и рисунки (планировки). */
+export function seoImages(page: Page): Img[] {
+  const out: Img[] = [];
+  for (const s of page.sections) for (const b of s.blocks) {
+    if (b.type === 'gallery') out.push(...b.images);
+    else if (b.type === 'figure' && b.image) out.push(b.image);
+  }
+  return out;
+}
+
 export function allGalleryImages(page: Page): Img[] {
   const out: Img[] = [];
   for (const s of page.sections) for (const b of s.blocks) if (b.type === 'gallery') out.push(...b.images);

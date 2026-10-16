@@ -1,5 +1,5 @@
 // sitemap.xml: все страницы, языковые версии (hreflang) и фото страниц.
-import { pages, manifest, allGalleryImages, firstGallery } from '../lib/data';
+import { pages, manifest, seoImages } from '../lib/data';
 import { HREFLANG, LANGS } from '../lib/i18n';
 import projects from '../../content/projects.json';
 
@@ -20,7 +20,7 @@ export function GET() {
       .map((l) => `<xhtml:link rel="alternate" hreflang="${HREFLANG[l]}" href="${abs(p.alternates[l]!)}"/>`);
     const xd = p.alternates.en || p.alternates.ru;
     if (alts.length) alts.push(`<xhtml:link rel="alternate" hreflang="x-default" href="${abs(xd!)}"/>`);
-    const ids = [...new Set([...allGalleryImages(p).map((i) => i.id), ...(covers.get(p.path) || [])])].filter((id) => manifest[id]).slice(0, 200);
+    const ids = [...new Set([...seoImages(p).map((i) => i.id), ...(covers.get(p.path) || [])])].filter((id) => manifest[id]).slice(0, 200);
     const imgs = ids.map((id) => {
       const m = manifest[id];
       const f = (m.files.find(([w]) => w >= 1440) || m.files[m.files.length - 1])[1];
