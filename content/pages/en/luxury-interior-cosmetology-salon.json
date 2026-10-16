@@ -168,13 +168,9 @@
      ]
     },
     {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Technical documentation developed under the “Express” package"
-      }
-     ]
+     "type": "heading",
+     "level": 2,
+     "text": "Sample technical documentation developed under the “Express” design package"
     },
     {
      "type": "gallery",
@@ -223,7 +219,8 @@
        "id": "694324b0af945c00530488ae",
        "alt": "equipment layout plan cosmetology"
       }
-     ]
+     ],
+     "docs": true
     },
     {
      "type": "buttons",
