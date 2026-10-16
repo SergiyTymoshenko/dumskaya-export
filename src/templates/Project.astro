@@ -112,6 +112,15 @@ import { typo } from '../lib/typo';
   .phero__cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 0 var(--pad) clamp(28px, 6vh, 64px); text-align: center; color: #fff; }
   .phero__title { color: #fff; margin: 0; font-size: clamp(20px, 3.2vw, 40px); letter-spacing: 0.2em; }
   .phero__sub { margin: 10px 0 0; font-size: 14px; letter-spacing: 0.08em; }
+  /* телефон и другие вертикальные экраны: фото целиком, без обрезки по бокам, подпись — под фото */
+  @media (max-aspect-ratio: 1/1) {
+    .phero { height: auto; min-height: 0; max-height: none; background: none; }
+    .phero :global(.phero__img) { height: auto; }
+    .phero::after { display: none; }
+    .phero__cap { position: static; color: var(--ink); padding: 20px var(--pad) 0; }
+    .phero__title { color: var(--ink); font-size: 18px; letter-spacing: 0.14em; }
+    .phero__sub { color: var(--stone); }
+  }
 
   .pbody { display: grid; gap: 40px; padding-block: clamp(32px, 6vw, 88px); }
   @media (min-width: 960px) { .pbody { grid-template-columns: minmax(280px, 4fr) 8fr; gap: clamp(40px, 5vw, 88px); } }

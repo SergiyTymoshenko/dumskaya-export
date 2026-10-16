@@ -129,6 +129,17 @@ const heroTitle = lang === 'en' ? 'Interior design, custom furniture and turnkey
   .hero__city { margin: 14px 0 0; font-size: 14px; letter-spacing: 0.08em; }
   .hero__btn { margin-top: 22px; color: #fff; border-color: rgba(255,255,255,.85); text-shadow: none; backdrop-filter: blur(2px); background: rgba(0,0,0,.12); }
   .hero__btn:hover { background: #fff; color: var(--ink); border-color: #fff; }
+  /* телефон и другие вертикальные экраны: фото целиком, без обрезки по бокам, подпись и кнопка — под фото */
+  @media (max-aspect-ratio: 1/1) {
+    .hero { height: auto; min-height: 0; max-height: none; background: none; }
+    .hero :global(.hero__img) { height: auto; }
+    .hero::after { display: none; }
+    .hero__cap { position: static; color: var(--ink); text-shadow: none; padding: 24px var(--pad) 8px; }
+    .hero__title { color: var(--ink); }
+    .hero__city { color: var(--stone); }
+    .hero__btn { color: var(--paper); background: var(--ink); border-color: var(--ink); backdrop-filter: none; }
+    .hero__btn:hover { background: var(--oak); border-color: var(--oak); color: var(--paper); }
+  }
 
   .studio { display: grid; gap: clamp(28px, 5vw, 80px); align-items: start; }
   @media (min-width: 960px) { .studio { grid-template-columns: 5fr 7fr; } }
