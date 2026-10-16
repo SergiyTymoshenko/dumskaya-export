@@ -56,7 +56,8 @@ for f in dumskaya.caddy dumskaya-redirects.snippet; do
   [ -f "/etc/caddy/sites/$f" ] && cp -a "/etc/caddy/sites/$f" "/etc/caddy/sites/$f.bak-$TS"
   mv "/etc/caddy/sites/$f.new" "/etc/caddy/sites/$f"
 done
-# В основной Caddyfile добавляется одна строка — импорт только файла этого сайта
+# В основной Caddyfile добавляется одна строка — импорт только файла этого сайта. Caddyfile принадлежит
+# EuroExchange (его выкладка перезаписывает файл): если в нём уже есть «import sites/*.caddy», ничего не добавляется.
 IMPORT_RE='^[[:space:]]*import[[:space:]]+sites/(\*|dumskaya)\.caddy[[:space:]]*$'
 grep -qE "$IMPORT_RE" "$CADDYFILE" || printf '\n# dumskaya-design.com (~/dumskaya/deploy/server-setup.sh)\nimport sites/dumskaya.caddy\n' >> "$CADDYFILE"
 

@@ -49,15 +49,33 @@ DELAY=""; case "$(rsync --help 2>&1)" in *--delay-updates*) DELAY="--delay-updat
 rsync -az --delete $DELAY --exclude '.DS_Store' dist/ "$HOST:/var/www/dumskaya/site/"
 
 echo "▸ 5/5 Настройки сервера"
-if ssh "$HOST" 'cd ~/dumskaya/deploy && sha256sum -c --quiet ~/dumskaya/installed.sha256 >/dev/null 2>&1'; then
-  echo "  без изменений"
-else
-  echo "  изменились редиректы или сервис заявок — применяю (нужен пароль sudo)…"
+# changed — менялись редиректы или сервис заявок; unlinked — в основном Caddyfile нет строки,
+# подключающей сайт (его перезаписала выкладка другого проекта на этом сервере)
+STATE="$(ssh "$HOST" 'cd ~/dumskaya/deploy; sha256sum -c --quiet ~/dumskaya/installed.sha256 >/dev/null 2>&1 || echo changed; grep -qE "^[[:space:]]*import[[:space:]]+sites/(\*|dumskaya)\.caddy[[:space:]]*$" /etc/caddy/Caddyfile || echo unlinked')"
+case "$STATE" in
+  *unlinked*) echo "  сайт отключён от Caddy (основной Caddyfile перезаписан) — подключаю снова (нужен пароль sudo)…" ;;
+  *changed*)  echo "  изменились редиректы или сервис заявок — применяю (нужен пароль sudo)…" ;;
+  *)          echo "  без изменений" ;;
+esac
+if [ -n "$STATE" ]; then
   ssh -t "$HOST" 'sudo bash ~/dumskaya/deploy/server-setup.sh "$(cat ~/dumskaya/mode 2>/dev/null || echo preview)"'
 fi
 MODE="$(ssh "$HOST" 'cat ~/dumskaya/mode 2>/dev/null || echo preview')"
 if [ "$MODE" = live ]; then
-  echo "Готово: https://dumskaya-design.com"
+  # проверка с этого Мака, как у посетителя: сайт должен ответить 200 по HTTPS
+  CODE=000
+  for _ in 1 2 3 4 5; do
+    CODE="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 https://dumskaya-design.com/ || true)"
+    [ "$CODE" = 200 ] && break; sleep 3
+  done
+  if [ "$CODE" = 200 ]; then
+    echo "Готово: https://dumskaya-design.com — сайт отвечает."
+  else
+    echo "ВНИМАНИЕ: файлы выложены, но https://dumskaya-design.com не отвечает (код $CODE)."
+    echo "Подключить сайт к Caddy заново:  ssh -t $HOST 'sudo bash ~/dumskaya/deploy/server-setup.sh live'"
+    echo "Если не помогло — пришлите Claude этот вывод."
+    exit 1
+  fi
 else
   echo "Готово. Сайт пока в режиме просмотра. Посмотреть:  npm run tunnel  и откройте http://localhost:8088"
 fi

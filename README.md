@@ -57,8 +57,14 @@ Caddy сам получит HTTPS-сертификат. Затем в Search Con
 ssh -t eurox 'sudo bash ~/dumskaya/deploy/server-doctor.sh'
 ```
 
-Показывает состояние Caddy и причину ошибки, возвращает основной Caddyfile к виду до установки сайта
+Показывает состояние Caddy и причину ошибки, отключает сайт от Caddy (свою строку в Caddyfile и файл сайта)
 и проверяет, что остальные сайты на сервере отвечают.
+
+**Сосед по серверу — EuroExchange.** Основной `/etc/caddy/Caddyfile` принадлежит ему: его выкладка
+(`/opt/eurox0003/deploy.sh`) перезаписывает файл целиком из репозитория eurox0003. Наш сайт подключается
+строкой `import sites/*.caddy` в том Caddyfile (сайт — файл `/etc/caddy/sites/dumskaya.caddy`).
+Если строки нет, `server-setup.sh` дописывает свою, а `npm run deploy` замечает пропажу и подключает сайт снова;
+в конце выкладка проверяет, что https://dumskaya-design.com отвечает.
 
 ## Переводы (UA и EN)
 

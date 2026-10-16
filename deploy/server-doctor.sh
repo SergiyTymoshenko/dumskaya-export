@@ -3,7 +3,7 @@
 #   sudo bash ~/dumskaya/deploy/server-doctor.sh
 #
 # 1) показывает состояние Caddy и причину последней ошибки;
-# 2) возвращает основной /etc/caddy/Caddyfile к виду до установки сайта и отключает файл сайта;
+# 2) отключает сайт: убирает из /etc/caddy/Caddyfile строку, добавленную server-setup.sh, и переименовывает файл сайта;
 # 3) проверяет, что Caddy работает и остальные сайты на сервере отвечают.
 # Выход 0 — откат прошёл и причина ошибки известна (можно запускать выкладку снова), иначе 1.
 set -uo pipefail
@@ -38,23 +38,15 @@ if echo "$CHECK" | grep -q 'dumskaya.log' && echo "$CHECK" | grep -qi 'permissio
 fi
 
 echo "=== 5. Откат основного Caddyfile"
-if grep -qE '^\s*import\s+sites/(\*|dumskaya)\.caddy\s*$' "$CF"; then
+# Основной Caddyfile принадлежит проекту EuroExchange (его выкладка перезаписывает файл целиком):
+# убирается только строка, которую добавил server-setup.sh. Общую строку «import sites/*.caddy»
+# из файла EuroExchange не трогаем — сайт отключается переименованием своего файла ниже.
+if grep -qE '^\s*import\s+sites/dumskaya\.caddy\s*$' "$CF"; then
   cp -a "$CF" "$CF.failed-$TS"
-  ORIG=""
-  for b in $(ls -tr "$CF".bak-* 2>/dev/null); do
-    grep -qE '^\s*import\s+sites/' "$b" || { ORIG="$b"; break; }
-  done
-  EXTRA=""
-  [ -n "$ORIG" ] && EXTRA="$(diff "$ORIG" "$CF" | grep -vE '^[0-9,]+a[0-9,]+$' | grep -vE '^> *$' | grep -vE '^> *import +sites/(\*|dumskaya)\.caddy *$')"
-  if [ -n "$ORIG" ] && [ -z "$EXTRA" ]; then
-    cp -a "$ORIG" "$CF"
-    echo "Caddyfile восстановлен из $ORIG (кроме строки import, отличий не было)."
-  else
-    sed -i -E '/^\s*import\s+sites\/(\*|dumskaya)\.caddy\s*$/d' "$CF"
-    echo "Из Caddyfile удалена только строка import сайта (в файле есть и другие изменения — их не трогаю)."
-  fi
+  sed -i -E '/^# dumskaya-design\.com \(~\/dumskaya\/deploy\/server-setup\.sh\)$/d; /^\s*import\s+sites\/dumskaya\.caddy\s*$/d' "$CF"
+  echo "Из Caddyfile удалена строка import сайта (остальное не трогаю)."
 else
-  echo "Строки import сайта в Caddyfile нет — откатывать нечего."
+  echo "Своей строки import в Caddyfile нет — в нём ничего не меняю."
 fi
 for f in dumskaya.caddy dumskaya-redirects.snippet; do
   [ -f "$SITES/$f" ] && mv "$SITES/$f" "$SITES/$f.off-$TS"
