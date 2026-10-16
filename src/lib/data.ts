@@ -10,7 +10,8 @@ export type Block =
   | { type: 'buttons'; items: { text: string; href: string | null }[] }
   | { type: 'faq'; items: { q: string; a: string }[] }
   | { type: 'facts'; title?: string; rows: [string, string][] }
-  | { type: 'form'; title?: string; text?: string };
+  | { type: 'form'; title?: string; text?: string }
+  | { type: 'figure'; image: Img; caption?: string };
 export type Section = { id: string; blocks: Block[] };
 export type Page = {
   path: string; lang: Lang; type: string; group: string | null;

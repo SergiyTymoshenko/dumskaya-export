@@ -2,6 +2,7 @@
 // Общий вывод блоков страницы: заголовки, текст, фото, карточки, кнопки.
 // На странице остаётся ровно один H1 (если шаблон выводит свой — skipH1).
 import Gallery from './Gallery.astro';
+import Img from './Img.astro';
 import Tile from './Tile.astro';
 import Parts from './Parts.astro';
 import { splitCaption, pageByPath, type Section, type Phone } from '../lib/data';
@@ -51,6 +52,12 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
       }
       if (b.type === 'text') return <div class="wrap blk__text"><Parts parts={b.parts} /></div>;
       if (b.type === 'gallery') return <Gallery images={b.images} start="pair" class="blk__gallery" sizes="100vw" />;
+      if (b.type === 'figure') return (
+        <figure class="wrap blk__fig" data-zoom>
+          <Img id={b.image.id} alt={b.image.alt} sizes="100vw" />
+          {b.caption && <figcaption class="blk__figcap">{b.caption}</figcaption>}
+        </figure>
+      );
       if (b.type === 'cards') {
         const three = b.items.length >= 6;
         const kit = b.items.map((c) => kitchenNo(c.href));
@@ -122,6 +129,9 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
   .faq__a { padding: 0 0 18px; }
   .faq__a :global(p:last-child) { margin-bottom: 0; }
   .blk__facts { margin-block: 8px 28px; max-width: 640px; }
+  .blk__fig { margin-block: 8px 28px; }
+  .blk__fig :global(img) { display: block; width: 100%; height: auto; }
+  .blk__figcap { margin-top: 10px; font-size: 13px; color: var(--stone); }
   .stamp { width: 100%; border-collapse: collapse; border: 1px solid var(--ink); font-size: 14px; line-height: 1.4; }
   .stamp__head { caption-side: top; text-align: left; border: 1px solid var(--ink); border-bottom: 0; padding: 8px 12px; font-family: var(--display); letter-spacing: 0.2em; text-transform: uppercase; font-size: 11px; color: var(--ink); }
   .stamp th, .stamp td { border-top: 1px solid var(--ink); padding: 9px 12px; vertical-align: top; text-align: left; }

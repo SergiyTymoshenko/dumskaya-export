@@ -127,6 +127,14 @@
      "type": "cards",
      "items": [
       {
+       "title": "Apartment in Bratislava, 127 m²",
+       "href": "/en/apartment-interior-design-bratislava-127sqm",
+       "image": {
+        "id": "bra127-01",
+        "alt": "Living room with sofa and armchairs in warm beige tones — interior design in Bratislava"
+       }
+      },
+      {
        "title": "Metropolis apartment in Bratislava, 75 m²",
        "href": "/en/design-interior-studio-bratislava-metropolis-sk-75m",
        "image": {
@@ -163,14 +171,6 @@
        "href": "/en/apartment-interior-design-bratislava-58m2",
        "image": {
         "id": "6abd6af84888499d20745492",
-        "alt": "interior design project apartment bratislava"
-       }
-      },
-      {
-       "title": "Apartment in Bratislava, 52 m²",
-       "href": "/en/interior-apartment-design-bratislava-slovakia-52sqm",
-       "image": {
-        "id": "6abd6b0c61617a4443acb569",
         "alt": "interior design project apartment bratislava"
        }
       }

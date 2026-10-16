@@ -45,6 +45,8 @@ def strings(p):
             elif t == 'form':
                 if b.get('title'): out.append((f'{k}.title', b['title']))
                 if b.get('text'): out.append((f'{k}.text', b['text']))
+            elif t == 'figure':
+                if b.get('caption'): out.append((f'{k}.caption', b['caption']))
             elif t == 'facts':
                 if b.get('title'): out.append((f'{k}.title', b['title']))
                 for ii, (kk, vv) in enumerate(b['rows']):
@@ -61,6 +63,8 @@ def images(p):
                 for it in b['items']:
                     if it.get('image'):
                         yield it['image']
+            elif b['type'] == 'figure' and b.get('image'):
+                yield b['image']
 
 def load_tm(lang):
     f = os.path.join(TM_DIR, f'tm-{lang}.json')

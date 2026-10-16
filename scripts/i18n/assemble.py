@@ -94,6 +94,8 @@ for lang in LANGS:
                 elif t == 'form':
                     if b.get('title'): b['title'] = tr(lang, b['title'], tm)
                     if b.get('text'): b['text'] = tr(lang, b['text'], tm)
+                elif t == 'figure':
+                    if b.get('caption'): b['caption'] = tr(lang, b['caption'], tm)
                 elif t == 'facts':
                     if b.get('title'): b['title'] = tr(lang, b['title'], tm)
                     b['rows'] = [[tr(lang, kk, tm), localize_html(tr(lang, vv, tm), lang)] for kk, vv in b['rows']]

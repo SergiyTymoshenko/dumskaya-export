@@ -1,5 +1,45 @@
 [
  {
+  "path": "/interior-design-apartment-bratislava-127m",
+  "group": "residential",
+  "alternates": {
+   "ru": "/interior-design-apartment-bratislava-127m",
+   "ua": "/ua/dyzain-interieru-kvartyry-bratyslava-127m2",
+   "en": "/en/apartment-interior-design-bratislava-127sqm"
+  },
+  "cover": "bra127-01",
+  "title": {
+   "en": "Apartment in Bratislava, 127 m²",
+   "ua": "Квартира у Братиславі, 127 м²",
+   "ru": "Квартира в Братиславе, 127 м²"
+  },
+  "explicit_warsaw": false,
+  "area": 127,
+  "facts": {
+   "ru": {
+    "object": "Трёхкомнатная квартира с балконом",
+    "area": "127 м²",
+    "city": "Братислава",
+    "works": "Дизайн-проект «Базовый»: 3D-визуализация и техническая документация",
+    "status": "в реализации — идёт ремонт"
+   },
+   "ua": {
+    "object": "Трикімнатна квартира з балконом",
+    "area": "127 м²",
+    "city": "Братислава",
+    "works": "Дизайн-проєкт «Базовий»: 3D-візуалізація та технічна документація",
+    "status": "у реалізації — триває ремонт"
+   },
+   "en": {
+    "object": "Three-room apartment with a balcony",
+    "area": "127 m²",
+    "city": "Bratislava",
+    "works": "“Basic” design project: 3D visualization and technical drawings",
+    "status": "in progress — renovation underway"
+   }
+  }
+ },
+ {
   "path": "/design-interior-studio-bratislava-metropolis-sk-75m",
   "group": "residential",
   "alternates": {

@@ -127,6 +127,14 @@
      "type": "cards",
      "items": [
       {
+       "title": "Квартира в Братиславе, 127 м²",
+       "href": "/interior-design-apartment-bratislava-127m",
+       "image": {
+        "id": "bra127-01",
+        "alt": "Квартира в Братиславе, 127 м²"
+       }
+      },
+      {
        "title": "Квартира Metropolis в Братиславе, 75 м²",
        "href": "/design-interior-studio-bratislava-metropolis-sk-75m",
        "image": {
@@ -164,14 +172,6 @@
        "image": {
         "id": "6abd6af84888499d20745492",
         "alt": "Квартира в Братиславе, 58 м²"
-       }
-      },
-      {
-       "title": "Квартира в Братиславе, 52 м²",
-       "href": "/apartment-interior-design-bratislava-52m",
-       "image": {
-        "id": "6abd6b0c61617a4443acb569",
-        "alt": "Квартира в Братиславе, 52 м²"
        }
       }
      ]
