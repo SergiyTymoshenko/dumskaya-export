@@ -3,6 +3,7 @@ import HeroImg from '../components/HeroImg.astro';
 import Gallery from '../components/Gallery.astro';
 import Tile from '../components/Tile.astro';
 import Parts from '../components/Parts.astro';
+import Crumbs from '../components/Crumbs.astro';
 import Img from '../components/Img.astro';
 import { ui, type Lang } from '../lib/i18n';
 import { projectsFor, splitCaption, localize, allGalleryImages, isServicesSection, type Page, type Part } from '../lib/data';
@@ -65,9 +66,7 @@ import { typo } from '../lib/typo';
 <div class="pbody wrap">
   <aside class="pside">
     <div class="pside__inner">
-      <nav class="crumbs" aria-label="breadcrumbs">
-        <a href={home}>{T.home}</a> / {portfolio ? <a href={portfolio}>{T.projects}</a> : T.projects}
-      </nav>
+      <Crumbs items={[{ label: T.home, href: home }, { label: T.projects, href: portfolio }, { label: project?.label || page.h1 }]} />
       <h1 class="pside__h1"><Caps text={page.h1} /></h1>
       <table class="stamp">
         <caption class="stamp__head">DUMSKAYA DESIGN</caption>

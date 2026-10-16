@@ -132,7 +132,10 @@ export function crumbsFor(page: Page): { label: string; href: string | null }[] 
   switch (page.type) {
     case 'home': return [home];
     case 'portfolio': return [home, last(t.projects)];
-    case 'project': return [home, { label: t.projects, href: L('/proekty-interior-design') }, last(page.h1)];
+    case 'project': {
+      const pr = projects.find((p) => p.alternates[lang] === page.path);
+      return [home, { label: t.projects, href: L('/proekty-interior-design') }, last(pr?.title[lang] || page.h1)];
+    }
     case 'kitchen': {
       const code = (page.alternates.ru || page.path).match(/k-?(\d{2})/i)?.[1];
       return [home, { label: t.kitchens, href: L('/kupkuhni-na-zakaz-vienna-bratislava') }, last(code ? `K-${code}` : page.h1)];
