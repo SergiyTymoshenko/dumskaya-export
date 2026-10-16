@@ -5,16 +5,17 @@
 
 Слушает 127.0.0.1:8095 (Caddy проксирует сюда /api/lead). Заявку:
   1) сразу дописывает в файл leads.jsonl — так она не потеряется, даже если почта и Telegram недоступны;
-  2) отправляет в Telegram (бот → чат);
+  2) отправляет в Telegram-бот студии (bot.py): разработчику и дизайнерам, а заявку на товар партнёра —
+     ещё и людям этого партнёра (партнёр товара — в shop-products.json, собирается из сайта при выкладке);
   3) отправляет письмом через SMTP (например, Gmail с паролем приложения).
+В этом же процессе работает сам бот (приём пользователей, роли) — см. bot.py.
 Только стандартная библиотека Python 3, без установки пакетов.
 
 Настройки — переменные окружения (файл lead.env, его читает systemd):
-  TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+  TELEGRAM_BOT_TOKEN  BOT_OWNER_ID (Telegram ID разработчика)  BOT_DB=/home/deploy/dumskaya/bot.db
   SMTP_HOST=smtp.gmail.com  SMTP_PORT=587  SMTP_USER  SMTP_PASSWORD  MAIL_TO
   LEADS_FILE=/home/deploy/dumskaya/leads.jsonl  PORT=8095
 """
-import html
 import json
 import os
 import smtplib
@@ -32,7 +33,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 PORT = int(os.environ.get("PORT", "8095"))
 LEADS_FILE = os.environ.get("LEADS_FILE", os.path.expanduser("~/dumskaya/leads.jsonl"))
 TG_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-TG_CHAT = os.environ.get("TELEGRAM_CHAT_ID", "")
+BOT_OWNER = os.environ.get("BOT_OWNER_ID", "")
+BOT_DB = os.environ.get("BOT_DB", os.path.expanduser("~/dumskaya/bot.db"))
 SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com")
 SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
 SMTP_USER = os.environ.get("SMTP_USER", "")
@@ -55,24 +57,16 @@ def log(msg):
     print(f"[{datetime.now():%Y-%m-%d %H:%M:%S}] {msg}", flush=True)
 
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from bot import Bot  # noqa: E402
+
+BOT = None
+
+
 def send_telegram(lead):
-    if not (TG_TOKEN and TG_CHAT):
+    if not BOT:
         return False
-    lines = [
-        "<b>Заявка с сайта</b>",
-        f"<b>Имя:</b> {html.escape(lead['name'])}",
-        f"<b>Контакт:</b> {html.escape(lead['contact'])}",
-    ]
-    if lead.get("model"):
-        lines.append(f"<b>Интересует:</b> {html.escape(lead['model'])}")
-    if lead.get("message"):
-        lines.append(f"<b>Сообщение:</b>\n{html.escape(lead['message'])}")
-    lines.append(f"<i>{html.escape(lead.get('lang', ''))} · https://dumskaya-design.com{html.escape(lead.get('page', ''))}</i>")
-    data = urllib.parse.urlencode({"chat_id": TG_CHAT, "text": "\n".join(lines), "parse_mode": "HTML",
-                                   "disable_web_page_preview": "true"}).encode()
-    req = urllib.request.Request(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage", data=data)
-    with urllib.request.urlopen(req, timeout=15) as r:
-        return json.loads(r.read()).get("ok", False)
+    return bool(BOT.route_lead(lead))
 
 
 def send_mail(lead):
@@ -141,7 +135,9 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path.rstrip("/") == "/api/lead/health":
-            return self.reply(200, {"ok": True, "telegram": bool(TG_TOKEN and TG_CHAT), "email": bool(SMTP_USER and SMTP_PASSWORD)})
+            people = len(BOT.active(("owner", "designer"))) if BOT else 0
+            return self.reply(200, {"ok": True, "telegram": bool(BOT and people), "recipients": people,
+                                    "email": bool(SMTP_USER and SMTP_PASSWORD)})
         self.reply(404, {"ok": False})
 
     def do_POST(self):
@@ -195,13 +191,18 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main():
+    global BOT
+    if TG_TOKEN:
+        BOT = Bot(TG_TOKEN, BOT_OWNER, BOT_DB, log=log)
     if "--test" in sys.argv:
         lead = {"name": "Проверка", "contact": "test@example.com", "message": "Тестовая заявка с сервера",
                 "page": "/contact", "model": "", "lang": "ru", "time": datetime.now(timezone.utc).isoformat()}
         print("доставлено:", deliver(lead))
         return
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
-    log(f"слушаю 127.0.0.1:{PORT}; telegram={'да' if TG_TOKEN and TG_CHAT else 'нет'}, почта={'да' if SMTP_USER and SMTP_PASSWORD else 'нет'}")
+    if BOT:
+        BOT.start()
+    log(f"слушаю 127.0.0.1:{PORT}; бот={'да' if BOT else 'нет'}, почта={'да' if SMTP_USER and SMTP_PASSWORD else 'нет'}")
     srv.serve_forever()
 
 

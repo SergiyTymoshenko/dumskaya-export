@@ -6,7 +6,7 @@
     python3 ~/dumskaya/deploy/lead_setup.py
 
 Что делает:
-  1) Telegram: проверяет токен бота, находит чат, куда писать заявки, отправляет туда пробное сообщение;
+  1) Telegram: проверяет токен бота студии, записывает ID разработчика, бот пишет вам пробное сообщение;
   2) почта: проверяет вход в Gmail по паролю приложения;
   3) записывает ~/dumskaya/lead.env (доступ только у владельца), перезапускает сервис заявок
      (нужен пароль sudo) и отправляет пробную заявку тем же путём, что и форма на сайте.
@@ -103,38 +103,18 @@ def tg(token, method, **params):
         return {"ok": False, "error_code": 0, "description": f"нет связи с Telegram: {e}"}
 
 
-def chat_label(c):
-    if c.get("type") == "private":
-        name = " ".join(x for x in (c.get("first_name"), c.get("last_name")) if x)
-        return f"личный чат с {name}" + (f" (@{c['username']})" if c.get("username") else "")
-    return f"группа «{c.get('title', '')}»"
-
-
-def find_chats(token):
-    r = tg(token, "getUpdates", timeout=0, allowed_updates=json.dumps(["message", "my_chat_member", "channel_post"]))
-    if not r.get("ok"):
-        return None, r
-    chats = {}
-    for u in r.get("result", []):
-        for key in ("message", "edited_message", "channel_post", "my_chat_member"):
-            c = (u.get(key) or {}).get("chat")
-            if c:
-                chats[c["id"]] = c
-    return list(chats.values()), r
-
-
 def setup_telegram(vals):
-    head("1. Telegram — заявки будут приходить сообщением от вашего бота")
+    head("1. Telegram-бот студии — заявки с сайта, пользователи и партнёры")
     token = vals.get("TELEGRAM_BOT_TOKEN", "")
     if token:
         say(f"  Сейчас указан бот с токеном {mask(token)}.")
-    say(f"  {D}Нужен отдельный новый бот (не тот, что уже работает у вас в другом сервисе):")
-    say("  в Telegram откройте @BotFather → /newbot → имя, например «DUMSKAYA заявки» →")
-    say(f"  username латиницей, на конце «bot». BotFather пришлёт токен вида 123456789:AAE…{X}")
+    say(f"  {D}Нужен отдельный бот студии (не тот, что работает в другом сервисе): @BotFather → /newbot →")
+    say("  имя, например «DUMSKAYA студия» → username латиницей с «bot» на конце. BotFather пришлёт токен")
+    say(f"  вида 123456789:AAE…  Там же: /setjoingroups → выберите бота → Disable (в группы бот не добавляется).{X}")
     for attempt in range(3):
         new = ask_secret("Вставьте токен бота (Enter — оставить текущий)")
         if not new and not token:
-            note("Telegram пропущен — заявки будут приходить только на почту.")
+            note("Бот пропущен — заявки будут приходить только на почту.")
             return
         cand = new or token
         me = tg(cand, "getMe")
@@ -144,53 +124,31 @@ def setup_telegram(vals):
             break
         bad(f"Telegram не принял токен: {me.get('description')}")
         if attempt == 2:
-            note("Telegram пропущен. Запустите настройку ещё раз, когда будет правильный токен.")
+            note("Бот пропущен. Запустите настройку ещё раз, когда будет правильный токен.")
             return
     bot = me["result"]["username"]
     vals["TELEGRAM_BOT_TOKEN"] = token
-
-    cur = vals.get("TELEGRAM_CHAT_ID", "")
-    if cur and not new:
-        keep = ask(f"Заявки сейчас уходят в чат {cur}. Оставить его? (да/нет)", "да").lower()
-        if keep.startswith("д") or keep.startswith("y"):
-            return send_tg_hello(token, cur)
-    say(f"\n  Теперь откройте в Telegram бота {B}@{bot}{X} и нажмите «Старт» (или напишите ему что угодно).")
-    say(f"  {D}Если заявки должны приходить в общую группу — добавьте бота в группу и напишите в ней /start@{bot}{X}")
+    vals.setdefault("BOT_DB", os.path.join(APP, "bot.db"))
+    if vals.get("TELEGRAM_CHAT_ID"):
+        vals["TELEGRAM_CHAT_ID"] = ""          # старый способ (один чат) больше не нужен: получатели — в боте
     while True:
-        ask("Когда напишете — нажмите Enter здесь")
-        chats, r = find_chats(token)
-        if chats is None:
-            if r.get("error_code") == 409:
-                bad("Этот бот уже подключён к другой программе — Telegram не отдаёт его сообщения.")
-                note("Создайте отдельного бота в @BotFather и запустите настройку ещё раз.")
-            else:
-                bad(f"Не получилось прочитать сообщения бота: {r.get('description')}")
+        owner = ask("Telegram ID разработчика — получает все уведомления и принимает пользователей",
+                    vals.get("BOT_OWNER_ID") or "633722")
+        if owner.isdigit():
+            break
+        bad("Telegram ID — только цифры.")
+    vals["BOT_OWNER_ID"] = owner
+    say(f"\n  Откройте в Telegram бота {B}@{bot}{X} с этого аккаунта и нажмите «Старт» (если ещё не нажимали).")
+    for attempt in range(3):
+        r = tg(token, "sendMessage", chat_id=owner,
+               text=f"Бот @{bot} подключается к сайту dumskaya-design.com. Через минуту он заработает — нажмите /start.")
+        if r.get("ok"):
+            ok("бот написал вам — проверьте Telegram")
             return
-        if not chats:
-            note("Бот пока не получил ни одного сообщения. Напишите ему ещё раз (или введите 0 и Enter — пропустить).")
-            if ask("Enter — проверить снова", "") == "0":
-                return
-            continue
-        if len(chats) == 1:
-            chat = chats[0]
-        else:
-            say("  Бот видит несколько чатов:")
-            for i, c in enumerate(chats, 1):
-                say(f"    {i}. {chat_label(c)}")
-            n = ask("Номер чата, куда отправлять заявки", "1")
-            chat = chats[int(n) - 1] if n.isdigit() and 1 <= int(n) <= len(chats) else chats[0]
-        vals["TELEGRAM_CHAT_ID"] = str(chat["id"])
-        ok(f"куда будут приходить заявки: {chat_label(chat)}")
-        return send_tg_hello(token, vals["TELEGRAM_CHAT_ID"])
-
-
-def send_tg_hello(token, chat_id):
-    r = tg(token, "sendMessage", chat_id=chat_id,
-           text="Бот подключён: сюда будут приходить заявки с сайта dumskaya-design.com")
-    if r.get("ok"):
-        ok("пробное сообщение отправлено — проверьте Telegram")
-    else:
-        bad(f"не удалось написать в чат: {r.get('description')}")
+        bad(f"бот не может написать вам: {r.get('description')}")
+        if attempt < 2:
+            ask(f"Откройте @{bot}, нажмите «Старт» и потом Enter здесь")
+    note("Не дозвонились до вашего аккаунта — после настройки откройте бота и нажмите «Старт».")
 
 
 # ---------- Почта ----------
@@ -258,7 +216,8 @@ def restart_and_test(vals):
         bad("Сервис не отвечает. Последние строки журнала:")
         subprocess.run(["sudo", "journalctl", "-u", "dumskaya-lead", "-n", "15", "--no-pager"])
         return
-    ok(f"сервис работает: Telegram — {'да' if health.get('telegram') else 'нет'}, почта — {'да' if health.get('email') else 'нет'}")
+    ok(f"сервис работает: бот — {'да, получателей заявок: ' + str(health.get('recipients')) if health.get('telegram') else 'нет'}, "
+       f"почта — {'да' if health.get('email') else 'нет'}")
     if not (health.get("telegram") or health.get("email")):
         note("Ни Telegram, ни почта не настроены — заявки только сохраняются в файл leads.jsonl.")
         return
@@ -298,6 +257,8 @@ def main():
     ok(f"настройки записаны в {ENV} (доступ только у пользователя {getpass.getuser()})")
     restart_and_test(vals)
     say(f"\n{B}Готово.{X} Повторить или поменять настройки: с Mac — npm run leads")
+    if vals.get("TELEGRAM_BOT_TOKEN"):
+        say("Дальше: попросите Ирину открыть бота и нажать «Старт» — вам придёт запрос с кнопками, нажмите «Дизайнер студии».")
 
 
 if __name__ == "__main__":

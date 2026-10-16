@@ -11,3 +11,5 @@ content/image-manifest.json
 i18n-work/
 # собирается из content/redirects.json при каждой выкладке (scripts/build_caddy.py)
 deploy/caddy/dumskaya-redirects.snippet
+# товары магазина для бота заявок — собирается при выкладке (scripts/build_shop.py)
+deploy/shop-products.json

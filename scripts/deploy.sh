@@ -36,6 +36,7 @@ if ! python3 scripts/check_site.py >"$CHECK"; then
 fi
 grep -E '^(страниц|ошибок)|заглушк' "$CHECK"; rm -f "$CHECK"
 python3 scripts/build_caddy.py
+python3 scripts/build_shop.py
 
 echo "▸ 4/5 Выкладка на $HOST"
 ssh "$HOST" 'mkdir -p ~/dumskaya/deploy'
