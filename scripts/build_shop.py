@@ -6,6 +6,9 @@
 понимает, чей товар: если у товара указан партнёр (поле "partner": <номер партнёра из бота> в
 content/pages/ru/shop/<товар>.json), заявка уходит людям этого партнёра, а разработчику и дизайнеру —
 уведомление. Без поля "partner" товар студии — заявка как обычно.
+Товары партнёрских фабрик из content/shop/catalog/<фабрика>.json (ещё до выкладки их страниц) тоже попадают
+в список: партнёр — название компании из content/shop/manufacturers.json, плюс подсказка для студии и партнёра —
+изготовитель, его артикул и коллекция (клиент их не видит).
 Запускается при выкладке (scripts/deploy.sh); файл не хранится в git.
    python3 scripts/build_shop.py"""
 import glob, json, os, re, sys
@@ -14,7 +17,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 out, errs = {}, []
 for f in sorted(glob.glob(os.path.join(ROOT, "content/pages/ru/shop/*.json"))):
     p = json.load(open(f, encoding="utf-8"))
-    m = re.search(r"\((TDD-[\w-]+|[A-Z]{2,5}-\d+)\)", p.get("title", ""))
+    m = re.search(r"\((TDD-[\w-]+|[A-Z]{2,5}-[A-Z]?\d+)\)", p.get("title", ""))
     if not m:
         continue
     code = m.group(1).upper()
@@ -26,6 +29,22 @@ for f in sorted(glob.glob(os.path.join(ROOT, "content/pages/ru/shop/*.json"))):
     if code in out:
         errs.append(f"артикул {code} повторяется: {out[code]['path']} и {p['path']}")
     out[code] = {"name": name, "path": p["path"], "partner": int(partner) if str(partner or "").isdigit() else None}
+# каталоги партнёрских фабрик
+TYPE_RU = {"suspension": "Подвесной светильник", "ceiling": "Потолочный светильник", "wall": "Бра",
+           "table": "Настольная лампа", "floor": "Торшер", "spot": "Спот"}
+mfrs = json.load(open(os.path.join(ROOT, "content/shop/manufacturers.json"), encoding="utf-8"))
+for key, mf in mfrs.items():
+    cat = json.load(open(os.path.join(ROOT, mf["catalog"]), encoding="utf-8"))
+    cols = cat["collections"]
+    for it in cat["products"]:
+        code = it["sku"].upper()
+        if code in out:
+            errs.append(f"артикул {code} повторяется: {out[code].get('path') or 'каталог'} и каталог {key}")
+            continue
+        col = cols.get(it["collection"], {}).get("name", it["collection"])
+        out[code] = {"name": f"{TYPE_RU.get(it['type'], 'Светильник')} {col}", "path": it.get("path"),
+                     "partner": mf.get("partner"), "mfr": f"{mf['name']} ({mf['country']})",
+                     "mfr_code": it["mfr_code"], "collection": col}
 dst = os.path.join(ROOT, "deploy", "shop-products.json")
 json.dump(out, open(dst, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 own = sum(1 for v in out.values() if v["partner"])

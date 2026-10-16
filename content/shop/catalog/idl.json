@@ -1,0 +1,4918 @@
+{
+ "manufacturer": "idl",
+ "sources": [
+  {
+   "title": "IDL — каталог 2024 (388 стр.)",
+   "url": "https://www.idl1987.it/file-download/IDL-luce1987-2024.pdf"
+  },
+  {
+   "title": "IDL — Novelties 2025 (49 стр.)",
+   "url": "https://www.idl1987.it/wp-content/uploads/2025/04/IDL-2025-novelties-1.pdf"
+  },
+  {
+   "title": "IDL — коллекции на сайте фабрики",
+   "url": "https://www.idl1987.it/ru/collezioni/illuminazione/"
+  }
+ ],
+ "status": "черновик: номенклатура и артикулы готовы; фото, размеры, свет и тексты карточек — при выкладке на сайт",
+ "collections": {
+  "acropora": {
+   "name": "Acropora",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1000–1049",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/acropora/",
+   "finishes": {
+    "ru": "Металлический каркас: сталь, тёмный кортен, светлое золото, чёрный никель, глянцевое античное золото, матовое античное золото. Рассеиватель — сатинированный Plexiglas."
+   },
+   "products": 12
+  },
+  "amalfi": {
+   "name": "Amalfi",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1050–1099",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/amalfi/",
+   "finishes": {
+    "ru": "Металлическое основание: глянцевый белый или чёрный, окисленный кортен, эффект ржавчины; внутренняя часть — золотая или серебряная фольга либо белый матовый. Рассеиватель — сатинированный поликарбонат."
+   },
+   "products": 16
+  },
+  "artic": {
+   "name": "Artic",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1100–1149",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/artic/",
+   "finishes": {
+    "ru": "Металлическое основание: светлое золото, чёрный никель, матовая бронза, сталь."
+   },
+   "products": 14
+  },
+  "bamboo": {
+   "name": "Bamboo",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1150–1199",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/bamboo/",
+   "finishes": {
+    "ru": "Металлический каркас: хром, золото 24 карата, сатинированный чёрный никель, чёрный никель. Плафоны из муранского стекла: прозрачные с хромированным или золотым декором, прозрачные. Абажур из ткани chinette или lamé золотого или серебряного цвета."
+   },
+   "products": 27
+  },
+  "cesare": {
+   "name": "Cesare",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1200–1249",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/cesare/",
+   "finishes": {
+    "ru": "Металлическое основание: сатинированный никель, сатинированный чёрный никель, сатинированное золото, сатинированная бронза. Муранское стекло с гравировкой: бронзовое, дымчатое, прозрачное."
+   },
+   "products": 3
+  },
+  "collier": {
+   "name": "Collier",
+   "line": "contemporary",
+   "designer": "Alessandro Masturzo",
+   "sku_block": "1250–1299",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/collier/",
+   "finishes": {
+    "ru": "Металлический каркас в окрашенных отделках: gold, rame yamana (медь). Диффузор — силиконовая трубка 3D Flex LED."
+   },
+   "products": 4
+  },
+  "dp": {
+   "name": "DP",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1300–1349",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/dp/",
+   "finishes": {
+    "ru": "Металлический каркас: блестящий кварц с деталями из матовой бронзы, блестящий песочный с деталями из матового золота, брашированная латунь. Диффузоры — матовое муранское стекло белого или бронзового цвета."
+   },
+   "products": 15
+  },
+  "ekle": {
+   "name": "Eklè",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1350–1399",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/ekle/",
+   "finishes": {
+    "ru": "Металлическое основание в сочетаниях: сатинированное золото и сталь, сатинированное золото и бронза, сатинированное золото и тёмный кортен, сатинированное золото. Диффузор — сатинированный Plexiglas."
+   },
+   "products": 21
+  },
+  "endless": {
+   "name": "Endless",
+   "line": "contemporary",
+   "designer": "IDL Studio",
+   "sku_block": "1400–1449",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/endless/",
+   "finishes": {
+    "ru": "Металлический каркас: красный матовый, зелёный матовый, синий матовый, бронза матовая, белый матовый. Диффузор — светодиодная лента 3D."
+   },
+   "products": 6
+  },
+  "flower-miu": {
+   "name": "Flower Miù",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1450–1499",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/flower-miu/",
+   "finishes": {
+    "ru": "Металлический каркас: сталь, светлое золото, матовое античное золото. Диффузор — прозрачное муранское стекло."
+   },
+   "products": 15
+  },
+  "galaxy": {
+   "name": "Galaxy",
+   "line": "contemporary",
+   "designer": "Alessandro Masturzo",
+   "sku_block": "1500–1549",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/galaxy/",
+   "finishes": {
+    "ru": "Металлический каркас: окрашенный Shiny Sand, окрашенный Matt White, гальванический матовый чёрный никель, гальванический Pure Steel. Диффузоры — прозрачный и сатинированный Plexiglas."
+   },
+   "products": 8
+  },
+  "loop": {
+   "name": "Loop",
+   "line": "contemporary",
+   "designer": "IDL Studio",
+   "sku_block": "1550–1599",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/loop/",
+   "finishes": {
+    "ru": "Металлический каркас: красный матовый, зелёный матовый, синий матовый, бронза матовая, белый матовый. Диффузор — светодиодная лента 3D."
+   },
+   "products": 13
+  },
+  "mangrove": {
+   "name": "Mangrove",
+   "line": "contemporary",
+   "designer": "Alessandro Masturzo",
+   "sku_block": "1600–1649",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/mangrove/",
+   "finishes": {
+    "ru": "Металлический каркас: окрашенный Colombia, окрашенный Shiny Sand, брашированная латунь. Диффузоры — сатинированный Plexiglas."
+   },
+   "products": 5
+  },
+  "marea": {
+   "name": "Marea",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1650–1699",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/marea/",
+   "finishes": {
+    "ru": "Металлический каркас: блестящий песочный, тёмно-серый (grigio Danimarca), сатинированное светлое золото. Диффузор — прозрачное муранское стекло pulegoso."
+   },
+   "products": 14
+  },
+  "miox": {
+   "name": "Miox",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1700–1749",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/miox/",
+   "finishes": {
+    "ru": "Металлический каркас: матовое светлое золото, сталь, чёрный никель. Рассеиватель — прозрачное муранское стекло pulegoso."
+   },
+   "products": 10
+  },
+  "miu": {
+   "name": "Miu",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1750–1799",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/miu/",
+   "finishes": {
+    "ru": "Металлический каркас: тёмный кортен, матовое античное золото, сталь, светлое золото."
+   },
+   "products": 10
+  },
+  "nature": {
+   "name": "Nature",
+   "line": "contemporary",
+   "designer": "IDL Studio",
+   "sku_block": "1800–1849",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/nature/",
+   "finishes": {
+    "ru": "Металлический каркас: окрашенный Colombia, матовое светлое золото. Диффузоры — выдувное стекло по муранской технологии: прозрачное, бронзовое, дымчатое, жемчужное."
+   },
+   "products": 7
+  },
+  "paradise": {
+   "name": "Paradise",
+   "line": "contemporary",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1850–1899",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/paradise/",
+   "finishes": {
+    "ru": "Металлический каркас: хром или светлое золото. Муранское стекло: белое, прозрачное, аквамарин, бронза, с эффектом золотой или серебряной фольги. Основание настольной лампы и торшера — сатинированный никель."
+   },
+   "products": 14
+  },
+  "roma": {
+   "name": "Roma",
+   "line": "contemporary",
+   "designer": "Antonio Piva",
+   "sku_block": "1900–1949",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/roma/",
+   "finishes": {
+    "ru": "Металлическое основание: хром. Стеклянные подвески. Возможны размеры на заказ."
+   },
+   "products": 9
+  },
+  "charme": {
+   "name": "Charme",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "1950–1999",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/charme/",
+   "finishes": {
+    "ru": "Металлическое основание: чёрный никель, сталь, бронза, медь, светлое золото. Абажуры тёмного или светлого оттенка из джута или chinette либо цветной plissé. Декоративное муранское стекло: прозрачное, янтарное, дымчатое, голубое, зелёное, белое."
+   },
+   "products": 8
+  },
+  "chrysalis": {
+   "name": "Chrysalis",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2000–2049",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/chrysalis/",
+   "finishes": {
+    "ru": "Металлическое основание: светлое золото, сталь, слоновая кость, тёмный баклажан, чёрный никель. Декоративные элементы из прозрачного хрусталя. Возможны размеры на заказ."
+   },
+   "products": 26
+  },
+  "corten": {
+   "name": "Corten",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2050–2099",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/corten/",
+   "finishes": {
+    "ru": "Металлическое основание: кортен серебристого цвета с хромированными цепочками или кортен коричневого цвета с золотыми цепочками. Декоративные элементы из прозрачного хрусталя."
+   },
+   "products": 27
+  },
+  "crystal-blade": {
+   "name": "Crystal Blade",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2100–2149",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/crystal-blade/",
+   "finishes": {
+    "ru": "Металлический каркас: светлое золото, тёмный баклажан, хром. Плафоны — прозрачное муранское стекло, декоративные элементы из прозрачного хрусталя."
+   },
+   "products": 11
+  },
+  "crystalline": {
+   "name": "Crystalline",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2150–2199",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/crystalline/",
+   "finishes": {
+    "ru": "Металлический каркас: хром или светлое золото. Хрустальные подвески и стеклянные элементы: прозрачные, белые, чёрные, красные."
+   },
+   "products": 11
+  },
+  "diamante": {
+   "name": "Diamante",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2200–2249",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/diamante/",
+   "finishes": {
+    "ru": "Металлический каркас: хром. Прозрачные кристаллы Asfour."
+   },
+   "products": 5
+  },
+  "groovy": {
+   "name": "Groovy",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2250–2299",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/groovy/",
+   "finishes": {
+    "ru": "Металлическое основание в сочетаниях: белый матовый, чёрный матовый или чёрная фольга со светлым золотом или сталью; полностью светлое золото; полностью сталь. Декоративные элементы из прозрачного хрусталя; у бра — рассеиватель из сатинированного Plexiglas."
+   },
+   "products": 11
+  },
+  "ice-rain": {
+   "name": "Ice Rain",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2300–2349",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/ice-rain/",
+   "finishes": {
+    "ru": "Металлическое основание цвета слоновой кости. Листья из прозрачного или белого муранского стекла либо мультиколор — сочетание стеклянных и металлических (золото или сталь) листьев."
+   },
+   "products": 14
+  },
+  "leaves": {
+   "name": "Leaves",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2350–2399",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/leaves/",
+   "finishes": {
+    "ru": "Металлическое основание в сочетаниях: светлое золото, бронза и чёрный никель; светлое золото и бронза; светлое золото и чёрный никель; бронза и чёрный никель; чёрный никель и сталь. Декоративные подвески из прозрачного стекла."
+   },
+   "products": 10
+  },
+  "ninfea": {
+   "name": "Ninfea",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2400–2449",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/ninfea/",
+   "finishes": {
+    "ru": "Металлическое основание: хром или светлое золото. Подвески из белого муранского жемчуга или прозрачного хрусталя."
+   },
+   "products": 7
+  },
+  "tribu": {
+   "name": "Tribù",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2450–2499",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/tribu/",
+   "finishes": {
+    "ru": "Металлический каркас: глянцевое античное золото, светлое золото, сталь, бархатный белый. Чеканное прозрачное муранское стекло."
+   },
+   "products": 6
+  },
+  "vanity": {
+   "name": "Vanity",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2500–2549",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/vanity/",
+   "finishes": {
+    "ru": "Абажуры из джута светлого или тёмного оттенка, chinette слоновой кости или серо-бежевого цвета, белый или слоновой кости plissé."
+   },
+   "products": 2
+  },
+  "weave": {
+   "name": "Weave",
+   "line": "luxury",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2550–2599",
+   "mfr_url": "https://www.idl1987.it/ru/collezioni/illuminazione/weave/",
+   "finishes": {
+    "ru": "Металлическое основание: сталь, светлое золото, бронза. Абажуры настольных ламп из джута или chinette тёмного и светлого оттенка."
+   },
+   "products": 19
+  },
+  "angel": {
+   "name": "Angel",
+   "line": "catalog",
+   "designer": "IDL Staff",
+   "sku_block": "2600–2649",
+   "mfr_url": null,
+   "finishes": {
+    "ru": "Металлический каркас: сталь. Прозрачное муранское стекло pulegoso. Абажуры настольных ламп: джут светлый или тёмный, chinette слоновой кости или серо-бежевая."
+   },
+   "products": 7
+  },
+  "crystal-moon": {
+   "name": "Crystal Moon",
+   "line": "catalog",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2650–2699",
+   "mfr_url": null,
+   "finishes": {
+    "ru": "Металлический каркас: светлое золото. Белые плафоны из муранского стекла, декоративные кристаллы."
+   },
+   "products": 7
+  },
+  "crystal-rock": {
+   "name": "Crystal Rock",
+   "line": "catalog",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2700–2749",
+   "mfr_url": null,
+   "finishes": {
+    "ru": "Металлический каркас: светлое золото с золотыми цепочками, ржавчина, бархатный чёрный. Абажуры chinette слоновой кости или серо-бежевые."
+   },
+   "products": 6
+  },
+  "elite": {
+   "name": "Elite",
+   "line": "catalog",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2750–2799",
+   "mfr_url": null,
+   "finishes": {
+    "ru": "Металлический каркас: сталь, светлое золото, бронза. Листья из муранского стекла: белые или прозрачные. Возможны размеры на заказ."
+   },
+   "products": 8
+  },
+  "floritude": {
+   "name": "Floritude",
+   "line": "catalog",
+   "designer": "Cristian Feltrin",
+   "sku_block": "2800–2849",
+   "mfr_url": null,
+   "finishes": {
+    "ru": "Металлический каркас: сталь. Цветы из кристаллов Asfour."
+   },
+   "products": 2
+  },
+  "grace": {
+   "name": "Grace",
+   "line": "catalog",
+   "designer": "IDL Staff",
+   "sku_block": "2850–2899",
+   "mfr_url": null,
+   "finishes": {
+    "ru": "Металлический каркас: бархатный белый, бархатный чёрный, брашированный чёрный никель, брашированный хром, брашированное золото. Абажуры из ткани lamé золотого или серебряного цвета."
+   },
+   "products": 4
+  }
+ },
+ "products": [
+  {
+   "sku": "DL-T1001",
+   "mfr_code": "650/1L",
+   "collection": "acropora",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    94,
+    95
+   ]
+  },
+  {
+   "sku": "DL-S1002",
+   "mfr_code": "650/3",
+   "collection": "acropora",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    95
+   ]
+  },
+  {
+   "sku": "DL-W1003",
+   "mfr_code": "650/4A",
+   "collection": "acropora",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    90,
+    95
+   ]
+  },
+  {
+   "sku": "DL-T1004",
+   "mfr_code": "650/5L",
+   "collection": "acropora",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    93,
+    95
+   ]
+  },
+  {
+   "sku": "DL-C1005",
+   "mfr_code": "650/8PF",
+   "collection": "acropora",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    95
+   ]
+  },
+  {
+   "sku": "DL-S1006",
+   "mfr_code": "650/20",
+   "collection": "acropora",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    85,
+    87,
+    91,
+    95
+   ]
+  },
+  {
+   "sku": "DL-S1007",
+   "mfr_code": "650/28",
+   "collection": "acropora",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    89,
+    95
+   ]
+  },
+  {
+   "sku": "DL-S1008",
+   "mfr_code": "651/9",
+   "collection": "acropora",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    95
+   ]
+  },
+  {
+   "sku": "DL-C1009",
+   "mfr_code": "651/9PF",
+   "collection": "acropora",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    95
+   ]
+  },
+  {
+   "sku": "DL-S1010",
+   "mfr_code": "651/14",
+   "collection": "acropora",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    95
+   ]
+  },
+  {
+   "sku": "DL-F1011",
+   "mfr_code": "651/15P",
+   "collection": "acropora",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    92,
+    95
+   ]
+  },
+  {
+   "sku": "DL-S1012",
+   "mfr_code": "651/60",
+   "collection": "acropora",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    95
+   ]
+  },
+  {
+   "sku": "DL-S1051",
+   "mfr_code": "478/35/E",
+   "collection": "amalfi",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-C1052",
+   "mfr_code": "478/35PF/E",
+   "collection": "amalfi",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-S1053",
+   "mfr_code": "478/50/E",
+   "collection": "amalfi",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-C1054",
+   "mfr_code": "478/50PF/E",
+   "collection": "amalfi",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-S1055",
+   "mfr_code": "478/72/E",
+   "collection": "amalfi",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-C1056",
+   "mfr_code": "478/72PF/E",
+   "collection": "amalfi",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-S1057",
+   "mfr_code": "478/90/E",
+   "collection": "amalfi",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-C1058",
+   "mfr_code": "478/90PF/E",
+   "collection": "amalfi",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-S1059",
+   "mfr_code": "482/35",
+   "collection": "amalfi",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-C1060",
+   "mfr_code": "482/35PF",
+   "collection": "amalfi",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    358,
+    359
+   ]
+  },
+  {
+   "sku": "DL-S1061",
+   "mfr_code": "482/50",
+   "collection": "amalfi",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    353,
+    355,
+    359
+   ]
+  },
+  {
+   "sku": "DL-C1062",
+   "mfr_code": "482/50PF",
+   "collection": "amalfi",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    358,
+    359
+   ]
+  },
+  {
+   "sku": "DL-S1063",
+   "mfr_code": "482/72",
+   "collection": "amalfi",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    353,
+    354,
+    357,
+    359
+   ]
+  },
+  {
+   "sku": "DL-C1064",
+   "mfr_code": "482/72PF",
+   "collection": "amalfi",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-S1065",
+   "mfr_code": "482/90",
+   "collection": "amalfi",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    356,
+    359
+   ]
+  },
+  {
+   "sku": "DL-C1066",
+   "mfr_code": "482/90PF",
+   "collection": "amalfi",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    359
+   ]
+  },
+  {
+   "sku": "DL-S1101",
+   "mfr_code": "641/90",
+   "collection": "artic",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    115,
+    127
+   ]
+  },
+  {
+   "sku": "DL-W1102",
+   "mfr_code": "642/3ADX",
+   "collection": "artic",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    127
+   ]
+  },
+  {
+   "sku": "DL-W1103",
+   "mfr_code": "642/3ASX",
+   "collection": "artic",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    127
+   ]
+  },
+  {
+   "sku": "DL-S1104",
+   "mfr_code": "642/50",
+   "collection": "artic",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    127
+   ]
+  },
+  {
+   "sku": "DL-C1105",
+   "mfr_code": "642/60PF",
+   "collection": "artic",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    122,
+    126
+   ]
+  },
+  {
+   "sku": "DL-S1106",
+   "mfr_code": "642/70",
+   "collection": "artic",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    114,
+    127
+   ]
+  },
+  {
+   "sku": "DL-S1107",
+   "mfr_code": "642/90",
+   "collection": "artic",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    113,
+    127
+   ]
+  },
+  {
+   "sku": "DL-C1108",
+   "mfr_code": "642/90PF",
+   "collection": "artic",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    126
+   ]
+  },
+  {
+   "sku": "DL-S1109",
+   "mfr_code": "642/115",
+   "collection": "artic",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    126
+   ]
+  },
+  {
+   "sku": "DL-S1110",
+   "mfr_code": "642/150",
+   "collection": "artic",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    121,
+    126
+   ]
+  },
+  {
+   "sku": "DL-T1111",
+   "mfr_code": "642/L",
+   "collection": "artic",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    124,
+    127
+   ]
+  },
+  {
+   "sku": "DL-S1112",
+   "mfr_code": "643/4",
+   "collection": "artic",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    121,
+    127
+   ]
+  },
+  {
+   "sku": "DL-S1113",
+   "mfr_code": "643/10",
+   "collection": "artic",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    119,
+    126
+   ]
+  },
+  {
+   "sku": "DL-S1114",
+   "mfr_code": "643/12",
+   "collection": "artic",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    116,
+    126
+   ]
+  },
+  {
+   "sku": "DL-W1151",
+   "mfr_code": "423/1A",
+   "collection": "bamboo",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    375,
+    381
+   ]
+  },
+  {
+   "sku": "DL-T1152",
+   "mfr_code": "423/1L",
+   "collection": "bamboo",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    370,
+    381
+   ]
+  },
+  {
+   "sku": "DL-S1153",
+   "mfr_code": "423/1S",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    369,
+    380
+   ]
+  },
+  {
+   "sku": "DL-W1154",
+   "mfr_code": "423/2ADX",
+   "collection": "bamboo",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    374,
+    381
+   ]
+  },
+  {
+   "sku": "DL-W1155",
+   "mfr_code": "423/2ASX",
+   "collection": "bamboo",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    374,
+    381
+   ]
+  },
+  {
+   "sku": "DL-S1156",
+   "mfr_code": "423/3",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    380
+   ]
+  },
+  {
+   "sku": "DL-W1157",
+   "mfr_code": "423/3A",
+   "collection": "bamboo",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    363,
+    365,
+    381
+   ]
+  },
+  {
+   "sku": "DL-T1158",
+   "mfr_code": "423/3L",
+   "collection": "bamboo",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    370,
+    381
+   ]
+  },
+  {
+   "sku": "DL-F1159",
+   "mfr_code": "423/3P",
+   "collection": "bamboo",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    377,
+    381
+   ]
+  },
+  {
+   "sku": "DL-C1160",
+   "mfr_code": "423/3PF",
+   "collection": "bamboo",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    380
+   ]
+  },
+  {
+   "sku": "DL-S1161",
+   "mfr_code": "423/6",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    367,
+    380
+   ]
+  },
+  {
+   "sku": "DL-C1162",
+   "mfr_code": "423/6PF",
+   "collection": "bamboo",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    371,
+    380
+   ]
+  },
+  {
+   "sku": "DL-S1163",
+   "mfr_code": "423/8",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    364,
+    380
+   ]
+  },
+  {
+   "sku": "DL-C1164",
+   "mfr_code": "423/8PF",
+   "collection": "bamboo",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    380
+   ]
+  },
+  {
+   "sku": "DL-C1165",
+   "mfr_code": "423/10PF",
+   "collection": "bamboo",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    368,
+    380
+   ]
+  },
+  {
+   "sku": "DL-S1166",
+   "mfr_code": "423/12",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    362,
+    380
+   ]
+  },
+  {
+   "sku": "DL-C1167",
+   "mfr_code": "423/12PF",
+   "collection": "bamboo",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    380
+   ]
+  },
+  {
+   "sku": "DL-S1168",
+   "mfr_code": "423/35",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    373,
+    381
+   ]
+  },
+  {
+   "sku": "DL-S1169",
+   "mfr_code": "423/66",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    372,
+    381
+   ]
+  },
+  {
+   "sku": "DL-T1170",
+   "mfr_code": "423B/1LG",
+   "collection": "bamboo",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    376,
+    381
+   ]
+  },
+  {
+   "sku": "DL-T1171",
+   "mfr_code": "423B/1LP",
+   "collection": "bamboo",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    376,
+    381
+   ]
+  },
+  {
+   "sku": "DL-F1172",
+   "mfr_code": "423B/4P",
+   "collection": "bamboo",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    379,
+    381
+   ]
+  },
+  {
+   "sku": "DL-F1173",
+   "mfr_code": "423B/5P",
+   "collection": "bamboo",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    379,
+    381
+   ]
+  },
+  {
+   "sku": "DL-S1174",
+   "mfr_code": "496/8",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    366,
+    380
+   ]
+  },
+  {
+   "sku": "DL-S1175",
+   "mfr_code": "497/8",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    360,
+    361,
+    380
+   ]
+  },
+  {
+   "sku": "DL-S1176",
+   "mfr_code": "497/8+8",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    380
+   ]
+  },
+  {
+   "sku": "DL-S1177",
+   "mfr_code": "497/12",
+   "collection": "bamboo",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    361,
+    380
+   ]
+  },
+  {
+   "sku": "DL-S1201",
+   "mfr_code": "632/50",
+   "collection": "cesare",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    219,
+    223
+   ]
+  },
+  {
+   "sku": "DL-S1202",
+   "mfr_code": "632/76",
+   "collection": "cesare",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    219,
+    222,
+    223
+   ]
+  },
+  {
+   "sku": "DL-S1203",
+   "mfr_code": "632/110",
+   "collection": "cesare",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    219,
+    221,
+    223
+   ]
+  },
+  {
+   "sku": "DL-S1251",
+   "mfr_code": "697/10",
+   "collection": "collier",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    11,
+    12,
+    17
+   ]
+  },
+  {
+   "sku": "DL-S1252",
+   "mfr_code": "697/2",
+   "collection": "collier",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    13,
+    14,
+    17
+   ]
+  },
+  {
+   "sku": "DL-W1253",
+   "mfr_code": "697/3A",
+   "collection": "collier",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    14,
+    15,
+    17
+   ]
+  },
+  {
+   "sku": "DL-F1254",
+   "mfr_code": "697/2P",
+   "collection": "collier",
+   "type": "floor",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    16,
+    17
+   ]
+  },
+  {
+   "sku": "DL-W1301",
+   "mfr_code": "672/1A",
+   "collection": "dp",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    29,
+    31
+   ]
+  },
+  {
+   "sku": "DL-T1302",
+   "mfr_code": "672/1L",
+   "collection": "dp",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    30,
+    31
+   ]
+  },
+  {
+   "sku": "DL-W1303",
+   "mfr_code": "672/2A",
+   "collection": "dp",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    28,
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1304",
+   "mfr_code": "672/3",
+   "collection": "dp",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    24,
+    31
+   ]
+  },
+  {
+   "sku": "DL-T1305",
+   "mfr_code": "672/3L",
+   "collection": "dp",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    30,
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1306",
+   "mfr_code": "672/5",
+   "collection": "dp",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    24,
+    31
+   ]
+  },
+  {
+   "sku": "DL-F1307",
+   "mfr_code": "672/5P",
+   "collection": "dp",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    27,
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1308",
+   "mfr_code": "672/9",
+   "collection": "dp",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    31
+   ]
+  },
+  {
+   "sku": "DL-C1309",
+   "mfr_code": "672/9PF",
+   "collection": "dp",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    25,
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1310",
+   "mfr_code": "672/15",
+   "collection": "dp",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    19,
+    20,
+    31
+   ]
+  },
+  {
+   "sku": "DL-C1311",
+   "mfr_code": "672/15PF",
+   "collection": "dp",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1312",
+   "mfr_code": "672/16",
+   "collection": "dp",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    31
+   ]
+  },
+  {
+   "sku": "DL-F1313",
+   "mfr_code": "672/16P",
+   "collection": "dp",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    26,
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1314",
+   "mfr_code": "673/9",
+   "collection": "dp",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    23,
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1315",
+   "mfr_code": "673/12",
+   "collection": "dp",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    22,
+    31
+   ]
+  },
+  {
+   "sku": "DL-T1351",
+   "mfr_code": "668/1LM",
+   "collection": "ekle",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    75,
+    83
+   ]
+  },
+  {
+   "sku": "DL-T1352",
+   "mfr_code": "668/1LP",
+   "collection": "ekle",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    75,
+    83
+   ]
+  },
+  {
+   "sku": "DL-F1353",
+   "mfr_code": "668/1P",
+   "collection": "ekle",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    77,
+    83
+   ]
+  },
+  {
+   "sku": "DL-W1354",
+   "mfr_code": "668/2A",
+   "collection": "ekle",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    72,
+    83
+   ]
+  },
+  {
+   "sku": "DL-T1355",
+   "mfr_code": "668/3L",
+   "collection": "ekle",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    76,
+    83
+   ]
+  },
+  {
+   "sku": "DL-W1356",
+   "mfr_code": "668/4A",
+   "collection": "ekle",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    72,
+    83
+   ]
+  },
+  {
+   "sku": "DL-S1357",
+   "mfr_code": "668/6",
+   "collection": "ekle",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    67,
+    82
+   ]
+  },
+  {
+   "sku": "DL-W1358",
+   "mfr_code": "668/6A",
+   "collection": "ekle",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    83
+   ]
+  },
+  {
+   "sku": "DL-F1359",
+   "mfr_code": "668/6P",
+   "collection": "ekle",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    78,
+    83
+   ]
+  },
+  {
+   "sku": "DL-S1360",
+   "mfr_code": "668/12",
+   "collection": "ekle",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    68,
+    82
+   ]
+  },
+  {
+   "sku": "DL-F1361",
+   "mfr_code": "668/12P",
+   "collection": "ekle",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    81,
+    83
+   ]
+  },
+  {
+   "sku": "DL-C1362",
+   "mfr_code": "668/12PF",
+   "collection": "ekle",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    73,
+    83
+   ]
+  },
+  {
+   "sku": "DL-S1363",
+   "mfr_code": "668/16",
+   "collection": "ekle",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    82
+   ]
+  },
+  {
+   "sku": "DL-C1364",
+   "mfr_code": "668/16PF",
+   "collection": "ekle",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    82
+   ]
+  },
+  {
+   "sku": "DL-S1365",
+   "mfr_code": "668/20",
+   "collection": "ekle",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    63,
+    82
+   ]
+  },
+  {
+   "sku": "DL-S1366",
+   "mfr_code": "668/20+16",
+   "collection": "ekle",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    59,
+    82
+   ]
+  },
+  {
+   "sku": "DL-S1367",
+   "mfr_code": "668/24",
+   "collection": "ekle",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    60,
+    82
+   ]
+  },
+  {
+   "sku": "DL-S1368",
+   "mfr_code": "669/20",
+   "collection": "ekle",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    65,
+    82
+   ]
+  },
+  {
+   "sku": "DL-C1369",
+   "mfr_code": "670/16PF",
+   "collection": "ekle",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    82
+   ]
+  },
+  {
+   "sku": "DL-S1370",
+   "mfr_code": "670/20",
+   "collection": "ekle",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    71,
+    82
+   ]
+  },
+  {
+   "sku": "DL-S1371",
+   "mfr_code": "671/3S",
+   "collection": "ekle",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    62,
+    82
+   ]
+  },
+  {
+   "sku": "DL-S1401",
+   "mfr_code": "684/2",
+   "collection": "endless",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    18,
+    24
+   ]
+  },
+  {
+   "sku": "DL-S1402",
+   "mfr_code": "682/130x44",
+   "collection": "endless",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    19
+   ]
+  },
+  {
+   "sku": "DL-S1403",
+   "mfr_code": "682/2",
+   "collection": "endless",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    19
+   ]
+  },
+  {
+   "sku": "DL-S1404",
+   "mfr_code": "684/120",
+   "collection": "endless",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    20
+   ]
+  },
+  {
+   "sku": "DL-S1405",
+   "mfr_code": "686/250",
+   "collection": "endless",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    21,
+    22,
+    24
+   ]
+  },
+  {
+   "sku": "DL-C1406",
+   "mfr_code": "685/140PF",
+   "collection": "endless",
+   "type": "ceiling",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    24
+   ]
+  },
+  {
+   "sku": "DL-W1451",
+   "mfr_code": "655/1A",
+   "collection": "flower-miu",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1452",
+   "mfr_code": "655/1SG",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1453",
+   "mfr_code": "655/1SM",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1454",
+   "mfr_code": "655/1SP",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    111
+   ]
+  },
+  {
+   "sku": "DL-W1455",
+   "mfr_code": "655/2A",
+   "collection": "flower-miu",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    108,
+    111
+   ]
+  },
+  {
+   "sku": "DL-F1456",
+   "mfr_code": "655/3P",
+   "collection": "flower-miu",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    110,
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1457",
+   "mfr_code": "655/3+3",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1458",
+   "mfr_code": "655/4",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    107,
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1459",
+   "mfr_code": "655/7",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    106,
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1460",
+   "mfr_code": "655/9SL",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    105,
+    111
+   ]
+  },
+  {
+   "sku": "DL-T1461",
+   "mfr_code": "655/1LG",
+   "collection": "flower-miu",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    111
+   ]
+  },
+  {
+   "sku": "DL-T1462",
+   "mfr_code": "655/LP",
+   "collection": "flower-miu",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    108,
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1463",
+   "mfr_code": "658/1SG",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    103,
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1464",
+   "mfr_code": "658/1SM",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    103,
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1465",
+   "mfr_code": "658/1SP",
+   "collection": "flower-miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    103,
+    111
+   ]
+  },
+  {
+   "sku": "DL-S1501",
+   "mfr_code": "688/20",
+   "collection": "galaxy",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    38,
+    39,
+    46
+   ]
+  },
+  {
+   "sku": "DL-S1502",
+   "mfr_code": "689/16",
+   "collection": "galaxy",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    40,
+    41,
+    46
+   ]
+  },
+  {
+   "sku": "DL-F1503",
+   "mfr_code": "688/15P",
+   "collection": "galaxy",
+   "type": "floor",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    42,
+    46
+   ]
+  },
+  {
+   "sku": "DL-W1504",
+   "mfr_code": "688/4A",
+   "collection": "galaxy",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    43,
+    46
+   ]
+  },
+  {
+   "sku": "DL-T1505",
+   "mfr_code": "688/4L",
+   "collection": "galaxy",
+   "type": "table",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    44,
+    46
+   ]
+  },
+  {
+   "sku": "DL-S1506",
+   "mfr_code": "688/4",
+   "collection": "galaxy",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    45,
+    46
+   ]
+  },
+  {
+   "sku": "DL-S1507",
+   "mfr_code": "690/12",
+   "collection": "galaxy",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    45,
+    46
+   ]
+  },
+  {
+   "sku": "DL-S1508",
+   "mfr_code": "689/12",
+   "collection": "galaxy",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    46
+   ]
+  },
+  {
+   "sku": "DL-S1551",
+   "mfr_code": "683/19",
+   "collection": "loop",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    25,
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1552",
+   "mfr_code": "683/30",
+   "collection": "loop",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    25,
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1553",
+   "mfr_code": "683/6",
+   "collection": "loop",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    26,
+    31
+   ]
+  },
+  {
+   "sku": "DL-T1554",
+   "mfr_code": "683/1LP",
+   "collection": "loop",
+   "type": "table",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    27,
+    31
+   ]
+  },
+  {
+   "sku": "DL-T1555",
+   "mfr_code": "683/1LG",
+   "collection": "loop",
+   "type": "table",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    27,
+    31
+   ]
+  },
+  {
+   "sku": "DL-W1556",
+   "mfr_code": "683/2A",
+   "collection": "loop",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    28,
+    31
+   ]
+  },
+  {
+   "sku": "DL-W1557",
+   "mfr_code": "683/1AG",
+   "collection": "loop",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    29,
+    31
+   ]
+  },
+  {
+   "sku": "DL-F1558",
+   "mfr_code": "683/2P",
+   "collection": "loop",
+   "type": "floor",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    30,
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1559",
+   "mfr_code": "683/2",
+   "collection": "loop",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    31
+   ]
+  },
+  {
+   "sku": "DL-S1560",
+   "mfr_code": "683/6+3",
+   "collection": "loop",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    31
+   ]
+  },
+  {
+   "sku": "DL-W1561",
+   "mfr_code": "684/1A",
+   "collection": "loop",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    31
+   ]
+  },
+  {
+   "sku": "DL-W1562",
+   "mfr_code": "683/1AP",
+   "collection": "loop",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    31
+   ]
+  },
+  {
+   "sku": "DL-C1563",
+   "mfr_code": "683/2PF",
+   "collection": "loop",
+   "type": "ceiling",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    31
+   ]
+  },
+  {
+   "sku": "DL-C1601",
+   "mfr_code": "694/9",
+   "collection": "mangrove",
+   "type": "ceiling",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    32,
+    37
+   ]
+  },
+  {
+   "sku": "DL-C1602",
+   "mfr_code": "694/9PF",
+   "collection": "mangrove",
+   "type": "ceiling",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    33,
+    37
+   ]
+  },
+  {
+   "sku": "DL-S1603",
+   "mfr_code": "695/10",
+   "collection": "mangrove",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    34,
+    35,
+    37
+   ]
+  },
+  {
+   "sku": "DL-F1604",
+   "mfr_code": "694/9P",
+   "collection": "mangrove",
+   "type": "floor",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    36,
+    37
+   ]
+  },
+  {
+   "sku": "DL-W1605",
+   "mfr_code": "694/3A",
+   "collection": "mangrove",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    37
+   ]
+  },
+  {
+   "sku": "DL-S1651",
+   "mfr_code": "674/3S",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    45
+   ]
+  },
+  {
+   "sku": "DL-S1652",
+   "mfr_code": "674/50",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    45
+   ]
+  },
+  {
+   "sku": "DL-S1653",
+   "mfr_code": "674/78",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    39,
+    45
+   ]
+  },
+  {
+   "sku": "DL-S1654",
+   "mfr_code": "674/110",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    45
+   ]
+  },
+  {
+   "sku": "DL-S1655",
+   "mfr_code": "675/50",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    45
+   ]
+  },
+  {
+   "sku": "DL-S1656",
+   "mfr_code": "675/78",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    37,
+    45
+   ]
+  },
+  {
+   "sku": "DL-S1657",
+   "mfr_code": "675/110",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    45
+   ]
+  },
+  {
+   "sku": "DL-S1658",
+   "mfr_code": "676/110",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    34,
+    45
+   ]
+  },
+  {
+   "sku": "DL-T1659",
+   "mfr_code": "677/2L",
+   "collection": "marea",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    44,
+    45
+   ]
+  },
+  {
+   "sku": "DL-S1660",
+   "mfr_code": "677/3",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    41,
+    45
+   ]
+  },
+  {
+   "sku": "DL-C1661",
+   "mfr_code": "677/5PF",
+   "collection": "marea",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    43,
+    45
+   ]
+  },
+  {
+   "sku": "DL-S1662",
+   "mfr_code": "677/6",
+   "collection": "marea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    40,
+    45
+   ]
+  },
+  {
+   "sku": "DL-W1663",
+   "mfr_code": "677/AG",
+   "collection": "marea",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    42,
+    45
+   ]
+  },
+  {
+   "sku": "DL-W1664",
+   "mfr_code": "677/AP",
+   "collection": "marea",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    42,
+    45
+   ]
+  },
+  {
+   "sku": "DL-W1701",
+   "mfr_code": "679/1A",
+   "collection": "miox",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    55,
+    57
+   ]
+  },
+  {
+   "sku": "DL-T1702",
+   "mfr_code": "679/1L",
+   "collection": "miox",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    56,
+    57
+   ]
+  },
+  {
+   "sku": "DL-S1703",
+   "mfr_code": "679/2",
+   "collection": "miox",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    51,
+    57
+   ]
+  },
+  {
+   "sku": "DL-W1704",
+   "mfr_code": "679/2A",
+   "collection": "miox",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    54,
+    57
+   ]
+  },
+  {
+   "sku": "DL-S1705",
+   "mfr_code": "679/6",
+   "collection": "miox",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    50,
+    57
+   ]
+  },
+  {
+   "sku": "DL-W1706",
+   "mfr_code": "680/1A",
+   "collection": "miox",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    57
+   ]
+  },
+  {
+   "sku": "DL-S1707",
+   "mfr_code": "680/3",
+   "collection": "miox",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    48,
+    57
+   ]
+  },
+  {
+   "sku": "DL-S1708",
+   "mfr_code": "680/6",
+   "collection": "miox",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    49,
+    57
+   ]
+  },
+  {
+   "sku": "DL-S1709",
+   "mfr_code": "680/8",
+   "collection": "miox",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    47,
+    57
+   ]
+  },
+  {
+   "sku": "DL-S1710",
+   "mfr_code": "680/10",
+   "collection": "miox",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    52,
+    57
+   ]
+  },
+  {
+   "sku": "DL-S1751",
+   "mfr_code": "656/1SG",
+   "collection": "miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    99,
+    101
+   ]
+  },
+  {
+   "sku": "DL-S1752",
+   "mfr_code": "656/1SM",
+   "collection": "miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    101
+   ]
+  },
+  {
+   "sku": "DL-S1753",
+   "mfr_code": "656/1SP",
+   "collection": "miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    99,
+    101
+   ]
+  },
+  {
+   "sku": "DL-W1754",
+   "mfr_code": "656/2A",
+   "collection": "miu",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    100,
+    101
+   ]
+  },
+  {
+   "sku": "DL-W1755",
+   "mfr_code": "656/3A",
+   "collection": "miu",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    101
+   ]
+  },
+  {
+   "sku": "DL-S1756",
+   "mfr_code": "656/7SL",
+   "collection": "miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    97,
+    101
+   ]
+  },
+  {
+   "sku": "DL-S1757",
+   "mfr_code": "656/9",
+   "collection": "miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    98,
+    101
+   ]
+  },
+  {
+   "sku": "DL-S1758",
+   "mfr_code": "657/1SG",
+   "collection": "miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    101
+   ]
+  },
+  {
+   "sku": "DL-S1759",
+   "mfr_code": "657/1SM",
+   "collection": "miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    101
+   ]
+  },
+  {
+   "sku": "DL-S1760",
+   "mfr_code": "657/1SP",
+   "collection": "miu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    101
+   ]
+  },
+  {
+   "sku": "DL-S1801",
+   "mfr_code": "691/6+6",
+   "collection": "nature",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    4,
+    5,
+    10
+   ]
+  },
+  {
+   "sku": "DL-S1802",
+   "mfr_code": "691/6",
+   "collection": "nature",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    6,
+    10
+   ]
+  },
+  {
+   "sku": "DL-W1803",
+   "mfr_code": "691/1A",
+   "collection": "nature",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    6,
+    10
+   ]
+  },
+  {
+   "sku": "DL-W1804",
+   "mfr_code": "691/3A",
+   "collection": "nature",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    7,
+    10
+   ]
+  },
+  {
+   "sku": "DL-W1805",
+   "mfr_code": "691/2A",
+   "collection": "nature",
+   "type": "wall",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    7,
+    10
+   ]
+  },
+  {
+   "sku": "DL-S1806",
+   "mfr_code": "691/13",
+   "collection": "nature",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    8,
+    10
+   ]
+  },
+  {
+   "sku": "DL-S1807",
+   "mfr_code": "692/13",
+   "collection": "nature",
+   "type": "suspension",
+   "catalog": "IDL Novelties 2025",
+   "catalog_pages": [
+    9,
+    10
+   ]
+  },
+  {
+   "sku": "DL-T1851",
+   "mfr_code": "430/1L",
+   "collection": "paradise",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    277,
+    281
+   ]
+  },
+  {
+   "sku": "DL-F1852",
+   "mfr_code": "430/1P",
+   "collection": "paradise",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    280,
+    281
+   ]
+  },
+  {
+   "sku": "DL-W1853",
+   "mfr_code": "430/2ADX",
+   "collection": "paradise",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    275,
+    281
+   ]
+  },
+  {
+   "sku": "DL-W1854",
+   "mfr_code": "430/2ASX",
+   "collection": "paradise",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    271,
+    281
+   ]
+  },
+  {
+   "sku": "DL-W1855",
+   "mfr_code": "430/4A",
+   "collection": "paradise",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    275,
+    281
+   ]
+  },
+  {
+   "sku": "DL-S1856",
+   "mfr_code": "430/20",
+   "collection": "paradise",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    274,
+    281
+   ]
+  },
+  {
+   "sku": "DL-S1857",
+   "mfr_code": "430/42",
+   "collection": "paradise",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    281
+   ]
+  },
+  {
+   "sku": "DL-C1858",
+   "mfr_code": "430/42PF",
+   "collection": "paradise",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    276,
+    281
+   ]
+  },
+  {
+   "sku": "DL-S1859",
+   "mfr_code": "430/62",
+   "collection": "paradise",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    269,
+    270,
+    272,
+    281
+   ]
+  },
+  {
+   "sku": "DL-C1860",
+   "mfr_code": "430/65PF",
+   "collection": "paradise",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    281
+   ]
+  },
+  {
+   "sku": "DL-C1861",
+   "mfr_code": "430/90PF",
+   "collection": "paradise",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    278,
+    279,
+    281
+   ]
+  },
+  {
+   "sku": "DL-S1862",
+   "mfr_code": "430/100",
+   "collection": "paradise",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    273,
+    281
+   ]
+  },
+  {
+   "sku": "DL-S1863",
+   "mfr_code": "430/120",
+   "collection": "paradise",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    281
+   ]
+  },
+  {
+   "sku": "DL-C1864",
+   "mfr_code": "430/120PF",
+   "collection": "paradise",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    281
+   ]
+  },
+  {
+   "sku": "DL-T1901",
+   "mfr_code": "359/1L",
+   "collection": "roma",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    232,
+    233
+   ]
+  },
+  {
+   "sku": "DL-S1902",
+   "mfr_code": "359/1SP",
+   "collection": "roma",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    233
+   ]
+  },
+  {
+   "sku": "DL-W1903",
+   "mfr_code": "359/2A",
+   "collection": "roma",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    230,
+    233
+   ]
+  },
+  {
+   "sku": "DL-W1904",
+   "mfr_code": "359/4A",
+   "collection": "roma",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    230,
+    233
+   ]
+  },
+  {
+   "sku": "DL-S1905",
+   "mfr_code": "359/5R",
+   "collection": "roma",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    227,
+    233
+   ]
+  },
+  {
+   "sku": "DL-S1906",
+   "mfr_code": "359/5SP",
+   "collection": "roma",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    228,
+    233
+   ]
+  },
+  {
+   "sku": "DL-S1907",
+   "mfr_code": "359/14",
+   "collection": "roma",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    225,
+    233
+   ]
+  },
+  {
+   "sku": "DL-S1908",
+   "mfr_code": "359/22",
+   "collection": "roma",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    226,
+    233
+   ]
+  },
+  {
+   "sku": "DL-S1909",
+   "mfr_code": "359/42",
+   "collection": "roma",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    233
+   ]
+  },
+  {
+   "sku": "DL-T1951",
+   "mfr_code": "600/1LG",
+   "collection": "charme",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    309,
+    319
+   ]
+  },
+  {
+   "sku": "DL-T1952",
+   "mfr_code": "600/1LM",
+   "collection": "charme",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    311,
+    319
+   ]
+  },
+  {
+   "sku": "DL-T1953",
+   "mfr_code": "600/1LP",
+   "collection": "charme",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    309,
+    319
+   ]
+  },
+  {
+   "sku": "DL-T1954",
+   "mfr_code": "601/1LG",
+   "collection": "charme",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    314,
+    319
+   ]
+  },
+  {
+   "sku": "DL-T1955",
+   "mfr_code": "601/1LM",
+   "collection": "charme",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    312,
+    313,
+    315,
+    319
+   ]
+  },
+  {
+   "sku": "DL-F1956",
+   "mfr_code": "600/7P",
+   "collection": "charme",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    316,
+    319
+   ]
+  },
+  {
+   "sku": "DL-F1957",
+   "mfr_code": "600/9P",
+   "collection": "charme",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    316,
+    319
+   ]
+  },
+  {
+   "sku": "DL-F1958",
+   "mfr_code": "600/13P",
+   "collection": "charme",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    317,
+    319
+   ]
+  },
+  {
+   "sku": "DL-T2001",
+   "mfr_code": "448/1LG",
+   "collection": "chrysalis",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    204,
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2002",
+   "mfr_code": "448/3",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    206
+   ]
+  },
+  {
+   "sku": "DL-W2003",
+   "mfr_code": "448/3ADX",
+   "collection": "chrysalis",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    202,
+    207
+   ]
+  },
+  {
+   "sku": "DL-W2004",
+   "mfr_code": "448/3ASX",
+   "collection": "chrysalis",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    202,
+    207
+   ]
+  },
+  {
+   "sku": "DL-T2005",
+   "mfr_code": "448/3L",
+   "collection": "chrysalis",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    203,
+    207
+   ]
+  },
+  {
+   "sku": "DL-C2006",
+   "mfr_code": "448/3PF",
+   "collection": "chrysalis",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    198,
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2007",
+   "mfr_code": "448/3+3",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    206
+   ]
+  },
+  {
+   "sku": "DL-C2008",
+   "mfr_code": "448/3+3PF",
+   "collection": "chrysalis",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2009",
+   "mfr_code": "448/5",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    206
+   ]
+  },
+  {
+   "sku": "DL-T2010",
+   "mfr_code": "448/5L",
+   "collection": "chrysalis",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    203,
+    207
+   ]
+  },
+  {
+   "sku": "DL-C2011",
+   "mfr_code": "448/5PF",
+   "collection": "chrysalis",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2012",
+   "mfr_code": "448/5+3",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    193,
+    206
+   ]
+  },
+  {
+   "sku": "DL-C2013",
+   "mfr_code": "448/5+3PF",
+   "collection": "chrysalis",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    198,
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2014",
+   "mfr_code": "448/6",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    206
+   ]
+  },
+  {
+   "sku": "DL-F2015",
+   "mfr_code": "448/6P",
+   "collection": "chrysalis",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2016",
+   "mfr_code": "448/6+3",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    193,
+    206
+   ]
+  },
+  {
+   "sku": "DL-F2017",
+   "mfr_code": "448/6+5P",
+   "collection": "chrysalis",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    205,
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2018",
+   "mfr_code": "448/8",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    199,
+    206
+   ]
+  },
+  {
+   "sku": "DL-C2019",
+   "mfr_code": "448/8PF",
+   "collection": "chrysalis",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2020",
+   "mfr_code": "448/8SLED",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    194,
+    206
+   ]
+  },
+  {
+   "sku": "DL-S2021",
+   "mfr_code": "448/8+3",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    206
+   ]
+  },
+  {
+   "sku": "DL-C2022",
+   "mfr_code": "448/8+3PF",
+   "collection": "chrysalis",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    207
+   ]
+  },
+  {
+   "sku": "DL-C2023",
+   "mfr_code": "448/84PF",
+   "collection": "chrysalis",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    197,
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2024",
+   "mfr_code": "448/27",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    201,
+    206
+   ]
+  },
+  {
+   "sku": "DL-S2025",
+   "mfr_code": "448/2000LED",
+   "collection": "chrysalis",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    196,
+    206
+   ]
+  },
+  {
+   "sku": "DL-C2026",
+   "mfr_code": "448/SPOT",
+   "collection": "chrysalis",
+   "type": "spot",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    207
+   ]
+  },
+  {
+   "sku": "DL-S2051",
+   "mfr_code": "468/1LED",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    350
+   ]
+  },
+  {
+   "sku": "DL-C2052",
+   "mfr_code": "468/1PFLED",
+   "collection": "corten",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    341,
+    351
+   ]
+  },
+  {
+   "sku": "DL-S2053",
+   "mfr_code": "468/2LED",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    334,
+    350
+   ]
+  },
+  {
+   "sku": "DL-S2054",
+   "mfr_code": "468/35/E",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    350
+   ]
+  },
+  {
+   "sku": "DL-C2055",
+   "mfr_code": "468/35PF/E",
+   "collection": "corten",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    350
+   ]
+  },
+  {
+   "sku": "DL-S2056",
+   "mfr_code": "468/50/E",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    350
+   ]
+  },
+  {
+   "sku": "DL-C2057",
+   "mfr_code": "468/50PF/E",
+   "collection": "corten",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    339,
+    350
+   ]
+  },
+  {
+   "sku": "DL-S2058",
+   "mfr_code": "468/72/E",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    339,
+    350
+   ]
+  },
+  {
+   "sku": "DL-C2059",
+   "mfr_code": "468/72PF/E",
+   "collection": "corten",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    350
+   ]
+  },
+  {
+   "sku": "DL-S2060",
+   "mfr_code": "468/120LED",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    336,
+    350
+   ]
+  },
+  {
+   "sku": "DL-F2061",
+   "mfr_code": "468/P",
+   "collection": "corten",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    348,
+    351
+   ]
+  },
+  {
+   "sku": "DL-T2062",
+   "mfr_code": "469/1L",
+   "collection": "corten",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    349,
+    351
+   ]
+  },
+  {
+   "sku": "DL-W2063",
+   "mfr_code": "469/3A",
+   "collection": "corten",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    343,
+    351
+   ]
+  },
+  {
+   "sku": "DL-W2064",
+   "mfr_code": "469/3AG",
+   "collection": "corten",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    342,
+    351
+   ]
+  },
+  {
+   "sku": "DL-S2065",
+   "mfr_code": "469/6",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    335,
+    350
+   ]
+  },
+  {
+   "sku": "DL-C2066",
+   "mfr_code": "469/6PF",
+   "collection": "corten",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    340,
+    351
+   ]
+  },
+  {
+   "sku": "DL-C2067",
+   "mfr_code": "469/6PFG",
+   "collection": "corten",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    351
+   ]
+  },
+  {
+   "sku": "DL-S2068",
+   "mfr_code": "469/120",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    350
+   ]
+  },
+  {
+   "sku": "DL-T2069",
+   "mfr_code": "509/3L",
+   "collection": "corten",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    346,
+    351
+   ]
+  },
+  {
+   "sku": "DL-S2070",
+   "mfr_code": "509/4",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    333,
+    350
+   ]
+  },
+  {
+   "sku": "DL-W2071",
+   "mfr_code": "509/4A-G",
+   "collection": "corten",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    344,
+    351
+   ]
+  },
+  {
+   "sku": "DL-W2072",
+   "mfr_code": "509/4A-M",
+   "collection": "corten",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    351
+   ]
+  },
+  {
+   "sku": "DL-T2073",
+   "mfr_code": "509/4L",
+   "collection": "corten",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    346,
+    347,
+    351
+   ]
+  },
+  {
+   "sku": "DL-S2074",
+   "mfr_code": "509/6",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    332,
+    350
+   ]
+  },
+  {
+   "sku": "DL-S2075",
+   "mfr_code": "509/8",
+   "collection": "corten",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    333,
+    350
+   ]
+  },
+  {
+   "sku": "DL-W2076",
+   "mfr_code": "509/16A-G",
+   "collection": "corten",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    351
+   ]
+  },
+  {
+   "sku": "DL-W2077",
+   "mfr_code": "509/16A-M",
+   "collection": "corten",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    345,
+    351
+   ]
+  },
+  {
+   "sku": "DL-W2101",
+   "mfr_code": "512/1A",
+   "collection": "crystal-blade",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    257,
+    267
+   ]
+  },
+  {
+   "sku": "DL-T2102",
+   "mfr_code": "512/1L",
+   "collection": "crystal-blade",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    266,
+    267
+   ]
+  },
+  {
+   "sku": "DL-W2103",
+   "mfr_code": "512/2A",
+   "collection": "crystal-blade",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    261,
+    267
+   ]
+  },
+  {
+   "sku": "DL-T2104",
+   "mfr_code": "512/2L",
+   "collection": "crystal-blade",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    266,
+    267
+   ]
+  },
+  {
+   "sku": "DL-W2105",
+   "mfr_code": "512/3A",
+   "collection": "crystal-blade",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    263,
+    267
+   ]
+  },
+  {
+   "sku": "DL-F2106",
+   "mfr_code": "512/5P",
+   "collection": "crystal-blade",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    265,
+    267
+   ]
+  },
+  {
+   "sku": "DL-S2107",
+   "mfr_code": "512/5SG",
+   "collection": "crystal-blade",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    260,
+    267
+   ]
+  },
+  {
+   "sku": "DL-S2108",
+   "mfr_code": "512/6",
+   "collection": "crystal-blade",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    264,
+    267
+   ]
+  },
+  {
+   "sku": "DL-S2109",
+   "mfr_code": "512/6+3",
+   "collection": "crystal-blade",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    256,
+    267
+   ]
+  },
+  {
+   "sku": "DL-S2110",
+   "mfr_code": "512/8",
+   "collection": "crystal-blade",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    259,
+    267
+   ]
+  },
+  {
+   "sku": "DL-S2111",
+   "mfr_code": "512/120",
+   "collection": "crystal-blade",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    258,
+    267
+   ]
+  },
+  {
+   "sku": "DL-W2151",
+   "mfr_code": "493/2A",
+   "collection": "crystalline",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    242,
+    243
+   ]
+  },
+  {
+   "sku": "DL-T2152",
+   "mfr_code": "493/3L",
+   "collection": "crystalline",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    242,
+    243
+   ]
+  },
+  {
+   "sku": "DL-S2153",
+   "mfr_code": "493/6",
+   "collection": "crystalline",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    235,
+    239,
+    243
+   ]
+  },
+  {
+   "sku": "DL-F2154",
+   "mfr_code": "493/6P",
+   "collection": "crystalline",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    242,
+    243
+   ]
+  },
+  {
+   "sku": "DL-S2155",
+   "mfr_code": "493/10",
+   "collection": "crystalline",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    240,
+    243
+   ]
+  },
+  {
+   "sku": "DL-C2156",
+   "mfr_code": "493/10PF",
+   "collection": "crystalline",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    241,
+    243
+   ]
+  },
+  {
+   "sku": "DL-S2157",
+   "mfr_code": "493/16",
+   "collection": "crystalline",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    243
+   ]
+  },
+  {
+   "sku": "DL-S2158",
+   "mfr_code": "493/16+16",
+   "collection": "crystalline",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    238,
+    243
+   ]
+  },
+  {
+   "sku": "DL-C2159",
+   "mfr_code": "493/80PF",
+   "collection": "crystalline",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    243
+   ]
+  },
+  {
+   "sku": "DL-S2160",
+   "mfr_code": "494/12",
+   "collection": "crystalline",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    237,
+    243
+   ]
+  },
+  {
+   "sku": "DL-S2161",
+   "mfr_code": "494/24",
+   "collection": "crystalline",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    243
+   ]
+  },
+  {
+   "sku": "DL-S2201",
+   "mfr_code": "628/50",
+   "collection": "diamante",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    245,
+    249
+   ]
+  },
+  {
+   "sku": "DL-S2202",
+   "mfr_code": "628/70",
+   "collection": "diamante",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    246,
+    247,
+    248,
+    249
+   ]
+  },
+  {
+   "sku": "DL-S2203",
+   "mfr_code": "628/90",
+   "collection": "diamante",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    245,
+    249
+   ]
+  },
+  {
+   "sku": "DL-W2204",
+   "mfr_code": "628/A",
+   "collection": "diamante",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    249
+   ]
+  },
+  {
+   "sku": "DL-T2205",
+   "mfr_code": "628/L",
+   "collection": "diamante",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    249
+   ]
+  },
+  {
+   "sku": "DL-W2251",
+   "mfr_code": "463/1A",
+   "collection": "groovy",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    157,
+    163,
+    165
+   ]
+  },
+  {
+   "sku": "DL-T2252",
+   "mfr_code": "463/1L",
+   "collection": "groovy",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    161,
+    165
+   ]
+  },
+  {
+   "sku": "DL-F2253",
+   "mfr_code": "463/1P",
+   "collection": "groovy",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    153,
+    165
+   ]
+  },
+  {
+   "sku": "DL-W2254",
+   "mfr_code": "463/2AP",
+   "collection": "groovy",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    165
+   ]
+  },
+  {
+   "sku": "DL-S2255",
+   "mfr_code": "463/6",
+   "collection": "groovy",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    160,
+    165
+   ]
+  },
+  {
+   "sku": "DL-C2256",
+   "mfr_code": "463/8PF",
+   "collection": "groovy",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    162,
+    165
+   ]
+  },
+  {
+   "sku": "DL-S2257",
+   "mfr_code": "463/10",
+   "collection": "groovy",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    159,
+    165
+   ]
+  },
+  {
+   "sku": "DL-C2258",
+   "mfr_code": "463/10PF",
+   "collection": "groovy",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    165
+   ]
+  },
+  {
+   "sku": "DL-S2259",
+   "mfr_code": "463/12",
+   "collection": "groovy",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    158,
+    165
+   ]
+  },
+  {
+   "sku": "DL-S2260",
+   "mfr_code": "464/6",
+   "collection": "groovy",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    156,
+    165
+   ]
+  },
+  {
+   "sku": "DL-S2261",
+   "mfr_code": "464/12",
+   "collection": "groovy",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    153,
+    154,
+    164,
+    165
+   ]
+  },
+  {
+   "sku": "DL-W2301",
+   "mfr_code": "507/3A",
+   "collection": "ice-rain",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    133,
+    141
+   ]
+  },
+  {
+   "sku": "DL-T2302",
+   "mfr_code": "507/4L",
+   "collection": "ice-rain",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    140,
+    141
+   ]
+  },
+  {
+   "sku": "DL-W2303",
+   "mfr_code": "507/6A",
+   "collection": "ice-rain",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    133,
+    141
+   ]
+  },
+  {
+   "sku": "DL-F2304",
+   "mfr_code": "507/6P",
+   "collection": "ice-rain",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    139,
+    141
+   ]
+  },
+  {
+   "sku": "DL-S2305",
+   "mfr_code": "507/6S",
+   "collection": "ice-rain",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    141
+   ]
+  },
+  {
+   "sku": "DL-S2306",
+   "mfr_code": "507/10",
+   "collection": "ice-rain",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    135,
+    141
+   ]
+  },
+  {
+   "sku": "DL-C2307",
+   "mfr_code": "507/10PF",
+   "collection": "ice-rain",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    136,
+    141
+   ]
+  },
+  {
+   "sku": "DL-S2308",
+   "mfr_code": "507/12",
+   "collection": "ice-rain",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    129,
+    134,
+    141
+   ]
+  },
+  {
+   "sku": "DL-C2309",
+   "mfr_code": "507/12PF",
+   "collection": "ice-rain",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    141
+   ]
+  },
+  {
+   "sku": "DL-S2310",
+   "mfr_code": "507/18",
+   "collection": "ice-rain",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    129,
+    141
+   ]
+  },
+  {
+   "sku": "DL-S2311",
+   "mfr_code": "508/10",
+   "collection": "ice-rain",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    132,
+    141
+   ]
+  },
+  {
+   "sku": "DL-S2312",
+   "mfr_code": "508/12",
+   "collection": "ice-rain",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    131,
+    141
+   ]
+  },
+  {
+   "sku": "DL-S2313",
+   "mfr_code": "508/80",
+   "collection": "ice-rain",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    137,
+    141
+   ]
+  },
+  {
+   "sku": "DL-S2314",
+   "mfr_code": "508/120",
+   "collection": "ice-rain",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    141
+   ]
+  },
+  {
+   "sku": "DL-S2351",
+   "mfr_code": "605/1S",
+   "collection": "leaves",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    217
+   ]
+  },
+  {
+   "sku": "DL-W2352",
+   "mfr_code": "605/5A",
+   "collection": "leaves",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    214,
+    216,
+    217
+   ]
+  },
+  {
+   "sku": "DL-C2353",
+   "mfr_code": "605/5PF",
+   "collection": "leaves",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    217
+   ]
+  },
+  {
+   "sku": "DL-S2354",
+   "mfr_code": "605/8",
+   "collection": "leaves",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    211,
+    215,
+    217
+   ]
+  },
+  {
+   "sku": "DL-S2355",
+   "mfr_code": "605/10",
+   "collection": "leaves",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    212,
+    213,
+    217
+   ]
+  },
+  {
+   "sku": "DL-C2356",
+   "mfr_code": "605/10PF",
+   "collection": "leaves",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    217
+   ]
+  },
+  {
+   "sku": "DL-S2357",
+   "mfr_code": "605/16",
+   "collection": "leaves",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    209,
+    210,
+    211,
+    217
+   ]
+  },
+  {
+   "sku": "DL-C2358",
+   "mfr_code": "605/16PF",
+   "collection": "leaves",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    217
+   ]
+  },
+  {
+   "sku": "DL-S2359",
+   "mfr_code": "606/10",
+   "collection": "leaves",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    217
+   ]
+  },
+  {
+   "sku": "DL-S2360",
+   "mfr_code": "606/16",
+   "collection": "leaves",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    217
+   ]
+  },
+  {
+   "sku": "DL-W2401",
+   "mfr_code": "436/4+1A",
+   "collection": "ninfea",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    305,
+    307
+   ]
+  },
+  {
+   "sku": "DL-T2402",
+   "mfr_code": "436/5L",
+   "collection": "ninfea",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    306,
+    307
+   ]
+  },
+  {
+   "sku": "DL-F2403",
+   "mfr_code": "436/5P",
+   "collection": "ninfea",
+   "type": "floor",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    303,
+    307
+   ]
+  },
+  {
+   "sku": "DL-S2404",
+   "mfr_code": "436/10+1",
+   "collection": "ninfea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    307
+   ]
+  },
+  {
+   "sku": "DL-C2405",
+   "mfr_code": "436/10+1PF",
+   "collection": "ninfea",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    304,
+    307
+   ]
+  },
+  {
+   "sku": "DL-S2406",
+   "mfr_code": "436/18+1",
+   "collection": "ninfea",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    301,
+    302,
+    307
+   ]
+  },
+  {
+   "sku": "DL-C2407",
+   "mfr_code": "436/18+1PF",
+   "collection": "ninfea",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    307
+   ]
+  },
+  {
+   "sku": "DL-W2451",
+   "mfr_code": "660/1A",
+   "collection": "tribu",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    189,
+    191
+   ]
+  },
+  {
+   "sku": "DL-W2452",
+   "mfr_code": "660/2A",
+   "collection": "tribu",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    184,
+    189,
+    191
+   ]
+  },
+  {
+   "sku": "DL-S2453",
+   "mfr_code": "660/10",
+   "collection": "tribu",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    183,
+    191
+   ]
+  },
+  {
+   "sku": "DL-W2454",
+   "mfr_code": "661/1A",
+   "collection": "tribu",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    187,
+    191
+   ]
+  },
+  {
+   "sku": "DL-W2455",
+   "mfr_code": "661/2A",
+   "collection": "tribu",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    187,
+    190,
+    191
+   ]
+  },
+  {
+   "sku": "DL-T2456",
+   "mfr_code": "661/2L",
+   "collection": "tribu",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    185,
+    191
+   ]
+  },
+  {
+   "sku": "DL-T2501",
+   "mfr_code": "584/1L",
+   "collection": "vanity",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    297,
+    299
+   ]
+  },
+  {
+   "sku": "DL-T2502",
+   "mfr_code": "585/1L",
+   "collection": "vanity",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    298,
+    299
+   ]
+  },
+  {
+   "sku": "DL-T2551",
+   "mfr_code": "511/1L",
+   "collection": "weave",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    178,
+    181
+   ]
+  },
+  {
+   "sku": "DL-W2552",
+   "mfr_code": "511/2A",
+   "collection": "weave",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    176,
+    181
+   ]
+  },
+  {
+   "sku": "DL-T2553",
+   "mfr_code": "511/2L",
+   "collection": "weave",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    181
+   ]
+  },
+  {
+   "sku": "DL-S2554",
+   "mfr_code": "511/3",
+   "collection": "weave",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    173,
+    180
+   ]
+  },
+  {
+   "sku": "DL-T2555",
+   "mfr_code": "511/3L",
+   "collection": "weave",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    181
+   ]
+  },
+  {
+   "sku": "DL-S2556",
+   "mfr_code": "511/4",
+   "collection": "weave",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    173,
+    180
+   ]
+  },
+  {
+   "sku": "DL-T2557",
+   "mfr_code": "511/4L",
+   "collection": "weave",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    177,
+    181
+   ]
+  },
+  {
+   "sku": "DL-S2558",
+   "mfr_code": "511/6",
+   "collection": "weave",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    172,
+    180
+   ]
+  },
+  {
+   "sku": "DL-W2559",
+   "mfr_code": "513/3A",
+   "collection": "weave",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    181
+   ]
+  },
+  {
+   "sku": "DL-S2560",
+   "mfr_code": "513/6",
+   "collection": "weave",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    180
+   ]
+  },
+  {
+   "sku": "DL-C2561",
+   "mfr_code": "513/6PF",
+   "collection": "weave",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    174,
+    181
+   ]
+  },
+  {
+   "sku": "DL-S2562",
+   "mfr_code": "513/8",
+   "collection": "weave",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    167,
+    180
+   ]
+  },
+  {
+   "sku": "DL-C2563",
+   "mfr_code": "513/8PF",
+   "collection": "weave",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    181
+   ]
+  },
+  {
+   "sku": "DL-S2564",
+   "mfr_code": "513/12",
+   "collection": "weave",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    167,
+    180
+   ]
+  },
+  {
+   "sku": "DL-S2565",
+   "mfr_code": "513/16",
+   "collection": "weave",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    180
+   ]
+  },
+  {
+   "sku": "DL-S2566",
+   "mfr_code": "513/26",
+   "collection": "weave",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    169,
+    180
+   ]
+  },
+  {
+   "sku": "DL-S2567",
+   "mfr_code": "514/6",
+   "collection": "weave",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    170,
+    180
+   ]
+  },
+  {
+   "sku": "DL-T2568",
+   "mfr_code": "590/1L",
+   "collection": "weave",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    179,
+    181
+   ]
+  },
+  {
+   "sku": "DL-T2569",
+   "mfr_code": "591/1L",
+   "collection": "weave",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    179,
+    181
+   ]
+  },
+  {
+   "sku": "DL-W2601",
+   "mfr_code": "653/1AP",
+   "collection": "angel",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    283,
+    287
+   ]
+  },
+  {
+   "sku": "DL-T2602",
+   "mfr_code": "653/1LG",
+   "collection": "angel",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    286,
+    287
+   ]
+  },
+  {
+   "sku": "DL-T2603",
+   "mfr_code": "653/1LP",
+   "collection": "angel",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    287
+   ]
+  },
+  {
+   "sku": "DL-S2604",
+   "mfr_code": "653/1SG",
+   "collection": "angel",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    284,
+    287
+   ]
+  },
+  {
+   "sku": "DL-S2605",
+   "mfr_code": "653/1SP",
+   "collection": "angel",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    284,
+    285,
+    287
+   ]
+  },
+  {
+   "sku": "DL-S2606",
+   "mfr_code": "653/2+1S",
+   "collection": "angel",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    287
+   ]
+  },
+  {
+   "sku": "DL-S2607",
+   "mfr_code": "653/6+6",
+   "collection": "angel",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    283,
+    287
+   ]
+  },
+  {
+   "sku": "DL-C2651",
+   "mfr_code": "475/1AG-PFG",
+   "collection": "crystal-moon",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    291,
+    295
+   ]
+  },
+  {
+   "sku": "DL-C2652",
+   "mfr_code": "475/1AP-PFP",
+   "collection": "crystal-moon",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    291,
+    295
+   ]
+  },
+  {
+   "sku": "DL-T2653",
+   "mfr_code": "475/1L",
+   "collection": "crystal-moon",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    294,
+    295
+   ]
+  },
+  {
+   "sku": "DL-S2654",
+   "mfr_code": "475/1SG",
+   "collection": "crystal-moon",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    292,
+    295
+   ]
+  },
+  {
+   "sku": "DL-S2655",
+   "mfr_code": "475/1SP",
+   "collection": "crystal-moon",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    295
+   ]
+  },
+  {
+   "sku": "DL-S2656",
+   "mfr_code": "475/12",
+   "collection": "crystal-moon",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    289,
+    295
+   ]
+  },
+  {
+   "sku": "DL-C2657",
+   "mfr_code": "475/12PF",
+   "collection": "crystal-moon",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    290,
+    295
+   ]
+  },
+  {
+   "sku": "DL-T2701",
+   "mfr_code": "476/2L",
+   "collection": "crystal-rock",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    331
+   ]
+  },
+  {
+   "sku": "DL-S2702",
+   "mfr_code": "476/3",
+   "collection": "crystal-rock",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    331
+   ]
+  },
+  {
+   "sku": "DL-T2703",
+   "mfr_code": "476/3L",
+   "collection": "crystal-rock",
+   "type": "table",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    330,
+    331
+   ]
+  },
+  {
+   "sku": "DL-S2704",
+   "mfr_code": "476/4",
+   "collection": "crystal-rock",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    325,
+    326,
+    327,
+    331
+   ]
+  },
+  {
+   "sku": "DL-W2705",
+   "mfr_code": "476/4A",
+   "collection": "crystal-rock",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    329,
+    331
+   ]
+  },
+  {
+   "sku": "DL-C2706",
+   "mfr_code": "476/4PF",
+   "collection": "crystal-rock",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    328,
+    331
+   ]
+  },
+  {
+   "sku": "DL-W2751",
+   "mfr_code": "596/2+1A",
+   "collection": "elite",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    149,
+    151
+   ]
+  },
+  {
+   "sku": "DL-S2752",
+   "mfr_code": "596/4+1",
+   "collection": "elite",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    150,
+    151
+   ]
+  },
+  {
+   "sku": "DL-S2753",
+   "mfr_code": "596/8+1",
+   "collection": "elite",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    143,
+    151
+   ]
+  },
+  {
+   "sku": "DL-C2754",
+   "mfr_code": "596/8+1PF",
+   "collection": "elite",
+   "type": "ceiling",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    145,
+    151
+   ]
+  },
+  {
+   "sku": "DL-S2755",
+   "mfr_code": "596/28+3",
+   "collection": "elite",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    151
+   ]
+  },
+  {
+   "sku": "DL-S2756",
+   "mfr_code": "596/34+3",
+   "collection": "elite",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    146,
+    147,
+    151
+   ]
+  },
+  {
+   "sku": "DL-S2757",
+   "mfr_code": "596/41+6",
+   "collection": "elite",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    151
+   ]
+  },
+  {
+   "sku": "DL-S2758",
+   "mfr_code": "596/150",
+   "collection": "elite",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    148,
+    151
+   ]
+  },
+  {
+   "sku": "DL-S2801",
+   "mfr_code": "664/5",
+   "collection": "floritude",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    254,
+    255
+   ]
+  },
+  {
+   "sku": "DL-S2802",
+   "mfr_code": "664/9",
+   "collection": "floritude",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    251,
+    253,
+    255
+   ]
+  },
+  {
+   "sku": "DL-W2851",
+   "mfr_code": "530/2A",
+   "collection": "grace",
+   "type": "wall",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    322,
+    323
+   ]
+  },
+  {
+   "sku": "DL-S2852",
+   "mfr_code": "530/6",
+   "collection": "grace",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    321,
+    323
+   ]
+  },
+  {
+   "sku": "DL-S2853",
+   "mfr_code": "530/6+3",
+   "collection": "grace",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    321,
+    323
+   ]
+  },
+  {
+   "sku": "DL-S2854",
+   "mfr_code": "530/10+5",
+   "collection": "grace",
+   "type": "suspension",
+   "catalog": "IDL 2024",
+   "catalog_pages": [
+    323
+   ]
+  }
+ ]
+}

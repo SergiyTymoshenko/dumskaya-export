@@ -1,0 +1,16 @@
+{
+ "idl": {
+  "name": "IDL 1987",
+  "legal": "I.D.L. Export S.r.l.",
+  "country": "Италия",
+  "site": "https://www.idl1987.it",
+  "address": "via S. Marco 14, 31050 Fanzolo di Vedelago (TV), Italia",
+  "phone": "+39 0423 487141",
+  "email": "info@idl1987.it",
+  "partner": "Александр Замлинский (Италия)",
+  "categories": ["lighting"],
+  "catalog": "content/shop/catalog/idl.json",
+  "sku_range": "DL-…1000–2899",
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
+ }
+}

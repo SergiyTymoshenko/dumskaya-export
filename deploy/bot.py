@@ -231,6 +231,7 @@ class Bot:
         self.username = (me.get("result") or {}).get("username", "")
         self.setup_profile()
         self.ensure_shop_manager()
+        self.ensure_partners()
         offset = int(self.s.get("offset", "0") or 0)
         pause = 1
         self.log(f"бот @{self.username or '?'} слушает Telegram")
@@ -458,6 +459,23 @@ class Bot:
         if not u or u["role"] == "owner":
             return False
         return admin["role"] == "owner" or u["role"] not in ADMIN_ROLES
+
+    def find_partner(self, ref):
+        """Партнёр товара: номер из бота (/partners) или название компании (для фабрик из content/shop/manufacturers.json)."""
+        if ref is None or str(ref).strip() == "":
+            return None
+        if str(ref).isdigit():
+            return self.partner(int(ref))
+        return self.s.one("SELECT * FROM partners WHERE name=?", str(ref).strip())
+
+    def ensure_partners(self, products=None):
+        """Компании партнёров, указанные у товаров по названию, заводятся в боте заранее — при приёме человека
+        их остаётся выбрать из списка («Из какой компании?»)."""
+        products = products if products is not None else load_products()
+        for name in sorted({str(it.get("partner")).strip() for it in products.values()
+                            if it.get("partner") and not str(it.get("partner")).isdigit()}):
+            if not self.s.one("SELECT 1 FROM partners WHERE name=?", name):
+                self.s.run("INSERT INTO partners(name, created) VALUES(?, ?)", name, now())
 
     def partner_by_name(self, name):
         p = self.s.one("SELECT * FROM partners WHERE name=?", name)
@@ -717,7 +735,10 @@ class Bot:
             people = sorted(self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", p["id"]),
                             key=lambda u: (ROLE_ORDER.index(u["role"]) if u["role"] in ROLE_ORDER else 99, u["name"] or ""))
             people = [f"{self.label(u)} ({ROLES.get(u['role'], '—').lower()})" for u in people]
-            goods = sorted(code for code, it in products.items() if str(it.get("partner") or "") == str(p["id"]))
+            goods = sorted(code for code, it in products.items()
+                           if str(it.get("partner") or "") in (str(p["id"]), p["name"]))
+            if len(goods) > 12:
+                goods = goods[:12] + [f"… всего {len(goods)}"]
             lines.append(f"\n<b>№{p['id']} {esc(p['name'])}</b>\n"
                          f"Люди: {esc(', '.join(people)) if people else 'никого — заявки придут вам'}\n"
                          f"Товары на сайте: {esc(', '.join(goods)) if goods else 'нет'}")
@@ -743,14 +764,15 @@ class Bot:
         pid = prod.get("partner") if prod else None
         delivered = []
         if pid:
-            p = self.partner(int(pid)) if str(pid).isdigit() else None
-            people = self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", int(pid)) if p else []
+            p = self.find_partner(pid)
+            people = self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", p["id"]) if p else []
             for u in people:
                 if self.send(u["tg_id"], "<b>Заявка с сайта DUMSKAYA DESIGN на ваш товар</b>\n\n" + body):
                     delivered.append(u["tg_id"])
             who = ", ".join(self.label(u) for u in people if u["tg_id"] in delivered)
             if not p:
-                head = f"⚠️ <b>Заявка на товар партнёра №{esc(pid)}</b> — такого партнёра нет в боте, передайте заявку вручную"
+                head = (f"⚠️ <b>Заявка на товар партнёра {esc(pid if not str(pid).isdigit() else '№' + str(pid))}</b> — "
+                        f"такого партнёра нет в боте, передайте заявку вручную")
             elif who:
                 head = f"<b>Заявка на товар партнёра «{esc(p['name'])}»</b> — передана: {esc(who)}"
             else:
@@ -773,6 +795,13 @@ def format_lead(lead, model, prod):
     lines = [f"<b>Имя:</b> {esc(lead.get('name'))}", f"<b>Контакт:</b> {esc(lead.get('contact'))}"]
     if model:
         lines.append(f"<b>Интересует:</b> {esc(model)}" + (f" — {esc(prod.get('name'))}" if prod and prod.get("name") else ""))
+    if prod and prod.get("mfr"):                     # подсказка для студии и партнёра; клиент этого не видит
+        hint = f"<b>Изготовитель:</b> {esc(prod['mfr'])}"
+        if prod.get("mfr_code"):
+            hint += f", артикул изготовителя <code>{esc(prod['mfr_code'])}</code>"
+        if prod.get("collection"):
+            hint += f", коллекция {esc(prod['collection'])}"
+        lines.append(hint)
     if lead.get("message"):
         lines.append(f"<b>Сообщение:</b>\n{esc(lead.get('message'))}")
     page = lead.get("page") or ""
