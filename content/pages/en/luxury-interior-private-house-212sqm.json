@@ -102,30 +102,6 @@
        "alt": "kitchen with concealed storage and lighting"
       },
       {
-       "id": "684a99bcd3b4e0c14f700881",
-       "alt": "villa hallway with recessed lighting"
-      },
-      {
-       "id": "684a99bbcbfab8d2b1b77109",
-       "alt": "high-end corridor with seamless wall panels"
-      },
-      {
-       "id": "684a99b8ca4fe5e649e14a08",
-       "alt": "refined entryway with custom console"
-      },
-      {
-       "id": "684a99bcd3b4e0c14f700886",
-       "alt": "corridor with premium floor and wall finishes"
-      },
-      {
-       "id": "684a99bad82130a88ea8401e",
-       "alt": "neutral hallway design in luxury villa"
-      },
-      {
-       "id": "684a99b9d3b4e0c14f700862",
-       "alt": "built-in wardrobe in minimalist entry"
-      },
-      {
        "id": "684a99f66775d3727cd6eb85",
        "alt": "luxury bedroom with soft textures and tones"
       },
@@ -170,50 +146,6 @@
        "alt": "villa bathroom with built-in storage"
       },
       {
-       "id": "684a9a49cbfab8d2b1b77396",
-       "alt": "elegant materials in corridor zone"
-      },
-      {
-       "id": "684a9a4aca4fe5e649e14d7d",
-       "alt": "sculptural lighting in villa hallway"
-      },
-      {
-       "id": "684a9a4acbfab8d2b1b773a0",
-       "alt": "narrow corridor with light-toned decor"
-      },
-      {
-       "id": "684a9a4a6775d3727cd6ecec",
-       "alt": "hidden storage in high-end hallway"
-      },
-      {
-       "id": "684a9a49d82130a88ea84329",
-       "alt": "entry space with statement art and lighting"
-      },
-      {
-       "id": "684a9a48d82130a88ea84321",
-       "alt": "warm wood finishes in corridor"
-      },
-      {
-       "id": "684a9ab4d82130a88ea845d6",
-       "alt": "minimalist premium bathroom with wall tiles"
-      },
-      {
-       "id": "684a9ab46775d3727cd6eef2",
-       "alt": "soft lighting in serene bathroom design"
-      },
-      {
-       "id": "684a9ab7d82130a88ea845eb",
-       "alt": "elegant tapware and stone counters"
-      },
-      {
-       "id": "684a9ab5cbfab8d2b1b776a2",
-       "alt": "spacious villa bathroom with dual sinks"
-      },
-      {
-       "id": "684a9ab5d3b4e0c14f700e79",
-       "alt": "recessed lighting in luxury wet area"
-      },
-      {
        "id": "684a9a87d82130a88ea844c8",
        "alt": "luxury kids room with custom furniture"
       },
@@ -252,6 +184,74 @@
       {
        "id": "684a9a95cbfab8d2b1b775e1",
        "alt": "smart lighting in children's space"
+      },
+      {
+       "id": "684a9ab4d82130a88ea845d6",
+       "alt": "minimalist premium bathroom with wall tiles"
+      },
+      {
+       "id": "684a9ab46775d3727cd6eef2",
+       "alt": "soft lighting in serene bathroom design"
+      },
+      {
+       "id": "684a9ab7d82130a88ea845eb",
+       "alt": "elegant tapware and stone counters"
+      },
+      {
+       "id": "684a9ab5cbfab8d2b1b776a2",
+       "alt": "spacious villa bathroom with dual sinks"
+      },
+      {
+       "id": "684a9ab5d3b4e0c14f700e79",
+       "alt": "recessed lighting in luxury wet area"
+      },
+      {
+       "id": "684a99bcd3b4e0c14f700881",
+       "alt": "villa hallway with recessed lighting"
+      },
+      {
+       "id": "684a99bbcbfab8d2b1b77109",
+       "alt": "high-end corridor with seamless wall panels"
+      },
+      {
+       "id": "684a99b8ca4fe5e649e14a08",
+       "alt": "refined entryway with custom console"
+      },
+      {
+       "id": "684a99bcd3b4e0c14f700886",
+       "alt": "corridor with premium floor and wall finishes"
+      },
+      {
+       "id": "684a99bad82130a88ea8401e",
+       "alt": "neutral hallway design in luxury villa"
+      },
+      {
+       "id": "684a99b9d3b4e0c14f700862",
+       "alt": "built-in wardrobe in minimalist entry"
+      },
+      {
+       "id": "684a9a49cbfab8d2b1b77396",
+       "alt": "elegant materials in corridor zone"
+      },
+      {
+       "id": "684a9a4aca4fe5e649e14d7d",
+       "alt": "sculptural lighting in villa hallway"
+      },
+      {
+       "id": "684a9a4acbfab8d2b1b773a0",
+       "alt": "narrow corridor with light-toned decor"
+      },
+      {
+       "id": "684a9a4a6775d3727cd6ecec",
+       "alt": "hidden storage in high-end hallway"
+      },
+      {
+       "id": "684a9a49d82130a88ea84329",
+       "alt": "entry space with statement art and lighting"
+      },
+      {
+       "id": "684a9a48d82130a88ea84321",
+       "alt": "warm wood finishes in corridor"
       }
      ]
     },

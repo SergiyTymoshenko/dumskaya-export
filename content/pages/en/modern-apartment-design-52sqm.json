@@ -70,22 +70,6 @@
        "alt": "modern lounge area with soft furnishings"
       },
       {
-       "id": "66d74f58155aff1223913027",
-       "alt": "simple and elegant corridor layout"
-      },
-      {
-       "id": "66d74f5934085faf9b349cda",
-       "alt": "modern entryway with custom furniture"
-      },
-      {
-       "id": "66d74f5fbc41733b4b3c25f6",
-       "alt": "hallway with mirror and storage"
-      },
-      {
-       "id": "66d74f60bc41733b4b3c25fe",
-       "alt": "functional entryway layout"
-      },
-      {
        "id": "66d74f986b7edfc3aa14ec09",
        "alt": "bedroom interior with natural textures"
       },
@@ -108,14 +92,6 @@
       {
        "id": "66d74f67b962fab2515b58d4",
        "alt": "interior design of bedroom apartment"
-      },
-      {
-       "id": "66d74f69155aff122391305c",
-       "alt": "terrace with wood flooring and decor"
-      },
-      {
-       "id": "66d74f6ebc41733b4b3c2636",
-       "alt": "cozy balcony for city apartment"
       },
       {
        "id": "66d74f6f6b7edfc3aa14eb31",
@@ -144,6 +120,30 @@
       {
        "id": "66d74f786b7edfc3aa14eb88",
        "alt": "soft lighting in bathroom interior"
+      },
+      {
+       "id": "66d74f69155aff122391305c",
+       "alt": "terrace with wood flooring and decor"
+      },
+      {
+       "id": "66d74f6ebc41733b4b3c2636",
+       "alt": "cozy balcony for city apartment"
+      },
+      {
+       "id": "66d74f58155aff1223913027",
+       "alt": "simple and elegant corridor layout"
+      },
+      {
+       "id": "66d74f5934085faf9b349cda",
+       "alt": "modern entryway with custom furniture"
+      },
+      {
+       "id": "66d74f5fbc41733b4b3c25f6",
+       "alt": "hallway with mirror and storage"
+      },
+      {
+       "id": "66d74f60bc41733b4b3c25fe",
+       "alt": "functional entryway layout"
       }
      ]
     },

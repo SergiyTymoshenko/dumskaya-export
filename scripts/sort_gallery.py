@@ -4,7 +4,8 @@
 детская → гостевая → гардеробная → постирочная → прихожая → терраса → прочее → чертежи.
 Помещение каждого фото — в content/image-rooms.json (id фото → код). Титульное фото проекта
 (первое в первой галерее — обложка со старого сайта) остаётся первым. Внутри одного помещения порядок
-прежний; галереи на странице (например, визуализации и фото готового объекта) сортируются каждая отдельно.
+прежний; галереи на странице (например, визуализации и фото готового объекта) сортируются каждая отдельно,
+а галереи-документы (страницы дизайн-проекта, где много чертежей — код D) остаются как есть.
 UA/EN-страницы повторяют порядок после  python3 scripts/i18n/assemble.py
    python3 scripts/sort_gallery.py"""
 import json, glob, os
@@ -24,6 +25,8 @@ for f in sorted(glob.glob(os.path.join(ROOT, 'content/pages/ru/*.json'))):
             ims = b['images']
             head, rest = (ims[:1], ims[1:]) if first else ([], ims)
             first = False
+            # галерея-документ (страницы дизайн-проекта: обложка, обмеры, чертежи, визуализации) — порядок не трогаем
+            if sum(1 for im in ims if rooms.get(im['id']) == 'D') >= 0.25 * len(ims): continue
             rank = lambda im: ORDER.index(rooms.get(im['id'], 'X')) if rooms.get(im['id'], 'X') in ORDER else len(ORDER)
             new = head + sorted(rest, key=rank)   # sorted() устойчивая — внутри помещения порядок прежний
             if [i['id'] for i in new] != [i['id'] for i in ims]:

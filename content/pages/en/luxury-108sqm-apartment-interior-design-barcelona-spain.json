@@ -252,14 +252,6 @@
        "alt": "luxury kitchen-living space with custom finishes barcelona, spain"
       },
       {
-       "id": "66d4d89d5339d71adfe4dd33",
-       "alt": "luxury children’s interior with neutral tones barcelona, spain"
-      },
-      {
-       "id": "66d4d89ef04f31b4af6c89b5",
-       "alt": "bespoke wardrobe system in modern bedroom barcelona, spain"
-      },
-      {
        "id": "66d4d892f04f31b4af6c896c",
        "alt": "high-end apartment hallway with wall decor barcelona, spain"
       },
@@ -280,14 +272,6 @@
        "alt": "lounge area with accent furniture and textures barcelona, spain"
       },
       {
-       "id": "66d4d892f04f31b4af6c896b",
-       "alt": "high-end wardrobe in apartment bedroom barcelona, spain"
-      },
-      {
-       "id": "66d4d891e93b01287b02c8dd",
-       "alt": "sleek furniture in minimalist entryway barcelona, spain"
-      },
-      {
        "id": "66d4d8b3e93b01287b02c94c",
        "alt": "modern sofa and neutral tones in apartment lounge barcelona, spain"
       },
@@ -304,8 +288,24 @@
        "alt": "luxury apartment interior with minimalist style barcelona, spain"
       },
       {
+       "id": "66d4d89d5339d71adfe4dd33",
+       "alt": "luxury children’s interior with neutral tones barcelona, spain"
+      },
+      {
+       "id": "66d4d89ef04f31b4af6c89b5",
+       "alt": "bespoke wardrobe system in modern bedroom barcelona, spain"
+      },
+      {
+       "id": "66d4d892f04f31b4af6c896b",
+       "alt": "high-end wardrobe in apartment bedroom barcelona, spain"
+      },
+      {
        "id": "66d4d89b83005165268b578a",
        "alt": "luxury master bedroom with layered lighting barcelona, spain"
+      },
+      {
+       "id": "66d4d891e93b01287b02c8dd",
+       "alt": "sleek furniture in minimalist entryway barcelona, spain"
       }
      ]
     },
@@ -346,34 +346,6 @@
        "alt": "marble and wood accents in upscale interior barcelona, spain"
       },
       {
-       "id": "66d4dca4e93b01287b02cfbb",
-       "alt": "bespoke details in minimalist luxury design barcelona, spain"
-      },
-      {
-       "id": "66d4dca583005165268b5e2a",
-       "alt": "functional zones with premium aesthetics barcelona, spain"
-      },
-      {
-       "id": "66d4dca783005165268b5e3e",
-       "alt": "full-service luxury interior implementation barcelona, spain"
-      },
-      {
-       "id": "66d4dca783005165268b5e3d",
-       "alt": "3D visualization of luxury apartment interior barcelona, spain"
-      },
-      {
-       "id": "66d4dcb883005165268b5e7f",
-       "alt": "premium decor and lighting composition barcelona, spain"
-      },
-      {
-       "id": "66d4dcb0f04f31b4af6c903b",
-       "alt": "luxury turnkey apartment interior solution barcelona, spain"
-      },
-      {
-       "id": "66d4dcb5e93b01287b02cfe0",
-       "alt": "luxury walk-in wardrobe with integrated lighting barcelona, spain"
-      },
-      {
        "id": "66d4dcbe83005165268b5e97",
        "alt": "dressing room with custom shelving and mirror barcelona, spain"
       },
@@ -392,6 +364,34 @@
       {
        "id": "66d4dcc25339d71adfe4e40b",
        "alt": "minimalist wardrobe room with neutral tones barcelona, spain"
+      },
+      {
+       "id": "66d4dca783005165268b5e3e",
+       "alt": "full-service luxury interior implementation barcelona, spain"
+      },
+      {
+       "id": "66d4dca783005165268b5e3d",
+       "alt": "3D visualization of luxury apartment interior barcelona, spain"
+      },
+      {
+       "id": "66d4dca4e93b01287b02cfbb",
+       "alt": "bespoke details in minimalist luxury design barcelona, spain"
+      },
+      {
+       "id": "66d4dca583005165268b5e2a",
+       "alt": "functional zones with premium aesthetics barcelona, spain"
+      },
+      {
+       "id": "66d4dcb883005165268b5e7f",
+       "alt": "premium decor and lighting composition barcelona, spain"
+      },
+      {
+       "id": "66d4dcb0f04f31b4af6c903b",
+       "alt": "luxury turnkey apartment interior solution barcelona, spain"
+      },
+      {
+       "id": "66d4dcb5e93b01287b02cfe0",
+       "alt": "luxury walk-in wardrobe with integrated lighting barcelona, spain"
       }
      ]
     },
