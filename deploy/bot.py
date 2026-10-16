@@ -7,7 +7,9 @@ Telegram-бот студии DUMSKAYA DESIGN — внутренний инстр
 Пользователи и роли:
   1) разработчик (BOT_OWNER_ID в lead.env) — получает все уведомления, принимает пользователей;
   2) дизайнер студии — получает заявки с сайта и уведомления о заявках партнёрам, принимает пользователей;
-     назначить дизайнера может только разработчик;
+     назначить дизайнера может только разработчик. За одним из студии закреплены товары магазина студии
+     (товары без партнёра): заявки на них идут ему, разработчику — копия. Если дизайнер один — за ним
+     автоматически; сменить — кнопка в карточке человека (/users), только у разработчика;
   3) партнёры: поставщик, изготовитель мебели, прораб, независимый подрядчик — привязаны к компании
      (частное лицо — компания с его именем). Людям компании приходят заявки с сайта на её товары;
   4) сотрудники поставщиков — их добавляет сам поставщик: /invite даёт одноразовую ссылку,
@@ -228,6 +230,7 @@ class Bot:
         me = self.api("getMe")
         self.username = (me.get("result") or {}).get("username", "")
         self.setup_profile()
+        self.ensure_shop_manager()
         offset = int(self.s.get("offset", "0") or 0)
         pause = 1
         self.log(f"бот @{self.username or '?'} слушает Telegram")
@@ -360,8 +363,11 @@ class Bot:
             return head + ("Сюда приходят все уведомления: заявки с сайта, заявки партнёрам, запросы доступа и ошибки.\n\n"
                            "/users — пользователи и запросы\n/partners — партнёры и их товары")
         if role == "designer":
-            return head + ("Сюда приходят заявки с сайта, уведомления о заявках партнёрам и запросы на доступ к боту.\n\n"
-                           "/users — пользователи и запросы\n/partners — партнёры и их товары")
+            mgr = self.shop_manager()
+            shop = ("Товары магазина студии закреплены за вами — заявки на них тоже приходят сюда.\n\n"
+                    if mgr and mgr["tg_id"] == u["tg_id"] else "")
+            return head + ("Сюда приходят заявки с сайта, уведомления о заявках партнёрам и запросы на доступ к боту.\n"
+                           + shop + "\n/users — пользователи и запросы\n/partners — партнёры и их товары")
         if role == "supplier":
             return head + ("Сюда будут приходить заявки с сайта dumskaya-design.com на ваши товары — вам "
                            "и вашим сотрудникам в боте.\n\n/team — ваши сотрудники в боте\n/invite — пригласить сотрудника")
@@ -427,6 +433,12 @@ class Bot:
             return self.remove(admin, int(parts[1]), msg)
         if act == "users":
             return self.users_list(admin["tg_id"], msg)
+        if act == "sm":                            # закрепить товары магазина студии (только разработчик)
+            u = self.user(int(parts[1]))
+            if admin["role"] != "owner" or not u or u["status"] != "active" or u["role"] not in ADMIN_ROLES:
+                return self.edit(msg, "Закрепить товары магазина может только разработчик — за собой или дизайнером студии.")
+            self.set_shop_manager(u, by=admin)
+            return self.user_card(admin, u["tg_id"], msg)
 
     def check_target(self, admin, msg, mode, uid):
         u = self.user(uid)
@@ -504,6 +516,7 @@ class Bot:
         self.set_commands(u)
         verb = "изменил(а) роль" if changed else "принял(а)"
         self.notify(f"{esc(self.label(admin))} {verb}: {esc(self.label(u))} — {esc(self.role_line(u))}", skip=(admin["tg_id"],))
+        self.ensure_shop_manager()
 
     def reject(self, admin, uid, msg):
         u = self.user(uid)
@@ -522,6 +535,30 @@ class Bot:
         self.edit(msg, f"Доступ закрыт: {esc(self.label(u))}", [[("Пользователи", "users")]])
         self.send(uid, "Доступ к боту студии DUMSKAYA DESIGN закрыт.")
         self.notify(f"{esc(self.label(admin))} закрыл(а) доступ: {esc(self.label(u))}", skip=(admin["tg_id"],))
+        self.ensure_shop_manager()
+
+    # ---------- товары магазина студии ----------
+    def shop_manager(self):
+        """Кто отвечает за товары магазина студии (товары без партнёра): ему приходят заявки на них."""
+        v = self.s.get("shop_manager")
+        u = self.user(int(v)) if v and v.isdigit() else None
+        return u if u and u["status"] == "active" and u["role"] in ADMIN_ROLES else None
+
+    def set_shop_manager(self, u, by=None):
+        self.s.put("shop_manager", str(u["tg_id"]))
+        self.send(u["tg_id"], "🛒 За вами закреплены товары магазина студии на сайте dumskaya-design.com. "
+                              "Заявки на них будут приходить сюда.")
+        self.notify(f"🛒 Товары магазина студии закреплены за: {esc(self.label(u))}", roles=("owner",), skip=(u["tg_id"],))
+
+    def ensure_shop_manager(self):
+        """Если ответственного нет (или он больше не в студии), а дизайнер студии один — закрепить за ним."""
+        if self.shop_manager():
+            return
+        designers = self.active(("designer",))
+        if len(designers) == 1:
+            self.set_shop_manager(designers[0])
+        else:
+            self.s.drop("shop_manager")
 
     # ---------- сотрудники поставщика ----------
     def make_invite(self, sup):
@@ -662,10 +699,15 @@ class Bot:
                                   f"\n\nКем принять?", self.role_rows("a", uid, admin))
         text = (f"<b>{esc(self.label(u))}</b>\nРоль: {esc(self.role_line(u))}\nTelegram ID: <code>{uid}</code>"
                 + (f"\nПринял(а): {esc(self.label(self.user(u['added_by'])))}" if u["added_by"] else ""))
+        mgr = self.shop_manager()
+        if mgr and mgr["tg_id"] == uid:
+            text += "\n🛒 За ней/ним закреплены товары магазина студии"
         if self.can_manage(admin, u):
             rows = [[("Изменить роль", f"cr:{uid}")], [("Закрыть доступ", f"rm:{uid}")], [("← Все пользователи", "users")]]
         else:
             rows = [[("← Все пользователи", "users")]]
+        if admin["role"] == "owner" and u["role"] in ADMIN_ROLES and not (mgr and mgr["tg_id"] == uid):
+            rows.insert(0, [("🛒 Закрепить товары магазина", f"sm:{uid}")])
         self.edit(msg, text, rows)
 
     def partners_list(self, chat_id, products=None):
@@ -682,6 +724,11 @@ class Bot:
         if len(lines) == 1:
             lines.append("Пока нет. Партнёр появляется, когда вы принимаете человека в роли поставщика, "
                          "изготовителя, прораба или подрядчика и указываете его компанию.")
+        own = sorted(code for code, it in products.items() if not it.get("partner"))
+        if own:
+            m = self.shop_manager()
+            lines.append(f"\n<b>Товары студии</b>: {esc(', '.join(own))}\n"
+                         f"Ответственный: {esc(self.label(m)) if m else 'не назначен — заявки приходят разработчику и дизайнерам'}")
         lines.append("\nНомер партнёра (№) нужен, чтобы привязать к нему товар в магазине на сайте.")
         self.send(chat_id, "\n".join(lines))
 
@@ -709,6 +756,14 @@ class Bot:
             else:
                 head = f"⚠️ <b>Заявка на товар партнёра «{esc(p['name'])}»</b> — партнёр не подключён к боту, передайте заявку вручную"
             delivered += self.notify(head + "\n\n" + body)
+        elif prod:                                   # товар магазина студии — ответственному, разработчику копия
+            m = self.shop_manager()
+            if m and self.send(m["tg_id"], "<b>🛒 Заявка на товар магазина</b> — закреплён за вами\n\n" + body):
+                delivered.append(m["tg_id"])
+                delivered += self.notify(f"<b>🛒 Заявка на товар магазина</b> — передана: {esc(self.label(m))}\n\n" + body,
+                                         roles=("owner",), skip=(m["tg_id"],))
+            else:
+                delivered += self.notify("<b>🛒 Заявка на товар магазина</b>\n\n" + body)
         else:
             delivered += self.notify("<b>Заявка с сайта</b>\n\n" + body)
         return delivered
