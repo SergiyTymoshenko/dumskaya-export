@@ -2,6 +2,10 @@
 //
 //   IMAGES_DIR=~/Documents/dumskaya-export/images npm run images
 //
+// При выкладке через GitHub оригиналов старых фото нет (они только на Маке): IMAGES_REMOTE_MANIFEST —
+// список фото, которые уже лежат на сайте (https://dumskaya-design.com/img/manifest.json). Такие фото
+// берутся из него как есть, заново делаются только фото, у которых есть оригинал (новые — из assets/).
+//
 // Для каждой картинки, которая используется на страницах, делает WebP нескольких
 // ширин с понятным именем файла (dizajn-...-01-1600.webp) и записывает авторство
 // (XMP: автор, правообладатель, описание). Уже готовые файлы пропускает,
@@ -36,6 +40,8 @@ function xmp({ alt }) {
 </rdf:Description></rdf:RDF></x:xmpmeta><?xpacket end="w"?>`;
 }
 
+const remote = process.env.IMAGES_REMOTE_MANIFEST ? JSON.parse(fs.readFileSync(process.env.IMAGES_REMOTE_MANIFEST, 'utf8')) : {};
+let fromRemote = 0;
 const manifest = {};
 const manifestPath = path.join(ROOT, 'content/image-manifest.json');
 let done = 0, made = 0, missing = [];
@@ -56,7 +62,11 @@ async function work() {
     manifest[id] = { name, width: meta.width, height: meta.height, files: files.map((f) => [f.w, f.file]) };
     const todo = files.filter((f) => !fs.existsSync(path.join(OUT, f.file)));
     if (todo.length) {
-      if (!fs.existsSync(src)) { missing.push(id); delete manifest[id]; continue; }
+      if (!fs.existsSync(src)) {
+        // оригинала нет, но фото уже на сайте (выкладка через GitHub) — используем то, что там лежит
+        if (remote[id] && remote[id].name === name) { manifest[id] = remote[id]; fromRemote++; continue; }
+        missing.push(id); delete manifest[id]; continue;
+      }
       const input = sharp(src, { limitInputPixels: false }).rotate();
       for (const f of todo) {
         await input.clone().resize({ width: f.w, withoutEnlargement: true })
@@ -72,6 +82,8 @@ async function work() {
 }
 await Promise.all(Array.from({ length: Math.max(1, os.cpus().length - 1) }, work));
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 0));
+// копия списка — на сайт (/img/manifest.json): по нему выкладка через GitHub знает, какие фото уже на сервере
+fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify(manifest));
 // убрать файлы фото, которые больше нигде не используются (фото удалено или заменено на новое)
 const valid = new Set(Object.values(names));
 let removed = 0;
@@ -80,4 +92,4 @@ for (const f of fs.readdirSync(OUT)) {
   if (m && !valid.has(m[1])) { fs.unlinkSync(path.join(OUT, f)); removed++; }
 }
 if (removed) console.log(`удалено старых файлов: ${removed}`);
-console.log(`готово: ${done} фото, новых файлов ${made}` + (missing.length ? `, нет оригиналов: ${missing.length}` : ''));
+console.log(`готово: ${done} фото, новых файлов ${made}` + (fromRemote ? `, уже на сайте: ${fromRemote}` : '') + (missing.length ? `, нет оригиналов: ${missing.length}` : ''));
