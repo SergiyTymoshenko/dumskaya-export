@@ -42,7 +42,11 @@ const crumbs = crumbsFor(page);
 if (crumbs.length > 1) {
   graph.push({
     '@type': 'BreadcrumbList',
-    itemListElement: crumbs.map((cr, i) => ({ '@type': 'ListItem', position: i + 1, name: cr.label, ...(cr.href ? { item: abs(cr.href) } : {}) })),
+    // Google требует ссылку (item) у каждого звена, кроме последнего: звенья-подписи без своей страницы
+    // («Услуги», «Советы», «Где мы работаем») в разметку не попадают
+    itemListElement: crumbs
+      .filter((cr, i) => cr.href || i === crumbs.length - 1)
+      .map((cr, i) => ({ '@type': 'ListItem', position: i + 1, name: cr.label, ...(cr.href ? { item: abs(cr.href) } : {}) })),
   });
 }
 const images = allGalleryImages(page).filter((i) => manifest[i.id]);
