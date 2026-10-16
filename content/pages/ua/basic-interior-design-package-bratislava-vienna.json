@@ -370,11 +370,19 @@
      "type": "cards",
      "items": [
       {
-       "title": "Квартира в Києві 80 м²",
+       "title": "Квартира у Братиславі, 127 м²",
+       "href": "/ua/dyzain-interieru-kvartyry-bratyslava-127m2",
+       "image": {
+        "id": "bra127-01",
+        "alt": "Вітальня з диваном і кріслами в теплих бежевих тонах — дизайн інтер’єру у Братиславі"
+       }
+      },
+      {
+       "title": "Квартира у Києві, 80 м²",
        "href": "/ua/studiya-dizajnu-intereru-kvartiri-kiev-ukraina-80m",
        "image": {
-        "id": "6abd6a8e6bbe610384483447",
-        "alt": "Квартира у Києві, 80 м²"
+        "id": "6abd0a7d61617a4443ab2567",
+        "alt": "дизайн проєкт інтер’єру квартири в києві"
        }
       }
      ]

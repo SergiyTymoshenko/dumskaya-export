@@ -370,11 +370,19 @@
      "type": "cards",
      "items": [
       {
-       "title": "Квартира в Киеве 80 м²",
+       "title": "Квартира в Братиславе, 127 м²",
+       "href": "/interior-design-apartment-bratislava-127m",
+       "image": {
+        "id": "bra127-01",
+        "alt": "Квартира в Братиславе, 127 м²"
+       }
+      },
+      {
+       "title": "Квартира в Киеве, 80 м²",
        "href": "/studio-interior-design-disain-proekt-kvartira-kiev-80m",
        "image": {
-        "id": "6abd6a8e6bbe610384483447",
-        "alt": "дизайнер интерьера братислава"
+        "id": "6abd0a7d61617a4443ab2567",
+        "alt": "Квартира в Киеве, 80 м²"
        }
       }
      ]

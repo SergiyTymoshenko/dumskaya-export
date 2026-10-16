@@ -370,11 +370,19 @@
      "type": "cards",
      "items": [
       {
+       "title": "Apartment in Bratislava, 127 m²",
+       "href": "/en/apartment-interior-design-bratislava-127sqm",
+       "image": {
+        "id": "bra127-01",
+        "alt": "Living room with sofa and armchairs in warm beige tones — interior design in Bratislava"
+       }
+      },
+      {
        "title": "Apartment in Kyiv, 80 m²",
        "href": "/en/luxury-80sqm-apartment-interior-design-kyiv",
        "image": {
-        "id": "6abd6a8e6bbe610384483447",
-        "alt": "Apartment in Kyiv, 80 m²"
+        "id": "6abd0a7d61617a4443ab2567",
+        "alt": "luxury open-plan kitchen and living room kyiv ukraine"
        }
       }
      ]
