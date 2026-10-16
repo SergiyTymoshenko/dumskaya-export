@@ -1,0 +1,50 @@
+# Сторож сайта снаружи: примерно раз в 5 минут GitHub открывает https://dumskaya-design.com/.
+# Не открывается ~10 минут (если сам сервер жив — ~30 минут) — сообщение разработчику в бот студии (scripts/outside_watch.py).
+# Нужен на случай, когда сервер сайта выключился целиком и его собственный сторож молчит.
+# Ничего не выкладывает и сервер не трогает.
+# Настройка: Settings → Secrets and variables → Actions → секрет TELEGRAM_BOT_TOKEN (токен бота студии).
+# Проверка: Actions → «Сторож сайта снаружи» → Run workflow (с галочкой «test» — проверочное сообщение в бот).
+name: Сторож сайта снаружи
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      test:
+        description: "Прислать в бот проверочное сообщение"
+        type: boolean
+        default: true
+
+concurrency:
+  group: site-watch
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  actions: write   # кеш с состоянием между запусками
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: scripts/outside_watch.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/cache/restore@v4
+        with:
+          path: .watch
+          key: site-watch-${{ github.run_id }}
+          restore-keys: site-watch-
+      - name: Проверка сайта
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          BOT_OWNER_ID: ${{ vars.BOT_OWNER_ID }}
+        run: python3 scripts/outside_watch.py ${{ (github.event_name == 'workflow_dispatch' && inputs.test) && '--test' || '' }}
+      - uses: actions/cache/save@v4
+        if: always() && hashFiles('.watch/changed') != ''
+        with:
+          path: .watch
+          key: site-watch-${{ github.run_id }}
