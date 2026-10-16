@@ -76,7 +76,8 @@ cd ~/dumskaya-site && git fetch origin && git reset --hard origin/main && bash s
 сторож молчит вместе с ним — для этого **сторож снаружи на GitHub** (`.github/workflows/site-watch.yml`,
 `scripts/outside_watch.py`): примерно раз в 5 минут GitHub открывает сайт; не открывается ~10 минут — сообщение
 от того же бота с пометкой, жив ли сам сервер (если жив — через ~30 минут: о коротком падении уже сообщил сторож
-на сервере). Ничего не выкладывает. Нужен секрет репозитория `TELEGRAM_BOT_TOKEN` (Settings → Secrets and variables
+на сервере). Ничего не выкладывает. **Сейчас выключен** (включить: Actions → «Сторож сайта снаружи» → Enable workflow).
+Нужен секрет репозитория `TELEGRAM_BOT_TOKEN` (Settings → Secrets and variables
 → Actions); проверка — Actions → «Сторож сайта снаружи» → Run workflow. GitHub выключает расписание, если
 в репозитории 60 дней не было коммитов (пришлёт письмо) — тогда включить снова там же, в Actions.
 
