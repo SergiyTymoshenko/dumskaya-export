@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Schema from '../components/Schema.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import Lightbox from '../components/Lightbox.astro';
 import { HREFLANG, LANGS, ui, type Lang } from '../lib/i18n';
 // основные начертания кириллицы — грузятся заранее, чтобы заголовки не «прыгали» при подмене шрифта
 import fontDisplayCyr from '@fontsource/montserrat/files/montserrat-cyrillic-400-normal.woff2?url';
@@ -60,6 +61,7 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
     <slot />
   </main>
   <Footer page={page} />
+  <Lightbox lang={lang} />
   {analytics && <CookieBanner lang={lang} gtm={site.analytics.gtm} />}
 </body>
 </html>

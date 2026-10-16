@@ -1,0 +1,135 @@
+---
+// Просмотр фото крупно: нажатие на любое фото внутри [data-zoom] открывает его во весь экран
+// в максимальном размере. Листание — стрелками на экране и клавиатуре, свайпом на телефоне;
+// закрыть — крестик, Esc, нажатие на тёмный фон. Фото страницы листаются по порядку.
+import { ui, type Lang } from '../lib/i18n';
+interface Props { lang: Lang }
+const T = ui(Astro.props.lang);
+---
+<dialog class="lb" data-lb aria-label={T.photo}>
+  <button type="button" class="lb__btn lb__close" data-lb-close aria-label={T.close}>
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+  </button>
+  <button type="button" class="lb__btn lb__nav lb__prev" data-lb-prev aria-label={T.photoPrev}>
+    <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M15 4l-8 8 8 8" stroke="currentColor" stroke-width="1.3" fill="none"/></svg>
+  </button>
+  <figure class="lb__fig">
+    <img class="lb__img" alt="" data-lb-img />
+    <figcaption class="lb__cap"><span data-lb-count class="lb__count"></span><span data-lb-cap></span></figcaption>
+  </figure>
+  <button type="button" class="lb__btn lb__nav lb__next" data-lb-next aria-label={T.photoNext}>
+    <svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M9 4l8 8-8 8" stroke="currentColor" stroke-width="1.3" fill="none"/></svg>
+  </button>
+</dialog>
+
+<script>
+  const dlg = document.querySelector<HTMLDialogElement>('[data-lb]');
+  if (dlg && typeof dlg.showModal === 'function') {
+    const view = dlg.querySelector<HTMLImageElement>('[data-lb-img]')!;
+    const cap = dlg.querySelector<HTMLElement>('[data-lb-cap]')!;
+    const count = dlg.querySelector<HTMLElement>('[data-lb-count]')!;
+    const prev = dlg.querySelector<HTMLButtonElement>('[data-lb-prev]')!;
+    const next = dlg.querySelector<HTMLButtonElement>('[data-lb-next]')!;
+    const SEL = '[data-zoom] img:not([aria-hidden])';
+    let list: HTMLImageElement[] = [];
+    let i = 0;
+
+    // самый большой файл из srcset
+    const biggest = (img: HTMLImageElement) => {
+      let best = img.currentSrc || img.src, bw = 0;
+      (img.getAttribute('srcset') || '').split(',').forEach((p) => {
+        const [u, w] = p.trim().split(/\s+/);
+        const n = parseInt(w || '0', 10);
+        if (u && n > bw) { bw = n; best = u; }
+      });
+      return best;
+    };
+    const preload = (img?: HTMLImageElement) => { if (img) new Image().src = biggest(img); };
+
+    function show(k: number) {
+      i = (k + list.length) % list.length;
+      const im = list[i];
+      view.src = im.currentSrc || im.src;          // сразу — то, что уже загружено на странице
+      view.alt = im.alt;
+      const big = biggest(im);
+      if (big && !view.src.endsWith(big)) {
+        const pre = new Image();
+        pre.onload = () => { if (list[i] === im) view.src = big; };
+        pre.src = big;
+      }
+      cap.textContent = im.alt || '';
+      count.textContent = list.length > 1 ? `${i + 1} / ${list.length}  ` : '';
+      prev.hidden = next.hidden = list.length < 2;
+      preload(list[(i + 1) % list.length]);
+    }
+    function open(im: HTMLImageElement) {
+      list = Array.from(document.querySelectorAll<HTMLImageElement>(SEL));
+      show(Math.max(0, list.indexOf(im)));
+      dlg!.showModal();
+      document.documentElement.classList.add('lb-open');
+    }
+
+    document.addEventListener('click', (e) => {
+      const im = (e.target as Element).closest?.(SEL) as HTMLImageElement | null;
+      if (!im || im.closest('a')) return;
+      e.preventDefault();
+      open(im);
+    });
+    // клавиатура: фото в галерее доступны с Tab и открываются Enter
+    document.querySelectorAll<HTMLImageElement>(SEL).forEach((im) => {
+      if (im.closest('a')) return;
+      im.tabIndex = 0;
+      im.setAttribute('role', 'button');
+      im.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(im); } });
+    });
+
+    prev.addEventListener('click', () => show(i - 1));
+    next.addEventListener('click', () => show(i + 1));
+    dlg.querySelector('[data-lb-close]')!.addEventListener('click', () => dlg.close());
+    dlg.addEventListener('click', (e) => { if (e.target === dlg || (e.target as Element).classList.contains('lb__fig')) dlg.close(); });
+    dlg.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(i - 1);
+      if (e.key === 'ArrowRight') show(i + 1);
+    });
+    dlg.addEventListener('close', () => { document.documentElement.classList.remove('lb-open'); view.removeAttribute('src'); });
+
+    // свайп на телефоне
+    let x0 = 0, y0 = 0;
+    dlg.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+    dlg.addEventListener('touchend', (e) => {
+      if (e.touches.length) return;
+      const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(dx < 0 ? i + 1 : i - 1);
+      else if (dy > 120 && Math.abs(dy) > Math.abs(dx) * 1.5) dlg.close();   // смахнуть вниз — закрыть
+    });
+  }
+</script>
+
+<style>
+  .lb {
+    position: fixed; inset: 0; margin: 0; padding: 0; border: 0;
+    width: 100vw; height: 100svh; max-width: none; max-height: none;
+    background: rgba(14, 13, 12, 0.96); color: #fff; overflow: hidden;
+  }
+  .lb[open] { display: grid; place-items: center; }
+  .lb::backdrop { background: rgba(0, 0, 0, 0.6); }
+  .lb__fig { margin: 0; width: 100%; height: 100%; display: grid; place-items: center; align-content: center; gap: 12px; padding: 56px 72px 20px; box-sizing: border-box; }
+  .lb__img { display: block; width: auto; height: auto; max-width: 100%; max-height: calc(100svh - 120px); object-fit: contain; user-select: none; }
+  .lb__cap { font-size: 13px; line-height: 1.5; color: rgba(255, 255, 255, 0.72); text-align: center; max-width: 70ch; min-height: 1.5em; }
+  .lb__count { letter-spacing: 0.08em; color: rgba(255, 255, 255, 0.9); white-space: pre; }
+  .lb__btn { position: absolute; z-index: 1; display: grid; place-items: center; border: 0; background: none; color: #fff; cursor: pointer; opacity: 0.85; }
+  .lb__btn:hover, .lb__btn:focus-visible { opacity: 1; }
+  .lb__close { top: 8px; right: 8px; width: 52px; height: 52px; }
+  .lb__nav { top: 50%; width: 64px; height: 96px; transform: translateY(-50%); }
+  .lb__prev { left: 4px; }
+  .lb__next { right: 4px; }
+  .lb__nav[hidden] { display: none; }
+  @media (max-width: 719px) {
+    .lb__fig { padding: 56px 0 16px; }
+    .lb__img { max-height: calc(100svh - 130px); }
+    .lb__cap { padding-inline: 64px; }
+    .lb__nav { top: auto; bottom: 4px; transform: none; width: 56px; height: 56px; }
+  }
+  :global(html.lb-open) { overflow: hidden; }
+  :global([data-zoom] img:not([aria-hidden])) { cursor: zoom-in; }
+</style>

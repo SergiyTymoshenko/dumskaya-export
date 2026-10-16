@@ -43,7 +43,7 @@ const descr = (p: Page) => { const d = p.title.split('|')[0].split(':').slice(1)
   <Crumbs items={[{ label: T.home, href: homePath(lang) }, { label: T.kitchens, href: catalog }, { label: code }]} />
 </div>
 <div class="kgrid wrap">
-  <div class="kgal">
+  <div class="kgal" data-zoom>
     {hero && <Img id={hero.id} alt={hero.alt} sizes="(min-width: 960px) 60vw, 100vw" eager class="kgal__hero" />}
     {thumbs.length > 0 && <div class="kgal__thumbs">{thumbs.map((t) => <Img id={t.id} alt={t.alt} sizes="(min-width: 960px) 20vw, 33vw" />)}</div>}
   </div>
@@ -78,7 +78,7 @@ const descr = (p: Page) => { const d = p.title.split('|')[0].split(':').slice(1)
   .kgrid { display: grid; gap: 40px; padding-bottom: clamp(48px, 7vw, 96px); }
   /* на компьютере фото закреплены, а текст и характеристики прокручиваются рядом */
   @media (min-width: 960px) { .kgrid { grid-template-columns: 7fr 5fr; gap: clamp(40px, 5vw, 80px); align-items: start; } .kgal { position: sticky; top: calc(var(--header) + 16px); } }
-  .kgal :global(.kgal__hero) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+  .kgal :global(.kgal__hero) { width: 100%; height: auto; max-height: calc(100svh - var(--header) - 32px); object-fit: contain; background: #f3f1ed; }
   .kgal__thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); margin-top: var(--gap); }
   .kgal__thumbs :global(img) { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
   .kinfo__code { font-size: clamp(26px, 3.2vw, 38px); margin: 0; }

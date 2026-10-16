@@ -1,0 +1,30 @@
+---
+// Большое фото во всю ширину без обрезки: высота блока — по пропорциям фото, но не выше экрана.
+// Если фото выше, чем помещается на экране (компьютер, вертикальные кадры), оно целиком вписывается
+// по высоте, а поля по бокам заполняет размытая копия того же фото. Подпись — через <slot />,
+// она лежит поверх фото снизу.
+import Img from './Img.astro';
+import { manifest, imageMeta } from '../lib/data';
+interface Props { id: string | null | undefined; alt?: string; eager?: boolean; zoom?: boolean; class?: string }
+const { id, alt = '', eager = false, zoom = false, class: cls } = Astro.props;
+const m = id ? manifest[id] : undefined;
+const meta = id ? imageMeta[id] : undefined;
+const w = m?.width || meta?.width || 4, h = m?.height || meta?.height || 3;
+const small = m ? `/img/${m.files[0][1]}` : null;
+---
+<div class:list={['himg', cls]} style={`--ar:${(h / w).toFixed(4)}`} data-zoom={zoom ? '' : undefined}>
+  {small && <img class="himg__bg" src={small} alt="" aria-hidden="true" loading={eager ? 'eager' : 'lazy'} decoding="async" />}
+  <Img id={id} alt={alt} sizes="100vw" eager={eager} class="himg__img" />
+  <slot />
+</div>
+<style>
+  .himg {
+    position: relative; overflow: hidden; background: #e9e6e0;
+    height: min(calc(100vw * var(--ar)), calc(100svh - var(--header)));
+  }
+  .himg__bg {
+    position: absolute; inset: -48px; width: calc(100% + 96px); height: calc(100% + 96px); max-width: none;
+    object-fit: cover; filter: blur(32px) saturate(1.05) brightness(.92); pointer-events: none;
+  }
+  .himg :global(.himg__img) { position: relative; width: 100%; height: 100%; object-fit: contain; }
+</style>

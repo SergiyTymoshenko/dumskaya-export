@@ -1,7 +1,7 @@
 ---
 // Общий вывод блоков страницы: заголовки, текст, фото, карточки, кнопки.
 // На странице остаётся ровно один H1 (если шаблон выводит свой — skipH1).
-import Img from './Img.astro';
+import Gallery from './Gallery.astro';
 import Tile from './Tile.astro';
 import Parts from './Parts.astro';
 import { splitCaption, pageByPath, type Section } from '../lib/data';
@@ -39,11 +39,7 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
         return <h2 class="section-title blk__h wrap"><Caps text={b.text} /></h2>;
       }
       if (b.type === 'text') return <div class="wrap blk__text"><Parts parts={b.parts} /></div>;
-      if (b.type === 'gallery') return (
-        <div class:list={['blk__gallery', b.images.length === 1 && 'is-single']}>
-          {b.images.map((i) => <Img id={i.id} alt={i.alt} sizes={b.images.length === 1 ? '100vw' : '(min-width: 720px) 50vw, 100vw'} />)}
-        </div>
-      );
+      if (b.type === 'gallery') return <Gallery images={b.images} start="pair" class="blk__gallery" sizes="100vw" />;
       if (b.type === 'cards') {
         const three = b.items.length >= 6;
         const kit = b.items.map((c) => kitchenNo(c.href));
@@ -97,10 +93,7 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
   .blk__h1 { font-size: clamp(20px, 2.4vw, 30px); margin-block: 8px 24px; max-width: 30em; }
   .blk__h { margin-block: 24px 20px; max-width: 34em; }
   .blk__text { margin-block: 8px 24px; }
-  .blk__gallery { display: grid; gap: var(--gap); grid-template-columns: 1fr; margin-block: 16px; }
-  @media (min-width: 720px) { .blk__gallery { grid-template-columns: 1fr 1fr; } .blk__gallery.is-single { grid-template-columns: 1fr; } }
-  .blk__gallery :global(img) { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
-  .blk__gallery.is-single :global(img) { aspect-ratio: auto; max-height: 80svh; }
+  .blk :global(.blk__gallery) { margin-block: 16px; }
   .blk__btns { display: flex; flex-wrap: wrap; gap: 12px; margin-block: 16px; }
   .blk__h3 { font: 500 17px/1.4 var(--body); color: var(--ink); margin: 28px 0 10px; max-width: var(--measure); }
   .blk__faq { margin-block: 8px 24px; max-width: calc(var(--measure) + 2 * var(--pad)); }

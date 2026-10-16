@@ -1,0 +1,46 @@
+---
+// Галерея без обрезки фото: ряды «одно широкое фото — пара фото — одно — пара…».
+// В паре фото одной высоты, ширина каждого — по его пропорциям, поэтому вертикальные
+// и горизонтальные кадры видны целиком. Одиночное фото не выше экрана. На телефоне — по одному в ряд.
+// Любое фото открывается крупно по нажатию (components/Lightbox.astro).
+import Img from './Img.astro';
+import { manifest, imageMeta, type Img as Pic } from '../lib/data';
+interface Props { images: Pic[]; start?: 'one' | 'pair'; class?: string; sizes?: string }
+const { images, start = 'one', class: cls, sizes = '(min-width: 960px) 60vw, 100vw' } = Astro.props;
+const ar = (id: string) => {
+  const m = manifest[id] || imageMeta[id];
+  return m && m.width && m.height ? m.width / m.height : 4 / 3;
+};
+const rows: Pic[][] = [];
+let wantOne = start === 'one';
+for (let i = 0; i < images.length; ) {
+  const a = images[i];
+  // широкое фото — отдельным рядом; вертикальное — всегда в паре (иначе оно будет огромным)
+  if ((wantOne && ar(a.id) >= 1.2) || i === images.length - 1) { rows.push([a]); i += 1; wantOne = false; continue; }
+  rows.push([a, images[i + 1]]); i += 2; wantOne = true;
+}
+---
+<div class:list={['gal', cls]} data-zoom>
+  {rows.map((r) => (
+    <div class:list={['gal__row', r.length === 1 && 'gal__row--one']}>
+      {r.map((im) => (
+        <div class="gal__item" style={`--ar:${ar(im.id).toFixed(4)}`}>
+          <Img id={im.id} alt={im.alt} sizes={r.length === 1 ? sizes : '(min-width: 960px) 30vw, (min-width: 720px) 50vw, 100vw'} />
+        </div>
+      ))}
+    </div>
+  ))}
+</div>
+<style>
+  .gal { display: grid; gap: var(--gap); }
+  .gal__row { display: flex; gap: var(--gap); align-items: flex-start; }
+  .gal__item { flex: var(--ar) 1 0%; min-width: 0; }
+  .gal__item :global(img), .gal__item :global(.ph) { display: block; width: 100%; height: auto; aspect-ratio: var(--ar); }
+  /* одиночное фото — не выше экрана; если вертикальное, по центру */
+  .gal__row--one .gal__item { flex: 1 1 100%; display: flex; justify-content: center; }
+  .gal__row--one .gal__item :global(img) { width: auto; max-width: 100%; max-height: calc(100svh - var(--header) - 32px); }
+  @media (max-width: 719px) {
+    .gal__row { flex-direction: column; }
+    .gal__item { flex: none; width: 100%; }
+  }
+</style>

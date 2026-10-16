@@ -1,5 +1,6 @@
 ---
-import Img from '../components/Img.astro';
+import HeroImg from '../components/HeroImg.astro';
+import Gallery from '../components/Gallery.astro';
 import Tile from '../components/Tile.astro';
 import Parts from '../components/Parts.astro';
 import { ui, type Lang } from '../lib/i18n';
@@ -49,11 +50,12 @@ import Caps from '../components/Caps.astro';
 import { typo } from '../lib/typo';
 ---
 <section class="phero">
-  <Img id={hero?.id} alt={hero?.alt || name} sizes="100vw" eager class="phero__img" />
-  <div class="phero__cap">
-    <p class="phero__title display"><Caps text={name} /></p>
-    {area && <p class="phero__sub">{area}</p>}
-  </div>
+  <HeroImg id={hero?.id} alt={hero?.alt || name} eager zoom>
+    <div class="phero__cap">
+      <p class="phero__title display"><Caps text={name} /></p>
+      {area && <p class="phero__sub">{area}</p>}
+    </div>
+  </HeroImg>
 </section>
 
 <div class="pbody wrap">
@@ -82,9 +84,7 @@ import { typo } from '../lib/typo';
         {items.map((it) => ('h' in it ? <h2 class="ph2">{typo(it.h)}</h2> : <Parts parts={it.p} />))}
       </div>
     )}
-    <div class="pgallery">
-      {photos.map((i) => <Img id={i.id} alt={i.alt} sizes="(min-width: 960px) 60vw, 100vw" />)}
-    </div>
+    {photos.length > 0 && <Gallery images={photos} class="pgallery" />}
   </div>
 </div>
 
@@ -106,21 +106,12 @@ import { typo } from '../lib/typo';
 )}
 
 <style>
-  .phero { position: relative; height: calc(100svh - var(--header)); min-height: 380px; max-height: 1000px; overflow: hidden; background: #ddd; }
-  .phero :global(.phero__img) { width: 100%; height: 100%; object-fit: cover; }
-  .phero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0) 50%); }
-  .phero__cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 0 var(--pad) clamp(28px, 6vh, 64px); text-align: center; color: #fff; }
-  .phero__title { color: #fff; margin: 0; font-size: clamp(20px, 3.2vw, 40px); letter-spacing: 0.2em; }
-  .phero__sub { margin: 10px 0 0; font-size: 14px; letter-spacing: 0.08em; }
-  /* телефон и другие вертикальные экраны: фото целиком, без обрезки по бокам, подпись — под фото */
-  @media (max-aspect-ratio: 1/1) {
-    .phero { height: auto; min-height: 0; max-height: none; background: none; }
-    .phero :global(.phero__img) { height: auto; }
-    .phero::after { display: none; }
-    .phero__cap { position: static; color: var(--ink); padding: 20px var(--pad) 0; }
-    .phero__title { color: var(--ink); font-size: 18px; letter-spacing: 0.14em; }
-    .phero__sub { color: var(--stone); }
-  }
+  .phero { position: relative; }
+  .phero :global(.himg)::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,0) 50%); pointer-events: none; }
+  .phero__cap { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 0 var(--pad) clamp(16px, 6vh, 64px); text-align: center; color: #fff; pointer-events: none; text-shadow: 0 1px 12px rgba(0,0,0,.3); }
+  .phero__title { color: #fff; margin: 0; font-size: clamp(15px, 3.2vw, 40px); letter-spacing: 0.2em; }
+  .phero__sub { margin: 8px 0 0; font-size: 14px; letter-spacing: 0.08em; }
+  @media (max-width: 719px) { .phero__title { letter-spacing: 0.14em; } .phero__sub { margin-top: 4px; font-size: 13px; } }
 
   .pbody { display: grid; gap: 40px; padding-block: clamp(32px, 6vw, 88px); }
   @media (min-width: 960px) { .pbody { grid-template-columns: minmax(280px, 4fr) 8fr; gap: clamp(40px, 5vw, 88px); } }
@@ -139,13 +130,7 @@ import { typo } from '../lib/typo';
   .pmain__text { margin-bottom: clamp(32px, 5vw, 56px); }
   .ph2 { font: 500 clamp(17px, 1.5vw, 19px)/1.35 var(--body); color: var(--ink); margin: 1.6em 0 0.6em; max-width: var(--measure); }
   .ph2:first-child { margin-top: 0; }
-  .pgallery { display: grid; gap: var(--gap); grid-template-columns: 1fr 1fr; }
-  .pgallery :global(img) { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
-  .pgallery :global(img:nth-child(3n+1)) { grid-column: 1 / -1; }
-  @media (max-width: 719px) {
-    .pgallery { grid-template-columns: 1fr; margin-inline: calc(var(--pad) * -1); }
-    .pgallery :global(img) { aspect-ratio: auto; }
-  }
+  @media (max-width: 719px) { :global(.pgallery) { margin-inline: calc(var(--pad) * -1); } }
 
   .pnav { padding-top: clamp(24px, 4vw, 48px); }
   .pnav__all { text-align: center; margin: 32px 0 0; }

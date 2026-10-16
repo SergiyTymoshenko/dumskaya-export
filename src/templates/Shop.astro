@@ -24,7 +24,7 @@ const pname = (p: Page) => p.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '');
 </div>
 {isProduct ? (
   <div class="wrap sgrid">
-    <div class="sgal">{images.map((i, n) => <Img id={i.id} alt={`${name} — ${T.photo} ${n + 1}`} sizes="(min-width: 960px) 30vw, 50vw" eager={n === 0} />)}</div>
+    <div class="sgal" data-zoom>{images.map((i, n) => <Img id={i.id} alt={`${name} — ${T.photo} ${n + 1}`} sizes="(min-width: 960px) 30vw, 50vw" eager={n === 0} />)}</div>
     <div class="sinfo">
       <h1 class="display sinfo__h1">{name}</h1>
       {code && <p class="muted">{T.article}: {code}</p>}
@@ -36,7 +36,7 @@ const pname = (p: Page) => p.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '');
   <>
     <h1 class="display wrap stitle">{name}</h1>
     <p class="wrap muted sdesc">{page.description}</p>
-    <div class="tiles tiles--3">
+    <div class="tiles tiles--3 slist">
       {products.map((p, n) => <Tile href={p.path} image={firstGallery(p)[0]?.id} alt={pname(p)} title={pname(p).replace(/\s*\([^)]*\)$/, '')} sub={pname(p).match(/\((TDD-\d+)\)/)?.[1]} sizes="(min-width: 960px) 33vw, 50vw" eager={n < 3} below />)}
     </div>
   </>
@@ -48,6 +48,8 @@ const pname = (p: Page) => p.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '');
   .sgrid { display: grid; gap: 40px; padding-bottom: clamp(48px, 7vw, 96px); }
   @media (min-width: 960px) { .sgrid { grid-template-columns: 7fr 5fr; } }
   .sgal { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
-  .sgal :global(img) { width: 100%; aspect-ratio: 1; object-fit: cover; background: #f3f1ed; }
+  .sgal :global(img) { width: 100%; aspect-ratio: 1; object-fit: contain; background: #f3f1ed; }
+  /* товар на светлом фоне — целиком, без обрезки */
+  .slist :global(.tile img) { aspect-ratio: 4 / 5; object-fit: contain; background: #f5f5f4; }
   .sinfo__h1 { font-size: clamp(20px, 2.1vw, 26px); margin-bottom: 12px; }
 </style>
