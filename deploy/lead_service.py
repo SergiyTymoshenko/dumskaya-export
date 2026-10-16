@@ -8,7 +8,8 @@
   2) отправляет в Telegram-бот студии (bot.py): разработчику и дизайнерам, а заявку на товар партнёра —
      ещё и людям этого партнёра — поставщику и его сотрудникам (партнёр товара — в shop-products.json, собирается из сайта при выкладке);
   3) отправляет письмом через SMTP (например, Gmail с паролем приложения).
-В этом же процессе работает сам бот (приём пользователей, роли) — см. bot.py.
+В этом же процессе работает сам бот (приём пользователей, роли) — см. bot.py, и сторож сайта: если сайт
+не отвечает, разработчику в бот приходит сообщение — см. site_monitor.py.
 Только стандартная библиотека Python 3, без установки пакетов.
 
 Настройки — переменные окружения (файл lead.env, его читает systemd):
@@ -59,6 +60,7 @@ def log(msg):
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
+from site_monitor import SiteMonitor  # noqa: E402
 
 BOT = None
 
@@ -201,7 +203,9 @@ def main():
         return
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     if BOT:
+        BOT.monitor = SiteMonitor(BOT, log=log)     # сторож сайта: «сайт не отвечает» разработчику в бот
         BOT.start()
+        BOT.monitor.start()
     log(f"слушаю 127.0.0.1:{PORT}; бот={'да' if BOT else 'нет'}, почта={'да' if SMTP_USER and SMTP_PASSWORD else 'нет'}")
     srv.serve_forever()
 

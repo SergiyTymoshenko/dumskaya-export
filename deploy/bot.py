@@ -48,6 +48,7 @@ INVITE_DAYS = 7
 
 ADMIN_COMMANDS = [{"command": "users", "description": "Пользователи и запросы"},
                   {"command": "partners", "description": "Партнёры и их товары"},
+                  {"command": "site", "description": "Работает ли сайт"},
                   {"command": "help", "description": "Что умеет бот"},
                   {"command": "cancel", "description": "Отменить ввод"}]
 SUPPLIER_COMMANDS = [{"command": "team", "description": "Мои сотрудники"},
@@ -137,6 +138,7 @@ class Bot:
         self.s = Store(db_path)
         self.stop = threading.Event()
         self.username = ""
+        self.monitor = None                  # сторож сайта (site_monitor.py), ставит lead_service.py
         if self.owner:
             u = self.user(self.owner)
             if not u:
@@ -324,6 +326,9 @@ class Bot:
             return self.users_list(uid)
         if cmd == "/partners" and self.is_admin(u):
             return self.partners_list(uid)
+        if cmd == "/site" and self.is_admin(u):
+            mon = getattr(self, "monitor", None)
+            return self.send(uid, mon.status() if mon else "Сторож сайта не запущен.")
         if cmd == "/team" and self.is_supplier(u):
             return self.team_list(u)
         if cmd == "/invite" and self.is_supplier(u):
@@ -361,14 +366,15 @@ class Bot:
         role = u["role"]
         head = f"<b>DUMSKAYA DESIGN</b> — внутренний бот студии.\nВаша роль: {esc(self.role_line(u))}.\n\n"
         if role == "owner":
-            return head + ("Сюда приходят все уведомления: заявки с сайта, заявки партнёрам, запросы доступа и ошибки.\n\n"
-                           "/users — пользователи и запросы\n/partners — партнёры и их товары")
+            return head + ("Сюда приходят все уведомления: заявки с сайта, заявки партнёрам, запросы доступа и ошибки, "
+                           "а если сайт перестанет отвечать — «🔴 Сайт не отвечает» (и «🟢 снова работает»).\n\n"
+                           "/users — пользователи и запросы\n/partners — партнёры и их товары\n/site — работает ли сайт")
         if role == "designer":
             mgr = self.shop_manager()
             shop = ("Товары магазина студии закреплены за вами — заявки на них тоже приходят сюда.\n\n"
                     if mgr and mgr["tg_id"] == u["tg_id"] else "")
             return head + ("Сюда приходят заявки с сайта, уведомления о заявках партнёрам и запросы на доступ к боту.\n"
-                           + shop + "\n/users — пользователи и запросы\n/partners — партнёры и их товары")
+                           + shop + "\n/users — пользователи и запросы\n/partners — партнёры и их товары\n/site — работает ли сайт")
         if role == "supplier":
             return head + ("Сюда будут приходить заявки с сайта dumskaya-design.com на ваши товары — вам "
                            "и вашим сотрудникам в боте.\n\n/team — ваши сотрудники в боте\n/invite — пригласить сотрудника")
