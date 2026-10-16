@@ -1,0 +1,418 @@
+{
+ "path": "/en/interior-design-ukraine",
+ "lang": "en",
+ "type": "service",
+ "group": null,
+ "title": "Interior Design & Turnkey Renovation in Ukraine | DUMSKAYA",
+ "description": "Full-cycle services in Ukraine: interior design, architecture, custom furniture, turnkey renovation, and procurement. Projects in Kyiv and Kharkiv.",
+ "h1": "Interior design, custom furniture, and turnkey renovation in Ukraine",
+ "og_image": "6abd6b0561617a4443acb529",
+ "alternates": {
+  "ru": "/dizajn-interera-ukraina",
+  "ua": "/ua/dyzain-interieru-ukraina",
+  "en": "/en/interior-design-ukraine"
+ },
+ "phone": "ua",
+ "sections": [
+  {
+   "id": "city-dizajn-interera-ukraina-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Interior design, custom furniture, and turnkey renovation in Ukraine"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> offers a full cycle of services in Ukraine: interior design, architecture, custom furniture, turnkey renovation, and procurement. One team runs the project from the first consultation to the handover of the keys, so you don’t have to find and coordinate separate contractors."
+      },
+      {
+       "t": "p",
+       "html": "Our portfolio includes private houses in Kyiv (217 m²) and Kharkiv (212 m²) completed on a turnkey basis, apartments in Kyiv, a clothing boutique, and a barbershop facade. You can order the design project on its own or together with its implementation."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "DUMSKAYA DESIGN in Ukraine",
+     "rows": [
+      [
+       "Services",
+       "full cycle: design, architecture, furniture, renovation, procurement"
+      ],
+      [
+       "Projects",
+       "houses in Kyiv and Kharkiv, apartments and a boutique in Kyiv"
+      ],
+      [
+       "Format",
+       "design project only, or a turnkey project"
+      ],
+      [
+       "Consultation",
+       "free — by phone, messenger, or online"
+      ],
+      [
+       "Languages",
+       "Ukrainian, Russian, English"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      },
+      {
+       "text": "Kitchen catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ukraina-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What we do in Ukraine"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Interior design project for an apartment or house</strong> — layout, concept, and the selection of materials, furniture, and lighting.",
+        "<strong>3D visualization</strong> — photorealistic images of every room before the renovation begins.",
+        "<strong>Architecture and facades</strong> — concept designs for houses, 3D visualization of facades and yards.",
+        "<strong>Technical documentation</strong> — working drawings, electrical and plumbing plans, and specifications for the builders.",
+        "<strong>Custom furniture</strong> — kitchens, wardrobes, walk-in closets, entrance hall furniture, TV walls, and bedroom furniture.",
+        "<strong>Turnkey renovation</strong> — from demolition to the final cleaning.",
+        "<strong>Design supervision and procurement</strong> — checking that the work matches the project, and ordering materials, plumbing fixtures, and lighting.",
+        "<strong>Commercial interiors</strong> — offices, shops, and beauty salons."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "We work with new builds, resale homes, private houses, and commercial spaces."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ukraina-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projects in Ukraine"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The houses in Kyiv and Kharkiv were completed on a turnkey basis: interior design, technical documentation, custom furniture, and renovation."
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Private house in Kyiv, 217 m²",
+       "href": "/en/luxury-interior-design-kiev-private-house-217sqm",
+       "image": {
+        "id": "6abd6b0561617a4443acb529",
+        "alt": "luxury interior design"
+       }
+      },
+      {
+       "title": "Private house in Kharkiv, 212 m²",
+       "href": "/en/luxury-interior-private-house-212sqm",
+       "image": {
+        "id": "6abd6a716bbe6103844833be",
+        "alt": "luxury villa living room with panoramic view"
+       }
+      },
+      {
+       "title": "Apartment in Kyiv, 119 m²",
+       "href": "/en/luxury-119sqm-apartment-interior-design-kyiv",
+       "image": {
+        "id": "6abd6a956bbe610384483468",
+        "alt": "integrated kitchen and lounge in modern flat kyiv"
+       }
+      },
+      {
+       "title": "Apartment in Kyiv, 80 m²",
+       "href": "/en/luxury-80sqm-apartment-interior-design-kyiv",
+       "image": {
+        "id": "6abd0a7d61617a4443ab2567",
+        "alt": "luxury open-plan kitchen and living room kyiv ukraine"
+       }
+      },
+      {
+       "title": "Clothing boutique in Kyiv, 140 m²",
+       "href": "/en/clothing-boutique-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Barbershop facade in Kyiv",
+       "href": "/en/barbershop-facade-architectural-solution",
+       "image": {
+        "id": "66d313f8e6210d11a55d877c",
+        "alt": "custom facade concept for a modern barbershop in Kyiv, Ukraine"
+       }
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d7610234085faf9b34d5c1",
+       "alt": "luxury villa interior design in modern style"
+      },
+      {
+       "id": "66d760fdb962fab2515b8f40",
+       "alt": "luxury villa living room with panoramic view"
+      },
+      {
+       "id": "66d760f3155aff1223916872",
+       "alt": "refined color scheme in villa lounge"
+      },
+      {
+       "id": "66d760ff155aff12239168bd",
+       "alt": "minimalist lines in luxury lounge layout"
+      },
+      {
+       "id": "684a97d56775d3727cd6e03b",
+       "alt": "luxury villa interior design in modern style"
+      },
+      {
+       "id": "684a97d5d82130a88ea83676",
+       "alt": "elegant lines and minimalist luxury décor"
+      },
+      {
+       "id": "684a97d6d3b4e0c14f6fff27",
+       "alt": "plush seating in high-end lounge interior"
+      },
+      {
+       "id": "684a97d5cbfab8d2b1b767a3",
+       "alt": "statement lighting in luxury living area"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All studio projects",
+       "href": "/en/portfolio-interior-design-projects"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ukraina-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How the process works"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Consultation.</strong> We discuss your project by phone, messenger, or video call. The consultation is free.",
+        "<strong>Measurements.</strong> We record the dimensions, utilities, and specific features of the rooms on site.",
+        "<strong>Concept and 3D.</strong> Layout options, style, materials, and photorealistic visualizations. We agree on revisions with you.",
+        "<strong>Documentation and estimate.</strong> Drawings for the builders and for furniture production, specifications, and a renovation cost estimate.",
+        "<strong>Implementation.</strong> Furniture production, renovation, installation, and procurement — by one team, on an agreed schedule.",
+        "<strong>Handover.</strong> Final assembly, installation of lighting and plumbing fixtures, cleaning, and handing over the keys."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "If you are currently abroad, the project can be managed remotely: we agree on the concept, visualizations, and progress of the work online."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ukraina-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Cost of the design project and renovation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The cost of the design project depends on the package — from <a href=\"/en/express-interior-design-package-bratislava-vienna\">“Express”</a> to <a href=\"/en/premium-plus-interior-design-package-bratislava-vienna\">“Premium+”</a>; package contents and prices are on the pricing page."
+      },
+      {
+       "t": "p",
+       "html": "We calculate the cost of furniture and renovation based on the project and the estimate. The first consultation is free."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      },
+      {
+       "text": "Renovation cost estimate",
+       "href": "/en/renovation-cost-estimate-bratislava-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ukraina-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about working in Ukraine"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Can I order just the design project?",
+       "a": "<p>Yes. You will receive visualizations and working drawings that any construction crew can work from. Implementation — furniture and renovation — can be ordered from us right away or later.</p>"
+      },
+      {
+       "q": "Can the project be managed if I live abroad?",
+       "a": "<p>Yes. Consultations and approval of the concept, 3D visualizations, and progress of the work all happen online. We work on site, and you make the key decisions remotely.</p>"
+      },
+      {
+       "q": "How long does a design project take?",
+       "a": "<p>“Express” takes from 14 days; a full design project usually takes 4–8 weeks. We give timelines for renovation and furniture production once the estimate is ready.</p>"
+      },
+      {
+       "q": "Do you design commercial interiors?",
+       "a": "<p>Yes: shops, offices, beauty salons, and facades. In Kyiv, for example, we completed a 140 m² clothing boutique and a barbershop facade.</p>"
+      },
+      {
+       "q": "What languages do you work in?",
+       "a": "<p>Ukrainian, Russian, and English.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ukraina-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Request a free consultation",
+     "text": "Tell us where the property is and what you need — we will reply within one business day."
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-ukraina-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,6 +1,6 @@
 ---
 import { LANGS, LANG_LABEL, ui, type Lang } from '../lib/i18n';
-import { site, type Page, altPath, localize } from '../lib/data';
+import { site, type Page, altPath, localize, phoneFor } from '../lib/data';
 
 interface Props { page: Page }
 const { page } = Astro.props;
@@ -9,7 +9,9 @@ const T = ui(lang);
 const menu = site.menu[lang] as any[];
 const priceOverview = localize('/price-interior-design-bratislava-wien-praha', lang);
 const home = lang === 'ru' ? '/' : `/${lang}`;
-const phone = site.contacts.phones[0];
+// на посадочных страницах регионов (Вена, Украина, США…) — телефон этого региона
+const { phone } = phoneFor(page);
+const menuPhones = [phone, ...site.contacts.phones.filter((p: any) => p.tel !== phone.tel)];
 ---
 <header class="hdr">
   <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
@@ -70,7 +72,7 @@ const phone = site.contacts.phones[0];
     </div>
     <div class="menu__foot">
       <p>
-        {site.contacts.phones.map((p: any) => (
+        {menuPhones.map((p: any) => (
           <span class="menu__phone"><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{p.city[lang]}</span></span>
         ))}
       </p>

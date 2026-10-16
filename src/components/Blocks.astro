@@ -4,14 +4,15 @@
 import Gallery from './Gallery.astro';
 import Tile from './Tile.astro';
 import Parts from './Parts.astro';
-import { splitCaption, pageByPath, type Section } from '../lib/data';
+import { splitCaption, pageByPath, type Section, type Phone } from '../lib/data';
 import { typo } from '../lib/typo';
 import Caps from './Caps.astro';
 import LeadForm from './LeadForm.astro';
 import type { Lang } from '../lib/i18n';
 
-interface Props { sections: Section[]; skipH1?: boolean; lang?: Lang }
-const { sections, skipH1 = false, lang = 'ru' } = Astro.props;
+// phone — телефон региона посадочной страницы: выводится сразу под H1, чтобы был виден на любом экране
+interface Props { sections: Section[]; skipH1?: boolean; lang?: Lang; phone?: Phone }
+const { sections, skipH1 = false, lang = 'ru', phone } = Astro.props;
 let formN = 0;
 // Уровни заголовков без пропусков: подзаголовок, встретившийся до первого H2, выводится как H2
 // (выглядит так же, как H3), чтобы после H1 не шёл сразу H3.
@@ -33,7 +34,17 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
   <section class="blk">
     {s.blocks.map((b) => {
       if (b.type === 'heading') {
-        if (b.level === 1) return skipH1 ? null : <h1 class="blk__h1 display wrap"><Caps text={b.text} /></h1>;
+        if (b.level === 1) return skipH1 ? null : (
+          <>
+            <h1 class:list={['blk__h1 display wrap', phone && 'blk__h1--ph']}><Caps text={b.text} /></h1>
+            {phone && (
+              <p class="wrap regph">
+                <span class="regph__label">{phone.label[lang]}</span>
+                <a class="regph__num" href={`tel:${phone.tel}`}>{phone.text}</a>
+              </p>
+            )}
+          </>
+        );
         if (b.level >= 3) return seenH2 ? <h3 class="blk__h3 wrap">{typo(b.text)}</h3> : <h2 class="blk__h3 wrap">{typo(b.text)}</h2>;
         seenH2 = true;
         return <h2 class="section-title blk__h wrap"><Caps text={b.text} /></h2>;
@@ -91,6 +102,11 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
 <style>
   .blk { padding-block: clamp(16px, 3vw, 40px); }
   .blk__h1 { font-size: clamp(20px, 2.4vw, 30px); margin-block: 8px 24px; max-width: 30em; }
+  .blk__h1--ph { margin-bottom: 14px; }
+  .regph { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 14px; margin: 0 0 28px; }
+  .regph__label { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone); }
+  .regph__num { font: 300 clamp(20px, 2.1vw, 26px)/1.25 var(--display); letter-spacing: 0.04em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .regph__num:hover { color: var(--oak); }
   .blk__h { margin-block: 24px 20px; max-width: 34em; }
   .blk__text { margin-block: 8px 24px; }
   .blk :global(.blk__gallery) { margin-block: 16px; }

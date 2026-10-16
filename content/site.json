@@ -51,10 +51,6 @@
      {
       "label": "Смета на ремонт",
       "href": "/smeta-na-remont-bratislava-vienna"
-     },
-     {
-      "label": "Для клиентов из США",
-      "href": "/interior-custom-furniture-project-usa"
      }
     ]
    },
@@ -109,6 +105,14 @@
      {
       "label": "Германия",
       "href": "/dizajn-interera-germaniya"
+     },
+     {
+      "label": "Украина",
+      "href": "/dizajn-interera-ukraina"
+     },
+     {
+      "label": "США",
+      "href": "/interior-custom-furniture-project-usa"
      }
     ]
    },
@@ -193,10 +197,6 @@
      {
       "label": "Кошторис на ремонт",
       "href": "/ua/smeta-na-remont-bratislava-vienna"
-     },
-     {
-      "label": "Для клієнтів зі США",
-      "href": "/ua/interior-custom-furniture-project-usa"
      }
     ]
    },
@@ -251,6 +251,14 @@
      {
       "label": "Німеччина",
       "href": "/ua/dyzain-interieru-nimechchyna"
+     },
+     {
+      "label": "Україна",
+      "href": "/ua/dyzain-interieru-ukraina"
+     },
+     {
+      "label": "США",
+      "href": "/ua/interior-custom-furniture-project-usa"
      }
     ]
    },
@@ -335,10 +343,6 @@
      {
       "label": "Renovation Cost Estimate",
       "href": "/en/renovation-cost-estimate-bratislava-vienna"
-     },
-     {
-      "label": "For US Clients",
-      "href": "/en/interior-custom-furniture-project-usa"
      }
     ]
    },
@@ -393,6 +397,14 @@
      {
       "label": "Germany",
       "href": "/en/interior-design-germany"
+     },
+     {
+      "label": "Ukraine",
+      "href": "/en/interior-design-ukraine"
+     },
+     {
+      "label": "USA",
+      "href": "/en/interior-custom-furniture-project-usa"
      }
     ]
    },
@@ -436,6 +448,12 @@
      "ru": "Братислава",
      "ua": "Братислава",
      "en": "Bratislava"
+    },
+    "key": "sk",
+    "label": {
+     "ru": "Телефон в Братиславе",
+     "ua": "Телефон у Братиславі",
+     "en": "Phone in Bratislava"
     }
    },
    {
@@ -445,6 +463,12 @@
      "ru": "Вена",
      "ua": "Відень",
      "en": "Vienna"
+    },
+    "key": "at",
+    "label": {
+     "ru": "Телефон в Вене",
+     "ua": "Телефон у Відні",
+     "en": "Phone in Vienna"
     }
    },
    {
@@ -454,6 +478,27 @@
      "ru": "Киев",
      "ua": "Київ",
      "en": "Kyiv"
+    },
+    "key": "ua",
+    "label": {
+     "ru": "Телефон в Украине, Киев",
+     "ua": "Телефон в Україні, Київ",
+     "en": "Phone in Ukraine, Kyiv"
+    }
+   },
+   {
+    "tel": "+13322447788",
+    "text": "+1 (332) 244-7788",
+    "city": {
+     "ru": "Нью-Йорк",
+     "ua": "Нью-Йорк",
+     "en": "New York"
+    },
+    "key": "us",
+    "label": {
+     "ru": "Телефон в США, Нью-Йорк",
+     "ua": "Телефон у США, Нью-Йорк",
+     "en": "US phone, New York"
     }
    }
   ],

@@ -53,7 +53,8 @@ export function llmsTxt(): string {
   const L: string[] = [];
   L.push('# DUMSKAYA DESIGN');
   L.push('');
-  L.push('> Interior design studio based in Bratislava, Slovakia, working in Bratislava and Vienna, Austria. ' +
+  L.push('> Interior design studio based in Bratislava, Slovakia, working in Bratislava and Vienna, Austria, ' +
+    'with a full cycle of services in Ukraine and remote design for clients in the USA (furniture shipped from Europe). ' +
     'Residential and commercial interior design, custom furniture and kitchens made to order, turnkey renovation, ' +
     'architecture and 3D visualization. Founded and led by interior designer Irina Dumskaya. ' +
     'The website is available in English, Ukrainian and Russian.');

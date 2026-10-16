@@ -17,6 +17,8 @@ export type Page = {
   title: string; description: string; h1: string; og_image: string | null;
   alternates: Partial<Record<Lang, string>>;
   sections: Section[];
+  /** посадочная страница региона: ключ телефона из site.json (sk, at, ua, us) — он стоит в шапке и под заголовком */
+  phone?: string;
 };
 export type Project = {
   path: string; group: 'residential' | 'commercial' | 'architecture';
@@ -39,6 +41,14 @@ export const projects = projectsJson as Project[];
 export const manifest = manifestJson as Record<string, ImageFile>;
 export const imageMeta = imagesJson as Record<string, { width: number; height: number; alt: Record<Lang, string> }>;
 export const site = siteJson as any;
+
+export type Phone = { tel: string; text: string; key: string; city: Record<Lang, string>; label: Record<Lang, string> };
+/** Телефон страницы: телефон региона у посадочных страниц, иначе основной (Братислава). */
+export function phoneFor(page: Page): { phone: Phone; regional: boolean } {
+  const all = site.contacts.phones as Phone[];
+  const own = page.phone ? all.find((p) => p.key === page.phone) : undefined;
+  return { phone: own || all[0], regional: !!own };
+}
 
 /** Адрес той же страницы на другом языке (или главная этого языка, если перевода нет). */
 export function altPath(page: Page, lang: Lang): string {

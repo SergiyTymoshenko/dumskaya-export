@@ -12,6 +12,7 @@
   "ua": "/ua/kukhni-pid-kliuch-viden",
   "en": "/en/custom-kitchens-vienna"
  },
+ "phone": "at",
  "sections": [
   {
    "id": "city-kuhni-pod-klyuch-vena-0",
@@ -57,10 +58,6 @@
       [
        "Фурнитура",
        "Hettich, Blum, Häfele"
-      ],
-      [
-       "Телефон в Вене",
-       "<a href=\"tel:+4367761430187\">+43 677 614 30 187</a>"
       ]
      ]
     },

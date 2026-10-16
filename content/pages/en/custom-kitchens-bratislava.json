@@ -12,6 +12,7 @@
   "ua": "/ua/kuhni-na-zamovlennia-bratislava",
   "en": "/en/custom-kitchens-bratislava"
  },
+ "phone": "sk",
  "sections": [
   {
    "id": "city-kuhni-na-zakaz-bratislava-0",
@@ -57,10 +58,6 @@
       [
        "Studio and samples",
        "<a href=\"https://maps.app.goo.gl/tiVyq6kmvewMGHsW9\" rel=\"noopener\" target=\"_blank\">Súkennícka 1, Bratislava-Ružinov</a>"
-      ],
-      [
-       "Phone",
-       "<a href=\"tel:+421918177785\">+421 918 17 77 85</a>"
       ]
      ]
     },

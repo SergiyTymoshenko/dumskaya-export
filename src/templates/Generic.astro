@@ -6,7 +6,7 @@ import Blocks from '../components/Blocks.astro';
 import Crumbs from '../components/Crumbs.astro';
 import Caps from '../components/Caps.astro';
 import { ui, type Lang } from '../lib/i18n';
-import { site, homePath, localize, isServicesSection, plain, type Page } from '../lib/data';
+import { site, homePath, localize, isServicesSection, plain, phoneFor, type Page } from '../lib/data';
 import { packFor } from '../lib/packs';
 import { typo } from '../lib/typo';
 interface Props { page: Page }
@@ -20,6 +20,8 @@ const hasH1 = page.sections.some((s) => s.blocks.some((b) => b.type === 'heading
 const crumbs = [{ label: T.home, href: homePath(lang) }, ...(group ? [{ label: group.label, href: groupHref }] : []), { label: page.h1 }];
 
 const pack = packFor(page);
+const reg = phoneFor(page);
+const regPhone = reg.regional ? reg.phone : undefined;
 const main = page.sections.filter((s) => !isServicesSection(s));
 const services = page.sections.filter(isServicesSection);
 const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
@@ -50,7 +52,7 @@ const summary = pack?.parts.find((p) => p.t === 'p');
 ) : (
   <>
     {!hasH1 && <h1 class="display wrap gh1"><Caps text={page.h1} /></h1>}
-    <Blocks sections={main} lang={lang} />
+    <Blocks sections={main} lang={lang} phone={regPhone} />
   </>
 )}
 <Blocks sections={services} lang={lang} />

@@ -12,6 +12,7 @@
   "ua": "/ua/mebli-na-zamovlennia-viden",
   "en": "/en/custom-furniture-vienna"
  },
+ "phone": "at",
  "sections": [
   {
    "id": "city-mebel-na-zakaz-vena-0",
@@ -57,10 +58,6 @@
       [
        "Цены",
        "единые для Братиславы и Вены"
-      ],
-      [
-       "Телефон в Вене",
-       "<a href=\"tel:+4367761430187\">+43 677 614 30 187</a>"
       ]
      ]
     },

@@ -25,7 +25,7 @@ const studio = {
   telephone: c.phones[0].tel,
   priceRange: '€€',
   address: { '@type': 'PostalAddress', streetAddress: c.address.street, postalCode: c.address.postal, addressLocality: c.address.city, addressCountry: c.address.country },
-  areaServed: [{ '@type': 'City', name: 'Bratislava' }, { '@type': 'City', name: 'Vienna' }],
+  areaServed: [{ '@type': 'City', name: 'Bratislava' }, { '@type': 'City', name: 'Vienna' }, { '@type': 'Country', name: 'Ukraine' }, { '@type': 'Country', name: 'United States' }],
   contactPoint: c.phones.map((p: any) => ({ '@type': 'ContactPoint', telephone: p.tel, contactType: 'customer service', areaServed: p.city.en, availableLanguage: ['ru', 'uk', 'en'] })),
   sameAs: [...c.social.map((s: any) => s.href), ...(c.maps ? [c.maps] : [])],
   hasMap: c.maps || undefined,

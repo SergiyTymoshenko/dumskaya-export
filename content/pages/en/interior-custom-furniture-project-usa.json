@@ -3,162 +3,312 @@
  "lang": "en",
  "type": "service",
  "group": null,
- "title": "Turnkey Custom Furniture for US Clients | DUMSKAYA DESIGN",
- "description": "Furnishing homes and commercial spaces in the USA: design, furniture made in Europe, delivery and installation. New York, Los Angeles, Miami.",
- "h1": "Turnkey furnishing of residential and commercial properties in the USA (New York, Los Angeles, Miami)",
+ "title": "Interior Design & European Furniture in the USA | DUMSKAYA",
+ "description": "Remote interior design for US clients, with cabinet and premium upholstered furniture shipped from Europe. New York, Los Angeles, Miami.",
+ "h1": "Interior design and furniture from Europe for clients in the USA",
  "og_image": "6abd6ad368c5e81567a1c165",
  "alternates": {
   "ru": "/interior-custom-furniture-project-usa",
   "ua": "/ua/interior-custom-furniture-project-usa",
   "en": "/en/interior-custom-furniture-project-usa"
  },
+ "phone": "us",
  "sections": [
   {
-   "id": "695a4b50f3dd0c9a4103f0a2",
+   "id": "city-interior-custom-furniture-project-usa-0",
    "blocks": [
     {
      "type": "heading",
      "level": 1,
-     "text": "Turnkey furnishing of residential and commercial properties in the USA (New York, Los Angeles, Miami)"
+     "text": "Interior design and furniture from Europe for clients in the USA"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "Design, manufacturing in Europe, and project delivery"
+       "html": "<strong>DUMSKAYA DESIGN</strong> is an interior design studio with its own furniture production in Bratislava, Slovakia. For clients in the USA, we create design projects remotely, make cabinet furniture at our own facility, and supply premium upholstered furniture from Europe — with delivery to the USA and coordination of on-site installation."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> designs and delivers turnkey furniture projects for residential and commercial properties in the USA — from concept and design to furniture manufacturing in Europe, shipping, and coordination of on-site installation."
-      },
-      {
-       "t": "p",
-       "html": "We work on properties of any scale:"
-      },
-      {
-       "t": "ul",
-       "items": [
-        "apartments, penthouses, private houses, villas",
-        "commercial spaces",
-        "boutiques and showrooms"
-       ]
+       "html": "We work with apartments, penthouses, private houses, and villas, as well as commercial spaces — boutiques, showrooms, and offices. Our projects include apartments in New York and Los Angeles."
       }
      ]
     },
     {
-     "type": "heading",
-     "level": 3,
-     "text": "What a turnkey furniture project includes"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "ul",
-       "items": [
-        "furniture concept development and zoning",
-        "custom furniture design for all areas",
-        "technical and working documentation for manufacturing",
-        "selection of materials, finishes, and hardware",
-        "furniture manufacturing in Europe",
-        "quality control during manufacturing",
-        "arranging international shipping to the USA",
-        "coordination of on-site furniture installation"
-       ]
-      },
-      {
-       "t": "p",
-       "html": "You receive a fully finished furniture project, thought through down to the smallest detail and adapted for implementation in the USA."
-      }
+     "type": "facts",
+     "title": "For clients in the USA",
+     "rows": [
+      [
+       "Design project",
+       "remote — based on a floor plan, photos, and video calls"
+      ],
+      [
+       "Cabinet furniture",
+       "our own production in Bratislava"
+      ],
+      [
+       "Upholstered furniture",
+       "premium, from Europe"
+      ],
+      [
+       "Delivery",
+       "international, to your property in the USA"
+      ],
+      [
+       "Installation",
+       "we coordinate on-site installation"
+      ],
+      [
+       "Timeline",
+       "design 1–2 months, furniture with delivery 4–5 months"
+      ],
+      [
+       "Languages",
+       "English, Russian, Ukrainian"
+      ]
      ]
     },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Timeline"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Furniture project development: 1–2 months"
-      },
-      {
-       "t": "p",
-       "html": "Furniture manufacturing and delivery: 4–5 months after project approval"
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Residential and commercial projects in the USA"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "We work with private and business clients, taking into account the requirements of the US market, the way the furniture will be used, and the type of property."
-      },
-      {
-       "t": "p",
-       "html": "We deliver projects in:"
-      },
-      {
-       "t": "ul",
-       "items": [
-        "New York",
-        "Los Angeles, California",
-        "Miami, Florida"
-       ]
-      },
-      {
-       "t": "p",
-       "html": "and other US cities."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Why choose DUMSKAYA DESIGN"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "ul",
-       "items": [
-        "turnkey furniture projects for the US market",
-        "our own furniture production in Europe",
-        "custom solutions, no templates",
-        "premium materials and precise attention to detail",
-        "clear timelines and a structured process",
-        "professional installation coordination"
-       ]
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN is a studio with many years of international experience and a reliable partner for turnkey furniture projects in the USA.</strong>"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "695a4b50f3dd0c9a4103f0b2",
-   "blocks": [
     {
      "type": "buttons",
      "items": [
       {
        "text": "Book a free consultation",
        "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      },
+      {
+       "text": "Kitchen catalog",
+       "href": "/en/custom-kitchens-bratislava-vienna"
       }
      ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-custom-furniture-project-usa-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What we do for clients in the USA"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Remote design project</strong> — layout, concept, 3D visualization, and the selection of materials and lighting.",
+        "<strong>Technical documentation</strong> — drawings for furniture production and for local contractors.",
+        "<strong>Custom cabinet furniture</strong> — kitchens, wardrobes, walk-in closets, and furniture for bedrooms, entrance halls, and home offices. Made at our own facility in Bratislava.",
+        "<strong>Premium upholstered furniture</strong> — sofas, armchairs, and beds from Europe, selected for your project: models, fabrics, and finishes.",
+        "<strong>Delivery to the USA</strong> — packing, international shipping, and delivery to your property.",
+        "<strong>Installation coordination</strong> — installation drawings, instructions, and scheduling of the on-site installation."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "We deliver projects in New York, Los Angeles, Miami, and other US cities."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-custom-furniture-project-usa-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How the process works"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Online consultation.</strong> We discuss your project by video call or messenger. You send us a floor plan, photos, and your wishes. The consultation is free.",
+        "<strong>Design project.</strong> Layout, concept, 3D visualizations, and documentation — everything is agreed remotely, and we make revisions based on your comments.",
+        "<strong>Furniture specification.</strong> We design the cabinet furniture from the drawings and select models, fabrics, and finishes for the upholstered pieces. Before production, we confirm the dimensions using on-site measurements.",
+        "<strong>Production.</strong> We make the cabinet furniture in Bratislava and check its quality before shipping.",
+        "<strong>Delivery.</strong> We pack the furniture and ship it from Europe to your property in the USA.",
+        "<strong>Installation.</strong> We coordinate the on-site installation based on our installation drawings."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Developing the design takes 1–2 months; furniture production and delivery take 4–5 months after the design is approved."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-custom-furniture-project-usa-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projects in the USA"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Apartment in New York, 57 m²",
+       "href": "/en/luxury-interior-design-apartment-new-york-usa-57sqm",
+       "image": {
+        "id": "6abd6af268c5e81567a1c21a",
+        "alt": "luxury apartment interior design new york usa"
+       }
+      },
+      {
+       "title": "Apartment in Los Angeles, 140 m²",
+       "href": "/en/premium-interior-design-apartment-los-angeles-california-usa-140sqm",
+       "image": {
+        "id": "6abd6ac168c5e81567a1c102",
+        "alt": "luxury interior design los-angeles usa"
+       }
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d7330bf8a5b9ed2a065fbc",
+       "alt": "bespoke kitchen cabinetry designed for modern U.S. interiors"
+      },
+      {
+       "id": "66d73309b962fab2515afd39",
+       "alt": "marble island in premium kitchen lounge new york usa"
+      },
+      {
+       "id": "66d733d6b962fab2515afff8",
+       "alt": "luxury bedroom interior design new york usa"
+      },
+      {
+       "id": "66d733d6c88df859f56e3b01",
+       "alt": "bespoke headboard in master bedroom new york usa"
+      },
+      {
+       "id": "66b9f119d81b3096fdd0d0a1",
+       "alt": "bespoke sofa in high-end lounge los angeles california"
+      },
+      {
+       "id": "66b91efb1161d657dc8d098f",
+       "alt": "panoramic windows in premium living space los angeles"
+      },
+      {
+       "id": "66b91f2743d3e7af1c200413",
+       "alt": "elegant coffee table in modern living room los angeles usa"
+      },
+      {
+       "id": "66b91efb8b4279408ae98ff0",
+       "alt": "statement chandelier in premium lounge los angeles california"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All studio projects",
+       "href": "/en/portfolio-interior-design-projects"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-custom-furniture-project-usa-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Pricing"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Design projects follow our studio packages, priced per m², from <a href=\"/en/express-interior-design-package-bratislava-vienna\">“Express”</a> to <a href=\"/en/premium-plus-interior-design-package-bratislava-vienna\">“Premium+”</a>. We calculate the cost of furniture and delivery to the USA based on the project and the specification. The first consultation is free."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All packages and prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-custom-furniture-project-usa-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions from US clients"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Can I get a design project without traveling to Europe?",
+       "a": "<p>Yes. Every stage happens online: consultations, approval of the concept and 3D visualizations, and revisions. You receive the visualizations and drawings electronically.</p>"
+      },
+      {
+       "q": "How are measurements taken?",
+       "a": "<p>A floor plan and photos are enough for the design project. Before furniture production, we confirm the dimensions using on-site measurements taken by your contractor according to our instructions.</p>"
+      },
+      {
+       "q": "What furniture do you ship from Europe?",
+       "a": "<p>We make cabinet furniture — kitchens, wardrobes, walk-in closets, bedroom and home office furniture — at our own facility in Bratislava. Premium upholstered furniture — sofas, armchairs, and beds — we supply from Europe, selecting models, fabrics, and finishes for your project.</p>"
+      },
+      {
+       "q": "How long do the design and delivery take?",
+       "a": "<p>Developing the design takes 1–2 months. Furniture production and delivery to the USA take 4–5 months after the design is approved.</p>"
+      },
+      {
+       "q": "Who installs the furniture in the USA?",
+       "a": "<p>We coordinate the on-site installation: we prepare installation drawings and instructions and agree on the schedule with the local installation crew.</p>"
+      },
+      {
+       "q": "Which US cities do you work in?",
+       "a": "<p>New York, Los Angeles, Miami, and other US cities. You can call us at our New York number <a href=\"tel:+13322447788\">+1 (332) 244-7788</a>.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-custom-furniture-project-usa-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Request a free consultation",
+     "text": "Tell us where the property is and what you need — we will reply within one business day."
     }
    ]
   },
@@ -452,7 +602,7 @@
    ]
   },
   {
-   "id": "69cbf313c4c90529feccedd3",
+   "id": "city-interior-custom-furniture-project-usa-10",
    "blocks": [
     {
      "type": "heading",
