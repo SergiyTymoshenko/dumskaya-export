@@ -5,7 +5,8 @@ export type Img = { id: string; alt: string };
 export type Block =
   | { type: 'heading'; level: number; text: string }
   | { type: 'text'; parts: Part[] }
-  | { type: 'gallery'; images: Img[] }
+  /** docs: на странице проекта — листы технической документации: отдельный блок после фото, с заголовком секции */
+  | { type: 'gallery'; images: Img[]; docs?: boolean }
   | { type: 'cards'; items: { title: string; href: string | null; image: Img | null }[] }
   | { type: 'buttons'; items: { text: string; href: string | null }[] }
   | { type: 'faq'; items: { q: string; a: string }[] }

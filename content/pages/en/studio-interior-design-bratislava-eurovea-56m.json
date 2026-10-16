@@ -183,7 +183,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Technical documentation developed under the “Furniture” design package"
+     "text": "Sample technical documentation developed under the “Furniture” design package"
     },
     {
      "type": "gallery",
@@ -340,7 +340,8 @@
        "id": "694c3e85dc0acba3c587a3ba",
        "alt": "designer interior eurovea city bratislava"
       }
-     ]
+     ],
+     "docs": true
     },
     {
      "type": "buttons",

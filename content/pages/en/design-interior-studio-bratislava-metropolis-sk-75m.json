@@ -223,7 +223,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Technical documentation developed under the “Furniture” design package"
+     "text": "Sample technical documentation developed under the “Furniture” design package"
     },
     {
      "type": "gallery",
@@ -496,7 +496,8 @@
        "id": "69f9f4d45814261fbebb2199",
        "alt": "interior with wall panels bratislava slovakia modern design dumskaya design"
       }
-     ]
+     ],
+     "docs": true
     }
    ]
   },

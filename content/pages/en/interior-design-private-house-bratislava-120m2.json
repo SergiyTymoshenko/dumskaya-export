@@ -259,7 +259,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Technical documentation under the “Express” design package — €20/m²; electrical documentation is charged separately"
+     "text": "Sample technical documentation under the “Express” design package — €20/m²; electrical documentation is charged separately"
     },
     {
      "type": "gallery",
@@ -572,7 +572,8 @@
        "id": "69c977c797f2c44cce96ba27",
        "alt": "interior design complete drawing set bratislava slovakia dumskaya design"
       }
-     ]
+     ],
+     "docs": true
     },
     {
      "type": "buttons",

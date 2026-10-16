@@ -6,7 +6,7 @@ import Parts from '../components/Parts.astro';
 import Crumbs from '../components/Crumbs.astro';
 import Img from '../components/Img.astro';
 import { ui, type Lang } from '../lib/i18n';
-import { projectsFor, splitCaption, localize, allGalleryImages, isServicesSection, type Page, type Part } from '../lib/data';
+import { projectsFor, splitCaption, localize, allGalleryImages, isServicesSection, type Page, type Part, type Img as Pic } from '../lib/data';
 
 interface Props { page: Page }
 const { page } = Astro.props;
@@ -17,7 +17,20 @@ const list = projectsFor(lang);
 const idx = list.findIndex((p) => p.href === page.path);
 const project = list[idx];
 const [name, area] = splitCaption(project?.label || page.h1);
-const images = allGalleryImages(page);
+// листы технической документации (галерея с "docs": true) — отдельным блоком после фото,
+// под заголовком своей секции («Пример технической документации…»); остальные галереи — общей лентой
+const docs: { title: string; images: Pic[] }[] = [];
+const docHeads = new Set<unknown>();
+const shots: Pic[] = [];
+for (const s of page.sections) s.blocks.forEach((b, k) => {
+  if (b.type !== 'gallery') return;
+  if (!b.docs) { shots.push(...b.images); return; }
+  const h = s.blocks.slice(0, k).reverse().find((x) => x.type === 'heading');
+  if (h) docHeads.add(h);
+  docs.push({ title: h && h.type === 'heading' ? h.text : '', images: b.images });
+});
+if (!shots.length) docs.length = 0;            // на странице одни чертежи — показываем их как обычную ленту
+const images = shots.length ? shots : allGalleryImages(page);
 const [hero, ...photos] = images;
 // текст проекта по порядку; подзаголовок выводится, только если за ним идёт текст
 // (подписи к галереям вроде «Фотографии реализованного объекта» не нужны — фото идут общей лентой)
@@ -25,7 +38,7 @@ type Item = { h: string } | { p: Part[] };
 const items: Item[] = [];
 const blocks = page.sections.filter((s) => !isServicesSection(s)).flatMap((s) => s.blocks);
 blocks.forEach((b, k) => {
-  if (b.type === 'heading' && b.level > 1 && blocks[k + 1]?.type === 'text' && k > 0) items.push({ h: b.text });
+  if (b.type === 'heading' && b.level > 1 && blocks[k + 1]?.type === 'text' && k > 0 && !(docs.length && docHeads.has(b))) items.push({ h: b.text });
   else if (b.type === 'text') {
     const last = items[items.length - 1];
     if (last && 'p' in last) last.p.push(...b.parts); else items.push({ p: [...b.parts] });
@@ -94,6 +107,12 @@ import { typo } from '../lib/typo';
       </figure>
     ))}
     {photos.length > 0 && <Gallery images={photos} class="pgallery" />}
+    {docs.map((d) => (
+      <section class="pdocs">
+        {d.title && <h2 class="ph2">{typo(d.title)}</h2>}
+        <Gallery images={d.images} class="pgallery" />
+      </section>
+    ))}
   </div>
 </div>
 
@@ -142,6 +161,8 @@ import { typo } from '../lib/typo';
   .pfig__cap { margin-top: 10px; font-size: 13px; letter-spacing: 0.06em; color: var(--stone); }
   .ph2 { font: 500 clamp(17px, 1.5vw, 19px)/1.35 var(--body); color: var(--ink); margin: 1.6em 0 0.6em; max-width: var(--measure); }
   .ph2:first-child { margin-top: 0; }
+  .pdocs { margin-top: clamp(48px, 7vw, 88px); }
+  .pdocs .ph2 { margin-bottom: clamp(16px, 2vw, 24px); }
   @media (max-width: 719px) { :global(.pgallery) { margin-inline: calc(var(--pad) * -1); } }
 
   .pnav { padding-top: clamp(24px, 4vw, 48px); }
