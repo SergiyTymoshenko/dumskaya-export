@@ -22,13 +22,13 @@
   "site": "https://www.olevlight.com",
   "address": "Via del Progresso 40, 36064 Colceresa (VI), Italia",
   "email": "info@olevlight.com",
-  "partner": null,
+  "partner": "Александр Замлинский (Италия)",
   "categories": [
    "lighting"
   ],
   "catalog": "content/shop/catalog/olev.json",
   "sku_range": "DL-…3000–3399",
-  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
  },
  "delta": {
   "name": "Delta Light",
@@ -38,13 +38,13 @@
   "address": "Muizelstraat 2, 8560 Wevelgem, Belgium",
   "phone": "+32 56 435 735",
   "email": "info@deltalight.com",
-  "partner": null,
+  "partner": "Александр Замлинский (Италия)",
   "categories": [
    "lighting"
   ],
   "catalog": "content/shop/catalog/delta.json",
   "sku_range": "DL-…3400–4699",
-  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
  },
  "baxter": {
   "name": "Baxter",
@@ -54,14 +54,14 @@
   "address": "Via Trento 68, 20821 Meda (MB), Italia",
   "phone": "+39 031 35999",
   "email": "info@baxter.it",
-  "partner": null,
+  "partner": "Александр Замлинский (Италия)",
   "categories": [
    "furniture",
    "lighting"
   ],
   "catalog": "content/shop/catalog/baxter.json",
   "sku_range": "DF-…5000–5599 (свет — DL- с теми же номерами)",
-  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
  },
  "flexform": {
   "name": "Flexform",
@@ -71,13 +71,13 @@
   "address": "Via L. Einaudi 23/25, 20821 Meda (MB), Italia",
   "phone": "+39 0362 3991",
   "email": "info@flexform.it",
-  "partner": null,
+  "partner": "Александр Замлинский (Италия)",
   "categories": [
    "furniture"
   ],
   "catalog": "content/shop/catalog/flexform.json",
   "sku_range": "DF-…5600–6199",
-  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
  },
  "molteni": {
   "name": "Molteni&C",
@@ -85,7 +85,7 @@
   "country": "Италия",
   "site": "https://www.molteni.it",
   "address": "Via Rossini 50, 20833 Giussano (MB), Italia",
-  "partner": null,
+  "partner": "Александр Замлинский (Италия)",
   "categories": [
    "furniture",
    "storage",
@@ -93,7 +93,7 @@
   ],
   "catalog": "content/shop/catalog/molteni.json",
   "sku_range": "DF-…6200–6799",
-  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
  },
  "maxalto": {
   "name": "Maxalto",
@@ -103,12 +103,12 @@
   "address": "Strada provinciale 32 n. 15, 22060 Novedrate (CO), Italia (офис; юридический адрес — Via Manzoni 38, 20121 Milano)",
   "phone": "+39 031 795213",
   "email": "info@maxalto.com",
-  "partner": null,
+  "partner": "Александр Замлинский (Италия)",
   "categories": [
    "furniture"
   ],
   "catalog": "content/shop/catalog/maxalto.json",
   "sku_range": "DF-…6800–7099 (свет — DL- с теми же номерами)",
-  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
  }
 }
