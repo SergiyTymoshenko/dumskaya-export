@@ -63,8 +63,9 @@ if (page.type === 'project' || page.type === 'kitchen') {
     creator: { '@id': ORG_ID },
     image: images.slice(0, 12).map((i) => ({
       '@type': 'ImageObject', contentUrl: img(i.id), caption: i.alt,
-      creator: { '@type': 'Organization', name: 'DUMSKAYA DESIGN' }, creditText: 'DUMSKAYA DESIGN',
-      copyrightNotice: '© DUMSKAYA DESIGN',
+      // права на фото и визуализации — у Iryna Dumska (основательница студии)
+      creator: { '@type': 'Person', name: 'Iryna Dumska' }, creditText: 'Iryna Dumska / DUMSKAYA DESIGN',
+      copyrightNotice: '© Iryna Dumska', copyrightHolder: { '@type': 'Person', name: 'Iryna Dumska' },
       license: abs(localize('/image-license', page.lang as any) || '/image-license'),
       acquireLicensePage: abs(localize('/contact-studio-interior-design-bratislava-vienna', page.lang as any) || '/contact-studio-interior-design-bratislava-vienna'),
     })),
