@@ -8,7 +8,7 @@
 //
 // Для каждой картинки, которая используется на страницах, делает WebP нескольких
 // ширин с понятным именем файла (dizajn-...-01-1600.webp) и записывает авторство
-// (XMP: автор и правообладатель — Iryna Dumska, описание). Уже готовые файлы пропускает,
+// (XMP: автор, правообладатель, описание). Уже готовые файлы пропускает,
 // поэтому повторный запуск обрабатывает только новое.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -32,10 +32,10 @@ function xmp({ alt }) {
   return `<?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/"><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:photoshop="http://ns.adobe.com/photoshop/1.0/" xmlns:xmpRights="http://ns.adobe.com/xap/1.0/rights/" xmlns:plus="http://ns.useplus.org/ldf/xmp/1.0/">
-<dc:creator><rdf:Seq><rdf:li>Iryna Dumska</rdf:li></rdf:Seq></dc:creator>
-<dc:rights><rdf:Alt><rdf:li xml:lang="x-default">© Iryna Dumska, DUMSKAYA DESIGN, dumskaya-design.com</rdf:li></rdf:Alt></dc:rights>
+<dc:creator><rdf:Seq><rdf:li>DUMSKAYA DESIGN</rdf:li></rdf:Seq></dc:creator>
+<dc:rights><rdf:Alt><rdf:li xml:lang="x-default">© DUMSKAYA DESIGN, dumskaya-design.com</rdf:li></rdf:Alt></dc:rights>
 <dc:description><rdf:Alt><rdf:li xml:lang="x-default">${esc(alt)}</rdf:li></rdf:Alt></dc:description>
-<photoshop:Credit>Iryna Dumska / DUMSKAYA DESIGN</photoshop:Credit>
+<photoshop:Credit>DUMSKAYA DESIGN</photoshop:Credit>
 <xmpRights:WebStatement>https://dumskaya-design.com/image-license</xmpRights:WebStatement>
 <plus:Licensor><rdf:Seq><rdf:li rdf:parseType="Resource"><plus:LicensorURL>https://dumskaya-design.com/contact-studio-interior-design-bratislava-vienna</plus:LicensorURL></rdf:li></rdf:Seq></plus:Licensor>
 </rdf:Description></rdf:RDF></x:xmpmeta><?xpacket end="w"?>`;
