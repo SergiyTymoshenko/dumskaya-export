@@ -144,7 +144,7 @@ PDF у фабрики.
 и скачаны файлы — `scripts/shop/factories/README.md`. Файлы — в папке выгрузки на Mac:
 фото и чертежи `~/Documents/dumskaya-export/images/shop/<фабрика>/`, техкарты `~/Documents/dumskaya-export/catalogs/<фабрика>/`.
 Остальные фабрики из списка (Poliform, Minotti, Rugiano, Rimadesio, MisuraEmme, Lago, Giorgetti,
-Il Paralume Marina) пока не загружены.
+Il Paralume Marina) пока не загружены; при загрузке их тоже закрепить за Александром Замлинским.
 
 ## Включение домена
 
