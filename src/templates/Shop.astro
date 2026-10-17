@@ -19,11 +19,17 @@ const shopHome = localize('/shop', lang);
 const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
 const images = firstGallery(page);
 const pname = (p: Page) => p.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '');
+const tile = (p: Page, n: number, eager = false) => (
+  { href: p.path, image: firstGallery(p)[0]?.id, alt: pname(p), title: pname(p).replace(/\s*\([^)]*\)$/, ''), sub: pname(p).match(/\((TDD-\d+)\)/)?.[1], eager: eager && n < 3 }
+);
+// на карточке товара — остальные товары (перелинковка внутри магазина)
+const others = isProduct ? products.filter((p) => p.path !== page.path) : [];
 ---
 <div class="wrap stop">
   <Crumbs items={[{ label: T.home, href: homePath(lang) }, { label: T.shop, href: isShopHome ? null : shopHome }, ...(isShopHome ? [] : [{ label: name }])]} />
 </div>
 {isProduct ? (
+  <>
   <div class="wrap sgrid">
     <div class="sgal" data-zoom>{images.map((i, n) => <Img id={i.id} alt={`${name} — ${T.photo} ${n + 1}`} sizes="(min-width: 960px) 30vw, 50vw" eager={n === 0} />)}</div>
     <div class="sinfo">
@@ -31,8 +37,18 @@ const pname = (p: Page) => p.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '');
       {code && <p class="muted">{T.article}: {code}</p>}
       <p>{page.description}</p>
       {contact && <a class="btn btn--solid" href={`${contact}?model=${code || ''}`}>{T.askPrice}</a>}
+      <p class="sinfo__made">{T.made}</p>
     </div>
   </div>
+  {others.length > 0 && (
+    <section class="smore">
+      <h2 class="display wrap smore__h">{T.moreProducts}</h2>
+      <div class="tiles tiles--3 slist">
+        {others.map((p, n) => { const t = tile(p, n); return <Tile href={t.href} image={t.image} alt={t.alt} title={t.title} sub={t.sub} sizes="(min-width: 960px) 33vw, 50vw" below />; })}
+      </div>
+    </section>
+  )}
+  </>
 ) : (
   <>
     <h1 class="display wrap stitle">{name}</h1>
@@ -53,4 +69,7 @@ const pname = (p: Page) => p.title.replace(/\s*\|\s*DUMSKAYA DESIGN\s*$/, '');
   /* товар на светлом фоне — целиком, без обрезки */
   .slist :global(.tile img) { aspect-ratio: 4 / 5; object-fit: contain; background: #f5f5f4; }
   .sinfo__h1 { font-size: clamp(20px, 2.1vw, 26px); margin-bottom: 12px; }
+  .sinfo__made { font-size: 14px; color: var(--stone); margin: 24px 0 0; padding-top: 16px; border-top: 1px solid var(--line); }
+  .smore { padding-bottom: clamp(48px, 7vw, 96px); }
+  .smore__h { font-size: clamp(18px, 1.8vw, 22px); margin-bottom: 24px; }
 </style>

@@ -14,6 +14,10 @@
     "href": "/kupkuhni-na-zakaz-vienna-bratislava"
    },
    {
+    "label": "Магазин",
+    "href": "/shop"
+   },
+   {
     "label": "Услуги",
     "children": [
      {
@@ -168,6 +172,10 @@
     "href": "/ua/custom-kitchens-bratislava-vienna"
    },
    {
+    "label": "Магазин",
+    "href": "/ua/shop"
+   },
+   {
     "label": "Послуги",
     "children": [
      {
@@ -320,6 +328,10 @@
    {
     "label": "Kitchens",
     "href": "/en/custom-kitchens-bratislava-vienna"
+   },
+   {
+    "label": "Shop",
+    "href": "/en/shop"
    },
    {
     "label": "Services",
