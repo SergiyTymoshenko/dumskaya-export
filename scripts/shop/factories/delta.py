@@ -38,10 +38,14 @@ def parse(url, h):
         if a['resource'] in seen: continue
         seen.add(a['resource']); A.append(a)
     drw = (sf.get('technicalDrawing') or {}).get('assetView', {}).get('resource')
+    # фильтры над списком: где (Indoor/Outdoor), крепление (Wall/Ceiling/…), монтаж (Surface mounted/Recessed/…), форма
+    facets = {}
+    for k, v in re.findall(r'<label class="dropdown-label"><span>([^<]+)</span></label><div class="dropdown-selection"><span>([^<]+)</span>', h):
+        facets.setdefault(html.unescape(k).strip(), html.unescape(v).strip())
     return {'url': url, 'family': fam.get('title'), 'family_desc': fam.get('shortDescription'), 'subfamily': sub.get('title') or url.split('/')[-1].upper(),
             'columns': [c.get('title') for c in sf.get('columns') or []], 'common': {v.get('name'): ', '.join(map(str, v.get('value') or [])) + ((' ' + v['unit']) if v.get('unit') else '') for v in (sf.get('equivalentProperties') or {}).values() if isinstance(v, dict)},
             'colours': {k: (v.get('value') if isinstance(v, dict) else v) for k, v in (sf.get('availableColours') or {}).items()} if isinstance(sf.get('availableColours'), dict) else sf.get('availableColours'),
-            'variants': variants, 'drawing': drw, 'shots': [a for a in A if a['type'] == 'product_shot'], 'projects': [a for a in A if a['type'] == 'project_picture'][:4]}
+            'facets': facets, 'variants': variants, 'drawing': drw, 'shots': [a for a in A if a['type'] == 'product_shot'], 'projects': [a for a in A if a['type'] == 'project_picture'][:4]}
 if __name__ == '__main__':
     U = urls(); print('subfamilies', len(U), flush=True)
     out = []

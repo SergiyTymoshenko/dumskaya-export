@@ -31,8 +31,11 @@ LIGHT = {
     "wall": ("W", "Бра", "wall lamp"),
     "table_lamp": ("T", "Настольная лампа", "table lamp"),
     "floor": ("F", "Торшер", "floor lamp"),
+    "wall_recessed": ("W", "Встраиваемый настенный светильник", "recessed wall light"),
     "inground": ("G", "Встраиваемый в пол светильник", "in-ground light"),
     "bollard": ("G", "Ландшафтный светильник", "bollard light"),
+    "pole": ("G", "Светильник для опоры", "pole-top light"),
+    "light_part": ("C", "Комплектующие для света", "lighting component"),
 }
 FURN = {
     "sofa": ("S", "Диван", "sofa"),
@@ -162,12 +165,21 @@ def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", norm(s).lower()).strip("-")
 
 
-def smart_title(s):
+def cap(w):
+    if re.search(r"\d", w):                                   # IP44, 7TUBI, '09 — как есть
+        return w
+    if re.fullmatch(r"([A-Za-z]\.){2,}[A-Za-z]?\.?", w):     # сокращения: S.H., A.B.C.
+        return w.upper()
+    return "-".join(x[:1].upper() + x[1:].lower() if x[:1].isalpha() else x for x in w.split("-"))
+
+
+def smart_title(s, mixed=False):
+    """КАПС фабрик → «Как в названии»; mixed — в смешанных названиях поправить только слова целиком заглавными."""
     s = re.sub(r"\s+", " ", (s or "").strip())
     if s.isupper() or s.islower():
-        s = " ".join(w.upper() if re.fullmatch(r"([A-Za-z]\.){2,}[A-Za-z]?\.?", w) else      # сокращения: S.H., A.B.C.
-                     w if re.search(r"\d", w) and not re.search(r"[A-Z]{2}", w) else
-                     (w[0].upper() + w[1:].lower() if w[:1].isalpha() else w) for w in s.split(" "))
+        return " ".join(cap(w) for w in s.split(" "))
+    if mixed:
+        return " ".join(cap(w) if w.isupper() and len(w) > 1 else w for w in s.split(" "))
     return s
 
 
@@ -449,9 +461,69 @@ def maxalto():
     return out
 
 
+def delta():
+    """Delta Light: товар — подсемейство (страница с таблицей исполнений: цвет, свет, мощность, размеры)."""
+    files, _ = files_of("delta")
+    MEDIA = "https://deltalight.com/media/cache/resolve/"
+    out = []
+    for p in json.load(open(os.path.join(SRC, "delta/site.json"), encoding="utf-8")):
+        f = p.get("facets") or {}
+        fix, ins = f.get("Fixation"), f.get("Installation")
+        props0 = {k: v for x in p.get("variants") or [] for k, v in x.get("props", {}).items()}
+        if fix in ("Mains voltage track", "Low voltage systems") or (ins or "").endswith("track mounted"):
+            t = "track"
+        elif fix == "Pole" or ins == "Pole top":
+            t = "pole"
+        elif fix == "Table top":
+            t = "table_lamp"
+        elif fix == "All":
+            t = "light_part"
+        elif ins == "Suspended":
+            t = "suspension"
+        elif fix == "Wall":
+            t = "wall_recessed" if ins in ("Recessed", "Semi-recessed") else "wall"
+        elif fix == "Floor":
+            t = "inground" if ins in ("Recessed", "Semi-recessed") else "bollard" if "Height bollard" in props0 or f.get("Location") == "Outdoor" else "floor"
+        elif ins in ("Recessed", "Semi-recessed"):
+            t = "recessed"
+        elif "Height bollard" in props0:
+            t = "bollard"
+        else:
+            t = "ceiling"
+        model = smart_title(p.get("subfamily"), mixed=True)
+        cols = p.get("colours") or {}
+        vers, tech = [], {}
+        for v in p.get("variants") or []:
+            pr = {k: x for k, x in (v.get("props") or {}).items() if k != "Certificates"}
+            vers.append({"code": v.get("sku"), "colour": cols.get(v.get("colour"), v.get("colour")) if isinstance(cols, dict) else v.get("colour"),
+                         "props": pr})
+            for k in ("Luminaire power", "Luminaire lm", "CCT", "CRI", "Beam angle", "IP", "Dimming type", "Voltage", "Length",
+                      "Cutout size", "Min. recessed depth", "Height", "Width", "Diameter", "Height bollard"):
+                if pr.get(k) and pr[k] not in tech.setdefault(k, []):
+                    tech[k].append(pr[k])
+        common = {k: v for k, v in (p.get("common") or {}).items() if v}
+        bases = list(dict.fromkeys(v.get("base") for v in p.get("variants") or [] if v.get("base")))
+        imgs = [x for x in (img(files, MEDIA + "website_image_w_1600/" + s["resource"]) for s in (p.get("shots") or [])[:1]) if x]
+        drw = []
+        if p.get("drawing"):
+            d = img(files, MEDIA + "website_image_w_640/" + p["drawing"])
+            if d:
+                drw.append({k: d[k] for k in ("file", "width", "height", "bytes")} | {"source": {"site": d["src"]}})
+        place = [x.lower() for x in [f.get("Location")] if x]
+        out.append({"mfr_key": p["url"].split("/products/", 1)[-1], "model": model, "type": t,
+                    "collection": slug(p.get("family") or model), "category": " / ".join(x for x in (fix, ins) if x) or None,
+                    "place": place, "mfr_code": ", ".join(bases[:4]) + (" …" if len(bases) > 4 else "") if bases else None,
+                    "text": {"en": p.get("family_desc")} if p.get("family_desc") else None,
+                    "tech": {"common": common, **{k: v for k, v in tech.items() if v}} or None,
+                    "finishes": {"": list(cols.values())} if isinstance(cols, dict) and cols else None,
+                    "versions": vers, "images": imgs, "drawings": drw, "sheets": [],
+                    "links": {"page": p["url"], "family": p["url"].rsplit("/", 1)[0]}})
+    return out
+
+
 FACT = {
     "olev": {"fn": olev, "kind": "light", "range": (3000, 3399), "name": "OLEV", "site": "https://www.olevlight.com/en/"},
-    "delta": {"fn": None, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
+    "delta": {"fn": delta, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
     "baxter": {"fn": baxter, "kind": "furn", "range": (5000, 5599), "name": "Baxter", "site": "https://www.baxter.it/en/products"},
     "flexform": {"fn": flexform, "kind": "furn", "range": (5600, 6199), "name": "Flexform", "site": "https://www.flexform.it/en/products"},
     "molteni": {"fn": molteni, "kind": "furn", "range": (6200, 6799), "name": "Molteni&C", "site": "https://www.molteni.it/en/eu"},

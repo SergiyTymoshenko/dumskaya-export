@@ -641,7 +641,7 @@
    "sku_block": "6319"
   },
   "glove-up": {
-   "name": "Glove-up",
+   "name": "Glove-Up",
    "designer": "Patricia Urquiola",
    "products": 2,
    "sku_block": "6320–6321"
@@ -713,19 +713,19 @@
    "sku_block": "6334"
   },
   "hi-line-6": {
-   "name": "Hi-line 6",
+   "name": "Hi-Line 6",
    "designer": null,
    "products": 2,
    "sku_block": "6335–6336"
   },
   "hi-line-6-frame-door": {
-   "name": "Hi-line 6 Frame Door",
+   "name": "Hi-Line 6 Frame Door",
    "designer": null,
    "products": 1,
    "sku_block": "6337"
   },
   "high-wave": {
-   "name": "High-wave",
+   "name": "High-Wave",
    "designer": "Hannes Wettstein",
    "products": 1,
    "sku_block": "6338"
@@ -917,19 +917,19 @@
    "sku_block": "6372"
   },
   "mhc-1": {
-   "name": "Mhc.1",
+   "name": "MHC.1",
    "designer": "Werner Blaser",
    "products": 1,
    "sku_block": "6373"
   },
   "mhc-2": {
-   "name": "Mhc.2",
+   "name": "MHC.2",
    "designer": "Yasuhiko Itoh",
    "products": 1,
    "sku_block": "6374"
   },
   "mhc-3-miss": {
-   "name": "Mhc.3 Miss",
+   "name": "MHC.3 Miss",
    "designer": "Tobia Scarpa",
    "products": 1,
    "sku_block": "6375"
@@ -1073,13 +1073,13 @@
    "sku_block": "6405"
   },
   "pass-word-evolution": {
-   "name": "Pass-word Evolution",
+   "name": "Pass-Word Evolution",
    "designer": "Dante Bonuccelli",
    "products": 1,
    "sku_block": "6406"
   },
   "pass-word-evolution-grid-up-wall-unit": {
-   "name": "Pass-word Evolution Grid-up",
+   "name": "Pass-Word Evolution Grid-Up",
    "designer": "Vincent Van Duysen",
    "products": 1,
    "sku_block": "6407"
@@ -10727,10 +10727,10 @@
   {
    "sku": "DF-A6320",
    "name": {
-    "ru": "Кресло Glove-up",
-    "en": "Glove-up armchair"
+    "ru": "Кресло Glove-Up",
+    "en": "Glove-Up armchair"
    },
-   "model": "Glove-up",
+   "model": "Glove-Up",
    "type": "armchair",
    "collection": "glove-up",
    "category": "Armchairs",
@@ -10767,10 +10767,10 @@
   {
    "sku": "DF-C6321",
    "name": {
-    "ru": "Стул Glove-up",
-    "en": "Glove-up chair"
+    "ru": "Стул Glove-Up",
+    "en": "Glove-Up chair"
    },
-   "model": "Glove-up",
+   "model": "Glove-Up",
    "type": "chair",
    "collection": "glove-up",
    "category": "Chairs and Stools",
@@ -11822,10 +11822,10 @@
   {
    "sku": "DF-H6335",
    "name": {
-    "ru": "Мебель для ванной Hi-line 6",
-    "en": "Hi-line 6 bathroom furniture"
+    "ru": "Мебель для ванной Hi-Line 6",
+    "en": "Hi-Line 6 bathroom furniture"
    },
-   "model": "Hi-line 6",
+   "model": "Hi-Line 6",
    "type": "bathroom",
    "collection": "hi-line-6",
    "category": "BATHROOMS",
@@ -11881,10 +11881,10 @@
   {
    "sku": "DF-E6336",
    "name": {
-    "ru": "Кухня Hi-line 6",
-    "en": "Hi-line 6 kitchen"
+    "ru": "Кухня Hi-Line 6",
+    "en": "Hi-Line 6 kitchen"
    },
-   "model": "Hi-line 6",
+   "model": "Hi-Line 6",
    "type": "kitchen",
    "collection": "hi-line-6",
    "category": "Kitchens",
@@ -11983,10 +11983,10 @@
   {
    "sku": "DF-E6337",
    "name": {
-    "ru": "Кухня Hi-line 6 Frame Door",
-    "en": "Hi-line 6 Frame Door kitchen"
+    "ru": "Кухня Hi-Line 6 Frame Door",
+    "en": "Hi-Line 6 Frame Door kitchen"
    },
-   "model": "Hi-line 6 Frame Door",
+   "model": "Hi-Line 6 Frame Door",
    "type": "kitchen",
    "collection": "hi-line-6-frame-door",
    "category": "Kitchens",
@@ -12057,10 +12057,10 @@
   {
    "sku": "DF-B6338",
    "name": {
-    "ru": "Кровать High-wave",
-    "en": "High-wave bed"
+    "ru": "Кровать High-Wave",
+    "en": "High-Wave bed"
    },
-   "model": "High-wave",
+   "model": "High-Wave",
    "type": "bed",
    "collection": "high-wave",
    "category": "Beds and Benches",
@@ -14759,10 +14759,10 @@
   {
    "sku": "DF-H6373",
    "name": {
-    "ru": "Система хранения Mhc.1",
-    "en": "Mhc.1 storage unit"
+    "ru": "Система хранения MHC.1",
+    "en": "MHC.1 storage unit"
    },
-   "model": "Mhc.1",
+   "model": "MHC.1",
    "type": "storage",
    "collection": "mhc-1",
    "category": "Single Units",
@@ -14837,10 +14837,10 @@
   {
    "sku": "DF-H6374",
    "name": {
-    "ru": "Система хранения Mhc.2",
-    "en": "Mhc.2 storage unit"
+    "ru": "Система хранения MHC.2",
+    "en": "MHC.2 storage unit"
    },
-   "model": "Mhc.2",
+   "model": "MHC.2",
    "type": "storage",
    "collection": "mhc-2",
    "category": "Single Units",
@@ -14883,10 +14883,10 @@
   {
    "sku": "DF-C6375",
    "name": {
-    "ru": "Стул Mhc.3 Miss",
-    "en": "Mhc.3 Miss chair"
+    "ru": "Стул MHC.3 Miss",
+    "en": "MHC.3 Miss chair"
    },
-   "model": "Mhc.3 Miss",
+   "model": "MHC.3 Miss",
    "type": "chair",
    "collection": "mhc-3-miss",
    "category": "Chairs and Stools",
@@ -17244,10 +17244,10 @@
   {
    "sku": "DF-H6406",
    "name": {
-    "ru": "Система хранения Pass-word Evolution",
-    "en": "Pass-word Evolution storage unit"
+    "ru": "Система хранения Pass-Word Evolution",
+    "en": "Pass-Word Evolution storage unit"
    },
-   "model": "Pass-word Evolution",
+   "model": "Pass-Word Evolution",
    "type": "storage",
    "collection": "pass-word-evolution",
    "category": "Living System and Bookshelves",
@@ -17336,10 +17336,10 @@
   {
    "sku": "DF-H6407",
    "name": {
-    "ru": "Система хранения Pass-word Evolution Grid-up",
-    "en": "Pass-word Evolution Grid-up storage unit"
+    "ru": "Система хранения Pass-Word Evolution Grid-Up",
+    "en": "Pass-Word Evolution Grid-Up storage unit"
    },
-   "model": "Pass-word Evolution Grid-up Wall Unit",
+   "model": "Pass-Word Evolution Grid-Up Wall Unit",
    "type": "storage",
    "collection": "pass-word-evolution-grid-up-wall-unit",
    "category": "Living System and Bookshelves",

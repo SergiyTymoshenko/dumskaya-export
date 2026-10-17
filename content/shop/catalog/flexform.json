@@ -593,7 +593,7 @@
    "sku_block": "5793–5794"
   },
   "happy-hour": {
-   "name": "Happy-hour",
+   "name": "Happy-Hour",
    "designer": "Antonio Citterio",
    "products": 1,
    "sku_block": "5795"
@@ -29782,10 +29782,10 @@
   {
    "sku": "DF-A5795",
    "name": {
-    "ru": "Кресло Happy-hour",
-    "en": "Happy-hour armchair"
+    "ru": "Кресло Happy-Hour",
+    "en": "Happy-Hour armchair"
    },
-   "model": "Happy-hour",
+   "model": "Happy-Hour",
    "type": "armchair",
    "collection": "happy-hour",
    "category": "Armchairs",
