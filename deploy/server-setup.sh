@@ -98,6 +98,6 @@ sleep 1
 systemctl is-active --quiet dumskaya-lead && echo "Сервис заявок работает." || { echo "Сервис заявок не запустился:"; journalctl -u dumskaya-lead -n 20 --no-pager; }
 
 echo "$MODE" > "$APP/mode"; chown "$USER_NAME":"$USER_NAME" "$APP/mode"
-sha256sum "$HERE/lead_service.py" "$HERE/bot.py" "$HERE/site_monitor.py" "$HERE/caddy/"* "$HERE/dumskaya-lead.service" > "$APP/installed.sha256"
+sha256sum "$HERE/lead_service.py" "$HERE/bot.py" "$HERE/site_monitor.py" "$HERE/translate.py" "$HERE/caddy/"* "$HERE/dumskaya-lead.service" > "$APP/installed.sha256"
 chown "$USER_NAME":"$USER_NAME" "$APP/installed.sha256"
 echo "Готово."

@@ -30,6 +30,12 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
+try:                                   # перевод сообщений заказчиков (translate.py рядом)
+    from translate import lang_from
+except ImportError:                    # pragma: no cover
+    def lang_from(code):
+        return ""
+
 SITE = "https://dumskaya-design.com"
 ROLES = {
     "owner": "Разработчик",
@@ -820,8 +826,17 @@ def format_lead(lead, model, prod):
                 return txt + (f" ({esc(what)})" if what else "")
             lines.append(f"<b>{esc(ref.get('label') or 'Каталог')}:</b> {esc(ref.get('catalog', ''))}, стр. "
                          + ", ".join(pg(p) for p in ref["pages"]))
-    if lead.get("message"):
-        lines.append(f"<b>Сообщение:</b>\n{esc(lead.get('message'))}")
+    msg, ru = lead.get("message") or "", lead.get("message_ru") or ""
+    if msg:
+        if ru and len(msg) + len(ru) > 3300:          # Telegram берёт до 4096 знаков; полностью — в письме и файле заявок
+            cut = lambda s: s if len(s) <= 1600 else s[:1600].rstrip() + " … (дальше — в письме)"  # noqa: E731
+            msg, ru = cut(msg), cut(ru)
+        lines.append(f"<b>Сообщение:</b>\n{esc(msg)}")
+        if ru:
+            src = lang_from(lead.get("message_lang"))
+            lines.append(f"<b>Перевод на русский{(' ' + esc(src)) if src else ''}:</b>\n{esc(ru)}")
+        elif lead.get("translate_error"):
+            lines.append("<i>Перевести не получилось — сервис перевода не ответил.</i>")
     page = lead.get("page") or ""
     lines.append(f"<i>{esc(lead.get('lang', ''))} · {esc(SITE + page)}</i>")
     return "\n".join(lines)

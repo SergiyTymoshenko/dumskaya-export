@@ -8,8 +8,10 @@
 Что делает:
   1) Telegram: проверяет токен бота студии, записывает ID разработчика, бот пишет вам пробное сообщение;
   2) почта: проверяет вход в Gmail по паролю приложения;
-  3) записывает ~/dumskaya/lead.env (доступ только у владельца), перезапускает сервис заявок
+  3) перевод сообщений заказчиков на русский: проверяет ключ DeepL или Claude пробным переводом;
+  4) записывает ~/dumskaya/lead.env (доступ только у владельца), перезапускает сервис заявок
      (нужен пароль sudo) и отправляет пробную заявку тем же путём, что и форма на сайте.
+Только перевод (с Mac — npm run translate):  python3 ~/dumskaya/deploy/lead_setup.py --translate
 Токен и пароль на экран не выводятся. Enter на любом вопросе — оставить как есть.
 """
 import getpass
@@ -194,9 +196,61 @@ def setup_mail(vals):
     ok(f"заявки будут приходить на {vals['MAIL_TO']}")
 
 
+# ---------- Перевод ----------
+def check_translate(var, key):
+    sys.path.insert(0, os.path.join(APP, "deploy"))
+    try:
+        import translate
+    except ImportError:
+        return False, "на сервере ещё нет translate.py — сначала выложите сайт (npm run deploy)"
+    saved = {k: os.environ.pop(k, None) for k in ("DEEPL_API_KEY", "ANTHROPIC_API_KEY")}
+    os.environ[var] = key
+    try:
+        r = translate.to_russian("Hello! I would like a quote for a sofa with delivery to Vienna.")
+        if r and any("\u0400" <= c <= "\u04ff" for c in r[1]):
+            return True, f"«{r[1][:90]}»"
+        return False, f"сервис ответил без перевода: {r}"
+    except Exception as e:  # noqa: BLE001
+        return False, str(e)[:300]
+    finally:
+        os.environ.pop(var, None)
+        os.environ.update({k: v for k, v in saved.items() if v})
+
+
+def setup_translate(vals, step="3"):
+    head(f"{step}. Перевод сообщений заказчиков на русский — в боте и в письме")
+    cur = "DeepL" if vals.get("DEEPL_API_KEY") else "Claude" if vals.get("ANTHROPIC_API_KEY") else ""
+    if cur:
+        say(f"  Сейчас перевод через {cur}.")
+    say(f"  {D}Нужен ключ одного из сервисов (сообщения на русском не переводятся и знаки не тратят):")
+    say("  • DeepL API Free — бесплатно до 500 000 знаков в месяц (это сотни заявок):")
+    say("      www.deepl.com/pro-api → «API Free» → регистрация (карта нужна только для проверки, на Free не списывают);")
+    say("      затем www.deepl.com/your-account/keys → скопировать ключ (оканчивается на :fx);")
+    say("  • или Claude API — оплата по факту, перевод одной заявки — доли цента:")
+    say(f"      console.anthropic.com → Billing (пополнить от $5) → Settings → API keys → Create key (начинается с sk-ant-).{X}")
+    for attempt in range(3):
+        key = ask_secret("Вставьте ключ (Enter — оставить как есть, «-» — выключить перевод)")
+        if not key:
+            note("Перевод не изменён." if cur else "Перевод не включён — заявки приходят как есть.")
+            return
+        if key == "-":
+            vals["DEEPL_API_KEY"] = vals["ANTHROPIC_API_KEY"] = ""
+            note("Перевод выключен.")
+            return
+        var = "ANTHROPIC_API_KEY" if key.startswith("sk-ant-") else "DEEPL_API_KEY"
+        good, info = check_translate(var, key)
+        if good:
+            ok(f"{'Claude' if var == 'ANTHROPIC_API_KEY' else 'DeepL'} переводит: {info}")
+            vals["DEEPL_API_KEY"] = key if var == "DEEPL_API_KEY" else ""
+            vals["ANTHROPIC_API_KEY"] = key if var == "ANTHROPIC_API_KEY" else ""
+            return
+        bad(f"ключ не сработал: {info}")
+    note("Перевод не включён. Запустите ещё раз с правильным ключом: с Mac — npm run translate")
+
+
 # ---------- Сервис ----------
-def restart_and_test(vals):
-    head("3. Сохраняю настройки и перезапускаю сервис заявок")
+def restart_and_test(vals, step="4", message="Это пробная заявка: если вы её видите, форма на сайте работает."):
+    head(f"{step}. Сохраняю настройки и перезапускаю сервис заявок")
     if subprocess.run(["systemctl", "cat", "dumskaya-lead"], capture_output=True).returncode != 0:
         bad("Сервис заявок ещё не установлен — сначала выложите сайт (npm run deploy), потом запустите настройку снова.")
         return
@@ -222,11 +276,11 @@ def restart_and_test(vals):
         note("Ни Telegram, ни почта не настроены — заявки только сохраняются в файл leads.jsonl.")
         return
 
-    head("4. Пробная заявка — тем же путём, что и форма на сайте")
+    head(f"{int(step) + 1}. Пробная заявка — тем же путём, что и форма на сайте")
     mode = open(os.path.join(APP, "mode")).read().strip() if os.path.exists(os.path.join(APP, "mode")) else "preview"
     url = "http://127.0.0.1:8088/api/lead" if mode == "preview" else "http://127.0.0.1:8095/api/lead"
     lead = {"name": "Проверка настройки", "contact": "заявка отправлена с сервера",
-            "message": "Это пробная заявка: если вы её видите, форма на сайте работает.",
+            "message": message,
             "model": "", "lang": "ru", "page": "/contact-studio-interior-design-bratislava-vienna"}
     req = urllib.request.Request(url, data=json.dumps(lead).encode(), headers={"Content-Type": "application/json"})
     try:
@@ -249,10 +303,22 @@ def main():
     say(f"{B}Настройка заявок с сайта dumskaya-design.com{X}")
     say(f"{D}Enter на любом вопросе — оставить как есть. Токен и пароль на экран не выводятся.{X}")
     lines, vals = read_env()
+    global SAVED
+    if "--translate" in sys.argv:                  # только перевод: с Mac — npm run translate
+        setup_translate(vals, step="1")
+        write_env(lines, vals)
+        SAVED = True
+        ok(f"настройки записаны в {ENV}")
+        msg = ("Hello! This is a test request. If a Russian translation is shown below, translation of client "
+               "messages works." if vals.get("DEEPL_API_KEY") or vals.get("ANTHROPIC_API_KEY") else
+               "Это пробная заявка: перевод выключен.")
+        restart_and_test(vals, step="2", message=msg)
+        say(f"\n{B}Готово.{X} Поменять ключ или выключить перевод: с Mac — npm run translate")
+        return
     setup_telegram(vals)
     setup_mail(vals)
+    setup_translate(vals)
     write_env(lines, vals)
-    global SAVED
     SAVED = True
     ok(f"настройки записаны в {ENV} (доступ только у пользователя {getpass.getuser()})")
     restart_and_test(vals)

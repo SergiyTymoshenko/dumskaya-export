@@ -16,6 +16,7 @@
   TELEGRAM_BOT_TOKEN  BOT_OWNER_ID (Telegram ID разработчика)  BOT_DB=/home/deploy/dumskaya/bot.db
   SMTP_HOST=smtp.gmail.com  SMTP_PORT=587  SMTP_USER  SMTP_PASSWORD  MAIL_TO
   LEADS_FILE=/home/deploy/dumskaya/leads.jsonl  PORT=8095
+  Перевод сообщений заказчиков на русский (translate.py): DEEPL_API_KEY или ANTHROPIC_API_KEY (+ TRANSLATE_MODEL)
 """
 import json
 import os
@@ -61,6 +62,7 @@ def log(msg):
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
+from translate import lang_from, provider, translate_lead  # noqa: E402
 
 BOT = None
 
@@ -87,6 +89,10 @@ def send_mail(lead):
         "",
         lead.get("message", ""),
         "",
+    ]
+    if lead.get("message_ru"):
+        body += [f"Перевод на русский {lang_from(lead.get('message_lang'))}:".replace("  ", " "), lead["message_ru"], ""]
+    body += [
         f"Страница: https://dumskaya-design.com{lead.get('page', '')}",
         f"Язык: {lead.get('lang', '')}",
         f"Время: {lead['time']}",
@@ -100,6 +106,7 @@ def send_mail(lead):
 
 
 def deliver(lead):
+    translate_lead(lead, log=log)      # перевод сообщения на русский (если оно не по-русски и задан ключ сервиса)
     ok = []
     for name, fn in (("telegram", send_telegram), ("email", send_mail)):
         try:
@@ -206,7 +213,8 @@ def main():
         BOT.monitor = SiteMonitor(BOT, log=log)     # сторож сайта: «сайт не отвечает» разработчику в бот
         BOT.start()
         BOT.monitor.start()
-    log(f"слушаю 127.0.0.1:{PORT}; бот={'да' if BOT else 'нет'}, почта={'да' if SMTP_USER and SMTP_PASSWORD else 'нет'}")
+    log(f"слушаю 127.0.0.1:{PORT}; бот={'да' if BOT else 'нет'}, почта={'да' if SMTP_USER and SMTP_PASSWORD else 'нет'}, "
+        f"перевод={ {'deepl': 'DeepL', 'claude': 'Claude'}.get(provider(), 'нет') }")
     srv.serve_forever()
 
 
