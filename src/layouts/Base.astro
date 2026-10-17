@@ -47,6 +47,7 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="google-site-verification" content={site.verification.google} />
   <meta name="yandex-verification" content={site.verification.yandex} />
+  {site.verification.bing && <meta name="msvalidate.01" content={site.verification.bing} />}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon.png" sizes="96x96" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -62,6 +63,6 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
   </main>
   <Footer page={page} />
   <Lightbox lang={lang} />
-  {analytics && <CookieBanner lang={lang} gtm={site.analytics.gtm} />}
+  {analytics && <CookieBanner lang={lang} gtm={site.analytics.gtm} ga4={site.analytics.ga4} />}
 </body>
 </html>

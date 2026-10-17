@@ -519,18 +519,18 @@ add("/architecture-gazebo-pergola",
      "An exclusive gazebo with a pergola — from 3D visualization to construction on site. Garden architecture by DUMSKAYA DESIGN."))
 add("/shop",
     ("Магазин мебели DUMSKAYA DESIGN — офисная мебель",
-     "Мебель для кабинета руководителя из коллекции Executive Desk: столы, шкафы и стол для переговоров. Производство в Европе, доставка по Словакии и Австрии."),
+     "Мебель для кабинета руководителя из коллекции Executive Desk 2026 — дизайн мебели DUMSKAYA DESIGN: столы, шкафы и стол для переговоров."),
     ("Магазин меблів DUMSKAYA DESIGN — офісні меблі",
-     "Меблі для кабінету керівника з колекції Executive Desk: столи, шафи та стіл для переговорів. Виробництво в Європі, доставка Словаччиною та Австрією."),
+     "Меблі для кабінету керівника з колекції Executive Desk 2026 — дизайн меблів DUMSKAYA DESIGN: столи, шафи та стіл для переговорів."),
     ("DUMSKAYA DESIGN Furniture Shop — Office Furniture",
-     "Executive office furniture from the Executive Desk collection: desks, cabinets and a conference table. Made in Europe, delivery in Slovakia and Austria."))
+     "Executive office furniture from the Executive Desk 2026 collection, designed by DUMSKAYA DESIGN: desks, cabinets and a conference table."))
 add("/shop/cat/ofisnaya-mebel",
-    ("Офисная мебель Executive Desk 2025 | DUMSKAYA DESIGN",
-     "Коллекция Executive Desk 2025: столы руководителя трёх размеров, шкафы и стол для переговоров. Мебель для кабинета от DUMSKAYA DESIGN."),
-    ("Офісні меблі Executive Desk 2025 | DUMSKAYA DESIGN",
-     "Колекція Executive Desk 2025: столи керівника трьох розмірів, шафи та стіл для переговорів. Меблі для кабінету від DUMSKAYA DESIGN."),
-    ("Executive Desk 2025 Office Furniture | DUMSKAYA DESIGN",
-     "The Executive Desk 2025 collection: executive desks in three sizes, cabinets and a conference table. Office furniture by DUMSKAYA DESIGN."))
+    ("Офисная мебель Executive Desk 2026 | DUMSKAYA DESIGN",
+     "Коллекция Executive Desk 2026 — дизайн мебели DUMSKAYA DESIGN: столы руководителя трёх размеров, шкафы и стол для переговоров."),
+    ("Офісні меблі Executive Desk 2026 | DUMSKAYA DESIGN",
+     "Колекція Executive Desk 2026 — дизайн меблів DUMSKAYA DESIGN: столи керівника трьох розмірів, шафи та стіл для переговорів."),
+    ("Executive Desk 2026 Office Furniture | DUMSKAYA DESIGN",
+     "The Executive Desk 2026 collection, furniture designed by DUMSKAYA DESIGN: executive desks in three sizes, cabinets and a conference table."))
 SHOP = {
     "/shop/executive-desk-boss-s": ("Стол руководителя Boss, размер S", "Стіл керівника Boss, розмір S", "Executive Desk Boss, Size S", "TDD-003"),
     "/shop/executive-desk-boss-m": ("Стол руководителя Boss, размер M", "Стіл керівника Boss, розмір M", "Executive Desk Boss, Size M", "TDD-002"),
@@ -542,11 +542,11 @@ SHOP = {
 for path, (ru, ua, en, code) in SHOP.items():
     add(path,
         (f"{ru} ({code}) | DUMSKAYA DESIGN",
-         f"{ru}, артикул {code}, из коллекции Executive Desk 2025 от DUMSKAYA DESIGN. Цена и доставка — по запросу."),
+         f"{ru}, артикул {code}, из коллекции Executive Desk 2026 — дизайн мебели DUMSKAYA DESIGN. Цена и доставка — по запросу."),
         (f"{ua} ({code}) | DUMSKAYA DESIGN",
-         f"{ua}, артикул {code}, з колекції Executive Desk 2025 від DUMSKAYA DESIGN. Ціна та доставка — за запитом."),
+         f"{ua}, артикул {code}, з колекції Executive Desk 2026 — дизайн меблів DUMSKAYA DESIGN. Ціна та доставка — за запитом."),
         (f"{en} ({code}) | DUMSKAYA DESIGN",
-         f"{en}, item {code}, from the Executive Desk 2025 collection by DUMSKAYA DESIGN. Price and delivery on request."))
+         f"{en}, item {code}, from the Executive Desk 2026 collection designed by DUMSKAYA DESIGN. Price and delivery on request."))
 
 
 def fit(t, limit):

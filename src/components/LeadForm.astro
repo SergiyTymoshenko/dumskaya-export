@@ -55,6 +55,7 @@ const privacy = lang === 'ru' ? '/privacy' : `/${lang}/privacy`;
         if (!res.ok) throw new Error(String(res.status));
         form.reset(); status.textContent = msg.ok; status.dataset.state = 'ok';
         window.dataLayer && window.dataLayer.push({ event: 'generate_lead' });
+        window.gtag && window.gtag('event', 'generate_lead');   // заявка — событие в Google Analytics (если посетитель принял cookie)
       } catch (err) {
         status.textContent = msg.fail; status.dataset.state = 'fail';
       } finally {

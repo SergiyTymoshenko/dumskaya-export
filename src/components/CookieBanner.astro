@@ -1,8 +1,9 @@
 ---
-// Согласие на cookie: Google Tag Manager загружается только после «Принять».
+// Согласие на cookie: Google Analytics (GA4, gtag.js — как было на старом сайте) и Google Tag Manager
+// загружаются только после «Принять». Тегов GA4 в контейнере GTM нет — поэтому GA4 подключён напрямую.
 import { ui, type Lang } from '../lib/i18n';
-interface Props { lang: Lang; gtm: string }
-const { lang, gtm } = Astro.props;
+interface Props { lang: Lang; gtm: string; ga4: string }
+const { lang, gtm, ga4 } = Astro.props;
 const T = ui(lang);
 const privacy = lang === 'ru' ? '/privacy' : `/${lang}/privacy`;
 ---
@@ -13,12 +14,20 @@ const privacy = lang === 'ru' ? '/privacy' : `/${lang}/privacy`;
     <button type="button" class="btn btn--solid" data-choice="granted">{T.cookie.accept}</button>
   </div>
 </div>
-<script is:inline define:vars={{ gtm }}>
+<script is:inline define:vars={{ gtm, ga4 }}>
   (function () {
     var KEY = 'dd-consent';
     function load() {
       if (window.__gtmLoaded) return; window.__gtmLoaded = true;
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtm);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      if (ga4) {
+        var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4;
+        document.head.appendChild(g);
+        window.gtag('js', new Date());
+        window.gtag('config', ga4);
+      }
+      if (gtm) (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtm);
     }
     var box = document.querySelector('[data-cookie]');
     // «Настройки cookie» в подвале: снова показать выбор (согласие можно отозвать в любой момент)
