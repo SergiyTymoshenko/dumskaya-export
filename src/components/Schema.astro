@@ -1,6 +1,6 @@
 ---
 // Разметка schema.org (JSON-LD): студия, сайт, хлебные крошки, статьи, фото проектов.
-import { site, manifest, crumbsFor, allGalleryImages, type Page } from '../lib/data';
+import { site, manifest, crumbsFor, allGalleryImages, localize, type Page } from '../lib/data';
 import { HREFLANG } from '../lib/i18n';
 import home from '../../content/home.json';
 interface Props { page: Page }
@@ -65,6 +65,8 @@ if (page.type === 'project' || page.type === 'kitchen') {
       '@type': 'ImageObject', contentUrl: img(i.id), caption: i.alt,
       creator: { '@type': 'Organization', name: 'DUMSKAYA DESIGN' }, creditText: 'DUMSKAYA DESIGN',
       copyrightNotice: '© DUMSKAYA DESIGN',
+      license: abs(localize('/image-license', page.lang as any) || '/image-license'),
+      acquireLicensePage: abs(localize('/contact-studio-interior-design-bratislava-vienna', page.lang as any) || '/contact-studio-interior-design-bratislava-vienna'),
     })),
   });
 }

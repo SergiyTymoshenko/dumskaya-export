@@ -33,7 +33,7 @@ const year = new Date().getFullYear();
         : <a href={altPath(page, l)} hreflang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</a>)}
     </p>
   </div>
-  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}. <a href={lang === 'ru' ? '/privacy' : `/${lang}/privacy`}>{T.form.privacy}</a><button type="button" class="ftr__cookie" data-cookie-settings hidden>{T.cookieSettings}</button></p>
+  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}. <a href={lang === 'ru' ? '/privacy' : `/${lang}/privacy`}>{T.form.privacy}</a> · <a href={lang === 'ru' ? '/image-license' : `/${lang}/image-license`}>{T.imageLicense}</a><button type="button" class="ftr__cookie" data-cookie-settings hidden>{T.cookieSettings}</button></p>
 </footer>
 
 <style>

@@ -1,0 +1,87 @@
+{
+ "path": "/en/image-license",
+ "lang": "en",
+ "type": "privacy",
+ "group": null,
+ "title": "Use of Photos and Renderings | DUMSKAYA DESIGN",
+ "description": "Interior photos, 3D renderings and drawings on the DUMSKAYA DESIGN website are protected by copyright: what is allowed and how to get a licence.",
+ "h1": "Use of photos and renderings",
+ "og_image": null,
+ "alternates": {
+  "ru": "/image-license",
+  "ua": "/ua/image-license",
+  "en": "/en/image-license"
+ },
+ "sections": [
+  {
+   "id": "image-license",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Use of photos and renderings"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Who owns the images"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Interior photos, 3D renderings, drawings and other images on dumskaya-design.com were created by the DUMSKAYA DESIGN interior design studio or commissioned by it and are protected by copyright. © DUMSKAYA DESIGN."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What you may do without permission"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Share a link to a page of the website — on social media, in messengers and e-mails. A link preview may show an image from that page."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What you may not do without permission"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Copy or publish the images on other websites, social media, marketplaces or in advertising; present the studio’s projects as your own; alter the images or remove the credit or author information."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How to get permission (a licence)"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Write to us at <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a> or use the form on the <a href=\"/en/contact-studio-interior-design-bratislava-vienna\">Contact</a> page: which images (a link to the page), where and for what purpose you would like to use them. We reply within one working day and send you the terms."
+      },
+      {
+       "t": "p",
+       "html": "When use is permitted, credit the author: “© DUMSKAYA DESIGN, dumskaya-design.com”."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
