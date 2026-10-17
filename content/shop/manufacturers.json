@@ -8,9 +8,107 @@
   "phone": "+39 0423 487141",
   "email": "info@idl1987.it",
   "partner": "Александр Замлинский (Италия)",
-  "categories": ["lighting"],
+  "categories": [
+   "lighting"
+  ],
   "catalog": "content/shop/catalog/idl.json",
   "sku_range": "DL-…1000–2899",
   "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
+ },
+ "olev": {
+  "name": "OLEV",
+  "legal": "OLEV S.r.l.",
+  "country": "Италия",
+  "site": "https://www.olevlight.com",
+  "address": "Via del Progresso 40, 36064 Colceresa (VI), Italia",
+  "email": "info@olevlight.com",
+  "partner": null,
+  "categories": [
+   "lighting"
+  ],
+  "catalog": "content/shop/catalog/olev.json",
+  "sku_range": "DL-…3000–3399",
+  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+ },
+ "delta": {
+  "name": "Delta Light",
+  "legal": "Delta Light NV",
+  "country": "Бельгия",
+  "site": "https://deltalight.com",
+  "address": "Muizelstraat 2, 8560 Wevelgem, Belgium",
+  "phone": "+32 56 435 735",
+  "email": "info@deltalight.com",
+  "partner": null,
+  "categories": [
+   "lighting"
+  ],
+  "catalog": "content/shop/catalog/delta.json",
+  "sku_range": "DL-…3400–4699",
+  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+ },
+ "baxter": {
+  "name": "Baxter",
+  "legal": "Baxter S.r.l.",
+  "country": "Италия",
+  "site": "https://www.baxter.it",
+  "address": "Via Trento 68, 20821 Meda (MB), Italia",
+  "phone": "+39 031 35999",
+  "email": "info@baxter.it",
+  "partner": null,
+  "categories": [
+   "furniture",
+   "lighting"
+  ],
+  "catalog": "content/shop/catalog/baxter.json",
+  "sku_range": "DF-…5000–5599 (свет — DL- с теми же номерами)",
+  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+ },
+ "flexform": {
+  "name": "Flexform",
+  "legal": "Flexform S.p.A.",
+  "country": "Италия",
+  "site": "https://www.flexform.it",
+  "address": "Via L. Einaudi 23/25, 20821 Meda (MB), Italia",
+  "phone": "+39 0362 3991",
+  "email": "info@flexform.it",
+  "partner": null,
+  "categories": [
+   "furniture"
+  ],
+  "catalog": "content/shop/catalog/flexform.json",
+  "sku_range": "DF-…5600–6199",
+  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+ },
+ "molteni": {
+  "name": "Molteni&C",
+  "legal": "Molteni&C S.p.A.",
+  "country": "Италия",
+  "site": "https://www.molteni.it",
+  "address": "Via Rossini 50, 20833 Giussano (MB), Italia",
+  "partner": null,
+  "categories": [
+   "furniture",
+   "storage",
+   "kitchens"
+  ],
+  "catalog": "content/shop/catalog/molteni.json",
+  "sku_range": "DF-…6200–6799",
+  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
+ },
+ "maxalto": {
+  "name": "Maxalto",
+  "legal": "B&B Italia S.p.A. (бренд Maxalto)",
+  "country": "Италия",
+  "site": "https://www.maxalto.com",
+  "address": "Strada provinciale 32 n. 15, 22060 Novedrate (CO), Italia (офис; юридический адрес — Via Manzoni 38, 20121 Milano)",
+  "phone": "+39 031 795213",
+  "email": "info@maxalto.com",
+  "partner": null,
+  "categories": [
+   "furniture"
+  ],
+  "catalog": "content/shop/catalog/maxalto.json",
+  "sku_range": "DF-…6800–7099 (свет — DL- с теми же номерами)",
+  "note": "Партнёр пока не назначен: заявки на товары этой фабрики — ответственному за магазин студии (Ирине) с копией разработчику."
  }
 }

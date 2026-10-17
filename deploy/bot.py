@@ -807,8 +807,10 @@ def format_lead(lead, model, prod):
             hint += f", артикул изготовителя <code>{esc(prod['mfr_code'])}</code>"
         if prod.get("collection"):
             hint += f", коллекция {esc(prod['collection'])}"
+        if str(prod.get("mfr_url") or "").startswith("http"):
+            hint += f', <a href="{esc(prod["mfr_url"])}">страница у фабрики</a>'
         lines.append(hint)
-        ref = prod.get("catalog")                    # где товар в каталоге фабрики; номер — ссылка на страницу PDF
+        ref = prod.get("catalog")                    # где товар в каталоге (техкарте) фабрики; номер — ссылка на страницу PDF
         if isinstance(ref, dict) and ref.get("pages"):
             def pg(p):
                 n, label, what = (list(p) + [None, None, None])[:3]
@@ -816,7 +818,8 @@ def format_lead(lead, model, prod):
                 if ref.get("url") and str(n).isdigit():
                     txt = f'<a href="{esc(ref["url"])}#page={int(n)}">{txt}</a>'
                 return txt + (f" ({esc(what)})" if what else "")
-            lines.append(f"<b>Каталог:</b> {esc(ref.get('catalog', ''))}, стр. " + ", ".join(pg(p) for p in ref["pages"]))
+            lines.append(f"<b>{esc(ref.get('label') or 'Каталог')}:</b> {esc(ref.get('catalog', ''))}, стр. "
+                         + ", ".join(pg(p) for p in ref["pages"]))
     if lead.get("message"):
         lines.append(f"<b>Сообщение:</b>\n{esc(lead.get('message'))}")
     page = lead.get("page") or ""

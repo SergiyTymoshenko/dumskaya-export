@@ -13,3 +13,9 @@ i18n-work/
 deploy/caddy/dumskaya-redirects.snippet
 # товары магазина для бота заявок — собирается при выкладке (scripts/build_shop.py)
 deploy/shop-products.json
+# сборщики данных фабрик: кеш страниц и промежуточные файлы (scripts/shop/factories/README.md)
+scripts/shop/factories/cache/
+scripts/shop/factories/*.json
+scripts/shop/factories/*.tsv
+scripts/shop/factories/*.log
+scripts/shop/factories/delta_files/

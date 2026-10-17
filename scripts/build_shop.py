@@ -29,7 +29,7 @@ for f in sorted(glob.glob(os.path.join(ROOT, "content/pages/ru/shop/*.json"))):
     if code in out:
         errs.append(f"артикул {code} повторяется: {out[code]['path']} и {p['path']}")
     out[code] = {"name": name, "path": p["path"], "partner": int(partner) if str(partner or "").isdigit() else None}
-# каталоги партнёрских фабрик
+# каталоги фабрик (content/shop/manufacturers.json): партнёрских и тех, за кем партнёр пока не закреплён
 TYPE_RU = {"suspension": "Подвесной светильник", "ceiling": "Потолочный светильник", "wall": "Бра",
            "table": "Настольная лампа", "floor": "Торшер", "spot": "Спот"}
 def catalog_ref(it, sources):
@@ -46,8 +46,21 @@ def catalog_ref(it, sources):
     return {"catalog": src["id"], "url": src.get("url"), "pages": pages}
 
 
+def sheet_ref(it, mf):
+    """Техкарта изделия (PDF у фабрики): ссылка и страницы с чертежами — для фабрик, где товар = страница изделия."""
+    sh = (it.get("sheets") or [None])[0]
+    if not sh or not sh.get("url"):
+        return None
+    pages = sorted({d["source"]["page"] for d in it.get("drawings") or [] if d.get("source", {}).get("sheet") == sh["file"]})
+    return {"label": "Техкарта", "catalog": mf["name"], "url": sh["url"],
+            "pages": [[n, str(n), "чертёж"] for n in pages] or [[1, "1", None]]}
+
+
 mfrs = json.load(open(os.path.join(ROOT, "content/shop/manufacturers.json"), encoding="utf-8"))
 for key, mf in mfrs.items():
+    if not os.path.exists(os.path.join(ROOT, mf["catalog"])):
+        print(f"  · {mf['name']}: каталога {mf['catalog']} ещё нет — пропуск")
+        continue
     cat = json.load(open(os.path.join(ROOT, mf["catalog"]), encoding="utf-8"))
     cols = cat["collections"]
     sources = {s["id"]: s for s in cat.get("sources", []) if s.get("id")}
@@ -57,10 +70,12 @@ for key, mf in mfrs.items():
             errs.append(f"артикул {code} повторяется: {out[code].get('path') or 'каталог'} и каталог {key}")
             continue
         col = cols.get(it["collection"], {}).get("name", it["collection"])
-        out[code] = {"name": f"{TYPE_RU.get(it['type'], 'Светильник')} {col}", "path": it.get("path"),
-                     "partner": mf.get("partner"), "mfr": f"{mf['name']} ({mf['country']})",
-                     "mfr_code": it["mfr_code"], "collection": col}
-        ref = catalog_ref(it, sources)
+        name = (it.get("name") or {}).get("ru") or f"{TYPE_RU.get(it['type'], 'Светильник')} {col}"
+        out[code] = {"name": name, "path": it.get("path"), "partner": mf.get("partner"),
+                     "mfr": f"{mf['name']} ({mf['country']})", "mfr_code": it.get("mfr_code"), "collection": col}
+        if (it.get("links") or {}).get("page"):
+            out[code]["mfr_url"] = it["links"]["page"]
+        ref = catalog_ref(it, sources) or sheet_ref(it, mf)
         if ref:
             out[code]["catalog"] = ref
 dst = os.path.join(ROOT, "deploy", "shop-products.json")

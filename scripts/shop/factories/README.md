@@ -1,0 +1,58 @@
+# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto)
+
+Откуда берутся `content/shop/sources/<фабрика>/` и каталоги `content/shop/catalog/<фабрика>.json`.
+У IDL — свой путь: `scripts/shop/idl_factory/README.md`.
+
+Только то, что фабрика открыто выкладывает на сайте без входа: тексты, характеристики, фото, техкарты PDF.
+Файлы 2D/3D и BIM, которые у фабрики даются после регистрации, не качаем — в каталоге только ссылка
+на страницу изделия. `robots.txt` соблюдаем: Delta Light — не чаще одного запроса в 20 секунд
+(так у них для ClaudeBot), разделы `/asset/file/*` не трогаем; остальные сайты — 1–2 запроса в секунду.
+
+## Шаги
+
+1. **Сбор со страниц** (компьютер с Python 3, `pip install requests beautifulsoup4 lxml pdfplumber`), в этой папке:
+
+   ```
+   python3 olev.py && python3 olev_ds.py          # → olev.json, olev_ds.json (коды, мощность, люмены из техлистов)
+   python3 baxter.py                              # → baxter.json
+   python3 flexform.py                            # → flexform.json
+   python3 molteni.py && python3 molteni_post.py  # → molteni.json → molteni2.json (только фото и техкарты этого изделия)
+   python3 maxalto.py                             # → maxalto.json
+   python3 delta_run.py                           # → delta.json, dl-delta.tsv и файлы в delta_files/ (долго: 20 с на запрос)
+   ```
+
+   Страницы кешируются в `cache/` — повторный запуск не ходит на сайт заново. Ничего из этого не хранится в git.
+
+2. **Списки файлов**: `python3 gen_dl.py olev baxter flexform molteni maxalto` → `dl-<фабрика>.tsv`
+   («путь в выгрузке<TAB>адрес»): до 8 фото на изделие и техкарты PDF. Уже скачанным путь не меняется.
+
+3. **Скачать на Mac** (Терминал Mac): списки и `dl.sh` положить в `~/Documents/dumskaya-export/_work/`, затем
+   `cd ~/Documents/dumskaya-export/_work && bash dl.sh dl-baxter.tsv 600` — повторять, пока не напишет
+   «не скачано: 0» (уже скачанное пропускает). Фото — в `images/shop/<фабрика>/<изделие>/`, техкарты —
+   в `catalogs/<фабрика>/`. Файлы Delta Light скачиваются шагом 1 (`delta_files/`) — их перенести в выгрузку.
+
+4. **Размеры фото и чертежи** (там же, нужны `pip install pillow pymupdf`):
+   `python3 manifest.py <фабрика>` → `manifest-<фабрика>.json` (размеры фото, текст техкарт);
+   `python3 drawings.py <фабрика>` → чертежи с размерами, вырезанные из техкарт
+   (`images/shop/<фабрика>/drawings/`, сведения — `drawings-<фабрика>.json`).
+
+5. **Исходники в репозиторий**: собрать в одну папку `<фабрика>.json` из шага 1, `dl-*.tsv`, `manifest-*.json`,
+   `drawings-*.json` и запустить `python3 scripts/shop/factories/make_sources.py <папка>` →
+   `content/shop/sources/<фабрика>/site.json` (данные сайта) и `files.json` (адрес → файл в выгрузке,
+   размеры; что прочитано из техкарт: коды исполнений, материалы, отделки, страницы чертежей).
+   Тексты PDF целиком в git не попадают.
+
+6. **Каталоги**: `python3 scripts/shop/factories_import.py` → `content/shop/catalog/<фабрика>.json`
+   (артикулы, названия по-русски, тип, коллекции, тексты, исполнения, фото, чертежи, техкарты, ссылки).
+   Выданные артикулы сохраняются. Потом `python3 scripts/build_shop.py` — список для бота.
+
+## Что где у фабрик
+
+| Фабрика | Что берём | Размеры |
+|---|---|---|
+| OLEV | страницы изделий (EN), техлисты PDF: коды, мощность, люмены, CCT, IP | чертёж из техлиста |
+| Delta Light | подсемейства с исполнениями (EN): характеристики, отделки, фото изделия, чертёж SVG | в характеристиках и на чертеже |
+| Baxter | EN и RU тексты, исполнения с кодами и размерами в см, материалы, техкарты | по исполнениям + чертёж |
+| Flexform | EN и RU тексты и материалы, техкарты (коды исполнений), архив 2D (ссылка) | чертёж из техкарты |
+| Molteni&C | EN тексты, техкарты (материалы, отделки) | чертёж из техкарты |
+| Maxalto | EN тексты, техкарты (материалы) | чертёж из техкарты |
