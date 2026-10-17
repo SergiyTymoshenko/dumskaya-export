@@ -227,7 +227,15 @@ def site_maxalto(work):
 
 
 def site_delta(work):
-    return [{k: v for k, v in p.items() if k != "projects"} for p in load(work, "delta.json", []) if not p.get("error")]
+    out = []
+    for p in load(work, "delta.json", []):
+        if p.get("error"):
+            continue
+        q = {k: v for k, v in p.items() if k not in ("projects", "variants")}
+        q["variants"] = [{"sku": v.get("sku"), "base": v.get("base"), "colour": v.get("colour"),
+                          "props": {k: x for k, x in (v.get("props") or {}).items() if k != "Certificates"}} for v in p.get("variants") or []]
+        out.append(q)
+    return out
 
 
 def main():

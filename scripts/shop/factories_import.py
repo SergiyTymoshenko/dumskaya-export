@@ -165,21 +165,25 @@ def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", norm(s).lower()).strip("-")
 
 
-def cap(w):
+def cap(w, short_upper=False):
     if re.search(r"\d", w):                                   # IP44, 7TUBI, '09 — как есть
+        return w
+    if re.fullmatch(r"[IVX]{2,4}", w.upper()) and w.isupper():   # римские цифры: II, III, IV
+        return w
+    if short_upper and w.isupper() and len(w) <= 2:            # у Delta Light: M, S, OK, HI — обозначения исполнений
         return w
     if re.fullmatch(r"([A-Za-z]\.){2,}[A-Za-z]?\.?", w):     # сокращения: S.H., A.B.C.
         return w.upper()
     return "-".join(x[:1].upper() + x[1:].lower() if x[:1].isalpha() else x for x in w.split("-"))
 
 
-def smart_title(s, mixed=False):
+def smart_title(s, mixed=False, short_upper=False):
     """КАПС фабрик → «Как в названии»; mixed — в смешанных названиях поправить только слова целиком заглавными."""
     s = re.sub(r"\s+", " ", (s or "").strip())
     if s.isupper() or s.islower():
-        return " ".join(cap(w) for w in s.split(" "))
+        return " ".join(cap(w, short_upper) for w in s.split(" "))
     if mixed:
-        return " ".join(cap(w) if w.isupper() and len(w) > 1 else w for w in s.split(" "))
+        return " ".join(cap(w, short_upper) if w.isupper() and len(w) > 1 else w for w in s.split(" "))
     return s
 
 
@@ -490,18 +494,22 @@ def delta():
             t = "bollard"
         else:
             t = "ceiling"
-        model = smart_title(p.get("subfamily"), mixed=True)
+        model = smart_title(p.get("subfamily"), mixed=True, short_upper=True)
         cols = p.get("colours") or {}
+        allp = [{k: x for k, x in (v.get("props") or {}).items() if k != "Certificates"} for v in p.get("variants") or []]
+        keys = {k for pr in allp for k in pr}
+        same = {k for k in keys if len({pr.get(k) for pr in allp}) == 1}
         vers, tech = [], {}
-        for v in p.get("variants") or []:
-            pr = {k: x for k, x in (v.get("props") or {}).items() if k != "Certificates"}
+        for v, pr in zip(p.get("variants") or [], allp):
             vers.append({"code": v.get("sku"), "colour": cols.get(v.get("colour"), v.get("colour")) if isinstance(cols, dict) else v.get("colour"),
-                         "props": pr})
+                         "props": {k: x for k, x in pr.items() if k not in same}})
             for k in ("Luminaire power", "Luminaire lm", "CCT", "CRI", "Beam angle", "IP", "Dimming type", "Voltage", "Length",
                       "Cutout size", "Min. recessed depth", "Height", "Width", "Diameter", "Height bollard"):
                 if pr.get(k) and pr[k] not in tech.setdefault(k, []):
                     tech[k].append(pr[k])
         common = {k: v for k, v in (p.get("common") or {}).items() if v}
+        if allp:
+            common.update({k: allp[0][k] for k in sorted(same) if allp[0].get(k)})
         bases = list(dict.fromkeys(v.get("base") for v in p.get("variants") or [] if v.get("base")))
         imgs = [x for x in (img(files, MEDIA + "website_image_w_1600/" + s["resource"]) for s in (p.get("shots") or [])[:1]) if x]
         drw = []
@@ -514,7 +522,7 @@ def delta():
                     "collection": slug(p.get("family") or model), "category": " / ".join(x for x in (fix, ins) if x) or None,
                     "place": place, "mfr_code": ", ".join(bases[:4]) + (" …" if len(bases) > 4 else "") if bases else None,
                     "text": {"en": p.get("family_desc")} if p.get("family_desc") else None,
-                    "tech": {"common": common, **{k: v for k, v in tech.items() if v}} or None,
+                    "tech": {"common": common, **{k: v for k, v in tech.items() if v and k not in same}} or None,
                     "finishes": {"": list(cols.values())} if isinstance(cols, dict) and cols else None,
                     "versions": vers, "images": imgs, "drawings": drw, "sheets": [],
                     "links": {"page": p["url"], "family": p["url"].rsplit("/", 1)[0]}})
