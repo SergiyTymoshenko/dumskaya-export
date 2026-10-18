@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Даёт каждой картинке понятное имя файла по странице, где она стоит:
-  apartment-interior-design-bratislava-58m-03
-Имя берётся по русскому адресу первой страницы, на которой картинка встречается
-(сначала проекты, потом остальные страницы). Слова «warsaw/varshava/poland»
+Имена файлов картинок на сайте: content/image-names.json (id → имя).
+
+Уже выданные имена НЕ меняются никогда: по ним фото знает Google и кеш браузеров (год).
+Скрипт только дописывает имена новым картинкам, которым имя ещё не дали руками:
+  <помещение>-<русский адрес страницы>-NN   living-room-kitchen-interior-design-apartment-bratislava-127m-01
+Помещение — по коду из content/image-rooms.json (у фото без кода — без него).
+Лучше давать новым фото описательные имена руками (что на фото, объект, город — см. навык
+«Добавить страницу»), а скрипт — страховка для забытых. Слова «warsaw/varshava/poland»
 из имён убираются — правило «нейтрально, если город не указан явно».
-Результат: content/image-names.json (id → имя).
+   python3 scripts/image_names.py
 """
 import glob
 import json
@@ -15,6 +19,13 @@ import re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 C = os.path.join(ROOT, "content")
+
+# код помещения (content/image-rooms.json) → слово в имени файла
+ROOM_WORDS = {
+    "L": "living-room-kitchen", "MB": "master-bedroom", "MBA": "master-bathroom", "ST": "home-office",
+    "KID": "kids-room", "G": "guest-room", "W": "walk-in-closet", "LA": "laundry-room",
+    "H": "entrance-hall", "T": "terrace", "D": "drawing",
+}
 
 GEO_DROP = re.compile(r"-?(warsaw|varshava|warszawa|poland|polsha|polshcha|moscow|moskva)(?=-|$)")
 
@@ -64,7 +75,12 @@ def main():
     ru.sort(key=lambda p: (p["type"] != "project", p["type"] != "kitchen", p["path"]))
     others = load("ua") + load("en")
     by_path = {p["path"]: p for p in ru + others}
-    names, used = {}, set()
+    names_path = os.path.join(C, "image-names.json")
+    names = json.load(open(names_path, encoding="utf-8")) if os.path.exists(names_path) else {}
+    old_count = len(names)
+    used = set(names.values())
+    rooms_path = os.path.join(C, "image-rooms.json")
+    rooms = json.load(open(rooms_path, encoding="utf-8")) if os.path.exists(rooms_path) else {}
 
     def name_for(page):
         rp = page["alternates"].get("ru") or page["path"]
@@ -83,12 +99,13 @@ def main():
 
     # 1–2. фото в галереях страниц: сначала проекты и кухни, потом остальные, потом ua/en
     for page in ru + others:
-        base = name_for(page)
-        counter = sum(1 for v in used if v.startswith(base + "-") and v[len(base) + 1:].isdigit())
+        page_base = name_for(page)
         for iid in gallery_ids(page):
             if iid in names:
                 continue
-            counter += 1
+            room = ROOM_WORDS.get(rooms.get(iid, ""))
+            base = f"{room}-{page_base}" if room else page_base
+            counter = 1
             name = f"{base}-{counter:02d}"
             while name in used:
                 counter += 1
@@ -111,7 +128,7 @@ def main():
     names["65d3aa3656ff01000f88c35d"] = names.get("65d3aa3656ff01000f88c35d") or "dumskaya-design-logo"
     with open(os.path.join(C, "image-names.json"), "w", encoding="utf-8") as f:
         json.dump(names, f, ensure_ascii=False, indent=0)
-    print(f"имён картинок: {len(names)}")
+    print(f"имён картинок: {len(names)} (новых: {len(names) - old_count}, прежние не менялись)")
 
 
 if __name__ == "__main__":
