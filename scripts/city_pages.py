@@ -525,7 +525,7 @@ GERMANY = dict(
 )
 
 # ---------- Варшава ----------
-WAR_PROJECTS = ['/apartment-interior-design-warsaw-43m', '/apartment-interior-design-warsaw-43m2', '/apartment-interior-design-krakow-63m', '/apartment-interior-design-krakow-64m', '/office-interior-design-53m']
+WAR_PROJECTS = ['/apartment-interior-design-warsaw-43m', '/apartment-interior-design-warsaw-43m2', '/apartment-interior-design-krakow-63m', '/apartment-interior-design-krakow-64m', '/office-interior-design-53m', '/office-interior-design-warsaw-183m']
 
 WARSAW_DESIGN = dict(
     path=WAR['design'], type='service',

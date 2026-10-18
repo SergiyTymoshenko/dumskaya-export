@@ -1419,6 +1419,46 @@
   }
  },
  {
+  "path": "/office-interior-design-warsaw-183m",
+  "group": "commercial",
+  "alternates": {
+   "ru": "/office-interior-design-warsaw-183m",
+   "ua": "/ua/dyzain-interieru-ofisu-varshava-183-m2",
+   "en": "/en/office-interior-design-warsaw-183sqm"
+  },
+  "cover": "war183-01",
+  "title": {
+   "en": "Office in Warsaw, 183 m²",
+   "ua": "Офіс у Варшаві, 183 м²",
+   "ru": "Офис в Варшаве, 183 м²"
+  },
+  "explicit_warsaw": true,
+  "area": 183,
+  "facts": {
+   "ru": {
+    "object": "Офис для маркетологов",
+    "area": "183 м²",
+    "city": "Варшава",
+    "works": "Дизайн-проект (пакет «Экспресс»), планировочное решение и 3D-визуализация",
+    "status": "дизайн-проект"
+   },
+   "ua": {
+    "object": "Офіс для маркетологів",
+    "area": "183 м²",
+    "city": "Варшава",
+    "works": "Дизайн-проєкт (пакет «Експрес»), планувальне рішення та 3D-візуалізація",
+    "status": "дизайн-проєкт"
+   },
+   "en": {
+    "object": "Office for a marketing team",
+    "area": "183 m²",
+    "city": "Warsaw",
+    "works": "“Express” package design project, layout and 3D visualization",
+    "status": "design project"
+   }
+  }
+ },
+ {
   "path": "/interior-design-cosmetology-salon",
   "group": "commercial",
   "alternates": {

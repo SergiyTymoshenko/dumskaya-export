@@ -1,0 +1,386 @@
+{
+ "path": "/en/office-interior-design-warsaw-183sqm",
+ "lang": "en",
+ "type": "project",
+ "group": "commercial",
+ "title": "Office Interior Design in Warsaw, 183 m² | DUMSKAYA DESIGN",
+ "description": "Office for a marketing team in Warsaw, 183 m²: layout option 1 and 3D visualizations under the “Express” design package by DUMSKAYA DESIGN.",
+ "h1": "Office interior design for a marketing team in Warsaw, 183 m²",
+ "og_image": "war183-01",
+ "alternates": {
+  "ru": "/office-interior-design-warsaw-183m",
+  "ua": "/ua/dyzain-interieru-ofisu-varshava-183-m2",
+  "en": "/en/office-interior-design-warsaw-183sqm"
+ },
+ "sections": [
+  {
+   "id": "war183-main",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Office interior design for a marketing team in Warsaw, 183 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> designed the interior of a 183 m² office in Warsaw for a marketing team under the <a href=\"/en/express-interior-design-package-bratislava-vienna\">“Express”</a> design package: layout option 1 with a furniture plan and photorealistic 3D visualizations of all the main rooms."
+      },
+      {
+       "t": "p",
+       "html": "The office is built for a large team and lively collaboration: a spacious open-plan area, an open-type office, the “Financiers” office, a meeting room and a separate executive office. Reception with a waiting area serves clients and guests, while a game zone and a kitchen-dining area give the team room to unwind."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interior and 3D visualizations"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The palette is calm and warm: light walls, grey-brown carpet, natural wood in the custom furniture and living greenery. Each zone has its own accent: soft rounded armchairs at reception, orange chairs and a blue panel in the office with the world map, green chairs in the kitchen, bean bag chairs and a TV in the game zone."
+      },
+      {
+       "t": "p",
+       "html": "The executive office has a desk, a TV area and soft armchairs for informal meetings."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What’s included in the “Express” package"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The “Express” package is a fast design project without a full set of working drawings: a measured floor plan, a furniture layout and 3D visualization. If you need detailed drawings for renovation, compare the packages on the <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">prices page</a>."
+      },
+      {
+       "t": "p",
+       "html": "The project is developed remotely, while renovation and furniture in Warsaw are handled by the studio’s partners — see the <a href=\"/en/interior-design-apartmens-warsaw\">“Interior design in Warsaw”</a> page for details."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Layout option 1"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The working part of the office has two large zones: a 72.34 m² open-plan area and a 25.84 m² open-type office. Next to them are the “Financiers” office, the meeting room and the executive office. The entrance group combines reception and the game zone, while the kitchen-dining area is a separate room. The workstations are arranged with circulation routes, functional zones and the way the office will be used in mind."
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Room schedule:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Reception — 21.49 m²",
+        "Game zone — 13.19 m²",
+        "Meeting room — 6.34 m²",
+        "“Financiers” office — 15.99 m²",
+        "Open-type office — 25.84 m²",
+        "Open-plan work area — 72.34 m²",
+        "Kitchen-dining area — 10.20 m²",
+        "Executive office — 18.05 m²",
+        "Total area — 183.44 m²"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "image": {
+      "id": "war183-plan",
+      "alt": "Layout option 1 of a 183 m² office in Warsaw with the furniture plan"
+     },
+     "caption": "Layout option 1 with the furniture plan"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "war183-01",
+       "alt": "Office reception with a front desk, armchairs and a coffee table"
+      },
+      {
+       "id": "war183-02",
+       "alt": "Reception waiting area with soft armchairs and a wall panel"
+      },
+      {
+       "id": "war183-03",
+       "alt": "Custom furniture with lighting and open shelving at reception"
+      },
+      {
+       "id": "war183-04",
+       "alt": "Entrance from reception to the offices through a glass partition"
+      },
+      {
+       "id": "war183-05",
+       "alt": "Reception with a waiting area, a multifunction printer and a glass partition"
+      },
+      {
+       "id": "war183-06",
+       "alt": "Reception desk with a potted tree"
+      },
+      {
+       "id": "war183-07",
+       "alt": "Office game zone with bean bag chairs and a coffee table"
+      },
+      {
+       "id": "war183-08",
+       "alt": "Game zone with a TV and bean bag chairs"
+      },
+      {
+       "id": "war183-09",
+       "alt": "Lounge with a sofa, bean bag chairs and a painting"
+      },
+      {
+       "id": "war183-10",
+       "alt": "Office with dark desks by a glazed door"
+      },
+      {
+       "id": "war183-11",
+       "alt": "Workstations with ergonomic chairs by windows with blinds"
+      },
+      {
+       "id": "war183-12",
+       "alt": "Dark desks, an open shelving unit with décor and monitors"
+      },
+      {
+       "id": "war183-13",
+       "alt": "Office corridor with workstations and plants"
+      },
+      {
+       "id": "war183-14",
+       "alt": "Entrance to an office with a world map on the wall"
+      },
+      {
+       "id": "war183-15",
+       "alt": "Workstation with an orange chair against a blue panel"
+      },
+      {
+       "id": "war183-16",
+       "alt": "Desk beside a blue perforated panel"
+      },
+      {
+       "id": "war183-17",
+       "alt": "Desks with orange chairs and a backlit world map"
+      },
+      {
+       "id": "war183-18",
+       "alt": "Office with a glazed door and a shelving unit"
+      },
+      {
+       "id": "war183-19",
+       "alt": "Backlit world map above the workstations"
+      },
+      {
+       "id": "war183-20",
+       "alt": "Workstations facing glazed double doors"
+      },
+      {
+       "id": "war183-21",
+       "alt": "Desks with laptops and orange chairs"
+      },
+      {
+       "id": "war183-22",
+       "alt": "Work area with shelving, plants and accent lighting"
+      },
+      {
+       "id": "war183-23",
+       "alt": "Open-plan office entrance hall with a plant by the door"
+      },
+      {
+       "id": "war183-24",
+       "alt": "White desks behind a glass partition"
+      },
+      {
+       "id": "war183-25",
+       "alt": "Open-plan workspace with white desks and a lounge area"
+      },
+      {
+       "id": "war183-26",
+       "alt": "White desks with monitors and upholstered office chairs"
+      },
+      {
+       "id": "war183-27",
+       "alt": "Workstations by panoramic windows with blinds"
+      },
+      {
+       "id": "war183-28",
+       "alt": "Workstation next to a decorative tree"
+      },
+      {
+       "id": "war183-29",
+       "alt": "Soft sofa by a column and open-plan desks"
+      },
+      {
+       "id": "war183-30",
+       "alt": "Sofa and ottoman in the lounge by the glass partition"
+      },
+      {
+       "id": "war183-31",
+       "alt": "General view of the open-plan workspace with white desks"
+      },
+      {
+       "id": "war183-32",
+       "alt": "Lounge with a sofa and a coffee table in the open-plan area"
+      },
+      {
+       "id": "war183-33",
+       "alt": "Sofa, oval coffee table and panoramic windows"
+      },
+      {
+       "id": "war183-34",
+       "alt": "Column with wood trim and planters"
+      },
+      {
+       "id": "war183-35",
+       "alt": "Office kitchen-dining area with an L-shaped kitchen by the window"
+      },
+      {
+       "id": "war183-36",
+       "alt": "Kitchen with light cabinetry and a dark refrigerator"
+      },
+      {
+       "id": "war183-37",
+       "alt": "Kitchen with a dining area and green chairs"
+      },
+      {
+       "id": "war183-38",
+       "alt": "Dining table by the window with a city view"
+      },
+      {
+       "id": "war183-39",
+       "alt": "Dining area: table and chairs by a wall with a poster"
+      },
+      {
+       "id": "war183-40",
+       "alt": "Executive office: TV area and soft armchairs"
+      },
+      {
+       "id": "war183-41",
+       "alt": "Executive office: desk by the panoramic windows"
+      },
+      {
+       "id": "war183-42",
+       "alt": "Executive desk and guest armchairs"
+      },
+      {
+       "id": "war183-43",
+       "alt": "Executive desk facing the TV panel"
+      },
+      {
+       "id": "war183-44",
+       "alt": "TV console and wall panel in the executive office"
+      },
+      {
+       "id": "war183-45",
+       "alt": "Lounge chair by the window in the executive office"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "All projects",
+       "href": "/en/portfolio-interior-design-projects"
+      },
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Design package prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "war183-services",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
