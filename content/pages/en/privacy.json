@@ -69,7 +69,7 @@
       },
       {
        "t": "p",
-       "html": "If the message in an enquiry is not written in Russian, its text (without your name and contact details) is sent to a machine translation service so that we receive a Russian translation. The service uses the text only for translation."
+       "html": "If the message in an enquiry is written in neither Russian nor Ukrainian, its text (without your name and contact details) is sent to a machine translation service so that we receive a Russian translation. The service uses the text only for translation."
       }
      ]
     },

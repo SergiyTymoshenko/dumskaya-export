@@ -69,7 +69,7 @@
       },
       {
        "t": "p",
-       "html": "Ist die Nachricht in einer Anfrage nicht auf Russisch verfasst, wird ihr Text (ohne Namen und Kontaktdaten) an einen maschinellen Übersetzungsdienst übermittelt, damit wir eine russische Übersetzung erhalten. Der Dienst verwendet den Text nur für die Übersetzung."
+       "html": "Ist die Nachricht in einer Anfrage weder auf Russisch noch auf Ukrainisch verfasst, wird ihr Text (ohne Namen und Kontaktdaten) an einen maschinellen Übersetzungsdienst übermittelt, damit wir eine russische Übersetzung erhalten. Der Dienst verwendet den Text nur für die Übersetzung."
       }
      ]
     },
