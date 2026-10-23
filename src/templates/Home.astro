@@ -6,7 +6,7 @@ import Parts from '../components/Parts.astro';
 import Caps from '../components/Caps.astro';
 import Blocks from '../components/Blocks.astro';
 import { ui, type Lang } from '../lib/i18n';
-import { projectsFor, splitCaption, localize, isServicesSection, site, type Page, type Part } from '../lib/data';
+import { projectsFor, splitCaption, localize, isServicesSection, site, pagePhones, type Page, type Part } from '../lib/data';
 import home from '../../content/home.json';
 
 interface Props { page: Page }
@@ -123,7 +123,7 @@ const heroTitle = page.h1;
 <section class="cta section wrap">
   <h2 class="cta__title display">{T.freeConsult}</h2>
   <ul class="cta__phones">
-    {site.contacts.phones.slice(0, 2).map((p: any) => <li><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{p.city[lang]}</span></li>)}
+    {pagePhones(page).map((p: any) => <li><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{p.city[lang]}</span></li>)}
   </ul>
   <div class="cta__btns">
     {buttons.slice(0, 2).map((b: any, i: number) => b.href && <a class:list={['btn', i === 0 && 'btn--solid']} href={b.href}>{b.text}</a>)}

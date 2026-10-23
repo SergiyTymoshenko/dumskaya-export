@@ -58,12 +58,11 @@ export function phoneFor(page: Page): { phone: Phone; regional: boolean; plain: 
   return { phone: own || all[0], regional: !!own, plain: !!own && !!page.phone_plain };
 }
 
-/** Телефоны в подвале и в меню: Братислава и Вена; на посадочной другого региона — ещё телефон этого региона (первым).
- *  Телефоны всех стран — только на странице «Контакты». */
+/** Телефоны в подвале, меню и на главной: Братислава (два номера) и Вена — все телефоны студии. */
 export function pagePhones(page: Page): Phone[] {
   const all = site.contacts.phones as Phone[];
   const { phone, regional } = phoneFor(page);
-  const main = all.filter((p) => p.key === 'sk' || p.key === 'at');
+  const main = all.filter((p) => ['sk', 'ua', 'at'].includes(p.key));
   return regional && !main.includes(phone) ? [phone, ...main] : main;
 }
 

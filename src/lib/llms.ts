@@ -62,7 +62,7 @@ export function llmsTxt(): string {
     'The website is available in English, Ukrainian and Russian.');
   L.push('');
   L.push(`- Studio address: ${c.address.street}, ${c.address.postal} ${c.address.city}, Slovakia`);
-  L.push(`- Phone: ${c.phones.filter((p: any) => p.key === 'sk' || p.key === 'at').map((p: any) => `${p.text} (${p.city.en})`).join(', ')}`);
+  L.push(`- Phone: ${c.phones.map((p: any) => `${p.text} (${p.city.en})`).join(', ')}`);
   L.push(`- Email: ${c.email}`);
   L.push(`- Messengers: WhatsApp and Telegram at ${c.phones[0].text}`);
   L.push(`- Instagram: ${c.social.map((s: any) => s.href).join(', ')}`);
