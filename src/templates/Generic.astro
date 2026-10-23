@@ -5,7 +5,7 @@
 import Blocks from '../components/Blocks.astro';
 import Crumbs from '../components/Crumbs.astro';
 import Caps from '../components/Caps.astro';
-import { ui, type Lang } from '../lib/i18n';
+import { ui, LANGS, type Lang } from '../lib/i18n';
 import { site, homePath, localize, isServicesSection, plain, phoneFor, type Page } from '../lib/data';
 import { packFor } from '../lib/packs';
 import { typo } from '../lib/typo';
@@ -22,7 +22,7 @@ const crumbs = [{ label: T.home, href: homePath(lang) }, ...(group ? [{ label: g
 const pack = packFor(page);
 const reg = phoneFor(page);
 const regPhone = reg.regional
-  ? (reg.plain ? { ...reg.phone, label: { ru: ui('ru').phone, ua: ui('ua').phone, en: ui('en').phone } } : reg.phone)
+  ? (reg.plain ? { ...reg.phone, label: Object.fromEntries(LANGS.map((l) => [l, ui(l).phone])) } : reg.phone)
   : undefined;
 const main = page.sections.filter((s) => !isServicesSection(s));
 const services = page.sections.filter(isServicesSection);

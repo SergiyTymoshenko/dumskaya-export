@@ -22,7 +22,7 @@ export function typo(text: string): string {
   s = shortWords(shortWords(s)); // дважды — для цепочек «и в»
   s = s.replace(/(\d) ?- ?(?=\d)/g, '$1–'); // диапазоны: 35-45 → 35–45
   s = s.replace(/(\d)\s(?=\d{3}(?!\d))/g, `$1${NB}`); // 2 500, 12 000
-  s = s.replace(/(\d)\s(?=(?:€|zł|Kč|\$|м²|m²|м2|m2|мм|см|mm|cm|м\b|m\b|пог\.|дн|днів|days|мес|міс|month))/g, `$1${NB}`);
+  s = s.replace(/(\d)\s(?=(?:€|zł|Kč|\$|м²|m²|м2|m2|мм|см|mm|cm|м\b|m\b|bm\b|lfm\b|пог\.|дн|днів|days|dní|Tage|мес|міс|month|mesiac|Monat))/g, `$1${NB}`);
   s = s.replace(/\s([—–])\s/g, `${NB}$1 `); // тире не начинает строку
   return s;
 }
