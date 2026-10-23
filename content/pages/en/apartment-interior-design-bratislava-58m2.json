@@ -26,27 +26,47 @@
      "parts": [
       {
        "t": "p",
-       "html": "Interior design studio <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 58 m² apartment in Bratislava. The project covered the full cycle of work: technical documentation, custom furniture, decorating, and a turnkey renovation."
+       "html": "A 58 m² apartment in Bratislava. We handled the full cycle: an interior design project with 3D visualization, technical drawings, custom furniture, turnkey renovation, and decorating. Before the renovation, the client received a detailed <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">cost estimate</a> covering construction and finishing work, materials, furniture, and appliances. The gallery shows visualizations of the apartment."
       },
       {
        "t": "p",
-       "html": "The design covers the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, and bathroom. Built-in wardrobes, shelving, and storage systems were custom-designed for each area."
+       "html": "The project includes a living room with a kitchen, a bedroom with a walk-in closet, an entrance hall, and a combined bathroom. The cabinets and shelves are sized for each zone, so there is enough room for belongings and the rooms stay uncluttered."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Entrance hall, living room and kitchen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The entrance hall flows into the living room without a wall. A partition marks the boundary: black metal posts with a light marble-look panel in the center. It screens the sofa from the entrance but lets the light from the windows through. The entrance hall has a bench on a metal base, a wall-mounted coat rail, and a cabinet with gray fronts."
       },
       {
        "t": "p",
-       "html": "Within 58 m², the layout and furniture were planned to provide ample storage while keeping the interior open and airy."
+       "html": "Two walls are clad in light gray brick-look tiles, the floor is wood-look, and the windows have wide blinds. The TV wall combines a marble-look panel with a dark niche, and under the TV is a floating media unit lit from below. The kitchen is dark gray, with wooden upper cabinets and built-in appliances. In front of the kitchen is a wooden breakfast bar, with a pendant on thin brass rods above it."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom, hallway and bathroom"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the bedroom, the wall behind the bed is covered with soft gray upholstered panels with beveled seams. Below them, a wooden shelf runs the full width and serves as both headboard and bedside tables. Black lamps hang on either side. Opposite the bed are a TV and a floating console. A black metal shelving partition separates the walk-in closet from the bedroom."
       },
       {
        "t": "p",
-       "html": "Before the renovation, the client received a detailed cost estimate covering construction and finishing work, materials, furniture, and appliances."
-      },
-      {
-       "t": "p",
-       "html": "The gallery features photorealistic 3D visualizations of the apartment."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN provides interior design for apartments and private houses, develops custom furniture, and delivers comprehensive turnkey renovation projects in Bratislava and other cities in Slovakia.</strong>"
+       "html": "In the hallway by the bedroom is a floor-to-ceiling wardrobe with walnut-look fronts and a profile handle along the edge. The bathroom is finished in gray stone-look tile, with one wall in wood-look tile lit from above. There is a wall-hung toilet, a countertop basin on a dark vanity, and a glass partition. We <a href=\"/en/custom-residential-furniture\">make cabinet furniture at our own production facility in Bratislava</a> — kitchens, wardrobes, vanities."
       }
      ]
     },

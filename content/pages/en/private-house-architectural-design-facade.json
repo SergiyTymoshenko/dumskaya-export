@@ -26,19 +26,57 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an architectural solution for the facades of a private house — a concept for the building’s exterior that respects its existing architecture and proportions."
+       "html": "An architectural design for the facades of a private house: we developed a new exterior for the building, working from its existing architecture and proportions. The project covers the combination of finishing materials, the color palette, architectural elements and exterior details, the proportions of the facades and how the parts of the building connect. The gallery has photorealistic 3D visualizations that show the materials and colors before any work begins."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Volume and proportions"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The house has two parts. The main volume has two stories under a gabled roof with gray roofing and a projecting gable. Next to it is a single-story extension with a flat roof: sliding floor-to-ceiling glass doors take up almost its entire front, and a white canopy with built-in spotlights hangs over them. The canopy creates a covered gallery along the whole facade."
       },
       {
        "t": "p",
-       "html": "The project works out the combinations of finishing materials, the color palette, architectural elements, and exterior details, as well as the proportions of the facades and the relationship between the different parts of the building."
+       "html": "To keep the tall gable from looking heavy, its windows are grouped vertically across two floors. The piers and the spandrels between them are clad in wooden slats, so each group reads as a single element. The upper floor has a balcony with a glass railing and a small bay window."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Facade materials"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The palette is restrained and uses three materials. The base is large-format slabs of light stone with a soft gray texture, used on the gables and the plinth. The rest of the walls are smooth white plaster. Vertical wooden slats add warmth: they appear around the windows, on the wall of the glazed gallery and at the entrance. Window frames and downpipes are dark gray to match the roof."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Entrance and grounds"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "A wide stone staircase leads up to the terrace in front of the extension, with LED lighting built into every step. The terrace has a glass railing, and tall planters with boxwood stand by the doors. On the side of the house is a pergola in a white U-shaped frame with horizontal dark slats, trained with climbing plants. Paths of rectangular stone slabs cross the lawn to the house."
       },
       {
        "t": "p",
-       "html": "The gallery features photorealistic 3D visualizations of the facades, showing the materials and color schemes before any work begins."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN provides architectural design and 3D facade visualization for private houses in Slovakia and other European countries.</strong>"
+       "html": "This kind of design is part of our <a href=\"/en/architecture-and-design\">architecture and facade work</a>: facade design and 3D visualization for private houses in Slovakia and elsewhere in Europe."
       }
      ]
     },

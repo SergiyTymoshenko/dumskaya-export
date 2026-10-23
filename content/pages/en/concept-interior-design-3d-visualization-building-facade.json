@@ -26,7 +26,21 @@
      "parts": [
       {
        "t": "p",
-       "html": "For this house, DUMSKAYA DESIGN (Bratislava, Slovakia) developed a concept design for the facade in budget and premium versions, as well as landscaping that blends the house into its surroundings."
+       "html": "A concept design for the facades of a residential housing development: we designed the exterior of the buildings in two finish options, a budget one and a more expensive one, along with the landscaping of the plots, and then presented everything in 3D visualizations and a video tour. The studio prepares concept designs like this from Bratislava for houses in Slovakia, Austria, and other countries. Clients order them before detailed design begins, to choose materials and colors while changes are still cheap."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Houses and plots"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The development consists of two-story duplex houses under gabled standing-seam roofs. The two halves of each house mirror each other: each has its own garage with a sectional door, its own entrance, and a separate plot. Each half has two windows on the upper floor, with the wall between them picked out in color. On the garden side, the ground floor is glazed almost entirely, with large floor-to-ceiling openings leading straight onto the lawn."
       }
      ]
     },
@@ -40,50 +54,50 @@
      "parts": [
       {
        "t": "p",
-       "html": "Affordable yet high-quality materials and minimalist decor: the result is a contemporary, neat, and functional facade."
+       "html": "Smooth render in white or beige, the wall sections between the windows one shade darker, light window frames, dark garage doors and front doors. A small glass canopy over the entrance. With few finishes, the facade looks simple and tidy, and the budget is easy to keep under control."
       },
       {
        "t": "p",
-       "html": "Plants were selected based on an analysis of the site, and the pathways are made of inexpensive yet durable materials. The landscaping highlights the natural surroundings and stays within a limited budget."
+       "html": "The landscaping is simple too: lawn, a concrete paver driveway, and in front of the beige house a flower bed with foxgloves and ornamental grasses. The plants were chosen based on a site analysis, and the paths use inexpensive but durable materials."
       }
      ]
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "Premium option"
+     "text": "The wood and stone option"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "The finishes are natural stone, premium plaster, and wood paneling. Exclusive decorative elements make the facade elegant and emphasize the character of the house."
+       "html": "The white render is complemented by vertical strips of wood paneling at the corners of the house and between the two halves, with dark window frames. The entrance is set in a deep portal: a dark gray frame, a wood-paneled wall inside, a front door with a narrow glass insert, and a light slatted screen that shields the porch from the neighbors. On the garden side, a wooden deck runs in front of the glazing, and glass canopies on black brackets sit over the doors. The finishes are natural stone, high-quality render, and wood paneling."
       },
       {
        "t": "p",
-       "html": "Premium-level landscaping: rare ornamental plants, lounge areas with architectural lighting, and pathways made of fine natural stone. Every detail blends with the architecture of the house and the surrounding nature."
+       "html": "A path of long stone slabs laid on gravel leads to the portal, with a flower bed along it. In front of the houses are less common ornamental plants: topiary pines, pink-flowering trees, and columnar conifers. A fence of horizontal panels with white posts runs along the street."
       }
      ]
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "Surroundings and integration of the house"
+     "text": "The house in its setting"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "The facade and the surrounding grounds were designed with the environment in mind, so the house looks like a natural part of the landscape."
+       "html": "The facades and plots were designed together with the surroundings so that the houses read as part of the landscape: the visualizations show the trees around the development, the lawns, the fences between plots, and the street with its driveways. In the back garden there is a seating area with hanging chairs, a fire bowl, and low garden lights. The development is shown from the street and from the garden side, and the video is a 3D tour of it."
       }
      ]
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "What do you get?"
+     "text": "What you get"
     },
     {
      "type": "text",
@@ -91,10 +105,19 @@
       {
        "t": "ul",
        "items": [
-        "Two options to choose from: 3D visualization for both designs.",
-        "Material recommendations: help choosing the best option.",
-        "Landscape design: a complete project that highlights the style of the house."
+        "two facade options, each with its own 3D visualization;",
+        "material recommendations to help you choose an option that fits your budget;",
+        "a landscape design for the plot in the style of the house."
        ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Prices for each stage are on the <a href=\"/en/3d-visualization-facade-exterior-price\">3D facade visualization</a> page. If you need a design for the whole house after the concept, that is the next stage — <a href=\"/en/architecture-and-design\">architectural design</a>."
       }
      ]
     },
@@ -227,6 +250,37 @@
       {
        "text": "Design package prices",
        "href": "/en/3d-visualization-facade-exterior-price"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3d-architecture-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about facade concept design"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "How much does a facade concept with options cost?",
+       "a": "<p>A concept for one facade costs €375–750; with the plot and detailed surroundings, €500–1,250. The price includes 2–3 concept options and 1–2 rounds of revisions to the chosen one. Final high-resolution renders are charged separately: €250–500 per view.</p>"
+      },
+      {
+       "q": "Can I get a building permit based on the concept design?",
+       "a": "<p>No. Slovakia has had a new Building Act in force since April 2025: to build a house, you need a decision on the building proposal (stavebný zámer), and the proposal itself is prepared by a designer licensed for design work — an authorized architect or engineer. They receive the concept and visualizations as input: by that point, the look of the house and the materials have already been chosen.</p>"
+      },
+      {
+       "q": "What do you need to get started?",
+       "a": "<p>A site plan, floor plans or at least measurements of the existing house, photos of the plot and the neighboring houses, and examples of facades you like. We can work remotely, and the consultation is free.</p>"
+      },
+      {
+       "q": "Is this kind of concept design useful for a developer?",
+       "a": "<p>Yes. The visualizations and video tour show buyers the whole future street, and the two finish options help compare costs in advance.</p>"
       }
      ]
     }

@@ -58,6 +58,15 @@ export function phoneFor(page: Page): { phone: Phone; regional: boolean; plain: 
   return { phone: own || all[0], regional: !!own, plain: !!own && !!page.phone_plain };
 }
 
+/** Телефоны в подвале и в меню: Братислава и Вена; на посадочной другого региона — ещё телефон этого региона (первым).
+ *  Телефоны всех стран — только на странице «Контакты». */
+export function pagePhones(page: Page): Phone[] {
+  const all = site.contacts.phones as Phone[];
+  const { phone, regional } = phoneFor(page);
+  const main = all.filter((p) => p.key === 'sk' || p.key === 'at');
+  return regional && !main.includes(phone) ? [phone, ...main] : main;
+}
+
 /** Адрес той же страницы на другом языке (или главная этого языка, если перевода нет). */
 export function altPath(page: Page, lang: Lang): string {
   return page.alternates[lang] || (lang === 'ru' ? '/' : `/${lang}`);

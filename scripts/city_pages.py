@@ -18,9 +18,9 @@ PRICES = '/price-interior-design-bratislava-wien-praha'
 CATALOG = '/kupkuhni-na-zakaz-vienna-bratislava'
 ESTIMATE = '/smeta-na-remont-bratislava-vienna'
 RENOV = '/stroitelstvo-remont-bratislava'
-BRA = {'design': '/interior-design-apartmens-bratislava', 'furniture': '/kuhni-shkafi-bratislava', 'kitchens': '/kuhni-na-zakaz-bratislava'}
+BRA = {'design': '/interior-design-apartments-bratislava', 'furniture': '/kuhni-shkafi-bratislava', 'kitchens': '/kuhni-na-zakaz-bratislava'}
 VIE = {'design': '/dizajn-interera-vena', 'furniture': '/mebel-na-zakaz-vena', 'kitchens': '/kuhni-pod-klyuch-vena'}
-WAR = {'design': '/interior-design-apartmens-warsaw', 'furniture': '/kuhni-shkafi-warsaw', 'renovation': '/stroitelstvo-remont-warsaw'}
+WAR = {'design': '/interior-design-apartments-warsaw', 'furniture': '/kuhni-shkafi-warsaw', 'renovation': '/stroitelstvo-remont-warsaw'}
 GER = '/dizajn-interera-germaniya'
 UKR = '/dizajn-interera-ukraina'
 UKR_ALT = {'ru': UKR, 'ua': '/ua/dyzain-interieru-ukraina', 'en': '/en/interior-design-ukraine'}
@@ -119,8 +119,8 @@ VIENNA_DESIGN = dict(
         section(
             H(2, 'Проекты DUMSKAYA DESIGN в Вене'),
             P('Оба проекта выполнены под ключ: дизайн интерьера, техническая документация, мебель на заказ и ремонт.'),
-            CARDS(['/apartmens-vienna-luxury-interior-design-58m', '/apartmens-wien-luxury-interior-design-115m']),
-            GAL([('/apartmens-vienna-luxury-interior-design-58m', [1, 2, 3, 4]), ('/apartmens-wien-luxury-interior-design-115m', [1, 2, 3, 4])]),
+            CARDS(['/apartments-vienna-luxury-interior-design-58m', '/apartments-wien-luxury-interior-design-115m']),
+            GAL([('/apartments-vienna-luxury-interior-design-58m', [1, 2, 3, 4]), ('/apartments-wien-luxury-interior-design-115m', [1, 2, 3, 4])]),
             BTN(('Все проекты студии', '/proekty-interior-design'),),
         ),
         section(
@@ -199,7 +199,7 @@ VIENNA_FURNITURE = dict(
             H(2, 'Примеры мебели на заказ'),
             GAL([(BRA['furniture'], [4, 1, 2, 3, 5, 6])]),
             P('Мебель для квартир в Вене 58 м² и 115 м² изготовлена на нашем производстве по проекту студии:'),
-            CARDS(['/apartmens-vienna-luxury-interior-design-58m', '/apartmens-wien-luxury-interior-design-115m']),
+            CARDS(['/apartments-vienna-luxury-interior-design-58m', '/apartments-wien-luxury-interior-design-115m']),
         ),
         section(
             H(2, 'Вопросы о мебели на заказ в Вене'),
@@ -390,7 +390,7 @@ BRA_FURNITURE = dict(
         section(
             H(2, 'Проекты с мебелью нашего производства'),
             CARDS(['/design-interior-studio-bratislava-metropolis-sk-75m', '/studio-interior-design-bratislava-eurovea-56m', '/interior-design-apartment-bratislava-158m',
-                   '/interior-design-private-house-bratislava-120m2', '/apartmens-vienna-luxury-interior-design-58m', '/apartmens-wien-luxury-interior-design-115m']),
+                   '/interior-design-private-house-bratislava-120m2', '/apartments-vienna-luxury-interior-design-58m', '/apartments-wien-luxury-interior-design-115m']),
         ),
         section(
             H(2, 'Вопросы о мебели на заказ'),
@@ -809,8 +809,8 @@ USA_PAGE = dict(
         ),
         section(
             H(2, 'Проекты в США'),
-            CARDS(['/apartmens-ny-luxury-interior-design-57m', '/apartmens-los-angeles-interior-design-140']),
-            GAL([('/apartmens-ny-luxury-interior-design-57m', [1, 2, 3, 4]), ('/apartmens-los-angeles-interior-design-140', [1, 2, 3, 4])]),
+            CARDS(['/apartments-new-york-luxury-interior-design-57m', '/apartments-los-angeles-interior-design-140m']),
+            GAL([('/apartments-new-york-luxury-interior-design-57m', [1, 2, 3, 4]), ('/apartments-los-angeles-interior-design-140m', [1, 2, 3, 4])]),
             BTN(('Все проекты студии', '/proekty-interior-design'),),
         ),
         section(
@@ -834,7 +834,7 @@ USA_PAGE = dict(
 )
 
 # ---------- Прага (телефон — украинский, подпись «Телефон» без города) ----------
-PRG_PROJECT = '/apartmens-praha-luxury-interior-design-90m'
+PRG_PROJECT = '/apartments-praha-luxury-interior-design-90m'
 PRAGUE = dict(
     path=PRG, type='service', phone='ua', phone_plain=True, alternates=PRG_ALT,
     title='Дизайн интерьера в Праге — квартиры и дома | DUMSKAYA',

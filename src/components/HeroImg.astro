@@ -11,9 +11,11 @@ const m = id ? manifest[id] : undefined;
 const meta = id ? imageMeta[id] : undefined;
 const w = m?.width || meta?.width || 4, h = m?.height || meta?.height || 3;
 const small = m ? `/img/${m.files[0][1]}` : null;
+// размеры уменьшенной копии — чтобы у каждого <img> были width/height (размытый фон, CSS растягивает его сам)
+const sw = m ? m.files[0][0] : 0, sh = m ? Math.round((m.files[0][0] * h) / w) : 0;
 ---
 <div class:list={['himg', cls]} style={`--ar:${(h / w).toFixed(4)}`} data-zoom={zoom ? '' : undefined}>
-  {small && <img class="himg__bg" src={small} alt="" aria-hidden="true" loading={eager ? 'eager' : 'lazy'} decoding="async" />}
+  {small && <img class="himg__bg" src={small} alt="" aria-hidden="true" width={sw} height={sh} loading={eager ? 'eager' : 'lazy'} decoding="async" />}
   <Img id={id} alt={alt} sizes="100vw" eager={eager} class="himg__img" />
   <slot />
 </div>

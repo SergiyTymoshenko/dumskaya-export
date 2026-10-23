@@ -26,19 +26,51 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 64 m² apartment in Kraków in a contemporary minimalist style, with clean spatial architecture and a calm color palette."
+       "html": "A 64 m² apartment in Kraków in a contemporary minimalist style. The studio prepared the interior design project: the interior concept, photorealistic 3D visualizations and technical documentation for the build. The apartment has an open-plan kitchen and living room, a bedroom, a study, an entrance hall and a bathroom."
       },
       {
        "t": "p",
-       "html": "The interior features neutral gray tones, clean lines, and minimalist forms. The restrained palette creates a calm backdrop for the interior, while the combination of different textures and materials makes the space expressive without excessive decorative elements."
+       "html": "The palette is built on warm grays and gray-beiges, and the only color accent is the mustard poufs. Texture carries the interior: walnut veneer, decorative plaster on the bedroom and study walls, concrete-effect porcelain tiles in the bathroom. Every room has light oak plank flooring."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen-living room"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The upper kitchen cabinets are light beige; the tall columns and base cabinet fronts are graphite gray. The oven and fridge are hidden in the columns, and the fronts have no handles. In front of the kitchen is an island with a light stone countertop and three counter stools, and above it a pendant on a thin rod with swiveling shades."
       },
       {
        "t": "p",
-       "html": "Particular attention was paid to architectural details. Hidden doors without trim are integrated flush into the walls, reinforcing the minimalist character of the interior. Understated furniture solutions and built-in elements preserve the clean geometry of the rooms and make efficient use of the available floor area."
+       "html": "Only distance separates the sofa from the kitchen. Behind it, the wall is covered with walnut veneer panels with slot lighting around the edges. The room is lit by surface-mounted spotlights and a magnetic track recessed into the ceiling, so the fixtures can be moved without touching the finishes."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom, study and bathroom"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the bedroom, glass globes on long cords hang down on either side of the bed. Opposite is a long wall-hung TV unit that continues into a small dressing table by the window. Heavy curtains in the same tone as the walls cover the whole window."
       },
       {
        "t": "p",
-       "html": "The project included the interior concept, photorealistic 3D visualizations, and technical documentation for implementation."
+       "html": "The study has a desk on a metal base, with open shelves with built-in lighting and wall cabinets above it. A sofa for guests stands against the opposite wall. The bathroom has a bathtub with a glass screen, a veneered vanity with a countertop basin, and a wall behind the wall-hung toilet clad in the same wood panels, which hides the installation frame and a shelf niche. The fixtures and heated towel rail are matte black."
+      },
+      {
+       "t": "p",
+       "html": "The interior doors are flush-mounted, with no trim, and painted the color of the walls. The entrance hall has a console with lighting and a full-height mirror. For a rough idea of what a design project of similar scope costs, see the <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">design package prices</a> page."
       }
      ]
     },

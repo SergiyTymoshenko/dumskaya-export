@@ -3,7 +3,7 @@
   "ru": [
    {
     "label": "О студии",
-    "href": "/"
+    "href": "/about-studio"
    },
    {
     "label": "Портфолио",
@@ -22,7 +22,7 @@
     "children": [
      {
       "label": "Дизайн жилых интерьеров",
-      "href": "/interior-design-apartmens-bratislava"
+      "href": "/interior-design-apartments-bratislava"
      },
      {
       "label": "Дизайн коммерческих интерьеров",
@@ -96,7 +96,7 @@
     "children": [
      {
       "label": "Братислава",
-      "href": "/interior-design-apartmens-bratislava"
+      "href": "/interior-design-apartments-bratislava"
      },
      {
       "label": "Вена",
@@ -104,7 +104,7 @@
      },
      {
       "label": "Варшава",
-      "href": "/interior-design-apartmens-warsaw"
+      "href": "/interior-design-apartments-warsaw"
      },
      {
       "label": "Германия",
@@ -161,7 +161,7 @@
   "ua": [
    {
     "label": "Про студію",
-    "href": "/ua"
+    "href": "/ua/pro-studiyu"
    },
    {
     "label": "Портфоліо",
@@ -319,7 +319,7 @@
   "en": [
    {
     "label": "About",
-    "href": "/en"
+    "href": "/en/about-studio"
    },
    {
     "label": "Portfolio",
@@ -420,7 +420,7 @@
      },
      {
       "label": "Warsaw",
-      "href": "/en/interior-design-apartmens-warsaw"
+      "href": "/en/interior-design-apartments-warsaw"
      },
      {
       "label": "Germany",

@@ -5,7 +5,7 @@
  "group": null,
  "title": "3D Facade Visualization: Prices from €75 | DUMSKAYA DESIGN",
  "description": "Photorealistic 3D visualization of building facades and exteriors: €75–375 depending on complexity. Timing and revisions explained.",
- "h1": "Prices for 3D visualization of building facades and exteriors",
+ "h1": "Prices for 3D building facade and exterior visualization",
  "og_image": "673a0573ece0e84849b9e248",
  "alternates": {
   "ru": "/3d-vizualizaciya-fasada-zdaniya-cena",
@@ -19,7 +19,16 @@
     {
      "type": "heading",
      "level": 1,
-     "text": "Prices for 3D visualization of building facades and exteriors"
+     "text": "Prices for 3D building facade and exterior visualization"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "We create photorealistic 3D visualizations of facades and plots from your drawings or starting from concept development — for projects in Slovakia, Austria, and other countries. Below is the price of each stage and the revisions it includes."
+      }
+     ]
     },
     {
      "type": "gallery",
@@ -71,15 +80,6 @@
      ]
     },
     {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "3D facade visualization is done in stages. For each stage below, you’ll find the scope of work, the cost, and the revision terms:"
-      }
-     ]
-    },
-    {
      "type": "heading",
      "level": 2,
      "text": "1. Gathering and analyzing the technical brief"
@@ -89,7 +89,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "You provide drawings, plans, materials, and reference examples — we use them to form a clear picture of the project."
+       "html": "You send us drawings, plans, materials, and examples, and we use them to put together the visualization brief."
       },
       {
        "t": "ul",
@@ -110,7 +110,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "A three-dimensional model of the building facade is developed based on the drawings and plans."
+       "html": "We build a 3D model of the facade from the drawings and plans."
       },
       {
        "t": "ul",
@@ -131,7 +131,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Textures and materials (such as stone, brick, and glass) are applied to the model according to the technical brief."
+       "html": "We apply the materials and textures from the brief to the model: stone, brick, render, wood, glass."
       },
       {
        "t": "ul",
@@ -152,7 +152,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "The lighting and surroundings of the building are modeled for a realistic visualization."
+       "html": "We set up the lighting — time of day, sun, shadows — and the building’s immediate surroundings."
       },
       {
        "t": "ul",
@@ -173,12 +173,12 @@
      "parts": [
       {
        "t": "p",
-       "html": "A basic render is created for preview."
+       "html": "A draft render to check the camera angle, materials, and lighting."
       },
       {
        "t": "ul",
        "items": [
-        "Cost: Usually included in the project.",
+        "Cost: usually included in the project.",
         "Revisions: minor camera angle adjustments are free of charge; more significant changes cost €25–50."
        ]
       }
@@ -194,7 +194,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Once the draft render is approved, a high-quality final visualization is created."
+       "html": "Once the draft render is approved, we render the final high-resolution image."
       },
       {
        "t": "ul",
@@ -298,7 +298,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "We develop an original concept for the facade or site: we analyze architectural trends, create several sketch options, and define the overall style, materials, and main forms."
+       "html": "We develop a concept for the facade or plot: we prepare several sketch options and settle on the style, materials, and main forms."
       },
       {
        "t": "p",
@@ -334,7 +334,7 @@
       {
        "t": "ul",
        "items": [
-        "Free of charge: 1–2 rounds of adjustments to the selected concept.",
+        "Free of charge: 1–2 rounds of revisions to the chosen option.",
         "Paid: additional concept options or rework of an existing design — from €125 per round."
        ]
       },
@@ -352,7 +352,7 @@
       },
       {
        "t": "p",
-       "html": "Suitable if there’s no clear technical brief or the facade style hasn’t been chosen yet, and you want to see a contemporary, unconventional solution. Once the concept is approved, a full 3D visualization is created based on it."
+       "html": "This suits you if there is no clear brief or the facade style hasn’t been chosen yet. Once the concept is approved, we produce a full 3D visualization based on it. An example of this kind of work is a <a href=\"/en/concept-interior-design-3d-visualization-building-facade\">facade concept design</a> in two finish options."
       }
      ]
     },
@@ -366,7 +366,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "Based on your drawings or plans, we create a 3D visualization of the finished building design and place it in its surroundings. You can see how the house will look in a real or modeled environment — with landscaping, neighboring buildings, and nature."
+       "html": "From your drawings or plans, we produce a 3D visualization of the finished building design and place it in its surroundings. You can see how the house looks among the neighboring buildings and trees."
       },
       {
        "t": "p",
@@ -374,7 +374,7 @@
       },
       {
        "t": "p",
-       "html": "1. Creating a 3D model of the building based on the data provided."
+       "html": "1. Creating a 3D model of the building from your drawings."
       },
       {
        "t": "p",
@@ -429,15 +429,15 @@
       },
       {
        "t": "p",
-       "html": "Architects use this service to show how a finished design will fit into a real site, and it’s also useful for presenting a project to investors."
+       "html": "For architects, this kind of visualization shows how the finished design will sit on the real plot, and it is also used to present the project to investors."
       },
       {
        "t": "p",
-       "html": "<strong>The final cost depends on the complexity of the project, the level of detail, and the number of revisions.</strong>"
+       "html": "The final cost depends on the complexity of the project, the level of detail, and the number of revisions."
       },
       {
        "t": "p",
-       "html": "<strong>If all the plots share a single concept, some of the work can be combined — which lowers the overall cost.</strong>"
+       "html": "If several plots share a common concept, we combine part of the work, and the total cost goes down."
       }
      ]
     },
@@ -510,6 +510,41 @@
         "id": "66d476c7e6210d11a55ff6ee",
         "alt": "custom architectural concept of a pergola-style gazebo for outdoor space"
        }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3d-vizualizaciya-fasada-zdaniya-cena-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about 3D facade visualization"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "What is the total cost of visualizing one facade?",
+       "a": "<p>If the brief is complete and the surroundings are simple: model €200–375, materials €125–250, lighting €75–200, final render of one view €250–500. Total: €650–1,325. Each additional view is another €250–500, and landscaping around the house starts at €125.</p>"
+      },
+      {
+       "q": "What should I send for a quote?",
+       "a": "<p>Floor plans, elevations and a section of the building, a site plan, photos of the plot and the neighboring houses, and examples of facades you like. If there are no drawings, we start with a facade concept.</p>"
+      },
+      {
+       "q": "Can I order a visualization without coming to Bratislava?",
+       "a": "<p>Yes, all the work is done remotely: you send materials by messenger or email and receive the draft and final renders as files. The consultation is free.</p>"
+      },
+      {
+       "q": "A change to the facade has to be agreed with the neighbors. Will a visualization help?",
+       "a": "<p>Yes, it is easier to reach agreement over a picture than over a drawing. In Austria, for example, changes to an owner-occupied apartment that alter the outside appearance of the building (say, an outdoor air conditioning unit on the facade) require the consent of the other owners. A visualization shows them the result in advance.</p>"
+      },
+      {
+       "q": "Can you also design the house itself?",
+       "a": "<p>Yes. The studio does <a href=\"/en/architecture-and-design\">architectural design</a>: concept design, facades, landscaping, and working documentation. A visualization can be the first stage of such a project.</p>"
       }
      ]
     }

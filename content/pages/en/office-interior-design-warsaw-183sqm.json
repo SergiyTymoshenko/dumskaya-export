@@ -26,47 +26,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed the interior of a 183 m² office in Warsaw for a marketing team under the <a href=\"/en/express-interior-design-package-bratislava-vienna\">“Express”</a> design package: layout option 1 with a furniture plan and photorealistic 3D visualizations of all the main rooms."
-      },
-      {
-       "t": "p",
-       "html": "The office is built for a large team and lively collaboration: a spacious open-plan area, an open-type office, the “Financiers” office, a meeting room and a separate executive office. Reception with a waiting area serves clients and guests, while a game zone and a kitchen-dining area give the team room to unwind."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Interior and 3D visualizations"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "The palette is calm and warm: light walls, grey-brown carpet, natural wood in the custom furniture and living greenery. Each zone has its own accent: soft rounded armchairs at reception, orange chairs and a blue panel in the office with the world map, green chairs in the kitchen, bean bag chairs and a TV in the game zone."
-      },
-      {
-       "t": "p",
-       "html": "The executive office has a desk, a TV area and soft armchairs for informal meetings."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "What’s included in the “Express” package"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "The “Express” package is a fast design project without a full set of working drawings: a measured floor plan, a furniture layout and 3D visualization. If you need detailed drawings for renovation, compare the packages on the <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">prices page</a>."
-      },
-      {
-       "t": "p",
-       "html": "The project is developed remotely, while renovation and furniture in Warsaw are handled by the studio’s partners — see the <a href=\"/en/interior-design-apartmens-warsaw\">“Interior design in Warsaw”</a> page for details."
+       "html": "A 183 m² office in Warsaw for a marketing team. The project was done under the <a href=\"/en/express-interior-design-package-bratislava-vienna\">“Express”</a> design package: layout option No. 1 with furniture placement and 3D visualizations of all the main rooms. The design was developed remotely, and the studio’s partners in Warsaw handle the renovation and furniture; more on the <a href=\"/en/interior-design-apartments-warsaw\">interior design in Warsaw</a> page."
       }
      ]
     },
@@ -80,13 +40,8 @@
      "parts": [
       {
        "t": "p",
-       "html": "The working part of the office has two large zones: a 72.34 m² open-plan area and a 25.84 m² open-type office. Next to them are the “Financiers” office, the meeting room and the executive office. The entrance group combines reception and the game zone, while the kitchen-dining area is a separate room. The workstations are arranged with circulation routes, functional zones and the way the office will be used in mind."
-      }
-     ]
-    },
-    {
-     "type": "text",
-     "parts": [
+       "html": "The office is planned for a large team. The working part consists of two large zones: a 72.34 m² open-plan area and a 25.84 m² open-type office. Next to them are the “Financiers” office, a meeting room and the director’s office. The entrance area combines the reception and waiting area with a games area, and the kitchen-dining room is in a separate room. The workstations are arranged with the walkways in mind and with how people move between zones."
+      },
       {
        "t": "p",
        "html": "Room schedule:"
@@ -104,6 +59,38 @@
         "Executive office — 18.05 m²",
         "Total area — 183.44 m²"
        ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "The interior, zone by zone"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The base is calm and warm: light walls, gray-brown carpet, wood-look countertops and panels, and plants in planters. The suspended ceiling has square LED panels and round lights. The offices are separated by glass partitions with frosted strips."
+      },
+      {
+       "t": "p",
+       "html": "Each zone has its own color accent. The reception has soft rounded armchairs and a wooden desk for the administrator. The office with the illuminated 3D world map has orange armchairs and a blue perforated panel beside them. The open-plan area has white desks, with a sofa and an oval coffee table by the windows. The kitchen has an L-shaped unit with light handleless fronts and a table by the window with green chairs; the games area has beanbag chairs and a TV panel. The director’s office has a desk, a TV area and upholstered armchairs for informal meetings."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What’s included in the “Express” package"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "This is a quick design project without a full set of working drawings: a measured floor plan, a furniture layout plan and 3D visualization. If you need detailed drawings for the renovation, compare the packages on the <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">prices page</a>."
       }
      ]
     },

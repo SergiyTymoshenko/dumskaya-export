@@ -26,11 +26,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> prepares detailed cost estimates covering construction work, finishing work, and materials for the renovation of apartments, private homes, and other spaces in Bratislava and Vienna. With an estimate, you know the budget and the scope of work in advance and can plan your expenses."
+       "html": "We prepare detailed renovation cost estimates for apartments, private houses, and commercial spaces in Bratislava and Vienna: what work is needed, how much of it, what it costs, and how much material it will take. An estimate is ordered before renovation starts, so you know the budget, can compare contractors’ quotes, and can plan purchases. The cost is €5/m² of the property’s floor area."
       },
       {
        "t": "p",
-       "html": "The price is €5/m² of the property’s floor area. The calculation takes into account the actual dimensions of the rooms, the condition of the surfaces, and the planned work."
+       "html": "We calculate from the actual dimensions and condition of the rooms, not from an average price per square meter. The estimate is based on an interior design project with working drawings, if there is one, or on a scope of work we agree with you on site."
       }
      ]
     },
@@ -44,87 +44,104 @@
      "parts": [
       {
        "t": "p",
-       "html": "We measure the walls, floors, and ceilings and identify geometric deviations in the surfaces. Based on this data, we calculate the work quantities and the amount of materials needed."
-      },
-      {
-       "t": "p",
-       "html": "This way, the estimate reflects the real condition of the property and comes closer to the actual costs."
+       "html": "We visit the property, measure the walls, floors, and ceilings, and check how far the surfaces are out of true. A wall that has to be leveled with plaster and a straight wall ready for paint look different in an estimate, just as a floor that needs screed differs from one with a finished base. We calculate quantities of work and materials from the measurements, so the estimate stays closer to the actual costs."
       }
      ]
     },
     {
      "type": "heading",
      "level": 3,
-     "text": "Cost calculation for construction and finishing work"
+     "text": "What the estimate includes"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "work items with quantities and costs — preparation and demolition, construction, electrical, plumbing, and finishing, depending on the property;",
+        "a specification of construction and finishing materials: what is needed, in what quantity, and roughly what it costs;",
+        "if you wish — furniture, appliances, plumbing fixtures, and lighting, so you can see the full budget for the apartment or house."
+       ]
+      }
+     ]
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "The estimate includes a list of work items with quantities and costs: preparatory, construction, and finishing work, depending on the condition of the property and the planned renovation."
+       "html": "Work and materials are broken down by section. You can see what the budget is made up of, and every line item can be compared with another contractor’s quote. If the materials or scope of work change, we adjust the estimate."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smeta-na-remont-bratislava-vienna-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "How we prepare the estimate"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Inquiry.</strong> You send us a floor plan, photos of the rooms, and, if you have them, an interior design project or drawings. The consultation is free, and we reply within one business day.",
+        "<strong>Measurements.</strong> We visit the property in Bratislava or Vienna and check the condition of the surfaces.",
+        "<strong>Scope of work.</strong> We agree on what is to be done: which partitions come down and which go up, how many electrical and plumbing points, what goes on the floors and walls.",
+        "<strong>Calculation.</strong> We work out the quantities and the cost of labor and materials.",
+        "<strong>Handover of the estimate.</strong> We go through it with you section by section and answer your questions."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smeta-na-remont-bratislava-vienna-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Cost and a sample calculation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "A cost estimate costs €5/m² of the property’s floor area. If you then hire us for the renovation, the cost of the estimate is deducted from the price of the work."
       },
       {
        "t": "p",
-       "html": "You can see what makes up the budget, compare contractor bids, and keep spending under control at every stage."
+       "html": "Example: for a 60 m² apartment, the estimate is €300. If our crews then renovate this apartment, the €300 is deducted from the price of the work. A 140 m² private house — €700."
+      },
+      {
+       "t": "p",
+       "html": "The estimate is based on the available information about the property and the agreed scope of work. Final costs may change if hidden defects are found during renovation, or if design decisions, the scope of work, or material prices change."
       }
      ]
     },
     {
      "type": "heading",
      "level": 3,
-     "text": "Specification of construction and finishing materials"
+     "text": "Apartments in multi-unit buildings"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "A separate section covers materials: how much construction and finishing material the work requires and how much it costs."
+       "html": "If the renovation affects the common parts of the building — load-bearing or exterior walls, shared building services, the facade — we clarify this before the calculation. In Slovakia, an apartment owner may not make alterations that change the building’s appearance or unreasonably disturb the neighbors without the consent of the other owners, and the building manager (správca) has the right to check whether the work affects the common parts. In Vienna, for an owner-occupied apartment (Wohnungseigentum), such work also requires the consent of the other owners, and the property management company (Hausverwaltung) cannot give it on their behalf. Whether this work goes into the estimate depends on that approval."
       },
       {
        "t": "p",
-       "html": "The specification helps you plan purchases and agree on the budget before the renovation begins. If the materials or the scope of work change, the calculation is adjusted."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "What the client receives"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "A detailed renovation cost estimate: work quantities and costs, plus a list of materials with quantities and approximate costs."
-      },
-      {
-       "t": "p",
-       "html": "You can use it to plan the budget and purchases, approve the work, and monitor spending."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Service cost and terms"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "<strong>The price for preparing an estimate is €5/m² of the property’s floor area.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "<strong>If you order a renovation from DUMSKAYA DESIGN, the cost of preparing the estimate is deducted from the cost of the renovation work.</strong>"
-      },
-      {
-       "t": "p",
-       "html": "The estimate is based on the available information about the property and the agreed scope of work. Final costs may change if hidden defects are discovered or if design decisions, the scope of work, or material prices change."
+       "html": "For more on the work our crews do, see the <a href=\"/en/renovation-construction-price-list\">turnkey renovation</a> page."
       }
      ]
     },
@@ -142,6 +159,41 @@
       {
        "text": "Interior design service prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smeta-na-remont-bratislava-vienna-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Questions about renovation cost estimates"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Can I order an estimate without an interior design project?",
+       "a": "<p>Yes. We calculate from the measurements and a scope of work agreed with you. With working drawings — for example, from the <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic”</a> package — the estimate is more accurate, since the tile layout, electrical and plumbing points, and materials are already defined. Without drawings, we price some items based on preliminary decisions and refine them once the decisions are made.</p>"
+      },
+      {
+       "q": "Can I give your estimate to another contractor?",
+       "a": "<p>Yes, the estimate is yours to keep. When several contractors price the same scope of work with the same quantities, you can see the price difference on every line item.</p>"
+      },
+      {
+       "q": "Do you include custom furniture in the estimate?",
+       "a": "<p>Yes, if the project needs it: kitchens, wardrobes, walk-in closets. We make the furniture at our own production facility in Bratislava, and delivery is included in its price, so the estimate shows the total with delivery and installation right away.</p>"
+      },
+      {
+       "q": "Does an estimate for a property in Vienna cost more?",
+       "a": "<p>No, it is the same €5/m². We take the measurements on site, and the trip to Vienna is not charged separately — it is about an hour’s drive from Bratislava. For an 80 m² apartment, the estimate costs €400, whether in Vienna or Bratislava.</p>"
+      },
+      {
+       "q": "When is the best time to order an estimate?",
+       "a": "<p>When the working drawings are ready, or at least the scope of work is clear. In a new build — after the <a href=\"/en/apartment-handover-inspection-bratislava\">apartment handover inspection</a>: defects the developer has to fix under the handover report do not need to be included in the renovation budget.</p>"
       }
      ]
     }

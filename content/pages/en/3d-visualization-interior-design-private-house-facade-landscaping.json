@@ -26,27 +26,61 @@
      "parts": [
       {
        "t": "p",
-       "html": "Imagine what your future home and its grounds will look like before construction even begins. <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> creates photorealistic 3D visualizations of private house facades and their surroundings, allowing you to assess the building’s architecture and the overall site concept in advance."
+       "html": "A concept design for the facade of a private house and the landscaping of its plot, shown in photorealistic 3D visualization. We brought the house and garden together in one scene: wall finishes, roof, windows, terrace, pool, and planting. The project comes with a video tour of the exterior that shows the facade and garden from different points on the plot."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Facade and roof"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The house has an attic floor under a gable roof. The roof is standing-seam metal in graphite gray, with roof windows and a white chimney. The walls are finished in white stucco, and the second facade material is dark wood. It clads the white-framed dormer projecting from the roof slope, the corner bay window, and the wall section by the entrance."
       },
       {
        "t": "p",
-       "html": "The visualization can show the house facade, finishing materials and their combinations, color schemes, windows and doors, outdoor lighting, paths, terraces, and relaxation areas, as well as landscaping elements — trees, shrubs, lawns, and ornamental plants."
+       "html": "On the garden side, large sliding doors open onto the terrace, with a white louvered canopy above them. Higher up are two tall windows with French balconies and black metal railings. On the driveway side are a garage with gray sectional doors, a wooden front door, and a balcony with a glass railing over the porch. The gutters and window frames are dark to match the roof."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Garden and pool lounge area"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The plot is laid out on two levels. Next to the house is a wooden terrace with wicker armchairs. Below, behind a gray concrete retaining wall, is a deck with four sun loungers and a pool edged with light tiles. Wide steps connect the levels."
       },
       {
        "t": "p",
-       "html": "The house and the plot are shown in a single visualization, so you can immediately see how the facade works with the landscaping."
+       "html": "The planting includes lawn, grasses with fluffy plumes, large-leaved hostas, purple flowering perennials along the terrace, and trees with pink spring blossoms. By the entrance stand a shaped pine and decorative boulders. A hanging cocoon chair sits in a corner of the garden."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Why visualize a house before building it"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The visualization shows in advance how white stucco, wood, and a metal roof work together, where to plant a tree so it doesn’t block the windows, and how the terrace looks from the garden. We compare color and cladding options on the same model — changing them in a picture is easier than on a building site. The images and video are also useful for presenting the project and getting it approved."
       },
       {
        "t": "p",
-       "html": "Materials and textures, natural light, shadows, and vegetation are rendered realistically — the visualization shows how the house and yard will actually look."
-      },
-      {
-       "t": "p",
-       "html": "The visualization helps you compare architectural and color options, choose materials, and make changes before construction begins; it is also useful for presenting the project and getting decisions approved."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN creates professional 3D visualizations of private house facades and the surrounding grounds for projects in Slovakia and other European countries.</strong>"
+       "html": "We make visualizations like this for private houses in Slovakia and other European countries. For house design, see the <a href=\"/en/architecture-and-design\">architecture</a> section."
       }
      ]
     },

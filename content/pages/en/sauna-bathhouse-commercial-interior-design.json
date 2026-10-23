@@ -26,23 +26,51 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 120 m² commercial sauna and spa — a space for relaxation and wellness treatments."
+       "html": "A 120 m² commercial bathhouse and sauna. The studio did the interior design project and the furniture design for every room, from the entrance and reception to the steam rooms, the massage room and the lounge."
       },
       {
        "t": "p",
-       "html": "The layout includes a reception area, a changing room with showers, restrooms, a relaxation area, a massage room, and circulation spaces; the rooms are arranged to follow the guest’s route through the space."
+       "html": "The rooms follow the visitor’s route: entrance and reception, a corridor with restrooms, a changing room with showers that opens onto the steam rooms, a lounge and a separate massage room."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materials and lighting"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The base of the finishes is large-format gray concrete-effect tile on the floors and walls. Warm wood breaks it up: a wall of vertical slats at the entrance, wood panels in the massage room, the cladding of the steam room. The shower area has partitions of black vertical tiles and tinted glass doors. In the corridors the walls are split by height: concrete-effect panels below and warm beige paint above."
       },
       {
        "t": "p",
-       "html": "Custom furniture was designed for the spaces in keeping with the project’s overall style."
+       "html": "The lighting is mostly warm and diffused: hidden lighting around the ceiling perimeter, vertical light lines in the corners and spotlights. In the steam room the benches and ceiling are light wood, strips of light glow under the benches, and the wall by the stove is a stone-pattern panel with backlighting."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Lounge and massage room"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The lounge opens onto the garden through large sliding windows. Two of its walls are covered with moss and live plants, and the end wall is dark tile with the logo. One part has loungers with soft mattresses and side tables with table lamps, the other a corner sofa, a wooden table and wicker chairs. Next to them is a console for tea and coffee, and a TV hangs on the concrete-effect wall."
       },
       {
        "t": "p",
-       "html": "Using the design project, the client can carry out the work independently or entrust it to <strong>DUMSKAYA DESIGN</strong>, with design supervision, a turnkey renovation, and custom furniture manufacturing."
+       "html": "The massage room has open black metal shelving against wood for cosmetics and towels, a stone basin on a console and a wall of dark mosaic. The changing room has wooden benches, hooks for bath brooms and towels, and potted plants in tubs."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designs saunas, steam baths, spas, and wellness spaces in Bratislava and Vienna — from concept and design documentation to custom furniture and turnkey delivery."
+       "html": "With this project the client can manage construction themselves or hand it over to the studio, with design supervision, turnkey renovation and custom furniture. More of the studio’s work for businesses is in the <a href=\"/en/commercial-interior-design\">commercial interior design</a> section."
       }
      ]
     },
@@ -123,7 +151,7 @@
       },
       {
        "id": "68bc128f9a8d89dc553509c9",
-       "alt": "Sauna (bathhouse), 120 m² — photo 19"
+       "alt": "Sauna and bathhouse, 120 m²"
       },
       {
        "id": "68bc12903fc53e5f7fe732b9",

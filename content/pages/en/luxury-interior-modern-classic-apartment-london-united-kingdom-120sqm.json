@@ -26,27 +26,47 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 120 m² apartment in London, United Kingdom: interior design, technical documentation, custom furniture, and a turnkey renovation."
+       "html": "A 120 m² apartment in London in a contemporary classic style. The studio did the interior design project with 3D visualization and technical documentation, the custom furniture and a turnkey renovation; the project is complete. Before work started, the client received a detailed <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">cost estimate</a> for the work, materials, furniture, appliances, plumbing fixtures and lighting."
       },
       {
        "t": "p",
-       "html": "The interior is designed in a contemporary classic style (<strong>Modern Classic</strong>): classic proportions and decorative elements are combined with a modern layout, clean forms, and several lighting scenarios."
+       "html": "The classic side shows in the proportions and finishes: wall moldings, multi-level ceilings with cornices, herringbone parquet, marble-look tile. The layout is modern, with a shared kitchen-living room, and the lighting is built from several scenarios: chandeliers, concealed ceiling lighting, linear fixtures and wall sconces."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen-living room"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The living room, dining room and kitchen take up one space along the windows. Above the sofa hangs a large chandelier of brass branches with crystal drops. Opposite is the TV wall with a built-in fireplace, clad in large slabs of dark marble. It is flanked by wood slats and crystal sconces, followed by white walls with moldings and built-in shelving. The floor combines two materials: herringbone parquet in the seating area and large marble-look tile around it, with a thin brass strip marking the border between them."
       },
       {
        "t": "p",
-       "html": "The project included the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, bathroom, and storage systems."
+       "html": "The kitchen has glossy white tall units up to the ceiling, while the upper cabinets and the island are clad in walnut veneer laid in a herringbone pattern. The countertop and backsplash are light veined stone. The tall units house an oven, a coffee machine and a wine cooler, and next to them are two glass display cabinets behind white latticework. A row of slim brass pendants hangs above the island."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedrooms, study, entrance hall"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the bedroom, the wardrobe fronts are finished in the same herringbone walnut veneer as the kitchen, and between the wardrobe and the window stands a column with a molding and a vertical light. The second bedroom has full-wall wardrobes with white fronts and a pattern of thin lines, with a desk by the window. The study has an upholstered sofa, a dark wood shelving unit and a desk by the window."
       },
       {
        "t": "p",
-       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-made as part of the overall interior concept."
-      },
-      {
-       "t": "p",
-       "html": "Before work began, a detailed cost estimate was prepared covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting. A turnkey renovation of the apartment in London was then carried out based on the technical documentation."
-      },
-      {
-       "t": "p",
-       "html": "Below are 3D visualizations of the project and photos of the finished apartment with its custom-made furniture."
+       "html": "The entrance hall walls are finished in textured plaster, and the floor is white marble-look tile with a gray border. Built-in wardrobes with white fronts and brass handles line one wall; opposite are a console with a pouf and a mirror."
       }
      ]
     },

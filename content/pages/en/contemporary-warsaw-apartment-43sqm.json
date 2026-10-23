@@ -26,23 +26,51 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed a design project for a 43 m² apartment in Warsaw, Poland. The goal was to fit everything needed into a small floor area without losing the sense of space."
+       "html": "An interior design project for a 43 m² apartment in Warsaw, done under the <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic” design package</a>. We developed the layout, chose the finishes, lighting and furniture, and made 3D visualizations of every room. The task was to fit a living room, kitchen, dining table, workspace, bedroom, bathroom and wardrobes into a small floor area without the apartment feeling cramped."
       },
       {
        "t": "p",
-       "html": "The interior is designed in a contemporary minimalist style: a light, neutral color scheme, understated forms, and natural materials."
+       "html": "The interior follows contemporary minimalism: light gray-beige walls, wood in two shades, black handles and light fixtures. All the living areas have oak chevron flooring, which runs from the entrance hall through the living room and ties the apartment together."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen, dining area and workspace"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The kitchen is L-shaped. The upper cabinets have wood fronts; the base cabinets and the column of tall cabinets are light gray and smooth. The light stone-effect slab backsplash is lit from under the upper cabinets. In front of the kitchen stands a round dark wood table with light upholstered chairs, and above it hangs a large pendant light with a fabric shade."
       },
       {
        "t": "p",
-       "html": "The layout includes a living area, kitchen, bedroom, workspace, bathroom, and storage systems."
+       "html": "A workspace is set up by the living room window: a desk with drawers, a tall ceiling-height cabinet next to it and a slim black desk lamp. The TV hangs on the adjacent wall above a low wall-hung wooden unit. The windows have white sheers and heavy gray-beige curtains."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom, bathroom and entrance hall"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The bedroom has a bed with an upholstered headboard, and above it a light relief panel and a black vertical wall sconce. The wall opposite the window is taken up by light ceiling-height wardrobes, with a dressing table with a mirror and wood trim in the niche between them. The bedside tables are wall-hung."
       },
       {
        "t": "p",
-       "html": "The project was developed as part of the <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic” design package</a>: layout and interior solutions, plus the selection of finishing materials, lighting, and furniture."
+       "html": "The bathroom has the bath and toilet in one room: a bathtub with a glass screen and a rain shower, and above it a niche with glass shelves and lighting. The walls are in large beige stone-effect tiles, with wood-effect panels on one wall. The toilet is wall-hung, and the faucets and accessories are black."
       },
       {
        "t": "p",
-       "html": "The gallery features photorealistic 3D visualizations of the apartment."
+       "html": "The entrance hall has a ceiling-height built-in wardrobe with wood fronts, a mirrored panel with vertical lighting and fluted white panels. The interior doors are concealed, painted the color of the walls, with long black handles. Lighting throughout the apartment comes from surface-mounted spotlights and black tracks with linear lights."
       }
      ]
     },

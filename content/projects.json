@@ -225,12 +225,12 @@
   }
  },
  {
-  "path": "/apartmens-vienna-luxury-interior-design-58m",
+  "path": "/apartments-vienna-luxury-interior-design-58m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartmens-vienna-luxury-interior-design-58m",
+   "ru": "/apartments-vienna-luxury-interior-design-58m",
    "ua": "/ua/interior-apartments-vienna-austria-58m2",
-   "en": "/en/apartmens-vienna-luxury-interior-design-58m"
+   "en": "/en/apartment-interior-design-vienna-austria-58sqm"
   },
   "cover": "6abd6a794888499d20745202",
   "title": {
@@ -691,10 +691,10 @@
   }
  },
  {
-  "path": "/apartmens-dubai-luxury-interior-design-160",
+  "path": "/apartments-dubai-luxury-interior-design-160m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartmens-dubai-luxury-interior-design-160",
+   "ru": "/apartments-dubai-luxury-interior-design-160m",
    "ua": "/ua/dyzain-proekt-interieru-apartamentiv-dubai-160-m2",
    "en": "/en/premium-interior-design-apartment-dubai-uae-160sqm"
   },
@@ -728,10 +728,10 @@
   }
  },
  {
-  "path": "/apartmens-los-angeles-interior-design-140",
+  "path": "/apartments-los-angeles-interior-design-140m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartmens-los-angeles-interior-design-140",
+   "ru": "/apartments-los-angeles-interior-design-140m",
    "ua": "/ua/dyzain-proekt-interieru-apartamentiv-los-andzheles-140-m2",
    "en": "/en/premium-interior-design-apartment-los-angeles-california-usa-140sqm"
   },
@@ -765,10 +765,10 @@
   }
  },
  {
-  "path": "/apartmens-praha-luxury-interior-design-90m",
+  "path": "/apartments-praha-luxury-interior-design-90m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartmens-praha-luxury-interior-design-90m",
+   "ru": "/apartments-praha-luxury-interior-design-90m",
    "ua": "/ua/dyzain-proekt-interieru-apartamentiv-praha-chekhiia-90-m2",
    "en": "/en/apartment-interior-design-prague-czech-republic-90sqm"
   },
@@ -802,10 +802,10 @@
   }
  },
  {
-  "path": "/apartmens-ny-luxury-interior-design-57m",
+  "path": "/apartments-new-york-luxury-interior-design-57m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartmens-ny-luxury-interior-design-57m",
+   "ru": "/apartments-new-york-luxury-interior-design-57m",
    "ua": "/ua/dyzain-proekt-interieru-apartamentiv-niu-york-usa",
    "en": "/en/luxury-interior-design-apartment-new-york-usa-57sqm"
   },
@@ -1169,10 +1169,10 @@
   }
  },
  {
-  "path": "/apartmens-wien-luxury-interior-design-115m",
+  "path": "/apartments-wien-luxury-interior-design-115m",
   "group": "residential",
   "alternates": {
-   "ru": "/apartmens-wien-luxury-interior-design-115m",
+   "ru": "/apartments-wien-luxury-interior-design-115m",
    "ua": "/ua/dyzain-interieru-apartamentiv-viden-avstriia-115-m2-vid-dumskaya-design",
    "en": "/en/luxury-interior-design-apartment-vienna-austria-115sqm"
   },

@@ -26,23 +26,61 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed a contemporary interior design project for a 60 m² apartment with an 18 m² terrace."
+       "html": "An interior design project for a 60 m² apartment with an 18 m² terrace: the studio developed the layout, selected the materials, and produced photorealistic 3D visualizations of every room. The interior is contemporary, in a calm palette of light oak, gray stone and concrete, and black metal."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Layout"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "According to the measured floor plan, the apartment has a 22.6 m² kitchen-living room, a 10.2 m² bedroom, a 4.7 m² hallway, and a 3.8 m² bathroom. The terrace runs along the facade, and the windows of the kitchen-living room and the bedroom face onto it."
       },
       {
        "t": "p",
-       "html": "The concept is based on clean lines, understated forms, natural materials, and a calm, neutral palette: the interior looks contemporary and never feels cramped."
+       "html": "The kitchen and living room are one space. The kitchen stands against the wall: tall pantry units with a built-in oven at the ends, and the sink and cooktop between them. In front of the kitchen is an island clad in gray stone, with a wooden dining table attached to it. Opposite is the TV area: a wall of large concrete-look slabs, a low media unit on black legs, and a niche with open shelves and vertical lighting."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Finishes and lighting"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The floors in the rooms are light oak in a chevron pattern, and the entrance hall has large gray tiles. The kitchen’s tall units are finished in oak, the upper cabinets are light gray, matte, and handleless, and the backsplash is a stone-look slab. A black track with linear lights runs along the ceiling, and above the table hangs a fixture of thin black rods with shades. The flush-mounted doors sit level with the wall, and by the entrance the wall is made of gray panels and an oak inset with a long black handle."
       },
       {
        "t": "p",
-       "html": "The 18 m² terrace is designed as an extension of the living space — an additional area for relaxing. Inside the apartment, functional zones, storage, and lighting have been thoughtfully arranged."
+       "html": "The bedroom has gray-beige walls, a bed with an upholstered gray headboard, and dark floor-length curtains. A built-in workspace runs along one wall: a desktop, a shelf, and a light wood panel."
       },
       {
        "t": "p",
-       "html": "The gallery features photorealistic 3D visualizations and project materials showing the apartment’s layout, materials, and atmosphere."
-      },
+       "html": "The bathroom is tiled from floor to ceiling in gray stone-look tile. There is a wall-hung toilet with floor-to-ceiling cabinets with wooden fronts above it. The faucet, bidet shower, and towel warmer are black; a gray countertop basin sits on a wooden vanity, with an oval mirror in a black frame above it."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Terrace"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> provides apartment and private house interior design in Bratislava and Vienna — from the layout and 3D visualization to a complete set of technical documentation."
+       "html": "The terrace works as an outdoor living room: wooden decking, a large light gray modular sofa with a built-in side table, and a wooden slat screen with ivy climbing over it. The cost of a project like this depends on the floor area and the scope of work; see <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">design package prices</a> for details."
       }
      ]
     },

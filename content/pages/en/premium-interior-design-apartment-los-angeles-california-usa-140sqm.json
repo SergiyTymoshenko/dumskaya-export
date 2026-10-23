@@ -8,7 +8,7 @@
  "h1": "Apartment interior design in Los Angeles, custom furniture, and turnkey renovation, 140 m²",
  "og_image": "6abd6ac168c5e81567a1c102",
  "alternates": {
-  "ru": "/apartmens-los-angeles-interior-design-140",
+  "ru": "/apartments-los-angeles-interior-design-140m",
   "ua": "/ua/dyzain-proekt-interieru-apartamentiv-los-andzheles-140-m2",
   "en": "/en/premium-interior-design-apartment-los-angeles-california-usa-140sqm"
  },
@@ -26,27 +26,57 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed a project for a 140 m² apartment in Los Angeles (California, USA): premium interior design, technical documentation, custom furniture, and solutions for a turnkey renovation."
+       "html": "A 140 m² apartment in Los Angeles. We did this project remotely: interior design, 3D visualization, technical documentation and the furniture design. The work covered the living room with dining area, the kitchen with built-in appliances, bedrooms, walk-in closets, entrance hall, bathrooms and storage. We also prepared a detailed cost estimate for construction and finishing work, materials, furniture, appliances, plumbing fixtures and lighting, so the scope and budget were clear before the renovation started. The gallery shows the visualizations."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Living room, dining area and fireplace"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The main wall of the living room is taken up entirely by light oak furniture. On the left is an open shelving unit of square cubbies, in the center a TV niche with a long bioethanol fireplace in a black frame below it, and on the right plain handleless fronts. Above the cabinets runs a row of open niches up to the ceiling, with the air-conditioning grille above them and a lit cornice along it."
       },
       {
        "t": "p",
-       "html": "The project covers the living room, bedrooms, a kitchen with built-in appliances, walk-in closets, an entrance hall, bathrooms, and storage areas — all rooms follow a single concept, with materials, color, lighting, and furniture coordinated with one another."
+       "html": "The dining area with a glass table sits behind the sofa. The wall behind it is made of oak panels and insets of boldly patterned stone in gray-brown tones, and the same wall has coat hooks by the entrance. The front door is clad in oak slats. The ceiling has track systems with black spotlights and recessed downlights."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The kitchen is a galley layout. On one side are oak columns with two built-in ovens and a fridge. On the other are white handleless fronts, a white countertop, a gas cooktop and a built-in range hood. The run ends in an oak breakfast bar for two, which also separates the kitchen from the entrance hall."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom and walk-in closet"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The bedroom is reached through a walk-through closet with ceiling-height white wardrobes and dark vertical handles. In the bedroom itself, a countertop with drawers runs the full length of the wall opposite the bed, serving as both a desk and a dressing table. To the left above it is an oak shelving unit, to the right a backlit slat panel, and next to it a white wardrobe."
       },
       {
        "t": "p",
-       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-designed for the room dimensions and layout, so no floor area is wasted and the interior looks cohesive."
-      },
-      {
-       "t": "p",
-       "html": "Technical documentation and a detailed cost estimate were prepared for the project, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting. The client can see the scope of work and the implementation budget in advance."
-      },
-      {
-       "t": "p",
-       "html": "The project provides for a turnkey renovation of the apartment based on the documentation developed — construction and finishing work, furniture manufacturing, and interior fit-out in a single sequence."
-      },
-      {
-       "t": "p",
-       "html": "The gallery features photorealistic 3D visualizations showing the apartment’s layout, materials, furniture, and lighting before any work begins."
+       "html": "The kitchen, shelving, walk-in closets and wardrobes were designed to the dimensions of the rooms. The documentation sets out the turnkey renovation as a single sequence: construction, finishing, furniture making, fit-out."
       }
      ]
     },

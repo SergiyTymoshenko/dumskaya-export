@@ -22,6 +22,19 @@
      "text": "Examples of completed interior design projects"
     },
     {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Here you’ll find the studio’s projects: apartments, private houses and villas, offices, salons and shops, and architectural facade designs. Each project page shows 3D visualizations or photos of the finished space, the floor area, the city, and a description of the layout, materials, and furniture."
+      },
+      {
+       "t": "p",
+       "html": "Each project card states exactly what the studio did: the design project, working drawings, custom furniture made at our own workshop in Bratislava, or a turnkey renovation. You can calculate the cost of a design project for your space using our <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">design package prices</a>."
+      }
+     ]
+    },
+    {
      "type": "cards",
      "items": [
       {
@@ -66,7 +79,7 @@
       },
       {
        "title": "Apartment in Vienna, 58 m²",
-       "href": "/en/apartmens-vienna-luxury-interior-design-58m",
+       "href": "/en/apartment-interior-design-vienna-austria-58sqm",
        "image": {
         "id": "6abd6a794888499d20745202",
         "alt": "luxury interior design project apartment vienna"

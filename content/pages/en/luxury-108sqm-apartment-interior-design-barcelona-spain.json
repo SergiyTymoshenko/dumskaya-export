@@ -26,27 +26,51 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 108 m² apartment in Barcelona, Spain: interior design, technical documentation, custom furniture, and a turnkey renovation."
+       "html": "A 108 m² apartment in Barcelona. The studio produced the interior design project with 3D visualization, the technical documentation and a detailed cost estimate covering construction and finishing work, materials, furniture, appliances, plumbing fixtures and lighting. We then carried out the turnkey renovation and installed the <a href=\"/en/custom-residential-furniture\">custom furniture</a>."
       },
       {
        "t": "p",
-       "html": "The project included the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, bathroom, and storage areas — all rooms unified by a single concept of materials, color, and lighting."
+       "html": "The project covers the kitchen-living room, bedroom, walk-in closets, entrance hall, bathroom and storage areas. The same materials repeat in every room: light marble-look tiles, warm walnut, dark veined stone, light upholstered panels and thin brass inlays."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Living room and kitchen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The wall behind the living room sofa is made of tall light-colored upholstered panels with narrow mirror and brass strips between them. Next to it is the dining area with a glass table. Above it and the passage to the entrance hall runs a ceiling of walnut slats with built-in spotlights, and the slats continue down the wall."
       },
       {
        "t": "p",
-       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-designed and made to the dimensions of the rooms."
+       "html": "The kitchen with an island stands by the windows. The fronts are beige gloss and handleless, the oven is built into the island, and the backsplash is veined stone. The island has a white countertop and a wooden bar shelf, with pendants in white shades and metal frames above it. Behind the kitchen, the TV wall is clad in dark stone."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Entrance hall, rooms, bathroom"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The entrance hall has wall-to-wall cabinets with walnut fronts and dark vertical inserts. The side walls are clad in large dark marble-look tiles, with an upholstered bench in the middle. Along the passage there are white gloss panels and two narrow lit walnut niches, and the doors sit flush with the walls, without casings."
       },
       {
        "t": "p",
-       "html": "Before work began, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting."
+       "html": "In one of the rooms, the wall behind the sofa is made of upholstered panels framed in walnut, with two sconces, and the door is hidden in the walnut paneling. The bathroom has white marble-look floor tiles, a hexagonal mosaic with gold inserts on the wall by the bathtub, and a long wall-hung vanity with two sinks opposite."
       },
       {
        "t": "p",
-       "html": "The studio then carried out a turnkey renovation of the apartment in Barcelona: construction and finishing work, installation of the custom-made furniture, and the final fit-out of the rooms."
-      },
-      {
-       "t": "p",
-       "html": "Below are 3D visualizations of the project, photos of the renovated apartment, and photos of the furniture installation, showing not only the result but also the stages of the work."
+       "html": "Further down the page you will find the visualizations, photos of the apartment after the renovation and photos of the furniture installation stage by stage."
       }
      ]
     },

@@ -26,157 +26,122 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> works with private houses and residential and commercial properties: architectural design, renovation, interior architecture, and 3D visualization."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Architectural design"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Concepts and designs for private houses and residential and commercial buildings. We work out the massing and spatial solutions, facades, proportions, materials, and exterior appearance."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Facades and architectural solutions"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Facade design for new and existing buildings: finishing materials, color, architectural elements, and lighting brought together in a single contemporary look."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Renovation and adaptive reuse of buildings"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "We design renovations of existing buildings: changing their appearance and adapting the space to new uses."
+       "html": "We design private houses, facades, building renovations, and small garden structures — gazebos, pergolas, outdoor kitchens — in Bratislava, Vienna, and other cities in Slovakia and Austria, for residential and commercial projects."
       },
       {
        "t": "p",
-       "html": "For historic and architecturally significant buildings, design solutions are developed with the specific features of the property and the applicable preservation requirements in mind."
+       "html": "Architecture, interiors, and furniture can be handled as one project: we design the house together with its layout and interiors, and then make the kitchens, cabinets, and walk-in closets at our <a href=\"/en/custom-residential-furniture\">own furniture workshop</a> in Bratislava. We show the design in photorealistic 3D visualizations before construction starts, while it is still easy to change."
       }
      ]
     },
     {
      "type": "heading",
      "level": 3,
-     "text": "Landscaping and outdoor spaces"
+     "text": "What we design"
     },
     {
      "type": "text",
      "parts": [
       {
-       "t": "p",
-       "html": "We design the grounds in the same style as the house: pathways, seating areas, outdoor lighting, planting, and other landscape elements."
+       "t": "ul",
+       "items": [
+        "<strong>Private houses</strong> — massing, layout, proportions, roof, facades, materials.",
+        "<strong>Facades</strong> of new and existing buildings — finishes, color, windows, exterior lighting.",
+        "<strong>Renovation</strong> — a new look for the building and spaces adapted to new uses; for historic buildings, in line with heritage protection requirements.",
+        "<strong>The plot</strong> — paths, terraces, outdoor lighting, and planting in the same style as the house.",
+        "<strong>Small garden structures</strong> — gazebos, pergolas, outdoor kitchens.",
+        "<strong>Interior architecture</strong> — interior spaces planned around the building’s structure and how people will live in the house."
+       ]
       }
      ]
     },
     {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Where needed, we build in energy-efficient solutions so the house costs less to run."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-steps",
+   "blocks": [
+    {
      "type": "heading",
      "level": 3,
-     "text": "Energy-efficient architectural solutions"
+     "text": "How the work goes"
     },
     {
      "type": "text",
      "parts": [
       {
-       "t": "p",
-       "html": "Where needed, we build energy-efficient solutions and the efficient use of materials into the design — this reduces the building’s operating costs."
+       "t": "ol",
+       "items": [
+        "<strong>Consultation.</strong> Free; we reply to inquiries within one business day.",
+        "<strong>Information about the property.</strong> Photos, measurements or drawings of the building, a site plan, examples of houses you like.",
+        "<strong>Concept design.</strong> Massing, layout, facades. We compare cladding and color options on the same model.",
+        "<strong>3D visualization.</strong> Facades, plot, and interiors: you can see the proportions, materials, light, and how the house looks in its surroundings. On request, a video tour around the house.",
+        "<strong>Documentation.</strong> Working drawings, diagrams, and specifications — depending on the scope of the project.",
+        "<strong>Supervision.</strong> On site, we work with the contractors, manufacturers, and other specialists on the project."
+       ]
       }
      ]
     },
     {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "You receive a concept design with plans and elevations, visualizations, and, if they are part of the project, working drawings and specifications. These are used to prepare the documents for the building authority, and the contractor uses them to calculate the cost estimate."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-local",
+   "blocks": [
+    {
      "type": "heading",
      "level": 3,
-     "text": "Interior architecture"
+     "text": "Permits in Slovakia and Austria"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "We design interior spaces with the building’s architecture, layout, functional zoning, and usage scenarios in mind."
+       "html": "Slovakia has had a new Building Act in force since April 2025. A new house, an extension, or an added story requires a decision from the building authority (rozhodnutie o stavebnom zámere). A facade renovation and other alterations that don’t change the building’s dimensions are reported by notification (ohlásenie) if they could affect the building’s structural strength and stability or fire safety, or if the house is a listed monument or stands in a protected heritage area (pamiatkové územie)."
       },
       {
        "t": "p",
-       "html": "Architecture and interior are treated as a single system, which makes it possible to create a functional and visually cohesive space."
+       "html": "In Vienna, a significant change to a building’s outside appearance requires a building permit (Baubewilligung); many other changes are filed as a building notice (Bauanzeige) with plans. In protected zones (Schutzzonen) and in buildings built before 1945, even replacing windows has to be reported. We take these requirements into account in the design."
       }
      ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-price",
+   "blocks": [
     {
      "type": "heading",
      "level": 3,
-     "text": "3D modeling and architectural visualization"
+     "text": "Pricing"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "We create detailed photorealistic 3D visualizations of facades, exteriors, interiors, and the surrounding grounds."
+       "html": "The price of an architectural design depends on the building’s floor area, the scope of the project, and whether working drawings and supervision are needed. Prices for facade and plot visualization are on a <a href=\"/en/3d-visualization-facade-exterior-price\">separate page</a>."
       },
       {
        "t": "p",
-       "html": "The visualization shows you in advance the architectural design, the building’s proportions, materials, colors, lighting, and how the property looks in its surroundings."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Technical documentation"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Depending on the project scope, we prepare working drawings, diagrams, specifications, and other documentation used to implement the project."
-      },
-      {
-       "t": "p",
-       "html": "<strong>Project support.</strong> DUMSKAYA DESIGN can support implementation at various stages and work with contractors, manufacturers, and other specialists on the project."
-      },
-      {
-       "t": "p",
-       "html": "Where needed, we adapt the solutions to technical requirements, the specifics of the property, and local building codes."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Custom design"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "We can develop a new architectural concept or adapt an existing design to your site, building, layout, and requirements."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN — architectural design, facade design, interior architecture, and 3D visualization for private and commercial properties.</strong>"
+       "html": "We design house interiors under our <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">design packages</a> — from €20 to €70/m². For example, the interiors of a 150 m² house under the “Basic” package (€35–45/m²) come to €5,250–6,750."
       }
      ]
     },
@@ -253,6 +218,41 @@
         "id": "66d476c7e6210d11a55ff6ee",
         "alt": "custom architectural concept of a pergola-style gazebo for outdoor space"
        }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about architectural design"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Who prepares the documents for the building authority?",
+       "a": "<p>In Slovakia, a designer licensed for this work. Most buildings require an authorized designer. For simple buildings — for example, a residential house with no more than three apartments, two above-ground floors, and a built-up area of up to 300 m² — the law also allows a specialist without authorization but with a relevant degree. Our concept design, facades, and visualizations are the input for this documentation.</p>"
+      },
+      {
+       "q": "Can I order just a new facade for an existing house?",
+       "a": "<p>Yes. That is how we did the facade of a villa in Marbella: the volume of the house stayed the same, and the new look comes from the finishes, architectural details, and color. You receive a facade design with materials and visualizations showing the house as it will look after the renovation.</p>"
+      },
+      {
+       "q": "Why design the house and the interior at the same time?",
+       "a": "<p>Windows, openings, and outlets for lighting and plumbing go exactly where the future interior and furniture need them. Walls and wiring hardly ever have to be redone after construction. We make the built-in furniture from the same drawings in Bratislava.</p>"
+      },
+      {
+       "q": "We already have a house design. Can you rework it?",
+       "a": "<p>Yes. We adapt the layout, facades, and materials to your plot, your family, and your budget, and show the result in 3D before construction starts. For this we need the project drawings, a site plan, and your wishes.</p>"
+      },
+      {
+       "q": "Do you work on projects in Vienna?",
+       "a": "<p>Yes. Vienna is about an hour’s drive from Bratislava, so we go out to sites in Vienna just as we do in Bratislava. Projects for other countries are done remotely.</p>"
       }
      ]
     }

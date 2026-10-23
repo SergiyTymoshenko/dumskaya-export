@@ -26,19 +26,57 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for ABC Cosmetology, a 54 m² skincare clinic. The project was completed under the “Express” design package, with a focus on functional space planning, client comfort, and convenience for the specialists."
+       "html": "A 54 m² cosmetology salon. We created its interior design project under the <a href=\"/en/express-interior-design-package-bratislava-vienna\">“Express”</a> package: a floor plan, a set of 3D visualizations and technical documentation for the renovation. The main task was to arrange the rooms so that clients could move easily from the entrance to the treatment room, and the cosmetologist could work comfortably with the equipment and instruments."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Layout"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "According to the furniture layout plan, the salon is divided into five rooms totaling 53.71 m²:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "entrance hall with waiting area — 10.88 m²;",
+        "reception — 9.72 m²;",
+        "treatment room No. 1 — 12.53 m²;",
+        "treatment room No. 2 — 16.48 m²;",
+        "restroom — 4.10 m²."
+       ]
       },
       {
        "t": "p",
-       "html": "The layout includes a reception and waiting area, treatment rooms, and a restroom; the rooms are arranged around the flow of treatments and the movement of clients and staff."
+       "html": "On the measured floor plan, the reception and the future first treatment room were a single 22 m² room with a window. We divided it with a furniture partition: cabinets on the treatment room side, a niche for the water cooler on the reception side. The entrance leads into the hall with the waiting area, which is also where the restroom door is. The second treatment room opens off the reception. Each treatment room plan shows a treatment couch, space for equipment and a cart for sterile instruments; the second one also has a unit with a sink."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Finishes and furniture"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The palette is light: white walls, light oak-look laminate, sand and gray tones. The reception desk is clad in textured stone-effect plaster, and the same plaster covers the walls of the entrance hall. The waiting area has two armchairs in light upholstery with rounded backs, black pedestal side tables and white cube shelves for products in a niche. On the wall behind the desk hangs an artwork: a face drawn in thin black wire."
       },
       {
        "t": "p",
-       "html": "The project included photorealistic 3D visualizations and technical documentation for implementation."
+       "html": "The first treatment room has white upper and lower cabinets, a photo mural of city buildings in gray tones on one wall, a track with spotlights and white roller blinds on the windows. In the second room, one wall is covered in beige slats with a tall mirror in a thin black frame and the salon’s logo. The restroom is finished in large gray tile and plaster: a wall-hung vanity, a wall-hung toilet, a white heated towel rail and an LED strip along the corner of the wall."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designs skincare clinics, aesthetic medicine clinics, and beauty salons in Bratislava and Vienna, taking into account the specifics of the business and the size of the premises."
+       "html": "The drawing set includes a measured floor plan, a furniture layout plan with a specification and other sheets; you can see examples below on this page."
       }
      ]
     },
@@ -151,7 +189,7 @@
       },
       {
        "id": "69432412b7700d1d0de3a7cf",
-       "alt": "restroom interior in cosmetology salon — Cosmetology Salon, 54 m², photo 27"
+       "alt": "Cosmetology salon, 54 m²"
       },
       {
        "id": "69432413b7700d1d0de3a7d9",
@@ -159,7 +197,7 @@
       },
       {
        "id": "6943241263082b971de5e500",
-       "alt": "restroom interior in cosmetology salon — Cosmetology Salon, 54 m², photo 29"
+       "alt": "Cosmetology salon, 54 m²"
       },
       {
        "id": "69432413b7700d1d0de3a7db",

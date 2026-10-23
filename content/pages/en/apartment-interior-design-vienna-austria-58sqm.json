@@ -1,5 +1,5 @@
 {
- "path": "/en/apartmens-vienna-luxury-interior-design-58m",
+ "path": "/en/apartment-interior-design-vienna-austria-58sqm",
  "lang": "en",
  "type": "project",
  "group": "residential",
@@ -8,9 +8,9 @@
  "h1": "Apartment interior design in Vienna, custom furniture and turnkey renovation, 58 m²",
  "og_image": "6abd6a794888499d20745202",
  "alternates": {
-  "ru": "/apartmens-vienna-luxury-interior-design-58m",
+  "ru": "/apartments-vienna-luxury-interior-design-58m",
   "ua": "/ua/interior-apartments-vienna-austria-58m2",
-  "en": "/en/apartmens-vienna-luxury-interior-design-58m"
+  "en": "/en/apartment-interior-design-vienna-austria-58sqm"
  },
  "sections": [
   {
@@ -26,19 +26,69 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 58 m² apartment in Vienna, Austria: interior design, technical documentation, custom furniture, furnishing and procurement, and a turnkey renovation."
+       "html": "A 58 m² apartment in Vienna that the studio took from design to finished interior: interior design, technical documentation, custom furniture, procurement and turnkey renovation. The furniture was designed together with the interior, so the wardrobes and cabinets are built into the walls and niches instead of being placed in the rooms after the renovation."
       },
       {
        "t": "p",
-       "html": "In 58 m², it is important to make use of every meter without losing the sense of open space — hence the attention to the layout, ergonomics, and storage."
+       "html": "The color scheme is warm: gray-beige walls, walnut-colored wood and light marble-effect porcelain tiles with golden-brown veining. The living rooms have oak chevron flooring."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Living room, kitchen and dining table"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The living room, kitchen and dining area are one space. The TV area is set against a wooden wall lit from below, with a low shelf running its full width. Next to it, a column is clad in a marble-effect slab, and opposite stands a light modular sofa. The French window is dressed with sheers and curtains in the same tone as the walls."
       },
       {
        "t": "p",
-       "html": "The custom furniture was designed alongside the interior, so the wardrobes and storage systems are built into the architecture of the apartment rather than added on top of it."
+       "html": "The kitchen is L-shaped, with light beige matte fronts and a countertop and backsplash in the same terracotta brown. Between the upper cabinets and the countertop is an open shelf for spice jars, with lighting under the cabinets. The fridge is hidden in a column. The kitchen floor is marble-effect porcelain tile, and the living room has parquet."
       },
       {
        "t": "p",
-       "html": "Before work began, a detailed cost estimate was prepared covering labor, materials, furniture, appliances, plumbing fixtures, and lighting. A turnkey renovation of the apartment was then carried out according to the technical documentation."
+       "html": "The dining table is round and wooden, with light upholstered chairs. A wood-slat divider with a strip of light separates the dining area."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom, bathroom, entrance hall"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the bedroom, the bed sits in a niche between two ceiling-height wardrobes. The headboard is upholstered, behind it are relief panels with a botanical pattern framed in moldings, and a multi-tier chandelier hangs above the bed."
+      },
+      {
+       "t": "p",
+       "html": "The bathroom is finished in travertine- and marble-effect tiles. The basin is set into a marble countertop, with a full-width backlit mirror and a strip of vertical mosaic above it. The bathtub is built into a tiled surround, and the toilet is wall-hung."
+      },
+      {
+       "t": "p",
+       "html": "Along the wall of the entrance hall are ceiling-height wardrobes and a wall-hung console with a pouf. The doors are finished in wood and sit flush with the wall, and next to them are a glowing light slot and a slatted wall."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Cost estimate and renovation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Before work began, a detailed <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">cost estimate</a> was prepared covering labor, materials, furniture, appliances, plumbing fixtures and lighting. The turnkey renovation followed the project’s technical documentation, and the furniture was made at the studio’s own workshop in Bratislava."
       }
      ]
     },

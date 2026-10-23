@@ -96,7 +96,7 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
         <div class="wrap blk__faq">
           {b.items.map((f) => (
             <details class="faq">
-              <summary class="faq__q">{f.q}</summary>
+              <summary class="faq__q"><h3 class="faq__h">{f.q}</h3></summary>
               <div class="faq__a prose" set:html={f.a} />
             </details>
           ))}
@@ -136,6 +136,8 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
   .faq:last-child { border-bottom: 1px solid var(--line); }
   .faq__q { cursor: pointer; list-style: none; padding: 16px 36px 16px 0; position: relative; font-weight: 500; color: var(--ink); }
   .faq__q::-webkit-details-marker { display: none; }
+  /* вопрос — заголовок (для поисковиков и ИИ-ассистентов), выглядит как обычная строка FAQ */
+  .faq__h { margin: 0; font: inherit; color: inherit; letter-spacing: inherit; text-transform: none; }
   .faq__q::after { content: '+'; position: absolute; right: 4px; top: 12px; font-size: 22px; font-weight: 300; color: var(--stone); }
   .faq[open] .faq__q::after { content: '–'; }
   .faq__a { padding: 0 0 18px; }

@@ -5,7 +5,7 @@
  "group": null,
  "title": "New Apartment Handover Inspection in Bratislava — from €250",
  "description": "Inspection of a new apartment before signing the handover: defects, geometry, utilities and a defect report. Up to 50 m² — €250, larger — €400.",
- "h1": "New-build apartment handover inspection in Bratislava",
+ "h1": "Apartment handover inspection in Bratislava",
  "og_image": "65d3cb0956ff01000f891f5c",
  "alternates": {
   "ru": "/priemka-kvartiry-ot-zastrojshchika",
@@ -19,59 +19,84 @@
     {
      "type": "heading",
      "level": 1,
-     "text": "New-build apartment handover inspection in Bratislava"
+     "text": "Apartment handover inspection in Bratislava"
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "<strong>A handover inspection of a new-build apartment</strong> is a check before you move in that helps uncover hidden defects and avoid unnecessary repair costs. <strong>DUMSKAYA DESIGN</strong> (Bratislava, Slovakia) carries out apartment handover inspections in Bratislava and checks whether your new home meets the promised quality standards."
+       "html": "Before you sign the handover report for a new apartment, it pays to have it checked by a specialist. We carry out handover inspections in new builds in Bratislava: we inspect the finishes, windows, doors, plumbing fixtures, and building systems, measure the geometry of the walls and floors, and draw up a list of issues for the developer. The service is for buyers of new-build apartments who want to see the defects before signing and have them written into the report. At the inspection, we represent the buyer, not the developer."
+      },
+      {
+       "t": "p",
+       "html": "Most of our projects in Bratislava are new builds: we design their interiors and renovate them with our own crews. So we also look at the apartment with the future renovation in mind. A wall that leans out of plumb where the kitchen will stand, or a difference in floor level between rooms, is easy to miss at the handover, but when the kitchen is installed and the flooring laid, it means leveling the base and adjusting the furniture to fit."
       }
      ]
     },
     {
      "type": "heading",
      "level": 3,
-     "text": "What the service includes"
+     "text": "What we check"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "that the apartment matches the design documentation: layout, openings, location of water and electrical connection points;",
+        "walls, ceilings, and floors — cracks, chips, stains, uneven finishes;",
+        "geometry: how far walls and corners are out of true, how level the floor is;",
+        "windows, balcony doors, and balcony structures — how they open and close, and whether the frames or glass are damaged;",
+        "doors supplied with the apartment;",
+        "electrical wiring, water supply, and ventilation;",
+        "plumbing fixtures and installed equipment."
+       ]
+      }
+     ]
     },
     {
      "type": "text",
      "parts": [
       {
        "t": "p",
-       "html": "Checking that the apartment complies with the project documentation"
-      },
-      {
-       "t": "p",
-       "html": "Inspecting wall, ceiling, and floor finishes for defects"
-      },
-      {
-       "t": "p",
-       "html": "Checking windows, doors, and balcony structures"
-      },
-      {
-       "t": "p",
-       "html": "Checking utility systems: electrical, water supply, ventilation"
-      },
-      {
-       "t": "p",
-       "html": "Assessing the quality of plumbing fixtures and installed equipment"
-      },
-      {
-       "t": "p",
-       "html": "Checking geometry: wall angle deviations and floor levelness"
-      },
-      {
-       "t": "p",
-       "html": "Documenting defects and drawing up a list of issues for the developer"
-      },
-      {
-       "t": "p",
-       "html": "Advice on next steps if defects are found"
+       "html": "Every defect we find goes on the list of issues: exactly what is wrong and where. After the inspection, we go through it with you — what is serious and what is a minor unfinished item — and suggest how to word the issues for the report."
       }
      ]
+    }
+   ]
+  },
+  {
+   "id": "priemka-kvartiry-ot-zastrojshchika-protokol",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "The handover report in Slovakia"
     },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "A new apartment is accepted with a handover report (preberací protokol) signed by the buyer and the developer. Defects and unfinished work are entered in the report before signing, including minor ones that do not stop you from living in the apartment. An issue that is not in the report is harder to raise once it has been signed."
+      },
+      {
+       "t": "p",
+       "html": "Each issue is written so that it cannot be read two ways: what the defect is, where it is, and what problem it causes. Photos are attached to the report. Each item gets a deadline for the repair. The same report records the meter readings for electricity, water, heating, and gas, if the building has gas."
+      },
+      {
+       "t": "p",
+       "html": "If the developer has not given you the apartment’s operating manual (manuál užívania bytu), ask for it. It describes the materials and the required maintenance — for example, the permitted load on the terrace or regular lubrication of the windows. If the contract provides for it, the developer may refuse to fix a defect when the maintenance in the manual was not followed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "priemka-kvartiry-ot-zastrojshchika-price",
+   "blocks": [
     {
      "type": "heading",
      "level": 3,
@@ -81,38 +106,25 @@
      "type": "text",
      "parts": [
       {
-       "t": "p",
-       "html": "€250 — handover inspection of an apartment up to 50 m²"
-      },
-      {
-       "t": "p",
-       "html": "€400 — handover inspection of an apartment of 50 m² or more"
-      },
-      {
-       "t": "p",
-       "html": "€200 — repeat visit if a follow-up inspection is needed after the developer has fixed the defects"
+       "t": "ul",
+       "items": [
+        "€250 — handover inspection of an apartment up to 50 m²;",
+        "€400 — handover inspection of an apartment of 50 m² or more;",
+        "€200 — a return visit, if another inspection is needed after the developer has fixed the defects."
+       ]
       }
      ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Why choose us?"
     },
     {
      "type": "text",
      "parts": [
       {
-       "t": "ul",
-       "items": [
-        "Experience in design and renovation — we know what to look for",
-        "We work in the client’s interests, not the developer’s",
-        "We help prepare formal defect notices for the developer"
-       ]
+       "t": "p",
+       "html": "Example: a 48 m² apartment costs €250. If the developer has fixed the issues and you want us to check the result, a return visit for €200 is added, for a total of €450. A 72 m² apartment with a return visit costs €600."
       },
       {
        "t": "p",
-       "html": "<strong>Book an apartment handover inspection with DUMSKAYA DESIGN (Bratislava, Slovakia) and be confident in the quality of your new home.</strong>"
+       "html": "If you plan to renovate after the handover, order a <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">renovation cost estimate</a> or an <a href=\"/en/interior-design\">apartment interior design project</a> — they make it easier to work out the budget in advance."
       }
      ]
     },
@@ -130,6 +142,41 @@
       {
        "text": "Interior design service prices",
        "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "priemka-kvartiry-ot-zastrojshchika-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Questions about apartment handover inspections"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "When should I book the inspection?",
+       "a": "<p>As soon as the developer has set a date. Send us the address, floor area, and handover date — we will reply within one business day and arrange the visit. If you have the apartment’s design documentation, send it in advance so we can check the apartment against it.</p>"
+      },
+      {
+       "q": "Can I refuse to sign the report if there are many defects?",
+       "a": "<p>The report is signed after the inspection, not before it: first the whole apartment is checked, then the issues are written in, and only then is it signed. Minor defects and unfinished items usually do not prevent you from accepting the apartment: they are entered in the report with repair deadlines. If the defects are serious or the apartment is not fit to live in, it is worth reviewing the contract with a lawyer before signing.</p>"
+      },
+      {
+       "q": "What else is handed over with the apartment?",
+       "a": "<p>Everything sold with it under the contract, such as a basement storage unit (pivnica) or a parking space. These are inspected too. The report records how many keys were handed over — for the apartment, mailbox, storage unit, and building entrance.</p>"
+      },
+      {
+       "q": "Who signs the report on the developer’s side?",
+       "a": "<p>A person who is authorized to do so. If a developer’s representative comes to the handover, ask to see a power of attorney or another document confirming their right to sign the report.</p>"
+      },
+      {
+       "q": "What if the developer does not fix the issues on time?",
+       "a": "<p>Send a written reminder and set an extra deadline. If the defect is still not fixed, the next steps — a price reduction or a lawsuit — should be discussed with a lawyer. In a dispute with a developer, a court expert’s report (znalecký posudok) carries more weight. Our list of issues is a technical inspection before signing and does not replace such a report.</p>"
       }
      ]
     }

@@ -1,5 +1,5 @@
 {
- "path": "/interior-design-apartmens-warsaw",
+ "path": "/interior-design-apartments-warsaw",
  "lang": "ru",
  "type": "service",
  "group": null,
@@ -8,9 +8,9 @@
  "h1": "Дизайн интерьера квартир и домов в Варшаве",
  "og_image": "6abd6aaa6bbe6103844834dd",
  "alternates": {
-  "ru": "/interior-design-apartmens-warsaw",
+  "ru": "/interior-design-apartments-warsaw",
   "ua": "/ua/dyzain-interieru-varshava",
-  "en": "/en/interior-design-apartmens-warsaw"
+  "en": "/en/interior-design-apartments-warsaw"
  },
  "sections": [
   {
@@ -175,19 +175,19 @@
      "images": [
       {
        "id": "66b297074c04c27fce4d020c",
-       "alt": "Дизайн интерьера гостиная Варшава — Квартира в Варшаве 43 м², фото 2"
+       "alt": "Кухня-гостиная — квартира в Варшаве, 43 м²"
       },
       {
        "id": "66b297074c04c27fce4d0204",
-       "alt": "Дизайн интерьера гостиная Варшава — Квартира в Варшаве 43 м², фото 3"
+       "alt": "Кухня-гостиная — квартира в Варшаве, 43 м²"
       },
       {
        "id": "66b9e66643d3e7af1c2165ae",
-       "alt": "Дизайн интерьера гостиная Варшава — Квартира в Варшаве 43 м², фото 4"
+       "alt": "Кухня-гостиная — квартира в Варшаве, 43 м²"
       },
       {
        "id": "66b29707c946cd9dbecef975",
-       "alt": "Дизайн интерьера гостиная Варшава — Квартира в Варшаве 43 м², фото 5"
+       "alt": "Кухня-гостиная — квартира в Варшаве, 43 м²"
       }
      ]
     }
@@ -294,7 +294,7 @@
      "items": [
       {
        "title": "Дизайн жилых интерьеров",
-       "href": "/interior-design-apartmens-bratislava",
+       "href": "/interior-design-apartments-bratislava",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
         "alt": "дизайнер интерьера, братислава, вена"

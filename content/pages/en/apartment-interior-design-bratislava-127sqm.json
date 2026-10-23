@@ -26,19 +26,37 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> created the interior design project for a 127 m² three-room apartment in Bratislava under the <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic”</a> package: the layout, 3D visualizations of every room, and a full set of technical drawings for the renovation. The project is now being implemented — renovation work is underway."
+       "html": "A 127 m² three-bedroom apartment with a balcony in Bratislava. We developed its interior design project under the <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic”</a> package: a floor plan, 3D visualizations of every room and a full set of technical drawings for the renovation. The project is now being built, and the renovation is underway."
       },
       {
        "t": "p",
-       "html": "The apartment has a 43 m² living room opening onto a balcony, an 18.5 m² kitchen with a dining area, a 21.6 m² master bedroom, a 15 m² children’s room, an entrance hall, a laundry room, a bathroom, and two toilets."
+       "html": "The apartment has a 43 m² living room opening onto the balcony, an 18.5 m² kitchen with a dining area, a 21.6 m² master bedroom, a 15 m² children’s room, an entrance hall, a laundry room, a bathroom and two WCs."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Rooms and materials"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The interior is done in a warm beige-gray palette. The living rooms have wide light-oak floorboards; the entrance hall, kitchen and bathrooms have large-format tile that looks like light stone. The doors are flush and painted to match the walls, the curtains are tucked into ceiling recesses with concealed tracks, and the lighting comes from recessed linear fixtures and tracks."
       },
       {
        "t": "p",
-       "html": "The interior is designed in a warm beige-gray palette: light neutral walls, wood-toned flooring, flush hidden doors painted to match the walls, recessed niches for concealed curtain tracks, and track lighting. The living room has a TV wall with an oak panel and open shelving, soft rounded furniture, and a spot for a piano; the children’s room has a study area, a bed, and wall bars with a climbing panel."
+       "html": "The living room has a TV area with an oak panel and open shelves. Opposite are a sofa and two rounded armchairs, and a piano stands closer to the entrance hall. The kitchen is a separate room: a run of units along one wall with tall cabinets for the fridge and oven, and a dining table by the window."
       },
       {
        "t": "p",
-       "html": "The furniture is designed to fit the rooms: the kitchen, the TV wall, wardrobes in the entrance hall, bedroom, and children’s room, backlit wall panels, and vanity units and tall cabinets in the bathrooms — with a separate custom furniture plan and specification."
+       "html": "The master bedroom has a bed with an upholstered headboard, a full-wall wardrobe without handles and a dressing table with a mirror. The children’s room has a desk by the window, a bed against an oak panel and wall bars with a climbing panel. The bathroom is finished in textured herringbone tile, and the WC has a niche with lit shelves."
+      },
+      {
+       "t": "p",
+       "html": "The furniture is designed to the dimensions of each room: the kitchen, the TV area, wardrobes in the entrance hall, bedroom and children’s room, lit wall panels, vanity units and tall cabinets in the bathrooms. It comes with a separate custom furniture plan and a specification, and can be made at <a href=\"/en/custom-residential-furniture\">our own workshop</a>."
       }
      ]
     },
@@ -52,7 +70,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "The set of working drawings runs to 45 sheets: the measured floor plan, layout and furniture plan, custom furniture plan, partition walls, plumbing and heating, air conditioning, sockets, lighting and switches, ventilation, floors, ceilings with curtain niches, wall finishes with NCS colors, and wall elevations for the kitchen, living room, corridor, children’s room, bedroom, and bathrooms. The construction crew carries out the renovation from these drawings."
+       "html": "The set of working drawings runs to 45 sheets: a measured floor plan, the layout and furniture arrangement, a custom furniture plan, partition installation, plumbing and heating, air conditioning, outlets, lighting and switches, ventilation, floors, ceilings with recesses for curtain tracks, wall finishes with NCS colors, and wall elevations for the kitchen, living room, hallway, children’s room, bedroom and bathrooms. The construction crew works from these drawings."
       }
      ]
     },

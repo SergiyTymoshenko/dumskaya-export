@@ -26,15 +26,57 @@
      "parts": [
       {
        "t": "p",
-       "html": "A client came to our studio with a challenging task: to organize a living space for a young family in just 47 m². We needed to plan a living room combined with a kitchen, a convenient bathroom, a spacious children’s room with a study area, and a cozy bedroom."
+       "html": "An interior design project for a 47 m² three-room apartment. The brief was not an easy one: fit a living room combined with the kitchen, a bathroom, a children’s room with a desk and the parents’ bedroom into this floor area. We did the layout and visualizations of every room. The interior is in a gray-beige palette with wood tones, and the rooms have chevron parquet floors."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Layout"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The living room and kitchen were joined into one bright space. The bathroom was placed so it can be reached from every room. In the children’s room, the balcony was added to the living area, and built-in furniture and storage systems organize the space for sleeping, playing and studying. The compact parents’ bedroom was kept separate and closed off; zoning and a calm color give it privacy."
       },
       {
        "t": "p",
-       "html": "The living room and kitchen were combined into a single bright space for the family and guests. The bathroom was positioned so that it is accessible from every room. In the children’s room, the balcony was joined to the living area, and spaces for sleeping, playing, and studying were organized with multifunctional furniture and storage systems. Thanks to zoning and the color palette, the compact parents’ bedroom turned out cozy and private."
+       "html": "The doors from the living room to the other rooms are concealed: the wall is clad in dark oak-look panels, and the door leaves sit flush with them, so they are barely visible. Vertical light lines run along the corners of this wall, and linear fixtures are built into the ceiling."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen and dining area"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The upper kitchen cabinets and the tall unit have fluted fronts in a gray-brown tone, the lower units are light and matte, and the sink sits by the window. The dining area is a round glass table on a black base with upholstered chairs in a light fabric, and above them hangs a chandelier with white globe shades and brass details. Next to it is a display cabinet with reeded glass in a black frame."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Children’s room, bedroom, bathroom"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The children’s room has a bed with an olive upholstered headboard, a floor-to-ceiling wardrobe beside it and open shelves. On the added balcony, a desk with drawers runs along the window, and low cabinets for toys and books sit under the window. In the bedroom, one whole wall is taken up by a wardrobe with smooth, light, handleless fronts, and the bed has a soft headboard with vertical channel stitching."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> (Bratislava, Slovakia) rose to the challenge, transforming 47 m² into a convenient, stylish, and functional space for a young family."
+       "html": "The bathroom is finished in large light stone-look tile and fluted terracotta-colored tile. There is a vanity unit with a basin, an oval mirror with lighting and a shower behind glass in a black frame; the faucets and heated towel rail are black too."
       }
      ]
     },

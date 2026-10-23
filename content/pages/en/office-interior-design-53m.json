@@ -26,19 +26,47 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> designed and delivered a 53 m² office project in Poznań: the interior, custom furniture, and a turnkey renovation."
+       "html": "A 53 m² office in Poznań. The studio created the interior design project with 3D visualization, designed the custom furniture and carried out the turnkey renovation; the project is complete. The furniture was designed together with the interior so that every part of the small floor area is put to use. The page starts with the visualizations, followed by photos and a video of the finished office and a shot taken during furniture installation."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How the office is laid out"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "It is a single open room with floor-to-ceiling glazing along the long wall. The director’s workspace with a guest area is by the window, and the staff desks are closer to the entrance. There are no partitions; the zones are set apart by the wall and ceiling finishes. Above the director’s area the ceiling is a black grid, while the rest of the office has light panels with built-in lights."
       },
       {
        "t": "p",
-       "html": "The furniture was designed together with the interior to make full use of the small office’s floor area."
+       "html": "Behind the director’s desk is a wall of walnut-look wood panels with black inserts, patterned with vertical slats cut at an angle at the ends. A narrow strip of preserved moss runs down the middle, with LED lighting along its edge. A linear light hangs above the desk, and the windows have vertical blinds."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materials and furniture"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The other walls were painted warm gray and divided into large rectangles with moldings; a TV hangs on one of them. The wall projection next to the wood cladding is finished in large gray concrete-look tiles, and the entrance door also has a concrete-look finish. The floor is large gray tile."
       },
       {
        "t": "p",
-       "html": "Below are 3D visualizations of the project, along with photos and a video of the finished office."
+       "html": "The director and the staff have the same desks: a walnut-look top on black metal legs. Along one wall stands a tall shelving unit of black sections in different sizes with thin inserts, and next to it a floor-to-ceiling cabinet in wood. The bright accent is the orange armchairs and sofa in the guest area, with brass basket side tables and black trays beside them."
       },
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN provides commercial interior design, custom furniture design and manufacturing, and full-scope implementation of offices, stores, boutiques, and beauty salons in Bratislava and Vienna.</strong>"
+       "html": "Similar projects for offices, salons and shops are described on the <a href=\"/en/commercial-interior-design\">commercial interiors</a> page."
       }
      ]
     },

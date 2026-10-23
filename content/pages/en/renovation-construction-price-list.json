@@ -35,277 +35,100 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> carries out turnkey renovations of apartments, houses, and commercial spaces in Bratislava, Vienna, and other cities across Slovakia and Austria."
+       "html": "We carry out turnkey renovation of apartments, houses, and commercial spaces in Bratislava, Vienna, and other cities in Slovakia and Austria. The work is done by our own crews from Bratislava, and we make the furniture at our own production facility there too. Prices for Bratislava and Vienna are the same."
       },
       {
        "t": "p",
-       "html": "We can take on the entire property — from the interior design project, technical documentation, and cost estimate to construction and finishing work, procurement, custom furniture, and final installation."
+       "html": "You can hand over the whole project — interior design, technical documentation, cost estimate, construction and finishing work, purchasing materials, procurement, custom furniture, installation, and design supervision. You can also order individual stages if another contractor has already done the design or part of the work."
       },
       {
        "t": "p",
-       "html": "We carry out the renovation strictly according to the approved design project: the placement of furniture, lighting, electrical points, and plumbing, as well as the materials, are all defined in advance, so there are fewer changes along the way."
+       "html": "We renovate according to the approved interior design project: where the furniture goes, where the lights, outlets, and plumbing are, which materials to use — everything is decided before work begins, so there is less rework along the way."
       }
      ]
     },
     {
      "type": "heading",
      "level": 3,
-     "text": "Turnkey renovation with a single team"
+     "text": "Types of work"
     },
     {
      "type": "text",
      "parts": [
-      {
-       "t": "p",
-       "html": "What <strong>DUMSKAYA DESIGN</strong> can take care of:"
-      },
       {
        "t": "ul",
        "items": [
-        "interior design project;",
-        "technical documentation for the construction crew;",
-        "preliminary and detailed cost estimates;",
-        "demolition and construction work;",
-        "electrical work;",
-        "plumbing work;",
-        "finishing work;",
-        "selection and purchasing of materials;",
-        "sourcing of lighting, plumbing fixtures, and equipment;",
-        "manufacturing of custom kitchens, wardrobes, and other furniture;",
-        "furniture delivery and installation;",
-        "design supervision of the project’s implementation."
+        "<strong>Demolition and preparation</strong> — partitions, floor and wall coverings, tile, ceilings, doors, plumbing fixtures.",
+        "<strong>General construction</strong> — block and drywall partitions, niches, boxing-in, openings, surface leveling.",
+        "<strong>Electrical</strong> — wiring, outlets and switches, distribution boards, connection points for appliances and lighting.",
+        "<strong>Plumbing</strong> — water supply and drain piping, relocating plumbing points, concealed cistern frames, shower systems.",
+        "<strong>Heating</strong> — relocating radiators, underfloor heating — within what the property allows.",
+        "<strong>Plastering and painting</strong> — plaster, skim coat, primer, paint, base coats for decorative finishes.",
+        "<strong>Drywall</strong> — ceilings, cornices, structures with concealed lighting.",
+        "<strong>Tile</strong> — porcelain stoneware, mosaic, large-format tile.",
+        "<strong>Flooring</strong> — parquet, engineered wood, laminate, SPC, vinyl.",
+        "<strong>Doors and trim</strong> — concealed and interior doors, baseboards, panels, moldings.",
+        "<strong>Lighting</strong> — recessed fixtures, pendants, tracks, LED profiles.",
+        "<strong>Plumbing fixture installation</strong> — toilets, bathtubs, shower screens, faucets, heated towel rails.",
+        "<strong>Custom furniture</strong> — kitchens, wardrobes, walk-in closets, TV units, bathroom furniture: design, production, delivery, installation.",
+        "<strong>Procurement and final installation</strong> — ordering materials, lighting, doors, and furniture to the design and installing them."
        ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stroitelstvo-remont-bratislava-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "How the work goes"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Consultation.</strong> Free; we reply to inquiries within one business day.",
+        "<strong>Design.</strong> If there is no design yet, we create an interior design project and drawings; if there is one, we check that it has all the drawings the crew needs.",
+        "<strong>Estimate and contract.</strong> We price the work and materials, and the contract sets out the scope, cost, and schedule.",
+        "<strong>Renovation.</strong> The crew works from the drawings while the furniture is being made.",
+        "<strong>Completion.</strong> Installation of furniture, lighting, and plumbing fixtures, cleaning, and handover of the property."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stroitelstvo-remont-bratislava-local",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Renovating in a multi-unit building"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In Slovakia, under the building act in force since April 2025, replacing plaster, floors, tile, non-load-bearing partitions, doors, the kitchen, and plumbing fixtures needs neither a permit nor a notification. Work that may affect the building’s structural strength and stability or fire safety must be reported to the building authority in advance (ohlásenie); rules are stricter for listed buildings. The building manager (správca) has the right to check whether the renovation affects the common parts of the building — load-bearing and exterior walls, shared building services. Hours for noisy work, where they are set, are laid down in the house rules (domový poriadok), which everyone in the building must follow, including the crew."
       },
       {
        "t": "p",
-       "html": "You can also order individual stages — for example, if the design project or part of the work has already been completed by another contractor."
+       "html": "In Vienna, work in an owner-occupied apartment (Wohnungseigentum) that affects the common parts of the building or its appearance requires the consent of the other owners; the property management company (Hausverwaltung) cannot give it on their behalf. Layout changes and work on load-bearing structures are filed with the building authority (Baupolizei), usually as a notification (Bauanzeige) with plans and a structural calculation or engineer’s report. We clarify all of this before the estimate."
       }
      ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "The work we carry out"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Our main types of construction, engineering, and finishing work:"
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Demolition and preparatory work"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Removal of partition walls, flooring, tile, ceiling structures, doors, plumbing fixtures, and other existing interior elements. Preparing the space for construction and engineering work to begin."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Partition walls and general construction work"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Building new partition walls from blocks and drywall, creating niches, enclosures, and decorative structures, preparing openings, leveling surfaces, and other construction work according to the project documentation."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Electrical work"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Running new electrical wiring, installing and relocating outlets and switches, installing electrical panels and connection points for household appliances, lighting, LED accent lighting, and other electrical equipment."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Plumbing work"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Laying out water supply and drain lines, relocating plumbing points, installing in-wall toilet frames, bathtubs, shower systems, washbasins, faucets, kitchen plumbing fixtures, and other equipment."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Heating and building systems"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Installing and relocating radiators, preparing connections for heating equipment, installing underfloor heating, and carrying out other engineering work in line with the technical capabilities of the property."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Plastering and painting"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Leveling walls and ceilings, plastering, skim coating, priming, preparing surfaces for paint or decorative finishes, and painting walls and ceilings."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Drywall work"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Installation of drywall ceilings, partitions, niches, enclosures, curtain cornices, concealed lighting, and other interior structures."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Tiling"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Laying ceramic and porcelain tile, mosaics, and large-format materials in bathrooms, kitchens, entrance halls, and other rooms."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Flooring"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Subfloor preparation and installation of parquet, engineered wood, laminate, SPC, vinyl flooring, tile, and other types of floor materials."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Installation of doors and decorative elements"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Installation of interior and concealed doors, baseboards, decorative panels, moldings, and other interior elements."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Lighting"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Installation of recessed and surface-mounted fixtures, pendant lighting, track systems, decorative accent lighting, and LED profiles."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Installation of plumbing fixtures and equipment"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Installation of toilets, bathtubs, shower enclosures and screens, faucets, sinks, heated towel racks, mirrors, and other equipment."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Custom furniture"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Design, manufacturing, delivery, and installation of kitchens, built-in wardrobes, walk-in closets, TV walls, wall panels, bathroom furniture, and other made-to-measure cabinet furniture."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Interior furnishing and procurement"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Selection and ordering of finishing materials, plumbing fixtures, lighting, doors, furniture, and other interior elements in line with the approved design project."
-      }
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Final installation and move-in preparation"
-    },
-    {
-     "type": "text",
-     "parts": [
-      {
-       "t": "p",
-       "html": "Installation of furniture, lighting, plumbing fixtures, and decorative elements, completion of installation work, and getting the interior ready for use."
-      }
-     ]
-    },
+    }
+   ]
+  },
+  {
+   "id": "stroitelstvo-remont-bratislava-price",
+   "blocks": [
     {
      "type": "heading",
      "level": 3,
@@ -316,15 +139,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "The cost depends on the size and condition of the property, the scope of demolition and construction work, the complexity of the engineering solutions, the materials, the level of furnishing, and the timeline."
+       "html": "The cost depends on the floor area and condition of the property, the amount of demolition, the complexity of the building services, the materials, procurement, and the timeline."
       },
       {
        "t": "p",
-       "html": "For a preliminary assessment, send us a floor plan of the space, a design project, or any existing technical documentation. Based on these, we will give you an approximate cost, and once the scope of work has been clarified, we will prepare a detailed cost estimate."
-      },
-      {
-       "t": "p",
-       "html": "If there is no finished design yet, we recommend starting with a design project and technical documentation: the renovation budget will be more accurate, and fewer decisions will have to be made on the fly."
+       "html": "For a preliminary assessment, send us a floor plan, interior design project, or technical documentation, and we will give you an approximate cost. A <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">detailed cost estimate</a> gives the exact price: €5/m², so €350 for a 70 m² apartment. If we do the renovation, the cost of the estimate is deducted from the price of the work."
       }
      ]
     },
@@ -346,6 +165,45 @@
       {
        "text": "Turnkey renovation in Warsaw",
        "href": "/en/turnkey-renovation-warsaw"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stroitelstvo-remont-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Questions about turnkey renovation"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Can you renovate to another designer’s project?",
+       "a": "<p>Yes, if the project includes working drawings. Before starting, we review the project, prepare an estimate, and tell you which drawings the crew is missing. If there is no project at all, the minimum is the working drawings from the <a href=\"/en/basic-interior-design-package-bratislava-vienna\">“Basic”</a> package: €35–45/m², or €2,100–2,700 for a 60 m² apartment.</p>"
+      },
+      {
+       "q": "Does renovation in Vienna cost more?",
+       "a": "<p>No. We price work and furniture at the same rates as in Bratislava, and furniture delivery is included in its price. Vienna is about an hour’s drive from Bratislava, and site visits are not charged separately.</p>"
+      },
+      {
+       "q": "How long does a renovation take?",
+       "a": "<p>It depends on the floor area, the amount of demolition and building services work, and whether the design is ready. We give the timeline after the estimate and write it into the contract. The furniture is made alongside the renovation, not after it.</p>"
+      },
+      {
+       "q": "Who buys the materials?",
+       "a": "<p>Whichever suits you. You can leave purchasing and procurement to us, following the specification in the project. Or you can buy everything yourself from the same specification, and we will agree on what needs to be on site by which stage.</p>"
+      },
+      {
+       "q": "Who makes sure the renovation matches the design?",
+       "a": "<p>A designer on design supervision: they visit the site, answer the crew’s questions about the drawings, and check that the work and materials match the project. The cost is €1,000 per month; the “Premium+” package includes two months.</p>"
+      },
+      {
+       "q": "Do you work with new builds without finishes?",
+       "a": "<p>Yes, most of our projects in Bratislava are new builds. Before renovation starts, we recommend an <a href=\"/en/apartment-handover-inspection-bratislava\">apartment handover inspection</a>: defects written into the report are fixed by the developer, not paid for out of your renovation budget.</p>"
       }
      ]
     }

@@ -26,15 +26,51 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 140 m² private house in Dunajská Streda, Slovakia, taking into account the architecture of the house and the owners’ everyday needs."
+       "html": "A 140 m² private house in Dunajská Streda, Slovakia. We created its interior design project: the interior concept and the solutions needed to build it. We did not carry out the renovation or make the furniture for this project. The gallery shows visualizations of the kitchen-living room, bedroom, bathroom, laundry room, entrance hall and home gym."
       },
       {
        "t": "p",
-       "html": "All rooms in the house share a common style: materials, textures, colors, furniture, and lighting were selected as a single composition."
+       "html": "All the rooms share one palette: light beige walls, oak, dark wood and stone. Every floor except the wet areas is herringbone oak parquet."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen, dining and living area"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The kitchen, dining area and living room are one space. The kitchen is U-shaped with an island: the lower fronts are light and handleless, and the tall units in dark wood house the ovens and a lit display cabinet. The wall by the window is finished in concrete-look plaster, and the window has wooden blinds. A ring light hangs over the table, and a flexible light line on cables hangs over the island."
       },
       {
        "t": "p",
-       "html": "The project included the interior concept and the solutions for implementing it; renovation work and furniture manufacturing for this property were not carried out by <strong>DUMSKAYA DESIGN</strong>."
+       "html": "In the living room, the TV wall is finished with an oak-look panel and slats along the bottom. To its left is a built-in glass-fronted corner fireplace, with a low stone-look platform running along the wall in front of it and a log holder on top. The seating area is a light sofa and a round travertine-look coffee table on a rug."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom, bathroom and utility rooms"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The bedroom has walls with thin moldings, a bed upholstered in dark brown, and a floating wooden nightstand with a glass globe on a brass rod above it. By the window is a dressing table with built-in shelves and a semicircular mirror lit around the edge. The windows have taupe curtains and white sheers."
+      },
+      {
+       "t": "p",
+       "html": "The bathroom is laid with large beige marble-look tile. The curbless shower is behind glass, with a rain shower head and a dark bronze mixer; the basin sits on a floating wood-look vanity with a lit mirror above. In the laundry room, the washer and dryer are stacked, with floor-to-ceiling cabinets and open towel shelves next to them."
+      },
+      {
+       "t": "p",
+       "html": "The hallway has a wardrobe set into a niche with long black handles, and wall panels with moldings. A separate room is set aside as a gym: concrete-look walls, a wood panel with a light line, blinds, exercise equipment and a sofa."
       }
      ]
     },

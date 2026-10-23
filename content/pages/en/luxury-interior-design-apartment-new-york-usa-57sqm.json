@@ -8,7 +8,7 @@
  "h1": "Apartment interior design in New York, custom furniture and turnkey renovation, 57 m²",
  "og_image": "6abd6af268c5e81567a1c21a",
  "alternates": {
-  "ru": "/apartmens-ny-luxury-interior-design-57m",
+  "ru": "/apartments-new-york-luxury-interior-design-57m",
   "ua": "/ua/dyzain-proekt-interieru-apartamentiv-niu-york-usa",
   "en": "/en/luxury-interior-design-apartment-new-york-usa-57sqm"
  },
@@ -26,27 +26,51 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 57 m² apartment in New York, USA: interior design, technical documentation, custom furniture, and a turnkey renovation."
+       "html": "A 57 m² apartment in New York that we took from design to finished interior: an interior design project with 3D visualization, technical documentation, custom furniture and turnkey renovation. The page has two galleries, the visualizations and photos of the completed apartment, so you can compare the concept with the result."
       },
       {
        "t": "p",
-       "html": "The 57 m² space fits a living room, a bedroom, a kitchen with built-in appliances, walk-in closets, an entrance hall, and a bathroom. The layout is planned so that the small floor area provides enough room for both living and storage."
+       "html": "The 57 m² holds a living room with a kitchen and dining table, a bedroom, walk-in closets, an entrance hall and a bathroom. The layout was planned so that the small floor area has room for both living and storage."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Living room and kitchen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The main living room wall is clad in large slabs of dark brown marble with golden veining. It holds the TV and a long wall-hung unit with slatted walnut veneer fronts. On either side are vertical wood slats, and a strip of lighting runs around the edge of the marble wall. The living area has light herringbone flooring; the entrance hall and the area by the kitchen have tiles that match the brown marble."
       },
       {
        "t": "p",
-       "html": "The kitchen, built-in wardrobes, walk-in closets, and storage systems were custom-made to the exact room dimensions, so the floor area is fully used and the interior looks cohesive."
+       "html": "The kitchen runs in a single line along the wall. The top row is white gloss up to the ceiling, the middle row is walnut veneer, and the base cabinets are light, with a profile instead of handles. The backsplash is the same dark marble as the living room wall. A brass-colored ring chandelier hangs above the dining table, and linear lights are recessed into the ceiling."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Storage and bedroom"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The kitchen, built-in cabinets, walk-in closets and storage systems were custom-made to the exact dimensions of the rooms. The entrance hall has a sliding-door wardrobe with concrete-effect doors and shelves and drawers inside. By the window stands a tall cabinet with walnut veneer fronts laid in herringbone, a brass bar handle and an open black niche in the middle."
       },
       {
        "t": "p",
-       "html": "Before work began, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting."
+       "html": "In the bedroom, the walls on either side of the bed are finished with wood panels with a diagonal slat pattern. The bathroom has light and dark marble-effect tiles, an inset of wood slats by the basin and a round mirror."
       },
       {
        "t": "p",
-       "html": "The studio then carried out a turnkey renovation of the apartment according to the design, installed the custom-made furniture, and fitted out the rooms."
-      },
-      {
-       "t": "p",
-       "html": "This page features 3D visualizations of the project and photos of the finished interior with the custom-made furniture, so you can compare the concept with the result."
+       "html": "Before work began, we prepared the technical documentation and a <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">detailed cost estimate</a> covering construction and finishing work, materials, furniture, appliances, plumbing fixtures and lighting. We then carried out the turnkey renovation to the design, installed the furniture we had made and fitted out the rooms."
       }
      ]
     },

@@ -1,83 +1,202 @@
 ---
-// Разметка schema.org (JSON-LD): студия, сайт, хлебные крошки, статьи, фото проектов.
-import { site, manifest, crumbsFor, allGalleryImages, localize, type Page } from '../lib/data';
-import { HREFLANG } from '../lib/i18n';
+// Разметка schema.org (JSON-LD), одна @graph на страницу:
+//  • компания — Organization (#organization): кто мы, основатель, контакты, профили (sameAs);
+//  • студия — ProfessionalService (#studio): офис в Братиславе, зона работы, каталог услуг;
+//  • сайт (WebSite) и страница (WebPage / AboutPage / ContactPage / CollectionPage) с хлебными крошками;
+//  • услуга (Service) на страницах услуг и пакетов, каталог пакетов с ценами — на обзоре цен;
+//  • статьи (Article), фото проектов (CreativeWork + ImageObject), FAQ (FAQPage).
+// Полное описание компании и студии — на главной, «О студии» и «Контактах»; на остальных страницах — ссылки по @id.
+import { site, manifest, crumbsFor, allGalleryImages, localize, pageByPath, type Page } from '../lib/data';
+import { parsePacks, packFor } from '../lib/packs';
+import { HREFLANG, type Lang } from '../lib/i18n';
 import home from '../../content/home.json';
 interface Props { page: Page }
 const { page } = Astro.props;
+const lang = page.lang as Lang;
 const SITE = 'https://dumskaya-design.com';
 const abs = (p: string) => SITE + (p === '/' ? '/' : p);
 const img = (id?: string | null) => {
   const m = id ? manifest[id] : null;
   return m ? `${SITE}/img/${m.files[m.files.length - 1][1]}` : undefined;
 };
+const txt = (h: string) => h.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 const c = site.contacts;
-const ORG_ID = `${SITE}/#studio`;
-const studio = {
-  '@type': 'ProfessionalService',
-  '@id': ORG_ID,
+const ORG = `${SITE}/#organization`;
+const STUDIO = `${SITE}/#studio`;
+const WEBSITE = `${SITE}/#website`;
+const PAGE = `${abs(page.path)}#webpage`;
+const ru = page.alternates.ru || page.path;
+
+const city = (name: string) => ({ '@type': 'City', name });
+const country = (name: string) => ({ '@type': 'Country', name });
+// где работает студия: офис и бригады — Братислава и Вена
+const AREA = [city('Bratislava'), city('Vienna'), country('Slovakia'), country('Austria')];
+const address = { '@type': 'PostalAddress', streetAddress: c.address.street, postalCode: c.address.postal, addressLocality: c.address.city, addressCountry: c.address.country };
+// телефоны в разметке компании — только Братислава и Вена (телефоны других стран — на посадочных этих стран)
+const mainPhones = c.phones.filter((p: any) => p.key === 'sk' || p.key === 'at');
+const DESCRIPTION: Record<Lang, string> = {
+  ru: 'Студия дизайна интерьеров в Братиславе: дизайн-проекты квартир, домов и коммерческих помещений, мебель на заказ на собственном производстве и ремонт под ключ в Братиславе и Вене.',
+  ua: 'Студія дизайну інтер’єрів у Братиславі: дизайн-проєкти квартир, будинків і комерційних приміщень, меблі на замовлення на власному виробництві та ремонт під ключ у Братиславі й Відні.',
+  en: 'Interior design studio in Bratislava: design projects for apartments, houses and commercial spaces, custom furniture from our own workshop and turnkey renovation in Bratislava and Vienna.',
+};
+
+// Услуги студии — из меню «Услуги» на языке страницы
+const menu = (site.menu[lang] || []) as any[];
+const servicesMenu = (menu.find((m) => m.children && m.children.some((x: any) => localize('/stroitelstvo-remont-bratislava', lang) === x.href))?.children || []) as any[];
+const offerCatalog = servicesMenu.length ? {
+  '@type': 'OfferCatalog',
+  name: { ru: 'Услуги студии', ua: 'Послуги студії', en: 'Studio services' }[lang],
+  itemListElement: servicesMenu.filter((x) => x.href).map((x) => ({
+    '@type': 'Offer', itemOffered: { '@type': 'Service', name: x.label, url: abs(x.href), provider: { '@id': STUDIO } },
+  })),
+} : undefined;
+
+const organization = {
+  '@type': 'Organization',
+  '@id': ORG,
   name: 'DUMSKAYA DESIGN',
-  description: 'Interior design studio: residential and commercial interiors, custom furniture and turnkey renovation in Bratislava and Vienna.',
+  alternateName: 'Dumskaya Design',
   url: `${SITE}/`,
-  logo: `${SITE}/logo.png`,
+  logo: { '@type': 'ImageObject', '@id': `${SITE}/#logo`, url: `${SITE}/logo.png`, width: 512, height: 512, caption: 'DUMSKAYA DESIGN' },
+  image: img(home.hero),
+  description: DESCRIPTION[lang],
+  email: c.email,
+  telephone: mainPhones[0]?.tel,
+  address,
+  areaServed: AREA,
+  founder: { '@type': 'Person', '@id': `${SITE}/#founder`, name: 'Irina Dumskaya', jobTitle: 'Founder and lead interior designer', worksFor: { '@id': ORG } },
+  contactPoint: mainPhones.map((p: any) => ({
+    '@type': 'ContactPoint', telephone: p.tel, contactType: 'customer service', areaServed: p.key === 'at' ? 'AT' : 'SK', availableLanguage: ['ru', 'uk', 'en'],
+  })),
+  knowsAbout: ['Interior design', 'Residential interior design', 'Commercial interior design', 'Custom furniture', 'Custom kitchens', 'Turnkey renovation', 'Renovation cost estimate', '3D visualization', 'Architectural design'],
+  sameAs: [...c.social.map((s: any) => s.href), ...(c.maps ? [c.maps] : [])],
+  subOrganization: { '@id': STUDIO },
+};
+const studio = {
+  '@type': ['ProfessionalService', 'HomeAndConstructionBusiness'],
+  '@id': STUDIO,
+  name: 'DUMSKAYA DESIGN',
+  description: DESCRIPTION[lang],
+  url: `${SITE}/`,
+  logo: { '@id': `${SITE}/#logo` },
   image: img(home.hero),
   email: c.email,
-  telephone: c.phones[0].tel,
+  telephone: mainPhones[0]?.tel,
   priceRange: '€€',
-  address: { '@type': 'PostalAddress', streetAddress: c.address.street, postalCode: c.address.postal, addressLocality: c.address.city, addressCountry: c.address.country },
-  areaServed: [{ '@type': 'City', name: 'Bratislava' }, { '@type': 'City', name: 'Vienna' }, { '@type': 'Country', name: 'Ukraine' }, { '@type': 'Country', name: 'United States' }],
-  contactPoint: c.phones.map((p: any) => ({ '@type': 'ContactPoint', telephone: p.tel, contactType: 'customer service', areaServed: p.city.en, availableLanguage: ['ru', 'uk', 'en'] })),
-  sameAs: [...c.social.map((s: any) => s.href), ...(c.maps ? [c.maps] : [])],
+  currenciesAccepted: 'EUR',
+  address,
   hasMap: c.maps || undefined,
-  founder: { '@type': 'Person', name: 'Irina Dumskaya' },
+  areaServed: AREA,
+  parentOrganization: { '@id': ORG },
+  founder: { '@id': `${SITE}/#founder` },
+  hasOfferCatalog: offerCatalog,
+  sameAs: [...c.social.map((s: any) => s.href), ...(c.maps ? [c.maps] : [])],
 };
-const graph: any[] = [];
-if (page.type === 'home' || page.type === 'contact') {
-  graph.push(studio);
-  if (page.type === 'home') graph.push({ '@type': 'WebSite', '@id': `${SITE}/#website`, url: `${SITE}/`, name: 'DUMSKAYA DESIGN', inLanguage: ['ru', 'uk', 'en'], publisher: { '@id': ORG_ID } });
-} else {
-  graph.push({ '@type': 'Organization', '@id': ORG_ID, name: 'DUMSKAYA DESIGN', url: `${SITE}/`, logo: `${SITE}/logo.png` });
-}
+const website = {
+  '@type': 'WebSite', '@id': WEBSITE, url: `${SITE}/`, name: 'DUMSKAYA DESIGN',
+  inLanguage: ['ru', 'uk', 'en'], publisher: { '@id': ORG },
+};
+
+const full = page.type === 'home' || page.type === 'contact' || page.type === 'about';
+const graph: any[] = full
+  ? [organization, studio, website]
+  : [{ '@type': 'Organization', '@id': ORG, name: 'DUMSKAYA DESIGN', url: `${SITE}/`, logo: `${SITE}/logo.png` }, website];
+
+// Страница
 const crumbs = crumbsFor(page);
-if (crumbs.length > 1) {
+const crumbItems = crumbs
+  // Google требует ссылку (item) у каждого звена, кроме последнего: звенья-подписи без своей страницы
+  // («Услуги», «Советы», «Где мы работаем») в разметку не попадают
+  .filter((cr, i) => cr.href || i === crumbs.length - 1)
+  .map((cr, i, arr) => ({ '@type': 'ListItem', position: i + 1, name: cr.label, ...(cr.href || i === arr.length - 1 ? { item: abs(cr.href || page.path) } : {}) }));
+const BREADCRUMB = `${abs(page.path)}#breadcrumb`;
+graph.push({ '@type': 'BreadcrumbList', '@id': BREADCRUMB, itemListElement: crumbItems });
+
+const pageType = page.type === 'contact' ? 'ContactPage' : page.type === 'about' ? 'AboutPage'
+  : page.type === 'portfolio' || ru === '/kupkuhni-na-zakaz-vienna-bratislava' || (page.type === 'shop' && ru === '/shop') ? 'CollectionPage' : 'WebPage';
+const images = allGalleryImages(page).filter((i) => manifest[i.id]);
+const primary = img(page.type === 'home' ? home.hero : (page.og_image && manifest[page.og_image] ? page.og_image : images[0]?.id));
+graph.push({
+  '@type': pageType, '@id': PAGE, url: abs(page.path), name: page.title, description: page.description || undefined,
+  inLanguage: HREFLANG[lang], isPartOf: { '@id': WEBSITE }, breadcrumb: { '@id': BREADCRUMB },
+  about: { '@id': page.type === 'home' || page.type === 'about' || page.type === 'contact' ? ORG : STUDIO },
+  primaryImageOfPage: primary ? { '@type': 'ImageObject', url: primary } : undefined,
+});
+
+// Услуга: страницы услуг, посадочные регионов и страницы пакетов
+const REGION: [RegExp, any[]][] = [
+  [/vena|wien|vienna/, [city('Vienna'), country('Austria')]],
+  [/germaniya/, [country('Germany')]],
+  [/praga/, [city('Prague'), country('Czech Republic')]],
+  [/ispaniya/, [country('Spain')]],
+  [/ukraina/, [country('Ukraine')]],
+  [/usa/, [country('United States')]],
+  [/warsaw/, [city('Warsaw'), country('Poland')]],
+];
+const unitPrice = (min: number, max?: number) => ({
+  '@type': 'Offer', priceCurrency: 'EUR', url: abs(page.path),
+  priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'EUR', unitCode: 'MTK', unitText: 'm²', ...(max && max !== min ? { minPrice: min, maxPrice: max } : { price: min }) },
+});
+const nums = (s: string) => (s.match(/\d+(?:[.,]\d+)?/g) || []).map((n) => Number(n.replace(',', '.')));
+const isOverview = ru === '/price-interior-design-bratislava-wien-praha';
+if ((page.type === 'service' || page.type === 'price') && !isOverview && !/^\/interior-design-furniture-65m$|^\/furniture-private-house-design$|^\/3d-architecture-bratislava$/.test(ru)) {
+  const area = (/bratislava/.test(ru) ? null : REGION.find(([re]) => re.test(ru))?.[1]) || AREA;
+  const pack = packFor(page);
+  let offers: any;
+  if (pack) { const [a, b] = nums(pack.price); if (a) offers = unitPrice(a, b); }
+  else if (ru === '/smeta-na-remont-bratislava-vienna') offers = unitPrice(5);
+  else if (ru === '/priemka-kvartiry-ot-zastrojshchika') offers = { '@type': 'AggregateOffer', priceCurrency: 'EUR', lowPrice: 200, highPrice: 400, url: abs(page.path) };
   graph.push({
-    '@type': 'BreadcrumbList',
-    // Google требует ссылку (item) у каждого звена, кроме последнего: звенья-подписи без своей страницы
-    // («Услуги», «Советы», «Где мы работаем») в разметку не попадают
-    itemListElement: crumbs
-      .filter((cr, i) => cr.href || i === crumbs.length - 1)
-      .map((cr, i) => ({ '@type': 'ListItem', position: i + 1, name: cr.label, ...(cr.href ? { item: abs(cr.href) } : {}) })),
+    '@type': 'Service', '@id': `${abs(page.path)}#service`, name: page.h1, description: page.description || undefined,
+    url: abs(page.path), provider: { '@id': STUDIO }, areaServed: area, inLanguage: HREFLANG[lang],
+    image: primary, offers,
   });
 }
-const images = allGalleryImages(page).filter((i) => manifest[i.id]);
+// Обзор цен: каталог дизайн-пакетов с ценой за м²
+if (isOverview) {
+  const packs = parsePacks(page).packs;
+  graph.push({
+    '@type': 'OfferCatalog', '@id': `${abs(page.path)}#packages`, name: page.h1,
+    itemListElement: packs.map((p) => {
+      const [a, b] = nums(p.price);
+      const target = p.href ? pageByPath.get(p.href) : undefined;
+      return {
+        ...unitPrice(a, b),
+        url: p.href ? abs(p.href) : abs(page.path),
+        itemOffered: { '@type': 'Service', name: target?.h1 || p.title.replace(/\s*[—–-]\s*\d.*$/, ''), provider: { '@id': STUDIO } },
+      };
+    }),
+  });
+}
+
 if (page.type === 'article') {
   graph.push({
-    '@type': 'Article', headline: page.h1, description: page.description, inLanguage: HREFLANG[page.lang],
-    mainEntityOfPage: abs(page.path), image: images.slice(0, 5).map((i) => img(i.id)),
-    author: { '@id': ORG_ID }, publisher: { '@id': ORG_ID },
+    '@type': 'Article', headline: page.h1, description: page.description, inLanguage: HREFLANG[lang],
+    mainEntityOfPage: { '@id': PAGE }, image: images.slice(0, 5).map((i) => img(i.id)),
+    author: { '@id': ORG }, publisher: { '@id': ORG },
   });
 }
 if (page.type === 'project' || page.type === 'kitchen') {
   graph.push({
-    '@type': 'CreativeWork', name: page.h1, description: page.description, inLanguage: HREFLANG[page.lang], url: abs(page.path),
-    creator: { '@id': ORG_ID },
+    '@type': 'CreativeWork', name: page.h1, description: page.description, inLanguage: HREFLANG[lang], url: abs(page.path),
+    mainEntityOfPage: { '@id': PAGE }, creator: { '@id': ORG },
     image: images.slice(0, 12).map((i) => ({
       '@type': 'ImageObject', contentUrl: img(i.id), caption: i.alt,
       creator: { '@type': 'Organization', name: 'DUMSKAYA DESIGN' }, creditText: 'DUMSKAYA DESIGN',
-      copyrightNotice: '© DUMSKAYA DESIGN', copyrightHolder: { '@id': ORG_ID },
-      license: abs(localize('/image-license', page.lang as any) || '/image-license'),
-      acquireLicensePage: abs(localize('/contact-studio-interior-design-bratislava-vienna', page.lang as any) || '/contact-studio-interior-design-bratislava-vienna'),
+      copyrightNotice: '© DUMSKAYA DESIGN', copyrightHolder: { '@id': ORG },
+      license: abs(localize('/image-license', lang) || '/image-license'),
+      acquireLicensePage: abs(localize('/contact-studio-interior-design-bratislava-vienna', lang) || '/contact-studio-interior-design-bratislava-vienna'),
     })),
   });
 }
 const faq = page.sections.flatMap((s) => s.blocks).filter((b: any) => b.type === 'faq').flatMap((b: any) => b.items);
 if (faq.length) {
-  const txt = (h: string) => h.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
   graph.push({
-    '@type': 'FAQPage',
+    '@type': 'FAQPage', '@id': `${abs(page.path)}#faq`, isPartOf: { '@id': PAGE },
     mainEntity: faq.map((f: any) => ({ '@type': 'Question', name: txt(f.q), acceptedAnswer: { '@type': 'Answer', text: txt(f.a) } })),
   });
 }
+// пустые поля (undefined) JSON.stringify сам выбрасывает
 const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
 ---
 <script type="application/ld+json" set:html={json} />

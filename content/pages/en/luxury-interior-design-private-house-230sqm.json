@@ -26,27 +26,53 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed a project for a 230 m² private house: interior design, technical documentation, custom furniture, and a turnkey renovation."
+       "html": "A 230 m² private house: we did the interior design, 3D visualization, technical documentation, custom furniture and turnkey renovation and ran the project from concept to furniture installation. The house has a living room, a kitchen with a dining area, bedrooms, a study, walk-in closets, a hall with a staircase and bathrooms. The top floor is an attic with sloping ceilings."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ground floor: living room, kitchen, hall"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The ground floor has one continuous floor of large gray travertine-effect porcelain tiles, and the living room, dining room and kitchen open into one another in a row. The TV wall is made of wood-textured panels and dark marble slabs with golden veining. A double-sided fireplace is built into the marble section, so the fire can be seen from both the living room and the dining room. On the opposite wall is metal shelving against vertical wood slats."
       },
       {
        "t": "p",
-       "html": "The project included the living room, bedrooms, kitchen with built-in appliances, walk-in closets, entrance hall, and bathrooms."
-      },
+       "html": "The kitchen is light: a long run of handleless base units, a light stone-effect backsplash and dark glass fronts above it. The island is clad in veneer with a dark marble countertop. Behind the island are the dining table and a lit glass cabinet for glassware, with pendants made of thin metal branches above them. The staircase to the upper floor has stone treads on a wooden stringer, with lighting under each step."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Attic and bathrooms"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "Built-in wardrobes, storage systems, and shelving were custom-designed together with the interior to suit the architecture of the house’s rooms."
-      },
+       "html": "In the bedrooms the windows follow the line of the roof, the curtains hang full height, and the walls behind the headboards are covered with upholstered panels. In the attic lounge the walls are finished in stone-effect decorative plaster, and two lit niches hold panels of preserved moss. In the main bathroom the shower is clad in dark marble-effect tiles, and the wall with the concealed toilet frame is veneer with diagonal slats and metal inserts."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Furniture and cost estimate"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "Before work began, a detailed cost estimate was prepared covering labor, construction and finishing materials, furniture, appliances, plumbing fixtures, and lighting. The studio managed the project from concept through renovation and furniture installation."
-      },
-      {
-       "t": "p",
-       "html": "The gallery features photorealistic 3D visualizations of the house."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN is a Bratislava-based studio offering interior design, custom furniture, and turnkey renovation in Bratislava and Vienna.</strong>"
+       "html": "The built-in cabinets, storage systems and shelves were custom-designed together with the interior to suit the architecture of the house. Before work began we prepared a detailed <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">cost estimate</a>: labor, construction and finishing materials, furniture, household appliances, plumbing fixtures and lighting. The gallery shows photorealistic 3D visualizations of the house."
       }
      ]
     },

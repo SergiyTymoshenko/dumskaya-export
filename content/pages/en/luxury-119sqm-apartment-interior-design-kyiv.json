@@ -26,23 +26,61 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> developed an interior design project for a 119 m² apartment with a 30 m² terrace in Kyiv, Ukraine, in a contemporary luxury style."
+       "html": "An interior design project for a 119 m² apartment with a 30 m² terrace in Kyiv. The interior is contemporary, in a light beige-gray palette: wood, porcelain tile that looks like white marble with gray veining, and gold-tone metal in the light fixtures and furniture legs. The studio developed the layout, the interior solutions and the visualizations. The terrace continues the living room and serves as another place to relax."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen, dining and living area"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The kitchen, dining area and living room form one open space. The floor is divided by zone: large marble-look porcelain tile around the kitchen and table, and herringbone oak parquet in the living room."
       },
       {
        "t": "p",
-       "html": "The interior is based on minimalist lines, premium materials, and modern high-tech solutions. The space is finished in a calm, neutral color palette that creates an understated backdrop and highlights the architecture, materials, and individual interior details."
+       "html": "The kitchen is a single run. The upper cabinets and the niche above the countertop are wood, the lower fronts are matte gray-beige, and the backsplash is a light marble-look slab with lighting. Tall units at both ends hide the appliances and storage."
       },
       {
        "t": "p",
-       "html": "Particular attention was paid to the combination of natural wood, marble, and metal accents. The variety of textures creates a visually rich interior without excessive decor and supports the character of a contemporary premium space."
+       "html": "The round dining table has a fluted base and a glass top, surrounded by chairs in pinkish-beige velvet on gold-tone legs. Above it hangs a chandelier of glass globes on brass rods. In the living room, the TV wall is clad in vertical wood slats with lighting, and opposite is a light-colored corner sofa. Some walls are finished in decorative plaster framed with moldings, and the ceiling has cornices and light lines."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom and walk-in closet"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The bedroom has herringbone parquet and molded walls. Near the window are open shelves with lighting and a low fluted TV unit. By the headboard hang a globe pendant and a vertical strip of light. The walk-in closet is separated from the bedroom by glass doors in a thin gold-tone frame, and inside you can see the rails and lit shelves."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bathroom and entrance hall"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The bathroom has a freestanding oval tub and a brass-finish floor-mounted faucet. The walls are clad in beige marble-look slabs framed by vertical slats. A contour light line picks out the niche with a shelf, and a decorative light made of metal discs hangs on the wall."
       },
       {
        "t": "p",
-       "html": "Lighting plays an important role in the concept. Different lighting scenarios help highlight materials and architectural elements, visually structure the space, and create a comfortable atmosphere at different times of day."
-      },
-      {
-       "t": "p",
-       "html": "The 30 m² terrace is designed as an extension of the living space."
+       "html": "The entrance hall has a full-wall wardrobe with mirrored doors, a narrow floating console, flush doors painted to match the walls and a soft pouf. The floor is the same marble-look porcelain tile as in the kitchen."
       }
      ]
     },

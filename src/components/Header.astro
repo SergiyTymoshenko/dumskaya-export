@@ -1,6 +1,6 @@
 ---
 import { LANGS, LANG_LABEL, ui, type Lang } from '../lib/i18n';
-import { site, type Page, altPath, localize, phoneFor } from '../lib/data';
+import { site, type Page, altPath, localize, phoneFor, pagePhones } from '../lib/data';
 
 interface Props { page: Page }
 const { page } = Astro.props;
@@ -11,7 +11,8 @@ const priceOverview = localize('/price-interior-design-bratislava-wien-praha', l
 const home = lang === 'ru' ? '/' : `/${lang}`;
 // на посадочных страницах регионов (Вена, Украина, США…) — телефон этого региона
 const { phone } = phoneFor(page);
-const menuPhones = [phone, ...site.contacts.phones.filter((p: any) => p.tel !== phone.tel)];
+// в меню — Братислава и Вена (на посадочной региона — ещё его телефон); все страны — на странице «Контакты»
+const menuPhones = pagePhones(page);
 ---
 <header class="hdr">
   <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>

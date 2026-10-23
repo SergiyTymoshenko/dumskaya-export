@@ -22,6 +22,19 @@
      "text": "Примеры реализованных дизайн-проектов интерьера"
     },
     {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Здесь собраны проекты студии: квартиры, частные дома и виллы, офисы, салоны и магазины, архитектурные решения фасадов. На странице каждого проекта — 3D-визуализации или фото готового объекта, площадь, город и описание: планировка, материалы, мебель."
+      },
+      {
+       "t": "p",
+       "html": "В карточке проекта указано, что именно сделала студия: дизайн-проект, рабочие чертежи, мебель на заказ на собственном производстве в Братиславе или ремонт под ключ. Стоимость дизайн-проекта для вашего объекта можно посчитать по <a href=\"/price-interior-design-bratislava-wien-praha\">ценам на дизайн-пакеты</a>."
+      }
+     ]
+    },
+    {
      "type": "cards",
      "items": [
       {
@@ -66,7 +79,7 @@
       },
       {
        "title": "Квартира в Вене 58 м²",
-       "href": "/apartmens-vienna-luxury-interior-design-58m",
+       "href": "/apartments-vienna-luxury-interior-design-58m",
        "image": {
         "id": "6abd6a794888499d20745202",
         "alt": "дизайнер интерьера вена"
@@ -170,7 +183,7 @@
       },
       {
        "title": "Апартаменты в Дубаи 160 м²",
-       "href": "/apartmens-dubai-luxury-interior-design-160",
+       "href": "/apartments-dubai-luxury-interior-design-160m",
        "image": {
         "id": "6abd6aba3ba7c7b83394f8d8",
         "alt": "дизайн проект апартаментов дубаи"
@@ -178,7 +191,7 @@
       },
       {
        "title": "Апартаменты в Лос-Анджелес 140 м²",
-       "href": "/apartmens-los-angeles-interior-design-140",
+       "href": "/apartments-los-angeles-interior-design-140m",
        "image": {
         "id": "6abd6ac168c5e81567a1c102",
         "alt": "дизайнер интерьера лос анджелес"
@@ -186,7 +199,7 @@
       },
       {
        "title": "Апартаменты в Праге 90 м²",
-       "href": "/apartmens-praha-luxury-interior-design-90m",
+       "href": "/apartments-praha-luxury-interior-design-90m",
        "image": {
         "id": "6abd6aea61617a4443acb472",
         "alt": "дизайнер интерьера прага"
@@ -194,7 +207,7 @@
       },
       {
        "title": "Апартаменты в Нью-Йорке 57 м²",
-       "href": "/apartmens-ny-luxury-interior-design-57m",
+       "href": "/apartments-new-york-luxury-interior-design-57m",
        "image": {
         "id": "6abd6af268c5e81567a1c21a",
         "alt": "дизайн проект нью йорк сша"
@@ -274,7 +287,7 @@
       },
       {
        "title": "Квартира, Вена, Австрия, 115 м²",
-       "href": "/apartmens-wien-luxury-interior-design-115m",
+       "href": "/apartments-wien-luxury-interior-design-115m",
        "image": {
         "id": "6abd6b354888499d207455da",
         "alt": "заказать дизайн проект"
@@ -513,7 +526,7 @@
      "items": [
       {
        "title": "Дизайн жилых интерьеров",
-       "href": "/interior-design-apartmens-bratislava",
+       "href": "/interior-design-apartments-bratislava",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
         "alt": "дизайнер интерьера, братислава, вена"

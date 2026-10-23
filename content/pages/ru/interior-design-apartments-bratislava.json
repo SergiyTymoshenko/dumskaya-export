@@ -1,5 +1,5 @@
 {
- "path": "/interior-design-apartmens-bratislava",
+ "path": "/interior-design-apartments-bratislava",
  "lang": "ru",
  "type": "service",
  "group": null,
@@ -8,7 +8,7 @@
  "h1": "Дизайн интерьера квартир и домов в Братиславе",
  "og_image": "6abd6a8768c5e81567a1bfe0",
  "alternates": {
-  "ru": "/interior-design-apartmens-bratislava",
+  "ru": "/interior-design-apartments-bratislava",
   "ua": "/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku",
   "en": "/en/interior-design"
  },
@@ -320,7 +320,7 @@
      "items": [
       {
        "title": "Дизайн жилых интерьеров",
-       "href": "/interior-design-apartmens-bratislava",
+       "href": "/interior-design-apartments-bratislava",
        "image": {
         "id": "6abd6ad93ba7c7b83394f9b9",
         "alt": "дизайнер интерьера, братислава, вена"

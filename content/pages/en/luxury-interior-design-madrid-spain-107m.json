@@ -26,27 +26,53 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 107 m² apartment in Madrid, Spain: interior design, technical documentation, custom furniture, and a turnkey renovation."
+       "html": "A 107 m² apartment in Madrid that the studio designed and delivered: interior design, 3D visualization, technical documentation, custom furniture and turnkey renovation. The project covered the living room with kitchen, the bedrooms, walk-in closets, entrance hall, bathroom, balcony and storage areas. All the rooms share one palette: dark walnut, gray stone, black metal."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen-living room"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The kitchen and living room are one space. The kitchen fronts are matte black and handleless, and between the upper and base cabinets there is a backlit wood-panel backsplash and open shelving. In front of the kitchen stands an island with a wooden breakfast bar, its top running down to the floor on both sides. The walls are clad in dark stone-effect tiles, there is a wooden bulkhead with recessed spotlights above the kitchen, and a pendant made of thin metal rays hangs above the island."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedrooms, entrance hall, balcony"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the main bedroom, the headboard stands against dark stone-effect panels laid in a herringbone pattern, with the wall sconces mounted directly on them. In the second bedroom, the TV wall is finished in wood herringbone, with a long desk on metal legs below it. In the finished apartment, a world map made of different wood species hangs above one of the beds."
       },
       {
        "t": "p",
-       "html": "The project included the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, bathroom, and storage areas — all rooms unified by a single concept of materials, color, and lighting."
-      },
+       "html": "The entrance hall is clad in walnut veneer, and the door to the room is concealed, flush with the panels. The ceiling is covered with a black grid with built-in lights, and the niche between the panels holds a vertical panel of preserved plants. On the balcony, the ceiling and one wall are in wood slats, the side walls are tiled in aged brick-effect tiles, and there is a storage bench at the end. The bathroom has wood-effect and dark slate tiles, a wall-hung basin on a black bracket and a round mirror."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Furniture and renovation"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-designed and made to the dimensions of the rooms."
-      },
-      {
-       "t": "p",
-       "html": "Before work began, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting."
-      },
-      {
-       "t": "p",
-       "html": "The studio then carried out a turnkey renovation of the apartment in Madrid: construction and finishing work, installation of the custom-made furniture, and the final fit-out of the rooms."
-      },
-      {
-       "t": "p",
-       "html": "Below are 3D visualizations of the project and photos of the renovated apartment with its custom-made furniture."
+       "html": "The kitchen, built-in cabinets, walk-in closets, shelving and storage systems were custom-made to the dimensions of the rooms. Before work began, we prepared the technical documentation and a detailed <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">cost estimate</a> covering labor, materials, furniture, appliances, plumbing fixtures and lighting. The studio then carried out the turnkey renovation and installed the furniture. Below are visualizations and photos of the apartment after the renovation."
       }
      ]
     },

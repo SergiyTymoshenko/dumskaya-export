@@ -1,0 +1,290 @@
+{
+ "path": "/ua/pro-studiyu",
+ "lang": "ua",
+ "type": "about",
+ "group": null,
+ "title": "Про студію DUMSKAYA DESIGN — дизайн інтер’єру в Братиславі",
+ "description": "Студія Ірини Думської в Братиславі: проєкти квартир, будинків і офісів, власне виробництво меблів і ремонт під ключ у Братиславі й Відні.",
+ "h1": "Про студію DUMSKAYA DESIGN",
+ "og_image": "655410c220a5eb000f971701",
+ "alternates": {
+  "ru": "/about-studio",
+  "ua": "/ua/pro-studiyu",
+  "en": "/en/about-studio"
+ },
+ "sections": [
+  {
+   "id": "about-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Про студію DUMSKAYA DESIGN"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "DUMSKAYA DESIGN — студія дизайну інтер’єрів у Братиславі. Ми проєктуємо квартири, будинки й комерційні приміщення, виготовляємо меблі на власному виробництві та робимо ремонт під ключ власними бригадами. Основна робота — у Братиславі та Відні, дизайн-проєкти для інших країн готуємо дистанційно."
+      },
+      {
+       "t": "p",
+       "html": "Студію очолює <strong>Ірина Думська</strong> — керівниця та головна дизайнерка. Досвід роботи в дизайні інтер’єрів і меблів — понад 15 років."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-services",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Чим займається студія"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<a href=\"/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku\">дизайн житлових інтер’єрів</a>: квартири, будинки, вілли;",
+        "<a href=\"/ua/dyzain-interieriv-komertsiinykh-prymishchen-bratislava-slovakia\">дизайн комерційних інтер’єрів</a>: офіси, салони краси, магазини, студії;",
+        "<a href=\"/ua/vyhotovlennia-mebliv-na-zamovlennia-kukhnia-kabinet-harderobna-peredpokii\">меблі на замовлення</a> та <a href=\"/ua/custom-kitchens-bratislava-vienna\">кухні</a> за кресленнями проєкту або за вашими розмірами;",
+        "<a href=\"/ua/budivnytstvo-ta-remont-pid-kliuch-zhytlovykh-ta-komertsiinykh-prymishchen-bratislava-slovakia-prais-lyst\">ремонт під ключ</a> і <a href=\"/ua/smeta-na-remont-bratislava-vienna\">кошториси на ремонт</a>;",
+        "<a href=\"/ua/pryimannia-kvartyry-vid-zabudovnyka-bratislava\">приймання квартир від забудовника</a>;",
+        "<a href=\"/ua/arkhitektura-ta-proektuvannia\">архітектурне проєктування</a> і <a href=\"/ua/3d-vizualizatsiia-fasadu-budivli-ta-navkolyshnoho-seredovyshcha\">3D-візуалізація фасадів</a>."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-production",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Власне виробництво та власні бригади"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Меблі за нашими кресленнями виготовляємо на власному виробництві в Братиславі: кухні, шафи й гардеробні, ТВ-зони, меблі для ванних кімнат, стінові панелі, меблі для офісів і салонів. Готові вироби доставляємо й монтуємо в Братиславі, у Відні та по Німеччині."
+      },
+      {
+       "t": "p",
+       "html": "Ремонт виконують бригади студії з Братислави — у Словаччині й в Австрії ті самі люди. Ми не передаємо об’єкт субпідрядникам, тому за проєкт, меблі та ремонт відповідає одна команда. Ціни однакові для Братислави та Відня, доставка меблів входить у вартість."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-work",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Як організована робота"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Дизайн-проєкти робимо за пакетами з ціною за квадратний метр: від «Експресу» за 20 €/м² — планування та 3D-візуалізації — до «Преміум+» за 70 €/м² із двома місяцями авторського супроводу. Склад кожного пакета розписаний заздалегідь, тому ще до початку роботи зрозуміло, які креслення та візуалізації ви отримаєте і скільки вони коштують. Подробиці — на сторінці <a href=\"/ua/tsina-dyzain-proektiv-interieru-bratislava-wien-praha\">цін</a>."
+      },
+      {
+       "t": "p",
+       "html": "Перша консультація безкоштовна. На ній обговорюємо об’єкт, бюджет і строки, дивимося план приміщення та підбираємо пакет. Можна приїхати до студії: за попередньою домовленістю покажемо зразки матеріалів і фурнітури."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-geo",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Де ми працюємо"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Студія розташована в Братиславі, у районі Ružinov. Більшість наших об’єктів — квартири в новобудовах Братислави та Відня, приватні будинки в Словаччині й Австрії, офіси та салони."
+      },
+      {
+       "t": "p",
+       "html": "Для замовників з інших країн робимо дизайн-проєкти дистанційно. Серед таких робіт — апартаменти в Празі, Мадриді та Барселоні, будинки в Німеччині, квартира в Лондоні, апартаменти в Дубаї, Нью-Йорку та Лос-Анджелесі. Усі проєкти з фото й описами — у <a href=\"/ua/realizovani-dyzain-proekty-ta-arkhitekturni-rishennia\">портфоліо</a>."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-contacts",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Контакти студії"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "Адреса: Súkennícka 1, 821 09 Братислава, Словаччина",
+        "Телефон у Братиславі: <a href=\"tel:+421918177785\">+421 918 17 77 85</a>",
+        "Телефон у Відні: <a href=\"tel:+4367761430187\">+43 677 614 30 187</a>",
+        "E-mail: <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>"
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Відповімо протягом робочого дня. Форма заявки та месенджери — на сторінці <a href=\"/ua/contact-studio-interior-design-bratislava-vienna\">контактів</a>."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-projects",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Кілька проєктів студії"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Дворівнева квартира в Братиславі, 158 м²",
+       "href": "/ua/interior-design-duplex-apartment-bratislava-158m2",
+       "image": {
+        "id": "6abd6a8e6bbe610384483447",
+        "alt": "Дизайн-проєкт сучасної квартири у братислава"
+       }
+      },
+      {
+       "title": "Квартира Metropolis у Братиславі, 75 м²",
+       "href": "/ua/luxury-interior-design-apartment-metropolis-bratislava-slovakia",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "кухня на замовлення, купити кухню, виготовлення кухні, ціна, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Квартира у Відні, 58 м²",
+       "href": "/ua/interior-apartments-vienna-austria-58m2",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "дизайнер інтер’єру квартири у відні"
+       }
+      },
+      {
+       "title": "Приватний будинок у Дунайській Стреді, 140 м²",
+       "href": "/ua/interior-design-private-house-dunajska-streda-140m",
+       "image": {
+        "id": "6abd6a9d68c5e81567a1c052",
+        "alt": "Дизайн інтер’єру приватного будинку в Дунайській Стреді, Словаччина — проєкт студії DUMSKAYA DESIGN"
+       }
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Замовити безкоштовну консультацію",
+       "href": "/ua/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "Усі проєкти",
+       "href": "/ua/realizovani-dyzain-proekty-ta-arkhitekturni-rishennia"
+      },
+      {
+       "text": "Ціни на дизайн-пакети",
+       "href": "/ua/tsina-dyzain-proektiv-interieru-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-svc",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Послуги студії дизайну інтер’єрів"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Дизайн житлових інтер’єрів",
+       "href": "/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "дизайнер інтер’єру, студія дизайну інтер’єру, квартири, будинки, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Дизайн комерційних інтер’єрів",
+       "href": "/ua/dyzain-interieriv-komertsiinykh-prymishchen-bratislava-slovakia",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "дизайнер інтер’єрів, офісу, салону краси, бутика жіночого одягу, магазину, ресепшн, ресторанів, готелів, кабінету керівника, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Меблі на замовлення",
+       "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-kukhnia-kabinet-harderobna-peredpokii",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "меблі на замовлення, кухня на замовлення, шафа, кухня на замовлення, купити кухню, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Меблі на замовлення для бізнесу",
+       "href": "/ua/vyhotovlennia-mebliv-na-zamovlennia-dlia-komertsiinykh-obiektiv",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "офісні меблі на замовлення, кабінет керівника під замовлення, ресепшен з меблями на замовлення, братислава, словакія, відень, австрія"
+       }
+      },
+      {
+       "title": "Кухні на замовлення",
+       "href": "/ua/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "кухня на замовлення, купити кухню, виготовлення кухні, ціна, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      },
+      {
+       "title": "Ремонт під ключ",
+       "href": "/ua/budivnytstvo-ta-remont-pid-kliuch-zhytlovykh-ta-komertsiinykh-prymishchen-bratislava-slovakia-prais-lyst",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "ремонт під ключ, прайс-лист, ціна, вартість, оздоблювальні роботи, ремонт квартири, ремонт офісу, братислава, словакія, відень, австрія, прага, чехія"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

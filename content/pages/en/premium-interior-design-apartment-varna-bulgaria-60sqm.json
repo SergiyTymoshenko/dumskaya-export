@@ -26,23 +26,43 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 60 m² apartment in Varna, Bulgaria: interior design, technical documentation, custom furniture, and a turnkey renovation."
+       "html": "A 60 m² apartment in Varna, Bulgaria. The studio developed the interior design with 3D visualization and technical documentation, made the custom furniture and carried out a turnkey renovation. The project covered the living room, a kitchen with built-in appliances, the bedroom, walk-in closets, the entrance hall, the bathroom and storage systems. A detailed cost estimate was ready before work began: construction and finishing work, materials, furniture, appliances, plumbing fixtures and lighting. The renovation followed the technical documentation. The visualizations come first on this page, followed by photos of the finished apartment with the furniture we made."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Living room and kitchen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The walls are light, with a ceiling cornice and thin moldings, and the interior doors are white with dark glossy glass. The living room has two kinds of flooring: large white marble-look tile in the walk-through area and herringbone parquet by the window, where two armchairs and a side table stand. Opposite the sofa is a floating wood-look unit with a built-in bioethanol fireplace, with the TV above it. By the window is a white bookcase, and two chandeliers with brass frames and globe shades hang above the armchairs."
       },
       {
        "t": "p",
-       "html": "The project included the living room, bedroom, kitchen with built-in appliances, walk-in closets, entrance hall, bathroom, and storage systems."
+       "html": "The kitchen is L-shaped. The upper fronts are white and handleless, with an open section in a dark color, and the countertop looks like light oak. The backsplash and the wall behind the sink are laid with black glossy mosaic. The countertop continues as a breakfast bar on a glass support, with three pendants in metal mesh above it. The kitchen floor is large light tile, and the entrance hall has herringbone again."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom, walk-in closet and bathroom"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the bedroom, the headboard is made of soft dark gray panels running from floor to ceiling, flanked by walls with white moldings and pendant lights. The nightstands are wall-mounted and white. The walk-in closet is white too: a wardrobe with hinged doors, two rails one above the other, open shelves up to the ceiling and a set of drawers."
       },
       {
        "t": "p",
-       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-made; the furniture was designed together with the interior to make use of every square meter of the 60 m²."
-      },
-      {
-       "t": "p",
-       "html": "Before work began, a detailed cost estimate was prepared covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting. The studio then carried out a turnkey renovation of the apartment in Varna based on the technical documentation."
-      },
-      {
-       "t": "p",
-       "html": "Below are 3D visualizations of the project and photos of the finished apartment with its custom-made furniture."
+       "html": "The bathroom uses two tones: the wall with the wall-hung toilet is in white tile, and the bathtub area is in brown marble-look tile. Between them is a narrow tall cabinet with an open niche for towels. The kitchen, wardrobes and walk-in closet were designed together with the interior to make use of every meter of the 60 m². The studio works the same way on <a href=\"/en/custom-residential-furniture\">custom furniture</a> in Bratislava."
       }
      ]
     },

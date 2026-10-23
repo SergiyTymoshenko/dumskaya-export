@@ -53,14 +53,16 @@ export function llmsTxt(): string {
   const L: string[] = [];
   L.push('# DUMSKAYA DESIGN');
   L.push('');
-  L.push('> Interior design studio based in Bratislava, Slovakia, working in Bratislava and Vienna, Austria, ' +
-    'with a full cycle of services in Ukraine and remote design for clients in the USA (furniture shipped from Europe). ' +
-    'Residential and commercial interior design, custom furniture and kitchens made to order, turnkey renovation, ' +
-    'architecture and 3D visualization. Founded and led by interior designer Irina Dumskaya. ' +
+  L.push('> Interior design studio based in Bratislava, Slovakia, working in Bratislava and Vienna, Austria; ' +
+    'design projects for clients in other countries are prepared remotely. ' +
+    'Residential and commercial interior design, custom furniture and kitchens from the studio’s own workshop in Bratislava, ' +
+    'turnkey renovation by the studio’s own crews, architecture and 3D visualization. ' +
+    'Founded and led by interior designer Irina Dumskaya, more than 15 years of experience. ' +
+    'Prices are the same in Bratislava and Vienna, furniture delivery is included. ' +
     'The website is available in English, Ukrainian and Russian.');
   L.push('');
   L.push(`- Studio address: ${c.address.street}, ${c.address.postal} ${c.address.city}, Slovakia`);
-  L.push(`- Phone: ${c.phones.map((p: any) => `${p.text} (${p.city.en})`).join(', ')}`);
+  L.push(`- Phone: ${c.phones.filter((p: any) => p.key === 'sk' || p.key === 'at').map((p: any) => `${p.text} (${p.city.en})`).join(', ')}`);
   L.push(`- Email: ${c.email}`);
   L.push(`- Messengers: WhatsApp and Telegram at ${c.phones[0].text}`);
   L.push(`- Instagram: ${c.social.map((s: any) => s.href).join(', ')}`);
@@ -74,6 +76,7 @@ export function llmsTxt(): string {
     }
     L.push('');
   };
+  L.push('## About', '', `- [About the studio](${abs('/en/about-studio')}): who we are, own furniture workshop and crews, where we work.`, '');
   section('Services', group('Services'));
   section('Where we work', group('Where we work'));
   section('Design packages and prices', [{ label: 'All prices', href: '/en/interior-design-pricing-bratislava-wien-praha' }, ...group('Prices')]
@@ -105,7 +108,7 @@ export function llmsTxt(): string {
 }
 
 export function llmsFullTxt(): string {
-  const order = ['home', 'service', 'price', 'kitchen', 'project', 'article', 'portfolio', 'contact', 'shop'];
+  const order = ['home', 'about', 'service', 'price', 'kitchen', 'project', 'article', 'portfolio', 'contact', 'shop'];
   const list = pages
     .filter((p) => p.lang === 'en' && order.includes(p.type))
     .sort((a, b) => order.indexOf(a.type) - order.indexOf(b.type) || a.path.localeCompare(b.path));

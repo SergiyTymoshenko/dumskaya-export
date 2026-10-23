@@ -10,7 +10,7 @@ interface Props { page: Page }
 const { page } = Astro.props;
 const lang = page.lang as Lang;
 const T = ui(lang);
-const intro = mainParts(page).filter((p) => p.t === 'p' && /Telegram|WhatsApp/i.test(p.html)).slice(0, 1);
+const intro = mainParts(page).filter((p) => p.t === 'p');
 const c = site.contacts;
 ---
 <div class="wrap ctop">

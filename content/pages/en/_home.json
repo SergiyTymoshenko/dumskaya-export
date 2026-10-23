@@ -3,9 +3,9 @@
  "lang": "en",
  "type": "home",
  "group": null,
- "title": "Interior Design in Bratislava & Vienna | DUMSKAYA DESIGN",
- "description": "DUMSKAYA DESIGN: interior design for apartments, houses and offices, custom furniture and turnkey renovation in Bratislava and Vienna. Free consultation.",
- "h1": "Interior design, custom furniture manufacturing, and turnkey renovation",
+ "title": "Interior Design Studio in Bratislava & Vienna | DUMSKAYA",
+ "description": "Irina Dumskaya’s studio: interior design for homes and offices, custom furniture from our own workshop, turnkey renovation in Bratislava and Vienna.",
+ "h1": "Interior design studio in Bratislava and Vienna",
  "og_image": "6abd0a7d61617a4443ab2567",
  "alternates": {
   "ru": "/",
@@ -50,7 +50,7 @@
     {
      "type": "heading",
      "level": 1,
-     "text": "Interior design, custom furniture manufacturing, and turnkey renovation"
+     "text": "Interior design studio in Bratislava and Vienna"
     },
     {
      "type": "text",
@@ -155,7 +155,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>The result is an interior that looks just like the visualizations and is comfortable to live in every day.</strong>"
+       "html": "The finished apartment looks just like the visualizations, and it is comfortable to live in every day."
       }
      ]
     }
@@ -178,6 +178,161 @@
       {
        "text": "Completed projects",
        "href": "/en/portfolio-interior-design-projects"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How the design process works"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "We work on an interior step by step, and at each stage you see the result before the next one begins:"
+      },
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Consultation.</strong> Free of charge, at our Bratislava studio, on site, or online. We discuss the space, budget, and timeline and choose the right package.",
+        "<strong>Measurements and layout.</strong> We take measurements and prepare a measured floor plan and furniture layout options. From then on, we work from one approved layout.",
+        "<strong>3D visualizations.</strong> We show every room with its materials, lighting, and furniture. Changes are made before the concept is approved, not during the renovation.",
+        "<strong>Working drawings.</strong> Electrical, plumbing, lighting, ceiling, and floor plans, wall elevations, and material specifications: everything the crew and furniture makers need to work without guesswork.",
+        "<strong>Cost estimate and implementation.</strong> We work out the budget, carry out the renovation, make the furniture, and make sure the finished apartment matches the visualizations."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-cycle",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Design, furniture, and renovation under one roof"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "We make furniture to the project drawings at our own workshop in Bratislava: kitchens, wardrobes and walk-in closets, TV units, bathroom furniture, and wall panels. Our own crews from Bratislava carry out the renovations, including in Vienna. We don’t hand projects over to subcontractors."
+      },
+      {
+       "t": "p",
+       "html": "When one team handles the design, furniture, and renovation, the niches and the electrical and plumbing outlets are planned from the start around a specific kitchen and specific wardrobes. On site, nobody has to move a socket that ended up behind a tall cabinet or rebuild a wardrobe that didn’t fit its niche."
+      },
+      {
+       "t": "p",
+       "html": "Prices are the same for Bratislava and Vienna, and furniture delivery is included. You can also order just one part: only the design project, only <a href=\"/en/custom-residential-furniture\">custom furniture</a>, or a <a href=\"/en/renovation-construction-price-list\">turnkey renovation</a> based on an existing project."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-prices",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What an interior design project costs"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The price is calculated per square meter and depends on what the package includes:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "“Express” — €20/m²: layout and 3D visualizations, ready from 14 days after the layout is approved;",
+        "“Basic” — €35–45/m²: visualizations and a full set of working drawings for the renovation;",
+        "“Furniture” — €35–45/m²: visualizations and drawings for manufacturing built-in furniture;",
+        "“Premium” — €50/m²: detail drawings and wall elevations for every room, plus two material-selection trips with the designer;",
+        "“Premium+” — €70/m²: everything in “Premium” plus two months of design supervision during the renovation."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "For example, a 60 m² apartment with a full set of drawings under the “Basic” package costs €2,100–2,700. The minimum price and the scope of each package are listed on our <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">interior design prices</a> page."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-where",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bratislava, Vienna, and remote projects"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The studio is in Bratislava’s Ružinov district, at Súkennícka 1. We most often work with new builds: an apartment bought from a developer has to be planned, finished, and furnished. Before you sign the handover report, we can carry out an <a href=\"/en/apartment-handover-inspection-bratislava\">apartment handover inspection</a> and draw up a list of defects."
+      },
+      {
+       "t": "p",
+       "html": "Vienna is about an hour’s drive away, so measurements, site meetings, and design supervision there work just as they do in Bratislava and are not charged separately. Learn more on our page about <a href=\"/en/interior-design-vienna\">interior design in Vienna</a>."
+      },
+      {
+       "t": "p",
+       "html": "For properties in other countries, we prepare design projects remotely: visualizations and working drawings that a local contractor works from."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Frequently asked questions"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Where do I start if my apartment is still under construction?",
+       "a": "<p>With the layout. Many developers accept buyer changes up to a certain stage of construction: you can move a partition, water outlets, or sockets while it still costs nothing to change. Send us the developer’s floor plan, and at the consultation we’ll tell you what is worth changing.</p>"
+      },
+      {
+       "q": "What will I receive at the end of the design project?",
+       "a": "<p>It depends on the package. “Basic” includes a measured floor plan; a furniture layout; plans for demolition and construction, electrical, plumbing, underfloor heating, lighting, ceilings, and floors; kitchen and bathroom elevations; material specifications; and 3D visualizations of every room. Any crew can work from a set like this.</p>"
+      },
+      {
+       "q": "How long does a project take?",
+       "a": "<p>“Express” is ready from 14 days after the layout is approved. A full project with working drawings usually takes 4–8 weeks, depending on the floor area and the number of revisions.</p>"
+      },
+      {
+       "q": "Can I order furniture without a design project?",
+       "a": "<p>Yes. We’ll make a kitchen, wardrobe, or walk-in closet to fit your space: furniture design, manufacturing in Bratislava, delivery, and installation. Kitchen models with photos are in our <a href=\"/en/custom-kitchens-bratislava-vienna\">kitchen catalog</a>.</p>"
+      },
+      {
+       "q": "Do you carry out renovations based on another designer’s project?",
+       "a": "<p>Yes, if there are working drawings. Before we start, we’ll review the project, prepare a <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">cost estimate</a>, and tell you which drawings are missing for the job.</p>"
+      },
+      {
+       "q": "What languages can I use to communicate with the studio?",
+       "a": "<p>Russian, Ukrainian, and English. We prepare the documentation in whichever language suits you and the crew.</p>"
       }
      ]
     }

@@ -1,6 +1,6 @@
 ---
 import { ui, LANGS, LANG_LABEL, type Lang } from '../lib/i18n';
-import { site, type Page, altPath, localize } from '../lib/data';
+import { site, type Page, altPath, localize, pagePhones } from '../lib/data';
 
 interface Props { page: Page }
 const { page } = Astro.props;
@@ -17,11 +17,18 @@ const year = new Date().getFullYear();
   <div class="ftr__contacts">
     <h2 class="visually-hidden">{T.contacts}</h2>
     <ul>
-      {site.contacts.phones.map((p: any) => (
+      {pagePhones(page).map((p) => (
         <li><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{p.city[lang]}</span></li>
       ))}
       <li><a href={`mailto:${site.contacts.email}`}>{site.contacts.email}</a></li>
+      {contact && <li><a href={contact}>{T.allContacts}</a></li>}
     </ul>
+    <address class="ftr__addr">
+      <span>DUMSKAYA DESIGN</span>
+      {site.contacts.maps
+        ? <a href={site.contacts.maps} rel="noopener" target="_blank">{site.contacts.address.label[lang]}</a>
+        : <span>{site.contacts.address.label[lang]}</span>}
+    </address>
   </div>
   <div class="ftr__aside">
     <ul class="ftr__social">
@@ -52,6 +59,8 @@ const year = new Date().getFullYear();
   .ftr__logo img { width: 150px; height: auto; }
   .ftr__contacts { display: grid; gap: 20px; align-content: start; justify-items: start; }
   .ftr__contacts .btn:hover { text-decoration: none; }
+  .ftr__addr { font-style: normal; display: grid; gap: 2px; }
+  .ftr__addr a { display: inline-block; padding-block: 6px; }
   .ftr__aside { display: grid; gap: 20px; align-content: start; }
   .ftr__social { grid-auto-flow: column; justify-content: start; gap: 20px !important; }
   .ftr__langs { display: flex; gap: 8px; letter-spacing: 0.06em; }

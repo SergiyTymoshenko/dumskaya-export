@@ -26,23 +26,11 @@
      "parts": [
       {
        "t": "p",
-       "html": "The furniture department of <strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> makes custom kitchens for apartments and private homes. Choose a model from the catalog, and we will prepare a price quote based on the configuration you choose and the specifics of your room."
+       "html": "The studio’s furniture department makes custom kitchens for apartments and private houses in Bratislava and Vienna: a design based on the room’s dimensions, production at our own facility in Bratislava, and delivery and installation by our own team. Below is a catalog of 32 models. You can take any of them as a starting point and have it recalculated for your kitchen, or order a design from scratch."
       },
       {
        "t": "p",
-       "html": "We can adapt any model to the dimensions and layout of your room: we change the configuration, the size of individual elements, the materials, colors, hardware, and interior fittings."
-      },
-      {
-       "t": "p",
-       "html": "We select materials and hardware to suit your budget — from affordable options to premium ones."
-      },
-      {
-       "t": "p",
-       "html": "We also deliver and install the kitchen. On request, we equip it with a sink, appliances, a range hood, and plumbing fixtures."
-      },
-      {
-       "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN offers custom kitchens in Bratislava and Vienna — from model selection, individual adaptation, and cost calculation to manufacturing, outfitting, delivery, and installation.</strong>"
+       "html": "The price is the same for Vienna and Bratislava, with delivery already included. If you like, we can supply the kitchen with a sink, appliances, a range hood, and plumbing fixtures, and they are then included in the quote as well."
       }
      ]
     }
@@ -55,6 +43,15 @@
      "type": "heading",
      "level": 2,
      "text": "Catalog of standard kitchen models"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The catalog has straight, L-shaped, and U-shaped kitchens, as well as models with an island or a peninsula, from 3.1 to 9 linear meters long. Styles include minimalist, contemporary, classic, neoclassical, and loft. Each model’s page lists its dimensions, fronts, countertop, and hardware. All of this can be changed: the length of each run, the color, the cabinet interiors, the space for appliances."
+      }
+     ]
     }
    ]
   },
@@ -349,6 +346,137 @@
       {
        "text": "Custom kitchens in Vienna",
        "href": "/en/custom-kitchens-vienna"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How ordering a kitchen works"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Inquiry.</strong> Send us a floor plan or the dimensions of your kitchen, photos of the room, and the catalog model number if one caught your eye. We reply within one business day.",
+        "<strong>Preliminary quote.</strong> Based on this information, we give you an approximate price.",
+        "<strong>Site measurement.</strong> We come to the site in Bratislava or Vienna, take measurements, and mark the windows, doors, and water, drain, and electrical connection points.",
+        "<strong>Design and 3D visualization.</strong> We show the kitchen in your room, choose the fronts, countertop, and hardware together, and agree on the appliances. You can see material samples at the studio at Súkennícka 1.",
+        "<strong>Contract.</strong> We fix one total: production, delivery, and installation. At this stage we also give the production lead time, which runs from approval of the design and the advance payment.",
+        "<strong>Production and installation.</strong> We make the kitchen in Bratislava, deliver and assemble it, build in the appliances, and adjust the fronts."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What goes into the price"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "We quote for a specific configuration: two kitchens of the same length can differ noticeably in price because of the fronts, countertop, and mechanisms. The total depends on:"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "length and configuration: how many linear meters, whether there is an island or a peninsula, whether the cabinets go up to the ceiling;",
+        "fronts: laminated chipboard is the most affordable option, while painted MDF, veneer, and acrylic cost more;",
+        "countertop: chipboard-based laminate, compact laminate, porcelain stoneware, quartz, or stone;",
+        "hardware and fittings: hinges and runners with or without soft-close, lift-up mechanisms for wall cabinets, cargo pull-outs, organizers;",
+        "appliances and plumbing fixtures, if you order them from us."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Measurement, delivery, and installation are already included in the price. If you need wardrobes, a walk-in closet, and an entrance hall as well as the kitchen, it is easier to start with the <a href=\"/en/custom-furniture-bratislava-design-production\">“Furniture” package</a> (€35–45/m²): it includes 3D visualization and drawings for all the built-in furniture in the apartment."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-materials",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fronts, countertops, hardware"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the catalog models, the cabinet carcasses are made of 18 mm laminated chipboard. We make fronts from laminated chipboard, foil-wrapped MDF, painted MDF, veneer, HPL, acrylic, and glass. Materials are often combined in one kitchen: the K-02 model, for example, has veneer upper fronts and painted lower ones."
+      },
+      {
+       "t": "p",
+       "html": "Countertops — laminate, compact laminate, engineered quartz, porcelain stoneware, solid surface, and natural stone. Hettich, Blum, and Häfele hardware: soft-close mechanisms, pull-out systems, lift-up mechanisms, cargo pull-outs. We choose materials and hardware to fit the budget, from affordable to high-end. For more on kitchens with the full scope of work, see <a href=\"/en/custom-kitchens-bratislava\">turnkey kitchens in Bratislava</a> and <a href=\"/en/custom-kitchens-vienna\">turnkey kitchens in Vienna</a>."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Questions about custom kitchens"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Can I order a kitchen that isn’t in the catalog?",
+       "a": "<p>Yes. If you have your own idea or a photo of a kitchen you like, we design it from scratch based on site measurements. The catalog helps us agree on a style faster and get a rough sense of the budget, but it does not limit your choice.</p>"
+      },
+      {
+       "q": "When should the measurement be done if the apartment is still being renovated?",
+       "a": "<p>A preliminary quote can be made from the floor plan. The final measurement is taken once the walls are leveled and the water, drain, and electrical connection points are where the kitchen needs them. If our crew is doing the renovation, the connection points are placed according to the kitchen design from the start.</p>"
+      },
+      {
+       "q": "Can I buy the appliances myself?",
+       "a": "<p>Yes. We need the appliance models before production starts, because the openings and modules are calculated from their dimensions. You can also order appliances through us, and then they are included in the overall quote.</p>"
+      },
+      {
+       "q": "My new-build apartment hasn’t been handed over by the developer yet. Where do I start?",
+       "a": "<p>With the handover inspection. Issues with the walls, floors, and utility connection points are recorded in the handover report (preberací protokol): that makes it easier to hold the developer to them while there is still no kitchen standing against the wall. We carry out <a href=\"/en/apartment-handover-inspection-bratislava\">apartment handover inspections</a>: up to 50 m² — €250, larger — €400.</p>"
+      },
+      {
+       "q": "In Vienna, can the range hood be vented through the facade?",
+       "a": "<p>An opening in the facade affects the common parts of the building, so for an owner-occupied apartment it requires the consent of the other owners; you can get the co-owners’ contact details through the Hausverwaltung. If there is no consent, we install a recirculating range hood, which does not need an outside vent.</p>"
+      },
+      {
+       "q": "Do you only work in Bratislava and Vienna?",
+       "a": "<p>No, we deliver and install kitchens throughout Slovakia, Austria, and Germany. Delivery is included in the price, and our own team does the installation.</p>"
       }
      ]
     }

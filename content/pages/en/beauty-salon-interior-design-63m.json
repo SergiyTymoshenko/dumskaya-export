@@ -26,19 +26,57 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> developed an interior design project for a 63 m² beauty salon — a space that works well for both clients and beauty professionals."
+       "html": "An interior design project for a 63 m² beauty salon, with technical documentation for the renovation. Within this area we fit a reception desk with a waiting area, workstations for hairdressers, manicurists and a brow artist, a cosmetologist’s room, a restroom and a back room for staff. The zones follow the way the salon works: from the entrance the client comes to the desk and the waiting area, then to the stylists’ chairs, with the service rooms at the back."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Reception and main room"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "By the entrance stands a white reception desk with rounded corners. Behind it is a light wood shelving unit with vertical dividers for retail cosmetics, and three pebble-shaped pendant lights hang above the desk. The waiting area is by the large window: soft bouclé armchairs and a side table on a solid pedestal base."
       },
       {
        "t": "p",
-       "html": "The 63 m² space accommodates stations for hairdressers, manicurists, and brow artists, an esthetician’s treatment room, a reception area, and a staff room; the zoning follows the salon’s workflows."
+       "html": "The hairdressing stations are separated by plastered partitions with rounded ends. Each has a built-in arched mirror with perimeter lighting and a floating light wood console. The chairs are beige on chrome bases. The wall behind the manicure tables carries sculpted faces in relief against vertical slats, reflected in the mirrors of the hairdressing stations."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Manicure, brows and service rooms"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The manicure tables, with rounded tops, drawers and built-in dust extraction, are placed by the window, each with a ring light and a rolling stool for the manicurist. The brow artist’s station is screened off. The cosmetologist has a separate treatment room."
       },
       {
        "t": "p",
-       "html": "Lighting, storage systems, and workstation ergonomics were worked out in detail. The project includes technical documentation for implementation."
-      },
+       "html": "The back room is set up as a kitchenette: light floor-to-ceiling cabinets, open niches, and a table for quick meals with a fridge under the countertop. At the sink there is a backsplash of textured terracotta tiles and a black faucet."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Finishes and lighting"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designs beauty salons, hair salons, and beauty studios in Bratislava and Vienna — from the interior design project and technical documentation to custom furniture and turnkey renovation."
+       "html": "The whole palette is built on shades of white and beige: large-format light porcelain tiles on the floor, matte plaster on the walls and light wood furniture. General lighting comes from recessed spotlights, with lit mirrors at the workstations. Ventilation and air conditioning are part of the design: the grilles and ducts are visible in the visualizations. More of our work for businesses is in the <a href=\"/en/commercial-interior-design\">commercial interior design</a> section."
       }
      ]
     },

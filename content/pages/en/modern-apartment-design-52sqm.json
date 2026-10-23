@@ -26,23 +26,61 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN (Bratislava, Slovakia)</strong> completed a comprehensive project for a 52 m² apartment — from developing the interior design and technical documentation to manufacturing custom furniture, carrying out a turnkey renovation, and decorating."
+       "html": "A 52 m² apartment where we went through the whole process: an interior design project with 3D visualization, technical drawings, custom furniture, turnkey renovation, and decorating. The project included a kitchen-living room, a bedroom with a workspace by the window, walk-in closets, an entrance hall, and a bathroom. The gallery shows photorealistic visualizations."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen and living room"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The kitchen and living room are one space. The kitchen runs along the wall: upper cabinets in light veneer, tall columns with white high-gloss fronts for built-in appliances, and a backsplash of dark veined stone. A breakfast bar on a transparent support extends from the kitchen and separates the work area from the sofa."
       },
       {
        "t": "p",
-       "html": "The project covers the living room, bedroom, kitchen with custom interior fittings and built-in appliances, walk-in closets, entrance hall, and bathroom, as well as built-in wardrobes, shelving, and storage systems."
+       "html": "Opposite the sofa is a wall of white vertical slats with a TV and a floating media unit with black fronts. A concealed LED strip runs along the edge of the ceiling bulkhead, and above the sofa is a wall light made of two rings with perimeter lighting."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The lower half of the wall behind the bed is covered with light gray panels; above them are white handleless cabinets across the full width, with a narrow open niche and lighting. Above the bedside table hang two brass-colored ring pendants. By the window we set up a workspace: a wooden desktop with lit shelves above it and a tall white cabinet beside it."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Entrance hall and bathroom"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the hallway, one side is taken up by a floor-to-ceiling wardrobe in wood veneer with a long black profile handle; on the other side are flush-mounted doors in the wall color. The floors in the rooms are oak-look."
       },
       {
        "t": "p",
-       "html": "The furniture for each area was designed together with the interior, tailored to the specifics of the rooms and the owners’ habits."
+       "html": "The bathroom is finished in large-format light marble-look tile. The vanity is dark wood, with a mirror with rounded corners and lighting above it. It has a bathtub and a shower behind a glass screen, and next to the wall-hung toilet stands a wooden unit with lit shelves at the top and a closed cabinet below."
       },
       {
        "t": "p",
-       "html": "Before work began, a detailed cost estimate was prepared covering renovation work, finishing materials, furniture, and appliances — so the budget was known in advance."
-      },
-      {
-       "t": "p",
-       "html": "The gallery features photorealistic 3D visualizations of the apartment."
+       "html": "The kitchen, built-in cabinets, shelves, and storage systems were designed together with the interior to fit the rooms and made to order (more on the <a href=\"/en/custom-residential-furniture\">custom furniture</a> page). Before work began, the client received a detailed cost estimate covering the renovation, finishing materials, furniture, and appliances, so the budget was known in advance."
       }
      ]
     },

@@ -1,0 +1,290 @@
+{
+ "path": "/en/about-studio",
+ "lang": "en",
+ "type": "about",
+ "group": null,
+ "title": "About DUMSKAYA DESIGN, Interior Design Studio in Bratislava",
+ "description": "Irina Dumskaya’s studio in Bratislava: interior design for homes and offices, our own furniture workshop and turnkey renovation in Bratislava and Vienna.",
+ "h1": "About DUMSKAYA DESIGN",
+ "og_image": "655410c220a5eb000f971701",
+ "alternates": {
+  "ru": "/about-studio",
+  "ua": "/ua/pro-studiyu",
+  "en": "/en/about-studio"
+ },
+ "sections": [
+  {
+   "id": "about-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "About DUMSKAYA DESIGN"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "DUMSKAYA DESIGN is an interior design studio in Bratislava. We design apartments, houses, and commercial spaces, make furniture at our own workshop, and carry out turnkey renovations with our own crews. Most of our work is in Bratislava and Vienna; for other countries we prepare design projects remotely."
+      },
+      {
+       "t": "p",
+       "html": "The studio is led by <strong>Irina Dumskaya</strong>, its head and principal designer, with more than 15 years of experience in interior and furniture design."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-services",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "What the studio does"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<a href=\"/en/interior-design\">residential interior design</a>: apartments, houses, villas;",
+        "<a href=\"/en/commercial-interior-design\">commercial interior design</a>: offices, beauty salons, shops, studios;",
+        "<a href=\"/en/custom-residential-furniture\">custom furniture</a> and <a href=\"/en/custom-kitchens-bratislava-vienna\">kitchens</a> made to the project drawings or to your measurements;",
+        "<a href=\"/en/renovation-construction-price-list\">turnkey renovation</a> and <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">renovation cost estimates</a>;",
+        "<a href=\"/en/apartment-handover-inspection-bratislava\">apartment handover inspections</a> for new-build apartments from developers;",
+        "<a href=\"/en/architecture-and-design\">architectural design</a> and <a href=\"/en/3d-visualization-facade-exterior-price\">3D facade visualization</a>."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-production",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our own workshop and our own crews"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "We make furniture to our drawings at our own workshop in Bratislava: kitchens, wardrobes and walk-in closets, TV units, bathroom furniture, wall panels, and furniture for offices and salons. We deliver and install the finished pieces in Bratislava, in Vienna, and across Germany."
+      },
+      {
+       "t": "p",
+       "html": "Renovations are done by the studio’s crews from Bratislava; the same people work in Slovakia and in Austria. We don’t hand projects over to subcontractors, so one team is responsible for the design, the furniture, and the renovation. Prices are the same for Bratislava and Vienna, and furniture delivery is included."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-work",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "How we work"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "We offer design projects as packages priced per square meter: from “Express” at €20/m² (layout and 3D visualizations) to “Premium+” at €70/m² with two months of design supervision. The scope of each package is set out in advance, so before work begins you know which drawings and visualizations you will receive and what they cost. Details are on our <a href=\"/en/interior-design-pricing-bratislava-wien-praha\">prices</a> page."
+      },
+      {
+       "t": "p",
+       "html": "The first consultation is free. We discuss the property, budget, and timeline, look at the floor plan, and choose a package. You can also visit the studio: by appointment, we’ll show you material and hardware samples."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-geo",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Where we work"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The studio is in Bratislava’s Ružinov district. Most of our projects are apartments in new developments in Bratislava and Vienna, private houses in Slovakia and Austria, offices, and salons."
+      },
+      {
+       "t": "p",
+       "html": "For clients in other countries, we prepare design projects remotely. These include apartments in Prague, Madrid, and Barcelona, houses in Germany, an apartment in London, and apartments in Dubai, New York, and Los Angeles. All projects with photos and descriptions are in our <a href=\"/en/portfolio-interior-design-projects\">portfolio</a>."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-contacts",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Contact details"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "Address: Súkennícka 1, 821 09 Bratislava, Slovakia",
+        "Phone in Bratislava: <a href=\"tel:+421918177785\">+421 918 17 77 85</a>",
+        "Phone in Vienna: <a href=\"tel:+4367761430187\">+43 677 614 30 187</a>",
+        "Email: <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>"
+       ]
+      },
+      {
+       "t": "p",
+       "html": "We reply within one business day. The request form and messenger links are on our <a href=\"/en/contact-studio-interior-design-bratislava-vienna\">contact</a> page."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-projects",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Selected projects"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Duplex apartment in Bratislava, 158 m²",
+       "href": "/en/luxury-158sqm-duplex-apartment-interior-design-bratislava",
+       "image": {
+        "id": "6abd6a8e6bbe610384483447",
+        "alt": "Apartment in Kyiv, 80 m²"
+       }
+      },
+      {
+       "title": "Metropolis apartment in Bratislava, 75 m²",
+       "href": "/en/design-interior-studio-bratislava-metropolis-sk-75m",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Apartment in Vienna, 58 m²",
+       "href": "/en/apartment-interior-design-vienna-austria-58sqm",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "modern living room interior vienna austria"
+       }
+      },
+      {
+       "title": "Private house in Dunajská Streda, 140 m²",
+       "href": "/en/interior-design-private-house-dunajska-streda-140m",
+       "image": {
+        "id": "6abd6a9d68c5e81567a1c052",
+        "alt": "Interior Design Project for a Private House in Dunajská Streda, Slovakia by DUMSKAYA DESIGN"
+       }
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Book a free consultation",
+       "href": "/en/contact-studio-interior-design-bratislava-vienna"
+      },
+      {
+       "text": "All projects",
+       "href": "/en/portfolio-interior-design-projects"
+      },
+      {
+       "text": "Design package prices",
+       "href": "/en/interior-design-pricing-bratislava-wien-praha"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "about-svc",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Our interior design services"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Residential Interior Design",
+       "href": "/en/interior-design",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "interior designer, interior design studio, bratislava, slovakia, vienna"
+       }
+      },
+      {
+       "title": "Commercial Interior Design",
+       "href": "/en/commercial-interior-design",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "commercial interior design, Bratislava, Slovakia"
+       }
+      },
+      {
+       "title": "Custom furniture",
+       "href": "/en/custom-residential-furniture",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "luxury furniture, custom furniture manufacturing, kitchen manufacturing, wardrobe manufacturing, custom furniture, custom kitchen, made-to-order kitchen, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Custom Furniture for Business",
+       "href": "/en/commercial-furniture-design",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "office furniture, custom furniture manufacturing, made to order, executive office, office furnishings, store furniture, custom reception desk, custom office kitchen, wall panels, bratislava"
+       }
+      },
+      {
+       "title": "Custom Kitchens",
+       "href": "/en/custom-kitchens-bratislava-vienna",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "custom kitchen, price, order kitchen, kitchen manufacturing, buy kitchen, bratislava"
+       }
+      },
+      {
+       "title": "Turnkey Renovation",
+       "href": "/en/renovation-construction-price-list",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "turnkey renovation, price list, price, cost, finishing works, apartment renovation, office renovation, house renovation, Bratislava"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

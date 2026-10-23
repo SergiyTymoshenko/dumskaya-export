@@ -4,6 +4,7 @@ import HeroImg from '../components/HeroImg.astro';
 import Tile from '../components/Tile.astro';
 import Parts from '../components/Parts.astro';
 import Caps from '../components/Caps.astro';
+import Blocks from '../components/Blocks.astro';
 import { ui, type Lang } from '../lib/i18n';
 import { projectsFor, splitCaption, localize, isServicesSection, site, type Page, type Part } from '../lib/data';
 import home from '../../content/home.json';
@@ -13,9 +14,13 @@ const { page } = Astro.props;
 const lang = page.lang as Lang;
 const T = ui(lang);
 
-// Текст главной: письмо Ирины и список «что вы получите»
-const textBlock = page.sections.flatMap((s) => s.blocks).filter((b) => b.type === 'text').map((b: any) => b.parts as Part[])
-  .sort((a, b) => b.length - a.length)[0] || [];
+// Дополнительные разделы главной (как мы работаем, цены, FAQ…) — секции с id «home-…»: выводятся общими блоками
+const extra = page.sections.filter((s) => (s.id || '').startsWith('home-'));
+const own = page.sections.filter((s) => !(s.id || '').startsWith('home-'));
+// Текст главной: письмо Ирины и список «что вы получите» — текст в секции с H1
+const h1Section = own.find((s) => s.blocks.some((b) => b.type === 'heading' && b.level === 1));
+const textBlock = ((h1Section?.blocks.find((b) => b.type === 'text') as any)?.parts as Part[])
+  || own.flatMap((s) => s.blocks).filter((b) => b.type === 'text').map((b: any) => b.parts as Part[]).sort((a, b) => b.length - a.length)[0] || [];
 const plain = (h: string) => h.replace(/<[^>]+>/g, '');
 const qIdx = textBlock.findIndex((p) => p.t === 'p' && /\?\s*$/.test(plain(p.html)));
 const letter = qIdx > 0 ? textBlock.slice(0, qIdx) : textBlock;
@@ -33,7 +38,7 @@ for (const p of rest) {
 const lead = letter.slice(0, 3);
 const more = letter.slice(3);
 
-const buttons = (page.sections.flatMap((s) => s.blocks).find((b) => b.type === 'buttons') as any)?.items || [];
+const buttons = (own.flatMap((s) => s.blocks).find((b) => b.type === 'buttons') as any)?.items || [];
 const services = page.sections.find(isServicesSection);
 const servicesCards = (services?.blocks.find((b) => b.type === 'cards') as any)?.items || [];
 const all = projectsFor(lang);
@@ -41,13 +46,13 @@ const featured = (home.featured as string[]).map((p) => all.find((x) => x.path =
 const portfolio = localize('/proekty-interior-design', lang);
 const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
 const prices = localize('/price-interior-design-bratislava-wien-praha', lang);
-const heroTitle = lang === 'en' ? 'Interior design, custom furniture and turnkey renovation' : page.h1;
+const heroTitle = page.h1;
 ---
 <section class="hero">
   <HeroImg id={home.hero} alt={heroTitle} eager>
     <div class="hero__cap">
       <h1 class="hero__title display"><Caps text={heroTitle} /></h1>
-      <p class="hero__city">{T.city}</p>
+      <p class="hero__city">{T.heroSub}</p>
       {contact && <a class="btn hero__btn" href={contact}>{T.heroCta}</a>}
     </div>
   </HeroImg>
@@ -101,6 +106,8 @@ const heroTitle = lang === 'en' ? 'Interior design, custom furniture and turnkey
     {closing.length > 0 && <Parts parts={closing} class="benefits__closing" />}
   </section>
 )}
+
+{extra.length > 0 && <div class="extra"><Blocks sections={extra} lang={lang} skipH1 /></div>}
 
 {servicesCards.length > 0 && (
   <section aria-labelledby="services" class="services">
@@ -156,6 +163,8 @@ const heroTitle = lang === 'en' ? 'Interior design, custom furniture and turnkey
   .head__link { font-size: 15px; white-space: nowrap; }
   .services { padding-top: clamp(48px, 8vw, 112px); }
   .benefits + .services { padding-top: 0; }
+  .extra { padding-block: 0 clamp(16px, 3vw, 40px); }
+  .extra :global(.blk__text), .extra :global(.blk__h3) { max-width: calc(var(--measure) + 2 * var(--pad)); }
 
   .benefits__title { max-width: 32em; margin-bottom: clamp(28px, 4vw, 48px); }
   .benefits__grid { display: grid; gap: 32px 48px; border-top: 1px solid var(--line); padding-top: 32px; }

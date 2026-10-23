@@ -8,7 +8,7 @@
  "h1": "Apartment interior design in Vienna, custom furniture and turnkey renovation, 115 m²",
  "og_image": "6abd6b354888499d207455da",
  "alternates": {
-  "ru": "/apartmens-wien-luxury-interior-design-115m",
+  "ru": "/apartments-wien-luxury-interior-design-115m",
   "ua": "/ua/dyzain-interieru-apartamentiv-viden-avstriia-115-m2-vid-dumskaya-design",
   "en": "/en/luxury-interior-design-apartment-vienna-austria-115sqm"
  },
@@ -26,23 +26,57 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> completed a comprehensive project for a 115 m² apartment in Vienna, Austria — from developing the interior design and technical documentation to manufacturing custom furniture and carrying out a turnkey renovation."
+       "html": "A 115 m² apartment in Vienna that we handled from start to finish: interior design, 3D visualization, technical documentation, furniture making and turnkey renovation. The project includes a living room, kitchen, bedroom, children’s room, walk-in closets, entrance hall and bathroom. The interior is light, in warm beige tones, with dark wood and brass in the details."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Living room and kitchen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The living room walls are divided into panels, some smooth under decorative plaster and some in relief with a diagonal pattern, separated by thin brass inlays. The ceiling is multi-level with brass edging, and a ring chandelier of glass drops hangs in the center. The floor is herringbone parquet."
       },
       {
        "t": "p",
-       "html": "The design covers the living room, bedroom, kitchen, walk-in closets, entrance hall, and bathroom, including built-in wardrobes, shelving, and storage systems."
+       "html": "The kitchen wall is made up of tall dark veneer cabinets with a built-in oven and coffee machine. In front of it, a rectangle of herringbone parquet is set into the marble floor, with two ring chandeliers above it. Folding glass doors in a dark frame separate the kitchen from the adjoining room."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bedroom, children’s room, entrance hall"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the bedroom, upholstered wall panels sit behind the bed, pendant lights on thin cords hang on either side, and by the window there is a dressing table on brass legs with a hexagonal mirror. The children’s room is in light colors: wallpaper with stars, a wardrobe with relief fronts and open shelves. In the entrance hall, the doors are concealed, flush with the wall, next to ceiling-height gloss wardrobes, and the floor is marble-effect porcelain tile."
       },
       {
        "t": "p",
-       "html": "The wardrobes, storage systems, and kitchen with built-in appliances were custom-made and designed alongside the interior — tailored to the architecture of this particular apartment."
-      },
+       "html": "The bathroom is finished in large light marble-effect tiles, the shower is separated by glass, and the tall cabinet is in dark veneer. The on-site photos show the wall behind the toilet installation frame: dark veneer panels with metal inlays and a narrow mirror in the center."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Furniture, cost estimate, renovation"
+    },
+    {
+     "type": "text",
+     "parts": [
       {
        "t": "p",
-       "html": "Before work began, a detailed cost estimate was prepared covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting. A turnkey renovation of the apartment was then carried out according to the technical documentation."
-      },
-      {
-       "t": "p",
-       "html": "Below are 3D visualizations and photos of the finished apartment, so you can compare the concept with the result."
+       "html": "The kitchen, wardrobes, walk-in closets and storage systems were designed together with the interior to suit the architecture of this apartment and made at our workshop in Bratislava. Before work began, we prepared a detailed <a href=\"/en/renovation-cost-estimate-bratislava-vienna\">cost estimate</a> covering construction and finishing work, materials, furniture, appliances, plumbing fixtures and lighting. We then carried out the renovation according to the technical documentation. Below are visualizations and photos from the site."
       }
      ]
     },

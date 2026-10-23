@@ -26,27 +26,61 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>DUMSKAYA DESIGN</strong> designed and delivered a project for a 215 m² private house in Berlin, Germany: interior design, technical documentation, custom furniture, and a turnkey renovation."
+       "html": "A 215 m² private house in Berlin. The studio handled the whole project: interior design, 3D visualization, technical documentation, custom furniture and a turnkey renovation. It covered the living room, a kitchen with built-in appliances, bedrooms, walk-in closets, the entrance hall, bathrooms and storage."
       },
       {
        "t": "p",
-       "html": "The project included the living room, bedrooms, kitchen with built-in appliances, walk-in closets, entrance hall, bathrooms, and storage areas — all rooms unified by a single concept of materials, color, and lighting."
+       "html": "The main material in the house is wood in a warm gray-brown shade, used on the walls, the kitchen and the doors. It is paired with light stone-look panels, light oak chevron flooring and brass in the light fixtures."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Living and dining area"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The living room, dining room and kitchen are one room, with floor-to-ceiling windows opening onto the garden. The wall behind the sofa is clad in wood panels and vertical slats, and the section next to it in large light panels lit along the edge. Opposite is the TV area with a built-in fireplace, a low unit and open lit shelves."
       },
       {
        "t": "p",
-       "html": "The kitchen, built-in wardrobes, walk-in closets, shelving, and storage systems were custom-designed and made to the dimensions of the house’s rooms."
+       "html": "The dining table stands by the picture window: a dark stone top on a solid conical base, with beige fabric dining armchairs. Above the table is a chandelier of frosted globes on thin brass rods. General lighting comes from recessed tracks and downlights."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kitchen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "The kitchen is U-shaped, with handleless wood fronts. The sink is by the window, and the cooktop is set into a peninsula with a light countertop, with bar stools on its other side. One wall is taken up by a bank of tall cabinets up to the ceiling, with two ovens built in at eye level. Above the peninsula hangs a brass fixture with a flexible light ribbon."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Entrance hall, furniture and renovation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In the entrance hall, the walls and doors are clad in the same wood: the doors to the rooms and the wardrobes are hidden in fluted panels, and on the wall between them hang an oval mirror in a brass frame and two vertical sconces."
       },
       {
        "t": "p",
-       "html": "Before work began, technical documentation and a detailed cost estimate were prepared, covering construction and finishing work, materials, furniture, appliances, plumbing fixtures, and lighting."
-      },
-      {
-       "t": "p",
-       "html": "The studio then carried out a turnkey renovation of the house in Berlin: construction and finishing work, installation of the custom-made furniture, and the final fit-out of the rooms."
-      },
-      {
-       "t": "p",
-       "html": "The gallery features photorealistic 3D visualizations of the project."
+       "html": "The kitchen, built-in wardrobes, walk-in closets and shelving were custom made to the dimensions of the house. Before work began, we prepared the technical documentation and a detailed cost estimate: finishes, materials, furniture, appliances, plumbing fixtures, lighting. Then we carried out a turnkey renovation, including furniture installation. More on the <a href=\"/en/custom-residential-furniture\">custom furniture</a> page."
       }
      ]
     },
@@ -187,7 +221,7 @@
       },
       {
        "id": "66b177659490292586e32e21",
-       "alt": "Private house in Berlin, Germany, 215 m² — photo 34"
+       "alt": "Entrance hall — private house in Berlin, 215 m²"
       }
      ]
     },
