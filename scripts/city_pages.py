@@ -79,8 +79,8 @@ def services_section(): return section(H(2, 'Услуги студии диза�
 
 PACKAGES_P = ('Цены на дизайн-проект одинаковые для всех городов, где мы работаем: пакет '
               f'<a href="/express-interior-design-package-bratislava-vienna">«Экспресс»</a> — 20 €/м², '
-              f'<a href="/basic-interior-design-package-bratislava-vienna">«Базовый»</a> и '
-              f'<a href="/custom-furniture-bratislava-design-production">«Мебель»</a> — 35–45 €/м², '
+              f'<a href="/basic-interior-design-package-bratislava-vienna">«Базовый»</a> — 35–45 €/м², '
+              f'<a href="/custom-furniture-bratislava-design-production">«Мебель»</a> — 35–50 €/м², '
               f'<a href="/premium-interior-design-package-bratislava-vienna">«Премиум»</a> — 50 €/м², '
               f'<a href="/premium-plus-interior-design-package-bratislava-vienna">«Премиум+»</a> — 70 €/м². '
               f'Первая консультация бесплатная.')

@@ -4,7 +4,7 @@
  "type": "price",
  "group": null,
  "title": "Interior Design Prices: Packages from €20/m² | DUMSKAYA",
- "description": "Interior design packages: Express €20/m², Basic and Furniture €35–45/m², Premium €50/m², Premium+ €70/m². Bratislava and Vienna, free consultation.",
+ "description": "Interior design packages: Express €20/m², Basic €35–45/m², Furniture €35–50/m², Premium €50/m², Premium+ €70/m². Bratislava and Vienna, free consultation.",
  "h1": "Interior design prices in Bratislava and Vienna",
  "og_image": "6abd0a7d61617a4443ab2567",
  "alternates": {
@@ -82,7 +82,7 @@
      "parts": [
       {
        "t": "p",
-       "html": "<strong>The “Furniture” interior design package — €35–45/m²</strong>"
+       "html": "<strong>The “Furniture” interior design package — €35–50/m²</strong>"
       },
       {
        "t": "p",
@@ -94,7 +94,7 @@
       },
       {
        "t": "p",
-       "html": "<strong>Price: €35–45/m²</strong>"
+       "html": "<strong>Price: €35–50/m²</strong>"
       },
       {
        "t": "p",

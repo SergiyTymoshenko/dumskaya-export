@@ -302,11 +302,11 @@ add("/contact-studio-interior-design-bratislava-vienna",
      "Phone numbers in Bratislava and Vienna, e-mail and enquiry form. Free consultation on interior design, custom furniture and turnkey renovation."))
 add("/price-interior-design-bratislava-wien-praha",
     ("Цены на дизайн интерьера: пакеты от 20 €/м² | DUMSKAYA",
-     "Пакеты дизайна интерьера: Экспресс 20 €/м², Базовый и Мебель 35–45 €/м², Премиум 50 €/м², Премиум+ 70 €/м². Братислава и Вена, консультация бесплатно."),
+     "Пакеты: Экспресс 20 €/м², Базовый 35–45 €/м², Мебель 35–50 €/м², Премиум 50 €/м², Премиум+ 70 €/м². Братислава и Вена, консультация бесплатно."),
     ("Ціни на дизайн інтер’єру: пакети від 20 €/м² | DUMSKAYA",
-     "Пакети дизайну інтер’єру: Експрес 20 €/м², Базовий і Меблі 35–45 €/м², Преміум 50 €/м², Преміум+ 70 €/м². Братислава й Відень, консультація безкоштовно."),
+     "Пакети: Експрес 20 €/м², Базовий 35–45 €/м², Меблі 35–50 €/м², Преміум 50 €/м², Преміум+ 70 €/м². Братислава й Відень, консультація безкоштовно."),
     ("Interior Design Prices: Packages from €20/m² | DUMSKAYA",
-     "Interior design packages: Express €20/m², Basic and Furniture €35–45/m², Premium €50/m², Premium+ €70/m². Bratislava and Vienna, free consultation."))
+     "Interior design packages: Express €20/m², Basic €35–45/m², Furniture €35–50/m², Premium €50/m², Premium+ €70/m². Bratislava and Vienna, free consultation."))
 add("/express-interior-design-package-bratislava-vienna",
     ("Дизайн-пакет «Экспресс» — 20 €/м² | DUMSKAYA DESIGN",
      "Быстрый дизайн интерьера от 14 дней: планировка, расстановка мебели и подбор материалов. 20 €/м², от 1 500 €. Братислава и Вена."),
@@ -322,12 +322,12 @@ add("/office-interior-design-warsaw-183m",
     ('Office Interior Design in Warsaw, 183 m² | DUMSKAYA DESIGN',
      'Office for a marketing team in Warsaw, 183 m²: layout option 1 and 3D visualizations under the “Express” design package by DUMSKAYA DESIGN.'))
 add("/custom-furniture-bratislava-design-production",
-    ("Дизайн-пакет «Мебель» — 35–45 €/м² | Братислава и Вена",
-     "Проект корпусной мебели для квартиры с готовой отделкой: 3D-визуализация и мебельные чертежи. 35–45 €/м², от 2 000 €. Изготовление в Братиславе."),
-    ("Дизайн-пакет «Меблі» — 35–45 €/м² | DUMSKAYA DESIGN",
-     "Проєкт і виготовлення меблів на замовлення: кухні, шафи, гардеробні, меблі для офісу. 35–45 €/м², від 2 000 €. Братислава та Відень."),
-    ("Furniture Design Package — €35–45/m² | DUMSKAYA DESIGN",
-     "Design and production of custom furniture: kitchens, wardrobes, walk-in closets, office furniture. €35–45/m², from €2,000. Bratislava and Vienna."))
+    ("Дизайн-пакет «Мебель» — 35–50 €/м² | Братислава и Вена",
+     "Проект корпусной мебели для квартиры с готовой отделкой: 3D-визуализация и мебельные чертежи. 35–50 €/м², от 2 000 €. Изготовление в Братиславе."),
+    ("Дизайн-пакет «Меблі» — 35–50 €/м² | DUMSKAYA DESIGN",
+     "Проєкт і виготовлення меблів на замовлення: кухні, шафи, гардеробні, меблі для офісу. 35–50 €/м², від 2 000 €. Братислава та Відень."),
+    ("Furniture Design Package — €35–50/m² | DUMSKAYA DESIGN",
+     "Design and production of custom furniture: kitchens, wardrobes, walk-in closets, office furniture. €35–50/m², from €2,000. Bratislava and Vienna."))
 add("/basic-interior-design-package-bratislava-vienna",
     ("Дизайн-пакет «Базовый» — 35–45 €/м² | DUMSKAYA DESIGN",
      "Полный дизайн-проект интерьера: планировка, 3D-визуализация, рабочие чертежи и спецификации. 35–45 €/м², от 2 000 €. Братислава и Вена."),
