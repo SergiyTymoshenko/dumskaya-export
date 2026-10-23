@@ -5,13 +5,17 @@
   "alternates": {
    "ru": "/interior-design-apartment-bratislava-127m",
    "ua": "/ua/dyzain-interieru-kvartyry-bratyslava-127m2",
-   "en": "/en/apartment-interior-design-bratislava-127sqm"
+   "en": "/en/apartment-interior-design-bratislava-127sqm",
+   "sk": "/sk/dizajn-trojizboveho-bytu-bratislava-127-m2",
+   "de": "/de/innenarchitektur-dreizimmerwohnung-bratislava-127-m2"
   },
   "cover": "bra127-01",
   "title": {
    "en": "Apartment in Bratislava, 127 m²",
    "ua": "Квартира у Братиславі, 127 м²",
-   "ru": "Квартира в Братиславе, 127 м²"
+   "ru": "Квартира в Братиславе, 127 м²",
+   "sk": "Byt v Bratislave, 127 m²",
+   "de": "Wohnung in Bratislava, 127 m²"
   },
   "explicit_warsaw": false,
   "area": 127,
@@ -36,6 +40,20 @@
     "city": "Bratislava",
     "works": "“Basic” design project: 3D visualization and technical drawings",
     "status": "in progress — renovation underway"
+   },
+   "sk": {
+    "object": "Trojizbový byt s balkónom",
+    "area": "127 m²",
+    "city": "Bratislava",
+    "works": "Návrh interiéru v balíku „Základný“: 3D vizualizácia a výkresová dokumentácia",
+    "status": "v realizácii — prebieha rekonštrukcia"
+   },
+   "de": {
+    "object": "Dreizimmerwohnung mit Balkon",
+    "area": "127 m²",
+    "city": "Bratislava",
+    "works": "Einrichtungsplanung „Basis“: 3D-Visualisierung und technische Dokumentation",
+    "status": "in Umsetzung — Sanierung läuft"
    }
   }
  },
@@ -45,13 +63,17 @@
   "alternates": {
    "ru": "/design-interior-studio-bratislava-metropolis-sk-75m",
    "ua": "/ua/luxury-interior-design-apartment-metropolis-bratislava-slovakia",
-   "en": "/en/design-interior-studio-bratislava-metropolis-sk-75m"
+   "en": "/en/design-interior-studio-bratislava-metropolis-sk-75m",
+   "sk": "/sk/dizajn-interieru-bytu-metropolis-bratislava-75-m2",
+   "de": "/de/innenarchitektur-wohnung-metropolis-bratislava-75-m2"
   },
   "cover": "6abd6a8768c5e81567a1bfe0",
   "title": {
    "en": "Apartment Metropolis in Bratislava, 75 m²",
    "ua": "Квартира Metropolis у Братиславі, 75 м²",
-   "ru": "Квартира Metropolis в Братиславе, 75 м²"
+   "ru": "Квартира Metropolis в Братиславе, 75 м²",
+   "sk": "Byt v Metropolis v Bratislave, 75 m²",
+   "de": "Wohnung im Metropolis, Bratislava, 75 m²"
   },
   "explicit_warsaw": false,
   "area": 75,
@@ -73,6 +95,18 @@
     "area": "75 м²",
     "city": "Братислава",
     "works": "Дизайн-проект (пакет «Мебель»), 3D-визуализация и мебель на заказ"
+   },
+   "sk": {
+    "object": "Byt v Metropolis",
+    "area": "75 m²",
+    "city": "Bratislava",
+    "works": "Návrh interiéru (balík „Nábytok“), 3D vizualizácia a nábytok na mieru"
+   },
+   "de": {
+    "object": "Wohnung im Metropolis",
+    "area": "75 m²",
+    "city": "Bratislava",
+    "works": "Einrichtungsplanung (Paket „Möbel“), 3D-Visualisierung und Möbel nach Maß"
    }
   }
  },
@@ -82,13 +116,17 @@
   "alternates": {
    "ru": "/studio-interior-design-disain-proekt-kvartira-kiev-80m",
    "ua": "/ua/studiya-dizajnu-intereru-kvartiri-kiev-ukraina-80m",
-   "en": "/en/luxury-80sqm-apartment-interior-design-kyiv"
+   "en": "/en/luxury-80sqm-apartment-interior-design-kyiv",
+   "sk": "/sk/dizajn-interieru-bytu-kyjev-80-m2",
+   "de": "/de/innenarchitektur-wohnung-kiew-80-m2"
   },
   "cover": "6abd0a7d61617a4443ab2567",
   "title": {
    "en": "Apartment in Kyiv, 80 m²",
    "ua": "Квартира у Києві, 80 м²",
-   "ru": "Квартира в Киеве, 80 м²"
+   "ru": "Квартира в Киеве, 80 м²",
+   "sk": "Byt v Kyjeve, 80 m²",
+   "de": "Wohnung in Kiew, 80 m²"
   },
   "explicit_warsaw": false,
   "area": 80,
@@ -110,6 +148,18 @@
     "area": "80 м²",
     "city": "Киев",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация и мебель на заказ"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "80 m²",
+    "city": "Kyjev",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia a nábytok na mieru"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "80 m²",
+    "city": "Kiew",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation und Möbel nach Maß"
    }
   }
  },
@@ -119,13 +169,17 @@
   "alternates": {
    "ru": "/studio-interior-design-bratislava-eurovea-56m",
    "ua": "/ua/studio-interior-design-bratislava-eurovea-56m",
-   "en": "/en/studio-interior-design-bratislava-eurovea-56m"
+   "en": "/en/studio-interior-design-bratislava-eurovea-56m",
+   "sk": "/sk/dizajn-interieru-bytu-eurovea-bratislava-56-m2",
+   "de": "/de/innenarchitektur-wohnung-eurovea-bratislava-56-m2"
   },
   "cover": "6abd6a8168c5e81567a1bfb4",
   "title": {
    "en": "Apartment Eurovea City in Bratislava, 56 m²",
    "ua": "Квартира Eurovea City у Братиславі, 56 м²",
-   "ru": "Квартира Eurovea City в Братиславе, 56 м²"
+   "ru": "Квартира Eurovea City в Братиславе, 56 м²",
+   "sk": "Byt v Eurovea City v Bratislave, 56 m²",
+   "de": "Wohnung in Eurovea City, Bratislava, 56 m²"
   },
   "explicit_warsaw": false,
   "area": 56,
@@ -147,6 +201,18 @@
     "area": "56 м²",
     "city": "Братислава",
     "works": "Дизайн-проект (пакет «Мебель»), 3D-визуализация и мебель на заказ"
+   },
+   "sk": {
+    "object": "Byt v Eurovea City",
+    "area": "56 m²",
+    "city": "Bratislava",
+    "works": "Návrh interiéru (balík „Nábytok“), 3D vizualizácia a nábytok na mieru"
+   },
+   "de": {
+    "object": "Wohnung in Eurovea City",
+    "area": "56 m²",
+    "city": "Bratislava",
+    "works": "Einrichtungsplanung (Paket „Möbel“), 3D-Visualisierung und Möbel nach Maß"
    }
   }
  },
@@ -156,13 +222,17 @@
   "alternates": {
    "ru": "/interior-design-apartment-bratislava-158m",
    "ua": "/ua/interior-design-duplex-apartment-bratislava-158m2",
-   "en": "/en/luxury-158sqm-duplex-apartment-interior-design-bratislava"
+   "en": "/en/luxury-158sqm-duplex-apartment-interior-design-bratislava",
+   "sk": "/sk/dizajn-mezonetoveho-bytu-bratislava-158-m2",
+   "de": "/de/innenarchitektur-maisonette-bratislava-158-m2"
   },
   "cover": "6abd6a8e6bbe610384483447",
   "title": {
    "en": "Duplex apartment in Bratislava, 158 m²",
    "ua": "Дворівнева квартира у Братиславі, 158 м²",
-   "ru": "Двухуровневая квартира в Братиславе, 158 м²"
+   "ru": "Двухуровневая квартира в Братиславе, 158 м²",
+   "sk": "Mezonetový byt v Bratislave, 158 m²",
+   "de": "Maisonette-Wohnung in Bratislava, 158 m²"
   },
   "explicit_warsaw": false,
   "area": 158,
@@ -184,6 +254,18 @@
     "area": "158 м²",
     "city": "Братислава",
     "works": "Дизайн-проект, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Mezonetový byt s terasou 20 m²",
+    "area": "158 m²",
+    "city": "Bratislava",
+    "works": "Návrh interiéru, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Maisonette-Wohnung mit 20 m² Terrasse",
+    "area": "158 m²",
+    "city": "Bratislava",
+    "works": "Einrichtungsplanung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -193,13 +275,17 @@
   "alternates": {
    "ru": "/interior-design-private-house-bratislava-120m2",
    "ua": "/ua/interior-design-private-house-bratislava-120m2",
-   "en": "/en/interior-design-private-house-bratislava-120m2"
+   "en": "/en/interior-design-private-house-bratislava-120m2",
+   "sk": "/sk/dizajn-interieru-rodinneho-domu-bratislava-120-m2",
+   "de": "/de/innenarchitektur-einfamilienhaus-bratislava-120-m2"
   },
   "cover": "6abd6a6a61617a4443acb201",
   "title": {
    "en": "Private house in Bratislava, 120 m²",
    "ua": "Приватний будинок у Братиславі, 120 м²",
-   "ru": "Частный дом в Братиславе, 120 м²"
+   "ru": "Частный дом в Братиславе, 120 м²",
+   "sk": "Rodinný dom v Bratislave, 120 m²",
+   "de": "Einfamilienhaus in Bratislava, 120 m²"
   },
   "explicit_warsaw": false,
   "area": 120,
@@ -221,6 +307,18 @@
     "area": "120 м²",
     "city": "Братислава",
     "works": "Дизайн-проект (пакет «Экспресс») и проект электрики"
+   },
+   "sk": {
+    "object": "Rodinný dom",
+    "area": "120 m²",
+    "city": "Bratislava",
+    "works": "Návrh interiéru (balík „Express“) a projekt elektroinštalácie"
+   },
+   "de": {
+    "object": "Einfamilienhaus",
+    "area": "120 m²",
+    "city": "Bratislava",
+    "works": "Einrichtungsplanung (Paket „Express“) und Elektroplanung"
    }
   }
  },
@@ -230,13 +328,17 @@
   "alternates": {
    "ru": "/apartments-vienna-luxury-interior-design-58m",
    "ua": "/ua/interior-apartments-vienna-austria-58m2",
-   "en": "/en/apartment-interior-design-vienna-austria-58sqm"
+   "en": "/en/apartment-interior-design-vienna-austria-58sqm",
+   "sk": "/sk/dizajn-interieru-bytu-vieden-58-m2",
+   "de": "/de/innenarchitektur-wohnung-wien-58-m2"
   },
   "cover": "6abd6a794888499d20745202",
   "title": {
    "en": "Apartment in Vienna, 58 m²",
    "ua": "Квартира у Відні, 58 м²",
-   "ru": "Квартира в Вене, 58 м²"
+   "ru": "Квартира в Вене, 58 м²",
+   "sk": "Byt vo Viedni, 58 m²",
+   "de": "Wohnung in Wien, 58 m²"
   },
   "explicit_warsaw": false,
   "area": 58,
@@ -258,6 +360,18 @@
     "area": "58 м²",
     "city": "Вена",
     "works": "Дизайн-проект, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "58 m²",
+    "city": "Viedeň",
+    "works": "Návrh interiéru, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "58 m²",
+    "city": "Wien",
+    "works": "Einrichtungsplanung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -267,13 +381,17 @@
   "alternates": {
    "ru": "/interior-design-private-house-dunajska-streda-140m",
    "ua": "/ua/interior-design-private-house-dunajska-streda-140m",
-   "en": "/en/interior-design-private-house-dunajska-streda-140m"
+   "en": "/en/interior-design-private-house-dunajska-streda-140m",
+   "sk": "/sk/dizajn-interieru-rodinneho-domu-dunajska-streda-140-m2",
+   "de": "/de/innenarchitektur-einfamilienhaus-dunajska-streda-140-m2"
   },
   "cover": "6abd6a9d68c5e81567a1c052",
   "title": {
    "en": "Private house in Dunajská Streda, 140 m²",
    "ua": "Приватний будинок у Дунайській-Стреді, 140 м²",
-   "ru": "Частный дом в Дунайска-Стреде, 140 м²"
+   "ru": "Частный дом в Дунайска-Стреде, 140 м²",
+   "sk": "Rodinný dom v Dunajskej Strede, 140 m²",
+   "de": "Einfamilienhaus in Dunajská Streda, 140 m²"
   },
   "explicit_warsaw": false,
   "area": 140,
@@ -295,6 +413,18 @@
     "area": "140 м²",
     "city": "Дунайска-Стреда",
     "works": "Дизайн-проект"
+   },
+   "sk": {
+    "object": "Rodinný dom",
+    "area": "140 m²",
+    "city": "Dunajská Streda",
+    "works": "Návrh interiéru"
+   },
+   "de": {
+    "object": "Einfamilienhaus",
+    "area": "140 m²",
+    "city": "Dunajská Streda",
+    "works": "Einrichtungsplanung"
    }
   }
  },
@@ -304,13 +434,17 @@
   "alternates": {
    "ru": "/interior-design-private-house-kharkiv-212m",
    "ua": "/ua/interior-design-private-house-kharkiv-212m",
-   "en": "/en/luxury-interior-private-house-212sqm"
+   "en": "/en/luxury-interior-private-house-212sqm",
+   "sk": "/sk/dizajn-interieru-rodinneho-domu-charkov-212-m2",
+   "de": "/de/innenarchitektur-einfamilienhaus-charkiw-212-m2"
   },
   "cover": "6abd6a716bbe6103844833be",
   "title": {
    "en": "Private house in Kharkiv, 212 m²",
    "ua": "Приватний будинок у Харкові, 212 м²",
-   "ru": "Частный дом в Харькове, 212 м²"
+   "ru": "Частный дом в Харькове, 212 м²",
+   "sk": "Rodinný dom v Charkove, 212 m²",
+   "de": "Einfamilienhaus in Charkiw, 212 m²"
   },
   "explicit_warsaw": false,
   "area": 212,
@@ -332,6 +466,18 @@
     "area": "212 м²",
     "city": "Харьков",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Rodinný dom",
+    "area": "212 m²",
+    "city": "Charkov",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Einfamilienhaus",
+    "area": "212 m²",
+    "city": "Charkiw",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -341,13 +487,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-warsaw-43m2",
    "ua": "/ua/dyzain-proekt-interieru-kvartyry-43-m2-varshava",
-   "en": "/en/contemporary-warsaw-apartment-43sqm"
+   "en": "/en/contemporary-warsaw-apartment-43sqm",
+   "sk": "/sk/dizajn-minimalistickeho-bytu-varsava-43-m2",
+   "de": "/de/minimalistische-wohnung-warschau-43-m2"
   },
   "cover": "6abd6b6368c5e81567a1c463",
   "title": {
    "ru": "Минималистичная квартира в Варшаве, 43 м²",
    "ua": "Мінімалістична квартира у Варшаві, 43 м²",
-   "en": "Minimalist apartment in Warsaw, 43 m²"
+   "en": "Minimalist apartment in Warsaw, 43 m²",
+   "sk": "Minimalistický byt vo Varšave, 43 m²",
+   "de": "Minimalistische Wohnung in Warschau, 43 m²"
   },
   "explicit_warsaw": true,
   "area": 43,
@@ -369,6 +519,18 @@
     "area": "43 м²",
     "city": "Варшава",
     "works": "Дизайн-проект (пакет «Базовый») и 3D-визуализация"
+   },
+   "sk": {
+    "object": "Byt, minimalizmus",
+    "area": "43 m²",
+    "city": "Varšava",
+    "works": "Návrh interiéru (balík „Základný“) a 3D vizualizácia"
+   },
+   "de": {
+    "object": "Wohnung, minimalistisch",
+    "area": "43 m²",
+    "city": "Warschau",
+    "works": "Einrichtungsplanung (Paket „Basis“) und 3D-Visualisierung"
    }
   }
  },
@@ -378,13 +540,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-krakow-63m",
    "ua": "/ua/dyzain-proekt-interieru-kvartyry-63-m2-krakiv-polshcha",
-   "en": "/en/apartment-interior-design-krakow-63m"
+   "en": "/en/apartment-interior-design-krakow-63m",
+   "sk": "/sk/dizajn-interieru-bytu-krakov-63-m2",
+   "de": "/de/innenarchitektur-wohnung-krakau-63-m2"
   },
   "cover": "6abd6b4e68c5e81567a1c3f1",
   "title": {
    "en": "Apartment in Kraków, 63 m²",
    "ua": "Квартира у Кракові, 63 м²",
-   "ru": "Квартира в Кракове, 63 м²"
+   "ru": "Квартира в Кракове, 63 м²",
+   "sk": "Byt v Krakove, 63 m²",
+   "de": "Wohnung in Krakau, 63 m²"
   },
   "explicit_warsaw": false,
   "area": 63,
@@ -406,6 +572,18 @@
     "area": "63 м²",
     "city": "Краков",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "63 m²",
+    "city": "Krakov",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "63 m²",
+    "city": "Krakau",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
    }
   }
  },
@@ -415,13 +593,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-60m",
    "ua": "/ua/dyzain-proekt-interieru-apartamentiv-60-m2",
-   "en": "/en/apartment-interior-design-60m"
+   "en": "/en/apartment-interior-design-60m",
+   "sk": "/sk/dizajn-interieru-bytu-s-terasou-60-m2",
+   "de": "/de/innenarchitektur-wohnung-terrasse-60-m2"
   },
   "cover": "6abd6ab34888499d20745304",
   "title": {
    "en": "Apartment, 60 m²",
    "ua": "Квартира, 60 м²",
-   "ru": "Квартира, 60 м²"
+   "ru": "Квартира, 60 м²",
+   "sk": "Byt, 60 m²",
+   "de": "Wohnung, 60 m²"
   },
   "explicit_warsaw": false,
   "area": 60,
@@ -440,6 +622,16 @@
     "object": "Квартира с террасой 18 м²",
     "area": "60 м²",
     "works": "Дизайн-проект и 3D-визуализация"
+   },
+   "sk": {
+    "object": "Byt s terasou 18 m²",
+    "area": "60 m²",
+    "works": "Návrh interiéru a 3D vizualizácia"
+   },
+   "de": {
+    "object": "Wohnung mit 18 m² Terrasse",
+    "area": "60 m²",
+    "works": "Einrichtungsplanung und 3D-Visualisierung"
    }
   }
  },
@@ -449,13 +641,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-54m",
    "ua": "/ua/apartment-interior-design-custom-furniture-54m2",
-   "en": "/en/luxury-54sqm-apartment-interior-design-bratislava"
+   "en": "/en/luxury-54sqm-apartment-interior-design-bratislava",
+   "sk": "/sk/dizajn-interieru-bytu-54-m2",
+   "de": "/de/innenarchitektur-wohnung-54-m2"
   },
   "cover": "6abd6b143ba7c7b83394fb01",
   "title": {
    "en": "Apartment, 54 m²",
    "ua": "Квартира, 54 м²",
-   "ru": "Квартира, 54 м²"
+   "ru": "Квартира, 54 м²",
+   "sk": "Byt, 54 m²",
+   "de": "Wohnung, 54 m²"
   },
   "explicit_warsaw": false,
   "area": 54,
@@ -474,6 +670,16 @@
     "object": "Квартира",
     "area": "54 м²",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "54 m²",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "54 m²",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
    }
   }
  },
@@ -483,13 +689,17 @@
   "alternates": {
    "ru": "/apartment-furniture-interior-design-45m",
    "ua": "/ua/dyzain-proekt-interieru-kvartyry-45-m2",
-   "en": "/en/modern-apartment-design-45sqm"
+   "en": "/en/modern-apartment-design-45sqm",
+   "sk": "/sk/dizajn-interieru-bytu-45-m2",
+   "de": "/de/innenarchitektur-wohnung-45-m2"
   },
   "cover": "6abd6b5c3ba7c7b83394fc44",
   "title": {
    "en": "Apartment, 45 m²",
    "ua": "Квартира, 45 м²",
-   "ru": "Квартира, 45 м²"
+   "ru": "Квартира, 45 м²",
+   "sk": "Byt, 45 m²",
+   "de": "Wohnung, 45 m²"
   },
   "explicit_warsaw": false,
   "area": 45,
@@ -508,6 +718,16 @@
     "object": "Квартира",
     "area": "45 м²",
     "works": "Дизайн-проект"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "45 m²",
+    "works": "Návrh interiéru"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "45 m²",
+    "works": "Einrichtungsplanung"
    }
   }
  },
@@ -517,13 +737,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-48m",
    "ua": "/ua/dyzain-proekt-interieru-kvartyry-48-m2",
-   "en": "/en/48sqm-luxury-apartment-interior-design"
+   "en": "/en/48sqm-luxury-apartment-interior-design",
+   "sk": "/sk/dizajn-interieru-bytu-48-m2",
+   "de": "/de/innenarchitektur-wohnung-48-m2"
   },
   "cover": "6abd6ac73ba7c7b83394f91e",
   "title": {
    "en": "Apartment, 48 m²",
    "ua": "Квартира, 48 м²",
-   "ru": "Квартира, 48 м²"
+   "ru": "Квартира, 48 м²",
+   "sk": "Byt, 48 m²",
+   "de": "Wohnung, 48 m²"
   },
   "explicit_warsaw": false,
   "area": 48,
@@ -542,6 +766,16 @@
     "object": "Квартира",
     "area": "48 м²",
     "works": "Дизайн-проект, мебель на заказ, ремонт под ключ и декорирование"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "48 m²",
+    "works": "Návrh interiéru, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "48 m²",
+    "works": "Einrichtungsplanung, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
    }
   }
  },
@@ -551,13 +785,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-bratislava-58m",
    "ua": "/ua/apartment-interior-design-bratislava-58m2",
-   "en": "/en/apartment-interior-design-bratislava-58m2"
+   "en": "/en/apartment-interior-design-bratislava-58m2",
+   "sk": "/sk/dizajn-interieru-bytu-bratislava-58-m2",
+   "de": "/de/innenarchitektur-wohnung-bratislava-58-m2"
   },
   "cover": "6abd6af84888499d20745492",
   "title": {
    "en": "Apartment in Bratislava, 58 m²",
    "ua": "Квартира у Братиславі, 58 м²",
-   "ru": "Квартира в Братиславе, 58 м²"
+   "ru": "Квартира в Братиславе, 58 м²",
+   "sk": "Byt v Bratislave, 58 m²",
+   "de": "Wohnung in Bratislava, 58 m²"
   },
   "explicit_warsaw": false,
   "area": 58,
@@ -579,6 +817,18 @@
     "area": "58 m²",
     "city": "Bratislava",
     "works": "Interior design, 3D visualization, technical drawings, custom furniture, turnkey renovation and styling"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "58 m²",
+    "city": "Bratislava",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "58 m²",
+    "city": "Bratislava",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
    }
   }
  },
@@ -588,13 +838,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-52m",
    "ua": "/ua/dyzain-proekt-interieru-kvartyry-52-m2",
-   "en": "/en/modern-apartment-design-52sqm"
+   "en": "/en/modern-apartment-design-52sqm",
+   "sk": "/sk/dizajn-interieru-bytu-52-m2",
+   "de": "/de/innenarchitektur-wohnung-52-m2"
   },
   "cover": "6abd6aff68c5e81567a1c258",
   "title": {
    "en": "Apartment, 52 m²",
    "ua": "Квартира, 52 м²",
-   "ru": "Квартира, 52 м²"
+   "ru": "Квартира, 52 м²",
+   "sk": "Byt, 52 m²",
+   "de": "Wohnung, 52 m²"
   },
   "explicit_warsaw": false,
   "area": 52,
@@ -613,6 +867,16 @@
     "object": "Квартира",
     "area": "52 м²",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "52 m²",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "52 m²",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
    }
   }
  },
@@ -622,13 +886,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-warsaw-43m",
    "ua": "/ua/dyzain-proekt-interieru-kvartyry-43-m2-varshava-polshcha",
-   "en": "/en/modern-apartment-design-warsaw-43sqm"
+   "en": "/en/modern-apartment-design-warsaw-43sqm",
+   "sk": "/sk/dizajn-interieru-bytu-varsava-43-m2",
+   "de": "/de/innenarchitektur-wohnung-warschau-43-m2"
   },
   "cover": "6abd6aaa6bbe6103844834dd",
   "title": {
    "en": "Apartment in Warsaw, 43 m²",
    "ua": "Квартира у Варшаві, 43 м²",
-   "ru": "Квартира в Варшаве, 43 м²"
+   "ru": "Квартира в Варшаве, 43 м²",
+   "sk": "Byt vo Varšave, 43 m²",
+   "de": "Wohnung in Warschau, 43 m²"
   },
   "explicit_warsaw": true,
   "area": 43,
@@ -650,6 +918,18 @@
     "area": "43 м²",
     "city": "Варшава",
     "works": "Дизайн-проект, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "43 m²",
+    "city": "Varšava",
+    "works": "Návrh interiéru, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "43 m²",
+    "city": "Warschau",
+    "works": "Einrichtungsplanung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
    }
   }
  },
@@ -659,13 +939,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-bratislava-52m",
    "ua": "/ua/dyzain-proekt-interieru-kvartyry-52-m2-bratyslavi-slovachchyna",
-   "en": "/en/interior-apartment-design-bratislava-slovakia-52sqm"
+   "en": "/en/interior-apartment-design-bratislava-slovakia-52sqm",
+   "sk": "/sk/dizajn-interieru-bytu-bratislava-52-m2",
+   "de": "/de/innenarchitektur-wohnung-bratislava-52-m2"
   },
   "cover": "6abd6b0c61617a4443acb569",
   "title": {
    "en": "Apartment in Bratislava, 52 m²",
    "ua": "Квартира у Братиславі, 52 м²",
-   "ru": "Квартира в Братиславе, 52 м²"
+   "ru": "Квартира в Братиславе, 52 м²",
+   "sk": "Byt v Bratislave, 52 m²",
+   "de": "Wohnung in Bratislava, 52 m²"
   },
   "explicit_warsaw": false,
   "area": 52,
@@ -687,6 +971,18 @@
     "area": "52 м²",
     "city": "Братислава",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "52 m²",
+    "city": "Bratislava",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "52 m²",
+    "city": "Bratislava",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -696,13 +992,17 @@
   "alternates": {
    "ru": "/apartments-dubai-luxury-interior-design-160m",
    "ua": "/ua/dyzain-proekt-interieru-apartamentiv-dubai-160-m2",
-   "en": "/en/premium-interior-design-apartment-dubai-uae-160sqm"
+   "en": "/en/premium-interior-design-apartment-dubai-uae-160sqm",
+   "sk": "/sk/dizajn-interieru-apartmanu-dubaj-160-m2",
+   "de": "/de/innenarchitektur-apartment-dubai-160-m2"
   },
   "cover": "6abd6aba3ba7c7b83394f8d8",
   "title": {
    "en": "Apartment in Dubai, 160 m²",
    "ua": "Апартаменти у Дубаї, 160 м²",
-   "ru": "Апартаменты в Дубае, 160 м²"
+   "ru": "Апартаменты в Дубае, 160 м²",
+   "sk": "Apartmán v Dubaji, 160 m²",
+   "de": "Apartment in Dubai, 160 m²"
   },
   "explicit_warsaw": false,
   "area": 160,
@@ -724,6 +1024,18 @@
     "area": "160 м²",
     "city": "Дубай",
     "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Apartmán",
+    "area": "160 m²",
+    "city": "Dubaj",
+    "works": "Návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Apartment",
+    "area": "160 m²",
+    "city": "Dubai",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -733,13 +1045,17 @@
   "alternates": {
    "ru": "/apartments-los-angeles-interior-design-140m",
    "ua": "/ua/dyzain-proekt-interieru-apartamentiv-los-andzheles-140-m2",
-   "en": "/en/premium-interior-design-apartment-los-angeles-california-usa-140sqm"
+   "en": "/en/premium-interior-design-apartment-los-angeles-california-usa-140sqm",
+   "sk": "/sk/dizajn-interieru-apartmanu-los-angeles-140-m2",
+   "de": "/de/innenarchitektur-apartment-los-angeles-140-m2"
   },
   "cover": "6abd6ac168c5e81567a1c102",
   "title": {
    "en": "Apartment in Los Angeles, 140 m²",
    "ua": "Апартаменти у Лос-Анджелесі, 140 м²",
-   "ru": "Апартаменты в Лос-Анджелесе, 140 м²"
+   "ru": "Апартаменты в Лос-Анджелесе, 140 м²",
+   "sk": "Apartmán v Los Angeles, 140 m²",
+   "de": "Apartment in Los Angeles, 140 m²"
   },
   "explicit_warsaw": false,
   "area": 140,
@@ -761,6 +1077,18 @@
     "area": "140 м²",
     "city": "Лос-Анджелес",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация и проект мебели"
+   },
+   "sk": {
+    "object": "Apartmán",
+    "area": "140 m²",
+    "city": "Los Angeles",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia a návrh nábytku"
+   },
+   "de": {
+    "object": "Apartment",
+    "area": "140 m²",
+    "city": "Los Angeles",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation und Möbelplanung"
    }
   }
  },
@@ -770,13 +1098,17 @@
   "alternates": {
    "ru": "/apartments-praha-luxury-interior-design-90m",
    "ua": "/ua/dyzain-proekt-interieru-apartamentiv-praha-chekhiia-90-m2",
-   "en": "/en/apartment-interior-design-prague-czech-republic-90sqm"
+   "en": "/en/apartment-interior-design-prague-czech-republic-90sqm",
+   "sk": "/sk/dizajn-interieru-apartmanu-praha-90-m2",
+   "de": "/de/innenarchitektur-apartment-prag-90-m2"
   },
   "cover": "6abd6aea61617a4443acb472",
   "title": {
    "en": "Apartment in Prague, 90 m²",
    "ua": "Апартаменти у Празі, 90 м²",
-   "ru": "Апартаменты в Праге, 90 м²"
+   "ru": "Апартаменты в Праге, 90 м²",
+   "sk": "Apartmán v Prahe, 90 m²",
+   "de": "Apartment in Prag, 90 m²"
   },
   "explicit_warsaw": false,
   "area": 90,
@@ -798,6 +1130,18 @@
     "area": "90 м²",
     "city": "Прага",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Apartmán",
+    "area": "90 m²",
+    "city": "Praha",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Apartment",
+    "area": "90 m²",
+    "city": "Prag",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -807,13 +1151,17 @@
   "alternates": {
    "ru": "/apartments-new-york-luxury-interior-design-57m",
    "ua": "/ua/dyzain-proekt-interieru-apartamentiv-niu-york-usa",
-   "en": "/en/luxury-interior-design-apartment-new-york-usa-57sqm"
+   "en": "/en/luxury-interior-design-apartment-new-york-usa-57sqm",
+   "sk": "/sk/dizajn-interieru-apartmanu-new-york-57-m2",
+   "de": "/de/innenarchitektur-apartment-new-york-57-m2"
   },
   "cover": "6abd6af268c5e81567a1c21a",
   "title": {
    "en": "Apartment in New York, 57 m²",
    "ua": "Апартаменти у Нью-Йорку, 57 м²",
-   "ru": "Апартаменты в Нью-Йорке, 57 м²"
+   "ru": "Апартаменты в Нью-Йорке, 57 м²",
+   "sk": "Apartmán v New Yorku, 57 m²",
+   "de": "Apartment in New York, 57 m²"
   },
   "explicit_warsaw": false,
   "area": 57,
@@ -835,6 +1183,18 @@
     "area": "57 м²",
     "city": "Нью-Йорк",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Apartmán",
+    "area": "57 m²",
+    "city": "New York",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Apartment",
+    "area": "57 m²",
+    "city": "New York",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -844,13 +1204,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-krakow-64m",
    "ua": "/ua/dyzain-proekt-interieru-kvartyry-64-m2-krakiv-polshcha",
-   "en": "/en/apartment-interior-design-krakow-64m"
+   "en": "/en/apartment-interior-design-krakow-64m",
+   "sk": "/sk/dizajn-minimalistickeho-bytu-krakov-64-m2",
+   "de": "/de/minimalistische-wohnung-krakau-64-m2"
   },
   "cover": "6abd6b556bbe61038448383c",
   "title": {
    "en": "Apartment in Kraków, 64 m²",
    "ua": "Квартира у Кракові, 64 м²",
-   "ru": "Квартира в Кракове, 64 м²"
+   "ru": "Квартира в Кракове, 64 м²",
+   "sk": "Byt v Krakove, 64 m²",
+   "de": "Wohnung in Krakau, 64 m²"
   },
   "explicit_warsaw": false,
   "area": 64,
@@ -872,6 +1236,18 @@
     "area": "64 м²",
     "city": "Краков",
     "works": "Дизайн-проект, 3D-визуализация и техническая документация"
+   },
+   "sk": {
+    "object": "Byt, minimalizmus",
+    "area": "64 m²",
+    "city": "Krakov",
+    "works": "Návrh interiéru, 3D vizualizácia a výkresová dokumentácia"
+   },
+   "de": {
+    "object": "Wohnung, minimalistisch",
+    "area": "64 m²",
+    "city": "Krakau",
+    "works": "Einrichtungsplanung, 3D-Visualisierung und technische Dokumentation"
    }
   }
  },
@@ -881,13 +1257,17 @@
   "alternates": {
    "ru": "/dizainer-interierov-kiev",
    "ua": "/ua/dyzain-proekt-interieru-pryvatnoho-budynku-217-m-kyiv-ukraine",
-   "en": "/en/luxury-interior-design-kiev-private-house-217sqm"
+   "en": "/en/luxury-interior-design-kiev-private-house-217sqm",
+   "sk": "/sk/dizajn-interieru-rodinneho-domu-kyjev-217-m2",
+   "de": "/de/innenarchitektur-einfamilienhaus-kiew-217-m2"
   },
   "cover": "6abd6b0561617a4443acb529",
   "title": {
    "en": "Private house in Kyiv, 217 m²",
    "ua": "Приватний будинок у Києві, 217 м²",
-   "ru": "Частный дом в Киеве, 217 м²"
+   "ru": "Частный дом в Киеве, 217 м²",
+   "sk": "Rodinný dom v Kyjeve, 217 m²",
+   "de": "Einfamilienhaus in Kiew, 217 m²"
   },
   "explicit_warsaw": false,
   "area": 217,
@@ -909,6 +1289,18 @@
     "area": "217 м²",
     "city": "Киев",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Rodinný dom",
+    "area": "217 m²",
+    "city": "Kyjev",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Einfamilienhaus",
+    "area": "217 m²",
+    "city": "Kiew",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -918,13 +1310,17 @@
   "alternates": {
    "ru": "/villa-interior-design-160m",
    "ua": "/ua/dyzain-interieru-budynku-160-m2-vid-dumskaya-design",
-   "en": "/en/luxury-interior-design-private-house-munich-germany-160sqm"
+   "en": "/en/luxury-interior-design-private-house-munich-germany-160sqm",
+   "sk": "/sk/dizajn-interieru-rodinneho-domu-mnichov-160-m2",
+   "de": "/de/innenarchitektur-einfamilienhaus-muenchen-160-m2"
   },
   "cover": "6abd6b3b4888499d2074560d",
   "title": {
    "en": "Private house in Munich, 160 m²",
    "ua": "Приватний будинок у Мюнхені, 160 м²",
-   "ru": "Частный дом в Мюнхене, 160 м²"
+   "ru": "Частный дом в Мюнхене, 160 м²",
+   "sk": "Rodinný dom v Mníchove, 160 m²",
+   "de": "Einfamilienhaus in München, 160 m²"
   },
   "explicit_warsaw": false,
   "area": 160,
@@ -946,6 +1342,18 @@
     "area": "160 м²",
     "city": "Мюнхен",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Rodinný dom",
+    "area": "160 m²",
+    "city": "Mníchov",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Einfamilienhaus",
+    "area": "160 m²",
+    "city": "München",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -955,13 +1363,17 @@
   "alternates": {
    "ru": "/interior-design-private-house-215m",
    "ua": "/ua/dyzain-proekt-interieru-pryvatnoho-budynku-215-m-berlin-nimetchina",
-   "en": "/en/luxury-interior-private-house-berlin-germany-215sqm"
+   "en": "/en/luxury-interior-private-house-berlin-germany-215sqm",
+   "sk": "/sk/dizajn-interieru-rodinneho-domu-berlin-215-m2",
+   "de": "/de/innenarchitektur-einfamilienhaus-berlin-215-m2"
   },
   "cover": "6abd6aa461617a4443acb2fc",
   "title": {
    "en": "Private house in Berlin, 215 m²",
    "ua": "Приватний будинок у Берліні, 215 м²",
-   "ru": "Частный дом в Берлине, 215 м²"
+   "ru": "Частный дом в Берлине, 215 м²",
+   "sk": "Rodinný dom v Berlíne, 215 m²",
+   "de": "Einfamilienhaus in Berlin, 215 m²"
   },
   "explicit_warsaw": false,
   "area": 215,
@@ -983,6 +1395,18 @@
     "area": "215 м²",
     "city": "Берлин",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Rodinný dom",
+    "area": "215 m²",
+    "city": "Berlín",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Einfamilienhaus",
+    "area": "215 m²",
+    "city": "Berlin",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -992,13 +1416,17 @@
   "alternates": {
    "ru": "/interior-design-apartment-luxury-kyiv-119m",
    "ua": "/ua/dyzain-interieru-apartamentiv-z-terasoiu-u-kyievi-119-m2",
-   "en": "/en/luxury-119sqm-apartment-interior-design-kyiv"
+   "en": "/en/luxury-119sqm-apartment-interior-design-kyiv",
+   "sk": "/sk/dizajn-interieru-bytu-kyjev-119-m2",
+   "de": "/de/innenarchitektur-wohnung-terrasse-kiew-119-m2"
   },
   "cover": "6abd6a956bbe610384483468",
   "title": {
    "en": "Apartment in Kyiv, 119 m²",
    "ua": "Квартира у Києві, 119 м²",
-   "ru": "Квартира в Киеве, 119 м²"
+   "ru": "Квартира в Киеве, 119 м²",
+   "sk": "Byt v Kyjeve, 119 m²",
+   "de": "Wohnung in Kiew, 119 m²"
   },
   "explicit_warsaw": false,
   "area": 119,
@@ -1020,6 +1448,18 @@
     "area": "119 м²",
     "city": "Киев",
     "works": "Дизайн-проект"
+   },
+   "sk": {
+    "object": "Byt s terasou 30 m²",
+    "area": "119 m²",
+    "city": "Kyjev",
+    "works": "Návrh interiéru"
+   },
+   "de": {
+    "object": "Wohnung mit 30 m² Terrasse",
+    "area": "119 m²",
+    "city": "Kiew",
+    "works": "Einrichtungsplanung"
    }
   }
  },
@@ -1029,13 +1469,17 @@
   "alternates": {
    "ru": "/interior-design-furniture-classic-120m-london",
    "ua": "/ua/dyzain-proekt-kvartyra-suchasna-klasyka-120-m-london",
-   "en": "/en/luxury-interior-modern-classic-apartment-london-united-kingdom-120sqm"
+   "en": "/en/luxury-interior-modern-classic-apartment-london-united-kingdom-120sqm",
+   "sk": "/sk/dizajn-interieru-bytu-londyn-120-m2",
+   "de": "/de/innenarchitektur-wohnung-london-120-m2"
   },
   "cover": "6abceda061617a4443aa9440",
   "title": {
    "en": "Apartment in London, 120 m²",
    "ua": "Квартира у Лондоні, 120 м²",
-   "ru": "Квартира в Лондоне, 120 м²"
+   "ru": "Квартира в Лондоне, 120 м²",
+   "sk": "Byt v Londýne, 120 m²",
+   "de": "Wohnung in London, 120 m²"
   },
   "explicit_warsaw": false,
   "area": 120,
@@ -1057,6 +1501,18 @@
     "area": "120 м²",
     "city": "Лондон",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Byt, moderná klasika",
+    "area": "120 m²",
+    "city": "Londýn",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Wohnung, moderne Klassik",
+    "area": "120 m²",
+    "city": "London",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1066,13 +1522,17 @@
   "alternates": {
    "ru": "/apartment-luxury-interior-design-madrid-spain-107m",
    "ua": "/ua/dyzain-interieru-madrid-spain-107",
-   "en": "/en/luxury-interior-design-madrid-spain-107m"
+   "en": "/en/luxury-interior-design-madrid-spain-107m",
+   "sk": "/sk/dizajn-interieru-apartmanu-madrid-107-m2",
+   "de": "/de/innenarchitektur-apartment-madrid-107-m2"
   },
   "cover": "6abd6ad368c5e81567a1c165",
   "title": {
    "en": "Apartment in Madrid, 107 m²",
    "ua": "Апартаменти у Мадриді, 107 м²",
-   "ru": "Апартаменты в Мадриде, 107 м²"
+   "ru": "Апартаменты в Мадриде, 107 м²",
+   "sk": "Apartmán v Madride, 107 m²",
+   "de": "Apartment in Madrid, 107 m²"
   },
   "explicit_warsaw": false,
   "area": 107,
@@ -1094,6 +1554,18 @@
     "area": "107 м²",
     "city": "Мадрид",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Apartmán",
+    "area": "107 m²",
+    "city": "Madrid",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Apartment",
+    "area": "107 m²",
+    "city": "Madrid",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1103,13 +1575,17 @@
   "alternates": {
    "ru": "/luxury-interior-design-barcelona-spain-108m",
    "ua": "/ua/dyzain-proekt-interieru-barcelona-spain-108",
-   "en": "/en/luxury-108sqm-apartment-interior-design-barcelona-spain"
+   "en": "/en/luxury-108sqm-apartment-interior-design-barcelona-spain",
+   "sk": "/sk/dizajn-interieru-apartmanu-barcelona-108-m2",
+   "de": "/de/innenarchitektur-apartment-barcelona-108-m2"
   },
   "cover": "6abd6ae14888499d20745418",
   "title": {
    "en": "Apartment in Barcelona, 108 m²",
    "ua": "Апартаменти у Барселоні, 108 м²",
-   "ru": "Апартаменты в Барселоне, 108 м²"
+   "ru": "Апартаменты в Барселоне, 108 м²",
+   "sk": "Apartmán v Barcelone, 108 m²",
+   "de": "Apartment in Barcelona, 108 m²"
   },
   "explicit_warsaw": false,
   "area": 108,
@@ -1131,6 +1607,18 @@
     "area": "108 м²",
     "city": "Барселона",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Apartmán",
+    "area": "108 m²",
+    "city": "Barcelona",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Apartment",
+    "area": "108 m²",
+    "city": "Barcelona",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1140,13 +1628,17 @@
   "alternates": {
    "ru": "/apartment-interior-design-51m",
    "ua": "/ua/apartment-interior-design-custom-furniture-51m2",
-   "en": "/en/51sqm-luxury-apartment-interior-design-bratislava"
+   "en": "/en/51sqm-luxury-apartment-interior-design-bratislava",
+   "sk": "/sk/dizajn-interieru-bytu-51-m2",
+   "de": "/de/innenarchitektur-wohnung-51-m2"
   },
   "cover": "6abd6b1b68c5e81567a1c2e1",
   "title": {
    "en": "Apartment, 51 m²",
    "ua": "Квартира, 51 м²",
-   "ru": "Квартира, 51 м²"
+   "ru": "Квартира, 51 м²",
+   "sk": "Byt, 51 m²",
+   "de": "Wohnung, 51 m²"
   },
   "explicit_warsaw": false,
   "area": 51,
@@ -1165,6 +1657,16 @@
     "object": "Квартира",
     "area": "51 м²",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ, ремонт под ключ и декорирование"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "51 m²",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "51 m²",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
    }
   }
  },
@@ -1174,13 +1676,17 @@
   "alternates": {
    "ru": "/apartments-wien-luxury-interior-design-115m",
    "ua": "/ua/dyzain-interieru-apartamentiv-viden-avstriia-115-m2-vid-dumskaya-design",
-   "en": "/en/luxury-interior-design-apartment-vienna-austria-115sqm"
+   "en": "/en/luxury-interior-design-apartment-vienna-austria-115sqm",
+   "sk": "/sk/dizajn-interieru-bytu-vieden-115-m2",
+   "de": "/de/innenarchitektur-wohnung-wien-115-m2"
   },
   "cover": "6abd6b354888499d207455da",
   "title": {
    "en": "Apartment in Vienna, 115 m²",
    "ua": "Квартира у Відні, 115 м²",
-   "ru": "Квартира в Вене, 115 м²"
+   "ru": "Квартира в Вене, 115 м²",
+   "sk": "Byt vo Viedni, 115 m²",
+   "de": "Wohnung in Wien, 115 m²"
   },
   "explicit_warsaw": false,
   "area": 115,
@@ -1202,6 +1708,18 @@
     "area": "115 м²",
     "city": "Вена",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "115 m²",
+    "city": "Viedeň",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "115 m²",
+    "city": "Wien",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1211,13 +1729,17 @@
   "alternates": {
    "ru": "/interior-design-furniture-60m",
    "ua": "/ua/apartment-interior-design-renovation-varna-60m2",
-   "en": "/en/premium-interior-design-apartment-varna-bulgaria-60sqm"
+   "en": "/en/premium-interior-design-apartment-varna-bulgaria-60sqm",
+   "sk": "/sk/dizajn-interieru-bytu-varna-60-m2",
+   "de": "/de/innenarchitektur-wohnung-warna-60-m2"
   },
   "cover": "6abd6ad93ba7c7b83394f9b9",
   "title": {
    "en": "Apartment in Varna, 60 m²",
    "ua": "Квартира у Варні, 60 м²",
-   "ru": "Квартира в Варне, 60 м²"
+   "ru": "Квартира в Варне, 60 м²",
+   "sk": "Byt vo Varne, 60 m²",
+   "de": "Wohnung in Warna, 60 m²"
   },
   "explicit_warsaw": false,
   "area": 60,
@@ -1239,6 +1761,18 @@
     "area": "60 м²",
     "city": "Варна",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Byt",
+    "area": "60 m²",
+    "city": "Varna",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Wohnung",
+    "area": "60 m²",
+    "city": "Warna",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1248,13 +1782,17 @@
   "alternates": {
    "ru": "/interior-design-apartment-ukraine-47m",
    "ua": "/ua/dyzain-proekt-interieru-malohabarytnoi-kvartyry-47-m2",
-   "en": "/en/interior-design-compact-3-room-apartment-47sqm"
+   "en": "/en/interior-design-compact-3-room-apartment-47sqm",
+   "sk": "/sk/dizajn-trojizboveho-bytu-47-m2",
+   "de": "/de/innenarchitektur-dreizimmerwohnung-47-m2"
   },
   "cover": "6abd6b696bbe610384483889",
   "title": {
    "en": "Three-room apartment, 47 m²",
    "ua": "Трикімнатна квартира, 47 м²",
-   "ru": "Трёхкомнатная квартира, 47 м²"
+   "ru": "Трёхкомнатная квартира, 47 м²",
+   "sk": "Trojizbový byt, 47 m²",
+   "de": "Dreizimmerwohnung, 47 m²"
   },
   "explicit_warsaw": false,
   "area": 47,
@@ -1273,6 +1811,16 @@
     "object": "Трёхкомнатная квартира",
     "area": "47 м²",
     "works": "Дизайн-проект"
+   },
+   "sk": {
+    "object": "Trojizbový byt",
+    "area": "47 m²",
+    "works": "Návrh interiéru"
+   },
+   "de": {
+    "object": "Dreizimmerwohnung",
+    "area": "47 m²",
+    "works": "Einrichtungsplanung"
    }
   }
  },
@@ -1282,13 +1830,17 @@
   "alternates": {
    "ru": "/interior-design-villa-179m-madrid-spain",
    "ua": "/ua/dyzain-proekt-interieru-villa-179-m-madrid-spain",
-   "en": "/en/luxury-interior-villa-179sqm-madrid-spain"
+   "en": "/en/luxury-interior-villa-179sqm-madrid-spain",
+   "sk": "/sk/dizajn-interieru-vily-madrid-179-m2",
+   "de": "/de/innenarchitektur-villa-madrid-179-m2"
   },
   "cover": "6abd6b2668c5e81567a1c33b",
   "title": {
    "en": "Villa in Madrid, 179 m²",
    "ua": "Вілла у Мадриді, 179 м²",
-   "ru": "Вилла в Мадриде, 179 м²"
+   "ru": "Вилла в Мадриде, 179 м²",
+   "sk": "Vila v Madride, 179 m²",
+   "de": "Villa in Madrid, 179 m²"
   },
   "explicit_warsaw": false,
   "area": 179,
@@ -1310,6 +1862,18 @@
     "area": "179 м²",
     "city": "Мадрид",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Vila",
+    "area": "179 m²",
+    "city": "Madrid",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Villa",
+    "area": "179 m²",
+    "city": "Madrid",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1319,13 +1883,17 @@
   "alternates": {
    "ru": "/dumskaya-interior-design-villa-220m",
    "ua": "/ua/dyzain-interieru-burgas-villa-220m",
-   "en": "/en/luxury-interior-villa-burgas-bulgaria-220sqm"
+   "en": "/en/luxury-interior-villa-burgas-bulgaria-220sqm",
+   "sk": "/sk/dizajn-interieru-vily-burgas-220-m2",
+   "de": "/de/innenarchitektur-villa-burgas-220-m2"
   },
   "cover": "6abd6b434888499d20745636",
   "title": {
    "en": "Villa in Burgas, 220 m²",
    "ua": "Вілла у Бургасі, 220 м²",
-   "ru": "Вилла в Бургасе, 220 м²"
+   "ru": "Вилла в Бургасе, 220 м²",
+   "sk": "Vila v Burgase, 220 m²",
+   "de": "Villa in Burgas, 220 m²"
   },
   "explicit_warsaw": false,
   "area": 220,
@@ -1347,6 +1915,18 @@
     "area": "220 м²",
     "city": "Бургас",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Vila",
+    "area": "220 m²",
+    "city": "Burgas",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Villa",
+    "area": "220 m²",
+    "city": "Burgas",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1356,13 +1936,17 @@
   "alternates": {
    "ru": "/dumskaya-interior-design-villa-230m",
    "ua": "/ua/dyzain-proekt-interieru-pryvatnoho-budynku-230-m-vienna",
-   "en": "/en/luxury-interior-design-private-house-230sqm"
+   "en": "/en/luxury-interior-design-private-house-230sqm",
+   "sk": "/sk/dizajn-interieru-rodinneho-domu-230-m2",
+   "de": "/de/innenarchitektur-einfamilienhaus-230-m2"
   },
   "cover": "6abd6b2e4888499d207455b1",
   "title": {
    "en": "Private house, 230 m²",
    "ua": "Приватний будинок, 230 м²",
-   "ru": "Частный дом, 230 м²"
+   "ru": "Частный дом, 230 м²",
+   "sk": "Rodinný dom, 230 m²",
+   "de": "Einfamilienhaus, 230 m²"
   },
   "explicit_warsaw": false,
   "area": 230,
@@ -1381,6 +1965,16 @@
     "object": "Частный дом",
     "area": "230 м²",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Rodinný dom",
+    "area": "230 m²",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Einfamilienhaus",
+    "area": "230 m²",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1390,13 +1984,17 @@
   "alternates": {
    "ru": "/furniture-interior-design-43m",
    "ua": "/ua/realizatsiia-dyzain-proektu-interieru-ta-remontu-pid-kliuch-43m",
-   "en": "/en/interior-design-43sqm-duplex-apartment"
+   "en": "/en/interior-design-43sqm-duplex-apartment",
+   "sk": "/sk/dizajn-mezonetoveho-bytu-43-m2",
+   "de": "/de/innenarchitektur-maisonette-wohnung-43-m2"
   },
   "cover": "6abd6acd6bbe6103844835b3",
   "title": {
    "en": "Duplex apartment, 43 m²",
    "ua": "Дворівнева квартира, 43 м²",
-   "ru": "Двухуровневая квартира, 43 м²"
+   "ru": "Двухуровневая квартира, 43 м²",
+   "sk": "Mezonetový byt, 43 m²",
+   "de": "Maisonette-Wohnung, 43 m²"
   },
   "explicit_warsaw": false,
   "area": 43,
@@ -1415,6 +2013,16 @@
     "object": "Двухуровневая квартира",
     "area": "43 м²",
     "works": "Дизайн-проект, 3D-визуализация, техническая документация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Mezonetový byt",
+    "area": "43 m²",
+    "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Maisonette-Wohnung",
+    "area": "43 m²",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1424,13 +2032,17 @@
   "alternates": {
    "ru": "/office-interior-design-warsaw-183m",
    "ua": "/ua/dyzain-interieru-ofisu-varshava-183-m2",
-   "en": "/en/office-interior-design-warsaw-183sqm"
+   "en": "/en/office-interior-design-warsaw-183sqm",
+   "sk": "/sk/dizajn-kancelarie-varsava-183-m2",
+   "de": "/de/innenarchitektur-buero-warschau-183-m2"
   },
   "cover": "war183-01",
   "title": {
    "en": "Office in Warsaw, 183 m²",
    "ua": "Офіс у Варшаві, 183 м²",
-   "ru": "Офис в Варшаве, 183 м²"
+   "ru": "Офис в Варшаве, 183 м²",
+   "sk": "Kancelária vo Varšave, 183 m²",
+   "de": "Büro in Warschau, 183 m²"
   },
   "explicit_warsaw": true,
   "area": 183,
@@ -1455,6 +2067,20 @@
     "city": "Warsaw",
     "works": "“Express” package design project, layout and 3D visualization",
     "status": "design project"
+   },
+   "sk": {
+    "object": "Kancelária pre marketingový tím",
+    "area": "183 m²",
+    "city": "Varšava",
+    "works": "Návrh interiéru (balík „Express“), dispozičné riešenie a 3D vizualizácia",
+    "status": "návrh interiéru"
+   },
+   "de": {
+    "object": "Büro für ein Marketingteam",
+    "area": "183 m²",
+    "city": "Warschau",
+    "works": "Einrichtungsplanung (Paket „Express“), Grundrisslösung und 3D-Visualisierung",
+    "status": "Planungsprojekt"
    }
   }
  },
@@ -1464,13 +2090,17 @@
   "alternates": {
    "ru": "/interior-design-cosmetology-salon",
    "ua": "/ua/dyzain-interieru-kosmetolohichnoho-salonu-54-m2",
-   "en": "/en/luxury-interior-cosmetology-salon"
+   "en": "/en/luxury-interior-cosmetology-salon",
+   "sk": "/sk/dizajn-kozmetickeho-salonu-54-m2",
+   "de": "/de/innenarchitektur-kosmetikstudio-54-m2"
   },
   "cover": "6abe045b3ba7c7b833963e2b",
   "title": {
    "en": "Cosmetology salon, 54 m²",
    "ua": "Косметологічний салон, 54 м²",
-   "ru": "Косметологический салон, 54 м²"
+   "ru": "Косметологический салон, 54 м²",
+   "sk": "Kozmetický salón, 54 m²",
+   "de": "Kosmetikstudio, 54 m²"
   },
   "explicit_warsaw": false,
   "area": 54,
@@ -1489,6 +2119,16 @@
     "object": "Косметологический салон",
     "area": "54 м²",
     "works": "Дизайн-проект (пакет «Экспресс»), 3D-визуализация и техническая документация"
+   },
+   "sk": {
+    "object": "Kozmetický salón",
+    "area": "54 m²",
+    "works": "Návrh interiéru (balík „Express“), 3D vizualizácia a výkresová dokumentácia"
+   },
+   "de": {
+    "object": "Kosmetikstudio",
+    "area": "54 m²",
+    "works": "Einrichtungsplanung (Paket „Express“), 3D-Visualisierung und technische Dokumentation"
    }
   }
  },
@@ -1498,13 +2138,17 @@
   "alternates": {
    "ru": "/beauty-salon-interior-design-63m",
    "ua": "/ua/dyzain-interieru-salonu-krasy-63-m2",
-   "en": "/en/beauty-salon-interior-design-63m"
+   "en": "/en/beauty-salon-interior-design-63m",
+   "sk": "/sk/dizajn-salonu-krasy-63-m2",
+   "de": "/de/innenarchitektur-schoenheitssalon-63-m2"
   },
   "cover": "6abe04846bbe610384497d7b",
   "title": {
    "en": "Beauty salon, 63 m²",
    "ua": "Салон краси, 63 м²",
-   "ru": "Салон красоты, 63 м²"
+   "ru": "Салон красоты, 63 м²",
+   "sk": "Salón krásy, 63 m²",
+   "de": "Schönheitssalon, 63 m²"
   },
   "explicit_warsaw": false,
   "area": 63,
@@ -1523,6 +2167,16 @@
     "object": "Салон красоты",
     "area": "63 м²",
     "works": "Дизайн-проект и техническая документация"
+   },
+   "sk": {
+    "object": "Salón krásy",
+    "area": "63 m²",
+    "works": "Návrh interiéru a výkresová dokumentácia"
+   },
+   "de": {
+    "object": "Schönheitssalon",
+    "area": "63 m²",
+    "works": "Einrichtungsplanung und technische Dokumentation"
    }
   }
  },
@@ -1532,13 +2186,17 @@
   "alternates": {
    "ru": "/office-interior-design-500m",
    "ua": "/ua/dyzain-interieru-ofisu-500-m2",
-   "en": "/en/office-interior-design-500m"
+   "en": "/en/office-interior-design-500m",
+   "sk": "/sk/dizajn-kancelarie-500-m2",
+   "de": "/de/innenarchitektur-buero-500-m2"
   },
   "cover": "66f5d16697317fa68a804f5a",
   "title": {
    "en": "Office, 500 m²",
    "ua": "Офіс, 500 м²",
-   "ru": "Офис, 500 м²"
+   "ru": "Офис, 500 м²",
+   "sk": "Kancelária, 500 m²",
+   "de": "Büro, 500 m²"
   },
   "explicit_warsaw": false,
   "area": 500,
@@ -1557,6 +2215,16 @@
     "object": "Офис",
     "area": "500 м²",
     "works": "Дизайн-проект, 3D-визуализация и мебель на заказ"
+   },
+   "sk": {
+    "object": "Kancelária",
+    "area": "500 m²",
+    "works": "Návrh interiéru, 3D vizualizácia a nábytok na mieru"
+   },
+   "de": {
+    "object": "Büro",
+    "area": "500 m²",
+    "works": "Einrichtungsplanung, 3D-Visualisierung und Möbel nach Maß"
    }
   }
  },
@@ -1566,13 +2234,17 @@
   "alternates": {
    "ru": "/photo-studio-interior-design-custom-furniture-130m2-bratislava",
    "ua": "/ua/dyzain-interieru-fotostudii-130-m2",
-   "en": "/en/photo-studio-interior-design-130m"
+   "en": "/en/photo-studio-interior-design-130m",
+   "sk": "/sk/dizajn-fotostudia-130-m2",
+   "de": "/de/innenarchitektur-fotostudio-130-m2"
   },
   "cover": "6abe048a61617a4443adfce2",
   "title": {
    "en": "Photo studio, 130 m²",
    "ua": "Фотостудія, 130 м²",
-   "ru": "Фотостудия, 130 м²"
+   "ru": "Фотостудия, 130 м²",
+   "sk": "Fotoštúdio, 130 m²",
+   "de": "Fotostudio, 130 m²"
   },
   "explicit_warsaw": false,
   "area": 130,
@@ -1591,6 +2263,16 @@
     "object": "Фотостудия",
     "area": "130 м²",
     "works": "Дизайн-проект, мебель на заказ, ремонт под ключ и авторское сопровождение"
+   },
+   "sk": {
+    "object": "Fotoštúdio",
+    "area": "130 m²",
+    "works": "Návrh interiéru, nábytok na mieru, rekonštrukcia na kľúč a autorský dozor"
+   },
+   "de": {
+    "object": "Fotostudio",
+    "area": "130 m²",
+    "works": "Einrichtungsplanung, Möbel nach Maß, schlüsselfertige Sanierung und künstlerische Oberleitung"
    }
   }
  },
@@ -1600,13 +2282,17 @@
   "alternates": {
    "ru": "/clothing-boutique-interior-design-kyiv-140",
    "ua": "/ua/womens-clothing-boutique-interior-design-kyiv-ukraine",
-   "en": "/en/clothing-boutique-interior-design"
+   "en": "/en/clothing-boutique-interior-design",
+   "sk": "/sk/dizajn-butiku-s-oblecenim-kyjev-140-m2",
+   "de": "/de/innenarchitektur-modeboutique-kiew-140-m2"
   },
   "cover": "6abe046a3ba7c7b833963e82",
   "title": {
    "en": "Clothing boutique in Kyiv, 140 m²",
    "ua": "Бутик одягу у Києві, 140 м²",
-   "ru": "Бутик одежды в Киеве, 140 м²"
+   "ru": "Бутик одежды в Киеве, 140 м²",
+   "sk": "Butik s oblečením v Kyjeve, 140 m²",
+   "de": "Modeboutique in Kiew, 140 m²"
   },
   "explicit_warsaw": false,
   "area": 140,
@@ -1628,6 +2314,18 @@
     "area": "140 м²",
     "city": "Киев",
     "works": "Дизайн-проект, 3D-визуализация, проект мебели и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Butik s oblečením",
+    "area": "140 m²",
+    "city": "Kyjev",
+    "works": "Návrh interiéru, 3D vizualizácia, návrh nábytku a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Modeboutique",
+    "area": "140 m²",
+    "city": "Kiew",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, Möbelplanung und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1637,13 +2335,17 @@
   "alternates": {
    "ru": "/dizayn-kommercheskogo-interyera-sauna-banya",
    "ua": "/ua/dyzain-interieru-lazni-sauny-120-m2",
-   "en": "/en/sauna-bathhouse-commercial-interior-design"
+   "en": "/en/sauna-bathhouse-commercial-interior-design",
+   "sk": "/sk/dizajn-interieru-sauny-120-m2",
+   "de": "/de/innenarchitektur-sauna-banja-120-m2"
   },
   "cover": "6abe044a6bbe610384497c6d",
   "title": {
    "en": "Sauna and bathhouse, 120 m²",
    "ua": "Лазня і сауна, 120 м²",
-   "ru": "Баня и сауна, 120 м²"
+   "ru": "Баня и сауна, 120 м²",
+   "sk": "Sauna a parný kúpeľ, 120 m²",
+   "de": "Dampfbad und Sauna, 120 m²"
   },
   "explicit_warsaw": false,
   "area": 120,
@@ -1662,6 +2364,16 @@
     "object": "Баня и сауна",
     "area": "120 м²",
     "works": "Дизайн-проект и проект мебели"
+   },
+   "sk": {
+    "object": "Sauna a parný kúpeľ",
+    "area": "120 m²",
+    "works": "Návrh interiéru a návrh nábytku"
+   },
+   "de": {
+    "object": "Dampfbad und Sauna",
+    "area": "120 m²",
+    "works": "Einrichtungsplanung und Möbelplanung"
    }
   }
  },
@@ -1671,13 +2383,17 @@
   "alternates": {
    "ru": "/office-interior-design-140m",
    "ua": "/ua/office-interior-design-custom-furniture-140m2-bratislava",
-   "en": "/en/office-interior-design-140m"
+   "en": "/en/office-interior-design-140m",
+   "sk": "/sk/dizajn-kancelarie-140-m2",
+   "de": "/de/innenarchitektur-buero-140-m2"
   },
   "cover": "6abe04703ba7c7b833963eaa",
   "title": {
    "en": "Office, 140 m²",
    "ua": "Офіс, 140 м²",
-   "ru": "Офис, 140 м²"
+   "ru": "Офис, 140 м²",
+   "sk": "Kancelária, 140 m²",
+   "de": "Büro, 140 m²"
   },
   "explicit_warsaw": false,
   "area": 140,
@@ -1696,6 +2412,16 @@
     "object": "Офис",
     "area": "140 м²",
     "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Kancelária",
+    "area": "140 m²",
+    "works": "Návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Büro",
+    "area": "140 m²",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1705,13 +2431,17 @@
   "alternates": {
    "ru": "/office-interior-design-53m",
    "ua": "/ua/dyzain-interieru-ofisu-53-m2",
-   "en": "/en/office-interior-design-53m"
+   "en": "/en/office-interior-design-53m",
+   "sk": "/sk/dizajn-kancelarie-poznan-53-m2",
+   "de": "/de/innenarchitektur-buero-posen-53-m2"
   },
   "cover": "6abe04546bbe610384497c98",
   "title": {
    "en": "Office in Poznań, 53 m²",
    "ua": "Офіс у Познані, 53 м²",
-   "ru": "Офис в Познани, 53 м²"
+   "ru": "Офис в Познани, 53 м²",
+   "sk": "Kancelária v Poznani, 53 m²",
+   "de": "Büro in Posen, 53 m²"
   },
   "explicit_warsaw": false,
   "area": 53,
@@ -1733,6 +2463,18 @@
     "area": "53 м²",
     "city": "Познань",
     "works": "Дизайн-проект, 3D-визуализация, мебель на заказ и ремонт под ключ"
+   },
+   "sk": {
+    "object": "Kancelária",
+    "area": "53 m²",
+    "city": "Poznaň",
+    "works": "Návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč"
+   },
+   "de": {
+    "object": "Büro",
+    "area": "53 m²",
+    "city": "Posen",
+    "works": "Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung"
    }
   }
  },
@@ -1742,13 +2484,17 @@
   "alternates": {
    "ru": "/boss-office-interior-design",
    "ua": "/ua/kabinet-kerivnyka-mebli-na-zamovlennia",
-   "en": "/en/boss-office-interior-design"
+   "en": "/en/boss-office-interior-design",
+   "sk": "/sk/dizajn-kancelarie-riaditela-7-m2",
+   "de": "/de/innenarchitektur-chefbuero-7-m2"
   },
   "cover": "6abe046261617a4443adfc3e",
   "title": {
    "en": "Executive office, 7 m²",
    "ua": "Кабінет керівника, 7 м²",
-   "ru": "Кабинет руководителя, 7 м²"
+   "ru": "Кабинет руководителя, 7 м²",
+   "sk": "Kancelária riaditeľa, 7 m²",
+   "de": "Chefbüro, 7 m²"
   },
   "explicit_warsaw": false,
   "area": null,
@@ -1767,6 +2513,16 @@
     "object": "Кабинет руководителя",
     "area": "7 м²",
     "works": "Дизайн-проект, 3D-визуализация и мебель на заказ"
+   },
+   "sk": {
+    "object": "Kancelária riaditeľa",
+    "area": "7 m²",
+    "works": "Návrh interiéru, 3D vizualizácia a nábytok na mieru"
+   },
+   "de": {
+    "object": "Chefbüro",
+    "area": "7 m²",
+    "works": "Einrichtungsplanung, 3D-Visualisierung und Möbel nach Maß"
    }
   }
  },
@@ -1776,13 +2532,17 @@
   "alternates": {
    "ru": "/shop-show-room-interior-design-50m",
    "ua": "/ua/dyzain-interieru-mahazynu-50-m2",
-   "en": "/en/retail-store-interior-design-50m2"
+   "en": "/en/retail-store-interior-design-50m2",
+   "sk": "/sk/dizajn-predajne-50-m2",
+   "de": "/de/innenarchitektur-geschaeft-50-m2"
   },
   "cover": "6abe047d4888499d2075a16a",
   "title": {
    "en": "Retail store, 50 m²",
    "ua": "Магазин, 50 м²",
-   "ru": "Магазин, 50 м²"
+   "ru": "Магазин, 50 м²",
+   "sk": "Predajňa, 50 m²",
+   "de": "Geschäft, 50 m²"
   },
   "explicit_warsaw": false,
   "area": 50,
@@ -1801,6 +2561,16 @@
     "object": "Магазин",
     "area": "50 м²",
     "works": "Дизайн-проект, 3D-визуализация и мебель на заказ"
+   },
+   "sk": {
+    "object": "Predajňa",
+    "area": "50 m²",
+    "works": "Návrh interiéru, 3D vizualizácia a nábytok na mieru"
+   },
+   "de": {
+    "object": "Geschäft",
+    "area": "50 m²",
+    "works": "Einrichtungsplanung, 3D-Visualisierung und Möbel nach Maß"
    }
   }
  },
@@ -1810,13 +2580,17 @@
   "alternates": {
    "ru": "/architecture-villa-spain-marbella",
    "ua": "/ua/arkhitekturni-rishennia-dlia-fasadu-pryvatnoho-budynku-ispaniia-marbelia",
-   "en": "/en/luxury-interior-design-architectural-facade-villa-marbella-spain"
+   "en": "/en/luxury-interior-design-architectural-facade-villa-marbella-spain",
+   "sk": "/sk/navrh-fasady-vily-marbella",
+   "de": "/de/fassadenentwurf-villa-marbella"
   },
   "cover": "66b619f623f9a34a612c9e7d",
   "title": {
    "ru": "Фасад виллы в Марбелье",
    "ua": "Фасад вілли в Марбельї",
-   "en": "Villa facade in Marbella"
+   "en": "Villa facade in Marbella",
+   "sk": "Fasáda vily v Marbelle",
+   "de": "Villa-Fassade in Marbella"
   },
   "explicit_warsaw": false,
   "area": null
@@ -1827,13 +2601,17 @@
   "alternates": {
    "ru": "/3d-vizualizaciya-fasada-bratislava",
    "ua": "/ua/3d-vizualizaciya-fasadu-kyiv",
-   "en": "/en/3d-visualization-interior-design-private-house-facade-landscaping"
+   "en": "/en/3d-visualization-interior-design-private-house-facade-landscaping",
+   "sk": "/sk/3d-vizualizacia-fasady-rodinneho-domu",
+   "de": "/de/3d-visualisierung-fassade-garten"
   },
   "cover": "673a059eece0e84849b9e2cf",
   "title": {
    "ru": "3D-визуализация фасада и двора",
    "ua": "3D-візуалізація фасаду та двору",
-   "en": "3D facade and garden visualization"
+   "en": "3D facade and garden visualization",
+   "sk": "3D vizualizácia fasády a záhrady",
+   "de": "3D-Visualisierung von Fassade und Garten"
   },
   "explicit_warsaw": false,
   "area": null
@@ -1844,13 +2622,17 @@
   "alternates": {
    "ru": "/architecture-private-house",
    "ua": "/ua/architectural-design-private-house-facades-bratislava",
-   "en": "/en/private-house-architectural-design-facade"
+   "en": "/en/private-house-architectural-design-facade",
+   "sk": "/sk/architektonicky-navrh-fasad-rodinneho-domu",
+   "de": "/de/fassadenplanung-einfamilienhaus"
   },
   "cover": "66a56e39d68a3eb051612386",
   "title": {
    "ru": "Фасады частного дома",
    "ua": "Фасади приватного будинку",
-   "en": "Private house facades"
+   "en": "Private house facades",
+   "sk": "Fasády rodinného domu",
+   "de": "Fassaden eines Einfamilienhauses"
   },
   "explicit_warsaw": false,
   "area": null
@@ -1861,13 +2643,17 @@
   "alternates": {
    "ru": "/architecture-facade-barbershop-kyiv",
    "ua": "/ua/barbershop-facade-design-kyiv-ukraine",
-   "en": "/en/barbershop-facade-architectural-solution"
+   "en": "/en/barbershop-facade-architectural-solution",
+   "sk": "/sk/navrh-fasady-barbershopu-kyjev",
+   "de": "/de/fassadenentwurf-barbershop-kiew"
   },
   "cover": "66d313f8e6210d11a55d877c",
   "title": {
    "ru": "Фасад барбершопа в Киеве",
    "ua": "Фасад барбершопу в Києві",
-   "en": "Barbershop facade in Kyiv"
+   "en": "Barbershop facade in Kyiv",
+   "sk": "Fasáda barbershopu v Kyjeve",
+   "de": "Barbershop-Fassade in Kiew"
   },
   "explicit_warsaw": false,
   "area": null
@@ -1878,13 +2664,17 @@
   "alternates": {
    "ru": "/architecture-gazebo-pergola",
    "ua": "/ua/pergola-gazebo-design-built-project-bratislava",
-   "en": "/en/gazebo-pergola-design-and-construction"
+   "en": "/en/gazebo-pergola-design-and-construction",
+   "sk": "/sk/altanok-s-pergolou-navrh-realizacia",
+   "de": "/de/gartenpavillon-pergola-planung"
   },
   "cover": "66d476c1e93b01287b01e50b",
   "title": {
    "ru": "Беседка с перголой",
    "ua": "Альтанка з перголою",
-   "en": "Gazebo with pergola"
+   "en": "Gazebo with pergola",
+   "sk": "Altánok s pergolou",
+   "de": "Pavillon mit Pergola"
   },
   "explicit_warsaw": false,
   "area": null

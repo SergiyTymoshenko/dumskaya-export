@@ -33,7 +33,23 @@ UA = [
     r'\bгармоні(йн|я)', r'\bідеальн', r'\bунікальн', r'\bбездоганн', r'затишок і функціональн', r'втіли\w* мрі',
     r'являє собою', r'\bвишукан', r'органічно',
 ]
+SK = [
+    r'\bnielen\b[^.]{0,60}?,\s*ale (aj|tiež)\b', r'\bjedinečn', r'\bdokonal', r'\bideáln', r'\bbezchybn', r'\bharmonick',
+    r'\bluxusn', r'\bsofistikovan', r'\bexkluzívn', r'vysníva', r'\bsnov\b', r'v dnešnej dobe', r'je dôležité poznamenať',
+    r'stojí za zmienku', r'neoddeliteľn', r'kľúčovú úlohu', r'zohráva (dôležitú|kľúčovú) úlohu', r'\bponor(iť|te) sa', r'\bobjavte\b',
+    r'\bpremeňte\b', r'útuln\w* a funkčn', r'štýlov\w* a praktick', r's láskou', r'sme hrdí',
+    r'\bprémiov', r'\belitn', r'\bštýlov\w*\b', r'\bluxus',
+]
+DE = [
+    r'\bnicht nur\b[^.]{0,60}?,?\s*sondern auch\b', r'\beinzigartig', r'\bperfekt', r'\bmakellos', r'\bharmonisch', r'\bnahtlos',
+    r'\bluxuriös', r'\bexklusiv', r'zeitlose Eleganz', r'\bTraum(wohnung|haus|küche|zuhause)', r'Wohlfühloase', r'in der heutigen Zeit',
+    r'es ist wichtig zu beachten', r'(entscheidende|wichtige) Rolle', r'\beintauchen', r'\bentdecken Sie\b', r'\bverwandeln Sie\b',
+    r'gemütlich und funktional', r'stilvoll und praktisch', r'mit Liebe zum Detail', r'rundum sorglos', r'höchste Qualität',
+    r'maßgeschneiderte Lösung', r'wir sind stolz',
+    r'\bPremium-?(segment|qualität|klasse)', r'\bstilvoll', r'\belitär', r'\bLuxus',
+]
 TAG = re.compile(r'<[^>]+>')
+ALTS = False
 
 
 def scan(text, patterns):
@@ -63,6 +79,10 @@ def strings(page):
                 for it in b['items']:
                     yield it['q']
                     yield it['a']
+            elif ALTS and b['type'] in ('gallery', 'figure', 'cards'):
+                for im in b.get('images', []) + ([b['image']] if b.get('image') else []) + [c.get('image') or {} for c in b.get('items', [])]:
+                    if im.get('alt'):
+                        yield im['alt']
     for k in ('title', 'description', 'h1'):
         if page.get(k):
             yield page[k]
@@ -71,10 +91,12 @@ def strings(page):
 def main():
     only = set(sys.argv[1:])
     found = 0
-    pats = {'ru': RU, 'ua': UA, 'en': EN}
-    for lang in ('ru', 'ua', 'en'):
+    pats = {'ru': RU, 'ua': UA, 'en': EN, 'sk': SK, 'de': DE}
+    for lang in ('ru', 'ua', 'en', 'sk', 'de'):
         for f in sorted(glob.glob(os.path.join(ROOT, f'content/pages/{lang}/*.json'))):
             page = json.load(open(f, encoding='utf-8'))
+            global ALTS
+            ALTS = lang in ('sk', 'de')   # подписи фото SK/DE переведены заново — проверяем и их
             if only and page['path'] not in only and page.get('alternates', {}).get('ru') not in only:
                 continue
             for s in strings(page):

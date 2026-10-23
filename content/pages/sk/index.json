@@ -1,0 +1,407 @@
+{
+ "path": "/sk",
+ "lang": "sk",
+ "type": "home",
+ "group": null,
+ "title": "Štúdio dizajnu interiéru v Bratislave a vo Viedni | DUMSKAYA",
+ "description": "Štúdio, ktoré vedie Irina Dumskaya: návrhy bytov, domov a kancelárií, nábytok z vlastnej výroby a rekonštrukcia na kľúč v Bratislave a vo Viedni.",
+ "h1": "Štúdio interiérového dizajnu v Bratislave a vo Viedni",
+ "og_image": "6abd0a7d61617a4443ab2567",
+ "alternates": {
+  "ru": "/",
+  "ua": "/ua",
+  "en": "/en",
+  "sk": "/sk",
+  "de": "/de"
+ },
+ "sections": [
+  {
+   "id": "5d4d7e711e2c240023a2eb28",
+   "blocks": [
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "DUMSKAYA DESIGN"
+      },
+      {
+       "t": "p",
+       "html": "INTERIOR DESIGN &amp; FURNITURE"
+      },
+      {
+       "t": "p",
+       "html": "BRATISLAVA &amp; VIENNA"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5eff4ac0759b310022b7131f",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "655410c220a5eb000f971701",
+       "alt": "Interiérová dizajnérka Irina Dumskaya, Bratislava a Viedeň"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Štúdio interiérového dizajnu v Bratislave a vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Volám sa <strong>Irina Dumskaya</strong>, vediem štúdio <strong>DUMSKAYA DESIGN</strong> v Bratislave a som jeho hlavná dizajnérka."
+      },
+      {
+       "t": "p",
+       "html": "Navrhujeme interiéry bytov, rodinných a radových domov, víl, ale aj hotelov, kancelárií, obchodov a salónov krásy. Projekt dotiahneme až do konca: nábytok vyrábame vo vlastnej výrobe v Bratislave a rekonštrukcie na kľúč robia naši vlastní remeselníci."
+      },
+      {
+       "t": "p",
+       "html": "Pekný interiér musí byť aj pohodlný: s dobre vyriešenou dispozíciou, úložnými priestormi, svetlom a presnými výkresmi, podľa ktorých remeselníci pracujú bez hádania. Preto vás najprv pozorne počúvame, ako bývate alebo pracujete, a až potom navrhujeme riešenia."
+      },
+      {
+       "t": "p",
+       "html": "Pracujeme v Bratislave a vo Viedni. Pre klientov z iných krajín pripravujeme návrhy interiérov na diaľku."
+      },
+      {
+       "t": "p",
+       "html": "Rada sa s vami zoznámim a prediskutujem váš projekt na bezplatnej konzultácii."
+      },
+      {
+       "t": "p",
+       "html": "S pozdravom\n<strong>Irina Dumskaya</strong>"
+      },
+      {
+       "t": "p",
+       "html": "Čo dostanete, keď si objednáte návrh interiéru v štúdiu DUMSKAYA DESIGN?"
+      },
+      {
+       "t": "p",
+       "html": "1. Individuálny návrh:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Riešenia podľa vášho štýlu a spôsobu života.",
+        "Zohľadníme všetky vaše želania a potreby."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "2. Kompletná výkresová dokumentácia:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Zameranie priestoru (pôdorys skutočného stavu).",
+        "Pôdorys s rozmiestnením nábytku.",
+        "Výkresy búraných a nových konštrukcií.",
+        "Výpis dverí a okien.",
+        "Výkresy zdravotechniky, podlahového kúrenia, zásuviek a vypínačov.",
+        "Výkresy osvetlenia, stropov a podláh."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "3. Podrobné špecifikácie:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Zoznam dokončovacích materiálov s množstvami.",
+        "Rozvinuté pohľady stien s presnými rozmermi."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "4. 3D vizualizácia interiéru:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Fotorealistické 3D vizualizácie všetkých miestností.",
+        "Úpravy vizualizácií až do schválenia konceptu."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "5. Podpora dizajnéra:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Spoločné výjazdy s dizajnérom na výber materiálov.",
+        "Autorský dozor počas rekonštrukcie."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "6. Všetko v jedných rukách:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Výkresy nábytku a jeho výroba v našej vlastnej dielni.",
+        "Rekonštrukcia na kľúč a kontrola v každej etape — menej strateného času a drahých chýb."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Hotový byt vyzerá rovnako ako na vizualizáciách a každý deň sa v ňom pohodlne býva."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66a1243ef38918cb3ece0d6c",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Ceny dizajnových balíkov",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      },
+      {
+       "text": "Realizované projekty",
+       "href": "/sk/portfolio-dizajn-interieru"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ako prebieha práca na interiéri"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Na interiéri pracujeme po krokoch a výsledok každého z nich vidíte skôr, než sa začne ďalší:"
+      },
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Konzultácia.</strong> Bezplatne, v štúdiu v Bratislave, na objekte alebo online. Prejdeme priestor, rozpočet a termíny a vyberieme vhodný balík.",
+        "<strong>Zameranie a dispozícia.</strong> Zameriame priestor, pripravíme pôdorys skutočného stavu a varianty rozmiestnenia nábytku. Ďalej pracujeme s jednou schválenou dispozíciou.",
+        "<strong>3D vizualizácie.</strong> Ukážeme vám každú miestnosť s materiálmi, svetlom a nábytkom. Úpravy robíme pred schválením konceptu, nie počas rekonštrukcie.",
+        "<strong>Realizačné výkresy.</strong> Výkresy elektroinštalácie, zdravotechniky, osvetlenia, stropov a podláh, rozvinuté pohľady stien, špecifikácie materiálov — všetko, podľa čoho remeselníci a stolári pracujú bez hádania.",
+        "<strong>Rozpočet a realizácia.</strong> Vyrátame rozpočet, urobíme rekonštrukciu, vyrobíme nábytok a dohliadneme, aby hotový byt zodpovedal vizualizáciám."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-cycle",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Návrh, nábytok a rekonštrukcia v jedných rukách"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Nábytok podľa výkresov z projektu vyrábame vo vlastnej výrobe v Bratislave: kuchyne, skrine a šatníky, TV steny, kúpeľňový nábytok, stenové panely. Rekonštrukcie robia naši remeselníci z Bratislavy, aj vo Viedni. Objekty neodovzdávame subdodávateľom."
+      },
+      {
+       "t": "p",
+       "html": "Keď návrh, nábytok aj rekonštrukciu vedie jeden tím, niky a vývody elektriny a vody sú od začiatku navrhnuté pre konkrétnu kuchyňu a konkrétne skrine. Na stavbe potom netreba presúvať zásuvku, ktorá skončila za vysokou skrinkou, ani prerábať skriňu, ktorá sa nezmestila do niky."
+      },
+      {
+       "t": "p",
+       "html": "Ceny sú rovnaké pre Bratislavu aj Viedeň, doprava nábytku je v cene. Objednať si môžete aj len časť: iba návrh interiéru, iba <a href=\"/sk/nabytok-na-mieru-bratislava\">nábytok na mieru</a> alebo <a href=\"/sk/rekonstrukcia-bytu-na-kluc-bratislava\">rekonštrukciu na kľúč</a> podľa hotového projektu."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-prices",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Koľko stojí návrh interiéru"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Cena sa počíta za štvorcový meter a závisí od toho, čo balík obsahuje:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Express“ — 20 €/m²: dispozícia a 3D vizualizácie, hotové od 14 dní po schválení dispozície;",
+        "„Základný“ — 35–45 €/m²: vizualizácie a kompletné realizačné výkresy na rekonštrukciu;",
+        "„Nábytok“ — 35–50 €/m²: vizualizácie a výkresy na výrobu korpusového nábytku;",
+        "„Premium“ — 50 €/m²: detaily a rozvinuté pohľady všetkých miestností, dva výjazdy s dizajnérom na výber materiálov;",
+        "„Premium+“ — 70 €/m²: všetko z balíka „Premium“ a dva mesiace autorského dozoru počas rekonštrukcie."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Napríklad byt 60 m² s kompletnými výkresmi v balíku „Základný“ stojí 2 100–2 700 €. Minimálnu cenu a obsah každého balíka nájdete na stránke s <a href=\"/sk/cena-dizajnu-interieru-bratislava-vieden\">cenami dizajnu interiéru</a>."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-where",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bratislava, Viedeň a projekty na diaľku"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Štúdio sídli v Bratislave, v Ružinove, na Súkenníckej 1. Najčastejšie pracujeme s novostavbami: byt od developera treba navrhnúť, dokončiť a zariadiť. Pred podpisom protokolu s vami môžeme absolvovať <a href=\"/sk/preberanie-bytu-od-developera-bratislava\">preberanie bytu</a> a spísať zoznam vád."
+      },
+      {
+       "t": "p",
+       "html": "Do Viedne je to asi hodina jazdy, preto zameranie, stretnutia na objekte aj autorský dozor tam prebiehajú rovnako ako v Bratislave a neúčtujeme ich zvlášť. Viac nájdete na stránke o <a href=\"/sk/dizajn-interieru-vieden\">dizajne interiéru vo Viedni</a>."
+      },
+      {
+       "t": "p",
+       "html": "Pre objekty v iných krajinách pripravujeme návrhy na diaľku: vizualizácie a realizačné výkresy, podľa ktorých pracuje miestny dodávateľ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Otázky a odpovede"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Čím začať, ak sa byt ešte stavia?",
+       "a": "<p>Dispozíciou. Mnohí developeri prijímajú klientske zmeny do určitej fázy výstavby: dá sa presunúť priečka, vývody vody alebo zásuvky, kým to ešte nič nestojí. Pošlite nám pôdorys od developera a na konzultácii vám povieme, čo sa v ňom oplatí zmeniť.</p>"
+      },
+      {
+       "q": "Čo dostanem po dokončení návrhu interiéru?",
+       "a": "<p>Závisí to od balíka. V balíku „Základný“ je to zameranie, dispozícia s nábytkom, výkresy búraných a nových konštrukcií, elektroinštalácie, zdravotechniky, podlahového kúrenia, osvetlenia, stropov a podláh, rozvinuté pohľady kuchyne a kúpeľní, špecifikácie materiálov a 3D vizualizácie všetkých miestností. S takouto dokumentáciou môže pracovať ktorákoľvek stavebná firma.</p>"
+      },
+      {
+       "q": "Ako dlho trvá projekt?",
+       "a": "<p>Balík „Express“ je hotový od 14 dní po schválení dispozície. Kompletný projekt s realizačnými výkresmi zvyčajne trvá 4–8 týždňov, podľa plochy a počtu úprav.</p>"
+      },
+      {
+       "q": "Dá sa objednať nábytok bez návrhu interiéru?",
+       "a": "<p>Áno. Kuchyňu, skriňu alebo šatník vyrobíme podľa rozmerov vášho priestoru: návrh nábytku, výroba v Bratislave, doprava a montáž. Modely kuchýň s fotografiami nájdete v <a href=\"/sk/kuchyne-na-mieru-bratislava-vieden\">katalógu kuchýň</a>.</p>"
+      },
+      {
+       "q": "Robíte rekonštrukciu aj podľa cudzieho projektu?",
+       "a": "<p>Áno, ak má realizačné výkresy. Pred začiatkom projekt skontrolujeme, pripravíme <a href=\"/sk/rozpocet-rekonstrukcie-bratislava-vieden\">rozpočet</a> a povieme vám, ktoré výkresy na prácu chýbajú.</p>"
+      },
+      {
+       "q": "V akom jazyku sa môžem so štúdiom dohovoriť?",
+       "a": "<p>Po rusky, po ukrajinsky a po anglicky. Dokumentáciu pripravíme v jazyku, ktorý vyhovuje vám aj remeselníkom.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67d458805c9de83c34466850",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

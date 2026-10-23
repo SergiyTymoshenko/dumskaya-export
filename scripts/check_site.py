@@ -10,7 +10,9 @@
   • Варшава/Москва не встречаются в видимом тексте страниц, кроме явно варшавских проектов;
   • хлебные крошки на каждой странице (кроме главных): начинаются с главной своего языка, кончаются
     текущей страницей (без ссылки), на языке страницы; разметка BreadcrumbList для Google с ними совпадает,
-    у каждого звена, кроме последнего, есть ссылка на существующую страницу.
+    у каждого звена, кроме последнего, есть ссылка на существующую страницу;
+  • на словацких страницах — только словацкий телефон студии, на немецких — только австрийский
+    (ссылки tel:, видимый текст, разметка); на них нет кириллицы, а ссылки из текста ведут на страницы того же языка.
   python3 scripts/check_site.py
 """
 import glob, json, os, re, sys
@@ -25,6 +27,7 @@ SITE = "https://dumskaya-design.com"
 class P(HTMLParser):
     def __init__(self):
         super().__init__()
+        self.body_links = []   # ссылки в тексте страницы (без шапки, меню и подвала)
         self.links, self.h1, self.alts, self.canon, self.title, self.desc, self.ld = [], 0, {}, None, "", None, []
         self._t = self._ld = False
         self.text = []
@@ -52,6 +55,8 @@ class P(HTMLParser):
             self._cri = self._depth
         if tag == "a" and a.get("href"):
             self.links.append(a["href"])
+            if not self._navstack:
+                self.body_links.append(a["href"])
         if tag == "h1":
             self.h1 += 1
         if tag == "title":
@@ -91,12 +96,37 @@ class P(HTMLParser):
             self.text.append(d)
 
 
-HOME = {"ru": "/", "ua": "/ua", "en": "/en"}
-HOME_LABEL = {"ru": "Главная", "ua": "Головна", "en": "Home"}
+SITE_JSON = json.load(open(os.path.join(ROOT, "content", "site.json"), encoding="utf-8"))
+PHONES = {p["key"]: p for p in SITE_JSON["contacts"]["phones"]}
+OWN_PHONE = {"sk": "sk", "de": "at"}   # на этих языках — только свой номер
+
+
+def check_phones(u, html, errs):
+    lang = lang_of(u)
+    own = PHONES.get(OWN_PHONE.get(lang))
+    if not own:
+        return
+    # мессенджеры студии (WhatsApp, Telegram) привязаны к своему номеру — это не телефон в тексте
+    html = re.sub(r"https://(wa\.me|t\.me)/[^\"'\s<]*", "", html)
+    for k, ph in PHONES.items():
+        if ph is own:
+            continue
+        digits = ph["tel"].lstrip("+")
+        if ph["tel"] in html or ph["text"] in html or re.search(r"\+\s?" + r"\s?".join(digits), html):
+            errs.append(f"чужой телефон {ph['text']} на странице {lang}: {u}")
+    if own["tel"] not in html:
+        errs.append(f"нет телефона {own['text']}: {u}")
+
+
+HOME = {"ru": "/", "ua": "/ua", "en": "/en", "sk": "/sk", "de": "/de"}
+HOME_LABEL = {"ru": "Главная", "ua": "Головна", "en": "Home", "sk": "Domov", "de": "Startseite"}
 
 
 def lang_of(u):
-    return "ua" if u == "/ua" or u.startswith("/ua/") else "en" if u == "/en" or u.startswith("/en/") else "ru"
+    for l in ("ua", "en", "sk", "de"):
+        if u == "/" + l or u.startswith("/" + l + "/"):
+            return l
+    return "ru"
 
 
 def check_crumbs(u, p, parsed, errs):
@@ -120,7 +150,7 @@ def check_crumbs(u, p, parsed, errs):
         if not t:
             errs.append(f"крошки: пустое звено: {u}")
     labels = " ".join(t for t, _, _ in vis)
-    if (lang == "en" and re.search(r"[а-яёіїєґ]", labels, re.I)) or (lang == "ua" and re.search(r"[ыэъё]", labels, re.I)):
+    if (lang in ("en", "sk", "de") and re.search(r"[а-яёіїєґ]", labels, re.I)) or (lang == "ua" and re.search(r"[ыэъё]", labels, re.I)):
         errs.append(f"крошки не на языке страницы ({labels}): {u}")
     bl = []
     for block in p.ld:
@@ -162,12 +192,13 @@ def main():
     redirects = json.load(open(os.path.join(ROOT, "content", "redirects.json"), encoding="utf-8"))
     projects = json.load(open(os.path.join(ROOT, "content", "projects.json"), encoding="utf-8"))
     explicit = {v for p in projects if p.get("explicit_warsaw") for v in p["alternates"].values()}
-    explicit |= {u for u in pages if re.search(r"warsaw|varshav|germany|germaniya|nimechch", u)}
+    explicit |= {u for u in pages if re.search(r"warsaw|varshav|germany|germaniya|nimechch|deutschland", u)}
     errs, warn = [], []
-    parsed = {}
+    parsed, raw_html = {}, {}
     for u, f in pages.items():
         p = P()
-        p.feed(open(f, encoding="utf-8").read())
+        raw_html[u] = open(f, encoding="utf-8").read()
+        p.feed(raw_html[u])
         parsed[u] = p
     for u, p in parsed.items():
         if p.h1 != 1:
@@ -203,9 +234,21 @@ def main():
             except Exception as e:
                 errs.append(f"JSON-LD не читается: {u}: {e}")
         check_crumbs(u, p, parsed, errs)
+        lang = lang_of(u)
+        if lang in OWN_PHONE:
+            check_phones(u, raw_html[u], errs)
+            txt = " ".join(p.text)
+            m = re.search(r"\w*[а-яёіїєґ]\w*", txt, re.I)
+            if m:
+                errs.append(f"кириллица на странице {lang} («{m.group(0)}»): {u}")
+            for raw in p.body_links:
+                v = urlparse(raw.replace(SITE, "")).path or "/"
+                if raw.startswith("/") or raw.startswith(SITE):
+                    if not v.startswith(("/img/", "/_astro/", "/api/")) and lang_of(v) != lang:
+                        errs.append(f"ссылка из текста на другой язык {v}: {u}")
         if u not in explicit:
             txt = " ".join(p.text)
-            m = re.search(r"\w*(Варшав|Warsaw|Warszaw|Москв|Moscow|Польш|Польщ|Poland)\w*", txt)
+            m = re.search(r"\w*(Варшав|Warsaw|Warszaw|Varšav|Warschau|Москв|Moscow|Moskv|Moskau|Польш|Польщ|Poland|Poľsk|Polen)\w*", txt)
             if m:
                 ctx = txt[max(0, m.start() - 60): m.end() + 30].replace("\n", " ")
                 warn.append(f"гео в тексте {u}: …{ctx}…")

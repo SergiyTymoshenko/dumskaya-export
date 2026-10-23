@@ -1,0 +1,87 @@
+{
+ "path": "/sk/obchod/manazerska-skrina-exclusive-xxl",
+ "lang": "sk",
+ "type": "shop",
+ "group": null,
+ "title": "Manažérska skriňa Exclusive, XXL (TDD-005) | DUMSKAYA DESIGN",
+ "description": "Manažérska skriňa Exclusive, XXL, kód TDD-005, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie.",
+ "h1": "Manažérska skriňa Exclusive, XXL (TDD-005)",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop/exclusive-executive-office-cabinet",
+  "ua": "/ua/shop/exclusive-executive-office-cabinet",
+  "en": "/en/shop/exclusive-executive-office-cabinet",
+  "sk": "/sk/obchod/manazerska-skrina-exclusive-xxl",
+  "de": "/de/shop/chefschrank-exclusive-xxl"
+ },
+ "sections": [
+  {
+   "id": "69affc7e2e4f2c0dbc77875e",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Manažérska skriňa Exclusive, XXL"
+      },
+      {
+       "id": "35c86dbb-51b0-48df-9fa3-81d931db82d1",
+       "alt": "Manažérska skriňa Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Manažérska skriňa Exclusive, XXL (TDD-005)"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Manažérska skriňa Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Manažérska skriňa Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Manažérska skriňa Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Manažérska skriňa Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Manažérska skriňa Exclusive, XXL"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,551 @@
+{
+ "path": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+ "lang": "de",
+ "type": "service",
+ "group": null,
+ "title": "Küchen nach Maß Wien & Bratislava: 32 Modelle | DUMSKAYA",
+ "description": "Küchen nach Maß für Ihren Raum: 32 Modelle im Katalog, eigene Fertigung in Bratislava, Aufmaß, Lieferung und Montage im Preis. Wien und Bratislava.",
+ "h1": "Küchen nach Maß in Bratislava und Wien",
+ "og_image": "6abea7264888499d2078543f",
+ "alternates": {
+  "ru": "/kupkuhni-na-zakaz-vienna-bratislava",
+  "ua": "/ua/custom-kitchens-bratislava-vienna",
+  "en": "/en/custom-kitchens-bratislava-vienna",
+  "sk": "/sk/kuchyne-na-mieru-bratislava-vieden",
+  "de": "/de/kuechen-nach-mass-katalog-wien-bratislava"
+ },
+ "sections": [
+  {
+   "id": "67c88f63eec91e6d7422a7f9",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Küchen nach Maß in Bratislava und Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Möbelabteilung des Studios fertigt Küchen nach Maß für Wohnungen und Einfamilienhäuser in Bratislava und Wien: Planung nach den Raummaßen, Fertigung in der eigenen Werkstatt in Bratislava, Lieferung und Montage durch unser eigenes Team. Unten finden Sie einen Katalog mit 32 Modellen. Jedes davon können Sie als Ausgangspunkt nehmen und für Ihre Küche neu berechnen lassen — oder Sie bestellen eine Planung von Grund auf."
+      },
+      {
+       "t": "p",
+       "html": "Der Preis ist für Wien und Bratislava gleich, die Lieferung ist bereits enthalten. Auf Wunsch statten wir die Küche mit Spüle, Geräten, Dunstabzug und Armaturen aus — dann sind auch diese im Angebot enthalten."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67c88f63eec91e6d7422a7fb",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Katalog der Küchen-Serienmodelle"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Im Katalog finden Sie Küchenzeilen, Eckküchen und U-Küchen sowie Modelle mit Insel und Halbinsel, von 3,1 bis 9 Laufmetern Länge. Stile: minimalistisch, modern, klassisch, neoklassisch und Loft. Auf der Seite jedes Modells stehen Maße, Fronten, Arbeitsplatte und Beschläge. All das lässt sich ändern: die Länge der Seiten, die Farbe, die Innenausstattung der Kästen, der Platz für Geräte."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67c88f63eec91e6d7422a801",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Küchenmodell Nr. K-45",
+       "href": "/de/kueche-k-45-u-kueche-beige",
+       "image": {
+        "id": "6abea65b4888499d20785099",
+        "alt": "U-Küche K-45 mit Steinarbeitsplatte, Hochkästen in Holzoptik und Barbereich, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-44",
+       "href": "/de/kueche-k-44-eckkueche-graubeige",
+       "image": {
+        "id": "6abea6624888499d207850c8",
+        "alt": "Eckküche K-44 in Grau-Beige mit Oberkästen in Holzoptik und Steindekor, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell K-06",
+       "href": "/de/kueche-k-06-kuechenzeile-weiss-minimalistisch",
+       "image": {
+        "id": "6abea7264888499d2078543f",
+        "alt": "Weiße Küchenzeile K-06 im minimalistischen Stil mit schlichten Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell K-05",
+       "href": "/de/kueche-k-05-klassische-eckkueche-beige",
+       "image": {
+        "id": "6abea72ec8c59bb7c8399171",
+        "alt": "Beige klassische Eckküche K-05 mit hellen Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell K-11",
+       "href": "/de/kueche-k-11-moderne-kuechenzeile-grau",
+       "image": {
+        "id": "6abea7047bf8b4294f3dee4b",
+        "alt": "Graue Küchenzeile K-11 mit Steindekor und moderner Möbelkomposition, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell K-08",
+       "href": "/de/kueche-k-08-kuechenzeile-braun-minimalistisch",
+       "image": {
+        "id": "6abea7187bf8b4294f3deea9",
+        "alt": "Braune Küchenzeile K-08 mit Fronten in Holzoptik, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell K-03",
+       "href": "/de/kueche-k-03-inselkueche-schwarz",
+       "image": {
+        "id": "6abea73d4888499d207854b2",
+        "alt": "Schwarze Küchenzeile K-03 mit Insel und Holzdekor, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell K-04",
+       "href": "/de/kueche-k-04-moderne-eckkueche-grau",
+       "image": {
+        "id": "6abea73568c5e81567a5bd3f",
+        "alt": "Graue moderne Eckküche K-04 mit Arbeitsfläche in Steinoptik, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell K-41",
+       "href": "/de/kueche-k-41-moderne-kuechenzeile-grau-graphit",
+       "image": {
+        "id": "6abea9327bf8b4294f3df680",
+        "alt": "Küchenzeile K-41 mit graphitfarbenen Oberkästen, hellen Fronten und Arbeitsplatte in Marmoroptik, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-07",
+       "href": "/de/kueche-k-07-moderne-u-kueche-weiss",
+       "image": {
+        "id": "6abea71f6bbe6103844c303f",
+        "alt": "Weiße U-Küche K-07 im modernen Stil, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-09",
+       "href": "/de/kueche-k-09-moderne-inselkueche-grau",
+       "image": {
+        "id": "6abea7116bbe6103844c2ffa",
+        "alt": "Graue Küchenzeile K-09 mit Glasfronten oben und Insel, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-12",
+       "href": "/de/kueche-k-12-moderne-eckkueche-beige",
+       "image": {
+        "id": "6abea6ff7bf8b4294f3dee2c",
+        "alt": "Beige Eckküche K-12 mit Holzdekor und kombinierten Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-02",
+       "href": "/de/kueche-k-02-eckkueche-insel-beige",
+       "image": {
+        "id": "6abea7437bf8b4294f3def6e",
+        "alt": "Beige Eckküche K-02 im minimalistischen Stil mit Insel und Furnierfronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-01",
+       "href": "/de/kueche-k-01-klassische-eckkueche-gruen",
+       "image": {
+        "id": "6abea74a68c5e81567a5bda9",
+        "alt": "Grüne klassische Eckküche K-01 mit lackierten Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-10",
+       "href": "/de/kueche-k-10-loft-eckkueche-braun",
+       "image": {
+        "id": "6abea70ac8c59bb7c83990fd",
+        "alt": "Braune Eckküche K-10 im Loft-Stil mit Glas und Holzdekor, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-13",
+       "href": "/de/kueche-k-13-inselkueche-beige-minimalistisch",
+       "image": {
+        "id": "6abea6f87bf8b4294f3dee01",
+        "alt": "Beige Küchenzeile K-13 im minimalistischen Stil mit Insel, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-14",
+       "href": "/de/kueche-k-14-kuechenzeile-insel-beige",
+       "image": {
+        "id": "6abea6f37bf8b4294f3dedd3",
+        "alt": "Beige Küchenzeile K-14 mit Insel und kombinierten modernen Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-15",
+       "href": "/de/kueche-k-15-moderne-inselkueche-rot",
+       "image": {
+        "id": "6abea6ea6bbe6103844c2f6e",
+        "alt": "Rote Küchenzeile K-15 mit Insel und moderner Arbeitsfläche in Steinoptik, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-16",
+       "href": "/de/kueche-k-16-eckkueche-gruen-neoklassik",
+       "image": {
+        "id": "6abea6e44888499d207852fb",
+        "alt": "Grüne neoklassische Eckküche K-16 mit Kassettenfronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-17",
+       "href": "/de/kueche-k-17-u-kueche-grau-neoklassik",
+       "image": {
+        "id": "6abea6dd7bf8b4294f3ded6d",
+        "alt": "Graue U-Küche K-17 im neoklassischen Stil, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-18",
+       "href": "/de/kueche-k-18-moderne-eckkueche-grau-cargo",
+       "image": {
+        "id": "6abea6d568c5e81567a5bbb3",
+        "alt": "Graue moderne Eckküche K-18 mit beschichteten Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-19",
+       "href": "/de/kueche-k-19-moderne-kuechenzeile-beige",
+       "image": {
+        "id": "6abea6cf6bbe6103844c2f08",
+        "alt": "Beige Küchenzeile K-19 mit schlichten beschichteten Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-20",
+       "href": "/de/kueche-k-20-moderne-u-kueche-beige",
+       "image": {
+        "id": "6abea6c76bbe6103844c2ed7",
+        "alt": "Beige U-Küche K-20 mit drei Arbeitsseiten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-21",
+       "href": "/de/kueche-k-21-eckkueche-weiss-neoklassik",
+       "image": {
+        "id": "6abea6c04888499d2078526a",
+        "alt": "Weiße neoklassische Eckküche K-21 mit folierten Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-26",
+       "href": "/de/kueche-k-26-moderne-kuechenzeile-braun",
+       "image": {
+        "id": "6abea6acc8c59bb7c8398f78",
+        "alt": "Braune Küchenzeile K-26 mit Holzdekor und moderner Linienführung, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-28",
+       "href": "/de/kueche-k-28-moderne-u-kueche-braun",
+       "image": {
+        "id": "6abea6a06bbe6103844c2e47",
+        "alt": "Braune U-Küche K-28 mit Oberkästen in Holzoptik und unifarbenen Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-30",
+       "href": "/de/kueche-k-30-eckkueche-grau-weiss",
+       "image": {
+        "id": "6abea6937bf8b4294f3dec4c",
+        "alt": "Eckküche K-30 mit weißen Oberkästen und grauen Unterkästen, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-31",
+       "href": "/de/kueche-k-31-moderne-eckkueche-braun",
+       "image": {
+        "id": "6abea68dc8c59bb7c8398ef7",
+        "alt": "Eckküche K-31 mit hellgrünen Oberkästen und braunen Unterkästen in Holzoptik, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-35",
+       "href": "/de/kueche-k-35-kuechenzeile-grau-holz",
+       "image": {
+        "id": "6abea6857bf8b4294f3debf6",
+        "alt": "Küchenzeile K-35 mit hellen Oberkästen in Holzoptik und dunklen graubraunen Fronten, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-36",
+       "href": "/de/kueche-k-36-eckkueche-grau-graphit",
+       "image": {
+        "id": "6abea67dc8c59bb7c8398ea6",
+        "alt": "Eckküche K-36 mit graphitfarbenen Oberkästen und hellgrauen Unterkästen, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-42",
+       "href": "/de/kueche-k-42-moderne-eckkueche-blau",
+       "image": {
+        "id": "6abea66f6bbe6103844c2d7b",
+        "alt": "Eckküche K-42 mit hellen Oberkästen und dunkelblauen Unterkästen, Bratislava und Wien"
+       }
+      },
+      {
+       "title": "Küchenmodell Nr. K-43",
+       "href": "/de/kueche-k-43-moderne-kuechenzeile-rot",
+       "image": {
+        "id": "6abea6687bf8b4294f3deb73",
+        "alt": "Küchenzeile K-43 mit dunklen bordeauxroten Fronten und graphitfarbenen gerillten Oberkästen, Bratislava und Wien"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67dd34eab62c1979aaf2b923",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Möbel für Wohnungen und Häuser",
+       "href": "/de/moebel-nach-mass-bratislava"
+      },
+      {
+       "text": "Möbel für Gewerbeobjekte",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien"
+      },
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Küchen nach Maß in Bratislava",
+       "href": "/de/kueche-nach-mass-bratislava"
+      },
+      {
+       "text": "Küchen nach Maß in Wien",
+       "href": "/de/kueche-nach-mass-wien"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "So läuft die Küchenbestellung ab"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Anfrage.</strong> Schicken Sie uns Grundriss oder Maße der Küche, Fotos des Raums und die Modellnummer aus dem Katalog, falls Ihnen eines gefällt. Wir antworten innerhalb eines Werktags.",
+        "<strong>Erste Kalkulation.</strong> Anhand dieser Angaben nennen wir Ihnen einen Richtpreis.",
+        "<strong>Aufmaß.</strong> Wir kommen zu Ihnen nach Bratislava oder Wien, nehmen die Maße und markieren Fenster, Türen sowie die Anschlüsse für Wasser, Abwasser und Strom.",
+        "<strong>Planung und 3D-Visualisierung.</strong> Wir zeigen Ihnen die Küche in Ihrem Raum, wählen gemeinsam Fronten, Arbeitsplatte und Beschläge und stimmen die Geräte ab. Materialmuster können Sie im Studio in der Súkennícka 1 ansehen.",
+        "<strong>Vertrag.</strong> Wir legen eine Summe fest: Fertigung, Lieferung und Montage. Hier nennen wir auch die Fertigungszeit — sie läuft ab Freigabe der Planung und Eingang der Anzahlung.",
+        "<strong>Fertigung und Montage.</strong> Wir fertigen die Küche in Bratislava, liefern sie, bauen sie auf, setzen die Geräte ein und stellen die Fronten ein."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Wie sich der Preis zusammensetzt"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Wir kalkulieren für eine konkrete Ausstattung: Zwei gleich lange Küchen können sich im Preis deutlich unterscheiden — wegen der Fronten, der Arbeitsplatte und der Mechanismen. Die Summe hängt ab von:"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "Länge und Form: wie viele Laufmeter, ob es eine Insel oder Halbinsel gibt, ob die Kästen bis zur Decke reichen;",
+        "Fronten: Beschichtete Spanplatte ist die günstigste Variante, lackiertes MDF, Furnier und Acryl kosten mehr;",
+        "Arbeitsplatte: Laminat auf Spanplatte, Kompaktplatte, Feinsteinzeug, Quarz oder Stein;",
+        "Beschläge und Innenausstattung: Scharniere und Auszüge mit oder ohne Dämpfung, Klappenbeschläge für die Oberkästen, Cargo-Auszüge, Organizer;",
+        "Geräte und Armaturen, wenn Sie diese bei uns bestellen."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Aufmaß, Lieferung und Montage sind bereits im Preis enthalten. Wenn Sie neben der Küche auch Kästen, einen begehbaren Schrankraum und Vorraummöbel brauchen, beginnen Sie am besten mit dem <a href=\"/de/designpaket-moebel-wien-bratislava\">Paket „Möbel“</a> (35–50 €/m²): Es enthält die 3D-Visualisierung und die Pläne für alle Einbaumöbel der Wohnung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-materials",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fronten, Arbeitsplatten, Beschläge"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Bei den Katalogmodellen sind die Korpusse aus 18 mm starker beschichteter Spanplatte. Fronten fertigen wir aus beschichteter Spanplatte, foliertem MDF, lackiertem MDF, Furnier, HPL, Acryl und Glas. In einer Küche werden Materialien oft kombiniert: Beim Modell K-02 zum Beispiel sind die oberen Fronten furniert und die unteren lackiert."
+      },
+      {
+       "t": "p",
+       "html": "Arbeitsplatten — Laminat, Kompaktplatte, Quarzkomposit, Feinsteinzeug, Mineralwerkstoff und Naturstein. Beschläge von Hettich, Blum und Häfele: Dämpfung, Auszugssysteme, Klappenbeschläge, Cargo-Auszüge. Materialien und Beschläge wählen wir nach Budget, von günstig bis hochwertig. Mehr über Küchen mit dem vollen Leistungsumfang lesen Sie auf den Seiten <a href=\"/de/kueche-nach-mass-bratislava\">schlüsselfertige Küchen in Bratislava</a> und <a href=\"/de/kueche-nach-mass-wien\">schlüsselfertige Küchen in Wien</a>."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fragen zu Küchen nach Maß"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Kann ich eine Küche bestellen, die nicht im Katalog ist?",
+       "a": "<p>Ja. Wenn Sie eine eigene Idee oder ein Foto einer Küche haben, die Ihnen gefällt, planen wir sie von Grund auf nach Aufmaß. Der Katalog hilft, sich schneller auf einen Stil zu einigen und das Budget grob einzuschätzen, schränkt die Auswahl aber nicht ein.</p>"
+      },
+      {
+       "q": "Wann macht man das Aufmaß, wenn in der Wohnung noch saniert wird?",
+       "a": "<p>Eine erste Kalkulation ist anhand des Grundrisses möglich. Das endgültige Aufmaß machen wir, wenn die Wände begradigt sind und die Anschlüsse für Wasser, Abwasser und Strom dort liegen, wo die Küche sie braucht. Übernimmt unser Team die Sanierung, werden die Anschlüsse gleich nach der Küchenplanung gesetzt.</p>"
+      },
+      {
+       "q": "Kann ich die Geräte selbst kaufen?",
+       "a": "<p>Ja. Wir brauchen die Gerätemodelle vor Fertigungsbeginn: Nach ihren Maßen werden Nischen und Module berechnet. Sie können die Geräte auch über uns bestellen — dann sind sie im Gesamtangebot enthalten.</p>"
+      },
+      {
+       "q": "Meine Neubauwohnung ist vom Bauträger noch nicht übergeben. Womit fange ich an?",
+       "a": "<p>Mit der Übergabe. Mängel an Wänden, Böden und Anschlüssen werden im Übergabeprotokoll (preberací protokol) festgehalten: So lassen sie sich beim Bauträger leichter geltend machen, solange noch keine Küche an der Wand steht. Wir begleiten die <a href=\"/de/wohnungsuebergabe-bautraeger-bratislava\">Wohnungsübergabe</a>: bis 50 m² für 250 €, größere Wohnungen für 400 €.</p>"
+      },
+      {
+       "q": "Kann der Dunstabzug in Wien über die Fassade ins Freie führen?",
+       "a": "<p>Eine Öffnung in der Fassade betrifft allgemeine Teile des Hauses. Bei einer Eigentumswohnung braucht es dafür die Zustimmung der anderen Eigentümer; die Kontakte der Miteigentümer bekommen Sie über die Hausverwaltung. Gibt es keine Zustimmung, bauen wir einen Umluft-Dunstabzug ein: Er braucht keine Abluft nach außen.</p>"
+      },
+      {
+       "q": "Arbeiten Sie nur in Bratislava und Wien?",
+       "a": "<p>Nein, wir liefern und montieren Küchen in der ganzen Slowakei, in Österreich und in Deutschland. Die Lieferung ist im Preis enthalten, die Montage übernimmt unser eigenes Team.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbf42dc4c90529feccfd5c",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

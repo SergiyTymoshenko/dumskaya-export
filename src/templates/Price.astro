@@ -18,7 +18,7 @@ const contact = localize('/contact-studio-interior-design-bratislava-vienna', la
 // примеры работ подписываются названием проекта («Квартира Metropolis в Братиславе, 75 м²»)
 const projectLabel = new Map(projectsFor(lang).map((p) => [p.href, p.label]));
 const exLabel = (x: { text: string; href: string | null }) => projectLabel.get(x.href || '') ||
-  x.text.replace(/^(Пример работы|Пример|Посмотреть пример работы( с)?|Приклад роботи|Приклад|Переглянути приклад роботи( з)?|Example of (our )?work|Example|See an example( of work)?( with)?)\s*[:—-]?\s*/i, '');
+  x.text.replace(/^(Пример работы|Пример|Посмотреть пример работы( с)?|Приклад роботи|Приклад|Переглянути приклад роботи( з)?|Example of (our )?work|Example|See an example( of work)?( with)?|Pozrieť ukážku projektu( s)?|Ukážka projektu|Ukážka|Projektbeispiel( mit)?|Beispiel)\s*[:—-]?\s*/i, '').replace(/\s+ansehen$/, '');
 const order = (name: string) => contact && `${contact}?model=${encodeURIComponent(T.packModel.replace('{}', name))}#lead`;
 ---
 <div class="wrap ptop">

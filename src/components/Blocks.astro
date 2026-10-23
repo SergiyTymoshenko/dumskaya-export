@@ -5,7 +5,8 @@ import Gallery from './Gallery.astro';
 import Img from './Img.astro';
 import Tile from './Tile.astro';
 import Parts from './Parts.astro';
-import { splitCaption, pageByPath, productCards, type Section, type Phone } from '../lib/data';
+import { splitCaption, pageByPath, productCards, langPhones, site, type Section, type Phone } from '../lib/data';
+import { ui } from '../lib/i18n';
 import { typo } from '../lib/typo';
 import Caps from './Caps.astro';
 import LeadForm from './LeadForm.astro';
@@ -110,6 +111,18 @@ const isLeadBtn = (x: { text: string; href: string | null }) =>
           </table>
         </div>
       );
+      if ((b as any).type === 'contacts') {
+        const c = site.contacts;
+        return (
+          <div class="wrap blk__text prose">
+            <ul class="blk__contacts">
+              <li>{ui(lang).address}: {c.maps ? <a href={c.maps} rel="noopener" target="_blank">{c.address.label[lang]}</a> : c.address.label[lang]}</li>
+              {langPhones(lang).map((p) => <li>{p.label[lang]}: <a href={`tel:${p.tel}`}>{p.text}</a></li>)}
+              <li>E-mail: <a href={`mailto:${c.email}`}>{c.email}</a></li>
+            </ul>
+          </div>
+        );
+      }
       if (b.type === 'form') return <div class="wrap blk__form"><LeadForm lang={lang} id={`lead${formN++ ? formN : ''}`} title={(b as any).title} intro={(b as any).text} /></div>;
       return null;
     })}

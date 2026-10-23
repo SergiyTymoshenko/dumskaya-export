@@ -1,0 +1,89 @@
+{
+ "path": "/de/bildrechte-fotos-visualisierungen",
+ "lang": "de",
+ "type": "privacy",
+ "group": null,
+ "title": "Nutzung von Fotos und Visualisierungen | DUMSKAYA DESIGN",
+ "description": "Fotos, 3D-Visualisierungen und Pläne dieser Website sind urheberrechtlich geschützt: was ohne Genehmigung zulässig ist und wie Sie eine Lizenz bekommen.",
+ "h1": "Nutzung von Fotos und Visualisierungen",
+ "og_image": null,
+ "alternates": {
+  "ru": "/image-license",
+  "ua": "/ua/image-license",
+  "en": "/en/image-license",
+  "sk": "/sk/pouzitie-fotografii-vizualizacii",
+  "de": "/de/bildrechte-fotos-visualisierungen"
+ },
+ "sections": [
+  {
+   "id": "image-license",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Nutzung von Fotos und Visualisierungen"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Wem die Bilder gehören"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Fotos von Interieurs, 3D-Visualisierungen, Pläne und andere Bilder auf dumskaya-design.com hat das Studio für Innenarchitektur DUMSKAYA DESIGN erstellt oder in Auftrag gegeben. Sie sind urheberrechtlich geschützt. © DUMSKAYA DESIGN."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Was ohne Genehmigung erlaubt ist"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Einen Link auf eine Seite der Website teilen: in sozialen Netzwerken, Messengern und E-Mails. In der Vorschau eines solchen Links kann ein Bild von der Seite erscheinen."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Was ohne Genehmigung nicht erlaubt ist"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Bilder kopieren und auf anderen Websites, in sozialen Netzwerken, auf Marktplätzen und in der Werbung veröffentlichen; Projekte des Studios als eigene ausgeben; Bilder verändern und den Bildnachweis oder Angaben zum Urheber entfernen."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "So erhalten Sie eine Genehmigung (Lizenz)"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Schreiben Sie uns an <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a> oder über das Formular auf der Seite <a href=\"/de/kontakt-innenarchitektur-wien-bratislava\">„Kontakt“</a>: welche Bilder (Link zur Seite), wo und wofür Sie sie verwenden möchten. Wir antworten innerhalb eines Werktags und schicken Ihnen die Bedingungen."
+      },
+      {
+       "t": "p",
+       "html": "Bei genehmigter Nutzung nennen Sie bitte den Urheber: „© DUMSKAYA DESIGN, dumskaya-design.com“."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

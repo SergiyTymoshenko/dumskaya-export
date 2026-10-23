@@ -1,0 +1,364 @@
+{
+ "path": "/de/preise-innenarchitektur-wien-bratislava",
+ "lang": "de",
+ "type": "price",
+ "group": null,
+ "title": "Preise für Innenarchitektur: Pakete ab 20 €/m² | DUMSKAYA",
+ "description": "Pakete: Express 20 €/m², Basis 35–45 €/m², Möbel 35–50 €/m², Premium 50 €/m², Premium+ 70 €/m². Wien und Bratislava, Beratung kostenlos.",
+ "h1": "Preise für Innenarchitektur in Bratislava und Wien",
+ "og_image": "6abd0a7d61617a4443ab2567",
+ "alternates": {
+  "ru": "/price-interior-design-bratislava-wien-praha",
+  "ua": "/ua/tsina-dyzain-proektiv-interieru-bratislava-wien-praha",
+  "en": "/en/interior-design-pricing-bratislava-wien-praha",
+  "sk": "/sk/cena-dizajnu-interieru-bratislava-vieden",
+  "de": "/de/preise-innenarchitektur-wien-bratislava"
+ },
+ "sections": [
+  {
+   "id": "66a0fb192d89b148e69fc866",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Preise für Innenarchitektur in Bratislava und Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Fünf Pakete — vom schnellen 3D-Konzept bis zum Projekt mit künstlerischer Oberleitung während der Sanierung. Wählen Sie das Paket, das zu Ihrem Objekt und Ihren Zielen passt."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Designpaket „Express“ — 20 €/m² Bearbeitungszeit — ab 14 Tagen nach Freigabe des Grundrisses"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ein rasches Konzept für Wohnungen, Häuser und Gewerbeflächen, die bereit für den Innenausbau sind und keinen vollständigen Satz Ausführungspläne brauchen."
+      },
+      {
+       "t": "p",
+       "html": "Enthalten sind Bestandsplan, Möblierungsplan und fotorealistische 3D-Visualisierungen jedes Hauptraums mit einer Korrekturrunde. Die Elektroplanung wird gesondert verrechnet."
+      },
+      {
+       "t": "p",
+       "html": "Grundriss, Materialien, Möbel, Licht und Farben sehen Sie schon vor Beginn der Ausbauarbeiten."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Preis: 20 €/m²</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Mindestpreis des Pakets — 1.500 €</strong>"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Mehr erfahren",
+       "href": "/de/designpaket-express-wien-bratislava"
+      },
+      {
+       "text": "Beispiel: Gewerbeobjekt",
+       "href": "/de/innenarchitektur-kosmetikstudio-54-m2"
+      },
+      {
+       "text": "Beispiel: Einfamilienhaus",
+       "href": "/de/innenarchitektur-einfamilienhaus-bratislava-120-m2"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>Designpaket „Möbel“ — 35–50 €/m²</strong>"
+      },
+      {
+       "t": "p",
+       "html": "Für Wohnungen, Häuser und Gewerbeflächen, die eingerichtet werden sollen. Enthalten sind Bestandsplan, Möblierungsplan, fotorealistische 3D-Visualisierungen jedes Raums mit einer Korrekturrunde und ein vollständiger Satz Möbelpläne für die Fertigung von Möbeln nach Maß."
+      },
+      {
+       "t": "p",
+       "html": "Sie erhalten ein fertiges Einrichtungskonzept und eine technische Vorgabe für die Fertigung von Küchen, Kästen, begehbaren Schrankräumen, eingebauten Stauraumsystemen und anderen Einbaumöbeln nach Maß."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Preis: 35–50 €/m²</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Mindestpreis des Pakets — 2.000 €</strong>"
+      },
+      {
+       "t": "p",
+       "html": "Die Möbel nach diesem Projekt können wir in der eigenen Tischlerei fertigen, liefern und montieren."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Mehr erfahren",
+       "href": "/de/designpaket-moebel-wien-bratislava"
+      },
+      {
+       "text": "Projektbeispiel: Wohnprojekt Metropolis, Bratislava, 75 m²",
+       "href": "/de/innenarchitektur-wohnung-metropolis-bratislava-75-m2"
+      },
+      {
+       "text": "Projektbeispiel: Wohnprojekt Eurovea City, Bratislava, 56 m²",
+       "href": "/de/innenarchitektur-wohnung-eurovea-bratislava-56-m2"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Designpaket „Basis“ — 35–45 €/m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Eine vollständige Planung für Wohnungen, Häuser und Gewerbeflächen vor der Sanierung: 3D-Visualisierung und ein Satz Ausführungspläne für die Handwerker."
+      },
+      {
+       "t": "p",
+       "html": "Enthalten sind Bestandsplan, Möblierungsplan, Abbruch- und Neubaupläne, Pläne für Sanitär, Fußbodenheizung, Steckdosen und Elektroauslässe, Schalter, Beleuchtung, Decken und Böden, Wandabwicklungen für Küche und Bäder sowie Material- und Ausstattungslisten für die Oberflächen."
+      },
+      {
+       "t": "p",
+       "html": "Fotorealistische 3D-Visualisierungen jedes Raums mit einer Korrekturrunde."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Preis: 35–45 €/m² </strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Mindestpreis des Pakets — 2.000 €</strong>"
+      },
+      {
+       "t": "p",
+       "html": "Zusätzlich buchbar: künstlerische Oberleitung, eine detaillierte Kostenschätzung für die Sanierung, Einrichtung und Beschaffung, Fertigung von Möbeln nach Maß und eine schlüsselfertige Sanierung."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Mehr erfahren",
+       "href": "/de/designpaket-basis-wien-bratislava"
+      },
+      {
+       "text": "Projektbeispiel: Wohnung in Bratislava, 127 m²",
+       "href": "/de/innenarchitektur-dreizimmerwohnung-bratislava-127-m2"
+      },
+      {
+       "text": "Projektbeispiel mit technischer Dokumentation ansehen",
+       "href": "/de/innenarchitektur-wohnung-kiew-80-m2"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Designpaket „Premium“ — 50 €/m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Das genaueste Projekt für Wohnungen, Häuser und Gewerbeflächen, mit Unterstützung durch die Designerin bei der Vorbereitung der Sanierung."
+      },
+      {
+       "t": "p",
+       "html": "Enthalten sind der vollständige Basis-Satz an Ausführungsplänen, Wandabwicklungen aller Räume, Detailpläne und Schnitte, Materiallisten mit Mengenermittlung der wichtigsten Materialien sowie fotorealistische 3D-Visualisierungen jedes Raums mit bis zu zwei Korrekturrunden."
+      },
+      {
+       "t": "p",
+       "html": "Dazu zwei gemeinsame Termine mit der Designerin zur Auswahl der Oberflächen."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Preis: 50 €/m²</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Mindestpreis des Pakets — 2.500 €</strong>"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Mehr erfahren",
+       "href": "/de/designpaket-premium-wien-bratislava"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Designpaket „Premium+“ — 70 €/m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Das umfassendste Paket: ein genau ausgearbeitetes Projekt und Begleitung durch die Designerin während der Umsetzung."
+      },
+      {
+       "t": "p",
+       "html": "Enthalten ist alles aus dem Paket „Premium“ und zusätzlich 2 Monate künstlerische Oberleitung, Möbelpläne, vollständige Materiallisten für alle Oberflächen und Ausstattungslisten für sämtliche Einrichtungsgegenstände."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Preis: 70 €/m²</strong>"
+      },
+      {
+       "t": "p",
+       "html": "<strong>Mindestpreis des Pakets — 3.500 €</strong>"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Mehr erfahren",
+       "href": "/de/designpaket-premium-plus-wien-bratislava"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Zusätzliche Leistungen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die künstlerische Oberleitung können Sie zu jedem Paket gesondert buchen:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Künstlerische Oberleitung — 1.000 €/Monat."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Die Designerin berät die Handwerker, klärt Details und prüft, ob auf der Baustelle nach Plan gearbeitet wird."
+      },
+      {
+       "t": "p",
+       "html": "Wenn Sie nicht sicher sind, welches Paket Sie brauchen, kommen Sie zur kostenlosen Beratung: Nach Fläche und Anforderungen Ihres Objekts empfehlen wir das passende."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Kostenschätzung für die Sanierung",
+       "href": "/de/kostenschaetzung-sanierung-wien-bratislava"
+      },
+      {
+       "text": "Sanierung schlüsselfertig",
+       "href": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbf45fc4c90529feccff64",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

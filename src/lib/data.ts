@@ -16,7 +16,9 @@ export type Block =
   /** видео с YouTube: превью — фото проекта (poster — id картинки), плеер грузится только по нажатию */
   | { type: 'video'; youtube: string; poster?: string }
   /** карточки товаров магазина (русские адреса; на других языках — те же товары на языке страницы) */
-  | { type: 'products'; items: string[] };
+  | { type: 'products'; items: string[] }
+  /** контакты студии: адрес, телефоны языка страницы (на SK — словацкий, на DE — австрийский), e-mail */
+  | { type: 'contacts' };
 export type Section = { id: string; blocks: Block[] };
 export type Page = {
   path: string; lang: Lang; type: string; group: string | null;
@@ -51,19 +53,32 @@ export const imageMeta = imagesJson as Record<string, { width: number; height: n
 export const site = siteJson as any;
 
 export type Phone = { tel: string; text: string; key: string; city: Record<Lang, string>; label: Record<Lang, string> };
-/** Телефон страницы: телефон региона у посадочных страниц, иначе основной (Братислава). */
+/** Телефоны языка: словацкая версия — только словацкий номер, немецкая — только австрийский, остальные — все номера студии. */
+export const LANG_PHONES: Partial<Record<Lang, string[]>> = { sk: ['sk'], de: ['at'] };
+
+/** Телефон страницы: телефон региона у посадочных страниц, иначе основной (Братислава).
+ *  На SK и DE — всегда номер своего языка; если регион страницы другой — подпись без города. */
 export function phoneFor(page: Page): { phone: Phone; regional: boolean; plain: boolean } {
   const all = site.contacts.phones as Phone[];
+  const only = LANG_PHONES[page.lang];
+  if (only) {
+    const phone = all.find((p) => p.key === only[0]) || all[0];
+    return { phone, regional: !!page.phone, plain: !!page.phone && page.phone !== phone.key };
+  }
   const own = page.phone ? all.find((p) => p.key === page.phone) : undefined;
   return { phone: own || all[0], regional: !!own, plain: !!own && !!page.phone_plain };
 }
 
-/** Телефоны в подвале, меню и на главной: Братислава (два номера) и Вена — все телефоны студии. */
-export function pagePhones(page: Page): Phone[] {
+/** Телефоны в подвале, меню, на главной и в «Контактах»: все номера студии (на SK и DE — только номер своего языка). */
+export function langPhones(lang: Lang): Phone[] {
   const all = site.contacts.phones as Phone[];
-  const { phone, regional } = phoneFor(page);
-  const main = all.filter((p) => ['sk', 'ua', 'at'].includes(p.key));
-  return regional && !main.includes(phone) ? [phone, ...main] : main;
+  const keys = LANG_PHONES[lang] || ['sk', 'ua', 'at'];
+  return all.filter((p) => keys.includes(p.key));
+}
+
+/** Телефоны в подвале, меню и на главной для страницы. */
+export function pagePhones(page: Page): Phone[] {
+  return langPhones(page.lang);
 }
 
 /** Адрес той же страницы на другом языке (или главная этого языка, если перевода нет). */
@@ -87,7 +102,7 @@ export function projectsFor(lang: Lang) {
 
 /** Разбивает подпись карточки на название и строку с площадью: «Квартира в Вене 58 м²» → [«Квартира в Вене», «58 м²»]. */
 export function splitCaption(text: string): [string, string] {
-  const re = /,?\s*\(?\s*(?:тераса|терраса|terrace)?\s*\d{1,4}\s*(?:м²|м2|m²|m2)\s*(?:terrace|тераса|терраса)?\)?/gi;
+  const re = /,?\s*\(?\s*(?:тераса|терраса|terrace|terasa|Terrasse)?\s*\d{1,4}\s*(?:м²|м2|m²|m2)\s*(?:terrace|тераса|терраса|terasa|Terrasse)?\)?/gi;
   const areas = (text.match(re) || []).map((s) => s.replace(/^[,\s(]+|[)\s]+$/g, '').trim());
   const name = text.replace(re, '').replace(/\s{2,}/g, ' ').replace(/[,\s]+$/, '').trim();
   return [name, areas.join(', ')];
@@ -116,7 +131,7 @@ export function allGalleryImages(page: Page): Img[] {
 
 export function isServicesSection(s: Section) {
   const h = s.blocks.find((b) => b.type === 'heading') as any;
-  return !!h && /^(Услуги студии|Послуги студії|Interior design studio services|Our (interior design )?services|Services)/i.test(h.text);
+  return !!h && /^(Услуги студии|Послуги студії|Interior design studio services|Our (interior design )?services|Services|Služby štúdia|Leistungen des Studios)/i.test(h.text);
 }
 
 /** Все страницы данного типа на языке lang (порядок — по русскому адресу). */
@@ -153,6 +168,8 @@ export function crumbsFor(page: Page): { label: string; href: string | null }[] 
     ru: { home: 'Главная', projects: 'Проекты', kitchens: 'Кухни', tips: 'Советы', shop: 'Магазин', prices: 'Цены', contacts: 'Контакты' },
     ua: { home: 'Головна', projects: 'Проєкти', kitchens: 'Кухні', tips: 'Поради', shop: 'Магазин', prices: 'Ціни', contacts: 'Контакти' },
     en: { home: 'Home', projects: 'Projects', kitchens: 'Kitchens', tips: 'Tips', shop: 'Shop', prices: 'Prices', contacts: 'Contact' },
+    sk: { home: 'Domov', projects: 'Projekty', kitchens: 'Kuchyne', tips: 'Tipy', shop: 'Obchod', prices: 'Ceny', contacts: 'Kontakt' },
+    de: { home: 'Startseite', projects: 'Projekte', kitchens: 'Küchen', tips: 'Tipps', shop: 'Shop', prices: 'Preise', contacts: 'Kontakt' },
   }[lang];
   const home = { label: t.home, href: homePath(lang) };
   const last = (label: string) => ({ label, href: page.path });
@@ -180,7 +197,7 @@ export function crumbsFor(page: Page): { label: string; href: string | null }[] 
       if (ru === '/price-interior-design-bratislava-wien-praha') return [home, last(t.prices)];
       const menu = (site.menu[lang] || []) as any[];
       const group = menu.find((m) => m.children?.some((c: any) => c.href === page.path));
-      const prices = group && /Цен|Ціни|Prices/.test(group.label);
+      const prices = group && /Цен|Ціни|Prices|Ceny|Preise/.test(group.label);
       return [home, ...(group ? [{ label: group.label, href: prices ? L('/price-interior-design-bratislava-wien-praha') : null }] : []), last(page.h1)];
     }
   }

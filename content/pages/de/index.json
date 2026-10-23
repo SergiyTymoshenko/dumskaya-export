@@ -1,0 +1,407 @@
+{
+ "path": "/de",
+ "lang": "de",
+ "type": "home",
+ "group": null,
+ "title": "Innenarchitektur in Wien und Bratislava | DUMSKAYA DESIGN",
+ "description": "Das Studio von Irina Dumskaya plant Wohnungen, Häuser und Büros, fertigt Möbel in eigener Tischlerei und saniert schlüsselfertig in Wien und Bratislava.",
+ "h1": "Studio für Innenarchitektur in Bratislava und Wien",
+ "og_image": "6abd0a7d61617a4443ab2567",
+ "alternates": {
+  "ru": "/",
+  "ua": "/ua",
+  "en": "/en",
+  "sk": "/sk",
+  "de": "/de"
+ },
+ "sections": [
+  {
+   "id": "5d4d7e711e2c240023a2eb28",
+   "blocks": [
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "DUMSKAYA DESIGN"
+      },
+      {
+       "t": "p",
+       "html": "INNENARCHITEKTUR &amp; MÖBEL"
+      },
+      {
+       "t": "p",
+       "html": "BRATISLAVA &amp; WIEN"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5eff4ac0759b310022b7131f",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "655410c220a5eb000f971701",
+       "alt": "Interior Designerin Irina Dumskaya, Bratislava und Wien"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Studio für Innenarchitektur in Bratislava und Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Mein Name ist <strong>Irina Dumskaya</strong>. Ich bin Leiterin und Chefdesignerin des Studios <strong>DUMSKAYA DESIGN</strong> in Bratislava."
+      },
+      {
+       "t": "p",
+       "html": "Wir planen Innenräume für Wohnungen, Landhäuser, Reihenhäuser, Einfamilienhäuser und Villen, aber auch für Hotels, Büros, Geschäfte und Kosmetiksalons. Und wir bringen jedes Projekt bis zum fertigen Ergebnis: Die Möbel fertigen wir in unserer eigenen Werkstatt in Bratislava, die schlüsselfertige Sanierung übernehmen unsere eigenen Teams."
+      },
+      {
+       "t": "p",
+       "html": "Ein schönes Interieur muss auch im Alltag funktionieren: eine durchdachte Raumaufteilung, genug Stauraum, gutes Licht und genaue Pläne, nach denen die Handwerker ohne Rätselraten arbeiten. Deshalb hören wir zuerst genau zu, wie Sie wohnen oder arbeiten, und schlagen erst dann Lösungen vor."
+      },
+      {
+       "t": "p",
+       "html": "Wir arbeiten in Bratislava und Wien. Für Kundinnen und Kunden in anderen Ländern planen wir aus der Ferne."
+      },
+      {
+       "t": "p",
+       "html": "Ich freue mich, Sie kennenzulernen und Ihr Projekt bei einer kostenlosen Beratung zu besprechen."
+      },
+      {
+       "t": "p",
+       "html": "Herzliche Grüße\n<strong>Irina Dumskaya</strong>"
+      },
+      {
+       "t": "p",
+       "html": "Was bekommen Sie mit einer Einrichtungsplanung von DUMSKAYA DESIGN?"
+      },
+      {
+       "t": "p",
+       "html": "1. Individuelle Gestaltung:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Lösungen, die zu Ihrem Stil und Ihrem Alltag passen.",
+        "Wir berücksichtigen alle Ihre Wünsche und Anforderungen."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "2. Vollständiger Plansatz:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Bestandsplan (Aufmaß) der Räume.",
+        "Möblierungsplan.",
+        "Abbruch- und Neubaupläne.",
+        "Listen der Tür- und Fensteröffnungen.",
+        "Pläne für Sanitär, Fußbodenheizung, Steckdosen und Schalter.",
+        "Beleuchtungs-, Decken- und Bodenpläne."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "3. Material- und Ausstattungslisten:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Liste aller Oberflächenmaterialien mit Mengenangaben.",
+        "Wandabwicklungen mit genauen Maßen."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "4. 3D-Visualisierung des Interieurs:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Fotorealistische 3D-Visualisierungen aller Räume.",
+        "Änderungen an den Visualisierungen bis zur Freigabe des Konzepts."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "5. Begleitung durch die Designerin:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Gemeinsame Termine mit der Designerin zur Materialauswahl.",
+        "Künstlerische Oberleitung während der Sanierung."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "6. Alles aus einer Hand:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Möbelpläne und Fertigung der Möbel in unserer eigenen Werkstatt.",
+        "Schlüsselfertige Sanierung und Kontrolle in jeder Bauphase — weniger verlorene Zeit und weniger teure Fehler."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Die fertige Wohnung sieht so aus wie auf den Visualisierungen, und es lebt sich darin jeden Tag bequem."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66a1243ef38918cb3ece0d6c",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Preise der Designpakete",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Realisierte Projekte",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "So läuft die Planung ab"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Wir arbeiten Schritt für Schritt. Bei jedem Schritt sehen Sie das Ergebnis, bevor der nächste beginnt:"
+      },
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Beratung.</strong> Kostenlos, im Studio in Bratislava, vor Ort oder online. Wir besprechen die Räume, das Budget und den Zeitplan und wählen das passende Paket.",
+        "<strong>Aufmaß und Grundriss.</strong> Wir messen die Räume aus, erstellen den Bestandsplan und Varianten für die Möblierung. Danach arbeiten wir mit einer einzigen freigegebenen Raumaufteilung weiter.",
+        "<strong>3D-Visualisierungen.</strong> Wir zeigen jeden Raum mit Materialien, Licht und Möbeln. Änderungen machen wir vor der Freigabe des Konzepts, nicht während der Sanierung.",
+        "<strong>Ausführungspläne.</strong> Elektro-, Sanitär-, Beleuchtungs-, Decken- und Bodenpläne, Wandabwicklungen, Materiallisten: alles, wonach Handwerker und Tischler arbeiten, ohne raten zu müssen.",
+        "<strong>Kostenschätzung und Umsetzung.</strong> Wir kalkulieren das Budget, führen die Sanierung durch, fertigen die Möbel und achten darauf, dass die fertige Wohnung den Visualisierungen entspricht."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-cycle",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Planung, Möbel und Sanierung aus einer Hand"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Möbel nach den Plänen des Projekts fertigen wir in unserer eigenen Werkstatt in Bratislava: Küchen, Kästen und begehbare Schrankräume, TV-Möbel, Badmöbel, Wandpaneele. Die Sanierung übernehmen unsere Teams aus Bratislava, auch in Wien. An Subunternehmer geben wir keine Baustelle weiter."
+      },
+      {
+       "t": "p",
+       "html": "Wenn ein Team Planung, Möbel und Sanierung übernimmt, sind Nischen sowie Elektro- und Wasseranschlüsse von Anfang an auf die konkrete Küche und die konkreten Kästen abgestimmt. Auf der Baustelle muss niemand eine Steckdose versetzen, die hinter einem Hochschrank gelandet ist, oder einen Kasten umbauen, der nicht in die Nische passt."
+      },
+      {
+       "t": "p",
+       "html": "Die Preise sind für Bratislava und Wien gleich, die Lieferung der Möbel ist im Preis enthalten. Sie können auch nur einen Teil beauftragen: nur die Planung, nur <a href=\"/de/moebel-nach-mass-bratislava\">Möbel nach Maß</a> oder eine <a href=\"/de/schluesselfertige-sanierung-wien-bratislava\">schlüsselfertige Sanierung</a> nach einem fertigen Projekt."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-prices",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Was die Einrichtungsplanung kostet"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Der Preis wird pro Quadratmeter berechnet und hängt davon ab, was das Paket enthält:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Express“ — 20 €/m²: Grundriss und 3D-Visualisierungen, fertig ab 14 Tagen nach Freigabe des Grundrisses;",
+        "„Basis“ — 35–45 €/m²: Visualisierungen und vollständiger Plansatz für die Sanierung;",
+        "„Möbel“ — 35–50 €/m²: Visualisierungen und Pläne für die Fertigung der Einbaumöbel;",
+        "„Premium“ — 50 €/m²: Detailpläne und Wandabwicklungen für alle Räume, zwei gemeinsame Termine mit der Designerin zur Materialauswahl;",
+        "„Premium+“ — 70 €/m²: alles aus „Premium“ und zwei Monate künstlerische Oberleitung der Sanierung."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Ein Beispiel: Eine Wohnung mit 60 m² und vollständigem Plansatz im Paket „Basis“ kostet 2.100–2.700 €. Den Mindestpreis und den Umfang jedes Pakets finden Sie auf der Seite <a href=\"/de/preise-innenarchitektur-wien-bratislava\">Preise für Innenarchitektur</a>."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-where",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Bratislava, Wien und Planung aus der Ferne"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Das Studio befindet sich in Bratislava im Bezirk Ružinov, Súkennícka 1. Am häufigsten arbeiten wir mit Neubauwohnungen: Eine Wohnung vom Bauträger muss geplant, ausgebaut und eingerichtet werden. Bevor Sie das Übergabeprotokoll unterschreiben, können wir die Wohnung bei der <a href=\"/de/wohnungsuebergabe-bautraeger-bratislava\">Wohnungsübergabe</a> prüfen und eine Mängelliste erstellen."
+      },
+      {
+       "t": "p",
+       "html": "Nach Wien ist es etwa eine Stunde Fahrt. Aufmaß, Termine auf der Baustelle und künstlerische Oberleitung laufen dort genauso wie in Bratislava und werden nicht extra verrechnet. Mehr dazu auf der Seite <a href=\"/de/innenarchitekt-wien\">Innenarchitektur in Wien</a>."
+      },
+      {
+       "t": "p",
+       "html": "Für Objekte in anderen Ländern planen wir aus der Ferne: Visualisierungen und Ausführungspläne, nach denen eine Firma vor Ort arbeitet."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "home-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fragen und Antworten"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Wo fange ich an, wenn die Wohnung noch gebaut wird?",
+       "a": "<p>Beim Grundriss. Viele Bauträger nehmen Sonderwünsche der Käufer bis zu einer bestimmten Bauphase an: Eine Trennwand, Wasseranschlüsse oder Steckdosen lassen sich versetzen, solange die Änderung noch nichts kostet. Schicken Sie uns den Plan des Bauträgers. Bei der Beratung sagen wir Ihnen, was Sie daran ändern sollten.</p>"
+      },
+      {
+       "q": "Was bekomme ich nach der Planung in die Hand?",
+       "a": "<p>Das hängt vom Paket ab. Im Paket „Basis“ sind es der Bestandsplan, der Grundriss mit Möblierung, Abbruch- und Neubaupläne, Pläne für Elektro, Sanitär, Fußbodenheizung, Beleuchtung, Decken und Böden, Wandabwicklungen von Küche und Bädern, Materiallisten und 3D-Visualisierungen aller Räume. Mit diesen Unterlagen kann jedes Handwerkerteam arbeiten.</p>"
+      },
+      {
+       "q": "Wie lange dauert die Planung?",
+       "a": "<p>„Express“ ist ab 14 Tagen nach Freigabe des Grundrisses fertig. Ein vollständiges Projekt mit Ausführungsplänen dauert meist 4–8 Wochen, je nach Fläche und Anzahl der Änderungen.</p>"
+      },
+      {
+       "q": "Kann ich Möbel auch ohne Einrichtungsplanung bestellen?",
+       "a": "<p>Ja. Küche, Kasten oder begehbaren Schrankraum fertigen wir nach den Maßen Ihres Raums: Möbelplanung, Fertigung in Bratislava, Lieferung und Montage. Küchenmodelle mit Fotos finden Sie im <a href=\"/de/kuechen-nach-mass-katalog-wien-bratislava\">Küchenkatalog</a>.</p>"
+      },
+      {
+       "q": "Übernehmen Sie die Sanierung auch nach fremder Planung?",
+       "a": "<p>Ja, wenn Ausführungspläne vorhanden sind. Vor Beginn prüfen wir das Projekt, erstellen eine <a href=\"/de/kostenschaetzung-sanierung-wien-bratislava\">Kostenschätzung</a> und sagen Ihnen, welche Pläne für die Arbeit noch fehlen.</p>"
+      },
+      {
+       "q": "In welcher Sprache kann ich mit dem Studio kommunizieren?",
+       "a": "<p>Auf Russisch, Ukrainisch und Englisch. Die Unterlagen erstellen wir in der Sprache, die für Sie und die Handwerker am besten passt.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67d458805c9de83c34466850",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

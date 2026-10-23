@@ -1,0 +1,1002 @@
+{
+ "/": {
+  "path": "/de",
+  "title": "Innenarchitektur in Wien und Bratislava | DUMSKAYA DESIGN",
+  "description": "Das Studio von Irina Dumskaya plant Wohnungen, Häuser und Büros, fertigt Möbel in eigener Tischlerei und saniert schlüsselfertig in Wien und Bratislava."
+ },
+ "/3d-architecture-bratislava": {
+  "path": "/de/fassadenentwurf-3d-visualisierung-bratislava",
+  "title": "Fassadenentwurf mit 3D-Visualisierung | DUMSKAYA DESIGN",
+  "description": "Fassadenentwurf für eine Doppelhausanlage: zwei Ausstattungsvarianten, Außenanlagen und 3D-Visualisierung. Studio in Bratislava, Projekte auch für Wien."
+ },
+ "/3d-vizualizaciya-fasada-bratislava": {
+  "path": "/de/3d-visualisierung-fassade-garten",
+  "title": "3D-Visualisierung: Hausfassade und Garten | DUMSKAYA DESIGN",
+  "description": "Vorentwurf für die Fassade eines Einfamilienhauses und die Bepflanzung des Grundstücks, mit fotorealistischer 3D-Visualisierung und Video-Tour.",
+  "project_title": "3D-Visualisierung von Fassade und Garten"
+ },
+ "/3d-vizualizaciya-fasada-zdaniya-cena": {
+  "path": "/de/3d-visualisierung-fassade-preise",
+  "title": "3D-Visualisierung von Fassaden: Preise ab 75 € | DUMSKAYA",
+  "description": "Fotorealistische 3D-Visualisierung von Fassade und Garten: Modell, Material, Licht, Rendering. Preise und Korrekturen je Schritt. Wien und Bratislava."
+ },
+ "/about-studio": {
+  "path": "/de/ueber-uns-innenarchitektur-bratislava",
+  "title": "Über DUMSKAYA DESIGN — Innenarchitektur in Bratislava",
+  "description": "Innenarchitektur-Studio von Irina Dumskaya in Bratislava: Wohnungen, Häuser und Büros, eigene Möbelfertigung, Sanierung in Bratislava und Wien."
+ },
+ "/apartment-furniture-interior-design-45m": {
+  "path": "/de/innenarchitektur-wohnung-45-m2",
+  "title": "Innenarchitektur: Wohnung, 45 m² | DUMSKAYA DESIGN",
+  "description": "Einrichtungsplanung für eine Wohnung mit 45 m² im modernen Stil: helle Eiche, glatte graubeige Fronten, Stauraum in Einbaumöbeln.",
+  "project_title": "Wohnung, 45 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "45 m²",
+   "works": "Einrichtungsplanung"
+  }
+ },
+ "/apartment-interior-design-48m": {
+  "path": "/de/innenarchitektur-wohnung-48-m2",
+  "title": "Innenarchitektur: Wohnung, 48 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 48 m²: Einrichtungsplanung, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration. Visualisierungen und Fotos der fertigen Wohnung.",
+  "project_title": "Wohnung, 48 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "48 m²",
+   "works": "Einrichtungsplanung, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
+  }
+ },
+ "/apartment-interior-design-51m": {
+  "path": "/de/innenarchitektur-wohnung-51-m2",
+  "title": "Innenarchitektur: Wohnung, 51 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 51 m²: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration.",
+  "project_title": "Wohnung, 51 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "51 m²",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
+  }
+ },
+ "/apartment-interior-design-52m": {
+  "path": "/de/innenarchitektur-wohnung-52-m2",
+  "title": "Innenarchitektur: Wohnung, 52 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 52 m²: Wohnküche, Schlafzimmer mit Arbeitsplatz, Schrankräume. Planung, 3D-Visualisierung, Möbel nach Maß, Sanierung und Dekoration.",
+  "project_title": "Wohnung, 52 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "52 m²",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
+  }
+ },
+ "/apartment-interior-design-54m": {
+  "path": "/de/innenarchitektur-wohnung-54-m2",
+  "title": "Innenarchitektur: Wohnung, 54 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 54 m², vom Konzept bis zur Deko: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung.",
+  "project_title": "Wohnung, 54 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "54 m²",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
+  }
+ },
+ "/apartment-interior-design-60m": {
+  "path": "/de/innenarchitektur-wohnung-terrasse-60-m2",
+  "title": "Innenarchitektur: Wohnung mit Terrasse, 60 m² | DUMSKAYA",
+  "description": "Wohnung mit 60 m² und 18 m² Terrasse: Einrichtungsplanung und 3D-Visualisierung. Helle Eiche, grauer Stein, Beton und schwarzes Metall.",
+  "project_title": "Wohnung, 60 m²",
+  "facts": {
+   "object": "Wohnung mit 18 m² Terrasse",
+   "area": "60 m²",
+   "works": "Einrichtungsplanung und 3D-Visualisierung"
+  }
+ },
+ "/apartment-interior-design-bratislava-52m": {
+  "path": "/de/innenarchitektur-wohnung-bratislava-52-m2",
+  "title": "Innenarchitektur: Wohnung in Bratislava, 52 m² | DUMSKAYA",
+  "description": "Wohnung mit 52 m² in Bratislava: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Wohnung in Bratislava, 52 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "52 m²",
+   "city": "Bratislava",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/apartment-interior-design-bratislava-58m": {
+  "path": "/de/innenarchitektur-wohnung-bratislava-58-m2",
+  "title": "Innenarchitektur: Wohnung in Bratislava, 58 m² | DUMSKAYA",
+  "description": "Wohnung mit 58 m² in Bratislava: Planung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration.",
+  "project_title": "Wohnung in Bratislava, 58 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "58 m²",
+   "city": "Bratislava",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
+  }
+ },
+ "/apartment-interior-design-krakow-63m": {
+  "path": "/de/innenarchitektur-wohnung-krakau-63-m2",
+  "title": "Innenarchitektur: Wohnung in Krakau, 63 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 63 m² in Krakau: Planung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration.",
+  "project_title": "Wohnung in Krakau, 63 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "63 m²",
+   "city": "Krakau",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
+  }
+ },
+ "/apartment-interior-design-krakow-64m": {
+  "path": "/de/minimalistische-wohnung-krakau-64-m2",
+  "title": "Minimalistische Wohnung in Krakau, 64 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 64 m² in Krakau im minimalistischen Stil: Einrichtungsplanung, 3D-Visualisierung und technische Dokumentation. Warme Grau- und Graubeigetöne.",
+  "project_title": "Wohnung in Krakau, 64 m²",
+  "facts": {
+   "object": "Wohnung, minimalistisch",
+   "area": "64 m²",
+   "city": "Krakau",
+   "works": "Einrichtungsplanung, 3D-Visualisierung und technische Dokumentation"
+  }
+ },
+ "/apartment-interior-design-warsaw-43m": {
+  "path": "/de/innenarchitektur-wohnung-warschau-43-m2",
+  "title": "Innenarchitektur: Wohnung in Warschau, 43 m² | DUMSKAYA",
+  "description": "Wohnung mit 43 m² in Warschau: Einrichtungsplanung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration.",
+  "project_title": "Wohnung in Warschau, 43 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "43 m²",
+   "city": "Warschau",
+   "works": "Einrichtungsplanung, technische Dokumentation, Möbel nach Maß, schlüsselfertige Sanierung und Dekoration"
+  }
+ },
+ "/apartment-interior-design-warsaw-43m2": {
+  "path": "/de/minimalistische-wohnung-warschau-43-m2",
+  "title": "Minimalistische Wohnung in Warschau, 43 m² | DUMSKAYA",
+  "description": "Wohnung mit 43 m² in Warschau im modernen Minimalismus: Einrichtungsplanung im Paket „Basis“ und 3D-Visualisierung aller Räume.",
+  "project_title": "Minimalistische Wohnung in Warschau, 43 m²",
+  "facts": {
+   "object": "Wohnung, minimalistisch",
+   "area": "43 m²",
+   "city": "Warschau",
+   "works": "Einrichtungsplanung (Paket „Basis“) und 3D-Visualisierung"
+  }
+ },
+ "/apartment-luxury-interior-design-madrid-spain-107m": {
+  "path": "/de/innenarchitektur-apartment-madrid-107-m2",
+  "title": "Innenarchitektur: Apartment in Madrid, 107 m² | DUMSKAYA",
+  "description": "Apartment mit 107 m² in Madrid: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Apartment in Madrid, 107 m²",
+  "facts": {
+   "object": "Apartment",
+   "area": "107 m²",
+   "city": "Madrid",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/apartments-dubai-luxury-interior-design-160m": {
+  "path": "/de/innenarchitektur-apartment-dubai-160-m2",
+  "title": "Innenarchitektur: Apartment in Dubai, 160 m² | DUMSKAYA",
+  "description": "Apartment mit 160 m² in Dubai: Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung. Studio in Bratislava und Wien.",
+  "project_title": "Apartment in Dubai, 160 m²",
+  "facts": {
+   "object": "Apartment",
+   "area": "160 m²",
+   "city": "Dubai",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/apartments-los-angeles-interior-design-140m": {
+  "path": "/de/innenarchitektur-apartment-los-angeles-140-m2",
+  "title": "Apartment in Los Angeles, 140 m² | DUMSKAYA DESIGN",
+  "description": "Apartment mit 140 m² in Los Angeles, aus der Ferne geplant: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation und Möbelplanung.",
+  "project_title": "Apartment in Los Angeles, 140 m²",
+  "facts": {
+   "object": "Apartment",
+   "area": "140 m²",
+   "city": "Los Angeles",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation und Möbelplanung"
+  }
+ },
+ "/apartments-new-york-luxury-interior-design-57m": {
+  "path": "/de/innenarchitektur-apartment-new-york-57-m2",
+  "title": "Innenarchitektur: Apartment in New York, 57 m² | DUMSKAYA",
+  "description": "Apartment mit 57 m² in New York: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Apartment in New York, 57 m²",
+  "facts": {
+   "object": "Apartment",
+   "area": "57 m²",
+   "city": "New York",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/apartments-praha-luxury-interior-design-90m": {
+  "path": "/de/innenarchitektur-apartment-prag-90-m2",
+  "title": "Innenarchitektur: Apartment in Prag, 90 m² | DUMSKAYA DESIGN",
+  "description": "Apartment mit 90 m² in Prag: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Apartment in Prag, 90 m²",
+  "facts": {
+   "object": "Apartment",
+   "area": "90 m²",
+   "city": "Prag",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/apartments-vienna-luxury-interior-design-58m": {
+  "path": "/de/innenarchitektur-wohnung-wien-58-m2",
+  "title": "Innenarchitektur: Wohnung in Wien, 58 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 58 m² in Wien, von der Planung bis zum fertigen Interieur: technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Wohnung in Wien, 58 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "58 m²",
+   "city": "Wien",
+   "works": "Einrichtungsplanung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/apartments-wien-luxury-interior-design-115m": {
+  "path": "/de/innenarchitektur-wohnung-wien-115-m2",
+  "title": "Innenarchitektur: Wohnung in Wien, 115 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 115 m² in Wien: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Wohnung in Wien, 115 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "115 m²",
+   "city": "Wien",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/architecture-design-bratislava": {
+  "path": "/de/hausplanung-architektur-bratislava",
+  "title": "Architekturplanung für Häuser in Bratislava | DUMSKAYA",
+  "description": "Einfamilienhäuser, Fassaden, Umbauten und Pergolen in Bratislava und Wien: Entwurf, 3D-Visualisierung, Pläne, Interieur und Möbel in einem Projekt."
+ },
+ "/architecture-facade-barbershop-kyiv": {
+  "path": "/de/fassadenentwurf-barbershop-kiew",
+  "title": "Barbershop-Fassade in Kiew: Architekturentwurf | DUMSKAYA",
+  "description": "Architekturentwurf für die Fassade eines Barbershops in Kiew: Konzept, Materialien, Beschriftung und 3D-Visualisierung im Straßenbild.",
+  "project_title": "Barbershop-Fassade in Kiew"
+ },
+ "/architecture-gazebo-pergola": {
+  "path": "/de/gartenpavillon-pergola-planung",
+  "title": "Pavillon mit Pergola: Planung und Umsetzung | DUMSKAYA",
+  "description": "Pavillon mit Pergola und Outdoor-Küche: vom Entwurf mit 3D-Visualisierung bis zum fertigen Bau auf dem Grundstück. Gartenarchitektur von DUMSKAYA DESIGN.",
+  "project_title": "Pavillon mit Pergola"
+ },
+ "/architecture-private-house": {
+  "path": "/de/fassadenplanung-einfamilienhaus",
+  "title": "Fassadenplanung für ein Einfamilienhaus | DUMSKAYA DESIGN",
+  "description": "Neue Fassaden für ein bestehendes Einfamilienhaus: Materialien, Farben, Details und fotorealistische 3D-Visualisierung. Studio in Bratislava und Wien.",
+  "project_title": "Fassaden eines Einfamilienhauses"
+ },
+ "/architecture-villa-spain-marbella": {
+  "path": "/de/fassadenentwurf-villa-marbella",
+  "title": "Fassadenentwurf für eine Villa in Marbella | DUMSKAYA DESIGN",
+  "description": "Umbau der Fassade einer Villa in Marbella, Spanien: Architekturentwurf, fotorealistische 3D-Visualisierung und 3D-Tour rund ums Haus.",
+  "project_title": "Villa-Fassade in Marbella"
+ },
+ "/basic-interior-design-package-bratislava-vienna": {
+  "path": "/de/designpaket-basis-wien-bratislava",
+  "title": "Designpaket „Basis“ — 35–45 €/m² | DUMSKAYA DESIGN",
+  "description": "Vollständige Einrichtungsplanung: Grundriss, 3D-Visualisierung, Ausführungspläne und Materiallisten. 35–45 €/m², ab 2.000 €. Wien und Bratislava."
+ },
+ "/beauty-salon-interior-design-63m": {
+  "path": "/de/innenarchitektur-schoenheitssalon-63-m2",
+  "title": "Innenarchitektur: Schönheitssalon, 63 m² | DUMSKAYA DESIGN",
+  "description": "Schönheitssalon mit 63 m²: Einrichtungsplanung und technische Dokumentation. Empfang, Wartebereich, Plätze für Friseur und Maniküre, Kosmetikraum.",
+  "project_title": "Schönheitssalon, 63 m²",
+  "facts": {
+   "object": "Schönheitssalon",
+   "area": "63 m²",
+   "works": "Einrichtungsplanung und technische Dokumentation"
+  }
+ },
+ "/boss-office-interior-design": {
+  "path": "/de/innenarchitektur-chefbuero-7-m2",
+  "title": "Innenarchitektur: Chefbüro, 7 m² | DUMSKAYA DESIGN",
+  "description": "Chefbüro mit 7 m² im Dachgeschoß: Einrichtungsplanung, 3D-Visualisierung und Möbel nach Maß für einen schmalen Raum mit Dachschräge.",
+  "project_title": "Chefbüro, 7 m²",
+  "facts": {
+   "object": "Chefbüro",
+   "area": "7 m²",
+   "works": "Einrichtungsplanung, 3D-Visualisierung und Möbel nach Maß"
+  }
+ },
+ "/clothing-boutique-interior-design-kyiv-140": {
+  "path": "/de/innenarchitektur-modeboutique-kiew-140-m2",
+  "title": "Innenarchitektur: Modeboutique in Kiew, 140 m² | DUMSKAYA",
+  "description": "Modeboutique mit 140 m² in Kiew: Einrichtungsplanung, 3D-Visualisierung, Planung der Ladenmöbel und schlüsselfertige Sanierung.",
+  "project_title": "Modeboutique in Kiew, 140 m²",
+  "facts": {
+   "object": "Modeboutique",
+   "area": "140 m²",
+   "city": "Kiew",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, Möbelplanung und schlüsselfertige Sanierung"
+  }
+ },
+ "/contact-studio-interior-design-bratislava-vienna": {
+  "path": "/de/kontakt-innenarchitektur-wien-bratislava",
+  "title": "Kontakt DUMSKAYA DESIGN — Wien und Bratislava",
+  "description": "Telefon in Wien und Bratislava, E-Mail und Anfrageformular. Kostenlose Beratung zu Innenarchitektur, Möbeln nach Maß und schlüsselfertiger Sanierung."
+ },
+ "/custom-furniture-bratislava-design-production": {
+  "path": "/de/designpaket-moebel-wien-bratislava",
+  "title": "Designpaket „Möbel“: Möbel nach Maß, 35–50 €/m² | DUMSKAYA",
+  "description": "Planung von Einbaumöbeln für eine fertig ausgebaute Wohnung: 3D-Visualisierung und Möbelpläne. 35–50 €/m², ab 2.000 €. Gefertigt in Bratislava."
+ },
+ "/design-interior-studio-bratislava-metropolis-sk-75m": {
+  "path": "/de/innenarchitektur-wohnung-metropolis-bratislava-75-m2",
+  "title": "Wohnung im Metropolis, Bratislava, 75 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 75 m² im Metropolis in Bratislava: Planung im Paket „Möbel“, 3D-Visualisierung und Möbel nach Maß aus unserer Fertigung.",
+  "project_title": "Wohnung im Metropolis, Bratislava, 75 m²",
+  "facts": {
+   "object": "Wohnung im Metropolis",
+   "area": "75 m²",
+   "city": "Bratislava",
+   "works": "Einrichtungsplanung (Paket „Möbel“), 3D-Visualisierung und Möbel nach Maß"
+  }
+ },
+ "/dizainer-interierov-kiev": {
+  "path": "/de/innenarchitektur-einfamilienhaus-kiew-217-m2",
+  "title": "Innenarchitektur: Einfamilienhaus in Kiew, 217 m² | DUMSKAYA",
+  "description": "Einfamilienhaus mit 217 m² in Kiew: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Einfamilienhaus in Kiew, 217 m²",
+  "facts": {
+   "object": "Einfamilienhaus",
+   "area": "217 m²",
+   "city": "Kiew",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/dizajn-interera-germaniya": {
+  "path": "/de/interior-design-moebel-deutschland",
+  "title": "Interior Design und Maßmöbel für Deutschland | DUMSKAYA",
+  "description": "Interior Design für Deutschland: Planung aus der Ferne, Möbel aus Bratislava inkl. Lieferung, Montage durch unser Team. Projekte in München und Berlin."
+ },
+ "/dizajn-interera-vena": {
+  "path": "/de/innenarchitekt-wien",
+  "title": "Innenarchitekt in Wien: Wohnungen und Häuser | DUMSKAYA",
+  "description": "Wohnungen und Häuser in Wien: Planung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung. Studio in Bratislava, 60 km von Wien."
+ },
+ "/dizayn-kommercheskogo-interyera-sauna-banya": {
+  "path": "/de/innenarchitektur-sauna-banja-120-m2",
+  "title": "Innenarchitektur: Dampfbad und Sauna, 120 m² | DUMSKAYA",
+  "description": "Dampfbad und Sauna mit 120 m² für den gewerblichen Betrieb: Innenarchitektur und Möbelplanung vom Empfang bis zu Schwitzräumen und Ruhebereich.",
+  "project_title": "Dampfbad und Sauna, 120 m²",
+  "facts": {
+   "object": "Dampfbad und Sauna",
+   "area": "120 m²",
+   "works": "Einrichtungsplanung und Möbelplanung"
+  }
+ },
+ "/dumskaya-interior-design-villa-220m": {
+  "path": "/de/innenarchitektur-villa-burgas-220-m2",
+  "title": "Innenarchitektur: Villa in Burgas, 220 m² | DUMSKAYA DESIGN",
+  "description": "Villa mit 220 m² in Burgas: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Villa in Burgas, 220 m²",
+  "facts": {
+   "object": "Villa",
+   "area": "220 m²",
+   "city": "Burgas",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/dumskaya-interior-design-villa-230m": {
+  "path": "/de/innenarchitektur-einfamilienhaus-230-m2",
+  "title": "Innenarchitektur: Einfamilienhaus, 230 m² | DUMSKAYA DESIGN",
+  "description": "Einfamilienhaus mit 230 m²: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Einfamilienhaus, 230 m²",
+  "facts": {
+   "object": "Einfamilienhaus",
+   "area": "230 m²",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/express-interior-design-package-bratislava-vienna": {
+  "path": "/de/designpaket-express-wien-bratislava",
+  "title": "Designpaket „Express“ — 20 €/m² | DUMSKAYA DESIGN",
+  "description": "Schnelle Einrichtungsplanung ab 14 Tagen: Grundriss, Möblierungsplan und Materialauswahl. 20 €/m², ab 1.500 €. Wien und Bratislava."
+ },
+ "/furniture-interior-design-43m": {
+  "path": "/de/innenarchitektur-maisonette-wohnung-43-m2",
+  "title": "Innenarchitektur: Maisonette-Wohnung, 43 m² | DUMSKAYA",
+  "description": "Maisonette-Wohnung mit 43 m²: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Maisonette-Wohnung, 43 m²",
+  "facts": {
+   "object": "Maisonette-Wohnung",
+   "area": "43 m²",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/furniture-private-house-design": {
+  "path": "/de/moebel-nach-mass-sanierung-einfamilienhaus",
+  "title": "Möbel nach Maß und Sanierung eines Hauses | DUMSKAYA DESIGN",
+  "description": "Projekt von DUMSKAYA DESIGN: Planung und Fertigung von Möbeln nach Maß, schlüsselfertige Sanierung eines Einfamilienhauses. Fotos des fertigen Hauses."
+ },
+ "/image-license": {
+  "path": "/de/bildrechte-fotos-visualisierungen",
+  "title": "Nutzung von Fotos und Visualisierungen | DUMSKAYA DESIGN",
+  "description": "Fotos, 3D-Visualisierungen und Pläne dieser Website sind urheberrechtlich geschützt: was ohne Genehmigung zulässig ist und wie Sie eine Lizenz bekommen."
+ },
+ "/interior-design-apartment-bratislava-127m": {
+  "path": "/de/innenarchitektur-dreizimmerwohnung-bratislava-127-m2",
+  "title": "Dreizimmerwohnung in Bratislava, 127 m² | DUMSKAYA DESIGN",
+  "description": "Dreizimmerwohnung mit 127 m² in Bratislava: Planung im Paket „Basis“, 3D-Visualisierung und technische Dokumentation. Die Sanierung läuft.",
+  "project_title": "Wohnung in Bratislava, 127 m²",
+  "facts": {
+   "object": "Dreizimmerwohnung mit Balkon",
+   "area": "127 m²",
+   "city": "Bratislava",
+   "works": "Einrichtungsplanung „Basis“: 3D-Visualisierung und technische Dokumentation",
+   "status": "in Umsetzung — Sanierung läuft"
+  }
+ },
+ "/interior-design-apartment-bratislava-158m": {
+  "path": "/de/innenarchitektur-maisonette-bratislava-158-m2",
+  "title": "Maisonette-Wohnung in Bratislava, 158 m² | DUMSKAYA DESIGN",
+  "description": "Maisonette mit 158 m² und 20 m² Terrasse in Bratislava: Einrichtungsplanung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Maisonette-Wohnung in Bratislava, 158 m²",
+  "facts": {
+   "object": "Maisonette-Wohnung mit 20 m² Terrasse",
+   "area": "158 m²",
+   "city": "Bratislava",
+   "works": "Einrichtungsplanung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/interior-design-apartment-luxury-kyiv-119m": {
+  "path": "/de/innenarchitektur-wohnung-terrasse-kiew-119-m2",
+  "title": "Wohnung mit Terrasse in Kiew, 119 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 119 m² und 30 m² Terrasse in Kiew: Einrichtungsplanung in hellem Beige und Grau mit Holz, Marmoroptik und goldfarbenem Metall.",
+  "project_title": "Wohnung in Kiew, 119 m²",
+  "facts": {
+   "object": "Wohnung mit 30 m² Terrasse",
+   "area": "119 m²",
+   "city": "Kiew",
+   "works": "Einrichtungsplanung"
+  }
+ },
+ "/interior-design-apartment-ukraine-47m": {
+  "path": "/de/innenarchitektur-dreizimmerwohnung-47-m2",
+  "title": "Innenarchitektur: Dreizimmerwohnung, 47 m² | DUMSKAYA",
+  "description": "Dreizimmerwohnung mit 47 m²: Einrichtungsplanung für Wohnküche, Bad, Kinderzimmer mit Arbeitsplatz und Elternschlafzimmer auf kleiner Fläche.",
+  "project_title": "Dreizimmerwohnung, 47 m²",
+  "facts": {
+   "object": "Dreizimmerwohnung",
+   "area": "47 m²",
+   "works": "Einrichtungsplanung"
+  }
+ },
+ "/interior-design-apartments-bratislava": {
+  "path": "/de/innenarchitekt-bratislava",
+  "title": "Innenarchitekt in Bratislava: Wohnungen & Häuser | DUMSKAYA",
+  "description": "Innenarchitektur-Studio in Bratislava-Ružinov: Planung, 3D-Visualisierung, Möbel aus eigener Tischlerei, schlüsselfertige Sanierung. Kostenlose Beratung."
+ },
+ "/interior-design-cosmetology-salon": {
+  "path": "/de/innenarchitektur-kosmetikstudio-54-m2",
+  "title": "Innenarchitektur: Kosmetikstudio, 54 m² | DUMSKAYA DESIGN",
+  "description": "Kosmetikstudio mit 54 m²: Planung im Paket „Express“, 3D-Visualisierung und technische Dokumentation für die Sanierung. Studio in Bratislava und Wien.",
+  "project_title": "Kosmetikstudio, 54 m²",
+  "facts": {
+   "object": "Kosmetikstudio",
+   "area": "54 m²",
+   "works": "Einrichtungsplanung (Paket „Express“), 3D-Visualisierung und technische Dokumentation"
+  }
+ },
+ "/interior-design-furniture-60m": {
+  "path": "/de/innenarchitektur-wohnung-warna-60-m2",
+  "title": "Innenarchitektur: Wohnung in Warna, 60 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 60 m² in Warna, Bulgarien: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Wohnung in Warna, 60 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "60 m²",
+   "city": "Warna",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/interior-design-furniture-65m": {
+  "path": "/de/innenarchitektur-wohnung-charkiw-65-m2",
+  "title": "Innenarchitektur: Wohnung in Charkiw, 65 m² | DUMSKAYA",
+  "description": "Wohnung mit 65 m² in Charkiw: Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung. Studio in Bratislava und Wien."
+ },
+ "/interior-design-furniture-classic-120m-london": {
+  "path": "/de/innenarchitektur-wohnung-london-120-m2",
+  "title": "Moderne Klassik: Wohnung in London, 120 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 120 m² in London, moderne Klassik: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß, Sanierung.",
+  "project_title": "Wohnung in London, 120 m²",
+  "facts": {
+   "object": "Wohnung, moderne Klassik",
+   "area": "120 m²",
+   "city": "London",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/interior-design-office-bratislava-wien": {
+  "path": "/de/innenarchitektur-buero-geschaeft-wien",
+  "title": "Innenarchitektur für Büros und Geschäfte in Wien | DUMSKAYA",
+  "description": "Planung von Büros, Geschäften und Salons in Wien und Bratislava: Grundriss, 3D-Visualisierung, Pläne und Möbel nach Maß. Ab 20 €/m²."
+ },
+ "/interior-design-private-house-215m": {
+  "path": "/de/innenarchitektur-einfamilienhaus-berlin-215-m2",
+  "title": "Innenarchitektur: Haus in Berlin, 215 m² | DUMSKAYA DESIGN",
+  "description": "Einfamilienhaus mit 215 m² in Berlin: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Einfamilienhaus in Berlin, 215 m²",
+  "facts": {
+   "object": "Einfamilienhaus",
+   "area": "215 m²",
+   "city": "Berlin",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/interior-design-private-house-bratislava-120m2": {
+  "path": "/de/innenarchitektur-einfamilienhaus-bratislava-120-m2",
+  "title": "Innenarchitektur: Haus in Bratislava, 120 m² | DUMSKAYA",
+  "description": "Zweigeschoßiges Einfamilienhaus mit 120 m² in Bratislava: Planung im Paket „Express“ und vollständige Elektroplanung.",
+  "project_title": "Einfamilienhaus in Bratislava, 120 m²",
+  "facts": {
+   "object": "Einfamilienhaus",
+   "area": "120 m²",
+   "city": "Bratislava",
+   "works": "Einrichtungsplanung (Paket „Express“) und Elektroplanung"
+  }
+ },
+ "/interior-design-private-house-dunajska-streda-140m": {
+  "path": "/de/innenarchitektur-einfamilienhaus-dunajska-streda-140-m2",
+  "title": "Innenarchitektur: Haus in Dunajská Streda, 140 m² | DUMSKAYA",
+  "description": "Einfamilienhaus mit 140 m² in Dunajská Streda: Einrichtungsplanung für Wohnküche, Schlafzimmer, Bad, Vorraum, Hauswirtschafts- und Fitnessraum.",
+  "project_title": "Einfamilienhaus in Dunajská Streda, 140 m²",
+  "facts": {
+   "object": "Einfamilienhaus",
+   "area": "140 m²",
+   "city": "Dunajská Streda",
+   "works": "Einrichtungsplanung"
+  }
+ },
+ "/interior-design-private-house-kharkiv-212m": {
+  "path": "/de/innenarchitektur-einfamilienhaus-charkiw-212-m2",
+  "title": "Innenarchitektur: Haus in Charkiw, 212 m² | DUMSKAYA DESIGN",
+  "description": "Einfamilienhaus mit 212 m² in Charkiw: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Einfamilienhaus in Charkiw, 212 m²",
+  "facts": {
+   "object": "Einfamilienhaus",
+   "area": "212 m²",
+   "city": "Charkiw",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/interior-design-villa-179m-madrid-spain": {
+  "path": "/de/innenarchitektur-villa-madrid-179-m2",
+  "title": "Innenarchitektur: Villa in Madrid, 179 m² | DUMSKAYA DESIGN",
+  "description": "Villa mit 179 m² in Madrid: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Villa in Madrid, 179 m²",
+  "facts": {
+   "object": "Villa",
+   "area": "179 m²",
+   "city": "Madrid",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/izgotovlenie-mebeli-pod-zakaz-dlya-kommercheskih-obektov-ofis-resepshen-peregovornaya-kabinet-kuhnya-bratislava": {
+  "path": "/de/moebel-nach-mass-buero-gewerbe-wien",
+  "title": "Möbel nach Maß für Büro und Gewerbe in Wien | DUMSKAYA",
+  "description": "Empfangstheken, Tische, Schränke und Ladenmöbel nach Maß für Büros, Geschäfte und Salons. Eigene Fertigung in Bratislava, Montage in Wien und Bratislava."
+ },
+ "/kak-pravilno-organizovat-rabochee-mesto-v-spalne": {
+  "path": "/de/arbeitsplatz-im-schlafzimmer-einrichten",
+  "title": "Arbeitsplatz im Schlafzimmer einrichten: Tipps | DUMSKAYA",
+  "description": "So passt ein Arbeitsplatz ins Schlafzimmer: Zonierung, Beleuchtung, Möbel nach Maß und Stauraum. Praktische Tipps aus unserer Planungspraxis."
+ },
+ "/kak-pravilno-organizovat-svoj-sanuzel": {
+  "path": "/de/kleines-bad-planen-tipps",
+  "title": "Kleines Bad planen: Tipps aus der Praxis | DUMSKAYA",
+  "description": "Bad und WC planen: Anordnung der Sanitärobjekte, Stauraum, Beleuchtung und Materialien. Ratschläge aus der Praxis von DUMSKAYA DESIGN."
+ },
+ "/kak-pravilno-organizovat-udobnuyu-i-funkcionalnuyu-kuhnyu": {
+  "path": "/de/kueche-planen-regeln",
+  "title": "Küche planen: Regeln für eine praktische Küche | DUMSKAYA",
+  "description": "Arbeitsdreieck, Stauraumzonen, Abstände und Beleuchtung: So planen Sie eine Küche, in der sich gut kochen lässt. Tipps aus der Planungspraxis."
+ },
+ "/kak-pravilno-organizovat-udobnyj-i-funkcionalnyj-balkon": {
+  "path": "/de/balkon-gestalten-ideen-tipps",
+  "title": "Balkon gestalten: Ideen und Tipps | DUMSKAYA DESIGN",
+  "description": "Wie Sie den Balkon nutzen: als Sitzplatz, Arbeitsecke oder Stauraum. Möbel, Beleuchtung und Materialien — Tipps aus unserer Planungspraxis."
+ },
+ "/kuhni-na-zakaz-bratislava": {
+  "path": "/de/kueche-nach-mass-bratislava",
+  "title": "Küche nach Maß in Bratislava, schlüsselfertig | DUMSKAYA",
+  "description": "Küchen nach Maß in Bratislava: Planung, 3D-Visualisierung, eigene Tischlerei, Lieferung und Montage. 32 Modelle im Katalog oder individuelle Planung."
+ },
+ "/kuhni-pod-klyuch-vena": {
+  "path": "/de/kueche-nach-mass-wien",
+  "title": "Küchen nach Maß in Wien: Planung und Montage | DUMSKAYA",
+  "description": "Küchen nach Maß für Wien: Aufmaß, Planung, 3D-Visualisierung, Fertigung in Bratislava, Lieferung und Montage. 32 Modelle im Katalog oder eigene Planung."
+ },
+ "/kuhni-pod-zakaz-k-01-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-01-klassische-eckkueche-gruen",
+  "title": "Küche nach Maß K-01: klassische Eckküche in Grün | DUMSKAYA",
+  "description": "Klassische Eckküche K-01 in Grün, Arbeitsplatte aus Acrylstein. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-02-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-02-eckkueche-insel-beige",
+  "title": "Küche nach Maß K-02: Eckküche mit Insel in Beige | DUMSKAYA",
+  "description": "Minimalistische Eckküche K-02 in Beige mit Insel und Furnierfronten. Nach Ihren Maßen, Montage in Wien und Bratislava. Kostenlose Beratung."
+ },
+ "/kuhni-pod-zakaz-k-03-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-03-inselkueche-schwarz",
+  "title": "Küche nach Maß K-03: Inselküche in Schwarz | DUMSKAYA",
+  "description": "Moderne Inselküche K-03 in Schwarz mit Holzdekor und Feinsteinzeug-Platte. Nach Ihren Maßen, Montage in Wien und Bratislava. Kostenlose Beratung."
+ },
+ "/kuhni-pod-zakaz-k-04-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-04-moderne-eckkueche-grau",
+  "title": "Küche nach Maß K-04: moderne Eckküche in Grau | DUMSKAYA",
+  "description": "Moderne Eckküche K-04 in Grau mit Arbeitsplatte aus Quarzit. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-05-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-05-klassische-eckkueche-beige",
+  "title": "Küche nach Maß K-05: klassische Eckküche in Beige | DUMSKAYA",
+  "description": "Klassische Eckküche K-05 in Beige mit lackierten Fronten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-06-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-06-kuechenzeile-weiss-minimalistisch",
+  "title": "Küche nach Maß K-06: Küchenzeile in Weiß | DUMSKAYA",
+  "description": "Minimalistische Küchenzeile K-06 in Weiß, 4,4 lfm, mit Acrylfronten. Nach Ihren Maßen, Montage in Wien und Bratislava. Kostenlose Beratung."
+ },
+ "/kuhni-pod-zakaz-k-07-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-07-moderne-u-kueche-weiss",
+  "title": "Küche nach Maß K-07: moderne U-Küche in Weiß | DUMSKAYA",
+  "description": "Moderne U-Küche K-07 in Weiß mit Feinsteinzeug-Arbeitsplatte. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-08-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-08-kuechenzeile-braun-minimalistisch",
+  "title": "Küche nach Maß K-08: Küchenzeile in Braun | DUMSKAYA",
+  "description": "Minimalistische Küchenzeile K-08 in Braun, HPL-Fronten in Holzoptik. Nach Ihren Maßen, Montage in Wien und Bratislava. Kostenlose Beratung."
+ },
+ "/kuhni-pod-zakaz-k-09-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-09-moderne-inselkueche-grau",
+  "title": "Küche nach Maß K-09: moderne Inselküche in Grau | DUMSKAYA",
+  "description": "Moderne Inselküche K-09 in Grau mit Glasfronten und Quarzit. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-10-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-10-loft-eckkueche-braun",
+  "title": "Küche nach Maß K-10: Loft-Eckküche in Braun | DUMSKAYA",
+  "description": "Eckküche K-10 im Loft-Stil: Glasfronten oben, Holzdekor unten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-11-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-11-moderne-kuechenzeile-grau",
+  "title": "Küche nach Maß K-11: moderne Küchenzeile in Grau | DUMSKAYA",
+  "description": "Moderne Küchenzeile K-11 in Grau mit Fronten in Steinoptik. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-12-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-12-moderne-eckkueche-beige",
+  "title": "Küche nach Maß K-12: moderne Eckküche in Beige | DUMSKAYA",
+  "description": "Moderne Eckküche K-12 in Beige mit Holzdekor, 5,4 lfm. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-13-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-13-inselkueche-beige-minimalistisch",
+  "title": "Küche nach Maß K-13: Inselküche in Beige | DUMSKAYA",
+  "description": "Minimalistische Inselküche K-13 in Beige mit Acrylfronten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-14-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-14-kuechenzeile-insel-beige",
+  "title": "Küche nach Maß K-14: Küchenzeile mit Insel, Beige | DUMSKAYA",
+  "description": "Minimalistische Küchenzeile K-14 in Beige mit Insel, 7,6 lfm. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-15-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-15-moderne-inselkueche-rot",
+  "title": "Küche nach Maß K-15: moderne Inselküche in Rot | DUMSKAYA",
+  "description": "Moderne Inselküche K-15 in Rot mit lackierten Fronten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-16-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-16-eckkueche-gruen-neoklassik",
+  "title": "Küche nach Maß K-16: Eckküche in Grün, Neoklassik | DUMSKAYA",
+  "description": "Neoklassische Eckküche K-16 in Grün mit folierten Fronten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-17-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-17-u-kueche-grau-neoklassik",
+  "title": "Küche nach Maß K-17: U-Küche in Grau, Neoklassik | DUMSKAYA",
+  "description": "Neoklassische U-Küche K-17 in Grau mit kombinierten Fronten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-18-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-18-moderne-eckkueche-grau-cargo",
+  "title": "Küche nach Maß K-18: moderne Eckküche in Grau | DUMSKAYA",
+  "description": "Moderne Eckküche K-18 in Grau mit Cargo-Auszug, 4,8 lfm. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-19-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-19-moderne-kuechenzeile-beige",
+  "title": "Küche nach Maß K-19: moderne Küchenzeile in Beige | DUMSKAYA",
+  "description": "Moderne Küchenzeile K-19 in Beige, 3,1 m lang. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-20-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-20-moderne-u-kueche-beige",
+  "title": "Küche nach Maß K-20: moderne U-Küche in Beige | DUMSKAYA",
+  "description": "Moderne U-Küche K-20 in Beige mit Arbeitsflächen an drei Seiten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-21-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-21-eckkueche-weiss-neoklassik",
+  "title": "Küche nach Maß K-21: Eckküche in Weiß, Neoklassik | DUMSKAYA",
+  "description": "Neoklassische Eckküche K-21 in Weiß mit folierten Fronten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-26-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-26-moderne-kuechenzeile-braun",
+  "title": "Küche nach Maß K-26: moderne Küchenzeile in Braun | DUMSKAYA",
+  "description": "Moderne Küchenzeile K-26 in Braun mit Holzdekor, 3,7 m lang. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-28-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-28-moderne-u-kueche-braun",
+  "title": "Küche nach Maß K-28: moderne U-Küche in Braun | DUMSKAYA",
+  "description": "Moderne U-Küche K-28 in Braun mit Oberkästen in Holzoptik. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-30-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-30-eckkueche-grau-weiss",
+  "title": "Küche nach Maß K-30: Eckküche in Grau und Weiß | DUMSKAYA",
+  "description": "Moderne Eckküche K-30 in Grau und Weiß, 4,2 m lang. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-31-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-31-moderne-eckkueche-braun",
+  "title": "Küche nach Maß K-31: moderne Eckküche in Braun | DUMSKAYA",
+  "description": "Eckküche K-31: hellgrüne Oberkästen, unten braune Holzoptik. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-35-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-35-kuechenzeile-grau-holz",
+  "title": "Küche nach Maß K-35: Küchenzeile in Grau und Holz | DUMSKAYA",
+  "description": "Küchenzeile K-35: helle Holzoptik oben, graubraune Fronten unten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-36-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-36-eckkueche-grau-graphit",
+  "title": "Küche nach Maß K-36: Eckküche in Grau und Graphit | DUMSKAYA",
+  "description": "Eckküche K-36: Oberkästen in Graphit, Unterkästen in Hellgrau. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-41-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-41-moderne-kuechenzeile-grau-graphit",
+  "title": "Küche nach Maß K-41: moderne Küchenzeile in Grau | DUMSKAYA",
+  "description": "Küchenzeile K-41: Graphit oben, helle Fronten, Platte in Marmoroptik. Nach Ihren Maßen, Montage in Wien und Bratislava. Kostenlose Beratung."
+ },
+ "/kuhni-pod-zakaz-k-42-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-42-moderne-eckkueche-blau",
+  "title": "Küche nach Maß K-42: moderne Eckküche in Blau | DUMSKAYA",
+  "description": "Moderne Eckküche K-42: oben Cremebeige, unten Dunkelblau. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-43-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-43-moderne-kuechenzeile-rot",
+  "title": "Küche nach Maß K-43: moderne Küchenzeile in Rot | DUMSKAYA",
+  "description": "Moderne Küchenzeile K-43 in Bordeaux mit gerillten Graphitfronten. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-44-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-44-eckkueche-graubeige",
+  "title": "Küche nach Maß K-44: Eckküche in Graubeige | DUMSKAYA",
+  "description": "Eckküche K-44 in Graubeige mit Oberkästen in Holzoptik. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-pod-zakaz-k-45-cena-bratislava-slovakia": {
+  "path": "/de/kueche-k-45-u-kueche-beige",
+  "title": "Küche nach Maß K-45: U-Küche in Beige | DUMSKAYA",
+  "description": "U-Küche K-45 in Beige mit Hochschränken in Holzoptik. Nach Ihren Maßen, Montage in Wien und Bratislava. Preis auf Anfrage, Beratung kostenlos."
+ },
+ "/kuhni-shkafi-bratislava": {
+  "path": "/de/moebel-nach-mass-bratislava",
+  "title": "Möbel nach Maß in Bratislava: eigene Fertigung | DUMSKAYA",
+  "description": "Möbel nach Maß in Bratislava: Küchen, Kästen, begehbare Schrankräume, Vorräume, Arbeitszimmer. Eigene Fertigung, Aufmaß, Lieferung und Montage."
+ },
+ "/kupkuhni-na-zakaz-vienna-bratislava": {
+  "path": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+  "title": "Küchen nach Maß Wien & Bratislava: 32 Modelle | DUMSKAYA",
+  "description": "Küchen nach Maß für Ihren Raum: 32 Modelle im Katalog, eigene Fertigung in Bratislava, Aufmaß, Lieferung und Montage im Preis. Wien und Bratislava."
+ },
+ "/luxury-interior-design-barcelona-spain-108m": {
+  "path": "/de/innenarchitektur-apartment-barcelona-108-m2",
+  "title": "Innenarchitektur: Apartment in Barcelona, 108 m² | DUMSKAYA",
+  "description": "Apartment mit 108 m² in Barcelona: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Apartment in Barcelona, 108 m²",
+  "facts": {
+   "object": "Apartment",
+   "area": "108 m²",
+   "city": "Barcelona",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/mebel-na-zakaz-vena": {
+  "path": "/de/moebel-nach-mass-wien",
+  "title": "Möbel nach Maß in Wien: Fertigung und Montage | DUMSKAYA",
+  "description": "Küchen, Kästen, begehbare Schrankräume und andere Möbel nach Maß für Wien: Planung, eigene Fertigung in Bratislava, Lieferung im Preis, Montage durch uns."
+ },
+ "/office-interior-design-140m": {
+  "path": "/de/innenarchitektur-buero-140-m2",
+  "title": "Innenarchitektur: Büro, 140 m² | DUMSKAYA DESIGN",
+  "description": "Büro einer Kanzlei mit 140 m²: Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung. Mit Fotos des fertigen Büros.",
+  "project_title": "Büro, 140 m²",
+  "facts": {
+   "object": "Büro",
+   "area": "140 m²",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/office-interior-design-500m": {
+  "path": "/de/innenarchitektur-buero-500-m2",
+  "title": "Innenarchitektur: Büro, 500 m² | DUMSKAYA DESIGN",
+  "description": "Büro mit 500 m²: Einrichtungsplanung, 3D-Visualisierung und Möbel nach Maß. Chefbüro und Empfang sind umgesetzt, dazu ein Video des fertigen Interieurs.",
+  "project_title": "Büro, 500 m²",
+  "facts": {
+   "object": "Büro",
+   "area": "500 m²",
+   "works": "Einrichtungsplanung, 3D-Visualisierung und Möbel nach Maß"
+  }
+ },
+ "/office-interior-design-53m": {
+  "path": "/de/innenarchitektur-buero-posen-53-m2",
+  "title": "Innenarchitektur: Büro in Posen, 53 m² | DUMSKAYA DESIGN",
+  "description": "Büro mit 53 m² in Posen: Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung. Fotos und Video des fertigen Büros.",
+  "project_title": "Büro in Posen, 53 m²",
+  "facts": {
+   "object": "Büro",
+   "area": "53 m²",
+   "city": "Posen",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/office-interior-design-warsaw-183m": {
+  "path": "/de/innenarchitektur-buero-warschau-183-m2",
+  "title": "Innenarchitektur: Büro in Warschau, 183 m² | DUMSKAYA DESIGN",
+  "description": "Büro für ein Marketingteam in Warschau, 183 m²: Grundrisslösung Nr. 1 und 3D-Visualisierungen im Designpaket „Express“ von DUMSKAYA DESIGN.",
+  "project_title": "Büro in Warschau, 183 m²",
+  "facts": {
+   "object": "Büro für ein Marketingteam",
+   "area": "183 m²",
+   "city": "Warschau",
+   "works": "Einrichtungsplanung (Paket „Express“), Grundrisslösung und 3D-Visualisierung",
+   "status": "Planungsprojekt"
+  }
+ },
+ "/osnovnye-principy-i-pravila-pri-proektirovanie-dizajna-interera-detskoj-komnaty": {
+  "path": "/de/kinderzimmer-gestalten-regeln",
+  "title": "Kinderzimmer gestalten: Grundsätze und Regeln | DUMSKAYA",
+  "description": "So planen Sie ein Kinderzimmer: Sicherheit, Zonierung, mitwachsende Möbel, Licht und Farbe. Die wichtigsten Regeln von DUMSKAYA DESIGN."
+ },
+ "/photo-studio-interior-design-custom-furniture-130m2-bratislava": {
+  "path": "/de/innenarchitektur-fotostudio-130-m2",
+  "title": "Innenarchitektur: Fotostudio, 130 m² | DUMSKAYA DESIGN",
+  "description": "Fotostudio mit 130 m² und mehreren Sets für Foto und Video: Einrichtungsplanung, Möbel nach Maß, Sanierung und künstlerische Oberleitung.",
+  "project_title": "Fotostudio, 130 m²",
+  "facts": {
+   "object": "Fotostudio",
+   "area": "130 m²",
+   "works": "Einrichtungsplanung, Möbel nach Maß, schlüsselfertige Sanierung und künstlerische Oberleitung"
+  }
+ },
+ "/premium-interior-design-package-bratislava-vienna": {
+  "path": "/de/designpaket-premium-wien-bratislava",
+  "title": "Designpaket „Premium“ — 50 €/m² | DUMSKAYA DESIGN",
+  "description": "Erweiterte Einrichtungsplanung mit Detailplänen für Möbel, Beleuchtung und Materialien. 50 €/m², ab 2.500 €. Wien und Bratislava."
+ },
+ "/premium-plus-interior-design-package-bratislava-vienna": {
+  "path": "/de/designpaket-premium-plus-wien-bratislava",
+  "title": "Designpaket „Premium+“ — 70 €/m² | DUMSKAYA DESIGN",
+  "description": "Einrichtungsplanung mit künstlerischer Oberleitung und Begleitung der Sanierung bis zur Übergabe. 70 €/m², ab 3.500 €. Wien und Bratislava."
+ },
+ "/price-interior-design-bratislava-wien-praha": {
+  "path": "/de/preise-innenarchitektur-wien-bratislava",
+  "title": "Preise für Innenarchitektur: Pakete ab 20 €/m² | DUMSKAYA",
+  "description": "Pakete: Express 20 €/m², Basis 35–45 €/m², Möbel 35–50 €/m², Premium 50 €/m², Premium+ 70 €/m². Wien und Bratislava, Beratung kostenlos."
+ },
+ "/priemka-kvartiry-ot-zastrojshchika": {
+  "path": "/de/wohnungsuebergabe-bautraeger-bratislava",
+  "title": "Wohnungsübergabe Bratislava: Begleitung ab 250 € | DUMSKAYA",
+  "description": "Wir prüfen Ihre neue Wohnung in Bratislava vor dem Übergabeprotokoll: Oberflächen, Maße, Fenster, Haustechnik, Mängelliste. Bis 50 m² — 250 €."
+ },
+ "/privacy": {
+  "path": "/de/datenschutz-erklaerung",
+  "title": "Datenschutzerklärung | DUMSKAYA DESIGN",
+  "description": "Welche Daten diese Website erhebt, wozu, wie lange sie gespeichert werden und welche Rechte Sie haben: Anfrageformular, E-Mails, Google-Analytics-Cookies."
+ },
+ "/proekty-interior-design": {
+  "path": "/de/portfolio-innenarchitektur-projekte",
+  "title": "Portfolio: Innenarchitektur-Projekte | DUMSKAYA DESIGN",
+  "description": "Projekte von DUMSKAYA DESIGN: Wohnungen, Häuser, Villen, Büros und Salons. Fotos und 3D-Visualisierungen der Interieurs. Studio in Bratislava und Wien."
+ },
+ "/shop": {
+  "path": "/de/shop",
+  "title": "Möbel-Shop DUMSKAYA DESIGN — Büromöbel",
+  "description": "Möbel für das Chefbüro aus der Kollektion Executive Desk 2026, entworfen von DUMSKAYA DESIGN: Schreibtische, Schränke und ein Besprechungstisch."
+ },
+ "/shop-show-room-interior-design-50m": {
+  "path": "/de/innenarchitektur-geschaeft-50-m2",
+  "title": "Innenarchitektur: Geschäft, 50 m² | DUMSKAYA DESIGN",
+  "description": "Geschäft mit 50 m² für Maniküre-Werkzeuge und -Geräte: Einrichtungsplanung, 3D-Visualisierung und Ladenmöbel nach Maß aus eigener Fertigung.",
+  "project_title": "Geschäft, 50 m²",
+  "facts": {
+   "object": "Geschäft",
+   "area": "50 m²",
+   "works": "Einrichtungsplanung, 3D-Visualisierung und Möbel nach Maß"
+  }
+ },
+ "/shop/cat/ofisnaya-mebel": {
+  "path": "/de/shop/bueromoebel",
+  "title": "Büromöbel Executive Desk 2026 | DUMSKAYA DESIGN",
+  "description": "Die Kollektion Executive Desk 2026, entworfen von DUMSKAYA DESIGN: Chefschreibtische in drei Größen, Schränke und ein Besprechungstisch."
+ },
+ "/shop/exclusive-executive-office-cabinet": {
+  "path": "/de/shop/chefschrank-exclusive-xxl",
+  "title": "Chefschrank Exclusive, XXL (TDD-005) | DUMSKAYA DESIGN",
+  "description": "Chefschrank Exclusive, XXL, Artikel TDD-005, aus der Kollektion Executive Desk 2026 von DUMSKAYA DESIGN. Preis und Lieferung auf Anfrage."
+ },
+ "/shop/exclusive-executive-office-cabinet-1": {
+  "path": "/de/shop/chefschrank-exclusive-s",
+  "title": "Chefschrank Exclusive, S (TDD-006) | DUMSKAYA DESIGN",
+  "description": "Chefschrank Exclusive, S, Artikel TDD-006, aus der Kollektion Executive Desk 2026 von DUMSKAYA DESIGN. Preis und Lieferung auf Anfrage."
+ },
+ "/shop/executive-conference-table": {
+  "path": "/de/shop/besprechungstisch-executive",
+  "title": "Besprechungstisch Executive (TDD-004) | DUMSKAYA DESIGN",
+  "description": "Besprechungstisch Executive, Artikel TDD-004, aus der Kollektion Executive Desk 2026 von DUMSKAYA DESIGN. Preis und Lieferung auf Anfrage."
+ },
+ "/shop/executive-desk-boss-l": {
+  "path": "/de/shop/chefschreibtisch-boss-l",
+  "title": "Chefschreibtisch Boss, Größe L (TDD-001) | DUMSKAYA DESIGN",
+  "description": "Chefschreibtisch Boss, Größe L, Artikel TDD-001, aus der Kollektion Executive Desk 2026 von DUMSKAYA DESIGN. Preis und Lieferung auf Anfrage."
+ },
+ "/shop/executive-desk-boss-m": {
+  "path": "/de/shop/chefschreibtisch-boss-m",
+  "title": "Chefschreibtisch Boss, Größe M (TDD-002) | DUMSKAYA DESIGN",
+  "description": "Chefschreibtisch Boss, Größe M, Artikel TDD-002, aus der Kollektion Executive Desk 2026 von DUMSKAYA DESIGN. Preis und Lieferung auf Anfrage."
+ },
+ "/shop/executive-desk-boss-s": {
+  "path": "/de/shop/chefschreibtisch-boss-s",
+  "title": "Chefschreibtisch Boss, Größe S (TDD-003) | DUMSKAYA DESIGN",
+  "description": "Chefschreibtisch Boss, Größe S, Artikel TDD-003, aus der Kollektion Executive Desk 2026 von DUMSKAYA DESIGN. Preis und Lieferung auf Anfrage."
+ },
+ "/smeta-na-remont-bratislava-vienna": {
+  "path": "/de/kostenschaetzung-sanierung-wien-bratislava",
+  "title": "Kostenschätzung für Sanierung in Wien: 5 €/m² | DUMSKAYA",
+  "description": "Kostenschätzung für Wohnung, Haus oder Büro in Wien und Bratislava: Aufmaß, Arbeiten, Material. 5 €/m², bei Sanierung durch uns angerechnet."
+ },
+ "/stroitelstvo-remont-bratislava": {
+  "path": "/de/schluesselfertige-sanierung-wien-bratislava",
+  "title": "Schlüsselfertige Sanierung in Wien und Bratislava",
+  "description": "Wohnungen, Häuser und Büros schlüsselfertig sanieren: eigene Teams, eigene Möbelfertigung, Kostenschätzung 5 €/m². Gleiche Preise in Wien und Bratislava."
+ },
+ "/studio-interior-design-bratislava-eurovea-56m": {
+  "path": "/de/innenarchitektur-wohnung-eurovea-bratislava-56-m2",
+  "title": "Wohnung in Eurovea City, Bratislava, 56 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 56 m² in Eurovea City, Bratislava: Planung im Paket „Möbel“ auf Basis der Bauträger-Ausstattung, 3D-Visualisierung, Möbel nach Maß.",
+  "project_title": "Wohnung in Eurovea City, Bratislava, 56 m²",
+  "facts": {
+   "object": "Wohnung in Eurovea City",
+   "area": "56 m²",
+   "city": "Bratislava",
+   "works": "Einrichtungsplanung (Paket „Möbel“), 3D-Visualisierung und Möbel nach Maß"
+  }
+ },
+ "/studio-interior-design-disain-proekt-kvartira-kiev-80m": {
+  "path": "/de/innenarchitektur-wohnung-kiew-80-m2",
+  "title": "Innenarchitektur: Wohnung in Kiew, 80 m² | DUMSKAYA DESIGN",
+  "description": "Wohnung mit 80 m² in Kiew: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation und Möbel nach Maß, mit künstlerischer Oberleitung.",
+  "project_title": "Wohnung in Kiew, 80 m²",
+  "facts": {
+   "object": "Wohnung",
+   "area": "80 m²",
+   "city": "Kiew",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation und Möbel nach Maß"
+  }
+ },
+ "/transformaciya-malenkoj-kvartiry-prakticheskie-sovety-dlya-maksimalnogo-ispolzovaniya-prostranstva": {
+  "path": "/de/kleine-wohnung-einrichten-tipps",
+  "title": "Kleine Wohnung einrichten: praktische Tipps | DUMSKAYA",
+  "description": "Wie Sie jeden Quadratmeter einer kleinen Wohnung nutzen: Grundriss, Einbaumöbel, Stauraum, Licht und Farbe. Erprobte Lösungen aus unseren Projekten."
+ },
+ "/villa-interior-design-160m": {
+  "path": "/de/innenarchitektur-einfamilienhaus-muenchen-160-m2",
+  "title": "Innenarchitektur: Haus in München, 160 m² | DUMSKAYA DESIGN",
+  "description": "Einfamilienhaus mit 160 m² in München: Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung.",
+  "project_title": "Einfamilienhaus in München, 160 m²",
+  "facts": {
+   "object": "Einfamilienhaus",
+   "area": "160 m²",
+   "city": "München",
+   "works": "Einrichtungsplanung, 3D-Visualisierung, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung"
+  }
+ },
+ "/why-you-need-an-interior-designer": {
+  "path": "/de/warum-innenarchitekt-beauftragen",
+  "title": "Warum Sie einen Innenarchitekten brauchen | DUMSKAYA DESIGN",
+  "description": "Wie ein Innenarchitekt Budget und Zeit spart, Fehler bei der Sanierung vermeidet und Räume praktisch plant. Tipps von DUMSKAYA DESIGN."
+ }
+}

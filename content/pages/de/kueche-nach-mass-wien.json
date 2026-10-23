@@ -1,0 +1,329 @@
+{
+ "path": "/de/kueche-nach-mass-wien",
+ "lang": "de",
+ "type": "service",
+ "group": null,
+ "title": "Küchen nach Maß in Wien: Planung und Montage | DUMSKAYA",
+ "description": "Küchen nach Maß für Wien: Aufmaß, Planung, 3D-Visualisierung, Fertigung in Bratislava, Lieferung und Montage. 32 Modelle im Katalog oder eigene Planung.",
+ "h1": "Küchen nach Maß in Wien, schlüsselfertig — Planung, Fertigung, Lieferung und Montage",
+ "og_image": "66c511596549f3d91ef8764e",
+ "alternates": {
+  "ru": "/kuhni-pod-klyuch-vena",
+  "ua": "/ua/kukhni-pid-kliuch-viden",
+  "en": "/en/custom-kitchens-vienna",
+  "sk": "/sk/kuchyne-na-mieru-vieden",
+  "de": "/de/kueche-nach-mass-wien"
+ },
+ "phone": "at",
+ "sections": [
+  {
+   "id": "city-kuhni-pod-klyuch-vena-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Küchen nach Maß in Wien, schlüsselfertig — Planung, Fertigung, Lieferung und Montage"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> fertigt Küchen nach Maß für Wohnungen und Häuser in Wien, schlüsselfertig: Aufmaß, Planung, 3D-Visualisierung, Fertigung in unserer eigenen Werkstatt in Bratislava, Lieferung, Montage und Einbau der Geräte. Die Lieferung nach Wien ist im Preis enthalten, die Montage übernimmt unser eigenes Team."
+      },
+      {
+       "t": "p",
+       "html": "Sie können eines von 32 Modellen aus dem <a href=\"/de/kuechen-nach-mass-katalog-wien-bratislava\">Katalog</a> wählen und an die Maße Ihrer Küche anpassen lassen oder eine ganz individuelle Planung bestellen. Die Preise für Wien sind dieselben wie für Bratislava."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "Küchen für Wien",
+     "rows": [
+      [
+       "Fertigung",
+       "eigene, in Bratislava"
+      ],
+      [
+       "Lieferung und Montage",
+       "im Preis enthalten, eigenes Montageteam"
+      ],
+      [
+       "Aufmaß",
+       "vor Ort in Wien"
+      ],
+      [
+       "Modelle",
+       "32 im Katalog + individuelle Planungen"
+      ],
+      [
+       "Beschläge",
+       "Hettich, Blum, Häfele"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Küchenkatalog",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava"
+      },
+      {
+       "text": "Möbel nach Maß in Wien",
+       "href": "/de/moebel-nach-mass-wien"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Was eine schlüsselfertige Küche umfasst"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Aufmaß</strong> des Raums mit Lage der Anschlüsse, Fenster, Türen und Geräte.",
+        "<strong>Planung und Grundriss</strong> — Küchenzeile, Eckküche, U-Küche, mit Insel oder Halbinsel, Wohnküche.",
+        "<strong>3D-Visualisierung</strong> — Sie sehen die Küche in Ihrem Raum, bevor die Fertigung beginnt.",
+        "<strong>Technische Planung</strong> — Zeichnungen der Module, Anschlussplan für die Geräte, Liste der Materialien und Beschläge.",
+        "<strong>Fertigung</strong> in unserer eigenen Tischlerei in Bratislava.",
+        "<strong>Lieferung und Montage</strong> in Wien durch unser eigenes Team, Einstellen der Fronten und Mechanismen.",
+        "<strong>Einbau der Geräte</strong> — Backofen, Kochfeld, Dunstabzug, Geschirrspüler, Kühlschrank."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materialien, Arbeitsplatten und Beschläge"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Fronten: beschichtete Spanplatte, foliertes MDF, lackiertes MDF, Furnier, HPL, Acryl, Glas. Arbeitsplatten: Laminat, Kompaktplatte, Quarzkomposit, Feinsteinzeug, Mineralwerkstoff und Naturstein. Beschläge von Hettich, Blum und Häfele: Dämpfung (Soft-Close), Auszugssysteme, Klappenbeschläge, Cargo-Auszüge, Organizer und Mülltrennsysteme."
+      },
+      {
+       "t": "p",
+       "html": "Die Ausstattung richtet sich nach Ihrem Budget — von Standard bis gehoben. Bei jedem Katalogmodell steht, woraus es gefertigt ist, und das lässt sich ändern."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Beispiele für Küchen"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66c511596549f3d91ef8764e",
+       "alt": "Montage einer hochwertigen Küche in Wien"
+      },
+      {
+       "id": "69c86798ce29bfd07714ea68",
+       "alt": "Hochwertige Küche nach Maß, Bratislava"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87656",
+       "alt": "Designerküche schlüsselfertig"
+      },
+      {
+       "id": "684a98176775d3727cd6e122",
+       "alt": "Küche nach Maß aus Echtholz"
+      },
+      {
+       "id": "684a981fcbfab8d2b1b768ec",
+       "alt": "Küche nach Designerentwurf"
+      },
+      {
+       "id": "684a9818cbfab8d2b1b768ba",
+       "alt": "Fertigung hochwertiger Küchen"
+      },
+      {
+       "id": "684a98186775d3727cd6e12a",
+       "alt": "Moderne Küche mit Kochinsel nach Maß, Wien"
+      },
+      {
+       "id": "684a9818d82130a88ea83742",
+       "alt": "Küche nach individuellen Maßen"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Modelle im Katalog",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "So bestellen Sie eine Küche in Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Anfrage.</strong> Schicken Sie uns einen Grundriss oder die Maße der Küche, Fotos und Beispiele für ein Design, das Ihnen gefällt — oder wählen Sie ein Modell aus dem Katalog.",
+        "<strong>Erste Kalkulation.</strong> Innerhalb weniger Tage nennen wir Ihnen einen Richtpreis.",
+        "<strong>Aufmaß und Planung.</strong> Wir kommen zum Aufmaß nach Wien, erstellen Planung und 3D-Visualisierung und stimmen die Materialien mit Ihnen ab.",
+        "<strong>Fixpreis und Vertrag.</strong> Ein Betrag für die Küche inklusive Lieferung und Montage.",
+        "<strong>Fertigung, Lieferung, Montage.</strong> Wir fertigen in Bratislava, liefern und montieren in Wien und bauen die Geräte ein."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fragen zu schlüsselfertigen Küchen in Wien"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Was kostet eine schlüsselfertige Küche in Wien?",
+       "a": "<p>Der Preis hängt von den Maßen, dem Material von Fronten und Arbeitsplatte, den Beschlägen und den Geräten ab. Den genauen Preis nennen wir nach Aufmaß und Planung — als eine Summe, inklusive Lieferung nach Wien und Montage. Richtwerte für die einzelnen Modelle finden Sie im <a href=\"/de/kuechen-nach-mass-katalog-wien-bratislava\">Katalog</a>.</p>"
+      },
+      {
+       "q": "Kostet die Lieferung nach Wien extra?",
+       "a": "<p>Nein, Lieferung und Montage sind im Küchenpreis enthalten. Für die Anfahrt aus Bratislava gibt es keine Aufpreise.</p>"
+      },
+      {
+       "q": "Wie lange dauert die Fertigung?",
+       "a": "<p>Die Dauer hängt von Umfang, Materialien und Auslastung der Werkstatt ab — wir nennen sie mit dem Angebot. Sie läuft ab Freigabe der Planung und Eingang der Anzahlung.</p>"
+      },
+      {
+       "q": "Lässt sich ein Katalogmodell anpassen?",
+       "a": "<p>Ja. Maße, Frontfarbe, Arbeitsplatte, Innenausstattung und Geräte passen wir an Ihre Küche an — das Katalogmodell ist der Ausgangspunkt.</p>"
+      },
+      {
+       "q": "Schließen Sie die Geräte an?",
+       "a": "<p>Bei der Montage setzen wir die Geräte ein und bauen sie ein. Die Anschlüsse für Wasser, Gas und Strom gehören zur Sanierung — übernimmt diese unser Team, läuft alles in einem Projekt.</p>"
+      },
+      {
+       "q": "Fertigen Sie auch Küchen für Häuser außerhalb von Wien?",
+       "a": "<p>Ja — in Niederösterreich und im Burgenland, in gut erreichbarer Entfernung von Bratislava.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Angebot für Ihre Küche",
+     "text": "Schicken Sie uns den Grundriss der Küche und Fotos — wir erstellen ein erstes Angebot."
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

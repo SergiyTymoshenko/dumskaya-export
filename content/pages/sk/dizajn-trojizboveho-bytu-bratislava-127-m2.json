@@ -1,0 +1,499 @@
+{
+ "path": "/sk/dizajn-trojizboveho-bytu-bratislava-127-m2",
+ "lang": "sk",
+ "type": "project",
+ "group": "residential",
+ "title": "Dizajn trojizbového bytu 127 m² v Bratislave | DUMSKAYA",
+ "description": "Trojizbový byt 127 m² v Bratislave: návrh interiéru v balíku „Základný“, 3D vizualizácia a výkresová dokumentácia. Prebieha rekonštrukcia.",
+ "h1": "Dizajn interiéru 3-izbového bytu v Bratislave, 127 m²",
+ "og_image": "bra127-01",
+ "alternates": {
+  "ru": "/interior-design-apartment-bratislava-127m",
+  "ua": "/ua/dyzain-interieru-kvartyry-bratyslava-127m2",
+  "en": "/en/apartment-interior-design-bratislava-127sqm",
+  "sk": "/sk/dizajn-trojizboveho-bytu-bratislava-127-m2",
+  "de": "/de/innenarchitektur-dreizimmerwohnung-bratislava-127-m2"
+ },
+ "sections": [
+  {
+   "id": "bra127-main",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Dizajn interiéru 3-izbového bytu v Bratislave, 127 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Trojizbový byt s balkónom v Bratislave, 127 m². Vypracovali sme preň návrh interiéru v balíku <a href=\"/sk/dizajnovy-balik-zakladny-bratislava-vieden\">„Základný“</a>: dispozičné riešenie, 3D vizualizácie všetkých miestností a kompletnú technickú dokumentáciu pre rekonštrukciu. Byt je teraz v realizácii, prebieha rekonštrukcia."
+      },
+      {
+       "t": "p",
+       "html": "V byte je obývačka 43 m² s výstupom na balkón, kuchyňa s jedálenským kútom 18,5 m², hlavná spálňa 21,6 m², detská izba 15 m², predsieň, práčovňa, kúpeľňa a dve WC."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Miestnosti a materiály"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Interiér je v teplých béžovo-sivých tónoch. V obytných miestnostiach sú na podlahe široké dosky zo svetlého duba, v predsieni, kuchyni a kúpeľniach veľkoformátová dlažba s imitáciou svetlého kameňa. Dvere sú skryté, vo farbe stien, závesy sú zapustené v stropných nikách so skrytými koľajničkami. Osvetlenie tvoria lineárne zápustné svietidlá a lištové systémy."
+      },
+      {
+       "t": "p",
+       "html": "V obývačke je TV zóna s dubovým panelom a otvorenými policami, oproti nej pohovka a dve oblé kreslá, bližšie k predsieni stojí pianíno. Kuchyňa je samostatná miestnosť: pracovná linka pozdĺž steny s vysokými skrinkami na chladničku a rúru, pri okne jedálenský stôl."
+      },
+      {
+       "t": "p",
+       "html": "V hlavnej spálni je posteľ s čalúneným čelom, skriňa na celú stenu bez úchytiek a toaletný stolík so zrkadlom. V detskej izbe je pracovné miesto pri okne, posteľ pri dubovom paneli a rebriny s lezeckým panelom. V kúpeľni je reliéfny obklad ukladaný do rybej kosti, na WC nika s policami a podsvietením."
+      },
+      {
+       "t": "p",
+       "html": "Nábytok je navrhnutý na rozmery miestností: kuchyňa, TV zóna, skrine v predsieni, spálni a detskej izbe, podsvietené nástenné panely, skrinky a vysoké skrinky v kúpeľniach. K nemu patrí samostatný výkres nábytku na mieru a špecifikácia. Vyrobiť ho môžeme v <a href=\"/sk/nabytok-na-mieru-bratislava\">našej vlastnej výrobni</a>."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Technická dokumentácia"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Realizačné výkresy majú 45 listov: zameranie skutočného stavu, dispozičné riešenie s rozmiestnením nábytku, výkres nábytku na mieru, osadenie priečok, zdravotechnika a vykurovanie, klimatizácia, zásuvky, osvetlenie a vypínače, vetranie, podlahy, stropy s nikami na koľajničky závesov, povrchy stien s farbami podľa NCS a rozvinuté pohľady kuchyne, obývačky, chodby, detskej izby, spálne a kúpeľní. Stavebná partia robí rekonštrukciu podľa týchto výkresov."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "image": {
+      "id": "bra127-plan",
+      "alt": "Dispozičné riešenie bytu 127 m² v Bratislave s rozmiestnením nábytku"
+     },
+     "caption": "Dispozičné riešenie s rozmiestnením nábytku"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "bra127-01",
+       "alt": "Obývačka s pohovkou a kreslami v teplých béžových tónoch — dizajn interiéru v Bratislave"
+      },
+      {
+       "id": "bra127-02",
+       "alt": "Obývačka s dubovou TV stenou a otvorenými policami — dizajn bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-03",
+       "alt": "Obývačka s dubovou TV stenou a otvorenými policami — dizajn bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-04",
+       "alt": "Obývačka s dubovou TV stenou a otvorenými policami — dizajn bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-05",
+       "alt": "Obývačka s dubovou TV stenou a otvorenými policami — dizajn bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-06",
+       "alt": "Obývačka s pohovkou a kreslami v teplých béžových tónoch — dizajn interiéru v Bratislave"
+      },
+      {
+       "id": "bra127-07",
+       "alt": "Obývačka s pohovkou a kreslami v teplých béžových tónoch — dizajn interiéru v Bratislave"
+      },
+      {
+       "id": "bra127-08",
+       "alt": "Obývačka s pohovkou a kreslami v teplých béžových tónoch — dizajn interiéru v Bratislave"
+      },
+      {
+       "id": "bra127-09",
+       "alt": "Obývačka s pohovkou a kreslami v teplých béžových tónoch — dizajn interiéru v Bratislave"
+      },
+      {
+       "id": "bra127-10",
+       "alt": "Obývačka s pohovkou a kreslami v teplých béžových tónoch — dizajn interiéru v Bratislave"
+      },
+      {
+       "id": "bra127-11",
+       "alt": "Obývačka s pohovkou a kreslami v teplých béžových tónoch — dizajn interiéru v Bratislave"
+      },
+      {
+       "id": "bra127-12",
+       "alt": "Obývačka s pianínom a výstupom na balkón — byt 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-13",
+       "alt": "Obývačka s pianínom a výstupom na balkón — byt 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-14",
+       "alt": "Obývačka s pianínom a výstupom na balkón — byt 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-15",
+       "alt": "Obývačka s pianínom a výstupom na balkón — byt 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-16",
+       "alt": "Kuchyňa s jedálenským kútom — dizajn interiéru bytu v Bratislave"
+      },
+      {
+       "id": "bra127-17",
+       "alt": "Kuchyňa s jedálenským kútom — dizajn interiéru bytu v Bratislave"
+      },
+      {
+       "id": "bra127-18",
+       "alt": "Kuchyňa s jedálenským kútom — dizajn interiéru bytu v Bratislave"
+      },
+      {
+       "id": "bra127-19",
+       "alt": "Kuchyňa s jedálenským kútom — dizajn interiéru bytu v Bratislave"
+      },
+      {
+       "id": "bra127-20",
+       "alt": "Kuchyňa s vysokou skrinkou na vstavané spotrebiče a skrytými dverami — byt v Bratislave"
+      },
+      {
+       "id": "bra127-21",
+       "alt": "Kuchyňa s vysokou skrinkou na vstavané spotrebiče a skrytými dverami — byt v Bratislave"
+      },
+      {
+       "id": "bra127-22",
+       "alt": "Hlavná spálňa s čalúneným čelom postele a skriňou — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-23",
+       "alt": "Hlavná spálňa s čalúneným čelom postele a skriňou — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-24",
+       "alt": "Hlavná spálňa s čalúneným čelom postele a skriňou — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-25",
+       "alt": "Hlavná spálňa s čalúneným čelom postele a skriňou — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-26",
+       "alt": "Toaletný stolík so zrkadlom v hlavnej spálni — byt 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-27",
+       "alt": "Toaletný stolík so zrkadlom v hlavnej spálni — byt 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-28",
+       "alt": "Kúpeľňa s vaňou a obkladom do rybej kosti — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-29",
+       "alt": "Kúpeľňa s vaňou a obkladom do rybej kosti — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-30",
+       "alt": "Kúpeľňa s vaňou a obkladom do rybej kosti — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-31",
+       "alt": "Kúpeľňa s vaňou a obkladom do rybej kosti — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-32",
+       "alt": "Kúpeľňa s vaňou a obkladom do rybej kosti — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-33",
+       "alt": "Detská izba s pracovným miestom a rebrinami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-34",
+       "alt": "Detská izba s pracovným miestom a rebrinami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-35",
+       "alt": "Detská izba s pracovným miestom a rebrinami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-36",
+       "alt": "Detská izba s posteľou a vstavanou skriňou — byt 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-37",
+       "alt": "Detská izba s posteľou a vstavanou skriňou — byt 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-38",
+       "alt": "Detská izba s pracovným miestom a rebrinami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-39",
+       "alt": "Detská izba s pracovným miestom a rebrinami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-40",
+       "alt": "Práčovňa so vstavanou práčkou a sušičkou — byt v Bratislave"
+      },
+      {
+       "id": "bra127-41",
+       "alt": "Práčovňa so vstavanou práčkou a sušičkou — byt v Bratislave"
+      },
+      {
+       "id": "bra127-42",
+       "alt": "Predsieň so vstavanou skriňou a skrytými dverami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-43",
+       "alt": "Predsieň so vstavanou skriňou a skrytými dverami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-44",
+       "alt": "Predsieň so vstavanou skriňou a skrytými dverami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-45",
+       "alt": "Predsieň so vstavanou skriňou a skrytými dverami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-46",
+       "alt": "Predsieň so vstavanou skriňou a skrytými dverami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-47",
+       "alt": "Predsieň so vstavanou skriňou a skrytými dverami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-48",
+       "alt": "Predsieň so vstavanou skriňou a skrytými dverami — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-49",
+       "alt": "Kúpeľňa so sprchovým kútom a dubovou skrinkou pod umývadlo — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-50",
+       "alt": "Kúpeľňa so sprchovým kútom a dubovou skrinkou pod umývadlo — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-51",
+       "alt": "Kúpeľňa so sprchovým kútom a dubovou skrinkou pod umývadlo — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-52",
+       "alt": "Kúpeľňa so sprchovým kútom a dubovou skrinkou pod umývadlo — dizajn bytu v Bratislave"
+      },
+      {
+       "id": "bra127-53",
+       "alt": "WC so závesnou toaletou a podsvietenou nikou — byt v Bratislave"
+      },
+      {
+       "id": "bra127-54",
+       "alt": "WC so závesnou toaletou a podsvietenou nikou — byt v Bratislave"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky projekty",
+       "href": "/sk/portfolio-dizajn-interieru"
+      },
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Ceny dizajnových balíkov",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2f50a8dc85bab9dc8f8a3781",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ukážka technickej dokumentácie z dizajnového balíka „Základný“"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "bra127-d01",
+       "alt": "Zameranie skutočného stavu po búracích prácach — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d02",
+       "alt": "Pôdorys s rozmiestnením nábytku — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d03",
+       "alt": "Pôdorys nábytku na mieru — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d04",
+       "alt": "Pôdorys osadenia priečok — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d05",
+       "alt": "Osadenie priečok v 3D — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d06",
+       "alt": "Sadrokartónové konštrukcie v kúpeľni — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d07",
+       "alt": "Umiestnenie radiátorov a konvektorov — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d08",
+       "alt": "Umiestnenie klimatizačných jednotiek — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d09",
+       "alt": "Umiestnenie zariaďovacích predmetov — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d10",
+       "alt": "Špecifikácia sanitárneho vybavenia — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d11",
+       "alt": "Rozvinutý pohľad so zariaďovacími predmetmi v kúpeľni — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d12",
+       "alt": "Pôdorys zásuviek, vypínačov a elektrických zariadení — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d13",
+       "alt": "Umiestnenie svietidiel — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d14",
+       "alt": "Prepojenie vypínačov a svietidiel — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d15",
+       "alt": "Umiestnenie odsávacích ventilátorov — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d16",
+       "alt": "Pôdorys kladenia podlahových krytín — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d17",
+       "alt": "Pôdorys stropov — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d18",
+       "alt": "3D pohľady k rezom stropu — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d19",
+       "alt": "Schéma povrchových úprav stien — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d20",
+       "alt": "Rozvinutý pohľad kuchyne — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d21",
+       "alt": "Rozvinutý pohľad obývačky — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d22",
+       "alt": "Rez detskou izbou — technický výkres bytu 127 m² v Bratislave"
+      },
+      {
+       "id": "bra127-d23",
+       "alt": "Rozvinutý pohľad kúpeľne — technický výkres bytu 127 m² v Bratislave"
+      }
+     ],
+     "docs": true
+    }
+   ]
+  },
+  {
+   "id": "69cbfcd996e515190621f6e5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

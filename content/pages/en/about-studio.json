@@ -10,7 +10,9 @@
  "alternates": {
   "ru": "/about-studio",
   "ua": "/ua/pro-studiyu",
-  "en": "/en/about-studio"
+  "en": "/en/about-studio",
+  "sk": "/sk/o-studiu",
+  "de": "/de/ueber-uns-innenarchitektur-bratislava"
  },
  "sections": [
   {
@@ -140,17 +142,11 @@
      "text": "Contact details"
     },
     {
+     "type": "contacts"
+    },
+    {
      "type": "text",
      "parts": [
-      {
-       "t": "ul",
-       "items": [
-        "Address: Súkennícka 1, 821 09 Bratislava, Slovakia",
-        "Phones in Bratislava: <a href=\"tel:+421918177785\">+421 918 17 77 85</a>, <a href=\"tel:+380953662575\">+380 95 366 25 75</a>",
-        "Phone in Vienna: <a href=\"tel:+4367761430187\">+43 677 614 30 187</a>",
-        "Email: <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>"
-       ]
-      },
       {
        "t": "p",
        "html": "We reply within one business day. The request form and messenger links are on our <a href=\"/en/contact-studio-interior-design-bratislava-vienna\">contact</a> page."

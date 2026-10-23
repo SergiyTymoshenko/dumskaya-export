@@ -1,0 +1,339 @@
+{
+ "path": "/sk/nabytok-na-mieru-vieden",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Nábytok na mieru vo Viedni — výroba a montáž | DUMSKAYA",
+ "description": "Kuchyne, skrine, šatníky a nábytok na mieru pre Viedeň: návrh, vlastná výroba v Bratislave, doprava v cene, montáž naším tímom.",
+ "h1": "Nábytok na mieru vo Viedni — návrh, výroba a montáž",
+ "og_image": "66c511596549f3d91ef8764e",
+ "alternates": {
+  "ru": "/mebel-na-zakaz-vena",
+  "ua": "/ua/mebli-na-zamovlennia-viden",
+  "en": "/en/custom-furniture-vienna",
+  "sk": "/sk/nabytok-na-mieru-vieden",
+  "de": "/de/moebel-nach-mass-wien"
+ },
+ "phone": "at",
+ "sections": [
+  {
+   "id": "city-mebel-na-zakaz-vena-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Nábytok na mieru vo Viedni — návrh, výroba a montáž"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> navrhuje a vyrába korpusový nábytok na mieru pre byty, domy a komerčné priestory vo Viedni. Výrobu máme vlastnú, v Bratislave, 60 km od Viedne. Dopravu a montáž robí naša partia a doprava je už zahrnutá v cene."
+      },
+      {
+       "t": "p",
+       "html": "Nábytok robíme ako súčasť interiéru: kuchyne, vstavané skrine, šatníky, predsiene, TV steny, nábytok do spální, pracovní a kúpeľní. Každý kus navrhujeme pre konkrétny priestor — podľa zamerania, s ohľadom na rozvody, spotrebiče a štýl interiéru."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "Nábytok pre Viedeň",
+     "rows": [
+      [
+       "Výroba",
+       "vlastná, Bratislava"
+      ],
+      [
+       "Doprava do Viedne",
+       "zahrnutá v cene"
+      ],
+      [
+       "Montáž",
+       "naša partia"
+      ],
+      [
+       "Zameranie",
+       "priamo na mieste vo Viedni"
+      ],
+      [
+       "Ceny",
+       "rovnaké pre Bratislavu aj Viedeň"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Kuchyne na mieru vo Viedni",
+       "href": "/sk/kuchyne-na-mieru-vieden"
+      },
+      {
+       "text": "Katalóg kuchýň",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Čo vyrábame"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Kuchyne</strong> — rovné, rohové, v tvare U, s ostrovom, so vstavanými spotrebičmi.",
+        "<strong>Vstavané skrine</strong> až po strop, s krídlovými alebo posuvnými dverami, s vnútorným vybavením podľa vašich vecí.",
+        "<strong>Šatníky</strong> a úložné systémy s osvetlením.",
+        "<strong>Predsiene</strong> — skrine, lavice, botníky, zrkadlá a panely.",
+        "<strong>Nábytok do obývačky a spálne</strong> — TV steny, stenové panely, postele s čelom, nočné stolíky, komody.",
+        "<strong>Domáce pracovne</strong> — pracovné stoly, regály, knižnice.",
+        "<strong>Nábytok do kúpeľne</strong> — skrinky pod umývadlo, zrkadlové skrinky, vysoké skrinky.",
+        "<strong>Nábytok pre firmy</strong> — recepcie, kancelárie, zasadačky, predajné zariadenie."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materiály a kovanie"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Dvierka a čelá — laminovaná drevotrieska, MDF s fóliou alebo lakom, dyha, HPL, akrylát, sklo. Pracovné dosky — laminát, kompaktná doska, kremenný kompozit, keramika, umelý a prírodný kameň. Kovanie — Hettich, Blum, Häfele: tlmené dovieranie, výsuvné systémy, výklopné mechanizmy, cargo výsuvy a vnútorné organizéry."
+      },
+      {
+       "t": "p",
+       "html": "Výbavu volíme podľa rozpočtu: od štandardnej po špičkovú. Ku každému výrobku pripravíme technickú špecifikáciu a podľa nej ho aj vyrobíme."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ako si objednať nábytok vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Dopyt.</strong> Pošlite pôdorys miestnosti, fotografie a príklady nábytku, ktorý sa vám páči. Podľa nich urobíme predbežný odhad.",
+        "<strong>Zameranie a návrh.</strong> Prídeme na miesto vo Viedni a potom pripravíme konštrukčné riešenie, 3D vizualizáciu a špecifikáciu materiálov.",
+        "<strong>Cenová ponuka.</strong> Povieme vám presnú cenu výrobkov vrátane dopravy a montáže — jednou sumou.",
+        "<strong>Výroba.</strong> Nábytok vyrábame v Bratislave. Termín závisí od rozsahu a materiálov, oznámime ho spolu s cenovou ponukou.",
+        "<strong>Doprava a montáž.</strong> Nábytok privezie a namontuje naša partia, zabudujeme spotrebiče a nastavíme dvierka."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Príklady nábytku na mieru"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66c511596549f3d91ef8764e",
+       "alt": "Montáž kuchyne vyššej triedy vo Viedni"
+      },
+      {
+       "id": "69c86798ce29bfd07714ea68",
+       "alt": "Kuchyňa na mieru vyššej triedy, Bratislava"
+      },
+      {
+       "id": "685a680d6458fdbb26b47ae1",
+       "alt": "Výroba kuchyne podľa individuálneho návrhu"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87656",
+       "alt": "Dizajnová kuchyňa na kľúč"
+      },
+      {
+       "id": "684a98176775d3727cd6e122",
+       "alt": "Kuchyňa na mieru z prírodného dreva"
+      },
+      {
+       "id": "684a981fcbfab8d2b1b768ec",
+       "alt": "Kuchyňa podľa návrhu dizajnéra"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Nábytok do bytov vo Viedni s rozlohou 58 m² a 115 m² sme vyrobili v našej výrobni podľa návrhu štúdia:"
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Byt vo Viedni, 58 m²",
+       "href": "/sk/dizajn-interieru-bytu-vieden-58-m2",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "Byt vo Viedni, 58 m²"
+       }
+      },
+      {
+       "title": "Byt vo Viedni, 115 m²",
+       "href": "/sk/dizajn-interieru-bytu-vieden-115-m2",
+       "image": {
+        "id": "6abd6b354888499d207455da",
+        "alt": "Byt vo Viedni, 115 m²"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Otázky o nábytku na mieru vo Viedni"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Koľko stojí doprava nábytku do Viedne?",
+       "a": "<p>Nič navyše k cene výrobkov: doprava aj cesta partie na montáž sú v cene. Dostanete jednu celkovú cenu za nábytok na kľúč.</p>"
+      },
+      {
+       "q": "Kto robí zameranie a montáž?",
+       "a": "<p>Naši odborníci z Bratislavy. Zameranie robíme pred spustením výroby, montáž po dodaní, zvyčajne za jeden až dva dni podľa rozsahu.</p>"
+      },
+      {
+       "q": "Môžem si objednať len jednu skriňu alebo kuchyňu, bez návrhu interiéru?",
+       "a": "<p>Áno. Samostatný kus navrhneme podľa zamerania a vašich požiadaviek. Ak potrebujete celý interiér, je praktickejšie začať <a href=\"/sk/dizajn-interieru-vieden\">návrhom interiéru</a> — potom bude všetok nábytok v jednom štýle.</p>"
+      },
+      {
+       "q": "Zabudovávate aj spotrebiče?",
+       "a": "<p>Áno. Kuchyne navrhujeme rovno pre vybrané spotrebiče a pri montáži osadíme rúru, varnú dosku, digestor, umývačku riadu a chladničku. Spotrebiče si môžete kúpiť sami alebo objednať cez nás.</p>"
+      },
+      {
+       "q": "Čím sa líši nábytok na mieru od hotového?",
+       "a": "<p>Rozmermi a vnútorným vybavením: nábytok sa vyrába presne podľa stien, ník a výšky stropu, s takými zásuvkami a policami, aké potrebujete práve vy. Vizuálne sa stáva súčasťou architektúry miestnosti, nie samostatným kusom.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Vypočítať cenu nábytku",
+     "text": "Pošlite pôdorys alebo rozmery miestnosti a fotografie — pripravíme predbežnú ponuku."
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

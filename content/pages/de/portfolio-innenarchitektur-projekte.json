@@ -1,0 +1,582 @@
+{
+ "path": "/de/portfolio-innenarchitektur-projekte",
+ "lang": "de",
+ "type": "portfolio",
+ "group": null,
+ "title": "Portfolio: Innenarchitektur-Projekte | DUMSKAYA DESIGN",
+ "description": "Projekte von DUMSKAYA DESIGN: Wohnungen, Häuser, Villen, Büros und Salons. Fotos und 3D-Visualisierungen der Interieurs. Studio in Bratislava und Wien.",
+ "h1": "Beispiele umgesetzter Innenarchitektur-Projekte",
+ "og_image": "6abd6a8e6bbe610384483447",
+ "alternates": {
+  "ru": "/proekty-interior-design",
+  "ua": "/ua/realizovani-dyzain-proekty-ta-arkhitekturni-rishennia",
+  "en": "/en/portfolio-interior-design-projects",
+  "sk": "/sk/portfolio-dizajn-interieru",
+  "de": "/de/portfolio-innenarchitektur-projekte"
+ },
+ "sections": [
+  {
+   "id": "60046d9a8e229e00212eebaf",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Beispiele umgesetzter Innenarchitektur-Projekte"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Hier finden Sie Projekte des Studios: Wohnungen, Einfamilienhäuser und Villen, Büros, Salons und Geschäfte sowie Fassadenentwürfe. Auf jeder Projektseite gibt es 3D-Visualisierungen oder Fotos des fertigen Objekts, Fläche, Stadt und eine Beschreibung von Grundriss, Materialien und Möbeln."
+      },
+      {
+       "t": "p",
+       "html": "Bei jedem Projekt steht, was das Studio genau gemacht hat: Planung, Ausführungspläne, Möbel nach Maß aus der eigenen Tischlerei in Bratislava oder eine schlüsselfertige Sanierung. Was eine Planung für Ihr Objekt kostet, können Sie anhand der <a href=\"/de/preise-innenarchitektur-wien-bratislava\">Preise der Designpakete</a> berechnen."
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Wohnung Metropolis, Bratislava, 75 m²",
+       "href": "/de/innenarchitektur-wohnung-metropolis-bratislava-75-m2",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Innenarchitekt in Bratislava"
+       }
+      },
+      {
+       "title": "Wohnung in Kiew, 80 m²",
+       "href": "/de/innenarchitektur-wohnung-kiew-80-m2",
+       "image": {
+        "id": "6abd0a7d61617a4443ab2567",
+        "alt": "Innenarchitekt, Kiew"
+       }
+      },
+      {
+       "title": "Wohnung Eurovea, Bratislava, 56 m²",
+       "href": "/de/innenarchitektur-wohnung-eurovea-bratislava-56-m2",
+       "image": {
+        "id": "6abd6a8168c5e81567a1bfb4",
+        "alt": "Innenarchitekt in Bratislava"
+       }
+      },
+      {
+       "title": "Wohnung in Bratislava, 158 m²",
+       "href": "/de/innenarchitektur-maisonette-bratislava-158-m2",
+       "image": {
+        "id": "6abd6a8e6bbe610384483447",
+        "alt": "Wohnküche — Wohnung, Bratislava, 158 m²"
+       }
+      },
+      {
+       "title": "Einfamilienhaus 120 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-bratislava-120-m2",
+       "image": {
+        "id": "6abd6a6a61617a4443acb201",
+        "alt": "Wohnküche — Einfamilienhaus, Bratislava, 120 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Wien, 58 m²",
+       "href": "/de/innenarchitektur-wohnung-wien-58-m2",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "Wohnküche — Wohnung, Wien, 58 m²"
+       }
+      },
+      {
+       "title": "Einfamilienhaus, 140 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-dunajska-streda-140-m2",
+       "image": {
+        "id": "6abd6a9d68c5e81567a1c052",
+        "alt": "Innenarchitektur eines Einfamilienhauses in Dunajská Streda, Slowakei — ein Projekt von DUMSKAYA DESIGN"
+       }
+      },
+      {
+       "title": "Einfamilienhaus, 212 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-charkiw-212-m2",
+       "image": {
+        "id": "6abd6a716bbe6103844833be",
+        "alt": "Wohnküche — Einfamilienhaus, 212 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Warschau, 43 m²",
+       "href": "/de/minimalistische-wohnung-warschau-43-m2",
+       "image": {
+        "id": "6abd6b6368c5e81567a1c463",
+        "alt": "Wohnung in Warschau, 43 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Krakau, 63 m²",
+       "href": "/de/innenarchitektur-wohnung-krakau-63-m2",
+       "image": {
+        "id": "6abd6b4e68c5e81567a1c3f1",
+        "alt": "Wohnküche mit Möbeln nach Maß — Wohnung, Krakau, 63 m²"
+       }
+      },
+      {
+       "title": "Wohnung, 60 m² (Terrasse 18 m²)",
+       "href": "/de/innenarchitektur-wohnung-terrasse-60-m2",
+       "image": {
+        "id": "6abd6ab34888499d20745304",
+        "alt": "Wohnküche — Innenarchitektur-Projekt"
+       }
+      },
+      {
+       "title": "Wohnung, 54 m²",
+       "href": "/de/innenarchitektur-wohnung-54-m2",
+       "image": {
+        "id": "6abd6b143ba7c7b83394fb01",
+        "alt": "Wohnküche — Wohnung, 54 m²"
+       }
+      },
+      {
+       "title": "Wohnung, 45 m²",
+       "href": "/de/innenarchitektur-wohnung-45-m2",
+       "image": {
+        "id": "6abd6b5c3ba7c7b83394fc44",
+        "alt": "Wohnküche — Wohnung, 45 m²"
+       }
+      },
+      {
+       "title": "Wohnung, 48 m²",
+       "href": "/de/innenarchitektur-wohnung-48-m2",
+       "image": {
+        "id": "6abd6ac73ba7c7b83394f91e",
+        "alt": "Innenarchitektur-Projekt"
+       }
+      },
+      {
+       "title": "Wohnung in Bratislava, 58 m²",
+       "href": "/de/innenarchitektur-wohnung-bratislava-58-m2",
+       "image": {
+        "id": "6abd6af84888499d20745492",
+        "alt": "Wohnküche — Wohnung, Bratislava, 58 m²"
+       }
+      },
+      {
+       "title": "Wohnung, 52 m²",
+       "href": "/de/innenarchitektur-wohnung-52-m2",
+       "image": {
+        "id": "6abd6aff68c5e81567a1c258",
+        "alt": "Wohnküche — Wohnung, 52 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Warschau, 43 m²",
+       "href": "/de/innenarchitektur-wohnung-warschau-43-m2",
+       "image": {
+        "id": "6abd6aaa6bbe6103844834dd",
+        "alt": "Wohnung in Warschau, 43 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Bratislava, 52 m²",
+       "href": "/de/innenarchitektur-wohnung-bratislava-52-m2",
+       "image": {
+        "id": "6abd6b0c61617a4443acb569",
+        "alt": "Innenarchitekt in Bratislava"
+       }
+      },
+      {
+       "title": "Apartment in Dubai, 160 m²",
+       "href": "/de/innenarchitektur-apartment-dubai-160-m2",
+       "image": {
+        "id": "6abd6aba3ba7c7b83394f8d8",
+        "alt": "Innenarchitektur — Apartment, Dubai, 160 m²"
+       }
+      },
+      {
+       "title": "Apartment in Los Angeles, 140 m²",
+       "href": "/de/innenarchitektur-apartment-los-angeles-140-m2",
+       "image": {
+        "id": "6abd6ac168c5e81567a1c102",
+        "alt": "Innenarchitekt Los Angeles"
+       }
+      },
+      {
+       "title": "Apartment in Prag, 90 m²",
+       "href": "/de/innenarchitektur-apartment-prag-90-m2",
+       "image": {
+        "id": "6abd6aea61617a4443acb472",
+        "alt": "Wohnküche — Apartment, Prag, 90 m²"
+       }
+      },
+      {
+       "title": "Apartment in New York, 57 m²",
+       "href": "/de/innenarchitektur-apartment-new-york-57-m2",
+       "image": {
+        "id": "6abd6af268c5e81567a1c21a",
+        "alt": "Wohnküche — Apartment, New York, 57 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Krakau, 64 m²",
+       "href": "/de/minimalistische-wohnung-krakau-64-m2",
+       "image": {
+        "id": "6abd6b556bbe61038448383c",
+        "alt": "Schlafzimmer mit Möbeln nach Maß — Wohnung, Krakau, 64 m²"
+       }
+      },
+      {
+       "title": "Einfamilienhaus in Kiew, 217 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-kiew-217-m2",
+       "image": {
+        "id": "6abd6b0561617a4443acb529",
+        "alt": "Wohnküche — Einfamilienhaus, Kiew, 217 m²"
+       }
+      },
+      {
+       "title": "Einfamilienhaus, München, Deutschland, 160 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-muenchen-160-m2",
+       "image": {
+        "id": "6abd6b3b4888499d2074560d",
+        "alt": "Innenarchitektur — Einfamilienhaus, München, 160 m²"
+       }
+      },
+      {
+       "title": "Einfamilienhaus, Berlin, 215 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-berlin-215-m2",
+       "image": {
+        "id": "6abd6aa461617a4443acb2fc",
+        "alt": "Wohnküche — Einfamilienhaus, Berlin, 215 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Kiew, 119 m² (Terrasse 30 m²)",
+       "href": "/de/innenarchitektur-wohnung-terrasse-kiew-119-m2",
+       "image": {
+        "id": "6abd6a956bbe610384483468",
+        "alt": "Wohnküche — Innenarchitektur-Projekt"
+       }
+      },
+      {
+       "title": "Moderne Klassik, London, 120 m²",
+       "href": "/de/innenarchitektur-wohnung-london-120-m2",
+       "image": {
+        "id": "6abceda061617a4443aa9440",
+        "alt": "Wohnküche — Wohnung, London, 120 m²"
+       }
+      },
+      {
+       "title": "Apartment, Madrid, Spanien, 107 m²",
+       "href": "/de/innenarchitektur-apartment-madrid-107-m2",
+       "image": {
+        "id": "6abd6ad368c5e81567a1c165",
+        "alt": "Wohnküche — Apartment, Madrid, 107 m²"
+       }
+      },
+      {
+       "title": "Apartment, Barcelona, Spanien, 108 m²",
+       "href": "/de/innenarchitektur-apartment-barcelona-108-m2",
+       "image": {
+        "id": "6abd6ae14888499d20745418",
+        "alt": "Wohnküche — Apartment, Barcelona, 108 m²"
+       }
+      },
+      {
+       "title": "Wohnung, 51 m²",
+       "href": "/de/innenarchitektur-wohnung-51-m2",
+       "image": {
+        "id": "6abd6b1b68c5e81567a1c2e1",
+        "alt": "Wohnküche — Wohnung, 51 m²"
+       }
+      },
+      {
+       "title": "Wohnung, Wien, Österreich, 115 m²",
+       "href": "/de/innenarchitektur-wohnung-wien-115-m2",
+       "image": {
+        "id": "6abd6b354888499d207455da",
+        "alt": "Wohnküche — Wohnung, Wien, 115 m²"
+       }
+      },
+      {
+       "title": "Wohnung, Warna, Bulgarien, 60 m²",
+       "href": "/de/innenarchitektur-wohnung-warna-60-m2",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Wohnküche — Wohnung, Warna, 60 m²"
+       }
+      },
+      {
+       "title": "Wohnung, 47 m²",
+       "href": "/de/innenarchitektur-dreizimmerwohnung-47-m2",
+       "image": {
+        "id": "6abd6b696bbe610384483889",
+        "alt": "Wohnküche — Innenarchitektur-Projekt"
+       }
+      },
+      {
+       "title": "Villa, Madrid, Spanien, 179 m²",
+       "href": "/de/innenarchitektur-villa-madrid-179-m2",
+       "image": {
+        "id": "6abd6b2668c5e81567a1c33b",
+        "alt": "Innenarchitektur — Villa, Madrid, 179 m²"
+       }
+      },
+      {
+       "title": "Villa, Burgas, Bulgarien, 220 m²",
+       "href": "/de/innenarchitektur-villa-burgas-220-m2",
+       "image": {
+        "id": "6abd6b434888499d20745636",
+        "alt": "Wohnküche — Villa, Burgas, 220 m²"
+       }
+      },
+      {
+       "title": "Einfamilienhaus, 230 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-230-m2",
+       "image": {
+        "id": "6abd6b2e4888499d207455b1",
+        "alt": "Wohnküche — Innenarchitektur-Projekt"
+       }
+      },
+      {
+       "title": "Maisonettewohnung, 43 m²",
+       "href": "/de/innenarchitektur-maisonette-wohnung-43-m2",
+       "image": {
+        "id": "6abd6acd6bbe6103844835b3",
+        "alt": "Innenarchitektur — Maisonettewohnung, Posen, 43 m²"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66c3dbcd60fbdf863e623e3f",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Innenarchitektur für Gewerberäume: Projektbeispiele"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Kosmetikstudio 54 m²",
+       "href": "/de/innenarchitektur-kosmetikstudio-54-m2",
+       "image": {
+        "id": "6abe045b3ba7c7b833963e2b",
+        "alt": "Innenarchitektur — Kosmetikinstitut, 54 m²"
+       }
+      },
+      {
+       "title": "Beautysalon 63 m²",
+       "href": "/de/innenarchitektur-schoenheitssalon-63-m2",
+       "image": {
+        "id": "6abe04846bbe610384497d7b",
+        "alt": "Innenarchitektur — Schönheitssalon, 63 m²"
+       }
+      },
+      {
+       "title": "Büro 500 m²",
+       "href": "/de/innenarchitektur-buero-500-m2",
+       "image": {
+        "id": "66f5d16697317fa68a804f5a",
+        "alt": "Innenarchitektur — Büro, 500 m²"
+       }
+      },
+      {
+       "title": "Fotostudio 130 m²",
+       "href": "/de/innenarchitektur-fotostudio-130-m2",
+       "image": {
+        "id": "6abe048a61617a4443adfce2",
+        "alt": "Innenarchitektur — Fotostudio, 130 m²"
+       }
+      },
+      {
+       "title": "Damenmodeboutique in Kiew, 140 m²",
+       "href": "/de/innenarchitektur-modeboutique-kiew-140-m2",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur-Projekt einer Damenmode-Boutique"
+       }
+      },
+      {
+       "title": "Dampfbad und Sauna, 120 m²",
+       "href": "/de/innenarchitektur-sauna-banja-120-m2",
+       "image": {
+        "id": "6abe044a6bbe610384497c6d",
+        "alt": "Gewerbliche Innenarchitektur — Sauna, 120 m²"
+       }
+      },
+      {
+       "title": "Büro 140 m²",
+       "href": "/de/innenarchitektur-buero-140-m2",
+       "image": {
+        "id": "6abe04703ba7c7b833963eaa",
+        "alt": "Innenarchitektur eines Büros"
+       }
+      },
+      {
+       "title": "Büro 53 m², Posen",
+       "href": "/de/innenarchitektur-buero-posen-53-m2",
+       "image": {
+        "id": "6abe04546bbe610384497c98",
+        "alt": "Innenarchitektur — Büro, Posen, 53 m²"
+       }
+      },
+      {
+       "title": "Chefbüro 7 m²",
+       "href": "/de/innenarchitektur-chefbuero-7-m2",
+       "image": {
+        "id": "6abe046261617a4443adfc3e",
+        "alt": "Innenarchitektur-Projekt eines Chefbüros"
+       }
+      },
+      {
+       "title": "Geschäft 50 m²",
+       "href": "/de/innenarchitektur-geschaeft-50-m2",
+       "image": {
+        "id": "6abe047d4888499d2075a16a",
+        "alt": "Innenarchitektur-Projekt eines Geschäfts"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66b61d8cd7827983548826fc",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Beispiele für Architekturplanung mit Ausführung der Bauarbeiten"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Villa, Spanien, Marbella",
+       "href": "/de/fassadenentwurf-villa-marbella",
+       "image": {
+        "id": "66b619f623f9a34a612c9e7d",
+        "alt": "Architekturentwurf — Villa, Marbella"
+       }
+      },
+      {
+       "title": "3D-Modellierung eines Fassadenentwurfs für ein Wohnhaus",
+       "href": "/de/3d-visualisierung-fassade-garten",
+       "image": {
+        "id": "673a059eece0e84849b9e2cf",
+        "alt": "3D-Visualisierung einer Gebäudefassade"
+       }
+      },
+      {
+       "title": "Privathaus",
+       "href": "/de/fassadenplanung-einfamilienhaus",
+       "image": {
+        "id": "66a56e39d68a3eb051612386",
+        "alt": "Privathaus, architektonische Lösung"
+       }
+      },
+      {
+       "title": "Architektonische Lösung für die Fassade eines Barbershops, Ukraine, Kiew",
+       "href": "/de/fassadenentwurf-barbershop-kiew",
+       "image": {
+        "id": "66d313f8e6210d11a55d877c",
+        "alt": "Fassadenentwurf — Barbershop, Kiew"
+       }
+      },
+      {
+       "title": "Architektonische Lösung: Gartenpavillon mit Pergola",
+       "href": "/de/gartenpavillon-pergola-planung",
+       "image": {
+        "id": "66d476c1e93b01287b01e50b",
+        "alt": "Architekturentwurf — Gartenpavillon mit Pergola beim Einfamilienhaus"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66a0fb2ca35d7b20d86ceec0",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Preise der Designpakete",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbba929b62c896a9fd05f0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

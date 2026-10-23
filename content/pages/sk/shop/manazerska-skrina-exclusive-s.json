@@ -1,0 +1,95 @@
+{
+ "path": "/sk/obchod/manazerska-skrina-exclusive-s",
+ "lang": "sk",
+ "type": "shop",
+ "group": null,
+ "title": "Manažérska skriňa Exclusive, S (TDD-006) | DUMSKAYA DESIGN",
+ "description": "Manažérska skriňa Exclusive, S, kód TDD-006, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie.",
+ "h1": "Manažérska skriňa Exclusive, S (TDD-006)",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop/exclusive-executive-office-cabinet-1",
+  "ua": "/ua/shop/exclusive-executive-office-cabinet-1",
+  "en": "/en/shop/exclusive-executive-office-cabinet-1",
+  "sk": "/sk/obchod/manazerska-skrina-exclusive-s",
+  "de": "/de/shop/chefschrank-exclusive-s"
+ },
+ "sections": [
+  {
+   "id": "69affc7e2e4f2c0dbc77875e",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Manažérska skriňa Exclusive, S"
+      },
+      {
+       "id": "59c80e9b-aa2b-4447-8798-46e452e0dc1c",
+       "alt": "Manažérska skriňa Exclusive, S"
+      },
+      {
+       "id": "e9f1513a-fd7f-4c83-8dd7-d31f71eba82a",
+       "alt": "Manažérska skriňa Exclusive, S"
+      },
+      {
+       "id": "2c00a599-f952-4e54-b455-b0363841811d",
+       "alt": "Manažérska skriňa Exclusive, S"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Manažérska skriňa Exclusive, S (TDD-006)"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Manažérska skriňa Exclusive, S"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Manažérska skriňa Exclusive, S"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Manažérska skriňa Exclusive, S"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Manažérska skriňa Exclusive, S"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Manažérska skriňa Exclusive, S"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

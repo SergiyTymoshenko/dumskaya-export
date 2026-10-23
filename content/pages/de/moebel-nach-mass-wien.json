@@ -1,0 +1,339 @@
+{
+ "path": "/de/moebel-nach-mass-wien",
+ "lang": "de",
+ "type": "service",
+ "group": null,
+ "title": "Möbel nach Maß in Wien: Fertigung und Montage | DUMSKAYA",
+ "description": "Küchen, Kästen, begehbare Schrankräume und andere Möbel nach Maß für Wien: Planung, eigene Fertigung in Bratislava, Lieferung im Preis, Montage durch uns.",
+ "h1": "Möbel nach Maß in Wien — Planung, Fertigung und Montage",
+ "og_image": "66c511596549f3d91ef8764e",
+ "alternates": {
+  "ru": "/mebel-na-zakaz-vena",
+  "ua": "/ua/mebli-na-zamovlennia-viden",
+  "en": "/en/custom-furniture-vienna",
+  "sk": "/sk/nabytok-na-mieru-vieden",
+  "de": "/de/moebel-nach-mass-wien"
+ },
+ "phone": "at",
+ "sections": [
+  {
+   "id": "city-mebel-na-zakaz-vena-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Möbel nach Maß in Wien — Planung, Fertigung und Montage"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> plant und fertigt Einbaumöbel nach Maß für Wohnungen, Häuser und Gewerbeflächen in Wien. Unsere eigene Werkstatt steht in Bratislava, 60 km von Wien entfernt. Lieferung und Montage übernimmt unser eigenes Montageteam, die Lieferkosten sind bereits im Preis enthalten."
+      },
+      {
+       "t": "p",
+       "html": "Wir fertigen Möbel als Teil des Innenraums: Küchen, Einbaukästen, begehbare Schrankräume, Vorräume, TV-Wände, Möbel für Schlafzimmer, Arbeitszimmer und Bäder. Jedes Stück planen wir für den jeweiligen Raum — nach Aufmaß, mit Blick auf Anschlüsse, Geräte und den Stil des Interieurs."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "Möbel für Wien",
+     "rows": [
+      [
+       "Fertigung",
+       "eigene, in Bratislava"
+      ],
+      [
+       "Lieferung nach Wien",
+       "im Preis enthalten"
+      ],
+      [
+       "Montage",
+       "unser eigenes Montageteam"
+      ],
+      [
+       "Aufmaß",
+       "vor Ort in Wien"
+      ],
+      [
+       "Preise",
+       "gleich für Bratislava und Wien"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Küchen nach Maß in Wien",
+       "href": "/de/kueche-nach-mass-wien"
+      },
+      {
+       "text": "Küchenkatalog",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Was wir fertigen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Küchen</strong> — Küchenzeilen, Eckküchen, U-Küchen, mit Insel, mit Einbaugeräten.",
+        "<strong>Einbaukästen</strong> bis zur Decke, mit Dreh- oder Schiebetüren und einer Innenausstattung, die zu Ihren Sachen passt.",
+        "<strong>Begehbare Schrankräume</strong> und Stauraumsysteme mit Beleuchtung.",
+        "<strong>Vorräume</strong> — Kästen, Sitzbänke, Schuhkästen, Spiegel und Paneele.",
+        "<strong>Möbel für Wohn- und Schlafzimmer</strong> — TV-Wände, Wandpaneele, Betten mit Kopfteil, Nachtkästchen, Kommoden.",
+        "<strong>Arbeitszimmer</strong> — Schreibtische, Regale, Bücherwände.",
+        "<strong>Badmöbel</strong> — Waschtisch-Unterkästen, Spiegelkästen, Hochkästen.",
+        "<strong>Möbel für Unternehmen</strong> — Empfangstheken, Büros, Besprechungsräume, Ladeneinrichtung."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materialien und Beschläge"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Fronten — beschichtete Spanplatte, MDF foliert oder lackiert, Furnier, HPL, Acryl, Glas. Arbeitsplatten — Laminat, Kompaktplatte, Quarzkomposit, Feinsteinzeug, Mineralwerkstoff und Naturstein. Beschläge — Hettich, Blum, Häfele: Dämpfung (Soft-Close), Auszugssysteme, Klappenbeschläge, Cargo-Auszüge und Innenorganisation."
+      },
+      {
+       "t": "p",
+       "html": "Die Ausstattung wählen wir nach Ihrem Budget: von Standard bis gehoben. Für jedes Stück erstellen wir eine technische Spezifikation, nach der es dann auch gefertigt wird."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "So bestellen Sie Möbel in Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Anfrage.</strong> Schicken Sie uns einen Grundriss des Raums, Fotos und Beispiele von Möbeln, die Ihnen gefallen. Anhand dieser Unterlagen machen wir eine erste Schätzung.",
+        "<strong>Aufmaß und Planung.</strong> Wir kommen zu Ihnen nach Wien und erstellen danach die Konstruktion, eine 3D-Visualisierung und die Materialliste.",
+        "<strong>Angebot.</strong> Wir nennen Ihnen den genauen Preis der Möbel inklusive Lieferung und Montage — als eine Summe.",
+        "<strong>Fertigung.</strong> Die Möbel werden in Bratislava gefertigt. Die Dauer hängt von Umfang und Materialien ab, wir nennen sie mit dem Angebot.",
+        "<strong>Lieferung und Montage.</strong> Unser eigenes Team liefert und montiert, baut die Geräte ein und stellt die Fronten ein."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Beispiele für Möbel nach Maß"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66c511596549f3d91ef8764e",
+       "alt": "Montage einer hochwertigen Küche in Wien"
+      },
+      {
+       "id": "69c86798ce29bfd07714ea68",
+       "alt": "Hochwertige Küche nach Maß, Bratislava"
+      },
+      {
+       "id": "685a680d6458fdbb26b47ae1",
+       "alt": "Küchenfertigung nach individueller Planung"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87656",
+       "alt": "Designerküche schlüsselfertig"
+      },
+      {
+       "id": "684a98176775d3727cd6e122",
+       "alt": "Küche nach Maß aus Echtholz"
+      },
+      {
+       "id": "684a981fcbfab8d2b1b768ec",
+       "alt": "Küche nach Designerentwurf"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Möbel für diese Wohnungen in Wien mit 58 m² und 115 m² haben wir in unserer Werkstatt nach der Planung des Studios gefertigt:"
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Wohnung in Wien, 58 m²",
+       "href": "/de/innenarchitektur-wohnung-wien-58-m2",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "Wohnung in Wien, 58 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Wien, 115 m²",
+       "href": "/de/innenarchitektur-wohnung-wien-115-m2",
+       "image": {
+        "id": "6abd6b354888499d207455da",
+        "alt": "Wohnung in Wien, 115 m²"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fragen zu Möbeln nach Maß in Wien"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Was kostet die Möbellieferung nach Wien?",
+       "a": "<p>Nichts über den Möbelpreis hinaus: Lieferung und Anfahrt des Montageteams sind im Preis enthalten. Sie bekommen einen Gesamtpreis für die fertig montierten Möbel.</p>"
+      },
+      {
+       "q": "Wer übernimmt Aufmaß und Montage?",
+       "a": "<p>Unsere Fachleute aus Bratislava. Das Aufmaß machen wir vor Fertigungsbeginn, die Montage nach der Lieferung, meist in ein bis zwei Tagen, je nach Umfang.</p>"
+      },
+      {
+       "q": "Kann ich nur einen Kasten oder eine Küche bestellen, ohne Einrichtungsplanung?",
+       "a": "<p>Ja. Ein einzelnes Stück planen wir nach Aufmaß und Ihren Wünschen. Wenn Sie den ganzen Innenraum brauchen, beginnen Sie am besten mit einer <a href=\"/de/innenarchitekt-wien\">Einrichtungsplanung</a> — dann sind alle Möbel in einem Stil.</p>"
+      },
+      {
+       "q": "Bauen Sie auch Haushaltsgeräte ein?",
+       "a": "<p>Ja. Küchen planen wir gleich für die gewählten Geräte, und bei der Montage bauen wir Backofen, Kochfeld, Dunstabzug, Geschirrspüler und Kühlschrank ein. Die Geräte können Sie selbst kaufen oder über uns bestellen.</p>"
+      },
+      {
+       "q": "Was unterscheidet Möbel nach Maß von fertigen Möbeln?",
+       "a": "<p>Maße und Innenausstattung: Die Möbel werden genau für Wände, Nischen und Raumhöhe gefertigt, mit genau den Schubladen und Fachböden, die Sie brauchen. Optisch werden sie Teil der Raumarchitektur, kein einzelnes Möbelstück.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Möbelpreis berechnen lassen",
+     "text": "Schicken Sie uns einen Grundriss oder die Raummaße und Fotos — wir erstellen ein erstes Angebot."
+    }
+   ]
+  },
+  {
+   "id": "city-mebel-na-zakaz-vena-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

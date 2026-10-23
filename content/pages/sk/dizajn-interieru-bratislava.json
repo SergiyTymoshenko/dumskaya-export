@@ -1,0 +1,376 @@
+{
+ "path": "/sk/dizajn-interieru-bratislava",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Dizajn interiéru bytov a domov v Bratislave | DUMSKAYA",
+ "description": "Štúdio dizajnu interiéru v Bratislave (Ružinov): návrh, 3D vizualizácia, nábytok z vlastnej výroby a rekonštrukcia na kľúč. Bezplatná konzultácia.",
+ "h1": "Dizajn interiéru bytov a domov v Bratislave",
+ "og_image": "6abd6a8768c5e81567a1bfe0",
+ "alternates": {
+  "ru": "/interior-design-apartments-bratislava",
+  "ua": "/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku",
+  "en": "/en/interior-design",
+  "sk": "/sk/dizajn-interieru-bratislava",
+  "de": "/de/innenarchitekt-bratislava"
+ },
+ "phone": "sk",
+ "sections": [
+  {
+   "id": "city-interior-design-apartmens-bratislava-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Dizajn interiéru bytov a domov v Bratislave"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> je štúdio interiérového dizajnu v Bratislave. Kancelária a vlastná výroba nábytku sú v Ružinove, rekonštrukciu a montáž robia naše partie. Navrhujeme byty, domy a rezidencie a realizujeme ich na kľúč: od prvej konzultácie po odovzdanie kľúčov."
+      },
+      {
+       "t": "p",
+       "html": "Medzi realizovanými projektmi v Bratislave sú byty v Metropolis a Eurovea City, dvojpodlažný byt s plochou 158 m² a rodinný dom s plochou 120 m². Každý projekt navrhujeme individuálne: podľa dispozície, svetla, životného štýlu majiteľov a rozpočtu."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "DUMSKAYA DESIGN v Bratislave",
+     "rows": [
+      [
+       "Adresa štúdia",
+       "<a href=\"https://maps.app.goo.gl/tiVyq6kmvewMGHsW9\" rel=\"noopener\" target=\"_blank\">Súkennícka 1, 821 09 Bratislava-Ružinov</a>"
+      ],
+      [
+       "Výroba nábytku",
+       "vlastná, Bratislava"
+      ],
+      [
+       "Rekonštrukcia a montáž",
+       "vlastné partie"
+      ],
+      [
+       "Konzultácia",
+       "bezplatne — v štúdiu, na mieste alebo online"
+      ],
+      [
+       "Jazyky",
+       "ruština, ukrajinčina, angličtina"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Nábytok na mieru v Bratislave",
+       "href": "/sk/nabytok-na-mieru-bratislava"
+      },
+      {
+       "text": "Kuchyne na mieru v Bratislave",
+       "href": "/sk/kuchyne-na-mieru-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Čo obsahuje návrh interiéru"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Dispozícia a zónovanie</strong> — varianty dispozície s rozmiestnením nábytku a scénami osvetlenia.",
+        "<strong>Koncepcia interiéru</strong> — štýl, farebnosť, povrchové materiály, nábytok, svetlo, textílie a dekorácie.",
+        "<strong>3D vizualizácia</strong> — fotorealistické zobrazenie každej miestnosti.",
+        "<strong>Technická dokumentácia</strong> — zameranie, výkresy búracích prác a nových konštrukcií, elektroinštalácia, zdravotechnika, podlahy, stropy, rozvinuté pohľady stien, špecifikácie.",
+        "<strong>Nábytok na mieru</strong> — výrobné výkresy kuchýň, skríň, šatníkov a vstavaných úložných systémov.",
+        "<strong>Kompletizácia a autorský dozor</strong> — výber a objednávka materiálov, kontrola súladu rekonštrukcie s projektom."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Rozsah projektu závisí od zvoleného balíka: od „Expressu“ s dispozíciou a vizualizáciami po „Premium+“ s kompletnou dokumentáciou a autorským dozorom až do odovzdania."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projekty v Bratislave"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Byt v Bratislave, 127 m²",
+       "href": "/sk/dizajn-trojizboveho-bytu-bratislava-127-m2",
+       "image": {
+        "id": "bra127-01",
+        "alt": "Byt v Bratislave, 127 m²"
+       }
+      },
+      {
+       "title": "Byt Metropolis v Bratislave, 75 m²",
+       "href": "/sk/dizajn-interieru-bytu-metropolis-bratislava-75-m2",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Byt Metropolis v Bratislave, 75 m²"
+       }
+      },
+      {
+       "title": "Byt Eurovea City v Bratislave, 56 m²",
+       "href": "/sk/dizajn-interieru-bytu-eurovea-bratislava-56-m2",
+       "image": {
+        "id": "6abd6a8168c5e81567a1bfb4",
+        "alt": "Byt Eurovea City v Bratislave, 56 m²"
+       }
+      },
+      {
+       "title": "Dvojpodlažný byt v Bratislave, 158 m²",
+       "href": "/sk/dizajn-mezonetoveho-bytu-bratislava-158-m2",
+       "image": {
+        "id": "6abd6a8e6bbe610384483447",
+        "alt": "Dvojpodlažný byt v Bratislave, 158 m²"
+       }
+      },
+      {
+       "title": "Rodinný dom v Bratislave, 120 m²",
+       "href": "/sk/dizajn-interieru-rodinneho-domu-bratislava-120-m2",
+       "image": {
+        "id": "6abd6a6a61617a4443acb201",
+        "alt": "Rodinný dom v Bratislave, 120 m²"
+       }
+      },
+      {
+       "title": "Byt v Bratislave, 58 m²",
+       "href": "/sk/dizajn-interieru-bytu-bratislava-58-m2",
+       "image": {
+        "id": "6abd6af84888499d20745492",
+        "alt": "Byt v Bratislave, 58 m²"
+       }
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ďalej rodinný dom s plochou 140 m² v Dunajskej Strede a projekty vo Viedni, v Prahe a ďalších mestách."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky projekty štúdia",
+       "href": "/sk/portfolio-dizajn-interieru"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ako pracujeme"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Konzultácia.</strong> V štúdiu na Súkenníckej 1, na mieste alebo online. Prejdeme si zadanie, rozpočet a termíny — bezplatne.",
+        "<strong>Zameranie.</strong> Zaznamenáme rozmery, rozvody, okná a výšky — základ všetkých výkresov.",
+        "<strong>Dispozícia a koncepcia.</strong> Navrhneme varianty dispozície, štýl a materiály. Zapracujeme vaše pripomienky.",
+        "<strong>3D vizualizácia.</strong> Budúci interiér uvidíte ešte pred začiatkom rekonštrukcie.",
+        "<strong>Dokumentácia.</strong> Sada výkresov pre stavbárov a výrobu nábytku.",
+        "<strong>Realizácia.</strong> Rekonštrukcia, nábytok z vlastnej výroby, kompletizácia a odovzdanie — jedným tímom."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Cena návrhu interiéru v Bratislave"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ceny návrhu interiéru závisia od rozsahu prác: balík <a href=\"/sk/dizajnovy-balik-express-bratislava-vieden\">„Express“</a> — 20 €/m², <a href=\"/sk/dizajnovy-balik-zakladny-bratislava-vieden\">„Základný“</a> — 35–45 €/m², <a href=\"/sk/dizajnovy-balik-nabytok-bratislava-vieden\">„Nábytok“</a> — 35–50 €/m², <a href=\"/sk/dizajnovy-balik-premium-bratislava-vieden\">„Premium“</a> — 50 €/m², <a href=\"/sk/dizajnovy-balik-premium-plus-bratislava-vieden\">„Premium+“</a> — 70 €/m². Prvá konzultácia je bezplatná."
+      },
+      {
+       "t": "p",
+       "html": "Cenu rekonštrukcie a nábytku vypočítame podľa projektu. Na rekonštrukciu pripravíme <a href=\"/sk/rozpocet-rekonstrukcie-bratislava-vieden\">podrobný rozpočet</a> — 5 €/m². Ak si rekonštrukciu objednáte u nás, jeho cenu odpočítame zo sumy zmluvy."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky balíky a ceny",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      },
+      {
+       "text": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Otázky o dizajne interiéru v Bratislave"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Koľko stojí návrh interiéru bytu v Bratislave?",
+       "a": "<p>Od 20 €/m² za balík „Express“ po 70 €/m² za „Premium+“. Pri byte s plochou 60 m² vyjde kompletný projekt v balíku „Základný“ na 2 100–2 700 €. Minimálna cena projektu je od 1 500 €. Podrobnosti nájdete na <a href=\"/sk/cena-dizajnu-interieru-bratislava-vieden\">stránke s cenami</a>.</p>"
+      },
+      {
+       "q": "Ako dlho trvá projekt?",
+       "a": "<p>„Express“ — od 14 dní po schválení dispozície. Kompletný projekt s technickou dokumentáciou trvá zvyčajne 4–8 týždňov podľa plochy a počtu úprav.</p>"
+      },
+      {
+       "q": "Robíte aj rekonštrukciu podľa vlastného projektu?",
+       "a": "<p>Áno. Rekonštrukciu robia naše partie, nábytok vyrábame vo vlastnej výrobe v Bratislave, kompletizáciu a autorský dozor preberáme na seba. Objednať si môžete aj samotný projekt.</p>"
+      },
+      {
+       "q": "Pracujete aj s bytmi od developera?",
+       "a": "<p>Áno, väčšina našich zákaziek v Bratislave sú novostavby so základným štandardom alebo bez neho. Robíme aj <a href=\"/sk/preberanie-bytu-od-developera-bratislava\">preberanie bytu od developera</a> pred podpisom preberacieho protokolu.</p>"
+      },
+      {
+       "q": "Kde je štúdio a môžem prísť osobne?",
+       "a": "<p>Súkennícka 1, Bratislava-Ružinov — <a href=\"https://maps.app.goo.gl/tiVyq6kmvewMGHsW9\" rel=\"noopener\" target=\"_blank\">štúdio na Google Maps</a>. Príďte po predchádzajúcom dohovore — ukážeme vám vzorky materiálov a kovania a prejdeme si projekt.</p>"
+      },
+      {
+       "q": "Pracujete aj mimo Bratislavy?",
+       "a": "<p>Áno — na celom Slovensku, vo Viedni a v Dolnom Rakúsku a tiež na diaľku: projekty sme realizovali v Prahe, Mníchove, Berlíne, Varšave, Krakove a ďalších mestách.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Žiadosť o bezplatnú konzultáciu",
+     "text": "Napíšte nám, o aký objekt ide a čo potrebujete — odpovieme do jedného pracovného dňa."
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

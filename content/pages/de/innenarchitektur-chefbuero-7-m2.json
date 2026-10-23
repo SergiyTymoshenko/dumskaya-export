@@ -1,0 +1,185 @@
+{
+ "path": "/de/innenarchitektur-chefbuero-7-m2",
+ "lang": "de",
+ "type": "project",
+ "group": "commercial",
+ "title": "Innenarchitektur: Chefbüro, 7 m² | DUMSKAYA DESIGN",
+ "description": "Chefbüro mit 7 m² im Dachgeschoß: Einrichtungsplanung, 3D-Visualisierung und Möbel nach Maß für einen schmalen Raum mit Dachschräge.",
+ "h1": "Planung und Fertigung eines Chefbüros nach Maß, 7 m²",
+ "og_image": "66c3d91eef7f2fa45041f5e0",
+ "alternates": {
+  "ru": "/boss-office-interior-design",
+  "ua": "/ua/kabinet-kerivnyka-mebli-na-zamovlennia",
+  "en": "/en/boss-office-interior-design",
+  "sk": "/sk/dizajn-kancelarie-riaditela-7-m2",
+  "de": "/de/innenarchitektur-chefbuero-7-m2"
+ },
+ "sections": [
+  {
+   "id": "66c3d98dd6093d692b495fa4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Planung und Fertigung eines Chefbüros nach Maß, 7 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ein 7 m² großes Chefbüro im Dachgeschoß: Wir haben die Einrichtungsplanung und die 3D-Visualisierung erstellt und die Möbel nach Maß entworfen. Der Raum ist schmal und lang, mit Dachschräge und einem Dachflächenfenster. Auf dieser Fläche musste ein vollwertiger Arbeitsplatz untergebracht werden, deshalb haben wir Raum und Möbel als Einheit geplant, genau nach den Maßen dieses Zimmers. Die Galerie zeigt 3D-Visualisierungen des Büros."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Raumaufteilung unter der Schräge"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "An beiden Längswänden verlaufen Einbaumöbel. Am hohen Teil der Wand reichen Kästen mit glatten, grifflosen Fronten bis zur Decke. Wo die Decke abfällt, stehen offene Regale, deren Oberseite der Dachschräge folgt. Der Schreibtisch steht näher an der Stirnwand, unter dem Dachfenster, tagsüber fällt Licht von oben auf die Platte. Ganz am Ende steht ein niedriges Sideboard mit geriffelten Fronten, darauf der Drucker."
+      },
+      {
+       "t": "p",
+       "html": "Die Tischplatte in Eichenfurnier schließt mit einem Ende an die Einbaumöbel an, mit dem anderen ruht sie auf einem transparenten Bein. So versperrt der Tisch im schmalen Büro den Durchgang nicht und wirkt leichter. Am Tisch stehen zwei gleiche Sessel auf schlankem Metallfuß: für den Chef und für Gesprächspartner."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materialien und Licht"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Am Boden liegt großformatiges Feinsteinzeug in weißer Marmoroptik mit braunen Adern. Es gibt das Hauptmuster vor, deshalb sind die Wände ruhig gehalten: Fronten in hellem Eichenfurnier und Wandpaneele mit feinen senkrechten Lamellen in Graubeige. Decke und Schräge sind weiß. Die Rückwände der Regalnischen haben eine strukturierte Oberfläche, seitlich in den Nischen sind LED-Streifen versteckt: Abends geben die Regale mit Büchern und Keramik ein weiches Zusatzlicht. Auf dem Tisch steht eine Lampe mit matter Kugel."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Möbel nach den Maßen des Dachgeschoßes"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Kästen, Regal unter der Schräge, Schreibtisch und Sideboard wurden nach dem Aufmaß des Raums geplant und angefertigt. Im Dachgeschoß lässt sich nur so der niedrige Teil der Wand nutzen: Fertige Module aus dem Katalog würden unter der Decke leere Dreiecke lassen."
+      },
+      {
+       "t": "p",
+       "html": "Wir planen <a href=\"/de/innenarchitektur-buero-geschaeft-wien\">Innenarchitektur für Gewerbe</a> und entwerfen individuelle Möbel für Büros, Chefbüros, Geschäfte, Boutiquen und Beautysalons in Bratislava und Wien."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6abe046261617a4443adfc3e",
+       "alt": "Möbel nach Maß, Chefbüro nach Maß, Büromöbel, Fertigung von Büromöbeln"
+      },
+      {
+       "id": "66c3d91826c36d8c4f4d0f04",
+       "alt": "Chefbüro nach Maß, Büromöbel, Fertigung von Büromöbeln"
+      },
+      {
+       "id": "66c3d92526c36d8c4f4d0f2d",
+       "alt": "Möbel nach Maß, Chefbüro nach Maß, Büromöbel"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Projekte",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      },
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Preise der Designpakete",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc0179a9268f298b519cb1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

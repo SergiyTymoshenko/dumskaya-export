@@ -1,0 +1,201 @@
+{
+ "path": "/de/fassadenplanung-einfamilienhaus",
+ "lang": "de",
+ "type": "project",
+ "group": "architecture",
+ "title": "Fassadenplanung für ein Einfamilienhaus | DUMSKAYA DESIGN",
+ "description": "Neue Fassaden für ein bestehendes Einfamilienhaus: Materialien, Farben, Details und fotorealistische 3D-Visualisierung. Studio in Bratislava und Wien.",
+ "h1": "Architektonische Fassadenplanung für ein Privathaus",
+ "og_image": "66a5977995243fd68a52be91",
+ "alternates": {
+  "ru": "/architecture-private-house",
+  "ua": "/ua/architectural-design-private-house-facades-bratislava",
+  "en": "/en/private-house-architectural-design-facade",
+  "sk": "/sk/architektonicky-navrh-fasad-rodinneho-domu",
+  "de": "/de/fassadenplanung-einfamilienhaus"
+ },
+ "sections": [
+  {
+   "id": "66a596329558e1b25b738624",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Architektonische Fassadenplanung für ein Privathaus"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Architektonisches Konzept für die Fassaden eines Privathauses: Wir haben ein neues Erscheinungsbild für das Gebäude entwickelt und sind dabei von seiner bestehenden Architektur und seinen Proportionen ausgegangen. Ausgearbeitet wurden die Kombination der Oberflächenmaterialien, das Farbkonzept, architektonische Elemente und Details im Außenbereich, die Proportionen der Fassaden und die Verbindung zwischen den Gebäudeteilen. Die Galerie zeigt fotorealistische 3D-Visualisierungen, auf denen Materialien und Farben schon vor Baubeginn zu sehen sind."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Baukörper und Proportionen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Das Haus besteht aus zwei Teilen. Der Hauptbaukörper ist zweigeschoßig, mit Satteldach in grauer Deckung und vorspringendem Giebel. Daran schließt ein eingeschoßiger Anbau mit Flachdach an: Seine Front nehmen fast vollständig raumhohe Glasschiebetüren ein, darüber kragt ein weißes Vordach mit eingebauten Spots aus. Unter dem Vordach entsteht so eine überdachte Galerie entlang der gesamten Fassade."
+      },
+      {
+       "t": "p",
+       "html": "Damit der hohe Giebel nicht schwer wirkt, sind seine Fenster zu senkrechten Gruppen über zwei Geschoße zusammengefasst. Die Pfeiler und Brüstungsfelder dazwischen sind mit Holzlatten verkleidet, so dass jede Gruppe als ein Element wirkt. Im Obergeschoß gibt es einen Balkon mit Glasgeländer und einen kleinen Erker."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fassadenmaterialien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Palette ist zurückhaltend und besteht aus drei Materialien. Basis sind großformatige Platten aus hellem Stein mit sanfter grauer Textur, damit sind die Giebel und der Sockel verkleidet. Die übrigen Wandflächen sind glatt und weiß verputzt. Einen warmen Akzent setzen senkrechte Holzlatten: um die Fenster, an der Wand der verglasten Galerie und beim Eingang. Fensterrahmen und Fallrohre sind dunkelgrau, passend zum Dach."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Eingang und Grundstück"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Zur Terrasse vor dem Anbau führt eine breite Steinstiege, in jede Stufe ist eine LED-Beleuchtung eingebaut. Die Terrasse hat ein Glasgeländer, bei den Türen stehen hohe Pflanzgefäße mit Buchs. Seitlich am Haus steht eine Pergola in einem weißen U-förmigen Rahmen mit horizontalen dunklen Lamellen, an der Kletterpflanzen ranken. Über den Rasen führen Wege aus rechteckigen Steinplatten zum Haus."
+      },
+      {
+       "t": "p",
+       "html": "Solche Entwürfe gehören zu unserer <a href=\"/de/hausplanung-architektur-bratislava\">Arbeit in Architektur und Fassadengestaltung</a>: Planung und 3D-Visualisierung von Fassaden für Privathäuser in der Slowakei und in anderen Ländern Europas."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66a56e39d68a3eb051612386",
+       "alt": "3D-Visualisierung von Fassaden und Außenbereich eines Einfamilienhauses"
+      },
+      {
+       "id": "66a5976bbf0595cc9c125592",
+       "alt": "3D-Visualisierung einer Fassade für Innenarchitekten"
+      },
+      {
+       "id": "66a5979ca46c4d9eda288e4d",
+       "alt": "3D-Modellierung von Außenansichten für Architekturprojekte"
+      },
+      {
+       "id": "66a5972ba46c4d9eda288dcc",
+       "alt": "Erstellung von 3D-Visualisierungen für Fassaden von Privathäusern"
+      },
+      {
+       "id": "66a5977995243fd68a52be91",
+       "alt": "3D-Außenvisualisierung von Häusern"
+      },
+      {
+       "id": "66a5975ca46c4d9eda288e10",
+       "alt": "Realistische 3D-Außenvisualisierung für Hausprojekte"
+      },
+      {
+       "id": "66a5979195243fd68a52beb8",
+       "alt": "Erstellung hochwertiger 3D-Visualisierungen von Gebäudefassaden"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Projekte",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      },
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Preise der Designpakete",
+       "href": "/de/3d-visualisierung-fassade-preise"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc0083376a1a22235af0ae",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

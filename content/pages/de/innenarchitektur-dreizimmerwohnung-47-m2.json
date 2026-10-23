@@ -1,0 +1,249 @@
+{
+ "path": "/de/innenarchitektur-dreizimmerwohnung-47-m2",
+ "lang": "de",
+ "type": "project",
+ "group": "residential",
+ "title": "Innenarchitektur: Dreizimmerwohnung, 47 m² | DUMSKAYA",
+ "description": "Dreizimmerwohnung mit 47 m²: Einrichtungsplanung für Wohnküche, Bad, Kinderzimmer mit Arbeitsplatz und Elternschlafzimmer auf kleiner Fläche.",
+ "h1": "Beispiel einer Einrichtungsplanung: 3-Zimmer-Wohnung auf kleiner Fläche von 47 m²",
+ "og_image": "66a181999313b53dae626968",
+ "alternates": {
+  "ru": "/interior-design-apartment-ukraine-47m",
+  "ua": "/ua/dyzain-proekt-interieru-malohabarytnoi-kvartyry-47-m2",
+  "en": "/en/interior-design-compact-3-room-apartment-47sqm",
+  "sk": "/sk/dizajn-trojizboveho-bytu-47-m2",
+  "de": "/de/innenarchitektur-dreizimmerwohnung-47-m2"
+ },
+ "sections": [
+  {
+   "id": "66a16f697b69a9a2be8ee96e",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Beispiel einer Einrichtungsplanung: 3-Zimmer-Wohnung auf kleiner Fläche von 47 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Einrichtungsplanung für eine 3-Zimmer-Wohnung mit 47 m². Die Aufgabe war nicht einfach: Auf dieser Fläche sollten ein Wohnzimmer mit Küche, ein Bad, ein Kinderzimmer mit Arbeitsplatz und das Elternschlafzimmer Platz finden. Wir haben den Grundriss und Visualisierungen aller Räume erstellt. Das Interieur ist in Graubeige mit Holztönen gehalten, in den Zimmern liegt Parkett im französischen Fischgrätmuster."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Grundriss"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Wohnzimmer und Küche wurden zu einem hellen Raum verbunden. Das Bad liegt so, dass es von allen Zimmern aus erreichbar ist. Im Kinderzimmer haben wir den Balkon zum Wohnbereich dazugenommen und Schlafen, Spielen und Lernen mit Einbaumöbeln und Stauraum gelöst. Das kleine Elternschlafzimmer blieb separat und abgeschlossen. Für Privatsphäre sorgen die Zonierung und eine ruhige Farbe."
+      },
+      {
+       "t": "p",
+       "html": "Die Türen vom Wohnzimmer in die Zimmer sind verdeckt: Die Wand ist mit Paneelen in dunkler Eichenoptik verkleidet, die Türblätter liegen flächenbündig darin und sind kaum zu sehen. An den Ecken dieser Wand verlaufen senkrechte Lichtlinien, in der Decke sitzen lineare Einbauleuchten."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Küche und Essbereich"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Oberschränke der Küche und der Hochschrank haben geriffelte Fronten in Graubraun, die Unterschränke sind hell und matt, die Spüle steht am Fenster. Im Essbereich stehen ein runder Glastisch auf schwarzem Gestell und gepolsterte Stühle mit hellem Bezug, darüber hängt ein Luster mit weißen Kugelschirmen und Messingdetails. Daneben steht eine Vitrine mit Riffelglas in schwarzem Rahmen."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kinderzimmer, Schlafzimmer, Bad"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Im Kinderzimmer steht ein Bett mit olivgrünem Polsterkopfteil, daneben ein Kasten bis zur Decke und offene Regale. Auf dem dazugenommenen Balkon verläuft am Fenster ein Schreibtisch mit Laden, unter dem Fenster stehen niedrige Kästchen für Spielzeug und Bücher. Im Schlafzimmer nimmt ein Kasten mit glatten, hellen Fronten ohne Griffe eine ganze Wand ein, das Kopfteil des Bettes ist gepolstert und senkrecht abgesteppt."
+      },
+      {
+       "t": "p",
+       "html": "Das Bad ist mit großen Fliesen in heller Steinoptik und geriffelten Fliesen in Terrakotta verfliest. Es gibt einen Waschtisch mit Unterschrank, einen ovalen beleuchteten Spiegel und eine Dusche hinter Glas mit schwarzem Profil, Armaturen und Handtuchheizkörper sind ebenfalls schwarz."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66a17fa8138461b805e71e2e",
+       "alt": "Wohnküche — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a17fed138461b805e71e89",
+       "alt": "Wohnküche — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a17fc4dda6fd4a210a04e4",
+       "alt": "Wohnküche — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a17fdd7f338cb9ad5d8750",
+       "alt": "Wohnküche — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a181999313b53dae626968",
+       "alt": "Wohnküche — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a180179313b53dae626764",
+       "alt": "Schlafzimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a1801ac2c64781790f73c2",
+       "alt": "Schlafzimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a1801adda6fd4a210a0554",
+       "alt": "Schlafzimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a180199313b53dae62676a",
+       "alt": "Schlafzimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a18057dda6fd4a210a0595",
+       "alt": "Badezimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a2d83404b4e41540715a08",
+       "alt": "Badezimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a18059c2c64781790f7439",
+       "alt": "Badezimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a18055c2c64781790f741c",
+       "alt": "Badezimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a18056c2c64781790f742c",
+       "alt": "Badezimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a18038c2c64781790f73f5",
+       "alt": "Kinderzimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a18037138461b805e71eea",
+       "alt": "Kinderzimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a180379313b53dae6267ac",
+       "alt": "Kinderzimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a180397f338cb9ad5d87cb",
+       "alt": "Kinderzimmer — 3-Zimmer-Wohnung, 47 m²"
+      },
+      {
+       "id": "66a17ff8c2c64781790f738b",
+       "alt": "Vorraum — 3-Zimmer-Wohnung, 47 m²"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Projekte",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      },
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Preise der Designpakete",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbfcff96e515190621f84b",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

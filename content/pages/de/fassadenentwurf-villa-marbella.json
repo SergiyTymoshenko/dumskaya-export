@@ -1,0 +1,201 @@
+{
+ "path": "/de/fassadenentwurf-villa-marbella",
+ "lang": "de",
+ "type": "project",
+ "group": "architecture",
+ "title": "Fassadenentwurf für eine Villa in Marbella | DUMSKAYA DESIGN",
+ "description": "Umbau der Fassade einer Villa in Marbella, Spanien: Architekturentwurf, fotorealistische 3D-Visualisierung und 3D-Tour rund ums Haus.",
+ "h1": "Architektonisches Fassadenkonzept für den Umbau einer Villa in Marbella, Spanien",
+ "og_image": null,
+ "alternates": {
+  "ru": "/architecture-villa-spain-marbella",
+  "ua": "/ua/arkhitekturni-rishennia-dlia-fasadu-pryvatnoho-budynku-ispaniia-marbelia",
+  "en": "/en/luxury-interior-design-architectural-facade-villa-marbella-spain",
+  "sk": "/sk/navrh-fasady-vily-marbella",
+  "de": "/de/fassadenentwurf-villa-marbella"
+ },
+ "sections": [
+  {
+   "id": "66b61af98ed8e744210e9038",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Architektonisches Fassadenkonzept für den Umbau einer Villa in Marbella, Spanien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Eine Villa in Marbella, Spanien, deren Umbau geplant war. Das Studio hat das architektonische Konzept für die Fassade entwickelt und fotorealistische 3D-Visualisierungen des Außenbereichs sowie eine 3D-Tour rund um das Haus erstellt. Ziel war es, das bestehende Äußere zu erneuern und dabei die Proportionen des Gebäudes zu erhalten: Der Baukörper blieb unverändert, das neue Erscheinungsbild entsteht durch Oberflächen, architektonische Elemente und Farbe."
+      },
+      {
+       "t": "p",
+       "html": "Anhand der Visualisierungen sieht der Auftraggeber Fassade, Oberflächen und Farbkombinationen schon vor dem Umbau, solange sich noch leicht etwas ändern lässt."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fassadenmaterialien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Das Haus hat drei Ebenen, Flachdächer und weite Auskragungen mit dunkler Metalleinfassung. Auf jeder Ebene sind die Auskragungen leicht gegeneinander versetzt, deshalb liest sich die Fassade als Folge horizontaler Bänder. Wände und Pfeiler tragen hellen Strukturputz mit Steinkörnung, der Mittelteil der Hauptfassade ist mit dunklem Holz verkleidet. Das senkrechte Feld in der Fassadenmitte deckt ein Holzgitter über die volle Höhe von zwei Geschoßen ab."
+      },
+      {
+       "t": "p",
+       "html": "Die Panoramafenster haben dunkle Rahmen, Balkone und Terrassen der oberen Geschoße sind mit Glas eingefasst. In den Untersichten der Auskragungen sitzen Einbauspots, an den Pfeilern schmale Wandleuchten. Abends ist die Fassade gleichmäßig beleuchtet, ohne Scheinwerfer."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Eingang, Terrasse und Grundstück"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Der Eingang liegt verborgen unter einem Vordach. Neben der hölzernen Haustür steht eine Wand aus dunklem Spaltstein, zur Tür führen Stufen aus dunklen Steinplatten, die über dem Boden zu schweben scheinen. Der Weg ist mit großen hellen Platten mit breiten Fugen belegt, daneben stehen niedrige Gartenleuchten, die Zufahrt ist mit Rasengittersteinen befestigt."
+      },
+      {
+       "t": "p",
+       "html": "Zur Gartenseite öffnet sich das Erdgeschoß auf die Terrasse: Hier gibt es einen Loungebereich mit Gartenmöbeln, einen langen Esstisch und einen in die Wand eingebauten Kamin. Steinstufen führen hinunter zum Rasen, neben der Terrasse liegt ein Pool, dessen Rand mit großen Steinen eingefasst ist. Bepflanzt ist das Grundstück mit einer Kiefer, Palmen und geschnittenen Sträuchern."
+      },
+      {
+       "t": "p",
+       "html": "Weiter unten auf der Seite sehen Sie eine 3D-Tour durch den Außenbereich der Villa. Weitere Arbeiten des Studios zu Fassaden und Privathäusern finden Sie im Bereich <a href=\"/de/hausplanung-architektur-bratislava\">Architektur und Planung</a>."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66b619f623f9a34a612c9e7d",
+       "alt": "3D-Visualisierung einer Hausfassade in modernem Design"
+      },
+      {
+       "id": "66b619ff8b4279408ae3e121",
+       "alt": "Außenansicht des Hauses in 3D"
+      },
+      {
+       "id": "66b61a088acd8b217eb71a36",
+       "alt": "3D-Visualisierungen von Fassaden für Privathäuser"
+      },
+      {
+       "id": "66b61a1743d3e7af1c1a53d7",
+       "alt": "3D-Außenvisualisierung für Hausprojekte"
+      },
+      {
+       "id": "66b61a228b4279408ae3e19f",
+       "alt": "3D-Außenvisualisierung"
+      },
+      {
+       "id": "66b61a3143d3e7af1c1a5467",
+       "alt": "3D-Visualisierung der Umgebung"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "3D-Tour durch den Außenbereich der Villa"
+    },
+    {
+     "type": "video",
+     "youtube": "g7FK1KbloYw",
+     "poster": "66b619ff8b4279408ae3e121"
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Projekte",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      },
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Preise der Designpakete",
+       "href": "/de/3d-visualisierung-fassade-preise"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc011aa9268f298b519a06",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

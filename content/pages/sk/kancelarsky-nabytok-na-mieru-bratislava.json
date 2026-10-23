@@ -1,0 +1,690 @@
+{
+ "path": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Kancelársky nábytok na mieru v Bratislave a vo Viedni",
+ "description": "Recepčné pulty, stoly, skrine a predajný nábytok na mieru pre kancelárie, obchody a salóny. Vlastná výroba v Bratislave, montáž v Bratislave a vo Viedni.",
+ "h1": "Nábytok na mieru pre kancelárie, obchody a salóny v Bratislave a vo Viedni",
+ "og_image": "6abe07964888499d2075ac31",
+ "alternates": {
+  "ru": "/izgotovlenie-mebeli-pod-zakaz-dlya-kommercheskih-obektov-ofis-resepshen-peregovornaya-kabinet-kuhnya-bratislava",
+  "ua": "/ua/vyhotovlennia-mebliv-na-zamovlennia-dlia-komertsiinykh-obiektiv",
+  "en": "/en/commercial-furniture-design",
+  "sk": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+  "de": "/de/moebel-nach-mass-buero-gewerbe-wien"
+ },
+ "sections": [
+  {
+   "id": "67e1e1b55e630a5979a347c5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Nábytok na mieru pre kancelárie, obchody a salóny v Bratislave a vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Navrhujeme a vyrábame nábytok na mieru pre komerčné priestory v Bratislave a vo Viedni: kancelárie, obchody, butiky, salóny krásy a showroomy. Vyrábame ho vo vlastnej dielni v Bratislave, dovezieme a namontujeme ho vlastným tímom. Ceny sú pre obe mestá rovnaké, doprava je v cene."
+      },
+      {
+       "t": "p",
+       "html": "Môžete si objednať jeden kus, napríklad recepčný pult, alebo všetok nábytok do priestoru spolu s návrhom interiéru. Rozmery, konštrukciu a vnútorné vybavenie určujeme podľa zamerania a podľa toho, ako sa v priestore pracuje."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Kancelársky nábytok"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Recepčné pulty, nábytok do kancelárií riaditeľov, pracovné miesta zamestnancov, rokovacie stoly, skrine na dokumenty, kuchynky do kancelárie, nábytok do oddychových zón, stenové panely. V kancelárii so 140 m² sme čelo recepčného pultu obložili polopriehľadným kameňom podsvieteným zvnútra. Skrine na dokumenty s dvierkami z tónovaného skla sme dali do všetkých miestností, a tak nábytok v celej kancelárii pôsobí ako jedna zostava."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Obchody, butiky, showroomy"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Vitríny, regály, pokladničné zóny, skúšobné kabínky, úložné systémy. Nábytok do predajne navrhujeme pre konkrétny tovar: čo je vystavené na očiach a čo leží ako zásoba v zatvorených skrinkách. V obchode s 50 m² je predný panel pokladničného pultu z perforovaného čierneho kovu s názvom obchodu a za pultom stojí po celej stene drevený regál na krabice s tovarom."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Salóny krásy"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Recepčné pulty, pracoviská kaderníkov a kozmetičiek, skrine na spotrebný materiál, nábytok do čakárne. Na pracovné zóny volíme povrchy, ktoré znesú časté umývanie namokro."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Výkresy a materiály"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Pre každý kus pripravujeme realizačné výkresy a špecifikáciu: rozmery, konštrukcia, materiály, kovanie, vnútorné vybavenie. Podľa nich pracuje výroba a hotový nábytok zodpovedá projektu."
+      },
+      {
+       "t": "p",
+       "html": "Dvierka a čelá — laminovaná drevotrieska (LTD), MDF fóliovaná alebo lakovaná, dyha, HPL, akryl, sklo; kovanie — Hettich, Blum, Häfele. Na pulty a pracovné stoly, ktoré sa používajú celý deň, odporúčame odolné HPL alebo kompaktnú dosku."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Firemná identita v nábytku"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Do nábytku sa dajú preniesť farby, materiály a grafika firmy. V kancelárii s 500 m² sú recepčný pult aj pracovné stoly v terakotovej farbe stien a stenu za pultom sme obložili podsvietenými lamelami s priestorovým logom."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Ako prebieha práca"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Dopyt.</strong> Pošlite pôdorys priestoru, fotografie a brandbook, ak ho máte. Odpovieme do jedného pracovného dňa, konzultácia je bezplatná.",
+        "<strong>Zameranie.</strong> Prídeme na miesto v Bratislave alebo vo Viedni.",
+        "<strong>Projekt.</strong> Konštrukcia, 3D vizualizácia, materiály a kovanie.",
+        "<strong>Kalkulácia.</strong> Cena výrobkov s dopravou a montážou ako jedna suma. Termín výroby povieme v tom istom kroku.",
+        "<strong>Výroba a montáž.</strong> Nábytok vyrobíme v Bratislave, dovezieme a nainštalujeme ho vlastným tímom."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Cena"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Cenu počítame podľa výkresov: závisí od počtu a rozmerov kusov, materiálov a kovania. Ak treba navrhnúť nábytok do celého priestoru, je praktické urobiť to v <a href=\"/sk/dizajnovy-balik-nabytok-bratislava-vieden\">balíku „Nábytok“</a>: 35–50 €/m², minimálne 2 000 €. Pre kanceláriu s 80 m² je to 2 800–4 000 € za 3D vizualizáciu a kompletnú výkresovú dokumentáciu nábytku; výroba a montáž sa počítajú zvlášť, podľa týchto výkresov."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e1e1b55e630a5979a347d5",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Nábytok do bytov a domov",
+       "href": "/sk/nabytok-na-mieru-bratislava"
+      },
+      {
+       "text": "Katalóg kuchýň",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e1e1b55e630a5979a347cd",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Recepcie"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "672c744eefe1c2317f8d5209",
+       "alt": "Recepcia v butiku s nábytkom na mieru"
+      },
+      {
+       "id": "67ae6790e431dfd3457dab54",
+       "alt": "Moderný recepčný pult na mieru s podsvietením"
+      },
+      {
+       "id": "67ae673881ccab0cbae69832",
+       "alt": "Nábytok na mieru pre recepciu"
+      },
+      {
+       "id": "67ae672a81ccab0cbae69810",
+       "alt": "Minimalistická recepcia z prírodnej dyhy"
+      },
+      {
+       "id": "66f5d16697317fa68a804f5a",
+       "alt": "Nábytok recepcie v kancelárii IT firmy"
+      },
+      {
+       "id": "66f5d1661959d0d980a2ba7c",
+       "alt": "Oblúkový recepčný pult s lesklým povrchom"
+      },
+      {
+       "id": "66f5d16597317fa68a804f4f",
+       "alt": "Recepcia pre návštevníkov s dizajnovým nábytkom"
+      },
+      {
+       "id": "66f5d1651959d0d980a2ba71",
+       "alt": "Recepcia v loftovom štýle s kovovými prvkami"
+      },
+      {
+       "id": "6705a5f2464ad9c9b3f5f744",
+       "alt": "Biely jednoduchý recepčný pult v kancelárii"
+      },
+      {
+       "id": "66d3860588021f95e41105f0",
+       "alt": "Recepcia na mieru pre salón krásy"
+      },
+      {
+       "id": "66d385ff5339d71adfe28fd8",
+       "alt": "Recepčný pult s pracovným miestom pre recepčnú"
+      },
+      {
+       "id": "66c3d4c726c36d8c4f4d0b0a",
+       "alt": "Recepčný nábytok s kamenným obkladom"
+      },
+      {
+       "id": "672c74a39418e59f90720c95",
+       "alt": "Dizajnový recepčný pult s logom firmy"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e1e1b55e630a5979a347d1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kancelárie riaditeľov"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6abe07964888499d2075ac31",
+       "alt": "Korpusový nábytok na mieru do kancelárie riaditeľa"
+      },
+      {
+       "id": "66f5d29bd24f7464d55b574d",
+       "alt": "Návrh kancelárie s korpusovým nábytkom na mieru"
+      },
+      {
+       "id": "66f5d29b78b42fbcaa455c2f",
+       "alt": "Korpusový nábytok vyššej triedy do kancelárie riaditeľa"
+      },
+      {
+       "id": "66f5d29b78b42fbcaa455c2e",
+       "alt": "Moderná kancelária s korpusovým nábytkom v minimalistickom štýle"
+      },
+      {
+       "id": "6abe04703ba7c7b833963eaa",
+       "alt": "Pracovisko riaditeľa s dyhovaným korpusovým nábytkom"
+      },
+      {
+       "id": "6abe046261617a4443adfc3e",
+       "alt": "Nábytok na mieru do kancelárie top manažéra"
+      },
+      {
+       "id": "66c3d91826c36d8c4f4d0f04",
+       "alt": "Klasická pracovňa s korpusovým nábytkom z masívu"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e1e1b55e630a5979a347cf",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Pracovné priestory"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "672c74e3405f4b45286fb3ef",
+       "alt": "Salón krásy, 63 m²"
+      },
+      {
+       "id": "66d35a7588021f95e410a09a",
+       "alt": "Súprava korpusového nábytku do kancelárie"
+      },
+      {
+       "id": "66d35a745339d71adfe22e6f",
+       "alt": "Kancelária s pracovným stolom a skriňami na mieru"
+      },
+      {
+       "id": "66d35178e6210d11a55e14fe",
+       "alt": "Kancelársky nábytok na mieru do samostatnej kancelárie"
+      },
+      {
+       "id": "6abe04546bbe610384497c98",
+       "alt": "Elegantný interiér kancelárie s korpusovým nábytkom"
+      },
+      {
+       "id": "66d385f988021f95e41105a0",
+       "alt": "Priestranná kancelária s korpusovým nábytkom v reprezentatívnom štýle"
+      },
+      {
+       "id": "66d385f688021f95e4110585",
+       "alt": "Kancelária riaditeľa s modulmi navrhnutými na mieru"
+      },
+      {
+       "id": "66d385f688021f95e4110586",
+       "alt": "Korpusový nábytok pre rokovaciu zónu v kancelárii"
+      },
+      {
+       "id": "66d385f58300516526890553",
+       "alt": "Kancelária s korpusovým nábytkom vo firemných farbách"
+      },
+      {
+       "id": "66d385f388021f95e411056c",
+       "alt": "Kancelária s nábytkom vyrobeným podľa presných rozmerov"
+      },
+      {
+       "id": "66f5d2b21959d0d980a2bd11",
+       "alt": "Korpusový nábytok vyššej triedy pre vedenie firmy"
+      },
+      {
+       "id": "66f5d4acb6660fca5359ca23",
+       "alt": "Kancelária CEO s korpusovým nábytkom na mieru"
+      },
+      {
+       "id": "66f5d4ab78b42fbcaa456089",
+       "alt": "Funkčný korpusový nábytok na mieru do kancelárie"
+      },
+      {
+       "id": "672c74f69418e59f90720e0f",
+       "alt": "Nábytok na mieru pre salón krásy"
+      },
+      {
+       "id": "672c74ee4873af7ea83b76ae",
+       "alt": "Pracovné miesta na mieru v salóne krásy"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e1e1b55e630a5979a347d3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Spoločné a oddychové zóny"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "67ae673233ccb01054d5a0af",
+       "alt": "Stenové panely do kancelárie"
+      },
+      {
+       "id": "67ae672c33ccb01054d5a093",
+       "alt": "Oddychová zóna v kancelárii na mieru"
+      },
+      {
+       "id": "67ae672b824829649753cb69",
+       "alt": "Chodba so stenovými panelmi na mieru"
+      },
+      {
+       "id": "66d385f8e6210d11a55e8a5c",
+       "alt": "Zariadenie oddychovej zóny na mieru"
+      },
+      {
+       "id": "66d35160e6210d11a55e14a7",
+       "alt": "Kancelársky nábytok na mieru"
+      },
+      {
+       "id": "66f5d567d24f7464d55b5d48",
+       "alt": "Nábytok do jedálne na mieru"
+      },
+      {
+       "id": "66f5d55897317fa68a8056fe",
+       "alt": "Fotorámy na mieru do kancelárie"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e1f140d8beb6d09ee7b821",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Zasadačky"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66f5d38397317fa68a805332",
+       "alt": "Stenové panely na mieru do kancelárie"
+      },
+      {
+       "id": "66f5d382d24f7464d55b5903",
+       "alt": "Rokovací stôl na mieru do zasadačky"
+      },
+      {
+       "id": "66f5d382d24f7464d55b58fd",
+       "alt": "Tabuľa na mieru do kancelárie"
+      },
+      {
+       "id": "66f5d382b6660fca5359c75d",
+       "alt": "Zasadačka s nábytkom na mieru"
+      },
+      {
+       "id": "66f5d38297317fa68a805325",
+       "alt": "Návrh a výroba nábytku do zasadačiek"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e1f3999f278284089a1952",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Vitríny a stenové panely do obchodov"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6705a615464ad9c9b3f5f79f",
+       "alt": "Vybavenie obchodu na mieru"
+      },
+      {
+       "id": "6705a5f2464ad9c9b3f5f744",
+       "alt": "Nábytok do obchodu na mieru"
+      },
+      {
+       "id": "6705a5e661fdd39c47061c81",
+       "alt": "Vitrína do obchodu na mieru"
+      },
+      {
+       "id": "66c3d4c7cf429e2a01f592df",
+       "alt": "Nábytok do butiku na mieru"
+      },
+      {
+       "id": "66c3d4c5d828e27394c8c76b",
+       "alt": "Police do butiku na mieru"
+      },
+      {
+       "id": "66c3d4c3ef7f2fa45041f1c1",
+       "alt": "Butik s oblečením v Kyjeve, 140 m²"
+      },
+      {
+       "id": "66c3d4c2ccec0b517e98b83b",
+       "alt": "Kancelársky nábytok na zákazku"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e2002f8ffc49faa5efc884",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kuchynky do kancelárií"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "672c765ab72094b9d64a467e",
+       "alt": "Malé kuchynky na mieru do kancelárie"
+      },
+      {
+       "id": "672c765aefe1c2317f8d5a16",
+       "alt": "Kuchynka do kancelárie na mieru"
+      },
+      {
+       "id": "672c765a4873af7ea83b7ce8",
+       "alt": "Kancelárska kuchynka na mieru"
+      },
+      {
+       "id": "67c8dd2c2a37b96cbc80720a",
+       "alt": "Kuchynka v kancelárii"
+      },
+      {
+       "id": "67caccfaa20afb270b800a49",
+       "alt": "Kancelársky nábytok na mieru"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67e1e8148f998bf2cdcd2aa6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projekty na kľúč vrátane návrhu a výroby nábytku"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Kancelária 500 m²",
+       "href": "/sk/dizajn-kancelarie-500-m2",
+       "image": {
+        "id": "66f5d16697317fa68a804f5a",
+        "alt": "Dizajn interiéru a výroba nábytku na mieru pre kanceláriu"
+       }
+      },
+      {
+       "title": "Kancelária 140 m²",
+       "href": "/sk/dizajn-kancelarie-140-m2",
+       "image": {
+        "id": "6abe04703ba7c7b833963eaa",
+        "alt": "Dizajn interiéru a výroba nábytku na mieru pre kanceláriu"
+       }
+      },
+      {
+       "title": "Kancelária 53 m², Poznaň",
+       "href": "/sk/dizajn-kancelarie-poznan-53-m2",
+       "image": {
+        "id": "6abe04546bbe610384497c98",
+        "alt": "Dizajn interiéru kancelárie"
+       }
+      },
+      {
+       "title": "Fotoštúdio 130 m²",
+       "href": "/sk/dizajn-fotostudia-130-m2",
+       "image": {
+        "id": "6abe048a61617a4443adfce2",
+        "alt": "Dizajn interiéru a výroba nábytku na mieru pre kanceláriu"
+       }
+      },
+      {
+       "title": "Butik dámskej módy 140 m²",
+       "href": "/sk/dizajn-butiku-s-oblecenim-kyjev-140-m2",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Návrh interiéru butiku dámskej módy"
+       }
+      },
+      {
+       "title": "Obchod 50 m²",
+       "href": "/sk/dizajn-predajne-50-m2",
+       "image": {
+        "id": "6abe047d4888499d2075a16a",
+        "alt": "Návrh interiéru obchodu"
+       }
+      },
+      {
+       "title": "Salón krásy 63 m²",
+       "href": "/sk/dizajn-salonu-krasy-63-m2",
+       "image": {
+        "id": "6abe04846bbe610384497d7b",
+        "alt": "Dizajn interiéru, salón krásy"
+       }
+      },
+      {
+       "title": "Kancelária riaditeľa 7 m²",
+       "href": "/sk/dizajn-kancelarie-riaditela-7-m2",
+       "image": {
+        "id": "6abe046261617a4443adfc3e",
+        "alt": "Návrh interiéru kancelárie riaditeľa"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "izgotovlenie-mebeli-pod-zakaz-dlya-kommercheskih-obektov-ofis-resepshen-peregovornaya-kabinet-kuhnya-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Otázky o nábytku pre firmy"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Dá sa objednať len recepčný pult alebo jeden stôl?",
+       "a": "<p>Áno. Jednotlivý kus navrhneme podľa zamerania, ukážeme ho v 3D vizualizácii a vyrobíme. Ak budete neskôr potrebovať ďalší nábytok, urobíme ho v rovnakých materiáloch a farbách.</p>"
+      },
+      {
+       "q": "Treba robiť návrh interiéru celého priestoru?",
+       "a": "<p>Ak dispozícia, svetlo a povrchy zostávajú, stačí projekt nábytku. Ak sa mení celý priestor, je lepšie začať <a href=\"/sk/dizajn-komercnych-interierov-bratislava-vieden\">dizajnom komerčného interiéru</a>: zásuvky, podsvietenie a prípojky pre nábytok sa tak naplánujú vopred a nič sa nemusí prerábať.</p>"
+      },
+      {
+       "q": "Ako dlho trvá výroba?",
+       "a": "<p>Závisí od rozsahu objednávky, materiálov a vyťaženosti výroby. Termín povieme pri kalkulácii, plynie od schválenia projektu a zaplatenia zálohy.</p>"
+      },
+      {
+       "q": "Robíte nábytok aj pre firmy vo Viedni?",
+       "a": "<p>Áno. Zameranie a montáž robí náš tím, nábytok vyrábame v Bratislave, doprava je v cene a ceny sú rovnaké ako v Bratislave. Nábytok dovezieme a namontujeme aj po celom Slovensku a v Nemecku.</p>"
+      },
+      {
+       "q": "Kde si môžem pozrieť materiály pred objednávkou?",
+       "a": "<p>V štúdiu na Súkenníckej 1 v Bratislave, po predchádzajúcom dohovore. Sú tam vzorky dvierok, pracovných dosiek a kovania, takže si ich môžete porovnať naživo ešte pred schválením projektu.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbb6019b62c896a9fcca71",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

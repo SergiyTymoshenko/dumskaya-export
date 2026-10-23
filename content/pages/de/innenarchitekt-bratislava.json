@@ -1,0 +1,376 @@
+{
+ "path": "/de/innenarchitekt-bratislava",
+ "lang": "de",
+ "type": "service",
+ "group": null,
+ "title": "Innenarchitekt in Bratislava: Wohnungen & Häuser | DUMSKAYA",
+ "description": "Innenarchitektur-Studio in Bratislava-Ružinov: Planung, 3D-Visualisierung, Möbel aus eigener Tischlerei, schlüsselfertige Sanierung. Kostenlose Beratung.",
+ "h1": "Innenarchitektur für Wohnungen und Häuser in Bratislava",
+ "og_image": "6abd6a8768c5e81567a1bfe0",
+ "alternates": {
+  "ru": "/interior-design-apartments-bratislava",
+  "ua": "/ua/dyzain-interieru-kvartyry-pryvatnoho-budynku",
+  "en": "/en/interior-design",
+  "sk": "/sk/dizajn-interieru-bratislava",
+  "de": "/de/innenarchitekt-bratislava"
+ },
+ "phone": "sk",
+ "sections": [
+  {
+   "id": "city-interior-design-apartmens-bratislava-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Innenarchitektur für Wohnungen und Häuser in Bratislava"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> ist ein Studio für Innenarchitektur in Bratislava. Büro und eigene Tischlerei befinden sich im Stadtteil Ružinov, Sanierung und Montage übernehmen unsere eigenen Teams. Wir planen Wohnungen, Häuser und Residenzen und setzen sie schlüsselfertig um: von der ersten Beratung bis zur Schlüsselübergabe."
+      },
+      {
+       "t": "p",
+       "html": "Zu unseren Projekten in Bratislava gehören Wohnungen im Metropolis und in Eurovea City, eine Maisonette mit 158 m² und ein Einfamilienhaus mit 120 m². Jedes Projekt planen wir individuell: nach Grundriss, Lichtverhältnissen, Lebensstil der Eigentümer und Budget."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "DUMSKAYA DESIGN in Bratislava",
+     "rows": [
+      [
+       "Adresse des Studios",
+       "<a href=\"https://maps.app.goo.gl/tiVyq6kmvewMGHsW9\" rel=\"noopener\" target=\"_blank\">Súkennícka 1, 821 09 Bratislava-Ružinov</a>"
+      ],
+      [
+       "Möbelfertigung",
+       "eigene, in Bratislava"
+      ],
+      [
+       "Sanierung und Montage",
+       "eigene Handwerkerteams"
+      ],
+      [
+       "Beratung",
+       "kostenlos — im Studio, vor Ort oder online"
+      ],
+      [
+       "Sprachen",
+       "Russisch, Ukrainisch, Englisch"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Möbel nach Maß in Bratislava",
+       "href": "/de/moebel-nach-mass-bratislava"
+      },
+      {
+       "text": "Küchen nach Maß in Bratislava",
+       "href": "/de/kueche-nach-mass-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Was die Einrichtungsplanung umfasst"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Grundriss und Zonierung</strong> — Grundrissvarianten mit Möblierung und Lichtszenarien.",
+        "<strong>Gestaltungskonzept</strong> — Stil, Farbwelt, Oberflächen und Materialien, Möbel, Licht, Textilien und Dekoration.",
+        "<strong>3D-Visualisierung</strong> — fotorealistische Bilder jedes Raums.",
+        "<strong>Technische Dokumentation</strong> — Bestandsplan, Abbruch- und Neubauplan, Elektro, Sanitär, Böden, Decken, Wandabwicklungen, Material- und Ausstattungslisten.",
+        "<strong>Möbel nach Maß</strong> — Werkpläne für Küchen, Kästen, begehbare Schrankräume und eingebaute Stauraumsysteme.",
+        "<strong>Beschaffung und künstlerische Oberleitung</strong> — Auswahl und Bestellung der Materialien, Kontrolle, ob die Sanierung der Planung entspricht."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Der Umfang hängt vom gewählten Paket ab: vom Paket „Express“ mit Grundriss und Visualisierungen bis zum Paket „Premium+“ mit vollständiger Dokumentation und Begleitung bis zur Übergabe."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projekte in Bratislava"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Wohnung in Bratislava, 127 m²",
+       "href": "/de/innenarchitektur-dreizimmerwohnung-bratislava-127-m2",
+       "image": {
+        "id": "bra127-01",
+        "alt": "Wohnung in Bratislava, 127 m²"
+       }
+      },
+      {
+       "title": "Wohnung im Metropolis, Bratislava, 75 m²",
+       "href": "/de/innenarchitektur-wohnung-metropolis-bratislava-75-m2",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Wohnung im Metropolis, Bratislava, 75 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Eurovea City, Bratislava, 56 m²",
+       "href": "/de/innenarchitektur-wohnung-eurovea-bratislava-56-m2",
+       "image": {
+        "id": "6abd6a8168c5e81567a1bfb4",
+        "alt": "Wohnung in Eurovea City, Bratislava, 56 m²"
+       }
+      },
+      {
+       "title": "Maisonette in Bratislava, 158 m²",
+       "href": "/de/innenarchitektur-maisonette-bratislava-158-m2",
+       "image": {
+        "id": "6abd6a8e6bbe610384483447",
+        "alt": "Maisonette in Bratislava, 158 m²"
+       }
+      },
+      {
+       "title": "Einfamilienhaus in Bratislava, 120 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-bratislava-120-m2",
+       "image": {
+        "id": "6abd6a6a61617a4443acb201",
+        "alt": "Einfamilienhaus in Bratislava, 120 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Bratislava, 58 m²",
+       "href": "/de/innenarchitektur-wohnung-bratislava-58-m2",
+       "image": {
+        "id": "6abd6af84888499d20745492",
+        "alt": "Wohnung in Bratislava, 58 m²"
+       }
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Außerdem: ein Einfamilienhaus mit 140 m² in Dunajská Streda sowie Projekte in Wien, Prag und anderen Städten."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Projekte des Studios",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "So arbeiten wir"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Beratung.</strong> Im Studio in der Súkennícka 1, vor Ort oder online. Wir besprechen Aufgabe, Budget und Zeitplan — kostenlos.",
+        "<strong>Aufmaß.</strong> Wir erfassen Maße, Leitungen, Fenster und Raumhöhen — die Grundlage für alle Pläne.",
+        "<strong>Grundriss und Konzept.</strong> Wir schlagen Grundrissvarianten, Stil und Materialien vor und arbeiten Ihre Änderungen ein.",
+        "<strong>3D-Visualisierung.</strong> Sie sehen das künftige Interieur, bevor die Sanierung beginnt.",
+        "<strong>Dokumentation.</strong> Ein vollständiger Plansatz für die Handwerker und die Möbelfertigung.",
+        "<strong>Umsetzung.</strong> Sanierung, Möbel aus eigener Fertigung, Beschaffung und Übergabe — alles von einem Team."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Preise für Innenarchitektur in Bratislava"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Preise für die Planung hängen vom Leistungsumfang ab: Paket <a href=\"/de/designpaket-express-wien-bratislava\">„Express“</a> — 20 €/m², <a href=\"/de/designpaket-basis-wien-bratislava\">„Basis“</a> — 35–45 €/m², <a href=\"/de/designpaket-moebel-wien-bratislava\">„Möbel“</a> — 35–50 €/m², <a href=\"/de/designpaket-premium-wien-bratislava\">„Premium“</a> — 50 €/m², <a href=\"/de/designpaket-premium-plus-wien-bratislava\">„Premium+“</a> — 70 €/m². Die erste Beratung ist kostenlos."
+      },
+      {
+       "t": "p",
+       "html": "Die Kosten für Sanierung und Möbel berechnen wir auf Basis der Planung. Für die Sanierung erstellen wir eine <a href=\"/de/kostenschaetzung-sanierung-wien-bratislava\">detaillierte Kostenschätzung</a> — 5 €/m²; beauftragen Sie die Sanierung bei uns, wird dieser Betrag von der Auftragssumme abgezogen."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Pakete und Preise",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fragen zur Innenarchitektur in Bratislava"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Was kostet die Innenarchitektur-Planung einer Wohnung in Bratislava?",
+       "a": "<p>Von 20 €/m² für das Paket „Express“ bis 70 €/m² für „Premium+“. Für eine Wohnung mit 60 m² kostet die vollständige Planung im Paket „Basis“ 2.100–2.700 €. Ein Projekt kostet mindestens 1.500 €. Details finden Sie auf der <a href=\"/de/preise-innenarchitektur-wien-bratislava\">Preisseite</a>.</p>"
+      },
+      {
+       "q": "Wie lange dauert die Planung?",
+       "a": "<p>„Express“ — ab 14 Tagen nach Freigabe des Grundrisses. Eine vollständige Planung mit technischer Dokumentation dauert meist 4–8 Wochen, je nach Fläche und Anzahl der Änderungsrunden.</p>"
+      },
+      {
+       "q": "Übernehmen Sie auch die Sanierung nach Ihrer Planung?",
+       "a": "<p>Ja. Die Sanierung führen unsere Teams aus, die Möbel fertigen wir in unserer eigenen Tischlerei in Bratislava, Beschaffung und künstlerische Oberleitung übernehmen wir. Sie können auch nur die Planung beauftragen.</p>"
+      },
+      {
+       "q": "Arbeiten Sie auch mit Wohnungen vom Bauträger?",
+       "a": "<p>Ja, die meisten Projekte in Bratislava sind Neubauten mit Standardausstattung oder im Rohzustand. Wir begleiten auch die <a href=\"/de/wohnungsuebergabe-bautraeger-bratislava\">Wohnungsübergabe vom Bauträger</a>, bevor Sie das Übergabeprotokoll (preberací protokol) unterschreiben.</p>"
+      },
+      {
+       "q": "Wo ist das Studio und kann ich vorbeikommen?",
+       "a": "<p>Súkennícka 1, Bratislava-Ružinov — <a href=\"https://maps.app.goo.gl/tiVyq6kmvewMGHsW9\" rel=\"noopener\" target=\"_blank\">das Studio auf Google Maps</a>. Kommen Sie nach Terminvereinbarung vorbei: Wir zeigen Ihnen Material- und Beschlagmuster und besprechen Ihr Projekt.</p>"
+      },
+      {
+       "q": "Arbeiten Sie auch außerhalb von Bratislava?",
+       "a": "<p>Ja — in der ganzen Slowakei, in Wien und Niederösterreich sowie aus der Ferne: Umgesetzte Projekte gibt es in Prag, München, Berlin, Warschau, Krakau und anderen Städten.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Anfrage für eine kostenlose Beratung",
+     "text": "Schreiben Sie uns, um welches Objekt es geht und was Sie vorhaben — wir antworten innerhalb eines Werktags."
+    }
+   ]
+  },
+  {
+   "id": "city-interior-design-apartmens-bratislava-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

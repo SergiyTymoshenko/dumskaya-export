@@ -1,0 +1,121 @@
+{
+ "path": "/sk/ochrana-osobnych-udajov",
+ "lang": "sk",
+ "type": "privacy",
+ "group": null,
+ "title": "Ochrana osobných údajov | DUMSKAYA DESIGN",
+ "description": "Aké údaje zbiera web DUMSKAYA DESIGN, prečo a ako dlho ich uchováva a aké máte práva: formulár dopytu, e-maily, súbory cookie Google Analytics.",
+ "h1": "Zásady ochrany osobných údajov",
+ "og_image": null,
+ "alternates": {
+  "ru": "/privacy",
+  "ua": "/ua/privacy",
+  "en": "/en/privacy",
+  "sk": "/sk/ochrana-osobnych-udajov",
+  "de": "/de/datenschutz-erklaerung"
+ },
+ "sections": [
+  {
+   "id": "privacy",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Zásady ochrany osobných údajov"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kto spracúva vaše údaje"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Prevádzkovateľom osobných údajov je <strong>Panorama Systems Florida LLC</strong>, 200 Kings Point Dr, Apt 1603, Sunny Isles Beach, FL 33160, USA. Štúdio interiérového dizajnu DUMSKAYA DESIGN: Súkennícka 1, 821 09 Bratislava, Slovensko. E-mail: <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>, telefón: <a href=\"tel:+421918177785\">+421 918 17 77 85</a>."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Aké údaje spracúvame a prečo"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Keď odošlete formulár so žiadosťou, dostaneme vaše meno, telefónne číslo alebo e-mail a text správy. Tieto údaje potrebujeme iba na to, aby sme odpovedali na vašu žiadosť a pripravili ponuku (čl. 6 ods. 1 písm. b) GDPR — opatrenia pred uzavretím zmluvy)."
+      },
+      {
+       "t": "p",
+       "html": "Ak nám napíšete e-mail alebo správu cez WhatsApp či Telegram, dostaneme údaje, ktoré ste v správe sami uviedli, a použijeme ich na odpoveď."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Komu údaje poskytujeme"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Žiadosti z webu nám prichádzajú e-mailom (Google Gmail) a do Telegramu. Web beží na serveri Hetzner v Európskej únii. Údaje nepredávame a neposkytujeme ich tretím stranám na reklamné účely."
+      },
+      {
+       "t": "p",
+       "html": "Ak správa v žiadosti nie je napísaná po rusky, jej text (bez mena a kontaktných údajov) odovzdáme službe strojového prekladu, aby sme dostali preklad do ruštiny. Služba používa text iba na preklad."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ako dlho údaje uchovávame"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Žiadosti uchovávame najdlhšie 24 mesiacov od poslednej komunikácie, ak medzi nami nebola uzavretá zmluva. Údaje k zmluvám uchovávame tak dlho, ako to vyžadujú slovenské právne predpisy."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Súbory cookies a analytika"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Web používa Google Analytics prostredníctvom Google Tag Manager, aby sme vedeli, ktoré stránky sú pre návštevníkov užitočné. Tieto cookies sa načítajú až potom, čo v banneri udelíte súhlas. Rozhodnutie môžete kedykoľvek zmeniť alebo súhlas odvolať — odkaz „Nastavenia cookies“ v spodnej časti každej stránky znova otvorí banner."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Vaše práva"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Môžete požiadať o prístup k svojim údajom, o ich opravu, vymazanie alebo obmedzenie spracúvania, namietať proti spracúvaniu a získať svoje údaje v strojovo čitateľnom formáte. Napíšte na <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>. Sťažnosť môžete podať na Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk)."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,184 @@
+{
+ "path": "/de/balkon-gestalten-ideen-tipps",
+ "lang": "de",
+ "type": "article",
+ "group": null,
+ "title": "Balkon gestalten: Ideen und Tipps | DUMSKAYA DESIGN",
+ "description": "Wie Sie den Balkon nutzen: als Sitzplatz, Arbeitsecke oder Stauraum. Möbel, Beleuchtung und Materialien — Tipps aus unserer Planungspraxis.",
+ "h1": "Wie Sie einen Balkon bequem und praktisch einrichten",
+ "og_image": "66b4e40ff97515ef05f1d260",
+ "alternates": {
+  "ru": "/kak-pravilno-organizovat-udobnyj-i-funkcionalnyj-balkon",
+  "ua": "/ua/orhanizatsiia-balkona",
+  "en": "/en/perfect-balcony-design",
+  "sk": "/sk/zariadenie-balkona-napady-rady",
+  "de": "/de/balkon-gestalten-ideen-tipps"
+ },
+ "sections": [
+  {
+   "id": "66a26d72e5dd1ec1e7a51088",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Wie Sie einen Balkon bequem und praktisch einrichten"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66b4e40ed1ae1a915a67489d",
+       "alt": "Terrasse — Wohnung, 60 m²"
+      },
+      {
+       "id": "66b4e40ff97515ef05f1d25b",
+       "alt": "Terrasse — Wohnung, 60 m²"
+      },
+      {
+       "id": "66b4e4178d5739e4336aa30e",
+       "alt": "Terrasse — Wohnung, 60 m²"
+      },
+      {
+       "id": "66b4e40fd1ae1a915a6748ad",
+       "alt": "Terrasse — Wohnung, 60 m²"
+      },
+      {
+       "id": "66b4e40f8d5739e4336aa2e5",
+       "alt": "Terrasse — Wohnung, 60 m²"
+      },
+      {
+       "id": "66b4e40f8d5739e4336aa2df",
+       "alt": "Terrasse — Wohnung, 60 m²"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Balkon mit Bartheke und Griller"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Auch auf einem kleinen Balkon lässt sich ein Platz zum Entspannen einrichten. Ein Beispiel aus unserem Projekt: Auf 8 m² haben ein Ecksofa, eine Bartheke, ein Kasten und ein Griller Platz gefunden."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Sitzecke:</strong> Entlang zweier Wände steht ein Ecksofa mit Polstern und Decken."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Bartheke:</strong> Entlang der Verglasung verläuft eine Theke aus Holz und Metall mit hohen Hockern. Hier trinkt man den Morgenkaffee und schaut auf die Stadt."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Stauraum:</strong> Der geräumige Kasten wirkt, als wäre er in die Wand eingebaut — ein optischer Trick. Darin liegen saisonale Sachen, Polster, Decken und Werkzeug, und die schlichten Fronten lassen den kleinen Raum nicht überladen wirken."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Griller:</strong> Der kompakte Griller steht auf einem eigenen Gestell und nicht auf den Möbeln — so grillt man sicherer und bequemer."
+      },
+      {
+       "t": "p",
+       "html": "<strong>UFO-Heizstrahler:</strong> Damit lässt sich der Balkon das ganze Jahr nutzen: Auch in den kalten Monaten kann man hier einen Abend mit Familie oder Freunden verbringen."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Pflanzen und Deko:</strong> Pflanzen in Töpfen, an den Balken ranken Kletterpflanzen. Abends gehen Stehleuchten und Einbauleuchten an, ihr Licht ist weich und gestreut."
+      },
+      {
+       "t": "p",
+       "html": "Der Balkon ist ein weiteres Zimmer geworden: Hier trinkt man Kaffee, grillt und trifft sich mit Freunden. Die saisonalen Sachen sind im Kasten verstaut und nehmen in der Wohnung keinen Platz weg."
+      },
+      {
+       "t": "p",
+       "html": "Ihren Balkon oder Ihre Loggia können Sie bei einer kostenlosen Beratung im Studio <strong>DUMSKAYA DESIGN</strong> in Bratislava besprechen. Kästen und andere Einbaumöbel für den Balkon fertigen wir in unserer eigenen Produktion. Das Studio hat mehr als 15 Jahre Erfahrung."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Realisierte Projekte",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      },
+      {
+       "text": "Preise der Designpakete",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc037e376a1a22235b1b7f",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

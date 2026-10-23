@@ -1,0 +1,329 @@
+{
+ "path": "/sk/kuchyne-na-mieru-vieden",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Kuchyne na kľúč vo Viedni — návrh, výroba, montáž",
+ "description": "Kuchyne na mieru na kľúč vo Viedni: zameranie, návrh, 3D vizualizácia, výroba v Bratislave, doprava a montáž. 32 modelov v katalógu aj vlastné návrhy.",
+ "h1": "Kuchyne na kľúč vo Viedni — návrh, výroba, doprava a montáž",
+ "og_image": "66c511596549f3d91ef8764e",
+ "alternates": {
+  "ru": "/kuhni-pod-klyuch-vena",
+  "ua": "/ua/kukhni-pid-kliuch-viden",
+  "en": "/en/custom-kitchens-vienna",
+  "sk": "/sk/kuchyne-na-mieru-vieden",
+  "de": "/de/kueche-nach-mass-wien"
+ },
+ "phone": "at",
+ "sections": [
+  {
+   "id": "city-kuhni-pod-klyuch-vena-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Kuchyne na kľúč vo Viedni — návrh, výroba, doprava a montáž"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> robí kuchyne na mieru na kľúč do bytov a domov vo Viedni: zameranie, návrh, 3D vizualizácia, výroba vo vlastnej dielni v Bratislave, doprava, montáž a zabudovanie spotrebičov. Doprava do Viedne je v cene, montáž robí náš tím."
+      },
+      {
+       "t": "p",
+       "html": "Môžete si vybrať jeden z 32 modelov v <a href=\"/sk/kuchyne-na-mieru-bratislava-vieden\">katalógu</a> a prispôsobiť ho rozmerom svojej kuchyne alebo si objednať úplne individuálny návrh. Ceny pre Viedeň sú rovnaké ako pre Bratislavu."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "Kuchyne do Viedne",
+     "rows": [
+      [
+       "Výroba",
+       "vlastná, Bratislava"
+      ],
+      [
+       "Doprava a montáž",
+       "zahrnuté v cene, vlastný tím"
+      ],
+      [
+       "Zameranie",
+       "priamo na mieste vo Viedni"
+      ],
+      [
+       "Modely",
+       "32 v katalógu + individuálne návrhy"
+      ],
+      [
+       "Kovanie",
+       "Hettich, Blum, Häfele"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Katalóg kuchýň",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden"
+      },
+      {
+       "text": "Nábytok na mieru vo Viedni",
+       "href": "/sk/nabytok-na-mieru-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Čo zahŕňa kuchyňa na kľúč"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Zameranie</strong> miestnosti s polohou rozvodov, okien, dverí a spotrebičov.",
+        "<strong>Návrh a dispozícia</strong> — rovná, rohová, v tvare U, s ostrovom alebo polostrovom, obývačka s kuchyňou.",
+        "<strong>3D vizualizácia</strong> — kuchyňu uvidíte vo svojom interiéri ešte pred spustením výroby.",
+        "<strong>Technický projekt</strong> — výkresy skriniek, schéma pripojenia spotrebičov, špecifikácia materiálov a kovania.",
+        "<strong>Výroba</strong> vo vlastnej dielni v Bratislave.",
+        "<strong>Doprava a montáž</strong> vo Viedni naším tímom, nastavenie dvierok a mechanizmov.",
+        "<strong>Zabudovanie spotrebičov</strong> — rúra, varná doska, digestor, umývačka riadu, chladnička."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Materiály, pracovné dosky a kovanie"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Dvierka a čelá: laminovaná drevotrieska (LTD), fóliovaná MDF, lakovaná MDF, dyha, HPL, akryl, sklo. Pracovné dosky: laminát, kompaktná doska, kremenný kompozit, keramika, umelý a prírodný kameň. Kovanie Hettich, Blum a Häfele: tlmené dovieranie, výsuvné systémy, výklopné mechanizmy, cargo výsuvy, organizéry a systémy na triedenie odpadu."
+      },
+      {
+       "t": "p",
+       "html": "Vybavenie zostavíme podľa rozpočtu — od štandardného po nadštandardné. Pri každom modeli v katalógu je uvedené, z čoho je vyrobený, a to sa dá zmeniť."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Príklady kuchýň"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66c511596549f3d91ef8764e",
+       "alt": "Montáž kuchyne vyššej triedy vo Viedni"
+      },
+      {
+       "id": "69c86798ce29bfd07714ea68",
+       "alt": "Kuchyňa na mieru vyššej triedy, Bratislava"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87656",
+       "alt": "Dizajnová kuchyňa na kľúč"
+      },
+      {
+       "id": "684a98176775d3727cd6e122",
+       "alt": "Kuchyňa na mieru z prírodného dreva"
+      },
+      {
+       "id": "684a981fcbfab8d2b1b768ec",
+       "alt": "Kuchyňa podľa návrhu dizajnéra"
+      },
+      {
+       "id": "684a9818cbfab8d2b1b768ba",
+       "alt": "Výroba kuchýň vyššej triedy"
+      },
+      {
+       "id": "684a98186775d3727cd6e12a",
+       "alt": "Moderná kuchyňa s ostrovom na mieru, Viedeň"
+      },
+      {
+       "id": "684a9818d82130a88ea83742",
+       "alt": "Kuchynská linka podľa individuálnych rozmerov"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky modely v katalógu",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ako si objednať kuchyňu vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Dopyt.</strong> Pošlite pôdorys alebo rozmery kuchyne, fotografie a príklady dizajnu, ktorý sa vám páči, alebo si vyberte model z katalógu.",
+        "<strong>Predbežná kalkulácia.</strong> Do niekoľkých dní vám povieme orientačnú cenu.",
+        "<strong>Zameranie a projekt.</strong> Prídeme na zameranie do Viedne, pripravíme projekt a 3D vizualizáciu, odsúhlasíme materiály.",
+        "<strong>Presná cena a zmluva.</strong> Jedna suma za kuchyňu s dopravou a montážou.",
+        "<strong>Výroba, doprava, montáž.</strong> Kuchyňu vyrobíme v Bratislave, dovezieme a namontujeme vo Viedni, zabudujeme spotrebiče."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Otázky o kuchyniach na kľúč vo Viedni"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Koľko stojí kuchyňa na kľúč vo Viedni?",
+       "a": "<p>Cena závisí od rozmerov, materiálu dvierok a pracovnej dosky, kovania a spotrebičov. Presnú cenu povieme po zameraní a projekte — jednou sumou vrátane dopravy do Viedne a montáže. Orientačné ceny modelov nájdete v <a href=\"/sk/kuchyne-na-mieru-bratislava-vieden\">katalógu</a>.</p>"
+      },
+      {
+       "q": "Platí sa za dopravu do Viedne?",
+       "a": "<p>Nie, doprava a montáž sú zahrnuté v cene kuchyne. Za výjazd z Bratislavy nič nedoplácate.</p>"
+      },
+      {
+       "q": "Ako dlho trvá výroba?",
+       "a": "<p>Termín závisí od rozsahu, materiálov a vyťaženosti výroby — povieme vám ho pri kalkulácii. Plynie od schválenia projektu a zaplatenia zálohy.</p>"
+      },
+      {
+       "q": "Dá sa model z katalógu upraviť?",
+       "a": "<p>Áno. Rozmery, farbu dvierok, pracovnú dosku, vnútorné vybavenie aj spotrebiče prispôsobíme vašej kuchyni — model z katalógu slúži ako východisko.</p>"
+      },
+      {
+       "q": "Pripájate aj spotrebiče?",
+       "a": "<p>Pri montáži spotrebiče osadíme a zabudujeme. Pripojenie vody, plynu a elektriny je súčasťou rekonštrukcie — ak ju robí náš tím, všetko je v jednom projekte.</p>"
+      },
+      {
+       "q": "Robíte kuchyne aj do domov mimo Viedne?",
+       "a": "<p>Áno — v Dolnom Rakúsku a v Burgenlande, kam sa z Bratislavy pohodlne dostaneme.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Nacenenie kuchyne",
+     "text": "Pošlite pôdorys kuchyne a fotografie — pripravíme predbežnú ponuku."
+    }
+   ]
+  },
+  {
+   "id": "city-kuhni-pod-klyuch-vena-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

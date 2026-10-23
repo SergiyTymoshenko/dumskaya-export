@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import { ui } from '../lib/i18n';
 import type { Page } from '../lib/data';
 const page = { path: '/404', lang: 'ru', type: '404', group: null, title: 'Страница не найдена | DUMSKAYA DESIGN', description: '', h1: 'Страница не найдена', og_image: null, alternates: {}, sections: [] } as unknown as Page;
-const ru = ui('ru'), ua = ui('ua'), en = ui('en');
+const ru = ui('ru'), ua = ui('ua'), en = ui('en'), sk = ui('sk'), de = ui('de');
 ---
 <Base page={page} noindex>
   <div class="nf wrap">
@@ -12,6 +12,8 @@ const ru = ui('ru'), ua = ui('ua'), en = ui('en');
     <p class="nf__links"><a class="btn btn--solid" href="/">{ru.home}</a> <a class="btn" href="/proekty-interior-design">{ru.projects}</a></p>
     <p class="muted" lang="uk">{ua.notFound.title}. <a href="/ua">{ua.home}</a></p>
     <p class="muted" lang="en">{en.notFound.title}. <a href="/en">{en.home}</a></p>
+    <p class="muted" lang="sk">{sk.notFound.title}. <a href="/sk">{sk.home}</a></p>
+    <p class="muted" lang="de">{de.notFound.title}. <a href="/de">{de.home}</a></p>
   </div>
 </Base>
 <style>

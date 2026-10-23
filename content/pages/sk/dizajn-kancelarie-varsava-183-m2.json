@@ -1,0 +1,375 @@
+{
+ "path": "/sk/dizajn-kancelarie-varsava-183-m2",
+ "lang": "sk",
+ "type": "project",
+ "group": "commercial",
+ "title": "Dizajn kancelárie 183 m² vo Varšave | DUMSKAYA DESIGN",
+ "description": "Kancelária pre marketingový tím vo Varšave, 183 m²: dispozičné riešenie č. 1 a 3D vizualizácie v balíku „Express“ od štúdia DUMSKAYA DESIGN.",
+ "h1": "Dizajn kancelárie pre marketingový tím vo Varšave, 183 m²",
+ "og_image": "war183-01",
+ "alternates": {
+  "ru": "/office-interior-design-warsaw-183m",
+  "ua": "/ua/dyzain-interieru-ofisu-varshava-183-m2",
+  "en": "/en/office-interior-design-warsaw-183sqm",
+  "sk": "/sk/dizajn-kancelarie-varsava-183-m2",
+  "de": "/de/innenarchitektur-buero-warschau-183-m2"
+ },
+ "sections": [
+  {
+   "id": "war183-main",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Dizajn kancelárie pre marketingový tím vo Varšave, 183 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Kancelária s rozlohou 183 m² vo Varšave pre tím marketérov. Projekt vznikol v dizajnovom balíku <a href=\"/sk/dizajnovy-balik-express-bratislava-vieden\">„Express“</a>: dispozičné riešenie č. 1 s rozmiestnením nábytku a 3D vizualizácie všetkých hlavných miestností. Projekt sme pripravili na diaľku, rekonštrukciu a nábytok vo Varšave realizujú partneri štúdia — viac na stránke o dizajne interiéru vo Varšave."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Dispozičné riešenie č. 1"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Kancelária je navrhnutá pre veľký tím. Pracovnú časť tvoria dve veľké zóny: open space s rozlohou 72,34 m² a kancelária otvoreného typu s rozlohou 25,84 m². Vedľa je kancelária „Finančníci“, zasadačka a kancelária riaditeľa. Vstupná časť spája recepciu s čakárňou a hernú zónu, kuchyňa s jedálňou je v samostatnej miestnosti. Pracovné miesta sú rozmiestnené s ohľadom na priechody a na to, ako sa zamestnanci pohybujú medzi zónami."
+      },
+      {
+       "t": "p",
+       "html": "Prehľad miestností:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Recepcia — 21,49 m²",
+        "Herná zóna — 13,19 m²",
+        "Zasadačka — 6,34 m²",
+        "Kancelária „Finančníci“ — 15,99 m²",
+        "Kancelária otvoreného typu — 25,84 m²",
+        "Otvorená pracovná zóna — 72,34 m²",
+        "Kuchyňa s jedálňou — 10,20 m²",
+        "Kancelária riaditeľa — 18,05 m²",
+        "Celková plocha — 183,44 m²"
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Interiér po zónach"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Základ je pokojný a teplý: svetlé steny, sivohnedý koberec, pracovné dosky a panely s dreveným dekorom, rastliny v kvetináčoch. V podhľade sú štvorcové LED panely a okrúhle svietidlá. Kancelárie oddeľujú presklené priečky s matnými pásmi."
+      },
+      {
+       "t": "p",
+       "html": "Každá zóna má vlastný farebný akcent. Na recepcii sú mäkké oblé kreslá a drevený stôl recepčnej. V kancelárii s priestorovou podsvietenou mapou sveta stoja oranžové kreslá, vedľa modrý perforovaný panel. V open space sú biele stoly, pri oknách pohovka a oválny stolík. V kuchyni je rohová linka so svetlými dvierkami bez úchytiek a pri okne stôl so zelenými stoličkami, v hernej zóne sedacie vaky a TV panel. V kancelárii riaditeľa je pracovný stôl, TV kútik a mäkké kreslá na neformálne stretnutia."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Čo obsahuje balík „Express“"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Je to rýchly návrh interiéru bez kompletnej výkresovej dokumentácie: zameranie, plán rozmiestnenia nábytku a 3D vizualizácia. Ak na rekonštrukciu potrebujete podrobné výkresy, porovnajte balíky na <a href=\"/sk/cena-dizajnu-interieru-bratislava-vieden\">stránke s cenami</a>."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "image": {
+      "id": "war183-plan",
+      "alt": "Dispozičné riešenie č. 1 kancelárie s rozlohou 183 m² vo Varšave s rozmiestnením nábytku"
+     },
+     "caption": "Dispozičné riešenie č. 1 s rozmiestnením nábytku"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "war183-01",
+       "alt": "Recepcia kancelárie: stôl recepčnej, kreslá a konferenčný stolík"
+      },
+      {
+       "id": "war183-02",
+       "alt": "Čakáreň na recepcii s mäkkými kreslami a nástenným panelom"
+      },
+      {
+       "id": "war183-03",
+       "alt": "Nábytok na mieru s podsvietením a otvorenými policami na recepcii"
+      },
+      {
+       "id": "war183-04",
+       "alt": "Vstup z recepcie do kancelárií cez presklenú priečku"
+      },
+      {
+       "id": "war183-05",
+       "alt": "Recepcia s čakárňou, multifunkčnou tlačiarňou a presklenou priečkou"
+      },
+      {
+       "id": "war183-06",
+       "alt": "Pracovisko na recepcii so stromčekom v kvetináči"
+      },
+      {
+       "id": "war183-07",
+       "alt": "Herná zóna v kancelárii: sedacie vaky a konferenčný stolík"
+      },
+      {
+       "id": "war183-08",
+       "alt": "Herná zóna s TV panelom a sedacími vakmi"
+      },
+      {
+       "id": "war183-09",
+       "alt": "Oddychová zóna s pohovkou, sedacími vakmi a obrazom"
+      },
+      {
+       "id": "war183-10",
+       "alt": "Kancelária s tmavými pracovnými stolmi pri presklených dverách"
+      },
+      {
+       "id": "war183-11",
+       "alt": "Pracovné miesta s ergonomickými stoličkami pri oknách so žalúziami"
+      },
+      {
+       "id": "war183-12",
+       "alt": "Tmavé stoly, otvorený regál s dekoráciami a monitory"
+      },
+      {
+       "id": "war183-13",
+       "alt": "Chodba v kancelárii s pracovnými miestami a rastlinami"
+      },
+      {
+       "id": "war183-14",
+       "alt": "Vstup do kancelárie s mapou sveta na stene"
+      },
+      {
+       "id": "war183-15",
+       "alt": "Pracovisko s oranžovým kreslom pred modrým panelom"
+      },
+      {
+       "id": "war183-16",
+       "alt": "Pracovný stôl pri modrom perforovanom paneli"
+      },
+      {
+       "id": "war183-17",
+       "alt": "Pracovné stoly s oranžovými kreslami a podsvietenou mapou sveta"
+      },
+      {
+       "id": "war183-18",
+       "alt": "Kancelária s presklenými dverami a regálom"
+      },
+      {
+       "id": "war183-19",
+       "alt": "Podsvietená mapa sveta nad pracovnými miestami"
+      },
+      {
+       "id": "war183-20",
+       "alt": "Pracovné miesta oproti preskleným dverám"
+      },
+      {
+       "id": "war183-21",
+       "alt": "Stoly s notebookmi a oranžovými kreslami"
+      },
+      {
+       "id": "war183-22",
+       "alt": "Pracovná zóna s regálom, rastlinami a podsvietením"
+      },
+      {
+       "id": "war183-23",
+       "alt": "Hala otvorenej kancelárie s rastlinou pri dverách"
+      },
+      {
+       "id": "war183-24",
+       "alt": "Biele pracovné stoly za sklenenou priečkou"
+      },
+      {
+       "id": "war183-25",
+       "alt": "Otvorený pracovný priestor s bielymi stolmi a oddychovou zónou"
+      },
+      {
+       "id": "war183-26",
+       "alt": "Biele stoly s monitormi a čalúnenými kancelárskymi stoličkami"
+      },
+      {
+       "id": "war183-27",
+       "alt": "Pracovné miesta pri panoramatických oknách so žalúziami"
+      },
+      {
+       "id": "war183-28",
+       "alt": "Pracovisko vedľa dekoratívneho stromčeka"
+      },
+      {
+       "id": "war183-29",
+       "alt": "Mäkká pohovka pri stĺpe a pracovné stoly v open space"
+      },
+      {
+       "id": "war183-30",
+       "alt": "Pohovka a taburet v oddychovej zóne pri sklenenej priečke"
+      },
+      {
+       "id": "war183-31",
+       "alt": "Celkový pohľad na otvorený pracovný priestor s bielymi stolmi"
+      },
+      {
+       "id": "war183-32",
+       "alt": "Oddychová zóna s pohovkou a konferenčným stolíkom v open space"
+      },
+      {
+       "id": "war183-33",
+       "alt": "Pohovka, oválny konferenčný stolík a panoramatické okná"
+      },
+      {
+       "id": "war183-34",
+       "alt": "Stĺp s dreveným obkladom a kvetináče s rastlinami"
+      },
+      {
+       "id": "war183-35",
+       "alt": "Kuchyňa s jedálňou v kancelárii s rohovou linkou pri okne"
+      },
+      {
+       "id": "war183-36",
+       "alt": "Kuchyňa so svetlými dvierkami a tmavou chladničkou"
+      },
+      {
+       "id": "war183-37",
+       "alt": "Kuchyňa s jedálňou, jedálenským stolom a zelenými stoličkami"
+      },
+      {
+       "id": "war183-38",
+       "alt": "Jedálenský stôl pri okne s výhľadom na mesto"
+      },
+      {
+       "id": "war183-39",
+       "alt": "Jedálenská časť: stôl a stoličky pri stene s plagátom"
+      },
+      {
+       "id": "war183-40",
+       "alt": "Kancelária riaditeľa: TV kútik a mäkké kreslá"
+      },
+      {
+       "id": "war183-41",
+       "alt": "Kancelária riaditeľa: pracovný stôl pri panoramatických oknách"
+      },
+      {
+       "id": "war183-42",
+       "alt": "Pracovný stôl riaditeľa a kreslá pre hostí"
+      },
+      {
+       "id": "war183-43",
+       "alt": "Pracovisko riaditeľa oproti TV panelu"
+      },
+      {
+       "id": "war183-44",
+       "alt": "TV skrinka a nástenný panel v kancelárii riaditeľa"
+      },
+      {
+       "id": "war183-45",
+       "alt": "Kreslo na oddych pri okne v kancelárii riaditeľa"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky projekty",
+       "href": "/sk/portfolio-dizajn-interieru"
+      },
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Ceny dizajnových balíkov",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "war183-services",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

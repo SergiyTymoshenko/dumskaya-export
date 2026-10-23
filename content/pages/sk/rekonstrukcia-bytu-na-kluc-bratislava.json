@@ -1,0 +1,274 @@
+{
+ "path": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Rekonštrukcia bytov na kľúč v Bratislave a vo Viedni",
+ "description": "Rekonštrukcie bytov, domov a kancelárií na kľúč v Bratislave a vo Viedni: naše tímy, nábytok z našej výroby, rozpočet 5 €/m². Rovnaké ceny pre obe mestá.",
+ "h1": "Rekonštrukcia bytov a domov na kľúč v Bratislave a vo Viedni",
+ "og_image": "6abd6b1b68c5e81567a1c2e1",
+ "alternates": {
+  "ru": "/stroitelstvo-remont-bratislava",
+  "ua": "/ua/budivnytstvo-ta-remont-pid-kliuch-zhytlovykh-ta-komertsiinykh-prymishchen-bratislava-slovakia-prais-lyst",
+  "en": "/en/renovation-construction-price-list",
+  "sk": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+  "de": "/de/schluesselfertige-sanierung-wien-bratislava"
+ },
+ "sections": [
+  {
+   "id": "65d3d4cf54fd2b000e6b4d19",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Rekonštrukcia bytov a domov na kľúč v Bratislave a vo Viedni"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "65d3cb0956ff01000f891f5c",
+       "alt": "Rekonštrukcia bytu na kľúč, Bratislava, Slovensko"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Robíme rekonštrukcie bytov, domov a komerčných priestorov na kľúč v Bratislave, vo Viedni a v ďalších mestách Slovenska a Rakúska. Práce zabezpečujú naši vlastní remeselníci z Bratislavy, nábytok vyrábame vo vlastnej výrobe, tiež v Bratislave. Ceny sú pre Bratislavu aj Viedeň rovnaké."
+      },
+      {
+       "t": "p",
+       "html": "Môžete nám zveriť celý objekt: návrh interiéru, technickú dokumentáciu, rozpočet, stavebné a dokončovacie práce, nákup materiálu, zabezpečenie vybavenia, nábytok na mieru, montáž a autorský dozor. Objednať si môžete aj jednotlivé etapy, ak projekt alebo časť prác už urobil iný dodávateľ."
+      },
+      {
+       "t": "p",
+       "html": "Rekonštrukciu robíme podľa schváleného návrhu interiéru: kde stojí nábytok, kde je svetlo, zásuvky a sanita, aké sú materiály — všetko je rozhodnuté pred začiatkom prác, preto sa počas nich menej prerába."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Druhy prác"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Búracie a prípravné práce</strong> — priečky, podlahové krytiny, obklady a dlažby, stropy, dvere, sanita.",
+        "<strong>Stavebné práce</strong> — priečky z tvárnic a sadrokartónu, niky, zakrytie rozvodov, otvory, vyrovnávanie povrchov.",
+        "<strong>Elektroinštalácia</strong> — rozvody, zásuvky a vypínače, rozvádzače, vývody pre spotrebiče a svietidlá.",
+        "<strong>Vodoinštalácia</strong> — rozvody vody a kanalizácie, presun odberných miest, podomietkové moduly, sprchové systémy.",
+        "<strong>Kúrenie</strong> — presun radiátorov, podlahové kúrenie, podľa možností objektu.",
+        "<strong>Omietky a maľovanie</strong> — omietky, stierky, penetrácia, maľovanie, podklad pod dekoratívne povrchy.",
+        "<strong>Sadrokartón</strong> — podhľady, rímsy, konštrukcie so skrytým osvetlením.",
+        "<strong>Obklady a dlažby</strong> — gresová dlažba, mozaika, veľkoformátové obklady.",
+        "<strong>Podlahy</strong> — parkety, viacvrstvové drevené podlahy, laminát, SPC, vinyl.",
+        "<strong>Dvere a dokončovacie prvky</strong> — skryté a interiérové dvere, soklové lišty, panely, dekoratívne lišty.",
+        "<strong>Osvetlenie</strong> — zapustené svietidlá, závesné svietidlá, lištové systémy, LED profily.",
+        "<strong>Montáž sanity</strong> — WC misy, vane, sprchové zásteny, batérie, rebríkové radiátory.",
+        "<strong>Nábytok na mieru</strong> — kuchyne, skrine, šatníky, TV steny, kúpeľňový nábytok: návrh, výroba, doprava, montáž.",
+        "<strong>Zabezpečenie vybavenia a finálna montáž</strong> — objednanie materiálov, svietidiel, dverí a nábytku podľa projektu a ich osadenie."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stroitelstvo-remont-bratislava-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Ako prebieha práca"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Konzultácia.</strong> Bezplatne; na dopyt odpovieme do jedného pracovného dňa.",
+        "<strong>Projekt.</strong> Ak projekt nemáte, pripravíme návrh interiéru a výkresy. Ak ho máte, skontrolujeme, či remeselníkom stačia výkresy.",
+        "<strong>Rozpočet a zmluva.</strong> Vyrátame práce a materiály, v zmluve stanovíme rozsah, cenu a harmonogram.",
+        "<strong>Rekonštrukcia.</strong> Remeselníci pracujú podľa výkresov a nábytok sa medzitým vyrába.",
+        "<strong>Odovzdanie.</strong> Montáž nábytku, svietidiel a sanity, upratovanie, odovzdanie objektu."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stroitelstvo-remont-bratislava-local",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Rekonštrukcia v bytovom dome"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Podľa stavebného zákona, ktorý na Slovensku platí od apríla 2025, výmena omietok, podláh, obkladov a dlažieb, nenosných priečok, dverí, kuchyne a sanity nepotrebuje stavebné povolenie ani ohlásenie. Práce, ktoré môžu ovplyvniť mechanickú odolnosť a stabilitu domu alebo požiarnu bezpečnosť, treba vopred ohlásiť stavebnému úradu; pri kultúrnych pamiatkach sú pravidlá prísnejšie. Správca má právo skontrolovať, či rekonštrukcia nezasahuje do spoločných častí domu, napríklad do nosných a obvodových stien či spoločných rozvodov. Hodiny hlučných prác, ak sú stanovené, určuje domový poriadok. Dodržiavať ho musia všetci, ktorí sú v dome, aj remeselníci."
+      },
+      {
+       "t": "p",
+       "html": "Vo Viedni potrebujú práce v byte v osobnom vlastníctve (Wohnungseigentum), ktoré sa dotýkajú spoločných častí domu alebo jeho vzhľadu, súhlas ostatných vlastníkov; správca domu (Hausverwaltung) ho sám nedáva. Zmeny dispozície a zásahy do nosných konštrukcií sa vybavujú na viedenskom stavebnom úrade (Baupolizei), spravidla ohlásením (Bauanzeige) s výkresmi a statickým výpočtom alebo posudkom. To všetko zistíme ešte pred rozpočtom."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stroitelstvo-remont-bratislava-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Cena rekonštrukcie"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Cena závisí od plochy a stavu objektu, rozsahu búracích prác, náročnosti technických rozvodov, materiálov, vybavenia a termínov."
+      },
+      {
+       "t": "p",
+       "html": "Na predbežný odhad nám pošlite pôdorys, návrh interiéru alebo technickú dokumentáciu a povieme vám orientačnú cenu. Presnú cenu určí <a href=\"/sk/rozpocet-rekonstrukcie-bratislava-vieden\">podrobný rozpočet</a>: 5 €/m², pre byt 70 m² teda 350 €. Ak rekonštrukciu robíme my, cenu rozpočtu odpočítame z ceny prác."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Vypracovanie rozpočtu rekonštrukcie",
+       "href": "/sk/rozpocet-rekonstrukcie-bratislava-vieden"
+      },
+      {
+       "text": "Ceny služieb interiérového dizajnu",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stroitelstvo-remont-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Otázky o rekonštrukcii na kľúč"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Urobíte rekonštrukciu podľa projektu iného dizajnéra?",
+       "a": "<p>Áno, ak projekt obsahuje realizačné výkresy. Pred začiatkom projekt skontrolujeme, pripravíme rozpočet a povieme vám, ktoré výkresy remeselníkom chýbajú. Ak projekt nemáte vôbec, minimom sú realizačné výkresy z balíka <a href=\"/sk/dizajnovy-balik-zakladny-bratislava-vieden\">„Základný“</a>: 35–45 €/m², pre byt 60 m² teda 2 100–2 700 €.</p>"
+      },
+      {
+       "q": "Je rekonštrukcia vo Viedni drahšia?",
+       "a": "<p>Nie. Práce aj nábytok počítame podľa rovnakých sadzieb ako v Bratislave a doprava nábytku je v jeho cene. Z Bratislavy do Viedne je to asi hodina jazdy, výjazdy na objekt neúčtujeme zvlášť.</p>"
+      },
+      {
+       "q": "Ako dlho trvá rekonštrukcia?",
+       "a": "<p>Závisí to od plochy, rozsahu búracích prác a technických rozvodov a od toho, či je projekt hotový. Termín určíme po rozpočte a zapíšeme ho do zmluvy. Nábytok sa vyrába súbežne s rekonštrukciou, nie až po nej.</p>"
+      },
+      {
+       "q": "Kto nakupuje materiál?",
+       "a": "<p>Ako vám to vyhovuje. Nákup a zabezpečenie vybavenia môžete nechať na nás, podľa špecifikácie z projektu. Alebo nakupujete sami podľa tej istej špecifikácie a dohodneme sa, čo má byť na stavbe v ktorej etape.</p>"
+      },
+      {
+       "q": "Kto dohliada na to, aby rekonštrukcia zodpovedala projektu?",
+       "a": "<p>Dizajnér, ktorý robí autorský dozor: chodí na stavbu, odpovedá remeselníkom na otázky k výkresom a kontroluje, či práce a materiály zodpovedajú projektu. Cena je 1 000 € mesačne, balík „Premium+“ obsahuje dva mesiace.</p>"
+      },
+      {
+       "q": "Robíte aj holobyty v novostavbách?",
+       "a": "<p>Áno, väčšina našich objektov v Bratislave sú novostavby. Pred rekonštrukciou odporúčame <a href=\"/sk/preberanie-bytu-od-developera-bratislava\">preberanie bytu od developera</a>: vady zapísané v protokole odstráni developer a nezaplatíte ich z rozpočtu na rekonštrukciu.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6ac4d637661c653aa35cc830",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

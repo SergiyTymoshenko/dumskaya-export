@@ -1,0 +1,116 @@
+{
+ "path": "/sk/kontakt-bratislava-vieden",
+ "lang": "sk",
+ "type": "contact",
+ "group": null,
+ "title": "Kontakt DUMSKAYA DESIGN — Bratislava a Viedeň",
+ "description": "Telefónne čísla v Bratislave a vo Viedni, e-mail a formulár dopytu. Bezplatná konzultácia k dizajnu interiéru, nábytku na mieru a rekonštrukcii na kľúč.",
+ "h1": "Kontakt na štúdio interiérového dizajnu",
+ "og_image": "655410c220a5eb000f971701",
+ "alternates": {
+  "ru": "/contact-studio-interior-design-bratislava-vienna",
+  "ua": "/ua/contact-studio-interior-design-bratislava-vienna",
+  "en": "/en/contact-studio-interior-design-bratislava-vienna",
+  "sk": "/sk/kontakt-bratislava-vieden",
+  "de": "/de/kontakt-innenarchitektur-wien-bratislava"
+ },
+ "sections": [
+  {
+   "id": "5d6533289ad68b0023dd3cd6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Kontakt na štúdio interiérového dizajnu"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Zavolajte nám, napíšte cez <strong>Telegram</strong> alebo <strong>WhatsApp</strong>, prípadne pošlite žiadosť cez formulár. Odpovieme do jedného pracovného dňa."
+      },
+      {
+       "t": "p",
+       "html": "Štúdio nájdete v Bratislave na Súkenníckej 1 v Ružinove. Príďte po predchádzajúcom dohovore: ukážeme vám vzorky materiálov a kovania a prediskutujeme váš projekt."
+      },
+      {
+       "t": "p",
+       "html": "Vo Viedni sa stretávame priamo na objekte: zameranie, konzultácie aj autorský dozor tam prebiehajú rovnako ako v Bratislave. Prvá konzultácia je bezplatná."
+      },
+      {
+       "t": "p",
+       "html": "Do žiadosti napíšte mesto, plochu a čo potrebujete: návrh interiéru, nábytok, kuchyňu alebo rekonštrukciu. Ak máte pôdorys od developera, pošlite nám ho v správe cez WhatsApp alebo Telegram. Na konzultácii sa potom môžeme rozprávať konkrétnejšie."
+      }
+     ]
+    },
+    {
+     "type": "form"
+    }
+   ]
+  },
+  {
+   "id": "69cbf403c4c90529feccfb79",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

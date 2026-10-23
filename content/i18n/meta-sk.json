@@ -1,0 +1,1002 @@
+{
+ "/": {
+  "path": "/sk",
+  "title": "Štúdio dizajnu interiéru v Bratislave a vo Viedni | DUMSKAYA",
+  "description": "Štúdio, ktoré vedie Irina Dumskaya: návrhy bytov, domov a kancelárií, nábytok z vlastnej výroby a rekonštrukcia na kľúč v Bratislave a vo Viedni."
+ },
+ "/3d-architecture-bratislava": {
+  "path": "/sk/architektonicka-studia-fasad-3d-vizualizacia",
+  "title": "Architektonická štúdia fasád s 3D vizualizáciou | DUMSKAYA",
+  "description": "Štúdia fasád pre areál rodinných domov: dva varianty materiálov, sadové úpravy a 3D vizualizácia pozemku. Štúdio v Bratislave, pracujeme aj pre Viedeň."
+ },
+ "/3d-vizualizaciya-fasada-bratislava": {
+  "path": "/sk/3d-vizualizacia-fasady-rodinneho-domu",
+  "title": "3D vizualizácia fasády rodinného domu | DUMSKAYA DESIGN",
+  "description": "Štúdia fasády rodinného domu a sadových úprav pozemku s fotorealistickou 3D vizualizáciou. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "3D vizualizácia fasády a záhrady",
+  "facts": null
+ },
+ "/3d-vizualizaciya-fasada-zdaniya-cena": {
+  "path": "/sk/3d-vizualizacia-fasady-cena",
+  "title": "3D vizualizácia fasády: ceny od 75 € | DUMSKAYA DESIGN",
+  "description": "Fotorealistická 3D vizualizácia fasády a pozemku: model, materiály, svetlo, zeleň, render. Cena každej etapy a podmienky úprav. Bratislava a Viedeň."
+ },
+ "/about-studio": {
+  "path": "/sk/o-studiu",
+  "title": "O štúdiu DUMSKAYA DESIGN — dizajn interiéru v Bratislave",
+  "description": "Štúdio v Bratislave vedie Irina Dumskaya. Navrhujeme byty, domy a kancelárie, vyrábame nábytok a robíme rekonštrukcie na kľúč v Bratislave aj vo Viedni."
+ },
+ "/apartment-furniture-interior-design-45m": {
+  "path": "/sk/dizajn-interieru-bytu-45-m2",
+  "title": "Dizajn interiéru bytu 45 m² | DUMSKAYA DESIGN",
+  "description": "Návrh interiéru bytu 45 m² v modernom štýle: svetlý dub, hladké dvierka vo farbe stien a úložné priestory vo vstavanom nábytku. Štúdio DUMSKAYA DESIGN.",
+  "project_title": "Byt, 45 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "45 m²",
+   "works": "Návrh interiéru"
+  }
+ },
+ "/apartment-interior-design-48m": {
+  "path": "/sk/dizajn-interieru-bytu-48-m2",
+  "title": "Dizajn interiéru bytu 48 m² | DUMSKAYA DESIGN",
+  "description": "Byt 48 m²: návrh interiéru, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie. Štúdio DUMSKAYA DESIGN v Bratislave a vo Viedni.",
+  "project_title": "Byt, 48 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "48 m²",
+   "works": "Návrh interiéru, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+  }
+ },
+ "/apartment-interior-design-51m": {
+  "path": "/sk/dizajn-interieru-bytu-51-m2",
+  "title": "Dizajn interiéru bytu 51 m² | DUMSKAYA DESIGN",
+  "description": "Byt 51 m²: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie.",
+  "project_title": "Byt, 51 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "51 m²",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+  }
+ },
+ "/apartment-interior-design-52m": {
+  "path": "/sk/dizajn-interieru-bytu-52-m2",
+  "title": "Dizajn interiéru bytu 52 m² | DUMSKAYA DESIGN",
+  "description": "Byt 52 m²: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie.",
+  "project_title": "Byt, 52 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "52 m²",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+  }
+ },
+ "/apartment-interior-design-54m": {
+  "path": "/sk/dizajn-interieru-bytu-54-m2",
+  "title": "Dizajn interiéru bytu 54 m² | DUMSKAYA DESIGN",
+  "description": "Byt 54 m²: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie.",
+  "project_title": "Byt, 54 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "54 m²",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+  }
+ },
+ "/apartment-interior-design-60m": {
+  "path": "/sk/dizajn-interieru-bytu-s-terasou-60-m2",
+  "title": "Dizajn interiéru bytu 60 m² s terasou 18 m² | DUMSKAYA",
+  "description": "Byt 60 m² s terasou 18 m²: dispozícia, výber materiálov a 3D vizualizácia všetkých miestností. Svetlý dub, sivý kameň, betón a čierny kov.",
+  "project_title": "Byt, 60 m²",
+  "facts": {
+   "object": "Byt s terasou 18 m²",
+   "area": "60 m²",
+   "works": "Návrh interiéru a 3D vizualizácia"
+  }
+ },
+ "/apartment-interior-design-bratislava-52m": {
+  "path": "/sk/dizajn-interieru-bytu-bratislava-52-m2",
+  "title": "Dizajn interiéru bytu 52 m² v Bratislave | DUMSKAYA DESIGN",
+  "description": "Byt 52 m² v Bratislave: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Byt v Bratislave, 52 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "52 m²",
+   "city": "Bratislava",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/apartment-interior-design-bratislava-58m": {
+  "path": "/sk/dizajn-interieru-bytu-bratislava-58-m2",
+  "title": "Dizajn interiéru bytu 58 m² v Bratislave | DUMSKAYA DESIGN",
+  "description": "Byt 58 m² v Bratislave: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie.",
+  "project_title": "Byt v Bratislave, 58 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "58 m²",
+   "city": "Bratislava",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+  }
+ },
+ "/apartment-interior-design-krakow-63m": {
+  "path": "/sk/dizajn-interieru-bytu-krakov-63-m2",
+  "title": "Dizajn interiéru bytu 63 m² v Krakove | DUMSKAYA DESIGN",
+  "description": "Byt 63 m² v Krakove: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie.",
+  "project_title": "Byt v Krakove, 63 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "63 m²",
+   "city": "Krakov",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+  }
+ },
+ "/apartment-interior-design-krakow-64m": {
+  "path": "/sk/dizajn-minimalistickeho-bytu-krakov-64-m2",
+  "title": "Minimalistický dizajn bytu 64 m² v Krakove | DUMSKAYA",
+  "description": "Byt 64 m² v Krakove v minimalistickom štýle: návrh interiéru, 3D vizualizácia a výkresová dokumentácia. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Byt v Krakove, 64 m²",
+  "facts": {
+   "object": "Byt, minimalizmus",
+   "area": "64 m²",
+   "city": "Krakov",
+   "works": "Návrh interiéru, 3D vizualizácia a výkresová dokumentácia"
+  }
+ },
+ "/apartment-interior-design-warsaw-43m": {
+  "path": "/sk/dizajn-interieru-bytu-varsava-43-m2",
+  "title": "Dizajn interiéru bytu 43 m² vo Varšave | DUMSKAYA DESIGN",
+  "description": "Byt 43 m² vo Varšave: návrh interiéru, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie.",
+  "project_title": "Byt vo Varšave, 43 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "43 m²",
+   "city": "Varšava",
+   "works": "Návrh interiéru, výkresová dokumentácia, nábytok na mieru, rekonštrukcia na kľúč a dekorovanie"
+  }
+ },
+ "/apartment-interior-design-warsaw-43m2": {
+  "path": "/sk/dizajn-minimalistickeho-bytu-varsava-43-m2",
+  "title": "Minimalistický dizajn bytu 43 m² vo Varšave | DUMSKAYA",
+  "description": "Byt 43 m² vo Varšave v minimalistickom štýle: návrh interiéru (balík „Základný“) a 3D vizualizácia. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Minimalistický byt vo Varšave, 43 m²",
+  "facts": {
+   "object": "Byt, minimalizmus",
+   "area": "43 m²",
+   "city": "Varšava",
+   "works": "Návrh interiéru (balík „Základný“) a 3D vizualizácia"
+  }
+ },
+ "/apartment-luxury-interior-design-madrid-spain-107m": {
+  "path": "/sk/dizajn-interieru-apartmanu-madrid-107-m2",
+  "title": "Dizajn interiéru apartmánu 107 m² v Madride | DUMSKAYA",
+  "description": "Apartmán 107 m² v Madride: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Apartmán v Madride, 107 m²",
+  "facts": {
+   "object": "Apartmán",
+   "area": "107 m²",
+   "city": "Madrid",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/apartments-dubai-luxury-interior-design-160m": {
+  "path": "/sk/dizajn-interieru-apartmanu-dubaj-160-m2",
+  "title": "Dizajn interiéru apartmánu 160 m² v Dubaji | DUMSKAYA",
+  "description": "Apartmán 160 m² v Dubaji: návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Apartmán v Dubaji, 160 m²",
+  "facts": {
+   "object": "Apartmán",
+   "area": "160 m²",
+   "city": "Dubaj",
+   "works": "Návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/apartments-los-angeles-interior-design-140m": {
+  "path": "/sk/dizajn-interieru-apartmanu-los-angeles-140-m2",
+  "title": "Dizajn apartmánu 140 m² v Los Angeles | DUMSKAYA DESIGN",
+  "description": "Apartmán 140 m² v Los Angeles: návrh interiéru, 3D vizualizácia, výkresová dokumentácia a návrh nábytku. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Apartmán v Los Angeles, 140 m²",
+  "facts": {
+   "object": "Apartmán",
+   "area": "140 m²",
+   "city": "Los Angeles",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia a návrh nábytku"
+  }
+ },
+ "/apartments-new-york-luxury-interior-design-57m": {
+  "path": "/sk/dizajn-interieru-apartmanu-new-york-57-m2",
+  "title": "Dizajn interiéru apartmánu 57 m² v New Yorku | DUMSKAYA",
+  "description": "Apartmán 57 m² v New Yorku: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Apartmán v New Yorku, 57 m²",
+  "facts": {
+   "object": "Apartmán",
+   "area": "57 m²",
+   "city": "New York",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/apartments-praha-luxury-interior-design-90m": {
+  "path": "/sk/dizajn-interieru-apartmanu-praha-90-m2",
+  "title": "Dizajn interiéru apartmánu 90 m² v Prahe | DUMSKAYA DESIGN",
+  "description": "Apartmán 90 m² v Prahe: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Apartmán v Prahe, 90 m²",
+  "facts": {
+   "object": "Apartmán",
+   "area": "90 m²",
+   "city": "Praha",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/apartments-vienna-luxury-interior-design-58m": {
+  "path": "/sk/dizajn-interieru-bytu-vieden-58-m2",
+  "title": "Dizajn interiéru bytu 58 m² vo Viedni | DUMSKAYA DESIGN",
+  "description": "Byt 58 m² vo Viedni: návrh interiéru, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Byt vo Viedni, 58 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "58 m²",
+   "city": "Viedeň",
+   "works": "Návrh interiéru, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/apartments-wien-luxury-interior-design-115m": {
+  "path": "/sk/dizajn-interieru-bytu-vieden-115-m2",
+  "title": "Dizajn interiéru bytu 115 m² vo Viedni | DUMSKAYA DESIGN",
+  "description": "Byt 115 m² vo Viedni: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Byt vo Viedni, 115 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "115 m²",
+   "city": "Viedeň",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/architecture-design-bratislava": {
+  "path": "/sk/architektura-projektovanie-domov-bratislava",
+  "title": "Architektonické projektovanie domov v Bratislave | DUMSKAYA",
+  "description": "Rodinné domy, fasády, rekonštrukcie, drobná architektúra v Bratislave a vo Viedni: štúdia, 3D vizualizácia, výkresy, interiér aj nábytok v jednom projekte."
+ },
+ "/architecture-facade-barbershop-kyiv": {
+  "path": "/sk/navrh-fasady-barbershopu-kyjev",
+  "title": "Návrh fasády barbershopu v Kyjeve | DUMSKAYA DESIGN",
+  "description": "Architektonické riešenie fasády barbershopu v Kyjeve: koncept, materiály, vývesný štít a 3D vizualizácia. Štúdio DUMSKAYA DESIGN.",
+  "project_title": "Fasáda barbershopu v Kyjeve",
+  "facts": null
+ },
+ "/architecture-gazebo-pergola": {
+  "path": "/sk/altanok-s-pergolou-navrh-realizacia",
+  "title": "Altánok s pergolou: návrh a realizácia | DUMSKAYA DESIGN",
+  "description": "Návrh altánku s pergolou a letnou kuchyňou: od 3D vizualizácie po realizáciu na pozemku. Drobná architektúra od štúdia DUMSKAYA DESIGN.",
+  "project_title": "Altánok s pergolou",
+  "facts": null
+ },
+ "/architecture-private-house": {
+  "path": "/sk/architektonicky-navrh-fasad-rodinneho-domu",
+  "title": "Architektonický návrh fasád rodinného domu | DUMSKAYA",
+  "description": "Architektonický návrh fasád rodinného domu: riešenie fasád, materiály a 3D vizualizácia. Štúdio DUMSKAYA DESIGN v Bratislave a vo Viedni.",
+  "project_title": "Fasády rodinného domu",
+  "facts": null
+ },
+ "/architecture-villa-spain-marbella": {
+  "path": "/sk/navrh-fasady-vily-marbella",
+  "title": "Architektonické riešenie fasády vily, Marbella | DUMSKAYA",
+  "description": "Projekt rekonštrukcie fasády vily v Marbelle v Španielsku: architektonické riešenie a 3D vizualizácia. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Fasáda vily v Marbelle",
+  "facts": null
+ },
+ "/basic-interior-design-package-bratislava-vienna": {
+  "path": "/sk/dizajnovy-balik-zakladny-bratislava-vieden",
+  "title": "Dizajnový balík „Základný“ — 35–45 €/m² | DUMSKAYA DESIGN",
+  "description": "Kompletný návrh interiéru: dispozícia, 3D vizualizácia, realizačné výkresy a špecifikácie. 35–45 €/m², od 2 000 €. Bratislava a Viedeň."
+ },
+ "/beauty-salon-interior-design-63m": {
+  "path": "/sk/dizajn-salonu-krasy-63-m2",
+  "title": "Dizajn salónu krásy 63 m² | DUMSKAYA DESIGN",
+  "description": "Salón krásy 63 m²: návrh interiéru a výkresová dokumentácia. Recepcia s čakárňou, miesta pre kaderníkov a manikúru, miestnosť kozmetičky.",
+  "project_title": "Salón krásy, 63 m²",
+  "facts": {
+   "object": "Salón krásy",
+   "area": "63 m²",
+   "works": "Návrh interiéru a výkresová dokumentácia"
+  }
+ },
+ "/boss-office-interior-design": {
+  "path": "/sk/dizajn-kancelarie-riaditela-7-m2",
+  "title": "Dizajn kancelárie riaditeľa 7 m² | DUMSKAYA DESIGN",
+  "description": "Kancelária riaditeľa 7 m² v podkroví: návrh interiéru, 3D vizualizácia a nábytok na mieru. Štúdio DUMSKAYA DESIGN v Bratislave a vo Viedni.",
+  "project_title": "Kancelária riaditeľa, 7 m²",
+  "facts": {
+   "object": "Kancelária riaditeľa",
+   "area": "7 m²",
+   "works": "Návrh interiéru, 3D vizualizácia a nábytok na mieru"
+  }
+ },
+ "/clothing-boutique-interior-design-kyiv-140": {
+  "path": "/sk/dizajn-butiku-s-oblecenim-kyjev-140-m2",
+  "title": "Dizajn butiku s oblečením 140 m² v Kyjeve | DUMSKAYA",
+  "description": "Butik s dámskym oblečením 140 m² v Kyjeve: návrh interiéru, 3D vizualizácia, návrh nábytku a rekonštrukcia na kľúč. Štúdio DUMSKAYA DESIGN.",
+  "project_title": "Butik s oblečením v Kyjeve, 140 m²",
+  "facts": {
+   "object": "Butik s oblečením",
+   "area": "140 m²",
+   "city": "Kyjev",
+   "works": "Návrh interiéru, 3D vizualizácia, návrh nábytku a rekonštrukcia na kľúč"
+  }
+ },
+ "/contact-studio-interior-design-bratislava-vienna": {
+  "path": "/sk/kontakt-bratislava-vieden",
+  "title": "Kontakt DUMSKAYA DESIGN — Bratislava a Viedeň",
+  "description": "Telefónne čísla v Bratislave a vo Viedni, e-mail a formulár dopytu. Bezplatná konzultácia k dizajnu interiéru, nábytku na mieru a rekonštrukcii na kľúč."
+ },
+ "/custom-furniture-bratislava-design-production": {
+  "path": "/sk/dizajnovy-balik-nabytok-bratislava-vieden",
+  "title": "Dizajnový balík „Nábytok“ — 35–50 €/m² | DUMSKAYA DESIGN",
+  "description": "Návrh korpusového nábytku pre byt s hotovými povrchmi: 3D vizualizácia a výkresy nábytku. 35–50 €/m², od 2 000 €. Výroba v Bratislave."
+ },
+ "/design-interior-studio-bratislava-metropolis-sk-75m": {
+  "path": "/sk/dizajn-interieru-bytu-metropolis-bratislava-75-m2",
+  "title": "Dizajn bytu 75 m² v Bratislave, Metropolis | DUMSKAYA",
+  "description": "Byt 75 m² v Metropolis v Bratislave: návrh interiéru (balík „Nábytok“), 3D vizualizácia a nábytok na mieru. Štúdio DUMSKAYA DESIGN.",
+  "project_title": "Byt v Metropolis v Bratislave, 75 m²",
+  "facts": {
+   "object": "Byt v Metropolis",
+   "area": "75 m²",
+   "city": "Bratislava",
+   "works": "Návrh interiéru (balík „Nábytok“), 3D vizualizácia a nábytok na mieru"
+  }
+ },
+ "/dizainer-interierov-kiev": {
+  "path": "/sk/dizajn-interieru-rodinneho-domu-kyjev-217-m2",
+  "title": "Dizajn rodinného domu 217 m² v Kyjeve | DUMSKAYA DESIGN",
+  "description": "Rodinný dom 217 m² v Kyjeve: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Rodinný dom v Kyjeve, 217 m²",
+  "facts": {
+   "object": "Rodinný dom",
+   "area": "217 m²",
+   "city": "Kyjev",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/dizajn-interera-vena": {
+  "path": "/sk/dizajn-interieru-vieden",
+  "title": "Dizajn interiéru vo Viedni — byty a domy | DUMSKAYA",
+  "description": "Byty a domy vo Viedni: dizajn interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč vlastnými tímami. Štúdio v Bratislave, 60 km od Viedne."
+ },
+ "/dizayn-kommercheskogo-interyera-sauna-banya": {
+  "path": "/sk/dizajn-interieru-sauny-120-m2",
+  "title": "Dizajn sauny a parného kúpeľa 120 m² | DUMSKAYA DESIGN",
+  "description": "Komerčná sauna a parný kúpeľ 120 m²: návrh interiéru a návrh nábytku. Recepcia, šatňa so sprchami, parné miestnosti, masáže a oddychová zóna.",
+  "project_title": "Sauna a parný kúpeľ, 120 m²",
+  "facts": {
+   "object": "Sauna a parný kúpeľ",
+   "area": "120 m²",
+   "works": "Návrh interiéru a návrh nábytku"
+  }
+ },
+ "/dumskaya-interior-design-villa-220m": {
+  "path": "/sk/dizajn-interieru-vily-burgas-220-m2",
+  "title": "Dizajn interiéru vily 220 m² v Burgase | DUMSKAYA DESIGN",
+  "description": "Vila 220 m² v Burgase: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Vila v Burgase, 220 m²",
+  "facts": {
+   "object": "Vila",
+   "area": "220 m²",
+   "city": "Burgas",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/dumskaya-interior-design-villa-230m": {
+  "path": "/sk/dizajn-interieru-rodinneho-domu-230-m2",
+  "title": "Dizajn interiéru rodinného domu 230 m² | DUMSKAYA DESIGN",
+  "description": "Rodinný dom 230 m²: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Rodinný dom, 230 m²",
+  "facts": {
+   "object": "Rodinný dom",
+   "area": "230 m²",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/express-interior-design-package-bratislava-vienna": {
+  "path": "/sk/dizajnovy-balik-express-bratislava-vieden",
+  "title": "Dizajnový balík „Express“ — 20 €/m² | DUMSKAYA DESIGN",
+  "description": "Rýchly návrh interiéru od 14 dní: dispozícia, rozmiestnenie nábytku a výber materiálov. 20 €/m², od 1 500 €. Bratislava a Viedeň."
+ },
+ "/furniture-interior-design-43m": {
+  "path": "/sk/dizajn-mezonetoveho-bytu-43-m2",
+  "title": "Dizajn mezonetového bytu 43 m² | DUMSKAYA DESIGN",
+  "description": "Mezonetový byt 43 m²: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Mezonetový byt, 43 m²",
+  "facts": {
+   "object": "Mezonetový byt",
+   "area": "43 m²",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/furniture-private-house-design": {
+  "path": "/sk/nabytok-na-mieru-rekonstrukcia-rodinneho-domu",
+  "title": "Nábytok na mieru a rekonštrukcia rodinného domu | DUMSKAYA",
+  "description": "Projekt štúdia DUMSKAYA DESIGN: návrh a výroba nábytku na mieru a rekonštrukcia rodinného domu na kľúč. Fotografie hotového domu."
+ },
+ "/image-license": {
+  "path": "/sk/pouzitie-fotografii-vizualizacii",
+  "title": "Použitie fotografií a vizualizácií | DUMSKAYA DESIGN",
+  "description": "Fotografie interiérov, 3D vizualizácie a výkresy na webe DUMSKAYA DESIGN chráni autorské právo: čo je možné použiť bez povolenia a ako získať licenciu."
+ },
+ "/interior-design-apartment-bratislava-127m": {
+  "path": "/sk/dizajn-trojizboveho-bytu-bratislava-127-m2",
+  "title": "Dizajn trojizbového bytu 127 m² v Bratislave | DUMSKAYA",
+  "description": "Trojizbový byt 127 m² v Bratislave: návrh interiéru v balíku „Základný“, 3D vizualizácia a výkresová dokumentácia. Prebieha rekonštrukcia.",
+  "project_title": "Byt v Bratislave, 127 m²",
+  "facts": {
+   "object": "Trojizbový byt s balkónom",
+   "area": "127 m²",
+   "city": "Bratislava",
+   "works": "Návrh interiéru v balíku „Základný“: 3D vizualizácia a výkresová dokumentácia",
+   "status": "v realizácii — prebieha rekonštrukcia"
+  }
+ },
+ "/interior-design-apartment-bratislava-158m": {
+  "path": "/sk/dizajn-mezonetoveho-bytu-bratislava-158-m2",
+  "title": "Dizajn mezonetového bytu 158 m² v Bratislave | DUMSKAYA",
+  "description": "Mezonetový byt 158 m² s terasou 20 m² v Bratislave: návrh interiéru, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Mezonetový byt v Bratislave, 158 m²",
+  "facts": {
+   "object": "Mezonetový byt s terasou 20 m²",
+   "area": "158 m²",
+   "city": "Bratislava",
+   "works": "Návrh interiéru, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/interior-design-apartment-luxury-kyiv-119m": {
+  "path": "/sk/dizajn-interieru-bytu-kyjev-119-m2",
+  "title": "Dizajn bytu 119 m² v Kyjeve s terasou 30 m² | DUMSKAYA",
+  "description": "Návrh interiéru bytu 119 m² s terasou 30 m² v Kyjeve: svetlé béžovosivé tóny, drevo, dlažba v dekore bieleho mramoru a zlatistý kov.",
+  "project_title": "Byt v Kyjeve, 119 m²",
+  "facts": {
+   "object": "Byt s terasou 30 m²",
+   "area": "119 m²",
+   "city": "Kyjev",
+   "works": "Návrh interiéru"
+  }
+ },
+ "/interior-design-apartment-ukraine-47m": {
+  "path": "/sk/dizajn-trojizboveho-bytu-47-m2",
+  "title": "Dizajn trojizbového bytu 47 m² | DUMSKAYA DESIGN",
+  "description": "Návrh interiéru trojizbového bytu 47 m²: obývačka s kuchyňou, detská izba s pracovným miestom a spálňa rodičov na malej ploche.",
+  "project_title": "Trojizbový byt, 47 m²",
+  "facts": {
+   "object": "Trojizbový byt",
+   "area": "47 m²",
+   "works": "Návrh interiéru"
+  }
+ },
+ "/interior-design-apartments-bratislava": {
+  "path": "/sk/dizajn-interieru-bratislava",
+  "title": "Dizajn interiéru bytov a domov v Bratislave | DUMSKAYA",
+  "description": "Štúdio dizajnu interiéru v Bratislave (Ružinov): návrh, 3D vizualizácia, nábytok z vlastnej výroby a rekonštrukcia na kľúč. Bezplatná konzultácia."
+ },
+ "/interior-design-cosmetology-salon": {
+  "path": "/sk/dizajn-kozmetickeho-salonu-54-m2",
+  "title": "Dizajn kozmetického salónu 54 m² | DUMSKAYA DESIGN",
+  "description": "Kozmetický salón 54 m²: návrh interiéru (balík „Express“), 3D vizualizácia a výkresová dokumentácia. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Kozmetický salón, 54 m²",
+  "facts": {
+   "object": "Kozmetický salón",
+   "area": "54 m²",
+   "works": "Návrh interiéru (balík „Express“), 3D vizualizácia a výkresová dokumentácia"
+  }
+ },
+ "/interior-design-furniture-60m": {
+  "path": "/sk/dizajn-interieru-bytu-varna-60-m2",
+  "title": "Dizajn interiéru bytu 60 m² vo Varne | DUMSKAYA DESIGN",
+  "description": "Byt 60 m² vo Varne: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Byt vo Varne, 60 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "60 m²",
+   "city": "Varna",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/interior-design-furniture-65m": {
+  "path": "/sk/dizajn-interieru-bytu-charkov-65-m2",
+  "title": "Dizajn interiéru bytu 65 m² v Charkove | DUMSKAYA DESIGN",
+  "description": "Byt 65 m² v Charkove: návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč. Štúdio DUMSKAYA DESIGN v Bratislave a vo Viedni."
+ },
+ "/interior-design-furniture-classic-120m-london": {
+  "path": "/sk/dizajn-interieru-bytu-londyn-120-m2",
+  "title": "Dizajn bytu 120 m² v Londýne, moderná klasika | DUMSKAYA",
+  "description": "Byt 120 m² v Londýne v štýle modernej klasiky: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Byt v Londýne, 120 m²",
+  "facts": {
+   "object": "Byt, moderná klasika",
+   "area": "120 m²",
+   "city": "Londýn",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/interior-design-office-bratislava-wien": {
+  "path": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+  "title": "Dizajn kancelárií, obchodov a salónov — Bratislava, Viedeň",
+  "description": "Dizajn komerčných interiérov: dispozícia, 3D vizualizácia, výkresy a nábytok na mieru pre kancelárie, obchody a salóny. Bratislava a Viedeň, od 20 €/m²."
+ },
+ "/interior-design-private-house-215m": {
+  "path": "/sk/dizajn-interieru-rodinneho-domu-berlin-215-m2",
+  "title": "Dizajn rodinného domu 215 m² v Berlíne | DUMSKAYA DESIGN",
+  "description": "Rodinný dom 215 m² v Berlíne: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Rodinný dom v Berlíne, 215 m²",
+  "facts": {
+   "object": "Rodinný dom",
+   "area": "215 m²",
+   "city": "Berlín",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/interior-design-private-house-bratislava-120m2": {
+  "path": "/sk/dizajn-interieru-rodinneho-domu-bratislava-120-m2",
+  "title": "Dizajn rodinného domu 120 m² v Bratislave | DUMSKAYA",
+  "description": "Rodinný dom 120 m² v Bratislave: návrh interiéru (balík „Express“) a projekt elektroinštalácie. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Rodinný dom v Bratislave, 120 m²",
+  "facts": {
+   "object": "Rodinný dom",
+   "area": "120 m²",
+   "city": "Bratislava",
+   "works": "Návrh interiéru (balík „Express“) a projekt elektroinštalácie"
+  }
+ },
+ "/interior-design-private-house-dunajska-streda-140m": {
+  "path": "/sk/dizajn-interieru-rodinneho-domu-dunajska-streda-140-m2",
+  "title": "Dizajn rodinného domu 140 m² v Dunajskej Strede",
+  "description": "Rodinný dom 140 m² v Dunajskej Strede: návrh interiéru. Vo všetkých miestnostiach svetlá béžová, dub, tmavé drevo a kameň. Štúdio DUMSKAYA DESIGN.",
+  "project_title": "Rodinný dom v Dunajskej Strede, 140 m²",
+  "facts": {
+   "object": "Rodinný dom",
+   "area": "140 m²",
+   "city": "Dunajská Streda",
+   "works": "Návrh interiéru"
+  }
+ },
+ "/interior-design-private-house-kharkiv-212m": {
+  "path": "/sk/dizajn-interieru-rodinneho-domu-charkov-212-m2",
+  "title": "Dizajn rodinného domu 212 m² v Charkove | DUMSKAYA DESIGN",
+  "description": "Rodinný dom 212 m² v Charkove: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Rodinný dom v Charkove, 212 m²",
+  "facts": {
+   "object": "Rodinný dom",
+   "area": "212 m²",
+   "city": "Charkov",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/interior-design-villa-179m-madrid-spain": {
+  "path": "/sk/dizajn-interieru-vily-madrid-179-m2",
+  "title": "Dizajn interiéru vily 179 m² v Madride | DUMSKAYA DESIGN",
+  "description": "Vila 179 m² v Madride: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Vila v Madride, 179 m²",
+  "facts": {
+   "object": "Vila",
+   "area": "179 m²",
+   "city": "Madrid",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/izgotovlenie-mebeli-pod-zakaz-dlya-kommercheskih-obektov-ofis-resepshen-peregovornaya-kabinet-kuhnya-bratislava": {
+  "path": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+  "title": "Kancelársky nábytok na mieru v Bratislave a vo Viedni",
+  "description": "Recepčné pulty, stoly, skrine a predajný nábytok na mieru pre kancelárie, obchody a salóny. Vlastná výroba v Bratislave, montáž v Bratislave a vo Viedni."
+ },
+ "/kak-pravilno-organizovat-rabochee-mesto-v-spalne": {
+  "path": "/sk/pracovne-miesto-v-spalni",
+  "title": "Pracovné miesto v spálni: ako ho zariadiť | DUMSKAYA",
+  "description": "Ako umiestniť pracovné miesto do spálne: zónovanie, osvetlenie, nábytok na mieru a úložné priestory. Praktické rady interiérového dizajnéra."
+ },
+ "/kak-pravilno-organizovat-svoj-sanuzel": {
+  "path": "/sk/usporiadanie-kupelne-rady-dizajnera",
+  "title": "Ako usporiadať kúpeľňu: rady dizajnéra | DUMSKAYA",
+  "description": "Dispozícia kúpeľne a WC: umiestnenie sanity, úložné priestory, osvetlenie a materiály. Praktické rady interiérového dizajnéra DUMSKAYA DESIGN."
+ },
+ "/kak-pravilno-organizovat-udobnuyu-i-funkcionalnuyu-kuhnyu": {
+  "path": "/sk/planovanie-kuchyne-pravidla",
+  "title": "Ako navrhnúť pohodlnú kuchyňu: pravidlá | DUMSKAYA",
+  "description": "Pracovný trojuholník, úložné zóny, vzdialenosti a osvetlenie: ako navrhnúť pohodlnú a praktickú kuchyňu. Rady interiérového dizajnéra."
+ },
+ "/kak-pravilno-organizovat-udobnyj-i-funkcionalnyj-balkon": {
+  "path": "/sk/zariadenie-balkona-napady-rady",
+  "title": "Ako zariadiť balkón: nápady a rady | DUMSKAYA DESIGN",
+  "description": "Ako urobiť z balkóna pohodlné a praktické miesto: oddych, pracovný kút alebo úložný priestor. Nábytok, osvetlenie a materiály — rady dizajnéra."
+ },
+ "/kuhni-na-zakaz-bratislava": {
+  "path": "/sk/kuchyne-na-mieru-bratislava",
+  "title": "Kuchyne na mieru na kľúč v Bratislave | DUMSKAYA DESIGN",
+  "description": "Kuchyne na kľúč v Bratislave: návrh, 3D vizualizácia, vlastná výroba, doprava a montáž. 32 modelov v katalógu aj individuálne projekty."
+ },
+ "/kuhni-pod-klyuch-vena": {
+  "path": "/sk/kuchyne-na-mieru-vieden",
+  "title": "Kuchyne na kľúč vo Viedni — návrh, výroba, montáž",
+  "description": "Kuchyne na mieru na kľúč vo Viedni: zameranie, návrh, 3D vizualizácia, výroba v Bratislave, doprava a montáž. 32 modelov v katalógu aj vlastné návrhy."
+ },
+ "/kuhni-pod-zakaz-k-01-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-01-klasicka-zelena",
+  "title": "Kuchyňa na mieru K-01: klasická zelená | DUMSKAYA",
+  "description": "Klasická rohová kuchyňa K-01 v zelenej farbe s akrylátovou pracovnou doskou. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni, konzultácia zdarma."
+ },
+ "/kuhni-pod-zakaz-k-02-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-02-minimalisticka-bezova",
+  "title": "Kuchyňa na mieru K-02: minimalistická béžová | DUMSKAYA",
+  "description": "Béžová minimalistická kuchyňa K-02 s ostrovom a dyhovanými dvierkami. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-03-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-03-moderna-cierna",
+  "title": "Kuchyňa na mieru K-03: moderná čierna | DUMSKAYA",
+  "description": "Čierna kuchyňa K-03 s ostrovom, drevodekorom a keramickou pracovnou doskou. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-04-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-04-moderna-siva",
+  "title": "Kuchyňa na mieru K-04: moderná sivá | DUMSKAYA",
+  "description": "Sivá rohová kuchyňa K-04 s kvarcitovou pracovnou doskou a lakovanými dvierkami. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-05-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-05-klasicka-bezova",
+  "title": "Kuchyňa na mieru K-05: klasická béžová | DUMSKAYA",
+  "description": "Klasická béžová kuchyňa K-05 s lakovanými dvierkami a keramickou pracovnou doskou. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-06-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-06-minimalisticka-biela",
+  "title": "Kuchyňa na mieru K-06: minimalistická biela | DUMSKAYA",
+  "description": "Biela rovná kuchyňa K-06 v minimalistickom štýle s akrylátovými dvierkami. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-07-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-07-moderna-biela",
+  "title": "Kuchyňa na mieru K-07: moderná biela | DUMSKAYA",
+  "description": "Biela kuchyňa K-07 v tvare U s keramickou pracovnou doskou a lakovanými dvierkami. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-08-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-08-minimalisticka-hneda",
+  "title": "Kuchyňa na mieru K-08: minimalistická hnedá | DUMSKAYA",
+  "description": "Hnedá minimalistická kuchyňa K-08 s HPL dvierkami v dekore dreva. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-09-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-09-moderna-siva",
+  "title": "Kuchyňa na mieru K-09: moderná sivá | DUMSKAYA",
+  "description": "Sivá kuchyňa K-09 so sklenenými dvierkami, ostrovom a kvarcitovou pracovnou doskou. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-10-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-10-loft-hneda",
+  "title": "Kuchyňa na mieru K-10: hnedá v štýle loft | DUMSKAYA",
+  "description": "Hnedá kuchyňa K-10 v štýle loft so sklenenými dvierkami a drevodekorom. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-11-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-11-moderna-siva",
+  "title": "Kuchyňa na mieru K-11: moderná sivá | DUMSKAYA",
+  "description": "Sivá kuchyňa K-11 s dekorom kameňa a laminovanými dvierkami z MDF. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-12-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-12-moderna-bezova",
+  "title": "Kuchyňa na mieru K-12: moderná béžová | DUMSKAYA",
+  "description": "Béžová rohová kuchyňa K-12 s drevodekorom a modernými dvierkami. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-13-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-13-minimalisticka-bezova",
+  "title": "Kuchyňa na mieru K-13: minimalistická béžová | DUMSKAYA",
+  "description": "Béžová kuchyňa K-13 s ostrovom, akrylátovými dvierkami a kompaktnou pracovnou doskou. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-14-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-14-minimalisticka-bezova",
+  "title": "Kuchyňa na mieru K-14: minimalistická béžová | DUMSKAYA",
+  "description": "Béžová kuchyňa K-14 s ostrovom a kombinovanými dvierkami z MDF. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-15-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-15-moderna-cervena",
+  "title": "Kuchyňa na mieru K-15: moderná červená | DUMSKAYA",
+  "description": "Červená kuchyňa K-15 s ostrovom, lakovanými dvierkami a keramickou pracovnou doskou. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-16-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-16-neoklasicka-zelena",
+  "title": "Kuchyňa na mieru K-16: neoklasická zelená | DUMSKAYA",
+  "description": "Zelená rohová kuchyňa K-16 v neoklasickom štýle s fóliovanými dvierkami. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-17-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-17-neoklasicka-siva",
+  "title": "Kuchyňa na mieru K-17: neoklasická sivá | DUMSKAYA",
+  "description": "Sivá neoklasická kuchyňa K-17 v tvare U s kombinovanými dvierkami a kompaktnou pracovnou doskou. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-18-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-18-siva-rohova",
+  "title": "Kuchyňa na mieru K-18: moderná sivá rohová | DUMSKAYA",
+  "description": "Sivá rohová kuchyňa K-18 s laminovanými dvierkami a praktickým úložným systémom. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-19-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-19-bezova-rovna",
+  "title": "Kuchyňa na mieru K-19: moderná béžová rovná | DUMSKAYA",
+  "description": "Béžová rovná kuchyňa K-19 s dĺžkou 3,1 m a laminovanými dvierkami. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-20-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-20-bezova-tvar-u",
+  "title": "Kuchyňa na mieru K-20: moderná béžová v tvare U | DUMSKAYA",
+  "description": "Béžová kuchyňa K-20 v tvare U s laminovanými dvierkami a pracovnou plochou na troch stranách. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-21-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-21-biela-rohova",
+  "title": "Kuchyňa na mieru K-21: neoklasická biela rohová | DUMSKAYA",
+  "description": "Biela rohová kuchyňa K-21 v neoklasickom štýle s fóliovanými dvierkami. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-26-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-26-hneda-rovna",
+  "title": "Kuchyňa na mieru K-26: moderná hnedá rovná | DUMSKAYA",
+  "description": "Hnedá rovná kuchyňa K-26 s dĺžkou 3,7 m a drevodekorom. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-28-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-28-hneda-tvar-u",
+  "title": "Kuchyňa na mieru K-28: moderná hnedá v tvare U | DUMSKAYA",
+  "description": "Hnedá kuchyňa K-28 v tvare U s hornými skrinkami v dekore dreva a systémom cargo. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-30-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-30-siva-rohova",
+  "title": "Kuchyňa na mieru K-30: moderná sivá rohová | DUMSKAYA",
+  "description": "Sivobiela rohová kuchyňa K-30 s dĺžkou 4,2 m a laminovanými dvierkami. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-31-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-31-hneda-rohova",
+  "title": "Kuchyňa na mieru K-31: moderná hnedá rohová | DUMSKAYA",
+  "description": "Rohová kuchyňa K-31 so svetlozelenými hornými skrinkami a dvierkami v dekore hnedého dreva. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-35-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-35-siva-rovna",
+  "title": "Kuchyňa na mieru K-35: moderná sivá rovná | DUMSKAYA",
+  "description": "Rovná kuchyňa K-35 so svetlými skrinkami v dekore dreva a tmavými sivohnedými dvierkami. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-36-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-36-siva-rohova",
+  "title": "Kuchyňa na mieru K-36: moderná sivá rohová | DUMSKAYA",
+  "description": "Rohová kuchyňa K-36 s grafitovými hornými skrinkami a svetlosivými dvierkami. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-41-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-41-siva-rovna",
+  "title": "Kuchyňa na mieru K-41: moderná sivá rovná | DUMSKAYA",
+  "description": "Rovná kuchyňa K-41 s grafitovými hornými skrinkami, svetlými dvierkami a doskou v dekore mramoru. Na mieru, s montážou v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-42-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-42-modra-rohova",
+  "title": "Kuchyňa na mieru K-42: moderná modrá rohová | DUMSKAYA",
+  "description": "Rohová kuchyňa K-42 so svetlými hornými skrinkami a tmavomodrými dvierkami. Navrhneme ju na vaše rozmery, vyrobíme a namontujeme v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-43-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-43-cervena-rovna",
+  "title": "Kuchyňa na mieru K-43: moderná červená rovná | DUMSKAYA",
+  "description": "Rovná kuchyňa K-43 v tmavej bordovej farbe s grafitovými drážkovanými hornými skrinkami. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-44-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-44-sivobezova-rohova",
+  "title": "Kuchyňa na mieru K-44: sivobéžová rohová | DUMSKAYA",
+  "description": "Rohová kuchyňa K-44 v sivobéžových tónoch s hornými skrinkami v dekore dreva. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-pod-zakaz-k-45-cena-bratislava-slovakia": {
+  "path": "/sk/kuchyna-na-mieru-k-45-bezova-tvar-u",
+  "title": "Kuchyňa na mieru K-45: béžová v tvare U | DUMSKAYA",
+  "description": "Béžová kuchyňa K-45 v tvare U s vysokými skrinkami v dekore dreva a kamennou pracovnou doskou. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni."
+ },
+ "/kuhni-shkafi-bratislava": {
+  "path": "/sk/nabytok-na-mieru-bratislava",
+  "title": "Nábytok na mieru v Bratislave — vlastná výroba | DUMSKAYA",
+  "description": "Nábytok na mieru v Bratislave: kuchyne, skrine, šatníky, predsiene, pracovne. Vlastná výroba, zameranie, doprava a montáž naším tímom."
+ },
+ "/kupkuhni-na-zakaz-vienna-bratislava": {
+  "path": "/sk/kuchyne-na-mieru-bratislava-vieden",
+  "title": "Kuchyne na mieru v Bratislave a vo Viedni: 32 modelov",
+  "description": "Kuchyne na mieru podľa vašich rozmerov: 32 modelov v katalógu, vlastná výroba v Bratislave, zameranie, doprava a montáž v cene. Bratislava a Viedeň."
+ },
+ "/luxury-interior-design-barcelona-spain-108m": {
+  "path": "/sk/dizajn-interieru-apartmanu-barcelona-108-m2",
+  "title": "Dizajn apartmánu 108 m² v Barcelone | DUMSKAYA DESIGN",
+  "description": "Apartmán 108 m² v Barcelone: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Apartmán v Barcelone, 108 m²",
+  "facts": {
+   "object": "Apartmán",
+   "area": "108 m²",
+   "city": "Barcelona",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/mebel-na-zakaz-vena": {
+  "path": "/sk/nabytok-na-mieru-vieden",
+  "title": "Nábytok na mieru vo Viedni — výroba a montáž | DUMSKAYA",
+  "description": "Kuchyne, skrine, šatníky a nábytok na mieru pre Viedeň: návrh, vlastná výroba v Bratislave, doprava v cene, montáž naším tímom."
+ },
+ "/office-interior-design-140m": {
+  "path": "/sk/dizajn-kancelarie-140-m2",
+  "title": "Dizajn kancelárie 140 m² | DUMSKAYA DESIGN",
+  "description": "Kancelária právnickej firmy 140 m²: návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč. DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Kancelária, 140 m²",
+  "facts": {
+   "object": "Kancelária",
+   "area": "140 m²",
+   "works": "Návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/office-interior-design-500m": {
+  "path": "/sk/dizajn-kancelarie-500-m2",
+  "title": "Dizajn kancelárie 500 m² | DUMSKAYA DESIGN",
+  "description": "Kancelária 500 m²: návrh interiéru, 3D vizualizácia a nábytok na mieru. Štúdio DUMSKAYA DESIGN v Bratislave a vo Viedni.",
+  "project_title": "Kancelária, 500 m²",
+  "facts": {
+   "object": "Kancelária",
+   "area": "500 m²",
+   "works": "Návrh interiéru, 3D vizualizácia a nábytok na mieru"
+  }
+ },
+ "/office-interior-design-53m": {
+  "path": "/sk/dizajn-kancelarie-poznan-53-m2",
+  "title": "Dizajn kancelárie 53 m² v Poznani | DUMSKAYA DESIGN",
+  "description": "Kancelária 53 m² v Poznani: návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Kancelária v Poznani, 53 m²",
+  "facts": {
+   "object": "Kancelária",
+   "area": "53 m²",
+   "city": "Poznaň",
+   "works": "Návrh interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/office-interior-design-warsaw-183m": {
+  "path": "/sk/dizajn-kancelarie-varsava-183-m2",
+  "title": "Dizajn kancelárie 183 m² vo Varšave | DUMSKAYA DESIGN",
+  "description": "Kancelária pre marketingový tím vo Varšave, 183 m²: dispozičné riešenie č. 1 a 3D vizualizácie v balíku „Express“ od štúdia DUMSKAYA DESIGN.",
+  "project_title": "Kancelária vo Varšave, 183 m²",
+  "facts": {
+   "object": "Kancelária pre marketingový tím",
+   "area": "183 m²",
+   "city": "Varšava",
+   "works": "Návrh interiéru (balík „Express“), dispozičné riešenie a 3D vizualizácia",
+   "status": "návrh interiéru"
+  }
+ },
+ "/osnovnye-principy-i-pravila-pri-proektirovanie-dizajna-interera-detskoj-komnaty": {
+  "path": "/sk/dizajn-detskej-izby-zasady",
+  "title": "Dizajn detskej izby: zásady a pravidlá | DUMSKAYA",
+  "description": "Ako navrhnúť detskú izbu: bezpečnosť, zónovanie, nábytok, ktorý rastie s dieťaťom, svetlo a farby. Základné pravidlá od štúdia DUMSKAYA DESIGN."
+ },
+ "/photo-studio-interior-design-custom-furniture-130m2-bratislava": {
+  "path": "/sk/dizajn-fotostudia-130-m2",
+  "title": "Dizajn fotoštúdia 130 m² | DUMSKAYA DESIGN",
+  "description": "Fotoštúdio 130 m²: návrh interiéru, nábytok na mieru, rekonštrukcia na kľúč a autorský dozor. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Fotoštúdio, 130 m²",
+  "facts": {
+   "object": "Fotoštúdio",
+   "area": "130 m²",
+   "works": "Návrh interiéru, nábytok na mieru, rekonštrukcia na kľúč a autorský dozor"
+  }
+ },
+ "/premium-interior-design-package-bratislava-vienna": {
+  "path": "/sk/dizajnovy-balik-premium-bratislava-vieden",
+  "title": "Dizajnový balík „Premium“ — 50 €/m² | DUMSKAYA DESIGN",
+  "description": "Rozšírený návrh interiéru s detailným riešením nábytku, osvetlenia a materiálov. 50 €/m², od 2 500 €. Bratislava a Viedeň."
+ },
+ "/premium-plus-interior-design-package-bratislava-vienna": {
+  "path": "/sk/dizajnovy-balik-premium-plus-bratislava-vieden",
+  "title": "Dizajnový balík „Premium+“ — 70 €/m² | DUMSKAYA DESIGN",
+  "description": "Návrh interiéru s autorským dozorom a sprevádzaním rekonštrukcie až do odovzdania. 70 €/m², od 3 500 €. Bratislava a Viedeň."
+ },
+ "/price-interior-design-bratislava-wien-praha": {
+  "path": "/sk/cena-dizajnu-interieru-bratislava-vieden",
+  "title": "Ceny dizajnu interiéru: balíky od 20 €/m² | DUMSKAYA",
+  "description": "Balíky: Express 20 €/m², Základný 35–45 €/m², Nábytok 35–50 €/m², Premium 50 €/m², Premium+ 70 €/m². Bratislava a Viedeň, konzultácia zdarma."
+ },
+ "/priemka-kvartiry-ot-zastrojshchika": {
+  "path": "/sk/preberanie-bytu-od-developera-bratislava",
+  "title": "Preberanie bytu od developera v Bratislave — od 250 €",
+  "description": "Skontrolujeme nový byt v Bratislave pred podpisom preberacieho protokolu: povrchy, geometria, okná, inžinierske siete, zoznam vád. Do 50 m² — 250 €."
+ },
+ "/privacy": {
+  "path": "/sk/ochrana-osobnych-udajov",
+  "title": "Ochrana osobných údajov | DUMSKAYA DESIGN",
+  "description": "Aké údaje zbiera web DUMSKAYA DESIGN, prečo a ako dlho ich uchováva a aké máte práva: formulár dopytu, e-maily, súbory cookie Google Analytics."
+ },
+ "/proekty-interior-design": {
+  "path": "/sk/portfolio-dizajn-interieru",
+  "title": "Portfólio: projekty dizajnu interiéru | DUMSKAYA DESIGN",
+  "description": "Projekty štúdia DUMSKAYA DESIGN: byty, rodinné domy, vily, kancelárie a salóny. Fotografie a 3D vizualizácie interiérov. Štúdio v Bratislave a vo Viedni."
+ },
+ "/shop": {
+  "path": "/sk/obchod",
+  "title": "Obchod s nábytkom DUMSKAYA DESIGN — kancelársky nábytok",
+  "description": "Manažérsky nábytok z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN: stoly, skrine a rokovací stôl."
+ },
+ "/shop-show-room-interior-design-50m": {
+  "path": "/sk/dizajn-predajne-50-m2",
+  "title": "Dizajn predajne 50 m² | DUMSKAYA DESIGN",
+  "description": "Predajňa náradia a vybavenia na manikúru, 50 m²: návrh interiéru, 3D vizualizácia a predajný nábytok na mieru. Štúdio DUMSKAYA DESIGN.",
+  "project_title": "Predajňa, 50 m²",
+  "facts": {
+   "object": "Predajňa",
+   "area": "50 m²",
+   "works": "Návrh interiéru, 3D vizualizácia a nábytok na mieru"
+  }
+ },
+ "/shop/cat/ofisnaya-mebel": {
+  "path": "/sk/obchod/kancelarsky-nabytok",
+  "title": "Kancelársky nábytok Executive Desk 2026 | DUMSKAYA DESIGN",
+  "description": "Kolekcia Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN: manažérske stoly v troch veľkostiach, skrine a rokovací stôl."
+ },
+ "/shop/exclusive-executive-office-cabinet": {
+  "path": "/sk/obchod/manazerska-skrina-exclusive-xxl",
+  "title": "Manažérska skriňa Exclusive, XXL (TDD-005) | DUMSKAYA DESIGN",
+  "description": "Manažérska skriňa Exclusive, XXL, kód TDD-005, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie."
+ },
+ "/shop/exclusive-executive-office-cabinet-1": {
+  "path": "/sk/obchod/manazerska-skrina-exclusive-s",
+  "title": "Manažérska skriňa Exclusive, S (TDD-006) | DUMSKAYA DESIGN",
+  "description": "Manažérska skriňa Exclusive, S, kód TDD-006, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie."
+ },
+ "/shop/executive-conference-table": {
+  "path": "/sk/obchod/rokovaci-stol-executive",
+  "title": "Rokovací stôl Executive (TDD-004) | DUMSKAYA DESIGN",
+  "description": "Rokovací stôl Executive, kód TDD-004, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie."
+ },
+ "/shop/executive-desk-boss-l": {
+  "path": "/sk/obchod/manazersky-stol-boss-l",
+  "title": "Manažérsky stôl Boss, veľkosť L (TDD-001) | DUMSKAYA DESIGN",
+  "description": "Manažérsky stôl Boss, veľkosť L, kód TDD-001, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie."
+ },
+ "/shop/executive-desk-boss-m": {
+  "path": "/sk/obchod/manazersky-stol-boss-m",
+  "title": "Manažérsky stôl Boss, veľkosť M (TDD-002) | DUMSKAYA DESIGN",
+  "description": "Manažérsky stôl Boss, veľkosť M, kód TDD-002, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie."
+ },
+ "/shop/executive-desk-boss-s": {
+  "path": "/sk/obchod/manazersky-stol-boss-s",
+  "title": "Manažérsky stôl Boss, veľkosť S (TDD-003) | DUMSKAYA DESIGN",
+  "description": "Manažérsky stôl Boss, veľkosť S, kód TDD-003, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie."
+ },
+ "/smeta-na-remont-bratislava-vienna": {
+  "path": "/sk/rozpocet-rekonstrukcie-bratislava-vieden",
+  "title": "Rozpočet rekonštrukcie v Bratislave a vo Viedni — 5 €/m²",
+  "description": "Rozpočet rekonštrukcie bytu, domu či kancelárie v Bratislave a vo Viedni: zameranie, práce, materiály. 5 €/m², pri rekonštrukcii u nás ho odpočítame."
+ },
+ "/stroitelstvo-remont-bratislava": {
+  "path": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+  "title": "Rekonštrukcia bytov na kľúč v Bratislave a vo Viedni",
+  "description": "Rekonštrukcie bytov, domov a kancelárií na kľúč v Bratislave a vo Viedni: naše tímy, nábytok z našej výroby, rozpočet 5 €/m². Rovnaké ceny pre obe mestá."
+ },
+ "/studio-interior-design-bratislava-eurovea-56m": {
+  "path": "/sk/dizajn-interieru-bytu-eurovea-bratislava-56-m2",
+  "title": "Dizajn bytu 56 m² v Bratislave, Eurovea City | DUMSKAYA",
+  "description": "Byt 56 m² v Eurovea City v Bratislave: návrh interiéru (balík „Nábytok“), 3D vizualizácia a nábytok na mieru z našej výroby.",
+  "project_title": "Byt v Eurovea City v Bratislave, 56 m²",
+  "facts": {
+   "object": "Byt v Eurovea City",
+   "area": "56 m²",
+   "city": "Bratislava",
+   "works": "Návrh interiéru (balík „Nábytok“), 3D vizualizácia a nábytok na mieru"
+  }
+ },
+ "/studio-interior-design-disain-proekt-kvartira-kiev-80m": {
+  "path": "/sk/dizajn-interieru-bytu-kyjev-80-m2",
+  "title": "Dizajn interiéru bytu 80 m² v Kyjeve | DUMSKAYA DESIGN",
+  "description": "Byt 80 m² v Kyjeve: návrh interiéru, 3D vizualizácia, výkresová dokumentácia a nábytok na mieru. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+  "project_title": "Byt v Kyjeve, 80 m²",
+  "facts": {
+   "object": "Byt",
+   "area": "80 m²",
+   "city": "Kyjev",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia a nábytok na mieru"
+  }
+ },
+ "/transformaciya-malenkoj-kvartiry-prakticheskie-sovety-dlya-maksimalnogo-ispolzovaniya-prostranstva": {
+  "path": "/sk/dizajn-maleho-bytu-prakticke-rady",
+  "title": "Dizajn malého bytu: praktické rady | DUMSKAYA DESIGN",
+  "description": "Ako využiť každý meter malého bytu: dispozícia, vstavaný nábytok, úložné priestory, svetlo a farby. Praktické rady interiérového dizajnéra."
+ },
+ "/villa-interior-design-160m": {
+  "path": "/sk/dizajn-interieru-rodinneho-domu-mnichov-160-m2",
+  "title": "Dizajn rodinného domu 160 m² v Mníchove | DUMSKAYA DESIGN",
+  "description": "Rodinný dom 160 m² v Mníchove: návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč.",
+  "project_title": "Rodinný dom v Mníchove, 160 m²",
+  "facts": {
+   "object": "Rodinný dom",
+   "area": "160 m²",
+   "city": "Mníchov",
+   "works": "Návrh interiéru, 3D vizualizácia, výkresová dokumentácia, nábytok na mieru a rekonštrukcia na kľúč"
+  }
+ },
+ "/why-you-need-an-interior-designer": {
+  "path": "/sk/preco-interierovy-dizajner",
+  "title": "Prečo potrebujete interiérového dizajnéra | DUMSKAYA",
+  "description": "Ako interiérový dizajnér šetrí rozpočet aj čas, pomáha vyhnúť sa chybám pri rekonštrukcii a navrhuje funkčný priestor. Rady štúdia DUMSKAYA DESIGN."
+ }
+}

@@ -5,7 +5,7 @@ import { localize } from '../lib/data';
 interface Props { lang: Lang; model?: string; id?: string; title?: string; intro?: string }
 const { lang, model, id = 'lead', title, intro } = Astro.props;
 const T = ui(lang);
-const privacy = lang === 'ru' ? '/privacy' : `/${lang}/privacy`;
+const privacy = localize('/privacy', lang) || '/privacy';
 ---
 <form class="lead" id={id} action="/api/lead" method="post" data-lead novalidate>
   <h2 class="lead__title">{title || T.form.title}</h2>

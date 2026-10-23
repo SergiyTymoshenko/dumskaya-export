@@ -1,0 +1,499 @@
+{
+ "path": "/de/innenarchitektur-dreizimmerwohnung-bratislava-127-m2",
+ "lang": "de",
+ "type": "project",
+ "group": "residential",
+ "title": "Dreizimmerwohnung in Bratislava, 127 m² | DUMSKAYA DESIGN",
+ "description": "Dreizimmerwohnung mit 127 m² in Bratislava: Planung im Paket „Basis“, 3D-Visualisierung und technische Dokumentation. Die Sanierung läuft.",
+ "h1": "Innenarchitektur einer 3-Zimmer-Wohnung in Bratislava, 127 m²",
+ "og_image": "bra127-01",
+ "alternates": {
+  "ru": "/interior-design-apartment-bratislava-127m",
+  "ua": "/ua/dyzain-interieru-kvartyry-bratyslava-127m2",
+  "en": "/en/apartment-interior-design-bratislava-127sqm",
+  "sk": "/sk/dizajn-trojizboveho-bytu-bratislava-127-m2",
+  "de": "/de/innenarchitektur-dreizimmerwohnung-bratislava-127-m2"
+ },
+ "sections": [
+  {
+   "id": "bra127-main",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Innenarchitektur einer 3-Zimmer-Wohnung in Bratislava, 127 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Eine 3-Zimmer-Wohnung mit 127 m² und Balkon in Bratislava. Wir haben die Einrichtungsplanung im Paket <a href=\"/de/designpaket-basis-wien-bratislava\">„Basis“</a> erstellt: Grundriss, 3D-Visualisierungen aller Räume und die komplette technische Dokumentation für die Sanierung. Das Projekt ist derzeit in Umsetzung, die Sanierung läuft."
+      },
+      {
+       "t": "p",
+       "html": "Die Wohnung hat ein Wohnzimmer mit 43 m² und Zugang zum Balkon, eine Küche mit Essbereich (18,5 m²), ein Elternschlafzimmer mit 21,6 m², ein Kinderzimmer mit 15 m², Vorraum, Hauswirtschaftsraum, ein Badezimmer und zwei WCs."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Räume und Materialien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Das Interieur ist in warmen Beige- und Grautönen gehalten. In den Wohnräumen liegen breite Dielen aus heller Eiche, in Vorraum, Küche und Sanitärräumen großformatige Fliesen in heller Steinoptik. Die Türen sind flächenbündig und in Wandfarbe gestrichen, die Vorhänge laufen in Deckennischen mit verdeckten Schienen. Für das Licht sorgen lineare Einbauleuchten und Stromschienen."
+      },
+      {
+       "t": "p",
+       "html": "Im Wohnzimmer gibt es eine TV-Wand mit Eichenpaneel und offenen Regalen, gegenüber stehen ein Sofa und zwei runde Sessel, näher zum Vorraum ein Klavier. Die Küche ist ein eigener Raum: eine Küchenzeile entlang der Wand mit Hochschränken für Kühlschrank und Backrohr, am Fenster der Esstisch."
+      },
+      {
+       "t": "p",
+       "html": "Im Elternschlafzimmer stehen ein Bett mit gepolstertem Kopfteil, ein grifffloser Kleiderkasten über die ganze Wand und ein Schminktisch mit Spiegel. Im Kinderzimmer gibt es einen Arbeitsplatz am Fenster, ein Bett vor einem Eichenpaneel und eine Sprossenwand mit Kletterwand. Das Bad ist mit strukturierten Fliesen im Fischgrätmuster verfliest, im WC gibt es eine Nische mit beleuchteten Fächern."
+      },
+      {
+       "t": "p",
+       "html": "Die Möbel sind auf die Maße der Räume geplant: Küche, TV-Wand, Kästen in Vorraum, Schlafzimmer und Kinderzimmer, beleuchtete Wandpaneele, Unterschränke und Hochschränke in den Sanitärräumen. Dazu gibt es einen eigenen Plan der Maßmöbel und eine Material- und Ausstattungsliste. Gefertigt werden können sie in <a href=\"/de/moebel-nach-mass-bratislava\">unserer eigenen Tischlerei</a>."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Technische Dokumentation"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Ausführungspläne umfassen 45 Blätter: Bestandsplan, Grundriss mit Möblierung, Plan der Maßmöbel, Trennwände, Sanitär und Heizung, Klimatisierung, Steckdosen, Beleuchtung und Schalter, Lüftung, Böden, Decken mit Nischen für Vorhangschienen, Wandoberflächen mit NCS-Farben sowie Wandabwicklungen von Küche, Wohnzimmer, Gang, Kinderzimmer, Schlafzimmer und Sanitärräumen. Nach diesen Plänen führt der Bautrupp die Sanierung aus."
+      }
+     ]
+    },
+    {
+     "type": "figure",
+     "image": {
+      "id": "bra127-plan",
+      "alt": "Grundriss mit Möblierung — Wohnung mit 127 m² in Bratislava"
+     },
+     "caption": "Grundriss mit Möblierung"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "bra127-01",
+       "alt": "Wohnzimmer mit Sofa und Sesseln in warmen Beigetönen — Innenarchitektur in Bratislava"
+      },
+      {
+       "id": "bra127-02",
+       "alt": "Wohnzimmer mit TV-Wand aus Eiche und offenen Regalen — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-03",
+       "alt": "Wohnzimmer mit TV-Wand aus Eiche und offenen Regalen — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-04",
+       "alt": "Wohnzimmer mit TV-Wand aus Eiche und offenen Regalen — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-05",
+       "alt": "Wohnzimmer mit TV-Wand aus Eiche und offenen Regalen — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-06",
+       "alt": "Wohnzimmer mit Sofa und Sesseln in warmen Beigetönen — Innenarchitektur in Bratislava"
+      },
+      {
+       "id": "bra127-07",
+       "alt": "Wohnzimmer mit Sofa und Sesseln in warmen Beigetönen — Innenarchitektur in Bratislava"
+      },
+      {
+       "id": "bra127-08",
+       "alt": "Wohnzimmer mit Sofa und Sesseln in warmen Beigetönen — Innenarchitektur in Bratislava"
+      },
+      {
+       "id": "bra127-09",
+       "alt": "Wohnzimmer mit Sofa und Sesseln in warmen Beigetönen — Innenarchitektur in Bratislava"
+      },
+      {
+       "id": "bra127-10",
+       "alt": "Wohnzimmer mit Sofa und Sesseln in warmen Beigetönen — Innenarchitektur in Bratislava"
+      },
+      {
+       "id": "bra127-11",
+       "alt": "Wohnzimmer mit Sofa und Sesseln in warmen Beigetönen — Innenarchitektur in Bratislava"
+      },
+      {
+       "id": "bra127-12",
+       "alt": "Wohnzimmer mit Klavier und Zugang zum Balkon — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-13",
+       "alt": "Wohnzimmer mit Klavier und Zugang zum Balkon — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-14",
+       "alt": "Wohnzimmer mit Klavier und Zugang zum Balkon — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-15",
+       "alt": "Wohnzimmer mit Klavier und Zugang zum Balkon — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-16",
+       "alt": "Küche mit Essbereich — Innenarchitektur einer Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-17",
+       "alt": "Küche mit Essbereich — Innenarchitektur einer Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-18",
+       "alt": "Küche mit Essbereich — Innenarchitektur einer Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-19",
+       "alt": "Küche mit Essbereich — Innenarchitektur einer Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-20",
+       "alt": "Küche mit Geräte-Hochschrank und verdeckter Tür — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-21",
+       "alt": "Küche mit Geräte-Hochschrank und verdeckter Tür — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-22",
+       "alt": "Elternschlafzimmer mit Polsterkopfteil und Kleiderkasten — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-23",
+       "alt": "Elternschlafzimmer mit Polsterkopfteil und Kleiderkasten — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-24",
+       "alt": "Elternschlafzimmer mit Polsterkopfteil und Kleiderkasten — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-25",
+       "alt": "Elternschlafzimmer mit Polsterkopfteil und Kleiderkasten — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-26",
+       "alt": "Schminktisch mit Spiegel im Elternschlafzimmer — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-27",
+       "alt": "Schminktisch mit Spiegel im Elternschlafzimmer — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-28",
+       "alt": "Badezimmer mit Wanne und Fliesen im Fischgrätmuster — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-29",
+       "alt": "Badezimmer mit Wanne und Fliesen im Fischgrätmuster — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-30",
+       "alt": "Badezimmer mit Wanne und Fliesen im Fischgrätmuster — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-31",
+       "alt": "Badezimmer mit Wanne und Fliesen im Fischgrätmuster — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-32",
+       "alt": "Badezimmer mit Wanne und Fliesen im Fischgrätmuster — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-33",
+       "alt": "Kinderzimmer mit Arbeitsplatz und Sprossenwand — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-34",
+       "alt": "Kinderzimmer mit Arbeitsplatz und Sprossenwand — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-35",
+       "alt": "Kinderzimmer mit Arbeitsplatz und Sprossenwand — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-36",
+       "alt": "Kinderzimmer mit Bett und Einbaukasten — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-37",
+       "alt": "Kinderzimmer mit Bett und Einbaukasten — Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-38",
+       "alt": "Kinderzimmer mit Arbeitsplatz und Sprossenwand — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-39",
+       "alt": "Kinderzimmer mit Arbeitsplatz und Sprossenwand — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-40",
+       "alt": "Hauswirtschaftsraum mit eingebauter Waschmaschine und Trockner — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-41",
+       "alt": "Hauswirtschaftsraum mit eingebauter Waschmaschine und Trockner — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-42",
+       "alt": "Vorraum mit Einbaukasten und verdeckten Türen — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-43",
+       "alt": "Vorraum mit Einbaukasten und verdeckten Türen — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-44",
+       "alt": "Vorraum mit Einbaukasten und verdeckten Türen — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-45",
+       "alt": "Vorraum mit Einbaukasten und verdeckten Türen — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-46",
+       "alt": "Vorraum mit Einbaukasten und verdeckten Türen — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-47",
+       "alt": "Vorraum mit Einbaukasten und verdeckten Türen — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-48",
+       "alt": "Vorraum mit Einbaukasten und verdeckten Türen — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-49",
+       "alt": "Duschbad mit Waschtischunterschrank aus Eiche — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-50",
+       "alt": "Duschbad mit Waschtischunterschrank aus Eiche — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-51",
+       "alt": "Duschbad mit Waschtischunterschrank aus Eiche — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-52",
+       "alt": "Duschbad mit Waschtischunterschrank aus Eiche — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-53",
+       "alt": "Toilette mit Hänge-WC und beleuchteter Nische — Wohnung in Bratislava"
+      },
+      {
+       "id": "bra127-54",
+       "alt": "Toilette mit Hänge-WC und beleuchteter Nische — Wohnung in Bratislava"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Projekte",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      },
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Preise der Designpakete",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2f50a8dc85bab9dc8f8a3781",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Beispiel der technischen Dokumentation aus dem Designpaket „Basis“"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "bra127-d01",
+       "alt": "Bestandsplan nach dem Rückbau — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d02",
+       "alt": "Möblierungsplan — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d03",
+       "alt": "Plan der Maßmöbel — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d04",
+       "alt": "Plan der Trennwände — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d05",
+       "alt": "Plan der Trennwände in 3D — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d06",
+       "alt": "Trockenbaukonstruktionen im Bad — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d07",
+       "alt": "Lageplan der Heizkörper und Konvektoren — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d08",
+       "alt": "Lageplan der Klimageräte — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d09",
+       "alt": "Lageplan der Sanitärobjekte — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d10",
+       "alt": "Liste der Sanitärausstattung — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d11",
+       "alt": "Wandabwicklung mit Sanitärobjekten im Bad — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d12",
+       "alt": "Plan der Steckdosen, Schalter und Elektrogeräte — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d13",
+       "alt": "Lageplan der Leuchten — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d14",
+       "alt": "Zuordnung von Schaltern und Leuchten — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d15",
+       "alt": "Lageplan der Abluftventilatoren — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d16",
+       "alt": "Verlegeplan der Bodenbeläge — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d17",
+       "alt": "Deckenplan — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d18",
+       "alt": "3D-Ansichten zu den Deckenschnitten — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d19",
+       "alt": "Plan der Wandoberflächen — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d20",
+       "alt": "Wandabwicklung Küche — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d21",
+       "alt": "Wandabwicklung Wohnzimmer — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d22",
+       "alt": "Schnitt Kinderzimmer — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      },
+      {
+       "id": "bra127-d23",
+       "alt": "Wandabwicklung Bad — technischer Plan, Wohnung mit 127 m² in Bratislava"
+      }
+     ],
+     "docs": true
+    }
+   ]
+  },
+  {
+   "id": "69cbfcd996e515190621f6e5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

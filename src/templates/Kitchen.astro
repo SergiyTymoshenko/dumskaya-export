@@ -17,14 +17,14 @@ const [hero, ...thumbs] = images;
 const parts = mainParts(page);
 // «Основные характеристики»: короткие абзацы «Название: значение» → таблица-штамп
 const plainP = (p: any) => (p.t === 'p' ? p.html.replace(/<[^>]+>/g, '').trim() : '');
-const specAt = parts.findIndex((p) => /характеристик|specification|features/i.test(plainP(p)) && plainP(p).length < 80);
+const specAt = parts.findIndex((p) => /характеристик|specification|features|Technické parametre|Technische Daten/i.test(plainP(p)) && plainP(p).length < 80);
 const specs: [string, string][] = [];
 let specEnd = specAt;
 if (specAt >= 0) {
   for (let k = specAt + 1; k < parts.length; k++) {
     const m = plainP(parts[k]).match(/^([^:]{2,40}):\s*(.{1,120}?)\.?$/);
     if (!m) break;
-    specs.push([m[1], m[2]]);
+    specs.push([m[1], m[2].charAt(0).toUpperCase() + m[2].slice(1)]);   // значения в таблице — с заглавной на всех языках
     specEnd = k;
   }
 }

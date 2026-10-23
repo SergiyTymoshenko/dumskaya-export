@@ -1,0 +1,385 @@
+{
+ "path": "/sk/dizajn-interieru-vieden",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Dizajn interiéru vo Viedni — byty a domy | DUMSKAYA",
+ "description": "Byty a domy vo Viedni: dizajn interiéru, 3D vizualizácia, nábytok na mieru a rekonštrukcia na kľúč vlastnými tímami. Štúdio v Bratislave, 60 km od Viedne.",
+ "h1": "Dizajn interiéru bytov a domov vo Viedni",
+ "og_image": "6abd6b354888499d207455da",
+ "alternates": {
+  "ru": "/dizajn-interera-vena",
+  "ua": "/ua/dyzain-interieru-viden",
+  "en": "/en/interior-design-vienna",
+  "sk": "/sk/dizajn-interieru-vieden",
+  "de": "/de/innenarchitekt-wien"
+ },
+ "phone": "at",
+ "sections": [
+  {
+   "id": "city-dizajn-interera-vena-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Dizajn interiéru bytov a domov vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> je štúdio interiérového dizajnu s kanceláriou a vlastnou výrobou nábytku v Bratislave, 60 km od Viedne. Navrhujeme a realizujeme interiéry bytov a domov vo Viedni na kľúč: od dispozície a 3D vizualizácie po výrobu nábytku a rekonštrukciu. Dva viedenské projekty — byty s plochou 58 m² a 115 m² — sme zrealizovali kompletne: návrh, technickú dokumentáciu, nábytok aj rekonštrukciu."
+      },
+      {
+       "t": "p",
+       "html": "Pre klienta vo Viedni to znamená jeden tím a jednu cenu za celý objekt. Návrh interiéru pripravíme my, nábytok vyrobíme vo vlastnej výrobe, rekonštrukciu a montáž urobia naše partie, ktoré prídu z Bratislavy. Vzdialenosť termíny nepredlžuje: cesta trvá približne hodinu."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "DUMSKAYA DESIGN vo Viedni",
+     "rows": [
+      [
+       "Štúdio",
+       "Bratislava, Súkennícka 1 — 60 km od Viedne"
+      ],
+      [
+       "Výroba nábytku",
+       "vlastná, Bratislava"
+      ],
+      [
+       "Rekonštrukcia a montáž",
+       "vlastné partie z Bratislavy"
+      ],
+      [
+       "Doprava",
+       "zahrnutá v cene"
+      ],
+      [
+       "Ceny",
+       "rovnaké pre Bratislavu aj Viedeň"
+      ],
+      [
+       "Jazyky",
+       "ruština, ukrajinčina, angličtina"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Nábytok na mieru vo Viedni",
+       "href": "/sk/nabytok-na-mieru-vieden"
+      },
+      {
+       "text": "Kuchyne na mieru vo Viedni",
+       "href": "/sk/kuchyne-na-mieru-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Čo robíme pre klientov vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Návrh interiéru bytu alebo domu</strong> — dispozícia, koncepcia, výber materiálov, nábytku a osvetlenia.",
+        "<strong>3D vizualizácia</strong> — fotorealistické zobrazenie každej miestnosti ešte pred rekonštrukciou.",
+        "<strong>Technická dokumentácia</strong> — realizačné výkresy, schémy elektroinštalácie a zdravotechniky, špecifikácie pre stavbárov.",
+        "<strong>Nábytok na mieru</strong> — kuchyne, skrine, šatníky, predsiene a TV steny z vlastnej výroby.",
+        "<strong>Rekonštrukcia na kľúč</strong> — od búracích prác po záverečné upratovanie, našimi partiami.",
+        "<strong>Autorský dozor a kompletizácia</strong> — kontrola súladu s projektom, objednávka materiálov, sanity a svietidiel."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Pracujeme na novostavbách, starších bytoch aj rodinných domoch vo Viedni a okolí. Návrh interiéru si môžete objednať samostatne alebo spolu s realizáciou."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projekty DUMSKAYA DESIGN vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Oba projekty sme realizovali na kľúč: dizajn interiéru, technická dokumentácia, nábytok na mieru a rekonštrukcia."
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Byt vo Viedni, 58 m²",
+       "href": "/sk/dizajn-interieru-bytu-vieden-58-m2",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "Byt vo Viedni, 58 m²"
+       }
+      },
+      {
+       "title": "Byt vo Viedni, 115 m²",
+       "href": "/sk/dizajn-interieru-bytu-vieden-115-m2",
+       "image": {
+        "id": "6abd6b354888499d207455da",
+        "alt": "Byt vo Viedni, 115 m²"
+       }
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "69458237364911d845d8e8c3",
+       "alt": "Dizajn obývačky, Viedeň, Rakúsko"
+      },
+      {
+       "id": "694582375a2b8aea030c2c51",
+       "alt": "Obývačka s kuchyňou, dizajn interiéru, Viedeň, Rakúsko"
+      },
+      {
+       "id": "694582371e8e6f6006641eb8",
+       "alt": "Interiér obývačky s kuchyňou, Viedeň, Rakúsko"
+      },
+      {
+       "id": "6945823f28ee2c4d3bd6c0b4",
+       "alt": "Dizajn kuchyne, Viedeň, Rakúsko"
+      },
+      {
+       "id": "66d8d28bd5962a50a767150c",
+       "alt": "Obývačka s kuchyňou — byt vo Viedni, 115 m²"
+      },
+      {
+       "id": "66d8d28b738a140178adf9a3",
+       "alt": "Obývačka s kuchyňou — byt vo Viedni, 115 m²"
+      },
+      {
+       "id": "66d8d5303765af67caf400ac",
+       "alt": "Moderný dizajn interiéru vo Viedni"
+      },
+      {
+       "id": "66d8d530d5962a50a7671a3d",
+       "alt": "Nadštandardný dizajn interiéru vo Viedni"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky projekty štúdia",
+       "href": "/sk/portfolio-dizajn-interieru"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ako prebieha práca na interiéri vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Konzultácia.</strong> O zadaní sa porozprávame telefonicky, cez messenger alebo priamo na mieste vo Viedni. Konzultácia je bezplatná.",
+        "<strong>Zameranie.</strong> Prídeme na miesto, zaznamenáme rozmery, rozvody a špecifiká miestností.",
+        "<strong>Koncepcia a 3D.</strong> Dispozičné riešenia, štýl, materiály a fotorealistické vizualizácie. Spolu odsúhlasíme úpravy.",
+        "<strong>Dokumentácia.</strong> Výkresy pre stavbárov a výrobu nábytku, špecifikácie, rozpočet rekonštrukcie.",
+        "<strong>Realizácia.</strong> Nábytok vyrobíme v Bratislave, rekonštrukciu a montáž urobí naša partia vo Viedni. Doprava je v cene.",
+        "<strong>Odovzdanie.</strong> Finálna montáž, osadenie svietidiel a sanity, upratovanie, odovzdanie kľúčov."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Cena návrhu interiéru vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ceny návrhu interiéru sú rovnaké vo všetkých mestách, kde pracujeme: balík <a href=\"/sk/dizajnovy-balik-express-bratislava-vieden\">„Express“</a> — 20 €/m², <a href=\"/sk/dizajnovy-balik-zakladny-bratislava-vieden\">„Základný“</a> — 35–45 €/m², <a href=\"/sk/dizajnovy-balik-nabytok-bratislava-vieden\">„Nábytok“</a> — 35–50 €/m², <a href=\"/sk/dizajnovy-balik-premium-bratislava-vieden\">„Premium“</a> — 50 €/m², <a href=\"/sk/dizajnovy-balik-premium-plus-bratislava-vieden\">„Premium+“</a> — 70 €/m². Prvá konzultácia je bezplatná."
+      },
+      {
+       "t": "p",
+       "html": "Cenu nábytku a rekonštrukcie vypočítame podľa projektu a rozpočtu. Klient dostane jednu celkovú cenu — bez príplatkov za cestu a dopravu do Viedne."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky balíky a ceny",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      },
+      {
+       "text": "Rozpočet rekonštrukcie",
+       "href": "/sk/rozpocet-rekonstrukcie-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Otázky o práci vo Viedni"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Chodíte na stavby vo Viedni?",
+       "a": "<p>Áno. Zameranie, autorský dozor aj preberanie robíme priamo na mieste. Z Bratislavy do Viedne je to približne hodina cesty, preto sú výjazdy bežnou súčasťou práce a neúčtujú sa osobitne.</p>"
+      },
+      {
+       "q": "Kto robí rekonštrukciu a montáž vo Viedni?",
+       "a": "<p>Naše vlastné partie z Bratislavy — tie isté, ktoré pracujú na zákazkách na Slovensku. Objekt neodovzdávame subdodávateľom, preto za výsledok zodpovedáme celý.</p>"
+      },
+      {
+       "q": "Líšia sa ceny vo Viedni od cien v Bratislave?",
+       "a": "<p>Nie. Balíky návrhu interiéru stoja rovnako, doprava nábytku a výjazdy sú v cene. Cena rekonštrukcie závisí od rozsahu prác a vypočíta sa v rozpočte.</p>"
+      },
+      {
+       "q": "Kde sa nábytok vyrába?",
+       "a": "<p>Vo vlastnej výrobe DUMSKAYA DESIGN v Bratislave. Hotové kusy do Viedne dovezieme a namontujeme sami.</p>"
+      },
+      {
+       "q": "Dá sa objednať len návrh interiéru bez rekonštrukcie?",
+       "a": "<p>Áno. Dostanete kompletnú sadu výkresov a vizualizácií, podľa ktorej môže pracovať ktorýkoľvek dodávateľ. Ak budete neskôr potrebovať nábytok alebo rekonštrukciu, pokračujeme podľa toho istého projektu.</p>"
+      },
+      {
+       "q": "Pracujete aj v iných mestách Rakúska?",
+       "a": "<p>Áno, v Dolnom Rakúsku a Burgenlande — v dosahu pohodlnej cesty z Bratislavy. Pri vzdialenejších objektoch navrhujeme na diaľku a nábytok vyrobíme a dovezieme.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Žiadosť o bezplatnú konzultáciu",
+     "text": "Napíšte nám, o aký objekt ide a čo potrebujete — odpovieme do jedného pracovného dňa a navrhneme, ako môžeme spolupracovať."
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

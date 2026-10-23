@@ -1,0 +1,251 @@
+{
+ "path": "/sk/preberanie-bytu-od-developera-bratislava",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Preberanie bytu od developera v Bratislave — od 250 €",
+ "description": "Skontrolujeme nový byt v Bratislave pred podpisom preberacieho protokolu: povrchy, geometria, okná, inžinierske siete, zoznam vád. Do 50 m² — 250 €.",
+ "h1": "Preberanie bytu od developera v Bratislave",
+ "og_image": "65d3cb0956ff01000f891f5c",
+ "alternates": {
+  "ru": "/priemka-kvartiry-ot-zastrojshchika",
+  "ua": "/ua/pryimannia-kvartyry-vid-zabudovnyka-bratislava",
+  "en": "/en/apartment-handover-inspection-bratislava",
+  "sk": "/sk/preberanie-bytu-od-developera-bratislava",
+  "de": "/de/wohnungsuebergabe-bautraeger-bratislava"
+ },
+ "sections": [
+  {
+   "id": "67dbcbcf1bee0e0bef617b5d",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Preberanie bytu od developera v Bratislave"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Skôr ako podpíšete preberací protokol k novému bytu, oplatí sa ho skontrolovať s odborníkom. Na preberanie chodíme do novostavieb v Bratislave: prezrieme povrchy, okná, dvere, sanitu a technické rozvody, zmeriame geometriu stien a podláh a spíšeme zoznam nedostatkov pre developera. Služba je určená kupujúcim bytov v novostavbách, ktorí chcú vidieť vady ešte pred podpisom a zapísať ich do protokolu. Pri preberaní zastupujeme kupujúceho, nie developera."
+      },
+      {
+       "t": "p",
+       "html": "Väčšina našich zákaziek v Bratislave sú novostavby: navrhujeme v nich interiéry a rekonštrukcie robíme s vlastnými partiami. Preto sa na byt pozeráme aj z pohľadu budúcej rekonštrukcie. Vyklonenú stenu, pri ktorej bude stáť kuchyňa, alebo výškový rozdiel podlahy medzi izbami pri preberaní ľahko prehliadnete. Pri montáži kuchyne a kladení podlahy však kvôli nim treba vyrovnávať podklad a prispôsobovať nábytok."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Čo kontrolujeme"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "súlad bytu s projektovou dokumentáciou: dispozícia, otvory, umiestnenie vývodov vody a elektriny;",
+        "steny, stropy a podlahy — praskliny, odštiepenia, škvrny, nerovnosti povrchov;",
+        "geometriu: odchýlky stien a rohov, rovinnosť podlahy;",
+        "okná, balkónové dvere a konštrukcie balkóna — ako sa otvárajú a zatvárajú, či nie sú poškodené profily a sklo;",
+        "dvere, ktoré sú súčasťou výbavy bytu;",
+        "elektroinštaláciu, rozvody vody a vetranie;",
+        "sanitu a nainštalované zariadenia."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Každú zistenú vadu zapíšeme do zoznamu nedostatkov: čo presne nie je v poriadku a kde. Po obhliadke ho s vami prejdeme — čo je vážne a čo je drobný nedorobok — a poradíme, ako nedostatky sformulovať do protokolu."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "priemka-kvartiry-ot-zastrojshchika-protokol",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Preberací protokol na Slovensku"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Nový byt sa preberá na základe preberacieho protokolu, ktorý podpisuje kupujúci a developer. Vady a nedorobky sa do protokolu zapisujú pred podpisom, aj drobné, ktoré nebránia bývaniu. Nedostatok, ktorý v protokole nie je, sa po podpise uplatňuje ťažšie."
+      },
+      {
+       "t": "p",
+       "html": "Nedostatok sa opisuje tak, aby sa nedal vyložiť dvojako: aká je to vada, kde je a čomu prekáža. K protokolu sa prikladajú fotografie. Pri každej položke sa uvádza lehota na odstránenie. Do toho istého protokolu sa zapisujú stavy meračov elektriny, vody, tepla a plynu, ak je v dome plyn."
+      },
+      {
+       "t": "p",
+       "html": "Ak vám developer neodovzdal manuál užívania bytu, vyžiadajte si ho. Sú v ňom opísané materiály a povinná údržba — napríklad prípustné zaťaženie terasy alebo pravidelné mazanie okien. Ak to zmluva umožňuje, developer môže odmietnuť odstrániť vadu, keď sa údržba podľa manuálu nedodržiavala."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "priemka-kvartiry-ot-zastrojshchika-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Cena"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "250 € — preberanie bytu do 50 m²;",
+        "400 € — preberanie bytu od 50 m²;",
+        "200 € — opakovaná obhliadka, ak je po odstránení vád developerom potrebná ďalšia kontrola."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Príklad: byt 48 m² — 250 €. Ak developer nedostatky odstránil a chcete, aby sme výsledok skontrolovali, pridá sa opakovaná obhliadka za 200 €, spolu 450 €. Byt 72 m² s opakovanou obhliadkou — 600 €."
+      },
+      {
+       "t": "p",
+       "html": "Ak po prevzatí plánujete rekonštrukciu, objednajte si <a href=\"/sk/rozpocet-rekonstrukcie-bratislava-vieden\">rozpočet rekonštrukcie</a> alebo <a href=\"/sk/dizajn-interieru-bratislava\">návrh interiéru bytu</a> — s nimi si náklady ľahšie spočítate vopred."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Vypracovanie rozpočtu rekonštrukcie",
+       "href": "/sk/rozpocet-rekonstrukcie-bratislava-vieden"
+      },
+      {
+       "text": "Ceny služieb interiérového dizajnu",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "priemka-kvartiry-ot-zastrojshchika-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Otázky o preberaní bytu"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Kedy si objednať preberanie?",
+       "a": "<p>Hneď, ako developer určí termín. Napíšte nám adresu, výmeru a dátum preberania — odpovieme do jedného pracovného dňa a dohodneme obhliadku. Ak máte projektovú dokumentáciu bytu, pošlite ju vopred: byt s ňou porovnáme.</p>"
+      },
+      {
+       "q": "Môžem protokol nepodpísať, ak je vád veľa?",
+       "a": "<p>Protokol sa podpisuje po obhliadke, nie pred ňou: najprv sa skontroluje celý byt, potom sa zapíšu nedostatky a až potom sa podpisuje. Drobné vady a nedorobky zvyčajne nebránia prevzatiu bytu: zapíšu sa do protokolu s lehotami na odstránenie. Ak sú vady vážne alebo byt nie je pripravený na bývanie, pred podpisom si zmluvu prejdite s právnikom.</p>"
+      },
+      {
+       "q": "Čo sa ešte preberá spolu s bytom?",
+       "a": "<p>Všetko, čo sa podľa zmluvy predáva spolu s ním, napríklad pivnica alebo parkovacie miesto. Aj tie sa prezrú. Do protokolu sa zapíše, koľko kľúčov ste dostali — od bytu, poštovej schránky, pivnice a vchodu.</p>"
+      },
+      {
+       "q": "Kto podpisuje protokol za developera?",
+       "a": "<p>Osoba, ktorá je na to oprávnená. Ak na preberanie príde zástupca developera, požiadajte ho o plnú moc alebo iný doklad, ktorý potvrdzuje jeho oprávnenie podpísať protokol.</p>"
+      },
+      {
+       "q": "Čo robiť, ak developer neodstránil nedostatky v lehote?",
+       "a": "<p>Písomne ho upozorniť a dať mu dodatočnú lehotu. Ak vada ani potom nie je odstránená, ďalšie kroky — zľavu z ceny alebo žalobu — konzultujte s právnikom. V spore s developerom má väčšiu váhu znalecký posudok. Náš zoznam nedostatkov je technická obhliadka pred podpisom a znalecký posudok nenahrádza.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbf2b4c4c90529fecceb38",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

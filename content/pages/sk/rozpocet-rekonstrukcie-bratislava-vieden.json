@@ -1,0 +1,268 @@
+{
+ "path": "/sk/rozpocet-rekonstrukcie-bratislava-vieden",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Rozpočet rekonštrukcie v Bratislave a vo Viedni — 5 €/m²",
+ "description": "Rozpočet rekonštrukcie bytu, domu či kancelárie v Bratislave a vo Viedni: zameranie, práce, materiály. 5 €/m², pri rekonštrukcii u nás ho odpočítame.",
+ "h1": "Rozpočet rekonštrukcie bytu a domu v Bratislave a vo Viedni",
+ "og_image": "65d3cb0956ff01000f891f5c",
+ "alternates": {
+  "ru": "/smeta-na-remont-bratislava-vienna",
+  "ua": "/ua/smeta-na-remont-bratislava-vienna",
+  "en": "/en/renovation-cost-estimate-bratislava-vienna",
+  "sk": "/sk/rozpocet-rekonstrukcie-bratislava-vieden",
+  "de": "/de/kostenschaetzung-sanierung-wien-bratislava"
+ },
+ "sections": [
+  {
+   "id": "67eae77db6e27b1d0e36bd47",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Rozpočet rekonštrukcie bytu a domu v Bratislave a vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Pripravujeme podrobné rozpočty rekonštrukcie bytov, rodinných domov a komerčných priestorov v Bratislave a vo Viedni: aké práce sú potrebné, v akom rozsahu, koľko stoja a koľko materiálu bude treba. Rozpočet sa objednáva pred začiatkom rekonštrukcie, aby ste poznali náklady, mohli porovnať ponuky dodávateľov a naplánovať nákupy. Cena je 5 €/m² plochy objektu."
+      },
+      {
+       "t": "p",
+       "html": "Počítame podľa skutočných rozmerov a stavu miestností, nie podľa priemernej ceny za štvorcový meter. Základom výpočtu je návrh interiéru s realizačnými výkresmi, ak ho máte, alebo zoznam prác, na ktorom sa s vami dohodneme priamo na mieste."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Zameranie a posúdenie stavu priestorov"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Prídeme na miesto, zmeriame steny, podlahy a stropy a zistíme, o koľko sa povrchy odchyľujú od roviny a pravých uhlov. Stena, ktorú treba vyrovnať omietkou, a rovná stena pripravená na maľovanie vyzerajú v rozpočte inak. Rovnako podlaha, ktorá potrebuje poter, a hotový podklad. Z nameraných hodnôt počítame rozsah prác a množstvo materiálu, preto sa rozpočet menej líši od skutočných nákladov."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Čo obsahuje rozpočet"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "práce s výmerami a cenami — prípravné a búracie, stavebné, elektroinštalačné, inštalatérske a dokončovacie, podľa konkrétneho objektu;",
+        "špecifikácia stavebných a dokončovacích materiálov: čo treba, v akom množstve a koľko to približne stojí;",
+        "podľa vášho želania aj nábytok, spotrebiče, sanita a osvetlenie, aby ste videli celkový rozpočet bytu alebo domu."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Práce a materiály sú rozdelené do oddielov. Vidíte, z čoho sa rozpočet skladá, a každú položku môžete porovnať s ponukou iného dodávateľa. Ak sa zmenia materiály alebo rozsah prác, výpočet upravíme."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smeta-na-remont-bratislava-vienna-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Ako pripravujeme rozpočet"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Žiadosť.</strong> Pošlete nám pôdorys, fotografie priestorov a ak ich máte, aj návrh interiéru alebo výkresy. Konzultácia je bezplatná, odpovedáme do jedného pracovného dňa.",
+        "<strong>Zameranie.</strong> Prídeme na objekt v Bratislave alebo vo Viedni a skontrolujeme stav povrchov.",
+        "<strong>Zoznam prác.</strong> Dohodneme sa, čo sa bude robiť: ktoré priečky sa zbúrajú a ktoré pribudnú, koľko bude elektrických a vodoinštalačných bodov, aké budú podlahy a povrchy stien.",
+        "<strong>Výpočet.</strong> Vyrátame výmery a ceny prác aj materiálov.",
+        "<strong>Odovzdanie rozpočtu.</strong> Prejdeme ho s vami oddiel po oddiele a odpovieme na otázky."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smeta-na-remont-bratislava-vienna-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Cena a príklad výpočtu"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Vypracovanie rozpočtu stojí 5 €/m² plochy objektu. Ak si rekonštrukciu objednáte u nás, cenu rozpočtu odpočítame z ceny prác."
+      },
+      {
+       "t": "p",
+       "html": "Príklad: byt 60 m² — rozpočet 300 €. Ak potom rekonštrukciu tohto bytu robia naši remeselníci, 300 € sa odpočíta zo sumy za práce. Rodinný dom 140 m² — 700 €."
+      },
+      {
+       "t": "p",
+       "html": "Rozpočet vychádza z dostupných údajov o objekte a z dohodnutého zoznamu prác. Konečné náklady sa môžu zmeniť, ak sa počas rekonštrukcie objavia skryté vady alebo sa zmenia riešenia v projekte, rozsah prác či ceny materiálov."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Byt v bytovom dome"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ak sa rekonštrukcia dotýka spoločných častí domu (nosné alebo obvodové steny, spoločné rozvody, fasáda), zistíme to ešte pred výpočtom. Na Slovensku vlastník bytu nesmie bez súhlasu ostatných vlastníkov robiť úpravy, ktoré menia vzhľad domu alebo neprimerane obmedzujú susedov, a správca má právo skontrolovať, či práce nezasahujú do spoločných častí. Vo Viedni takéto práce pri byte v osobnom vlastníctve (Wohnungseigentum) tiež vyžadujú súhlas ostatných vlastníkov; správca domu (Hausverwaltung) ho sám dať nemôže. Od súhlasu závisí, či tieto práce zahrnieme do rozpočtu."
+      },
+      {
+       "t": "p",
+       "html": "Viac o prácach, ktoré robia naši remeselníci, nájdete na stránke o <a href=\"/sk/rekonstrukcia-bytu-na-kluc-bratislava\">rekonštrukcii na kľúč</a>."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Stavebné práce a rekonštrukcia (cenník)",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava"
+      },
+      {
+       "text": "Ceny služieb interiérového dizajnu",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smeta-na-remont-bratislava-vienna-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Otázky o rozpočte rekonštrukcie"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Dá sa objednať rozpočet bez návrhu interiéru?",
+       "a": "<p>Áno. Počítame podľa zamerania a zoznamu prác, ktorý s vami dohodneme. S realizačnými výkresmi, napríklad z balíka <a href=\"/sk/dizajnovy-balik-zakladny-bratislava-vieden\">„Základný“</a>, je rozpočet presnejší: kladenie obkladov a dlažby, elektrické a vodoinštalačné body aj materiály sú v nich už určené. Bez výkresov počítame časť položiek podľa predbežných riešení a spresníme ich, keď budú rozhodnuté.</p>"
+      },
+      {
+       "q": "Môžem váš rozpočet dať inému dodávateľovi?",
+       "a": "<p>Áno, rozpočet zostáva vám. Keď viacerí dodávatelia nacenia rovnaký zoznam prác s rovnakými výmerami, rozdiel v cene vidíte pri každej položke.</p>"
+      },
+      {
+       "q": "Zahrniete do rozpočtu aj nábytok na mieru?",
+       "a": "<p>Áno, ak ho projekt potrebuje: kuchyne, skrine, šatníky. Nábytok vyrábame vo vlastnej výrobe v Bratislave a doprava je v jeho cene, preto v rozpočte hneď vidíte sumu vrátane dopravy a montáže.</p>"
+      },
+      {
+       "q": "Je rozpočet pre objekt vo Viedni drahší?",
+       "a": "<p>Nie, rovnako 5 €/m². Zameranie robíme na mieste a cestu do Viedne neúčtujeme zvlášť, z Bratislavy je to asi hodina jazdy. Rozpočet pre byt s rozlohou 80 m² stojí 400 € vo Viedni aj v Bratislave.</p>"
+      },
+      {
+       "q": "Kedy je najlepšie objednať rozpočet?",
+       "a": "<p>Keď sú hotové realizačné výkresy alebo je aspoň jasný zoznam prác. V novostavbe až po <a href=\"/sk/preberanie-bytu-od-developera-bratislava\">preberaní bytu od developera</a>: vady, ktoré má podľa protokolu odstrániť developer, nemusíte zarátať do rozpočtu rekonštrukcie.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbf2813cf223de339aae5d",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

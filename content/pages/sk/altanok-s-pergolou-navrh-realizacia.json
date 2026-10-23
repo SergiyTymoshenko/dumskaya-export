@@ -1,0 +1,237 @@
+{
+ "path": "/sk/altanok-s-pergolou-navrh-realizacia",
+ "lang": "sk",
+ "type": "project",
+ "group": "architecture",
+ "title": "Altánok s pergolou: návrh a realizácia | DUMSKAYA DESIGN",
+ "description": "Návrh altánku s pergolou a letnou kuchyňou: od 3D vizualizácie po realizáciu na pozemku. Drobná architektúra od štúdia DUMSKAYA DESIGN.",
+ "h1": "Altánok s pergolou: návrh a realizácia",
+ "og_image": "66d476c15339d71adfe3fb24",
+ "alternates": {
+  "ru": "/architecture-gazebo-pergola",
+  "ua": "/ua/pergola-gazebo-design-built-project-bratislava",
+  "en": "/en/gazebo-pergola-design-and-construction",
+  "sk": "/sk/altanok-s-pergolou-navrh-realizacia",
+  "de": "/de/gartenpavillon-pergola-planung"
+ },
+ "sections": [
+  {
+   "id": "66d34600efdf845d3d79f86f",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Altánok s pergolou: návrh a realizácia"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Altánok s pergolou na pozemku rodinného domu. Štúdio navrhlo architektonický koncept a proporcie, vybralo povrchové materiály, naplánovalo oddychovú zónu s miestami na sedenie a dekoratívne večerné osvetlenie. Altánok vznikal v nadväznosti na architektúru domu a na povrchy sme zvolili materiály odolné voči počasiu. Stavba je postavená podľa projektu: na stránke sú najprv 3D vizualizácie, nižšie fotografie zo stavby."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Hmota a pergola"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Altánok je uzavretý, s presklenou fasádou. Do záhrady sa otvára posuvnými panoramatickými dverami, pred ktorými je drevená terasa. Steny majú svetlú štruktúrovanú omietku členenú tmavohnedými lištami, strecha je pokrytá plechovou krytinou v rovnakom tóne."
+      },
+      {
+       "t": "p",
+       "html": "Pergola je pristavaná k bočnej stene. Konštrukciu tvoria kovové stĺpiky a nosníky v tej istej hnedej farbe, na boku je clona z vodorovných lamiel, ktorá chráni miesto na oddych pred vetrom a pohľadmi susedov. Projekt počíta pod pergolou s letnou kuchyňou: betónová pracovná doska a grilovacia zóna s digestorom. Na druhej strane terasy visí závesné kreslo v tvare kokónu."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Jedáleň a kuchyňa vo vnútri"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Vo vnútri je jedna miestnosť: dlhý jedálenský stôl z masívu a kuchyňa pozdĺž plnej steny. Spodné dvierka sú sivé, so zvislým drážkovaním, horné skrinky a stena s televízorom sú obložené dyhou. Na stenách medzi oknami je obklad s imitáciou tmavého kameňa, podlaha je z veľkých svetlých dlaždíc s tmavým pásom po obvode. Nad stolom visia dva lustre zo sklenených trubičiek, v strope sú bodové svietidlá."
+      },
+      {
+       "t": "p",
+       "html": "Akcentové steny sú poskladané z drevených lamiel rôznej dĺžky. Medzi nimi sú zvislé podsvietené pásy machu, v jednej z týchto stien sú skryté dvere bez zárubní. V kúpeľni je závesné WC, sklenené police v nike, umývadlo položené na bielej doske a stena z obkladu s grafickým vzorom."
+      },
+      {
+       "t": "p",
+       "html": "Fotografie zo stavby ukazujú, že konštrukcia pergoly, lamelová clona, presklenie aj povrchová úprava fasády sú zhotovené podľa projektu. Ďalšie práce štúdia na samostatných stavbách a fasádach nájdete v sekcii <a href=\"/sk/architektura-projektovanie-domov-bratislava\">Architektúra a projektovanie</a>."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d476c7e6210d11a55ff6ee",
+       "alt": "3D vizualizácia moderného altánku s pergolou, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476e25339d71adfe3fb9a",
+       "alt": "Návrh altánku s pergolou pre rodinný dom, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476c1e93b01287b01e510",
+       "alt": "3D projekt altánku s modernou pergolou, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476c15339d71adfe3fb24",
+       "alt": "Architektonická vizualizácia altánku s pergolou, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476c083005165268a7350",
+       "alt": "Moderný návrh oddychovej zóny s pergolou, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476c1e93b01287b01e50b",
+       "alt": "3D vizualizácia oddychovej zóny pri rodinnom dome, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476c5e6210d11a55ff6de",
+       "alt": "Projekt moderného altánku s oddychovou zónou, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476c183005165268a7358",
+       "alt": "Návrh pergoly s dekoratívnym osvetlením, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476bfe6210d11a55ff6bb",
+       "alt": "Architektonický projekt altánku pre rodinný dom, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476ca5339d71adfe3fb4c",
+       "alt": "Moderný altánok s pergolou, 3D vizualizácia, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d476cae93b01287b01e53e",
+       "alt": "Návrh exteriéru rodinného domu s altánkom a pergolou, Bratislava, Slovensko"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fotografie z realizácie"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d347a8e6210d11a55e014f",
+       "alt": "Altánok s pergolou postavený podľa návrhu, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d347a8adeaee0e909c7a62",
+       "alt": "Fotografia hotovej oddychovej zóny s altánkom a pergolou, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d347a55339d71adfe2067e",
+       "alt": "Realizovaný projekt moderného altánku s pergolou, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d347a95339d71adfe20698",
+       "alt": "Realizovaný návrh altánku s pergolou a osvetlením, Bratislava, Slovensko"
+      },
+      {
+       "id": "66d347a98300516526887b2b",
+       "alt": "Hotový altánok s modernou pergolou pri rodinnom dome, Bratislava, Slovensko"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky projekty",
+       "href": "/sk/portfolio-dizajn-interieru"
+      },
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Ceny dizajnových balíkov",
+       "href": "/sk/3d-vizualizacia-fasady-cena"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc00ba376a1a22235af213",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

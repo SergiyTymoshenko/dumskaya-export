@@ -1,5 +1,5 @@
 ---
-import { LANGS, LANG_LABEL, ui, type Lang } from '../lib/i18n';
+import { LANGS, LANG_LABEL, HREFLANG, ui, type Lang } from '../lib/i18n';
 import { site, type Page, altPath, localize, phoneFor, pagePhones } from '../lib/data';
 
 interface Props { page: Page }
@@ -26,8 +26,8 @@ const menuPhones = pagePhones(page);
     <nav class="hdr__langs" aria-label="Language">
       {LANGS.map((l) => (
         l === lang
-          ? <span aria-current="true" lang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</span>
-          : <a href={altPath(page, l)} hreflang={l === 'ua' ? 'uk' : l} lang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</a>
+          ? <span aria-current="true" lang={HREFLANG[l]}>{LANG_LABEL[l]}</span>
+          : <a href={altPath(page, l)} hreflang={HREFLANG[l]} lang={HREFLANG[l]}>{LANG_LABEL[l]}</a>
       ))}
     </nav>
     <a class="hdr__phone" href={`tel:${phone.tel}`} aria-label={`${T.call}: ${phone.text}`}>
@@ -50,7 +50,7 @@ const menuPhones = pagePhones(page);
     <p class="menu__langs menu__langs--top">
       {LANGS.map((l) => l === lang
         ? <span aria-current="true">{LANG_LABEL[l]}</span>
-        : <a href={altPath(page, l)} hreflang={l === 'ua' ? 'uk' : l} lang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</a>)}
+        : <a href={altPath(page, l)} hreflang={HREFLANG[l]} lang={HREFLANG[l]}>{LANG_LABEL[l]}</a>)}
     </p>
     <ul class="menu__main">
       {menu.filter((m) => !m.children).map((m) => (

@@ -1,0 +1,268 @@
+{
+ "path": "/de/kostenschaetzung-sanierung-wien-bratislava",
+ "lang": "de",
+ "type": "service",
+ "group": null,
+ "title": "Kostenschätzung für Sanierung in Wien: 5 €/m² | DUMSKAYA",
+ "description": "Kostenschätzung für Wohnung, Haus oder Büro in Wien und Bratislava: Aufmaß, Arbeiten, Material. 5 €/m², bei Sanierung durch uns angerechnet.",
+ "h1": "Kostenschätzung für die Sanierung von Wohnungen und Häusern in Bratislava und Wien",
+ "og_image": "65d3cb0956ff01000f891f5c",
+ "alternates": {
+  "ru": "/smeta-na-remont-bratislava-vienna",
+  "ua": "/ua/smeta-na-remont-bratislava-vienna",
+  "en": "/en/renovation-cost-estimate-bratislava-vienna",
+  "sk": "/sk/rozpocet-rekonstrukcie-bratislava-vieden",
+  "de": "/de/kostenschaetzung-sanierung-wien-bratislava"
+ },
+ "sections": [
+  {
+   "id": "67eae77db6e27b1d0e36bd47",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Kostenschätzung für die Sanierung von Wohnungen und Häusern in Bratislava und Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Wir erstellen detaillierte Kostenschätzungen für die Sanierung von Wohnungen, Einfamilienhäusern und Geschäftsräumen in Bratislava und Wien: welche Arbeiten nötig sind, in welchem Umfang, was sie kosten und wie viel Material gebraucht wird. Die Kostenschätzung bestellt man vor Beginn der Sanierung, um das Budget zu kennen, Angebote verschiedener Firmen zu vergleichen und Einkäufe zu planen. Der Preis beträgt 5 €/m² Objektfläche."
+      },
+      {
+       "t": "p",
+       "html": "Wir rechnen mit den tatsächlichen Maßen und dem Zustand der Räume, nicht mit einem Durchschnittspreis pro Quadratmeter. Grundlage ist eine Planung mit Ausführungsplänen, falls vorhanden, oder eine Liste der Arbeiten, die wir mit Ihnen vor Ort abstimmen."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Aufmaß und Zustand der Räume"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Wir kommen ins Objekt, messen Wände, Böden und Decken und prüfen, wie stark die Flächen vom Lot, von der Waagrechten und vom rechten Winkel abweichen. Eine Wand, die verputzt und begradigt werden muss, und eine ebene Wand, die nur gemalt wird, stehen in der Kostenschätzung unterschiedlich da. Ebenso ein Boden, der Estrich braucht, und ein fertiger Untergrund. Aus dem Aufmaß berechnen wir die Mengen für Arbeiten und Material. Deshalb weicht die Schätzung weniger von den tatsächlichen Kosten ab."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Was die Kostenschätzung enthält"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "Arbeiten mit Mengen und Preisen — Vorbereitung und Abbruch, Baumeisterarbeiten, Elektro, Sanitär und Oberflächen, je nach Objekt;",
+        "Liste der Bau- und Ausbaumaterialien: was gebraucht wird, in welcher Menge und was es ungefähr kostet;",
+        "auf Wunsch auch Möbel, Haushaltsgeräte, Sanitärobjekte und Beleuchtung, damit Sie das gesamte Budget für Wohnung oder Haus sehen."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Arbeiten und Material sind nach Gewerken gegliedert. Sie sehen, woraus sich das Budget zusammensetzt, und können jede Position mit dem Angebot einer anderen Firma vergleichen. Ändern sich Materialien oder Leistungsumfang, passen wir die Berechnung an."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smeta-na-remont-bratislava-vienna-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "So erstellen wir die Kostenschätzung"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Anfrage.</strong> Sie schicken uns Grundriss, Fotos der Räume und, falls vorhanden, die Einrichtungsplanung oder Pläne. Die Beratung ist kostenlos, wir antworten innerhalb eines Werktags.",
+        "<strong>Aufmaß.</strong> Wir kommen zum Objekt in Bratislava oder Wien und prüfen den Zustand der Oberflächen.",
+        "<strong>Leistungsumfang.</strong> Wir legen gemeinsam fest, was gemacht wird: welche Zwischenwände abgebrochen und welche neu errichtet werden, wie viele Elektro- und Sanitäranschlüsse es gibt, welche Beläge auf Böden und Wände kommen.",
+        "<strong>Berechnung.</strong> Wir ermitteln Mengen und Kosten für Arbeiten und Material.",
+        "<strong>Übergabe der Kostenschätzung.</strong> Wir gehen sie mit Ihnen Abschnitt für Abschnitt durch und beantworten Ihre Fragen."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smeta-na-remont-bratislava-vienna-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Kosten und Rechenbeispiel"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Kostenschätzung kostet 5 €/m² Objektfläche. Beauftragen Sie uns danach mit der Sanierung, ziehen wir diesen Betrag von den Kosten der Arbeiten ab."
+      },
+      {
+       "t": "p",
+       "html": "Beispiel: Wohnung mit 60 m² — Kostenschätzung 300 €. Sanieren danach unsere Handwerker diese Wohnung, werden die 300 € von der Rechnung für die Arbeiten abgezogen. Einfamilienhaus mit 140 m² — 700 €."
+      },
+      {
+       "t": "p",
+       "html": "Die Kostenschätzung beruht auf den vorhandenen Angaben zum Objekt und dem vereinbarten Leistungsumfang. Die Endkosten können sich ändern, wenn bei der Sanierung verdeckte Mängel auftauchen oder sich Planungsentscheidungen, Leistungsumfang oder Materialpreise ändern."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Wohnung im Mehrparteienhaus"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Betrifft die Sanierung allgemeine Teile des Hauses (tragende oder Außenwände, gemeinsame Leitungen, die Fassade), klären wir das vor der Berechnung. In der Slowakei darf ein Wohnungseigentümer ohne Zustimmung der anderen Eigentümer keine Umbauten vornehmen, die das Aussehen des Hauses verändern oder die Nachbarn unverhältnismäßig beeinträchtigen. Die Hausverwaltung (správca) darf prüfen, ob die Arbeiten allgemeine Teile berühren. In Wien brauchen solche Arbeiten im Wohnungseigentum ebenfalls die Zustimmung der übrigen Eigentümer, die Hausverwaltung kann sie nicht selbst erteilen. Von dieser Zustimmung hängt ab, ob diese Arbeiten in die Kostenschätzung kommen."
+      },
+      {
+       "t": "p",
+       "html": "Mehr über die Arbeiten unserer Handwerker lesen Sie auf der Seite zur <a href=\"/de/schluesselfertige-sanierung-wien-bratislava\">schlüsselfertigen Sanierung</a>."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Bau und Sanierung (Preisliste)",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava"
+      },
+      {
+       "text": "Preise für Innenarchitektur",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "smeta-na-remont-bratislava-vienna-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Fragen zur Kostenschätzung"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Kann ich eine Kostenschätzung ohne Innenarchitektur-Projekt bestellen?",
+       "a": "<p>Ja. Wir rechnen nach Aufmaß und einer mit Ihnen abgestimmten Liste der Arbeiten. Mit Ausführungsplänen, zum Beispiel aus dem Paket <a href=\"/de/designpaket-basis-wien-bratislava\">„Basis“</a>, wird die Schätzung genauer: Fliesenspiegel, Elektro- und Sanitäranschlüsse und Materialien sind darin bereits festgelegt. Ohne Pläne rechnen wir einen Teil der Positionen nach vorläufigen Entscheidungen und präzisieren sie, sobald entschieden ist.</p>"
+      },
+      {
+       "q": "Darf ich Ihre Kostenschätzung einer anderen Firma geben?",
+       "a": "<p>Ja, die Kostenschätzung gehört Ihnen. Wenn mehrere Firmen dieselbe Liste der Arbeiten mit denselben Mengen anbieten, sehen Sie den Preisunterschied bei jeder Position.</p>"
+      },
+      {
+       "q": "Rechnen Sie auch Möbel nach Maß ein?",
+       "a": "<p>Ja, wenn das Projekt sie braucht: Küchen, Kästen, begehbare Schrankräume. Die Möbel fertigen wir in unserer eigenen Tischlerei in Bratislava, die Lieferung ist im Preis enthalten. So sehen Sie in der Schätzung gleich den Betrag samt Lieferung und Montage.</p>"
+      },
+      {
+       "q": "Ist eine Kostenschätzung für ein Objekt in Wien teurer?",
+       "a": "<p>Nein, ebenfalls 5 €/m². Das Aufmaß machen wir vor Ort, die Fahrt nach Wien wird nicht extra verrechnet: Von Bratislava ist es etwa eine Stunde. Für eine Wohnung mit 80 m² kostet die Schätzung 400 €, in Wien wie in Bratislava.</p>"
+      },
+      {
+       "q": "Wann bestellt man die Kostenschätzung am besten?",
+       "a": "<p>Wenn die Ausführungspläne fertig sind oder zumindest klar ist, welche Arbeiten anfallen. Im Neubau nach der <a href=\"/de/wohnungsuebergabe-bautraeger-bratislava\">Wohnungsübergabe vom Bauträger</a>: Mängel, die der Bauträger laut Protokoll behebt, müssen Sie nicht ins Sanierungsbudget einplanen.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbf2813cf223de339aae5d",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

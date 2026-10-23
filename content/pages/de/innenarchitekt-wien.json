@@ -1,0 +1,385 @@
+{
+ "path": "/de/innenarchitekt-wien",
+ "lang": "de",
+ "type": "service",
+ "group": null,
+ "title": "Innenarchitekt in Wien: Wohnungen und Häuser | DUMSKAYA",
+ "description": "Wohnungen und Häuser in Wien: Planung, 3D-Visualisierung, Möbel nach Maß und schlüsselfertige Sanierung. Studio in Bratislava, 60 km von Wien.",
+ "h1": "Innenarchitektur für Wohnungen und Häuser in Wien",
+ "og_image": "6abd6b354888499d207455da",
+ "alternates": {
+  "ru": "/dizajn-interera-vena",
+  "ua": "/ua/dyzain-interieru-viden",
+  "en": "/en/interior-design-vienna",
+  "sk": "/sk/dizajn-interieru-vieden",
+  "de": "/de/innenarchitekt-wien"
+ },
+ "phone": "at",
+ "sections": [
+  {
+   "id": "city-dizajn-interera-vena-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Innenarchitektur für Wohnungen und Häuser in Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> ist ein Studio für Innenarchitektur mit Büro und eigener Möbelfertigung in Bratislava, 60 km von Wien. Wir planen Interieurs von Wohnungen und Häusern in Wien und setzen sie schlüsselfertig um: vom Grundriss und der 3D-Visualisierung bis zur Möbelfertigung und Sanierung. Zwei Wiener Projekte — Wohnungen mit 58 m² und 115 m² — haben wir komplett umgesetzt: Planung, technische Dokumentation, Möbel und Sanierung."
+      },
+      {
+       "t": "p",
+       "html": "Für Kunden in Wien heißt das: ein Team und ein Preis für das ganze Objekt. Die Planung übernehmen wir, die Möbel fertigen wir in der eigenen Produktion, Sanierung und Montage erledigen unsere Teams, die aus Bratislava anreisen. Die Entfernung verlängert die Termine nicht: Die Fahrt dauert etwa eine Stunde."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "DUMSKAYA DESIGN in Wien",
+     "rows": [
+      [
+       "Studio",
+       "Bratislava, Súkennícka 1 — 60 km von Wien"
+      ],
+      [
+       "Möbelfertigung",
+       "eigene, in Bratislava"
+      ],
+      [
+       "Sanierung und Montage",
+       "eigene Teams aus Bratislava"
+      ],
+      [
+       "Lieferung",
+       "im Preis enthalten"
+      ],
+      [
+       "Preise",
+       "gleich für Bratislava und Wien"
+      ],
+      [
+       "Sprachen",
+       "Russisch, Ukrainisch, Englisch"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Möbel nach Maß in Wien",
+       "href": "/de/moebel-nach-mass-wien"
+      },
+      {
+       "text": "Küchen nach Maß in Wien",
+       "href": "/de/kueche-nach-mass-wien"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Was wir in Wien übernehmen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Einrichtungsplanung für Wohnung oder Haus</strong> — Grundriss, Konzept, Auswahl von Materialien, Möbeln und Beleuchtung.",
+        "<strong>3D-Visualisierung</strong> — fotorealistische Bilder jedes Raums vor Beginn der Sanierung.",
+        "<strong>Technische Dokumentation</strong> — Ausführungspläne, Elektro- und Sanitärpläne, Material- und Ausstattungslisten für die Baufirma.",
+        "<strong>Möbel nach Maß</strong> — Küchen, Kästen, begehbare Schrankräume, Vorraummöbel und TV-Wände aus eigener Fertigung.",
+        "<strong>Schlüsselfertige Sanierung</strong> — vom Abbruch bis zur Endreinigung, durch unsere eigenen Teams.",
+        "<strong>Künstlerische Oberleitung und Beschaffung</strong> — Kontrolle, ob alles nach Plan umgesetzt wird, Bestellung von Materialien, Sanitärobjekten und Leuchten."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Wir arbeiten in Neubauten, Bestandswohnungen und Einfamilienhäusern in Wien und Umgebung. Die Planung können Sie einzeln oder zusammen mit der Umsetzung beauftragen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projekte von DUMSKAYA DESIGN in Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Beide Projekte wurden schlüsselfertig umgesetzt: Innenarchitektur, technische Dokumentation, Möbel nach Maß und Sanierung."
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Wohnung in Wien, 58 m²",
+       "href": "/de/innenarchitektur-wohnung-wien-58-m2",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "Wohnung in Wien, 58 m²"
+       }
+      },
+      {
+       "title": "Wohnung in Wien, 115 m²",
+       "href": "/de/innenarchitektur-wohnung-wien-115-m2",
+       "image": {
+        "id": "6abd6b354888499d207455da",
+        "alt": "Wohnung in Wien, 115 m²"
+       }
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "69458237364911d845d8e8c3",
+       "alt": "Wohnzimmergestaltung, Wien, Österreich"
+      },
+      {
+       "id": "694582375a2b8aea030c2c51",
+       "alt": "Wohnküche, Innenarchitektur, Wien, Österreich"
+      },
+      {
+       "id": "694582371e8e6f6006641eb8",
+       "alt": "Einrichtung der Wohnküche, Wien, Österreich"
+      },
+      {
+       "id": "6945823f28ee2c4d3bd6c0b4",
+       "alt": "Küchengestaltung, Wien, Österreich"
+      },
+      {
+       "id": "66d8d28bd5962a50a767150c",
+       "alt": "Wohnbereich mit Küche — Wohnung in Wien, 115 m²"
+      },
+      {
+       "id": "66d8d28b738a140178adf9a3",
+       "alt": "Wohnbereich mit Küche — Wohnung in Wien, 115 m²"
+      },
+      {
+       "id": "66d8d5303765af67caf400ac",
+       "alt": "Moderne Innenarchitektur in Wien"
+      },
+      {
+       "id": "66d8d530d5962a50a7671a3d",
+       "alt": "Gehobene Innenarchitektur in Wien"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Projekte des Studios",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ablauf eines Innenarchitektur-Projekts in Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Beratung.</strong> Wir besprechen Ihr Vorhaben telefonisch, per Messenger oder vor Ort in Wien. Die Beratung ist kostenlos.",
+        "<strong>Aufmaß.</strong> Wir kommen zum Objekt und nehmen Maße, Leitungen und Besonderheiten der Räume auf.",
+        "<strong>Konzept und 3D.</strong> Grundrissvarianten, Stil, Materialien und fotorealistische Visualisierungen. Änderungen stimmen wir mit Ihnen ab.",
+        "<strong>Dokumentation.</strong> Pläne für Baufirma und Möbelfertigung, Material- und Ausstattungslisten, Kostenschätzung für die Sanierung.",
+        "<strong>Umsetzung.</strong> Die Möbel fertigen wir in Bratislava, Sanierung und Montage übernimmt unser Team in Wien. Die Lieferung ist im Preis enthalten.",
+        "<strong>Übergabe.</strong> Endmontage, Einbau von Leuchten und Sanitärobjekten, Reinigung, Schlüsselübergabe."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Kosten der Einrichtungsplanung in Wien"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Preise für die Planung sind in allen Städten, in denen wir arbeiten, gleich: Paket <a href=\"/de/designpaket-express-wien-bratislava\">„Express“</a> — 20 €/m², <a href=\"/de/designpaket-basis-wien-bratislava\">„Basis“</a> — 35–45 €/m², <a href=\"/de/designpaket-moebel-wien-bratislava\">„Möbel“</a> — 35–50 €/m², <a href=\"/de/designpaket-premium-wien-bratislava\">„Premium“</a> — 50 €/m², <a href=\"/de/designpaket-premium-plus-wien-bratislava\">„Premium+“</a> — 70 €/m². Die Erstberatung ist kostenlos."
+      },
+      {
+       "t": "p",
+       "html": "Möbel und Sanierung kalkulieren wir nach Planung und Kostenschätzung. Sie erhalten einen Gesamtpreis — ohne Aufpreis für Anfahrt und Lieferung nach Wien."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Pakete und Preise",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Kostenschätzung",
+       "href": "/de/kostenschaetzung-sanierung-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-5",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fragen zur Arbeit in Wien"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Kommen Sie zum Objekt nach Wien?",
+       "a": "<p>Ja. Aufmaß, künstlerische Oberleitung und Abnahme finden vor Ort statt. Von Bratislava nach Wien ist es etwa eine Stunde Fahrt, deshalb gehören die Fahrten zum normalen Ablauf und werden nicht extra verrechnet.</p>"
+      },
+      {
+       "q": "Wer übernimmt Sanierung und Montage in Wien?",
+       "a": "<p>Unsere eigenen Teams aus Bratislava — dieselben, die auf Baustellen in der Slowakei arbeiten. Wir geben das Objekt nicht an Subunternehmer weiter und tragen deshalb die volle Verantwortung für das Ergebnis.</p>"
+      },
+      {
+       "q": "Sind die Preise in Wien anders als in Bratislava?",
+       "a": "<p>Nein. Die Designpakete kosten gleich viel, Möbellieferung und Anfahrten sind im Preis enthalten. Die Sanierungskosten hängen vom Leistungsumfang ab und werden in der Kostenschätzung berechnet.</p>"
+      },
+      {
+       "q": "Wo werden die Möbel gefertigt?",
+       "a": "<p>In der eigenen Möbelfertigung von DUMSKAYA DESIGN in Bratislava. Die fertigen Möbel liefern und montieren wir in Wien selbst.</p>"
+      },
+      {
+       "q": "Kann ich nur die Planung ohne Sanierung bestellen?",
+       "a": "<p>Ja. Sie erhalten einen vollständigen Satz Pläne und Visualisierungen, mit dem jede Baufirma arbeiten kann. Brauchen Sie später Möbel oder eine Sanierung, machen wir mit demselben Projekt weiter.</p>"
+      },
+      {
+       "q": "Arbeiten Sie auch in anderen Städten Österreichs?",
+       "a": "<p>Ja, in Niederösterreich und im Burgenland — in gut erreichbarer Entfernung von Bratislava. Für weiter entfernte Objekte planen wir aus der Ferne, fertigen die Möbel und liefern sie.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-6",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Anfrage für eine kostenlose Beratung",
+     "text": "Schreiben Sie uns, um welches Objekt es geht und was Sie brauchen — wir antworten innerhalb eines Werktags und schlagen vor, wie wir zusammenarbeiten können."
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-vena-7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

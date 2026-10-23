@@ -1,0 +1,551 @@
+{
+ "path": "/sk/kuchyne-na-mieru-bratislava-vieden",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Kuchyne na mieru v Bratislave a vo Viedni: 32 modelov",
+ "description": "Kuchyne na mieru podľa vašich rozmerov: 32 modelov v katalógu, vlastná výroba v Bratislave, zameranie, doprava a montáž v cene. Bratislava a Viedeň.",
+ "h1": "Kuchyne na mieru v Bratislave a vo Viedni",
+ "og_image": "6abea7264888499d2078543f",
+ "alternates": {
+  "ru": "/kupkuhni-na-zakaz-vienna-bratislava",
+  "ua": "/ua/custom-kitchens-bratislava-vienna",
+  "en": "/en/custom-kitchens-bratislava-vienna",
+  "sk": "/sk/kuchyne-na-mieru-bratislava-vieden",
+  "de": "/de/kuechen-nach-mass-katalog-wien-bratislava"
+ },
+ "sections": [
+  {
+   "id": "67c88f63eec91e6d7422a7f9",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Kuchyne na mieru v Bratislave a vo Viedni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Nábytkové oddelenie štúdia vyrába kuchyne na mieru pre byty a rodinné domy v Bratislave a vo Viedni: návrh podľa rozmerov miestnosti, výroba vo vlastnej výrobni v Bratislave, doprava a montáž vlastným tímom. Nižšie nájdete katalóg 32 modelov. Ktorýkoľvek z nich môžete vziať ako základ a dať si ho prepočítať na vašu kuchyňu, alebo si objednať návrh od nuly."
+      },
+      {
+       "t": "p",
+       "html": "Cena pre Viedeň a Bratislavu je rovnaká a doprava je v nej už zahrnutá. Na želanie kuchyňu doplníme o drez, spotrebiče, digestor a sanitu — potom sú aj tie súčasťou cenovej ponuky."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67c88f63eec91e6d7422a7fb",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Katalóg sériových modelov kuchýň"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "V katalógu sú rovné, rohové kuchyne a kuchyne v tvare U, modely s ostrovom a polostrovom, s dĺžkou od 3,1 do 9 bežných metrov. Štýly: minimalizmus, moderný štýl, klasika, neoklasicizmus a loft. Na stránke každého modelu nájdete rozmery, dvierka, pracovnú dosku a kovanie. Všetko sa dá zmeniť: dĺžka strán, farba, vnútorné vybavenie skriniek, miesto pre spotrebiče."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67c88f63eec91e6d7422a801",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Model kuchyne č. K-45",
+       "href": "/sk/kuchyna-na-mieru-k-45-bezova-tvar-u",
+       "image": {
+        "id": "6abea65b4888499d20785099",
+        "alt": "Kuchyňa K-45 v tvare U s kamennou pracovnou doskou, vysokými skrinkami v dekore dreva a barovou časťou, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-44",
+       "href": "/sk/kuchyna-na-mieru-k-44-sivobezova-rohova",
+       "image": {
+        "id": "6abea6624888499d207850c8",
+        "alt": "Rohová kuchyňa K-44 v sivobéžových tónoch s hornými skrinkami v dekore dreva a kamenným dekorom, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne K-06",
+       "href": "/sk/kuchyna-na-mieru-k-06-minimalisticka-biela",
+       "image": {
+        "id": "6abea7264888499d2078543f",
+        "alt": "Biela rovná kuchyňa K-06 v minimalistickom štýle s jednoduchými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne K-05",
+       "href": "/sk/kuchyna-na-mieru-k-05-klasicka-bezova",
+       "image": {
+        "id": "6abea72ec8c59bb7c8399171",
+        "alt": "Béžová klasická rohová kuchyňa K-05 so svetlými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne K-11",
+       "href": "/sk/kuchyna-na-mieru-k-11-moderna-siva",
+       "image": {
+        "id": "6abea7047bf8b4294f3dee4b",
+        "alt": "Sivá rovná kuchyňa K-11 s kamenným dekorom a modernou zostavou nábytku, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne K-08",
+       "href": "/sk/kuchyna-na-mieru-k-08-minimalisticka-hneda",
+       "image": {
+        "id": "6abea7187bf8b4294f3deea9",
+        "alt": "Hnedá rovná kuchyňa K-08 s dvierkami v dekore dreva, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne K-03",
+       "href": "/sk/kuchyna-na-mieru-k-03-moderna-cierna",
+       "image": {
+        "id": "6abea73d4888499d207854b2",
+        "alt": "Čierna rovná kuchyňa K-03 s ostrovom a dekorom dreva, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne K-04",
+       "href": "/sk/kuchyna-na-mieru-k-04-moderna-siva",
+       "image": {
+        "id": "6abea73568c5e81567a5bd3f",
+        "alt": "Sivá moderná rohová kuchyňa K-04 s pracovnou plochou v dekore kameňa, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne K-41",
+       "href": "/sk/kuchyna-na-mieru-k-41-siva-rovna",
+       "image": {
+        "id": "6abea9327bf8b4294f3df680",
+        "alt": "Rovná kuchyňa K-41 s grafitovými hornými skrinkami, svetlými dvierkami a pracovnou doskou v dekore mramoru, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-07",
+       "href": "/sk/kuchyna-na-mieru-k-07-moderna-biela",
+       "image": {
+        "id": "6abea71f6bbe6103844c303f",
+        "alt": "Biela kuchyňa K-07 v tvare U v modernom štýle, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-09",
+       "href": "/sk/kuchyna-na-mieru-k-09-moderna-siva",
+       "image": {
+        "id": "6abea7116bbe6103844c2ffa",
+        "alt": "Sivá rovná kuchyňa K-09 so sklenenými hornými dvierkami a ostrovom, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-12",
+       "href": "/sk/kuchyna-na-mieru-k-12-moderna-bezova",
+       "image": {
+        "id": "6abea6ff7bf8b4294f3dee2c",
+        "alt": "Béžová rohová kuchyňa K-12 s dekorom dreva a kombinovanými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-02",
+       "href": "/sk/kuchyna-na-mieru-k-02-minimalisticka-bezova",
+       "image": {
+        "id": "6abea7437bf8b4294f3def6e",
+        "alt": "Béžová rohová kuchyňa K-02 v minimalistickom štýle s ostrovom a dyhovanými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-01",
+       "href": "/sk/kuchyna-na-mieru-k-01-klasicka-zelena",
+       "image": {
+        "id": "6abea74a68c5e81567a5bda9",
+        "alt": "Zelená klasická rohová kuchyňa K-01 s lakovanými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-10",
+       "href": "/sk/kuchyna-na-mieru-k-10-loft-hneda",
+       "image": {
+        "id": "6abea70ac8c59bb7c83990fd",
+        "alt": "Hnedá rohová kuchyňa K-10 v štýle loft so sklom a dekorom dreva, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-13",
+       "href": "/sk/kuchyna-na-mieru-k-13-minimalisticka-bezova",
+       "image": {
+        "id": "6abea6f87bf8b4294f3dee01",
+        "alt": "Béžová rovná kuchyňa K-13 v minimalistickom štýle s ostrovom, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-14",
+       "href": "/sk/kuchyna-na-mieru-k-14-minimalisticka-bezova",
+       "image": {
+        "id": "6abea6f37bf8b4294f3dedd3",
+        "alt": "Béžová rovná kuchyňa K-14 s ostrovom a kombinovanými modernými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-15",
+       "href": "/sk/kuchyna-na-mieru-k-15-moderna-cervena",
+       "image": {
+        "id": "6abea6ea6bbe6103844c2f6e",
+        "alt": "Červená rovná kuchyňa K-15 s ostrovom a modernou pracovnou plochou v dekore kameňa, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-16",
+       "href": "/sk/kuchyna-na-mieru-k-16-neoklasicka-zelena",
+       "image": {
+        "id": "6abea6e44888499d207852fb",
+        "alt": "Zelená neoklasicistická rohová kuchyňa K-16 s kazetovými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-17",
+       "href": "/sk/kuchyna-na-mieru-k-17-neoklasicka-siva",
+       "image": {
+        "id": "6abea6dd7bf8b4294f3ded6d",
+        "alt": "Sivá kuchyňa K-17 v tvare U v neoklasicistickom štýle, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-18",
+       "href": "/sk/kuchyna-na-mieru-k-18-siva-rohova",
+       "image": {
+        "id": "6abea6d568c5e81567a5bbb3",
+        "alt": "Sivá moderná rohová kuchyňa K-18 s laminovanými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-19",
+       "href": "/sk/kuchyna-na-mieru-k-19-bezova-rovna",
+       "image": {
+        "id": "6abea6cf6bbe6103844c2f08",
+        "alt": "Béžová rovná kuchyňa K-19 s jednoduchými laminovanými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-20",
+       "href": "/sk/kuchyna-na-mieru-k-20-bezova-tvar-u",
+       "image": {
+        "id": "6abea6c76bbe6103844c2ed7",
+        "alt": "Béžová kuchyňa K-20 v tvare U s tromi pracovnými stranami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-21",
+       "href": "/sk/kuchyna-na-mieru-k-21-biela-rohova",
+       "image": {
+        "id": "6abea6c04888499d2078526a",
+        "alt": "Biela neoklasicistická rohová kuchyňa K-21 s fóliovanými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-26",
+       "href": "/sk/kuchyna-na-mieru-k-26-hneda-rovna",
+       "image": {
+        "id": "6abea6acc8c59bb7c8398f78",
+        "alt": "Hnedá rovná kuchyňa K-26 s dekorom dreva a modernými tvarmi, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-28",
+       "href": "/sk/kuchyna-na-mieru-k-28-hneda-tvar-u",
+       "image": {
+        "id": "6abea6a06bbe6103844c2e47",
+        "alt": "Hnedá kuchyňa K-28 v tvare U s hornými skrinkami v dekore dreva a jednofarebnými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-30",
+       "href": "/sk/kuchyna-na-mieru-k-30-siva-rohova",
+       "image": {
+        "id": "6abea6937bf8b4294f3dec4c",
+        "alt": "Rohová kuchyňa K-30 s bielymi hornými a sivými spodnými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-31",
+       "href": "/sk/kuchyna-na-mieru-k-31-hneda-rohova",
+       "image": {
+        "id": "6abea68dc8c59bb7c8398ef7",
+        "alt": "Rohová kuchyňa K-31 so svetlozelenými hornými skrinkami a hnedou spodnou časťou v dekore dreva, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-35",
+       "href": "/sk/kuchyna-na-mieru-k-35-siva-rovna",
+       "image": {
+        "id": "6abea6857bf8b4294f3debf6",
+        "alt": "Rovná kuchyňa K-35 so svetlými hornými skrinkami v dekore dreva a tmavými sivohnedými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-36",
+       "href": "/sk/kuchyna-na-mieru-k-36-siva-rohova",
+       "image": {
+        "id": "6abea67dc8c59bb7c8398ea6",
+        "alt": "Rohová kuchyňa K-36 s grafitovými hornými a svetlosivými spodnými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-42",
+       "href": "/sk/kuchyna-na-mieru-k-42-modra-rohova",
+       "image": {
+        "id": "6abea66f6bbe6103844c2d7b",
+        "alt": "Rohová kuchyňa K-42 so svetlými hornými a tmavomodrými spodnými dvierkami, Bratislava a Viedeň"
+       }
+      },
+      {
+       "title": "Model kuchyne č. K-43",
+       "href": "/sk/kuchyna-na-mieru-k-43-cervena-rovna",
+       "image": {
+        "id": "6abea6687bf8b4294f3deb73",
+        "alt": "Rovná kuchyňa K-43 s tmavobordovými dvierkami a grafitovou drážkovanou hornou časťou, Bratislava a Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67dd34eab62c1979aaf2b923",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Nábytok do bytov a domov",
+       "href": "/sk/nabytok-na-mieru-bratislava"
+      },
+      {
+       "text": "Nábytok pre komerčné priestory",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava"
+      },
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Kuchyne na mieru v Bratislave",
+       "href": "/sk/kuchyne-na-mieru-bratislava"
+      },
+      {
+       "text": "Kuchyne na mieru vo Viedni",
+       "href": "/sk/kuchyne-na-mieru-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ako prebieha objednávka kuchyne"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Dopyt.</strong> Pošlite pôdorys alebo rozmery kuchyne, fotografie miestnosti a číslo modelu z katalógu, ak vás niektorý zaujal. Odpovieme do jedného pracovného dňa.",
+        "<strong>Predbežný výpočet.</strong> Podľa týchto údajov vám povieme orientačnú cenu.",
+        "<strong>Zameranie.</strong> Prídeme na miesto v Bratislave alebo vo Viedni, zameriame rozmery a vyznačíme okná, dvere a vývody vody, kanalizácie a elektriny.",
+        "<strong>Návrh a 3D vizualizácia.</strong> Ukážeme vám kuchyňu vo vašej miestnosti, spolu vyberieme dvierka, pracovnú dosku a kovanie a dohodneme spotrebiče. Vzorky materiálov si môžete pozrieť v štúdiu na Súkenníckej 1.",
+        "<strong>Zmluva.</strong> Dohodneme jednu sumu: výroba, doprava a montáž. Uvedieme aj termín výroby — plynie od schválenia návrhu a úhrady zálohy.",
+        "<strong>Výroba a montáž.</strong> Kuchyňu vyrobíme v Bratislave, privezieme, zmontujeme, zabudujeme spotrebiče a nastavíme dvierka."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Čo ovplyvňuje cenu"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ponuku počítame pre konkrétnu zostavu: dve rovnako dlhé kuchyne sa môžu v cene citeľne líšiť pre dvierka, pracovnú dosku a mechanizmy. Sumu ovplyvňuje:"
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "dĺžka a tvar: koľko bežných metrov, či je v kuchyni ostrov alebo polostrov, či skrinky siahajú až po strop;",
+        "dvierka: laminovaná drevotrieska je najdostupnejšia, lakovaná MDF, dyha a akrylát sú drahšie;",
+        "pracovná doska: laminát na drevotrieske, kompaktná doska, keramika, kremeň alebo kameň;",
+        "kovanie a vnútorné vybavenie: pánty a výsuvy s tlmeným dovieraním alebo bez neho, výklopné mechanizmy horných skriniek, cargo výsuvy, organizéry;",
+        "spotrebiče a sanita, ak si ich objednáte u nás."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Zameranie, doprava a montáž sú už v cene. Ak okrem kuchyne potrebujete aj skrine, šatník a predsieň, je praktickejšie začať <a href=\"/sk/dizajnovy-balik-nabytok-bratislava-vieden\">balíkom „Nábytok“</a> (35–50 €/m²): obsahuje 3D vizualizáciu a výkresy všetkého korpusového nábytku v byte."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-materials",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Dvierka, pracovné dosky, kovanie"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Korpusy skriniek sú v modeloch z katalógu z laminovanej drevotriesky hrúbky 18 mm. Dvierka vyrábame z laminovanej drevotriesky, MDF s fóliou, lakovanej MDF, dyhy, HPL, akrylátu a skla. V jednej kuchyni sa materiály často kombinujú: model K-02 má napríklad horné dvierka dyhované a spodné lakované."
+      },
+      {
+       "t": "p",
+       "html": "Pracovné dosky — laminát, kompaktná doska, kremenný kompozit, keramika, umelý a prírodný kameň. Kovanie Hettich, Blum a Häfele: tlmené dovieranie, výsuvné systémy, výklopné mechanizmy, cargo výsuvy. Materiály a kovanie vyberáme podľa rozpočtu, od dostupných po drahé. Viac o kuchyniach s kompletnou realizáciou nájdete na stránkach <a href=\"/sk/kuchyne-na-mieru-bratislava\">kuchyne na kľúč v Bratislave</a> a <a href=\"/sk/kuchyne-na-mieru-vieden\">kuchyne na kľúč vo Viedni</a>."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kupkuhni-na-zakaz-vienna-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Otázky o kuchyniach na mieru"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Dá sa objednať kuchyňa, ktorá nie je v katalógu?",
+       "a": "<p>Áno. Ak máte vlastnú predstavu alebo fotografiu kuchyne, ktorá sa vám páči, navrhneme ju od nuly podľa zamerania. Katalóg pomáha rýchlejšie sa dohodnúť na štýle a približne odhadnúť rozpočet, výber však neobmedzuje.</p>"
+      },
+      {
+       "q": "Kedy robiť zameranie, ak sa byt ešte rekonštruuje?",
+       "a": "<p>Predbežný výpočet sa dá urobiť podľa pôdorysu. Finálne zameranie robíme, keď sú steny vyrovnané a vývody vody, kanalizácie a elektriny sú tam, kde ich kuchyňa potrebuje. Ak rekonštrukciu robí naša partia, vývody urobí rovno podľa návrhu kuchyne.</p>"
+      },
+      {
+       "q": "Môžem si spotrebiče kúpiť sám?",
+       "a": "<p>Áno. Modely spotrebičov potrebujeme poznať pred spustením výroby: podľa ich rozmerov sa počítajú niky a moduly. Spotrebiče si môžete objednať aj cez nás — potom budú súčasťou celkovej ponuky.</p>"
+      },
+      {
+       "q": "Byt v novostavbe ešte nemám prevzatý od developera. Kde začať?",
+       "a": "<p>Preberaním. Nedostatky stien, podláh a vývodov rozvodov sa zapisujú do preberacieho protokolu: tak sa dajú od developera ľahšie vymáhať, kým pri stene ešte nestojí kuchyňa. Robíme <a href=\"/sk/preberanie-bytu-od-developera-bratislava\">preberanie bytu</a>: do 50 m² za 250 €, väčší byt za 400 €.</p>"
+      },
+      {
+       "q": "Dá sa vo Viedni vyviesť digestor cez fasádu?",
+       "a": "<p>Otvor vo fasáde zasahuje do spoločných častí domu, preto pri byte v osobnom vlastníctve treba súhlas ostatných vlastníkov; kontakty na spoluvlastníkov získate cez správcu domu (Hausverwaltung). Ak súhlas nedostanete, osadíme digestor s recirkuláciou: odvod von nepotrebuje.</p>"
+      },
+      {
+       "q": "Pracujete len v Bratislave a vo Viedni?",
+       "a": "<p>Nie, kuchyne dovezieme a namontujeme na celom Slovensku, v Rakúsku a Nemecku. Doprava je v cene, montáž robí náš tím.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbf42dc4c90529feccfd5c",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

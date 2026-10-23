@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Шаг 1 перевода: собирает из русских страниц строки, которых ещё нет в памяти переводов
 (content/i18n/tm-{ua,en}.json), и раскладывает их по пакетам i18n-work/<lang>-NN.json.
-   python3 scripts/i18n/extract.py [--batch-chars 30000]"""
+   python3 scripts/i18n/extract.py [--batch-chars 30000] [--langs sk,de]
+Для SK и DE берутся только страницы, у которых в русской странице есть адрес на этом языке (alternates)."""
 import json, os, sys, collections
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from common import *
@@ -13,7 +14,8 @@ ru = sorted((p for (l, _), p in P.items() if l == 'ru'),
             key=lambda p: (ORDER.index(p['type']) if p['type'] in ORDER else 99, p['path']))
 os.makedirs(WORK, exist_ok=True)
 import shutil; shutil.copy(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'GUIDE.md'), os.path.join(WORK, 'GUIDE.md'))
-for lang in LANGS:
+langs = sys.argv[sys.argv.index('--langs') + 1].split(',') if '--langs' in sys.argv else LANGS
+for lang in langs:
     tm = load_tm(lang)
     # описания фото, которых нет на языке
     have = {}
@@ -24,6 +26,8 @@ for lang in LANGS:
                     have.setdefault(im['id'], im['alt'])
     seen = set(tm); pages = []
     for p in ru:
+        if lang in NEW_LANGS and not p['alternates'].get(lang):
+            continue
         items = []
         for k, s in strings(p):
             if s in seen: continue

@@ -1,0 +1,89 @@
+{
+ "path": "/sk/pouzitie-fotografii-vizualizacii",
+ "lang": "sk",
+ "type": "privacy",
+ "group": null,
+ "title": "Použitie fotografií a vizualizácií | DUMSKAYA DESIGN",
+ "description": "Fotografie interiérov, 3D vizualizácie a výkresy na webe DUMSKAYA DESIGN chráni autorské právo: čo je možné použiť bez povolenia a ako získať licenciu.",
+ "h1": "Používanie fotografií a vizualizácií",
+ "og_image": null,
+ "alternates": {
+  "ru": "/image-license",
+  "ua": "/ua/image-license",
+  "en": "/en/image-license",
+  "sk": "/sk/pouzitie-fotografii-vizualizacii",
+  "de": "/de/bildrechte-fotos-visualisierungen"
+ },
+ "sections": [
+  {
+   "id": "image-license",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Používanie fotografií a vizualizácií"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Komu patria obrázky"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Fotografie interiérov, 3D vizualizácie, výkresy a ďalšie obrázky na webe dumskaya-design.com vytvorilo štúdio interiérového dizajnu DUMSKAYA DESIGN alebo vznikli na jeho objednávku a sú chránené autorským právom. © DUMSKAYA DESIGN."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Čo môžete bez povolenia"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Zdieľať odkaz na stránku webu na sociálnych sieťach, v četových aplikáciách a e-mailoch. V náhľade takého odkazu sa môže zobraziť obrázok zo stránky."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Čo nemôžete bez povolenia"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Kopírovať a zverejňovať obrázky na iných weboch, sociálnych sieťach, online trhoviskách a v reklame; vydávať projekty štúdia za svoje; upravovať obrázky a odstraňovať z nich označenie alebo údaje o autorovi."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ako získať povolenie (licenciu)"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Napíšte nám na <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a> alebo cez formulár na stránke <a href=\"/sk/kontakt-bratislava-vieden\">„Kontakt“</a>: ktoré obrázky (odkaz na stránku), kde a na čo ich chcete použiť. Odpovieme do jedného pracovného dňa a pošleme vám podmienky."
+      },
+      {
+       "t": "p",
+       "html": "Pri povolenom použití uveďte autora: „© DUMSKAYA DESIGN, dumskaya-design.com“."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

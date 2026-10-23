@@ -5,7 +5,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 PAGES = os.path.join(ROOT, 'content/pages')
 TM_DIR = os.path.join(ROOT, 'content/i18n')
 WORK = os.path.join(ROOT, 'i18n-work')          # временные пакеты для перевода (в .gitignore)
-LANGS = ('ua', 'en')
+LANGS = ('ua', 'en', 'sk', 'de')
+# новые языки (23.10.2026): переводятся не все страницы — только те, у которых в русской странице есть адрес на этом языке
+NEW_LANGS = ('sk', 'de')
 
 def load_pages():
     P = {}
@@ -15,7 +17,7 @@ def load_pages():
     return P
 
 def page_file(lang, path):
-    slug = path.strip('/').split('/')[-1] if path.strip('/') not in ('', 'ua', 'en') else 'index'
+    slug = path.strip('/').split('/')[-1] if path.strip('/') not in ('', 'ua', 'en', 'sk', 'de') else 'index'
     return os.path.join(PAGES, lang, slug + '.json')
 
 def strings(p):
@@ -81,4 +83,4 @@ CYR = re.compile(r'[а-яёіїєґ]', re.I)
 def alt_ok(lang, a):
     if not a or not a.strip():
         return False
-    return not CYR.search(a) if lang == 'en' else not RU_ONLY.search(a)
+    return not CYR.search(a) if lang in ('en', 'sk', 'de') else not RU_ONLY.search(a)

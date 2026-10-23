@@ -1,0 +1,336 @@
+{
+ "path": "/de/interior-design-moebel-deutschland",
+ "lang": "de",
+ "type": "service",
+ "group": null,
+ "title": "Interior Design und Maßmöbel für Deutschland | DUMSKAYA",
+ "description": "Interior Design für Deutschland: Planung aus der Ferne, Möbel aus Bratislava inkl. Lieferung, Montage durch unser Team. Projekte in München und Berlin.",
+ "h1": "Innenarchitektur und Möbel nach Maß für Kunden in Deutschland",
+ "og_image": "6abd6aa461617a4443acb2fc",
+ "alternates": {
+  "ru": "/dizajn-interera-germaniya",
+  "ua": "/ua/dyzain-interieru-nimechchyna",
+  "en": "/en/interior-design-germany",
+  "de": "/de/interior-design-moebel-deutschland"
+ },
+ "sections": [
+  {
+   "id": "city-dizajn-interera-germaniya-0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Innenarchitektur und Möbel nach Maß für Kunden in Deutschland"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>DUMSKAYA DESIGN</strong> ist ein Studio für Innenarchitektur mit eigener Möbelfertigung in Bratislava. Für Kunden in Deutschland planen wir Interieurs aus der Ferne, fertigen die Möbel in unserer eigenen Produktion und liefern sie in ganz Deutschland. Die Lieferung ist im Preis enthalten: Sie erhalten einen Gesamtpreis für die Möbel inklusive Montage."
+      },
+      {
+       "t": "p",
+       "html": "Zu unseren umgesetzten Projekten gehören ein Privathaus mit 160 m² in München und ein Haus mit 215 m² in Berlin: Innenarchitektur, technische Dokumentation, Möbel nach Maß und schlüsselfertige Sanierung. Wir kommunizieren auf Russisch, Ukrainisch oder Englisch."
+      }
+     ]
+    },
+    {
+     "type": "facts",
+     "title": "Für Kunden in Deutschland",
+     "rows": [
+      [
+       "Einrichtungsplanung",
+       "aus der Ferne, nach Grundriss und Fotos"
+      ],
+      [
+       "Möbelfertigung",
+       "eigene, in Bratislava"
+      ],
+      [
+       "Lieferung in ganz Deutschland",
+       "im Preis enthalten"
+      ],
+      [
+       "Montage",
+       "unser Team aus Bratislava"
+      ],
+      [
+       "Preise",
+       "wie in Bratislava und Wien"
+      ],
+      [
+       "Realisierte Projekte",
+       "München 160 m², Berlin 215 m²"
+      ]
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Pakete und Preise",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Küchenkatalog",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-1",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "So arbeiten wir bei Objekten in Deutschland"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Online-Beratung.</strong> Wir besprechen Ihr Vorhaben per Videocall oder Messenger. Sie schicken uns Grundriss, Fotos und Ihre Wünsche.",
+        "<strong>Planung.</strong> Grundriss, Konzept, 3D-Visualisierungen und technische Dokumentation — alles stimmen wir aus der Ferne ab, Änderungen arbeiten wir nach Ihren Kommentaren ein.",
+        "<strong>Möbel.</strong> Nach der Planung fertigen wir Küchen, Schränke, begehbare Schrankräume und andere Möbel in Bratislava. Vor der Produktion prüfen wir die Maße — anhand Ihres Aufmaßes oder bei einem Termin vor Ort mit unserem Fachmann.",
+        "<strong>Lieferung und Montage.</strong> Wir bringen die Möbel in jede Stadt in Deutschland und montieren sie mit unserem eigenen Team. Die Lieferung ist bereits im Preis enthalten.",
+        "<strong>Schlüsselfertige Sanierung.</strong> Bei größeren Objekten ist die komplette Umsetzung durch unsere Teams möglich — wie bei den Projekten in München und Berlin."
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-2",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Was Sie aus Deutschland bestellen können"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Einrichtungsplanung</strong> für Wohnung oder Haus — vom Grundriss bis zu den Ausführungsplänen.",
+        "<strong>3D-Visualisierung</strong> des Interieurs oder der Hausfassade.",
+        "<strong>Küche nach Maß</strong> — individuell geplant oder eines der 32 Modelle aus unserem Katalog, mit Lieferung und Montage.",
+        "<strong>Möbel nach Maß</strong> — Schränke, begehbare Schrankräume, Garderoben, TV-Wände, Möbel für Schlaf- und Arbeitszimmer.",
+        "<strong>Komplette Umsetzung</strong> — Planung, Möbel und Sanierung von einem Team."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Designpakete kosten gleich viel wie in Bratislava und Wien: ab 20 €/m². Den Möbelpreis kalkulieren wir nach der Planung, die Lieferung nach Deutschland ist darin bereits enthalten."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-3",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Projekte in Deutschland"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Privathaus in München, 160 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-muenchen-160-m2",
+       "image": {
+        "id": "6abd6b3b4888499d2074560d",
+        "alt": "Privathaus in München, 160 m²"
+       }
+      },
+      {
+       "title": "Privathaus in Berlin, 215 m²",
+       "href": "/de/innenarchitektur-einfamilienhaus-berlin-215-m2",
+       "image": {
+        "id": "6abd6aa461617a4443acb2fc",
+        "alt": "Privathaus in Berlin, 215 m²"
+       }
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d9d4433765af67caf6606f",
+       "alt": "Essbereich und Küche mit Insel — Privathaus in München, 160 m²"
+      },
+      {
+       "id": "66d9d44a3765af67caf660b1",
+       "alt": "Wohnzimmer mit Panoramafenster — Privathaus in München, 160 m²"
+      },
+      {
+       "id": "66d9d443390d05681a768358",
+       "alt": "Wohnzimmer, Wand mit verdeckten Türen und TV-Lowboard — Privathaus in München, 160 m²"
+      },
+      {
+       "id": "66d9d4423765af67caf6605d",
+       "alt": "Wohnzimmer, Essbereich und Küche in einem Raum — Privathaus in München, 160 m²"
+      },
+      {
+       "id": "66b176674c04c27fce4a38d0",
+       "alt": "Innenarchitektur Einfamilienhaus, Berlin"
+      },
+      {
+       "id": "66b1766422400dcb00b4ba14",
+       "alt": "Wohnküche — Einfamilienhaus in Berlin, 215 m²"
+      },
+      {
+       "id": "66b17663041394c5217ec62e",
+       "alt": "Schlüsselfertige Sanierung des Wohnzimmers, Berlin, Deutschland"
+      },
+      {
+       "id": "66b1766358abfced792fc3ea",
+       "alt": "Wohnzimmer mit Möbeln nach Maß, Berlin, Deutschland"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Alle Projekte des Studios",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-4",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fragen zur Zusammenarbeit mit Kunden in Deutschland"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Was kostet die Lieferung der Möbel nach Deutschland?",
+       "a": "<p>Die Lieferung ist im Möbelpreis enthalten, egal in welche Stadt — Berlin, München, Hamburg, Frankfurt oder ein kleiner Ort. Sie erhalten einen Gesamtpreis für die Möbel inklusive Lieferung und Montage.</p>"
+      },
+      {
+       "q": "Wie läuft das Aufmaß, wenn Sie in Bratislava sind?",
+       "a": "<p>Für die Planung genügen ein Grundriss und Fotos. Vor der Möbelproduktion prüfen wir die Maße — anhand Ihres eigenen Aufmaßes nach unserer Anleitung oder bei einem Termin vor Ort mit unserem Fachmann.</p>"
+      },
+      {
+       "q": "Wer montiert die Möbel?",
+       "a": "<p>Unser Team aus Bratislava. Die Montage planen wir gleich für den Liefertermin, damit alles bei einem Einsatz aufgebaut wird.</p>"
+      },
+      {
+       "q": "Kann ich nur die Planung bestellen?",
+       "a": "<p>Ja. Sie erhalten einen vollständigen Satz Visualisierungen und Pläne, nach denen ein Handwerksbetrieb vor Ort in Deutschland arbeiten kann.</p>"
+      },
+      {
+       "q": "Wie lange dauert es?",
+       "a": "<p>Die Planung dauert im Paket „Express“ ab 14 Tagen, ein vollständiges Projekt meist 4–8 Wochen. Die Fertigungszeit der Möbel hängt vom Umfang ab, wir nennen sie mit dem Angebot.</p>"
+      },
+      {
+       "q": "In welcher Sprache arbeiten Sie?",
+       "a": "<p>Russisch, Ukrainisch, Englisch. Die Unterlagen für deutsche Handwerksbetriebe enthalten Maße und Spezifikationen, die ohne Übersetzung verständlich sind.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-5",
+   "blocks": [
+    {
+     "type": "form",
+     "title": "Anfrage für eine kostenlose Beratung",
+     "text": "Schreiben Sie uns, wo das Objekt liegt und worum es geht — wir antworten innerhalb eines Werktags."
+    }
+   ]
+  },
+  {
+   "id": "city-dizajn-interera-germaniya-6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

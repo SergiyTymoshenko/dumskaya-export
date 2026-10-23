@@ -1,0 +1,103 @@
+{
+ "path": "/sk/obchod/manazersky-stol-boss-l",
+ "lang": "sk",
+ "type": "shop",
+ "group": null,
+ "title": "Manažérsky stôl Boss, veľkosť L (TDD-001) | DUMSKAYA DESIGN",
+ "description": "Manažérsky stôl Boss, veľkosť L, kód TDD-001, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie.",
+ "h1": "Manažérsky stôl Boss, veľkosť L (TDD-001)",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop/executive-desk-boss-l",
+  "ua": "/ua/shop/executive-desk-boss-l",
+  "en": "/en/shop/executive-desk-boss-l",
+  "sk": "/sk/obchod/manazersky-stol-boss-l",
+  "de": "/de/shop/chefschreibtisch-boss-l"
+ },
+ "sections": [
+  {
+   "id": "69affc7e2e4f2c0dbc77875e",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      },
+      {
+       "id": "98a6bf73-0d8b-438d-95ff-4a5b0fb96e45",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      },
+      {
+       "id": "afaa026c-b90b-443e-8196-b29cb16229be",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      },
+      {
+       "id": "2581faee-2351-46d1-85ff-484a8b7841be",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      },
+      {
+       "id": "a98fd21c-6bd3-430d-b383-ba150de2f4bb",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      },
+      {
+       "id": "230907f9-1a73-4df2-a4bc-1ae7c6d6f0e9",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Manažérsky stôl Boss, veľkosť L (TDD-001)"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Manažérsky stôl Boss, veľkosť L"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,327 @@
+{
+ "path": "/sk/architektura-projektovanie-domov-bratislava",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "Architektonické projektovanie domov v Bratislave | DUMSKAYA",
+ "description": "Rodinné domy, fasády, rekonštrukcie, drobná architektúra v Bratislave a vo Viedni: štúdia, 3D vizualizácia, výkresy, interiér aj nábytok v jednom projekte.",
+ "h1": "Architektonické projektovanie domov a fasád v Bratislave",
+ "og_image": "66b61a3143d3e7af1c1a5467",
+ "alternates": {
+  "ru": "/architecture-design-bratislava",
+  "ua": "/ua/arkhitektura-ta-proektuvannia",
+  "en": "/en/architecture-and-design",
+  "sk": "/sk/architektura-projektovanie-domov-bratislava",
+  "de": "/de/hausplanung-architektur-bratislava"
+ },
+ "sections": [
+  {
+   "id": "65d3d4d854fd2b000e6b4ddc",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Architektonické projektovanie domov a fasád v Bratislave"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Navrhujeme rodinné domy, fasády, rekonštrukcie budov a drobnú architektúru — altánky, pergoly, letné kuchyne — v Bratislave, vo Viedni a v ďalších mestách Slovenska a Rakúska, pre obytné aj komerčné stavby."
+      },
+      {
+       "t": "p",
+       "html": "Architektúru, interiér a nábytok môžete mať v jednom projekte: dom navrhneme spolu s dispozíciou a interiérmi a kuchyne, skrine a šatníky potom vyrobíme vo <a href=\"/sk/nabytok-na-mieru-bratislava\">vlastnej výrobe nábytku</a> v Bratislave. Riešenia ukážeme vo fotorealistickej 3D vizualizácii ešte pred začiatkom stavby, keď sa dajú ľahko zmeniť."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Čo navrhujeme"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Rodinné domy</strong> — hmota, dispozícia, proporcie, strecha, fasády, materiály.",
+        "<strong>Fasády</strong> nových aj existujúcich budov — povrchová úprava, farba, okná, osvetlenie.",
+        "<strong>Rekonštrukcie</strong> — nový vzhľad budovy a priestory pre nové funkcie; pri historických budovách v súlade s požiadavkami na ich ochranu.",
+        "<strong>Pozemok</strong> — chodníky, terasy, vonkajšie osvetlenie a zeleň v rovnakom štýle ako dom.",
+        "<strong>Drobná architektúra</strong> — altánky, pergoly, letné kuchyne.",
+        "<strong>Interiérová architektúra</strong> — vnútorné priestory navrhnuté s ohľadom na konštrukciu budovy a na to, ako sa v dome bude žiť."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ak je to potrebné, navrhneme energeticky úsporné riešenia, aby bola prevádzka domu lacnejšia."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Ako prebieha práca"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Konzultácia.</strong> Bezplatne; na dopyt odpovieme do jedného pracovného dňa.",
+        "<strong>Podklady k objektu.</strong> Fotografie, zameranie alebo výkresy budovy, situácia pozemku, príklady domov, ktoré sa vám páčia.",
+        "<strong>Architektonická štúdia.</strong> Hmota, dispozícia, fasády. Varianty obkladu a farieb porovnávame na jednom modeli.",
+        "<strong>3D vizualizácia.</strong> Fasády, pozemok a interiéry: vidno proporcie, materiály, svetlo aj to, ako dom pôsobí v okolí. Na želanie aj videoprehliadka okolo domu.",
+        "<strong>Dokumentácia.</strong> Realizačné výkresy, schémy a špecifikácie — podľa rozsahu projektu.",
+        "<strong>Autorský dozor.</strong> Na stavbe spolupracujeme s dodávateľmi, výrobcami a ďalšími odborníkmi na projekte."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Dostanete architektonickú štúdiu s pôdorysmi a pohľadmi, vizualizácie a, ak sú súčasťou projektu, realizačné výkresy a špecifikácie. Podľa nich sa pripravuje dokumentácia pre stavebný úrad a dodávateľ podľa nich zostaví rozpočet."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-local",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Povolenia na Slovensku a v Rakúsku"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Na Slovensku od apríla 2025 platí nový stavebný zákon. Na nový dom, prístavbu alebo nadstavbu treba rozhodnutie stavebného úradu o stavebnom zámere. Obnova fasády a ďalšie stavebné úpravy bez zmeny rozmerov budovy sa ohlasujú stavebnému úradu, ak môžu ovplyvniť mechanickú odolnosť a stabilitu stavby alebo požiarnu bezpečnosť, a tiež ak je dom kultúrnou pamiatkou alebo stojí v pamiatkovom území."
+      },
+      {
+       "t": "p",
+       "html": "Vo Viedni si podstatná zmena vonkajšieho vzhľadu budovy vyžaduje stavebné povolenie (Baubewilligung), mnohé ďalšie zmeny sa ohlasujú (Bauanzeige) s výkresmi. V ochranných zónach (Schutzzonen) a v domoch postavených pred rokom 1945 treba ohlásiť aj výmenu okien. Tieto požiadavky zohľadňujeme pri projektovaní."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Cena"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Cena architektonického projektu závisí od plochy budovy, rozsahu projektu a od toho, či sú potrebné realizačné výkresy a autorský dozor. Ceny vizualizácie fasády a pozemku nájdete na <a href=\"/sk/3d-vizualizacia-fasady-cena\">samostatnej stránke</a>."
+      },
+      {
+       "t": "p",
+       "html": "Interiéry domu navrhujeme podľa <a href=\"/sk/cena-dizajnu-interieru-bratislava-vieden\">balíkov návrhu interiéru</a> — od 20 do 70 €/m². Príklad: interiéry domu s plochou 150 m² v balíku „Základný“ (35–45 €/m²) vyjdú na 5 250–6 750 €."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "3D vizualizácia fasád a pozemku",
+       "href": "/sk/3d-vizualizacia-fasady-cena"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66a59562b1143391c11d64de",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Príklady architektonických projektov s realizáciou stavebných prác"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Vila, Španielsko, Marbella",
+       "href": "/sk/navrh-fasady-vily-marbella",
+       "image": {
+        "id": "66b619f623f9a34a612c9e7d",
+        "alt": "3D vizualizácia fasády rodinného domu v Marbelle"
+       }
+      },
+      {
+       "title": "Rodinný dom",
+       "href": "/sk/3d-vizualizacia-fasady-rodinneho-domu",
+       "image": {
+        "id": "686bcfbe29b44dd96a3d2a5f",
+        "alt": "3D vizualizácia fasády rodinného domu v Marbelle"
+       }
+      },
+      {
+       "title": "3D modelovanie architektonickej štúdie fasády domu",
+       "href": "/sk/architektonicka-studia-fasad-3d-vizualizacia",
+       "image": {
+        "id": "673a059eece0e84849b9e2cf",
+        "alt": "Fotorealistická vizualizácia exteriéru domu so zeleňou"
+       }
+      },
+      {
+       "title": "Rodinný dom",
+       "href": "/sk/architektonicky-navrh-fasad-rodinneho-domu",
+       "image": {
+        "id": "66a56e39d68a3eb051612386",
+        "alt": "Rodinný dom, architektonické riešenie"
+       }
+      },
+      {
+       "title": "Architektonické riešenie fasády barbershopu, Ukrajina, Kyjev",
+       "href": "/sk/navrh-fasady-barbershopu-kyjev",
+       "image": {
+        "id": "66d313f8e6210d11a55d877c",
+        "alt": "Architektonické riešenie fasády barbershopu"
+       }
+      },
+      {
+       "title": "Architektonické riešenie: altánok s pergolou",
+       "href": "/sk/altanok-s-pergolou-navrh-realizacia",
+       "image": {
+        "id": "66d476c7e6210d11a55ff6ee",
+        "alt": "Architektonické riešenie: altánok s pergolou"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Otázky o architektonickom projektovaní"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Kto pripravuje dokumentáciu pre stavebný úrad?",
+       "a": "<p>Na Slovensku projektant s oprávnením na takúto činnosť. Pri väčšine stavieb je potrebný autorizovaný projektant. Pri jednoduchých stavbách — napríklad pri obytnom dome s najviac tromi bytmi, dvoma nadzemnými podlažiami a zastavanou plochou do 300 m² — zákon pripúšťa aj odborníka bez autorizácie, ale s odborným vzdelaním. Naša architektonická štúdia, fasády a vizualizácie sú podkladom pre túto dokumentáciu.</p>"
+      },
+      {
+       "q": "Dá sa objednať len nová fasáda pre existujúci dom?",
+       "a": "<p>Áno. Takto vznikla fasáda vily v Marbelle: hmota domu zostala rovnaká, nový vzhľad mu dáva povrchová úprava, architektonické prvky a farba. Dostanete riešenie fasády s materiálmi a vizualizácie, na ktorých dom vidíte taký, aký bude po rekonštrukcii.</p>"
+      },
+      {
+       "q": "Prečo navrhovať dom a interiér naraz?",
+       "a": "<p>Okná, otvory a vývody pre svetlá a zdravotechniku sa hneď umiestnia tam, kde ich potrebuje budúci interiér a nábytok. Steny a elektroinštaláciu po stavbe takmer netreba prerábať. Vstavaný nábytok podľa tých istých výkresov vyrobíme v Bratislave.</p>"
+      },
+      {
+       "q": "Projekt domu už máme. Môžete ho prepracovať?",
+       "a": "<p>Áno. Dispozíciu, fasády a materiály prispôsobíme vášmu pozemku, rodine a rozpočtu a výsledok ukážeme v 3D ešte pred začiatkom stavby. Potrebujeme na to výkresy projektu, situáciu pozemku a vaše požiadavky.</p>"
+      },
+      {
+       "q": "Pracujete aj na stavbách vo Viedni?",
+       "a": "<p>Áno. Z Bratislavy do Viedne je to približne hodina cesty, preto na stavbu vo Viedni chodíme rovnako ako v Bratislave. Projekty pre iné krajiny robíme na diaľku.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbe24f36ccc5cb47fd4c5b",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

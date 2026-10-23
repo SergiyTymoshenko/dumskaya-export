@@ -10,7 +10,9 @@
  "alternates": {
   "ru": "/shop",
   "ua": "/ua/shop",
-  "en": "/en/shop"
+  "en": "/en/shop",
+  "sk": "/sk/obchod",
+  "de": "/de/shop"
  },
  "sections": [
   {

@@ -1,0 +1,251 @@
+{
+ "path": "/de/wohnungsuebergabe-bautraeger-bratislava",
+ "lang": "de",
+ "type": "service",
+ "group": null,
+ "title": "Wohnungsübergabe Bratislava: Begleitung ab 250 € | DUMSKAYA",
+ "description": "Wir prüfen Ihre neue Wohnung in Bratislava vor dem Übergabeprotokoll: Oberflächen, Maße, Fenster, Haustechnik, Mängelliste. Bis 50 m² — 250 €.",
+ "h1": "Wohnungsübergabe vom Bauträger in Bratislava",
+ "og_image": "65d3cb0956ff01000f891f5c",
+ "alternates": {
+  "ru": "/priemka-kvartiry-ot-zastrojshchika",
+  "ua": "/ua/pryimannia-kvartyry-vid-zabudovnyka-bratislava",
+  "en": "/en/apartment-handover-inspection-bratislava",
+  "sk": "/sk/preberanie-bytu-od-developera-bratislava",
+  "de": "/de/wohnungsuebergabe-bautraeger-bratislava"
+ },
+ "sections": [
+  {
+   "id": "67dbcbcf1bee0e0bef617b5d",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Wohnungsübergabe vom Bauträger in Bratislava"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Bevor Sie das Übergabeprotokoll für Ihre neue Wohnung unterschreiben, sollten Sie sie mit einer Fachperson prüfen. Wir begleiten Übergaben in Neubauten in Bratislava: Wir prüfen Oberflächen, Fenster, Türen, Sanitär und Haustechnik, messen Wände und Böden auf Ebenheit und Winkel und erstellen eine Mängelliste für den Bauträger. Das Angebot richtet sich an Käuferinnen und Käufer von Neubauwohnungen, die Mängel vor der Unterschrift sehen und ins Protokoll aufnehmen lassen wollen. Bei der Übergabe vertreten wir die Käuferseite, nicht den Bauträger."
+      },
+      {
+       "t": "p",
+       "html": "Die meisten unserer Projekte in Bratislava sind Neubauwohnungen: Wir planen dort die Innenräume und übernehmen den Ausbau mit eigenen Handwerkern. Deshalb sehen wir uns die Wohnung auch mit Blick auf die spätere Sanierung an. Eine schiefe Wand, an der die Küche stehen soll, oder ein Höhenunterschied im Boden zwischen zwei Zimmern ist bei der Übergabe leicht zu übersehen. Bei der Küchenmontage und beim Verlegen des Bodens muss man dann den Untergrund ausgleichen und die Möbel anpassen."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Was wir prüfen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "ob die Wohnung den Planunterlagen entspricht: Grundriss, Öffnungen, Lage der Wasser- und Elektroanschlüsse;",
+        "Wände, Decken und Böden — Risse, Abplatzungen, Flecken, unebene Oberflächen;",
+        "Maßhaltigkeit: Abweichungen bei Wänden und Winkeln, Ebenheit des Bodens;",
+        "Fenster, Balkontüren und Balkon — ob sie sich richtig öffnen und schließen lassen und ob Rahmen oder Glas beschädigt sind;",
+        "Türen, die zum Lieferumfang der Wohnung gehören;",
+        "Elektrik, Wasserversorgung und Lüftung;",
+        "Sanitärobjekte und eingebaute Geräte."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Jeden Mangel tragen wir in die Mängelliste ein: was genau nicht passt und wo. Nach der Besichtigung gehen wir die Liste mit Ihnen durch und erklären, was ernst ist und was nur eine Kleinigkeit. Außerdem helfen wir Ihnen, die Punkte für das Protokoll zu formulieren."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "priemka-kvartiry-ot-zastrojshchika-protokol",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Das Übergabeprotokoll in der Slowakei"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Eine neue Wohnung wird mit einem Übergabeprotokoll (preberací protokol) übernommen, das Käufer und Bauträger unterschreiben. Mängel und offene Arbeiten kommen vor der Unterschrift ins Protokoll, auch kleine, die das Wohnen nicht beeinträchtigen. Einen Mangel, der nicht im Protokoll steht, kann man nach der Unterschrift schwerer geltend machen."
+      },
+      {
+       "t": "p",
+       "html": "Jeder Punkt wird so formuliert, dass er eindeutig ist: welcher Mangel, wo und was er beeinträchtigt. Fotos werden dem Protokoll beigelegt. Für jeden Punkt wird eine Frist zur Behebung festgehalten. Im selben Protokoll stehen auch die Zählerstände für Strom, Wasser, Heizung und, falls im Haus vorhanden, Gas."
+      },
+      {
+       "t": "p",
+       "html": "Hat der Bauträger Ihnen keine Bedienungs- und Wartungsanleitung für die Wohnung (manuál užívania bytu) übergeben, fordern Sie sie an. Darin stehen die verwendeten Materialien und die vorgeschriebene Pflege, etwa die zulässige Belastung der Terrasse oder das regelmäßige Schmieren der Fenster. Sieht der Vertrag das vor, kann der Bauträger die Behebung eines Mangels ablehnen, wenn die Pflege laut Anleitung nicht eingehalten wurde."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "priemka-kvartiry-ot-zastrojshchika-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Kosten"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "250 € — Übergabe einer Wohnung bis 50 m²;",
+        "400 € — Übergabe einer Wohnung ab 50 m²;",
+        "200 € — zweiter Termin, wenn nach der Mängelbehebung durch den Bauträger eine weitere Besichtigung nötig ist."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Beispiel: Wohnung mit 48 m² — 250 €. Hat der Bauträger die Mängel behoben und sollen wir das Ergebnis prüfen, kommt ein zweiter Termin um 200 € dazu, insgesamt also 450 €. Eine Wohnung mit 72 m² samt zweitem Termin kostet 600 €."
+      },
+      {
+       "t": "p",
+       "html": "Ist nach der Übergabe eine Sanierung geplant, bestellen Sie eine <a href=\"/de/kostenschaetzung-sanierung-wien-bratislava\">Kostenschätzung für die Sanierung</a> oder eine <a href=\"/de/innenarchitekt-bratislava\">Planung für Ihre Wohnung</a>. Damit lässt sich das Budget leichter im Voraus berechnen."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Kostenschätzung für die Sanierung",
+       "href": "/de/kostenschaetzung-sanierung-wien-bratislava"
+      },
+      {
+       "text": "Preise für Innenarchitektur",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "priemka-kvartiry-ot-zastrojshchika-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Fragen zur Wohnungsübergabe"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Wann sollte ich die Prüfung bei der Übergabe buchen?",
+       "a": "<p>Sobald der Bauträger einen Termin festgelegt hat. Schicken Sie uns Adresse, Fläche und Übergabetermin, wir antworten innerhalb eines Werktags und vereinbaren den Besuch. Wenn Sie Planunterlagen zur Wohnung haben, schicken Sie sie vorab: Wir gleichen die Wohnung damit ab.</p>"
+      },
+      {
+       "q": "Kann ich die Unterschrift verweigern, wenn es viele Mängel gibt?",
+       "a": "<p>Das Protokoll wird nach der Besichtigung unterschrieben, nicht davor: Zuerst wird die ganze Wohnung geprüft, dann werden die Mängel eingetragen, erst danach wird unterschrieben. Kleine Mängel und offene Arbeiten sprechen meist nicht gegen die Übernahme. Sie kommen mit Fristen zur Behebung ins Protokoll. Sind die Mängel schwer oder ist die Wohnung nicht bewohnbar, sollten Sie den Vertrag vor der Unterschrift mit einer Anwältin oder einem Anwalt durchgehen.</p>"
+      },
+      {
+       "q": "Was wird mit der Wohnung noch übergeben?",
+       "a": "<p>Alles, was laut Vertrag mitverkauft wird, etwa ein Kellerabteil (pivnica) oder ein Stellplatz. Auch diese werden besichtigt. Im Protokoll steht, wie viele Schlüssel übergeben wurden: für Wohnung, Postkasten, Kellerabteil und Hauseingang.</p>"
+      },
+      {
+       "q": "Wer unterschreibt das Protokoll für den Bauträger?",
+       "a": "<p>Eine Person, die dazu bevollmächtigt ist. Kommt ein Vertreter des Bauträgers zur Übergabe, lassen Sie sich eine Vollmacht oder ein anderes Dokument zeigen, das seine Berechtigung zur Unterschrift belegt.</p>"
+      },
+      {
+       "q": "Was tun, wenn der Bauträger die Mängel nicht fristgerecht behebt?",
+       "a": "<p>Schriftlich daran erinnern und eine Nachfrist setzen. Ist der Mangel dann immer noch nicht behoben, besprechen Sie die nächsten Schritte, also Preisminderung oder Klage, mit einer Anwältin oder einem Anwalt. Im Streit mit dem Bauträger hat das Gutachten eines gerichtlich beeideten Sachverständigen (znalecký posudok) mehr Gewicht. Unsere Mängelliste ist eine technische Prüfung vor der Unterschrift und ersetzt ein solches Gutachten nicht.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbf2b4c4c90529fecceb38",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

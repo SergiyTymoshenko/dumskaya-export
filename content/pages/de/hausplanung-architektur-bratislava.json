@@ -1,0 +1,327 @@
+{
+ "path": "/de/hausplanung-architektur-bratislava",
+ "lang": "de",
+ "type": "service",
+ "group": null,
+ "title": "Architekturplanung für Häuser in Bratislava | DUMSKAYA",
+ "description": "Einfamilienhäuser, Fassaden, Umbauten und Pergolen in Bratislava und Wien: Entwurf, 3D-Visualisierung, Pläne, Interieur und Möbel in einem Projekt.",
+ "h1": "Architekturplanung von Häusern und Fassaden in Bratislava",
+ "og_image": "66b61a3143d3e7af1c1a5467",
+ "alternates": {
+  "ru": "/architecture-design-bratislava",
+  "ua": "/ua/arkhitektura-ta-proektuvannia",
+  "en": "/en/architecture-and-design",
+  "sk": "/sk/architektura-projektovanie-domov-bratislava",
+  "de": "/de/hausplanung-architektur-bratislava"
+ },
+ "sections": [
+  {
+   "id": "65d3d4d854fd2b000e6b4ddc",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Architekturplanung von Häusern und Fassaden in Bratislava"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Wir planen Einfamilienhäuser, Fassaden, Umbauten von Gebäuden und kleine Gartenbauten — Pavillons, Pergolen, Outdoor-Küchen — in Bratislava, Wien und anderen Städten der Slowakei und Österreichs, für Wohn- und Gewerbeobjekte."
+      },
+      {
+       "t": "p",
+       "html": "Architektur, Interieur und Möbel lassen sich in einem Projekt bündeln: Wir planen das Haus zusammen mit Raumaufteilung und Innenräumen, Küchen, Kästen und begehbare Schrankräume fertigen wir danach in unserer <a href=\"/de/moebel-nach-mass-bratislava\">eigenen Tischlerei</a> in Bratislava. Die Lösungen zeigen wir in fotorealistischer 3D-Visualisierung vor Baubeginn, solange sie sich noch leicht ändern lassen."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Was wir planen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ul",
+       "items": [
+        "<strong>Einfamilienhäuser</strong> — Baukörper, Grundriss, Proportionen, Dach, Fassaden, Materialien.",
+        "<strong>Fassaden</strong> neuer und bestehender Gebäude — Oberflächen, Farbe, Fenster, Beleuchtung.",
+        "<strong>Umbau</strong> — ein neues Erscheinungsbild für das Gebäude und Räume für neue Nutzungen; bei historischen Gebäuden unter Berücksichtigung des Denkmalschutzes.",
+        "<strong>Grundstück</strong> — Wege, Terrassen, Außenbeleuchtung und Bepflanzung im selben Stil wie das Haus.",
+        "<strong>Kleine Gartenbauten</strong> — Pavillons, Pergolen, Outdoor-Küchen.",
+        "<strong>Innenarchitektur</strong> — Innenräume, geplant mit Blick auf die Konstruktion des Gebäudes und darauf, wie im Haus gelebt wird."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Bei Bedarf planen wir energieeffiziente Lösungen ein, damit das Haus im Betrieb weniger kostet."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-steps",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "So läuft die Arbeit ab"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "ol",
+       "items": [
+        "<strong>Beratung.</strong> Kostenlos; auf Anfragen antworten wir innerhalb eines Werktags.",
+        "<strong>Unterlagen zum Objekt.</strong> Fotos, Aufmaß oder Pläne des Gebäudes, Lageplan, Beispiele von Häusern, die Ihnen gefallen.",
+        "<strong>Vorentwurf.</strong> Baukörper, Grundriss, Fassaden. Varianten von Verkleidung und Farbe vergleichen wir am selben Modell.",
+        "<strong>3D-Visualisierung.</strong> Fassaden, Grundstück und Innenräume: Sie sehen Proportionen, Materialien, Licht und wie das Haus in seiner Umgebung wirkt. Auf Wunsch gibt es einen Video-Rundgang ums Haus.",
+        "<strong>Dokumentation.</strong> Ausführungspläne, Schemata und Material- und Ausstattungslisten — je nach Projektumfang.",
+        "<strong>Künstlerische Oberleitung.</strong> Auf der Baustelle arbeiten wir mit Baufirmen, Herstellern und den anderen Fachleuten des Projekts zusammen."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Sie erhalten einen Vorentwurf mit Grundrissen und Ansichten, Visualisierungen und, falls sie Teil des Projekts sind, Ausführungspläne und Material- und Ausstattungslisten. Auf dieser Grundlage werden die Einreichunterlagen für die Baubehörde erstellt, und die Baufirma kalkuliert danach die Kosten."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-local",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Genehmigungen in der Slowakei und in Österreich"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In der Slowakei gilt seit April 2025 ein neues Baugesetz. Für ein neues Haus, einen Zubau oder eine Aufstockung braucht man eine Entscheidung der Baubehörde über das Bauvorhaben (rozhodnutie o stavebnom zámere). Eine Fassadensanierung und andere Umbauten ohne Änderung der Gebäudeabmessungen werden angezeigt (ohlásenie), wenn sie die Tragfähigkeit und Standsicherheit des Gebäudes oder den Brandschutz beeinflussen können oder wenn das Haus denkmalgeschützt ist bzw. in einer geschützten historischen Zone (pamiatkové územie) steht."
+      },
+      {
+       "t": "p",
+       "html": "In Wien braucht eine wesentliche Änderung des äußeren Erscheinungsbilds eines Gebäudes eine Baubewilligung, viele andere Änderungen werden per Bauanzeige mit Plänen gemeldet. In Schutzzonen und in Häusern, die vor 1945 gebaut wurden, ist sogar ein Fenstertausch anzeigepflichtig. Diese Vorgaben berücksichtigen wir bei der Planung."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-price",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "Kosten"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Der Preis eines Architekturprojekts hängt von der Gebäudefläche, vom Projektumfang und davon ab, ob Ausführungspläne und künstlerische Oberleitung nötig sind. Die Preise für die Visualisierung von Fassade und Grundstück finden Sie auf einer <a href=\"/de/3d-visualisierung-fassade-preise\">eigenen Seite</a>."
+      },
+      {
+       "t": "p",
+       "html": "Die Innenräume des Hauses planen wir nach unseren <a href=\"/de/preise-innenarchitektur-wien-bratislava\">Designpaketen</a> — von 20 bis 70 €/m². Beispiel: Innenräume eines Hauses mit 150 m² im Paket „Basis“ (35–45 €/m²) kosten 5.250–6.750 €."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "3D-Visualisierung von Fassaden und Grundstück",
+       "href": "/de/3d-visualisierung-fassade-preise"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66a59562b1143391c11d64de",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Beispiele für Architekturplanung mit Ausführung der Bauarbeiten"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Villa, Spanien, Marbella",
+       "href": "/de/fassadenentwurf-villa-marbella",
+       "image": {
+        "id": "66b619f623f9a34a612c9e7d",
+        "alt": "3D-Visualisierung der Fassade eines Privathauses in Marbella"
+       }
+      },
+      {
+       "title": "Privathaus",
+       "href": "/de/3d-visualisierung-fassade-garten",
+       "image": {
+        "id": "686bcfbe29b44dd96a3d2a5f",
+        "alt": "3D-Visualisierung der Fassade eines Privathauses in Marbella"
+       }
+      },
+      {
+       "title": "3D-Modellierung eines Fassadenentwurfs für ein Wohnhaus",
+       "href": "/de/fassadenentwurf-3d-visualisierung-bratislava",
+       "image": {
+        "id": "673a059eece0e84849b9e2cf",
+        "alt": "Fotorealistische Außenvisualisierung eines Hauses mit Begrünung"
+       }
+      },
+      {
+       "title": "Privathaus",
+       "href": "/de/fassadenplanung-einfamilienhaus",
+       "image": {
+        "id": "66a56e39d68a3eb051612386",
+        "alt": "Privathaus, architektonische Lösung"
+       }
+      },
+      {
+       "title": "Architektonische Lösung für die Fassade eines Barbershops, Ukraine, Kiew",
+       "href": "/de/fassadenentwurf-barbershop-kiew",
+       "image": {
+        "id": "66d313f8e6210d11a55d877c",
+        "alt": "Architektonische Lösung für die Fassade eines Barbershops"
+       }
+      },
+      {
+       "title": "Architektonische Lösung: Gartenpavillon mit Pergola",
+       "href": "/de/gartenpavillon-pergola-planung",
+       "image": {
+        "id": "66d476c7e6210d11a55ff6ee",
+        "alt": "Architektonische Lösung: Gartenpavillon mit Pergola"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "architecture-design-bratislava-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fragen zur Architekturplanung"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Wer erstellt die Unterlagen für die Baubehörde?",
+       "a": "<p>In der Slowakei ein Planer mit der entsprechenden Befugnis. Für die meisten Gebäude ist ein autorisierter Planer nötig. Bei einfachen Bauten — etwa einem Wohnhaus mit höchstens drei Wohnungen, zwei oberirdischen Geschoßen und einer bebauten Fläche bis 300 m² — lässt das Gesetz auch eine Fachperson ohne Autorisierung, aber mit einschlägiger Ausbildung zu. Unser Vorentwurf, die Fassaden und Visualisierungen sind die Grundlage für diese Unterlagen.</p>"
+      },
+      {
+       "q": "Kann man nur eine neue Fassade für ein bestehendes Haus bestellen?",
+       "a": "<p>Ja. So ist die Fassade der Villa in Marbella entstanden: Der Baukörper blieb, wie er war, das neue Erscheinungsbild entsteht durch Oberflächen, architektonische Elemente und Farbe. Sie erhalten eine Fassadenlösung mit Materialien und Visualisierungen, auf denen Sie das Haus so sehen, wie es nach dem Umbau aussehen wird.</p>"
+      },
+      {
+       "q": "Warum Haus und Interieur gleichzeitig planen?",
+       "a": "<p>Fenster, Öffnungen und Anschlüsse für Licht und Sanitär kommen gleich dorthin, wo das spätere Interieur und die Möbel sie brauchen. Wände und Leitungen muss man nach dem Bau kaum umbauen. Die Einbaumöbel fertigen wir nach denselben Plänen in Bratislava.</p>"
+      },
+      {
+       "q": "Wir haben schon einen Hausentwurf. Können Sie ihn überarbeiten?",
+       "a": "<p>Ja. Wir passen Grundriss, Fassaden und Materialien an Ihr Grundstück, Ihre Familie und Ihr Budget an und zeigen das Ergebnis vor Baubeginn in 3D. Dafür brauchen wir die Projektpläne, den Lageplan und Ihre Wünsche.</p>"
+      },
+      {
+       "q": "Arbeiten Sie auch an Objekten in Wien?",
+       "a": "<p>Ja. Von Bratislava nach Wien ist es etwa eine Stunde Fahrt, deshalb kommen wir zu Objekten in Wien genauso wie in Bratislava. Projekte für andere Länder erstellen wir aus der Ferne.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbe24f36ccc5cb47fd4c5b",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

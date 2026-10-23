@@ -1,0 +1,121 @@
+{
+ "path": "/de/datenschutz-erklaerung",
+ "lang": "de",
+ "type": "privacy",
+ "group": null,
+ "title": "Datenschutzerklärung | DUMSKAYA DESIGN",
+ "description": "Welche Daten diese Website erhebt, wozu, wie lange sie gespeichert werden und welche Rechte Sie haben: Anfrageformular, E-Mails, Google-Analytics-Cookies.",
+ "h1": "Datenschutzerklärung",
+ "og_image": null,
+ "alternates": {
+  "ru": "/privacy",
+  "ua": "/ua/privacy",
+  "en": "/en/privacy",
+  "sk": "/sk/ochrana-osobnych-udajov",
+  "de": "/de/datenschutz-erklaerung"
+ },
+ "sections": [
+  {
+   "id": "privacy",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Datenschutzerklärung"
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Wer Ihre Daten verarbeitet"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Verantwortlicher für die Verarbeitung personenbezogener Daten: <strong>Panorama Systems Florida LLC</strong>, 200 Kings Point Dr, Apt 1603, Sunny Isles Beach, FL 33160, USA. Studio für Innenarchitektur DUMSKAYA DESIGN: Súkennícka 1, 821 09 Bratislava, Slowakei. E-Mail: <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>, Telefon: <a href=\"tel:+4367761430187\">+43 677 614 30 187</a>."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Welche Daten wir verarbeiten und warum"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Wenn Sie das Anfrageformular absenden, erhalten wir Ihren Namen, Ihre Telefonnummer oder E-Mail-Adresse und den Text Ihrer Nachricht. Wir verwenden diese Daten nur, um Ihre Anfrage zu beantworten und ein Angebot vorzubereiten (Art. 6 Abs. 1 lit. b DSGVO — vorvertragliche Maßnahmen)."
+      },
+      {
+       "t": "p",
+       "html": "Wenn Sie uns per E-Mail, WhatsApp oder Telegram schreiben, erhalten wir die Daten, die Sie selbst in der Nachricht angeben, und verwenden sie für die Antwort."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "An wen Daten weitergegeben werden"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Anfragen über die Website erreichen uns per E-Mail (Google Gmail) und über Telegram. Die Website liegt auf einem Server von Hetzner in der Europäischen Union. Die Daten werden nicht verkauft und nicht zu Werbezwecken an Dritte weitergegeben."
+      },
+      {
+       "t": "p",
+       "html": "Ist die Nachricht in einer Anfrage nicht auf Russisch verfasst, wird ihr Text (ohne Namen und Kontaktdaten) an einen maschinellen Übersetzungsdienst übermittelt, damit wir eine russische Übersetzung erhalten. Der Dienst verwendet den Text nur für die Übersetzung."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Wie lange Daten gespeichert werden"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Anfragen speichern wir höchstens 24 Monate nach dem letzten Kontakt, sofern zwischen uns kein Vertrag geschlossen wurde. Vertragsdaten bewahren wir so lange auf, wie es das slowakische Recht verlangt."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Cookies und Webanalyse"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Website nutzt Google Analytics über den Google Tag Manager, um zu verstehen, welche Seiten für Besucherinnen und Besucher nützlich sind. Diese Cookies werden erst geladen, nachdem Sie im Banner zugestimmt haben. Sie können Ihre Entscheidung jederzeit ändern oder Ihre Einwilligung widerrufen: Der Link „Cookie-Einstellungen“ unten auf jeder Seite öffnet das Banner erneut."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ihre Rechte"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Sie können Auskunft über Ihre Daten sowie deren Berichtigung oder Löschung verlangen, die Einschränkung der Verarbeitung verlangen oder ihr widersprechen und Ihre Daten in einem maschinenlesbaren Format erhalten. Schreiben Sie an <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>. Eine Beschwerde können Sie bei der slowakischen Datenschutzbehörde einreichen: Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk)."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -10,7 +10,9 @@
  "alternates": {
   "ru": "/about-studio",
   "ua": "/ua/pro-studiyu",
-  "en": "/en/about-studio"
+  "en": "/en/about-studio",
+  "sk": "/sk/o-studiu",
+  "de": "/de/ueber-uns-innenarchitektur-bratislava"
  },
  "sections": [
   {
@@ -140,17 +142,11 @@
      "text": "Контакти студії"
     },
     {
+     "type": "contacts"
+    },
+    {
      "type": "text",
      "parts": [
-      {
-       "t": "ul",
-       "items": [
-        "Адреса: Súkennícka 1, 821 09 Братислава, Словаччина",
-        "Телефони у Братиславі: <a href=\"tel:+421918177785\">+421 918 17 77 85</a>, <a href=\"tel:+380953662575\">+380 95 366 25 75</a>",
-        "Телефон у Відні: <a href=\"tel:+4367761430187\">+43 677 614 30 187</a>",
-        "E-mail: <a href=\"mailto:dumskaya.design@gmail.com\">dumskaya.design@gmail.com</a>"
-       ]
-      },
       {
        "t": "p",
        "html": "Відповімо протягом робочого дня. Форма заявки та месенджери — на сторінці <a href=\"/ua/contact-studio-interior-design-bratislava-vienna\">контактів</a>."

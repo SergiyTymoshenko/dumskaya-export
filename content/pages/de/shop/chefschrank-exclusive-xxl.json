@@ -1,0 +1,87 @@
+{
+ "path": "/de/shop/chefschrank-exclusive-xxl",
+ "lang": "de",
+ "type": "shop",
+ "group": null,
+ "title": "Chefschrank Exclusive, XXL (TDD-005) | DUMSKAYA DESIGN",
+ "description": "Chefschrank Exclusive, XXL, Artikel TDD-005, aus der Kollektion Executive Desk 2026 von DUMSKAYA DESIGN. Preis und Lieferung auf Anfrage.",
+ "h1": "Chefschrank Exclusive, XXL (TDD-005)",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop/exclusive-executive-office-cabinet",
+  "ua": "/ua/shop/exclusive-executive-office-cabinet",
+  "en": "/en/shop/exclusive-executive-office-cabinet",
+  "sk": "/sk/obchod/manazerska-skrina-exclusive-xxl",
+  "de": "/de/shop/chefschrank-exclusive-xxl"
+ },
+ "sections": [
+  {
+   "id": "69affc7e2e4f2c0dbc77875e",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Chefschrank Exclusive, XXL"
+      },
+      {
+       "id": "35c86dbb-51b0-48df-9fa3-81d931db82d1",
+       "alt": "Chefschrank Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Chefschrank Exclusive, XXL (TDD-005)"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Chefschrank Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Chefschrank Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Chefschrank Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Chefschrank Exclusive, XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Chefschrank Exclusive, XXL"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

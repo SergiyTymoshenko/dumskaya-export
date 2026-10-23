@@ -1,0 +1,204 @@
+{
+ "path": "/sk/kuchyna-na-mieru-k-01-klasicka-zelena",
+ "lang": "sk",
+ "type": "kitchen",
+ "group": null,
+ "title": "Kuchyňa na mieru K-01: klasická zelená | DUMSKAYA",
+ "description": "Klasická rohová kuchyňa K-01 v zelenej farbe s akrylátovou pracovnou doskou. Výroba na vaše rozmery a montáž v Bratislave aj vo Viedni, konzultácia zdarma.",
+ "h1": "Klasická rohová kuchyňa K-01 v zelenej farbe s pracovnou doskou z akrylátového kameňa",
+ "og_image": "6abea74a68c5e81567a5bda9",
+ "alternates": {
+  "ru": "/kuhni-pod-zakaz-k-01-cena-bratislava-slovakia",
+  "ua": "/ua/kuhnya-pid-zamovlennya-k-01-cena-bratislava-slovakia",
+  "en": "/en/kitchen-k01-green-classic",
+  "sk": "/sk/kuchyna-na-mieru-k-01-klasicka-zelena",
+  "de": "/de/kueche-k-01-klassische-eckkueche-gruen"
+ },
+ "sections": [
+  {
+   "id": "67c8935455e2e65a2eeb4d99",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Klasická rohová kuchyňa K-01 v zelenej farbe s pracovnou doskou z akrylátového kameňa"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6abea74a68c5e81567a5bda9",
+       "alt": "Klasická zelená rohová kuchyňa K-01 s lakovanými dvierkami, Bratislava, Slovensko"
+      },
+      {
+       "id": "67c894fce5449e053607877a",
+       "alt": "Zelená kuchyňa na mieru s pracovnou doskou z akrylátového kameňa a vstavanými spotrebičmi, Viedeň, Rakúsko"
+      },
+      {
+       "id": "67c894fcbc98e6d349016cef",
+       "alt": "Rohová kuchyňa v klasickom štýle s výsuvným cargom a kovaním Hettich, Bratislava"
+      },
+      {
+       "id": "67c894fc2a37b96cbc7f915c",
+       "alt": "Zelená kuchynská linka K-01 s jednofarebnými dvierkami a akrylátovým kameňom, Viedeň"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Popis kuchyne"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "<strong>Sériový model kuchyne K-01</strong> je klasická rohová kuchyňa v zelenej farbe s pracovnou doskou z akrylátového kameňa. Dvierka sú lakované, jednofarebné. Pracovné zóny a skrinky stoja pozdĺž dvoch stien, celková dĺžka linky je 8,6 bežného metra."
+      },
+      {
+       "t": "p",
+       "html": "Dvierka sa zatvárajú plynulo a potichu vďaka pántom Hettich s tlmeným dovieraním, zásuvky sa vysúvajú na skrytých výsuvoch Actro YOU Hettich."
+      },
+      {
+       "t": "p",
+       "html": "<strong>Technické parametre kuchyne K-01:</strong>"
+      },
+      {
+       "t": "p",
+       "html": "Štýl: klasický"
+      },
+      {
+       "t": "p",
+       "html": "Farba: zelená, jednofarebná"
+      },
+      {
+       "t": "p",
+       "html": "Tvar: rohová, bez ostrova"
+      },
+      {
+       "t": "p",
+       "html": "Dĺžka: 8,6 bm"
+      },
+      {
+       "t": "p",
+       "html": "Rozmery: 8,6 × 2,6 × 0,6 m"
+      },
+      {
+       "t": "p",
+       "html": "Pracovná doska: akrylátový kameň"
+      },
+      {
+       "t": "p",
+       "html": "Horné a spodné dvierka: lakované"
+      },
+      {
+       "t": "p",
+       "html": "Korpus: LTD 18 mm"
+      },
+      {
+       "t": "p",
+       "html": "Spotrebiče: vstavané"
+      },
+      {
+       "t": "p",
+       "html": "Úložný systém: výsuvné cargo"
+      },
+      {
+       "t": "p",
+       "html": "Pánty: Hettich s tlmeným dovieraním"
+      },
+      {
+       "t": "p",
+       "html": "Výsuvy: skryté, Actro YOU Hettich"
+      },
+      {
+       "t": "p",
+       "html": "Úchytky: súčasťou dodávky"
+      },
+      {
+       "t": "p",
+       "html": "Dĺžku, farbu dvierok a vybavenie K-01 prispôsobíme vašej miestnosti, na želanie pridáme ostrov. Kuchyňu montujeme v Bratislave aj vo Viedni."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Katalóg kuchýň",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden"
+      },
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc03f2550f99deda0ed13d",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

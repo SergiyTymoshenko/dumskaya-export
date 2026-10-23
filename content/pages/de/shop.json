@@ -1,0 +1,92 @@
+{
+ "path": "/de/shop",
+ "lang": "de",
+ "type": "shop",
+ "group": null,
+ "title": "Möbel-Shop DUMSKAYA DESIGN — Büromöbel",
+ "description": "Möbel für das Chefbüro aus der Kollektion Executive Desk 2026, entworfen von DUMSKAYA DESIGN: Schreibtische, Schränke und ein Besprechungstisch.",
+ "h1": "Möbelshop DUMSKAYA DESIGN",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop",
+  "ua": "/ua/shop",
+  "en": "/en/shop",
+  "sk": "/sk/obchod",
+  "de": "/de/shop"
+ },
+ "sections": [
+  {
+   "id": "6076db2ee23cd70022e6ab4e",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "1b175855-aae0-41f1-b54e-6d6a3a368e7d",
+       "alt": "Möbelshop von DUMSKAYA DESIGN"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Executive Desk 2026"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Chefschrank Exclusive, Größe XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Konferenztisch Executive"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Chefschreibtisch Boss, Größe L"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Chefschreibtisch Boss, Größe M"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Chefschreibtisch Boss, Größe S"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Chefschrank Exclusive, Größe S"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

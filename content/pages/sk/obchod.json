@@ -1,0 +1,92 @@
+{
+ "path": "/sk/obchod",
+ "lang": "sk",
+ "type": "shop",
+ "group": null,
+ "title": "Obchod s nábytkom DUMSKAYA DESIGN — kancelársky nábytok",
+ "description": "Manažérsky nábytok z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN: stoly, skrine a rokovací stôl.",
+ "h1": "Obchod s nábytkom DUMSKAYA DESIGN",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop",
+  "ua": "/ua/shop",
+  "en": "/en/shop",
+  "sk": "/sk/obchod",
+  "de": "/de/shop"
+ },
+ "sections": [
+  {
+   "id": "6076db2ee23cd70022e6ab4e",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "1b175855-aae0-41f1-b54e-6d6a3a368e7d",
+       "alt": "Obchod s nábytkom DUMSKAYA DESIGN"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Executive Desk 2026"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Riaditeľská skriňa Exclusive, veľkosť XXL"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Rokovací stôl Executive"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Riaditeľský stôl Boss, veľkosť L"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Riaditeľský stôl Boss, veľkosť M"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Riaditeľský stôl Boss, veľkosť S"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Riaditeľská skriňa Exclusive, veľkosť S"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

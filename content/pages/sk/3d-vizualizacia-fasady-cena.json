@@ -1,0 +1,619 @@
+{
+ "path": "/sk/3d-vizualizacia-fasady-cena",
+ "lang": "sk",
+ "type": "service",
+ "group": null,
+ "title": "3D vizualizácia fasády: ceny od 75 € | DUMSKAYA DESIGN",
+ "description": "Fotorealistická 3D vizualizácia fasády a pozemku: model, materiály, svetlo, zeleň, render. Cena každej etapy a podmienky úprav. Bratislava a Viedeň.",
+ "h1": "Ceny 3D vizualizácie fasády a exteriéru budovy",
+ "og_image": "673a0573ece0e84849b9e248",
+ "alternates": {
+  "ru": "/3d-vizualizaciya-fasada-zdaniya-cena",
+  "ua": "/ua/3d-vizualizatsiia-fasadu-budivli-ta-navkolyshnoho-seredovyshcha",
+  "en": "/en/3d-visualization-facade-exterior-price",
+  "sk": "/sk/3d-vizualizacia-fasady-cena",
+  "de": "/de/3d-visualisierung-fassade-preise"
+ },
+ "sections": [
+  {
+   "id": "67370a6872bf7824004f4822",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Ceny 3D vizualizácie fasády a exteriéru budovy"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Pripravujeme fotorealistické 3D vizualizácie fasád a pozemkov podľa vašich výkresov alebo od návrhu koncepcie — pre stavby na Slovensku, v Rakúsku aj v iných krajinách. Nižšie je cena každej etapy a úpravy, ktoré do nej patria."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d476c7e6210d11a55ff6ee",
+       "alt": "Altánok s pergolou"
+      },
+      {
+       "id": "66b61a228b4279408ae3e19f",
+       "alt": "3D vizualizácia exteriéru rodinných domov"
+      },
+      {
+       "id": "66b61a088acd8b217eb71a36",
+       "alt": "Fasáda vily v Marbelle"
+      },
+      {
+       "id": "66b61a3143d3e7af1c1a5467",
+       "alt": "Fasáda vily v Marbelle"
+      },
+      {
+       "id": "673a059eece0e84849b9e2cf",
+       "alt": "3D model fasády domu so všetkými detailmi a textúrami"
+      },
+      {
+       "id": "673a0599550232c4543eaaad",
+       "alt": "3D vizualizácia exteriérov"
+      },
+      {
+       "id": "673a05b3ece0e84849b9e31e",
+       "alt": "3D vizualizácia okolia"
+      },
+      {
+       "id": "673a05ef995899838cc32214",
+       "alt": "3D vizualizácia exteriéru"
+      },
+      {
+       "id": "673a05a1995899838cc3208c",
+       "alt": "3D vizualizácia fasády pre interiérových dizajnérov"
+      },
+      {
+       "id": "673a05ae531e6a35a062f462",
+       "alt": "3D vizualizácia fasády rodinného domu"
+      },
+      {
+       "id": "673a05a2531e6a35a062f441",
+       "alt": "3D vizualizácia exteriérov pre projekty domov"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "1. Zber a analýza technického zadania"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Pošlete nám výkresy, pôdorysy, materiály a príklady — podľa nich zostavíme zadanie pre vizualizáciu."
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Cena: zvyčajne je zahrnutá v cene projektu. Ak treba zadanie výrazne doplniť, môže pribudnúť príplatok približne 50–125 €.",
+        "Úpravy: nie sú zahrnuté — iba spresnenie detailov."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "2. Tvorba základného 3D modelu"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Podľa výkresov a pôdorysov postavíme priestorový model fasády."
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Cena: 200–375 € (podľa náročnosti objektu a plochy fasády).",
+        "Úpravy: základné zmeny tvaru sú bezplatné. Väčšie zmeny, pri ktorých treba model prerobiť, stoja približne 50 € za každú."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "3. Materiály a textúry"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Modelu priradíme materiály a textúry zo zadania: kameň, tehlu, omietku, drevo, sklo."
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Cena: 125–250 € podľa počtu textúr a náročnosti materiálov.",
+        "Úpravy: 1–2 kolá korekcií (napríklad zmena farby textúry) sú bezplatné. Výmena všetkých textúr — približne 40 € za kolo."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "4. Nastavenie osvetlenia a okolia"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Nastavíme svetlo — dennú dobu, slnko, tiene — a najbližšie okolie budovy."
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Cena: 75–200 € podľa náročnosti.",
+        "Úpravy: jedno kolo korekcie osvetlenia je bezplatné, ďalšie zmeny — 25 € za úpravu."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "5. Prvý rendering (pracovná verzia)"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Pracovný render na kontrolu uhla pohľadu, materiálov a svetla."
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Cena: zvyčajne je zahrnutá v projekte.",
+        "Úpravy: drobné korekcie uhla pohľadu sú bezplatné, väčšie zmeny — 25–50 €."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "6. Finálny rendering"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Po schválení pracovného renderu vyrenderujeme finálny obrázok vo vysokom rozlíšení."
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Cena: 250–500 € za jeden pohľad.",
+        "Úpravy: nie sú zahrnuté — každá zmena si vyžaduje nový rendering (75–125 € podľa náročnosti)."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "7. Doplnenia a ďalšie úpravy"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Zmeny, ktoré neboli v pôvodnom zadaní."
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Cena: 40–125 € za zmenu, posudzuje sa individuálne.",
+        "Úpravy: účtujú sa osobitne, ak ich nezahŕňa zmluva."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "8. Okolie a sadové úpravy"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Modelovanie a vizualizácia okolia fasády: stromy, chodníky, osvetlenie."
+      },
+      {
+       "t": "p",
+       "html": "Cena:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Základné okolie: 125–250 €.",
+        "Detailné sadové úpravy: 250–625 €.",
+        "Úpravy: jedno kolo korekcií rozmiestnenia hlavných prvkov je bezplatné, podstatné zmeny — 50–100 € za kolo."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "9. Ďalšie pozemky"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Modelovanie budov, úprav pozemku, zelene a okolia na susedných pozemkoch."
+      },
+      {
+       "t": "p",
+       "html": "Cena:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Druhý pozemok: základné modelovanie — 200–375 €; detailné okolie a sadové úpravy — ďalších 250–500 €; finálny render — 250–500 € za každý pohľad.",
+        "Tretí pozemok: cena je rovnaká ako pri druhom."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Úpravy:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Jedno kolo drobných korekcií (napríklad umiestnenie objektov) je bezplatné.",
+        "Podstatné zmeny (napríklad výmena prvkov dizajnu) sa účtujú osobitne — 50–125 € za pozemok."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "10. Koncepčné modelovanie fasády"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Navrhneme koncepciu fasády alebo pozemku: pripravíme niekoľko skicových variantov, vyberieme štýl, materiály a hlavné tvary."
+      },
+      {
+       "t": "p",
+       "html": "Postup:"
+      },
+      {
+       "t": "p",
+       "html": "1. Analýza predstáv klienta (dotazník, rozhovor o nápadoch a inšpiráciách)."
+      },
+      {
+       "t": "p",
+       "html": "2. Tvorba 2–3 koncepčných skíc fasády."
+      },
+      {
+       "t": "p",
+       "html": "3. Dopracovanie vybraného variantu a jeho prevod do priestorového modelu."
+      },
+      {
+       "t": "p",
+       "html": "Cena:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Návrh koncepcie fasády: 375–750 € za jednu fasádu.",
+        "Rozšírená koncepcia (s pozemkom a detailným okolím): 500–1 250 €."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Úpravy:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Bezplatne: 1–2 kolá korekcií vybraného variantu.",
+        "Za poplatok: ďalšie varianty koncepcie alebo prepracovanie existujúceho riešenia — od 125 € za kolo."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Výstupy:"
+      },
+      {
+       "t": "p",
+       "html": "Po schválení koncepcie dostane klient finálny 3D model a hotové rendery v nízkom rozlíšení na predbežné posúdenie."
+      },
+      {
+       "t": "p",
+       "html": "Príklad použitia:"
+      },
+      {
+       "t": "p",
+       "html": "Hodí sa, ak nemáte jasné zadanie alebo ešte nie je vybraný štýl fasády. Po schválení koncepcie podľa nej pripravíme úplnú 3D vizualizáciu. Príkladom takej práce je <a href=\"/sk/architektonicka-studia-fasad-3d-vizualizacia\">architektonická štúdia fasády</a> v dvoch variantoch povrchovej úpravy."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "11. Vizualizácia existujúceho projektu zasadeného do okolia"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Podľa vašich výkresov alebo pôdorysov pripravíme 3D vizualizáciu hotového projektu budovy a zasadíme ju do okolia. Uvidíte, ako dom pôsobí medzi susednými stavbami a stromami."
+      },
+      {
+       "t": "p",
+       "html": "Postup:"
+      },
+      {
+       "t": "p",
+       "html": "1. Tvorba 3D modelu budovy podľa vašich výkresov."
+      },
+      {
+       "t": "p",
+       "html": "2. Návrh okolia (terén, cesty, susedné pozemky, stromy a pod.)."
+      },
+      {
+       "t": "p",
+       "html": "3. Zasadenie objektu do prostredia a nastavenie osvetlenia."
+      },
+      {
+       "t": "p",
+       "html": "4. Finálny render z navrhnutého uhla pohľadu."
+      },
+      {
+       "t": "p",
+       "html": "Cena:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Modelovanie existujúcej budovy: 250–500 € (podľa miery detailu a náročnosti projektu).",
+        "Návrh okolia: základná úroveň (trávnik, niekoľko stromov, jednoduché prvky) — 125–250 €, detailná krajina a okolie — 250–750 €.",
+        "Finálny render: 250–500 € za jeden pohľad."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Úpravy:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Bezplatne: 1 kolo korekcií zasadenia do prostredia (napríklad posun budovy, drobné zmeny terénu).",
+        "Za poplatok: podstatné zmeny modelu budovy — 75–125 €.",
+        "Úprava celého okolia alebo pridanie nových objektov — 50–125 €."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Výstupy:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "Finálne obrázky vo vysokej kvalite z vybraných uhlov pohľadu.",
+        "Ak je to potrebné, dodáme pracovný render na predbežné schválenie."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Príklad použitia:"
+      },
+      {
+       "t": "p",
+       "html": "Architektom takáto vizualizácia ukáže, ako hotový projekt zapadne do skutočného pozemku. Používa sa aj na prezentáciu projektu investorom."
+      },
+      {
+       "t": "p",
+       "html": "Konečná cena závisí od náročnosti projektu, miery detailu a počtu úprav."
+      },
+      {
+       "t": "p",
+       "html": "Ak majú viaceré pozemky spoločnú koncepciu, časť prác spojíme a celková cena sa zníži."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "673a0bf5766c487051cd6185",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Príklady projektov architektonického navrhovania a 3D vizualizácií"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Vila, Španielsko, Marbella",
+       "href": "/sk/navrh-fasady-vily-marbella",
+       "image": {
+        "id": "66b619f623f9a34a612c9e7d",
+        "alt": "3D vizualizácia fasády budovy"
+       }
+      },
+      {
+       "title": "Rodinný dom",
+       "href": "/sk/3d-vizualizacia-fasady-rodinneho-domu",
+       "image": {
+        "id": "686bcfbe29b44dd96a3d2a5f",
+        "alt": "3D vizualizácia fasády rodinného domu"
+       }
+      },
+      {
+       "title": "3D modelovanie architektonickej štúdie fasády domu",
+       "href": "/sk/architektonicka-studia-fasad-3d-vizualizacia",
+       "image": {
+        "id": "673a059eece0e84849b9e2cf",
+        "alt": "3D vizualizácia exteriérov"
+       }
+      },
+      {
+       "title": "Rodinný dom",
+       "href": "/sk/architektonicky-navrh-fasad-rodinneho-domu",
+       "image": {
+        "id": "66a56e39d68a3eb051612386",
+        "alt": "3D vizualizácia okolia"
+       }
+      },
+      {
+       "title": "Architektonické riešenie fasády barbershopu, Ukrajina, Kyjev",
+       "href": "/sk/navrh-fasady-barbershopu-kyjev",
+       "image": {
+        "id": "66d313f8e6210d11a55d877c",
+        "alt": "3D modelovanie fasád budov"
+       }
+      },
+      {
+       "title": "Architektonické riešenie: altánok s pergolou",
+       "href": "/sk/altanok-s-pergolou-navrh-realizacia",
+       "image": {
+        "id": "66d476c7e6210d11a55ff6ee",
+        "alt": "3D fasáda budovy"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3d-vizualizaciya-fasada-zdaniya-cena-faq",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Otázky o 3D vizualizácii fasády"
+    },
+    {
+     "type": "faq",
+     "items": [
+      {
+       "q": "Koľko stojí vizualizácia jednej fasády spolu?",
+       "a": "<p>Ak je zadanie úplné a okolie jednoduché: model 200–375 €, materiály 125–250 €, svetlo 75–200 €, finálny render jedného pohľadu 250–500 €. Spolu 650–1 325 €. Každý ďalší pohľad stojí ďalších 250–500 €, sadové úpravy okolo domu od 125 €.</p>"
+      },
+      {
+       "q": "Čo poslať na cenovú ponuku?",
+       "a": "<p>Pôdorysy podlaží, pohľady a rez budovy, situáciu pozemku, fotografie pozemku a susedných domov a príklady fasád, ktoré sa vám páčia. Ak výkresy nemáte, začneme koncepciou fasády.</p>"
+      },
+      {
+       "q": "Dá sa vizualizácia objednať bez cesty do Bratislavy?",
+       "a": "<p>Áno, celá práca prebieha na diaľku: podklady pošlete cez messenger alebo e-mailom, pracovné aj finálne rendery dostanete ako súbory. Konzultácia je bezplatná.</p>"
+      },
+      {
+       "q": "Zmenu fasády treba odsúhlasiť so susedmi. Pomôže vizualizácia?",
+       "a": "<p>Áno, nad obrázkom sa dohodnete ľahšie ako nad výkresom. Napríklad v Rakúsku si zmeny bytu v osobnom vlastníctve, ktoré menia vonkajší vzhľad domu (povedzme vonkajšia jednotka klimatizácie na fasáde), vyžadujú súhlas ostatných vlastníkov. Vizualizácia im výsledok ukáže vopred.</p>"
+      },
+      {
+       "q": "Môžem si u vás objednať aj projekt samotného domu?",
+       "a": "<p>Áno. Štúdio sa venuje <a href=\"/sk/architektura-projektovanie-domov-bratislava\">architektonickému projektovaniu</a>: štúdii, fasádam, úpravám pozemku a realizačnej dokumentácii. Vizualizácia môže byť prvou etapou takého projektu.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbe20f36ccc5cb47fd4486",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

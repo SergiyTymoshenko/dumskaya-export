@@ -1,0 +1,171 @@
+{
+ "path": "/sk/navrh-fasady-barbershopu-kyjev",
+ "lang": "sk",
+ "type": "project",
+ "group": "architecture",
+ "title": "Návrh fasády barbershopu v Kyjeve | DUMSKAYA DESIGN",
+ "description": "Architektonické riešenie fasády barbershopu v Kyjeve: koncept, materiály, vývesný štít a 3D vizualizácia. Štúdio DUMSKAYA DESIGN.",
+ "h1": "Architektonické riešenie fasády barbershopu, Kyjev, Ukrajina",
+ "og_image": "66d313f8e6210d11a55d877c",
+ "alternates": {
+  "ru": "/architecture-facade-barbershop-kyiv",
+  "ua": "/ua/barbershop-facade-design-kyiv-ukraine",
+  "en": "/en/barbershop-facade-architectural-solution",
+  "sk": "/sk/navrh-fasady-barbershopu-kyjev",
+  "de": "/de/fassadenentwurf-barbershop-kiew"
+ },
+ "sections": [
+  {
+   "id": "66d3108f24011c003f71c7ca",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Architektonické riešenie fasády barbershopu, Kyjev, Ukrajina"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Fasáda barbershopu v Kyjeve: navrhli sme architektonické riešenie rekonštrukcie fasády a pripravili 3D vizualizáciu. Prevádzka mala byť viditeľná z ulice, fasáda mala zodpovedať firemnému štýlu barbershopu a zároveň sa nemala biť so susednými domami. Vizualizácie ukazujú fasádu v kontexte ulice — s chodníkom, stromami a okolitou zástavbou."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Obklad a výklady"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Hlavným materiálom je biely kameň so sivými žilkami. Je ním obložená stena prízemia, široká rímsa nad výkladmi a stĺp pri vstupe. Sokel pod oknami sme urobili z tmavého kameňa: menej na ňom vidno pouličnú špinu a vizuálne drží výklady zospodu."
+      },
+      {
+       "t": "p",
+       "html": "Pozdĺž ulice sa tiahne široké trojdielne presklenie v tenkých tmavých rámoch. Cez sklo vidno salón a police s teplým podsvietením, takže večer výklad funguje ako vývesný štít. Naľavo od neho je samostatné výkladné okno vo svietiacom zlatistom ráme. Je v ňom vystavený jeden veľký objekt, ktorý tvorí na fasáde samostatný akcent."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Vstup, vývesný štít a osvetlenie"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Vstup je na rohu, pod strieškou. Steny vo vnútri portálu sú obložené tmavým kameňom, dvojkrídlové sklenené dvere sú zapustené dovnútra a po oboch stranách majú nástenné svietidlá, ktoré svietia hore aj dole. K dverám vedú široké schody s bielymi stupnicami a tmavými podstupnicami. Z boku je portál zasklený, takže zo vstupu vidno výklad. Pred vstupom je trávnik so stromom v kamennom obrubníku."
+      },
+      {
+       "t": "p",
+       "html": "Názov tvoria na rímse priestorové písmená s obrysovým podsvietením. Pod ním sa po celej dĺžke fasády tiahne tenká svetelná línia, ktorá večer oddeľuje rímsu od výkladov. Okrem nej a nástenných svietidiel pri dverách osvetľujú fasádu len výklady a podsvietený rám okna."
+      },
+      {
+       "t": "p",
+       "html": "Takéto zadania pre komerčné priestory patria do <a href=\"/sk/architektura-projektovanie-domov-bratislava\">architektonického projektovania</a>: koncept fasády, výber materiálov, riešenie vstupu a vývesného štítu, vizualizácie na odsúhlasenie."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66d313f8e6210d11a55d877c",
+       "alt": "Fasáda barbershopu v Kyjeve"
+      },
+      {
+       "id": "66d313f85339d71adfe18d77",
+       "alt": "Fasáda barbershopu v Kyjeve"
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky projekty",
+       "href": "/sk/portfolio-dizajn-interieru"
+      },
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Ceny dizajnových balíkov",
+       "href": "/sk/3d-vizualizacia-fasady-cena"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc013ba9268f298b519b0d",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -59,7 +59,7 @@ export function llmsTxt(): string {
     'turnkey renovation by the studio’s own crews, architecture and 3D visualization. ' +
     'Founded and led by interior designer Irina Dumskaya, more than 15 years of experience. ' +
     'Prices are the same in Bratislava and Vienna, furniture delivery is included. ' +
-    'The website is available in English, Ukrainian and Russian.');
+    'The website is available in English, Slovak, German, Ukrainian and Russian.');
   L.push('');
   L.push(`- Studio address: ${c.address.street}, ${c.address.postal} ${c.address.city}, Slovakia`);
   L.push(`- Phone: ${c.phones.map((p: any) => `${p.text} (${p.city.en})`).join(', ')}`);
@@ -99,6 +99,8 @@ export function llmsTxt(): string {
   L.push('## Other languages', '');
   L.push(`- Russian: [${abs('/')}](${abs('/')})`);
   L.push(`- Ukrainian: [${abs('/ua')}](${abs('/ua')})`);
+  L.push(`- Slovak: [${abs('/sk')}](${abs('/sk')})`);
+  L.push(`- German: [${abs('/de')}](${abs('/de')})`);
   L.push('');
   L.push('## Optional', '');
   L.push(`- [Full text of the English website](${abs('/llms-full.txt')})`);

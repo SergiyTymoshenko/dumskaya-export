@@ -1,0 +1,95 @@
+{
+ "path": "/sk/obchod/manazersky-stol-boss-m",
+ "lang": "sk",
+ "type": "shop",
+ "group": null,
+ "title": "Manažérsky stôl Boss, veľkosť M (TDD-002) | DUMSKAYA DESIGN",
+ "description": "Manažérsky stôl Boss, veľkosť M, kód TDD-002, z kolekcie Executive Desk 2026 — dizajn nábytku DUMSKAYA DESIGN. Cena a doprava na vyžiadanie.",
+ "h1": "Manažérsky stôl Boss, veľkosť M (TDD-002)",
+ "og_image": null,
+ "alternates": {
+  "ru": "/shop/executive-desk-boss-m",
+  "ua": "/ua/shop/executive-desk-boss-m",
+  "en": "/en/shop/executive-desk-boss-m",
+  "sk": "/sk/obchod/manazersky-stol-boss-m",
+  "de": "/de/shop/chefschreibtisch-boss-m"
+ },
+ "sections": [
+  {
+   "id": "69affc7e2e4f2c0dbc77875e",
+   "blocks": [
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "aa594016-b084-4724-b7c8-2ea80a77d04d",
+       "alt": "Manažérsky stôl Boss, veľkosť M"
+      },
+      {
+       "id": "fb2dfd22-cfee-4317-ab84-ee812749cd57",
+       "alt": "Manažérsky stôl Boss, veľkosť M"
+      },
+      {
+       "id": "1bf47950-3135-4f9d-8d14-3aea8d1d2739",
+       "alt": "Manažérsky stôl Boss, veľkosť M"
+      },
+      {
+       "id": "dcd98103-bd3a-41c4-88bc-289c08394b20",
+       "alt": "Manažérsky stôl Boss, veľkosť M"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Manažérsky stôl Boss, veľkosť M (TDD-002)"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "0de1893d-6c8f-402d-809e-30df256d24e4",
+       "alt": "Manažérsky stôl Boss, veľkosť M"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "441aa2c1-cdb0-425f-9a69-9a60a4bf1687",
+       "alt": "Manažérsky stôl Boss, veľkosť M"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "86714321-14fd-4c3a-8619-61bb05905632",
+       "alt": "Manažérsky stôl Boss, veľkosť M"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "a0417189-861e-4ffc-b410-fcea44834081",
+       "alt": "Manažérsky stôl Boss, veľkosť M"
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "25057330-bc7f-48cf-8626-5699d88d1c3f",
+       "alt": "Manažérsky stôl Boss, veľkosť M"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

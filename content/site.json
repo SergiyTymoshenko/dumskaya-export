@@ -473,6 +473,278 @@
     "label": "Contact",
     "href": "/en/contact-studio-interior-design-bratislava-vienna"
    }
+  ],
+  "sk": [
+   {
+    "label": "O štúdiu",
+    "href": "/sk/o-studiu"
+   },
+   {
+    "label": "Portfólio",
+    "href": "/sk/portfolio-dizajn-interieru"
+   },
+   {
+    "label": "Kuchyne",
+    "href": "/sk/kuchyne-na-mieru-bratislava-vieden"
+   },
+   {
+    "label": "Obchod",
+    "href": "/sk/obchod"
+   },
+   {
+    "label": "Služby",
+    "children": [
+     {
+      "label": "Dizajn obytných interiérov",
+      "href": "/sk/dizajn-interieru-bratislava"
+     },
+     {
+      "label": "Dizajn komerčných interiérov",
+      "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden"
+     },
+     {
+      "label": "Nábytok na mieru",
+      "href": "/sk/nabytok-na-mieru-bratislava"
+     },
+     {
+      "label": "Nábytok na mieru pre firmy",
+      "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava"
+     },
+     {
+      "label": "Architektúra a projektovanie",
+      "href": "/sk/architektura-projektovanie-domov-bratislava"
+     },
+     {
+      "label": "3D vizualizácia fasád",
+      "href": "/sk/3d-vizualizacia-fasady-cena"
+     },
+     {
+      "label": "Preberanie bytu",
+      "href": "/sk/preberanie-bytu-od-developera-bratislava"
+     },
+     {
+      "label": "Rekonštrukcia na kľúč",
+      "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava"
+     },
+     {
+      "label": "Rozpočet rekonštrukcie",
+      "href": "/sk/rozpocet-rekonstrukcie-bratislava-vieden"
+     }
+    ]
+   },
+   {
+    "label": "Tipy",
+    "children": [
+     {
+      "label": "Prečo potrebujete interiérového dizajnéra",
+      "href": "/sk/preco-interierovy-dizajner"
+     },
+     {
+      "label": "Rozmiestnenie nábytku v kuchyni",
+      "href": "/sk/planovanie-kuchyne-pravidla"
+     },
+     {
+      "label": "Návrh detskej izby",
+      "href": "/sk/dizajn-detskej-izby-zasady"
+     },
+     {
+      "label": "Pracovné miesto v spálni",
+      "href": "/sk/pracovne-miesto-v-spalni"
+     },
+     {
+      "label": "Malé byty",
+      "href": "/sk/dizajn-maleho-bytu-prakticke-rady"
+     },
+     {
+      "label": "Usporiadanie kúpeľne",
+      "href": "/sk/usporiadanie-kupelne-rady-dizajnera"
+     },
+     {
+      "label": "Útulný balkón",
+      "href": "/sk/zariadenie-balkona-napady-rady"
+     }
+    ]
+   },
+   {
+    "label": "Kde pracujeme",
+    "children": [
+     {
+      "label": "Bratislava",
+      "href": "/sk/dizajn-interieru-bratislava"
+     },
+     {
+      "label": "Viedeň",
+      "href": "/sk/dizajn-interieru-vieden"
+     }
+    ]
+   },
+   {
+    "label": "Ceny",
+    "children": [
+     {
+      "label": "Balík Express",
+      "href": "/sk/dizajnovy-balik-express-bratislava-vieden"
+     },
+     {
+      "label": "Balík Nábytok",
+      "href": "/sk/dizajnovy-balik-nabytok-bratislava-vieden"
+     },
+     {
+      "label": "Balík Základný",
+      "href": "/sk/dizajnovy-balik-zakladny-bratislava-vieden"
+     },
+     {
+      "label": "Balík Premium",
+      "href": "/sk/dizajnovy-balik-premium-bratislava-vieden"
+     },
+     {
+      "label": "Balík Premium+",
+      "href": "/sk/dizajnovy-balik-premium-plus-bratislava-vieden"
+     }
+    ]
+   },
+   {
+    "label": "Kontakt",
+    "href": "/sk/kontakt-bratislava-vieden"
+   }
+  ],
+  "de": [
+   {
+    "label": "Über das Studio",
+    "href": "/de/ueber-uns-innenarchitektur-bratislava"
+   },
+   {
+    "label": "Portfolio",
+    "href": "/de/portfolio-innenarchitektur-projekte"
+   },
+   {
+    "label": "Küchen",
+    "href": "/de/kuechen-nach-mass-katalog-wien-bratislava"
+   },
+   {
+    "label": "Shop",
+    "href": "/de/shop"
+   },
+   {
+    "label": "Leistungen",
+    "children": [
+     {
+      "label": "Innenarchitektur Wohnen",
+      "href": "/de/innenarchitekt-bratislava"
+     },
+     {
+      "label": "Innenarchitektur Gewerbe",
+      "href": "/de/innenarchitektur-buero-geschaeft-wien"
+     },
+     {
+      "label": "Möbel nach Maß",
+      "href": "/de/moebel-nach-mass-bratislava"
+     },
+     {
+      "label": "Möbel nach Maß für Unternehmen",
+      "href": "/de/moebel-nach-mass-buero-gewerbe-wien"
+     },
+     {
+      "label": "Architektur und Planung",
+      "href": "/de/hausplanung-architektur-bratislava"
+     },
+     {
+      "label": "3D-Visualisierung von Fassaden",
+      "href": "/de/3d-visualisierung-fassade-preise"
+     },
+     {
+      "label": "Wohnungsübergabe",
+      "href": "/de/wohnungsuebergabe-bautraeger-bratislava"
+     },
+     {
+      "label": "Sanierung schlüsselfertig",
+      "href": "/de/schluesselfertige-sanierung-wien-bratislava"
+     },
+     {
+      "label": "Kostenschätzung",
+      "href": "/de/kostenschaetzung-sanierung-wien-bratislava"
+     }
+    ]
+   },
+   {
+    "label": "Tipps",
+    "children": [
+     {
+      "label": "Warum ein Innenarchitekt",
+      "href": "/de/warum-innenarchitekt-beauftragen"
+     },
+     {
+      "label": "Möbel in der Küche anordnen",
+      "href": "/de/kueche-planen-regeln"
+     },
+     {
+      "label": "Kinderzimmer planen",
+      "href": "/de/kinderzimmer-gestalten-regeln"
+     },
+     {
+      "label": "Arbeitsplatz im Schlafzimmer",
+      "href": "/de/arbeitsplatz-im-schlafzimmer-einrichten"
+     },
+     {
+      "label": "Kleine Wohnungen",
+      "href": "/de/kleine-wohnung-einrichten-tipps"
+     },
+     {
+      "label": "Badezimmer einrichten",
+      "href": "/de/kleines-bad-planen-tipps"
+     },
+     {
+      "label": "Balkon gestalten",
+      "href": "/de/balkon-gestalten-ideen-tipps"
+     }
+    ]
+   },
+   {
+    "label": "Wo wir arbeiten",
+    "children": [
+     {
+      "label": "Wien",
+      "href": "/de/innenarchitekt-wien"
+     },
+     {
+      "label": "Bratislava",
+      "href": "/de/innenarchitekt-bratislava"
+     },
+     {
+      "label": "Deutschland",
+      "href": "/de/interior-design-moebel-deutschland"
+     }
+    ]
+   },
+   {
+    "label": "Preise",
+    "children": [
+     {
+      "label": "Paket Express",
+      "href": "/de/designpaket-express-wien-bratislava"
+     },
+     {
+      "label": "Paket Möbel",
+      "href": "/de/designpaket-moebel-wien-bratislava"
+     },
+     {
+      "label": "Paket Basis",
+      "href": "/de/designpaket-basis-wien-bratislava"
+     },
+     {
+      "label": "Paket Premium",
+      "href": "/de/designpaket-premium-wien-bratislava"
+     },
+     {
+      "label": "Paket Premium+",
+      "href": "/de/designpaket-premium-plus-wien-bratislava"
+     }
+    ]
+   },
+   {
+    "label": "Kontakt",
+    "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+   }
   ]
  },
  "contacts": {
@@ -483,13 +755,17 @@
     "city": {
      "ru": "Братислава",
      "ua": "Братислава",
-     "en": "Bratislava"
+     "en": "Bratislava",
+     "sk": "Bratislava",
+     "de": "Bratislava"
     },
     "key": "sk",
     "label": {
      "ru": "Телефон в Братиславе",
      "ua": "Телефон у Братиславі",
-     "en": "Phone in Bratislava"
+     "en": "Phone in Bratislava",
+     "sk": "Telefón v Bratislave",
+     "de": "Telefon in Bratislava"
     }
    },
    {
@@ -498,13 +774,17 @@
     "city": {
      "ru": "Братислава",
      "ua": "Братислава",
-     "en": "Bratislava"
+     "en": "Bratislava",
+     "sk": "Bratislava",
+     "de": "Bratislava"
     },
     "key": "ua",
     "label": {
      "ru": "Телефон в Братиславе",
      "ua": "Телефон у Братиславі",
-     "en": "Phone in Bratislava"
+     "en": "Phone in Bratislava",
+     "sk": "Telefón v Bratislave",
+     "de": "Telefon in Bratislava"
     }
    },
    {
@@ -513,13 +793,17 @@
     "city": {
      "ru": "Вена",
      "ua": "Відень",
-     "en": "Vienna"
+     "en": "Vienna",
+     "sk": "Viedeň",
+     "de": "Wien"
     },
     "key": "at",
     "label": {
      "ru": "Телефон в Вене",
      "ua": "Телефон у Відні",
-     "en": "Phone in Vienna"
+     "en": "Phone in Vienna",
+     "sk": "Telefón vo Viedni",
+     "de": "Telefon in Wien"
     }
    }
   ],
@@ -539,7 +823,9 @@
    "label": {
     "ru": "Súkennícka 1, 821 09 Братислава, Словакия",
     "ua": "Súkennícka 1, 821 09 Братислава, Словаччина",
-    "en": "Súkennícka 1, 821 09 Bratislava, Slovakia"
+    "en": "Súkennícka 1, 821 09 Bratislava, Slovakia",
+    "sk": "Súkennícka 1, 821 09 Bratislava, Slovensko",
+    "de": "Súkennícka 1, 821 09 Bratislava, Slowakei"
    }
   },
   "messengers": [

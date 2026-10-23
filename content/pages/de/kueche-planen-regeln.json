@@ -1,0 +1,536 @@
+{
+ "path": "/de/kueche-planen-regeln",
+ "lang": "de",
+ "type": "article",
+ "group": null,
+ "title": "Küche planen: Regeln für eine praktische Küche | DUMSKAYA",
+ "description": "Arbeitsdreieck, Stauraumzonen, Abstände und Beleuchtung: So planen Sie eine Küche, in der sich gut kochen lässt. Tipps aus der Planungspraxis.",
+ "h1": "Wie plant man eine praktische und funktionale Küche?",
+ "og_image": "66c511596549f3d91ef8764e",
+ "alternates": {
+  "ru": "/kak-pravilno-organizovat-udobnuyu-i-funkcionalnuyu-kuhnyu",
+  "ua": "/ua/pryntsypy-rozmishchennia-mebliv-na-kukhni",
+  "en": "/en/kitchen-layout-rules",
+  "sk": "/sk/planovanie-kuchyne-pravidla",
+  "de": "/de/kueche-planen-regeln"
+ },
+ "sections": [
+  {
+   "id": "67d8a2794b675ee497811008",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Küchenmodell K-06",
+       "href": "/de/kueche-k-06-kuechenzeile-weiss-minimalistisch",
+       "image": {
+        "id": "67c8c5edbc98e6d349021946",
+        "alt": "Küche nach Maß"
+       }
+      },
+      {
+       "title": "Küchenmodell K-05",
+       "href": "/de/kueche-k-05-klassische-eckkueche-beige",
+       "image": {
+        "id": "67d2ce3732bfd979ec7466ca",
+        "alt": "Küche nach Maß"
+       }
+      },
+      {
+       "title": "Küchenmodell K-11",
+       "href": "/de/kueche-k-11-moderne-kuechenzeile-grau",
+       "image": {
+        "id": "67d2d3d532bfd979ec747e9e",
+        "alt": "Möbel nach Maß"
+       }
+      },
+      {
+       "title": "Küchenmodell K-08",
+       "href": "/de/kueche-k-08-kuechenzeile-braun-minimalistisch",
+       "image": {
+        "id": "67d2cfa84385e682489fe2ff",
+        "alt": "Küche nach Maß, Modell K-08"
+       }
+      },
+      {
+       "title": "Küchenmodell K-03",
+       "href": "/de/kueche-k-03-inselkueche-schwarz",
+       "image": {
+        "id": "67d2c0e46ad366460788472f",
+        "alt": "Küche nach Maß, Modell K-03"
+       }
+      },
+      {
+       "title": "Küchenmodell K-04",
+       "href": "/de/kueche-k-04-moderne-eckkueche-grau",
+       "image": {
+        "id": "67c8be7ee5449e0536081d2e",
+        "alt": "Küche nach Maß aus dem Katalog des Studios"
+       }
+      },
+      {
+       "title": "Küchenmodell K-41",
+       "href": "/de/kueche-k-41-moderne-kuechenzeile-grau-graphit",
+       "image": {
+        "id": "67cb0bfd807a287f628edace",
+        "alt": "Küche nach Maß aus dem Katalog des Studios"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67ebac8c14296ee5989b4168",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Küchenmodell K-06",
+       "href": "/de/kueche-k-06-kuechenzeile-weiss-minimalistisch",
+       "image": {
+        "id": "67c8c5edbc98e6d349021946",
+        "alt": "Küche nach Maß"
+       }
+      },
+      {
+       "title": "Küchenmodell K-05",
+       "href": "/de/kueche-k-05-klassische-eckkueche-beige",
+       "image": {
+        "id": "67d2ce3732bfd979ec7466ca",
+        "alt": "Küche nach Maß"
+       }
+      },
+      {
+       "title": "Küchenmodell K-11",
+       "href": "/de/kueche-k-11-moderne-kuechenzeile-grau",
+       "image": {
+        "id": "67d2d3d532bfd979ec747e9e",
+        "alt": "Möbel nach Maß"
+       }
+      },
+      {
+       "title": "Küchenmodell K-08",
+       "href": "/de/kueche-k-08-kuechenzeile-braun-minimalistisch",
+       "image": {
+        "id": "67d2cfa84385e682489fe2ff",
+        "alt": "Küche nach Maß, Modell K-08"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67ebac8814296ee5989b4113",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Küchenmodell K-06",
+       "href": "/de/kueche-k-06-kuechenzeile-weiss-minimalistisch",
+       "image": {
+        "id": "67c8c5edbc98e6d349021946",
+        "alt": "Küche nach Maß"
+       }
+      },
+      {
+       "title": "Küchenmodell K-05",
+       "href": "/de/kueche-k-05-klassische-eckkueche-beige",
+       "image": {
+        "id": "67d2ce3732bfd979ec7466ca",
+        "alt": "Küche nach Maß"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66a24b1e73766597ae381002",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Wie plant man eine praktische und funktionale Küche?"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66b1632622400dcb00b4a99b",
+       "alt": "Planung und Fertigung einer Küche nach Maß"
+      },
+      {
+       "id": "66c511596549f3d91ef8764e",
+       "alt": "Wohnküche — Maisonettewohnung in Bratislava, 158 m²"
+      },
+      {
+       "id": "66c51159ef7f2fa45044aee2",
+       "alt": "Wohnküche — Maisonettewohnung in Bratislava, 158 m²"
+      },
+      {
+       "id": "66c511666549f3d91ef87690",
+       "alt": "Wohnküche — Maisonettewohnung in Bratislava, 158 m²"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87656",
+       "alt": "Wohnküche — Maisonettewohnung in Bratislava, 158 m²"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87657",
+       "alt": "Wohnküche — Maisonettewohnung in Bratislava, 158 m²"
+      },
+      {
+       "id": "66c511576549f3d91ef8763c",
+       "alt": "Wohnküche — Maisonettewohnung in Bratislava, 158 m²"
+      },
+      {
+       "id": "66b1774958abfced792fc4af",
+       "alt": "Wohnküche — Einfamilienhaus in Berlin, 215 m²"
+      },
+      {
+       "id": "66b1774622400dcb00b4baf9",
+       "alt": "Wohnküche — Einfamilienhaus in Berlin, 215 m²"
+      },
+      {
+       "id": "66b1774f9490292586e32dfb",
+       "alt": "Wohnküche — Einfamilienhaus in Berlin, 215 m²"
+      },
+      {
+       "id": "66b4e1468d5739e4336a98d6",
+       "alt": "Vorraum — Wohnung, 60 m²"
+      },
+      {
+       "id": "66b166594c04c27fce4a2bdb",
+       "alt": "Wohnküche — Wohnung in Kiew, 119 m²"
+      },
+      {
+       "id": "66b1665a22400dcb00b4ad91",
+       "alt": "Wohnküche — Wohnung in Kiew, 119 m²"
+      },
+      {
+       "id": "66b1632322400dcb00b4a98f",
+       "alt": "Wohnküche — Wohnung in Kiew, 119 m²"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Küchenmöbel richtig anordnen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ob eine Küche bequem ist, entscheidet sich bei der Planung des Grundrisses: wo Spüle, Herd und Kühlschrank stehen und wie viele Schritte dazwischen liegen. Mit diesen Regeln beginnen wir ein Projekt:"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "1. Form und Größe der Küche"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Die Anordnung richtet sich nach Form und Größe des Raums:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Kleine Küchen“: Küchenzeile oder Eckküche: Spüle, Herd und Kühlschrank stehen an einer oder zwei Wänden, die Raummitte bleibt frei.",
+        "„Schmale Küchen“: Die Möbel stehen entlang der langen Wand — in einer Zeile oder in L-Form. Eine U-Form geht nur, wenn zwischen den Zeilen mindestens 100–120 cm Durchgang bleiben.",
+        "„Quadratische Küchen“: Hier passt eine zweizeilige Küche: in einer Zeile Spüle und Herd, in der anderen Kühlschrank, Backofen und Hochschränke als Stauraum."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "2. Das Arbeitsdreieck"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Das Arbeitsdreieck bilden die drei Hauptzonen der Küche: Kühlschrank, Herd und Spüle. Wie sie angeordnet sind, entscheidet darüber, wie bequem das Kochen ist. Als Richtwert gelten 1,2 bis 2,7 m zwischen je zwei davon: Näher wird es eng, weiter bedeutet unnötige Wege. So sieht das bei verschiedenen Grundrissen aus:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Küchenzeile“: Alles an einer Wand. Passt für schmale Küchen, bei einer langen Zeile geht man aber viel zwischen Kühlschrank und Herd hin und her.",
+        "„L-Küche“: Passt in die meisten Küchen. Spüle und Herd liegen meist auf beiden Seiten der Ecke, der Kühlschrank am Ende einer Zeile, und jede Zone ist zwei, drei Schritte entfernt.",
+        "„U-Küche“: Für großzügige Küchen, mit der meisten Arbeitsfläche und dem meisten Stauraum. Der Nachteil: Drei Möbelzeilen wirken schwer, deshalb verzichtet man auf einer Seite oft auf Oberschränke."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3. Insel und Halbinsel"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Eine Insel oder Halbinsel bringt zusätzliche Arbeitsfläche und Schränke, braucht aber Platz rundherum:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Insel“: Dafür braucht es eine großzügige Küche: Rund um die Insel bleiben mindestens 100 cm Durchgang. Die Insel dient als Arbeitsfläche, Frühstücksplatz oder Platz für Kochfeld und Spüle — dann werden die Leitungen schon bei der Sanierung hingeführt.",
+        "„Halbinsel“: Sie schließt an einer Seite an die Wand oder an die Küchenzeile an und braucht deshalb weniger Platz als eine Insel. Oft dient sie als Bartheke und trennt zugleich Küche und Wohnzimmer."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "4. Durchgänge und Höhen"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ein paar Maße, die Sie im Plan prüfen sollten:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Durchgänge“: Zwischen den Möbelzeilen oder zwischen Arbeitsplatte und Insel mindestens 100 cm, wenn eine Person kocht, und rund 120 cm, wenn zwei kochen.",
+        "„Fenster und Balkon“: Läuft die Arbeitsplatte unter dem Fenster durch, prüfen Sie, ob der Fensterflügel nicht an die Armatur stößt und die Balkontür aufgeht, ohne an die Schränke anzuschlagen.",
+        "„Höhe der Schränke“: Die Arbeitsplatte liegt meist auf 85–90 cm Höhe, die Unterkante der Oberschränke 50–60 cm darüber. Die genauen Maße richten sich nach der Körpergröße der Person, die öfter kocht."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "5. Materialien und Farben"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Materialien für die Küche wählt man danach, wie sie mit Wasser, Fett und Hitze zurechtkommen, und erst dann nach der Farbe:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Materialien“: Für die Arbeitsplatte eignen sich Stein (Quarzkomposit, Granit), Keramik oder Edelstahl — sie vertragen Wasser und Hitze. Holz geht auch, muss aber regelmäßig nachgeölt werden, vor allem rund um die Spüle.",
+        "„Farben“: In einer kleinen Küche lassen helle Fronten den Raum größer wirken. Dunkle Fronten passen in eine großzügige Küche oder nur in die untere Reihe: Mit hellen Oberschränken wirkt die Küche nicht erdrückend."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "6. Geräte und Beleuchtung"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Geräte und Licht kommen schon vor der Sanierung in die Planung — davon hängen Steckdosen und Anschlüsse ab:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Einbaugeräte“: Backofen, Geschirrspüler und Kühlschrank wählen Sie am besten vor der Küchenbestellung aus: Für sie werden Nischen in exakter Größe und eigene Steckdosen geplant, für ein Induktionskochfeld ein eigener Stromkreis.",
+        "„Beleuchtung“: Ein Luster allein reicht in der Küche nicht: An der Arbeitsplatte stehen Sie mit dem Rücken zur Raummitte und werfen sich selbst Schatten. Über der Arbeitsfläche braucht es eine Beleuchtung unter den Oberschränken, über dem Esstisch eine Pendelleuchte und das Grundlicht auf einem eigenen Schalter."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "7. Stauraum"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Damit alles Platz hat und leicht erreichbar ist:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Schränke bis zur Decke“: Deckenhohe oder zweireihige Oberschränke bringen ein, zwei zusätzliche Fächer für selten genutztes Geschirr, und oben sammelt sich kein Staub.",
+        "„Schubladen“: Unten sind Schubladen praktischer als Drehtürschränke: Eine Schublade lässt sich ganz herausziehen, und Sie müssen sich nicht bücken und hinten nach dem Topf suchen.",
+        "„Organizer“: Besteckeinsätze, Deckelhalter und Auszugsmechanismen in Eckschränken — so hat jedes Ding seinen Platz, und die Ecke wird genutzt."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "8. Deko und Beschläge"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Den Charakter einer Küche bestimmen meist die Details:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Dekorative Elemente“: Ein Bild oder Poster an einer freien Wand, Kräuter in Töpfen am Fensterbrett, Griffe aus Messing oder Leder statt der Standardgriffe. Griffe und Deko lassen sich später leicht tauschen, wenn Sie die Küche auffrischen möchten.",
+        "„Funktionale Akzente“: Armatur, Leuchte über dem Tisch, offenes Regal — auch Dinge, die man täglich benutzt, dürfen auffallen. Etwa eine schwarze oder messingfarbene Armatur auf heller Arbeitsplatte."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "9. Essplatz und Lüftung"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "In der Küche wird auch gefrühstückt und mit Gästen zusammengesessen — auch daran sollten Sie denken:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Polstersitze und Textilien“: Wenn genug Platz ist, passt zum Esstisch eine Eckbank oder eine Sitzbank mit Schubladen. Vorhänge und Bezüge für die Küche sollten leicht waschbar sein.",
+        "„Dunstabzug“: Der Dunstabzug sollte mindestens so breit sein wie das Kochfeld. Eine Abluft-Haube mit Anschluss an den Lüftungsschacht entfernt Gerüche besser als ein Umluftmodell mit Aktivkohlefilter — ist ein Schacht in der Nähe, ist sie die bessere Wahl."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "10. Ökologie und Nachhaltigkeit"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Eine umweltfreundliche Küche hängt an zwei Entscheidungen — woraus die Möbel bestehen und wie viel Strom die Geräte verbrauchen:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Umweltfreundliche Materialien“: Wählen Sie für Möbel und Oberflächen Holz, Furnier, beschichtete Spanplatten und MDF mit geringer Formaldehyd-Emission sowie Farben auf Wasserbasis.",
+        "„Energieeffiziente Geräte“: Wählen Sie Haushaltsgeräte mit hoher Energieeffizienzklasse — das senkt die Stromkosten."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Wenn Sie Hilfe bei der Küchenplanung brauchen, kommen Sie zu einer kostenlosen Beratung ins Studio <strong>DUMSKAYA DESIGN</strong> in Bratislava. Wir arbeiten seit mehr als 15 Jahren und machen Küchen komplett: Planung, Fertigung in der eigenen Tischlerei, Lieferung und Montage in Bratislava und Wien. Die Preise sind in beiden Städten gleich, die Lieferung ist im Preis inbegriffen."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Kostenlose Beratung vereinbaren",
+       "href": "/de/kontakt-innenarchitektur-wien-bratislava"
+      },
+      {
+       "text": "Realisierte Projekte",
+       "href": "/de/portfolio-innenarchitektur-projekte"
+      },
+      {
+       "text": "Preise der Designpakete",
+       "href": "/de/preise-innenarchitektur-wien-bratislava"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc0357376a1a22235b1a34",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

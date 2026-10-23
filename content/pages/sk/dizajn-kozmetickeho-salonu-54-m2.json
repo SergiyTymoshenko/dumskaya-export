@@ -1,0 +1,348 @@
+{
+ "path": "/sk/dizajn-kozmetickeho-salonu-54-m2",
+ "lang": "sk",
+ "type": "project",
+ "group": "commercial",
+ "title": "Dizajn kozmetického salónu 54 m² | DUMSKAYA DESIGN",
+ "description": "Kozmetický salón 54 m²: návrh interiéru (balík „Express“), 3D vizualizácia a výkresová dokumentácia. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+ "h1": "Dizajn interiéru kozmetického salónu, 54 m²",
+ "og_image": "6abe045b3ba7c7b833963e2b",
+ "alternates": {
+  "ru": "/interior-design-cosmetology-salon",
+  "ua": "/ua/dyzain-interieru-kosmetolohichnoho-salonu-54-m2",
+  "en": "/en/luxury-interior-cosmetology-salon",
+  "sk": "/sk/dizajn-kozmetickeho-salonu-54-m2",
+  "de": "/de/innenarchitektur-kosmetikstudio-54-m2"
+ },
+ "sections": [
+  {
+   "id": "69430484ca12a146ee280d24",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Dizajn interiéru kozmetického salónu, 54 m²"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Kozmetický salón s rozlohou 54 m². Vypracovali sme preň návrh interiéru v balíku <a href=\"/sk/dizajnovy-balik-express-bratislava-vieden\">„Express“</a>: dispozičné riešenie, sadu 3D vizualizácií a technickú dokumentáciu pre rekonštrukciu. Hlavnou úlohou bolo usporiadať miestnosti tak, aby sa klient pohodlne dostal od vchodu do ošetrovacej miestnosti a kozmetička mohla dobre pracovať s prístrojmi a nástrojmi."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Dispozícia"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Podľa pôdorysu s rozmiestnením nábytku je salón rozdelený na päť miestností, spolu 53,71 m²:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "vstupná hala s čakacou zónou — 10,88 m²;",
+        "recepcia — 9,72 m²;",
+        "ošetrovacia miestnosť č. 1 — 12,53 m²;",
+        "ošetrovacia miestnosť č. 2 — 16,48 m²;",
+        "WC — 4,10 m²."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Na zameraní skutočného stavu tvorili recepcia a budúca prvá ošetrovacia miestnosť jednu miestnosť s oknom, 22 m². Rozdelili sme ju nábytkovou zostavou, ktorá slúži ako priečka: zo strany ošetrovacej miestnosti sú v nej skrine, zo strany recepcie nika na výdajník vody. Vchod vedie do haly s čakacou zónou, odtiaľ sú aj dvere na WC. Druhá ošetrovacia miestnosť sa otvára z recepcie. V každej je na pláne lehátko, miesto pre prístroje a vozík na sterilné nástroje, v druhej navyše zostava s umývadlom."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Povrchy a nábytok"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Paleta je svetlá: biele steny, laminátová podlaha v dekore svetlého duba, pieskové a sivé odtiene. Recepčný pult je obložený štruktúrovanou omietkou s imitáciou kameňa, rovnakú omietku majú aj steny haly. V čakacej zóne sú dve kreslá so svetlým čalúnením a oblým operadlom, čierne stolíky na jednej nohe a biele kockové police na produkty v nike. Na stene za pultom je nástenný obraz: kresba tváre z tenkého čierneho drôtu."
+      },
+      {
+       "t": "p",
+       "html": "V prvej ošetrovacej miestnosti sú biele horné a spodné skrinky, na jednej stene fototapeta s kresbou mestských domov v sivých tónoch, svetlo z lištového systému s bodovými svietidlami a na oknách biele rolety. V druhej miestnosti je stena obložená béžovými lamelami, na nej vysoké zrkadlo v tenkom čiernom ráme a logo salónu. WC má veľkoformátový sivý obklad a omietku: závesná skrinka, závesné WC, biely rebríkový radiátor a LED podsvietenie pozdĺž rohu steny."
+      },
+      {
+       "t": "p",
+       "html": "Súbor výkresov obsahuje zameranie skutočného stavu, pôdorys s rozmiestnením nábytku a špecifikáciou a ďalšie listy, ukážky nájdete nižšie na tejto stránke."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6abe045b3ba7c7b833963e2b",
+       "alt": "Interiér recepcie kozmetického salónu"
+      },
+      {
+       "id": "694322d6b7700d1d0de3a4b1",
+       "alt": "Návrh recepcie kozmetického štúdia"
+      },
+      {
+       "id": "694322cfb7700d1d0de3a497",
+       "alt": "Čakacia zóna v kozmetickom salóne"
+      },
+      {
+       "id": "694322c8a2e24d7bd737ef52",
+       "alt": "Moderná recepcia salónu krásy"
+      },
+      {
+       "id": "6943228663082b971de5e05d",
+       "alt": "Interiér vstupnej časti kozmetického salónu"
+      },
+      {
+       "id": "694322c2a2e24d7bd737ef39",
+       "alt": "Dizajn recepčného pultu v salóne krásy"
+      },
+      {
+       "id": "694322ba63082b971de5e10f",
+       "alt": "Recepcia kozmetického salónu — interiér"
+      },
+      {
+       "id": "694322b4c557cef976c498a7",
+       "alt": "Interiér čakacej zóny salónu krásy"
+      },
+      {
+       "id": "694322afc557cef976c4988b",
+       "alt": "Dizajn recepcie pre kozmetické služby"
+      },
+      {
+       "id": "694322a663082b971de5e09e",
+       "alt": "Moderný interiér recepcie salónu"
+      },
+      {
+       "id": "6943229faf945c005304837e",
+       "alt": "Vstupná zóna kozmetického salónu — dizajn"
+      },
+      {
+       "id": "69432295af945c0053048349",
+       "alt": "Interiér salónu krásy s recepciou"
+      },
+      {
+       "id": "6943228daf945c0053048329",
+       "alt": "Moderný dizajn recepcie salónu krásy"
+      },
+      {
+       "id": "694323d7a2e24d7bd737f20e",
+       "alt": "Interiér ošetrovacej miestnosti kozmetičky"
+      },
+      {
+       "id": "694323d863082b971de5e43c",
+       "alt": "Dizajn kozmetickej ošetrovacej miestnosti"
+      },
+      {
+       "id": "694323d763082b971de5e438",
+       "alt": "Moderný interiér kozmetickej ošetrovacej miestnosti"
+      },
+      {
+       "id": "694323d8a2e24d7bd737f21a",
+       "alt": "Dizajn miestnosti na kozmetické procedúry"
+      },
+      {
+       "id": "694323f4c557cef976c49c26",
+       "alt": "Interiér miestnosti kozmetičky v modernom štýle"
+      },
+      {
+       "id": "694323f4b7700d1d0de3a773",
+       "alt": "Pracovná miestnosť kozmetičky — dizajn"
+      },
+      {
+       "id": "694323f4b7700d1d0de3a76d",
+       "alt": "Interiér procedúrnej miestnosti v kozmetickom salóne"
+      },
+      {
+       "id": "694323f4c557cef976c49c21",
+       "alt": "Dizajn kozmetickej miestnosti na ošetrenia"
+      },
+      {
+       "id": "694323f4af945c00530486cc",
+       "alt": "Miestnosť kozmetičky — interiér"
+      },
+      {
+       "id": "694323f4a2e24d7bd737f269",
+       "alt": "Interiér kozmetickej ošetrovacej miestnosti s prístrojmi"
+      },
+      {
+       "id": "694323fdaf945c00530486e8",
+       "alt": "Minimalistický dizajn miestnosti kozmetičky"
+      },
+      {
+       "id": "694323f963082b971de5e4a8",
+       "alt": "Interiér kozmetickej ošetrovacej miestnosti pre súkromnú prax"
+      },
+      {
+       "id": "6943240063082b971de5e4c4",
+       "alt": "Profesionálny interiér kozmetickej ošetrovacej miestnosti"
+      },
+      {
+       "id": "69432412b7700d1d0de3a7cf",
+       "alt": "WC v kozmetickom salóne — interiér"
+      },
+      {
+       "id": "69432413b7700d1d0de3a7d9",
+       "alt": "Dizajn WC v salóne krásy"
+      },
+      {
+       "id": "6943241263082b971de5e500",
+       "alt": "Interiér toalety v kozmetickom salóne"
+      },
+      {
+       "id": "69432413b7700d1d0de3a7db",
+       "alt": "Moderné WC salónu krásy"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ukážka technickej dokumentácie z dizajnového balíka „Express“"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "6943249ab7700d1d0de3a950",
+       "alt": "Dispozícia kozmetického salónu — výkres"
+      },
+      {
+       "id": "6943249aa2e24d7bd737f3fc",
+       "alt": "Pôdorys s rozmiestnením nábytku — kozmetický salón"
+      },
+      {
+       "id": "6943249ba2e24d7bd737f405",
+       "alt": "Zameranie skutočného stavu priestoru kozmetického salónu"
+      },
+      {
+       "id": "6943249ac557cef976c49dcb",
+       "alt": "Technická dokumentácia k návrhu interiéru salónu"
+      },
+      {
+       "id": "694324a3b7700d1d0de3a973",
+       "alt": "Pôdorys zónovania kozmetického salónu"
+      },
+      {
+       "id": "6943249ca2e24d7bd737f411",
+       "alt": "Realizačné výkresy kozmetického salónu"
+      },
+      {
+       "id": "694324acc557cef976c49deb",
+       "alt": "Dispozícia salónu krásy — technický výkres"
+      },
+      {
+       "id": "6943249ca2e24d7bd737f415",
+       "alt": "Výkres miestnosti kozmetičky"
+      },
+      {
+       "id": "694324a263082b971de5e65a",
+       "alt": "Technický výkres interiéru salónu krásy"
+      },
+      {
+       "id": "694324aea2e24d7bd737f469",
+       "alt": "Projektová dokumentácia kozmetického salónu"
+      },
+      {
+       "id": "694324b0af945c00530488ae",
+       "alt": "Rozmiestnenie prístrojov — kozmetický salón"
+      }
+     ],
+     "docs": true
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky projekty",
+       "href": "/sk/portfolio-dizajn-interieru"
+      },
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Ceny dizajnových balíkov",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc02148db0832389dfd21a",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

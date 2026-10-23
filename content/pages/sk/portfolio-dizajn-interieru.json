@@ -1,0 +1,582 @@
+{
+ "path": "/sk/portfolio-dizajn-interieru",
+ "lang": "sk",
+ "type": "portfolio",
+ "group": null,
+ "title": "Portfólio: projekty dizajnu interiéru | DUMSKAYA DESIGN",
+ "description": "Projekty štúdia DUMSKAYA DESIGN: byty, rodinné domy, vily, kancelárie a salóny. Fotografie a 3D vizualizácie interiérov. Štúdio v Bratislave a vo Viedni.",
+ "h1": "Príklady realizovaných návrhov interiérov",
+ "og_image": "6abd6a8e6bbe610384483447",
+ "alternates": {
+  "ru": "/proekty-interior-design",
+  "ua": "/ua/realizovani-dyzain-proekty-ta-arkhitekturni-rishennia",
+  "en": "/en/portfolio-interior-design-projects",
+  "sk": "/sk/portfolio-dizajn-interieru",
+  "de": "/de/portfolio-innenarchitektur-projekte"
+ },
+ "sections": [
+  {
+   "id": "60046d9a8e229e00212eebaf",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Príklady realizovaných návrhov interiérov"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Tu nájdete projekty štúdia: byty, rodinné domy a vily, kancelárie, salóny a obchody aj architektonické riešenia fasád. Na stránke každého projektu sú 3D vizualizácie alebo fotografie hotového objektu, plocha, mesto a popis: dispozícia, materiály, nábytok."
+      },
+      {
+       "t": "p",
+       "html": "Pri každom projekte je uvedené, čo presne štúdio urobilo: návrh interiéru, realizačné výkresy, nábytok na mieru z vlastnej výroby v Bratislave alebo rekonštrukciu na kľúč. Cenu návrhu pre váš objekt si vypočítate podľa <a href=\"/sk/cena-dizajnu-interieru-bratislava-vieden\">cien dizajnových balíkov</a>."
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Byt Metropolis, Bratislava, 75 m²",
+       "href": "/sk/dizajn-interieru-bytu-metropolis-bratislava-75-m2",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Interiérový dizajnér, Bratislava"
+       }
+      },
+      {
+       "title": "Byt v Kyjeve, 80 m²",
+       "href": "/sk/dizajn-interieru-bytu-kyjev-80-m2",
+       "image": {
+        "id": "6abd0a7d61617a4443ab2567",
+        "alt": "Interiérový dizajnér, Kyjev"
+       }
+      },
+      {
+       "title": "Byt Eurovea, Bratislava, 56 m²",
+       "href": "/sk/dizajn-interieru-bytu-eurovea-bratislava-56-m2",
+       "image": {
+        "id": "6abd6a8168c5e81567a1bfb4",
+        "alt": "Interiérový dizajnér, Bratislava"
+       }
+      },
+      {
+       "title": "Byt v Bratislave, 158 m²",
+       "href": "/sk/dizajn-mezonetoveho-bytu-bratislava-158-m2",
+       "image": {
+        "id": "6abd6a8e6bbe610384483447",
+        "alt": "Obývačka s kuchyňou — byt, Bratislava, 158 m²"
+       }
+      },
+      {
+       "title": "Rodinný dom 120 m²",
+       "href": "/sk/dizajn-interieru-rodinneho-domu-bratislava-120-m2",
+       "image": {
+        "id": "6abd6a6a61617a4443acb201",
+        "alt": "Obývačka s kuchyňou — rodinný dom, Bratislava, 120 m²"
+       }
+      },
+      {
+       "title": "Byt vo Viedni, 58 m²",
+       "href": "/sk/dizajn-interieru-bytu-vieden-58-m2",
+       "image": {
+        "id": "6abd6a794888499d20745202",
+        "alt": "Obývačka s kuchyňou — byt, Viedeň, 58 m²"
+       }
+      },
+      {
+       "title": "Rodinný dom, 140 m²",
+       "href": "/sk/dizajn-interieru-rodinneho-domu-dunajska-streda-140-m2",
+       "image": {
+        "id": "6abd6a9d68c5e81567a1c052",
+        "alt": "Dizajn interiéru rodinného domu v Dunajskej Strede, Slovensko — projekt štúdia DUMSKAYA DESIGN"
+       }
+      },
+      {
+       "title": "Rodinný dom, 212 m²",
+       "href": "/sk/dizajn-interieru-rodinneho-domu-charkov-212-m2",
+       "image": {
+        "id": "6abd6a716bbe6103844833be",
+        "alt": "Obývačka s kuchyňou — rodinný dom, 212 m²"
+       }
+      },
+      {
+       "title": "Byt vo Varšave, 43 m²",
+       "href": "/sk/dizajn-minimalistickeho-bytu-varsava-43-m2",
+       "image": {
+        "id": "6abd6b6368c5e81567a1c463",
+        "alt": "Byt vo Varšave, 43 m²"
+       }
+      },
+      {
+       "title": "Byt v Krakove, 63 m²",
+       "href": "/sk/dizajn-interieru-bytu-krakov-63-m2",
+       "image": {
+        "id": "6abd6b4e68c5e81567a1c3f1",
+        "alt": "Obývačka s kuchyňou a nábytkom na mieru — byt, Krakov, 63 m²"
+       }
+      },
+      {
+       "title": "Byt, 60 m² (terasa 18 m²)",
+       "href": "/sk/dizajn-interieru-bytu-s-terasou-60-m2",
+       "image": {
+        "id": "6abd6ab34888499d20745304",
+        "alt": "Obývačka s kuchyňou — návrh interiéru"
+       }
+      },
+      {
+       "title": "Byt, 54 m²",
+       "href": "/sk/dizajn-interieru-bytu-54-m2",
+       "image": {
+        "id": "6abd6b143ba7c7b83394fb01",
+        "alt": "Obývačka s kuchyňou — byt, 54 m²"
+       }
+      },
+      {
+       "title": "Byt, 45 m²",
+       "href": "/sk/dizajn-interieru-bytu-45-m2",
+       "image": {
+        "id": "6abd6b5c3ba7c7b83394fc44",
+        "alt": "Obývačka s kuchyňou — byt, 45 m²"
+       }
+      },
+      {
+       "title": "Byt, 48 m²",
+       "href": "/sk/dizajn-interieru-bytu-48-m2",
+       "image": {
+        "id": "6abd6ac73ba7c7b83394f91e",
+        "alt": "Návrh interiéru"
+       }
+      },
+      {
+       "title": "Byt v Bratislave, 58 m²",
+       "href": "/sk/dizajn-interieru-bytu-bratislava-58-m2",
+       "image": {
+        "id": "6abd6af84888499d20745492",
+        "alt": "Obývačka s kuchyňou — byt, Bratislava, 58 m²"
+       }
+      },
+      {
+       "title": "Byt, 52 m²",
+       "href": "/sk/dizajn-interieru-bytu-52-m2",
+       "image": {
+        "id": "6abd6aff68c5e81567a1c258",
+        "alt": "Obývačka s kuchyňou — byt, 52 m²"
+       }
+      },
+      {
+       "title": "Byt vo Varšave, 43 m²",
+       "href": "/sk/dizajn-interieru-bytu-varsava-43-m2",
+       "image": {
+        "id": "6abd6aaa6bbe6103844834dd",
+        "alt": "Byt vo Varšave, 43 m²"
+       }
+      },
+      {
+       "title": "Byt v Bratislave, 52 m²",
+       "href": "/sk/dizajn-interieru-bytu-bratislava-52-m2",
+       "image": {
+        "id": "6abd6b0c61617a4443acb569",
+        "alt": "Interiérový dizajnér, Bratislava"
+       }
+      },
+      {
+       "title": "Apartmán v Dubaji, 160 m²",
+       "href": "/sk/dizajn-interieru-apartmanu-dubaj-160-m2",
+       "image": {
+        "id": "6abd6aba3ba7c7b83394f8d8",
+        "alt": "Návrh interiéru — apartmán, Dubaj, 160 m²"
+       }
+      },
+      {
+       "title": "Apartmán v Los Angeles, 140 m²",
+       "href": "/sk/dizajn-interieru-apartmanu-los-angeles-140-m2",
+       "image": {
+        "id": "6abd6ac168c5e81567a1c102",
+        "alt": "Interiérový dizajnér, Los Angeles"
+       }
+      },
+      {
+       "title": "Apartmán v Prahe, 90 m²",
+       "href": "/sk/dizajn-interieru-apartmanu-praha-90-m2",
+       "image": {
+        "id": "6abd6aea61617a4443acb472",
+        "alt": "Obývačka s kuchyňou — apartmán, Praha, 90 m²"
+       }
+      },
+      {
+       "title": "Apartmán v New Yorku, 57 m²",
+       "href": "/sk/dizajn-interieru-apartmanu-new-york-57-m2",
+       "image": {
+        "id": "6abd6af268c5e81567a1c21a",
+        "alt": "Obývačka s kuchyňou — apartmán, New York, 57 m²"
+       }
+      },
+      {
+       "title": "Byt v Krakove, 64 m²",
+       "href": "/sk/dizajn-minimalistickeho-bytu-krakov-64-m2",
+       "image": {
+        "id": "6abd6b556bbe61038448383c",
+        "alt": "Spálňa s nábytkom na mieru — byt, Krakov, 64 m²"
+       }
+      },
+      {
+       "title": "Rodinný dom v Kyjeve, 217 m²",
+       "href": "/sk/dizajn-interieru-rodinneho-domu-kyjev-217-m2",
+       "image": {
+        "id": "6abd6b0561617a4443acb529",
+        "alt": "Obývačka s kuchyňou — rodinný dom, Kyjev, 217 m²"
+       }
+      },
+      {
+       "title": "Rodinný dom, Mníchov, Nemecko, 160 m²",
+       "href": "/sk/dizajn-interieru-rodinneho-domu-mnichov-160-m2",
+       "image": {
+        "id": "6abd6b3b4888499d2074560d",
+        "alt": "Návrh interiéru — rodinný dom, Mníchov, 160 m²"
+       }
+      },
+      {
+       "title": "Rodinný dom, Berlín, 215 m²",
+       "href": "/sk/dizajn-interieru-rodinneho-domu-berlin-215-m2",
+       "image": {
+        "id": "6abd6aa461617a4443acb2fc",
+        "alt": "Obývačka s kuchyňou — rodinný dom, Berlín, 215 m²"
+       }
+      },
+      {
+       "title": "Byt v Kyjeve, 119 m² (terasa 30 m²)",
+       "href": "/sk/dizajn-interieru-bytu-kyjev-119-m2",
+       "image": {
+        "id": "6abd6a956bbe610384483468",
+        "alt": "Obývačka s kuchyňou — návrh interiéru"
+       }
+      },
+      {
+       "title": "Moderná klasika, Londýn, 120 m²",
+       "href": "/sk/dizajn-interieru-bytu-londyn-120-m2",
+       "image": {
+        "id": "6abceda061617a4443aa9440",
+        "alt": "Obývačka s kuchyňou — byt, Londýn, 120 m²"
+       }
+      },
+      {
+       "title": "Apartmán, Madrid, Španielsko, 107 m²",
+       "href": "/sk/dizajn-interieru-apartmanu-madrid-107-m2",
+       "image": {
+        "id": "6abd6ad368c5e81567a1c165",
+        "alt": "Obývačka s kuchyňou — apartmán, Madrid, 107 m²"
+       }
+      },
+      {
+       "title": "Apartmán, Barcelona, Španielsko, 108 m²",
+       "href": "/sk/dizajn-interieru-apartmanu-barcelona-108-m2",
+       "image": {
+        "id": "6abd6ae14888499d20745418",
+        "alt": "Obývačka s kuchyňou — apartmán, Barcelona, 108 m²"
+       }
+      },
+      {
+       "title": "Byt, 51 m²",
+       "href": "/sk/dizajn-interieru-bytu-51-m2",
+       "image": {
+        "id": "6abd6b1b68c5e81567a1c2e1",
+        "alt": "Obývačka s kuchyňou — byt, 51 m²"
+       }
+      },
+      {
+       "title": "Byt, Viedeň, Rakúsko, 115 m²",
+       "href": "/sk/dizajn-interieru-bytu-vieden-115-m2",
+       "image": {
+        "id": "6abd6b354888499d207455da",
+        "alt": "Obývačka s kuchyňou — byt, Viedeň, 115 m²"
+       }
+      },
+      {
+       "title": "Byt, Varna, Bulharsko, 60 m²",
+       "href": "/sk/dizajn-interieru-bytu-varna-60-m2",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Obývačka s kuchyňou — byt, Varna, 60 m²"
+       }
+      },
+      {
+       "title": "Byt, 47 m²",
+       "href": "/sk/dizajn-trojizboveho-bytu-47-m2",
+       "image": {
+        "id": "6abd6b696bbe610384483889",
+        "alt": "Obývačka s kuchyňou — návrh interiéru"
+       }
+      },
+      {
+       "title": "Vila, Madrid, Španielsko, 179 m²",
+       "href": "/sk/dizajn-interieru-vily-madrid-179-m2",
+       "image": {
+        "id": "6abd6b2668c5e81567a1c33b",
+        "alt": "Návrh interiéru — vila, Madrid, 179 m²"
+       }
+      },
+      {
+       "title": "Vila, Burgas, Bulharsko, 220 m²",
+       "href": "/sk/dizajn-interieru-vily-burgas-220-m2",
+       "image": {
+        "id": "6abd6b434888499d20745636",
+        "alt": "Obývačka s kuchyňou — vila, Burgas, 220 m²"
+       }
+      },
+      {
+       "title": "Rodinný dom, 230 m²",
+       "href": "/sk/dizajn-interieru-rodinneho-domu-230-m2",
+       "image": {
+        "id": "6abd6b2e4888499d207455b1",
+        "alt": "Obývačka s kuchyňou — návrh interiéru"
+       }
+      },
+      {
+       "title": "Mezonetový byt, 43 m²",
+       "href": "/sk/dizajn-mezonetoveho-bytu-43-m2",
+       "image": {
+        "id": "6abd6acd6bbe6103844835b3",
+        "alt": "Návrh interiéru — mezonetový byt, Poznaň, 43 m²"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66c3dbcd60fbdf863e623e3f",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Návrhy interiérov rôznych komerčných priestorov"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Kozmetický salón 54 m²",
+       "href": "/sk/dizajn-kozmetickeho-salonu-54-m2",
+       "image": {
+        "id": "6abe045b3ba7c7b833963e2b",
+        "alt": "Návrh interiéru — kozmetický salón, 54 m²"
+       }
+      },
+      {
+       "title": "Salón krásy 63 m²",
+       "href": "/sk/dizajn-salonu-krasy-63-m2",
+       "image": {
+        "id": "6abe04846bbe610384497d7b",
+        "alt": "Návrh interiéru — salón krásy, 63 m²"
+       }
+      },
+      {
+       "title": "Kancelária 500 m²",
+       "href": "/sk/dizajn-kancelarie-500-m2",
+       "image": {
+        "id": "66f5d16697317fa68a804f5a",
+        "alt": "Návrh interiéru — kancelárie, 500 m²"
+       }
+      },
+      {
+       "title": "Fotoštúdio 130 m²",
+       "href": "/sk/dizajn-fotostudia-130-m2",
+       "image": {
+        "id": "6abe048a61617a4443adfce2",
+        "alt": "Návrh interiéru — fotoštúdio, 130 m²"
+       }
+      },
+      {
+       "title": "Butik dámskej módy v Kyjeve, 140 m²",
+       "href": "/sk/dizajn-butiku-s-oblecenim-kyjev-140-m2",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Návrh interiéru butiku dámskej módy"
+       }
+      },
+      {
+       "title": "Parný kúpeľ (sauna), 120 m²",
+       "href": "/sk/dizajn-interieru-sauny-120-m2",
+       "image": {
+        "id": "6abe044a6bbe610384497c6d",
+        "alt": "Komerčný interiér — sauna, 120 m²"
+       }
+      },
+      {
+       "title": "Kancelária 140 m²",
+       "href": "/sk/dizajn-kancelarie-140-m2",
+       "image": {
+        "id": "6abe04703ba7c7b833963eaa",
+        "alt": "Dizajn interiéru kancelárie"
+       }
+      },
+      {
+       "title": "Kancelária 53 m², Poznaň",
+       "href": "/sk/dizajn-kancelarie-poznan-53-m2",
+       "image": {
+        "id": "6abe04546bbe610384497c98",
+        "alt": "Návrh interiéru — kancelária, Poznaň, 53 m²"
+       }
+      },
+      {
+       "title": "Kancelária riaditeľa 7 m²",
+       "href": "/sk/dizajn-kancelarie-riaditela-7-m2",
+       "image": {
+        "id": "6abe046261617a4443adfc3e",
+        "alt": "Návrh interiéru kancelárie riaditeľa"
+       }
+      },
+      {
+       "title": "Obchod 50 m²",
+       "href": "/sk/dizajn-predajne-50-m2",
+       "image": {
+        "id": "6abe047d4888499d2075a16a",
+        "alt": "Návrh interiéru obchodu"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66b61d8cd7827983548826fc",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Príklady architektonických projektov s realizáciou stavebných prác"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Vila, Španielsko, Marbella",
+       "href": "/sk/navrh-fasady-vily-marbella",
+       "image": {
+        "id": "66b619f623f9a34a612c9e7d",
+        "alt": "Architektonický návrh — vila, Marbella"
+       }
+      },
+      {
+       "title": "3D modelovanie architektonickej štúdie fasády domu",
+       "href": "/sk/3d-vizualizacia-fasady-rodinneho-domu",
+       "image": {
+        "id": "673a059eece0e84849b9e2cf",
+        "alt": "3D vizualizácia fasády budovy"
+       }
+      },
+      {
+       "title": "Rodinný dom",
+       "href": "/sk/architektonicky-navrh-fasad-rodinneho-domu",
+       "image": {
+        "id": "66a56e39d68a3eb051612386",
+        "alt": "Rodinný dom, architektonické riešenie"
+       }
+      },
+      {
+       "title": "Architektonické riešenie fasády barbershopu, Ukrajina, Kyjev",
+       "href": "/sk/navrh-fasady-barbershopu-kyjev",
+       "image": {
+        "id": "66d313f8e6210d11a55d877c",
+        "alt": "Návrh fasády — barbershop, Kyjev"
+       }
+      },
+      {
+       "title": "Architektonické riešenie: altánok s pergolou",
+       "href": "/sk/altanok-s-pergolou-navrh-realizacia",
+       "image": {
+        "id": "66d476c1e93b01287b01e50b",
+        "alt": "Architektonický návrh — altánok s pergolou pri rodinnom dome"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66a0fb2ca35d7b20d86ceec0",
+   "blocks": [
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Ceny dizajnových balíkov",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cbba929b62c896a9fd05f0",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

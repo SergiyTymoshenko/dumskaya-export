@@ -1,0 +1,207 @@
+{
+ "path": "/sk/3d-vizualizacia-fasady-rodinneho-domu",
+ "lang": "sk",
+ "type": "project",
+ "group": "architecture",
+ "title": "3D vizualizácia fasády rodinného domu | DUMSKAYA DESIGN",
+ "description": "Štúdia fasády rodinného domu a sadových úprav pozemku s fotorealistickou 3D vizualizáciou. Štúdio DUMSKAYA DESIGN, Bratislava a Viedeň.",
+ "h1": "3D vizualizácia fasády rodinného domu a zelene na pozemku",
+ "og_image": "686bd018c0ec2ed6ae939562",
+ "alternates": {
+  "ru": "/3d-vizualizaciya-fasada-bratislava",
+  "ua": "/ua/3d-vizualizaciya-fasadu-kyiv",
+  "en": "/en/3d-visualization-interior-design-private-house-facade-landscaping",
+  "sk": "/sk/3d-vizualizacia-fasady-rodinneho-domu",
+  "de": "/de/3d-visualisierung-fassade-garten"
+ },
+ "sections": [
+  {
+   "id": "673a04e92316b78d4988bfe7",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "3D vizualizácia fasády rodinného domu a zelene na pozemku"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Štúdia fasády rodinného domu a výsadby na pozemku vo fotorealistickej 3D vizualizácii. Dom aj záhradu sme spojili do jednej scény: povrch stien, strechu, okná, terasu, bazén a výsadbu. K projektu patrí aj videoprehliadka exteriéru, v ktorej vidieť fasádu a záhradu z rôznych miest pozemku."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Fasáda a strecha"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Dom má podkrovie pod sedlovou strechou. Krytina je falcovaná, grafitovosivá, so strešnými oknami a bielym komínom. Steny sú omietnuté nabielo, druhým materiálom fasády je tmavé drevo. Je ním obložený vikier na streche v bielom ráme, rohový arkier a časť steny pri vchode."
+      },
+      {
+       "t": "p",
+       "html": "Zo záhrady vedú na terasu veľké posuvné dvere, nad nimi je biela lamelová strieška. Vyššie sú dve vysoké okná s francúzskymi balkónmi a čiernym kovovým zábradlím. Od príjazdu je garáž so sivou sekcionálnou bránou, drevené vchodové dvere a nad vstupom balkón so skleneným zábradlím. Odkvapy a rámy sú tmavé, v tóne strechy."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Záhrada a oddych pri bazéne"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Pozemok je riešený v dvoch úrovniach. Pri dome je drevená terasa s prútenými kreslami. Nižšie, za opornou stenou zo sivého betónu, je drevená plocha so štyrmi lehátkami a bazén obložený svetlou dlažbou. Úrovne spájajú široké schody."
+      },
+      {
+       "t": "p",
+       "html": "Vo výsadbe je trávnik, okrasné trávy s nadýchanými metlinami, veľkolisté hosty, fialové kvitnúce trvalky pozdĺž terasy a stromy s ružovými jarnými kvetmi. Pri vchode rastie tvarovaná borovica a ležia dekoratívne balvany. V rohu záhrady visí závesné kreslo v tvare kokónu."
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Prečo vizualizovať dom pred stavbou"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Na vizualizácii vopred vidieť, ako spolu pôsobia biela omietka, drevo a plechová krytina, kam zasadiť strom, aby nezacloňoval okná, a ako vyzerá terasa zo záhrady. Varianty farieb a obkladov porovnávame na jednom modeli — zmeniť ich na obrázku je jednoduchšie ako na stavbe. Obrázky a video sa hodia na prezentáciu a schvaľovanie projektu."
+      },
+      {
+       "t": "p",
+       "html": "Takéto vizualizácie robíme pre rodinné domy na Slovensku a v ďalších krajinách Európy. O projektovaní domov sa dočítate v časti <a href=\"/sk/architektura-projektovanie-domov-bratislava\">architektúra</a>."
+      }
+     ]
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "686bd026fc98b09e4ae03c42",
+       "alt": "3D vizualizácia fasády rodinného domu a zelene, Bratislava, Slovensko"
+      },
+      {
+       "id": "686bd018c0ec2ed6ae939562",
+       "alt": "Fotorealistická vizualizácia fasády domu a dvora, Bratislava, Slovensko"
+      },
+      {
+       "id": "686bd00a82fd6eb56da7b6ce",
+       "alt": "3D vizualizácia exteriéru rodinného domu so záhradou, Bratislava, Slovensko"
+      },
+      {
+       "id": "686bcffc4d5b394d886164d5",
+       "alt": "Vizualizácia modernej fasády domu so stromami a trávnikom, Bratislava, Slovensko"
+      },
+      {
+       "id": "686bcfbe29b44dd96a3d2a5f",
+       "alt": "Architektonická 3D vizualizácia domu a úpravy pozemku, Bratislava, Slovensko"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "3D prehliadka exteriéru rodinného domu"
+    },
+    {
+     "type": "video",
+     "youtube": "WEQFdDNkEeE",
+     "poster": "686bd018c0ec2ed6ae939562"
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Všetky projekty",
+       "href": "/sk/portfolio-dizajn-interieru"
+      },
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Ceny dizajnových balíkov",
+       "href": "/sk/3d-vizualizacia-fasady-cena"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc00fb376a1a22235af746",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

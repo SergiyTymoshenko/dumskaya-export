@@ -1,0 +1,116 @@
+{
+ "path": "/de/kontakt-innenarchitektur-wien-bratislava",
+ "lang": "de",
+ "type": "contact",
+ "group": null,
+ "title": "Kontakt DUMSKAYA DESIGN — Wien und Bratislava",
+ "description": "Telefon in Wien und Bratislava, E-Mail und Anfrageformular. Kostenlose Beratung zu Innenarchitektur, Möbeln nach Maß und schlüsselfertiger Sanierung.",
+ "h1": "Kontakt zum Studio für Innenarchitektur",
+ "og_image": "655410c220a5eb000f971701",
+ "alternates": {
+  "ru": "/contact-studio-interior-design-bratislava-vienna",
+  "ua": "/ua/contact-studio-interior-design-bratislava-vienna",
+  "en": "/en/contact-studio-interior-design-bratislava-vienna",
+  "sk": "/sk/kontakt-bratislava-vieden",
+  "de": "/de/kontakt-innenarchitektur-wien-bratislava"
+ },
+ "sections": [
+  {
+   "id": "5d6533289ad68b0023dd3cd6",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Kontakt zum Studio für Innenarchitektur"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Rufen Sie an, schreiben Sie uns auf <strong>Telegram</strong> oder <strong>WhatsApp</strong> oder senden Sie eine Anfrage über das Formular. Wir antworten innerhalb eines Werktags."
+      },
+      {
+       "t": "p",
+       "html": "Das Studio befindet sich in Bratislava, Súkennícka 1, im Bezirk Ružinov. Besuchen Sie uns nach Terminvereinbarung: Wir zeigen Ihnen Material- und Beschlagmuster und besprechen Ihr Projekt."
+      },
+      {
+       "t": "p",
+       "html": "In Wien treffen wir uns direkt im Objekt: Aufmaß, Beratung und künstlerische Oberleitung laufen dort genauso wie in Bratislava. Die erste Beratung ist kostenlos."
+      },
+      {
+       "t": "p",
+       "html": "Schreiben Sie in Ihrer Anfrage Stadt, Fläche und was Sie brauchen: Planung, Möbel, Küche oder Sanierung. Wenn Sie einen Grundriss vom Bauträger haben, schicken Sie ihn per Messenger. Dann wird die Beratung konkreter."
+      }
+     ]
+    },
+    {
+     "type": "form"
+    }
+   ]
+  },
+  {
+   "id": "69cbf403c4c90529feccfb79",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Leistungen des Studios für Innenarchitektur"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Innenarchitektur Wohnen",
+       "href": "/de/innenarchitekt-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Innenarchitekt, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Innenarchitektur Gewerbe",
+       "href": "/de/innenarchitektur-buero-geschaeft-wien",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Innenarchitektur für Gewerbe, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß",
+       "href": "/de/moebel-nach-mass-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Möbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Möbel nach Maß für Unternehmen",
+       "href": "/de/moebel-nach-mass-buero-gewerbe-wien",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Büromöbel nach Maß, Fertigung, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Küchen nach Maß",
+       "href": "/de/kuechen-nach-mass-katalog-wien-bratislava",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Küche nach Maß, Bratislava, Wien"
+       }
+      },
+      {
+       "title": "Sanierung schlüsselfertig",
+       "href": "/de/schluesselfertige-sanierung-wien-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Sanierung schlüsselfertig, Preis, Bratislava, Wien"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

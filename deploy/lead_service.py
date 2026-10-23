@@ -52,6 +52,8 @@ THANKS = {
     "ru": ("Заявка отправлена", "Мы свяжемся с вами в течение рабочего дня.", "Вернуться на сайт"),
     "ua": ("Заявку надіслано", "Ми зв’яжемося з вами протягом робочого дня.", "Повернутися на сайт"),
     "en": ("Request sent", "We will get back to you within one working day.", "Back to the website"),
+    "sk": ("Žiadosť bola odoslaná", "Ozveme sa vám do jedného pracovného dňa.", "Späť na web"),
+    "de": ("Anfrage gesendet", "Wir melden uns innerhalb eines Werktags.", "Zurück zur Website"),
 }
 
 

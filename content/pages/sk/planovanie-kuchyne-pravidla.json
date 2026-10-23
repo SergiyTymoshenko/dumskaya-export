@@ -1,0 +1,536 @@
+{
+ "path": "/sk/planovanie-kuchyne-pravidla",
+ "lang": "sk",
+ "type": "article",
+ "group": null,
+ "title": "Ako navrhnúť pohodlnú kuchyňu: pravidlá | DUMSKAYA",
+ "description": "Pracovný trojuholník, úložné zóny, vzdialenosti a osvetlenie: ako navrhnúť pohodlnú a praktickú kuchyňu. Rady interiérového dizajnéra.",
+ "h1": "Ako správne navrhnúť pohodlnú a funkčnú kuchyňu?",
+ "og_image": "66c511596549f3d91ef8764e",
+ "alternates": {
+  "ru": "/kak-pravilno-organizovat-udobnuyu-i-funkcionalnuyu-kuhnyu",
+  "ua": "/ua/pryntsypy-rozmishchennia-mebliv-na-kukhni",
+  "en": "/en/kitchen-layout-rules",
+  "sk": "/sk/planovanie-kuchyne-pravidla",
+  "de": "/de/kueche-planen-regeln"
+ },
+ "sections": [
+  {
+   "id": "67d8a2794b675ee497811008",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Model kuchyne K-06",
+       "href": "/sk/kuchyna-na-mieru-k-06-minimalisticka-biela",
+       "image": {
+        "id": "67c8c5edbc98e6d349021946",
+        "alt": "Kuchyňa na mieru"
+       }
+      },
+      {
+       "title": "Model kuchyne K-05",
+       "href": "/sk/kuchyna-na-mieru-k-05-klasicka-bezova",
+       "image": {
+        "id": "67d2ce3732bfd979ec7466ca",
+        "alt": "Kuchyňa na mieru"
+       }
+      },
+      {
+       "title": "Model kuchyne K-11",
+       "href": "/sk/kuchyna-na-mieru-k-11-moderna-siva",
+       "image": {
+        "id": "67d2d3d532bfd979ec747e9e",
+        "alt": "Nábytok na mieru"
+       }
+      },
+      {
+       "title": "Model kuchyne K-08",
+       "href": "/sk/kuchyna-na-mieru-k-08-minimalisticka-hneda",
+       "image": {
+        "id": "67d2cfa84385e682489fe2ff",
+        "alt": "Kuchyňa na mieru, model K-08"
+       }
+      },
+      {
+       "title": "Model kuchyne K-03",
+       "href": "/sk/kuchyna-na-mieru-k-03-moderna-cierna",
+       "image": {
+        "id": "67d2c0e46ad366460788472f",
+        "alt": "Kuchyňa na mieru, model K-03"
+       }
+      },
+      {
+       "title": "Model kuchyne K-04",
+       "href": "/sk/kuchyna-na-mieru-k-04-moderna-siva",
+       "image": {
+        "id": "67c8be7ee5449e0536081d2e",
+        "alt": "Kuchyňa na mieru z katalógu štúdia"
+       }
+      },
+      {
+       "title": "Model kuchyne K-41",
+       "href": "/sk/kuchyna-na-mieru-k-41-siva-rovna",
+       "image": {
+        "id": "67cb0bfd807a287f628edace",
+        "alt": "Kuchyňa na mieru z katalógu štúdia"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67ebac8c14296ee5989b4168",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Model kuchyne K-06",
+       "href": "/sk/kuchyna-na-mieru-k-06-minimalisticka-biela",
+       "image": {
+        "id": "67c8c5edbc98e6d349021946",
+        "alt": "Kuchyňa na mieru"
+       }
+      },
+      {
+       "title": "Model kuchyne K-05",
+       "href": "/sk/kuchyna-na-mieru-k-05-klasicka-bezova",
+       "image": {
+        "id": "67d2ce3732bfd979ec7466ca",
+        "alt": "Kuchyňa na mieru"
+       }
+      },
+      {
+       "title": "Model kuchyne K-11",
+       "href": "/sk/kuchyna-na-mieru-k-11-moderna-siva",
+       "image": {
+        "id": "67d2d3d532bfd979ec747e9e",
+        "alt": "Nábytok na mieru"
+       }
+      },
+      {
+       "title": "Model kuchyne K-08",
+       "href": "/sk/kuchyna-na-mieru-k-08-minimalisticka-hneda",
+       "image": {
+        "id": "67d2cfa84385e682489fe2ff",
+        "alt": "Kuchyňa na mieru, model K-08"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "67ebac8814296ee5989b4113",
+   "blocks": [
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Model kuchyne K-06",
+       "href": "/sk/kuchyna-na-mieru-k-06-minimalisticka-biela",
+       "image": {
+        "id": "67c8c5edbc98e6d349021946",
+        "alt": "Kuchyňa na mieru"
+       }
+      },
+      {
+       "title": "Model kuchyne K-05",
+       "href": "/sk/kuchyna-na-mieru-k-05-klasicka-bezova",
+       "image": {
+        "id": "67d2ce3732bfd979ec7466ca",
+        "alt": "Kuchyňa na mieru"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "66a24b1e73766597ae381002",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 1,
+     "text": "Ako správne navrhnúť pohodlnú a funkčnú kuchyňu?"
+    },
+    {
+     "type": "gallery",
+     "images": [
+      {
+       "id": "66b1632622400dcb00b4a99b",
+       "alt": "Návrh a výroba kuchyne na mieru"
+      },
+      {
+       "id": "66c511596549f3d91ef8764e",
+       "alt": "Obývačka s kuchyňou — mezonetový byt v Bratislave, 158 m²"
+      },
+      {
+       "id": "66c51159ef7f2fa45044aee2",
+       "alt": "Obývačka s kuchyňou — mezonetový byt v Bratislave, 158 m²"
+      },
+      {
+       "id": "66c511666549f3d91ef87690",
+       "alt": "Obývačka s kuchyňou — mezonetový byt v Bratislave, 158 m²"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87656",
+       "alt": "Obývačka s kuchyňou — mezonetový byt v Bratislave, 158 m²"
+      },
+      {
+       "id": "66c5115b6549f3d91ef87657",
+       "alt": "Obývačka s kuchyňou — mezonetový byt v Bratislave, 158 m²"
+      },
+      {
+       "id": "66c511576549f3d91ef8763c",
+       "alt": "Obývačka s kuchyňou — mezonetový byt v Bratislave, 158 m²"
+      },
+      {
+       "id": "66b1774958abfced792fc4af",
+       "alt": "Obývačka s kuchyňou — rodinný dom v Berlíne, 215 m²"
+      },
+      {
+       "id": "66b1774622400dcb00b4baf9",
+       "alt": "Obývačka s kuchyňou — rodinný dom v Berlíne, 215 m²"
+      },
+      {
+       "id": "66b1774f9490292586e32dfb",
+       "alt": "Obývačka s kuchyňou — rodinný dom v Berlíne, 215 m²"
+      },
+      {
+       "id": "66b4e1468d5739e4336a98d6",
+       "alt": "Predsieň — byt, 60 m²"
+      },
+      {
+       "id": "66b166594c04c27fce4a2bdb",
+       "alt": "Obývačka s kuchyňou — byt v Kyjeve, 119 m²"
+      },
+      {
+       "id": "66b1665a22400dcb00b4ad91",
+       "alt": "Obývačka s kuchyňou — byt v Kyjeve, 119 m²"
+      },
+      {
+       "id": "66b1632322400dcb00b4a98f",
+       "alt": "Obývačka s kuchyňou — byt v Kyjeve, 119 m²"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Ako rozmiestniť nábytok v kuchyni"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "O tom, či bude kuchyňa pohodlná, sa rozhoduje pri návrhu dispozície: kde bude drez, varná doska a chladnička a koľko krokov je medzi nimi. Toto sú pravidlá, ktorými začíname projekt:"
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "1. Tvar a rozmery kuchyne"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Dispozícia sa vyberá podľa tvaru a rozmerov miestnosti:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Malé kuchyne“: Rovná alebo rohová linka: drez, varná doska a chladnička sú pozdĺž jednej alebo dvoch stien a stred miestnosti zostáva voľný.",
+        "„Úzke kuchyne“: Nábytok sa stavia pozdĺž dlhšej steny — rovno alebo do tvaru L. Linka v tvare U je možná, len ak medzi radmi zostane priechod aspoň 100–120 cm.",
+        "„Štvorcové kuchyne“: Hodí sa dvojradová linka: v jednom rade drez a varná doska, v druhom chladnička, rúra a vysoké skrine na odkladanie."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "2. Pracovný trojuholník"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Pracovný trojuholník tvoria tri hlavné zóny kuchyne: chladnička, varná doska a drez. Od ich rozmiestnenia závisí, ako pohodlne sa vám bude variť. Orientačne by medzi ktorýmikoľvek dvoma mali byť 1,2 až 2,7 m: bližšie je to tesné, ďalej robíte zbytočné kroky. Ako to funguje pri rôznych dispozíciách:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Rovná linka“: Všetko pozdĺž jednej steny. Hodí sa do úzkych kuchýň, no pri dlhej linke sa medzi chladničkou a varnou doskou veľa nachodíte.",
+        "„Linka v tvare L“: Hodí sa do väčšiny kuchýň. Drez a varná doska sú zvyčajne na rôznych stranách rohu, chladnička na konci jedného z radov a ku každej zóne sú dva-tri kroky.",
+        "„Linka v tvare U“: Pre priestranné kuchyne, s najväčšou pracovnou plochou a najviac skrinkami. Nevýhodou je, že tri rady nábytku pôsobia ťažkopádne, preto sa na jednej strane často vynechávajú horné skrinky."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "3. Ostrov a polostrov"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Ostrov alebo polostrov pridá pracovnú plochu a skrinky, potrebuje však okolo seba voľné miesto:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Ostrov“: Potrebujete priestrannú kuchyňu: okolo ostrova treba nechať priechod aspoň 100 cm. Ostrov slúži ako pracovná plocha, miesto na raňajky alebo na varnú dosku a drez — vtedy sa k nemu rozvody privádzajú už počas rekonštrukcie.",
+        "„Polostrov“: Jednou stranou nadväzuje na stenu alebo na linku, preto zaberá menej miesta ako ostrov. Často slúži ako barový pult a zároveň oddeľuje kuchyňu od obývačky."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "4. Priechody a výšky"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Niekoľko rozmerov, ktoré si oplatí skontrolovať na pôdoryse:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Priechody“: Medzi radmi nábytku alebo medzi pracovnou doskou a ostrovom aspoň 100 cm, ak varí jeden človek, a približne 120 cm, ak varia dvaja.",
+        "„Okná a balkón“: Ak pracovná doska vedie popod okno, overte si, že krídlo nezavadí o batériu a balkónové dvere sa otvoria bez toho, aby narazili do skriniek.",
+        "„Výška skriniek“: Pracovná doska býva vo výške 85–90 cm a spodný okraj horných skriniek o 50–60 cm vyššie. Presné čísla sa prispôsobujú výške toho, kto varí častejšie."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "5. Materiály a farby"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Materiály do kuchyne sa vyberajú podľa toho, ako znášajú vodu, mastnotu a teplo, a až potom podľa farby:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Materiály“: Na pracovnú dosku sa hodí kameň (kremenný aglomerát, žula), keramika alebo nehrdzavejúca oceľ — nevadí im voda ani horúce nádoby. Drevo je tiež možné, ale treba ho pravidelne ošetrovať olejom, najmä pri dreze.",
+        "„Farby“: V malej kuchyni svetlé dvierka opticky zväčšia priestor. Tmavé dobre vyzerajú v priestrannej kuchyni alebo len v spodnom rade: so svetlými hornými skrinkami kuchyňa nepôsobí ťaživo."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "6. Spotrebiče a osvetlenie"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Spotrebiče a svetlá treba zahrnúť do projektu ešte pred rekonštrukciou — od nich závisia zásuvky a vývody:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Vstavané spotrebiče“: Modely rúry, umývačky riadu a chladničky je lepšie vybrať pred objednávkou kuchyne: robia sa pre ne niky presných rozmerov a samostatné zásuvky a pre indukčnú varnú dosku samostatný elektrický okruh.",
+        "„Osvetlenie“: Jeden luster v kuchyni nestačí: pri pracovnej doske stojíte chrbtom k stredu miestnosti a sami si tienite. Nad pracovnou plochou treba osvetlenie pod hornými skrinkami, nad jedálenským stolom závesné svietidlo a celkové osvetlenie na samostatnom vypínači."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "7. Úložný priestor"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Aby sa všetko zmestilo a bolo ľahko na dosah:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Skrinky až po strop“: Horné skrinky až po strop alebo v dvoch radoch pridajú jednu-dve police na málo používaný riad a navrchu sa na nich neusádza prach.",
+        "„Výsuvné zásuvky“: V spodnom rade sú zásuvky pohodlnejšie ako skrinky s dvierkami: zásuvka sa vysunie celá a nemusíte sa zohýbať a hľadať hrniec vzadu.",
+        "„Organizéry“: Príborníky, deliče na pokrievky a výsuvné mechanizmy v rohových skrinkách — každá vec má svoje miesto a roh zostane využitý."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "8. Dekorácie a kovanie"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Charakter kuchyne najčastejšie určujú detaily:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Dekoratívne prvky“: Obraz alebo plagát na voľnej stene, bylinky v kvetináčoch na parapete, úchytky z mosadze alebo kože namiesto štandardných. Úchytky a dekorácie sa dajú neskôr ľahko vymeniť, keď budete chcieť kuchyňu osviežiť.",
+        "„Funkčné akcenty“: Batéria, svietidlo nad stolom, otvorená polica — aj veci, ktoré používate každý deň, môžu byť výrazné. Napríklad čierna alebo mosadzná batéria na svetlej pracovnej doske."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "9. Jedálenská časť a vetranie"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "V kuchyni sa aj raňajkuje a sedí s hosťami — aj na to treba myslieť:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Čalúnené sedenie a textil“: Ak je dosť miesta, k jedálenskému stolu sa hodí rohová lavica alebo lavica s úložnými zásuvkami. Závesy a poťahy do kuchyne vyberajte také, ktoré sa dajú ľahko prať.",
+        "„Digestor“: Digestor má byť aspoň taký široký ako varná doska. Digestor s odvodom do vetracieho potrubia odstraňuje pachy lepšie ako recirkulačný s uhlíkovým filtrom, preto ak je potrubie blízko, oplatí sa zvoliť ho."
+       ]
+      }
+     ]
+    },
+    {
+     "type": "heading",
+     "level": 3,
+     "text": "10. Ekológia a udržateľnosť"
+    },
+    {
+     "type": "text",
+     "parts": [
+      {
+       "t": "p",
+       "html": "Pri ekologickej kuchyni ide o dve rozhodnutia — z čoho je vyrobený nábytok a koľko elektriny míňajú spotrebiče:"
+      },
+      {
+       "t": "ul",
+       "items": [
+        "„Ekologické materiály“: Na nábytok a povrchy vyberajte drevo, dyhu, laminovanú drevotriesku (LTD) a MDF s nízkou emisiou formaldehydu a farby na vodnej báze.",
+        "„Energeticky úsporné spotrebiče“: Vyberajte spotrebiče s vysokou triedou energetickej účinnosti — znížite tak náklady na elektrinu."
+       ]
+      },
+      {
+       "t": "p",
+       "html": "Ak potrebujete pomoc s dispozíciou kuchyne, príďte na bezplatnú konzultáciu do štúdia <strong>DUMSKAYA DESIGN</strong> v Bratislave. Pracujeme viac ako 15 rokov a kuchyne robíme kompletne: návrh, výrobu vo vlastnej výrobni, dopravu a montáž v Bratislave a vo Viedni. Ceny sú v oboch mestách rovnaké, doprava je zahrnutá v cene."
+      }
+     ]
+    },
+    {
+     "type": "buttons",
+     "items": [
+      {
+       "text": "Objednať bezplatnú konzultáciu",
+       "href": "/sk/kontakt-bratislava-vieden"
+      },
+      {
+       "text": "Realizované projekty",
+       "href": "/sk/portfolio-dizajn-interieru"
+      },
+      {
+       "text": "Ceny dizajnových balíkov",
+       "href": "/sk/cena-dizajnu-interieru-bratislava-vieden"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69cc0357376a1a22235b1a34",
+   "blocks": [
+    {
+     "type": "heading",
+     "level": 2,
+     "text": "Služby štúdia interiérového dizajnu"
+    },
+    {
+     "type": "cards",
+     "items": [
+      {
+       "title": "Dizajn obytných interiérov",
+       "href": "/sk/dizajn-interieru-bratislava",
+       "image": {
+        "id": "6abd6ad93ba7c7b83394f9b9",
+        "alt": "Interiérový dizajnér, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Dizajn komerčných interiérov",
+       "href": "/sk/dizajn-komercnych-interierov-bratislava-vieden",
+       "image": {
+        "id": "6abe046a3ba7c7b833963e82",
+        "alt": "Dizajn komerčných interiérov, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru",
+       "href": "/sk/nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "65d3f45eaa9648000f6ff429",
+        "alt": "Výroba nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Nábytok na mieru pre firmy",
+       "href": "/sk/kancelarsky-nabytok-na-mieru-bratislava",
+       "image": {
+        "id": "6abe07964888499d2075ac31",
+        "alt": "Výroba kancelárskeho nábytku na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Kuchyne na mieru",
+       "href": "/sk/kuchyne-na-mieru-bratislava-vieden",
+       "image": {
+        "id": "6abd6a8768c5e81567a1bfe0",
+        "alt": "Kuchyňa na mieru, Bratislava, Viedeň"
+       }
+      },
+      {
+       "title": "Rekonštrukcia na kľúč",
+       "href": "/sk/rekonstrukcia-bytu-na-kluc-bratislava",
+       "image": {
+        "id": "65d3cb0956ff01000f891f5c",
+        "alt": "Rekonštrukcia na kľúč, cena, Bratislava, Viedeň"
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
