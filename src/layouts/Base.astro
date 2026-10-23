@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import Schema from '../components/Schema.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import Lightbox from '../components/Lightbox.astro';
-import { HREFLANG, LANGS, ui, type Lang } from '../lib/i18n';
+import { HREFLANG, HTML_LANG, OG_LOCALE, LANGS, ui, type Lang } from '../lib/i18n';
 // основные начертания кириллицы — грузятся заранее, чтобы заголовки не «прыгали» при подмене шрифта
 import fontDisplayCyr from '@fontsource/montserrat/files/montserrat-cyrillic-400-normal.woff2?url';
 import fontBodyCyr from '@fontsource/commissioner/files/commissioner-cyrillic-400-normal.woff2?url';
@@ -26,11 +26,11 @@ const ogUrl = og ? `${SITE}/img/${(og.files.find(([w]) => w >= 1200) || og.files
 const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
 ---
 <!doctype html>
-<html lang={HREFLANG[lang]}>
+<html lang={HTML_LANG[lang]}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  {(lang === 'en' ? [fontDisplayLat, fontBodyLat] : [fontDisplayCyr, fontBodyCyr]).map((f) => <link rel="preload" href={f} as="font" type="font/woff2" crossorigin />)}
+  {(['en', 'sk', 'de'].includes(lang) ? [fontDisplayLat, fontBodyLat] : [fontDisplayCyr, fontBodyCyr]).map((f) => <link rel="preload" href={f} as="font" type="font/woff2" crossorigin />)}
   <title>{page.title}</title>
   {page.description && <meta name="description" content={page.description} />}
   {noindex ? <meta name="robots" content="noindex, follow" /> : <link rel="canonical" href={url(page.path)} />}
@@ -40,6 +40,8 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
   {!noindex && <link rel="alternate" hreflang="x-default" href={url(xDefault)} />}
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="DUMSKAYA DESIGN" />
+  <meta property="og:locale" content={OG_LOCALE[lang]} />
+  {!noindex && LANGS.filter((l) => l !== lang && page.alternates[l]).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
   <meta property="og:title" content={page.title} />
   {page.description && <meta property="og:description" content={page.description} />}
   <meta property="og:url" content={url(page.path)} />

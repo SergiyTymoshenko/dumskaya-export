@@ -14,7 +14,7 @@ for s, t in tm.items():
     if not isinstance(t, str) or not t.strip(): E.append(f'пусто: {s[:60]}'); continue
     if strip(tag.findall(s)) != strip(tag.findall(t)): E.append(f'теги: {t[:90]}')
     if sorted(href.findall(s)) != sorted(href.findall(t)): E.append(f'href: {t[:90]}')
-    if lang == 'en' and CYR.search(re.sub(r'<[^>]+>', '', t)): E.append(f'кириллица: {t[:90]}')
+    if lang in ('en', 'sk', 'de') and CYR.search(re.sub(r'<[^>]+>', '', t)): E.append(f'кириллица: {t[:90]}')
     if lang == 'ua' and RU_ONLY.search(t): E.append(f'ы/э/ъ/ё: {t[:90]}')
     if nums(s) - nums(t): W.append(f'числа {dict(nums(s) - nums(t))}: {t[:90]}')
 for e in E: print('ОШИБКА', e)

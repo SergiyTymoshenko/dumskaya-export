@@ -31,12 +31,16 @@ for it in items:
         errors.append(f'{i}: теги не совпадают\n   src: {tag.findall(s)}\n   tr:  {tag.findall(t)}')
     if sorted(href.findall(s)) != sorted(href.findall(t)):
         errors.append(f'{i}: изменены href {href.findall(s)} → {href.findall(t)}')
-    if lang == 'en' and CYR.search(re.sub(r'<[^>]+>', '', t)):
-        errors.append(f'{i}: кириллица в английском: {t[:90]}')
+    if lang in ('en', 'sk', 'de') and CYR.search(re.sub(r'<[^>]+>', '', t)):
+        errors.append(f'{i}: кириллица в переводе ({lang}): {t[:90]}')
     if lang == 'ua' and RU_ONLY.search(t):
         errors.append(f'{i}: русские буквы (ы/э/ъ/ё) в украинском: {t[:90]}')
     if lang == 'ua' and len(s) > 60 and CYR.search(s) and not UA.search(t):
         warns.append(f'{i}: нет ни одной украинской буквы (і/ї/є/ґ/’) — точно украинский? {t[:90]}')
+    if lang == 'sk' and len(s) > 60 and not re.search(r'[áäčďéíĺľňóôŕšťúýž]', t, re.I):
+        warns.append(f'{i}: нет словацкой диакритики — точно словацкий? {t[:90]}')
+    if lang in ('sk', 'de') and re.search(r'"[^"<>]*"', re.sub(r'<[^>]+>', '', t)):
+        warns.append(f'{i}: прямые кавычки "…" — в {lang} нужны „…“: {t[:90]}')
     ns, nt = nums(s), nums(t)
     if ns - nt:
         warns.append(f'{i}: пропали числа {dict(ns - nt)}: {t[:90]}')

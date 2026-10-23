@@ -17,7 +17,7 @@ const [hero, ...thumbs] = images;
 const parts = mainParts(page);
 // «Основные характеристики»: короткие абзацы «Название: значение» → таблица-штамп
 const plainP = (p: any) => (p.t === 'p' ? p.html.replace(/<[^>]+>/g, '').trim() : '');
-const specAt = parts.findIndex((p) => /характеристик|specification|features/i.test(plainP(p)) && plainP(p).length < 80);
+const specAt = parts.findIndex((p) => /характеристик|specification|features|Technické parametre|Technische Daten/i.test(plainP(p)) && plainP(p).length < 80);
 const specs: [string, string][] = [];
 let specEnd = specAt;
 if (specAt >= 0) {

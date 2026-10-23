@@ -10,7 +10,9 @@
  "alternates": {
   "ru": "/privacy",
   "ua": "/ua/privacy",
-  "en": "/en/privacy"
+  "en": "/en/privacy",
+  "sk": "/sk/privacy",
+  "de": "/de/privacy"
  },
  "sections": [
   {

@@ -1,11 +1,12 @@
 ---
+import { localize } from '../lib/data';
 // Согласие на cookie: Google Analytics (GA4, gtag.js — как было на старом сайте) и Google Tag Manager
 // загружаются только после «Принять». Тегов GA4 в контейнере GTM нет — поэтому GA4 подключён напрямую.
 import { ui, type Lang } from '../lib/i18n';
 interface Props { lang: Lang; gtm: string; ga4: string }
 const { lang, gtm, ga4 } = Astro.props;
 const T = ui(lang);
-const privacy = lang === 'ru' ? '/privacy' : `/${lang}/privacy`;
+const privacy = localize('/privacy', lang) || '/privacy';
 ---
 <div class="cookie" data-cookie hidden role="region" aria-label="Cookies">
   <p>{T.cookie.text} <a href={privacy}>{T.form.privacy}</a></p>

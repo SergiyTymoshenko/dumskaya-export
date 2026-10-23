@@ -1,5 +1,5 @@
 ---
-import { ui, LANGS, LANG_LABEL, type Lang } from '../lib/i18n';
+import { ui, LANGS, LANG_LABEL, HREFLANG, type Lang } from '../lib/i18n';
 import { site, type Page, altPath, localize, pagePhones } from '../lib/data';
 
 interface Props { page: Page }
@@ -37,10 +37,10 @@ const year = new Date().getFullYear();
     <p class="ftr__langs">
       {LANGS.map((l) => l === lang
         ? <span aria-current="true">{LANG_LABEL[l]}</span>
-        : <a href={altPath(page, l)} hreflang={l === 'ua' ? 'uk' : l}>{LANG_LABEL[l]}</a>)}
+        : <a href={altPath(page, l)} hreflang={HREFLANG[l]}>{LANG_LABEL[l]}</a>)}
     </p>
   </div>
-  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}. <a href={lang === 'ru' ? '/privacy' : `/${lang}/privacy`}>{T.form.privacy}</a> · <a href={lang === 'ru' ? '/image-license' : `/${lang}/image-license`}>{T.imageLicense}</a><button type="button" class="ftr__cookie" data-cookie-settings hidden>{T.cookieSettings}</button></p>
+  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}. <a href={localize('/privacy', lang) || '/privacy'}>{T.form.privacy}</a> · <a href={localize('/image-license', lang) || '/image-license'}>{T.imageLicense}</a><button type="button" class="ftr__cookie" data-cookie-settings hidden>{T.cookieSettings}</button></p>
 </footer>
 
 <style>

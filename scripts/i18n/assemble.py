@@ -3,6 +3,9 @@
 content/i18n/tm-{ua,en}.json; 2) собирает украинские и английские страницы из русских:
 та же структура, фото и блоки, тексты — из памяти переводов, ссылки — на страницы того же языка.
 Адрес, title, description и картинка для соцсетей у страниц UA/EN остаются прежними.
+Словацкие и немецкие страницы (NEW_LANGS): title и description — из content/i18n/meta-<lang>.json (ключ — русский адрес);
+ссылки на страницы, которых на этом языке нет, убираются (текст остаётся, кнопка или карточка — нет);
+телефоны — только номер своего языка (sk — словацкий, de — австрийский).
    python3 scripts/i18n/assemble.py            (ошибка, если какой-то строки нет в памяти)"""
 import json, os, re, sys, glob, copy
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -48,7 +51,35 @@ def tr(lang, s, tm):
     missing[lang].add(s); return s
 
 def localize_html(html, lang):
-    return re.sub(r'href="([^"]*)"', lambda m: f'href="{localize(m.group(1), lang)}"', html)
+    html = re.sub(r'href="([^"]*)"', lambda m: f'href="{localize(m.group(1), lang)}"', html)
+    if lang in NEW_LANGS:
+        # ссылка на страницу, которой нет на этом языке, — обычный текст
+        html = re.sub(r'<a href="(/[^"]*)">(.*?)</a>', lambda m: m.group(0) if untranslated(m.group(1), lang) is False else m.group(2), html)
+        html = swap_phones(html, lang)
+    return html
+
+def untranslated(href, lang):
+    """True — внутренняя ссылка ведёт на страницу не своего языка (перевода нет)."""
+    if not href or not href.startswith('/') or href.startswith('//'):
+        return False
+    path = href.split('#')[0].split('?')[0]
+    return not (path == f'/{lang}' or path.startswith(f'/{lang}/'))
+
+# номера студии: на SK — только словацкий, на DE — только австрийский
+SITE = json.load(open(os.path.join(ROOT, 'content/site.json'), encoding='utf-8'))
+PHONES = {p['key']: p for p in SITE['contacts']['phones']}
+OWN_PHONE = {'sk': 'sk', 'de': 'at'}
+def swap_phones(text, lang):
+    own = PHONES.get(OWN_PHONE.get(lang))
+    if not own:
+        return text
+    for p in PHONES.values():
+        if p is own: continue
+        text = text.replace(f'tel:{p["tel"]}', f'tel:{own["tel"]}').replace(p['text'], own['text'])
+    return text
+
+META = {l: json.load(open(os.path.join(ROOT, f'content/i18n/meta-{l}.json'), encoding='utf-8'))
+        if os.path.exists(os.path.join(ROOT, f'content/i18n/meta-{l}.json')) else {} for l in NEW_LANGS}
 
 written = 0
 for lang in LANGS:
@@ -85,9 +116,13 @@ for lang in LANGS:
                 elif t == 'buttons':
                     for it in b['items']:
                         it['text'] = tr(lang, it['text'], tm); it['href'] = localize(it.get('href'), lang)
+                    if lang in NEW_LANGS:
+                        b['items'] = [it for it in b['items'] if not untranslated(it.get('href'), lang)]
                 elif t == 'cards':
                     for it in b['items']:
                         it['title'] = tr(lang, it['title'], tm); it['href'] = localize(it.get('href'), lang)
+                    if lang in NEW_LANGS:
+                        b['items'] = [it for it in b['items'] if not untranslated(it.get('href'), lang)]
                 elif t == 'faq':
                     for it in b['items']:
                         it['q'] = tr(lang, it['q'], tm); it['a'] = localize_html(tr(lang, it['a'], tm), lang)
@@ -110,7 +145,9 @@ for lang in LANGS:
                 a = re.sub(r"(?<=[А-Яа-яІіЇїЄєҐґ])'(?=[А-Яа-яІіЇїЄєҐґ])", '’', a)
                 a = re.sub(r'(?<![А-Яа-яІіЇїЄєҐґ])([Пп])роект', r'\1роєкт', a)
             im['alt'] = a
-        if not old:
+        if lang in NEW_LANGS and path in META[lang]:
+            new['title'] = META[lang][path]['title']; new['description'] = META[lang][path]['description']
+        elif not old:
             new['title'] = new['description'] = None   # заполняются отдельно (новая страница)
         f = page_file(lang, tpath)
         if old:   # файл старой страницы

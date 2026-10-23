@@ -1,7 +1,10 @@
-export type Lang = 'ru' | 'ua' | 'en';
-export const LANGS: Lang[] = ['ru', 'ua', 'en'];
-export const HREFLANG: Record<Lang, string> = { ru: 'ru', ua: 'uk', en: 'en' };
-export const LANG_LABEL: Record<Lang, string> = { ru: 'RU', ua: 'UA', en: 'EN' };
+export type Lang = 'ru' | 'ua' | 'en' | 'sk' | 'de';
+export const LANGS: Lang[] = ['ru', 'ua', 'en', 'sk', 'de'];
+export const HREFLANG: Record<Lang, string> = { ru: 'ru', ua: 'uk', en: 'en', sk: 'sk', de: 'de' };
+export const LANG_LABEL: Record<Lang, string> = { ru: 'RU', ua: 'UA', en: 'EN', sk: 'SK', de: 'DE' };
+/** язык в <html lang> и og:locale: немецкая версия написана по-австрийски */
+export const HTML_LANG: Record<Lang, string> = { ru: 'ru', ua: 'uk', en: 'en', sk: 'sk', de: 'de-AT' };
+export const OG_LOCALE: Record<Lang, string> = { ru: 'ru_RU', ua: 'uk_UA', en: 'en_US', sk: 'sk_SK', de: 'de_AT' };
 
 const t = {
   ru: {
@@ -63,6 +66,46 @@ const t = {
     allContacts: 'All contacts and request form', write: 'Write', messengers: 'Messengers', address: 'Studio address',
     cookie: { text: 'We use Google Analytics cookies to understand how visitors use the site. They are not loaded without your consent.', accept: 'Accept', decline: 'Decline' },
     notFound: { title: 'Page not found', text: 'The address may have changed. Start from the home page or browse the projects.' },
+  },
+  sk: {
+    video: 'Pozrieť video', videoNote: 'Video na YouTube', menu: 'Menu', close: 'Zavrieť', call: 'Zavolať', phone: 'Telefón', home: 'Domov',
+    city: 'Bratislava a Viedeň',
+    projects: 'Projekty', allProjects: 'Všetky projekty',
+    groups: { residential: 'Obytné interiéry', commercial: 'Komerčné interiéry', architecture: 'Architektúra' },
+    services: 'Služby štúdia',
+    about: 'O štúdiu', readMore: 'Čítať ďalej',
+    consult: 'Objednať bezplatnú konzultáciu', freeConsult: 'Bezplatná konzultácia', prices: 'Ceny služieb',
+    facts: { object: 'Objekt', area: 'Plocha', city: 'Mesto', works: 'Rozsah prác', status: 'Stav', terrace: 'Terasa' },
+    next: 'Ďalší projekt', prev: 'Predchádzajúci projekt',
+    contacts: 'Kontakt', rights: 'Všetky práva vyhradené',
+    m2: 'm²', photo: 'Fotografia',
+    tips: 'Tipy', otherTips: 'Ďalšie tipy', kitchens: 'Kuchyne', otherKitchens: 'Ďalšie modely kuchýň', allKitchens: 'Katalóg kuchýň',
+    photoPrev: 'Predchádzajúca fotografia', photoNext: 'Ďalšia fotografia', photoZoom: 'Zväčšiť fotografiu', packModel: 'Balík „{}“', orderPack: 'Objednať balík', packDetails: 'Viac o balíku', examples: 'Príklady', allPacks: 'Všetky balíky a ceny', minPrice: 'Minimálna cena', heroCta: 'Bezplatná konzultácia', heroSub: 'Návrh interiéru · nábytok na mieru · rekonštrukcia na kľúč', cookieSettings: 'Nastavenia cookies', made: 'Vyrábame vo vlastnej výrobe v Bratislave. Doprava a montáž v Bratislave, vo Viedni a po celom Nemecku, cena je rovnaká pre všetky mestá.', portrait: 'Irina Dumskaya, zakladateľka a hlavná dizajnérka štúdia DUMSKAYA DESIGN', skip: 'Prejsť na obsah',
+    kitchenPrice: 'Vypočítať cenu', more: 'Viac', prices2: 'Ceny', shop: 'Obchod', askPrice: 'Zistiť cenu', article: 'Kód', moreProducts: 'Ďalšie produkty z kolekcie', imageLicense: 'Používanie fotografií',
+    form: { title: 'Žiadosť o bezplatnú konzultáciu', name: 'Meno', contact: 'Telefón alebo e-mail', message: 'Napíšte nám o svojom byte, dome alebo priestore', send: 'Odoslať žiadosť', sending: 'Odosiela sa…', ok: 'Žiadosť sme prijali. Ozveme sa vám do jedného pracovného dňa.', fail: 'Žiadosť sa nepodarilo odoslať. Zavolajte nám alebo napíšte e-mail.', consent: 'Odoslaním formulára súhlasíte so spracovaním údajov na účel odpovede na vašu žiadosť.', privacy: 'Ochrana osobných údajov', model: 'Mám záujem o' },
+    allContacts: 'Všetky kontakty a formulár', write: 'Napísať', messengers: 'Chat', address: 'Adresa štúdia',
+    cookie: { text: 'Používame cookies Google Analytics, aby sme vedeli, ako návštevníci používajú web. Bez vášho súhlasu sa nenačítajú.', accept: 'Prijať', decline: 'Odmietnuť' },
+    notFound: { title: 'Stránka sa nenašla', text: 'Adresa sa mohla zmeniť. Začnite na úvodnej stránke alebo si pozrite projekty.' },
+  },
+  de: {
+    video: 'Video ansehen', videoNote: 'Video auf YouTube', menu: 'Menü', close: 'Schließen', call: 'Anrufen', phone: 'Telefon', home: 'Startseite',
+    city: 'Bratislava und Wien',
+    projects: 'Projekte', allProjects: 'Alle Projekte',
+    groups: { residential: 'Wohnräume', commercial: 'Gewerberäume', architecture: 'Architektur' },
+    services: 'Leistungen',
+    about: 'Über das Studio', readMore: 'Weiterlesen',
+    consult: 'Kostenlose Beratung vereinbaren', freeConsult: 'Kostenlose Beratung', prices: 'Preise',
+    facts: { object: 'Objekt', area: 'Fläche', city: 'Stadt', works: 'Leistungen', status: 'Status', terrace: 'Terrasse' },
+    next: 'Nächstes Projekt', prev: 'Vorheriges Projekt',
+    contacts: 'Kontakt', rights: 'Alle Rechte vorbehalten',
+    m2: 'm²', photo: 'Foto',
+    tips: 'Tipps', otherTips: 'Weitere Tipps', kitchens: 'Küchen', otherKitchens: 'Weitere Küchenmodelle', allKitchens: 'Küchenkatalog',
+    photoPrev: 'Vorheriges Foto', photoNext: 'Nächstes Foto', photoZoom: 'Foto vergrößern', packModel: 'Paket „{}“', orderPack: 'Paket bestellen', packDetails: 'Mehr zum Paket', examples: 'Beispiele', allPacks: 'Alle Pakete und Preise', minPrice: 'Mindestpreis', heroCta: 'Kostenlose Beratung', heroSub: 'Planung · Möbel nach Maß · schlüsselfertige Sanierung', cookieSettings: 'Cookie-Einstellungen', made: 'Gefertigt in unserer eigenen Werkstatt in Bratislava. Lieferung und Montage in Bratislava, Wien und ganz Deutschland, zum selben Preis für jede Stadt.', portrait: 'Irina Dumskaya, Gründerin und leitende Innenarchitektin von DUMSKAYA DESIGN', skip: 'Zum Inhalt springen',
+    kitchenPrice: 'Preis anfragen', more: 'Mehr', prices2: 'Preise', shop: 'Shop', askPrice: 'Preis anfragen', article: 'Artikel', moreProducts: 'Mehr aus der Kollektion', imageLicense: 'Nutzung der Fotos',
+    form: { title: 'Anfrage für eine kostenlose Beratung', name: 'Name', contact: 'Telefon oder E-Mail', message: 'Erzählen Sie uns von Ihrer Wohnung, Ihrem Haus oder Geschäftslokal', send: 'Anfrage senden', sending: 'Wird gesendet…', ok: 'Anfrage gesendet. Wir melden uns innerhalb eines Werktags.', fail: 'Die Anfrage konnte nicht gesendet werden. Bitte rufen Sie uns an oder schreiben Sie eine E-Mail.', consent: 'Mit dem Absenden stimmen Sie zu, dass wir Ihre Daten zur Beantwortung der Anfrage verarbeiten.', privacy: 'Datenschutzerklärung', model: 'Interesse an' },
+    allContacts: 'Alle Kontakte und Anfrageformular', write: 'Schreiben', messengers: 'Messenger', address: 'Adresse des Studios',
+    cookie: { text: 'Wir verwenden Cookies von Google Analytics, um zu verstehen, wie Besucherinnen und Besucher die Website nutzen. Ohne Ihre Zustimmung werden sie nicht geladen.', accept: 'Akzeptieren', decline: 'Ablehnen' },
+    notFound: { title: 'Seite nicht gefunden', text: 'Die Adresse hat sich vielleicht geändert. Beginnen Sie auf der Startseite oder sehen Sie sich unsere Projekte an.' },
   },
 } as const;
 

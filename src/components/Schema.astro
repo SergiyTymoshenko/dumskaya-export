@@ -6,7 +6,7 @@
 //  • услуга (Service) на страницах услуг и пакетов, каталог пакетов с ценами — на обзоре цен;
 //  • статьи (Article), фото проектов (CreativeWork + ImageObject), FAQ (FAQPage).
 // Полное описание компании и студии — на главной, «О студии» и «Контактах»; на остальных страницах — ссылки по @id.
-import { site, manifest, crumbsFor, allGalleryImages, localize, pageByPath, type Page } from '../lib/data';
+import { site, manifest, crumbsFor, allGalleryImages, localize, pageByPath, langPhones, type Page } from '../lib/data';
 import { parsePacks, packFor } from '../lib/packs';
 import { HREFLANG, type Lang } from '../lib/i18n';
 import home from '../../content/home.json';
@@ -32,12 +32,14 @@ const country = (name: string) => ({ '@type': 'Country', name });
 // где работает студия: офис и бригады — Братислава и Вена
 const AREA = [city('Bratislava'), city('Vienna'), country('Slovakia'), country('Austria')];
 const address = { '@type': 'PostalAddress', streetAddress: c.address.street, postalCode: c.address.postal, addressLocality: c.address.city, addressCountry: c.address.country };
-// телефоны студии: Братислава (два номера) и Вена
-const mainPhones = c.phones.filter((p: any) => ['sk', 'ua', 'at'].includes(p.key));
+// телефоны студии: Братислава (два номера) и Вена; на SK — только словацкий, на DE — только австрийский
+const mainPhones = langPhones(lang) as any[];
 const DESCRIPTION: Record<Lang, string> = {
   ru: 'Студия дизайна интерьеров в Братиславе: дизайн-проекты квартир, домов и коммерческих помещений, мебель на заказ на собственном производстве и ремонт под ключ в Братиславе и Вене.',
   ua: 'Студія дизайну інтер’єрів у Братиславі: дизайн-проєкти квартир, будинків і комерційних приміщень, меблі на замовлення на власному виробництві та ремонт під ключ у Братиславі й Відні.',
   en: 'Interior design studio in Bratislava: design projects for apartments, houses and commercial spaces, custom furniture from our own workshop and turnkey renovation in Bratislava and Vienna.',
+  sk: 'Štúdio interiérového dizajnu v Bratislave: návrhy interiérov bytov, domov a komerčných priestorov, nábytok na mieru z vlastnej výroby a rekonštrukcie na kľúč v Bratislave a vo Viedni.',
+  de: 'Studio für Innenarchitektur in Bratislava: Planung von Wohnungen, Häusern und Geschäftsräumen, Möbel nach Maß aus der eigenen Werkstatt und schlüsselfertige Sanierung in Bratislava und Wien.',
 };
 
 // Услуги студии — из меню «Услуги» на языке страницы
@@ -45,7 +47,7 @@ const menu = (site.menu[lang] || []) as any[];
 const servicesMenu = (menu.find((m) => m.children && m.children.some((x: any) => localize('/stroitelstvo-remont-bratislava', lang) === x.href))?.children || []) as any[];
 const offerCatalog = servicesMenu.length ? {
   '@type': 'OfferCatalog',
-  name: { ru: 'Услуги студии', ua: 'Послуги студії', en: 'Studio services' }[lang],
+  name: { ru: 'Услуги студии', ua: 'Послуги студії', en: 'Studio services', sk: 'Služby štúdia', de: 'Leistungen des Studios' }[lang],
   itemListElement: servicesMenu.filter((x) => x.href).map((x) => ({
     '@type': 'Offer', itemOffered: { '@type': 'Service', name: x.label, url: abs(x.href), provider: { '@id': STUDIO } },
   })),
@@ -94,7 +96,7 @@ const studio = {
 };
 const website = {
   '@type': 'WebSite', '@id': WEBSITE, url: `${SITE}/`, name: 'DUMSKAYA DESIGN',
-  inLanguage: ['ru', 'uk', 'en'], publisher: { '@id': ORG },
+  inLanguage: ['ru', 'uk', 'en', 'sk', 'de'], publisher: { '@id': ORG },
 };
 
 const full = page.type === 'home' || page.type === 'contact' || page.type === 'about';

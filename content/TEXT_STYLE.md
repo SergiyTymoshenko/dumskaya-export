@@ -1,7 +1,7 @@
 # Как писать тексты для dumskaya-design.com
 
 Правила для всех текстов сайта: страницы услуг, проекты, главная, FAQ, мета-теги. Пишем по-русски,
-украинская и английская версии переводятся по `scripts/i18n/GUIDE.md` с теми же правилами.
+украинская, английская, словацкая и немецкая версии переводятся по `scripts/i18n/GUIDE.md` с теми же правилами.
 
 Читатель — человек, который собирается делать ремонт или обставлять квартиру в Братиславе или Вене
 и выбирает студию. Ему нужны факты: что входит, сколько стоит, сколько длится, что он получит на руки,
@@ -83,5 +83,14 @@
 То же для английского: «not just X but Y», «seamless(ly)», «elevate», «curated», «nestled», «boasts»,
 «testament to», «tapestry», «delve», «whether you're … or …», «in today's world», «sanctuary»,
 «effortless», «meticulous», «harmonious», «timeless elegance», «transform your space», «dream home».
+Для словацкого: «nielen …, ale aj» (если без него можно), «jedinečný», «dokonalý», «ideálny», «bezchybný», «harmonický»,
+«harmonicky ladí», «luxusný», «sofistikovaný», «exkluzívny», «vysnívaný domov / byt snov», «v dnešnej dobe», «je dôležité
+poznamenať», «stojí za zmienku», «neoddeliteľná súčasť», «kľúčovú úlohu», «zohráva dôležitú úlohu», «ponoriť sa»,
+«objavte», «premeňte», «útulný a funkčný», «štýlový a praktický», «s láskou», «sme hrdí».
+Для немецкого: «nicht nur …, sondern auch» (если без него можно), «einzigartig», «perfekt», «ideal», «makellos», «harmonisch»,
+«nahtlos», «luxuriös», «exklusiv», «zeitlose Eleganz», «Traumwohnung / Traumhaus / Traumküche», «Wohlfühloase»,
+«in der heutigen Zeit», «es ist wichtig zu beachten», «spielt eine entscheidende Rolle», «eintauchen», «entdecken Sie»,
+«verwandeln Sie», «gemütlich und funktional», «stilvoll und praktisch», «mit Liebe zum Detail», «rundum sorglos»,
+«höchste Qualität», «maßgeschneiderte Lösungen», «wir sind stolz».
 Для украинского — те же штампы, что в русском: «не просто, а», «варто зазначити», «гармонійно»,
 «ідеальний», «унікальний», «бездоганний», «затишок і функціональність», «втілити мрію», «є», «являє собою».

@@ -6,11 +6,13 @@ const SHORT_WORDS = new Set([
   'для', 'при', 'без', 'под', 'над', 'про', 'или', 'чем', 'как', 'від', 'для', 'або', 'під', 'над', 'без', 'про', 'між',
   // en
   'the', 'and', 'for', 'von', 'und',
+  // sk / de
+  'pre', 'pri', 'bez', 'nad', 'pod', 'pod', 'zo', 'vo', 'ako', 'ich', 'für', 'mit', 'bei', 'aus', 'zum', 'zur', 'die', 'der', 'das',
 ]);
 
 function shortWords(s: string): string {
   // слово из 1–2 букв (или из списка) + пробел → неразрывный пробел
-  return s.replace(/(^|[\s («"„—–])([A-Za-zА-ЯЁа-яёІіЇїЄєҐґ’']{1,3})\s(?=\S)/g, (m, pre, w) =>
+  return s.replace(/(^|[\s («"„—–])([A-Za-zÀ-žА-ЯЁа-яёІіЇїЄєҐґ’']{1,3})\s(?=\S)/g, (m, pre, w) =>
     w.length <= 2 || SHORT_WORDS.has(w.toLowerCase()) ? pre + w + NB : m,
   );
 }

@@ -89,3 +89,73 @@ Apartment Handover Inspection; Turnkey Renovation; Renovation Cost Estimate; For
 - Строки вида «Производство», «собственное, Братислава» — это ячейки таблицы фактов: переводить коротко, без точки в конце.
 - Ответы FAQ содержат <p>…</p> — теги сохранить.
 - Нумерованные шаги начинаются с <strong>Слово.</strong> — сохранить жирный заголовок шага с точкой.
+
+## Словацкий (sk) и немецкий (de) — добавлены 23.10.2026
+
+Это не перевод «слово в слово», а тексты для местного поиска: словацкая версия — для людей в Братиславе и по всей
+Словакии, немецкая — для Вены и Австрии (и для немецкоязычных клиентов в Братиславе и Германии). Пиши так, как
+написал бы местный копирайтер студии: короткие ясные предложения, местные слова, ни одного штампа из
+`content/TEXT_STYLE.md` (там же список запрещённых оборотов для SK и DE). Факты, цифры, цены, ссылки — как в исходнике.
+Исходник — русский; английский перевод той же строки (если есть в `content/i18n/tm-en.json`) можно смотреть как подсказку.
+
+### Словацкий (sk)
+- Spisovná slovenčina, správna diakritika (ä, č, ď, dz, ľ, ĺ, ň, ô, ŕ, š, ť, ž). Úvodzovky „…“. Vykanie, «vy» малой буквой.
+- Цены: «35–50 €/m²», «od 1 500 €», «2 000 €» (тысячи — пробелом), десятичная запятая. «m²», «bm» (погонный метр) или «bežný meter».
+- Глоссарий: дизайн интерьера — dizajn interiéru / interiérový dizajn; дизайнер интерьера — interiérový dizajnér;
+  дизайн-проект — návrh interiéru / dizajnový projekt; мебель на заказ — nábytok na mieru; корпусная мебель — korpusový nábytok;
+  кухня на заказ — kuchyňa na mieru (kuchynská linka na mieru); ремонт под ключ — rekonštrukcia na kľúč;
+  авторский надзор / сопровождение — autorský dozor; 3D-визуализация — 3D vizualizácia; планировка — dispozícia / dispozičné riešenie;
+  обмерный план — zameranie (pôdorys skutočného stavu); рабочие чертежи — výkresová dokumentácia / realizačné výkresy;
+  развёртки стен — rozvinuté pohľady stien; спецификация — špecifikácia; смета — rozpočet; приёмка квартиры — preberanie bytu;
+  протокол приёмки — preberací protokol; застройщик — developer; новостройка — novostavba; жилой комплекс — rezidenčný projekt / bytový dom;
+  управляющая компания — správca; кухня-гостиная — obývačka s kuchyňou (obývacia izba s kuchyňou); спальня — spálňa;
+  ванная — kúpeľňa; санузел — kúpeľňa / WC; прихожая — predsieň; гардеробная — šatník; постирочная — práčovňa;
+  детская — detská izba; кабинет — pracovňa; гостевая — hosťovská izba; столешница — pracovná doska; фасады мебели — dvierka a čelá;
+  шпон — dyha; ЛДСП — laminovaná drevotrieska (LTD); МДФ — MDF; доводчики — tlmené dovieranie; фурнитура — kovanie.
+- Пакеты: „Express“, „Nábytok“, „Základný“, „Premium“, „Premium+“ — пишется «balík „Základný“».
+- Города и страны: Bratislava (v Bratislave), Viedeň (vo Viedni), Praha, Kyjev, Charkov, Varšava, Krakov, Poznaň, Mníchov,
+  Berlín, Madrid, Barcelona, Marbella, Londýn, Dubaj, New York, Los Angeles, Varna, Burgas, Dunajská Streda;
+  Slovensko, Rakúsko, Česko, Nemecko, Španielsko, Ukrajina, Poľsko, Bulharsko, USA, SAE.
+- SEO-формулировки: «dizajn interiéru Bratislava», «interiérový dizajnér v Bratislave», «návrh interiéru bytu»,
+  «nábytok na mieru Bratislava», «kuchyne na mieru Bratislava», «rekonštrukcia bytu na kľúč», «preberanie bytu od developera»,
+  «rozpočet rekonštrukcie», «dizajn interiéru vo Viedni».
+- Названия разделов: O štúdiu; Portfólio; Kuchyne; Obchod; Služby; Dizajn obytných interiérov; Dizajn komerčných interiérov;
+  Nábytok na mieru; Nábytok na mieru pre firmy; Architektúra a projektovanie; 3D vizualizácia fasád; Preberanie bytu;
+  Rekonštrukcia na kľúč; Rozpočet rekonštrukcie; Tipy; Kde pracujeme; Ceny; Kontakt.
+
+### Немецкий (de) — австрийский вариант
+- Österreichisches Standarddeutsch, «Sie». Anführungszeichen „…“. Цены: «35–50 €/m²», «ab 1.500 €», «2.000 €»
+  (тысячи — точкой), десятичная запятая. «m²», «lfm» (laufender Meter).
+- Австрийские слова, где они естественны: Kasten (Kleiderkasten, Einbaukasten), Vorraum, Stiege, Tischler / Tischlerei,
+  Bauträger, Hausverwaltung, Wohnhausanlage, Erstbezug, Jänner, künstlerische Oberleitung.
+- Глоссарий: дизайн интерьера — Innenarchitektur / Interior Design; дизайнер интерьера — Innenarchitektin, Innenarchitekt;
+  дизайн-проект — Planung / Einrichtungsplanung / Innenarchitektur-Projekt; мебель на заказ — Möbel nach Maß, Maßmöbel;
+  корпусная мебель — Einbaumöbel; кухня на заказ — Küche nach Maß; ремонт под ключ — schlüsselfertige Sanierung;
+  авторский надзор / сопровождение — künstlerische Oberleitung; 3D-визуализация — 3D-Visualisierung; планировка — Grundriss / Raumaufteilung;
+  обмерный план — Bestandsplan (Aufmaß); рабочие чертежи — Ausführungspläne; развёртки стен — Wandabwicklungen;
+  спецификация — Material- und Ausstattungsliste; смета — Kostenschätzung; приёмка квартиры — Wohnungsübergabe;
+  протокол приёмки — Übergabeprotokoll (in der Slowakei: preberací protokol); застройщик — Bauträger; новостройка — Neubau;
+  управляющая компания — Hausverwaltung (in der Slowakei: správca); кухня-гостиная — Wohnküche (Wohnbereich mit Küche);
+  спальня — Schlafzimmer; ванная — Badezimmer; санузел — Bad / WC; прихожая — Vorraum; гардеробная — begehbarer Schrankraum;
+  постирочная — Hauswirtschaftsraum; детская — Kinderzimmer; кабинет — Arbeitszimmer; гостевая — Gästezimmer;
+  столешница — Arbeitsplatte; фасады мебели — Fronten; шпон — Furnier; ЛДСП — beschichtete Spanplatte; МДФ — MDF;
+  доводчики — Dämpfung (Soft-Close); фурнитура — Beschläge.
+- Пакеты: „Express“, „Möbel“, „Basis“, „Premium“, „Premium+“ — «das Paket „Basis“».
+- Города и страны: Bratislava, Wien, Prag, Kiew, Charkiw, Warschau, Krakau, Posen, München, Berlin, Madrid, Barcelona,
+  Marbella, London, Dubai, New York, Los Angeles, Warna, Burgas, Dunajská Streda; Slowakei, Österreich, Tschechien,
+  Deutschland, Spanien, Ukraine, Polen, Bulgarien, USA, VAE.
+- SEO-формулировки: «Innenarchitekt in Wien», «Innenarchitektur Wien», «Interior Design Wien», «Einrichtungsplanung»,
+  «Möbel nach Maß in Wien», «Küche nach Maß Wien», «Wohnung schlüsselfertig sanieren», «Innenarchitekt in Bratislava».
+- Названия разделов: Über das Studio; Portfolio; Küchen; Shop; Leistungen; Innenarchitektur Wohnen; Innenarchitektur Gewerbe;
+  Möbel nach Maß; Möbel nach Maß für Unternehmen; Architektur und Planung; 3D-Visualisierung von Fassaden; Wohnungsübergabe;
+  Sanierung schlüsselfertig; Kostenschätzung; Tipps; Wo wir arbeiten; Preise; Kontakt.
+
+### Обязательные формы (по ним сайт узнаёт блоки — переводить ровно так)
+- «Услуги студии дизайна интерьеров» — sk «Služby štúdia interiérového dizajnu», de «Leistungen des Studios für Innenarchitektur».
+- «Технические характеристики кухни K-NN» — sk «Technické parametre kuchyne K-NN», de «Technische Daten der Küche K-NN».
+  Строки характеристик под ним — в виде «Название: значение» (название до 40 знаков, значение до 120), без точки в конце.
+- Строки с ценой пакета — так, чтобы цена стояла как «35–50 €/m²»: «Dizajnový balík „Nábytok“ — 35–50 €/m²»,
+  «Designpaket „Möbel“ — 35–50 €/m²»; «Стоимость: 20 €/м²» → «Cena: 20 €/m²» / «Preis: 20 €/m²»;
+  «Минимальная стоимость пакета — 1 500 €» → «Minimálna cena balíka — 1 500 €» / «Mindestpreis des Pakets — 1.500 €».
+- Вопрос в конце абзаца главной («Что вы получите…?») — тоже вопрос со знаком «?». Нумерация «1. …:» сохраняется.
+- `kind: "alt"` — подпись фото: коротко, что на фото и где, без кавычек; форма «Помещение — объект, город, площадь».

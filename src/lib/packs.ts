@@ -10,10 +10,10 @@ export type Pack = {
 };
 export type Extra = { title: string; parts: Part[]; buttons: { text: string; href: string | null }[] };
 
-const PRICE = /(€\s?\d[\d\s,.–-]*(?:€)?\s*\/\s*m²|\d[\d\s,.–-]*\s*€\s*\/\s*м²)/i;
+const PRICE = /(€\s?\d[\d\s,.–-]*(?:€)?\s*\/\s*m²|\d[\d\s,.–-]*\s*€\s*\/\s*[мm]²)/i;
 const isPack = (t: string) => PRICE.test(t) && t.length < 200;
-const MIN = /(Минимальн|Мінімальн|Minimum)/i;
-const COST = /^(Стоимость|Вартість|Price|Cost)[^:]{0,30}:\s*/i; // без \b — в JS он не работает с кириллицей
+const MIN = /(Минимальн|Мінімальн|Minimum|Minimáln|Mindestpreis)/i;
+const COST = /^(Стоимость|Вартість|Price|Cost|Cena|Preis|Kosten)[^:]{0,30}:\s*/i; // без \b — в JS он не работает с кириллицей
 
 export function parsePacks(page: Page) {
   const intro: Part[] = [];
@@ -24,8 +24,8 @@ export function parsePacks(page: Page) {
     const m = text.match(PRICE)!;
     const before = text.slice(0, m.index).replace(/[\s—–-]+$/, '');
     const after = text.slice(m.index! + m[0].length).replace(/^[\s.—–-]+/, '');
-    const q = before.match(/[«“"]([^»”"]+)[»”"]/);
-    const name = q ? q[1] : before.replace(/Interior Design Package|Design package|Дизайн-пакет (интерьера|інтер’єру)/i, '').trim();
+    const q = before.match(/[«“„"]([^»”“"]+)[»”“"]/);
+    const name = q ? q[1] : before.replace(/Interior Design Package|Design package|Дизайн-пакет (интерьера|інтер’єру)|Dizajnový balík( interiéru)?|Designpaket/i, '').trim();
     cur = { title: text, name, price: m[0].replace(/\s+/g, ' ').trim(), note: after, parts: [], buttons: [], href: null, min: '' };
     packs.push(cur);
   };
@@ -39,7 +39,7 @@ export function parsePacks(page: Page) {
       } else if (b.type === 'text') {
         for (const p of b.parts) {
           const t = p.t === 'p' ? plain(p.html) : '';
-          if (t && isPack(t) && /[«“"]/.test(t) && t.length < 120) { start(t); continue; }
+          if (t && isPack(t) && /[«“„"]/.test(t) && t.length < 120) { start(t); continue; }
           if (cur && 'price' in cur) {
             if (MIN.test(t) && t.length < 90) { cur.min = t.replace(/\.$/, ''); continue; }  // выводится отдельно
             if (COST.test(t) && PRICE.test(t) && t.length < 60) continue;                   // «Стоимость: 50 €/м²» — уже в шапке пакета

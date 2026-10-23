@@ -483,13 +483,17 @@
     "city": {
      "ru": "Братислава",
      "ua": "Братислава",
-     "en": "Bratislava"
+     "en": "Bratislava",
+     "sk": "Bratislava",
+     "de": "Bratislava"
     },
     "key": "sk",
     "label": {
      "ru": "Телефон в Братиславе",
      "ua": "Телефон у Братиславі",
-     "en": "Phone in Bratislava"
+     "en": "Phone in Bratislava",
+     "sk": "Telefón v Bratislave",
+     "de": "Telefon in Bratislava"
     }
    },
    {
@@ -498,13 +502,17 @@
     "city": {
      "ru": "Братислава",
      "ua": "Братислава",
-     "en": "Bratislava"
+     "en": "Bratislava",
+     "sk": "Bratislava",
+     "de": "Bratislava"
     },
     "key": "ua",
     "label": {
      "ru": "Телефон в Братиславе",
      "ua": "Телефон у Братиславі",
-     "en": "Phone in Bratislava"
+     "en": "Phone in Bratislava",
+     "sk": "Telefón v Bratislave",
+     "de": "Telefon in Bratislava"
     }
    },
    {
@@ -513,13 +521,17 @@
     "city": {
      "ru": "Вена",
      "ua": "Відень",
-     "en": "Vienna"
+     "en": "Vienna",
+     "sk": "Viedeň",
+     "de": "Wien"
     },
     "key": "at",
     "label": {
      "ru": "Телефон в Вене",
      "ua": "Телефон у Відні",
-     "en": "Phone in Vienna"
+     "en": "Phone in Vienna",
+     "sk": "Telefón vo Viedni",
+     "de": "Telefon in Wien"
     }
    }
   ],
@@ -539,7 +551,9 @@
    "label": {
     "ru": "Súkennícka 1, 821 09 Братислава, Словакия",
     "ua": "Súkennícka 1, 821 09 Братислава, Словаччина",
-    "en": "Súkennícka 1, 821 09 Bratislava, Slovakia"
+    "en": "Súkennícka 1, 821 09 Bratislava, Slovakia",
+    "sk": "Súkennícka 1, 821 09 Bratislava, Slovensko",
+    "de": "Súkennícka 1, 821 09 Bratislava, Slowakei"
    }
   },
   "messengers": [

@@ -3,7 +3,7 @@ import Crumbs from '../components/Crumbs.astro';
 import LeadForm from '../components/LeadForm.astro';
 import ServiceLinks from '../components/ServiceLinks.astro';
 import { ui, type Lang } from '../lib/i18n';
-import { site, homePath, servicesCards, mainParts, type Page } from '../lib/data';
+import { site, homePath, servicesCards, mainParts, langPhones, type Page } from '../lib/data';
 import Parts from '../components/Parts.astro';
 import Caps from '../components/Caps.astro';
 interface Props { page: Page }
@@ -21,7 +21,7 @@ const c = site.contacts;
   <div class="cinfo">
     {intro.length > 0 && <Parts parts={intro} />}
     <dl class="cinfo__list">
-      {c.phones.map((p: any) => (
+      {langPhones(lang).map((p: any) => (
         <div><dt>{p.city[lang]}</dt><dd><a href={`tel:${p.tel}`}>{p.text}</a></dd></div>
       ))}
       <div><dt>E-mail</dt><dd><a href={`mailto:${c.email}`}>{c.email}</a></dd></div>

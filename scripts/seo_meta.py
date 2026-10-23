@@ -596,6 +596,8 @@ def main():
     missing, done = [], 0
     for path, (f, p) in pages.items():
         lang = p["lang"]
+        if lang in ("sk", "de"):   # мета-теги SK/DE — в content/i18n/meta-<lang>.json, ставит assemble.py
+            continue
         ru_path = p["alternates"].get("ru") or path
         title = desc = None
         if ru_path in PROJECTS and ru_path in pages:
