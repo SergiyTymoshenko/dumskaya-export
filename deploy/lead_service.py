@@ -10,6 +10,7 @@
   3) отправляет письмом через SMTP (например, Gmail с паролем приложения).
 В этом же процессе работает сам бот (приём пользователей, роли) — см. bot.py, и сторож сайта: если сайт
 не отвечает, разработчику в бот приходит сообщение — см. site_monitor.py.
+И статистика посетителей по журналу Caddy (site_stats.py): отчёт разработчику в 9:00, команда /stats.
 Только стандартная библиотека Python 3, без установки пакетов.
 
 Настройки — переменные окружения (файл lead.env, его читает systemd):
@@ -64,6 +65,7 @@ def log(msg):
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
+from site_stats import SiteStats  # noqa: E402
 from translate import lang_from, provider, translate_lead  # noqa: E402
 
 BOT = None
@@ -213,8 +215,10 @@ def main():
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     if BOT:
         BOT.monitor = SiteMonitor(BOT, log=log)     # сторож сайта: «сайт не отвечает» разработчику в бот
+        BOT.stats = SiteStats(BOT, log=log)         # посетители по журналу Caddy: отчёт в 9:00 и /stats
         BOT.start()
         BOT.monitor.start()
+        BOT.stats.start()
     log(f"слушаю 127.0.0.1:{PORT}; бот={'да' if BOT else 'нет'}, почта={'да' if SMTP_USER and SMTP_PASSWORD else 'нет'}, "
         f"перевод={ {'deepl': 'DeepL', 'claude': 'Claude'}.get(provider(), 'нет') }")
     srv.serve_forever()

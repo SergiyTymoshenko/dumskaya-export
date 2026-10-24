@@ -35,8 +35,10 @@ install -d -m 755 /etc/caddy/sites
 CU="$(systemctl show caddy -p User --value 2>/dev/null)"; CU="${CU:-root}"
 as_caddy() { if [ "$CU" = root ]; then "$@"; else sudo -u "$CU" -H "$@"; fi; }
 install -d -o "$CU" -g "$CU" -m 755 /var/log/caddy
-[ -f /var/log/caddy/dumskaya.log ] || install -o "$CU" -g "$CU" -m 640 /dev/null /var/log/caddy/dumskaya.log
+[ -f /var/log/caddy/dumskaya.log ] || install -o "$CU" -g "$CU" -m 644 /dev/null /var/log/caddy/dumskaya.log
 chown "$CU":"$CU" /var/log/caddy/dumskaya.log*
+# журнал читает сервис статистики посетителей (от пользователя $USER_NAME); Caddy при ротации сохраняет эти права
+chmod 644 /var/log/caddy/dumskaya*.log* 2>/dev/null || true
 
 # 2. Caddy
 if [ "$MODE" = live ]; then
@@ -48,7 +50,9 @@ else
   WWW=""
   BIND="bind 127.0.0.1"
 fi
-sed -e "s#__SITE__#$SITE#" -e "s#__WWW_BLOCK__#$WWW#" -e "s#__BIND__#$BIND#" "$HERE/caddy/dumskaya.caddy.template" > /etc/caddy/sites/dumskaya.caddy.new
+LOGMODE="mode 0644"   # права нового файла журнала (Caddy 2.8+); старый Caddy этой строки не знает — тогда без неё
+gen_site() { sed -e "s#__SITE__#$SITE#" -e "s#__WWW_BLOCK__#$WWW#" -e "s#__BIND__#$BIND#" -e "s#__LOGMODE__#$LOGMODE#" "$HERE/caddy/dumskaya.caddy.template"; }
+gen_site > /etc/caddy/sites/dumskaya.caddy.new
 cp "$HERE/caddy/dumskaya-redirects.snippet" /etc/caddy/sites/dumskaya-redirects.snippet.new
 
 cp -a "$CADDYFILE" "$CADDYFILE.bak-$TS"
@@ -69,7 +73,12 @@ restore() {
   done
 }
 # проверка от имени пользователя Caddy — так же, как конфиг будет загружаться на самом деле
-if ! as_caddy caddy validate --config "$CADDYFILE" --adapter caddyfile >/tmp/dumskaya-caddy-validate.log 2>&1; then
+validate() { as_caddy caddy validate --config "$CADDYFILE" --adapter caddyfile >/tmp/dumskaya-caddy-validate.log 2>&1; }
+if ! validate && [ -n "$LOGMODE" ] && grep -q "mode" /tmp/dumskaya-caddy-validate.log; then
+  LOGMODE=""            # эта версия Caddy не знает «mode» в журнале — права выставлены chmod выше
+  gen_site > /etc/caddy/sites/dumskaya.caddy
+fi
+if ! validate; then
   tail -5 /tmp/dumskaya-caddy-validate.log | cut -c1-400 || true
   restore "Проверка конфига не прошла"
   exit 1
@@ -98,6 +107,6 @@ sleep 1
 systemctl is-active --quiet dumskaya-lead && echo "Сервис заявок работает." || { echo "Сервис заявок не запустился:"; journalctl -u dumskaya-lead -n 20 --no-pager; }
 
 echo "$MODE" > "$APP/mode"; chown "$USER_NAME":"$USER_NAME" "$APP/mode"
-sha256sum "$HERE/lead_service.py" "$HERE/bot.py" "$HERE/site_monitor.py" "$HERE/translate.py" "$HERE/caddy/"* "$HERE/dumskaya-lead.service" > "$APP/installed.sha256"
+sha256sum "$HERE/lead_service.py" "$HERE/bot.py" "$HERE/site_monitor.py" "$HERE/site_stats.py" "$HERE/translate.py" "$HERE/caddy/"* "$HERE/dumskaya-lead.service" > "$APP/installed.sha256"
 chown "$USER_NAME":"$USER_NAME" "$APP/installed.sha256"
 echo "Готово."

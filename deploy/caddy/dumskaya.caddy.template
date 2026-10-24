@@ -51,10 +51,12 @@ __SITE__ {
 		}
 	}
 
+	# журнал запросов: по нему сервис заявок считает посетителей (site_stats.py) — поэтому он открыт для чтения
 	log {
 		output file /var/log/caddy/dumskaya.log {
+			__LOGMODE__
 			roll_size 10MiB
-			roll_keep 5
+			roll_keep 10
 		}
 	}
 }
