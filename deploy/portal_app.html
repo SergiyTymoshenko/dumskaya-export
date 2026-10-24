@@ -129,6 +129,7 @@
   .msg .meta { display: block; font-size: calc(12px * var(--k)); opacity: .75; margin-top: 4px; text-align: right; white-space: normal; }
   .msg .orig { display: block; font-size: calc(14px * var(--k)); opacity: .8; border-top: 1px solid currentColor; border-top-color: rgba(127,127,127,.35); margin-top: 6px; padding-top: 5px; }
   .msg button.tr { border: 0; background: none; padding: 0; color: inherit; text-decoration: underline; font-size: calc(12px * var(--k)); opacity: .8; cursor: pointer; }
+  body.dropping #app { outline: 3px dashed var(--series); outline-offset: -4px; border-radius: 12px; }
   .msg img { display: block; max-width: 100%; max-height: 260px; border-radius: 10px; margin: 2px 0 4px; cursor: pointer; }
   .msg .file { display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; cursor: pointer; }
   .day { align-self: center; font-size: calc(13px * var(--k)); color: var(--text-2); background: var(--ghost); padding: 3px 10px; border-radius: 999px; }
@@ -625,6 +626,18 @@
   }
   const absUrl = (u) => new URL(u, location.href).href;
   function openLink(u) { if (tg && tg.openLink) tg.openLink(absUrl(u)); else window.open(u, '_blank'); }
+  function tgLink(u) { if (tg && tg.openTelegramLink) { try { return tg.openTelegramLink(u); } catch (e) {} } openLink(u); }   // t.me — внутри Telegram
+  // кабинет открыт на компьютере (Telegram для Mac, Windows, Linux или в браузере): Enter отправляет сообщение,
+  // файлы можно перетащить в разговор или в документы и вставить из буфера (снимок экрана — ⌘V / Ctrl+V)
+  const DESKTOP = (() => { try { return ['tdesktop', 'macos', 'web', 'weba', 'webk'].includes(tg && tg.platform) || matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) { return false; } })();
+  let dropTo = null;                      // куда положить брошенные или вставленные файлы на этом экране (разговор, документы)
+  function named(f, i) {                  // картинка из буфера приходит как «image.png» — даём имя с датой и временем
+    if (f.name && !/^image\.(png|jpe?g|gif|webp|heic)$/i.test(f.name)) return f;
+    const d = new Date(), p2 = (x) => String(x).padStart(2, '0');
+    const stamp = d.getFullYear() + '-' + p2(d.getMonth() + 1) + '-' + p2(d.getDate()) + '-' + p2(d.getHours()) + p2(d.getMinutes()) + p2(d.getSeconds());
+    const ext = ((f.type || 'image/png').split('/')[1] || 'png').replace('jpeg', 'jpg');
+    try { return new File([f], 'image-' + stamp + (i ? '-' + (i + 1) : '') + '.' + ext, { type: f.type }); } catch (e) { return f; }
+  }
   function mailLink(to) {                 // из Telegram mailto: открывается не везде — через страницу, она откроет «Почту»
     if (tg && tg.initData) return openLink('/api/crm/mail#' + new URLSearchParams({ to, s: 'DUMSKAYA DESIGN', b: '', l: LANG }).toString());
     location.href = 'mailto:' + to;
@@ -634,7 +647,7 @@
     if (ph) out.push(el('a', { class: 'icon-btn', href: 'tel:' + ph, title: T('call'), 'aria-label': T('call') }, '📞'));
     if (ph && (p.contact_pref === 'WhatsApp' || !p.contact_pref)) out.push(el('button', { class: 'icon-btn', type: 'button', title: 'WhatsApp', 'aria-label': 'WhatsApp', onclick: () => openLink('https://wa.me/' + ph.replace('+', '')) }, '🟢'));
     if (m.startsWith('@') || p.contact_pref === 'Telegram') out.push(el('button', { class: 'icon-btn', type: 'button', title: 'Telegram', 'aria-label': 'Telegram',
-      onclick: () => openLink(m.startsWith('@') ? 'https://t.me/' + m.slice(1) : 'https://t.me/' + (ph || m).replace(/^\+?/, '+')) }, '✈︎'));
+      onclick: () => tgLink(m.startsWith('@') ? 'https://t.me/' + m.slice(1) : 'https://t.me/' + (ph || m).replace(/^\+?/, '+')) }, '✈︎'));
     if (p.contact_pref === 'Viber' && ph) out.push(el('a', { class: 'icon-btn', href: 'viber://chat?number=' + encodeURIComponent(ph), title: 'Viber' }, '🟣'));
     if (p.email) out.push(el('button', { class: 'icon-btn', type: 'button', title: p.email, 'aria-label': 'E-mail', onclick: () => mailLink(p.email) }, '✉️'));
     return out;
@@ -685,6 +698,28 @@
     if (V && canList()) { V = null; PID = null; TH = null; stopChat(); render(); }
   }
   if (tg && tg.BackButton) tg.BackButton.onClick(goBack);
+  document.addEventListener('keydown', (e) => {          // компьютер: Esc — закрыть просмотр или окно, ⌘/Ctrl+Enter — сохранить форму
+    const top = sheets[sheets.length - 1], v = document.querySelector('.viewer');
+    if (e.key === 'Escape') { if (v) { v.remove(); backBtn(); } else if (top && !top.run) closeSheet(top.el); }
+    if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && top && top.run) { e.preventDefault(); top.run(); }
+  });
+  const takesFiles = () => { const top = sheets[sheets.length - 1]; return document.querySelector('.viewer') ? null : top ? top.files || null : dropTo; };
+  const hasFiles = (e) => !!(e.dataTransfer && [...(e.dataTransfer.types || [])].includes('Files'));
+  document.addEventListener('dragover', (e) => {         // файл, брошенный мимо, не открывается вместо кабинета
+    e.preventDefault();
+    document.body.classList.toggle('dropping', hasFiles(e) && !!takesFiles());
+  });
+  document.addEventListener('dragleave', (e) => { if (!e.relatedTarget) document.body.classList.remove('dropping'); });
+  document.addEventListener('drop', (e) => {
+    e.preventDefault(); document.body.classList.remove('dropping');
+    const fs = [...((e.dataTransfer && e.dataTransfer.files) || [])], to = takesFiles();
+    if (fs.length && to) to(fs);
+  });
+  document.addEventListener('paste', (e) => {            // снимок экрана или файл из буфера
+    const fs = [...((e.clipboardData && e.clipboardData.files) || [])], to = takesFiles();
+    if (!fs.length || !to) return;
+    e.preventDefault(); to(fs);
+  });
 
   // ---------- загрузка ----------
   async function openProject(id, as, startTab, thread) {
@@ -723,7 +758,7 @@
   }
 
   function render() {
-    stopChat();
+    stopChat(); dropTo = null;
     setNav(); backBtn();
     app.replaceChildren();
     if (PREVIEW) app.append(previewBanner());
@@ -954,8 +989,11 @@
     app.append(topBar(), el('h1', null, T('nav_docs')));
     const files = V.files || [];
     const secs = SECTIONS.filter((c) => files.some((f) => f.section === c));
-    if (canUpload()) app.append(el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, T('docs_crew_hint')),
-      el('button', { class: 'btn primary wide', type: 'button', style: 'margin:0 0 12px', onclick: () => uploadSheet() }, T('add_doc')));
+    if (canUpload()) {
+      app.append(el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, T('docs_crew_hint')),
+        el('button', { class: 'btn primary wide', type: 'button', style: 'margin:0 0 12px', onclick: () => uploadSheet() }, T('add_doc')));
+      dropTo = (fs) => uploadSheet(fs);
+    }
     if (!secs.length) { app.append(el('div', 'card empty', T('docs_empty'))); return; }
     if (!secs.includes(cat)) cat = secs.includes('visual') ? 'visual' : secs[0];
     app.append(el('div', 'chips', ...secs.map((c) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(cat === c), onclick: () => { cat = c; render(); } },
@@ -1025,16 +1063,18 @@
       return await new Promise((ok) => c.toBlob(ok, 'image/jpeg', 0.8));
     } catch (e) { return null; }
   }
-  function uploadSheet() {
+  function uploadSheet(start) {
     const input = el('input', { type: 'file', multiple: true, style: 'display:none' });
-    const info = el('p', 'small muted', '');
-    input.addEventListener('change', () => { info.textContent = input.files.length ? T('n_files', { n: input.files.length }) : ''; });
+    const info = el('p', { class: 'small muted', style: 'overflow-wrap:anywhere' }, '');
+    let picked = [];
+    const add = (list) => { picked = picked.concat([...(list || [])].map(named)); info.replaceChildren(...(picked.length ? [T('n_files', { n: picked.length }), el('br'), picked.map((f) => f.name).join(', ')] : [])); };
+    input.addEventListener('change', () => { add(input.files); input.value = ''; });
     const title = el('input', { placeholder: T('doc_ph') });
     const vis = visPicker(role() === 'worker' ? 'head' : 'client');
     sheet(T('add_doc').replace('＋ ', ''), el('div', input, el('button', { class: 'btn wide', type: 'button', onclick: () => input.click() }, '📎 ' + T('pick_files')), info,
       field(T('doc_title'), title), el('div', 'field', el('span', 'lab', T('who_sees')), vis.el, el('div', 'hint', T('vis_note')))),
     async () => {
-      const files = [...input.files];
+      const files = picked;
       if (!files.length) throw new Error(T('need_file'));
       if (files.some((f) => f.size > 60 * 1024 * 1024)) throw new Error(T('file_big'));
       const t = el('div', 'toast', ''); document.body.append(t);
@@ -1050,6 +1090,8 @@
       } finally { t.remove(); }
       toast(T('uploaded')); cat = 'work'; await reload();
     }, T('send'));
+    sheets[sheets.length - 1].files = add;      // перетащили или вставили файлы, пока форма открыта
+    if (start) add(start);
   }
 
   // ---------- разговоры ----------
@@ -1137,32 +1179,41 @@
     app.append(composer);
     function drawComposer() {
       composer.replaceChildren();
+      dropTo = null;
       if (ro) { composer.append(el('p', { class: 'small muted', style: 'text-align:center' }, '👁 ' + T('read_only'))); return; }
       const ta = el('textarea', { rows: 1, placeholder: T('placeholder'), 'aria-label': T('placeholder') });
-      const file = el('input', { type: 'file', accept: 'image/*,application/pdf', style: 'display:none' });
+      const file = el('input', { type: 'file', multiple: true, style: 'display:none' });
       const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, window.innerHeight * 0.4) + 'px'; };
       ta.addEventListener('input', grow);
       ta.addEventListener('focus', () => document.body.classList.add('typing'));
       ta.addEventListener('blur', () => setTimeout(() => document.body.classList.remove('typing'), 150));
-      const send = async (fileId) => {
+      const doSend = async (fileId) => {
         const text = ta.value.trim();
-        if ((!text && !fileId) || sending) return;
+        if (!text && !fileId) return;
         sending = true;
         try { await api('/api/portal/chat', { json: { thread_id: TID, text, file_id: fileId || null } }); ta.value = ''; grow(); }
         catch (e) { toast(e.message); }
         finally { sending = false; }
         await refreshChat(true);
       };
-      file.addEventListener('change', async () => {
-        const f = file.files[0]; file.value = '';
-        if (!f) return;
-        if (f.size > 20 * 1024 * 1024) return toast(T('too_big'));
-        const tt = el('div', 'toast', T('uploading')); document.body.append(tt);
-        try {
-          const r = await api('/api/portal/upload?thread=' + TID + '&name=' + encodeURIComponent(f.name || 'file'), { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
-          tt.remove(); await send(r.id);
-        } catch (e) { tt.remove(); toast(e.code === 'file_too_big' ? T('too_big') : e.message); }
+      let queue = Promise.resolve();        // сообщения и файлы уходят по очереди — ни одно не теряется
+      const send = (fileId) => (queue = queue.then(() => doSend(fileId)));
+      const attach = async (list) => {
+        const fs = [...(list || [])].map(named);
+        for (const f of fs) {
+          if (f.size > 20 * 1024 * 1024) { toast(T('too_big')); continue; }
+          const tt = el('div', 'toast', T('uploading')); document.body.append(tt);
+          try {
+            const r = await api('/api/portal/upload?thread=' + TID + '&name=' + encodeURIComponent(f.name || 'file'), { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
+            tt.remove(); await send(r.id);
+          } catch (e) { tt.remove(); toast(e.code === 'file_too_big' ? T('too_big') : e.message); }
+        }
+      };
+      file.addEventListener('change', async () => { const fs = [...file.files]; file.value = ''; await attach(fs); });
+      ta.addEventListener('keydown', (e) => {       // компьютер: Enter — отправить, Shift+Enter — новая строка; везде ⌘/Ctrl+Enter
+        if (e.key === 'Enter' && !e.shiftKey && !e.isComposing && (DESKTOP || e.metaKey || e.ctrlKey)) { e.preventDefault(); send(); }
       });
+      dropTo = attach;
       composer.append(el('div', 'composer', el('button', { class: 'icon-btn', type: 'button', title: T('attach'), 'aria-label': T('attach'), onclick: () => file.click() }, '📎'), ta, file,
         el('button', { class: 'icon-btn send', type: 'button', title: T('send'), 'aria-label': T('send'), onclick: () => send() }, '➤')));
     }

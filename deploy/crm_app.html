@@ -216,6 +216,7 @@
   .badge { font-weight: 650; white-space: nowrap; font-size: calc(15px * var(--k)); }
   .drop { outline: 2px dashed var(--series); outline-offset: -6px; }
   .dnd-hint { display: none; }
+  body.dropping #app { outline: 3px dashed var(--series); outline-offset: -4px; border-radius: 12px; }
   @media (hover: hover) and (pointer: fine) { .dnd-hint { display: block; } }
   /* кабинеты заказчиков и подрядчиков, товары, доп. услуги, переписка */
   .tgline { font-size: calc(14px * var(--k)); margin-top: 8px; }
@@ -299,7 +300,7 @@
   let S = null, P = null, tab = 'projects', view = 'list', filter = 'work', query = '', fileTab = 'measure', peopleTab = 'clients', period = 'month', M = null, lastPid = null;
   let L = null, LS = null, A = null, leadFilter = 'new', leadQuery = '';   // заявка, список заявок, доступ к боту
   let OWNER = false;          // разработчик: в «Студии» только сайт и доступ к боту (решено 24.10.2026)
-  let CH = [], chatTimer = null, chatBusy = false, CHT = null;               // открытый разговор проекта (заказчики, подрядчики, работники, группа)
+  let CH = [], chatTimer = null, chatBusy = false, CHT = null, chatDrop = null;   // chatDrop — файлы, брошенные или вставленные в разговор               // открытый разговор проекта (заказчики, подрядчики, работники, группа)
   const sheets = [];                        // открытые формы и карточки поверх страницы, последняя — сверху
 
   // ---------- оформление ----------
@@ -352,6 +353,14 @@
   const pd = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
   const dfmt = (s) => { if (!s) return ''; const d = pd(s.slice(0, 10)); return d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear(); };
   const todayISO = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+  // «Студия» открыта на компьютере (Telegram для Mac, Windows или в браузере): Enter в разговоре отправляет сообщение
+  const DESKTOP = (() => { try { return ['tdesktop', 'macos', 'web', 'weba', 'webk'].includes(tg && tg.platform) || matchMedia('(hover: hover) and (pointer: fine)').matches; } catch (e) { return false; } })();
+  function pastedName(f, i) {             // картинка из буфера приходит как «image.png» — даём имя с датой и временем
+    if (f.name && !/^image\.(png|jpe?g|gif|webp|heic)$/i.test(f.name)) return f;
+    const stamp = new Date().toTimeString().slice(0, 8).replace(/:/g, '-');
+    try { return new File([f], 'вставка-' + todayISO() + '-' + stamp + (i ? '-' + (i + 1) : '') + '.' + ((f.type || 'image/png').split('/')[1] || 'png').replace('jpeg', 'jpg'), { type: f.type }); }
+    catch (e) { return f; }
+  }
   const status = (s) => (S.lists.statuses.find((x) => x[0] === s) || [s, s])[1];
   const plural = (n, a, b, c) => { const x = Math.abs(n) % 100, y = x % 10; return x > 10 && x < 20 ? c : y === 1 ? a : y >= 2 && y <= 4 ? b : c; };
   function toast(text) {
@@ -468,7 +477,7 @@
   }
 
   function render() {
-    stopChat();
+    stopChat(); chatDrop = null;
     markNav();
     app.replaceChildren();
     if (OWNER) return ownerView();
@@ -1878,32 +1887,39 @@
       });
     };
     const ta = el('textarea', { rows: 1, placeholder: 'Сообщение…', 'aria-label': 'Сообщение' });
-    const file = el('input', { type: 'file', accept: 'image/*,application/pdf', style: 'display:none' });
+    const file = el('input', { type: 'file', multiple: true, style: 'display:none' });
     const share = el('input', { type: 'checkbox' });
     const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, window.innerHeight * 0.4) + 'px'; };
     ta.addEventListener('input', grow);
     ta.addEventListener('focus', () => document.body.classList.add('typing'));
     ta.addEventListener('blur', () => setTimeout(() => document.body.classList.remove('typing'), 150));
-    const send = async (fileId) => {
+    const doSend = async (fileId) => {
       const text = ta.value.trim();
-      if ((!text && !fileId) || chatBusy) return;
+      if (!text && !fileId) return;
       chatBusy = true;
       try { await api('/api/portal/chat', { json: { thread_id: CHT, text, file_id: fileId || null } }); ta.value = ''; grow(); if (t.kind === 'pc') t.studio_joined = true; }
       catch (e) { toast(e.message); }
       finally { chatBusy = false; }
       await pull(true);
     };
-    file.addEventListener('change', async () => {
-      const f = file.files[0]; file.value = '';
-      if (!f) return;
-      if (f.size > 20 * 1024 * 1024) return toast('Файл больше 20 МБ — в разговор не отправить');
-      const tt = el('div', 'toast', 'Загружаю файл…'); document.body.append(tt);
-      try {
-        const r = await api('/api/portal/upload?thread=' + CHT + '&name=' + encodeURIComponent(f.name || 'file') + (share.checked && !inClient ? '&client=1' : ''),
-          { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
-        tt.remove(); await send(r.id);
-      } catch (e) { tt.remove(); toast(e.message); }
+    let queue = Promise.resolve();          // сообщения и файлы уходят по очереди — ни одно не теряется
+    const send = (fileId) => (queue = queue.then(() => doSend(fileId)));
+    const attach = async (list) => {         // 📎, перетащили на компьютере или вставили из буфера (⌘V / Ctrl+V)
+      for (const f of [...(list || [])].map(pastedName)) {
+        if (f.size > 20 * 1024 * 1024) { toast('Файл больше 20 МБ — в разговор не отправить (положите в «Файлы проекта»)'); continue; }
+        const tt = el('div', 'toast', 'Загружаю файл…'); document.body.append(tt);
+        try {
+          const r = await api('/api/portal/upload?thread=' + CHT + '&name=' + encodeURIComponent(f.name || 'file') + (share.checked && !inClient ? '&client=1' : ''),
+            { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
+          tt.remove(); await send(r.id);
+        } catch (e) { tt.remove(); toast(e.message); }
+      }
+    };
+    file.addEventListener('change', async () => { const fs = [...file.files]; file.value = ''; await attach(fs); });
+    ta.addEventListener('keydown', (e) => {       // компьютер: Enter — отправить, Shift+Enter — новая строка; везде ⌘/Ctrl+Enter
+      if (e.key === 'Enter' && !e.shiftKey && !e.isComposing && (DESKTOP || e.metaKey || e.ctrlKey)) { e.preventDefault(); send(); }
     });
+    chatDrop = attach;
     app.append(...[el('div', 'composer', el('button', { class: 'icon-btn', type: 'button', title: 'Фото или файл', 'aria-label': 'Фото или файл', onclick: () => file.click() }, '📎'), ta, file,
       el('button', { class: 'icon-btn send', type: 'button', title: 'Отправить', 'aria-label': 'Отправить', onclick: () => send() }, '➤')),
       !inClient && t.kind ? el('label', { class: 'check', style: 'margin-top:8px' }, share, 'Файл увидит и заказчик (согласованный вариант)') : null,
@@ -2259,9 +2275,23 @@
     else if (q.get('tab') === 'leads') tab = 'leads';
     render();
   }
-  document.addEventListener('dragover', (e) => e.preventDefault());       // файл, брошенный мимо, не открывается вместо «Студии»
-  document.addEventListener('drop', (e) => e.preventDefault());
+  document.addEventListener('dragover', (e) => {          // файл, брошенный мимо, не открывается вместо «Студии»
+    e.preventDefault();
+    const inChat = chatDrop && view === 'chat' && !sheets.length && e.dataTransfer && [...(e.dataTransfer.types || [])].includes('Files');
+    document.body.classList.toggle('dropping', !!inChat);
+  });
+  document.addEventListener('dragleave', (e) => { if (!e.relatedTarget) document.body.classList.remove('dropping'); });
+  document.addEventListener('drop', (e) => {
+    e.preventDefault(); document.body.classList.remove('dropping');
+    const fs = [...((e.dataTransfer && e.dataTransfer.files) || [])];
+    if (fs.length && chatDrop && view === 'chat' && !sheets.length && !document.querySelector('.viewer')) chatDrop(fs);
+  });
   document.addEventListener('paste', (e) => {
+    if (chatDrop && view === 'chat' && !sheets.length && !document.querySelector('.viewer')) {
+      const fs = [...((e.clipboardData && e.clipboardData.files) || [])];
+      if (fs.length) { e.preventDefault(); chatDrop(fs); }
+      return;
+    }
     if (tab !== 'projects' || view !== 'project' || !P || sheets.length || document.querySelector('.viewer')) return;
     const fs = [...((e.clipboardData && e.clipboardData.files) || [])];
     if (!fs.length) return;
