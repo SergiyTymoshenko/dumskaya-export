@@ -177,7 +177,7 @@ class Handler(BaseHTTPRequestHandler):
             return
         if path.rstrip("/") == "/api/stats/app":           # графики посетителей — мини-приложение Telegram
             try:
-                page = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "stats_app.html"), encoding="utf-8").read()
+                page = crm_api.page("stats_app.html")
             except OSError:
                 return self.reply(404, {"ok": False})
             return self.reply(200, None, html_page=page, telegram_frame=True)

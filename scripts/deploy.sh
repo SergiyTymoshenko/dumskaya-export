@@ -39,6 +39,10 @@ python3 scripts/build_caddy.py
 python3 scripts/build_shop.py
 
 echo "▸ 4/5 Выкладка на $HOST"
+# версия бота и «Студии» — мелко внизу мини-приложения: коммит · когда · откуда («+ правки» — были незакоммиченные изменения)
+V="$(git rev-parse --short HEAD 2>/dev/null || echo '—')"
+git diff --quiet HEAD -- deploy 2>/dev/null || V="$V + правки"
+printf '%s · %s · Мак\n' "$V" "$(date '+%d.%m.%Y %H:%M')" > deploy/VERSION
 ssh "$HOST" 'mkdir -p ~/dumskaya/deploy'
 rsync -az --delete --exclude '.DS_Store' deploy/ "$HOST:dumskaya/deploy/"
 if ! ssh "$HOST" 'test -d /var/www/dumskaya/site'; then

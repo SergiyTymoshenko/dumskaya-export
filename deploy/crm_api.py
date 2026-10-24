@@ -6,6 +6,8 @@
 X-Telegram-Init-Data), как у графиков. Файлы отдаются по подписанным ссылкам (действуют 12 часов): так их можно
 открыть в браузере и скачать. Опасные для сайта типы (HTML, SVG…) отдаются только как вложение и в «песочнице».
 """
+import hashlib
+import html
 import json
 import os
 import urllib.parse
@@ -24,9 +26,39 @@ def ui_size(u):
     return v if v in SIZES else ("l" if u["role"] == "designer" else "m")
 
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+
+def _version():
+    """Версия запущенного кода — внизу «Студии» и графиков, мелко: коммит · когда выложено · откуда.
+    Файл VERSION пишут выкладка с Мака (scripts/deploy.sh) и автовыкладка (GitHub); читается при запуске сервиса,
+    поэтому показывает именно то, что работает. Нет файла — отпечаток кода."""
+    try:
+        with open(os.path.join(HERE, "VERSION"), encoding="utf-8") as fh:
+            v = " ".join(fh.read().split())[:80]
+        if v:
+            return v
+    except OSError:
+        pass
+    h = hashlib.sha256()
+    for name in sorted(os.listdir(HERE)):
+        if name.endswith((".py", ".html")):
+            with open(os.path.join(HERE, name), "rb") as fh:
+                h.update(name.encode() + b"\0" + fh.read())
+    return "код " + h.hexdigest()[:7]
+
+
+VERSION = _version()
+
+
+def page(name):
+    """Страница мини-приложения с версией внизу (метка __STUDIO_VERSION__)."""
+    with open(os.path.join(HERE, name), encoding="utf-8") as fh:
+        return fh.read().replace("__STUDIO_VERSION__", html.escape(VERSION))
+
+
 def app_page():
-    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "crm_app.html"), encoding="utf-8") as fh:
-        return fh.read()
+    return page("crm_app.html")
 
 
 def _json_body(h, limit=300_000):

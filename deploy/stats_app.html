@@ -112,6 +112,7 @@
   th:first-child, td:first-child { text-align: left; }
   th { color: var(--text-2); font-weight: 500; }
   .empty { color: var(--text-2); padding: 24px 0; text-align: center; }
+  .ver { color: var(--text-2); font-size: calc(12px * min(var(--k), 1.1)); text-align: center; margin: 22px 0 0; opacity: .8; overflow-wrap: anywhere; }
   .loading { opacity: .5; transition: opacity .2s; }
   .btn { font: inherit; font-size: calc(14px * var(--k)); font-weight: 600; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
     background: var(--series); color: #fff; }
@@ -176,6 +177,7 @@
     <button type="button" data-p="all" aria-pressed="false">Всё время</button>
   </div>
   <main id="app"><p class="empty">Загружаю…</p></main>
+  <p class="ver">Студия · версия __STUDIO_VERSION__</p>
 
 <script>
 (() => {

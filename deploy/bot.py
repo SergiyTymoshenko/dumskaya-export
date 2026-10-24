@@ -537,6 +537,8 @@ class Bot(CrmBotMixin):
         act = parts[0]
         if act == "cf":                            # файлы в проект: cf:p:проект / cf:c:раздел / cf:m:сдвиг / cf:b / cf:x
             return self.crm_button(admin, msg, parts)
+        if act == "ld":                            # заявка с сайта: ld:номер:что это (lead, ad, spam, ignore)
+            return self.lead_button(admin, msg, parts)
         if act == "ro":                            # ro:режим:uid:роль — выбрана роль
             mode, uid, role = parts[1], int(parts[2]), parts[3]
             return self.pick_role(admin, msg, mode, uid, role)
@@ -1007,8 +1009,7 @@ class Bot(CrmBotMixin):
         pid = prod.get("partner") if prod else None
         delivered = []
         lead["model_name"] = (prod or {}).get("name") or ""
-        btn = self.studio_button("📋 Открыть заявку в «Студии»", query=f"lead={lead['crm_id']}") if lead.get("crm_id") else None
-        rows = [btn] if btn else None
+        rows = self.lead_rows(lead.get("crm_id"))     # студии: что это (заявка, реклама, спам, игнорировать) и «Открыть»
         if pid:
             p = self.find_partner(pid)
             people = self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", p["id"]) if p else []

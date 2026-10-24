@@ -50,6 +50,40 @@ class CrmBotMixin:
         q = f"project={pid}" if pid else (query or "")
         return [(text, {"web_app": {"url": url + (f"?{q}" if q else "")}})]
 
+    # ---------- заявка с сайта: что это — кнопками прямо в сообщении ----------
+    TRIAGE_BUTTONS = [("lead", "📩", "Заявка"), ("ad", "🤝", "Реклама"), ("spam", "🚫", "Спам"), ("ignore", "🙈", "Игнорировать")]
+
+    def lead_rows(self, lid, current=None):
+        """Кнопки под сообщением о заявке (разработчику и дизайнеру): заявка, реклама или сотрудничество, спам,
+        игнорировать — и «Открыть заявку в «Студии»». Выбранное отмечено ✓."""
+        if not lid:
+            return None
+        rows = []
+        if getattr(self, "crm", None):
+            cur = "lead" if current in ("lead", "work", "project", "closed") else current
+            b = [(("✓ " if k == cur else e + " ") + t, f"ld:{lid}:{k}") for k, e, t in self.TRIAGE_BUTTONS]
+            rows += [b[:2], b[2:]]
+        btn = self.studio_button("📋 Открыть заявку в «Студии»", query=f"lead={lid}")
+        if btn:
+            rows.append(btn)
+        return rows or None
+
+    def lead_button(self, admin, msg, parts):
+        lid, status = int(parts[1]), parts[2]
+        if status not in [k for k, _, _ in self.TRIAGE_BUTTONS] or not getattr(self, "crm", None):
+            return
+        try:
+            cur = self.crm.lead(lid)["status"]
+        except CrmError:
+            return
+        if not (status == "lead" and cur in ("work", "project", "closed")):       # уже в работе — назад не откатывать
+            try:
+                cur = self.crm.set_lead_status(lid, status, admin["name"] or str(admin["tg_id"]))["status"]
+            except CrmError:                                                        # из заявки уже сделан проект
+                pass
+        self.api("editMessageReplyMarkup", chat_id=msg["chat"]["id"], message_id=msg["message_id"],
+                 reply_markup=self.kb(self.lead_rows(lid, cur)))
+
     # ---------- приём файлов ----------
     def _pending(self, uid):
         try:

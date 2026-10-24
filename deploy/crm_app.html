@@ -118,6 +118,7 @@
   .kv dt { color: var(--text-2); }
   .kv dd { margin: 0; overflow-wrap: anywhere; }
   .empty { color: var(--text-2); text-align: center; padding: 26px 8px; }
+  .ver { color: var(--text-2); font-size: calc(12px * min(var(--k), 1.1)); text-align: center; margin: 22px 0 0; opacity: .8; overflow-wrap: anywhere; }
   .nav { position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface); border-top: 1px solid var(--border);
     display: flex; justify-content: center; padding: 6px 6px calc(6px + var(--sab)); z-index: 5; }
   .nav .in { display: flex; width: 100%; max-width: 760px; }
@@ -189,6 +190,8 @@
   .status.project { color: var(--up); background: rgba(0, 99, 0, 0.10); }
   .status.closed { color: var(--text-2); }
   .status.spam { color: var(--down); background: rgba(208, 59, 59, 0.10); }
+  .status.lead { color: var(--series); background: var(--series-wash); }
+  .status.ad, .status.ignore { color: var(--text-2); }
   .msg { white-space: pre-wrap; overflow-wrap: anywhere; }
   .seg.seg2 { grid-template-columns: 1fr 1fr; }
   .seg.seg2 button:last-child:nth-child(odd) { grid-column: 1 / -1; }
@@ -233,6 +236,7 @@
 </head>
 <body>
 <main id="app"><p class="empty">Загружаю…</p></main>
+<p class="ver">Студия · версия __STUDIO_VERSION__</p>
 <nav class="nav" id="nav"><div class="in">
   <button type="button" data-tab="leads"><span>📋</span>Заявки<b class="dot" id="leads-dot" hidden></b></button>
   <button type="button" data-tab="projects"><span>📁</span>Проекты</button>
@@ -648,7 +652,9 @@
   }
 
   // ---------- заявки с сайта ----------
-  const leadStatus = (s) => (S.lists.lead_statuses.find((x) => x[0] === s) || [s, s])[1];
+  const leadStatus = (s, short) => (short && s === 'ad' ? 'Реклама' : (S.lists.lead_statuses.find((x) => x[0] === s) || [s, s])[1]);
+  const TRIAGE = [['lead', '📩 Заявка'], ['ad', '🤝 Реклама, сотрудничество'], ['spam', '🚫 Спам'], ['ignore', '🙈 Игнорировать']];
+  const isReal = (st) => !S.lists.lead_hidden.includes(st);     // настоящая заявка (не реклама, не спам, не «игнорировать»)
   const FROM_LANG = { en: 'с английского', sk: 'со словацкого', de: 'с немецкого', uk: 'с украинского', pl: 'с польского', cs: 'с чешского',
     it: 'с итальянского', fr: 'с французского', es: 'с испанского', hu: 'с венгерского' };
   function dtime(s) {
@@ -689,16 +695,16 @@
       if (tab !== 'leads' || view === 'lead') return;
     }
     const count = (st) => LS.leads.filter((x) => x.status === st).length;
-    const draw = () => {                                  // спам — отдельно: во «Все» не попадает, своя кнопка, когда он есть
-      const spam = count('spam');
-      if (leadFilter === 'spam' && !spam) leadFilter = 'all';
-      chips.replaceChildren(...[['new', 'Новые'], ['work', 'В работе'], ['all', 'Все']].concat(spam ? [['spam', 'Спам']] : []).map(([k, t]) => {
-        const n = k === 'all' ? LS.leads.length - spam : count(k);
+    const draw = () => {                    // реклама, спам, «игнорировать» во «Все» не попадают — у каждого своя кнопка, когда они есть
+      const hidden = [['ad', 'Реклама'], ['spam', 'Спам'], ['ignore', 'Игнор']].filter(([k]) => count(k));
+      if (S.lists.lead_hidden.includes(leadFilter) && !count(leadFilter)) leadFilter = 'all';
+      chips.replaceChildren(...[['new', 'Новые'], ['lead', 'Заявки'], ['work', 'В работе'], ['all', 'Все']].concat(hidden).map(([k, t]) => {
+        const n = k === 'all' ? LS.leads.filter((x) => isReal(x.status)).length : count(k);
         return el('button', { class: 'chip', type: 'button', 'aria-pressed': String(leadFilter === k), onclick: () => { leadFilter = k; draw(); } }, t + (n ? ' · ' + n : ''));
       }));
       list.replaceChildren();
       const q = leadQuery.trim().toLowerCase();
-      const items = LS.leads.filter((x) => (leadFilter === 'all' ? x.status !== 'spam' : x.status === leadFilter)
+      const items = LS.leads.filter((x) => (leadFilter === 'all' ? isReal(x.status) : x.status === leadFilter)
         && (!q || [x.name, x.contact, x.snippet, x.model, x.model_name].join(' ').toLowerCase().includes(q)));
       if (!items.length) {
         list.append(el('div', 'empty', !LS.leads.length ? 'Заявок пока нет. Как только кто-то отправит форму на сайте, она появится здесь.'
@@ -712,7 +718,7 @@
   }
   function leadCard(x) {
     return el('button', { class: 'pcard lead' + (x.status === 'new' ? ' new' : ''), type: 'button', onclick: () => openLead(x.id) },
-      el('div', 'top', el('span', 'num', dtime(x.ts)), el('span', 'status ' + x.status, leadStatus(x.status))),
+      el('div', 'top', el('span', 'num', dtime(x.ts)), el('span', 'status ' + x.status, leadStatus(x.status, true))),
       el('div', 'title', x.name || 'Без имени'),
       el('div', 'sub', [x.contact, x.model ? x.model + (x.model_name ? ' — ' + x.model_name : '') : ''].filter(Boolean).join(' · ') || ' '),
       x.snippet ? el('div', 'snip', x.snippet) : null,
@@ -724,19 +730,34 @@
     person.contact_pref = person.pref;
     const head = el('div', 'card');
     head.append(el('div', 'row between', el('span', 'muted num', dtime(x.ts) + (x.lang ? ' · сайт ' + x.lang.toUpperCase() : '')),
-      el('span', 'status ' + x.status, leadStatus(x.status))));
+      el('span', 'status ' + x.status, leadStatus(x.status, true))));
     head.append(el('div', { class: 'row', style: 'margin-top:6px' },
       el('div', 'grow', el('h1', { style: 'margin:0 0 2px;overflow-wrap:anywhere' }, x.name || 'Без имени'), el('div', { class: 'muted', style: 'overflow-wrap:anywhere' }, x.contact || '')),
       ...contactButtons(person)));
     app.append(head);
+    // что это — как при получении (то же — кнопками в сообщении бота); у настоящих заявок — как идёт работа
     const st = el('section', 'card');
-    st.append(el('h2', null, 'Что с заявкой'));
-    const seg = el('div', 'seg seg2');
-    S.lists.lead_statuses.forEach(([k, t]) => seg.append(el('button', { type: 'button', 'aria-pressed': String(x.status === k), onclick: () => setLead({ status: k }) }, t)));
-    st.append(seg);
+    const real = isReal(x.status) && x.status !== 'new';
+    if (!x.project_id) {                                // из заявки сделан проект — это точно заявка, «что это» не нужно
+      st.append(el('h2', null, 'Что это'));
+      if (x.status === 'new') st.append(el('p', { class: 'small muted', style: 'margin:-4px 0 8px' }, 'Отметьте сразу — так же можно кнопками прямо в сообщении бота о заявке.'));
+      const seg = el('div', 'seg seg2');
+      TRIAGE.forEach(([k, t]) => seg.append(el('button', { type: 'button', 'aria-pressed': String(k === 'lead' ? real : x.status === k),
+        onclick: () => { if (!(k === 'lead' && real)) setLead({ status: k }); } }, t)));
+      st.append(seg);
+    }
+    if (real) {
+      st.append(el('h2', { style: x.project_id ? null : 'margin:16px 0 10px' }, 'Как идёт'));
+      const flow = el('div', 'seg');
+      [['work', 'В работе'], ['project', 'Стала проектом'], ['closed', 'Закрыта']].forEach(([k, t]) => flow.append(el('button', { type: 'button',
+        'aria-pressed': String(x.status === k), onclick: () => {                // повторное нажатие — снова просто «Заявка»
+          if (x.status !== k) setLead({ status: k }); else if (!x.project_id) setLead({ status: 'lead' });
+        } }, t)));
+      st.append(flow);
+    }
     if (x.project_id) st.append(el('button', { class: 'btn wide', type: 'button', style: 'margin-top:12px', onclick: () => openProject(x.project_id) },
       '📁 Открыть проект' + (x.project_title ? ' «' + x.project_title + '»' : '')));
-    else if (x.status === 'spam') st.append(el('p', { class: 'small muted', style: 'margin:10px 0 0' }, 'Спам не показывается во «Все» — только на отдельной кнопке «Спам».'));
+    else if (!isReal(x.status)) st.append(el('p', { class: 'small muted', style: 'margin:10px 0 0' }, 'Такие не попадают во «Все» — они на отдельной кнопке «' + ({ ad: 'Реклама', spam: 'Спам', ignore: 'Игнор' }[x.status] || '') + '» в списке заявок.'));
     else st.append(el('button', { class: 'btn primary wide', type: 'button', style: 'margin-top:12px', onclick: () => leadProjectSheet(x) }, '＋ Сделать проектом'),
       el('p', { class: 'small muted', style: 'margin:6px 0 0' }, 'Создаст заказчика и проект, заявка станет «Стала проектом».'));
     app.append(st);

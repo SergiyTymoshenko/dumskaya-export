@@ -63,7 +63,13 @@ FILE_CATS = [("measure", "Обмерный план"), ("brief", "Опросни
              ("docs", "Документация"), ("after", "После"), ("other", "Другое")]
 PHOTO_CATS = ("before", "visual", "after")
 CONTACT_PREFS = ["Звонок", "WhatsApp", "Telegram", "Viber", "E-mail", "SMS"]
-LEAD_STATUSES = [("new", "Новая"), ("work", "В работе"), ("project", "Стала проектом"), ("closed", "Закрыта"), ("spam", "Спам")]
+# заявки: при получении — что это (заявка, реклама или предложение сотрудничества, спам, игнорировать), дальше у настоящих —
+# в работе, стала проектом, закрыта (решено 24.10.2026)
+LEAD_STATUSES = [("new", "Новая"), ("lead", "Заявка"), ("work", "В работе"), ("project", "Стала проектом"), ("closed", "Закрыта"),
+                 ("ad", "Реклама, сотрудничество"), ("spam", "Спам"), ("ignore", "Игнорировать")]
+LEAD_TRIAGE = ["lead", "ad", "spam", "ignore"]          # «что это» — при получении, и кнопками в сообщении бота
+LEAD_FLOW = ["work", "project", "closed"]               # «как идёт» — у настоящих заявок
+LEAD_HIDDEN = ["ad", "spam", "ignore"]                  # не заявки: во «Все» не попадают, у каждого своя кнопка
 TEST_CONTACTS = ("заявка отправлена с сервера", "test@example.com")   # пробные заявки мастера настройки и проверки
 LEADS_ARCHIVE_DAYS = 30             # заявки, пришедшие до «Студии»: за 30 дней — «В работе», старше — «Закрыта»
 PAY_METHODS = ["Банковский перевод", "Наличные", "Карта", "Другое"]
@@ -287,7 +293,7 @@ class Crm:
             pct = float(self.setting("default_pct") or DEFAULT_PCT)
         except ValueError:
             pct = DEFAULT_PCT
-        out.update(statuses=STATUSES, lead_statuses=LEAD_STATUSES, kinds=KINDS, file_cats=FILE_CATS, photo_cats=PHOTO_CATS, contact_prefs=CONTACT_PREFS,
+        out.update(statuses=STATUSES, lead_statuses=LEAD_STATUSES, lead_triage=LEAD_TRIAGE, lead_flow=LEAD_FLOW, lead_hidden=LEAD_HIDDEN, kinds=KINDS, file_cats=FILE_CATS, photo_cats=PHOTO_CATS, contact_prefs=CONTACT_PREFS,
                    pay_methods=PAY_METHODS, currencies=CURRENCIES, default_pct=pct)
         return out
 
@@ -541,15 +547,25 @@ class Crm:
 
     def save_lead(self, d, who):
         lid = int(d.get("id") or 0)
-        if not self.one("SELECT id FROM leads WHERE id=?", lid):
+        row = self.one("SELECT project_id FROM leads WHERE id=?", lid)
+        if not row:
             raise CrmError("Заявка не найдена")
         status = d.get("status")
         if status not in dict(LEAD_STATUSES):
             raise CrmError("Неизвестный статус заявки")
+        if row["project_id"] and status in LEAD_HIDDEN:
+            raise CrmError("Из этой заявки уже сделан проект")
         f = dict(status=status, note=_text(d.get("note"), 2000))
         self.run("UPDATE leads SET status=?, note=?, updated=?, updated_by=? WHERE id=?", f["status"], f["note"], now(), who, lid)
         self.audit(who, "edit", "lead", lid, f)
         return self.lead(lid)
+
+    def set_lead_status(self, lid, status, who):
+        """Статус заявки кнопкой в сообщении бота; заметка остаётся."""
+        cur = self.one("SELECT status, note FROM leads WHERE id=?", int(lid or 0))
+        if not cur:
+            raise CrmError("Заявка не найдена")
+        return self.save_lead({"id": lid, "status": status, "note": cur["note"] or ""}, who)
 
     def lead_to_project(self, d, who):
         """Из заявки — заказчик (новый или выбранный) и проект; заявка → «Стала проектом»."""
