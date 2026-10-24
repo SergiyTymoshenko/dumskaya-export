@@ -54,6 +54,8 @@ ADMIN_ROLES = ("owner", "designer")
 PARTNER_ROLES = ("supplier", "maker", "foreman", "contractor")   # партнёры студии
 COMPANY_ROLES = PARTNER_ROLES + ("staff",)                         # привязаны к компании-партнёру
 INVITE_DAYS = 7
+# что выложено автоматически (пишет /usr/local/lib/dumskaya/autodeploy — deploy/autodeploy.sh)
+DEPLOYED_FILE = os.path.expanduser(os.environ.get("DEPLOYED_FILE", "~/dumskaya/run/deployed.json"))
 
 ADMIN_COMMANDS = [{"command": "users", "description": "Пользователи и запросы"},
                   {"command": "partners", "description": "Партнёры и их товары"},
@@ -268,6 +270,7 @@ class Bot(CrmBotMixin):
         me = self.api("getMe")
         self.username = (me.get("result") or {}).get("username", "")
         self.setup_profile()
+        self.announce_deploy()
         self.ensure_shop_manager()
         self.ensure_partners()
         offset = int(self.s.get("offset", "0") or 0)
@@ -325,6 +328,31 @@ class Bot(CrmBotMixin):
             self.send(self.owner, "<b>Сообщение о кнопках после обновления бота</b>\n" + "\n".join(
                 f"✅ {esc(self.label(u))} — доставлено" if ok else f"⚠️ {esc(self.label(u))} — не доставлено: {esc(why_failed(why))}"
                 for u, (ok, why) in report))
+
+    def announce_deploy(self):
+        """После автовыкладки (GitHub → autodeploy) — разработчику одной строкой: что выложено; тихо, без звука.
+        Со звуком — если выкладка не запустилась и вернулась прежняя версия или нужна выкладка с Мака (sudo)."""
+        try:
+            with open(DEPLOYED_FILE, encoding="utf-8") as fh:
+                d = json.load(fh)
+        except (OSError, ValueError):
+            return
+        key = f"{d.get('sha')}:{d.get('status')}"
+        if not self.owner or not isinstance(d, dict) or self.s.get("deploy:announced") == key:
+            return
+        sha, subj = esc(str(d.get("sha") or "")[:7]), esc(d.get("subject") or "без описания")
+        loud = d.get("status") == "rolled_back" or bool(d.get("setup_needed"))
+        if d.get("status") == "rolled_back":
+            text = (f"⚠️ Автовыкладка «{subj}» ({sha}) не запустилась — вернул прежнюю версию, бот и «Студия» работают.\n"
+                    "Подробности на сервере: <code>~/dumskaya/autodeploy.log</code>")
+        else:
+            text = f"🔄 Выложено автоматически: «{subj}» ({sha})."
+            if d.get("setup_needed"):
+                text += ("\n\n⚠️ В этом обновлении изменились настройки сервера — их применит выкладка с Мака "
+                         "(один раз спросит пароль sudo), в Терминале:\n"
+                         "<code>cd ~/dumskaya-site &amp;&amp; git pull &amp;&amp; caffeinate -i npm run deploy</code>")
+        if self.send(self.owner, text, disable_notification=not loud):
+            self.s.put("deploy:announced", key)
 
     def set_commands(self, u):
         """Меню команд конкретного человека: у студии — /users, /partners; у поставщика — /team, /invite."""

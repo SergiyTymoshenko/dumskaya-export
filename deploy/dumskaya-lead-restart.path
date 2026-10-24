@@ -1,0 +1,12 @@
+# «Звонок» для перезапуска сервиса заявок без sudo: пользователь сервера пишет в ~/dumskaya/run/restart
+# (это делает /usr/local/lib/dumskaya/autodeploy — выкладка бота с GitHub или с Мака), и systemd запускает
+# dumskaya-lead-restart.service. Ставит server-setup.sh; путь /home/deploy подставляется.
+[Unit]
+Description=DUMSKAYA DESIGN — перезапуск сервиса заявок по «звонку» (выкладка бота без sudo)
+
+[Path]
+PathChanged=/home/deploy/dumskaya/run/restart
+Unit=dumskaya-lead-restart.service
+
+[Install]
+WantedBy=multi-user.target

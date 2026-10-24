@@ -8,7 +8,8 @@
 #             (включать после того, как DNS домена указывает на этот сервер).
 #
 # Что делает: папка /var/www/dumskaya, файл сайта в /etc/caddy/sites/ + строка «import sites/*.caddy»
-# в основном Caddyfile, сервис приёма заявок. Перед перезагрузкой Caddy конфиг проверяется;
+# в основном Caddyfile, сервис приёма заявок, «звонок» для его перезапуска без sudo и приём выкладки бота
+# (/usr/local/lib/dumskaya/autodeploy). Перед перезагрузкой Caddy конфиг проверяется;
 # если проверка не прошла — всё возвращается как было, другие сайты не затрагиваются.
 set -euo pipefail
 
@@ -100,15 +101,25 @@ if [ ! -f "$APP/lead.env" ]; then
   echo "Создан $APP/lead.env — впишите туда токен Telegram и пароль почты."
 fi
 sed -e "s#^User=.*#User=$USER_NAME#" -e "s#/home/deploy#$HOME_DIR#g" "$HERE/dumskaya-lead.service" > /etc/systemd/system/dumskaya-lead.service
+# 4. Перезапуск сервиса заявок без sudo: «звонок» (файл ~/dumskaya/run/restart → systemd перезапускает только его)
+#    и приём выкладки бота с GitHub и с Мака — файл root, изменить его без sudo нельзя
+install -d -o "$USER_NAME" -g "$USER_NAME" -m 750 "$APP/run"
+install -d -m 755 /usr/local/lib/dumskaya
+install -o root -g root -m 755 "$HERE/autodeploy.sh" /usr/local/lib/dumskaya/autodeploy
+sed -e "s#/home/deploy#$HOME_DIR#g" "$HERE/dumskaya-lead-restart.path" > /etc/systemd/system/dumskaya-lead-restart.path
+sed -e "s#/usr/bin/systemctl#$(command -v systemctl)#" "$HERE/dumskaya-lead-restart.service" > /etc/systemd/system/dumskaya-lead-restart.service
 systemctl daemon-reload
 systemctl enable dumskaya-lead >/dev/null 2>&1
+systemctl enable --now dumskaya-lead-restart.path >/dev/null 2>&1 || echo "«Звонок» перезапуска не включился — код бота применится только при выкладке с Мака с sudo."
 systemctl restart dumskaya-lead
 sleep 1
 systemctl is-active --quiet dumskaya-lead && echo "Сервис заявок работает." || { echo "Сервис заявок не запустился:"; journalctl -u dumskaya-lead -n 20 --no-pager; }
 
 echo "$MODE" > "$APP/mode"; chown "$USER_NAME":"$USER_NAME" "$APP/mode"
-sha256sum "$HERE/lead_service.py" "$HERE/bot.py" "$HERE/site_monitor.py" "$HERE/site_stats.py" "$HERE/geo.py" "$HERE/geo_names_ru.json" \
-  "$HERE/crm.py" "$HERE/crm_api.py" "$HERE/crm_bot.py" "$HERE/fx.py" \
-  "$HERE/translate.py" "$HERE/caddy/"* "$HERE/dumskaya-lead.service" > "$APP/installed.sha256"
-chown "$USER_NAME":"$USER_NAME" "$APP/installed.sha256"
+# отпечатки: installed — то, что меняется только с sudo (Caddy, файлы сервисов, приём выкладки);
+# running — код запущенного сервиса (новый код применяется перезапуском без sudo — autodeploy restart)
+sha256sum "$HERE/caddy/"* "$HERE/dumskaya-lead.service" "$HERE/dumskaya-lead-restart.path" "$HERE/dumskaya-lead-restart.service" \
+  "$HERE/autodeploy.sh" > "$APP/installed.sha256"
+(cd "$HERE" && sha256sum -- *.py *.html *.json) > "$APP/running.sha256"
+chown "$USER_NAME":"$USER_NAME" "$APP/installed.sha256" "$APP/running.sha256"
 echo "Готово."

@@ -1,0 +1,7 @@
+# Умеет только одно — перезапустить сервис заявок DUMSKAYA DESIGN (запускается из dumskaya-lead-restart.path).
+[Unit]
+Description=DUMSKAYA DESIGN — перезапуск сервиса заявок
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl restart dumskaya-lead.service

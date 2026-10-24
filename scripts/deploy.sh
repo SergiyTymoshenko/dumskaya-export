@@ -50,17 +50,23 @@ DELAY=""; case "$(rsync --help 2>&1)" in *--delay-updates*) DELAY="--delay-updat
 rsync -az --delete $DELAY --exclude '.DS_Store' dist/ "$HOST:/var/www/dumskaya/site/"
 
 echo "▸ 5/5 Настройки сервера"
-# changed — менялись редиректы или сервис заявок; unlinked — в основном Caddyfile нет строки,
-# подключающей сайт (его перезаписала выкладка другого проекта на этом сервере)
-STATE="$(ssh "$HOST" 'cd ~/dumskaya/deploy; sha256sum -c --quiet ~/dumskaya/installed.sha256 >/dev/null 2>&1 || echo changed; grep -qE "^[[:space:]]*import[[:space:]]+sites/(\*|dumskaya)\.caddy[[:space:]]*$" /etc/caddy/Caddyfile || echo unlinked')"
+# changed — менялись редиректы, файлы сервисов или приём выкладки (нужен sudo); unlinked — в основном Caddyfile нет
+# строки, подключающей сайт (его перезаписала выкладка другого проекта на этом сервере); code — изменился только код
+# бота и «Студии»: его применяет перезапуск сервиса без пароля (autodeploy restart, «звонок» ставит server-setup.sh)
+STATE="$(ssh "$HOST" 'cd ~/dumskaya/deploy; sha256sum -c --quiet ~/dumskaya/installed.sha256 >/dev/null 2>&1 || echo changed; [ -x /usr/local/lib/dumskaya/autodeploy ] || echo changed; grep -qE "^[[:space:]]*import[[:space:]]+sites/(\*|dumskaya)\.caddy[[:space:]]*$" /etc/caddy/Caddyfile || echo unlinked; sha256sum -c --quiet ~/dumskaya/running.sha256 >/dev/null 2>&1 || echo code')"
 case "$STATE" in
   *unlinked*) echo "  сайт отключён от Caddy (основной Caddyfile перезаписан) — подключаю снова (нужен пароль sudo)…" ;;
-  *changed*)  echo "  изменились редиректы или сервис заявок — применяю (нужен пароль sudo)…" ;;
+  *changed*)  echo "  изменились редиректы или настройки сервиса — применяю (нужен пароль sudo)…" ;;
+  *code*)     echo "  изменился код бота — перезапускаю сервис (без пароля)…" ;;
   *)          echo "  без изменений" ;;
 esac
-if [ -n "$STATE" ]; then
-  ssh -t "$HOST" 'sudo bash ~/dumskaya/deploy/server-setup.sh "$(cat ~/dumskaya/mode 2>/dev/null || echo preview)"'
-fi
+case "$STATE" in
+  *unlinked*|*changed*)
+    ssh -t "$HOST" 'sudo bash ~/dumskaya/deploy/server-setup.sh "$(cat ~/dumskaya/mode 2>/dev/null || echo preview)"' ;;
+  *code*)
+    ssh "$HOST" /usr/local/lib/dumskaya/autodeploy restart \
+      || { echo "  сервис не ответил после перезапуска. Журнал: ssh $HOST 'tail -20 ~/dumskaya/autodeploy.log; sudo journalctl -u dumskaya-lead -n 30'"; exit 1; } ;;
+esac
 # копия учёта студии на этот Мак (свежая копия баз + файлы проектов) — то же, что npm run backup
 DEPLOY_HOST="$HOST" bash scripts/backup.sh || echo "  копия учёта студии не скачалась — запустите позже: npm run backup"
 MODE="$(ssh "$HOST" 'cat ~/dumskaya/mode 2>/dev/null || echo preview')"
