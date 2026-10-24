@@ -31,7 +31,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 
 def _version():
     """Версия запущенного кода — внизу «Студии» и графиков, мелко: коммит · когда выложено · откуда.
-    Файл VERSION пишут выкладка с Мака (scripts/deploy.sh) и автовыкладка (GitHub); читается при запуске сервиса,
+    Файл VERSION пишет выкладка с Мака (scripts/deploy.sh); читается при запуске сервиса,
     поэтому показывает именно то, что работает. Нет файла — отпечаток кода."""
     try:
         with open(os.path.join(HERE, "VERSION"), encoding="utf-8") as fh:
