@@ -351,6 +351,7 @@ def main():
             crm_api.CRM = BOT.crm = Crm(rates=Rates(), extra_backups=[BOT_DB])
             crm_api.BOT = BOT
             BOT.stats.hooks.append(BOT.crm.backup_if_due)   # каждый день — копия баз в ~/dumskaya/backups
+            BOT.stats.hooks.append(BOT.crm_backup_reminder)  # копия на Маке старше недели — напомнить разработчику
         except Exception as e:  # noqa: BLE001
             log(f"учёт проектов не запущен: {type(e).__name__}: {e}")
         BOT.start()

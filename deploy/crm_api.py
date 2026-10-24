@@ -102,7 +102,8 @@ def handle_post(h, path, query):
         if path == "/api/crm/save":
             entity, d = data.get("entity"), data.get("data") or {}
             fn = {"project": CRM.save_project, "op": CRM.save_op, "client": CRM.save_client,
-                  "contractor": CRM.save_contractor, "link": CRM.link_contractor, "lists": CRM.save_lists}.get(entity)
+                  "contractor": CRM.save_contractor, "link": CRM.link_contractor, "stage": CRM.save_stage,
+                  "lists": CRM.save_lists}.get(entity)
             if not fn:
                 raise CrmError("Неизвестно, что сохранять")
             return h.reply(200, fn(d, who)) or True

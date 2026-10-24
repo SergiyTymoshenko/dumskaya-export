@@ -5,15 +5,21 @@
 Проект: номер по внутреннему учёту, название, заказчик, город, площадь, тариф, сумма договора (в евро), статус.
 Операции проекта (вся история):
   • оплата заказчика — сумма, валюта, дата, способ;
-  • бонус от поставщика («откат») — за мебель, шторы, свет и т. п.;
+  • бонус («откат») — от подрядчика (с привязкой к нему и этапу) или от поставщика, фабрики;
   • перепродажа — студия посредник: закупка и продажа, доход — разница.
-Суммы в любой валюте; в евро — по курсу центробанка на дату операции (fx.py) или по курсу, введённому вручную.
-Баланс проекта: договор − оплаты заказчика. Доход студии: оплаты + бонусы + наценка на перепродаже.
-Ещё: заказчики (телефон, почта, как удобнее связаться), подрядчики по видам работ, файлы проекта
-(до, после, визуализации, документация) — в ~/dumskaya/crm/files, ссылки на них подписаны и действуют 12 часов.
+Подрядчики в проекте — с этапами работ: сумма заказа и бонус студии с неё (процент, по умолчанию 10 %, сумма или
+«пока неизвестно»). Долг подрядчика = ожидаемые бонусы − полученные бонусы от него в этом проекте.
+Суммы в евро, гривне, долларе, злотом; в евро — по курсу центробанка на дату (fx.py) или по курсу, введённому вручную.
+Баланс проекта: договор − оплаты заказчика. Доход студии: оплаты + полученные бонусы + наценка на перепродаже.
+Ещё: заказчики (телефон, почта, как удобнее связаться), файлы проекта (обмерный план, опросник, до, визуализации,
+документация, после, другое) — в ~/dumskaya/crm/files, ссылки на них подписаны и действуют 12 часов; удалённые
+файлы 30 дней лежат в ~/dumskaya/crm/trash.
 
 Данные — ~/dumskaya/crm.db (SQLite). Каждый день — копия базы студии и базы бота в ~/dumskaya/backups (30 дней);
-при выкладке с Мака копии и файлы скачиваются на Мак. Только стандартная библиотека Python 3.
+с Мака `npm run backup` (и каждая выкладка) делает свежую копию и скачивает копии и файлы на Мак.
+Только стандартная библиотека Python 3.
+
+   python3 crm.py --backup-now     — свежая копия баз сейчас (её делает npm run backup с Мака)
 """
 import hashlib
 import hmac
@@ -23,9 +29,15 @@ import re
 import secrets
 import shutil
 import sqlite3
+import sys
 import threading
 import time
 from datetime import date, datetime, timedelta, timezone
+
+try:
+    from fx import CODES, CURRENCIES
+except ImportError:  # pragma: no cover
+    CURRENCIES, CODES = [("EUR", "€", "евро")], ["EUR"]
 
 try:
     from zoneinfo import ZoneInfo
@@ -37,14 +49,19 @@ APP = os.path.expanduser("~/dumskaya")
 CRM_DB = os.environ.get("CRM_DB", os.path.join(APP, "crm.db"))
 FILES_DIR = os.environ.get("CRM_FILES", os.path.join(APP, "crm", "files"))
 BACKUP_DIR = os.environ.get("BACKUP_DIR", os.path.join(APP, "backups"))
+BOT_DB = os.environ.get("BOT_DB", os.path.join(APP, "bot.db"))
 BACKUP_KEEP = 30
+TRASH_KEEP = 30                         # удалённые файлы проектов лежат в корзине 30 дней
+DEFAULT_PCT = 10                        # бонус студии с заказа подрядчика по умолчанию, %
 FILE_MAX = 60 * 1024 * 1024            # один файл — до 60 МБ
 MIN_FREE = 2 * 1024 ** 3               # оставлять на диске сервера хотя бы 2 ГБ (сервер общий)
 LINK_HOURS = 12
 
 STATUSES = [("active", "В работе"), ("paused", "На паузе"), ("done", "Завершён"), ("cancelled", "Отменён")]
-KINDS = {"payment": "Оплата заказчика", "commission": "Бонус от поставщика", "resale": "Перепродажа"}
-FILE_CATS = [("before", "До"), ("after", "После"), ("visual", "Визуализации"), ("docs", "Документация")]
+KINDS = {"payment": "Оплата заказчика", "commission": "Бонус", "resale": "Перепродажа"}
+FILE_CATS = [("measure", "Обмерный план"), ("brief", "Опросник"), ("before", "До"), ("visual", "Визуализации"),
+             ("docs", "Документация"), ("after", "После"), ("other", "Другое")]
+PHOTO_CATS = ("before", "visual", "after")
 CONTACT_PREFS = ["Звонок", "WhatsApp", "Telegram", "Viber", "E-mail", "SMS"]
 PAY_METHODS = ["Банковский перевод", "Наличные", "Карта", "Другое"]
 DEFAULTS = {
@@ -69,7 +86,8 @@ CREATE TABLE IF NOT EXISTS ops (            -- операции проекта; 
   title TEXT, category TEXT, method TEXT, counterparty TEXT,
   amount REAL NOT NULL, currency TEXT NOT NULL, rate REAL NOT NULL, rate_src TEXT, amount_eur REAL NOT NULL,
   buy REAL, buy_currency TEXT, buy_rate REAL, buy_rate_src TEXT, buy_eur REAL,
-  note TEXT, created_by TEXT, created TEXT, updated TEXT);
+  note TEXT, created_by TEXT, created TEXT, updated TEXT,
+  link_id INTEGER, stage_id INTEGER);         -- бонус от подрядчика проекта (project_contractors) и за какой этап
 CREATE INDEX IF NOT EXISTS ops_project ON ops(project_id);
 CREATE INDEX IF NOT EXISTS ops_day ON ops(day);
 CREATE TABLE IF NOT EXISTS contractors (
@@ -78,6 +96,12 @@ CREATE TABLE IF NOT EXISTS contractors (
 CREATE TABLE IF NOT EXISTS project_contractors (
   id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, contractor_id INTEGER NOT NULL, trade TEXT,
   note TEXT, created TEXT);
+CREATE TABLE IF NOT EXISTS stages (         -- этапы работ подрядчика в проекте: сумма заказа и бонус студии с неё
+  id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, link_id INTEGER NOT NULL, title TEXT, day TEXT,
+  amount REAL NOT NULL DEFAULT 0, currency TEXT NOT NULL, rate REAL NOT NULL, rate_src TEXT, amount_eur REAL NOT NULL DEFAULT 0,
+  pct REAL, commission REAL, commission_eur REAL,   -- commission NULL — бонус пока неизвестен
+  note TEXT, created_by TEXT, created TEXT, updated TEXT);
+CREATE INDEX IF NOT EXISTS stages_link ON stages(link_id);
 CREATE TABLE IF NOT EXISTS files (
   id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, category TEXT NOT NULL, name TEXT, path TEXT,
   thumb TEXT, mime TEXT, size INTEGER, tg_file_id TEXT, note TEXT, created_by TEXT, created TEXT);
@@ -128,14 +152,78 @@ def _day(v, field="Дата", required=True):
         raise CrmError(f"{field}: укажите дату") from None
 
 
+def _cur(v):
+    c = str(v or "EUR").upper()
+    if c not in CODES:
+        raise CrmError("Валюта: выберите из списка (" + ", ".join(CODES) + ")")
+    return c
+
+
 def _row(r):
     return dict(r) if r is not None else None
+
+
+def _debt(stages, ops):
+    """Бонусы подрядчика в проекте. stages — его этапы, ops — полученные от него бонусы.
+    Считается в валюте его этапов (если все в одной), иначе в евро: так оплата в той же валюте закрывает долг ровно,
+    без хвостов от разницы курсов. Возвращает ожидаемое, полученное, долг — в этой валюте и в евро."""
+    known = [s for s in stages if s["commission"] is not None]
+    curs = {s["currency"] for s in (known or stages)} or {o["currency"] for o in ops}
+    cur = next(iter(curs)) if len(curs) == 1 else "EUR"
+    k = 1.0                                             # сколько единиц валюты долга в одном евро
+    if cur != "EUR":
+        for pairs in ([(s["commission"], s["commission_eur"]) for s in known if s["currency"] == cur],
+                      [(s["amount"], s["amount_eur"]) for s in stages if s["currency"] == cur],
+                      [(o["amount"], o["amount_eur"]) for o in ops if o["currency"] == cur]):
+            a, e = sum(x for x, _ in pairs), sum(y or 0 for _, y in pairs)
+            if a > 0 and e > 0:
+                k = a / e
+                break
+
+    def in_cur(amount, currency, amount_eur):
+        return amount if currency == cur else (amount_eur or 0) * k
+    expected = sum(in_cur(s["commission"], s["currency"], s["commission_eur"]) for s in known)
+    received = sum(in_cur(o["amount"], o["currency"], o["amount_eur"]) for o in ops)
+    debt = expected - received if expected - received > 0.005 else 0.0
+    out_stages = []
+    for s in stages:
+        got = sum(in_cur(o["amount"], o["currency"], o["amount_eur"]) for o in ops if o.get("stage_id") == s["id"])
+        out_stages.append(dict(s, received=round(got, 2)))
+    return {"currency": cur, "rate": round(k, 6), "expected": round(expected, 2), "received": round(received, 2),
+            "debt": round(debt, 2), "expected_eur": round(expected / k, 2), "received_eur": round(sum(o["amount_eur"] for o in ops), 2),
+            "debt_eur": round(debt / k, 2), "unknown": len(stages) - len(known),
+            "order": round(sum(in_cur(s["amount"], s["currency"], s["amount_eur"]) for s in stages), 2),
+            "order_eur": round(sum(s["amount_eur"] for s in stages), 2), "stages": out_stages, "ops": len(ops)}
+
+
+def backup_dbs(sources, backup_dir, day, log=print):
+    """Копии баз SQLite (стандартным способом SQLite — целостные и во время работы сервиса): name-день.db."""
+    os.makedirs(backup_dir, exist_ok=True)
+    made = []
+    for src, name in sources:
+        if not os.path.exists(src):
+            continue
+        dst = os.path.join(backup_dir, f"{name}-{day}.db")
+        try:
+            s = sqlite3.connect(src)
+            t = sqlite3.connect(dst + ".tmp")
+            with t:
+                s.backup(t)
+            s.close()
+            t.close()
+            os.replace(dst + ".tmp", dst)
+            os.chmod(dst, 0o600)
+            made.append(dst)
+        except (sqlite3.Error, OSError) as e:
+            log(f"копия {name}: ошибка {e}")
+    return made
 
 
 class Crm:
     def __init__(self, path=CRM_DB, rates=None, files_dir=FILES_DIR, backup_dir=BACKUP_DIR, extra_backups=()):
         os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
         self.path, self.files_dir, self.backup_dir = path, files_dir, backup_dir
+        self.trash_dir = os.path.join(os.path.dirname(os.path.abspath(files_dir)), "trash")
         self.extra_backups = list(extra_backups)       # другие базы SQLite для ежедневной копии (база бота)
         self.db = sqlite3.connect(path, check_same_thread=False, isolation_level=None)
         self.db.row_factory = sqlite3.Row
@@ -145,6 +233,10 @@ class Crm:
             self.db.execute("PRAGMA journal_mode=WAL")
             self.db.execute("PRAGMA foreign_keys=ON")
             self.db.executescript(SCHEMA)
+            cols = {r[1] for r in self.db.execute("PRAGMA table_info(ops)")}
+            for c in ("link_id", "stage_id"):                  # базы, созданные до этапов подрядчиков
+                if c not in cols:
+                    self.db.execute(f"ALTER TABLE ops ADD COLUMN {c} INTEGER")
         try:
             os.chmod(path, 0o600)
         except OSError:
@@ -183,11 +275,11 @@ class Crm:
             except ValueError:
                 out[k] = v
         try:
-            from fx import CURRENCIES
-        except ImportError:  # pragma: no cover
-            CURRENCIES = [("EUR", "€", "евро")]
-        out.update(statuses=STATUSES, kinds=KINDS, file_cats=FILE_CATS, contact_prefs=CONTACT_PREFS, pay_methods=PAY_METHODS,
-                   currencies=CURRENCIES)
+            pct = float(self.setting("default_pct") or DEFAULT_PCT)
+        except ValueError:
+            pct = DEFAULT_PCT
+        out.update(statuses=STATUSES, kinds=KINDS, file_cats=FILE_CATS, photo_cats=PHOTO_CATS, contact_prefs=CONTACT_PREFS,
+                   pay_methods=PAY_METHODS, currencies=CURRENCIES, default_pct=pct)
         return out
 
     def save_lists(self, data, who):
@@ -197,6 +289,11 @@ class Crm:
                 if not items:
                     raise CrmError("Список не может быть пустым")
                 self.setting(k, json.dumps(list(dict.fromkeys(items)), ensure_ascii=False))
+        if "default_pct" in data:
+            pct = _money(data["default_pct"], "Бонус по умолчанию")
+            if pct > 100:
+                raise CrmError("Бонус по умолчанию: не больше 100 %")
+            self.setting("default_pct", str(pct))
         self.audit(who, "edit", "settings", 0, data)
         return self.lists()
 
@@ -236,13 +333,32 @@ class Crm:
               (SELECT MAX(day) FROM ops o WHERE o.project_id=p.id) AS last_op,
               (SELECT COUNT(*) FROM files f WHERE f.project_id=p.id) AS files
             FROM projects p LEFT JOIN clients c ON c.id=p.client_id ORDER BY p.updated DESC""")
+        debts = {}
+        for m in self.link_money().values():
+            d = debts.setdefault(m["project_id"], [0.0, 0.0])
+            d[0] += m["debt_eur"]
+            d[1] += m["expected_eur"]
         for r in rows:
             for k in ("paid", "bonus", "margin"):
                 r[k] = round(r[k], 2)
             r["extra"] = round(r["bonus"] + r["margin"], 2)
             r["balance"] = round((r["total_eur"] or 0) - r["paid"], 2)
             r["income"] = round(r["paid"] + r["extra"], 2)
+            r["contractor_debt"], r["bonus_expected"] = (round(x, 2) for x in debts.get(r["id"], (0, 0)))
         return rows
+
+    def link_money(self, project_id=None):
+        """{link_id: бонусы подрядчика в проекте (_debt) + project_id, contractor_id, trade}."""
+        flt, args = ("WHERE project_id=?", (int(project_id),)) if project_id else ("", ())
+        links = self.q(f"SELECT * FROM project_contractors {flt}", *args)
+        stages = self.q(f"SELECT * FROM stages {flt} ORDER BY day, id", *args)
+        ops = self.q(f"SELECT * FROM ops {flt + ' AND' if flt else 'WHERE'} kind='commission' AND link_id IS NOT NULL ORDER BY day, id", *args)
+        out = {}
+        for link in links:
+            m = _debt([x for x in stages if x["link_id"] == link["id"]], [o for o in ops if o["link_id"] == link["id"]])
+            m.update(link_id=link["id"], project_id=link["project_id"], contractor_id=link["contractor_id"], trade=link["trade"])
+            out[link["id"]] = m
+        return out
 
     def project(self, pid):
         p = next((r for r in self.project_rows() if r["id"] == int(pid)), None)
@@ -254,10 +370,13 @@ class Crm:
         links = self.q("""SELECT l.id AS link_id, l.trade AS link_trade, l.note AS link_note, c.*
                           FROM project_contractors l JOIN contractors c ON c.id=l.contractor_id
                           WHERE l.project_id=? ORDER BY l.id""", p["id"])
+        money = self.link_money(p["id"])
+        for link in links:
+            link["money"] = money.get(link["link_id"]) or _debt([], [])
         files = [self.file_view(f) for f in self.q("SELECT * FROM files WHERE project_id=? ORDER BY id DESC", p["id"])]
         client = self.one("SELECT * FROM clients WHERE id=?", p["client_id"]) if p["client_id"] else None
         history = self.q("SELECT ts, who, action, entity, entity_id FROM audit WHERE (entity='project' AND entity_id=?) OR "
-                         "(entity IN ('op', 'file', 'link') AND (details LIKE ? OR details LIKE ?)) ORDER BY id DESC LIMIT 50",
+                         "(entity IN ('op', 'file', 'link', 'stage') AND (details LIKE ? OR details LIKE ?)) ORDER BY id DESC LIMIT 50",
                          p["id"], f'%"project_id": {p["id"]},%', f'%"project_id": {p["id"]}}}%')
         return {"project": p, "ops": ops, "contractors": links, "files": files, "client": client, "history": history}
 
@@ -308,17 +427,30 @@ class Crm:
         if kind not in KINDS:
             raise CrmError("Неизвестный вид операции")
         day = _day(d.get("day"))
-        cur = (d.get("currency") or "EUR").upper()
+        cur = _cur(d.get("currency"))
         amount = _money(d.get("amount"), "Цена продажи" if kind == "resale" else "Сумма")
+        link_id = stage_id = None
+        counterparty = _text(d.get("counterparty"), 120)
+        if kind == "commission" and d.get("link_id"):
+            link = self.one("""SELECT l.id, c.name FROM project_contractors l JOIN contractors c ON c.id=l.contractor_id
+                               WHERE l.id=? AND l.project_id=?""", int(d["link_id"]), pid)
+            if not link:
+                raise CrmError("Подрядчик в этом проекте не найден")
+            link_id, counterparty = link["id"], link["name"]
+            if d.get("stage_id"):
+                if not self.one("SELECT id FROM stages WHERE id=? AND link_id=?", int(d["stage_id"]), link_id):
+                    raise CrmError("Этап не найден")
+                stage_id = int(d["stage_id"])
         rate, src, eur = self._convert(amount, cur, day, d.get("rate") if d.get("manual_rate") else None)
         f = dict(project_id=pid, kind=kind, day=day, title=_text(d.get("title"), 200), category=_text(d.get("category"), 60),
-                 method=_text(d.get("method"), 60), counterparty=_text(d.get("counterparty"), 120),
+                 method=_text(d.get("method"), 60), counterparty=counterparty,
                  amount=amount, currency=cur, rate=rate, rate_src=src, amount_eur=eur,
-                 buy=None, buy_currency=None, buy_rate=None, buy_rate_src=None, buy_eur=None, note=_text(d.get("note"), 2000))
+                 buy=None, buy_currency=None, buy_rate=None, buy_rate_src=None, buy_eur=None, note=_text(d.get("note"), 2000),
+                 link_id=link_id, stage_id=stage_id)
         if kind == "resale":
             if not f["title"]:
                 raise CrmError("Укажите, что перепродано")
-            bcur = (d.get("buy_currency") or cur).upper()
+            bcur = _cur(d.get("buy_currency") or cur)
             buy = _money(d.get("buy"), "Цена закупки")
             brate, bsrc, beur = self._convert(buy, bcur, day, d.get("buy_rate") if d.get("manual_buy_rate") else None)
             f.update(buy=buy, buy_currency=bcur, buy_rate=brate, buy_rate_src=bsrc, buy_eur=beur)
@@ -332,6 +464,45 @@ class Crm:
             oid = self.run(f"INSERT INTO ops({', '.join(f)}, created_by, created, updated) VALUES({', '.join('?' * len(f))}, ?, ?, ?)",
                            *f.values(), who, now(), now())
             self.audit(who, "add", "op", oid, f)
+        self.touch(pid)
+        return self.project(pid)
+
+    # ---------- этапы работ подрядчика ----------
+    def save_stage(self, d, who):
+        sid, pid, lid = int(d.get("id") or 0), int(d.get("project_id") or 0), int(d.get("link_id") or 0)
+        if not self.one("SELECT id FROM project_contractors WHERE id=? AND project_id=?", lid, pid):
+            raise CrmError("Подрядчик в этом проекте не найден")
+        day = _day(d.get("day") or today().isoformat())
+        cur = _cur(d.get("currency"))
+        amount = _money(d.get("amount") or 0, "Сумма заказа", allow_zero=True)
+        mode = d.get("mode")
+        pct = commission = None
+        if mode == "pct":
+            pct = _money(d.get("pct"), "Процент")
+            if pct > 100:
+                raise CrmError("Процент: не больше 100")
+            if amount <= 0:
+                raise CrmError("Чтобы посчитать бонус в процентах, укажите сумму заказа")
+            commission = round(amount * pct / 100, 2)
+        elif mode == "sum":
+            commission = _money(d.get("commission"), "Бонус студии")
+        elif mode != "unknown":
+            raise CrmError("Выберите, как считать бонус студии")
+        if amount <= 0 and commission is None:
+            raise CrmError("Укажите сумму заказа или бонус студии")
+        rate, src, amount_eur = self._convert(amount, cur, day, d.get("rate") if d.get("manual_rate") else None)
+        f = dict(project_id=pid, link_id=lid, title=_text(d.get("title"), 120), day=day, amount=amount, currency=cur,
+                 rate=rate, rate_src=src, amount_eur=amount_eur, pct=pct, commission=commission,
+                 commission_eur=round(commission / rate, 2) if commission is not None else None, note=_text(d.get("note"), 1000))
+        if sid:
+            if not self.one("SELECT id FROM stages WHERE id=? AND project_id=?", sid, pid):
+                raise CrmError("Этап не найден")
+            self.run(f"UPDATE stages SET {', '.join(f'{k}=?' for k in f)}, updated=? WHERE id=?", *f.values(), now(), sid)
+            self.audit(who, "edit", "stage", sid, f)
+        else:
+            sid = self.run(f"INSERT INTO stages({', '.join(f)}, created_by, created, updated) VALUES({', '.join('?' * len(f))}, ?, ?, ?)",
+                           *f.values(), who, now(), now())
+            self.audit(who, "add", "stage", sid, f)
         self.touch(pid)
         return self.project(pid)
 
@@ -402,17 +573,30 @@ class Crm:
             link = self.one("SELECT * FROM project_contractors WHERE id=?", rid)
             if not link:
                 raise CrmError("Не найдено")
+            if self.one("SELECT id FROM stages WHERE link_id=? LIMIT 1", rid) or self.one("SELECT id FROM ops WHERE link_id=? LIMIT 1", rid):
+                raise CrmError("У подрядчика в этом проекте есть этапы или полученные бонусы — сначала удалите их")
             self.run("DELETE FROM project_contractors WHERE id=?", rid)
             self.audit(who, "delete", "link", rid, link)
             return self.project(link["project_id"])
+        if entity == "stage":
+            st = self.one("SELECT * FROM stages WHERE id=?", rid)
+            if not st:
+                raise CrmError("Этап не найден")
+            self.run("UPDATE ops SET stage_id=NULL WHERE stage_id=?", rid)      # полученные бонусы остаются за подрядчиком
+            self.run("DELETE FROM stages WHERE id=?", rid)
+            self.audit(who, "delete", "stage", rid, st)
+            self.touch(st["project_id"])
+            return self.project(st["project_id"])
         if entity == "file":
             f = self.one("SELECT * FROM files WHERE id=?", rid)
             if not f:
                 raise CrmError("Файл не найден")
+            trash = os.path.join(self.trash_dir, today().isoformat())   # 30 дней в корзине, потом удаляется
             for p in (f["path"], f["thumb"]):
                 if p:
                     try:
-                        os.remove(os.path.join(self.files_dir, p))
+                        os.makedirs(trash, exist_ok=True)
+                        os.replace(os.path.join(self.files_dir, p), os.path.join(trash, f"{f['project_id']}-{os.path.basename(p)}"))
                     except OSError:
                         pass
             self.run("DELETE FROM files WHERE id=?", rid)
@@ -625,8 +809,29 @@ class Crm:
             r = by_month[k]
             months_out.append({kk: round(v, 2) if isinstance(v, float) else v for kk, v in r.items()}
                               | {"total": round(r["payment"] + r["commission"] + r["resale"], 2)})
-        owing = [p for p in self.project_rows() if p["status"] in ("active", "paused") and p["balance"] > 0.005]
-        names = {p["id"]: p for p in self.project_rows()}
+        all_rows = self.project_rows()
+        owing = [p for p in all_rows if p["status"] in ("active", "paused") and p["balance"] > 0.005]
+        names = {p["id"]: p for p in all_rows}
+        # подрядчики должны бонусы: по всем проектам, кроме отменённых; по подрядчику и его проектам
+        people = {c["id"]: c for c in self.q("SELECT id, name, trade FROM contractors")}
+        owe = {}
+        for m in self.link_money().values():
+            pr = names.get(m["project_id"])
+            if m["debt"] <= 0 or not pr or pr["status"] == "cancelled":
+                continue
+            c = owe.setdefault(m["contractor_id"], {"id": m["contractor_id"], "name": (people.get(m["contractor_id"]) or {}).get("name", "—"),
+                                                     "trade": m["trade"] or (people.get(m["contractor_id"]) or {}).get("trade") or "",
+                                                     "debt_eur": 0.0, "projects": []})
+            c["debt_eur"] += m["debt_eur"]
+            c["projects"].append({"id": pr["id"], "number": pr["number"] or "", "title": pr["title"], "debt": m["debt"],
+                                  "currency": m["currency"], "debt_eur": m["debt_eur"]})
+        owe_list = sorted(owe.values(), key=lambda c: -c["debt_eur"])
+        # бонусы за период — от кого
+        sources = {}
+        for o in rows:
+            if o["kind"] == "commission":
+                k = o["counterparty"] or "Не указано"
+                sources[k] = sources.get(k, 0) + o["amount_eur"]
         top = sorted(projects.items(), key=lambda kv: -kv[1])[:8]
         new = self.q("SELECT COUNT(*) AS n, COALESCE(SUM(total_eur), 0) AS s FROM projects WHERE " +
                      ("COALESCE(started, substr(created, 1, 10))>=? AND COALESCE(started, substr(created, 1, 10))<=?" if a else "1"), *args)[0]
@@ -641,6 +846,9 @@ class Crm:
             "top_projects": [[names[k]["number"] or "", names[k]["title"], round(v, 2), k] for k, v in top if k in names],
             "owing": round(sum(p["balance"] for p in owing), 2),
             "owing_projects": [[p["number"] or "", p["title"], p["balance"], p["id"]] for p in sorted(owing, key=lambda p: -p["balance"])[:10]],
+            "contractors_owe": round(sum(c["debt_eur"] for c in owe_list), 2),
+            "owe_contractors": [dict(c, debt_eur=round(c["debt_eur"], 2)) for c in owe_list[:15]],
+            "bonus_sources": [[k, round(v, 2)] for k, v in sorted(sources.items(), key=lambda kv: -kv[1])[:8] if abs(v) > 0.005],
         }
 
     # ---------- всё для приложения ----------
@@ -655,32 +863,29 @@ class Crm:
             c["projects"] = by_client.get(c["id"], [])
         contractors = self.q("""SELECT c.*, (SELECT COUNT(*) FROM project_contractors l WHERE l.contractor_id=c.id) AS projects
                                 FROM contractors c ORDER BY c.trade, c.name COLLATE NOCASE""")
+        status = {p["id"]: p["status"] for p in projects}
+        links = []
+        for m in self.link_money().values():
+            links.append({k: m[k] for k in ("link_id", "project_id", "contractor_id", "trade", "currency", "expected", "received",
+                                            "debt", "expected_eur", "received_eur", "debt_eur", "unknown", "order", "order_eur")}
+                         | {"stages": len(m["stages"])})
+        for c in contractors:
+            mine = [x for x in links if x["contractor_id"] == c["id"] and status.get(x["project_id"]) != "cancelled"]
+            c["debt_eur"] = round(sum(x["debt_eur"] for x in mine), 2)
+            c["received_eur"] = round(sum(x["received_eur"] for x in mine), 2)
         cities = sorted({x for x in [p["city"] for p in projects] + [c["city"] for c in clients] + [c["city"] for c in contractors] if x})
-        return {"projects": projects, "clients": clients, "contractors": contractors, "cities": cities, "lists": self.lists(),
-                "disk": self.disk()}
+        return {"projects": projects, "clients": clients, "contractors": contractors, "links": links, "cities": cities,
+                "lists": self.lists(), "disk": self.disk()}
 
     # ---------- копии ----------
     def backup_if_due(self, log=print):
-        """Раз в день — копия базы студии (и базы бота) в ~/dumskaya/backups; старше 30 дней — удаляются."""
+        """Раз в день — копия базы студии (и базы бота) в ~/dumskaya/backups; старше 30 дней — удаляются.
+        Заодно из корзины удаляются файлы, удалённые больше 30 дней назад."""
         d = today().isoformat()
         if self.setting("backup_day") == d:
             return False
-        os.makedirs(self.backup_dir, exist_ok=True)
-        for src, name in [(self.path, "crm")] + [(p, os.path.splitext(os.path.basename(p))[0]) for p in self.extra_backups]:
-            if not os.path.exists(src):
-                continue
-            dst = os.path.join(self.backup_dir, f"{name}-{d}.db")
-            try:
-                s = sqlite3.connect(src)
-                t = sqlite3.connect(dst + ".tmp")
-                with t:
-                    s.backup(t)
-                s.close()
-                t.close()
-                os.replace(dst + ".tmp", dst)
-                os.chmod(dst, 0o600)
-            except (sqlite3.Error, OSError) as e:
-                log(f"копия {name}: ошибка {e}")
+        backup_dbs([(self.path, "crm")] + [(p, os.path.splitext(os.path.basename(p))[0]) for p in self.extra_backups],
+                   self.backup_dir, d, log)
         cutoff = (today() - timedelta(days=BACKUP_KEEP)).isoformat()
         for f in os.listdir(self.backup_dir):
             m = re.search(r"-(\d{4}-\d{2}-\d{2})\.db$", f)
@@ -689,5 +894,18 @@ class Crm:
                     os.remove(os.path.join(self.backup_dir, f))
                 except OSError:
                     pass
+        if os.path.isdir(self.trash_dir):
+            old = (today() - timedelta(days=TRASH_KEEP)).isoformat()
+            for day_dir in os.listdir(self.trash_dir):
+                if re.fullmatch(r"\d{4}-\d{2}-\d{2}", day_dir) and day_dir < old:
+                    shutil.rmtree(os.path.join(self.trash_dir, day_dir), ignore_errors=True)
         self.setting("backup_day", d)
         return True
+
+
+if __name__ == "__main__":
+    if "--backup-now" in sys.argv:          # npm run backup на Маке: свежая копия перед скачиванием
+        made = backup_dbs([(CRM_DB, "crm"), (BOT_DB, "bot")], BACKUP_DIR, today().isoformat())
+        print("копии: " + (", ".join(os.path.basename(x) for x in made) or "баз пока нет"))
+    else:
+        print(__doc__)
