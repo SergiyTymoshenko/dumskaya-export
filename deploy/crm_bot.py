@@ -42,11 +42,13 @@ class CrmBotMixin:
         url = self.stats_app_url()
         return url.replace("/api/stats/app", "/api/crm/app") if url else None
 
-    def studio_button(self, text="📁 Открыть в «Студии»", pid=None):
+    def studio_button(self, text="📁 Открыть в «Студии»", pid=None, query=None):
+        """Строка с одной кнопкой, открывающей «Студию» (проект pid или экран по query: lead=12, tab=access)."""
         url = self.studio_url()
         if not url:
             return None
-        return [(text, {"web_app": {"url": url + (f"?project={pid}" if pid else "")}})]
+        q = f"project={pid}" if pid else (query or "")
+        return [(text, {"web_app": {"url": url + (f"?{q}" if q else "")}})]
 
     # ---------- приём файлов ----------
     def _pending(self, uid):

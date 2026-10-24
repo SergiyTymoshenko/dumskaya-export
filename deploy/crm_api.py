@@ -57,6 +57,11 @@ def handle_get(h, path, query):
     if path == "/api/crm/ui":                       # размер текста — нужен и графикам, работает и без учёта
         u = h.stats_admin()
         return h.reply(200, {"size": ui_size(u)} if u else {"size": "m"}) or True
+    if path == "/api/crm/access":                   # доступ к боту: люди, запросы, партнёры — работает и без учёта
+        u = h.stats_admin()
+        if not u or not BOT:
+            return h.reply(403, {"ok": False, "error": "Нет доступа"}) or True
+        return h.reply(200, BOT.access_state(u)) or True
     if not CRM:
         h.reply(503, {"ok": False, "error": "Учёт не запущен"})
         return True
@@ -76,6 +81,10 @@ def handle_get(h, path, query):
             return h.reply(200, CRM.stats(p if p in ("month", "quarter", "year", "all") else "month")) or True
         if path == "/api/crm/rate":
             return h.reply(200, CRM.rate(q.get("cur", "EUR").upper(), q.get("day", ""))) or True
+        if path == "/api/crm/leads":
+            return h.reply(200, CRM.leads_list()) or True
+        if path == "/api/crm/lead":
+            return h.reply(200, CRM.lead(q.get("id"))) or True
     except CrmError as e:
         return h.reply(400, {"ok": False, "error": str(e)}) or True
     h.reply(404, {"ok": False})
@@ -85,6 +94,16 @@ def handle_get(h, path, query):
 def handle_post(h, path, query):
     if not path.startswith("/api/crm/"):
         return False
+    if path == "/api/crm/access":
+        u = h.stats_admin()
+        if not u or not BOT:
+            return h.reply(403, {"ok": False, "error": "Нет доступа"}) or True
+        try:
+            return h.reply(200, BOT.access_action(u, _json_body(h, 5000))) or True
+        except CrmError as e:
+            return h.reply(400, {"ok": False, "error": str(e)}) or True
+        except (ValueError, TypeError):
+            return h.reply(400, {"ok": False, "error": "Неверные данные"}) or True
     if path == "/api/crm/ui":
         u = h.stats_admin()
         if not u or not BOT:
@@ -125,7 +144,7 @@ def handle_post(h, path, query):
             entity, d = data.get("entity"), data.get("data") or {}
             fn = {"project": CRM.save_project, "op": CRM.save_op, "client": CRM.save_client,
                   "contractor": CRM.save_contractor, "link": CRM.link_contractor, "stage": CRM.save_stage,
-                  "lists": CRM.save_lists}.get(entity)
+                  "lead": CRM.save_lead, "lead_project": CRM.lead_to_project, "lists": CRM.save_lists}.get(entity)
             if not fn:
                 raise CrmError("Неизвестно, что сохранять")
             return h.reply(200, fn(d, who)) or True

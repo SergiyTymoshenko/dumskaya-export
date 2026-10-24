@@ -63,6 +63,9 @@ FILE_CATS = [("measure", "Обмерный план"), ("brief", "Опросни
              ("docs", "Документация"), ("after", "После"), ("other", "Другое")]
 PHOTO_CATS = ("before", "visual", "after")
 CONTACT_PREFS = ["Звонок", "WhatsApp", "Telegram", "Viber", "E-mail", "SMS"]
+LEAD_STATUSES = [("new", "Новая"), ("work", "В работе"), ("project", "Стала проектом"), ("closed", "Закрыта")]
+TEST_CONTACTS = ("заявка отправлена с сервера", "test@example.com")   # пробные заявки мастера настройки и проверки
+LEADS_ARCHIVE_DAYS = 30             # заявки, пришедшие до «Студии»: за 30 дней — «В работе», старше — «Закрыта»
 PAY_METHODS = ["Банковский перевод", "Наличные", "Карта", "Другое"]
 DEFAULTS = {
     "tariffs": ["Экспресс", "Мебель", "Базовый", "Премиум", "Премиум+", "Авторское сопровождение", "Индивидуальный"],
@@ -106,6 +109,12 @@ CREATE TABLE IF NOT EXISTS files (
   id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, category TEXT NOT NULL, name TEXT, path TEXT,
   thumb TEXT, mime TEXT, size INTEGER, tg_file_id TEXT, note TEXT, created_by TEXT, created TEXT);
 CREATE INDEX IF NOT EXISTS files_project ON files(project_id);
+CREATE TABLE IF NOT EXISTS leads (            -- заявки с сайта (в файле leads.jsonl — они же, без статусов)
+  id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, name TEXT, contact TEXT, message TEXT, message_ru TEXT,
+  message_lang TEXT, page TEXT, model TEXT, model_name TEXT, lang TEXT, routed TEXT,
+  status TEXT NOT NULL DEFAULT 'new', note TEXT, project_id INTEGER, updated TEXT, updated_by TEXT,
+  src TEXT UNIQUE);                          -- src: время + имя + контакт — одна заявка не попадёт дважды
+CREATE INDEX IF NOT EXISTS leads_ts ON leads(ts);
 CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT);
 CREATE TABLE IF NOT EXISTS audit (
   id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT, who TEXT, action TEXT, entity TEXT, entity_id INTEGER, details TEXT);
@@ -278,7 +287,7 @@ class Crm:
             pct = float(self.setting("default_pct") or DEFAULT_PCT)
         except ValueError:
             pct = DEFAULT_PCT
-        out.update(statuses=STATUSES, kinds=KINDS, file_cats=FILE_CATS, photo_cats=PHOTO_CATS, contact_prefs=CONTACT_PREFS,
+        out.update(statuses=STATUSES, lead_statuses=LEAD_STATUSES, kinds=KINDS, file_cats=FILE_CATS, photo_cats=PHOTO_CATS, contact_prefs=CONTACT_PREFS,
                    pay_methods=PAY_METHODS, currencies=CURRENCIES, default_pct=pct)
         return out
 
@@ -466,6 +475,103 @@ class Crm:
             self.audit(who, "add", "op", oid, f)
         self.touch(pid)
         return self.project(pid)
+
+    # ---------- заявки с сайта ----------
+    @staticmethod
+    def lead_src(lead):
+        return hashlib.sha1(f"{lead.get('time')}|{lead.get('name')}|{lead.get('contact')}".encode()).hexdigest()[:20]
+
+    def add_lead(self, lead, status=None, note=""):
+        """Заявка с сайта → в учёт (если её там ещё нет). Возвращает номер заявки."""
+        src = self.lead_src(lead)
+        if (lead.get("contact") or "").strip().lower() in TEST_CONTACTS:
+            status, note = "test", "Пробная заявка при настройке сервиса"
+        self.run("""INSERT OR IGNORE INTO leads(ts, name, contact, message, message_ru, message_lang, page, model, model_name, lang,
+                    routed, status, note, src, updated) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                 _text(lead.get("time"), 40) or now(), _text(lead.get("name"), 120), _text(lead.get("contact"), 160),
+                 _text(lead.get("message"), 4000), _text(lead.get("message_ru"), 6000), _text(lead.get("message_lang"), 10),
+                 _text(lead.get("page"), 300), _text(lead.get("model"), 40), _text(lead.get("model_name"), 200),
+                 _text(lead.get("lang"), 5), _text(lead.get("routed"), 300), status or "new", _text(note, 500), src, now())
+        return self.one("SELECT id FROM leads WHERE src=?", src)["id"]
+
+    def lead_routed(self, lid, routed, model_name=""):
+        self.run("UPDATE leads SET routed=?, model_name=COALESCE(NULLIF(?, ''), model_name) WHERE id=?",
+                 _text(routed, 300), _text(model_name, 200), int(lid))
+
+    def import_leads(self, path, log=print):
+        """Заявки из файла leads.jsonl, которых ещё нет в учёте (пришли до «Студии» или пока учёт не работал).
+        Пришедшие до «Студии»: последние 30 дней — «В работе», старше — «Закрыта»; новые — «Новая»."""
+        if not os.path.exists(path):
+            return 0
+        first_run = not self.one("SELECT id FROM leads LIMIT 1")
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=LEADS_ARCHIVE_DAYS)).isoformat()
+        added = 0
+        with open(path, encoding="utf-8") as fh:
+            for line in fh:
+                try:
+                    lead = json.loads(line)
+                except ValueError:
+                    continue
+                if not isinstance(lead, dict) or self.one("SELECT id FROM leads WHERE src=?", self.lead_src(lead)):
+                    continue
+                if first_run:
+                    old = str(lead.get("time") or "") < cutoff
+                    self.add_lead(lead, "closed" if old else "work", "Пришла до запуска «Студии» — статус поставлен автоматически")
+                else:
+                    self.add_lead(lead)
+                added += 1
+        if added:
+            log(f"учёт: заявок из файла добавлено {added}")
+        return added
+
+    def leads_list(self):
+        rows = self.q("""SELECT l.id, l.ts, l.name, l.contact, substr(COALESCE(NULLIF(l.message_ru, ''), l.message), 1, 160) AS snippet,
+                                l.model, l.model_name, l.lang, l.status, l.project_id, l.routed, p.title AS project_title
+                         FROM leads l LEFT JOIN projects p ON p.id=l.project_id WHERE l.status != 'test' ORDER BY l.ts DESC, l.id DESC""")
+        return {"leads": rows, "statuses": LEAD_STATUSES}
+
+    def lead(self, lid):
+        r = self.one("""SELECT l.*, p.title AS project_title, p.number AS project_number FROM leads l
+                        LEFT JOIN projects p ON p.id=l.project_id WHERE l.id=?""", int(lid or 0))
+        if not r:
+            raise CrmError("Заявка не найдена")
+        r.pop("src", None)
+        r["history"] = self.q("SELECT ts, who, action, details FROM audit WHERE entity='lead' AND entity_id=? ORDER BY id DESC LIMIT 20", r["id"])
+        return r
+
+    def save_lead(self, d, who):
+        lid = int(d.get("id") or 0)
+        if not self.one("SELECT id FROM leads WHERE id=?", lid):
+            raise CrmError("Заявка не найдена")
+        status = d.get("status")
+        if status not in dict(LEAD_STATUSES):
+            raise CrmError("Неизвестный статус заявки")
+        f = dict(status=status, note=_text(d.get("note"), 2000))
+        self.run("UPDATE leads SET status=?, note=?, updated=?, updated_by=? WHERE id=?", f["status"], f["note"], now(), who, lid)
+        self.audit(who, "edit", "lead", lid, f)
+        return self.lead(lid)
+
+    def lead_to_project(self, d, who):
+        """Из заявки — заказчик (новый или выбранный) и проект; заявка → «Стала проектом»."""
+        lid = int(d.get("lead_id") or 0)
+        if not self.one("SELECT id FROM leads WHERE id=?", lid):
+            raise CrmError("Заявка не найдена")
+        c, pd = d.get("client") or {}, d.get("project") or {}
+        if not _text(pd.get("title"), 200):                       # проверить до того, как создавать заказчика
+            raise CrmError("Укажите название проекта")
+        number = _text(pd.get("number"), 40)
+        if number and self.one("SELECT id FROM projects WHERE number=?", number):
+            raise CrmError(f"Номер {number} уже есть у другого проекта")
+        cid = int(c.get("id") or 0)
+        if cid and not self.one("SELECT id FROM clients WHERE id=?", cid):
+            raise CrmError("Заказчик не найден")
+        if not cid:
+            cid = self.save_client(c, who)["id"]
+        pr = self.save_project(dict(pd, client_id=cid), who)
+        pid = pr["project"]["id"]
+        self.run("UPDATE leads SET status='project', project_id=?, updated=?, updated_by=? WHERE id=?", pid, now(), who, lid)
+        self.audit(who, "edit", "lead", lid, {"status": "project", "project_id": pid})
+        return pr
 
     # ---------- этапы работ подрядчика ----------
     def save_stage(self, d, who):
@@ -874,8 +980,9 @@ class Crm:
             c["debt_eur"] = round(sum(x["debt_eur"] for x in mine), 2)
             c["received_eur"] = round(sum(x["received_eur"] for x in mine), 2)
         cities = sorted({x for x in [p["city"] for p in projects] + [c["city"] for c in clients] + [c["city"] for c in contractors] if x})
+        leads_new = self.one("SELECT COUNT(*) AS n FROM leads WHERE status='new'")["n"]
         return {"projects": projects, "clients": clients, "contractors": contractors, "links": links, "cities": cities,
-                "lists": self.lists(), "disk": self.disk()}
+                "lists": self.lists(), "disk": self.disk(), "leads_new": leads_new}
 
     # ---------- копии ----------
     def backup_if_due(self, log=print):

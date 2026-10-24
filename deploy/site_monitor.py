@@ -149,6 +149,7 @@ class SiteMonitor:
         self.stop = threading.Event()
         self.fails = 0
         self.last = None                      # (время, ok, причина, мс) — для /site
+        self._cert = (0.0, None)              # (когда проверяли, дней до конца сертификата) — для «Студии»
 
     # ---------- состояние в базе бота ----------
     def get(self, k, default=None):
@@ -233,6 +234,20 @@ class SiteMonitor:
         days = self.cert_fn(self.url)
         cert = f"\nСертификат HTTPS: ещё {days} дн." if days is not None else ""
         return f"{head}\n{esc(self.url)} · проверка {hhmm(t)}, раз в минуту{cert}"
+
+    def status_data(self):
+        """То же для «Студии» (вкладка «Сайт», только разработчику): цифрами, без HTML."""
+        out = {"running": True, "live": bool(self.live_fn()), "url": self.url}
+        if not out["live"] or not self.last:
+            return out
+        t, ok, why, ms = self.last
+        down = self.get("down_since")
+        now = time.time()
+        if now - self._cert[0] > 600:            # сертификат — не чаще раза в 10 минут
+            self._cert = (now, self.cert_fn(self.url))
+        out.update(checked=t, ok=bool(ok), why=why or "", ms=ms, down_since=float(down) if down else None,
+                   cert_days=self._cert[1], every=EVERY)
+        return out
 
     # ---------- поток ----------
     def start(self):

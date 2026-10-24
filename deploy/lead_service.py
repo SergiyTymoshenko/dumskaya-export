@@ -121,6 +121,12 @@ def send_mail(lead):
 
 def deliver(lead):
     translate_lead(lead, log=log)      # перевод сообщения на русский (если оно не по-русски и задан ключ сервиса)
+    crm = getattr(BOT, "crm", None)
+    if crm:                            # в «Студию» → «Заявки»; номер нужен для кнопки «Открыть заявку» в сообщении
+        try:
+            lead["crm_id"] = crm.add_lead(lead)
+        except Exception as e:  # noqa: BLE001
+            log(f"учёт: заявка не записана: {type(e).__name__}: {e}")
     ok = []
     for name, fn in (("telegram", send_telegram), ("email", send_mail)):
         try:
@@ -128,6 +134,11 @@ def deliver(lead):
                 ok.append(name)
         except Exception as e:  # noqa: BLE001
             log(f"{name}: ошибка {type(e).__name__}: {e}")
+    if crm and lead.get("crm_id") and (lead.get("routed") or lead.get("model_name")):
+        try:
+            crm.lead_routed(lead["crm_id"], lead.get("routed") or "", lead.get("model_name") or "")
+        except Exception as e:  # noqa: BLE001
+            log(f"учёт: кому передана заявка — не записано: {e}")
     log(f"заявка от {lead['name']!r}: доставлено {ok or 'никуда (сохранено в файл)'}")
     return ok
 
@@ -170,6 +181,11 @@ class Handler(BaseHTTPRequestHandler):
             except OSError:
                 return self.reply(404, {"ok": False})
             return self.reply(200, None, html_page=page, telegram_frame=True)
+        if path.rstrip("/") == "/api/stats/site":          # работает ли сайт (что показывала /site): только разработчику
+            if not self.stats_owner():
+                return self.reply(403, {"ok": False})
+            mon = getattr(BOT, "monitor", None)
+            return self.reply(200, mon.status_data() if mon else {"running": False})
         if path.rstrip("/") == "/api/stats/me":            # «Не считать нас»: только у разработчика
             if not self.stats_owner():
                 return self.reply(403, {"ok": False})
@@ -352,6 +368,7 @@ def main():
             crm_api.CRM = BOT.crm = Crm(rates=Rates(), extra_backups=[BOT_DB])
             BOT.stats.hooks.append(BOT.crm.backup_if_due)   # каждый день — копия баз в ~/dumskaya/backups
             BOT.stats.hooks.append(BOT.crm_backup_reminder)  # копия на Маке старше недели — напомнить разработчику
+            BOT.crm.import_leads(LEADS_FILE, log=log)         # заявки из файла, которых ещё нет в «Студии»
         except Exception as e:  # noqa: BLE001
             log(f"учёт проектов не запущен: {type(e).__name__}: {e}")
         BOT.start()

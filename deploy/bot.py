@@ -30,6 +30,7 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
+from crm import CrmError               # ошибка, которую можно показать человеку (в «Студии»)
 from crm_bot import CrmBotMixin        # учёт проектов в чате: фото и документы в проект
 
 try:                                   # перевод сообщений заказчиков (translate.py рядом)
@@ -59,8 +60,8 @@ ADMIN_COMMANDS = [{"command": "users", "description": "Пользователи 
                   {"command": "site", "description": "Работает ли сайт"},
                   {"command": "help", "description": "Что умеет бот"},
                   {"command": "cancel", "description": "Отменить ввод"}]
-# кнопки под полем ввода у разработчика и дизайнера (нажатие = команда); «Студия» — кнопка меню слева от поля
-# (учёт проектов и графики сайта)
+# Всё для студии — в «Студии» (кнопка меню слева от поля ввода): заявки, проекты, деньги, контакты, доступ к боту, сайт.
+# Кнопки под полем ввода (нажатие = команда) — только пока сайт не на домене и «Студию» открыть нельзя (решено 24.10.2026).
 BTN_SITE, BTN_USERS, BTN_PARTNERS = "🌐 Сайт", "👥 Пользователи", "🤝 Партнёры"
 ADMIN_BUTTONS = {BTN_SITE: "/site", BTN_USERS: "/users", BTN_PARTNERS: "/partners"}
 # «Сайт» (работает ли сайт) — только у разработчика
@@ -69,7 +70,7 @@ KEYBOARDS = {
               "resize_keyboard": True, "is_persistent": True},
     "designer": {"keyboard": [[{"text": BTN_USERS}, {"text": BTN_PARTNERS}]], "resize_keyboard": True, "is_persistent": True},
 }
-KEYBOARD_VERSION = {"owner": "3", "designer": "5"}   # сменить — и кнопки этой роли придут заново
+KEYBOARD_VERSION = {"owner": "4", "designer": "6"}   # сменить — и сообщение о кнопках этой роли придёт заново
 SUPPLIER_COMMANDS = [{"command": "team", "description": "Мои сотрудники"},
                      {"command": "invite", "description": "Пригласить сотрудника"},
                      {"command": "help", "description": "Что умеет бот"}]
@@ -349,28 +350,38 @@ class Bot(CrmBotMixin):
             return None
 
     def keyboard_extra(self, u):
-        """Для отправки сообщения разработчику или дизайнеру — с кнопками студии под полем ввода."""
+        """Для сообщения разработчику или дизайнеру: кнопки под полем ввода — только если «Студию» открыть нельзя,
+        иначе — убрать старые кнопки."""
         if not self.is_admin(u):
             return {}
         self.s.put(f"kbd:{u['tg_id']}", KEYBOARD_VERSION[u["role"]])
-        return {"reply_markup": KEYBOARDS[u["role"]]}
+        return {"reply_markup": {"remove_keyboard": True} if self.studio_url() else KEYBOARDS[u["role"]]}
+
+    def studio_text(self, u):
+        return ("Всё для работы студии — в <b>«Студии»</b>: кнопка слева от поля ввода.\n\n"
+                "• <b>Заявки</b> с сайта — со статусами; из заявки одним нажатием — заказчик и проект\n"
+                "• <b>Проекты</b> — оплаты, подрядчики и их бонусы, файлы\n"
+                "• <b>Деньги</b> — доход за месяц, квартал, год\n"
+                "• <b>Контакты</b> — заказчики, подрядчики и доступ к боту (запросы, роли, партнёры)\n"
+                "• <b>Сайт</b> — графики посетителей" + (" и работает ли сайт" if u["role"] == "owner" else "") + "\n\n"
+                "Кнопки под полем ввода больше не нужны — убраны. Уведомления по-прежнему приходят сюда, "
+                "с кнопкой «Открыть в «Студии»». Фото и документы проекта можно присылать прямо в чат — бот спросит, "
+                "в какой проект.")
 
     def sync_buttons(self, u):
-        """Кнопки под полем ввода и кнопка «Студия» слева — у разработчика и дизайнера; у остальных — убрать.
-        Вернёт (доставлено, причина), если отправляли сообщение о новых кнопках, иначе None."""
+        """Кнопка «Студия» слева от поля ввода — у разработчика и дизайнера (пока сайт не на домене — кнопки под полем
+        ввода); у остальных — убрать. Вернёт (доставлено, причина), если отправляли сообщение о кнопках, иначе None."""
         uid, flag = u["tg_id"], f"kbd:{u['tg_id']}"
         if self.is_admin(u):
             url = self.studio_url()
             self.api("setChatMenuButton", chat_id=uid, menu_button=(
                 {"type": "web_app", "text": "Студия", "web_app": {"url": url}} if url else {"type": "commands"}))
             if self.s.get(flag) != KEYBOARD_VERSION[u["role"]]:
-                got = self.send_r(uid, "Кнопки студии — внизу экрана: пользователи и партнёры"
-                                  + (", сайт." if u["role"] == "owner" else ".")
-                                  + ("\n\nСлева от поля ввода — кнопка <b>«Студия»</b>: проекты, оплаты и доход, заказчики, "
-                                     "подрядчики, фото и документы проектов, а также графики посетителей сайта.\n\n"
-                                     "Фото и документы проекта можно присылать прямо сюда, в чат: бот спросит, "
-                                     "в какой проект их сохранить." if url else ""),
-                                  reply_markup=KEYBOARDS[u["role"]])
+                if url:
+                    got = self.send_r(uid, self.studio_text(u), reply_markup={"remove_keyboard": True})
+                else:
+                    got = self.send_r(uid, "Кнопки студии — внизу экрана: пользователи и партнёры"
+                                      + (", сайт." if u["role"] == "owner" else "."), reply_markup=KEYBOARDS[u["role"]])
                 if got[0]:                     # отметка — только после доставки, иначе попробуем при следующем запуске
                     self.s.put(flag, KEYBOARD_VERSION[u["role"]])
                 return got
@@ -426,8 +437,8 @@ class Bot(CrmBotMixin):
         if cmd == "/invite" and self.is_supplier(u):
             return self.make_invite(u)
         if self.is_admin(u):
-            return self.send(uid, "Кнопки — внизу экрана; проекты студии и графики сайта — «Студия» слева от поля ввода. "
-                                  "Все возможности — /help.", **self.keyboard_extra(u))
+            return self.send(uid, "Всё для работы студии — в «Студии»: кнопка слева от поля ввода. Что где — /help.",
+                             **self.keyboard_extra(u))
         self.send(uid, "Команды — в меню слева от поля ввода или /help.")
 
     def stranger(self, uid, name, username, u):
@@ -444,8 +455,9 @@ class Bot(CrmBotMixin):
                        "Запрос на доступ отправлен студии. Как только его одобрят, бот напишет вам.")
         u = self.user(uid)
         text = (f"<b>Запрос доступа к боту</b>\n{esc(self.label(u))}\nTelegram ID: <code>{uid}</code>\n\nКем принять?")
+        studio = self.studio_button("👥 Открыть в «Студии»", query="tab=access")
         for a in self.active(ADMIN_ROLES):
-            self.send(a["tg_id"], text, self.role_rows("a", uid, a))
+            self.send(a["tg_id"], text, self.role_rows("a", uid, a) + ([studio] if studio else []))
 
     def role_rows(self, mode, uid, admin):
         rows = []
@@ -462,19 +474,14 @@ class Bot(CrmBotMixin):
         head = f"<b>DUMSKAYA DESIGN</b> — внутренний бот студии.\nВаша роль: {esc(self.role_line(u))}.\n\n"
         if role == "owner":
             return head + ("Сюда приходят все уведомления: заявки с сайта, заявки партнёрам, запросы доступа и ошибки, "
-                           "а если сайт перестанет отвечать — «🔴 Сайт не отвечает» (и «🟢 снова работает»).\n\n"
-                           "Учёт проектов студии и статистика посетителей сайта — кнопка «Студия» слева от поля ввода; "
-                           "каждый день в 9:00 — короткая сводка за вчера с кнопкой «Графики».\n\n"
-                           "Фото и документы проекта можно присылать прямо в чат — бот спросит, в какой проект.\n\n"
-                           "Кнопки внизу экрана: 👥 Пользователи, 🤝 Партнёры, 🌐 Сайт (работает ли).")
+                           "а если сайт перестанет отвечать — «🔴 Сайт не отвечает» (и «🟢 снова работает»); "
+                           "каждый день в 9:00 — короткая сводка за вчера с кнопкой «Графики».\n\n" + self.studio_text(u))
         if role == "designer":
             mgr = self.shop_manager()
-            shop = ("Товары магазина студии закреплены за вами — заявки на них тоже приходят сюда.\n\n"
+            shop = ("Товары магазина студии закреплены за вами — заявки на них тоже приходят сюда.\n"
                     if mgr and mgr["tg_id"] == u["tg_id"] else "")
             return head + ("Сюда приходят заявки с сайта, уведомления о заявках партнёрам и запросы на доступ к боту.\n"
-                           + shop + "\nСлева от поля ввода — кнопка «Студия»: ваши проекты, оплаты и доход, заказчики, "
-                           "подрядчики, фото и документы, графики сайта. Фото и документы проекта можно присылать прямо "
-                           "в чат — бот спросит, в какой проект.\n\nКнопки внизу экрана: 👥 Пользователи, 🤝 Партнёры.")
+                           + shop + "\n" + self.studio_text(u))
         if role == "supplier":
             return head + ("Сюда будут приходить заявки с сайта dumskaya-design.com на ваши товары — вам "
                            "и вашим сотрудникам в боте.\n\n/team — ваши сотрудники в боте\n/invite — пригласить сотрудника")
@@ -628,15 +635,19 @@ class Bot(CrmBotMixin):
         self.approve(admin, uid, role, pid, None)
 
     def approve(self, admin, uid, role, pid, msg):
-        was = self.user(uid)
-        self.s.run("UPDATE users SET role=?, status='active', partner_id=?, added_by=?, updated=? WHERE tg_id=?",
-                   role, pid if role in COMPANY_ROLES else None, admin["tg_id"], now(), uid)
-        u = self.user(uid)
+        u = self.do_approve(admin, uid, role, pid)
         result = f"✅ {esc(self.label(u))} — {esc(self.role_line(u))}"
         if msg:
             self.edit(msg, result, [[("Пользователи", "users")]])
         else:
             self.send(admin["tg_id"], result)
+
+    def do_approve(self, admin, uid, role, pid):
+        """Принять человека или сменить роль (из чата и из «Студии»): ему — приветствие, остальным в студии — уведомление."""
+        was = self.user(uid)
+        self.s.run("UPDATE users SET role=?, status='active', partner_id=?, added_by=?, updated=? WHERE tg_id=?",
+                   role, pid if role in COMPANY_ROLES else None, admin["tg_id"], now(), uid)
+        u = self.user(uid)
         changed = was and was["status"] == "active"
         self.send(uid, ("Ваша роль в боте изменена.\n\n" if changed else "Доступ к боту открыт.\n\n") + self.welcome(u),
                   **self.keyboard_extra(u))
@@ -644,25 +655,120 @@ class Bot(CrmBotMixin):
         verb = "изменил(а) роль" if changed else "принял(а)"
         self.notify(f"{esc(self.label(admin))} {verb}: {esc(self.label(u))} — {esc(self.role_line(u))}", skip=(admin["tg_id"],))
         self.ensure_shop_manager()
+        return u
 
     def reject(self, admin, uid, msg):
         u = self.user(uid)
         if not u or u["status"] != "pending":
             return self.edit(msg, "Запрос уже обработан.")
-        self.s.run("UPDATE users SET status='rejected', added_by=?, updated=? WHERE tg_id=?", admin["tg_id"], now(), uid)
+        self.do_reject(admin, u)
         self.edit(msg, f"Отклонён запрос: {esc(self.label(u))}")
+
+    def do_reject(self, admin, u):
+        self.s.run("UPDATE users SET status='rejected', added_by=?, updated=? WHERE tg_id=?", admin["tg_id"], now(), u["tg_id"])
         self.notify(f"{esc(self.label(admin))} отклонил(а) запрос: {esc(self.label(u))}", skip=(admin["tg_id"],))
 
     def remove(self, admin, uid, msg):
         u = self.user(uid)
         if not self.can_manage(admin, u):
             return self.edit(msg, "Этого пользователя может изменить только разработчик.")
+        self.do_remove(admin, u)
+        self.edit(msg, f"Доступ закрыт: {esc(self.label(u))}", [[("Пользователи", "users")]])
+
+    def do_remove(self, admin, u):
+        uid = u["tg_id"]
         self.s.run("UPDATE users SET status='removed', updated=? WHERE tg_id=?", now(), uid)
         self.set_commands(self.user(uid))
-        self.edit(msg, f"Доступ закрыт: {esc(self.label(u))}", [[("Пользователи", "users")]])
         self.send(uid, "Доступ к боту студии DUMSKAYA DESIGN закрыт.")
         self.notify(f"{esc(self.label(admin))} закрыл(а) доступ: {esc(self.label(u))}", skip=(admin["tg_id"],))
         self.ensure_shop_manager()
+
+    # ---------- доступ к боту из «Студии» (мини-приложение) ----------
+    def supplier_companies(self):
+        """Компании, где есть поставщик в боте: только в них можно добавить сотрудника поставщика."""
+        return self.s.all("SELECT DISTINCT p.* FROM partners p JOIN users s ON s.partner_id=p.id "
+                          "AND s.role='supplier' AND s.status='active' ORDER BY p.name")
+
+    def access_state(self, admin, products=None):
+        """Люди в боте, запросы, компании-партнёры и их товары — для «Студии» (Контакты → Доступ)."""
+        products = products if products is not None else load_products()
+        mgr = self.shop_manager()
+        rows = self.s.all("SELECT u.*, p.name AS company FROM users u LEFT JOIN partners p ON p.id=u.partner_id "
+                          "WHERE u.status IN ('active','pending')")
+        people = []
+        for u in rows:
+            by = self.user(u["added_by"]) if u["added_by"] else None
+            people.append({"id": u["tg_id"], "name": u["name"] or str(u["tg_id"]), "username": u["username"] or "",
+                           "role": u["role"] or "", "role_name": ROLES.get(u["role"], ""), "status": u["status"],
+                           "company": u["company"] or "", "partner_id": u["partner_id"],
+                           "added_by": self.label(by) if by else "", "since": u["updated"] or u["created"] or "",
+                           "shop": bool(mgr and mgr["tg_id"] == u["tg_id"]),
+                           "manage": u["status"] == "pending" or self.can_manage(admin, u)})
+        people.sort(key=lambda x: (x["status"] != "pending", x["role"] not in ADMIN_ROLES, x["company"].lower(),
+                                   ROLE_ORDER.index(x["role"]) if x["role"] in ROLE_ORDER else 99, x["name"].lower()))
+        sup = {p["id"] for p in self.supplier_companies()}
+        partners = []
+        for p in self.s.all("SELECT * FROM partners ORDER BY name COLLATE NOCASE"):
+            goods = sorted(code for code, it in products.items() if str(it.get("partner") or "") in (str(p["id"]), p["name"]))
+            partners.append({"id": p["id"], "name": p["name"], "goods": goods[:24], "goods_count": len(goods),
+                             "people": sum(1 for x in people if x["partner_id"] == p["id"] and x["status"] == "active"),
+                             "supplier": p["id"] in sup})
+        own = sorted(code for code, it in products.items() if not it.get("partner"))
+        roles = [[k, v] for k, v in ROLES.items() if k != "owner" and (k != "designer" or admin["role"] == "owner")]
+        return {"people": people, "partners": partners, "roles": roles, "company_roles": list(COMPANY_ROLES),
+                "partner_roles": list(PARTNER_ROLES), "own_goods": own, "shop_manager": self.label(mgr) if mgr else "",
+                "me": {"id": admin["tg_id"], "role": admin["role"]}}
+
+    def access_action(self, admin, d):
+        """Принять, сменить роль, отклонить, закрыть доступ, закрепить товары магазина — те же правила, что в чате."""
+        act = d.get("action")
+        uid = int(d.get("uid") or 0)
+        u = self.user(uid) if uid else None
+        if not u:
+            raise CrmError("Человек не найден")
+        if act in ("approve", "change"):
+            if act == "approve" and u["status"] != "pending":
+                raise CrmError("Запрос уже обработан — обновите список")
+            if act == "change" and not self.can_manage(admin, u):
+                raise CrmError("Этого человека может изменить только разработчик")
+            role = d.get("role")
+            if role not in ROLES or role == "owner":
+                raise CrmError("Выберите роль")
+            if role == "designer" and admin["role"] != "owner":
+                raise CrmError("Назначить дизайнера студии может только разработчик")
+            pid = None
+            if role == "staff":
+                pid = int(d.get("partner_id") or 0)
+                if pid not in {p["id"] for p in self.supplier_companies()}:
+                    raise CrmError("Сотрудника можно добавить только в компанию, где есть поставщик")
+            elif role in PARTNER_ROLES:
+                company = " ".join(str(d.get("company") or "").split())
+                if d.get("private"):
+                    pid = self.partner_by_name(u["name"] or str(uid))
+                elif company:
+                    if not 2 <= len(company) <= 80:
+                        raise CrmError("Название компании — от 2 до 80 символов")
+                    pid = self.partner_by_name(company)
+                else:
+                    pid = int(d.get("partner_id") or 0)
+                    if not self.partner(pid):
+                        raise CrmError("Выберите компанию, «Без компании» или впишите новую")
+            self.do_approve(admin, uid, role, pid)
+        elif act == "reject":
+            if u["status"] != "pending":
+                raise CrmError("Запрос уже обработан — обновите список")
+            self.do_reject(admin, u)
+        elif act == "remove":
+            if not self.can_manage(admin, u):
+                raise CrmError("Этого человека может изменить только разработчик")
+            self.do_remove(admin, u)
+        elif act == "shop":
+            if admin["role"] != "owner" or u["status"] != "active" or u["role"] not in ADMIN_ROLES:
+                raise CrmError("Закрепить товары магазина может только разработчик — за собой или дизайнером студии")
+            self.set_shop_manager(u, by=admin)
+        else:
+            raise CrmError("Неизвестное действие")
+        return self.access_state(admin)
 
     # ---------- товары магазина студии ----------
     def shop_manager(self):
@@ -872,6 +978,9 @@ class Bot(CrmBotMixin):
         body = format_lead(lead, model, prod)
         pid = prod.get("partner") if prod else None
         delivered = []
+        lead["model_name"] = (prod or {}).get("name") or ""
+        btn = self.studio_button("📋 Открыть заявку в «Студии»", query=f"lead={lead['crm_id']}") if lead.get("crm_id") else None
+        rows = [btn] if btn else None
         if pid:
             p = self.find_partner(pid)
             people = self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", p["id"]) if p else []
@@ -879,6 +988,8 @@ class Bot(CrmBotMixin):
                 if self.send(u["tg_id"], "<b>Заявка с сайта DUMSKAYA DESIGN на ваш товар</b>\n\n" + body):
                     delivered.append(u["tg_id"])
             who = ", ".join(self.label(u) for u in people if u["tg_id"] in delivered)
+            lead["routed"] = (f"передана партнёру «{p['name']}»: {who}" if p and who else
+                              f"партнёр «{p['name'] if p else pid}» не подключён к боту — передать вручную")
             if not p:
                 head = (f"⚠️ <b>Заявка на товар партнёра {esc(pid if not str(pid).isdigit() else '№' + str(pid))}</b> — "
                         f"такого партнёра нет в боте, передайте заявку вручную")
@@ -886,17 +997,18 @@ class Bot(CrmBotMixin):
                 head = f"<b>Заявка на товар партнёра «{esc(p['name'])}»</b> — передана: {esc(who)}"
             else:
                 head = f"⚠️ <b>Заявка на товар партнёра «{esc(p['name'])}»</b> — партнёр не подключён к боту, передайте заявку вручную"
-            delivered += self.notify(head + "\n\n" + body)
+            delivered += self.notify(head + "\n\n" + body, rows=rows)
         elif prod:                                   # товар магазина студии — ответственному, разработчику копия
             m = self.shop_manager()
-            if m and self.send(m["tg_id"], "<b>🛒 Заявка на товар магазина</b> — закреплён за вами\n\n" + body):
+            if m and self.send(m["tg_id"], "<b>🛒 Заявка на товар магазина</b> — закреплён за вами\n\n" + body, rows):
                 delivered.append(m["tg_id"])
+                lead["routed"] = f"товар магазина студии — {self.label(m)}"
                 delivered += self.notify(f"<b>🛒 Заявка на товар магазина</b> — передана: {esc(self.label(m))}\n\n" + body,
-                                         roles=("owner",), skip=(m["tg_id"],))
+                                         roles=("owner",), skip=(m["tg_id"],), rows=rows)
             else:
-                delivered += self.notify("<b>🛒 Заявка на товар магазина</b>\n\n" + body)
+                delivered += self.notify("<b>🛒 Заявка на товар магазина</b>\n\n" + body, rows=rows)
         else:
-            delivered += self.notify("<b>Заявка с сайта</b>\n\n" + body)
+            delivered += self.notify("<b>Заявка с сайта</b>\n\n" + body, rows=rows)
         return delivered
 
 
