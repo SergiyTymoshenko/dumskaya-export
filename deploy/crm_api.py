@@ -3,19 +3,24 @@
 """Адреса /api/crm/* сервиса заявок — учёт проектов студии (crm.py) для страницы «Студия» (crm_app.html).
 
 Всё, кроме самой страницы и файлов, — только разработчику и дизайнеру: по подписи Telegram (заголовок
-X-Telegram-Init-Data), как у графиков. Файлы отдаются по подписанным ссылкам (действуют 12 часов): так их можно
+X-Telegram-Init-Data), как у графиков. Здесь же — товары и доп. услуги заказчика, заказчики проекта, ссылки в кабинет
+(/api/crm/invite), закрыть кабинет (/api/crm/unlink), карточка товара с нашего сайта (/api/crm/card); после сохранения —
+сообщения в Telegram (after_save). Кабинет заказчика и подрядчика и переписка — portal_api.py. Файлы отдаются по подписанным ссылкам (действуют 12 часов): так их можно
 открыть в браузере и скачать. Опасные для сайта типы (HTML, SVG…) отдаются только как вложение и в «песочнице».
 """
 import hashlib
 import html
 import json
 import os
+import re
+import threading
 import urllib.parse
 
 from crm import FILE_MAX, CrmError
 
 CRM = None            # ставит lead_service.py
 BOT = None
+PORTAL = None         # кабинеты заказчиков и подрядчиков (crm_portal.py)
 INLINE_OK = ("image/jpeg", "image/png", "image/webp", "image/gif", "application/pdf", "video/mp4", "text/plain")
 SIZES = ("m", "l", "xl")       # размер текста в «Студии» и графиках: обычный, крупный, очень крупный
 
@@ -54,7 +59,8 @@ VERSION = _version()
 def page(name):
     """Страница мини-приложения с версией внизу (метка __STUDIO_VERSION__)."""
     with open(os.path.join(HERE, name), encoding="utf-8") as fh:
-        return fh.read().replace("__STUDIO_VERSION__", html.escape(VERSION))
+        return fh.read().replace("__STUDIO_VERSION__", html.escape(VERSION)).replace(
+            "__VERSION_SHORT__", html.escape(VERSION.split()[-1] if VERSION.startswith("код ") else VERSION.split()[0]))
 
 
 def app_page():
@@ -66,6 +72,85 @@ def studio_user(h):
     к боту (решено 24.10.2026)."""
     u = h.stats_admin()
     return u if u and u["role"] == "designer" else None
+
+
+def portal_bg(fn, *args, **kw):
+    """Уведомление в Telegram — в фоне: «Студия» не ждёт Telegram и перевод."""
+    def run():
+        try:
+            fn(*args, **kw)
+        except Exception as e:  # noqa: BLE001
+            if BOT:
+                BOT.log(f"кабинет: уведомление не отправлено: {type(e).__name__}: {e}")
+    threading.Thread(target=run, daemon=True).start()
+
+
+def after_save(entity, d, r, who):
+    """Что сообщить в Telegram после сохранения в «Студии»: заказчику — новый товар или услуга (если отмечено
+    «Сообщить заказчику»), товар доставлен; сумма работ подрядчика — заказчику на подтверждение; подрядчику — что его
+    добавили в проект."""
+    if not BOT or not hasattr(BOT, "portal_event"):
+        return
+    was, sid = r.get("was"), r.get("saved_id")
+    if entity == "order" and d.get("notify"):
+        o = CRM.one("SELECT delivered FROM orders WHERE id=?", sid) or {}
+        if not was:
+            portal_bg(BOT.portal_event, "order_new", order_id=sid)
+        elif o.get("delivered") and not was.get("delivered"):
+            portal_bg(BOT.portal_event, "order_delivered", order_id=sid)
+    elif entity == "service" and d.get("notify") and not was:
+        portal_bg(BOT.portal_event, "service_new", service_id=sid)
+    elif entity == "stage" and d.get("ask", True):        # «Попросить заказчика подтвердить сумму» (по умолчанию — да)
+        st = CRM.one("SELECT amount, currency FROM stages WHERE id=?", sid) or {}
+        if not was or was.get("amount") != st.get("amount") or was.get("currency") != st.get("currency"):
+            portal_bg(BOT.portal_event, "stage_saved", stage_id=sid, was=was, by=who, by_contractor=False)
+    elif entity == "link" and r.get("new"):
+        portal_bg(BOT.portal_event, "link_new", link_id=sid)
+    elif entity in ("pclient", "pclient_remove"):          # убран из проекта: других проектов нет — кабинет закрывается;
+        c = CRM.one("SELECT tg_id FROM clients WHERE id=?", int(d.get("client_id") or 0)) or {}   # добавлен снова — открывается
+        if c.get("tg_id"):
+            portal_bg(BOT.portal_unlinked if entity == "pclient_remove" else BOT.portal_relinked, c["tg_id"])
+
+
+CARD_HOSTS = ("dumskaya-design.com", "www.dumskaya-design.com", "dumskaya-home.com", "www.dumskaya-home.com")
+
+
+def product_card(url, code=""):
+    """Карточка товара для заказа: по артикулу магазина студии (TDD-001…) или по ссылке на наш сайт — название, фото
+    (og:image) и ссылка. Чужие сайты не открываем: ссылка на товар у фабрики сохраняется как есть, фото — загрузить."""
+    url, code = url.strip(), code.strip().upper()
+    if code and not url:
+        try:
+            from bot import SITE, load_products
+            it = load_products().get(code)
+        except ImportError:
+            it = None
+        if not it:
+            raise CrmError(f"Артикула {code} нет в магазине на сайте")
+        url = SITE + it["path"]
+    p = urllib.parse.urlparse(url)
+    if p.scheme != "https" or p.hostname not in CARD_HOSTS:
+        raise CrmError("Карточку можно подтянуть только с dumskaya-design.com или dumskaya-home.com")
+    import urllib.request
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (DUMSKAYA DESIGN studio card)"})
+    try:
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            page_html = resp.read(600_000).decode("utf-8", "replace")
+    except Exception as e:  # noqa: BLE001
+        raise CrmError(f"Страница не открылась: {e}") from None
+
+    def meta(prop):
+        m = re.search(r'<meta[^>]+(?:property|name)=["\']' + re.escape(prop) + r'["\'][^>]*content=["\']([^"\']+)', page_html, re.I) or \
+            re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]*(?:property|name)=["\']' + re.escape(prop) + r'["\']', page_html, re.I)
+        return html.unescape(m.group(1)).strip() if m else ""
+    title = meta("og:title") or (lambda m: html.unescape(m.group(1)).strip() if m else "")(re.search(r"<title>([^<]+)</title>", page_html, re.I))
+    title = re.sub(r"\s*\|\s*DUMSKAYA (DESIGN|HOME)\s*$", "", title)
+    image = meta("og:image")
+    if image and not image.startswith("http"):
+        image = urllib.parse.urljoin(url, image)
+    m = re.search(r"\((TDD-[\w-]+|[A-Z]{2,5}-[A-Z]?\d+)\)", title)
+    return {"url": url, "title": re.sub(r"\s*\([^)]*\)\s*$", "", title), "image_url": image if image.startswith("https://") else "",
+            "code": code or (m.group(1) if m else "")}
 
 
 # Письмо заказчику. Кнопка ✉️ в «Студии» открывает эту страницу в браузере (из Telegram ссылки mailto: открываются не везде),
@@ -83,17 +168,24 @@ a.btn { display: block; background: var(--btn); color: #fff; text-decoration: no
 p { color: var(--mut); margin: 10px 0; overflow-wrap: anywhere; }
 b { color: var(--fg); }
 </style></head><body>
-<h1 style="font-size:24px;margin:0 0 8px">Письмо заказчику</h1>
+<h1 id="h" style="font-size:24px;margin:0 0 8px">Письмо заказчику</h1>
 <p id="to"></p>
 <a class="btn" id="go" href="#">✉️ Открыть в «Почте»</a>
-<p>Если «Почта» не открылась сама — нажмите кнопку. Потом вернитесь в Telegram.</p>
+<p id="hint">Если «Почта» не открылась сама — нажмите кнопку. Потом вернитесь в Telegram.</p>
 <script>
 (function () {
   var q = new URLSearchParams(location.hash.slice(1)), to = (q.get('to') || '').trim();
-  if (!/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(to)) { document.getElementById('to').textContent = 'Нет адреса e-mail.'; document.getElementById('go').remove(); return; }
+  // l — язык кабинета заказчика или подрядчика (из «Студии» — по-русски, как раньше)
+  var L = { uk: ['Лист', 'Відкрити в «Пошті»', 'Якщо «Пошта» не відкрилася сама — натисніть кнопку. Потім поверніться в Telegram.', 'Кому: ', 'Немає адреси e-mail.'],
+    en: ['E-mail', 'Open in Mail', 'If Mail did not open by itself, tap the button. Then come back to Telegram.', 'To: ', 'No e-mail address.'],
+    sk: ['E-mail', 'Otvoriť v aplikácii Mail', 'Ak sa aplikácia Mail neotvorila sama, ťuknite na tlačidlo. Potom sa vráťte do Telegramu.', 'Komu: ', 'Chýba e-mailová adresa.'],
+    de: ['E-Mail', 'In Mail öffnen', 'Falls Mail sich nicht von selbst geöffnet hat, tippen Sie auf die Schaltfläche. Kehren Sie danach zu Telegram zurück.', 'An: ', 'Keine E-Mail-Adresse.'],
+    ru: ['Письмо', 'Открыть в «Почте»', 'Если «Почта» не открылась сама — нажмите кнопку. Потом вернитесь в Telegram.', 'Кому: ', 'Нет адреса e-mail.'] }[q.get('l')];
+  if (L) { document.documentElement.lang = q.get('l'); document.getElementById('h').textContent = L[0]; document.getElementById('go').textContent = '✉️ ' + L[1]; document.getElementById('hint').textContent = L[2]; }
+  if (!/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(to)) { document.getElementById('to').textContent = L ? L[4] : 'Нет адреса e-mail.'; document.getElementById('go').remove(); return; }
   var enc = function (s) { return encodeURIComponent(s || '').replace(/%0A/g, '%0D%0A'); };
   var url = 'mailto:' + encodeURIComponent(to).replace('%40', '@') + '?subject=' + enc(q.get('s')) + '&body=' + enc(q.get('b'));
-  var t = document.getElementById('to'); t.append('Кому: '); var b = document.createElement('b'); b.textContent = to; t.append(b);
+  var t = document.getElementById('to'); t.append(L ? L[3] : 'Кому: '); var b = document.createElement('b'); b.textContent = to; t.append(b);
   document.getElementById('go').href = url;
   setTimeout(function () { location.href = url; }, 150);
 })();
@@ -159,6 +251,8 @@ def handle_get(h, path, query):
             return h.reply(200, CRM.leads_list()) or True
         if path == "/api/crm/lead":
             return h.reply(200, CRM.lead(q.get("id"))) or True
+        if path == "/api/crm/card":                      # карточка товара с нашего сайта: название, фото, ссылка
+            return h.reply(200, product_card(q.get("url") or "", q.get("code") or "")) or True
     except CrmError as e:
         return h.reply(400, {"ok": False, "error": str(e)}) or True
     h.reply(404, {"ok": False})
@@ -219,10 +313,32 @@ def handle_post(h, path, query):
             fn = {"project": CRM.save_project, "op": CRM.save_op, "client": CRM.save_client,
                   "contractor": CRM.save_contractor, "link": CRM.link_contractor, "stage": CRM.save_stage,
                   "lead": CRM.save_lead, "lead_project": CRM.lead_to_project, "lead_restore": CRM.restore_lead,
-                  "lists": CRM.save_lists}.get(entity)
+                  "lists": CRM.save_lists, "order": CRM.save_order, "service": CRM.save_service,
+                  "pclient": CRM.add_project_client, "pclient_remove": CRM.remove_project_client}.get(entity)
             if not fn:
                 raise CrmError("Неизвестно, что сохранять")
-            return h.reply(200, fn(d, who)) or True
+            r = fn(d, who)
+            if isinstance(r, dict):
+                after_save(entity, d, r, who)
+                r.pop("was", None)
+            return h.reply(200, r) or True
+        if path == "/api/crm/invite":                    # ссылка в кабинет заказчику или подрядчику
+            if not PORTAL or not BOT or not BOT.username:
+                raise CrmError("Бот сейчас недоступен — попробуйте через минуту")
+            inv = PORTAL.make_invite(data.get("kind"), data.get("ref_id"), data.get("project_id"), data.get("lang") or "ru", who)
+            link = f"https://t.me/{BOT.username}?start=pj_{inv['token']}"
+            p = CRM.one("SELECT title FROM projects WHERE id=?", int(data.get("project_id") or 0)) or {}
+            title = BOT.loc(p.get("title") or "", inv["lang"]) if hasattr(BOT, "loc") else p.get("title") or ""   # название — на его языке
+            return h.reply(200, dict(inv, link=link, text=BOT.invite_text(inv["lang"], inv["kind"], inv["name"], title, link),
+                                     token=None)) or True
+        if path == "/api/crm/unlink":                    # закрыть кабинет: Telegram отвязать от заказчика или подрядчика
+            if not PORTAL:
+                raise CrmError("Кабинет сейчас недоступен")
+            tg = PORTAL.unlink(data.get("kind"), data.get("ref_id"), who)
+            if tg and BOT:
+                portal_bg(BOT.portal_unlinked, tg)
+            pid = int(data.get("project_id") or 0)
+            return h.reply(200, CRM.project(pid) if pid else {"ok": True}) or True
         if path == "/api/crm/delete":
             if data.get("entity") == "leads":           # несколько заявок сразу (например, весь спам)
                 return h.reply(200, CRM.delete_leads(data.get("ids") or [], who)) or True

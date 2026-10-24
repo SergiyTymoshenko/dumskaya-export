@@ -14,7 +14,9 @@ Telegram-бот студии DUMSKAYA DESIGN — внутренний инстр
      (частное лицо — компания с его именем). Людям компании приходят заявки с сайта на её товары;
   4) сотрудники поставщиков — их добавляет сам поставщик: /invite даёт одноразовую ссылку,
      сотрудник открывает её и нажимает «Старт», поставщик подтверждает. Сотрудникам приходят заявки
-     на товары компании, как и поставщику. Студия видит их в /users и может закрыть доступ.
+     на товары компании, как и поставщику. Студия видит их в /users и может закрыть доступ;
+  5) заказчики и подрядчики проектов — только по ссылке из проекта в «Студии» (t.me/<бот>?start=pj_…): кабинет
+     «Мой проект», переписка с дизайнером, подтверждение сумм — см. portal_bot.py.
 
 Попасть в бот можно только по одобрению: человек нажимает «Старт», разработчику и дизайнерам приходит
 запрос с кнопками ролей (или, по ссылке-приглашению, — поставщику). Данные — в SQLite (BOT_DB, по умолчанию
@@ -32,6 +34,7 @@ from datetime import datetime, timedelta, timezone
 
 from crm import CrmError               # ошибка, которую можно показать человеку (в «Студии»)
 from crm_bot import CrmBotMixin        # учёт проектов в чате: фото и документы в проект
+from portal_bot import PORTAL_ROLES, PortalBotMixin   # кабинет заказчика и подрядчика, переписка с заказчиками
 
 try:                                   # перевод сообщений заказчиков (translate.py рядом)
     from translate import lang_from
@@ -48,6 +51,8 @@ ROLES = {
     "maker": "Изготовитель мебели",
     "foreman": "Прораб",
     "contractor": "Независимый подрядчик",
+    "client": "Заказчик",                  # кабинет проекта — только по ссылке-приглашению из «Студии»
+    "crew": "Подрядчик проекта",
 }
 ROLE_ORDER = list(ROLES)
 ADMIN_ROLES = ("owner", "designer")
@@ -162,7 +167,7 @@ class Store:
         self.run("DELETE FROM state WHERE key=?", key)
 
 
-class Bot(CrmBotMixin):
+class Bot(CrmBotMixin, PortalBotMixin):
     def __init__(self, token, owner_id, db_path, log=print):
         self.token = token
         self.owner = int(owner_id) if str(owner_id or "").strip().isdigit() else None
@@ -334,6 +339,8 @@ class Bot(CrmBotMixin):
             got = self.set_commands(u)
             if got is not None and u["tg_id"] != self.owner:
                 report.append((u, got))
+        for u in self.active(PORTAL_ROLES + PARTNER_ROLES + ("staff",)):   # «Мой проект» — у заказчиков и подрядчиков проектов
+            self.sync_portal_menu(u["tg_id"])
         if report and self.owner:              # кому ушло сообщение о кнопках после обновления бота — разработчику
             self.send(self.owner, "<b>Сообщение о кнопках после обновления бота</b>\n" + "\n".join(
                 f"✅ {esc(self.label(u))} — доставлено" if ok else f"⚠️ {esc(self.label(u))} — не доставлено: {esc(why_failed(why))}"
@@ -449,16 +456,24 @@ class Bot(CrmBotMixin):
         if u:
             self.s.run("UPDATE users SET name=?, username=? WHERE tg_id=?", name, f.get("username"), uid)
             u = self.user(uid)
+        if f.get("language_code") and self.s.get(f"tg:lang:{uid}") != f["language_code"][:8]:
+            self.s.put(f"tg:lang:{uid}", f["language_code"][:8])   # язык кабинета и переводов — по языку Telegram
         text = (m.get("text") or "").strip()
         cmd = text.split()[0].split("@")[0].lower() if text.startswith("/") else ""
         arg = text.split(maxsplit=1)[1].strip() if cmd and len(text.split(maxsplit=1)) > 1 else ""
 
         if cmd == "/start" and arg.startswith("inv_"):     # ссылка-приглашение от поставщика
             return self.join_invite(uid, name, f.get("username"), u, arg[4:])
+        if cmd == "/start" and arg.startswith("pj_"):      # ссылка в кабинет проекта — заказчику или подрядчику (из «Студии»)
+            return self.join_portal(uid, name, f.get("username"), f.get("language_code"), u, arg[3:])
         if not u or u["status"] != "active":
             return self.stranger(uid, name, f.get("username"), u)
+        if u["role"] == "designer" and not cmd and self.chat_reply(u, m):   # ответ заказчику свайпом — в переписку проекта
+            return
         if u["role"] == "designer" and self.file_of(m):       # фото или документ — сохранить в проект (учёт — у дизайнера)
             return self.crm_intake(u, m)
+        if u["role"] in PORTAL_ROLES:                          # заказчик или подрядчик проекта: переписка, кабинет
+            return self.portal_message(u, m, text, cmd)
         if text in ADMIN_BUTTONS and self.is_admin(u) and (text != BTN_SITE or u["role"] == "owner"):   # кнопка = команда
             self.s.drop(f"await:{uid}")
             cmd, arg = ADMIN_BUTTONS[text], ""
@@ -531,6 +546,8 @@ class Bot(CrmBotMixin):
                            "и вашим сотрудникам в боте.\n\n/team — ваши сотрудники в боте\n/invite — пригласить сотрудника")
         if role == "staff":
             return head + "Сюда будут приходить заявки с сайта dumskaya-design.com на товары вашей компании."
+        if role in PORTAL_ROLES:                    # заказчик и подрядчик проекта — на своём языке
+            return self.portal_welcome(u)
         return head + "Уведомления для вашей роли появятся позже — студия сообщит об этом."
 
     # ---------- кнопки ----------
@@ -542,6 +559,8 @@ class Bot(CrmBotMixin):
             return
         parts = (cq.get("data") or "").split(":")
         try:
+            if parts[0] in ("pc", "pd", "pp"):              # заказчик: подтвердить сумму, не согласен, проект для сообщения
+                return self.portal_callback(who, msg, parts)
             if self.is_admin(who):
                 return self.admin_button(who, msg, parts)
             if self.is_supplier(who):
@@ -725,7 +744,12 @@ class Bot(CrmBotMixin):
         uid = u["tg_id"]
         self.s.run("UPDATE users SET status='removed', updated=? WHERE tg_id=?", now(), uid)
         self.set_commands(self.user(uid))
-        self.send(uid, "Доступ к боту студии DUMSKAYA DESIGN закрыт.")
+        if u["role"] in PORTAL_ROLES:              # заказчику и подрядчику проекта — на его языке, кнопку «Мой проект» убрать
+            self.sync_portal_menu(uid)
+            from portal_bot import t as pt
+            self.send(uid, pt(self.lang_of(uid), "closed"))
+        else:
+            self.send(uid, "Доступ к боту студии DUMSKAYA DESIGN закрыт.")
         self.notify(f"{esc(self.label(admin))} закрыл(а) доступ: {esc(self.label(u))}", skip=(admin["tg_id"],))
         self.ensure_shop_manager()
 
@@ -760,7 +784,8 @@ class Bot(CrmBotMixin):
                              "people": sum(1 for x in people if x["partner_id"] == p["id"] and x["status"] == "active"),
                              "supplier": p["id"] in sup})
         own = sorted(code for code, it in products.items() if not it.get("partner"))
-        roles = [[k, v] for k, v in ROLES.items() if k != "owner" and (k != "designer" or admin["role"] == "owner")]
+        # заказчики и подрядчики проектов попадают в бот только по ссылке из проекта — их роль здесь не выбирается
+        roles = [[k, v] for k, v in ROLES.items() if k != "owner" and k not in PORTAL_ROLES and (k != "designer" or admin["role"] == "owner")]
         return {"people": people, "partners": partners, "roles": roles, "company_roles": list(COMPANY_ROLES),
                 "partner_roles": list(PARTNER_ROLES), "own_goods": own, "shop_manager": self.label(mgr) if mgr else "",
                 "me": {"id": admin["tg_id"], "role": admin["role"]}}
@@ -778,7 +803,7 @@ class Bot(CrmBotMixin):
             if act == "change" and not self.can_manage(admin, u):
                 raise CrmError("Этого человека может изменить только разработчик")
             role = d.get("role")
-            if role not in ROLES or role == "owner":
+            if role not in ROLES or role == "owner" or role in PORTAL_ROLES:
                 raise CrmError("Выберите роль")
             if role == "designer" and admin["role"] != "owner":
                 raise CrmError("Назначить дизайнера студии может только разработчик")

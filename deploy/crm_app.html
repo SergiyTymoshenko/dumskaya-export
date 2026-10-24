@@ -87,6 +87,7 @@
   .sum dt { color: var(--text-2); }
   .sum dd { margin: 0; font-weight: 700; text-align: right; white-space: nowrap; }
   .actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+  .actions.four { grid-template-columns: 1fr 1fr; }
   .actions .btn { padding: 8px 6px; font-size: calc(15px * var(--k)); flex-direction: column; gap: 3px; min-height: 64px; }
   .actions .btn span { font-size: calc(21px * var(--k)); line-height: 1; }
   .ops { list-style: none; margin: 0; padding: 0; }
@@ -215,11 +216,40 @@
   .drop { outline: 2px dashed var(--series); outline-offset: -6px; }
   .dnd-hint { display: none; }
   @media (hover: hover) and (pointer: fine) { .dnd-hint { display: block; } }
+  /* кабинеты заказчиков и подрядчиков, товары, доп. услуги, переписка */
+  .tgline { font-size: calc(14px * var(--k)); margin-top: 8px; }
+  .tgline.on { color: var(--up); font-weight: 600; }
+  .tgline.wait { color: var(--warn); }
+  .ogrid { display: grid; grid-template-columns: calc(64px * min(var(--k), 1.2)) 1fr; gap: 12px; align-items: start; }
+  .ogrid .ph { width: 100%; aspect-ratio: 1; border-radius: 10px; background: var(--ghost); object-fit: cover; display: flex; align-items: center; justify-content: center; font-size: calc(24px * var(--k)); }
+  .items { list-style: none; margin: 0; padding: 0; }
+  .items > li { padding: 12px 0; border-top: 1px solid var(--grid); cursor: pointer; }
+  .items > li:first-child { border-top: 0; }
+  .items .t { font-weight: 650; overflow-wrap: anywhere; }
+  .items .m { font-size: calc(14px * var(--k)); color: var(--text-2); overflow-wrap: anywhere; }
+  .chat { display: flex; flex-direction: column; gap: 8px; margin: 0 0 12px; }
+  .bub { max-width: 88%; padding: 9px 12px 7px; border-radius: 16px; background: var(--raised); border: 1px solid var(--border); align-self: flex-start; overflow-wrap: anywhere; white-space: pre-wrap; }
+  .bub.mine { align-self: flex-end; background: var(--series); color: var(--on-series); border-color: transparent; }
+  .bub .who { display: block; font-size: calc(13px * var(--k)); font-weight: 650; color: var(--series); margin-bottom: 2px; white-space: normal; }
+  .bub .meta { display: block; font-size: calc(12px * var(--k)); opacity: .8; margin-top: 4px; text-align: right; white-space: normal; }
+  .bub .orig { display: block; font-size: calc(14px * var(--k)); opacity: .85; border-top: 1px solid rgba(127,127,127,.35); margin-top: 6px; padding-top: 5px; }
+  .bub img { display: block; max-width: 100%; max-height: 260px; border-radius: 10px; margin: 2px 0 4px; cursor: pointer; }
+  .bub .file { text-decoration: underline; cursor: pointer; }
+  .daysep { align-self: center; font-size: calc(13px * var(--k)); color: var(--text-2); background: var(--ghost); padding: 3px 10px; border-radius: 999px; }
+  .composer { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 8px; display: flex; gap: 8px; align-items: flex-end; }
+  .composer textarea { flex: 1 1 auto; min-width: 0; border: 0; background: transparent; font: inherit; color: inherit; resize: none; min-height: 48px; max-height: 40vh; padding: 12px 6px; outline: none; }
+  .composer .icon-btn { width: 48px; height: 48px; }
+  .composer .send { background: var(--series); color: var(--on-series); border-color: var(--series); }
+  body.typing .nav { display: none; }
+  .badge-n { display: inline-block; min-width: 24px; padding: 0 7px; border-radius: 12px; background: var(--down); color: #fff; font-size: calc(13px * var(--k)); font-weight: 700; line-height: 24px; text-align: center; }
+  .seg.seg5 { grid-template-columns: repeat(5, 1fr); }
   /* крупный текст: раскладка, чтобы ничего не обрезалось */
   :root[data-size="l"] body, :root[data-size="xl"] body { font-weight: 500; line-height: 1.4; }
   :root[data-size="l"] .actions, :root[data-size="xl"] .actions { grid-template-columns: 1fr; }
   :root[data-size="l"] .actions .btn, :root[data-size="xl"] .actions .btn { flex-direction: row; justify-content: flex-start; gap: 12px; padding: 10px 16px; min-height: 58px; }
   :root[data-size="xl"] .kactions, :root[data-size="xl"] .two { grid-template-columns: 1fr; }
+  :root[data-size="l"] .actions.four, :root[data-size="xl"] .actions.four { grid-template-columns: 1fr; }
+  :root[data-size="xl"] .seg.seg5 { grid-template-columns: repeat(3, 1fr); }
   :root[data-size="xl"] .two { gap: 0; }
   :root[data-size="l"] .hb, :root[data-size="xl"] .hb { grid-template-columns: 1fr; gap: 4px; }
   :root[data-size="xl"] .kv { grid-template-columns: 1fr; gap: 0; }
@@ -239,7 +269,7 @@
 <p class="ver">Студия · версия __STUDIO_VERSION__</p>
 <nav class="nav" id="nav"><div class="in">
   <button type="button" data-tab="leads"><span>📋</span>Заявки<b class="dot" id="leads-dot" hidden></b></button>
-  <button type="button" data-tab="projects"><span>📁</span>Проекты</button>
+  <button type="button" data-tab="projects"><span>📁</span>Проекты<b class="dot" id="chat-dot" hidden></b></button>
   <button type="button" data-tab="money"><span>💶</span>Деньги</button>
   <button type="button" data-tab="people"><span>👥</span>Контакты</button>
   <button type="button" data-tab="charts"><span>📈</span>Сайт</button>
@@ -255,6 +285,7 @@
   let S = null, P = null, tab = 'projects', view = 'list', filter = 'work', query = '', fileTab = 'measure', peopleTab = 'clients', period = 'month', M = null, lastPid = null;
   let L = null, LS = null, A = null, leadFilter = 'new', leadQuery = '';   // заявка, список заявок, доступ к боту
   let OWNER = false;          // разработчик: в «Студии» только сайт и доступ к боту (решено 24.10.2026)
+  let CH = [], chatTimer = null, chatBusy = false;                          // переписка проекта с заказчиками
   const sheets = [];                        // открытые формы и карточки поверх страницы, последняя — сверху
 
   // ---------- оформление ----------
@@ -369,7 +400,9 @@
   function back() {
     const prev = stack.pop();
     if (!prev) return;
+    const fromChat = view === 'chat';
     tab = prev.tab; view = prev.view; render(); backBtn();
+    if (fromChat && view === 'project' && P) api('/api/crm/project?id=' + P.project.id).then((r) => { P = r; render(); }).catch(() => {});   // прочитанное — без отметки «новые»
   }
   function backBtn() {
     if (!tg || !tg.BackButton) return;
@@ -398,6 +431,8 @@
     document.querySelectorAll('.nav button').forEach((b) => b.setAttribute('aria-current', b.dataset.tab === tab ? 'page' : 'false'));
     const dot = document.getElementById('leads-dot'), n = S ? S.leads_new || 0 : 0;   // новые заявки — число на вкладке
     if (dot) { dot.hidden = !n; dot.textContent = n > 99 ? '99+' : String(n); }       // у разработчика вкладки «Заявки» нет
+    const cd = document.getElementById('chat-dot'), u = S ? S.unread || 0 : 0;        // непрочитанная переписка с заказчиками
+    if (cd) { cd.hidden = !u; cd.textContent = u > 99 ? '99+' : String(u); }
   }
 
   // ---------- загрузка ----------
@@ -419,12 +454,13 @@
   }
 
   function render() {
+    stopChat();
     markNav();
     app.replaceChildren();
     if (OWNER) return ownerView();
     if (!S) return;
     if (tab === 'leads') return view === 'lead' && L ? leadView() : leadsView();
-    if (tab === 'projects') return view === 'project' && P ? projectView() : projectsView();
+    if (tab === 'projects') return view === 'chat' && P ? chatView() : view === 'project' && P ? projectView() : projectsView();
     if (tab === 'money') return moneyView();
     if (tab === 'people') return peopleView();
   }
@@ -468,69 +504,142 @@
       c.append(bar, el('div', 'money num', el('span', null, 'Оплачено ', el('b', null, eur(p.paid)), ' из ' + eur(p.total_eur)),
         p.balance > 0.005 ? el('span', 'owe', 'Остаток ' + eur(p.balance)) : el('span', 'muted', p.balance < -0.005 ? 'Переплата ' + eur(-p.balance) : 'Оплачено полностью')));
     } else if (p.paid) c.append(el('div', 'money num', el('span', null, 'Оплачено ', el('b', null, eur(p.paid)))));
+    if (p.services_debt > 0.005 || p.orders_rest > 0.005) c.append(el('div', 'small owe num', 'Заказчик должен всего: ' + eur(p.client_debt)
+      + ' (услуги ' + eur(p.services_debt) + ', товары ' + eur(p.orders_rest) + ')'));
     if (p.extra) c.append(el('div', 'small muted num', 'Доп. доход: ' + eur(p.extra)));
     if (p.contractor_debt > 0) c.append(el('div', 'small owe num', 'Подрядчики должны бонусы: ' + eur(p.contractor_debt)));
+    if (p.unread) c.append(el('div', { class: 'small', style: 'margin-top:6px;color:var(--series);font-weight:650' }, '💬 Новых сообщений: ' + p.unread));
     return c;
   }
 
   // ---------- проект ----------
+  const ORDER_ST = { ordered: ['Заказан', 'active'], delivered: ['Доставлен — ждёт доплаты', 'work'], done: ['Выполнено', 'done'], cancelled: ['Отменён', 'cancelled'] };
+  const people = () => (P && P.people) || [];
+  const inviteOf = (kind, id) => (P.invites || []).find((x) => x.kind === kind && x.ref_id === id);
+  function tgLine(kind, rec) {           // подключён ли человек к кабинету проекта в боте
+    if (rec.tg_id) return el('div', 'tgline on', '✓ В кабинете' + (rec.tg_name ? ' · Telegram: ' + rec.tg_name : '') + (rec.tg_since ? ', с ' + dfmt(rec.tg_since) : ''));
+    const inv = inviteOf(kind, rec.id);
+    if (inv) return el('div', 'tgline wait', '⏳ Ссылка выдана, действует до ' + dfmt(inv.expires) + ' — ждём, когда откроет');
+    return el('div', 'tgline muted', 'Не подключён к кабинету');
+  }
+  const preview = (q) => { location.href = '/api/portal/app?' + new URLSearchParams(q).toString(); };
   function projectView() {
-    const { project: p, ops, files, contractors, client } = P;
+    const { project: p, ops, files, contractors } = P;
+    const orders = P.orders || [], services = P.services || [], ppl = people(), chat = P.chat || { count: 0, unread: 0 };
     const head = el('div', 'card');
     head.append(el('div', 'row between', el('span', 'muted num', p.number ? '№ ' + p.number : 'без номера'), el('span', 'status ' + p.status, status(p.status))),
       el('h1', { style: 'margin:4px 0 4px' }, p.title),
       el('div', 'muted', [p.city, p.country, p.area ? num(p.area) + NB + 'м²' : '', p.tariff ? 'тариф «' + p.tariff + '»' : ''].filter(Boolean).join(' · ')));
-    head.append(el('div', { style: 'margin-top:10px' }, el('button', { class: 'btn small', type: 'button', onclick: () => projectSheet(p) }, '✎ Изменить проект')));
+    head.append(el('div', { class: 'row wrap', style: 'margin-top:10px;gap:8px' }, el('button', { class: 'btn small', type: 'button', onclick: () => projectSheet(p) }, '✎ Изменить проект'),
+      ppl.length ? el('button', { class: 'btn small', type: 'button', onclick: () => preview({ preview: 'client', project: p.id }) }, '👁 Как видит заказчик') : null));
     app.append(head);
     const jump = el('div', 'jump');                       // длинная страница на телефоне: сразу к нужному блоку
-    [['sec-ops', 'Операции' + (ops.length ? ' · ' + ops.length : '')], ['sec-contractors', 'Подрядчики' + (contractors.length ? ' · ' + contractors.length : '')],
-      ['sec-client', 'Заказчик'], ['sec-files', 'Файлы' + (files.length ? ' · ' + files.length : '')]].forEach(([id, t]) =>
+    [['sec-chat', 'Переписка' + (chat.unread ? ' · ' + chat.unread + ' нов.' : chat.count ? ' · ' + chat.count : '')], ['sec-money', 'Деньги'],
+      ['sec-orders', 'Товары' + (orders.length ? ' · ' + orders.length : '')], ['sec-services', 'Услуги' + (services.length ? ' · ' + services.length : '')],
+      ['sec-contractors', 'Подрядчики' + (contractors.length ? ' · ' + contractors.length : '')], ['sec-client', 'Заказчики' + (ppl.length ? ' · ' + ppl.length : '')],
+      ['sec-files', 'Файлы' + (files.length ? ' · ' + files.length : '')], ['sec-ops', 'Операции' + (ops.length ? ' · ' + ops.length : '')]].forEach(([id, t]) =>
       jump.append(el('button', { class: 'chip', type: 'button', onclick: () => document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' }) }, t)));
     app.append(jump);
+
+    // переписка с заказчиками
+    const cc = el('section', { class: 'card', id: 'sec-chat' });
+    cc.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Переписка с заказчиками'), chat.unread ? el('span', 'badge-n', String(chat.unread)) : null));
+    if (chat.last) cc.append(el('div', { class: 'small', style: 'margin-top:8px' }, el('b', null, chat.last.author_kind === 'studio' ? 'Вы: ' : (chat.last.author_name || '') + ': '),
+      el('span', 'muted', (chat.last.file ? '📎 ' : '') + (chat.last.text || '').slice(0, 140) + ((chat.last.text || '').length > 140 ? '…' : '')),
+      el('div', 'muted', dtime(chat.last.created))));
+    const linked = ppl.filter((x) => x.tg_id);
+    if (!linked.length) cc.append(el('p', { class: 'small muted', style: 'margin:8px 0 0' }, ppl.length
+      ? 'Заказчики ещё не подключены к кабинету — дайте им ссылку в блоке «Заказчики». Переписка начнётся, когда они откроют её в Telegram.'
+      : 'Добавьте заказчиков в блоке «Заказчики» и дайте им ссылку в кабинет — переписка будет здесь.'));
+    cc.append(el('button', { class: 'btn wide', type: 'button', style: 'margin-top:10px', onclick: openChat }, '💬 Открыть переписку'),
+      el('p', { class: 'small muted', style: 'margin:6px 0 0' }, 'Сообщения заказчиков приходят и в бот, с переводом на русский. Ответить можно там — потяните сообщение влево — или здесь.'));
+    app.append(cc);
 
     // деньги
     const m = el('section', { class: 'card', id: 'sec-money' });
     m.append(el('h2', null, 'Деньги'));
-    m.append(el('dl', 'sum num',
+    const dl = el('dl', 'sum num',
       el('dt', null, 'Договор'), el('dd', null, eur(p.total_eur)),
-      el('dt', null, 'Оплачено'), el('dd', null, eur(p.paid)),
-      el('dt', null, p.balance < -0.005 ? 'Переплата' : 'Остаток к оплате'), el('dd', { class: p.balance > 0.005 ? 'owe' : '' }, eur(Math.abs(p.balance)))));
+      el('dt', null, 'Оплачено по договору'), el('dd', null, eur(p.paid)),
+      el('dt', null, p.balance < -0.005 ? 'Переплата' : 'Остаток по договору'), el('dd', { class: p.balance > 0.005 ? 'owe' : '' }, eur(Math.abs(p.balance))));
+    if (services.length) dl.append(el('dt', null, 'Доп. услуги — не оплачено'), el('dd', { class: p.services_debt > 0.005 ? 'owe' : '' }, eur(p.services_debt)));
+    if (orders.length) dl.append(el('dt', null, 'Товары — к доплате'), el('dd', { class: p.orders_rest > 0.005 ? 'owe' : '' }, eur(p.orders_rest)));
+    if (services.length || orders.length) dl.append(el('dt', null, el('b', { style: 'color:var(--text-1)' }, 'Заказчик должен всего')), el('dd', { class: p.client_debt > 0.005 ? 'owe' : '' }, eur(p.client_debt)));
+    m.append(dl);
     if (p.total_eur > 0) { const bar = el('div', 'bar'); bar.append(el('i', { style: 'width:' + Math.min(100, (p.paid / p.total_eur) * 100) + '%' })); m.append(bar); }
     m.append(el('div', 'small muted num', 'Доп. доход: ', el('b', { style: 'color:var(--text-1)' }, eur(p.extra)),
       p.extra ? ' (бонусы ' + eur(p.bonus) + ', наценка ' + eur(p.margin) + ')' : '', ' · Всего доход по проекту: ', el('b', { style: 'color:var(--text-1)' }, eur(p.income))));
     if (p.contractor_debt > 0) m.append(el('div', { class: 'small num', style: 'margin-top:4px' },
       el('span', 'owe', 'Подрядчики должны бонусы: ' + eur(p.contractor_debt)), el('span', 'muted', ' — подробно в блоке «Подрядчики»')));
-    m.append(el('div', 'actions',
+    m.append(el('div', 'actions four',
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('payment') }, el('span', null, '💶'), 'Оплата'),
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission') }, el('span', null, '🎁'), 'Бонус'),
-      el('button', { class: 'btn', type: 'button', onclick: () => opSheet('resale') }, el('span', null, '🔁'), 'Перепродажа')));
+      el('button', { class: 'btn', type: 'button', onclick: () => orderSheet(null) }, el('span', null, '🛋'), 'Товар'),
+      el('button', { class: 'btn', type: 'button', onclick: () => serviceSheet(null) }, el('span', null, '🧾'), 'Услуга')));
     app.append(m);
 
-    // операции
-    const o = el('section', { class: 'card', id: 'sec-ops' });
-    o.append(el('h2', null, 'Операции'));
-    if (!ops.length) o.append(el('p', 'muted small', 'Пока нет. Оплаты заказчика, бонусы и перепродажи появятся здесь — нажмите кнопку выше.'));
+    // товары заказчика
+    const og = el('section', { class: 'card', id: 'sec-orders' });
+    og.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Товары заказчика'), el('button', { class: 'btn small', type: 'button', onclick: () => orderSheet(null) }, '＋ Товар')));
+    if (!orders.length) og.append(el('p', 'muted small', 'Мебель, свет, декор, которые заказчик покупает через студию: цена для него, авансы, поставка. '
+      + 'Заказчик видит цену, свои оплаты и дату поставки; закупку и наценку — нет.'));
     else {
-      const ul = el('ul', 'ops');
-      ops.forEach((x) => ul.append(opRow(x)));
-      o.append(ul);
+      const ul = el('ul', 'items');
+      orders.forEach((o) => {
+        const mo = o.money, st = ORDER_ST[mo.status] || ['', ''];
+        const ph = o.photo ? el('img', { class: 'ph', src: o.photo, alt: '', loading: 'lazy' }) : el('div', 'ph', '🛋');
+        ul.append(el('li', { onclick: () => orderSheet(o) }, el('div', 'ogrid', ph, el('div', null,
+          el('div', 'row between', el('span', 't', o.title), el('span', 'status ' + st[1], st[0])),
+          el('div', 'm num', 'цена ' + curMoney(o.price, o.currency) + ' · оплачено ' + curMoney(mo.paid, o.currency) + (mo.rest > 0.005 && mo.status !== 'cancelled' ? ' · осталось ' + curMoney(mo.rest, o.currency) : '')),
+          el('div', 'm num', o.buy != null ? 'закупка ' + curMoney(o.buy, o.buy_currency) + (mo.margin != null ? ' · наценка ' + eur(mo.margin) : '') : 'закупка не внесена'),
+          el('div', 'm', o.delivered ? '🚚 доставлен ' + dfmt(o.delivered) : o.planned ? '🚚 плановая поставка ' + dfmt(o.planned) : '')))));
+      });
+      og.append(ul);
     }
-    app.append(o);
+    app.append(og);
 
-    // подрядчики: этапы, бонус студии, долг
+    // доп. услуги
+    const sv = el('section', { class: 'card', id: 'sec-services' });
+    sv.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Доп. услуги'), el('button', { class: 'btn small', type: 'button', onclick: () => serviceSheet(null) }, '＋ Услуга')));
+    if (!services.length) sv.append(el('p', 'muted small', 'Чертежи, авторское сопровождение с помесячной оплатой и т. п. Заказчик видит услугу и что оплачено; '
+      + 'о неоплаченном платеже бот напомнит ему и вам — в день оплаты и через 7 дней.'));
+    else {
+      const ul = el('ul', 'items');
+      services.forEach((s) => {
+        const sm = s.money;
+        const what = s.kind === 'monthly' ? 'помесячно ' + eur(s.amount) + ' с ' + dfmt(s.start) + (s.months ? ', ' + s.months + ' мес.' : '') : 'разовая ' + eur(s.amount) + ', оплата до ' + dfmt(s.start);
+        const state = s.cancelled ? 'отменена' : sm.debt > 0.005 ? (sm.overdue ? '⚠️ ' : '') + 'не оплачено ' + eur(sm.debt) : '✓ оплачено' + (sm.prepaid > 0.005 ? ', предоплата ' + eur(sm.prepaid) : '');
+        ul.append(el('li', { onclick: () => serviceSheet(s) }, el('div', 't', s.title), el('div', 'm num', what + (s.stopped ? ' · остановлена с ' + dfmt(s.stopped) : '')),
+          el('div', { class: 'm num ' + (sm.debt > 0.005 && !s.cancelled ? 'owe' : ''), style: 'font-weight:600' }, state + (sm.next ? ' · следующий платёж ' + dfmt(sm.next.due) : ''))));
+      });
+      sv.append(ul);
+    }
+    app.append(sv);
+
+    // подрядчики: этапы, бонус студии, долг, кабинет
     const k = el('section', { class: 'card', id: 'sec-contractors' });
     k.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Подрядчики'), el('button', { class: 'btn small', type: 'button', onclick: linkSheet }, '＋ Добавить')));
     if (!contractors.length) k.append(el('p', 'muted small', 'Прораб, мебельщик, шторница, кондиционерщик, двери, окна… Добавьте подрядчика и его этапы с суммой заказа — бонус студии (по умолчанию '
-      + pctText(S.lists.default_pct) + ') посчитается сам, а долг подрядчика будет виден здесь.'));
+      + pctText(S.lists.default_pct) + ') посчитается сам, а долг подрядчика будет виден здесь. Подрядчику можно дать ссылку в кабинет: он увидит документацию, '
+      + 'визуализации, контакты заказчика и свои расчёты со студией, сможет сам внести сумму работ.'));
     contractors.forEach((x) => k.append(contractorBlock(x)));
     app.append(k);
 
-    // заказчик
+    // заказчики проекта и их кабинет
     const c = el('section', { class: 'card', id: 'sec-client' });
-    c.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Заказчик'),
-      el('button', { class: 'btn small', type: 'button', onclick: () => clientSheet(client, (saved) => saveProjectField('client_id', saved.id)) }, client ? '✎' : '＋ Добавить')));
-    if (client) c.append(personBlock(client));
-    else c.append(el('p', 'muted small', 'Не указан. Нажмите «Добавить» или выберите в «Изменить проект».'));
+    c.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Заказчики'),
+      ppl.length < (S.lists.people_max || 10) ? el('button', { class: 'btn small', type: 'button', onclick: addClientSheet }, '＋ Добавить') : null));
+    if (!ppl.length) c.append(el('p', 'muted small', 'Не указаны. Добавьте заказчика — и дайте ему ссылку в кабинет: оплаты, документы, подрядчики и переписка с вами.'));
+    ppl.forEach((x, i) => {
+      const box = el('div', { class: i ? 'kcard' : '', style: i ? null : 'margin-top:10px' });
+      box.append(personBlock(x), tgLine('client', x));
+      box.append(el('div', 'kactions',
+        el('button', { class: 'btn' + (x.tg_id ? '' : ' primary'), type: 'button', onclick: () => inviteSheet('client', x) }, x.tg_id ? '🔗 Новая ссылка' : '🔗 Ссылка в кабинет'),
+        el('button', { class: 'btn', type: 'button', onclick: () => clientMoreSheet(x) }, 'Ещё…')));
+      c.append(box);
+    });
+    if (ppl.length) c.append(el('p', { class: 'small muted', style: 'margin:10px 0 0' }, 'Заказчик видит: оплаты и что осталось, доп. услуги, товары (без закупки), файлы — кроме «Другое», '
+      + 'подрядчиков с контактами и суммами работ (без бонусов), переписку с вами.'));
     app.append(c);
 
     // файлы
@@ -542,6 +651,8 @@
       tabs.append(el('button', { class: 'chip', type: 'button', 'aria-pressed': String(fileTab === key), onclick: () => { fileTab = key; render(); } }, name + (n ? ' · ' + n : '')));
     });
     f.append(tabs);
+    const who = [S.lists.client_cats.includes(fileTab) ? 'заказчик' : '', S.lists.contractor_cats.includes(fileTab) ? 'подрядчики' : ''].filter(Boolean);
+    f.append(el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, who.length ? '👁 В кабинете видят: ' + who.join(' и ') : '🔒 Видно только вам — в кабинеты не попадает'));
     const list = files.filter((x) => x.category === fileTab);
     if (!list.length) f.append(el('p', 'muted small', 'Пока пусто. Добавьте файлы кнопкой ниже — или пришлите их боту в чат: он спросит, в какой проект и раздел.'));
     else {
@@ -560,6 +671,17 @@
     f.addEventListener('drop', (e) => { e.preventDefault(); f.classList.remove('drop'); const fs = [...((e.dataTransfer && e.dataTransfer.files) || [])]; if (fs.length) upload(fs, fileTab); });
     app.append(f);
 
+    // операции
+    const o = el('section', { class: 'card', id: 'sec-ops' });
+    o.append(el('h2', null, 'Операции'));
+    if (!ops.length) o.append(el('p', 'muted small', 'Пока нет. Оплаты заказчика, бонусы и оплаты за товары появятся здесь — кнопки в блоке «Деньги».'));
+    else {
+      const ul = el('ul', 'ops');
+      ops.forEach((x) => ul.append(opRow(x)));
+      o.append(ul);
+    }
+    app.append(o);
+
     // подробности
     const d = el('section', 'card');
     d.append(el('h2', null, 'Подробности'));
@@ -570,22 +692,97 @@
     if (P.history && P.history.length) {
       const det = el('details', { style: 'margin-top:12px' }, el('summary', null, 'История изменений'));
       const ul = el('ul', { class: 'people small' });
-      const what = { project: 'проект', op: 'операцию', file: 'файл', link: 'подрядчика', stage: 'этап подрядчика' }, act = { add: 'добавил(а)', edit: 'изменил(а)', delete: 'удалил(а)' };
+      const what = { project: 'проект', op: 'операцию', file: 'файл', link: 'подрядчика', stage: 'этап подрядчика', order: 'товар', service: 'услугу',
+        pclient: 'заказчика в проекте', access: 'доступ к кабинету' }, act = { add: 'добавил(а)', edit: 'изменил(а)', delete: 'удалил(а)' };
       P.history.forEach((h) => ul.append(el('li', null, el('div', 'who', el('span', null, dfmt(h.ts) + ' · ' + (h.who || '') + ' ' + (act[h.action] || h.action) + ' ' + (what[h.entity] || h.entity))))));
       det.append(ul); d.append(det);
     }
     d.append(el('div', { style: 'height:10px' }), el('button', { class: 'btn danger small', type: 'button', onclick: async () => {
-      if (!(await confirmBox('Удалить проект «' + p.title + '»? Удалить можно только пустой проект — без операций и файлов.'))) return;
+      if (!(await confirmBox('Удалить проект «' + p.title + '»? Удалить можно только пустой проект — без операций, товаров, услуг, переписки и файлов.'))) return;
       try { await api('/api/crm/delete', { json: { entity: 'project', id: p.id } }); P = null; toast('Проект удалён'); stack.length = 0; view = 'list'; await refresh(); backBtn(); }
       catch (e) { toast(e.message); }
     } }, 'Удалить проект'));
     app.append(d);
   }
 
+  // ---------- заказчики проекта: добавить, ссылка в кабинет, закрыть ----------
+  function addClientSheet() {
+    const inProject = new Set(people().map((x) => x.id));
+    const list = el('div', 'pick'), s = el('input', { class: 'search', type: 'search', placeholder: 'Найти в контактах: имя, телефон' });
+    const draw = () => {
+      const q = s.value.trim().toLowerCase();
+      list.replaceChildren(...S.clients.filter((c) => !inProject.has(c.id) && (!q || [c.name, c.phone, c.email].join(' ').toLowerCase().includes(q))).slice(0, 30)
+        .map((c) => el('button', { class: 'btn', type: 'button', onclick: () => attach(c) }, el('span', 'grow', el('b', null, c.name), el('span', 'small muted', c.phone ? ' · ' + c.phone : '')))));
+      if (!list.children.length) list.append(el('p', 'muted small', 'В контактах никого не нашлось — добавьте нового заказчика.'));
+    };
+    async function attach(c) {
+      try { await refresh(await save('pclient', { project_id: P.project.id, client_id: c.id })); closeSheets(); toast('Заказчик добавлен в проект'); }
+      catch (e) { toast(e.message); }
+    }
+    s.addEventListener('input', draw); draw();
+    sheet('Заказчик в проект', el('div', el('p', 'muted small', 'Обычно до 5 человек: супруги, родственники, управляющий. У каждого — своя ссылка в кабинет.'), s, list), null, null,
+      [el('button', { class: 'btn primary', type: 'button', style: 'flex:1', onclick: () => clientSheet(null, async (c) => { S.clients.push(Object.assign({ projects: [] }, c)); await attach(c); }) }, '＋ Новый заказчик')]);
+  }
+  function clientMoreSheet(x) {
+    const p = P.project, body = el('div', el('div', 'card', personBlock(x), tgLine('client', x)));
+    const btns = [el('button', { class: 'btn wide', type: 'button', onclick: () => { closeSheets(); clientSheet(x, async () => { await refresh(await api('/api/crm/project?id=' + p.id)); }); } }, '✎ Изменить контакты')];
+    if (x.tg_id) btns.push(el('button', { class: 'btn danger wide', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Закрыть кабинет для «' + x.name + '»? Он перестанет видеть этот проект и получать сообщения. В переписке всё останется.'))) return;
+      try { await refresh(await api('/api/crm/unlink', { json: { kind: 'client', ref_id: x.id, project_id: p.id } })); closeSheets(); toast('Кабинет закрыт'); } catch (e) { toast(e.message); }
+    } }, 'Закрыть кабинет'));
+    btns.push(el('button', { class: 'btn danger wide', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Убрать «' + x.name + '» из проекта? В контактах он останется.' + (x.tg_id ? ' Если других проектов у него нет — кабинет закроется.' : '')))) return;
+      try {
+        await refresh(await save('pclient_remove', { project_id: p.id, client_id: x.id })); closeSheets(); toast('Убран из проекта');
+      } catch (e) { toast(e.message); }
+    } }, 'Убрать из проекта'));
+    body.append(el('div', 'pick', ...btns));
+    sheet('Заказчик', body);
+  }
+  // ссылка в кабинет: текст на языке человека — отправить в Telegram, WhatsApp, письмом или скопировать
+  function inviteSheet(kind, rec, link) {
+    const country = (P.project.country || '').toLowerCase();
+    let lang = /слова|slovak/.test(country) ? 'sk' : /австр|герман|austria|german/.test(country) ? 'de' : /украин|ukrain/.test(country) ? 'uk' : 'ru';
+    const seg = el('div', 'seg seg5'), box = el('div'), info = el('p', 'small muted');
+    let cur = null;
+    async function make() {
+      box.replaceChildren(el('p', 'muted', 'Готовлю ссылку…'));
+      try { cur = await api('/api/crm/invite', { json: { kind, ref_id: rec.id, project_id: P.project.id, lang } }); }
+      catch (e) { box.replaceChildren(el('p', 'err', e.message)); return; }
+      const t = area(cur.text, { readonly: true, style: 'min-height:200px' });
+      requestAnimationFrame(() => { t.style.height = t.scrollHeight + 4 + 'px'; });
+      const plain = cur.text.replace(cur.link, '').replace(/\n{3,}/g, '\n\n').replace(/:\s*\n\n/, ':\n').trim();
+      const ph = digits(rec.phone);
+      box.replaceChildren(el('div', 'field', t), el('div', 'pick',
+        el('button', { class: 'btn primary', type: 'button', onclick: () => {
+          const u = 'https://t.me/share/url?url=' + encodeURIComponent(cur.link) + '&text=' + encodeURIComponent(plain);
+          if (tg && tg.openTelegramLink) tg.openTelegramLink(u); else openLink(u);
+        } }, '✈︎ Отправить в Telegram'),
+        ph ? el('button', { class: 'btn', type: 'button', onclick: () => openLink('https://wa.me/' + ph.replace('+', '') + '?text=' + encodeURIComponent(cur.text)) }, '🟢 Отправить в WhatsApp') : null,
+        rec.email ? el('button', { class: 'btn', type: 'button', onclick: () => openMail(rec.email, 'DUMSKAYA DESIGN', cur.text) }, '✉️ Отправить письмом') : null,
+        el('button', { class: 'btn', type: 'button', onclick: async () => {
+          try { await navigator.clipboard.writeText(cur.text); toast('Скопировано'); } catch (e) { t.focus(); t.select(); toast('Выделено — скопируйте'); }
+        } }, '📋 Скопировать текст')));
+      info.textContent = 'Ссылка для одного человека — для ' + rec.name + '. Действует 14 дней, до ' + dfmt(cur.expires) + '. Прежняя неиспользованная ссылка ему больше не работает.'
+        + (rec.tg_id ? ' Сейчас кабинет открыт с Telegram «' + (rec.tg_name || '') + '» — по новой ссылке он перейдёт на тот Telegram, где её откроют.' : '');
+      try { await refresh(await api('/api/crm/project?id=' + P.project.id)); } catch (e) {}
+    }
+    const draw = () => seg.replaceChildren(...[['ru', 'RU'], ['uk', 'UA'], ['en', 'EN'], ['sk', 'SK'], ['de', 'DE']].map(([k, n]) => el('button', { type: 'button',
+      'aria-pressed': String(lang === k), onclick: () => { lang = k; draw(); make(); } }, n)));
+    draw(); make();
+    sheet('Ссылка в кабинет', el('div', el('p', 'muted', (kind === 'client' ? 'Заказчик: ' : 'Подрядчик: ') + rec.name),
+      el('div', 'field', el('span', 'lab', 'Язык сообщения и кабинета'), seg, el('div', 'hint', 'Кабинет откроется на языке его Telegram — он сможет сменить язык в ⚙︎.')), box, info));
+  }
+
   function opRow(x) {
     const kinds = { payment: 'Оплата заказчика', commission: 'Бонус', resale: 'Перепродажа' };
     let what = kinds[x.kind], meta = [dfmt(x.day)];
-    if (x.kind === 'payment') { if (x.method) meta.push(x.method); }
+    if (x.kind === 'payment') {
+      const o = x.order_id && (P.orders || []).find((y) => y.id === x.order_id), sv = x.service_id && (P.services || []).find((y) => y.id === x.service_id);
+      if (o) { what = 'Оплата за товар'; meta.push('«' + o.title + '» — не доход студии, доход — наценка товара'); }
+      else if (sv) { what = 'Оплата услуги'; meta.push('«' + sv.title + '»'); }
+      if (x.method) meta.push(x.method);
+    }
     if (x.kind === 'commission') {
       what = 'Бонус' + (x.counterparty ? ' · ' + x.counterparty : '');
       const k = x.link_id && P.contractors.find((y) => y.link_id === x.link_id);
@@ -599,7 +796,7 @@
     if (x.note) meta.push(x.note);
     return el('li', { onclick: () => opSheet(x.kind, x) },
       el('div', 'what', what),
-      el('div', { class: 'amt num' + (x.income > 0 ? ' plus' : '') }, (x.income >= 0 ? '+' : '') + eur(x.income)),
+      el('div', { class: 'amt num' + (x.income > 0 ? ' plus' : '') }, x.order_id ? money(x.amount, x.currency) : (x.income >= 0 ? '+' : '') + eur(x.income)),
       el('div', 'meta', meta.join(' · ')));
   }
 
@@ -910,6 +1107,14 @@
     const ul = el('ul', 'people');
     studio.forEach((p) => ul.append(personLi(p, [p.role_name, p.shop ? '🛒 товары магазина' : ''].filter(Boolean).join(' · '))));
     s.append(ul); box.append(s);
+    const cab = A.people.filter((p) => p.status === 'active' && (p.role === 'client' || p.role === 'crew'));
+    if (cab.length) {                                    // заказчики и подрядчики проектов — попадают в бот только по ссылке из проекта
+      const c = el('section', 'card', el('h2', null, 'Кабинеты проектов · ' + cab.length),
+        el('p', 'small muted', 'Заказчики и подрядчики, которые открыли ссылку из проекта. Ссылки и закрытие кабинета — в самом проекте, блоки «Заказчики» и «Подрядчики».'));
+      const ul2 = el('ul', 'people');
+      cab.forEach((p) => ul2.append(personLi(p, p.role_name)));
+      c.append(ul2); box.append(c);
+    }
     const k = el('section', 'card');
     k.append(el('h2', null, 'Партнёры'), el('p', 'small muted', 'Людям компании приходят заявки на её товары. № компании нужен, чтобы привязать к ней товар в магазине на сайте.'));
     const companies = A.partners.filter((c) => c.people || c.goods_count);
@@ -937,9 +1142,10 @@
       ['Товары магазина', p.shop ? 'закреплены за ним/ней' : ''], ['Telegram ID', String(p.id)]].forEach(([a, b]) => { if (b) kv.append(el('dt', null, a), el('dd', null, b)); });
     body.append(el('div', 'card', el('b', { style: 'font-size:calc(19px * var(--k));display:block;margin-bottom:8px' }, p.name), kv));
     const btns = [];
+    const cabinet = p.role === 'client' || p.role === 'crew';
     if (p.status === 'pending') btns.push(el('button', { class: 'btn primary wide', type: 'button', onclick: () => { closeSheets(); roleSheet(p, 'approve'); } }, 'Принять…'));
     else if (p.manage) {
-      btns.push(el('button', { class: 'btn wide', type: 'button', onclick: () => { closeSheets(); roleSheet(p, 'change'); } }, 'Изменить роль'));
+      if (!cabinet) btns.push(el('button', { class: 'btn wide', type: 'button', onclick: () => { closeSheets(); roleSheet(p, 'change'); } }, 'Изменить роль'));
       btns.push(el('button', { class: 'btn danger wide', type: 'button', onclick: async () => {
         if (!(await confirmBox('Закрыть доступ к боту для ' + p.name + '? Ему перестанут приходить заявки.'))) return;
         try { await accessAct({ action: 'remove', uid: p.id }, 'Доступ закрыт'); closeSheets(); } catch (e) { toast(e.message); }
@@ -1098,11 +1304,11 @@
     h.append(el('dl', 'sum num',
       el('dt', null, 'Оплаты заказчиков'), el('dd', null, eur(M.payments)),
       el('dt', null, 'Бонусы'), el('dd', null, eur(M.bonuses)),
-      el('dt', null, 'Наценка на перепродаже'), el('dd', null, eur(M.margin))), el('p', 'small muted', 'Новых проектов: ' + M.new_projects + (M.new_contracts ? ' на ' + eur(M.new_contracts) : '') + ' · операций: ' + M.ops));
+      el('dt', null, 'Наценка на товарах'), el('dd', null, eur(M.margin))), el('p', 'small muted', 'Новых проектов: ' + M.new_projects + (M.new_contracts ? ' на ' + eur(M.new_contracts) : '') + ' · операций: ' + M.ops));
     box.append(h);
     const o = el('section', 'card');
     o.append(el('h2', null, 'Заказчики ещё должны'), el('div', { class: 'hero num', style: 'font-size:calc(28px * var(--k));color:var(--warn)' }, eur(M.owing)),
-      el('p', 'small muted', 'Остаток по договорам проектов в работе и на паузе'));
+      el('p', 'small muted', 'По договорам, доп. услугам и товарам — проекты в работе и на паузе'));
     if (M.owing_projects.length) {
       const ul = el('ul', 'people');
       M.owing_projects.forEach(([n, title, bal, id]) => ul.append(el('li', null, el('div', { class: 'who', onclick: () => openProject(id) }, el('b', null, title), el('span', null, n ? '№ ' + n : '')), el('b', 'num owe', eur(bal)))));
@@ -1324,12 +1530,30 @@
     const titles = { payment: 'Оплата заказчика', commission: 'Бонус', resale: 'Перепродажа' };
     const body = el('div');
     const note = area(o.note, { placeholder: 'Комментарий (по желанию)' });
-    let main, buy, extra = {};
+    let main, buy, target = null, extra = {};
     body.append(field('Дата', day));
     if (kind === 'payment') {
       main = moneyField('Сколько заплатил заказчик', o.amount, o.currency, o.rate_src === 'вручную' ? o.rate : '', o.rate_src === 'вручную', day);
       extra.method = sel([['', '— не указан —']].concat(S.lists.pay_methods), o.method);
-      body.append(main, field('Как заплатил', extra.method));
+      // за что: договор, доп. услуга или товар (оплата за товар — не доход студии, доход — наценка товара)
+      const svs = (P.services || []).filter((x) => !x.cancelled || x.id === o.service_id), ors = (P.orders || []).filter((x) => x.money.status !== 'cancelled' || x.id === o.order_id);
+      target = sel([['', 'Дизайн-проект (договор)']].concat(svs.map((x) => ['s:' + x.id, 'Услуга: ' + x.title]), ors.map((x) => ['o:' + x.id, 'Товар: ' + x.title])),
+        o.order_id ? 'o:' + o.order_id : o.service_id ? 's:' + o.service_id : '');
+      const hint = el('div', 'hint');
+      const upd = (prefill) => {
+        const v = target.value, id = Number(v.slice(2));
+        if (v.startsWith('s:')) {
+          const x = svs.find((y) => y.id === id), due = x.money.charges.find((c) => c.status !== 'paid');
+          hint.textContent = x.money.debt > 0.005 ? 'Не оплачено по услуге: ' + eur(x.money.debt) + (due ? ' (ближайшее — ' + dfmt(due.due) + ')' : '') : 'По услуге всё оплачено' + (x.money.next ? ', следующий платёж ' + dfmt(x.money.next.due) : '');
+          if (prefill) main.set(due ? Math.round((due.amount - due.paid) * 100) / 100 : x.money.next ? x.money.next.amount : x.amount, 'EUR');
+        } else if (v.startsWith('o:')) {
+          const x = ors.find((y) => y.id === id);
+          hint.textContent = 'Осталось доплатить: ' + curMoney(x.money.rest, x.currency) + '. Оплата за товар не считается доходом студии — доход это наценка товара.';
+          if (prefill && x.money.rest > 0) main.set(x.money.rest, x.currency);
+        } else hint.textContent = P.project.balance > 0.005 ? 'Остаток по договору: ' + eur(P.project.balance) : 'Договор оплачен полностью';
+      };
+      target.addEventListener('change', () => upd(true)); upd(!o.id && !!(preset && (preset.order_id || preset.service_id)));
+      body.append(el('div', 'field', el('label', null, 'За что'), target, hint), main, field('Как заплатил', extra.method));
     } else if (kind === 'commission') {
       // бонус от подрядчика проекта (уменьшает его долг) или от любого поставщика, фабрики
       const ks = P.contractors;
@@ -1375,14 +1599,232 @@
       try { await refresh(await api('/api/crm/delete', { json: { entity: 'op', id: o.id } })); closeSheets(); toast('Удалено'); } catch (e) { toast(e.message); }
     } }, 'Удалить')] : [];
     const fresh = { payment: 'Новая оплата заказчика', commission: 'Получен бонус', resale: 'Новая перепродажа' };
+    if (o.id && o.order_id) titles.payment = 'Оплата за товар';
+    else if (o.id && o.service_id) titles.payment = 'Оплата услуги';
     sheet(o.id ? titles[kind] : fresh[kind], body, async () => {
       const m = main.value();
       const d = { id: o.id, project_id: P.project.id, kind, day: day.value, note: note.value, amount: m.amount, currency: m.currency, manual_rate: m.manual_rate, rate: m.rate };
       for (const k in extra) d[k] = extra[k].value;
+      if (target) { const v = target.value; d.order_id = v.startsWith('o:') ? Number(v.slice(2)) : null; d.service_id = v.startsWith('s:') ? Number(v.slice(2)) : null; }
       if (buy) { const b = buy.value(); Object.assign(d, { buy: b.amount, buy_currency: b.currency, manual_buy_rate: b.manual_rate, buy_rate: b.rate }); }
       await refresh(await save('op', d));
       toast('Сохранено');
     }, null, del);
+  }
+
+  // ---------- товар заказчика: карточка с нашего сайта, фото, цена, закупка, авансы, поставка ----------
+  function orderSheet(o) {
+    const isNew = !o;
+    o = o || { day: todayISO(), currency: 'EUR', qty: 1 };
+    const pid = P.project.id;
+    let image = o.image_url || '', fileId = o.file_id || null, photoUrl = o.photo || '';
+    const day = inp(o.day, { type: 'date' });
+    const link = inp(o.url || '', { type: 'url', placeholder: 'https://dumskaya-home.com/… или артикул TDD-001' });
+    const title = inp(o.title, { placeholder: 'Например: диван Viktor, ткань Velvet Grey' });
+    const code = inp(o.code, { placeholder: 'Артикул (по желанию)' });
+    const qty = inp(o.qty != null ? num(o.qty, 2).replace(/\s/g, '') : '', { inputmode: 'decimal', placeholder: '1' });
+    const pic = el('div', { class: 'ogrid', style: 'grid-template-columns:96px 1fr;align-items:center' });
+    const file = el('input', { type: 'file', accept: 'image/*', style: 'display:none' });
+    const drawPic = () => pic.replaceChildren(photoUrl || image ? el('img', { class: 'ph', src: photoUrl || image, alt: '' }) : el('div', 'ph', '🛋'),
+      el('div', 'pick', el('button', { class: 'btn small', type: 'button', onclick: () => file.click() }, photoUrl || image ? '📷 Другое фото' : '📷 Добавить фото'),
+        photoUrl || image ? el('button', { class: 'btn small danger', type: 'button', onclick: () => { photoUrl = ''; image = ''; fileId = null; drawPic(); } }, 'Убрать фото') : null));
+    file.addEventListener('change', async () => {
+      const f = file.files[0]; file.value = '';
+      if (!f) return;
+      const t = el('div', 'toast', 'Загружаю фото…'); document.body.append(t);
+      try {
+        const rec = await api('/api/crm/upload?project=' + pid + '&cat=goods&name=' + encodeURIComponent(f.name || 'foto.jpg'), { body: f, headers: { 'Content-Type': f.type || 'image/jpeg' } });
+        const th = await makeThumb(f);
+        let v = rec;
+        if (th) { try { v = await api('/api/crm/thumb?id=' + rec.id, { body: th, headers: { 'Content-Type': 'image/jpeg' } }); } catch (e) {} }
+        fileId = rec.id; photoUrl = v.thumb_url || v.url; image = ''; drawPic();
+      } catch (e) { toast(e.message); }
+      finally { t.remove(); }
+    });
+    drawPic();
+    const fetchCard = async () => {
+      const v = link.value.trim();
+      if (!v) return toast('Вставьте ссылку на товар или артикул');
+      const q = /^https?:/i.test(v) ? 'url=' + encodeURIComponent(v) : 'code=' + encodeURIComponent(v);
+      try {
+        const c = await api('/api/crm/card?' + q);
+        link.value = c.url; if (c.title) title.value = c.title; if (c.code && !code.value) code.value = c.code;
+        if (c.image_url && !fileId) { image = c.image_url; drawPic(); }
+        toast('Карточка подтянута');
+      } catch (e) { toast(e.message); }
+    };
+    const price = moneyField('Цена для заказчика', o.price || '', o.currency, o.rate_src === 'вручную' ? o.rate : '', o.rate_src === 'вручную', day, 'Её заказчик видит в кабинете');
+    const buy = moneyField('Закупка — сколько платит студия', o.buy == null ? '' : o.buy, o.buy_currency || o.currency, o.buy_rate_src === 'вручную' ? o.buy_rate : '', o.buy_rate_src === 'вручную', day,
+      '🔒 Заказчик не видит. Можно внести позже');
+    const supplier = inp(o.supplier, { placeholder: 'Фабрика, салон, магазин (только для вас)' });
+    const marginLine = el('div', { class: 'card small', style: 'margin:0 0 14px' });
+    const updM = () => { const b = buy.eur(), s2 = price.eur();
+      marginLine.replaceChildren(b != null && s2 != null ? el('span', null, 'Доход студии (наценка): ', el('b', { class: 'num', style: s2 - b < 0 ? 'color:var(--down)' : 'color:var(--up)' }, eur(s2 - b)))
+        : el('span', 'muted', 'Внесите закупку — покажу наценку в евро')); };
+    buy.addEventListener('eur', updM); price.addEventListener('eur', updM); updM();
+    const planned = inp(o.planned, { type: 'date' }), delivered = inp(o.delivered, { type: 'date' });
+    const noteClient = area(o.note_client, { placeholder: 'Ткань, цвет, размеры, что входит — заказчик видит' });
+    const note = area(o.note, { placeholder: 'Только для вас' });
+    const cancelled = el('input', { type: 'checkbox' }); cancelled.checked = !!o.cancelled;
+    const notify = el('input', { type: 'checkbox' }); notify.checked = true;
+    const linked = people().some((q) => q.tg_id);
+    const body = el('div',
+      el('div', 'field', el('label', null, 'Карточка с сайта'), el('div', 'pair', link, el('button', { class: 'btn', type: 'button', onclick: fetchCard }, 'Подтянуть')),
+        el('div', 'hint', 'Ссылка на товар dumskaya-design.com или dumskaya-home.com (или артикул магазина) — название и фото подставятся сами. Ссылку на сайт фабрики тоже можно вставить — она сохранится как есть.')),
+      el('div', 'field', el('span', 'lab', 'Фото'), pic, file),
+      field('Что за товар', title), el('div', 'two', field('Артикул', code), field('Количество, шт.', qty)),
+      field('Дата заказа', day), price, buy, field('Поставщик', supplier), marginLine,
+      el('div', 'two', field('Плановая поставка', planned), field('Доставлен', delivered, 'Когда привезли')),
+      field('Комментарий для заказчика', noteClient), field('Заметка', note));
+    if (!isNew) {
+      const mo = o.money;
+      const pays = el('section', 'card', el('h2', null, 'Оплаты заказчика за товар'),
+        el('div', 'small num', 'Оплачено ' + curMoney(mo.paid, o.currency) + ' из ' + curMoney(o.price, o.currency) + (mo.rest > 0.005 ? ' · осталось ' + curMoney(mo.rest, o.currency) : ' · оплачено полностью')));
+      (o.payments || []).forEach((x) => pays.append(el('div', 'small muted num', dfmt(x.day) + ' — ' + money(x.amount, x.currency))));
+      pays.append(el('button', { class: 'btn wide', type: 'button', style: 'margin-top:10px', onclick: () => { closeSheets(); opSheet('payment', null, { order_id: o.id, currency: o.currency }); } }, '💶 Внести оплату'),
+        el('p', { class: 'small muted', style: 'margin:6px 0 0' }, 'Доставлен и оплачен полностью — у заказчика статус «Выполнено».'));
+      body.prepend(pays);
+      body.append(el('div', 'field', el('label', 'check', cancelled, 'Отменён (заказчик увидит «Отменён»; без оплат — товар у него не показывается)')));
+    }
+    if (linked) body.append(el('div', 'field', el('label', 'check', notify, isNew ? 'Сообщить заказчику в Telegram о новом товаре' : 'Сообщить заказчику, когда отмечу «Доставлен»')));
+    const del = o.id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Удалить товар «' + o.title + '»? Если за него есть оплаты — сначала удалите их или отметьте «Отменён».'))) return;
+      try { await refresh(await api('/api/crm/delete', { json: { entity: 'order', id: o.id } })); closeSheets(); toast('Удалено'); } catch (e) { toast(e.message); }
+    } }, 'Удалить')] : [];
+    sheet(isNew ? 'Товар заказчика' : 'Товар', body, async () => {
+      const pv = price.value(), bv = buy.value();
+      await refresh(await save('order', { id: o.id, project_id: pid, title: title.value, code: code.value, qty: qty.value, url: link.value.trim(),
+        image_url: fileId ? '' : image, file_id: fileId, day: day.value, price: pv.amount, currency: pv.currency, manual_rate: pv.manual_rate, rate: pv.rate,
+        buy: bv.amount, buy_currency: bv.currency, manual_buy_rate: bv.manual_rate, buy_rate: bv.rate, supplier: supplier.value, planned: planned.value,
+        delivered: delivered.value, note_client: noteClient.value, note: note.value, cancelled: cancelled.checked, notify: linked && notify.checked }));
+      toast('Сохранено');
+    }, null, del);
+  }
+
+  // ---------- доп. услуга: разовая или помесячная ----------
+  function serviceSheet(sv) {
+    const isNew = !sv;
+    sv = sv || { kind: 'once', start: todayISO() };
+    let kind = sv.kind;
+    const dl = el('datalist', { id: 'svc-names' }, ...['Авторское сопровождение', 'Рабочие чертежи', 'Дополнительные визуализации', 'Комплектация', 'Выезд на объект']
+      .map((x) => el('option', { value: x })));
+    const title = inp(sv.title, { list: 'svc-names', placeholder: 'Например: авторское сопровождение', autocomplete: 'off' });
+    const amount = inp(sv.amount || '', { inputmode: 'decimal', placeholder: '0' });
+    const start = inp(sv.start, { type: 'date' });
+    const months = inp(sv.months || '', { inputmode: 'numeric', placeholder: 'пока не остановлю' });
+    const stopped = inp(sv.stopped, { type: 'date' });
+    const note = area(sv.note, { placeholder: 'Только для вас' });
+    const cancelled = el('input', { type: 'checkbox' }); cancelled.checked = !!sv.cancelled;
+    const notify = el('input', { type: 'checkbox' }); notify.checked = true;
+    const linked = people().some((q) => q.tg_id);
+    const seg = el('div', 'seg seg2'), amountF = field('Сумма, €', amount), startF = field('Срок оплаты', start);
+    const monthly = el('div', field('Сколько месяцев', months, 'Пусто — пока не остановите. Оплата каждый месяц в тот же день.'),
+      isNew ? null : field('Остановлена с', stopped, 'После этой даты новые месяцы не начисляются'));
+    const draw = () => {
+      seg.replaceChildren(...[['once', 'Разовая'], ['monthly', 'Помесячно']].map(([k, t]) => el('button', { type: 'button', 'aria-pressed': String(kind === k), onclick: () => { kind = k; draw(); } }, t)));
+      amountF.querySelector('label').textContent = kind === 'monthly' ? 'Сумма в месяц, €' : 'Сумма, €';
+      startF.querySelector('label').textContent = kind === 'monthly' ? 'Первый платёж' : 'Срок оплаты';
+      monthly.hidden = kind !== 'monthly';
+    };
+    draw();
+    const body = el('div', dl, field('Услуга', title), el('div', 'field', el('span', 'lab', 'Как платит заказчик'), seg), amountF, startF, monthly, field('Заметка', note));
+    if (!isNew) {
+      const m = sv.money, box = el('section', 'card', el('h2', null, 'Начисления и оплаты'));
+      const st = { paid: ['✓ оплачено', 'var(--up)'], due: ['к оплате', 'var(--warn)'], overdue: ['не оплачено больше 7 дней', 'var(--down)'], upcoming: ['срок не наступил', 'var(--text-2)'] };
+      m.charges.forEach((c) => box.append(el('div', { class: 'row between small num', style: 'padding:4px 0' }, el('span', null, dfmt(c.due) + ' — ' + eur(c.amount)),
+        el('span', { style: 'color:' + st[c.status][1] }, st[c.status][0] + (c.paid && c.status !== 'paid' ? ' (оплачено ' + eur(c.paid) + ')' : '')))));
+      if (m.next) box.append(el('div', 'small muted num', 'Следующий платёж: ' + dfmt(m.next.due) + ' — ' + eur(m.next.amount)));
+      box.append(el('div', { class: 'small num', style: 'margin-top:6px;font-weight:600' }, 'Начислено ' + eur(m.charged) + ' · оплачено ' + eur(m.paid) + (m.debt > 0.005 ? ' · долг ' + eur(m.debt) : '')),
+        el('button', { class: 'btn wide', type: 'button', style: 'margin-top:10px', onclick: () => { closeSheets(); opSheet('payment', null, { service_id: sv.id }); } }, '💶 Внести оплату'));
+      body.prepend(box);
+      body.append(el('div', 'field', el('label', 'check', cancelled, 'Отменена — ничего не начисляется, заказчик её не видит')));
+    } else if (linked) body.append(el('div', 'field', el('label', 'check', notify, 'Сообщить заказчику в Telegram о новой услуге')));
+    body.append(el('p', 'small muted', 'О неоплаченном платеже бот напомнит заказчику и вам — в день оплаты и ещё раз через 7 дней (днём, с 10 до 20).'));
+    const del = sv.id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Удалить услугу «' + sv.title + '»? Если по ней есть оплаты — отметьте её «Остановлена» или «Отменена».'))) return;
+      try { await refresh(await api('/api/crm/delete', { json: { entity: 'service', id: sv.id } })); closeSheets(); toast('Удалено'); } catch (e) { toast(e.message); }
+    } }, 'Удалить')] : [];
+    sheet(isNew ? 'Доп. услуга' : 'Услуга', body, async () => {
+      await refresh(await save('service', { id: sv.id, project_id: P.project.id, title: title.value, kind, amount: amount.value, start: start.value,
+        months: kind === 'monthly' ? months.value : '', stopped: kind === 'monthly' ? stopped.value : '', note: note.value, cancelled: cancelled.checked,
+        notify: isNew && linked && notify.checked }));
+      toast('Сохранено');
+    }, null, del);
+  }
+
+  // ---------- переписка с заказчиками проекта ----------
+  function stopChat() { if (chatTimer) { clearInterval(chatTimer); chatTimer = null; } document.body.classList.remove('typing'); }
+  function openChat() { CH = []; go('chat'); }
+  function chatView() {
+    const p = P.project, ppl = people();
+    app.append(el('div', 'card', el('div', 'small muted', 'Переписка с заказчиками'), el('h1', { style: 'margin:4px 0 4px' }, p.title),
+      el('div', 'small', ppl.length ? ppl.map((x) => x.name + (x.tg_id ? ' ✓' : ' — не в кабинете')).join(' · ') : 'Заказчиков в проекте нет'),
+      el('div', 'small muted', 'Сообщения заказчиков не на русском и не на украинском — с переводом. Ваши — уходят им с переводом на их язык. Подрядчики переписку не видят.')));
+    const box = el('div', 'chat'); app.append(box);
+    const draw = () => {
+      box.replaceChildren();
+      if (!CH.length) box.append(el('div', 'card muted', 'Сообщений пока нет. Напишите первым — заказчикам придёт сообщение в Telegram.'));
+      let last = '';
+      CH.forEach((m) => {
+        const d = new Date(m.created), k = d.toDateString();
+        if (k !== last) { last = k; box.append(el('div', 'daysep', dfmt(m.created))); }
+        const b = el('div', 'bub' + (m.mine ? ' mine' : ''));
+        if (!m.mine) b.append(el('span', 'who', m.author_name || 'Заказчик'));
+        if (m.file) {
+          const f = m.file;
+          if (f.image && (f.thumb_url || f.url)) b.append(el('img', { src: f.thumb_url || f.url, alt: f.name, loading: 'lazy', onclick: () => openLink(f.url) }));
+          else b.append(el('span', { class: 'file', onclick: () => f.url && openLink(f.url) }, '📄 ' + f.name), document.createElement('br'));
+        }
+        if (m.text) {
+          const ON = { sk: 'на словацком', de: 'на немецком', en: 'на английском', uk: 'на украинском', pl: 'на польском', cs: 'на чешском', it: 'на итальянском',
+            fr: 'на французском', es: 'на испанском', hu: 'на венгерском' };
+          if (!m.mine && m.tr) b.append(el('span', null, m.tr), el('span', 'orig', 'Оригинал' + (ON[m.lang] ? ' ' + ON[m.lang] : '') + ': ' + m.text));
+          else b.append(el('span', null, m.text));
+        }
+        b.append(el('span', 'meta', String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0')));
+        box.append(b);
+      });
+    };
+    const ta = el('textarea', { rows: 1, placeholder: 'Сообщение…', 'aria-label': 'Сообщение заказчикам' });
+    const file = el('input', { type: 'file', accept: 'image/*,application/pdf', style: 'display:none' });
+    const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, window.innerHeight * 0.4) + 'px'; };
+    ta.addEventListener('input', grow);
+    ta.addEventListener('focus', () => document.body.classList.add('typing'));
+    ta.addEventListener('blur', () => setTimeout(() => document.body.classList.remove('typing'), 150));
+    const send = async (fileId) => {
+      const text = ta.value.trim();
+      if ((!text && !fileId) || chatBusy) return;
+      chatBusy = true;
+      try { await api('/api/portal/chat', { json: { project_id: p.id, text, file_id: fileId || null } }); ta.value = ''; grow(); }
+      catch (e) { toast(e.message); }
+      finally { chatBusy = false; }
+      await pull(true);
+    };
+    file.addEventListener('change', async () => {
+      const f = file.files[0]; file.value = '';
+      if (!f) return;
+      if (f.size > 20 * 1024 * 1024) return toast('Файл больше 20 МБ — в переписку не отправить');
+      const t = el('div', 'toast', 'Загружаю файл…'); document.body.append(t);
+      try { const r = await api('/api/portal/upload?project=' + p.id + '&name=' + encodeURIComponent(f.name || 'file'), { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } }); t.remove(); await send(r.id); }
+      catch (e) { t.remove(); toast(e.message); }
+    });
+    app.append(el('div', 'composer', el('button', { class: 'icon-btn', type: 'button', title: 'Фото или файл', 'aria-label': 'Фото или файл', onclick: () => file.click() }, '📎'), ta, file,
+      el('button', { class: 'icon-btn send', type: 'button', title: 'Отправить', 'aria-label': 'Отправить', onclick: () => send() }, '➤')),
+      el('p', { class: 'small muted', style: 'margin:8px 0 0' }, 'Отправится всем заказчикам проекта, подключённым к кабинету.'));
+    async function pull(scroll) {
+      try {
+        const after = CH.length ? CH[CH.length - 1].id : 0;
+        const r = await api('/api/portal/chat?project=' + p.id + '&after=' + after);
+        if (r.messages.length || !after) {
+          const near = window.innerHeight + window.scrollY > document.body.scrollHeight - 160;
+          CH = after ? CH.concat(r.messages) : r.messages; draw();
+          if (scroll || near || !after) window.scrollTo(0, document.body.scrollHeight);
+          if (P.chat && P.chat.unread) { P.chat.unread = 0; const sp = S.projects.find((x) => x.id === p.id); if (sp) { S.unread = Math.max(0, (S.unread || 0) - (sp.unread || 0)); sp.unread = 0; } markNav(); }
+        }
+      } catch (e) { if (!CH.length) box.replaceChildren(el('p', 'err', e.message)); }
+    }
+    draw(); pull(true);
+    chatTimer = setInterval(() => { if (!document.hidden && view === 'chat') pull(false); }, 8000);
   }
 
   function contractorBlock(x) {
@@ -1403,7 +1845,10 @@
         ul.append(el('li', { onclick: () => stageSheet(x, st) },
           el('span', 't', st.title || 'Этап ' + (i + 1)),
           el('span', 'a num', st.amount ? curMoney(st.amount, st.currency) : ''),
-          el('span', 'm num', [bonus, st.received ? 'отдал ' + curMoney(st.received, c) : '', dfmt(st.day)].filter(Boolean).join(' · '))));
+          el('span', 'm num', [bonus, st.received ? 'отдал ' + curMoney(st.received, c) : '', dfmt(st.day), st.src === 'contractor' ? 'внёс подрядчик' : ''].filter(Boolean).join(' · ')),
+          el('span', { class: 'm', style: 'font-weight:600;color:' + (st.confirmed ? 'var(--up)' : st.disputed ? 'var(--down)' : 'var(--warn)') },
+            st.confirmed ? '✓ заказчик подтвердил' + (st.confirmed_by ? ' (' + st.confirmed_by + ')' : '') : st.disputed ? '⚠️ заказчик не согласен' + (st.dispute_note ? ': «' + st.dispute_note + '»' : '')
+              : people().some((q) => q.tg_id) ? 'ждёт подтверждения заказчика' : 'не подтверждено — заказчик не в кабинете')));
       });
       box.append(ul);
     }
@@ -1419,6 +1864,13 @@
     box.append(el('div', 'kactions',
       el('button', { class: 'btn', type: 'button', onclick: () => stageSheet(x, null) }, '＋ Этап'),
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission', null, { link_id: x.link_id, currency: c, amount: m.debt > 0 ? m.debt : '' }) }, '🎁 Отдал бонус')));
+    box.append(tgLine('contractor', x), el('div', 'kactions',
+      el('button', { class: 'btn', type: 'button', onclick: () => inviteSheet('contractor', x) }, x.tg_id ? '🔗 Новая ссылка' : '🔗 Ссылка в кабинет'),
+      el('button', { class: 'btn', type: 'button', onclick: () => preview({ preview: 'contractor', project: P.project.id, link: x.link_id }) }, '👁 Как видит')));
+    if (x.tg_id) box.append(el('button', { class: 'btn danger small', type: 'button', style: 'margin-top:8px', onclick: async () => {
+      if (!(await confirmBox('Закрыть кабинет подрядчику «' + x.name + '»? Он перестанет видеть все проекты студии, где он есть.'))) return;
+      try { await refresh(await api('/api/crm/unlink', { json: { kind: 'contractor', ref_id: x.id, project_id: P.project.id } })); toast('Кабинет закрыт'); } catch (e) { toast(e.message); }
+    } }, 'Закрыть кабинет'));
     return box;
   }
 
@@ -1454,10 +1906,14 @@
     }
     amt.addEventListener('eur', draw); [pct, sum].forEach((i) => i.addEventListener('input', draw));
     draw();
-    const note = area(st.note, { placeholder: 'Сроки, условия, что входит (по желанию)' });
+    const note = area(st.note, { placeholder: 'Сроки, условия, что входит (только для вас)' });
+    const ask = el('input', { type: 'checkbox' }); ask.checked = true;
+    const linked = people().some((q) => q.tg_id);
     const body = el('div', el('p', 'muted small', x.name + ((x.link_trade || x.trade) ? ' · ' + (x.link_trade || x.trade) : '')),
       field('Что делают', title), field('Дата', day), amt,
-      el('div', 'field', el('span', 'lab', 'Бонус студии'), seg, pctBox, sumBox, unk, out), field('Комментарий', note));
+      el('div', 'field', el('span', 'lab', 'Бонус студии'), seg, pctBox, sumBox, unk, out), field('Комментарий', note),
+      linked ? el('div', 'field', el('label', 'check', ask, 'Попросить заказчика подтвердить сумму (сообщение в Telegram, если сумма новая или изменилась)')) : null,
+      st.confirmed ? el('p', 'small muted', '✓ Заказчик подтвердил эту сумму. Если её изменить — подтверждение снимется и заказчика спросят снова.') : null);
     const del = st.id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
       if (!(await confirmBox('Удалить этап «' + (st.title || 'без названия') + '»? Полученные бонусы останутся за подрядчиком.'))) return;
       try { await refresh(await api('/api/crm/delete', { json: { entity: 'stage', id: st.id } })); closeSheets(); toast('Этап удалён'); } catch (e) { toast(e.message); }
@@ -1465,7 +1921,7 @@
     sheet(isNew ? 'Новый этап' : 'Этап работ', body, async () => {
       const v = amt.value();
       await refresh(await save('stage', { id: st.id, project_id: P.project.id, link_id: x.link_id, title: title.value, day: day.value,
-        amount: v.amount || 0, currency: v.currency, manual_rate: v.manual_rate, rate: v.rate, mode, pct: pct.value, commission: sum.value, note: note.value }));
+        amount: v.amount || 0, currency: v.currency, manual_rate: v.manual_rate, rate: v.rate, mode, pct: pct.value, commission: sum.value, note: note.value, ask: linked && ask.checked }));
       toast('Сохранено');
     }, null, del);
   }
@@ -1493,17 +1949,19 @@
     c = c || {};
     const f = { name: inp(c.name, { placeholder: 'Имя', autocomplete: 'off' }), trade: sel([['', '— выберите —']].concat(S.lists.trades), c.trade),
       company: inp(c.company, { placeholder: 'Фирма (по желанию)' }), phone: inp(c.phone, { type: 'tel', placeholder: '+421 …' }),
-      email: inp(c.email, { type: 'email' }), contact_pref: sel([['', '— не указано —']].concat(S.lists.contact_prefs), c.contact_pref),
+      email: inp(c.email, { type: 'email' }), messenger: inp(c.messenger, { placeholder: '@ник в Telegram или номер' }),
+      contact_pref: sel([['', '— не указано —']].concat(S.lists.contact_prefs), c.contact_pref),
       city: cityInput(c.city), note: area(c.note, { placeholder: 'Цены, качество, сроки…' }) };
     const body = el('div', field('Имя', f.name), field('Вид работ', f.trade), field('Компания', f.company), field('Телефон', f.phone), field('E-mail', f.email),
-      field('Как удобнее связаться', f.contact_pref), field('Город', f.city), field('Заметки', f.note));
+      field('Мессенджер', f.messenger), field('Как удобнее связаться', f.contact_pref), field('Город', f.city), field('Заметки', f.note),
+      el('p', 'small muted', 'Телефон, e-mail и мессенджер подрядчика видят заказчики его проектов в кабинете. Заметки — только вы.'));
     const del = c.id && !c.link_id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
       if (!(await confirmBox('Удалить подрядчика «' + c.name + '»?'))) return;
       try { await api('/api/crm/delete', { json: { entity: 'contractor', id: c.id } }); closeSheets(); toast('Удалено'); await refresh(); } catch (e) { toast(e.message); }
     } }, 'Удалить')] : [];
     sheet(c.id ? 'Подрядчик' : 'Новый подрядчик', body, async () => {
       const saved = await save('contractor', { id: c.id, name: f.name.value, trade: f.trade.value, company: f.company.value, phone: f.phone.value,
-        email: f.email.value, contact_pref: f.contact_pref.value, city: f.city.input.value, note: f.note.value });
+        email: f.email.value, messenger: f.messenger.value, contact_pref: f.contact_pref.value, city: f.city.input.value, note: f.note.value });
       toast('Сохранено');
       if (after) await after(saved); else { if (P) P = await api('/api/crm/project?id=' + P.project.id); await refresh(); }
     }, null, del);
@@ -1580,7 +2038,7 @@
     try { await loadState(); }
     catch (e) { app.replaceChildren(el('div', 'card muted', e.message)); return; }
     if (S.me && S.me.size) applySize(S.me.size);
-    if (q.get('project')) return openProject(q.get('project'), false);
+    if (q.get('project')) { await openProject(q.get('project'), false); if (q.get('chat') && P) openChat(); return; }
     if (q.get('lead')) { tab = 'leads'; return openLead(q.get('lead'), false); }
     if (q.get('tab') === 'access') { tab = 'people'; peopleTab = 'access'; }
     else if (q.get('tab') === 'leads') tab = 'leads';

@@ -267,31 +267,48 @@ class CrmBotMixin:
     # ---------- файл проекта → в чат ----------
     def send_file(self, chat_id, f, path):
         """Прислать файл проекта в чат: из Telegram по ссылке на него или с сервера (до 50 МБ)."""
-        caption = f["name"] or ""
+        return self.send_file_r(chat_id, f, path)[:2]
+
+    def send_file_r(self, chat_id, f, path, caption=None, rows=None):
+        """Файл в чат: (доставлено, причина, номер сообщения). caption — подпись в HTML (иначе имя файла), rows — кнопки.
+        Фото с сервера уходит фотографией (до 10 МБ), остальное — документом."""
+        html_caption = caption is not None
+        caption = (caption if html_caption else (f["name"] or ""))[:1024]
+        extra = {"parse_mode": "HTML"} if html_caption else {}
+        if rows:
+            extra["reply_markup"] = self.kb(rows)
         ref = f.get("tg_file_id") or ""
         if ":" in ref:
             kind, fid = ref.split(":", 1)
             method, field = {"photo": ("sendPhoto", "photo"), "video": ("sendVideo", "video")}.get(kind, ("sendDocument", "document"))
-            r = self.api(method, chat_id=chat_id, caption=caption[:1000], **{field: fid})
+            r = self.api(method, chat_id=chat_id, caption=caption, **extra, **{field: fid})
             if r.get("ok"):
-                return True, ""
+                return True, "", (r.get("result") or {}).get("message_id")
             if not path:
-                return False, r.get("description") or "ошибка"
+                return False, r.get("description") or "ошибка", None
         if not path or not os.path.exists(path):
-            return False, "файла нет на сервере"
-        if os.path.getsize(path) > TG_UPLOAD_MAX:
-            return False, "файл больше 50 МБ — откройте его по ссылке в «Студии»"
+            return False, "файла нет на сервере", None
+        size = os.path.getsize(path)
+        if size > TG_UPLOAD_MAX:
+            return False, "файл больше 50 МБ — откройте его по ссылке в «Студии»", None
         with open(path, "rb") as fh:
             data = fh.read()
+        mime = f.get("mime") or "application/octet-stream"
+        method, field = ("sendPhoto", "photo") if mime in ("image/jpeg", "image/png", "image/webp") and size <= 10 * 2**20 \
+            else ("sendDocument", "document")
         boundary = uuid.uuid4().hex
         name = (f["name"] or "file").replace('"', "")
-        body = b"".join([
-            f"--{boundary}\r\nContent-Disposition: form-data; name=\"chat_id\"\r\n\r\n{chat_id}\r\n".encode(),
-            f"--{boundary}\r\nContent-Disposition: form-data; name=\"caption\"\r\n\r\n".encode() + caption[:1000].encode() + b"\r\n",
-            f"--{boundary}\r\nContent-Disposition: form-data; name=\"document\"; filename*=UTF-8''{urllib.parse.quote(name)}\r\n"
-            f"Content-Type: {f.get('mime') or 'application/octet-stream'}\r\n\r\n".encode(), data, b"\r\n",
-            f"--{boundary}--\r\n".encode()])
-        req = urllib.request.Request(f"https://api.telegram.org/bot{self.token}/sendDocument", data=body,
+
+        def part(k, v):
+            return f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n".encode() + str(v).encode() + b"\r\n"
+        parts = [part("chat_id", chat_id), part("caption", caption)]
+        if html_caption:
+            parts.append(part("parse_mode", "HTML"))
+        if rows:
+            parts.append(part("reply_markup", json.dumps(self.kb(rows), ensure_ascii=False)))
+        parts += [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{field}\"; filename*=UTF-8''{urllib.parse.quote(name)}\r\n"
+                  f"Content-Type: {mime}\r\n\r\n".encode(), data, b"\r\n", f"--{boundary}--\r\n".encode()]
+        req = urllib.request.Request(f"https://api.telegram.org/bot{self.token}/{method}", data=b"".join(parts),
                                      headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
         try:
             with urllib.request.urlopen(req, timeout=180) as r:
@@ -303,4 +320,4 @@ class CrmBotMixin:
                 res = {"ok": False, "description": str(e)}
         except Exception as e:  # noqa: BLE001
             res = {"ok": False, "description": f"{type(e).__name__}: {e}"}
-        return bool(res.get("ok")), res.get("description") or ""
+        return bool(res.get("ok")), res.get("description") or "", (res.get("result") or {}).get("message_id")

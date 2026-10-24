@@ -1,0 +1,991 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>DUMSKAYA DESIGN</title>
+<!-- Кабинет заказчика и подрядчика DUMSKAYA DESIGN («Мой проект» в боте студии): мини-приложение Telegram.
+     Данные отдаёт сервис заявок (/api/portal/*) — по подписи Telegram, только свои проекты. Тексты — RU, UA, EN, SK, DE. -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface: #fcfcfb; --raised: #ffffff; --text-1: #0b0b0b; --text-2: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --border: rgba(11, 11, 11, 0.10); --series: #2a78d6; --series-wash: rgba(42, 120, 214, 0.10);
+    --up: #006300; --down: #d03b3b; --ghost: rgba(11, 11, 11, 0.05); --warn: #9a5b00; --on-series: #fff;
+    --bubble-mine: #2a78d6; --bubble-other: #ffffff;
+    --sab: max(env(safe-area-inset-bottom), var(--tg-safe-area-inset-bottom, 0px));
+    --k: 1;
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --raised: #222221; --text-1: #f0efec; --text-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --border: rgba(255, 255, 255, 0.10); --series: #3987e5; --series-wash: rgba(57, 135, 229, 0.12);
+    --up: #0ca30c; --down: #e66767; --ghost: rgba(255, 255, 255, 0.06); --warn: #e0a040; --bubble-other: #222221; --bubble-mine: #2a6fc4;
+  }
+  /* крупный текст (⚙︎ → «Размер текста»): всё в 1,25 или 1,5 раза больше и контрастнее */
+  :root[data-size="l"] { --k: 1.25; }
+  :root[data-size="xl"] { --k: 1.5; }
+  :root[data-size="l"], :root[data-size="xl"] {
+    --text-2: #2f2e2b; --muted: #4f4e49; --border: rgba(11, 11, 11, 0.32); --grid: #c4c3ba;
+    --series: #1a5cb0; --series-wash: rgba(26, 92, 176, 0.12); --up: #005200; --down: #b42323; --warn: #7a4600; --ghost: rgba(11, 11, 11, 0.08);
+    --bubble-mine: #1a5cb0;
+  }
+  :root[data-theme="dark"][data-size="l"], :root[data-theme="dark"][data-size="xl"] {
+    --text-2: #e4e3df; --muted: #bdbcb5; --border: rgba(255, 255, 255, 0.34); --grid: #4a4a45;
+    --series: #6aa9f2; --series-wash: rgba(106, 169, 242, 0.16); --up: #4fd14f; --down: #ff8f8f; --warn: #f2bb66; --ghost: rgba(255, 255, 255, 0.10);
+    --on-series: #0b0b0b; --bubble-mine: #2f6db8;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--page); color: var(--text-1); }
+  body { font: calc(17px * var(--k))/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 760px; margin: 0 auto;
+    padding: 14px 16px calc(88px + var(--sab)); -webkit-text-size-adjust: 100%; }
+  body.no-nav { padding-bottom: calc(24px + var(--sab)); }
+  h1 { font-size: calc(24px * var(--k)); font-weight: 650; margin: 2px 0 8px; letter-spacing: -0.01em; overflow-wrap: anywhere; }
+  h2 { font-size: calc(18px * var(--k)); font-weight: 650; margin: 0 0 10px; }
+  .muted { color: var(--text-2); }
+  .small { font-size: calc(14px * var(--k)); }
+  .num { font-variant-numeric: tabular-nums; }
+  button { font: inherit; color: inherit; }
+  a { color: var(--series); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px; margin: 0 0 12px; scroll-margin-top: 10px; }
+  .row { display: flex; align-items: center; gap: 10px; }
+  .between { justify-content: space-between; }
+  .grow { flex: 1 1 auto; min-width: 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 10px 16px; border-radius: 12px;
+    border: 1px solid var(--border); background: var(--raised); cursor: pointer; font-weight: 550; font-size: calc(16px * var(--k)); text-decoration: none; color: inherit; }
+  .btn.primary { background: var(--series); border-color: var(--series); color: var(--on-series); }
+  .btn.wide { width: 100%; }
+  .btn.small { min-height: 40px; padding: 6px 13px; font-size: calc(15px * var(--k)); }
+  .btn.danger { color: var(--down); }
+  .btn:disabled { opacity: .55; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 12px; }
+  .chip { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 8px 14px; font-size: calc(15px * var(--k)); cursor: pointer; min-height: 40px; }
+  .chip[aria-pressed="true"] { background: var(--text-1); color: var(--page); border-color: var(--text-1); font-weight: 600; }
+  .status { display: inline-block; font-size: calc(13px * var(--k)); font-weight: 600; padding: 3px 10px; border-radius: 999px; background: var(--ghost); color: var(--text-2); white-space: nowrap; }
+  .status.ok { color: var(--up); background: rgba(0, 99, 0, 0.10); }
+  .status.wait { color: var(--warn); background: rgba(154, 91, 0, 0.12); }
+  .status.bad { color: var(--down); background: rgba(208, 59, 59, 0.10); }
+  .status.info { color: var(--series); background: var(--series-wash); }
+  .hero { font-size: calc(36px * min(var(--k), 1.25)); font-weight: 700; line-height: 1.1; margin: 4px 0 10px; letter-spacing: -0.02em; }
+  .sum { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; margin: 0; font-size: calc(17px * var(--k)); }
+  .sum dt { color: var(--text-2); }
+  .sum dd { margin: 0; font-weight: 700; text-align: right; white-space: nowrap; }
+  .owe { color: var(--warn); }
+  .good { color: var(--up); }
+  .bar { height: 8px; border-radius: 4px; background: var(--ghost); overflow: hidden; margin: 12px 0 4px; }
+  .bar i { display: block; height: 100%; background: var(--series); border-radius: 4px; }
+  .list { list-style: none; margin: 0; padding: 0; }
+  .list > li { padding: 12px 0; border-top: 1px solid var(--grid); }
+  .list > li:first-child { border-top: 0; padding-top: 4px; }
+  .line { display: flex; justify-content: space-between; gap: 4px 12px; align-items: baseline; flex-wrap: wrap; }
+  .line b { font-weight: 650; }
+  .line .amt { font-weight: 650; white-space: nowrap; margin-left: auto; }
+  .sub { font-size: calc(15px * var(--k)); color: var(--text-2); overflow-wrap: anywhere; }
+  .icon-btn { width: calc(46px * (1 + (var(--k) - 1) / 2)); height: calc(46px * (1 + (var(--k) - 1) / 2)); border-radius: 12px; border: 1px solid var(--border);
+    background: var(--raised); display: inline-flex; align-items: center; justify-content: center; font-size: calc(19px * var(--k)); text-decoration: none; color: inherit; flex: 0 0 auto; cursor: pointer; }
+  .contacts { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .person b { display: block; font-size: calc(18px * var(--k)); overflow-wrap: anywhere; }
+  .stage { background: var(--page); border-radius: 12px; padding: 11px 12px; margin: 8px 0 0; }
+  .stage .acts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .order { display: grid; grid-template-columns: calc(84px * min(var(--k), 1.2)) 1fr; gap: 12px; align-items: start; }
+  .order .ph { width: 100%; aspect-ratio: 1; border-radius: 12px; background: var(--ghost); object-fit: cover; display: block; }
+  .order .ph.none { display: flex; align-items: center; justify-content: center; font-size: calc(30px * var(--k)); }
+  .charges { list-style: none; margin: 10px 0 0; padding: 0; }
+  .charges li { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-top: 1px dashed var(--grid); font-size: calc(15px * var(--k)); flex-wrap: wrap; }
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .thumb { aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: var(--ghost); border: 0; padding: 0; cursor: pointer; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .doc { aspect-ratio: 1; border-radius: 10px; background: var(--ghost); border: 0; padding: 8px; cursor: pointer; display: flex; flex-direction: column;
+    justify-content: space-between; text-align: left; font-size: calc(12px * var(--k)); overflow: hidden; }
+  .doc .ext { font-weight: 700; font-size: calc(13px * var(--k)); color: var(--series); }
+  .doc .nm { overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .empty { color: var(--text-2); text-align: center; padding: 26px 8px; }
+  .err { color: var(--down); font-size: calc(15px * var(--k)); margin: 0 0 10px; }
+  .ver { color: var(--text-2); font-size: calc(12px * min(var(--k), 1.1)); text-align: center; margin: 22px 0 0; opacity: .7; overflow-wrap: anywhere; }
+  .nav { position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface); border-top: 1px solid var(--border);
+    display: flex; justify-content: center; padding: 6px 6px calc(6px + var(--sab)); z-index: 5; }
+  .nav .in { display: flex; width: 100%; max-width: 760px; }
+  .nav button { flex: 1 1 0; border: 0; background: transparent; display: flex; flex-direction: column; align-items: center; gap: 2px; position: relative; min-width: 0;
+    font-size: calc(13px * min(var(--k), 1.15)); color: var(--text-2); padding: 4px 2px; cursor: pointer; min-height: 54px; }
+  .nav button span { font-size: calc(22px * min(var(--k), 1.25)); line-height: 1.1; }
+  .nav button em { font-style: normal; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  .nav .dot { position: absolute; top: 0; left: calc(50% + 8px); min-width: 22px; height: 22px; padding: 0 6px; border-radius: 11px; background: var(--down);
+    color: #fff; font-size: 13px; font-weight: 700; line-height: 22px; text-align: center; }
+  .nav button[aria-current="page"] { color: var(--series); font-weight: 650; }
+  body.typing .nav { display: none; }
+  .banner { background: var(--series-wash); border: 1px solid var(--series); border-radius: 14px; padding: 10px 12px; margin: 0 0 12px; font-size: calc(15px * var(--k)); }
+  .top { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; }
+  .top .grow { color: var(--text-2); font-size: calc(14px * var(--k)); }
+  /* переписка */
+  .chat { display: flex; flex-direction: column; gap: 8px; margin: 0 0 12px; }
+  .msg { max-width: 86%; padding: 9px 12px 7px; border-radius: 16px; background: var(--bubble-other); border: 1px solid var(--border); align-self: flex-start;
+    overflow-wrap: anywhere; white-space: pre-wrap; }
+  .msg.mine { align-self: flex-end; background: var(--bubble-mine); color: #fff; border-color: transparent; }
+  .msg .who { display: block; font-size: calc(13px * var(--k)); font-weight: 650; color: var(--series); margin-bottom: 2px; white-space: normal; }
+  .msg .meta { display: block; font-size: calc(12px * var(--k)); opacity: .75; margin-top: 4px; text-align: right; white-space: normal; }
+  .msg .orig { display: block; font-size: calc(14px * var(--k)); opacity: .8; border-top: 1px solid currentColor; border-top-color: rgba(127,127,127,.35); margin-top: 6px; padding-top: 5px; }
+  .msg button.tr { border: 0; background: none; padding: 0; color: inherit; text-decoration: underline; font-size: calc(12px * var(--k)); opacity: .8; cursor: pointer; }
+  .msg img { display: block; max-width: 100%; max-height: 260px; border-radius: 10px; margin: 2px 0 4px; cursor: pointer; }
+  .msg .file { display: inline-flex; gap: 6px; align-items: center; text-decoration: underline; cursor: pointer; }
+  .day { align-self: center; font-size: calc(13px * var(--k)); color: var(--text-2); background: var(--ghost); padding: 3px 10px; border-radius: 999px; }
+  .composer { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 8px; display: flex; gap: 8px; align-items: flex-end; }
+  .composer textarea { flex: 1 1 auto; min-width: 0; border: 0; background: transparent; font: inherit; color: inherit; resize: none; min-height: 48px; max-height: 40vh;
+    padding: 12px 6px; outline: none; }
+  .composer .icon-btn { width: 48px; height: 48px; }
+  .composer .send { background: var(--series); color: var(--on-series); border-color: var(--series); }
+  /* формы */
+  .sheet { position: fixed; inset: 0; background: var(--page); z-index: 10; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .sheet .in { max-width: 760px; margin: 0 auto; padding: 0 16px calc(96px + var(--sab)); }
+  .sheet header { position: sticky; top: 0; background: var(--page); display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 12px 0; z-index: 2; border-bottom: 1px solid var(--grid); margin-bottom: 14px; }
+  .sheet header h2 { margin: 0; }
+  .sheet footer { position: fixed; left: 0; right: 0; bottom: 0; background: var(--page); border-top: 1px solid var(--grid); padding: 10px 16px calc(10px + var(--sab)); }
+  .sheet footer .in2 { max-width: 728px; margin: 0 auto; display: flex; gap: 8px; }
+  .field { margin: 0 0 14px; }
+  .field label, .field .lab { display: block; font-size: calc(15px * var(--k)); font-weight: 600; margin: 0 0 6px; }
+  .field .hint { font-size: calc(14px * var(--k)); color: var(--text-2); margin-top: 6px; }
+  .field input, .field select, .field textarea { width: 100%; border: 1px solid var(--border); background: var(--surface); color: inherit;
+    border-radius: 12px; padding: 12px 13px; font: inherit; min-height: 50px; min-width: 0; }
+  .field input[type="date"] { -webkit-appearance: none; appearance: none; display: block; text-align: left; }
+  .field textarea { min-height: 96px; resize: vertical; }
+  .pair { display: grid; grid-template-columns: 1fr calc(110px * var(--k)); gap: 8px; }
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: var(--ghost); padding: 3px; border-radius: 12px; }
+  .seg.five { grid-template-columns: repeat(5, 1fr); }
+  .seg button { border: 0; background: transparent; border-radius: 9px; min-height: 46px; font-size: calc(15px * var(--k)); cursor: pointer; padding: 4px; }
+  .seg button[aria-pressed="true"] { background: var(--raised); font-weight: 650; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .toast { position: fixed; left: 50%; bottom: calc(90px + var(--sab)); transform: translateX(-50%); background: var(--text-1); color: var(--page);
+    padding: 10px 16px; border-radius: 12px; font-size: calc(15px * var(--k)); z-index: 30; box-shadow: 0 6px 20px rgba(0,0,0,.2); max-width: 90%; text-align: center; }
+  .viewer { position: fixed; inset: 0; background: #0b0b0b; z-index: 20; display: flex; flex-direction: column; }
+  .viewer .img { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-height: 0; padding: 10px; }
+  .viewer img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
+  .viewer .bar2 { display: flex; gap: 8px; padding: 10px 12px calc(12px + var(--sab)); justify-content: center; flex-wrap: wrap; }
+  .viewer .bar2 .btn { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.18); }
+  .viewer .cap { color: #ddd; font-size: calc(14px * var(--k)); text-align: center; padding: 10px 12px 0; overflow-wrap: anywhere; }
+  .pcard { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px; cursor: pointer; text-align: left; width: 100%; display: block; margin: 0 0 10px; }
+  .pcard .title { font-size: calc(19px * var(--k)); font-weight: 650; margin: 4px 0 2px; overflow-wrap: anywhere; }
+  .loading { opacity: .55; transition: opacity .2s; }
+  :root[data-size="l"] body, :root[data-size="xl"] body { font-weight: 500; line-height: 1.4; }
+  :root[data-size="l"] .btn, :root[data-size="xl"] .btn, :root[data-size="l"] .chip, :root[data-size="xl"] .chip,
+  :root[data-size="l"] .field input, :root[data-size="xl"] .field input, :root[data-size="l"] .field textarea, :root[data-size="xl"] .field textarea,
+  :root[data-size="l"] .field select, :root[data-size="xl"] .field select { border-width: 2px; }
+  :root[data-size="l"] .nav button, :root[data-size="xl"] .nav button { color: var(--text-1); }
+  :root[data-size="l"] .nav button[aria-current="page"], :root[data-size="xl"] .nav button[aria-current="page"] { color: var(--series); text-decoration: underline; text-underline-offset: 3px; }
+  :root[data-size="xl"] .stage .acts, :root[data-size="xl"] .seg.five { grid-template-columns: 1fr 1fr; }
+  :root[data-size="xl"] .seg.five button:last-child { grid-column: 1 / -1; }
+  :root[data-size="xl"] .order { grid-template-columns: 1fr; }
+  :root[data-size="xl"] .order .ph { max-width: 160px; }
+  :root[data-size="l"] :focus-visible, :root[data-size="xl"] :focus-visible { outline: 3px solid var(--series); outline-offset: 2px; }
+</style>
+</head>
+<body>
+<main id="app"><p class="empty">…</p></main>
+<p class="ver">DUMSKAYA DESIGN · __VERSION_SHORT__</p>
+<nav class="nav" id="nav" hidden><div class="in"></div></nav>
+
+<script>
+(() => {
+  const tg = window.Telegram && window.Telegram.WebApp;
+  const INIT = tg ? tg.initData : '';
+  const app = document.getElementById('app');
+  const Q = new URLSearchParams(location.search);
+  const PREVIEW = Q.get('preview');                 // дизайнер студии смотрит кабинет глазами заказчика или подрядчика
+  const LANGS = [['ru', 'Русский'], ['uk', 'Українська'], ['en', 'English'], ['sk', 'Slovenčina'], ['de', 'Deutsch']];
+  const LOCALE = { ru: 'ru-RU', uk: 'uk-UA', en: 'en-GB', sk: 'sk-SK', de: 'de-AT' };
+
+  // ---------- тексты: русский, украинский, английский, словацкий, немецкий ----------
+  const I18N = {
+    ru: {
+      loading: 'Загружаю…', open_from_bot: 'Откройте кабинет кнопкой «Мой проект» в боте студии DUMSKAYA DESIGN.',
+      no_access: 'Кабинет пока недоступен. Попросите у студии ссылку-приглашение.', error: 'Не получилось загрузить. Проверьте интернет и попробуйте ещё раз.',
+      retry: 'Повторить', projects: 'Мои проекты', role_client: 'Заказчик', role_contractor: 'Подрядчик',
+      st_active: 'В работе', st_paused: 'На паузе', st_done: 'Завершён',
+      nav_home: 'Проект', nav_pay: 'Оплаты', nav_docs: 'Документы', nav_chat: 'Переписка', nav_work: 'Мой подряд',
+      package: 'Пакет «{x}»', to_pay: 'Осталось оплатить', all_paid: 'Всё оплачено', design: 'Дизайн-проект', services: 'Доп. услуги', goods: 'Товары',
+      next_pay: 'Следующий платёж', details: 'Подробнее', confirm_needed: 'Подтвердите суммы работ', new_msgs: 'Новые сообщения в переписке',
+      open_chat: 'Открыть переписку', your_designer: 'Ваш дизайнер', studio: 'Студия', write: 'Написать в переписке', call: 'Позвонить',
+      contractors: 'Подрядчики', contractors_hint: 'Контакты мастеров вашего проекта и суммы их работ.',
+      awaiting: 'Ждёт вашего подтверждения', confirmed_by: 'Подтвердил(а) {name}, {date}', disputed: 'Вы не согласны с суммой',
+      btn_confirm: 'Подтверждаю', btn_dispute: 'Не согласен', dispute_title: 'Не согласен с суммой', dispute_label: 'Комментарий (по желанию)',
+      dispute_hint: 'Ирина увидит ваш комментарий.', send: 'Отправить', by_contractor: 'внёс подрядчик', by_studio: 'внесла студия',
+      in_app: 'В кабинете: {x}', contract: 'Договор', paid: 'Оплачено', left: 'Осталось', overpaid: 'Переплата',
+      history: 'История оплат', for_contract: 'дизайн-проект', for_service: 'услуга «{x}»', for_order: 'товар «{x}»', no_payments: 'Оплат пока нет.',
+      monthly: 'Помесячно', once: 'Разовая', per_month: '{x} в месяц', from_date: 'с {d}', months_n: '{n} мес.', due_by: 'оплата до {d}',
+      c_paid: 'оплачено', c_due: 'к оплате', c_overdue: 'не оплачено', c_upcoming: 'срок {d}', partly: 'оплачено {x}',
+      stopped: 'Завершено {d}', prepaid: 'Предоплата: {x}', debt: 'Не оплачено: {x}',
+      o_ordered: 'Заказан', o_delivered: 'Доставлен — ждёт доплаты', o_done: 'Выполнено', o_cancelled: 'Отменён',
+      qty: '{n} шт.', planned: 'Плановая поставка: {d}', delivered_on: 'Доставлен {d}', product_page: 'Страница товара',
+      rest: 'Осталось доплатить: {x}', fully_paid: 'Оплачено полностью',
+      docs_empty: 'Документов пока нет. Студия добавит их по ходу проекта.',
+      cat_measure: 'Обмерный план', cat_brief: 'Опросник', cat_before: 'До', cat_visual: 'Визуализации', cat_docs: 'Документация', cat_after: 'После',
+      open: 'Открыть', close: 'Закрыть', chat_empty: 'Здесь ваша переписка с Ириной. Напишите вопрос — она ответит здесь и в Telegram.',
+      placeholder: 'Сообщение…', attach: 'Прикрепить фото или файл', auto: 'автоперевод', show_orig: 'оригинал', show_tr: 'перевод', you: 'Вы',
+      sending: 'Отправляю…', uploading: 'Загружаю файл…', too_big: 'Файл больше 20 МБ', today: 'Сегодня', yesterday: 'Вчера',
+      settings: 'Настройки', language: 'Язык', text_size: 'Размер текста', size_m: 'Обычный', size_l: 'Крупный', size_xl: 'Очень крупный', saved: 'Сохранено',
+      client: 'Заказчик', clients: 'Заказчики', address: 'Адрес', work_total: 'Сумма работ', fee: 'Вознаграждение студии', fee_pct: '{p} % от суммы',
+      fee_agreed: 'по договорённости', given: 'Уже передано студии', to_give: 'Осталось передать студии', all_given: 'Расчёт со студией закрыт',
+      add_stage: '＋ Внести сумму работ', stage_title: 'Что за работа', stage_ph: 'Например: электрика, 1-й этап', date: 'Дата', amount: 'Сумма',
+      comment: 'Комментарий', stage_hint: 'Студии — {p} % от суммы. Заказчик получит сообщение и подтвердит сумму.', save: 'Сохранить',
+      delete: 'Удалить', delete_q: 'Удалить эту сумму?', edit: 'Изменить', s_confirmed: '✓ Подтверждено заказчиком',
+      s_waiting: 'Ждёт подтверждения заказчика', s_disputed: '⚠️ Заказчик не согласен', fees_given: 'Передано студии',
+      need_title: 'Напишите, что за работа', need_amount: 'Введите сумму больше нуля', auto_names: 'Названия переведены автоматически.',
+      new_stage: 'Сумма работ', stages: 'Этапы работ', back_projects: 'Все проекты',
+    },
+    uk: {
+      loading: 'Завантажую…', open_from_bot: 'Відкрийте кабінет кнопкою «Мій проєкт» у боті студії DUMSKAYA DESIGN.',
+      no_access: 'Кабінет поки недоступний. Попросіть у студії посилання-запрошення.', error: 'Не вдалося завантажити. Перевірте інтернет і спробуйте ще раз.',
+      retry: 'Повторити', projects: 'Мої проєкти', role_client: 'Замовник', role_contractor: 'Підрядник',
+      st_active: 'У роботі', st_paused: 'На паузі', st_done: 'Завершено',
+      nav_home: 'Проєкт', nav_pay: 'Оплати', nav_docs: 'Документи', nav_chat: 'Листування', nav_work: 'Мій підряд',
+      package: 'Пакет «{x}»', to_pay: 'Залишилося сплатити', all_paid: 'Усе сплачено', design: 'Дизайн-проєкт', services: 'Додаткові послуги', goods: 'Товари',
+      next_pay: 'Наступний платіж', details: 'Докладніше', confirm_needed: 'Підтвердіть суми робіт', new_msgs: 'Нові повідомлення в листуванні',
+      open_chat: 'Відкрити листування', your_designer: 'Ваш дизайнер', studio: 'Студія', write: 'Написати в листуванні', call: 'Зателефонувати',
+      contractors: 'Підрядники', contractors_hint: 'Контакти майстрів вашого проєкту та суми їхніх робіт.',
+      awaiting: 'Чекає на ваше підтвердження', confirmed_by: 'Підтвердив(ла) {name}, {date}', disputed: 'Ви не згодні із сумою',
+      btn_confirm: 'Підтверджую', btn_dispute: 'Не згоден', dispute_title: 'Не згоден із сумою', dispute_label: 'Коментар (за бажанням)',
+      dispute_hint: 'Ірина побачить ваш коментар.', send: 'Надіслати', by_contractor: 'вніс підрядник', by_studio: 'внесла студія',
+      in_app: 'У кабінеті: {x}', contract: 'Договір', paid: 'Сплачено', left: 'Залишилося', overpaid: 'Переплата',
+      history: 'Історія оплат', for_contract: 'дизайн-проєкт', for_service: 'послуга «{x}»', for_order: 'товар «{x}»', no_payments: 'Оплат поки немає.',
+      monthly: 'Щомісяця', once: 'Разова', per_month: '{x} на місяць', from_date: 'з {d}', months_n: '{n} міс.', due_by: 'оплата до {d}',
+      c_paid: 'сплачено', c_due: 'до сплати', c_overdue: 'не сплачено', c_upcoming: 'термін {d}', partly: 'сплачено {x}',
+      stopped: 'Завершено {d}', prepaid: 'Передоплата: {x}', debt: 'Не сплачено: {x}',
+      o_ordered: 'Замовлено', o_delivered: 'Доставлено — чекає доплати', o_done: 'Виконано', o_cancelled: 'Скасовано',
+      qty: '{n} шт.', planned: 'Планова поставка: {d}', delivered_on: 'Доставлено {d}', product_page: 'Сторінка товару',
+      rest: 'Залишилося доплатити: {x}', fully_paid: 'Сплачено повністю',
+      docs_empty: 'Документів поки немає. Студія додасть їх під час роботи над проєктом.',
+      cat_measure: 'Обмірний план', cat_brief: 'Опитувальник', cat_before: 'До', cat_visual: 'Візуалізації', cat_docs: 'Документація', cat_after: 'Після',
+      open: 'Відкрити', close: 'Закрити', chat_empty: 'Тут ваше листування з Іриною. Напишіть запитання — вона відповість тут і в Telegram.',
+      placeholder: 'Повідомлення…', attach: 'Додати фото або файл', auto: 'автопереклад', show_orig: 'оригінал', show_tr: 'переклад', you: 'Ви',
+      sending: 'Надсилаю…', uploading: 'Завантажую файл…', too_big: 'Файл більший за 20 МБ', today: 'Сьогодні', yesterday: 'Учора',
+      settings: 'Налаштування', language: 'Мова', text_size: 'Розмір тексту', size_m: 'Звичайний', size_l: 'Великий', size_xl: 'Дуже великий', saved: 'Збережено',
+      client: 'Замовник', clients: 'Замовники', address: 'Адреса', work_total: 'Сума робіт', fee: 'Винагорода студії', fee_pct: '{p} % від суми',
+      fee_agreed: 'за домовленістю', given: 'Уже передано студії', to_give: 'Залишилося передати студії', all_given: 'Розрахунок зі студією закрито',
+      add_stage: '＋ Внести суму робіт', stage_title: 'Що за робота', stage_ph: 'Наприклад: електрика, 1-й етап', date: 'Дата', amount: 'Сума',
+      comment: 'Коментар', stage_hint: 'Студії — {p} % від суми. Замовник отримає повідомлення й підтвердить суму.', save: 'Зберегти',
+      delete: 'Видалити', delete_q: 'Видалити цю суму?', edit: 'Змінити', s_confirmed: '✓ Підтверджено замовником',
+      s_waiting: 'Чекає підтвердження замовника', s_disputed: '⚠️ Замовник не згоден', fees_given: 'Передано студії',
+      need_title: 'Напишіть, що за робота', need_amount: 'Введіть суму, більшу за нуль', auto_names: 'Назви перекладено автоматично.',
+      new_stage: 'Сума робіт', stages: 'Етапи робіт', back_projects: 'Усі проєкти',
+    },
+    en: {
+      loading: 'Loading…', open_from_bot: 'Open the app with the “My project” button in the DUMSKAYA DESIGN bot.',
+      no_access: 'The app is not available yet. Please ask the studio for an invitation link.', error: 'Couldn’t load. Please check your connection and try again.',
+      retry: 'Try again', projects: 'My projects', role_client: 'Client', role_contractor: 'Contractor',
+      st_active: 'In progress', st_paused: 'On hold', st_done: 'Completed',
+      nav_home: 'Project', nav_pay: 'Payments', nav_docs: 'Documents', nav_chat: 'Chat', nav_work: 'My work',
+      package: '“{x}” package', to_pay: 'Left to pay', all_paid: 'All paid', design: 'Design project', services: 'Extra services', goods: 'Furniture & items',
+      next_pay: 'Next payment', details: 'Details', confirm_needed: 'Please confirm the prices of work', new_msgs: 'New messages in the chat',
+      open_chat: 'Open chat', your_designer: 'Your designer', studio: 'Studio', write: 'Write in the chat', call: 'Call',
+      contractors: 'Contractors', contractors_hint: 'Contacts of the tradespeople on your project and the prices of their work.',
+      awaiting: 'Waiting for your confirmation', confirmed_by: 'Confirmed by {name}, {date}', disputed: 'You disagree with the amount',
+      btn_confirm: 'I confirm', btn_dispute: 'I disagree', dispute_title: 'Disagree with the amount', dispute_label: 'Comment (optional)',
+      dispute_hint: 'Irina will see your comment.', send: 'Send', by_contractor: 'entered by the contractor', by_studio: 'entered by the studio',
+      in_app: 'In the app: {x}', contract: 'Contract', paid: 'Paid', left: 'Left to pay', overpaid: 'Overpaid',
+      history: 'Payment history', for_contract: 'design project', for_service: 'service “{x}”', for_order: 'item “{x}”', no_payments: 'No payments yet.',
+      monthly: 'Monthly', once: 'One-off', per_month: '{x} per month', from_date: 'from {d}', months_n: '{n} months', due_by: 'due by {d}',
+      c_paid: 'paid', c_due: 'due', c_overdue: 'unpaid', c_upcoming: 'due {d}', partly: '{x} paid',
+      stopped: 'Ended {d}', prepaid: 'Paid in advance: {x}', debt: 'Unpaid: {x}',
+      o_ordered: 'Ordered', o_delivered: 'Delivered — balance due', o_done: 'Completed', o_cancelled: 'Cancelled',
+      qty: '{n} pcs', planned: 'Planned delivery: {d}', delivered_on: 'Delivered {d}', product_page: 'Product page',
+      rest: 'Left to pay: {x}', fully_paid: 'Paid in full',
+      docs_empty: 'No documents yet. The studio will add them as the project goes on.',
+      cat_measure: 'Measured plan', cat_brief: 'Questionnaire', cat_before: 'Before', cat_visual: 'Renderings', cat_docs: 'Documentation', cat_after: 'After',
+      open: 'Open', close: 'Close', chat_empty: 'This is your chat with Irina. Ask a question — she will reply here and in Telegram.',
+      placeholder: 'Message…', attach: 'Attach a photo or file', auto: 'auto-translated', show_orig: 'original', show_tr: 'translation', you: 'You',
+      sending: 'Sending…', uploading: 'Uploading file…', too_big: 'The file is larger than 20 MB', today: 'Today', yesterday: 'Yesterday',
+      settings: 'Settings', language: 'Language', text_size: 'Text size', size_m: 'Normal', size_l: 'Large', size_xl: 'Extra large', saved: 'Saved',
+      client: 'Client', clients: 'Clients', address: 'Address', work_total: 'Total for the work', fee: 'Studio fee', fee_pct: '{p} % of the amount',
+      fee_agreed: 'as agreed', given: 'Already paid to the studio', to_give: 'Still to pay the studio', all_given: 'Settled with the studio',
+      add_stage: '＋ Enter a price of work', stage_title: 'Work', stage_ph: 'E.g. electrics, stage 1', date: 'Date', amount: 'Amount',
+      comment: 'Comment', stage_hint: 'Studio fee: {p} % of the amount. The client will get a message and confirm the amount.', save: 'Save',
+      delete: 'Delete', delete_q: 'Delete this amount?', edit: 'Edit', s_confirmed: '✓ Confirmed by the client',
+      s_waiting: 'Waiting for the client’s confirmation', s_disputed: '⚠️ The client disagrees', fees_given: 'Paid to the studio',
+      need_title: 'Please describe the work', need_amount: 'Enter an amount greater than zero', auto_names: 'Names are translated automatically.',
+      new_stage: 'Price of work', stages: 'Stages of work', back_projects: 'All projects',
+    },
+    sk: {
+      loading: 'Načítavam…', open_from_bot: 'Aplikáciu otvoríte tlačidlom „Môj projekt“ v bote štúdia DUMSKAYA DESIGN.',
+      no_access: 'Aplikácia zatiaľ nie je dostupná. Požiadajte štúdio o pozývací odkaz.', error: 'Nepodarilo sa načítať. Skontrolujte pripojenie a skúste to znova.',
+      retry: 'Skúsiť znova', projects: 'Moje projekty', role_client: 'Klient', role_contractor: 'Dodávateľ',
+      st_active: 'Prebieha', st_paused: 'Pozastavený', st_done: 'Dokončený',
+      nav_home: 'Projekt', nav_pay: 'Platby', nav_docs: 'Dokumenty', nav_chat: 'Konverzácia', nav_work: 'Moje práce',
+      package: 'Balík „{x}“', to_pay: 'Zostáva zaplatiť', all_paid: 'Všetko je zaplatené', design: 'Dizajnový projekt', services: 'Doplnkové služby', goods: 'Tovar',
+      next_pay: 'Ďalšia platba', details: 'Podrobnosti', confirm_needed: 'Potvrďte ceny prác', new_msgs: 'Nové správy v konverzácii',
+      open_chat: 'Otvoriť konverzáciu', your_designer: 'Vaša dizajnérka', studio: 'Štúdio', write: 'Napísať do konverzácie', call: 'Zavolať',
+      contractors: 'Remeselníci', contractors_hint: 'Kontakty na remeselníkov vášho projektu a ceny ich prác.',
+      awaiting: 'Čaká na vaše potvrdenie', confirmed_by: 'Potvrdil(a) {name}, {date}', disputed: 'So sumou nesúhlasíte',
+      btn_confirm: 'Potvrdzujem', btn_dispute: 'Nesúhlasím', dispute_title: 'Nesúhlasím so sumou', dispute_label: 'Komentár (nepovinné)',
+      dispute_hint: 'Irina uvidí váš komentár.', send: 'Odoslať', by_contractor: 'zadal remeselník', by_studio: 'zadalo štúdio',
+      in_app: 'V aplikácii: {x}', contract: 'Zmluva', paid: 'Zaplatené', left: 'Zostáva', overpaid: 'Preplatok',
+      history: 'História platieb', for_contract: 'dizajnový projekt', for_service: 'služba „{x}“', for_order: 'tovar „{x}“', no_payments: 'Zatiaľ žiadne platby.',
+      monthly: 'Mesačne', once: 'Jednorazovo', per_month: '{x} mesačne', from_date: 'od {d}', months_n: '{n} mes.', due_by: 'splatné do {d}',
+      c_paid: 'zaplatené', c_due: 'na úhradu', c_overdue: 'nezaplatené', c_upcoming: 'splatnosť {d}', partly: 'zaplatené {x}',
+      stopped: 'Ukončené {d}', prepaid: 'Zaplatené vopred: {x}', debt: 'Nezaplatené: {x}',
+      o_ordered: 'Objednaný', o_delivered: 'Dodaný — čaká na doplatok', o_done: 'Hotovo', o_cancelled: 'Zrušený',
+      qty: '{n} ks', planned: 'Plánované dodanie: {d}', delivered_on: 'Dodaný {d}', product_page: 'Stránka produktu',
+      rest: 'Zostáva doplatiť: {x}', fully_paid: 'Zaplatené v plnej výške',
+      docs_empty: 'Zatiaľ žiadne dokumenty. Štúdio ich pridá počas projektu.',
+      cat_measure: 'Zameranie', cat_brief: 'Dotazník', cat_before: 'Pred', cat_visual: 'Vizualizácie', cat_docs: 'Dokumentácia', cat_after: 'Po',
+      open: 'Otvoriť', close: 'Zavrieť', chat_empty: 'Tu je vaša konverzácia s Irinou. Napíšte otázku — odpovie tu aj v Telegrame.',
+      placeholder: 'Správa…', attach: 'Priložiť fotku alebo súbor', auto: 'automatický preklad', show_orig: 'originál', show_tr: 'preklad', you: 'Vy',
+      sending: 'Odosielam…', uploading: 'Nahrávam súbor…', too_big: 'Súbor má viac ako 20 MB', today: 'Dnes', yesterday: 'Včera',
+      settings: 'Nastavenia', language: 'Jazyk', text_size: 'Veľkosť textu', size_m: 'Normálny', size_l: 'Veľký', size_xl: 'Veľmi veľký', saved: 'Uložené',
+      client: 'Klient', clients: 'Klienti', address: 'Adresa', work_total: 'Cena prác spolu', fee: 'Odmena štúdia', fee_pct: '{p} % zo sumy',
+      fee_agreed: 'podľa dohody', given: 'Už odovzdané štúdiu', to_give: 'Zostáva odovzdať štúdiu', all_given: 'Vyúčtovanie so štúdiom je uzavreté',
+      add_stage: '＋ Zadať cenu prác', stage_title: 'Aká práca', stage_ph: 'Napr. elektroinštalácia, 1. etapa', date: 'Dátum', amount: 'Suma',
+      comment: 'Komentár', stage_hint: 'Štúdiu — {p} % zo sumy. Klient dostane správu a sumu potvrdí.', save: 'Uložiť',
+      delete: 'Vymazať', delete_q: 'Vymazať túto sumu?', edit: 'Upraviť', s_confirmed: '✓ Potvrdené klientom',
+      s_waiting: 'Čaká na potvrdenie klienta', s_disputed: '⚠️ Klient nesúhlasí', fees_given: 'Odovzdané štúdiu',
+      need_title: 'Napíšte, o akú prácu ide', need_amount: 'Zadajte sumu väčšiu ako nula', auto_names: 'Názvy sú preložené automaticky.',
+      new_stage: 'Cena prác', stages: 'Etapy prác', back_projects: 'Všetky projekty',
+    },
+    de: {
+      loading: 'Wird geladen…', open_from_bot: 'Öffnen Sie die App über „Mein Projekt“ im Bot von DUMSKAYA DESIGN.',
+      no_access: 'Die App ist noch nicht verfügbar. Bitte fragen Sie das Studio nach einem Einladungslink.', error: 'Laden fehlgeschlagen. Bitte prüfen Sie die Verbindung und versuchen Sie es erneut.',
+      retry: 'Erneut versuchen', projects: 'Meine Projekte', role_client: 'Kunde', role_contractor: 'Handwerker',
+      st_active: 'In Arbeit', st_paused: 'Pausiert', st_done: 'Abgeschlossen',
+      nav_home: 'Projekt', nav_pay: 'Zahlungen', nav_docs: 'Unterlagen', nav_chat: 'Chat', nav_work: 'Meine Arbeiten',
+      package: 'Paket „{x}“', to_pay: 'Noch zu zahlen', all_paid: 'Alles bezahlt', design: 'Designprojekt', services: 'Zusatzleistungen', goods: 'Möbel & Artikel',
+      next_pay: 'Nächste Zahlung', details: 'Details', confirm_needed: 'Bitte bestätigen Sie die Preise der Arbeiten', new_msgs: 'Neue Nachrichten im Chat',
+      open_chat: 'Chat öffnen', your_designer: 'Ihre Designerin', studio: 'Studio', write: 'Im Chat schreiben', call: 'Anrufen',
+      contractors: 'Handwerker', contractors_hint: 'Kontakte der Handwerker Ihres Projekts und die Preise ihrer Arbeiten.',
+      awaiting: 'Wartet auf Ihre Bestätigung', confirmed_by: 'Bestätigt von {name}, {date}', disputed: 'Sie sind mit dem Betrag nicht einverstanden',
+      btn_confirm: 'Ich bestätige', btn_dispute: 'Stimmt nicht', dispute_title: 'Betrag stimmt nicht', dispute_label: 'Kommentar (optional)',
+      dispute_hint: 'Irina sieht Ihren Kommentar.', send: 'Senden', by_contractor: 'vom Handwerker eingetragen', by_studio: 'vom Studio eingetragen',
+      in_app: 'In der App: {x}', contract: 'Vertrag', paid: 'Bezahlt', left: 'Offen', overpaid: 'Überzahlung',
+      history: 'Zahlungsverlauf', for_contract: 'Designprojekt', for_service: 'Leistung „{x}“', for_order: 'Artikel „{x}“', no_payments: 'Noch keine Zahlungen.',
+      monthly: 'Monatlich', once: 'Einmalig', per_month: '{x} pro Monat', from_date: 'ab {d}', months_n: '{n} Monate', due_by: 'zahlbar bis {d}',
+      c_paid: 'bezahlt', c_due: 'fällig', c_overdue: 'unbezahlt', c_upcoming: 'fällig am {d}', partly: '{x} bezahlt',
+      stopped: 'Beendet am {d}', prepaid: 'Im Voraus bezahlt: {x}', debt: 'Unbezahlt: {x}',
+      o_ordered: 'Bestellt', o_delivered: 'Geliefert — Restzahlung offen', o_done: 'Erledigt', o_cancelled: 'Storniert',
+      qty: '{n} Stk.', planned: 'Geplante Lieferung: {d}', delivered_on: 'Geliefert am {d}', product_page: 'Produktseite',
+      rest: 'Noch zu zahlen: {x}', fully_paid: 'Vollständig bezahlt',
+      docs_empty: 'Noch keine Unterlagen. Das Studio fügt sie im Laufe des Projekts hinzu.',
+      cat_measure: 'Aufmaß', cat_brief: 'Fragebogen', cat_before: 'Vorher', cat_visual: 'Visualisierungen', cat_docs: 'Dokumentation', cat_after: 'Nachher',
+      open: 'Öffnen', close: 'Schließen', chat_empty: 'Hier ist Ihr Chat mit Irina. Stellen Sie Ihre Frage — sie antwortet hier und in Telegram.',
+      placeholder: 'Nachricht…', attach: 'Foto oder Datei anhängen', auto: 'automatisch übersetzt', show_orig: 'Original', show_tr: 'Übersetzung', you: 'Sie',
+      sending: 'Wird gesendet…', uploading: 'Datei wird hochgeladen…', too_big: 'Die Datei ist größer als 20 MB', today: 'Heute', yesterday: 'Gestern',
+      settings: 'Einstellungen', language: 'Sprache', text_size: 'Schriftgröße', size_m: 'Normal', size_l: 'Groß', size_xl: 'Sehr groß', saved: 'Gespeichert',
+      client: 'Kunde', clients: 'Kunden', address: 'Adresse', work_total: 'Summe der Arbeiten', fee: 'Provision des Studios', fee_pct: '{p} % vom Betrag',
+      fee_agreed: 'nach Vereinbarung', given: 'Bereits an das Studio gezahlt', to_give: 'Noch an das Studio zu zahlen', all_given: 'Mit dem Studio abgerechnet',
+      add_stage: '＋ Preis der Arbeiten eintragen', stage_title: 'Welche Arbeit', stage_ph: 'Z. B. Elektrik, 1. Abschnitt', date: 'Datum', amount: 'Betrag',
+      comment: 'Kommentar', stage_hint: 'Provision des Studios: {p} % vom Betrag. Der Kunde erhält eine Nachricht und bestätigt den Betrag.', save: 'Speichern',
+      delete: 'Löschen', delete_q: 'Diesen Betrag löschen?', edit: 'Bearbeiten', s_confirmed: '✓ Vom Kunden bestätigt',
+      s_waiting: 'Wartet auf Bestätigung des Kunden', s_disputed: '⚠️ Der Kunde ist nicht einverstanden', fees_given: 'An das Studio gezahlt',
+      need_title: 'Bitte beschreiben Sie die Arbeit', need_amount: 'Bitte einen Betrag größer als null eingeben', auto_names: 'Bezeichnungen werden automatisch übersetzt.',
+      new_stage: 'Preis der Arbeiten', stages: 'Arbeitsabschnitte', back_projects: 'Alle Projekte',
+    },
+  };
+  let LANG = (() => { const c = ((tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) || navigator.language || 'en').slice(0, 2).toLowerCase();
+    return I18N[c] ? c : { cs: 'sk', be: 'ru' }[c] || 'en'; })();
+  function T(k, v) {
+    let s = (I18N[LANG] && I18N[LANG][k]) || I18N.en[k] || k;
+    if (v) for (const x in v) s = s.split('{' + x + '}').join(v[x]);
+    return s;
+  }
+
+  let ME = null, V = null, PID = null, tab = 'home', cat = null, CHAT = [], chatTimer = null, sending = false;
+  const sheets = [];
+
+  // ---------- оформление и размер текста ----------
+  function theme() {
+    const dark = tg && tg.colorScheme ? tg.colorScheme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    if (tg) { try { const bg = dark ? '#0d0d0d' : '#f9f9f7'; tg.setHeaderColor(bg); tg.setBackgroundColor(bg); } catch (e) {} }
+  }
+  function applySize(z) { if (!['m', 'l', 'xl'].includes(z)) return; document.documentElement.dataset.size = z; try { localStorage.setItem('portal-size', z); } catch (e) {} }
+  try { applySize(localStorage.getItem('portal-size')); } catch (e) {}
+  if (tg) {
+    tg.ready(); tg.expand(); tg.onEvent('themeChanged', theme);
+    try { if (tg.isVersionAtLeast && tg.isVersionAtLeast('7.7')) tg.disableVerticalSwipes(); } catch (e) {}
+  }
+  theme();
+
+  // ---------- мелочи ----------
+  const el = (tag, attrs, ...kids) => {
+    if (attrs && (attrs.nodeType || Array.isArray(attrs))) { kids.unshift(attrs); attrs = null; }
+    const n = document.createElement(tag);
+    if (typeof attrs === 'string') n.className = attrs;
+    else if (attrs) for (const k in attrs) {
+      if (k === 'class') n.className = attrs[k];
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), attrs[k]);
+      else if (attrs[k] !== null && attrs[k] !== undefined && attrs[k] !== false) n.setAttribute(k, attrs[k] === true ? '' : attrs[k]);
+    }
+    for (const kid of kids.flat()) if (kid !== null && kid !== undefined && kid !== false) n.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+    return n;
+  };
+  const loc = () => LOCALE[LANG] || 'en-GB';
+  function money(x, cur) {
+    const v = Math.round((x || 0) * 100) / 100;
+    try { return new Intl.NumberFormat(loc(), { style: 'currency', currency: cur || 'EUR', currencyDisplay: 'narrowSymbol', minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 }).format(v); }
+    catch (e) { return v + ' ' + (cur || 'EUR'); }
+  }
+  const pd = (s) => { const [y, m, d] = String(s).slice(0, 10).split('-').map(Number); return new Date(y, m - 1, d); };
+  const dfmt = (s, short) => { if (!s) return ''; const d = pd(s); const same = d.getFullYear() === new Date().getFullYear();
+    return new Intl.DateTimeFormat(loc(), short && same ? { day: 'numeric', month: 'long' } : { day: 'numeric', month: 'long', year: 'numeric' }).format(d); };
+  const hm = (d) => String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
+  const digits = (s) => (s || '').replace(/[^\d+]/g, '');
+  function toast(text) {
+    const t = el('div', 'toast', text); document.body.append(t);
+    if (tg && tg.HapticFeedback) try { tg.HapticFeedback.notificationOccurred('success'); } catch (e) {}
+    setTimeout(() => t.remove(), 2400);
+  }
+  function confirmBox(text) {
+    return new Promise((ok) => { if (tg && tg.showConfirm) { try { return tg.showConfirm(text, ok); } catch (e) {} } ok(window.confirm(text)); });
+  }
+  async function api(path, opts) {
+    const o = opts || {};
+    const headers = { 'X-Telegram-Init-Data': INIT };
+    if (o.json) headers['Content-Type'] = 'application/json';
+    Object.assign(headers, o.headers || {});
+    const r = await fetch(path, { method: o.method || (o.json || o.body ? 'POST' : 'GET'), headers, body: o.json ? JSON.stringify(o.json) : o.body, cache: 'no-store' });
+    let data = null; try { data = await r.json(); } catch (e) {}
+    if (!r.ok) { const err = new Error((data && data.error) || T('error')); err.status = r.status; err.code = data && data.error; throw err; }
+    return data;
+  }
+  const absUrl = (u) => new URL(u, location.href).href;
+  function openLink(u) { if (tg && tg.openLink) tg.openLink(absUrl(u)); else window.open(u, '_blank'); }
+  function mailLink(to) {                 // из Telegram mailto: открывается не везде — через страницу, она откроет «Почту»
+    if (tg && tg.initData) return openLink('/api/crm/mail#' + new URLSearchParams({ to, s: 'DUMSKAYA DESIGN', b: '', l: LANG }).toString());
+    location.href = 'mailto:' + to;
+  }
+  function contactButtons(p) {
+    const out = [], ph = digits(p.phone), m = (p.messenger || '').trim();
+    if (ph) out.push(el('a', { class: 'icon-btn', href: 'tel:' + ph, title: T('call'), 'aria-label': T('call') }, '📞'));
+    if (ph && (p.contact_pref === 'WhatsApp' || !p.contact_pref)) out.push(el('button', { class: 'icon-btn', type: 'button', title: 'WhatsApp', 'aria-label': 'WhatsApp', onclick: () => openLink('https://wa.me/' + ph.replace('+', '')) }, '🟢'));
+    if (m.startsWith('@') || p.contact_pref === 'Telegram') out.push(el('button', { class: 'icon-btn', type: 'button', title: 'Telegram', 'aria-label': 'Telegram',
+      onclick: () => openLink(m.startsWith('@') ? 'https://t.me/' + m.slice(1) : 'https://t.me/' + (ph || m).replace(/^\+?/, '+')) }, '✈︎'));
+    if (p.contact_pref === 'Viber' && ph) out.push(el('a', { class: 'icon-btn', href: 'viber://chat?number=' + encodeURIComponent(ph), title: 'Viber' }, '🟣'));
+    if (p.email) out.push(el('button', { class: 'icon-btn', type: 'button', title: p.email, 'aria-label': 'E-mail', onclick: () => mailLink(p.email) }, '✉️'));
+    return out;
+  }
+  const statusName = (s) => T('st_' + s) || s;
+  const isClient = () => V && V.role === 'client';
+
+  // ---------- навигация ----------
+  function setNav() {
+    const nav = document.getElementById('nav'), inn = nav.querySelector('.in');
+    if (!V) { nav.hidden = true; document.body.classList.add('no-nav'); return; }
+    const items = isClient() ? [['home', '🏠', T('nav_home')], ['pay', '💶', T('nav_pay')], ['docs', '📄', T('nav_docs')], ['chat', '💬', T('nav_chat')]]
+      : [['home', '🏠', T('nav_home')], ['work', '🧾', T('nav_work')], ['docs', '📄', T('nav_docs')]];
+    inn.replaceChildren(...items.map(([k, ic, name]) => {
+      const n = k === 'chat' && V.chat ? V.chat.unread || 0 : 0;
+      return el('button', { type: 'button', 'aria-current': String(tab === k ? 'page' : 'false'), onclick: () => go(k) },
+        el('span', null, ic), el('em', null, name), n ? el('b', 'dot', n > 99 ? '99+' : String(n)) : null);
+    }));
+    nav.hidden = false; document.body.classList.remove('no-nav');
+  }
+  function go(t) { tab = t; render(); window.scrollTo(0, 0); }
+  function backBtn() {
+    if (!tg || !tg.BackButton) return;
+    if (sheets.length || document.querySelector('.viewer') || (V && ME && ME.projects.length > 1 && !PREVIEW)) tg.BackButton.show(); else tg.BackButton.hide();
+  }
+  if (tg && tg.BackButton) tg.BackButton.onClick(() => {
+    const v = document.querySelector('.viewer');
+    if (v) { v.remove(); return backBtn(); }
+    if (sheets.length) return closeSheet(sheets[sheets.length - 1].el);
+    if (V && ME && ME.projects.length > 1 && !PREVIEW) { V = null; PID = null; stopChat(); render(); }
+  });
+
+  // ---------- загрузка ----------
+  async function openProject(id, as, startTab) {
+    app.classList.add('loading');
+    try {
+      const q = new URLSearchParams({ id });
+      if (PREVIEW) { q.set('preview', PREVIEW); if (Q.get('link')) q.set('link', Q.get('link')); q.set('lang', LANG); }
+      if (as) q.set('as', as);
+      V = await api('/api/portal/project?' + q.toString());
+      PID = Number(id); cat = null;
+      tab = startTab && (isClient() ? ['home', 'pay', 'docs', 'chat'] : ['home', 'work', 'docs']).includes(startTab) ? startTab : (tab && tab !== 'list' ? tab : 'home');
+      if (!isClient() && (tab === 'pay' || tab === 'chat')) tab = 'home';
+      if (isClient() && tab === 'work') tab = 'home';
+      render(); window.scrollTo(0, 0);
+    } catch (e) { fail(e); }
+    finally { app.classList.remove('loading'); }
+  }
+  async function reload() {
+    const q = new URLSearchParams({ id: PID });
+    if (PREVIEW) { q.set('preview', PREVIEW); if (Q.get('link')) q.set('link', Q.get('link')); q.set('lang', LANG); }
+    if (V && V.role === 'contractor' && V.both) q.set('as', 'contractor');
+    try { V = await api('/api/portal/project?' + q.toString()); } catch (e) {}
+    render();
+  }
+  function fail(e) {
+    V = null; setNav();
+    const msg = e && e.status === 403 ? T('no_access') : T('error');
+    app.replaceChildren(el('div', 'card', el('p', null, msg), e && e.status === 403 ? null : el('button', { class: 'btn wide', type: 'button', onclick: () => start() }, T('retry'))));
+  }
+
+  function render() {
+    stopChat();
+    setNav(); backBtn();
+    app.replaceChildren();
+    if (PREVIEW) app.append(previewBanner());
+    if (!V) return projectsView();
+    if (tab === 'pay' && isClient()) return payView();
+    if (tab === 'docs') return docsView();
+    if (tab === 'chat' && isClient()) return chatView();
+    if (tab === 'work' && !isClient()) return workView();
+    return isClient() ? homeClient() : homeContractor();
+  }
+  function topBar() {
+    const back = ME && ME.projects.length > 1 && !PREVIEW
+      ? el('button', { class: 'btn small', type: 'button', onclick: () => { V = null; PID = null; render(); } }, '← ' + T('back_projects')) : null;
+    return el('div', 'top', back, el('span', 'grow', ''), el('button', { class: 'icon-btn', type: 'button', title: T('settings'), 'aria-label': T('settings'), onclick: settingsSheet }, '⚙︎'));
+  }
+  function previewBanner() {                          // дизайнер студии: так видит заказчик или подрядчик (по-русски — это для Ирины)
+    const langs = el('div', 'chips', ...LANGS.map(([k]) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(LANG === k),
+      onclick: () => { LANG = k; PID ? openProject(PID, null, tab) : render(); } }, k.toUpperCase())));
+    return el('div', 'banner', el('b', null, PREVIEW === 'contractor' ? '👁 Так видит подрядчик' : '👁 Так видит заказчик'),
+      el('div', 'small', 'Здесь ничего не меняется и не отправляется. Язык — как у него:'), langs,
+      el('button', { class: 'btn small', type: 'button', onclick: () => { location.href = '/api/crm/app' + (PID ? '?project=' + PID : ''); } }, '← В «Студию»'));
+  }
+
+  // ---------- список проектов ----------
+  function projectsView() {
+    if (!ME) return;
+    app.append(topBar(), el('h1', null, T('projects')));
+    ME.projects.forEach((p) => app.append(el('button', { class: 'pcard', type: 'button', onclick: () => openProject(p.id, p.roles.includes('client') ? 'client' : 'contractor') },
+      el('div', 'row between', el('span', 'small muted', p.roles.map((r) => T('role_' + r)).join(' · ')), el('span', 'status ' + (p.status === 'done' ? 'ok' : 'info'), statusName(p.status))),
+      el('div', 'title', p.title), el('div', 'sub', [p.city, p.number ? '№ ' + p.number : ''].filter(Boolean).join(' · ') || ' '),
+      p.unread ? el('div', { class: 'small', style: 'margin-top:6px;color:var(--series);font-weight:650' }, '💬 ' + T('new_msgs') + ': ' + p.unread) : null)));
+  }
+
+  // ---------- заказчик: проект ----------
+  function headCard() {
+    const p = V.project;
+    return el('section', 'card',
+      el('div', 'row between', el('span', 'small muted num', p.number ? '№ ' + p.number : ''), el('span', 'status ' + (p.status === 'done' ? 'ok' : 'info'), statusName(p.status))),
+      el('h1', { style: 'margin:6px 0 4px' }, p.title),
+      el('div', 'sub', [[p.city, p.country].filter(Boolean).join(', '), p.area ? (Math.round(p.area * 10) / 10).toLocaleString(loc()) + ' m²' : '',
+        p.tariff && isClient() ? T('package', { x: p.tariff }) : ''].filter(Boolean).join(' · ')),
+      !isClient() && p.address ? el('div', { class: 'sub', style: 'margin-top:4px' }, '📍 ' + p.address) : null);
+  }
+  function nextPayment() {
+    let best = null;
+    (V.services || []).forEach((s) => {
+      (s.charges || []).forEach((c) => { if (c.status !== 'paid' && (!best || c.due < best.due)) best = { due: c.due, amount: c.amount - c.paid, title: s.title }; });
+      if (s.next && (!best || s.next.due < best.due)) best = { due: s.next.due, amount: s.next.amount, title: s.title };
+    });
+    return best;
+  }
+  function homeClient() {
+    app.append(topBar(), headCard());
+    const m = V.money;
+    const pay = el('section', 'card');
+    if (m.total_debt > 0.005) {
+      pay.append(el('div', 'muted', T('to_pay')), el('div', 'hero num owe', money(m.total_debt)));
+      const dl = el('dl', 'sum num');
+      if (m.balance > 0.005) dl.append(el('dt', null, T('design')), el('dd', null, money(m.balance)));
+      if (m.services_debt > 0.005) dl.append(el('dt', null, T('services')), el('dd', null, money(m.services_debt)));
+      if (m.orders_rest > 0.005) dl.append(el('dt', null, T('goods')), el('dd', null, money(m.orders_rest)));
+      pay.append(dl);
+    } else pay.append(el('div', { class: 'hero good', style: 'font-size:calc(26px * var(--k))' }, '✓ ' + T('all_paid')));
+    const nx = nextPayment();
+    if (nx) pay.append(el('p', { class: 'small', style: 'margin:12px 0 0' }, el('b', null, T('next_pay') + ': '), nx.title + ' — ' + money(nx.amount) + ', ' + dfmt(nx.due, true)));
+    pay.append(el('button', { class: 'btn wide', type: 'button', style: 'margin-top:12px', onclick: () => go('pay') }, T('details') + ' →'));
+    app.append(pay);
+    const waiting = [];
+    (V.contractors || []).forEach((k) => k.stages.forEach((s) => { if (!s.confirmed && !s.disputed) waiting.push(s); }));
+    if (waiting.length && !PREVIEW) app.append(el('button', { class: 'pcard', type: 'button', style: 'border-color:var(--warn)',
+      onclick: () => { const x = document.getElementById('sec-contractors'); if (x) x.scrollIntoView({ behavior: 'smooth' }); } },
+      el('div', { class: 'title', style: 'color:var(--warn)' }, '🧾 ' + T('confirm_needed') + ' · ' + waiting.length)));
+    if (V.chat && V.chat.unread) app.append(el('button', { class: 'pcard', type: 'button', style: 'border-color:var(--series)', onclick: () => go('chat') },
+      el('div', { class: 'title', style: 'color:var(--series)' }, '💬 ' + T('new_msgs') + ' · ' + V.chat.unread)));
+    if ((V.contractors || []).length) {
+      const k = el('section', { class: 'card', id: 'sec-contractors' }, el('h2', null, T('contractors')), el('p', { class: 'small muted', style: 'margin:-4px 0 6px' }, T('contractors_hint')));
+      const ul = el('ul', 'list');
+      V.contractors.forEach((c) => ul.append(contractorItem(c)));
+      k.append(ul); app.append(k);
+    }
+    app.append(studioCard());
+    const others = (V.people || []).map((x) => x.name);
+    if (others.length > 1) app.append(el('p', { class: 'small muted', style: 'text-align:center' }, T('in_app', { x: others.join(', ') })));
+    if (!(LANG === 'ru' || LANG === 'uk')) app.append(el('p', { class: 'small muted', style: 'text-align:center' }, T('auto_names')));
+  }
+  function contractorItem(c) {
+    const li = el('li');
+    li.append(el('div', 'person', el('b', null, c.name), el('span', 'sub', [c.trade, c.company].filter(Boolean).join(' · '))),
+      el('div', 'contacts', ...contactButtons(c)));
+    c.stages.forEach((s) => {
+      const box = el('div', 'stage');
+      box.append(el('div', 'line', el('b', null, s.title || '—'), el('span', 'amt num', money(s.amount, s.currency))),
+        el('div', 'sub', [dfmt(s.day, true), s.src === 'contractor' ? T('by_contractor') : T('by_studio')].filter(Boolean).join(' · ')));
+      if (s.confirmed) box.append(el('div', { class: 'small good', style: 'margin-top:6px' }, '✓ ' + T('confirmed_by', { name: s.confirmed_by || '', date: dfmt(s.confirmed, true) })));
+      else if (s.disputed) box.append(el('div', { class: 'small owe', style: 'margin-top:6px' }, '⚠️ ' + T('disputed') + (s.dispute_note ? ': «' + s.dispute_note + '»' : '')));
+      else {
+        box.append(el('div', { class: 'small owe', style: 'margin-top:6px;font-weight:650' }, T('awaiting')));
+        if (!PREVIEW) box.append(el('div', 'acts',
+          el('button', { class: 'btn primary', type: 'button', onclick: () => stageAct(s, 'confirm') }, '✓ ' + T('btn_confirm')),
+          el('button', { class: 'btn', type: 'button', onclick: () => disputeSheet(s) }, T('btn_dispute'))));
+      }
+      if (s.disputed && !PREVIEW) box.append(el('div', 'acts', el('button', { class: 'btn', type: 'button', onclick: () => stageAct(s, 'confirm') }, '✓ ' + T('btn_confirm'))));
+      li.append(box);
+    });
+    return li;
+  }
+  async function stageAct(s, action, note) {
+    try { V = await api('/api/portal/stage', { json: { action, id: s.id, note: note || '' } }); toast(T('saved')); render(); }
+    catch (e) { toast(e.message); }
+  }
+  function disputeSheet(s) {
+    const t = el('textarea', { placeholder: '' });
+    sheet(T('dispute_title'), el('div', el('p', 'muted', (s.title || '—') + ' — ' + money(s.amount, s.currency)), field(T('dispute_label'), t, T('dispute_hint'))),
+      async () => { await stageAct(s, 'dispute', t.value); }, T('send'));
+  }
+  function studioCard() {
+    const st = V.studio || {}, name = (st.designer && st.designer[LANG]) || st.designer_latin || '';
+    return el('section', 'card', el('div', 'small muted', T('your_designer') + ' · DUMSKAYA DESIGN'),
+      el('div', 'person', el('b', null, name)),
+      el('div', 'contacts', ...contactButtons({ phone: st.phone, email: st.email, contact_pref: 'WhatsApp' }),
+        isClient() && !PREVIEW ? el('button', { class: 'btn primary grow', type: 'button', onclick: () => go('chat') }, '💬 ' + T('write')) : null),
+      el('div', { class: 'small muted', style: 'margin-top:8px' }, [st.phone, st.email].filter(Boolean).join(' · ')));
+  }
+
+  // ---------- заказчик: оплаты ----------
+  function payView() {
+    app.append(topBar(), el('h1', null, T('nav_pay')));
+    const m = V.money, p = V.project;
+    const c = el('section', 'card', el('h2', { style: 'margin-bottom:2px' }, T('design')), p.tariff ? el('div', { class: 'sub', style: 'margin-bottom:10px' }, T('package', { x: p.tariff })) : null);
+    c.append(el('dl', 'sum num', el('dt', null, T('contract')), el('dd', null, money(m.contract)), el('dt', null, T('paid')), el('dd', null, money(m.paid)),
+      el('dt', null, m.balance < -0.005 ? T('overpaid') : T('left')), el('dd', { class: m.balance > 0.005 ? 'owe' : 'good' }, money(Math.abs(m.balance)))));
+    if (m.contract > 0) { const bar = el('div', 'bar'); bar.append(el('i', { style: 'width:' + Math.min(100, m.paid / m.contract * 100) + '%' })); c.append(bar); }
+    app.append(c);
+    if ((V.services || []).length) {
+      const s = el('section', 'card', el('h2', null, T('services')));
+      const ul = el('ul', 'list');
+      V.services.forEach((x) => ul.append(serviceItem(x)));
+      s.append(ul); app.append(s);
+    }
+    if ((V.orders || []).length) {
+      const s = el('section', 'card', el('h2', null, T('goods')));
+      const ul = el('ul', 'list');
+      V.orders.forEach((x) => ul.append(orderItem(x)));
+      s.append(ul); app.append(s);
+    }
+    const h = el('section', 'card', el('h2', null, T('history')));
+    if (!V.payments.length) h.append(el('p', 'muted', T('no_payments')));
+    else {
+      const ul = el('ul', 'list');
+      V.payments.forEach((x) => ul.append(el('li', null, el('div', 'line', el('span', null, dfmt(x.day)), el('span', 'amt num good', money(x.amount, x.currency))),
+        el('div', 'sub', x.for === 'contract' ? T('for_contract') : T(x.for === 'order' ? 'for_order' : 'for_service', { x: x.title })))));
+      h.append(ul);
+    }
+    app.append(h);
+  }
+  function serviceItem(s) {
+    const li = el('li');
+    const kind = s.kind === 'monthly' ? T('monthly') + ' · ' + T('per_month', { x: money(s.amount) }) + ' · ' + T('from_date', { d: dfmt(s.start, true) }) + (s.months ? ' · ' + T('months_n', { n: s.months }) : '')
+      : T('once') + ' · ' + T('due_by', { d: dfmt(s.start, true) });
+    li.append(el('div', 'line', el('b', null, s.title), s.kind === 'once' ? el('span', 'amt num', money(s.amount)) : null), el('div', 'sub', kind));
+    if (s.stopped) li.append(el('div', 'sub', T('stopped', { d: dfmt(s.stopped, true) })));
+    const ch = el('ul', 'charges');
+    if (s.kind === 'once') (s.charges || []).forEach((c) => { if (c.status === 'paid') li.append(el('div', { class: 'small good', style: 'margin-top:6px' }, '✓ ' + T('c_paid'))); });
+    else (s.charges || []).slice(-6).forEach((c) => {
+      const lab = c.status === 'paid' ? el('span', 'good', '✓ ' + T('c_paid')) : c.status === 'upcoming' ? el('span', 'muted', T('c_upcoming', { d: dfmt(c.due, true) }))
+        : el('span', c.status === 'overdue' ? 'owe' : '', (c.status === 'overdue' ? T('c_overdue') : T('c_due')) + (c.paid ? ' · ' + T('partly', { x: money(c.paid) }) : ''));
+      ch.append(el('li', null, el('span', 'num', s.kind === 'monthly' ? dfmt(c.due, true) + ' — ' + money(c.amount) : money(c.amount)), lab));
+    });
+    if (s.next) ch.append(el('li', null, el('span', 'num muted', dfmt(s.next.due, true) + ' — ' + money(s.next.amount)), el('span', 'muted', T('next_pay'))));
+    if (ch.children.length) li.append(ch);
+    if (s.debt > 0.005) li.append(el('div', { class: 'small owe', style: 'margin-top:6px;font-weight:650' }, T('debt', { x: money(s.debt) })));
+    else if (s.prepaid > 0.005) li.append(el('div', { class: 'small good', style: 'margin-top:6px' }, T('prepaid', { x: money(s.prepaid) })));
+    return li;
+  }
+  function orderItem(o) {
+    const li = el('li');
+    const ph = o.photo ? el('img', { class: 'ph', src: o.photo, alt: '', loading: 'lazy' }) : el('div', 'ph none', '🛋');
+    if (o.photo) ph.addEventListener('error', () => ph.replaceWith(el('div', 'ph none', '🛋')));
+    const cls = { ordered: 'info', delivered: 'wait', done: 'ok', cancelled: '' }[o.status];
+    const right = el('div', null,
+      el('div', null, el('b', { style: 'font-size:calc(17px * var(--k));overflow-wrap:anywhere' }, o.title)),
+      el('div', 'sub', [o.code, o.qty ? T('qty', { n: (Math.round(o.qty * 100) / 100).toLocaleString(loc()) }) : ''].filter(Boolean).join(' · ')),
+      el('div', { style: 'margin:6px 0' }, el('span', 'status ' + cls, T('o_' + o.status))),
+      el('div', 'line', el('span', 'muted', T('paid')), el('span', 'amt num', money(o.paid, o.currency) + ' / ' + money(o.price, o.currency))),
+      o.rest > 0.005 && o.status !== 'cancelled' ? el('div', { class: 'small owe', style: 'font-weight:650' }, T('rest', { x: money(o.rest, o.currency) }))
+        : o.status !== 'cancelled' ? el('div', 'small good', '✓ ' + T('fully_paid')) : null,
+      o.delivered ? el('div', 'sub', '🚚 ' + T('delivered_on', { d: dfmt(o.delivered, true) })) : o.planned ? el('div', 'sub', '🚚 ' + T('planned', { d: dfmt(o.planned, true) })) : null,
+      o.note_client ? el('div', { class: 'sub', style: 'margin-top:4px' }, o.note_client) : null,
+      o.url ? el('button', { class: 'btn small', type: 'button', style: 'margin-top:8px', onclick: () => openLink(o.url) }, '↗ ' + T('product_page')) : null);
+    li.append(el('div', 'order', ph, right));
+    return li;
+  }
+
+  // ---------- документы ----------
+  function docsView() {
+    app.append(topBar(), el('h1', null, T('nav_docs')));
+    const files = V.files || [];
+    const cats = (V.cats || []).filter((c) => files.some((f) => f.category === c));
+    if (!cats.length) { app.append(el('div', 'card empty', T('docs_empty'))); return; }
+    if (!cats.includes(cat)) cat = cats.includes('visual') ? 'visual' : cats[0];
+    app.append(el('div', 'chips', ...cats.map((c) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(cat === c), onclick: () => { cat = c; render(); } },
+      T('cat_' + c) + ' · ' + files.filter((f) => f.category === c).length))));
+    const list = files.filter((f) => f.category === cat);
+    const g = el('div', 'gallery');
+    list.forEach((f) => g.append(fileTile(f, list)));
+    app.append(el('section', 'card', g));
+  }
+  function fileTile(f, list) {
+    const doc = () => el('button', { class: 'doc', type: 'button', onclick: () => viewer(f) },
+      el('span', 'ext', ((f.name || '').split('.').pop() || '').slice(0, 5).toUpperCase()), el('span', 'nm', f.name), el('span', 'muted', ''));
+    if (f.image && (f.thumb_url || f.url)) {
+      const b = el('button', { class: 'thumb', type: 'button', 'aria-label': f.name, onclick: () => viewer(f) });
+      const img = el('img', { src: f.thumb_url || f.url, alt: f.name, loading: 'lazy' });
+      img.addEventListener('error', () => b.replaceWith(doc()));
+      b.append(img); return b;
+    }
+    return doc();
+  }
+  function viewer(f) {
+    const v = el('div', 'viewer');
+    const box = el('div', 'img');
+    if (f.image && f.url) { const pic = el('img', { src: f.url, alt: f.name }); box.append(pic); }
+    else box.append(el('div', { style: 'color:#fff;text-align:center' }, el('div', { style: 'font-size:calc(48px * var(--k))' }, '📄'), f.name));
+    v.append(el('div', 'cap', f.name), box, el('div', 'bar2',
+      f.url ? el('button', { class: 'btn small', type: 'button', onclick: () => openLink(f.url) }, '↗ ' + T('open')) : null,
+      el('button', { class: 'btn small', type: 'button', onclick: () => { v.remove(); backBtn(); } }, T('close'))));
+    document.body.append(v); backBtn();
+  }
+
+  // ---------- переписка ----------
+  function stopChat() { if (chatTimer) { clearInterval(chatTimer); chatTimer = null; } document.body.classList.remove('typing'); }
+  async function loadChat(after) {
+    const q = new URLSearchParams({ project: PID, after: after || 0 });
+    if (PREVIEW) q.set('preview', '1');
+    const r = await api('/api/portal/chat?' + q.toString());
+    return r.messages || [];
+  }
+  function chatView() {
+    app.append(topBar(), el('h1', null, T('nav_chat')));
+    const box = el('div', 'chat'); app.append(box);
+    const draw = () => {
+      box.replaceChildren();
+      if (!CHAT.length) box.append(el('div', 'card empty', T('chat_empty')));
+      let lastDay = '';
+      CHAT.forEach((m) => {
+        const d = new Date(m.created), day = d.toDateString();
+        if (day !== lastDay) {
+          lastDay = day; const y = new Date(); y.setDate(y.getDate() - 1);
+          box.append(el('div', 'day', day === new Date().toDateString() ? T('today') : day === y.toDateString() ? T('yesterday') : dfmt(m.created.slice(0, 10), true)));
+        }
+        box.append(bubble(m, d));
+      });
+    };
+    const scrollDown = () => window.scrollTo(0, document.body.scrollHeight);
+    if (!PREVIEW) {
+      const ta = el('textarea', { rows: 1, placeholder: T('placeholder'), 'aria-label': T('placeholder') });
+      const file = el('input', { type: 'file', accept: 'image/*,application/pdf', style: 'display:none' });
+      const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, window.innerHeight * 0.4) + 'px'; };
+      ta.addEventListener('input', grow);
+      ta.addEventListener('focus', () => document.body.classList.add('typing'));
+      ta.addEventListener('blur', () => setTimeout(() => document.body.classList.remove('typing'), 150));
+      const send = async (fileId) => {
+        const text = ta.value.trim();
+        if ((!text && !fileId) || sending) return;
+        sending = true;
+        try { await api('/api/portal/chat', { json: { project_id: PID, text, file_id: fileId || null } }); ta.value = ''; grow(); }
+        catch (e) { toast(e.message); }
+        finally { sending = false; }
+        await refreshChat(true);
+      };
+      file.addEventListener('change', async () => {
+        const f = file.files[0]; file.value = '';
+        if (!f) return;
+        if (f.size > 20 * 1024 * 1024) return toast(T('too_big'));
+        const t = el('div', 'toast', T('uploading')); document.body.append(t);
+        try {
+          const r = await api('/api/portal/upload?project=' + PID + '&name=' + encodeURIComponent(f.name || 'file'), { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
+          t.remove(); await send(r.id);
+        } catch (e) { t.remove(); toast(e.code === 'file_too_big' ? T('too_big') : e.message); }
+      });
+      app.append(el('div', 'composer', el('button', { class: 'icon-btn', type: 'button', title: T('attach'), 'aria-label': T('attach'), onclick: () => file.click() }, '📎'), ta, file,
+        el('button', { class: 'icon-btn send', type: 'button', title: T('send'), 'aria-label': T('send'), onclick: () => send() }, '➤')));
+    }
+    async function refreshChat(scroll) {
+      try {
+        const after = CHAT.length ? CHAT[CHAT.length - 1].id : 0;
+        const fresh = await loadChat(after);
+        if (fresh.length || !after) {
+          const near = window.innerHeight + window.scrollY > document.body.scrollHeight - 160;
+          CHAT = after ? CHAT.concat(fresh) : fresh;
+          if (V.chat) V.chat.unread = 0;
+          draw(); setNav();
+          if (scroll || near || !after) scrollDown();
+        }
+      } catch (e) { if (!CHAT.length) box.replaceChildren(el('p', 'err', e.message)); }
+    }
+    CHAT = []; draw(); refreshChat(true);
+    chatTimer = setInterval(() => { if (!document.hidden && tab === 'chat') refreshChat(false); }, 8000);
+  }
+  function bubble(m, d) {
+    const mine = m.mine;
+    const b = el('div', 'msg' + (mine ? ' mine' : ''));
+    if (!mine) b.append(el('span', 'who', m.author_kind === 'studio' ? ((V.studio.designer && V.studio.designer[LANG]) || V.studio.designer_latin) : m.author_name));
+    if (m.file) {
+      const f = m.file;
+      if (f.image && (f.thumb_url || f.url)) { const img = el('img', { src: f.thumb_url || f.url, alt: f.name, loading: 'lazy', onclick: () => viewer(f) }); b.append(img); }
+      else b.append(el('span', { class: 'file', onclick: () => viewer(f) }, '📄 ' + f.name), document.createElement('br'));
+    }
+    let showOrig = false;
+    const textBox = el('span');
+    const drawText = () => {
+      textBox.replaceChildren(m.tr && !showOrig ? m.tr : m.text);
+      if (m.tr) textBox.append(el('span', 'meta', el('button', { class: 'tr', type: 'button', onclick: () => { showOrig = !showOrig; drawText(); } },
+        showOrig ? T('show_tr') : T('auto') + ' · ' + T('show_orig'))));
+    };
+    if (m.text) { drawText(); b.append(textBox); }
+    b.append(el('span', 'meta', hm(d)));
+    return b;
+  }
+
+  // ---------- подрядчик: проект ----------
+  function homeContractor() {
+    app.append(topBar(), headCard());
+    const c = el('section', 'card', el('h2', null, (V.clients || []).length > 1 ? T('clients') : T('client')));
+    const ul = el('ul', 'list');
+    (V.clients || []).forEach((x) => ul.append(el('li', null, el('div', 'person', el('b', null, x.name),
+      el('span', 'sub', [x.phone, x.email].filter(Boolean).join(' · '))), el('div', 'contacts', ...contactButtons(x)))));
+    c.append(ul); app.append(c);
+    const sum = mineSummary();
+    if (sum) app.append(el('button', { class: 'pcard', type: 'button', onclick: () => go('work') }, el('div', 'small muted', T('nav_work')),
+      el('div', 'title num', sum), el('div', 'sub', T('details') + ' →')));
+    app.append(studioCard());
+    if (!(LANG === 'ru' || LANG === 'uk')) app.append(el('p', { class: 'small muted', style: 'text-align:center' }, T('auto_names')));
+  }
+  function mineSummary() {
+    const m = (V.mine || [])[0];
+    if (!m) return '';
+    return T('work_total') + ': ' + money(m.money.order, m.money.currency);
+  }
+  function workView() {
+    app.append(topBar(), el('h1', null, T('nav_work')));
+    (V.mine || []).forEach((k) => {
+      const m = k.money, cur = m.currency;
+      const card = el('section', 'card', el('h2', { style: 'margin-bottom:2px' }, k.trade || k.name), el('div', { class: 'sub', style: 'margin-bottom:10px' }, k.name));
+      const dl = el('dl', 'sum num', el('dt', null, T('work_total')), el('dd', null, money(m.order, cur)));
+      if (m.expected > 0) dl.append(el('dt', null, T('fee')), el('dd', null, money(m.expected, cur)));
+      dl.append(el('dt', null, T('given')), el('dd', null, money(m.received, cur)));
+      if (m.debt > 0.005) dl.append(el('dt', null, T('to_give')), el('dd', { class: 'owe' }, money(m.debt, cur)));
+      card.append(dl);
+      if (m.expected > 0 && m.debt <= 0.005) card.append(el('p', { class: 'small good', style: 'margin:8px 0 0' }, '✓ ' + T('all_given')));
+      app.append(card);
+      const st = el('section', 'card', el('h2', null, T('stages')));
+      if (!k.stages.length) st.append(el('p', 'muted', '—'));
+      k.stages.forEach((s) => {
+        const box = el('div', 'stage');
+        box.append(el('div', 'line', el('b', null, s.title || '—'), el('span', 'amt num', money(s.amount, s.currency))),
+          el('div', 'sub', [dfmt(s.day, true), s.commission == null ? T('fee') + ': ' + T('fee_agreed')
+            : T('fee') + ': ' + money(s.commission, s.currency) + (s.pct != null ? ' (' + T('fee_pct', { p: (Math.round(s.pct * 100) / 100).toLocaleString(loc()) }) + ')' : '')].join(' · ')));
+        if (s.received) box.append(el('div', 'sub', T('fees_given') + ': ' + money(s.received, cur)));
+        box.append(el('div', { class: 'small ' + (s.confirmed ? 'good' : s.disputed ? 'owe' : 'muted'), style: 'margin-top:6px;font-weight:600' },
+          s.confirmed ? T('s_confirmed') + (s.confirmed_by ? ' — ' + s.confirmed_by : '') : s.disputed ? T('s_disputed') + (s.dispute_note ? ': «' + s.dispute_note + '»' : '') : T('s_waiting')));
+        if (s.note) box.append(el('div', 'sub', s.note));
+        if (s.mine && !s.confirmed && !PREVIEW) box.append(el('div', 'acts',
+          el('button', { class: 'btn', type: 'button', onclick: () => stageSheet(k, s) }, T('edit')),
+          el('button', { class: 'btn danger', type: 'button', onclick: async () => {
+            if (!(await confirmBox(T('delete_q')))) return;
+            try { V = await api('/api/portal/stage', { json: { action: 'delete', id: s.id } }); toast(T('saved')); render(); } catch (e) { toast(e.message); }
+          } }, T('delete'))));
+        st.append(box);
+      });
+      if (!PREVIEW) st.append(el('button', { class: 'btn primary wide', type: 'button', style: 'margin-top:12px', onclick: () => stageSheet(k, null) }, T('add_stage')));
+      app.append(st);
+      if (k.bonuses.length) {
+        const b = el('section', 'card', el('h2', null, T('fees_given')));
+        const ul = el('ul', 'list');
+        k.bonuses.forEach((x) => ul.append(el('li', null, el('div', 'line', el('span', null, dfmt(x.day)), el('span', 'amt num', money(x.amount, x.currency))))));
+        b.append(ul); app.append(b);
+      }
+    });
+  }
+  function stageSheet(k, s) {
+    s = s || {};
+    const title = el('input', { value: s.title || '', placeholder: T('stage_ph') });
+    const day = el('input', { type: 'date', value: s.day || new Date().toISOString().slice(0, 10) });
+    const amount = el('input', { inputmode: 'decimal', value: s.amount ? String(s.amount).replace('.', LANG === 'en' ? '.' : ',') : '', placeholder: '0' });
+    const cur = el('select', { 'aria-label': 'Currency' }, ...['EUR', 'UAH', 'USD', 'PLN'].map((c) => el('option', { value: c, selected: c === (s.currency || k.money.currency || 'EUR') }, c)));
+    const note = el('textarea', { placeholder: '' }); note.value = s.note || '';
+    const pct = s.pct != null ? s.pct : V.default_pct;
+    const body = el('div', field(T('stage_title'), title), field(T('date'), day),
+      el('div', 'field', el('label', null, T('amount')), el('div', 'pair', amount, cur)), field(T('comment'), note),
+      el('p', 'small muted', T('stage_hint', { p: (Math.round(pct * 100) / 100).toLocaleString(loc()) })));
+    sheet(T('new_stage'), body, async () => {
+      const a = parseFloat(amount.value.replace(/[\s ]/g, '').replace(',', '.'));
+      if (!title.value.trim()) throw new Error(T('need_title'));
+      if (!(a > 0)) throw new Error(T('need_amount'));
+      V = await api('/api/portal/stage', { json: { action: 'save', id: s.id || null, project_id: PID, link_id: k.link_id, title: title.value, day: day.value,
+        amount: a, currency: cur.value, note: note.value } });
+      toast(T('saved')); render();
+    }, T('save'));
+  }
+
+  // ---------- формы ----------
+  const MB = tg && tg.MainButton && tg.isVersionAtLeast && tg.isVersionAtLeast('6.1') ? tg.MainButton : null;
+  function syncSheets() {
+    const top = sheets[sheets.length - 1];
+    if (MB) {
+      const css = getComputedStyle(document.documentElement);
+      try { if (top && top.run) MB.setParams({ text: top.label, color: css.getPropertyValue('--series').trim(), text_color: css.getPropertyValue('--on-series').trim(), is_active: true, is_visible: true }); else MB.hide(); } catch (e) {}
+    }
+    backBtn();
+  }
+  if (MB) MB.onClick(() => { const top = sheets[sheets.length - 1]; if (top && top.run) top.run(); });
+  function closeSheet(sh) { const i = sheets.findIndex((x) => x.el === sh); if (i >= 0) sheets.splice(i, 1); sh.remove(); syncSheets(); }
+  function sheet(title, body, onSave, saveLabel) {
+    const err = el('p', 'err', ''); err.hidden = true;
+    const sh = el('div', 'sheet'), inner = el('div', 'in');
+    inner.append(el('header', null, el('h2', null, title), el('button', { class: 'btn small', type: 'button', onclick: () => closeSheet(sh) }, T('close'))), err, body);
+    sh.append(inner);
+    const rec = { el: sh, label: saveLabel || T('save'), run: null };
+    let busy = false, btn = null;
+    if (onSave) rec.run = async () => {
+      if (busy) return; busy = true; err.hidden = true; if (btn) btn.disabled = true;
+      if (MB) try { MB.showProgress(false); } catch (e) {}
+      try { await onSave(); closeSheet(sh); }
+      catch (e) { err.textContent = e.message; err.hidden = false; sh.scrollTo(0, 0); }
+      finally { busy = false; if (btn) btn.disabled = false; if (MB) try { MB.hideProgress(); } catch (e) {} }
+    };
+    if (onSave && !MB) { btn = el('button', { class: 'btn primary', type: 'button', style: 'flex:1', onclick: () => rec.run() }, rec.label); sh.append(el('footer', null, el('div', 'in2', btn))); }
+    else inner.style.paddingBottom = 'calc(28px + var(--sab))';
+    document.body.append(sh); sheets.push(rec); syncSheets();
+    return sh;
+  }
+  const field = (label, input, hint) => el('div', 'field', el('label', null, label), input, hint ? el('div', 'hint', hint) : null);
+  function settingsSheet() {
+    const langSeg = el('div', 'seg five'), sizeSeg = el('div', 'seg');
+    const draw = () => {
+      langSeg.replaceChildren(...LANGS.map(([k, n]) => el('button', { type: 'button', 'aria-pressed': String(LANG === k), title: n, onclick: async () => {
+        LANG = k; draw(); if (!PREVIEW) { try { await api('/api/portal/ui', { json: { lang: k } }); } catch (e) {} }
+        closeSheets(); if (PID) await openProject(PID, V && V.role === 'contractor' && V.both ? 'contractor' : null, tab); else render(); } }, k.toUpperCase())));
+      sizeSeg.replaceChildren(...[['m', T('size_m')], ['l', T('size_l')], ['xl', T('size_xl')]].map(([k, n]) => el('button', { type: 'button',
+        'aria-pressed': String((document.documentElement.dataset.size || 'm') === k), onclick: async () => {
+          applySize(k); draw(); render(); syncSheets(); if (!PREVIEW) { try { await api('/api/portal/ui', { json: { size: k } }); } catch (e) {} } } }, n)));
+    };
+    draw();
+    sheet(T('settings'), el('div', el('div', 'field', el('span', 'lab', T('language')), langSeg, el('div', 'hint', (LANGS.find((x) => x[0] === LANG) || [])[1] || '')),
+      el('div', 'field', el('span', 'lab', T('text_size')), sizeSeg)));
+  }
+  function closeSheets() { sheets.splice(0).forEach((x) => x.el.remove()); syncSheets(); }
+
+  // ---------- старт ----------
+  async function start() {
+    if (!INIT) { app.replaceChildren(el('div', 'card muted', T('open_from_bot'))); return; }
+    app.replaceChildren(el('p', 'empty', T('loading')));
+    try { ME = await api('/api/portal/me'); }
+    catch (e) { return fail(e); }
+    if (!PREVIEW) LANG = ME.lang || LANG;
+    if (ME.size) applySize(ME.size);
+    document.documentElement.lang = LANG === 'uk' ? 'uk' : LANG;
+    const want = Number(Q.get('project') || 0);
+    if (PREVIEW && want) return openProject(want, null, Q.get('tab'));
+    const p = ME.projects.find((x) => x.id === want) || (ME.projects.length === 1 ? ME.projects[0] : null);
+    if (p) return openProject(p.id, p.roles.includes('client') ? 'client' : 'contractor', Q.get('tab'));
+    render();
+  }
+  start();
+})();
+</script>
+</body>
+</html>

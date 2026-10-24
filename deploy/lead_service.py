@@ -12,6 +12,8 @@
 не отвечает, разработчику в бот приходит сообщение — см. site_monitor.py.
 И статистика посетителей по журналу Caddy (site_stats.py): мини-приложение «Графики» в боте, утром — строка разработчику.
 И учёт проектов студии (crm.py, crm_api.py, страница crm_app.html — кнопка «Студия» в боте).
+И кабинет заказчика и подрядчика с перепиской (crm_portal.py, portal_api.py, portal_bot.py, страница portal_app.html —
+кнопка «Мой проект» в боте); напоминания об оплате доп. услуг — раз в минуту вместе с остальными фоновыми делами.
 Только стандартная библиотека Python 3, без установки пакетов.
 
 Настройки — переменные окружения (файл lead.env, его читает systemd):
@@ -75,7 +77,9 @@ from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exc
                         is_own, mark_own, me_data, record_hit, record_time, web)
 from translate import lang_from, provider, translate_lead  # noqa: E402
 import crm_api  # noqa: E402  учёт проектов студии: /api/crm/*
+import portal_api  # noqa: E402  кабинет заказчика и подрядчика, переписка: /api/portal/*
 from crm import Crm  # noqa: E402
+from crm_portal import Portal  # noqa: E402
 from fx import Rates  # noqa: E402
 
 BOT = None
@@ -173,7 +177,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path, _, query = self.path.partition("?")
-        if crm_api.handle_get(self, path.rstrip("/"), query):
+        if crm_api.handle_get(self, path.rstrip("/"), query) or portal_api.handle_get(self, path.rstrip("/"), query):
             return
         if path.rstrip("/") == "/api/stats/app":           # графики посетителей — мини-приложение Telegram
             try:
@@ -277,7 +281,7 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path, _, query = self.path.partition("?")
-        if crm_api.handle_post(self, path.rstrip("/"), query):
+        if crm_api.handle_post(self, path.rstrip("/"), query) or portal_api.handle_post(self, path.rstrip("/"), query):
             return
         if self.path.split("?")[0].rstrip("/") == "/api/hit":
             return self.hit()
@@ -369,6 +373,10 @@ def main():
             BOT.stats.hooks.append(BOT.crm.backup_if_due)   # каждый день — копия баз в ~/dumskaya/backups
             BOT.stats.hooks.append(BOT.crm_backup_reminder)  # копия на Маке старше недели — напомнить разработчику
             BOT.crm.import_leads(LEADS_FILE, log=log)         # заявки из файла, которых ещё нет в «Студии»
+            # кабинет заказчика и подрядчика («Мой проект»), переписка с заказчиками, напоминания об оплате услуг
+            crm_api.PORTAL = portal_api.PORTAL = BOT.portal = Portal(BOT.crm)
+            portal_api.CRM, portal_api.BOT, portal_api.CHECK, portal_api.TOKEN = BOT.crm, BOT, check_init_data, TG_TOKEN
+            BOT.stats.hooks.append(BOT.portal_reminders)
         except Exception as e:  # noqa: BLE001
             log(f"учёт проектов не запущен: {type(e).__name__}: {e}")
         BOT.start()
