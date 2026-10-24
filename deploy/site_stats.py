@@ -69,9 +69,10 @@ EXCLUDE_FILE = os.path.join(STATS_DIR, "exclude.json")   # «свои» адре
 OWN_FILE = os.path.join(STATS_DIR, "own_devices.json")    # откуда студия открывала «Графики» — эти визиты тоже свои
 OWN_WINDOW = 3 * 3600                                     # …за 3 часа до и после открытия
 VERSION_FILE = os.path.join(STATS_DIR, "version")
-STATS_VERSION = "5"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
+STATS_VERSION = "6"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
                               # (2: отсев сканеров; 3: время на сайте и роботы без оформления и времени;
-                              #  4: страница — не больше 5 минут; 5: роботы без оформления и заголовков — и в старых днях)
+                              #  4: страница — не больше 5 минут; 5: роботы без оформления и заголовков — и в старых днях;
+                              #  6: elmah.axd и подобные адреса ASP.NET — тоже сканеры)
 SECRET_FILE = os.path.join(STATS_DIR, "secret")           # соль для обезличенного ключа посетителя, с сервера не уходит
 REPORT_HOUR = 9
 APP_URL = os.environ.get("STATS_APP_URL", "https://dumskaya-design.com/api/stats/app")   # мини-приложение с графиками
@@ -83,8 +84,8 @@ MONTHS = ["января", "февраля", "марта", "апреля", "ма�
 
 ASSET = re.compile(r"\.(css|js|mjs|map|png|jpe?g|webp|avif|gif|svg|ico|woff2?|ttf|otf|xml|txt|json|webmanifest|"
                    r"pdf|mp4|webm|zip|gz)$", re.I)
-JUNK = re.compile(r"\.(php\d?|aspx?|jsp|cgi|env|ini|sql|bak|old|yml|yaml|git|ds_store)\b|wp-|wordpress|/\.|"
-                  r"admin|xmlrpc|phpmyadmin|cgi-bin|/vendor/|/\.well-known/", re.I)
+JUNK = re.compile(r"\.(php\d?|aspx?|axd|asmx|ashx|jsp|cgi|env|ini|sql|bak|old|yml|yaml|git|ds_store)\b|wp-|wordpress|/\.|"
+                  r"admin|xmlrpc|phpmyadmin|cgi-bin|elmah|/vendor/|/\.well-known/", re.I)
 # адреса входа в админки и служебные файлы: на сайте их нет, ищут их только сканеры уязвимостей
 PROBE = re.compile(r"(^|/)(log-?in|log-?on|sign-?in|sign-?up|register|auth|oauth2?|sso|users?|accounts?|admin\w*|"
                    r"console|dashboard|panel|cpanel|webadmin|manager|portal|ci|cd|jenkins|gitlab|actuator|api-docs|"
