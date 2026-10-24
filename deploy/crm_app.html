@@ -555,7 +555,12 @@
     head.append(el('div', 'row between', el('span', 'muted num', p.number ? '№ ' + p.number : 'без номера'), el('span', 'status ' + p.status, status(p.status))),
       el('h1', { style: 'margin:4px 0 4px' }, p.title),
       el('div', 'muted', [p.city, p.country, p.area ? num(p.area) + NB + 'м²' : '', p.tariff ? 'тариф «' + p.tariff + '»' : ''].filter(Boolean).join(' · ')));
-    head.append(el('div', { class: 'row wrap', style: 'margin-top:10px;gap:8px' }, el('button', { class: 'btn small', type: 'button', onclick: () => projectSheet(p) }, '✎ Изменить проект'),
+    const closed = p.status === 'done' || p.status === 'cancelled';
+    if (p.status === 'done') head.append(el('div', { class: 'small', style: 'margin-top:8px;color:var(--up);font-weight:600' }, '✓ Проект завершён' + (p.finished ? ' ' + dfmt(p.finished) : '')));
+    head.append(el('div', { class: 'row wrap', style: 'margin-top:10px;gap:8px' },
+      closed ? el('button', { class: 'btn small primary', type: 'button', onclick: () => reopenProject() }, '↺ Вернуть в работу')
+        : el('button', { class: 'btn small', type: 'button', onclick: () => finishSheet() }, '✓ Завершить проект'),
+      el('button', { class: 'btn small', type: 'button', onclick: () => projectSheet(p) }, '✎ Изменить проект'),
       ppl.length ? el('button', { class: 'btn small', type: 'button', onclick: () => preview({ preview: 'client', project: p.id }) }, '👁 Как видит заказчик') : null));
     app.append(head);
     const jump = el('div', 'jump');                       // длинная страница на телефоне: сразу к нужному блоку
@@ -602,13 +607,13 @@
     m.append(el('div', 'actions four',
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('payment') }, el('span', null, '💶'), 'Оплата'),
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission') }, el('span', null, '🎁'), 'Бонус'),
-      el('button', { class: 'btn', type: 'button', onclick: () => orderSheet(null) }, el('span', null, '🛋'), 'Товар'),
-      el('button', { class: 'btn', type: 'button', onclick: () => serviceSheet(null) }, el('span', null, '🧾'), 'Услуга')));
+      el('button', { class: 'btn', type: 'button', onclick: () => ensureWorking(() => orderSheet(null)) }, el('span', null, '🛋'), 'Товар'),
+      el('button', { class: 'btn', type: 'button', onclick: () => ensureWorking(() => serviceSheet(null)) }, el('span', null, '🧾'), 'Услуга')));
     app.append(m);
 
     // товары заказчика
     const og = el('section', { class: 'card', id: 'sec-orders' });
-    og.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Товары заказчика'), el('button', { class: 'btn small', type: 'button', onclick: () => orderSheet(null) }, '＋ Товар')));
+    og.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Товары заказчика'), el('button', { class: 'btn small', type: 'button', onclick: () => ensureWorking(() => orderSheet(null)) }, '＋ Товар')));
     if (!orders.length) og.append(el('p', 'muted small', 'Мебель, свет, декор, которые заказчик покупает через студию: цена для него, авансы, поставка. '
       + 'Заказчик видит цену, свои оплаты и дату поставки; закупку и наценку — нет.'));
     else {
@@ -628,7 +633,7 @@
 
     // доп. услуги
     const sv = el('section', { class: 'card', id: 'sec-services' });
-    sv.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Доп. услуги'), el('button', { class: 'btn small', type: 'button', onclick: () => serviceSheet(null) }, '＋ Услуга')));
+    sv.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Доп. услуги'), el('button', { class: 'btn small', type: 'button', onclick: () => ensureWorking(() => serviceSheet(null)) }, '＋ Услуга')));
     if (!services.length) sv.append(el('p', 'muted small', 'Чертежи, авторское сопровождение с помесячной оплатой и т. п. Заказчик видит услугу и что оплачено; '
       + 'о неоплаченном платеже бот напомнит ему и вам — в день оплаты и через 7 дней.'));
     else {
@@ -646,7 +651,7 @@
 
     // подрядчики: этапы, бонус студии, долг, кабинет
     const k = el('section', { class: 'card', id: 'sec-contractors' });
-    k.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Подрядчики и поставщики'), el('button', { class: 'btn small', type: 'button', onclick: linkSheet }, '＋ Добавить')));
+    k.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Подрядчики и поставщики'), el('button', { class: 'btn small', type: 'button', onclick: () => ensureWorking(linkSheet) }, '＋ Добавить')));
     if (!contractors.length) k.append(el('p', 'muted small', 'Прораб, мебельщик, шторница, двери, окна… и поставщики: плитка, свет, полы, сантехника. Добавьте подрядчика '
       + 'с этапами работ или поставщика с поставками и суммой — бонус студии (по умолчанию ' + pctText(S.lists.default_pct) + ') посчитается сам, а долг будет виден здесь. '
       + 'Ссылка в кабинет: он увидит документацию, визуализации, контакты заказчика и свои расчёты со студией, сможет сам внести сумму.'));
@@ -759,6 +764,57 @@
       catch (e) { toast(e.message); }
     } }, 'Удалить проект'));
     app.append(d);
+  }
+
+  // ---------- завершить проект и вернуть в работу (решено 24.10.2026) ----------
+  // завершить: дата окончания, что ещё не закрыто (долги, поставки, подтверждения), помесячные услуги — остановить этой датой
+  function finishSheet() {
+    const p = P.project, day = inp(todayISO(), { type: 'date' });
+    const open = el('div'), stop = el('input', { type: 'checkbox' }), stopBox = el('div');
+    stop.checked = true;
+    const draw = () => {
+      const fin = day.value || todayISO();
+      const items = [];
+      if (p.client_debt > 0.005) items.push('Заказчик должен ' + eur(p.client_debt) + ' (' + [p.balance > 0.005 ? 'по договору ' + eur(p.balance) : '',
+        p.services_debt > 0.005 ? 'доп. услуги ' + eur(p.services_debt) : '', p.orders_rest > 0.005 ? 'товары ' + eur(p.orders_rest) : ''].filter(Boolean).join(', ') + ')');
+      if (p.contractor_debt > 0.005) items.push('Подрядчики и поставщики должны бонусы: ' + eur(p.contractor_debt));
+      const notDelivered = (P.orders || []).filter((o) => o.money.status === 'ordered').length;
+      if (notDelivered) items.push('Не доставлено товаров: ' + notDelivered);
+      let waiting = 0;
+      (P.contractors || []).forEach((x) => x.money.stages.forEach((st) => { if (!st.confirmed && !st.disputed) waiting++; }));
+      if (waiting) items.push('Суммы работ и поставок ждут подтверждения заказчика: ' + waiting);
+      if (p.services_debt > 0.005) items.push('По завершённому проекту напоминания об оплате доп. услуг не приходят — напомните заказчику сами');
+      open.replaceChildren(items.length ? el('div', null, el('b', null, 'Что ещё не закрыто:'), el('ul', { class: 'small', style: 'margin:6px 0 0;padding-left:20px' }, ...items.map((t) => el('li', null, t))))
+        : el('p', { class: 'small', style: 'color:var(--up);font-weight:600' }, '✓ Всё закрыто: долгов, недоставленных товаров и неподтверждённых сумм нет.'));
+      const run = (P.services || []).filter((sv) => sv.kind === 'monthly' && !sv.cancelled && sv.start <= fin && !(sv.stopped && sv.stopped <= fin) && sv.money.status !== 'stopped');
+      stopBox.replaceChildren(run.length ? el('label', 'check', stop, 'Остановить с этой даты помесячные услуги: ' + run.map((sv) => '«' + sv.title + '»').join(', ')) : '');
+    };
+    day.addEventListener('change', draw); draw();
+    sheet('Завершить проект', el('div', el('p', 'muted', p.title), field('Дата окончания', day), open, stopBox,
+      el('p', 'small muted', 'Проект перейдёт в «Завершённые». Заказчики, подрядчики и сотрудники по-прежнему видят его в кабинете — документы и переписка остаются. '
+        + 'Если заказчику понадобится доп. услуга, поставка или работа подрядчика — «↺ Вернуть в работу».')), async () => {
+      await refresh(await save('project_status', { id: p.id, status: 'done', finished: day.value, stop_services: stop.checked }));
+      toast('Проект завершён');
+    }, '✓ Завершить');
+  }
+  async function reopenProject() {
+    const p = P.project;
+    if (!(await confirmBox('Вернуть проект «' + p.title + '» в работу? Например, заказчику нужна доп. услуга, поставка или работа подрядчика.'))) return false;
+    try { await refresh(await save('project_status', { id: p.id, status: 'active' })); toast('Проект снова в работе'); return true; }
+    catch (e) { toast(e.message); return false; }
+  }
+  // новое (товар, услуга, этап или поставка, подрядчик) в завершённом проекте — спросить, вернуть ли его в работу
+  function ensureWorking(next) {
+    const st = P && P.project.status;
+    if (st !== 'done' && st !== 'cancelled') return next();
+    const sh = sheet(st === 'done' ? 'Проект завершён' : 'Проект отменён', el('div',
+      el('p', null, 'Заказчику понадобилась доп. услуга, поставка или работа подрядчика? Проект можно вернуть в работу — он снова будет в «В работе».'),
+      el('div', 'pick',
+        el('button', { class: 'btn primary', type: 'button', onclick: async () => {
+          try { await refresh(await save('project_status', { id: P.project.id, status: 'active' })); toast('Проект снова в работе'); closeSheet(sh); next(); }
+          catch (e) { toast(e.message); }
+        } }, '↺ Вернуть в работу и добавить'),
+        el('button', { class: 'btn', type: 'button', onclick: () => { closeSheet(sh); next(); } }, 'Добавить, не меняя статус'))));
   }
 
   // ---------- заказчики проекта: добавить, ссылка в кабинет, закрыть ----------
@@ -2062,7 +2118,7 @@
         m.unknown ? m.unknown + ' ' + (sup ? plural(m.unknown, 'поставка', 'поставки', 'поставок') : plural(m.unknown, 'этап', 'этапа', 'этапов')) + ' без бонуса' : ''].filter(Boolean).join(' · ')));
     }
     box.append(el('div', 'kactions',
-      el('button', { class: 'btn', type: 'button', onclick: () => stageSheet(x, null) }, sup ? '＋ Поставка' : '＋ Этап'),
+      el('button', { class: 'btn', type: 'button', onclick: () => ensureWorking(() => stageSheet(x, null)) }, sup ? '＋ Поставка' : '＋ Этап'),
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission', null, { link_id: x.link_id, currency: c, amount: m.debt > 0 ? m.debt : '' }) }, '🎁 Отдал бонус')));
     box.append(tgLine('contractor', x), el('div', 'kactions',
       x.tg_id ? el('button', { class: 'btn', type: 'button', onclick: () => startThread({ kind: 'org', contractor_id: x.id }) }, '💬 Написать')

@@ -418,7 +418,8 @@ def handle_post(h, path, query):
                   "contractor": CRM.save_contractor, "link": CRM.link_contractor, "stage": CRM.save_stage,
                   "lead": CRM.save_lead, "lead_project": CRM.lead_to_project, "lead_restore": CRM.restore_lead,
                   "lists": CRM.save_lists, "order": CRM.save_order, "service": CRM.save_service,
-                  "pclient": CRM.add_project_client, "pclient_remove": CRM.remove_project_client}.get(entity)
+                  "pclient": CRM.add_project_client, "pclient_remove": CRM.remove_project_client,
+                  "project_status": CRM.set_project_status}.get(entity)
             if not fn:
                 fn = portal_save(entity)
             if not fn:

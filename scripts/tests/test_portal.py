@@ -667,5 +667,21 @@ check(H.bot.invite_text("fr", "assistant", "Marie", "", "L") == FR["bot"]["invit
       "ссылка сотруднику студии — по-французски, от имени Ирины")
 check(P.label("Плитка", "fi") == langs.pack("fi")["fixed"]["Плитка"] and P.label("Сантехника", "el") == langs.pack("el")["fixed"]["Сантехника"],
       "категории поставщиков — на всех языках")
+# ---------- завершить проект и вернуть в работу ----------
+svc = H.crm.one("SELECT * FROM services WHERE project_id=? AND kind='monthly'", pid)
+check(svc and not svc["stopped"], "помесячная услуга идёт")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_status", "data": {"id": pid, "status": "done", "finished": "2026-10-24",
+                                                                               "stop_services": True}}, lang="ru")
+check(code == 200 and r["project"]["status"] == "done" and r["project"]["finished"] == "2026-10-24", "Ирина завершила проект")
+check(H.crm.one("SELECT stopped FROM services WHERE id=?", svc["id"])["stopped"] == "2026-10-24", "помесячная услуга остановлена датой окончания")
+code, me = call("/api/portal/me", H.CLIENT)
+check(any(p["id"] == pid and p["status"] == "done" for p in me["projects"]), "заказчик по-прежнему видит проект — «Завершено»")
+check(not [x for x in P.due_reminders(date(2026, 12, 20)) if x["project"]["id"] == pid], "по завершённому проекту напоминаний нет")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_status", "data": {"id": pid, "status": "done", "finished": "2020-01-01"}}, lang="ru")
+check(code == 400, "окончание раньше начала — нельзя")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_status", "data": {"id": pid, "status": "active"}}, lang="ru")
+check(code == 200 and r["project"]["status"] == "active" and not r["project"]["finished"], "вернула в работу: окончание стёрто")
+h = H.crm.q("SELECT details FROM audit WHERE entity='project' AND entity_id=? ORDER BY id DESC LIMIT 2", pid)
+check('"status": "active"' in h[0]["details"] and '"status": "done"' in h[1]["details"], "в истории проекта — и завершение, и возврат")
 srv.shutdown()
 print(f"OK: {ok} проверок")

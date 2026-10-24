@@ -661,6 +661,47 @@ class Crm:
             self.audit(who, "add", "project", pid, fields)
         return self.project(pid)
 
+    def running_services(self, pid, on):
+        """Помесячные услуги проекта, которые на дату on идут и будут начисляться дальше (не отменены, не остановлены, не закончились)."""
+        out = []
+        for sv in self.q("SELECT * FROM services WHERE project_id=? AND kind='monthly' AND cancelled IS NULL", int(pid)):
+            start = date.fromisoformat(sv["start"])
+            if start > on or (sv["stopped"] and date.fromisoformat(sv["stopped"]) <= on):
+                continue
+            if sv["months"] and add_months(start, int(sv["months"]) - 1) <= on:
+                continue
+            out.append(sv)
+        return out
+
+    def set_project_status(self, d, who):
+        """Завершить проект (дата окончания; помесячные услуги можно остановить этой датой) или вернуть в работу
+        (дата окончания стирается — история остаётся в журнале). Решено 24.10.2026: завершённый проект можно вернуть,
+        если заказчику понадобилась доп. услуга, поставка или работа подрядчика."""
+        pid = int(d.get("id") or 0)
+        p = self.one("SELECT * FROM projects WHERE id=?", pid)
+        if not p:
+            raise CrmError("Проект не найден")
+        status = d.get("status")
+        if status not in dict(STATUSES):
+            raise CrmError("Неизвестный статус")
+        details = {"project_id": pid, "status": status, "was": p["status"]}
+        if status == "done":
+            fin = _day(d.get("finished") or today().isoformat(), "Дата окончания")
+            if p["started"] and fin < p["started"]:
+                raise CrmError("Дата окончания раньше начала проекта")
+            stopped = []
+            if d.get("stop_services"):
+                for sv in self.running_services(pid, date.fromisoformat(fin)):
+                    self.run("UPDATE services SET stopped=?, updated=? WHERE id=?", fin, now(), sv["id"])
+                    stopped.append(sv["title"])
+            self.run("UPDATE projects SET status='done', finished=?, updated=? WHERE id=?", fin, now(), pid)
+            details.update(finished=fin, stopped_services=stopped)
+        else:
+            self.run("UPDATE projects SET status=?, finished=CASE WHEN ?='done' THEN finished ELSE NULL END, updated=? WHERE id=?",
+                     status, status, now(), pid)
+        self.audit(who, "edit", "project", pid, details)
+        return self.project(pid)
+
     def touch(self, pid):
         self.run("UPDATE projects SET updated=? WHERE id=?", now(), pid)
 

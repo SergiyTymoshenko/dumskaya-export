@@ -910,7 +910,7 @@ class PortalBotMixin:
             return None
         k = self.crm.one("""SELECT l.trade AS link_trade, c.name, c.trade, c.tg_id, c.kind FROM project_contractors l
                             JOIN contractors c ON c.id=l.contractor_id WHERE l.id=?""", st["link_id"]) or {}
-        p = self.crm.one("SELECT id, title FROM projects WHERE id=?", st["project_id"]) or {}
+        p = self.crm.one("SELECT id, title, status FROM projects WHERE id=?", st["project_id"]) or {}
         return st, k, p
 
     def _stage_text(self, sid, lang):
@@ -954,7 +954,8 @@ class PortalBotMixin:
                     sup = k.get("kind") == "supplier"
                     self.notify(f"🧾 <b>{'Поставщик' if sup else 'Подрядчик'} {esc(k.get('name'))}</b> внёс сумму {'поставки' if sup else 'работ'} · «{esc(p.get('title'))}»\n{line}\n\n"
                                 + ("Заказчику отправлено на подтверждение." if asked else
-                                   "Заказчик не подключён к кабинету — подтвердить некому. Пригласите заказчика или проверьте сумму сами."),
+                                   "Заказчик не подключён к кабинету — подтвердить некому. Пригласите заказчика или проверьте сумму сами.")
+                                + ("\n\nПроект завершён — вернуть в работу: «Студия» → проект → «↺ Вернуть в работу»." if p.get("status") == "done" else ""),
                                 roles=("designer",), rows=[studio] if studio else None)
                 elif k.get("tg_id") and self._active(k["tg_id"]):
                     lang = self.lang_of(k["tg_id"])
