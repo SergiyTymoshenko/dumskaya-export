@@ -15,6 +15,13 @@ from crm import FILE_MAX, CrmError
 CRM = None            # ставит lead_service.py
 BOT = None
 INLINE_OK = ("image/jpeg", "image/png", "image/webp", "image/gif", "application/pdf", "video/mp4", "text/plain")
+SIZES = ("m", "l", "xl")       # размер текста в «Студии» и графиках: обычный, крупный, очень крупный
+
+
+def ui_size(u):
+    """Размер текста у человека: что выбрал сам, иначе у дизайнера — крупный (решено 24.10.2026), у остальных — обычный."""
+    v = BOT.s.get(f"ui:size:{u['tg_id']}") if BOT else None
+    return v if v in SIZES else ("l" if u["role"] == "designer" else "m")
 
 
 def app_page():
@@ -47,6 +54,9 @@ def handle_get(h, path, query):
     if path == "/api/crm/file":
         serve_file(h, q)
         return True
+    if path == "/api/crm/ui":                       # размер текста — нужен и графикам, работает и без учёта
+        u = h.stats_admin()
+        return h.reply(200, {"size": ui_size(u)} if u else {"size": "m"}) or True
     if not CRM:
         h.reply(503, {"ok": False, "error": "Учёт не запущен"})
         return True
@@ -57,7 +67,7 @@ def handle_get(h, path, query):
     try:
         if path == "/api/crm/state":
             out = CRM.state()
-            out["me"] = {"name": u["name"], "role": u["role"]}
+            out["me"] = {"name": u["name"], "role": u["role"], "size": ui_size(u)}
             return h.reply(200, out) or True
         if path == "/api/crm/project":
             return h.reply(200, CRM.project(q.get("id"))) or True
@@ -75,6 +85,18 @@ def handle_get(h, path, query):
 def handle_post(h, path, query):
     if not path.startswith("/api/crm/"):
         return False
+    if path == "/api/crm/ui":
+        u = h.stats_admin()
+        if not u or not BOT:
+            return h.reply(403, {"ok": False, "error": "Нет доступа"}) or True
+        try:
+            size = _json_body(h, 2000).get("size")
+        except (CrmError, ValueError):
+            size = None
+        if size not in SIZES:
+            return h.reply(400, {"ok": False, "error": "Неизвестный размер"}) or True
+        BOT.s.put(f"ui:size:{u['tg_id']}", size)
+        return h.reply(200, {"size": size}) or True
     if not CRM:
         h.reply(503, {"ok": False, "error": "Учёт не запущен"})
         return True

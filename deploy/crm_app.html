@@ -15,6 +15,8 @@
     --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11, 11, 11, 0.10); --series: #2a78d6; --series-wash: rgba(42, 120, 214, 0.10);
     --up: #006300; --down: #d03b3b; --ghost: rgba(11, 11, 11, 0.05); --warn: #9a5b00;
     --sab: max(env(safe-area-inset-bottom), var(--tg-safe-area-inset-bottom, 0px));   /* полоска «домой» на iPhone */
+    --k: 1;                                 /* размер текста: 1 — обычный; крупный и очень крупный — ниже */
+    --on-series: #fff;
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
@@ -22,15 +24,28 @@
     --grid: #2c2c2a; --axis: #383835; --border: rgba(255, 255, 255, 0.10); --series: #3987e5; --series-wash: rgba(57, 135, 229, 0.12);
     --up: #0ca30c; --down: #e66767; --ghost: rgba(255, 255, 255, 0.06); --warn: #e0a040;
   }
+  /* Крупный текст (⚙︎ → «Размер текста»; у дизайнера по умолчанию «Крупный»): весь текст в 1,25 или 1,5 раза больше,
+     второстепенный текст и рамки — контрастнее (не светло-серые), поля ввода и кнопки — заметнее. */
+  :root[data-size="l"] { --k: 1.25; }
+  :root[data-size="xl"] { --k: 1.5; }
+  :root[data-size="l"], :root[data-size="xl"] {
+    --text-2: #2f2e2b; --muted: #4f4e49; --border: rgba(11, 11, 11, 0.32); --grid: #c4c3ba; --axis: #8f8e86;
+    --series: #1a5cb0; --series-wash: rgba(26, 92, 176, 0.12); --up: #005200; --down: #b42323; --warn: #7a4600; --ghost: rgba(11, 11, 11, 0.08);
+  }
+  :root[data-theme="dark"][data-size="l"], :root[data-theme="dark"][data-size="xl"] {
+    --text-2: #e4e3df; --muted: #bdbcb5; --border: rgba(255, 255, 255, 0.34); --grid: #4a4a45; --axis: #6a6a64;
+    --series: #6aa9f2; --series-wash: rgba(106, 169, 242, 0.16); --up: #4fd14f; --down: #ff8f8f; --warn: #f2bb66; --ghost: rgba(255, 255, 255, 0.10);
+    --on-series: #0b0b0b;
+  }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   [hidden] { display: none !important; }
   html, body { margin: 0; background: var(--page); color: var(--text-1); }
-  body { font: 17px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 760px; margin: 0 auto;
+  body { font: calc(17px * var(--k))/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 760px; margin: 0 auto;
     padding: 14px 16px calc(88px + var(--sab)); -webkit-text-size-adjust: 100%; }
-  h1 { font-size: 24px; font-weight: 650; margin: 2px 0 12px; letter-spacing: -0.01em; }
-  h2 { font-size: 17px; font-weight: 650; margin: 0 0 10px; }
+  h1 { font-size: calc(24px * var(--k)); font-weight: 650; margin: 2px 0 12px; letter-spacing: -0.01em; }
+  h2 { font-size: calc(17px * var(--k)); font-weight: 650; margin: 0 0 10px; }
   .muted { color: var(--text-2); }
-  .small { font-size: 14px; }
+  .small { font-size: calc(14px * var(--k)); }
   .num { font-variant-numeric: tabular-nums; }
   button { font: inherit; color: inherit; }
   a { color: var(--series); }
@@ -40,66 +55,66 @@
   .wrap { flex-wrap: wrap; }
   .grow { flex: 1 1 auto; min-width: 0; }
   .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 10px 16px;
-    border-radius: 12px; border: 1px solid var(--border); background: var(--raised); cursor: pointer; font-weight: 550; font-size: 16px; }
-  .btn.primary { background: var(--series); border-color: var(--series); color: #fff; }
+    border-radius: 12px; border: 1px solid var(--border); background: var(--raised); cursor: pointer; font-weight: 550; font-size: calc(16px * var(--k)); }
+  .btn.primary { background: var(--series); border-color: var(--series); color: var(--on-series); }
   .btn.wide { width: 100%; }
   .btn.danger { color: var(--down); }
-  .btn.small { min-height: 40px; padding: 6px 13px; font-size: 15px; }
+  .btn.small { min-height: 40px; padding: 6px 13px; font-size: calc(15px * var(--k)); }
   .btn:disabled { opacity: .55; }
   .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 12px; }
-  .chip { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 8px 14px; font-size: 15px; cursor: pointer; min-height: 40px; white-space: nowrap; }
+  .chip { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 8px 14px; font-size: calc(15px * var(--k)); cursor: pointer; min-height: 40px; white-space: nowrap; }
   .chip[aria-pressed="true"] { background: var(--text-1); color: var(--page); border-color: var(--text-1); font-weight: 600; }
   .search { width: 100%; border: 1px solid var(--border); background: var(--surface); border-radius: 12px; padding: 12px 14px; font: inherit; color: inherit; margin: 0 0 10px; min-height: 48px; }
-  .status { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--ghost); color: var(--text-2); white-space: nowrap; }
+  .status { display: inline-block; font-size: calc(12px * var(--k)); font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--ghost); color: var(--text-2); white-space: nowrap; }
   .status.active { color: var(--series); background: var(--series-wash); }
   .status.done { color: var(--up); }
   .status.cancelled { color: var(--muted); text-decoration: line-through; }
   .plist { display: grid; gap: 10px; }
   .pcard { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 13px 14px; cursor: pointer; text-align: left; width: 100%; }
-  .pcard .top { display: flex; justify-content: space-between; gap: 8px; align-items: center; font-size: 13px; color: var(--text-2); }
-  .pcard .title { font-size: 18px; font-weight: 650; margin: 3px 0 2px; overflow-wrap: anywhere; }
-  .pcard .sub { font-size: 15px; color: var(--text-2); }
+  .pcard .top { display: flex; justify-content: space-between; gap: 8px; align-items: center; font-size: calc(13px * var(--k)); color: var(--text-2); }
+  .pcard .title { font-size: calc(18px * var(--k)); font-weight: 650; margin: 3px 0 2px; overflow-wrap: anywhere; }
+  .pcard .sub { font-size: calc(15px * var(--k)); color: var(--text-2); }
   .bar { height: 8px; border-radius: 4px; background: var(--ghost); overflow: hidden; margin: 10px 0 6px; }
   .bar i { display: block; height: 100%; background: var(--series); border-radius: 4px; }
-  .money { display: flex; justify-content: space-between; gap: 8px; font-size: 15px; flex-wrap: wrap; }
+  .money { display: flex; justify-content: space-between; gap: 8px; font-size: calc(15px * var(--k)); flex-wrap: wrap; }
   .money b { font-weight: 650; }
   .owe { color: var(--warn); font-weight: 600; }
   .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 4px 0 4px; }
   .tile { background: var(--page); border-radius: 12px; padding: 10px; min-width: 0; }
-  .tile .l { font-size: 12px; color: var(--text-2); }
-  .tile .v { font-size: 19px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .sum { display: grid; grid-template-columns: 1fr auto; gap: 5px 12px; margin: 0; font-size: 17px; }
+  .tile .l { font-size: calc(12px * var(--k)); color: var(--text-2); }
+  .tile .v { font-size: calc(19px * var(--k)); font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sum { display: grid; grid-template-columns: 1fr auto; gap: 5px 12px; margin: 0; font-size: calc(17px * var(--k)); }
   .sum dt { color: var(--text-2); }
   .sum dd { margin: 0; font-weight: 700; text-align: right; white-space: nowrap; }
   .actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
-  .actions .btn { padding: 8px 6px; font-size: 15px; flex-direction: column; gap: 3px; min-height: 64px; }
-  .actions .btn span { font-size: 21px; line-height: 1; }
+  .actions .btn { padding: 8px 6px; font-size: calc(15px * var(--k)); flex-direction: column; gap: 3px; min-height: 64px; }
+  .actions .btn span { font-size: calc(21px * var(--k)); line-height: 1; }
   .ops { list-style: none; margin: 0; padding: 0; }
   .ops li { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 11px 0; border-top: 1px solid var(--grid); cursor: pointer; }
   .ops li:first-child { border-top: 0; }
-  .ops .what { font-weight: 600; font-size: 16px; overflow-wrap: anywhere; }
-  .ops .meta { font-size: 14px; color: var(--text-2); grid-column: 1 / -1; overflow-wrap: anywhere; }
+  .ops .what { font-weight: 600; font-size: calc(16px * var(--k)); overflow-wrap: anywhere; }
+  .ops .meta { font-size: calc(14px * var(--k)); color: var(--text-2); grid-column: 1 / -1; overflow-wrap: anywhere; }
   .ops .amt { font-weight: 650; white-space: nowrap; text-align: right; }
   .ops .amt.plus { color: var(--up); }
   .tabs { display: flex; gap: 4px; background: var(--ghost); padding: 3px; border-radius: 12px; margin: 0 0 10px; }
-  .tabs button { flex: 1 1 0; border: 0; background: transparent; padding: 9px 4px; border-radius: 9px; font-size: 15px; cursor: pointer; min-width: 0; white-space: nowrap; min-height: 42px; }
+  .tabs button { flex: 1 1 0; border: 0; background: transparent; padding: 9px 4px; border-radius: 9px; font-size: calc(15px * var(--k)); cursor: pointer; min-width: 0; white-space: nowrap; min-height: 42px; }
   .tabs button[aria-pressed="true"] { background: var(--raised); font-weight: 650; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .thumb { aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: var(--ghost); border: 0; padding: 0; cursor: pointer; position: relative; }
   .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .doc { aspect-ratio: 1; border-radius: 10px; background: var(--ghost); border: 0; padding: 8px; cursor: pointer; display: flex; flex-direction: column;
-    justify-content: space-between; text-align: left; font-size: 12px; overflow: hidden; }
-  .doc .ext { font-weight: 700; font-size: 13px; color: var(--series); }
+    justify-content: space-between; text-align: left; font-size: calc(12px * var(--k)); overflow: hidden; }
+  .doc .ext { font-weight: 700; font-size: calc(13px * var(--k)); color: var(--series); }
   .doc .nm { overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .people { list-style: none; margin: 0; padding: 0; }
   .people li { padding: 11px 0; border-top: 1px solid var(--grid); display: flex; gap: 10px; align-items: center; }
   .people li:first-child { border-top: 0; }
   .people .who { flex: 1 1 auto; min-width: 0; cursor: pointer; }
   .people .who b { display: block; font-weight: 600; overflow-wrap: anywhere; }
-  .people .who span { font-size: 14px; color: var(--text-2); }
-  .icon-btn { width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--border); background: var(--raised); display: inline-flex;
-    align-items: center; justify-content: center; font-size: 18px; text-decoration: none; color: inherit; flex: 0 0 auto; cursor: pointer; }
-  .kv { display: grid; grid-template-columns: minmax(110px, 38%) 1fr; gap: 6px 12px; font-size: 16px; }
+  .people .who span { font-size: calc(14px * var(--k)); color: var(--text-2); }
+  .icon-btn { width: calc(44px * (1 + (var(--k) - 1) / 2)); height: calc(44px * (1 + (var(--k) - 1) / 2)); border-radius: 12px; border: 1px solid var(--border); background: var(--raised); display: inline-flex;
+    align-items: center; justify-content: center; font-size: calc(18px * var(--k)); text-decoration: none; color: inherit; flex: 0 0 auto; cursor: pointer; }
+  .kv { display: grid; grid-template-columns: minmax(110px, 38%) 1fr; gap: 6px 12px; font-size: calc(16px * var(--k)); }
   .kv dt { color: var(--text-2); }
   .kv dd { margin: 0; overflow-wrap: anywhere; }
   .empty { color: var(--text-2); text-align: center; padding: 26px 8px; }
@@ -107,56 +122,58 @@
     display: flex; justify-content: center; padding: 6px 6px calc(6px + var(--sab)); z-index: 5; }
   .nav .in { display: flex; width: 100%; max-width: 760px; }
   .nav button { flex: 1 1 0; border: 0; background: transparent; display: flex; flex-direction: column; align-items: center; gap: 2px;
-    font-size: 13px; color: var(--text-2); padding: 4px; cursor: pointer; min-height: 52px; }
-  .nav button span { font-size: 22px; line-height: 1.1; }
+    font-size: calc(13px * var(--k)); color: var(--text-2); padding: 4px; cursor: pointer; min-height: 52px; }
+  .nav button span { font-size: calc(22px * var(--k)); line-height: 1.1; }
   .nav button[aria-current="page"] { color: var(--series); font-weight: 650; }
   /* формы */
   .sheet { position: fixed; inset: 0; background: var(--page); z-index: 10; overflow-y: auto; -webkit-overflow-scrolling: touch; }
   .sheet .in { max-width: 760px; margin: 0 auto; padding: 0 16px calc(96px + var(--sab)); }
   .sheet header { position: sticky; top: 0; background: var(--page); display: flex; align-items: center; justify-content: space-between; gap: 10px;
     padding: 12px 0; z-index: 2; border-bottom: 1px solid var(--grid); margin-bottom: 14px; }
-  .sheet header h2 { margin: 0; font-size: 18px; }
+  .sheet header h2 { margin: 0; font-size: calc(18px * var(--k)); }
   .sheet footer { position: fixed; left: 0; right: 0; bottom: 0; background: var(--page); border-top: 1px solid var(--grid);
     padding: 10px 16px calc(10px + var(--sab)); }
   .sheet footer .in2 { max-width: 728px; margin: 0 auto; display: flex; gap: 8px; }
   .field { margin: 0 0 14px; }
-  .field label, .field .lab { display: block; font-size: 15px; font-weight: 600; margin: 0 0 6px; }
-  .field .hint { font-size: 14px; color: var(--text-2); margin-top: 6px; }
+  .field label, .field .lab { display: block; font-size: calc(15px * var(--k)); font-weight: 600; margin: 0 0 6px; }
+  .field .hint { font-size: calc(14px * var(--k)); color: var(--text-2); margin-top: 6px; }
   .field input, .field select, .field textarea { width: 100%; border: 1px solid var(--border); background: var(--surface); color: inherit;
     border-radius: 12px; padding: 12px 13px; font: inherit; min-height: 50px; }
   .field input[type="date"] { -webkit-appearance: none; appearance: none; display: block; text-align: left; }
   .field input[type="date"]::-webkit-date-and-time-value { text-align: left; }
   .field textarea { min-height: 90px; resize: vertical; }
   .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--series); outline-offset: -1px; }
-  .pair { display: grid; grid-template-columns: 1fr 118px; gap: 8px; }
+  .pair { display: grid; grid-template-columns: 1fr calc(118px * var(--k)); gap: 8px; }
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .rate { font-size: 14px; color: var(--text-2); margin-top: 6px; }
+  .two > *, .pair > * { min-width: 0; }
+  .field input { min-width: 0; }
+  .rate { font-size: calc(14px * var(--k)); color: var(--text-2); margin-top: 6px; }
   .rate b { color: var(--text-1); }
-  .check, .field label.check { display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 400; margin: 10px 0 0; min-height: 32px; }
+  .check, .field label.check { display: flex; align-items: center; gap: 10px; font-size: calc(15px * var(--k)); font-weight: 400; margin: 10px 0 0; min-height: 32px; }
   .check input, .field .check input { width: 22px; height: 22px; min-height: 0; flex: 0 0 auto; }
-  .err { color: var(--down); font-size: 14px; margin: 0 0 10px; }
+  .err { color: var(--down); font-size: calc(14px * var(--k)); margin: 0 0 10px; }
   .toast { position: fixed; left: 50%; bottom: calc(90px + var(--sab)); transform: translateX(-50%); background: var(--text-1); color: var(--page);
-    padding: 10px 16px; border-radius: 12px; font-size: 14px; z-index: 30; box-shadow: 0 6px 20px rgba(0,0,0,.2); max-width: 90%; text-align: center; }
+    padding: 10px 16px; border-radius: 12px; font-size: calc(14px * var(--k)); z-index: 30; box-shadow: 0 6px 20px rgba(0,0,0,.2); max-width: 90%; text-align: center; }
   .viewer { position: fixed; inset: 0; background: #0b0b0b; z-index: 20; display: flex; flex-direction: column; }
   .viewer .img { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-height: 0; padding: 10px; }
   .viewer img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
   .viewer .bar2 { display: flex; gap: 8px; padding: 10px 12px calc(12px + var(--sab)); flex-wrap: wrap; justify-content: center; }
   .viewer .bar2 .btn { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.18); }
-  .viewer .cap { color: #ddd; font-size: 13px; text-align: center; padding: 10px 12px 0; overflow-wrap: anywhere; }
+  .viewer .cap { color: #ddd; font-size: calc(13px * var(--k)); text-align: center; padding: 10px 12px 0; overflow-wrap: anywhere; }
   .chart { position: relative; }
   .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
-  .chart text { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .chart text { fill: var(--muted); font-size: calc(11px * var(--k)); font-variant-numeric: tabular-nums; }
   .tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px;
-    font-size: 13px; box-shadow: 0 4px 16px rgba(0,0,0,.12); min-width: 160px; display: none; z-index: 2; }
+    font-size: calc(13px * var(--k)); box-shadow: 0 4px 16px rgba(0,0,0,.12); min-width: 160px; display: none; z-index: 2; }
   .tip .d { color: var(--text-2); margin-bottom: 4px; }
   .tip .r { display: flex; justify-content: space-between; gap: 10px; }
   .bars { display: grid; gap: 8px; }
-  .hb { display: grid; grid-template-columns: minmax(84px, 36%) 1fr; gap: 10px; align-items: center; font-size: 14px; }
+  .hb { display: grid; grid-template-columns: minmax(84px, 36%) 1fr; gap: 10px; align-items: center; font-size: calc(14px * var(--k)); }
   .hb .track { display: flex; align-items: center; gap: 8px; min-width: 0; }
   .hb .fill { height: 12px; background: var(--series); border-radius: 0 4px 4px 0; min-width: 2px; }
-  .hb .n { color: var(--text-2); font-size: 13px; white-space: nowrap; }
-  .hero { font-size: 40px; font-weight: 700; line-height: 1.1; margin: 2px 0 6px; letter-spacing: -0.02em; }
-  details summary { cursor: pointer; color: var(--text-2); font-size: 14px; }
+  .hb .n { color: var(--text-2); font-size: calc(13px * var(--k)); white-space: nowrap; }
+  .hero { font-size: calc(40px * min(var(--k), 1.25)); font-weight: 700; line-height: 1.1; margin: 2px 0 6px; letter-spacing: -0.02em; }
+  details summary { cursor: pointer; color: var(--text-2); font-size: calc(14px * var(--k)); }
   .loading { opacity: .55; transition: opacity .2s; }
   .pick { display: grid; gap: 8px; }
   .pick button { text-align: left; }
@@ -167,19 +184,36 @@
   .stages li { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 10px 12px; background: var(--page); border-radius: 12px; margin: 0 0 6px; cursor: pointer; }
   .stages .t { font-weight: 600; overflow-wrap: anywhere; }
   .stages .a { font-weight: 650; white-space: nowrap; text-align: right; }
-  .stages .m { grid-column: 1 / -1; font-size: 14px; color: var(--text-2); overflow-wrap: anywhere; }
-  .debt { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; margin: 8px 0 2px; }
-  .debt b { font-size: 19px; white-space: nowrap; }
+  .stages .m { grid-column: 1 / -1; font-size: calc(14px * var(--k)); color: var(--text-2); overflow-wrap: anywhere; }
+  .debt { display: flex; justify-content: space-between; align-items: baseline; gap: 2px 10px; margin: 8px 0 2px; flex-wrap: wrap; }
+  .debt b { font-size: calc(19px * var(--k)); white-space: nowrap; }
   .kactions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
   .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: var(--ghost); padding: 3px; border-radius: 12px; }
-  .seg button { border: 0; background: transparent; border-radius: 9px; min-height: 44px; font-size: 15px; cursor: pointer; padding: 4px; }
+  .seg button { border: 0; background: transparent; border-radius: 9px; min-height: 44px; font-size: calc(15px * var(--k)); cursor: pointer; padding: 4px; }
   .seg button[aria-pressed="true"] { background: var(--raised); font-weight: 650; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
   .jump { display: flex; gap: 6px; overflow-x: auto; margin: 0 -16px 12px; padding: 0 16px; scrollbar-width: none; }
   .jump::-webkit-scrollbar { display: none; }
-  .badge { font-weight: 650; white-space: nowrap; font-size: 15px; }
+  .badge { font-weight: 650; white-space: nowrap; font-size: calc(15px * var(--k)); }
   .drop { outline: 2px dashed var(--series); outline-offset: -6px; }
   .dnd-hint { display: none; }
   @media (hover: hover) and (pointer: fine) { .dnd-hint { display: block; } }
+  /* крупный текст: раскладка, чтобы ничего не обрезалось */
+  :root[data-size="l"] body, :root[data-size="xl"] body { font-weight: 500; line-height: 1.4; }
+  :root[data-size="l"] .actions, :root[data-size="xl"] .actions { grid-template-columns: 1fr; }
+  :root[data-size="l"] .actions .btn, :root[data-size="xl"] .actions .btn { flex-direction: row; justify-content: flex-start; gap: 12px; padding: 10px 16px; min-height: 58px; }
+  :root[data-size="xl"] .kactions, :root[data-size="xl"] .two { grid-template-columns: 1fr; }
+  :root[data-size="xl"] .two { gap: 0; }
+  :root[data-size="l"] .hb, :root[data-size="xl"] .hb { grid-template-columns: 1fr; gap: 4px; }
+  :root[data-size="xl"] .kv { grid-template-columns: 1fr; gap: 0; }
+  :root[data-size="xl"] .kv dd { margin-bottom: 8px; }
+  :root[data-size="l"] .field input, :root[data-size="l"] .field select, :root[data-size="l"] .field textarea, :root[data-size="l"] .search,
+  :root[data-size="xl"] .field input, :root[data-size="xl"] .field select, :root[data-size="xl"] .field textarea, :root[data-size="xl"] .search { border-width: 2px; }
+  :root[data-size="l"] ::placeholder, :root[data-size="xl"] ::placeholder { color: var(--muted); opacity: 1; }
+  :root[data-size="l"] .chip, :root[data-size="xl"] .chip, :root[data-size="l"] .btn, :root[data-size="xl"] .btn { border-width: 2px; }
+  :root[data-size="l"] .nav button, :root[data-size="xl"] .nav button { color: var(--text-1); }
+  :root[data-size="l"] .nav button[aria-current="page"], :root[data-size="xl"] .nav button[aria-current="page"] { color: var(--series); text-decoration: underline; text-underline-offset: 3px; }
+  :root[data-size="l"] .seg button, :root[data-size="xl"] .seg button { min-height: 52px; }
+  :root[data-size="l"] :focus-visible, :root[data-size="xl"] :focus-visible { outline: 3px solid var(--series); outline-offset: 2px; }
 </style>
 </head>
 <body>
@@ -207,8 +241,18 @@
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     if (tg) { try { const bg = dark ? '#0d0d0d' : '#f9f9f7'; tg.setHeaderColor(bg); tg.setBackgroundColor(bg); } catch (e) {} }
   }
+  // размер текста: свой у каждого (хранится на сервере, у дизайнера по умолчанию «Крупный»); на этом устройстве помним,
+  // чтобы при открытии сразу показать нужный размер
+  const SIZES = [['m', 'Обычный'], ['l', 'Крупный'], ['xl', 'Очень крупный']];
+  function applySize(z) {
+    if (!SIZES.some((x) => x[0] === z)) return;
+    document.documentElement.dataset.size = z;
+    try { localStorage.setItem('ui-size', z); } catch (e) {}
+  }
+  try { applySize(localStorage.getItem('ui-size')); } catch (e) {}
+  const K = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--k')) || 1;
   if (tg) {
-    tg.ready(); tg.expand(); tg.onEvent('themeChanged', theme);
+    tg.ready(); tg.expand(); tg.onEvent('themeChanged', () => { theme(); syncSheets(); });
     // на iPhone свайп вниз по странице не сворачивает «Студию» — листать формы можно спокойно
     try { if (tg.isVersionAtLeast && tg.isVersionAtLeast('7.7')) tg.disableVerticalSwipes(); } catch (e) {}
   }
@@ -335,7 +379,7 @@
   function projectsView() {
     const head = el('div', 'row', el('h1', { class: 'grow' }, 'Проекты'),
       el('button', { class: 'btn primary small', type: 'button', onclick: () => projectSheet() }, '＋ Новый проект'),
-      el('button', { class: 'icon-btn', type: 'button', title: 'Настройки: бонус по умолчанию, тарифы, виды работ', 'aria-label': 'Настройки', onclick: settingsSheet }, '⚙︎'));
+      el('button', { class: 'icon-btn', type: 'button', title: 'Настройки: размер текста, бонус по умолчанию, тарифы, виды работ', 'aria-label': 'Настройки', onclick: settingsSheet }, '⚙︎'));
     app.append(head);
     const s = el('input', { class: 'search', type: 'search', placeholder: 'Найти: номер, заказчик, город', value: query });
     s.addEventListener('input', () => { query = s.value; drawList(); });
@@ -524,8 +568,8 @@
   function viewer(x, list) {
     const v = el('div', 'viewer');
     const img = el('div', 'img');
-    const docBox = () => el('div', { style: 'color:#fff;text-align:center;font-size:15px' }, el('div', { style: 'font-size:48px' }, '📄'), x.name,
-      el('div', { style: 'color:#aaa;font-size:13px;margin-top:6px' }, x.url ? fsize(x.size) : 'Файл больше 20 МБ хранится в Telegram — его можно прислать себе в чат.'));
+    const docBox = () => el('div', { style: 'color:#fff;text-align:center;font-size:calc(15px * var(--k))' }, el('div', { style: 'font-size:calc(48px * var(--k))' }, '📄'), x.name,
+      el('div', { style: 'color:#aaa;font-size:calc(13px * var(--k));margin-top:6px' }, x.url ? fsize(x.size) : 'Файл больше 20 МБ хранится в Telegram — его можно прислать себе в чат.'));
     if (x.image && x.url) {
       const pic = el('img', { src: x.url, alt: x.name });
       pic.addEventListener('error', () => pic.replaceWith(docBox()));
@@ -594,7 +638,7 @@
 
   function personBlock(c) {
     const box = el('div');
-    box.append(el('div', 'row', el('div', 'grow', el('b', { style: 'font-size:17px' }, c.name),
+    box.append(el('div', 'row', el('div', 'grow', el('b', { style: 'font-size:calc(17px * var(--k))' }, c.name),
       el('div', 'small muted', [c.contact_pref ? 'удобнее: ' + c.contact_pref : '', c.city].filter(Boolean).join(' · '))), ...contactButtons(c)));
     const kv = el('dl', { class: 'kv', style: 'margin-top:10px' });
     [['Телефон', c.phone], ['E-mail', c.email], ['Мессенджер', c.messenger], ['Заметки', c.note]].forEach(([a, b]) => { if (b) kv.append(el('dt', null, a), el('dd', null, b)); });
@@ -691,7 +735,7 @@
       el('dt', null, 'Наценка на перепродаже'), el('dd', null, eur(M.margin))), el('p', 'small muted', 'Новых проектов: ' + M.new_projects + (M.new_contracts ? ' на ' + eur(M.new_contracts) : '') + ' · операций: ' + M.ops));
     box.append(h);
     const o = el('section', 'card');
-    o.append(el('h2', null, 'Заказчики ещё должны'), el('div', { class: 'hero num', style: 'font-size:28px;color:var(--warn)' }, eur(M.owing)),
+    o.append(el('h2', null, 'Заказчики ещё должны'), el('div', { class: 'hero num', style: 'font-size:calc(28px * var(--k));color:var(--warn)' }, eur(M.owing)),
       el('p', 'small muted', 'Остаток по договорам проектов в работе и на паузе'));
     if (M.owing_projects.length) {
       const ul = el('ul', 'people');
@@ -701,7 +745,7 @@
     box.append(o);
     if (M.owe_contractors.length) {
       const k = el('section', 'card');
-      k.append(el('h2', null, 'Подрядчики должны бонусы'), el('div', { class: 'hero num', style: 'font-size:28px;color:var(--warn)' }, eur(M.contractors_owe)),
+      k.append(el('h2', null, 'Подрядчики должны бонусы'), el('div', { class: 'hero num', style: 'font-size:calc(28px * var(--k));color:var(--warn)' }, eur(M.contractors_owe)),
         el('p', 'small muted', 'Бонус студии с этапов минус то, что подрядчик уже отдал. По всем проектам, кроме отменённых.'));
       const ul = el('ul', 'people');
       M.owe_contractors.forEach((x) => ul.append(el('li', { style: 'display:block' },
@@ -735,7 +779,7 @@
     const SVG = 'http://www.w3.org/2000/svg';
     const sv = (tag, a) => { const n = document.createElementNS(SVG, tag); for (const k in a) n.setAttribute(k, a[k]); return n; };
     const wrap = el('div', 'chart');
-    const W = Math.max(300, app.clientWidth - 30), H = 180, L = 44, R = 6, T = 10, B = 24, pw = W - L - R, ph = H - T - B;
+    const k = K(), W = Math.max(300, app.clientWidth - 30), H = Math.round(180 * Math.sqrt(k)), L = Math.round(44 * k), R = 6, T = 10, B = Math.round(24 * k), pw = W - L - R, ph = H - T - B;
     const vals = rows.map((r) => Math.max(0, r.total));
     let max = Math.max(1, ...vals); const p10 = Math.pow(10, Math.floor(Math.log10(max))); max = [1, 2, 2.5, 5, 10].map((m) => m * p10).find((m) => m >= max);
     const band = pw / rows.length, bw = Math.max(3, Math.min(24, band - 2)), y = (v) => T + ph - (v / max) * ph;
@@ -752,7 +796,7 @@
       const d = h <= 0 ? '' : `M${x0},${T + ph} V${top + rr} Q${x0},${top} ${x0 + rr},${top} H${x0 + bw - rr} Q${x0 + bw},${top} ${x0 + bw},${top + rr} V${T + ph} Z`;
       const p = sv('path', { d, fill: 'var(--series)' }); svg.append(p); bars.push(p);
       const [yy, mm] = r.month.split('-').map(Number);
-      const label = MON[mm - 1] + (yy !== year ? ' ' + yy : ''), w = label.length * 6.3, lx = cx - w / 2;
+      const label = MON[mm - 1] + (yy !== year ? ' ' + yy : ''), w = label.length * 6.3 * k, lx = cx - w / 2;
       if (lx > right + 6 && (rows.length <= 12 || mm % 3 === 1 || i === 0)) { right = lx + w; year = yy; const t = sv('text', { x: cx, y: H - 6, 'text-anchor': 'middle' }); t.textContent = label; svg.append(t); }
       const hit = sv('rect', { x: L + band * i, y: T, width: band, height: ph + B, fill: 'transparent', tabindex: 0 });
       const on = () => {
@@ -778,7 +822,8 @@
   function syncSheets() {
     const top = sheets[sheets.length - 1];
     if (MB) {
-      try { if (top && top.run) MB.setParams({ text: top.label, color: '#2a78d6', text_color: '#ffffff', is_active: true, is_visible: true }); else MB.hide(); } catch (e) {}
+      const css = getComputedStyle(document.documentElement);
+      try { if (top && top.run) MB.setParams({ text: top.label, color: css.getPropertyValue('--series').trim() || '#2a78d6', text_color: css.getPropertyValue('--on-series').trim() || '#ffffff', is_active: true, is_visible: true }); else MB.hide(); } catch (e) {}
     }
     // форма открыта — Telegram переспросит, прежде чем закрыть «Студию» (несохранённое не потеряется случайно)
     if (tg && tg.enableClosingConfirmation) try { if (sheets.some((x) => x.run)) tg.enableClosingConfirmation(); else tg.disableClosingConfirmation(); } catch (e) {}
@@ -979,7 +1024,7 @@
     const box = el('div', 'kcard');
     box.append(el('div', 'row',
       el('div', { class: 'grow', style: 'cursor:pointer', onclick: () => contractorCard(x) },
-        el('b', { style: 'font-size:18px;display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' ')),
+        el('b', { style: 'font-size:calc(18px * var(--k));display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' ')),
       ...contactButtons(x).slice(0, 2),
       el('button', { class: 'icon-btn', type: 'button', title: 'Убрать из проекта', 'aria-label': 'Убрать из проекта', onclick: async () => {
         if (!(await confirmBox('Убрать «' + x.name + '» из этого проекта? В контактах он останется.'))) return;
@@ -1018,7 +1063,7 @@
     st = st || { day: todayISO(), currency: last ? last.currency : 'EUR' };
     let mode = isNew ? 'pct' : st.commission == null ? 'unknown' : st.pct != null ? 'pct' : 'sum';
     const day = inp(st.day, { type: 'date' });
-    const title = inp(st.title, { placeholder: 'Например: кухня, черновые работы, 1-й этап' });
+    const title = inp(st.title, { placeholder: 'Кухня, черновые, 1-й этап…' });
     const amt = moneyField('Сумма заказа', st.amount || '', st.currency, st.rate_src === 'вручную' ? st.rate : '', st.rate_src === 'вручную', day,
       'На какую сумму подрядчик делает эту работу');
     const pct = inp(st.pct != null ? num(st.pct, 2).replace(/\s/g, '') : num(S.lists.default_pct, 2), { inputmode: 'decimal', 'aria-label': 'Процент' });
@@ -1121,7 +1166,16 @@
     const L = S.lists;
     const f = { tariffs: area(L.tariffs.join('\n')), trades: area(L.trades.join('\n')), commission_cats: area(L.commission_cats.join('\n')),
       default_pct: inp(num(L.default_pct, 2), { inputmode: 'decimal' }) };
-    const body = el('div', field('Бонус студии с заказа подрядчика, %', f.default_pct, 'Подставляется в каждый новый этап; в самом этапе можно поменять'),
+    // размер текста — сразу, без «Сохранить», и только для того, кто открыл (у каждого свой)
+    const sizeSeg = el('div', 'seg');
+    const drawSize = () => sizeSeg.replaceChildren(...SIZES.map(([k, t]) => el('button', { type: 'button', 'aria-pressed': String((document.documentElement.dataset.size || 'm') === k),
+      onclick: async () => {
+        applySize(k); drawSize(); render(); syncSheets();
+        try { await api('/api/crm/ui', { json: { size: k } }); } catch (e) { toast(e.message); }
+      } }, t)));
+    drawSize();
+    const body = el('div', el('div', 'field', el('span', 'lab', 'Размер текста'), sizeSeg, el('div', 'hint', 'Только для вас, на всех ваших устройствах — и в «Студии», и в графиках сайта')),
+      field('Бонус студии с заказа подрядчика, %', f.default_pct, 'Подставляется в каждый новый этап; в самом этапе можно поменять'),
       el('p', 'muted small', 'Списки: каждый пункт — с новой строки. Уже внесённые проекты не меняются.'),
       field('Тарифы', f.tariffs), field('Виды работ подрядчиков', f.trades), field('За что бывают бонусы от поставщиков', f.commission_cats),
       el('p', 'small muted', 'Файлы проектов на сервере: ' + num((S.disk.used || 0) / 1048576, 1) + ' МБ' + (S.disk.free ? ' · свободно ' + num(S.disk.free / 1073741824, 1) + ' ГБ' : '')));
@@ -1137,6 +1191,7 @@
     if (!INIT) { app.replaceChildren(el('div', 'card muted', 'Откройте «Студию» кнопкой в боте студии DUMSKAYA DESIGN.')); return; }
     try { await loadState(); }
     catch (e) { app.replaceChildren(el('div', 'card muted', e.message)); return; }
+    if (S.me && S.me.size) applySize(S.me.size);
     const pid = new URLSearchParams(location.search).get('project');
     if (pid) await openProject(pid, false); else render();
   }

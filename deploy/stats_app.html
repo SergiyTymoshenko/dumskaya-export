@@ -24,6 +24,7 @@
     --up: #006300;
     --down: #d03b3b;
     --ghost: rgba(11, 11, 11, 0.05);
+    --k: 1;                                 /* размер текста — как выбран в «Студии» (⚙︎ → «Размер текста») */
   }
   :root[data-theme="dark"] {
     color-scheme: dark;
@@ -41,39 +42,50 @@
     --down: #e66767;
     --ghost: rgba(255, 255, 255, 0.06);
   }
+  /* крупный текст: в 1,25 или 1,5 раза больше, второстепенный текст и линии — контрастнее */
+  :root[data-size="l"] { --k: 1.25; }
+  :root[data-size="xl"] { --k: 1.5; }
+  :root[data-size="l"], :root[data-size="xl"] {
+    --text-2: #2f2e2b; --muted: #4f4e49; --border: rgba(11, 11, 11, 0.32); --grid: #c4c3ba; --axis: #8f8e86;
+    --series: #1a5cb0; --series-wash: rgba(26, 92, 176, 0.12); --up: #005200; --down: #b42323; --ghost: rgba(11, 11, 11, 0.08);
+  }
+  :root[data-theme="dark"][data-size="l"], :root[data-theme="dark"][data-size="xl"] {
+    --text-2: #e4e3df; --muted: #bdbcb5; --border: rgba(255, 255, 255, 0.34); --grid: #4a4a45; --axis: #6a6a64;
+    --series: #6aa9f2; --series-wash: rgba(106, 169, 242, 0.16); --up: #4fd14f; --down: #ff8f8f; --ghost: rgba(255, 255, 255, 0.10);
+  }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: var(--page); color: var(--text-1); }
-  body { font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 16px 16px 40px; max-width: 760px; margin: 0 auto; }
-  h1 { font-size: 20px; font-weight: 600; margin: 0 0 2px; }
-  .back { display: inline-block; color: var(--series); text-decoration: none; font-size: 14px; margin: 0 0 6px; padding: 4px 0; }
-  .sub { color: var(--text-2); font-size: 13px; margin: 0 0 14px; }
+  body { font: calc(15px * var(--k))/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 16px 16px 40px; max-width: 760px; margin: 0 auto; }
+  h1 { font-size: calc(20px * var(--k)); font-weight: 600; margin: 0 0 2px; }
+  .back { display: inline-block; color: var(--series); text-decoration: none; font-size: calc(14px * var(--k)); margin: 0 0 6px; padding: 4px 0; }
+  .sub { color: var(--text-2); font-size: calc(13px * var(--k)); margin: 0 0 14px; }
   /* периоды: 4 кнопки в первом ряду, 3 — во втором (сетка из 12 колонок) */
   .filters { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; margin: 0 0 14px; }
-  .filters button { grid-column: span 3; min-width: 0; font: inherit; font-size: 13px; color: var(--text-1); background: var(--surface);
+  .filters button { grid-column: span 3; min-width: 0; font: inherit; font-size: calc(13px * var(--k)); color: var(--text-1); background: var(--surface);
     border: 1px solid var(--border); border-radius: 999px; padding: 7px 4px; cursor: pointer; white-space: nowrap; }
   .filters button:nth-child(n+5) { grid-column: span 4; }
-  @media (max-width: 359px) { .filters { gap: 4px; } .filters button { font-size: 12px; padding: 7px 2px; } }
+  @media (max-width: 359px) { .filters { gap: 4px; } .filters button { font-size: calc(12px * var(--k)); padding: 7px 2px; } }
   .filters button[aria-pressed="true"] { background: var(--text-1); color: var(--page); border-color: var(--text-1); font-weight: 600; }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin: 0 0 12px; }
-  .card h2 { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
-  .card .note { color: var(--text-2); font-size: 13px; margin: 0 0 10px; }
+  .card h2 { font-size: calc(15px * var(--k)); font-weight: 600; margin: 0 0 2px; }
+  .card .note { color: var(--text-2); font-size: calc(13px * var(--k)); margin: 0 0 10px; }
   .card .bars + .note { margin-top: 14px; }
   .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 12px; }
   .tile { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; min-width: 0; }
-  .tile .label { color: var(--text-2); font-size: 13px; }
-  .tile .value { font-size: 26px; font-weight: 600; line-height: 1.15; margin-top: 2px; white-space: nowrap; }
-  @media (max-width: 359px) { .tile .value { font-size: 22px; } }
+  .tile .label { color: var(--text-2); font-size: calc(13px * var(--k)); }
+  .tile .value { font-size: calc(26px * var(--k)); font-weight: 600; line-height: 1.15; margin-top: 2px; white-space: nowrap; }
+  @media (max-width: 359px) { .tile .value { font-size: calc(22px * var(--k)); } }
   .tile.hero, .tile.wide { grid-column: 1 / -1; }
-  .tile .split { color: var(--text-2); font-size: 13px; margin-top: 2px; }
-  .tile.hero .value { font-size: 48px; }
-  .delta { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+  .tile .split { color: var(--text-2); font-size: calc(13px * var(--k)); margin-top: 2px; }
+  .tile.hero .value { font-size: calc(48px * min(var(--k), 1.25)); }
+  .delta { font-size: calc(13px * var(--k)); color: var(--text-2); margin-top: 2px; }
   .delta .up { color: var(--up); font-weight: 600; }
   .delta .down { color: var(--down); font-weight: 600; }
   .chart { position: relative; }
   .chart svg { display: block; width: 100%; height: auto; overflow: visible; touch-action: pan-y; }
-  .chart text { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .chart text { fill: var(--muted); font-size: calc(11px * var(--k)); font-variant-numeric: tabular-nums; }
   .tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-    padding: 8px 10px; font-size: 13px; box-shadow: 0 4px 16px rgba(0,0,0,.12); min-width: 140px; display: none; z-index: 2; }
+    padding: 8px 10px; font-size: calc(13px * var(--k)); box-shadow: 0 4px 16px rgba(0,0,0,.12); min-width: 140px; display: none; z-index: 2; }
   .tip .d { color: var(--text-2); margin-bottom: 4px; }
   .tip .row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
   .tip .row b { font-weight: 600; }
@@ -81,56 +93,65 @@
   .tip .key { display: inline-block; width: 12px; height: 2px; background: var(--series); border-radius: 1px; margin-right: 6px; vertical-align: middle; }
   .bars { display: grid; gap: 8px; }
   .bar { display: grid; grid-template-columns: minmax(84px, 34%) 1fr; gap: 10px; align-items: center; }
-  .bar .name { color: var(--text-1); font-size: 14px; overflow-wrap: anywhere; }
+  .bar .name { color: var(--text-1); font-size: calc(14px * var(--k)); overflow-wrap: anywhere; }
   .bar .track { display: flex; align-items: center; gap: 8px; min-width: 0; }
   .bar .fill { height: 12px; background: var(--series); border-radius: 0 4px 4px 0; min-width: 2px; }
-  .bar .num { color: var(--text-2); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bar .num { color: var(--text-2); font-size: calc(13px * var(--k)); font-variant-numeric: tabular-nums; white-space: nowrap; }
   .pages { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
   .pages li { display: grid; gap: 4px; }
-  .pages .top { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; }
+  .pages .top { display: flex; justify-content: space-between; gap: 10px; font-size: calc(14px * var(--k)); }
   .pages .top .t { overflow-wrap: anywhere; }
   .pages .top .n { color: var(--text-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
-  .pages .avg { color: var(--text-2); font-size: 12px; margin-top: -2px; }
+  .pages .avg { color: var(--text-2); font-size: calc(12px * var(--k)); margin-top: -2px; }
   .pages .line { height: 4px; background: var(--series); border-radius: 0 2px 2px 0; min-width: 2px; }
   details { margin-top: 10px; }
-  summary { cursor: pointer; color: var(--text-2); font-size: 13px; }
-  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: 13px; font-variant-numeric: tabular-nums; }
+  summary { cursor: pointer; color: var(--text-2); font-size: calc(13px * var(--k)); }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: calc(13px * var(--k)); font-variant-numeric: tabular-nums; }
   th, td { text-align: right; padding: 5px 4px; border-bottom: 1px solid var(--grid); }
   th:first-child, td:first-child { text-align: left; }
   th { color: var(--text-2); font-weight: 500; }
   .empty { color: var(--text-2); padding: 24px 0; text-align: center; }
   .loading { opacity: .5; transition: opacity .2s; }
-  .btn { font: inherit; font-size: 14px; font-weight: 600; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
+  .btn { font: inherit; font-size: calc(14px * var(--k)); font-weight: 600; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
     background: var(--series); color: #fff; }
   .btn.ghost { background: transparent; color: var(--text-1); border: 1px solid var(--border); font-weight: 500; }
   .btn:disabled { opacity: .6; cursor: default; }
   .own { display: grid; gap: 10px; }
-  .own .now { font-size: 14px; }
+  .own .now { font-size: calc(14px * var(--k)); }
   .own .now b { font-variant-numeric: tabular-nums; }
   .own .ok { color: var(--up); font-weight: 600; }
   .own ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
-  .own li { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 14px; border-top: 1px solid var(--grid); padding-top: 8px; }
-  .own li .meta { color: var(--text-2); font-size: 12px; }
+  .own li { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: calc(14px * var(--k)); border-top: 1px solid var(--grid); padding-top: 8px; }
+  .own li .meta { color: var(--text-2); font-size: calc(12px * var(--k)); }
   .err { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; color: var(--text-2); }
   /* «1 час»: карточка посетителя */
   .visit .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-  .visit .place { font-size: 16px; font-weight: 600; overflow-wrap: anywhere; }
+  .visit .place { font-size: calc(16px * var(--k)); font-weight: 600; overflow-wrap: anywhere; }
   .visit .place .flag { margin-right: 4px; }
-  .visit .when { color: var(--text-2); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .visit .live { color: var(--up); font-weight: 600; font-size: 13px; white-space: nowrap; }
+  .visit .when { color: var(--text-2); font-size: calc(13px * var(--k)); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .visit .live { color: var(--up); font-weight: 600; font-size: calc(13px * var(--k)); white-space: nowrap; }
   .visit .live::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--up); margin-right: 6px; vertical-align: 1px; }
-  .visit .meta { color: var(--text-2); font-size: 13px; margin-top: 3px; }
+  .visit .meta { color: var(--text-2); font-size: calc(13px * var(--k)); margin-top: 3px; }
   .visit .meta b { color: var(--text-1); font-weight: 600; }
   .trail { list-style: none; margin: 10px 0 0; padding: 0; }
-  .trail li { display: grid; grid-template-columns: 42px 1fr auto; gap: 2px 10px; padding: 7px 0; border-top: 1px solid var(--grid); align-items: baseline; }
-  .trail .tm { color: var(--text-2); font-size: 13px; font-variant-numeric: tabular-nums; }
-  .trail .pt { font-size: 14px; overflow-wrap: anywhere; }
+  .trail li { display: grid; grid-template-columns: calc(42px * var(--k)) 1fr auto; gap: 2px 10px; padding: 7px 0; border-top: 1px solid var(--grid); align-items: baseline; }
+  .trail .tm { color: var(--text-2); font-size: calc(13px * var(--k)); font-variant-numeric: tabular-nums; }
+  .trail .pt { font-size: calc(14px * var(--k)); overflow-wrap: anywhere; }
   .trail .nf .pt { color: var(--down); }
-  .trail .du { color: var(--text-2); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .trail .du { color: var(--text-2); font-size: calc(13px * var(--k)); white-space: nowrap; font-variant-numeric: tabular-nums; }
   .trail .du.now { color: var(--up); font-weight: 600; }
   .trail .evs { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
-  .trail .ev { font-size: 12px; background: var(--ghost); border-radius: 999px; padding: 2px 9px; }
-  .foot { color: var(--muted); font-size: 12px; margin: 4px 2px 0; }
+  .trail .ev { font-size: calc(12px * var(--k)); background: var(--ghost); border-radius: 999px; padding: 2px 9px; }
+  .foot { color: var(--muted); font-size: calc(12px * var(--k)); margin: 4px 2px 0; }
+  /* крупный текст: раскладка, чтобы ничего не обрезалось */
+  :root[data-size="l"] body, :root[data-size="xl"] body { font-weight: 500; }
+  :root[data-size="l"] .filters button, :root[data-size="xl"] .filters button { border-width: 2px; padding: 9px 2px; }
+  :root[data-size="xl"] .filters button { grid-column: span 6; }
+  :root[data-size="xl"] .filters button:nth-child(7) { grid-column: 1 / -1; }
+  :root[data-size="l"] .tiles, :root[data-size="xl"] .tiles { grid-template-columns: 1fr; }
+  :root[data-size="l"] .bar, :root[data-size="xl"] .bar { grid-template-columns: 1fr; gap: 4px; }
+  :root[data-size="l"] .tile, :root[data-size="xl"] .tile, :root[data-size="l"] .card, :root[data-size="xl"] .card { border-width: 2px; }
+  :root[data-size="l"] details, :root[data-size="xl"] details { overflow-x: auto; }
 </style>
 </head>
 <body>
@@ -158,6 +179,12 @@
   const MONTHS_NOM = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
   const app = document.getElementById('app');
   let period = '7', data = null;
+  // размер текста — тот же, что в «Студии»: сразу — запомненный на этом устройстве, затем — с сервера
+  const SIZES = ['m', 'l', 'xl'];
+  const applySize = (z) => { if (!SIZES.includes(z)) return false; const was = document.documentElement.dataset.size; document.documentElement.dataset.size = z;
+    try { localStorage.setItem('ui-size', z); } catch (e) {} return was !== z; };
+  try { applySize(localStorage.getItem('ui-size')); } catch (e) {}
+  const K = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--k')) || 1;
   try { const p = localStorage.getItem('stats-period'); if (PERIODS.includes(p)) period = p; } catch (e) {}
 
   function theme() {
@@ -243,7 +270,7 @@
     ticks(rows).forEach((i) => {
       const d = long ? pd(rows[i].date) : null;   // у недель и месяцев год — у первой подписи и там, где он сменился
       const text = long ? MON_AXIS[d.getMonth()] + (d.getFullYear() !== year ? ' ' + d.getFullYear() : '') : tickText(rows, i);
-      const w = text.length * 6.3;
+      const w = text.length * 6.3 * K();
       const anchor = edges && i === 0 ? 'start' : edges && i === rows.length - 1 ? 'end' : 'middle';
       const x0 = anchor === 'start' ? xf(i) : anchor === 'end' ? xf(i) - w : xf(i) - w / 2;
       if (x0 < right + 8) return;
@@ -285,7 +312,7 @@
   // Линия по дням или часам (одна серия, площадь — лёгкая заливка), перекрестие и подсказка с остальными цифрами
   function lineChart(rows, key, tipRows) {
     const wrap = el('div', 'chart');
-    const W = Math.max(300, app.clientWidth - 30), H = 190, L = 34, R = 10, T = 10, B = 24;
+    const k = K(), W = Math.max(300, app.clientWidth - 30), H = Math.round(190 * Math.sqrt(k)), L = Math.round(34 * k), R = 10, T = 10, B = Math.round(24 * k);
     const pw = W - L - R, ph = H - T - B;
     const vals = rows.map((r) => (r.missing ? null : r[key]));
     const max = niceMax(Math.max(1, ...vals.filter((v) => v != null)));
@@ -369,7 +396,7 @@
   // Столбики по дням или часам (одна серия): ≤ 24 px, скругление 4 px сверху, зазор 2 px
   function columnChart(rows, key, tipRows) {
     const wrap = el('div', 'chart');
-    const W = Math.max(300, app.clientWidth - 30), H = 160, L = 34, R = 6, T = 10, B = 24;
+    const k = K(), W = Math.max(300, app.clientWidth - 30), H = Math.round(160 * Math.sqrt(k)), L = Math.round(34 * k), R = 6, T = 10, B = Math.round(24 * k);
     const pw = W - L - R, ph = H - T - B;
     const vals = rows.map((r) => (r.missing ? 0 : r[key]));
     const max = niceMax(Math.max(1, ...vals));
@@ -662,6 +689,8 @@
     load();
   }));
   press();
+  if (tg && tg.initData) fetch('/api/crm/ui', { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : null)).then((x) => { if (x && applySize(x.size) && data) render(); }).catch(() => {});
   // «1 час» обновляется сам, пока приложение открыто
   setInterval(() => { if (period === '1h' && document.visibilityState === 'visible') load(true); }, 60000);
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => data && render(), 150); });

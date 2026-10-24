@@ -347,9 +347,9 @@ def main():
     if BOT:
         BOT.monitor = SiteMonitor(BOT, log=log)     # сторож сайта: «сайт не отвечает» разработчику в бот
         BOT.stats = SiteStats(BOT, log=log)         # посетители по журналу Caddy: «Графики» и строка в 9:00
+        crm_api.BOT = BOT                           # размер текста в «Студии» и графиках, файлы проекта → в чат
         try:                                        # учёт проектов студии (кнопка «Студия»)
             crm_api.CRM = BOT.crm = Crm(rates=Rates(), extra_backups=[BOT_DB])
-            crm_api.BOT = BOT
             BOT.stats.hooks.append(BOT.crm.backup_if_due)   # каждый день — копия баз в ~/dumskaya/backups
             BOT.stats.hooks.append(BOT.crm_backup_reminder)  # копия на Маке старше недели — напомнить разработчику
         except Exception as e:  # noqa: BLE001
