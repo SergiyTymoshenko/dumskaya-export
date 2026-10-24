@@ -25,6 +25,8 @@ Caddy записывает каждый запрос в /var/log/caddy/dumskaya.
 """
 import glob
 import gzip
+import hashlib
+import hmac
 import html
 import json
 import os
@@ -34,7 +36,7 @@ import threading
 import time
 from collections import Counter
 from datetime import date, datetime, timedelta, timezone
-from urllib.parse import unquote, urlsplit
+from urllib.parse import parse_qsl, unquote, urlsplit
 
 try:
     from zoneinfo import ZoneInfo
@@ -48,6 +50,7 @@ SITE_DIR = os.environ.get("SITE_DIR", "/var/www/dumskaya/site")
 LEADS_FILE = os.environ.get("LEADS_FILE", os.path.join(APP, "leads.jsonl"))
 STATS_DIR = os.environ.get("STATS_DIR", os.path.join(APP, "stats"))
 REPORT_HOUR = 9
+APP_URL = os.environ.get("STATS_APP_URL", "https://dumskaya-design.com/api/stats/app")   # мини-приложение с графиками
 KEEP_DAYS = 800
 
 LANG_NAMES = {"ru": "RU", "ua": "UA", "en": "EN", "sk": "SK", "de": "DE"}
@@ -172,63 +175,90 @@ def leads_between(since_ts, until_ts):
     return out
 
 
-def aggregate(since_ts, until_ts):
-    """Итоги за период: только числа и адреса страниц, без IP."""
-    visitors = {}                                  # ключ (IP+браузер) → {src, dev, langs}
-    views, lang_views, notfound = Counter(), Counter(), Counter()
-    google, google_lang, bing, requests = 0, Counter(), 0, 0
-    for ts, e in entries(since_ts, until_ts):
-        requests += 1
+class Agg:
+    """Накопитель итогов за один период (день или «сегодня до текущего часа»): только числа, без IP."""
+
+    def __init__(self):
+        self.visitors = {}                          # ключ (IP+браузер) → {src, dev, langs}; только в памяти
+        self.views, self.lang_views, self.notfound = Counter(), Counter(), Counter()
+        self.google, self.google_lang, self.bing, self.requests = 0, Counter(), 0, 0
+
+    def add(self, e):
+        self.requests += 1
         r = e.get("request") or {}
         if r.get("method") != "GET":
-            continue
+            return
         h = r.get("headers") or {}
         ua = header(h, "User-Agent")
         path = unquote(urlsplit(r.get("uri") or "/").path) or "/"
         path = path.rstrip("/") or "/"
         if path.startswith(("/img/", "/_astro/", "/api/")) or ASSET.search(path):
-            continue
+            return
         status = e.get("status")
         if "Googlebot" in ua:
             if status in (200, 304):
-                google += 1
-                google_lang[lang_of(path)] += 1
-            continue
+                self.google += 1
+                self.google_lang[lang_of(path)] += 1
+            return
         if "bingbot" in ua.lower():
             if status in (200, 304):
-                bing += 1
-            continue
+                self.bing += 1
+            return
         human = (ua.startswith("Mozilla/") and not BOT.search(ua) and header(h, "Accept-Language")
                  and "prefetch" not in (header(h, "Sec-Purpose") + header(h, "Purpose")).lower())
         if not human:
-            continue
+            return
         if status == 404:
             if not JUNK.search(path):
-                notfound[path] += 1
-            continue
+                self.notfound[path] += 1
+            return
         if status not in (200, 304):
-            continue
+            return
         key = (r.get("client_ip") or r.get("remote_ip") or "") + "|" + ua
-        v = visitors.get(key)
+        v = self.visitors.get(key)
         if v is None:
-            v = visitors[key] = {"src": source(header(h, "Referer")), "dev": device(ua), "langs": set()}
+            v = self.visitors[key] = {"src": source(header(h, "Referer")), "dev": device(ua), "langs": set()}
         v["langs"].add(lang_of(path))
-        views[path] += 1
-        lang_views[lang_of(path)] += 1
-    leads = leads_between(since_ts, until_ts)
-    return {
-        "requests": requests,                      # 0 — за этот период журнала нет (ещё не вёлся или удалён)
-        "visitors": len(visitors),
-        "views": sum(views.values()),
-        "lang_visitors": dict(Counter(l for v in visitors.values() for l in v["langs"])),
-        "lang_views": dict(lang_views),
-        "sources": dict(Counter(v["src"] for v in visitors.values())),
-        "devices": dict(Counter(v["dev"] for v in visitors.values())),
-        "pages": dict(views.most_common(50)),
-        "notfound": dict(notfound.most_common(20)),
-        "google": google, "google_lang": dict(google_lang), "bing": bing,
-        "leads": len(leads), "lead_pages": dict(Counter(x["page"] for x in leads if x["page"])),
-    }
+        self.views[path] += 1
+        self.lang_views[lang_of(path)] += 1
+
+    def result(self, leads):
+        vs = self.visitors.values()
+        return {
+            "requests": self.requests,              # 0 — за этот период журнала нет (ещё не вёлся или удалён)
+            "visitors": len(self.visitors),
+            "views": sum(self.views.values()),
+            "lang_visitors": dict(Counter(l for v in vs for l in v["langs"])),
+            "lang_views": dict(self.lang_views),
+            "sources": dict(Counter(v["src"] for v in vs)),
+            "devices": dict(Counter(v["dev"] for v in vs)),
+            "pages": dict(self.views.most_common(50)),
+            "notfound": dict(self.notfound.most_common(20)),
+            "google": self.google, "google_lang": dict(self.google_lang), "bing": self.bing,
+            "leads": len(leads), "lead_pages": dict(Counter(x["page"] for x in leads if x["page"])),
+        }
+
+
+def aggregate(since_ts, until_ts):
+    """Итоги за период одним проходом по журналу."""
+    a = Agg()
+    for _, e in entries(since_ts, until_ts):
+        a.add(e)
+    return a.result(leads_between(since_ts, until_ts))
+
+
+def aggregate_days(days):
+    """Итоги нескольких дней за один проход по журналу: {день: итоги}."""
+    if not days:
+        return {}
+    bounds = {d: day_bounds(d) for d in days}
+    aggs = {d: Agg() for d in days}
+    lo, hi = min(b[0] for b in bounds.values()), max(b[1] for b in bounds.values())
+    for ts, e in entries(lo, hi):
+        d = datetime.fromtimestamp(ts, TZ).date()
+        if d in aggs:
+            aggs[d].add(e)
+    return {d: aggs[d].result(leads_between(*bounds[d])) for d in days}
 
 
 # ---------- дни и хранение ----------
@@ -269,16 +299,36 @@ def save_day(d, agg):
                 pass
 
 
-def day_stats(d, store=True):
-    """Итоги прошедшего дня: из сохранённого файла или из журнала (и сохранить); None — данных за день нет."""
-    agg = load_day(d)
-    if agg is None:
-        agg = aggregate(*day_bounds(d))
+_empty = {}                                         # дни без записей в журнале: {день: дата проверки}
+
+
+def days_stats(days):
+    """Итоги прошедших дней {день: итоги или None, если данных нет}: сохранённые файлы, недостающие —
+    из журнала одним проходом (и сохранить). Сегодняшний день не сохраняется — он ещё не закончился."""
+    t = today()
+    out, missing = {}, []
+    for d in days:
+        agg = load_day(d)
+        if agg is not None:
+            out[d] = agg
+        elif _empty.get(d) == t:
+            out[d] = None
+        else:
+            missing.append(d)
+    for d, agg in aggregate_days(missing).items():
         if not agg["requests"]:
-            return None
-        if store and d < today():
+            out[d] = None
+            _empty[d] = t
+            continue
+        if d < t:
             save_day(d, agg)
-    return agg
+        out[d] = agg
+    return out
+
+
+def day_stats(d):
+    """Итоги одного дня или None — данных за день нет."""
+    return days_stats([d])[d]
 
 
 def merge(aggs):
@@ -325,52 +375,83 @@ def esc(s):
     return html.escape(str(s), quote=False)
 
 
-def line(counter, order=None, limit=6):
-    items = list(counter.items())
-    if order:
-        items = [(k, counter.get(k, 0)) for k in order if counter.get(k)]
-    else:
-        items.sort(key=lambda kv: -kv[1])
+SPARK = "▁▂▃▄▅▆▇█"
+EIGHTHS = " ▏▎▍▌▋▊▉█"
+
+
+def spark(values):
+    """▁▃▅█ по дням; нет данных — «·»."""
+    nums = [v for v in values if v is not None]
+    top = max(nums) if nums else 0
+    return "".join("·" if v is None else SPARK[0] if not top else SPARK[min(7, round(v / top * 7))] for v in values)
+
+
+def bar(v, top, width=10):
+    """Полоса из блоков длиной до width знаков (с точностью до 1/8)."""
+    if not top or v <= 0:
+        return ""
+    units = max(1, round(v / top * width * 8))
+    return "█" * (units // 8) + (EIGHTHS[units % 8] if units % 8 else "")
+
+
+def bars(counter, order=None, limit=6, other="другие"):
+    """Блок <pre> с полосами: подпись, полоса, число."""
+    items = [(k, counter.get(k, 0)) for k in order if counter.get(k)] if order else \
+        sorted(counter.items(), key=lambda kv: -kv[1])
     if not items:
-        return "—"
+        return ""
     rest = sum(v for _, v in items[limit:])
-    parts = [f"{esc(k)} {v}" for k, v in items[:limit]]
-    if rest:
-        parts.append(f"другие {rest}")
-    return " · ".join(parts)
+    items = items[:limit] + ([(other, rest)] if rest else [])
+    top = max(v for _, v in items)
+    w = min(14, max(len(str(k)) for k, _ in items))
+    rows = [f"{str(k)[:w].ljust(w)} {bar(v, top).ljust(10)} {v}" for k, v in items]
+    return "<pre>" + esc("\n".join(rows)) + "</pre>"
 
 
 def delta(cur, prev):
     if prev is None:
         return ""
     d = cur - prev
-    return f" ({'+' if d > 0 else ''}{d})" if d else " (без изменений)"
+    return f"  {'▲' if d > 0 else '▼'} {abs(d)}" if d else "  = как раньше"
 
 
-def body(a, prev=None, top=7):
-    langs = {LANG_NAMES[k]: v for k, v in (a.get("lang_visitors") or {}).items()}
-    out = [f"Посетители: <b>{a['visitors']}</b>{delta(a['visitors'], prev and prev['visitors'])} · "
-           f"просмотров: {a['views']}{delta(a['views'], prev and prev['views'])}"]
-    if a["visitors"]:
-        out.append(f"Языки: {line(Counter(langs), order=list(LANG_NAMES.values()))}")
-        out.append(f"Откуда: {line(Counter(a.get('sources') or {}))}")
-        out.append(f"Устройства: {line(Counter(a.get('devices') or {}))}")
+def body(a, prev=None, top=7, trend=None, trend_label=""):
+    out = [f"👥 Посетители: <b>{a['visitors']}</b>{delta(a['visitors'], prev and prev['visitors'])}",
+           f"👁 Просмотры: <b>{a['views']}</b>{delta(a['views'], prev and prev['views'])}"]
     leads = a.get("leads", 0)
     lp = Counter(a.get("lead_pages") or {})
-    out.append(f"Заявки: <b>{leads}</b>{delta(leads, prev and prev.get('leads'))}"
+    out.append(f"✉️ Заявки: <b>{leads}</b>{delta(leads, prev and prev.get('leads'))}"
                + (f" — {', '.join(esc(title_of(p)) for p, _ in lp.most_common(3))}" if lp else ""))
+    if trend:
+        out.append(f"\n<code>{trend}</code> {esc(trend_label)}")
+    if a["visitors"]:
+        langs = Counter({LANG_NAMES[k]: v for k, v in (a.get("lang_visitors") or {}).items()})
+        out.append("\n<b>Языки</b>" + bars(langs, order=list(LANG_NAMES.values())))
+        out.append("<b>Откуда</b>" + bars(Counter(a.get("sources") or {}), limit=5))
+        dev = Counter(a.get("devices") or {})
+        out.append("Устройства: " + " · ".join(f"{esc(k)} {v}" for k, v in dev.most_common()))
     pages = Counter(a.get("pages") or {}).most_common(top)
     if pages:
-        out.append("\nПопулярные страницы:")
+        out.append("\n<b>Популярные страницы</b>")
         out += [f"{i}. {esc(title_of(p))} — {n}" for i, (p, n) in enumerate(pages, 1)]
     nf = Counter(a.get("notfound") or {}).most_common(5)
     if nf:
-        out.append("\nНе найдено (404): " + "; ".join(f"{esc(p)} — {n}" for p, n in nf))
+        out.append("\n⚠️ Не найдено (404): " + "; ".join(f"{esc(p)} — {n}" for p, n in nf))
     gl = Counter(a.get("google_lang") or {})
     new = " · ".join(f"{LANG_NAMES[k]} {gl[k]}" for k in ("sk", "de") if gl.get(k))
-    out.append(f"\nРобот Google: {a.get('google', 0)} стр." + (f" (из них {new})" if new else "")
+    out.append(f"\n🤖 Робот Google: {a.get('google', 0)} стр." + (f" (из них {new})" if new else "")
                + f" · Bing: {a.get('bing', 0)}")
     return "\n".join(out)
+
+
+def trend_of(last_day, n=14):
+    """Посетители за n дней, заканчивая last_day, — строка ▁▃▅█ и подпись."""
+    days = [last_day - timedelta(days=i) for i in range(n - 1, -1, -1)]
+    got = days_stats(days)
+    vals = [got[d]["visitors"] if got[d] else None for d in days]
+    if sum(1 for v in vals if v is not None) < 2:
+        return None, ""
+    return spark(vals), f"посетители за {n} дней"
 
 
 def day_name(d):
@@ -382,15 +463,17 @@ def daily_report(d):
     if a is None:
         return f"📊 <b>Сайт за {day_name(d)}</b>\nЗа этот день в журнале сайта нет записей."
     prev = day_stats(d - timedelta(days=1))
-    return f"📊 <b>Сайт за {day_name(d)}</b>\n" + body(a, prev)
+    tr, label = trend_of(d)
+    return f"📊 <b>Сайт за {day_name(d)}</b>\n\n" + body(a, prev, trend=tr, trend_label=label)
 
 
 def weekly_report(monday):
     """Неделя с понедельника monday по воскресенье — со сравнением с предыдущей."""
     days = [monday + timedelta(days=i) for i in range(7)]
-    cur = [day_stats(d) for d in days]
+    got = days_stats(days + [d - timedelta(days=7) for d in days])
+    cur = [got[d] for d in days]
     a = merge(x for x in cur if x is not None)
-    b = merge(day_stats(d - timedelta(days=7)) for d in days)
+    b = merge(got[d - timedelta(days=7)] for d in days)
     sun = days[-1]
     head = f"📈 <b>Сайт за неделю {monday.day} {MONTHS[monday.month - 1]} — {sun.day} {MONTHS[sun.month - 1]}</b>\n"
     if a is None:
@@ -399,8 +482,12 @@ def weekly_report(monday):
     note = ["посетители — сумма по дням"]
     if missing:
         note.append(f"нет данных за {missing} дн.")
-    note.append("в скобках — разница с прошлой неделей" if b else "сравнения с прошлой неделей пока нет")
-    return head + f"<i>{'; '.join(note)}</i>\n" + body(a, b, top=10)
+    note.append("▲▼ — разница с прошлой неделей" if b else "сравнения с прошлой неделей пока нет")
+    wd = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+    vals = [x["visitors"] if x else 0 for x in cur]
+    daily = "<b>По дням</b><pre>" + esc("\n".join(
+        f"{wd[i]} {bar(v, max(vals) or 1).ljust(10)} {v if cur[i] else '—'}" for i, v in enumerate(vals))) + "</pre>"
+    return head + f"<i>{'; '.join(note)}</i>\n\n" + body(a, b, top=10) + "\n\n" + daily
 
 
 def today_report():
@@ -411,11 +498,81 @@ def today_report():
     hh = datetime.now(TZ).strftime("%H:%M")
     tail = (f"\n\nВчера: посетителей {y['visitors']}, просмотров {y['views']}, заявок {y.get('leads', 0)}"
             if y else "")
-    return f"📊 <b>Сайт сегодня, до {hh}</b>\n" + body(a) + tail
+    tr, label = trend_of(d - timedelta(days=1))
+    return f"📊 <b>Сайт сегодня, до {hh}</b>\n\n" + body(a, trend=tr, trend_label=label + " (до вчера)" if tr else "") + tail
+
+
+# ---------- мини-приложение с графиками ----------
+def check_init_data(init_data, token, max_age=86400):
+    """Telegram ID из подписанных данных запуска мини-приложения или None (подпись — HMAC от токена бота)."""
+    try:
+        pairs = dict(parse_qsl(init_data or "", keep_blank_values=True, strict_parsing=True))
+    except ValueError:
+        return None
+    got = pairs.pop("hash", "")
+    if not got or not token:
+        return None
+    check = "\n".join(f"{k}={v}" for k, v in sorted(pairs.items()))
+    secret = hmac.new(b"WebAppData", token.encode(), hashlib.sha256).digest()
+    if not hmac.compare_digest(hmac.new(secret, check.encode(), hashlib.sha256).hexdigest(), got):
+        return None
+    try:
+        if time.time() - int(pairs.get("auth_date", "0")) > max_age:
+            return None
+        return int(json.loads(pairs.get("user") or "{}").get("id"))
+    except (ValueError, TypeError):
+        return None
+
+
+def web_data(n):
+    """Данные для графиков: n дней, последний — сегодня (неполный), и сравнение с предыдущими n днями."""
+    n = n if n in (7, 30, 90) else 7
+    t = today()
+    days = [t - timedelta(days=i) for i in range(n - 1, -1, -1)]
+    prev_days = [d - timedelta(days=n) for d in days]
+    got = days_stats(days[:-1] + prev_days)
+    start, _ = day_bounds(t)
+    got[t] = aggregate(start, time.time() + 1)
+    if not got[t]["requests"]:
+        got[t] = None
+    rows = []
+    for d in days:
+        a = got[d]
+        gl = (a or {}).get("google_lang") or {}
+        rows.append({"date": d.isoformat(), "missing": a is None, "partial": d == t,
+                     "visitors": (a or {}).get("visitors", 0), "views": (a or {}).get("views", 0),
+                     "leads": (a or {}).get("leads", 0), "google": (a or {}).get("google", 0),
+                     "google_sk": gl.get("sk", 0), "google_de": gl.get("de", 0)})
+    cur = [got[d] for d in days if got[d]]
+    prev = [got[d] for d in prev_days]
+    tot = merge(cur) if cur else None
+    pv = merge(prev) if prev and all(prev) else None          # сравниваем, только если за прошлый период есть все дни
+
+    def top(counter, k=8, other="другие"):
+        items = Counter(counter).most_common()
+        rest = sum(v for _, v in items[k:])
+        return [list(x) for x in items[:k]] + ([[other, rest]] if rest else [])
+
+    total = {"visitors": 0, "views": 0, "leads": 0, "google": 0, "langs": [], "sources": [], "devices": [],
+             "pages": [], "notfound": [], "leads_pages": []}
+    if tot:
+        total.update(
+            visitors=tot["visitors"], views=tot["views"], leads=tot["leads"], google=tot["google"],
+            langs=[[LANG_NAMES[k], tot["lang_visitors"][k]] for k in LANG_NAMES if tot["lang_visitors"].get(k)],
+            sources=top(tot["sources"]), devices=top(tot["devices"]),
+            pages=[[title_of(p), v] for p, v in tot["pages"].most_common(15)],
+            notfound=[[p, v] for p, v in tot["notfound"].most_common(10)],
+            leads_pages=[[title_of(p), v] for p, v in tot["lead_pages"].most_common(8)])
+    return {"days": rows, "coverage": len(cur), "total": total,
+            "prev": {k: pv[k] for k in ("visitors", "views", "leads", "google")} if pv else None,
+            "generated": datetime.now(TZ).strftime("%H:%M")}
 
 
 NO_ACCESS = ("Не могу прочитать журнал сайта ({}) — у сервиса нет доступа. Выложите сайт ещё раз "
              "(npm run deploy спросит пароль sudo и откроет журнал для чтения).")
+
+
+BUTTON = [[("📈 Графики", {"web_app": {"url": APP_URL}})]]
 
 
 # ---------- расписание ----------
@@ -432,6 +589,10 @@ class SiteStats:
             return open(os.path.join(APP, "mode")).read().strip() == "live"
         except OSError:
             return False
+
+    def button(self):
+        """Кнопка «Графики» — только когда сайт на домене (мини-приложение открывается по HTTPS)."""
+        return BUTTON if self.live_fn() else None
 
     def command(self):
         """Текст для команды /stats."""
@@ -454,9 +615,7 @@ class SiteStats:
         y = d - timedelta(days=1)
         try:
             # дни, пропущенные, пока сервис не работал, — сохранить итоги, пока журнал их ещё помнит
-            for k in range(7, 1, -1):
-                if load_day(d - timedelta(days=k)) is None:
-                    day_stats(d - timedelta(days=k))
+            days_stats([d - timedelta(days=k) for k in range(7, 1, -1)])
             texts = [daily_report(y)]
             if d.weekday() == 0:
                 texts.append(weekly_report(d - timedelta(days=7)))
@@ -464,7 +623,7 @@ class SiteStats:
             texts = [NO_ACCESS.format(esc(LOG_GLOB))]
         self.bot.s.put("stats:daily", d.isoformat())
         for t in texts:
-            self.bot.notify(t, roles=("owner",))
+            self.bot.notify(t, roles=("owner",), rows=BUTTON)
 
     def start(self):
         t = threading.Thread(target=self.loop, name="site-stats", daemon=True)

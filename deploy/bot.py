@@ -172,7 +172,9 @@ class Bot:
 
     @staticmethod
     def kb(rows):
-        return {"inline_keyboard": [[{"text": t, "callback_data": d} for t, d in row] for row in rows if row]}
+        """Кнопки: (текст, callback_data) или (текст, {"web_app": {...}} / {"url": ...})."""
+        return {"inline_keyboard": [[{"text": t, **d} if isinstance(d, dict) else {"text": t, "callback_data": d}
+                                     for t, d in row] for row in rows if row]}
 
     def send(self, chat_id, text, rows=None, **extra):
         p = {"chat_id": chat_id, "text": text, "parse_mode": "HTML", "link_preview_options": {"is_disabled": True}, **extra}
@@ -220,13 +222,13 @@ class Bot:
         p = self.partner(u["partner_id"])
         return role + (f" «{p['name']}»" if p else "")
 
-    def notify(self, text, roles=ADMIN_ROLES, skip=()):
+    def notify(self, text, roles=ADMIN_ROLES, skip=(), rows=None):
         """Сообщение всем активным пользователям с этими ролями (по умолчанию — разработчику и дизайнерам)."""
         sent = []
         for u in self.active(roles):
             if u["tg_id"] in skip:
                 continue
-            if self.send(u["tg_id"], text):
+            if self.send(u["tg_id"], text, rows):
                 sent.append(u["tg_id"])
         return sent
 
@@ -338,7 +340,9 @@ class Bot:
             return self.send(uid, mon.status() if mon else "Сторож сайта не запущен.")
         if cmd == "/stats" and self.is_admin(u):
             st = getattr(self, "stats", None)
-            return self.send(uid, st.command() if st else "Статистика посетителей не запущена.")
+            if not st:
+                return self.send(uid, "Статистика посетителей не запущена.")
+            return self.send(uid, st.command(), st.button())
         if cmd == "/team" and self.is_supplier(u):
             return self.team_list(u)
         if cmd == "/invite" and self.is_supplier(u):
@@ -380,14 +384,14 @@ class Bot:
                            "а если сайт перестанет отвечать — «🔴 Сайт не отвечает» (и «🟢 снова работает»).\n\n"
                            "Каждый день в 9:00 — отчёт о посетителях сайта за вчера, по понедельникам — и за неделю.\n\n"
                            "/users — пользователи и запросы\n/partners — партнёры и их товары\n/site — работает ли сайт\n"
-                           "/stats — посетители сайта сегодня")
+                           "/stats — посетители сайта сегодня и графики")
         if role == "designer":
             mgr = self.shop_manager()
             shop = ("Товары магазина студии закреплены за вами — заявки на них тоже приходят сюда.\n\n"
                     if mgr and mgr["tg_id"] == u["tg_id"] else "")
             return head + ("Сюда приходят заявки с сайта, уведомления о заявках партнёрам и запросы на доступ к боту.\n"
                            + shop + "\n/users — пользователи и запросы\n/partners — партнёры и их товары\n/site — работает ли сайт"
-                           "\n/stats — посетители сайта сегодня")
+                           "\n/stats — посетители сайта сегодня и графики")
         if role == "supplier":
             return head + ("Сюда будут приходить заявки с сайта dumskaya-design.com на ваши товары — вам "
                            "и вашим сотрудникам в боте.\n\n/team — ваши сотрудники в боте\n/invite — пригласить сотрудника")

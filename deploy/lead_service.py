@@ -65,7 +65,7 @@ def log(msg):
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
-from site_stats import SiteStats  # noqa: E402
+from site_stats import SiteStats, check_init_data, web_data  # noqa: E402
 from translate import lang_from, provider, translate_lead  # noqa: E402
 
 BOT = None
@@ -132,21 +132,44 @@ class Handler(BaseHTTPRequestHandler):
         fwd = self.headers.get("X-Forwarded-For", "")
         return fwd.split(",")[0].strip() or self.client_address[0]
 
-    def reply(self, code, payload, html_page=None):
+    def reply(self, code, payload, html_page=None, telegram_frame=False):
         if html_page is not None:
             body = html_page.encode()
             ctype = "text/html; charset=utf-8"
         else:
-            body = json.dumps(payload).encode()
-            ctype = "application/json"
+            body = json.dumps(payload, ensure_ascii=False).encode()
+            ctype = "application/json; charset=utf-8"
         self.send_response(code)
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Cache-Control", "no-store")
+        if telegram_frame:       # мини-приложение: Telegram Web открывает его во фрейме
+            self.send_header("Content-Security-Policy", "frame-ancestors 'self' https://web.telegram.org")
+        else:
+            self.send_header("X-Frame-Options", "SAMEORIGIN")
         self.end_headers()
         self.wfile.write(body)
 
     def do_GET(self):
+        path, _, query = self.path.partition("?")
+        if path.rstrip("/") == "/api/stats/app":           # графики посетителей — мини-приложение Telegram
+            try:
+                page = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "stats_app.html"), encoding="utf-8").read()
+            except OSError:
+                return self.reply(404, {"ok": False})
+            return self.reply(200, None, html_page=page, telegram_frame=True)
+        if path.rstrip("/") == "/api/stats/data":
+            uid = check_init_data(self.headers.get("X-Telegram-Init-Data", ""), TG_TOKEN)
+            if not uid or not BOT or not BOT.is_admin(BOT.user(uid)):
+                return self.reply(403, {"ok": False})
+            days = dict(urllib.parse.parse_qsl(query)).get("days", "7")
+            try:
+                return self.reply(200, web_data(int(days) if days.isdigit() else 7))
+            except PermissionError:
+                return self.reply(503, {"ok": False, "error": "log"})
+            except Exception as e:  # noqa: BLE001
+                log(f"статистика: ошибка {type(e).__name__}: {e}")
+                return self.reply(500, {"ok": False})
         if self.path.rstrip("/") == "/api/lead/health":
             people = len(BOT.active(("owner", "designer"))) if BOT else 0
             return self.reply(200, {"ok": True, "telegram": bool(BOT and people), "recipients": people,
