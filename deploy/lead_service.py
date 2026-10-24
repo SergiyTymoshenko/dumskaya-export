@@ -51,7 +51,7 @@ HIT_RATE = defaultdict(deque)      # ip → время последних наж
 HIT_MAX = 20                       # не больше 20 нажатий за 10 минут с одного адреса
 TIME_RATE = defaultdict(deque)     # ip → время последних сообщений «время на странице»
 TIME_MAX = 120                     # не больше 120 за 10 минут с одного адреса
-PERIODS = ("1h", "24h", "7", "30", "90")
+PERIODS = ("1h", "24h", "7", "30", "90", "365", "all")
 lock = threading.Lock()
 
 THANKS = {

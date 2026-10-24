@@ -20,7 +20,8 @@ Caddy записывает каждый запрос в /var/log/caddy/dumskaya.
     и нажатия на контакты приходят со страниц сайта (/api/hit) и держатся только в памяти сервиса, сутки;
   • «24 часа» — по часам, со сравнением с предыдущими сутками;
   • 7, 30, 90 дней — по дням. Итоги дней сохраняются в ~/dumskaya/stats/<дата>.json (только цифры, без IP),
-    поэтому длинные периоды не зависят от того, сколько хранится журнал.
+    поэтому длинные периоды не зависят от того, сколько хранится журнал; хранятся бессрочно;
+  • «Год» (52 недели) и «Всё время» — по неделям, когда данных больше двух лет — по месяцам.
 Утром в 9:00 (Братислава) разработчику — одна строка за вчера и кнопка «Графики».
 
 Работает в процессе сервиса заявок вместе с ботом (lead_service.py), только в режиме live.
@@ -61,19 +62,19 @@ LEADS_FILE = os.environ.get("LEADS_FILE", os.path.join(APP, "leads.jsonl"))
 HITS_FILE = os.environ.get("HITS_FILE", os.path.join(APP, "hits.jsonl"))   # нажатия на телефон, e-mail, мессенджеры
 TIMES_FILE = os.environ.get("TIMES_FILE", os.path.join(APP, "times.jsonl"))   # сколько секунд страница была на экране
 TIMES_KEEP_DAYS = 90          # столько же, сколько журнал: при пересчёте дней время на сайте не теряется
-PAGE_CAP = 30 * 60            # в средних страница дольше 30 минут считается за 30 (забыли на экране)
+PAGE_CAP = 5 * 60             # страница дольше 5 минут считается за 5: дальше это уже забытая на экране вкладка
 CONTACTS = {"tel": "телефон", "mail": "e-mail", "whatsapp": "WhatsApp", "telegram": "Telegram"}
 STATS_DIR = os.environ.get("STATS_DIR", os.path.join(APP, "stats"))
 EXCLUDE_FILE = os.path.join(STATS_DIR, "exclude.json")   # «свои» адреса (дома у студии) — их визиты не считаются
 OWN_FILE = os.path.join(STATS_DIR, "own_devices.json")    # откуда студия открывала «Графики» — эти визиты тоже свои
 OWN_WINDOW = 3 * 3600                                     # …за 3 часа до и после открытия
 VERSION_FILE = os.path.join(STATS_DIR, "version")
-STATS_VERSION = "3"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
-                              # (2: отсев сканеров; 3: время на сайте и роботы без оформления и времени)
+STATS_VERSION = "4"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
+                              # (2: отсев сканеров; 3: время на сайте и роботы без оформления и времени;
+                              #  4: страница — не больше 5 минут)
 SECRET_FILE = os.path.join(STATS_DIR, "secret")           # соль для обезличенного ключа посетителя, с сервера не уходит
 REPORT_HOUR = 9
 APP_URL = os.environ.get("STATS_APP_URL", "https://dumskaya-design.com/api/stats/app")   # мини-приложение с графиками
-KEEP_DAYS = 800
 
 LANG_NAMES = {"ru": "RU", "ua": "UA", "en": "EN", "sk": "SK", "de": "DE"}
 WEEKDAYS = ["понедельник", "вторник", "среду", "четверг", "пятницу", "субботу", "воскресенье"]
@@ -880,14 +881,7 @@ def save_day(d, agg):
     tmp = day_file(d) + ".tmp"
     with open(tmp, "w", encoding="utf-8") as fh:
         json.dump(agg, fh, ensure_ascii=False)
-    os.replace(tmp, day_file(d))
-    cutoff = (d - timedelta(days=KEEP_DAYS)).isoformat()
-    for f in glob.glob(os.path.join(STATS_DIR, "[0-9]*.json")):
-        if os.path.basename(f)[:10] < cutoff:
-            try:
-                os.remove(f)
-            except OSError:
-                pass
+    os.replace(tmp, day_file(d))               # итоги дней хранятся бессрочно — для «Года» и «Всего времени»
 
 
 _empty = {}                                         # дни без записей в журнале: {день: дата проверки}
@@ -925,6 +919,12 @@ def days_stats(days):
             out[d] = None
         else:
             missing.append(d)
+    if missing:                                     # дни раньше начала журнала — считать не из чего, журнал не читаем
+        ls = logs_start()
+        for d in [d for d in missing if ls is None or day_bounds(d)[1] <= ls]:
+            out[d] = None
+            _empty[d] = t
+            missing.remove(d)
     for d, agg in aggregate_days(missing).items():
         if not agg["requests"]:
             out[d] = None
@@ -1293,8 +1293,9 @@ def _session(info, views, evs, leads, before, now):
             secs, approx = int(nxt - ts), True        # примерно: до открытия следующей страницы
         else:
             secs, approx = None, False
-        pages.append({"ts": int(ts), "path": path, "nf": kind == "404", "secs": secs, "approx": approx,
-                      "title": path if kind == "404" else title_of(path), "events": []})
+        capped = secs is not None and secs > PAGE_CAP   # дольше 5 минут — считаем за 5 (забытая вкладка)
+        pages.append({"ts": int(ts), "path": path, "nf": kind == "404", "secs": min(secs, PAGE_CAP) if capped else secs,
+                      "capped": capped, "approx": approx, "title": path if kind == "404" else title_of(path), "events": []})
 
     def page_at(t, path=None):
         best = None
@@ -1323,7 +1324,7 @@ def _session(info, views, evs, leads, before, now):
             "geo": geo.lookup(ip) if geo else None, "device": dev, "os": os_name, "browser": browser,
             "lang": browser_lang(accept), "source": source(first[4], first[3]),
             "total": sum(p["secs"] or 0 for p in pages), "before": before, "pages": pages,
-            "timed": sum(min(p["secs"], PAGE_CAP) for p in pages if p["secs"] and not p["approx"])}
+            "timed": sum(p["secs"] for p in pages if p["secs"] and not p["approx"])}
 
 
 def web_live(now=None):
@@ -1399,12 +1400,64 @@ def web_live(now=None):
                 geo=bool(geo and geo.available()), credit=geo.CREDIT if geo else "")
 
 
+def first_day():
+    """Первый день, за который есть данные: самый ранний сохранённый итог или начало журнала."""
+    found = []
+    for f in glob.glob(os.path.join(STATS_DIR, "[0-9]*.json")):
+        try:
+            found.append(date.fromisoformat(os.path.basename(f)[:10]))
+        except ValueError:
+            pass
+    ls = logs_start()
+    if ls is not None:
+        found.append(datetime.fromtimestamp(ls, TZ).date())
+    return min(found) if found else None
+
+
+def web_long(period):
+    """«Год» (52 недели и текущая) и «Всё время» (с первого дня данных): по неделям, а когда данных больше двух лет —
+    по месяцам. Посетители недели или месяца — сумма по дням. Год сравнивается с предыдущими 52 неделями."""
+    t = today()
+    monday = t - timedelta(days=t.weekday())
+    if period == "365":
+        first, unit = monday - timedelta(weeks=51), "week"
+    else:
+        f = first_day() or t
+        unit = "week" if (t - f).days <= 2 * 366 else "month"
+        first = f - timedelta(days=f.weekday()) if unit == "week" else f.replace(day=1)
+    days = [first + timedelta(days=i) for i in range((t - first).days + 1)]
+    prev_days = [d - timedelta(weeks=52) for d in days] if period == "365" else []
+    got = days_stats(days[:-1] + prev_days)
+    start, _ = day_bounds(t)
+    got[t] = aggregate(start, time.time() + 1)
+    if not got[t]["requests"]:
+        got[t] = None
+    groups = {}
+    for d in days:
+        b = d - timedelta(days=d.weekday()) if unit == "week" else d.replace(day=1)
+        groups.setdefault(b, []).append(d)
+    rows = []
+    for b, ds in groups.items():
+        have = [got[d] for d in ds if got[d]]
+        end = b + timedelta(days=6) if unit == "week" else (b.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
+        rows.append(_row(merge(have) if have else None, date=b.isoformat(), end=end.isoformat(), missing=not have,
+                         partial=t in ds, days=len(have), span=(end - b).days + 1))
+    cur = [got[d] for d in days if got[d]]
+    prev = [got[d] for d in prev_days]
+    pv = merge(prev) if prev and all(prev) else None
+    return dict(_stamp(), period=period, unit=unit, rows=rows, coverage=len(cur), span=len(days),
+                first=days[0].isoformat(), total=_total(merge(cur) if cur else None),
+                prev=_prev(pv, all("contacts" in x for x in prev) if pv else False))
+
+
 def web(period):
-    """Данные мини-приложения за период: 1h, 24h, 7, 30 или 90 (дней)."""
+    """Данные мини-приложения за период: 1h, 24h, 7, 30, 90 (дней), 365 (год) или all (всё время)."""
     if period == "1h":
         return web_live()
     if period == "24h":
         return web_hours()
+    if period in ("365", "all"):
+        return web_long(period)
     return web_data(int(period) if str(period).isdigit() else 7)
 
 
