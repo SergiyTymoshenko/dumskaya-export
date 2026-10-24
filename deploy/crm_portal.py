@@ -31,12 +31,16 @@ import secrets
 from datetime import date, datetime, timedelta, timezone
 
 from crm import CLIENT_CATS, CONTRACTOR_CATS, FILE_CATS, CrmError, _text, now, today
+from langs import CODES, pack
+from langs import ui_lang as _ui_lang
 
 INVITE_DAYS = 14
 MSG_MAX = 4000
 REMIND_WINDOW = 60                 # о начислениях старше 60 дней не напоминаем (это уже разговор, а не напоминание)
-UI_LANGS = ("ru", "uk", "en", "sk", "de")
-STUDIO = {"name": "DUMSKAYA DESIGN", "designer": {"ru": "Ирина Думская", "uk": "Ірина Думська"}, "designer_latin": "Irina Dumskaya",
+UI_LANGS = tuple(CODES)                         # государственные языки европейских стран — langs.py
+STUDIO = {"name": "DUMSKAYA DESIGN", "designer": {"ru": "Ирина Думская", "uk": "Ірина Думська", "be": "Ірына Думская",
+                                                  "bg": "Ирина Думская", "sr": "Ирина Думска", "mk": "Ирина Думска"},
+          "designer_latin": "Irina Dumskaya",
           "phone": "+421 918 17 77 85", "email": "irina@dumskaya-design.com", "site": "https://dumskaya-design.com"}
 OBSERVER_NAME = "Разработчик ПО"
 THREAD_KINDS = ("client", "pc", "org", "worker", "group")
@@ -73,9 +77,8 @@ FIXED_LANGS = ("uk", "en", "sk", "de")
 
 
 def ui_lang(code):
-    """Язык кабинета по коду Telegram: ru, uk, en, sk, de; чешский — словацкий, белорусский — русский, остальное — английский."""
-    c = (code or "").lower().split("-")[0]
-    return c if c in UI_LANGS else {"cs": "sk", "be": "ru"}.get(c, "en")
+    """Язык кабинета по коду Telegram или выбранному человеком — один из языков langs.py, иначе английский."""
+    return _ui_lang(code)
 
 
 def _pick(row, keys):
@@ -1019,7 +1022,9 @@ class Portal:
             return t
         f = FIXED.get(t)
         if f:
-            return f[FIXED_LANGS.index(lang)] if lang in FIXED_LANGS else t
+            if lang in FIXED_LANGS:
+                return f[FIXED_LANGS.index(lang)]
+            return (pack(lang).get("fixed") or {}).get(t) or f[FIXED_LANGS.index("en")]
         if lang == "uk":
             return t
         return self.crm.setting(self._tr_key(t, lang))

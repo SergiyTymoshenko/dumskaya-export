@@ -174,7 +174,9 @@
   :root[data-size="l"] .field select, :root[data-size="xl"] .field select { border-width: 2px; }
   :root[data-size="l"] .nav button, :root[data-size="xl"] .nav button { color: var(--text-1); }
   :root[data-size="l"] .nav button[aria-current="page"], :root[data-size="xl"] .nav button[aria-current="page"] { color: var(--series); text-decoration: underline; text-underline-offset: 3px; }
-  :root[data-size="xl"] .stage .acts, :root[data-size="xl"] .seg.five { grid-template-columns: 1fr 1fr; }
+  :root[data-size="xl"] .seg.five { grid-template-columns: 1fr 1fr; }
+  :root[data-size="xl"] .stage .acts { grid-template-columns: 1fr; }    /* длинные слова на некоторых языках — кнопки друг под другом */
+  .btn { min-width: 0; overflow-wrap: break-word; }
   :root[data-size="xl"] .seg.five button:last-child { grid-column: 1 / -1; }
   :root[data-size="xl"] .order { grid-template-columns: 1fr; }
   :root[data-size="xl"] .order .ph { max-width: 160px; }
@@ -196,6 +198,10 @@
   .pick { display: grid; gap: 8px; }
   .pick .btn { justify-content: flex-start; text-align: left; }
   .top .seg { flex: 1 1 auto; }
+  .langbtn { font-weight: 650; letter-spacing: .02em; }
+  .pick.langs { grid-template-columns: 1fr 1fr; }
+  :root[data-size="xl"] .pick.langs { grid-template-columns: 1fr; }
+  .banner select, .field select { max-width: 100%; }
   :root[data-size="xl"] .drow { grid-template-columns: 1fr; }
   :root[data-size="xl"] .drow .doc, :root[data-size="xl"] .drow .thumb { max-width: 140px; }
 </style>
@@ -212,8 +218,12 @@
   const app = document.getElementById('app');
   const Q = new URLSearchParams(location.search);
   const PREVIEW = Q.get('preview');                 // дизайнер студии или наблюдатель смотрит глазами заказчика, подрядчика, работника
-  const LANGS = [['ru', 'Русский'], ['uk', 'Українська'], ['en', 'English'], ['sk', 'Slovenčina'], ['de', 'Deutsch']];
-  const LOCALE = { ru: 'ru-RU', uk: 'uk-UA', en: 'en-GB', sk: 'sk-SK', de: 'de-AT' };
+  // языки кабинета: пять основных — тексты ниже в странице; остальные европейские — с сервера (/api/portal/i18n, langs.py);
+  // полный список с названиями приходит в /api/portal/me
+  let LANGS = [['ru', 'Русский', 'ru-RU'], ['uk', 'Українська', 'uk-UA'], ['en', 'English', 'en-GB'], ['sk', 'Slovenčina', 'sk-SK'], ['de', 'Deutsch', 'de-AT']];
+  const KNOWN = ['ru', 'uk', 'en', 'sk', 'de', 'cs', 'pl', 'hu', 'fr', 'it', 'es', 'pt', 'nl', 'ro', 'bg', 'hr', 'sl', 'sr', 'bs', 'mk', 'sq', 'el', 'tr',
+    'lt', 'lv', 'et', 'fi', 'sv', 'da', 'no', 'is', 'ga', 'mt', 'be'];
+  const ALIAS = { nb: 'no', nn: 'no', lb: 'de', ca: 'es', eu: 'es', gl: 'es', fy: 'nl', cy: 'en', fo: 'da', az: 'tr', kk: 'ru', hy: 'ru', ka: 'ru' };
 
   // ---------- тексты: русский, украинский, английский, словацкий, немецкий ----------
   const I18N = {
@@ -279,6 +289,7 @@
       write_client: '💬 Написать заказчику', group: 'Группа', need_name: 'Напишите имя', edit_worker: 'Работник', team_of: 'Бригада · {x}',
       connected: 'в боте', not_connected: 'не в боте', assigned: 'Отмечено', unassigned: 'Снято', mine_doc: 'Ваш документ', to_studio: 'Написать студии',
       docs_crew_hint: 'Фото выполненных работ и документы по вашей части работ — выберите, кто их видит.',
+      lang_hint: 'На этом языке — кабинет и сообщения бота. Переписку и подписи документов переводим на него автоматически.',
     },
     uk: {
       loading: 'Завантажую…', open_from_bot: 'Відкрийте кабінет кнопкою «Мій проєкт» у боті студії DUMSKAYA DESIGN.',
@@ -342,6 +353,7 @@
       write_client: '💬 Написати замовнику', group: 'Група', need_name: 'Напишіть ім’я', edit_worker: 'Працівник', team_of: 'Бригада · {x}',
       connected: 'у боті', not_connected: 'не в боті', assigned: 'Позначено', unassigned: 'Знято', mine_doc: 'Ваш документ', to_studio: 'Написати студії',
       docs_crew_hint: 'Фото виконаних робіт і документи щодо вашої частини робіт — виберіть, хто їх бачить.',
+      lang_hint: 'Цією мовою — кабінет і повідомлення бота. Листування та підписи документів перекладаємо на неї автоматично.',
     },
     en: {
       loading: 'Loading…', open_from_bot: 'Open the app with the “My project” button in the DUMSKAYA DESIGN bot.',
@@ -405,6 +417,7 @@
       write_client: '💬 Write to the client', group: 'Group', need_name: 'Please enter a name', edit_worker: 'Worker', team_of: 'Team · {x}',
       connected: 'in the bot', not_connected: 'not in the bot', assigned: 'Assigned', unassigned: 'Removed', mine_doc: 'Your document', to_studio: 'Write to the studio',
       docs_crew_hint: 'Photos of finished work and documents for your part of the job — choose who can see them.',
+      lang_hint: 'The app and the bot’s messages are shown in this language. Chats and document captions are translated into it automatically.',
     },
     sk: {
       loading: 'Načítavam…', open_from_bot: 'Aplikáciu otvoríte tlačidlom „Môj projekt“ v bote štúdia DUMSKAYA DESIGN.',
@@ -468,6 +481,7 @@
       write_client: '💬 Napísať klientovi', group: 'Skupina', need_name: 'Napíšte meno', edit_worker: 'Pracovník', team_of: 'Tím · {x}',
       connected: 'v bote', not_connected: 'nie je v bote', assigned: 'Označené', unassigned: 'Zrušené', mine_doc: 'Váš dokument', to_studio: 'Napísať štúdiu',
       docs_crew_hint: 'Fotky hotovej práce a dokumenty k vašej časti prác — vyberte, kto ich vidí.',
+      lang_hint: 'V tomto jazyku je aplikácia aj správy bota. Konverzácie a popisy dokumentov do neho prekladáme automaticky.',
     },
     de: {
       loading: 'Wird geladen…', open_from_bot: 'Öffnen Sie die App über „Mein Projekt“ im Bot von DUMSKAYA DESIGN.',
@@ -531,10 +545,18 @@
       write_client: '💬 Dem Kunden schreiben', group: 'Gruppe', need_name: 'Bitte einen Namen eingeben', edit_worker: 'Mitarbeiter', team_of: 'Team · {x}',
       connected: 'im Bot', not_connected: 'nicht im Bot', assigned: 'Zugeteilt', unassigned: 'Entfernt', mine_doc: 'Ihr Dokument', to_studio: 'Dem Studio schreiben',
       docs_crew_hint: 'Fotos fertiger Arbeiten und Unterlagen zu Ihrem Teil der Arbeiten — wählen Sie, wer sie sieht.',
+      lang_hint: 'In dieser Sprache sehen Sie die App und die Nachrichten des Bots. Chats und Beschriftungen von Unterlagen werden automatisch in diese Sprache übersetzt.',
     },
   };
-  let LANG = (() => { const c = ((tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) || navigator.language || 'en').slice(0, 2).toLowerCase();
-    return I18N[c] ? c : { cs: 'sk', be: 'ru' }[c] || 'en'; })();
+  const pickLang = (code) => { const c = String(code || '').toLowerCase().split(/[-_]/)[0]; return KNOWN.includes(c) ? c : ALIAS[c] || 'en'; };
+  let LANG = pickLang((tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) || navigator.language || 'en');
+  async function loadLang(code) {               // тексты кабинета на этом языке (один раз)
+    if (I18N[code]) return true;
+    try { const r = await fetch('/api/portal/i18n?lang=' + encodeURIComponent(code), { cache: 'force-cache' }); const d = await r.json();
+      if (d && d.ui && Object.keys(d.ui).length) { I18N[code] = d.ui; return true; } } catch (e) {}
+    return false;
+  }
+  const langName = (k) => (LANGS.find((x) => x[0] === k) || [k, k.toUpperCase()])[1];
   function T(k, v) {
     let s = (I18N[LANG] && I18N[LANG][k]) || I18N.en[k] || k;
     if (v) for (const x in v) s = s.split('{' + x + '}').join(v[x]);
@@ -572,7 +594,7 @@
     for (const kid of kids.flat()) if (kid !== null && kid !== undefined && kid !== false) n.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
     return n;
   };
-  const loc = () => LOCALE[LANG] || 'en-GB';
+  const loc = () => (LANGS.find((x) => x[0] === LANG) || [])[2] || 'en-GB';
   function money(x, cur) {
     const v = Math.round((x || 0) * 100) / 100;
     try { return new Intl.NumberFormat(loc(), { style: 'currency', currency: cur || 'EUR', currencyDisplay: 'narrowSymbol', minimumFractionDigits: v % 1 ? 2 : 0, maximumFractionDigits: 2 }).format(v); }
@@ -721,12 +743,15 @@
     const back = canList() ? el('button', { class: 'btn small', type: 'button', onclick: () => { V = null; PID = null; TH = null; render(); } }, '← ' + T('back_projects')) : null;
     const roles = V && V.roles && V.roles.length > 1 && !PREVIEW ? el('div', 'seg', ...V.roles.map((r) => el('button', { type: 'button', 'aria-pressed': String(role() === r),
       onclick: () => openProject(PID, r, 'home') }, T('role_' + r)))) : null;
-    const bar = el('div', 'top', back, el('span', 'grow', ''), el('button', { class: 'icon-btn', type: 'button', title: T('settings'), 'aria-label': T('settings'), onclick: settingsSheet }, '⚙︎'));
+    const bar = el('div', 'top', back, el('span', 'grow', ''), ...topTools());
     return roles ? el('div', null, bar, el('div', { style: 'margin:0 0 10px' }, roles)) : bar;
   }
+  // справа вверху: язык кабинета (🌐 и код — видно, что язык можно сменить) и ⚙︎
+  const topTools = () => [PREVIEW ? null : el('button', { class: 'btn small langbtn', type: 'button', title: T('language'), 'aria-label': T('language') + ': ' + langName(LANG), onclick: langSheet },
+    '🌐 ' + LANG.toUpperCase()), el('button', { class: 'icon-btn', type: 'button', title: T('settings'), 'aria-label': T('settings'), onclick: settingsSheet }, '⚙︎')];
   function previewBanner() {                // дизайнер студии или наблюдатель: так видит заказчик, подрядчик, работник (по-русски)
-    const langs = el('div', 'chips', ...LANGS.map(([k]) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(LANG === k),
-      onclick: () => { LANG = k; PID ? openProject(PID, null, tab) : render(); } }, k.toUpperCase())));
+    const langs = el('select', { class: 'btn small', 'aria-label': 'Язык', onchange: async (e) => { const k = e.target.value; await loadLang(k); LANG = k; PID ? openProject(PID, null, tab, TID) : render(); } },
+      ...LANGS.map(([k, n]) => el('option', { value: k, selected: k === LANG ? true : null }, n)));
     const who = { contractor: '👁 Так видит подрядчик', worker: '👁 Так видит работник подрядчика' }[PREVIEW] || '👁 Так видит заказчик';
     const studio = ME && ME.designer;
     return el('div', 'banner', el('b', null, who),
@@ -1087,7 +1112,7 @@
   function chatView() {
     const t = (TH || []).find((x) => x.id === TID) || { id: TID, kind: '', members: [] };
     app.append(el('div', 'top', el('button', { class: 'btn small', type: 'button', onclick: () => { TID = null; render(); } }, '← ' + T('back_msgs')), el('span', 'grow', ''),
-      el('button', { class: 'icon-btn', type: 'button', title: T('settings'), 'aria-label': T('settings'), onclick: settingsSheet }, '⚙︎')));
+      ...topTools()));
     const head = el('section', 'card', el('h2', { style: 'margin:0' }, thTitle(t) || T('nav_chat')), el('div', 'sub', thSub(t) || ''));
     const note = thNote(t);
     if (note && t.kind !== 'group') head.append(el('p', { class: 'small muted', style: 'margin:8px 0 0' }, '👁 ' + note));
@@ -1294,7 +1319,7 @@
   }
   function teamView() {
     const back = el('button', { class: 'btn small', type: 'button', onclick: goBack }, '← ' + (V ? T('nav_home') : T('back_projects')));
-    app.append(el('div', 'top', back, el('span', 'grow', ''), el('button', { class: 'icon-btn', type: 'button', title: T('settings'), 'aria-label': T('settings'), onclick: settingsSheet }, '⚙︎')));
+    app.append(el('div', 'top', back, el('span', 'grow', ''), ...topTools()));
     if (!TEAM) { app.append(el('p', 'empty', T('loading'))); return; }
     app.append(el('h1', null, T('nav_team')), el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, TEAM.contractor.name + ' · ' + T('team_hint')));
     app.append(el('button', { class: 'btn primary wide', type: 'button', style: 'margin:0 0 12px', onclick: () => workerSheet(null) }, T('add_worker')));
@@ -1338,7 +1363,7 @@
   }
   function inviteSheet(w) {                 // ссылка работнику: текст на его языке — переслать в Telegram, WhatsApp или скопировать
     let lang = LANG, cur = null;
-    const seg = el('div', 'seg five'), box = el('div'), info = el('p', 'small muted', T('invite_hint'));
+    const seg = el('div', 'field'), box = el('div'), info = el('p', 'small muted', T('invite_hint'));
     async function make() {
       box.replaceChildren(el('p', 'muted', T('loading')));
       try { cur = await api('/api/portal/team', { json: { action: 'invite', crew_id: w.id, lang } }); TEAM.team = cur.team; }
@@ -1356,7 +1381,8 @@
           try { await navigator.clipboard.writeText(cur.text); toast(T('copied')); } catch (e) { t.focus(); t.select(); }
         } }, T('copy'))));
     }
-    const draw = () => seg.replaceChildren(...LANGS.map(([k]) => el('button', { type: 'button', 'aria-pressed': String(lang === k), onclick: () => { lang = k; draw(); make(); } }, k.toUpperCase())));
+    const draw = () => seg.replaceChildren(el('select', { 'aria-label': T('msg_lang'), onchange: (e) => { lang = e.target.value; make(); } },
+      ...LANGS.map(([k, n]) => el('option', { value: k, selected: k === lang ? true : null }, n))));
     draw(); make();
     sheet(T('invite_title'), el('div', el('p', 'muted', w.name + (w.position ? ' · ' + w.position : '')), el('div', 'field', el('span', 'lab', T('msg_lang')), seg), box, info));
   }
@@ -1425,18 +1451,32 @@
     return sh;
   }
   const field = (label, input, hint) => el('div', 'field', el('label', null, label), input, hint ? el('div', 'hint', hint) : null);
+  // язык кабинета — список всех языков на их же языке; на выбранный язык переводятся разговоры и названия
+  function langSheet() {
+    const list = el('div', 'pick langs');
+    const cur = LANGS.filter((x) => x[0] === LANG), rest = LANGS.filter((x) => x[0] !== LANG);      // выбранный — первым
+    cur.concat(rest).forEach(([k, n]) => list.append(el('button', { class: 'btn' + (k === LANG ? ' primary' : ''), type: 'button', lang: k, 'aria-pressed': String(k === LANG),
+      onclick: () => setLang(k) }, (k === LANG ? '✓ ' : '') + n)));
+    sheet(T('language'), el('div', el('p', 'small muted', T('lang_hint')), list));
+  }
+  async function setLang(k) {
+    const t = el('div', 'toast', '…'); document.body.append(t);
+    try { await loadLang(k); } finally { t.remove(); }
+    LANG = k; document.documentElement.lang = k;
+    if (!PREVIEW) { try { await api('/api/portal/ui', { json: { lang: k } }); } catch (e) {} }
+    closeSheets();
+    if (PID) await openProject(PID, V && V.roles && V.roles.length > 1 ? role() : null, tab, TID); else render();
+  }
   function settingsSheet() {
-    const langSeg = el('div', 'seg five'), sizeSeg = el('div', 'seg');
+    const langSeg = el('div'), sizeSeg = el('div', 'seg');
     const draw = () => {
-      langSeg.replaceChildren(...LANGS.map(([k, n]) => el('button', { type: 'button', 'aria-pressed': String(LANG === k), title: n, onclick: async () => {
-        LANG = k; draw(); if (!PREVIEW) { try { await api('/api/portal/ui', { json: { lang: k } }); } catch (e) {} }
-        closeSheets(); if (PID) await openProject(PID, V && V.roles && V.roles.length > 1 ? role() : null, tab, TID); else render(); } }, k.toUpperCase())));
+      langSeg.replaceChildren(el('button', { class: 'btn wide', type: 'button', onclick: langSheet }, '🌐 ' + langName(LANG) + ' →'));
       sizeSeg.replaceChildren(...[['m', T('size_m')], ['l', T('size_l')], ['xl', T('size_xl')]].map(([k, n]) => el('button', { type: 'button',
         'aria-pressed': String((document.documentElement.dataset.size || 'm') === k), onclick: async () => {
           applySize(k); draw(); render(); syncSheets(); if (!PREVIEW) { try { await api('/api/portal/ui', { json: { size: k } }); } catch (e) {} } } }, n)));
     };
     draw();
-    sheet(T('settings'), el('div', el('div', 'field', el('span', 'lab', T('language')), langSeg, el('div', 'hint', (LANGS.find((x) => x[0] === LANG) || [])[1] || '')),
+    sheet(T('settings'), el('div', el('div', 'field', el('span', 'lab', T('language')), langSeg, el('div', 'hint', T('lang_hint'))),
       el('div', 'field', el('span', 'lab', T('text_size')), sizeSeg)));
   }
   function closeSheets() { sheets.splice(0).forEach((x) => x.el.remove()); syncSheets(); }
@@ -1445,11 +1485,13 @@
   async function start() {
     if (!INIT) { app.replaceChildren(el('div', 'card muted', T('open_from_bot'))); return; }
     app.replaceChildren(el('p', 'empty', T('loading')));
-    try { ME = await api('/api/portal/me'); }
+    try { [ME] = await Promise.all([api('/api/portal/me'), loadLang(LANG)]); }
     catch (e) { return fail(e); }
+    if (ME.langs && ME.langs.length) LANGS = ME.langs;
     if (!PREVIEW) LANG = ME.lang || LANG;
+    await loadLang(LANG);
     if (ME.size) applySize(ME.size);
-    document.documentElement.lang = LANG === 'uk' ? 'uk' : LANG;
+    document.documentElement.lang = LANG;
     const want = Number(Q.get('project') || 0);
     if (PREVIEW && want) return openProject(want, null, Q.get('tab'), Q.get('thread'));
     if (Q.get('team') && (ME.heads || []).length) return openTeam(ME.heads[0].id);

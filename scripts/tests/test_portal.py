@@ -519,5 +519,42 @@ check(code == 403, "разработчику кабинет больше не о
 check(H.bot.user(H.OWNER)["role"] == "owner" and H.bot.user(H.OWNER)["status"] == "active", "разработчик остался разработчиком")
 st0 = H.crm.stats("all")
 check(st0["payments"] == 3175 + 2000 + 2000 and st0["margin"] == 850 + 280, f"доход: оплаты без товаров, наценка товаров {st0['payments']} {st0['margin']}")
+
+# ---------- язык кабинета: любой из европейских, человек выбирает сам ----------
+import langs  # noqa: E402
+FR, PLP = langs.pack("fr"), langs.pack("pl")
+check(len(langs.CODES) >= 30 and FR.get("ui") and FR.get("bot"), "языки кабинета: европейские, с готовыми переводами")
+inv5 = P.make_invite("client", env["b"]["id"], pid, "fr", "Ирина")
+check(inv5["lang"] == "fr", "ссылка заказчику — на французском")
+txt = H.bot.invite_text("fr", "client", "Peter", "Appartement", "https://t.me/x?start=pj_x")
+check(txt == FR["bot"]["invite_client"].format(name="Peter", project="Appartement", link="https://t.me/x?start=pj_x"), "текст ссылки — французский")
+n = len(H.CALLS)
+H.update(H.CLIENT2, "/start pj_" + inv5["token"], first="Peter", lang="en")          # Telegram по-английски, ссылка — по-французски
+check(H.bot.lang_of(H.CLIENT2) == "fr", "язык кабинета — из ссылки, которую выбрала студия")
+menu = [p for m, p in H.CALLS[n:] if m == "setChatMenuButton" and p["chat_id"] == H.CLIENT2]
+check(menu and menu[-1]["menu_button"]["text"] == FR["bot"]["menu"], "кнопка меню — по-французски")
+check(any(FR["bot"]["welcome_client"].split("{")[0].strip() in x for x in texts(H.CLIENT2, n)), "приветствие — по-французски")
+code, me = call("/api/portal/me", H.CLIENT2, lang="en")
+check(code == 200 and me["lang"] == "fr" and len(me["langs"]) == len(langs.CODES) and me["langs"][0][0] == "ru", "кабинет: язык и список всех языков")
+code, x = call("/api/portal/i18n?lang=fr", H.CLIENT2)
+check(code == 200 and x["lang"] == "fr" and len(x["ui"]) >= 200, "тексты кабинета по-французски — с сервера")
+code, x = call("/api/portal/i18n?lang=nb", 0)
+check(code == 200 and x["lang"] == "no" and x["ui"], "норвежский по коду Telegram nb, без входа (это просто тексты)")
+code, x = call("/api/portal/ui", H.CLIENT2, {"lang": "pl"}, lang="en")
+check(code == 200 and x["lang"] == "pl" and H.bot.lang_of(H.CLIENT2) == "pl", "заказчик сам выбрал польский")
+menu = [p for m, p in H.CALLS if m == "setChatMenuButton" and p["chat_id"] == H.CLIENT2]
+check(menu[-1]["menu_button"]["text"] == PLP["bot"]["menu"], "кнопка меню — по-польски")
+targets = []
+portal_bot.translate_text = lambda text, target: targets.append(target) or (("ru", f"[{target}] " + text) if target != "ru" else None)
+n = len(H.CALLS)
+code, x = call("/api/portal/chat", H.IRINA, {"thread_id": tC["id"], "text": "Добрый вечер! Шторы повесим в пятницу."}, lang="ru")
+check(code == 200 and wait(lambda: any("[pl] Добрый вечер" in x for x in texts(H.CLIENT2, n))), "сообщение Ирины — заказчику на польском")
+check(any(PLP["bot"]["auto_tr"] in x for x in texts(H.CLIENT2, n)), "пометка «переведено автоматически» — по-польски")
+check("pl" in targets and "de" in targets, "перевод — на язык каждого получателя (Анна выбрала немецкий)")
+check(P.label("Прораб", "pl") == PLP["fixed"]["Прораб"] and P.label("Премиум", "fr") == FR["fixed"]["Премиум"], "виды работ и пакеты — по словарю")
+code, x = call(f"/api/portal/project?id={pid}", H.CLIENT2, lang="en")
+check(code == 200 and x["lang"] == "pl", "кабинет открывается на выбранном языке")
+code, x = call(f"/api/portal/project?id={pid}&preview=client&lang=fi", H.IRINA, lang="ru")
+check(code == 200 and x["lang"] == "fi", "Ирина: как видит заказчик — на любом языке")
 srv.shutdown()
 print(f"OK: {ok} проверок")

@@ -18,6 +18,7 @@ from collections import defaultdict, deque
 
 from crm import FILE_MAX, CrmError
 from crm_portal import STUDIO, ui_lang
+from langs import pack, public_list
 
 CRM = None            # ставит lead_service.py
 PORTAL = None
@@ -182,6 +183,9 @@ def handle_get(h, path, query):
         import crm_api
         h.reply(200, None, html_page=crm_api.page("portal_app.html"), telegram_frame=True)
         return True
+    if path == "/api/portal/i18n":                   # тексты кабинета на языке (кроме пяти основных — они в самой странице)
+        code = ui_lang(dict(urllib.parse.parse_qsl(query)).get("lang"))
+        return h.reply(200, {"lang": code, "ui": pack(code).get("ui") or {}}) or True
     if not (CRM and PORTAL and BOT):
         return _deny(h, 503, "Кабинет сейчас недоступен")
     w = who(h)
@@ -198,7 +202,7 @@ def handle_get(h, path, query):
                 return _deny(h, 403, "no_projects")
             return h.reply(200, {"name": w["name"], "lang": w["lang"], "size": w["size"], "designer": w["designer"],
                                  "observer": w["observer"], "projects": projects, "heads": heads, "crews": crews,
-                                 "studio": STUDIO, "translate": BOT.can_translate()}) or True
+                                 "studio": STUDIO, "translate": BOT.can_translate(), "langs": public_list()}) or True
         if path == "/api/portal/project":
             v = project_view(w, q)
             # дизайнер и наблюдатель в просмотре может выбрать язык, как у заказчика

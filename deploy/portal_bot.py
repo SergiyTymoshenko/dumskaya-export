@@ -25,6 +25,7 @@ from datetime import date, datetime, timezone
 
 from crm import TZ, CrmError
 from crm_portal import STUDIO, ui_lang
+from langs import pack
 
 try:
     from translate import lang_from, provider as translate_provider, translate_text
@@ -300,8 +301,10 @@ SYM = {"EUR": "€", "USD": "$", "UAH": "₴", "PLN": "zł", "CZK": "Kč", "GBP"
 
 
 def t(lang, key, **kw):
+    """Текст бота на языке человека: русский, украинский, английский, словацкий, немецкий — здесь, остальные языки —
+    deploy/i18n/<код>.json (langs.py); нет перевода — по-английски."""
     d = T[key]
-    s = d.get(lang) or d["en"]
+    s = d.get(lang) or (pack(lang).get("bot") or {}).get(key) or d["en"]
     return s.format(**kw) if kw else s
 
 
@@ -313,7 +316,7 @@ def money(x, cur="EUR", lang="ru"):
     """12 000 € / 12,000 € (по-английски) / 1 500,50 ₴."""
     x = round(float(x or 0), 2)
     whole, frac = f"{abs(x):,.2f}".split(".")
-    sep, dec = (",", ".") if lang == "en" else (" ", ",")
+    sep, dec = (",", ".") if lang in ("en", "ga", "mt") else (" ", ",")
     s = whole.replace(",", sep) + (dec + frac if frac != "00" else "")
     return ("−" if x < 0 else "") + s + " " + SYM.get(cur, cur)
 
@@ -430,6 +433,8 @@ class PortalBotMixin:
         if inv and not lang_code and not self.s.get(f"tg:lang:{uid}"):
             self.s.put(f"tg:lang:{uid}", inv["lang"] or "ru")
         r = self.portal.use_invite(token, uid, name)
+        if r and r.get("lang") and not self.s.get(f"ui:lang:{uid}"):    # язык из ссылки (его выбрала студия или подрядчик);
+            self.s.put(f"ui:lang:{uid}", ui_lang(r["lang"]))             # человек сменит его сам — 🌐 в кабинете
         lang = self.lang_of(uid)
         if not r:
             return self.send(uid, t(lang, "invite_bad"))

@@ -767,8 +767,8 @@
   function inviteSheet(kind, rec, opts) {
     const o = opts || {}, pid = o.project !== undefined ? o.project : (P ? P.project.id : null);
     const country = ((pid && P && P.project.country) || '').toLowerCase();
-    let lang = /слова|slovak/.test(country) ? 'sk' : /австр|герман|austria|german/.test(country) ? 'de' : /украин|ukrain/.test(country) ? 'uk' : 'ru';
-    const seg = el('div', 'seg seg5'), box = el('div'), info = el('p', 'small muted');
+    let lang = langByCountry(country);
+    const seg = el('div'), box = el('div'), info = el('p', 'small muted');
     let cur = null;
     async function make() {
       box.replaceChildren(el('p', 'muted', 'Готовлю ссылку…'));
@@ -793,11 +793,12 @@
         + (rec.tg_id ? ' Сейчас кабинет открыт с Telegram «' + (rec.tg_name || '') + '» — по новой ссылке он перейдёт на тот Telegram, где её откроют.' : '');
       try { if (P && view !== 'list') await refresh(await api('/api/crm/project?id=' + P.project.id)); else await refresh(); } catch (e) {}
     }
-    const draw = () => seg.replaceChildren(...[['ru', 'RU'], ['uk', 'UA'], ['en', 'EN'], ['sk', 'SK'], ['de', 'DE']].map(([k, n]) => el('button', { type: 'button',
-      'aria-pressed': String(lang === k), onclick: () => { lang = k; draw(); make(); } }, n)));
+    const draw = () => seg.replaceChildren(el('select', { 'aria-label': 'Язык сообщения и кабинета', onchange: (e) => { lang = e.target.value; make(); } },
+      ...langList().map(([k, n]) => el('option', { value: k, selected: k === lang ? true : null }, n))));
     draw(); make();
     sheet('Ссылка в бот', el('div', el('p', 'muted', ({ client: 'Заказчик: ', contractor: 'Подрядчик: ', crew: 'Работник подрядчика' + (o.head ? ' ' + o.head : '') + ': ' }[kind] || '') + rec.name),
-      el('div', 'field', el('span', 'lab', 'Язык сообщения и кабинета'), seg, el('div', 'hint', 'Кабинет откроется на языке его Telegram — он сможет сменить язык в ⚙︎.')), box, info));
+      el('div', 'field', el('span', 'lab', 'Язык сообщения и кабинета'), seg, el('div', 'hint', 'Кабинет откроется на этом языке, переписку и подписи документов бот будет '
+        + 'переводить на него. Человек может сменить язык сам — кнопка 🌐 в кабинете.')), box, info));
   }
 
   function opRow(x) {
@@ -920,6 +921,21 @@
   const isReal = (st) => !S.lists.lead_hidden.includes(st);     // настоящая заявка (не реклама, не спам, не «игнорировать»)
   const FROM_LANG = { en: 'с английского', sk: 'со словацкого', de: 'с немецкого', uk: 'с украинского', pl: 'с польского', cs: 'с чешского',
     it: 'с итальянского', fr: 'с французского', es: 'с испанского', hu: 'с венгерского' };
+  // языки кабинетов (langs.py, приходят в /api/crm/state): [код, по-русски, «…ого», «…ом»]
+  const langList = () => (S && S.langs) || [['ru', 'Русский'], ['uk', 'Украинский'], ['en', 'Английский'], ['sk', 'Словацкий'], ['de', 'Немецкий']];
+  const fromLang = (c) => { const x = langList().find((y) => y[0] === c); return x && x[2] ? (/^[сзшжщ][^аеёиоуыэюя]/.test(x[2]) ? 'со ' : 'с ') + x[2] : FROM_LANG[c] || ''; };
+  const inLang = (c) => { const x = langList().find((y) => y[0] === c); return x && x[3] ? 'на ' + x[3] : ''; };
+  // язык ссылки по умолчанию — по стране проекта (Ирина может выбрать любой)
+  function langByCountry(country) {
+    const m = [[/слова|slovak/, 'sk'], [/австр|герман|швейцар|austria|german|switz/, 'de'], [/украин|ukrain/, 'uk'], [/чех|czech/, 'cs'], [/польш|poland/, 'pl'],
+      [/венгр|hungar/, 'hu'], [/франц|france/, 'fr'], [/итал|ital/, 'it'], [/испан|spain/, 'es'], [/португ|portug/, 'pt'], [/нидерл|голланд|бельг|netherl|belgi/, 'nl'],
+      [/румын|молдав|romania|moldov/, 'ro'], [/болгар|bulgar/, 'bg'], [/хорват|croat/, 'hr'], [/словени|sloveni/, 'sl'], [/серб|serbi|черногор|monteneg/, 'sr'],
+      [/босни|bosni/, 'bs'], [/македон|macedon/, 'mk'], [/албан|albani|косов|kosov/, 'sq'], [/грец|кипр|greece|cyprus/, 'el'], [/турц|turk/, 'tr'],
+      [/литв|lithuan/, 'lt'], [/латв|latvi/, 'lv'], [/эстон|eston/, 'et'], [/финл|finland/, 'fi'], [/швец|sweden/, 'sv'], [/дани|denmark/, 'da'],
+      [/норв|norw/, 'no'], [/исланд|iceland/, 'is'], [/брит|англи|ирланд|мальт|сша|united|ireland|malta|usa/, 'en']];
+    const hit = m.find(([re]) => re.test(country));
+    return hit ? hit[1] : 'ru';
+  }
   function dtime(s) {
     const d = new Date(s);
     if (isNaN(d)) return dfmt(s);
@@ -1055,7 +1071,7 @@
     if (x.model) m.append(el('p', { style: 'margin:0 0 8px' }, el('b', null, 'Интересует: '), x.model + (x.model_name ? ' — ' + x.model_name : '')));
     if (x.routed) m.append(el('p', { class: 'small muted', style: 'margin:0 0 8px' }, 'Заявка ' + x.routed));
     m.append(x.message ? el('div', 'msg', x.message) : el('p', 'muted', 'Без сообщения — только имя и контакт.'));
-    if (x.message_ru) m.append(el('h2', { style: 'margin:14px 0 6px' }, 'Перевод на русский' + (FROM_LANG[x.message_lang] ? ' ' + FROM_LANG[x.message_lang] : '')), el('div', 'msg', x.message_ru));
+    if (x.message_ru) m.append(el('h2', { style: 'margin:14px 0 6px' }, 'Перевод на русский' + (fromLang(x.message_lang) ? ' ' + fromLang(x.message_lang) : '')), el('div', 'msg', x.message_ru));
     if (x.page) m.append(el('button', { class: 'btn small', type: 'button', style: 'margin-top:12px', onclick: () => openLink('https://dumskaya-design.com' + x.page) }, '↗ Страница на сайте'));
     app.append(m);
     const n = el('section', 'card');
@@ -1835,8 +1851,6 @@
     head.append(el('div', 'small muted', 'Сообщения не на русском и не на украинском — с переводом. Ваши уходят каждому на его языке.'));
     app.append(head);
     const box = el('div', 'chat'); app.append(box);
-    const ON = { sk: 'на словацком', de: 'на немецком', en: 'на английском', uk: 'на украинском', pl: 'на польском', cs: 'на чешском', it: 'на итальянском',
-      fr: 'на французском', es: 'на испанском', hu: 'на венгерском' };
     const draw = () => {
       box.replaceChildren();
       if (!CH.length) box.append(el('div', 'card muted', 'Сообщений пока нет. Напишите первым — сообщение придёт в Telegram.'));
@@ -1856,7 +1870,7 @@
           } }, f.see_client === 1 ? '👁 Заказчик видит — скрыть' : '👁 Показать заказчику'));
         }
         if (m.text) {
-          if (!m.mine && m.tr) b.append(el('span', null, m.tr), el('span', 'orig', 'Оригинал' + (ON[m.lang] ? ' ' + ON[m.lang] : '') + ': ' + m.text));
+          if (!m.mine && m.tr) b.append(el('span', null, m.tr), el('span', 'orig', 'Оригинал' + (inLang(m.lang) ? ' ' + inLang(m.lang) : '') + ': ' + m.text));
           else b.append(el('span', null, m.text));
         }
         b.append(el('span', 'meta', String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0')));

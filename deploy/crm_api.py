@@ -19,6 +19,7 @@ import threading
 import urllib.parse
 
 from crm import FILE_MAX, CrmError
+from langs import studio_list
 
 CRM = None            # ставит lead_service.py
 BOT = None
@@ -318,6 +319,7 @@ def handle_get(h, path, query):
         if path == "/api/crm/state":
             out = CRM.state()
             out["me"] = {"name": u["name"], "role": u["role"], "size": ui_size(u)}
+            out["langs"] = studio_list()                  # языки кабинетов: ссылка-приглашение, «перевод с …»
             return h.reply(200, out) or True
         if path == "/api/crm/project":
             return h.reply(200, enrich(CRM.project(q.get("id")))) or True

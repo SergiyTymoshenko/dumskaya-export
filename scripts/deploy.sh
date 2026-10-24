@@ -57,7 +57,8 @@ echo "▸ 5/5 Настройки сервера"
 # changed — менялись редиректы, файлы сервисов или приём выкладки (нужен sudo); unlinked — в основном Caddyfile нет
 # строки, подключающей сайт (его перезаписала выкладка другого проекта на этом сервере); code — изменился только код
 # бота и «Студии»: его применяет перезапуск сервиса без пароля (autodeploy restart, «звонок» ставит server-setup.sh)
-STATE="$(ssh "$HOST" 'cd ~/dumskaya/deploy; sha256sum -c --quiet ~/dumskaya/installed.sha256 >/dev/null 2>&1 || echo changed; [ -x /usr/local/lib/dumskaya/autodeploy ] || echo changed; grep -qE "^[[:space:]]*import[[:space:]]+sites/(\*|dumskaya)\.caddy[[:space:]]*$" /etc/caddy/Caddyfile || echo unlinked; sha256sum -c --quiet ~/dumskaya/running.sha256 >/dev/null 2>&1 || echo code')"
+# (переводы кабинета deploy/i18n/*.json — тоже код: их отпечаток в ~/dumskaya/running-i18n.sha256)
+STATE="$(ssh "$HOST" 'cd ~/dumskaya/deploy; sha256sum -c --quiet ~/dumskaya/installed.sha256 >/dev/null 2>&1 || echo changed; [ -x /usr/local/lib/dumskaya/autodeploy ] || echo changed; grep -qE "^[[:space:]]*import[[:space:]]+sites/(\*|dumskaya)\.caddy[[:space:]]*$" /etc/caddy/Caddyfile || echo unlinked; sha256sum -c --quiet ~/dumskaya/running.sha256 >/dev/null 2>&1 || echo code; sha256sum -c --quiet ~/dumskaya/running-i18n.sha256 >/dev/null 2>&1 || echo code')"
 case "$STATE" in
   *unlinked*) echo "  сайт отключён от Caddy (основной Caddyfile перезаписан) — подключаю снова (нужен пароль sudo)…" ;;
   *changed*)  echo "  изменились редиректы или настройки сервиса — применяю (нужен пароль sudo)…" ;;
@@ -70,6 +71,10 @@ case "$STATE" in
   *code*)
     ssh "$HOST" /usr/local/lib/dumskaya/autodeploy restart \
       || { echo "  сервис не ответил после перезапуска. Журнал: ssh $HOST 'tail -20 ~/dumskaya/autodeploy.log; sudo journalctl -u dumskaya-lead -n 30'"; exit 1; } ;;
+esac
+# отпечаток переводов запущенного кода (после перезапуска любым путём)
+case "$STATE" in
+  *unlinked*|*changed*|*code*) ssh "$HOST" 'cd ~/dumskaya/deploy && sha256sum -- i18n/*.json > ~/dumskaya/running-i18n.sha256 2>/dev/null' || true ;;
 esac
 MODE="$(ssh "$HOST" 'cat ~/dumskaya/mode 2>/dev/null || echo preview')"
 if [ "$MODE" = live ]; then
