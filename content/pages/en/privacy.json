@@ -69,7 +69,11 @@
       },
       {
        "t": "p",
-       "html": "To understand traffic, we count page views from the server log and clicks on our phone numbers, e-mail address and messengers — without cookies or third-party services. Only totals are kept: how many visitors and clicks there were and on which pages."
+       "html": "To understand traffic, we count page views from the server log, clicks on our phone numbers, e-mail address and messengers, and how long a page stayed open on screen — without cookies or third-party services (Art. 6(1)(f) GDPR, legitimate interest)."
+      },
+      {
+       "t": "p",
+       "html": "The server log contains the IP address and browser details. A database on our own server uses the IP address to estimate the approximate location — country and city; the address is not passed on to anyone. The log is kept for no longer than 90 days, and only totals remain: how many visitors and clicks there were and on which pages."
       },
       {
        "t": "p",

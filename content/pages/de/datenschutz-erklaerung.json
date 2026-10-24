@@ -69,7 +69,11 @@
       },
       {
        "t": "p",
-       "html": "Um die Besucherzahlen zu verstehen, zählen wir Seitenaufrufe anhand des Server-Protokolls sowie Klicks auf Telefonnummer, E-Mail-Adresse und Messenger — ohne Cookies und ohne Drittanbieter. Gespeichert werden nur Summen: wie viele Besucher und Klicks es gab und auf welchen Seiten."
+       "html": "Um die Besucherzahlen zu verstehen, zählen wir Seitenaufrufe anhand des Server-Protokolls, Klicks auf Telefonnummer, E-Mail-Adresse und Messenger sowie die Zeit, die eine Seite auf dem Bildschirm geöffnet war — ohne Cookies und ohne Drittanbieter (Art. 6 Abs. 1 lit. f DSGVO, berechtigtes Interesse)."
+      },
+      {
+       "t": "p",
+       "html": "Das Server-Protokoll enthält die IP-Adresse und Angaben zum Browser. Anhand der IP-Adresse ermittelt eine Datenbank auf unserem eigenen Server den ungefähren Standort — Land und Stadt; die Adresse wird nicht weitergegeben. Das Protokoll wird höchstens 90 Tage aufbewahrt, danach bleiben nur Summen: wie viele Besucher und Klicks es gab und auf welchen Seiten."
       },
       {
        "t": "p",

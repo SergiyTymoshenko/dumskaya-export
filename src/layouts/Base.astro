@@ -76,6 +76,21 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
       try { navigator.sendBeacon('/api/hit', new Blob([JSON.stringify({ t: t, p: location.pathname })], { type: 'text/plain' })); } catch (err) {}
       if (window.gtag) window.gtag('event', 'contact_click', { method: t });   // Google Analytics — если принят cookie
     }, true);
+    // Время на странице — сколько секунд она была на экране; отправляется, когда страницу закрывают или сворачивают
+    (function () {
+      var shown = 0, since = document.visibilityState === 'visible' ? Date.now() : 0, sent = 0;
+      function send() {
+        if (since) { shown += Date.now() - since; since = 0; }
+        var s = Math.round(shown / 1000);
+        if (s < 1 || s === sent) return;
+        sent = s;
+        try { navigator.sendBeacon('/api/hit', new Blob([JSON.stringify({ t: 'time', p: location.pathname, s: s })], { type: 'text/plain' })); } catch (err) {}
+      }
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') send(); else if (!since) since = Date.now();
+      });
+      addEventListener('pagehide', send);
+    })();
   </script>
 </body>
 </html>

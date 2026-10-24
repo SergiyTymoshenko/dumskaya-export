@@ -14,10 +14,14 @@ Caddy записывает каждый запрос в /var/log/caddy/dumskaya.
   • заявки — из ~/dumskaya/leads.jsonl (пробные заявки с сервера не считаются);
   • 404 — адреса, которые не нашлись (без мусора сканеров вроде .php и wp-).
 
-Отчёт за вчера — разработчику в бот каждый день в 9:00 (Братислава), по понедельникам ещё и за прошлую
-неделю со сравнением. Итоги дней сохраняются в ~/dumskaya/stats/<дата>.json (только цифры, без IP) —
-недельный отчёт не зависит от того, сколько хранится журнал. Команда /stats — сегодня до текущего часа
-и вчера (разработчику и дизайнеру студии).
+Графики — мини-приложение в боте (кнопка «Графики», stats_app.html), периоды:
+  • «1 час» — каждый посетитель отдельно: страницы по порядку, время на каждой, откуда пришёл, устройство,
+    язык браузера, город по IP (geo.py, база на самом сервере). Строится на лету из журнала; время на странице
+    и нажатия на контакты приходят со страниц сайта (/api/hit) и держатся только в памяти сервиса, сутки;
+  • «24 часа» — по часам, со сравнением с предыдущими сутками;
+  • 7, 30, 90 дней — по дням. Итоги дней сохраняются в ~/dumskaya/stats/<дата>.json (только цифры, без IP),
+    поэтому длинные периоды не зависят от того, сколько хранится журнал.
+Утром в 9:00 (Братислава) разработчику — одна строка за вчера и кнопка «Графики».
 
 Работает в процессе сервиса заявок вместе с ботом (lead_service.py), только в режиме live.
 Только стандартная библиотека Python 3.
@@ -35,9 +39,14 @@ import re
 import sys
 import threading
 import time
-from collections import Counter
+from collections import Counter, deque
 from datetime import date, datetime, timedelta, timezone
 from urllib.parse import parse_qsl, unquote, urlsplit
+
+try:                                                # город по IP — для режима «1 час» (geo.py рядом)
+    import geo
+except ImportError:                                 # pragma: no cover
+    geo = None
 
 try:
     from zoneinfo import ZoneInfo
@@ -78,6 +87,24 @@ SOURCES = [(r"(^|\.)google\.", "Google"), (r"(^|\.)bing\.com$", "Bing"), (r"(^|\
            (r"(^|\.)(t\.me|telegram\.org)$", "Telegram"), (r"(^|\.)(chatgpt\.com|openai\.com)$", "ChatGPT"),
            (r"(^|\.)perplexity\.ai$", "Perplexity"), (r"(^|\.)youtube\.com$", "YouTube"),
            (r"(^|\.)pinterest\.", "Pinterest"), (r"(^|\.)houzz\.", "Houzz"), (r"(^|\.)linkedin\.com$", "LinkedIn")]
+# метки в адресе первой страницы: реклама и ссылки без Referer (из приложений, ChatGPT)
+AD_MARKS = (("gclid", "Google (реклама)"), ("gbraid", "Google (реклама)"), ("wbraid", "Google (реклама)"),
+            ("msclkid", "Bing (реклама)"))
+UTM_NAMES = {"ig": "Instagram", "instagram": "Instagram", "facebook": "Facebook", "fb": "Facebook",
+             "telegram": "Telegram", "tg": "Telegram", "google": "Google", "chatgpt": "ChatGPT",
+             "chatgpt.com": "ChatGPT", "whatsapp": "WhatsApp", "perplexity": "Perplexity", "bing": "Bing"}
+BROWSERS = [(r"Instagram", "Instagram"), (r"FBAN|FBAV|FB_IAB", "Facebook"), (r"Edg(e|A|iOS)?/", "Edge"),
+            (r"OPR/|OPT/|Opera", "Opera"), (r"YaBrowser", "Яндекс Браузер"), (r"SamsungBrowser", "Samsung Internet"),
+            (r"Firefox/|FxiOS", "Firefox"), (r"Chrome/|CriOS", "Chrome"), (r"Safari/", "Safari")]
+LANG_RU = {"ru": "русский", "uk": "украинский", "en": "английский", "sk": "словацкий", "de": "немецкий",
+           "cs": "чешский", "pl": "польский", "hu": "венгерский", "it": "итальянский", "fr": "французский",
+           "es": "испанский", "pt": "португальский", "be": "белорусский", "kk": "казахский", "he": "иврит",
+           "tr": "турецкий", "ro": "румынский", "bg": "болгарский", "sr": "сербский", "hr": "хорватский",
+           "sl": "словенский", "nl": "нидерландский", "ar": "арабский", "zh": "китайский", "ja": "японский",
+           "ka": "грузинский", "lt": "литовский", "lv": "латышский", "et": "эстонский", "fi": "финский",
+           "sv": "шведский", "da": "датский", "no": "норвежский", "nb": "норвежский", "el": "греческий"}
+SESSION_GAP = 30 * 60          # перерыв дольше получаса — уже другой заход
+LIVE_WINDOW = 3600             # «1 час»
 
 
 # ---------- разбор журнала ----------
@@ -108,18 +135,47 @@ def device(ua):
     return "компьютер"
 
 
-def source(ref):
-    if not ref:
-        return "прямые заходы"
-    host = (urlsplit(ref).hostname or "").lower()
+def source(ref, uri=""):
+    """Откуда пришёл посетитель: по Referer, а без него — по меткам в адресе (gclid, fbclid, utm_source)."""
+    q = dict(parse_qsl(urlsplit(uri).query)) if uri and "?" in uri else {}
+    for k, name in AD_MARKS:
+        if k in q:
+            return name
+    host = (urlsplit(ref).hostname or "").lower() if ref else ""
     if host.startswith("www."):
         host = host[4:]
-    if not host or host.endswith("dumskaya-design.com"):
-        return "прямые заходы"                       # переход внутри сайта (например, вкладка открыта со вчера)
-    for rx, name in SOURCES:
-        if re.search(rx, host):
-            return name
-    return host
+    if host and not host.endswith("dumskaya-design.com"):  # свой адрес — переход внутри сайта (вкладка со вчера)
+        for rx, name in SOURCES:
+            if re.search(rx, host):
+                return name
+        return host
+    if "fbclid" in q:
+        return "Facebook / Instagram"
+    utm = (q.get("utm_source") or "").strip().lower()[:40]
+    if utm:
+        return UTM_NAMES.get(utm, utm)
+    return "прямые заходы"
+
+
+def ua_info(ua):
+    """(«телефон», «iPhone», «Safari») — устройство, система, браузер."""
+    os_name = ("iPhone" if "iPhone" in ua else "iPad" if "iPad" in ua else "Android" if "Android" in ua else
+               "Windows" if "Windows" in ua else "Mac" if "Macintosh" in ua or "Mac OS X" in ua else
+               "ChromeOS" if "CrOS" in ua else "Linux" if "Linux" in ua else "")
+    browser = next((name for rx, name in BROWSERS if re.search(rx, ua)), "")
+    return device(ua), os_name, browser
+
+
+def browser_lang(accept_language):
+    """Первый язык из Accept-Language: «ru-RU,ru;q=0.9» → «русский»."""
+    first = (accept_language or "").split(",")[0].split(";")[0].strip().lower()
+    code = first.split("-")[0]
+    return LANG_RU.get(code, first)
+
+
+def norm_path(p):
+    p = unquote(urlsplit(p or "/").path) or "/"
+    return p.rstrip("/") or "/"
 
 
 def log_files(since_ts):
@@ -134,19 +190,66 @@ def log_files(since_ts):
     return sorted(out, key=os.path.getmtime)
 
 
+TS_RX = re.compile(rb'"ts":\s*([0-9]{9,}(?:\.[0-9]+)?)')
+
+
+def _line_ts(raw):
+    """Время записи без разбора всей строки JSON (Caddy пишет "ts" в начале); None — не нашлось."""
+    m = TS_RX.search(raw, 0, 300)
+    return float(m.group(1)) if m else None
+
+
+def _seek(fh, since_ts):
+    """Несжатая часть журнала идёт по времени — двоичным поиском сразу к записям не старше since_ts."""
+    fh.seek(0, 2)
+    lo, hi = 0, fh.tell()
+    while hi - lo > 65536:
+        mid = (lo + hi) // 2
+        fh.seek(mid)
+        fh.readline()                               # остаток строки, в середину которой попали
+        ts = None
+        for _ in range(20):
+            line = fh.readline()
+            if not line:
+                break
+            ts = _line_ts(line)
+            if ts is not None:
+                break
+        if ts is not None and ts < since_ts - 120:  # запас на записи, пришедшие не по порядку
+            lo = mid
+        else:
+            hi = mid
+    fh.seek(lo)
+    if lo:
+        fh.readline()
+
+
 def entries(since_ts, until_ts):
     """Записи журнала за период; PermissionError — если журнал недоступен для чтения."""
     files = log_files(since_ts)
     if not files and glob.glob(LOG_GLOB) == [] and not os.access(os.path.dirname(LOG_GLOB) or "/", os.R_OK):
         raise PermissionError(os.path.dirname(LOG_GLOB))
     for f in files:
-        opener = gzip.open if f.endswith(".gz") else open
-        with opener(f, "rt", encoding="utf-8", errors="replace") as fh:
-            for line in fh:
-                if '"request"' not in line:
+        gz = f.endswith(".gz")
+        try:
+            fh = gzip.open(f, "rb") if gz else open(f, "rb")
+        except PermissionError:
+            raise
+        except OSError:                             # часть журнала успели удалить при ротации
+            continue
+        with fh:
+            if not gz:
+                _seek(fh, since_ts)
+            for raw in fh:
+                if b'"request"' not in raw:
+                    continue
+                ts = _line_ts(raw)
+                if ts is not None and not since_ts <= ts < until_ts:
+                    if not gz and ts >= until_ts + 120:
+                        break                       # дальше в этой части только записи новее периода
                     continue
                 try:
-                    e = json.loads(line)
+                    e = json.loads(raw)
                 except ValueError:
                     continue
                 ts = e.get("ts")
@@ -310,14 +413,16 @@ def leads_between(since_ts, until_ts):
                     continue                                  # пробные заявки мастера настройки и сторожа
                 if is_excluded(d.get("ip")):
                     continue                                  # заявка со своего адреса (проверка формы)
-                out.append({"page": d.get("page", ""), "lang": d.get("lang", "ru"), "model": d.get("model", "")})
+                out.append({"page": d.get("page", ""), "lang": d.get("lang", "ru"), "model": d.get("model", ""),
+                            "ts": ts, "ip": d.get("ip", "")})
     except OSError:
         pass
     return out
 
 
-def hits_between(since_ts, until_ts):
-    """Нажатия на контакты за период: [(тип, страница)] (пишет /api/hit; без IP, свои адреса не записываются)."""
+def hits_between(since_ts, until_ts, with_ts=False):
+    """Нажатия на контакты за период: [(тип, страница)] или [(время, тип, страница)]
+    (пишет /api/hit; без IP, свои адреса не записываются)."""
     out = []
     try:
         with open(HITS_FILE, encoding="utf-8") as fh:
@@ -328,7 +433,8 @@ def hits_between(since_ts, until_ts):
                 except (ValueError, KeyError, TypeError):
                     continue
                 if since_ts <= ts < until_ts and d.get("t") in CONTACTS:
-                    out.append((d["t"], str(d.get("p") or "")))
+                    item = (d["t"], str(d.get("p") or ""))
+                    out.append((ts,) + item if with_ts else item)
     except OSError:
         pass
     return out
@@ -341,8 +447,60 @@ def record_hit(kind, path):
         fh.write(json.dumps({"ts": int(time.time()), "t": kind, "p": path}, ensure_ascii=False) + "\n")
 
 
+# ---------- события на страницах для «1 час»: только в памяти сервиса ----------
+RECENT_KEEP = 26 * 3600
+_recent = deque()
+_recent_lock = threading.Lock()
+
+
+def remember(kind, ip, ua, path, secs=0):
+    """Время на странице (kind="time", secs — сколько секунд страница была на экране) или нажатие на контакт —
+    для карточек посетителей. На диск не пишется; после перезапуска сервиса начинается заново."""
+    now = time.time()
+    with _recent_lock:
+        _recent.append((now, ip + "|" + ua, kind, norm_path(path), int(secs)))
+        while _recent and (now - _recent[0][0] > RECENT_KEEP or len(_recent) > 50000):
+            _recent.popleft()
+
+
+def recent_events(since_ts):
+    with _recent_lock:
+        return [x for x in _recent if x[0] >= since_ts]
+
+
+def is_human(ua, h):
+    return (ua.startswith("Mozilla/") and not BOT.search(ua) and bool(header(h, "Accept-Language"))
+            and "prefetch" not in (header(h, "Sec-Purpose") + header(h, "Purpose")).lower())
+
+
+def parse(e):
+    """Запись журнала → (вид, ip, браузер, страница, заголовки, адрес с параметрами) или None.
+    Вид: view — человек открыл страницу; 404 — человек не нашёл страницу (мусор сканеров не в счёт);
+    google, bing — роботы поисковиков прочитали страницу."""
+    r = e.get("request") or {}
+    if r.get("method") != "GET":
+        return None
+    uri = r.get("uri") or "/"
+    path = norm_path(uri)
+    if path.startswith(("/img/", "/_astro/", "/api/")) or ASSET.search(path):
+        return None
+    ip = r.get("client_ip") or r.get("remote_ip") or ""
+    h = r.get("headers") or {}
+    ua = header(h, "User-Agent")
+    status = e.get("status")
+    if "Googlebot" in ua or "bingbot" in ua.lower():
+        return ("google" if "Googlebot" in ua else "bing", ip, ua, path, h, uri) if status in (200, 304) else None
+    if not is_human(ua, h):
+        return None
+    if status == 404:
+        return None if JUNK.search(path) else ("404", ip, ua, path, h, uri)
+    if status not in (200, 304):
+        return None
+    return ("view", ip, ua, path, h, uri)
+
+
 class Agg:
-    """Накопитель итогов за один период (день или «сегодня до текущего часа»): только числа, без IP."""
+    """Накопитель итогов за один период (час, день или «сегодня до текущего часа»): только числа, без IP."""
 
     def __init__(self):
         self.visitors = {}                          # ключ (IP+браузер) → {src, dev, langs}; только в памяти
@@ -352,37 +510,20 @@ class Agg:
 
     def add(self, e):
         self.requests += 1
-        r = e.get("request") or {}
-        if r.get("method") != "GET":
+        p = parse(e)
+        if not p:
             return
-        ip = r.get("client_ip") or r.get("remote_ip") or ""
-        h = r.get("headers") or {}
-        ua = header(h, "User-Agent")
-        path = unquote(urlsplit(r.get("uri") or "/").path) or "/"
-        path = path.rstrip("/") or "/"
-        if path.startswith(("/img/", "/_astro/", "/api/")) or ASSET.search(path):
+        kind, ip, ua, path, h, uri = p
+        if kind == "google":
+            self.google += 1
+            self.google_lang[lang_of(path)] += 1
             return
-        status = e.get("status")
-        if "Googlebot" in ua:
-            if status in (200, 304):
-                self.google += 1
-                self.google_lang[lang_of(path)] += 1
+        if kind == "bing":
+            self.bing += 1
             return
-        if "bingbot" in ua.lower():
-            if status in (200, 304):
-                self.bing += 1
-            return
-        human = (ua.startswith("Mozilla/") and not BOT.search(ua) and header(h, "Accept-Language")
-                 and "prefetch" not in (header(h, "Sec-Purpose") + header(h, "Purpose")).lower())
-        if not human:
-            return
-        if status == 404 and is_excluded(ip):
-            return
-        if status == 404:
-            if not JUNK.search(path):
+        if kind == "404":
+            if not is_excluded(ip):
                 self.notfound[path] += 1
-            return
-        if status not in (200, 304):
             return
         if is_excluded(ip):
             self.own += 1
@@ -390,7 +531,7 @@ class Agg:
         key = ip + "|" + ua
         v = self.visitors.get(key)
         if v is None:
-            v = self.visitors[key] = {"src": source(header(h, "Referer")), "dev": device(ua), "langs": set()}
+            v = self.visitors[key] = {"src": source(header(h, "Referer"), uri), "dev": device(ua), "langs": set()}
         v["langs"].add(lang_of(path))
         self.views[path] += 1
         self.lang_views[lang_of(path)] += 1
@@ -725,6 +866,51 @@ def me_data(ip):
     return {"ip": ip, "net": net, "excluded": is_excluded(ip), "items": excluded_list()}
 
 
+def _row(a, **extra):
+    """Строка графика (день или час) из итогов периода; a=None — данных нет."""
+    a = a or {}
+    gl = a.get("google_lang") or {}
+    return dict(extra, visitors=a.get("visitors", 0), views=a.get("views", 0), leads=a.get("leads", 0),
+                google=a.get("google", 0), contacts=sum((a.get("contacts") or {}).values()),
+                google_sk=gl.get("sk", 0), google_de=gl.get("de", 0))
+
+
+def _top(counter, k=8, other="другие"):
+    items = Counter(counter).most_common()
+    rest = sum(v for _, v in items[k:])
+    return [list(x) for x in items[:k]] + ([[other, rest]] if rest else [])
+
+
+def _total(tot):
+    """Итоги периода для плиток и карточек (tot — результат merge или None)."""
+    total = {"visitors": 0, "views": 0, "leads": 0, "google": 0, "own": 0, "contacts": 0, "contact_types": [],
+             "contact_pages": [], "langs": [], "sources": [], "devices": [], "pages": [], "notfound": [], "leads_pages": []}
+    if tot:
+        total.update(
+            visitors=tot["visitors"], views=tot["views"], leads=tot["leads"], google=tot["google"], own=tot["own"],
+            langs=[[LANG_NAMES[k], tot["lang_visitors"][k]] for k in LANG_NAMES if tot["lang_visitors"].get(k)],
+            sources=_top(tot["sources"]), devices=_top(tot["devices"]),
+            pages=[[title_of(p), v] for p, v in tot["pages"].most_common(15)],
+            notfound=[[p, v] for p, v in tot["notfound"].most_common(10)],
+            leads_pages=[[title_of(p), v] for p, v in tot["lead_pages"].most_common(8)],
+            contacts=sum(tot["contacts"].values()),
+            contact_types=[[CONTACTS[k], tot["contacts"][k]] for k in CONTACTS if tot["contacts"].get(k)],
+            contact_pages=[[title_of(p), v] for p, v in tot["contact_pages"].most_common(8)])
+    return total
+
+
+def _prev(pv, contacts_known=True):
+    if not pv:
+        return None
+    return dict({k: pv[k] for k in ("visitors", "views", "leads", "google")},
+                contacts=sum(pv["contacts"].values()) if contacts_known else None)
+
+
+def _stamp(now=None):
+    now = now or time.time()
+    return {"generated": datetime.fromtimestamp(now, TZ).strftime("%H:%M"), "generated_ts": int(now)}
+
+
 def web_data(n):
     """Данные для графиков: n дней, последний — сегодня (неполный), и сравнение с предыдущими n днями."""
     n = n if n in (7, 30, 90) else 7
@@ -736,42 +922,154 @@ def web_data(n):
     got[t] = aggregate(start, time.time() + 1)
     if not got[t]["requests"]:
         got[t] = None
-    rows = []
-    for d in days:
-        a = got[d]
-        gl = (a or {}).get("google_lang") or {}
-        rows.append({"date": d.isoformat(), "missing": a is None, "partial": d == t,
-                     "visitors": (a or {}).get("visitors", 0), "views": (a or {}).get("views", 0),
-                     "leads": (a or {}).get("leads", 0), "google": (a or {}).get("google", 0),
-                     "contacts": sum(((a or {}).get("contacts") or {}).values()),
-                     "google_sk": gl.get("sk", 0), "google_de": gl.get("de", 0)})
+    rows = [_row(got[d], date=d.isoformat(), missing=got[d] is None, partial=d == t) for d in days]
     cur = [got[d] for d in days if got[d]]
     prev = [got[d] for d in prev_days]
     tot = merge(cur) if cur else None
     pv = merge(prev) if prev and all(prev) else None          # сравниваем, только если за прошлый период есть все дни
+    return dict(_stamp(), period=str(n), unit="day", rows=rows, coverage=len(cur), total=_total(tot),
+                prev=_prev(pv, all("contacts" in x for x in prev) if pv else False))
 
-    def top(counter, k=8, other="другие"):
-        items = Counter(counter).most_common()
-        rest = sum(v for _, v in items[k:])
-        return [list(x) for x in items[:k]] + ([[other, rest]] if rest else [])
 
-    total = {"visitors": 0, "views": 0, "leads": 0, "google": 0, "own": 0, "contacts": 0, "contact_types": [],
-             "contact_pages": [], "langs": [], "sources": [], "devices": [], "pages": [], "notfound": [], "leads_pages": []}
-    if tot:
-        total.update(
-            visitors=tot["visitors"], views=tot["views"], leads=tot["leads"], google=tot["google"], own=tot["own"],
-            langs=[[LANG_NAMES[k], tot["lang_visitors"][k]] for k in LANG_NAMES if tot["lang_visitors"].get(k)],
-            sources=top(tot["sources"]), devices=top(tot["devices"]),
-            pages=[[title_of(p), v] for p, v in tot["pages"].most_common(15)],
-            notfound=[[p, v] for p, v in tot["notfound"].most_common(10)],
-            leads_pages=[[title_of(p), v] for p, v in tot["lead_pages"].most_common(8)],
-            contacts=sum(tot["contacts"].values()),
-            contact_types=[[CONTACTS[k], tot["contacts"][k]] for k in CONTACTS if tot["contacts"].get(k)],
-            contact_pages=[[title_of(p), v] for p, v in tot["contact_pages"].most_common(8)])
-    return {"days": rows, "coverage": len(cur), "total": total,
-            "prev": dict({k: pv[k] for k in ("visitors", "views", "leads", "google")},
-                         contacts=sum(pv["contacts"].values()) if all("contacts" in x for x in prev) else None) if pv else None,
-            "generated": datetime.now(TZ).strftime("%H:%M")}
+def web_hours(now=None):
+    """24 часа по часам: текущий час (неполный) и 23 предыдущих; сравнение — с таким же отрезком перед ними.
+    Часы — по границам часа (у Братиславы и Флориды смещение от UTC целое, границы совпадают)."""
+    now = now or time.time()
+    start = int(now // 3600) * 3600 - 23 * 3600
+    pstart = start - (now - start)
+    buckets, cur, prev = [Agg() for _ in range(24)], Agg(), Agg()
+    for ts, e in entries(pstart, now + 1):
+        if ts >= start:
+            cur.add(e)
+            buckets[min(23, int((ts - start) // 3600))].add(e)
+        else:
+            prev.add(e)
+    leads, hits = leads_between(pstart, now + 1), hits_between(pstart, now + 1, with_ts=True)
+    rows = []
+    ls = logs_start()
+    for i, b in enumerate(buckets):
+        bs = start + i * 3600
+        r = b.result([x for x in leads if bs <= x["ts"] < bs + 3600], [(t, p) for ts, t, p in hits if bs <= ts < bs + 3600])
+        rows.append(_row(r, ts=bs, missing=ls is None or bs + 3600 <= ls, partial=i == 23))
+    tot = merge([cur.result([x for x in leads if x["ts"] >= start], [(t, p) for ts, t, p in hits if ts >= start])])
+    pv = None
+    if ls is not None and ls <= pstart + 300:                  # журнал помнит и предыдущие сутки целиком
+        pv = merge([prev.result([x for x in leads if x["ts"] < start], [(t, p) for ts, t, p in hits if ts < start])])
+    return dict(_stamp(now), period="24h", unit="hour", rows=rows, coverage=sum(not r["missing"] for r in rows),
+                total=_total(tot), prev=_prev(pv))
+
+
+def _session(info, views, evs, leads, before, now):
+    """Карточка одного захода посетителя: страницы по порядку со временем на каждой и события на них."""
+    ip, ua, accept = info
+    pages = []
+    for i, (ts, path, kind, uri, ref) in enumerate(views):
+        nxt = views[i + 1][0] if i + 1 < len(views) else None
+        nxt_same = next((v[0] for v in views[i + 1:] if v[1] == path), float("inf"))
+        # время, пока страница была на экране, — присылает сама страница, когда её закрывают или сворачивают
+        shown = max((s for t, k, p, s in evs if k == "time" and p == path and ts - 2 <= t < nxt_same), default=0)
+        if shown:
+            secs, approx = shown, False
+        elif nxt is not None and nxt - ts < SESSION_GAP:
+            secs, approx = int(nxt - ts), True        # примерно: до открытия следующей страницы
+        else:
+            secs, approx = None, False
+        pages.append({"ts": int(ts), "path": path, "nf": kind == "404", "secs": secs, "approx": approx,
+                      "title": path if kind == "404" else title_of(path), "events": []})
+
+    def page_at(t, path=None):
+        best = None
+        for i, v in enumerate(views):
+            if v[0] <= t + 2 and (path is None or v[1] == path):
+                best = i
+        return best
+
+    for t, k, p, s in evs:
+        if k in CONTACTS:
+            i = page_at(t, p)
+            i = page_at(t) if i is None else i
+            if i is not None:
+                pages[i]["events"].append({"t": k, "ts": int(t)})
+    for x in leads:
+        i = page_at(x["ts"], norm_path(x["page"]))
+        i = page_at(x["ts"]) if i is None else i
+        if i is not None:
+            pages[i]["events"].append({"t": "lead", "ts": int(x["ts"])})
+    end = max([views[-1][0]] + [t for t, *_ in evs] + [x["ts"] for x in leads])
+    last = pages[-1]
+    dev, os_name, browser = ua_info(ua)
+    first = views[0]
+    return {"start": int(first[0]), "end": int(end),
+            "active": last["secs"] is None and now - views[-1][0] < 15 * 60,   # последнюю страницу ещё не закрыли
+            "geo": geo.lookup(ip) if geo else None, "device": dev, "os": os_name, "browser": browser,
+            "lang": browser_lang(accept), "source": source(first[4], first[3]),
+            "total": sum(p["secs"] or 0 for p in pages), "before": before, "pages": pages}
+
+
+def web_live(now=None):
+    """«1 час»: каждый посетитель отдельно — заходы, в которых что-то происходило за последний час
+    (заход целиком, даже если начался раньше). Строится из журнала за сутки; IP наружу не отдаётся."""
+    now = now or time.time()
+    since = now - 86400
+    views, info, own = {}, {}, set()
+    for ts, e in entries(since, now + 1):
+        p = parse(e)
+        if not p or p[0] not in ("view", "404"):
+            continue
+        kind, ip, ua, path, h, uri = p
+        key = ip + "|" + ua
+        if is_excluded(ip):
+            if ts >= now - LIVE_WINDOW:
+                own.add(key)
+            continue
+        views.setdefault(key, []).append((ts, path, kind, uri, header(h, "Referer")))
+        info.setdefault(key, (ip, ua, header(h, "Accept-Language")))
+    events = {}
+    for t, key, kind, path, secs in recent_events(since):
+        events.setdefault(key, []).append((t, kind, path, secs))
+    leads = leads_between(since, now + 1)
+    sessions, last = [], None
+    for key, vs in views.items():
+        vs.sort(key=lambda v: v[0])
+        groups = [[vs[0]]]
+        for v in vs[1:]:
+            if v[0] - groups[-1][-1][0] > SESSION_GAP:
+                groups.append([v])
+            else:
+                groups[-1].append(v)
+        if last is None or vs[-1][0] > last[0]:
+            last = (vs[-1][0], info[key][0])
+        evs = sorted(events.get(key, []))
+        lds = [x for x in leads if x["ip"] == info[key][0]]
+        for gi, g in enumerate(groups):
+            lo, hi = g[0][0] - 5, groups[gi + 1][0][0] if gi + 1 < len(groups) else float("inf")
+            gev = [x for x in evs if lo <= x[0] < hi]
+            paths = {v[1] for v in g}             # заявка с того же адреса — этого человека, если он был на её странице
+            gld = [x for x in lds if lo <= x["ts"] < hi and (not x["page"] or norm_path(x["page"]) in paths)]
+            end = max([g[-1][0]] + [x[0] for x in gev] + [x["ts"] for x in gld])
+            if end >= now - LIVE_WINDOW:
+                sessions.append(_session(info[key], g, gev, gld, gi, now))
+    sessions.sort(key=lambda s: -s["end"])
+    hour = now - LIVE_WINDOW
+    summary = {"visitors": len(sessions), "active": sum(s["active"] for s in sessions),
+               "views": sum(1 for s in sessions for p in s["pages"] if p["ts"] >= hour),
+               "contacts": sum(1 for s in sessions for p in s["pages"] for x in p["events"] if x["t"] in CONTACTS and x["ts"] >= hour),
+               "leads": sum(1 for s in sessions for p in s["pages"] for x in p["events"] if x["t"] == "lead" and x["ts"] >= hour)}
+    lastv = None
+    if not sessions and last:
+        g = geo.lookup(last[1]) if geo else None
+        lastv = {"ts": int(last[0]), "place": g["place"] if g else ""}
+    return dict(_stamp(now), period="1h", sessions=sessions[:60], summary=summary, own=len(own), last=lastv,
+                geo=bool(geo and geo.available()), credit=geo.CREDIT if geo else "")
+
+
+def web(period):
+    """Данные мини-приложения за период: 1h, 24h, 7, 30 или 90 (дней)."""
+    if period == "1h":
+        return web_live()
+    if period == "24h":
+        return web_hours()
+    return web_data(int(period) if str(period).isdigit() else 7)
 
 
 def plural(n, one, few, many):
@@ -865,6 +1163,11 @@ class SiteStats:
                 self.tick()
             except Exception as e:  # noqa: BLE001
                 self.log(f"статистика: ошибка {type(e).__name__}: {e}")
+            if geo and self.live_fn():
+                try:                                # база городов: раз в месяц свежий выпуск (сама решает, пора ли)
+                    geo.update(log=self.log)
+                except Exception as e:  # noqa: BLE001
+                    self.log(f"гео: ошибка {type(e).__name__}: {e}")
             self.stop.wait(60)
 
 

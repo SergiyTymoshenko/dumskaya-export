@@ -10,7 +10,7 @@
   3) отправляет письмом через SMTP (например, Gmail с паролем приложения).
 В этом же процессе работает сам бот (приём пользователей, роли) — см. bot.py, и сторож сайта: если сайт
 не отвечает, разработчику в бот приходит сообщение — см. site_monitor.py.
-И статистика посетителей по журналу Caddy (site_stats.py): отчёт разработчику в 9:00, команда /stats.
+И статистика посетителей по журналу Caddy (site_stats.py): мини-приложение «Графики» в боте, утром — строка разработчику.
 Только стандартная библиотека Python 3, без установки пакетов.
 
 Настройки — переменные окружения (файл lead.env, его читает systemd):
@@ -49,6 +49,9 @@ RATE = defaultdict(deque)          # ip → время последних зая
 RATE_MAX, RATE_WINDOW = 5, 600     # не больше 5 заявок за 10 минут с одного адреса
 HIT_RATE = defaultdict(deque)      # ip → время последних нажатий на контакты
 HIT_MAX = 20                       # не больше 20 нажатий за 10 минут с одного адреса
+TIME_RATE = defaultdict(deque)     # ip → время последних сообщений «время на странице»
+TIME_MAX = 120                     # не больше 120 за 10 минут с одного адреса
+PERIODS = ("1h", "24h", "7", "30", "90")
 lock = threading.Lock()
 
 THANKS = {
@@ -68,7 +71,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
 from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
-                        is_excluded, me_data, record_hit, web_data)
+                        is_excluded, me_data, record_hit, remember, web)
 from translate import lang_from, provider, translate_lead  # noqa: E402
 
 BOT = None
@@ -168,9 +171,10 @@ class Handler(BaseHTTPRequestHandler):
         if path.rstrip("/") == "/api/stats/data":
             if not self.stats_admin():
                 return self.reply(403, {"ok": False})
-            days = dict(urllib.parse.parse_qsl(query)).get("days", "7")
+            q = dict(urllib.parse.parse_qsl(query))
+            period = q.get("p") or q.get("days") or "7"
             try:
-                return self.reply(200, web_data(int(days) if days.isdigit() else 7))
+                return self.reply(200, web(period if period in PERIODS else "7"))
             except PermissionError:
                 return self.reply(503, {"ok": False, "error": "log"})
             except Exception as e:  # noqa: BLE001
@@ -194,32 +198,51 @@ class Handler(BaseHTTPRequestHandler):
         return u if u and u["role"] == "owner" else None
 
     def hit(self):
-        """Нажатие на телефон, e-mail или мессенджер (скрипт на страницах сайта): записать тип и страницу."""
+        """Сообщение скрипта на страницах сайта: нажатие на телефон, e-mail или мессенджер (тип и страница —
+        в hits.jsonl, без IP) или «время на странице» (сколько секунд страница была на экране — только в памяти,
+        для карточек посетителей в «1 час»)."""
         try:
             n = int(self.headers.get("Content-Length") or 0)
             data = json.loads(self.rfile.read(n).decode("utf-8", "replace")) if 0 < n <= 400 else {}
         except ValueError:
             data = {}
+        if not isinstance(data, dict):
+            data = {}
         kind, page = str(data.get("t") or ""), str(data.get("p") or "")[:200]
         ua, ip = self.headers.get("User-Agent", ""), self.client_ip()
-        if kind in CONTACTS and page.startswith("/") and ua.startswith("Mozilla/") and not BOT_UA.search(ua) \
-                and not is_excluded(ip):
-            now = time.time()
-            with lock:
-                q = HIT_RATE[ip]
-                while q and now - q[0] > RATE_WINDOW:
-                    q.popleft()
-                ok = len(q) < HIT_MAX
-                if ok:
-                    q.append(now)
-            if ok:
-                try:
-                    record_hit(kind, page)
-                except OSError as e:
-                    log(f"нажатия: не записано: {e}")
+        valid = page.startswith("/") and ua.startswith("Mozilla/") and not BOT_UA.search(ua) and not is_excluded(ip)
+        if valid and kind == "time":
+            try:
+                secs = int(data.get("s") or 0)
+            except (TypeError, ValueError):
+                secs = 0
+            if 0 < secs <= 6 * 3600 and self.allow(TIME_RATE, ip, TIME_MAX):
+                remember("time", ip, ua, page, secs)
+        elif valid and kind in CONTACTS and self.allow(HIT_RATE, ip, HIT_MAX):
+            remember(kind, ip, ua, page)
+            try:
+                record_hit(kind, page)
+            except OSError as e:
+                log(f"нажатия: не записано: {e}")
         self.send_response(204)
         self.send_header("Cache-Control", "no-store")
         self.end_headers()
+
+    @staticmethod
+    def allow(rate, ip, limit):
+        """Не больше limit сообщений за 10 минут с одного адреса."""
+        now = time.time()
+        with lock:
+            if len(rate) > 5000:                     # адреса, от которых давно ничего не было, — забыть
+                for k in [k for k, q in rate.items() if not q or now - q[-1] > RATE_WINDOW]:
+                    del rate[k]
+            q = rate[ip]
+            while q and now - q[0] > RATE_WINDOW:
+                q.popleft()
+            if len(q) >= limit:
+                return False
+            q.append(now)
+            return True
 
     def do_POST(self):
         if self.path.split("?")[0].rstrip("/") == "/api/hit":
@@ -305,7 +328,7 @@ def main():
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     if BOT:
         BOT.monitor = SiteMonitor(BOT, log=log)     # сторож сайта: «сайт не отвечает» разработчику в бот
-        BOT.stats = SiteStats(BOT, log=log)         # посетители по журналу Caddy: отчёт в 9:00 и /stats
+        BOT.stats = SiteStats(BOT, log=log)         # посетители по журналу Caddy: «Графики» и строка в 9:00
         BOT.start()
         BOT.monitor.start()
         BOT.stats.start()

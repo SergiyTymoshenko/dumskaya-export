@@ -69,7 +69,11 @@
       },
       {
        "t": "p",
-       "html": "Aby sme vedeli, koľko ľudí web navštevuje, počítame zobrazenia stránok podľa záznamov servera a kliknutia na telefón, e-mail a messengery — bez cookies a bez služieb tretích strán. Uchovávame iba súhrnné čísla: koľko bolo návštevníkov a kliknutí a na ktorých stránkach."
+       "html": "Aby sme vedeli, koľko ľudí web navštevuje, počítame zobrazenia stránok podľa záznamov servera, kliknutia na telefón, e-mail a messengery a aj to, ako dlho bola stránka otvorená na obrazovke — bez cookies a bez služieb tretích strán (čl. 6 ods. 1 písm. f) GDPR — oprávnený záujem)."
+      },
+      {
+       "t": "p",
+       "html": "V záznamoch servera je IP adresa a údaje o prehliadači. Podľa IP adresy databáza priamo na našom serveri určí približnú polohu — krajinu a mesto; adresa sa nikam neposiela. Záznamy uchovávame najviac 90 dní a v súhrnoch zostávajú iba čísla: koľko bolo návštevníkov a kliknutí a na ktorých stránkach."
       },
       {
        "t": "p",

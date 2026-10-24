@@ -66,7 +66,7 @@ KEYBOARDS = {
               "resize_keyboard": True, "is_persistent": True},
     "designer": {"keyboard": [[{"text": BTN_USERS}, {"text": BTN_PARTNERS}]], "resize_keyboard": True, "is_persistent": True},
 }
-KEYBOARD_VERSION = {"owner": "2", "designer": "3"}   # сменить — и кнопки этой роли придут заново
+KEYBOARD_VERSION = {"owner": "2", "designer": "4"}   # сменить — и кнопки этой роли придут заново
 SUPPLIER_COMMANDS = [{"command": "team", "description": "Мои сотрудники"},
                      {"command": "invite", "description": "Пригласить сотрудника"},
                      {"command": "help", "description": "Что умеет бот"}]
@@ -102,6 +102,16 @@ def now(days=0):
 
 def esc(s):
     return html.escape(str(s or ""), quote=False)
+
+
+def why_failed(desc):
+    """Причина недоставки от Telegram — по-русски и что делать."""
+    d = (desc or "").lower()
+    if "blocked" in d:
+        return "бот заблокирован у этого человека в Telegram — пусть откроет бота и нажмёт «Перезапустить»"
+    if "chat not found" in d or "deactivated" in d or "initiate" in d:
+        return "Telegram не находит чат с этим человеком — пусть откроет бота и нажмёт «Старт»"
+    return desc or "Telegram не ответил"
 
 
 class Store:
@@ -186,13 +196,17 @@ class Bot:
                                      for t, d in row] for row in rows if row]}
 
     def send(self, chat_id, text, rows=None, **extra):
+        return self.send_r(chat_id, text, rows, **extra)[0]
+
+    def send_r(self, chat_id, text, rows=None, **extra):
+        """Отправить сообщение: (доставлено ли, причина от Telegram, если нет)."""
         p = {"chat_id": chat_id, "text": text, "parse_mode": "HTML", "link_preview_options": {"is_disabled": True}, **extra}
         if rows:
             p["reply_markup"] = self.kb(rows)
         r = self.api("sendMessage", **p)
         if not r.get("ok"):
             self.log(f"telegram: не отправлено {chat_id}: {r.get('description')}")
-        return r.get("ok", False)
+        return bool(r.get("ok")), str(r.get("description") or "")
 
     def edit(self, msg, text, rows=None):
         p = {"chat_id": msg["chat"]["id"], "message_id": msg["message_id"], "text": text, "parse_mode": "HTML",
@@ -298,8 +312,15 @@ class Bot:
         self.api("setMyShortDescription", short_description="Внутренний бот студии DUMSKAYA DESIGN")
         self.api("setMyCommands", commands=[{"command": "start", "description": "Начать"},
                                             {"command": "help", "description": "Что умеет бот"}])
+        report = []
         for u in self.active(ADMIN_ROLES + ("supplier",)):
-            self.set_commands(u)
+            got = self.set_commands(u)
+            if got is not None and u["tg_id"] != self.owner:
+                report.append((u, got))
+        if report and self.owner:              # кому ушло сообщение о кнопках после обновления бота — разработчику
+            self.send(self.owner, "<b>Сообщение о кнопках после обновления бота</b>\n" + "\n".join(
+                f"✅ {esc(self.label(u))} — доставлено" if ok else f"⚠️ {esc(self.label(u))} — не доставлено: {esc(why_failed(why))}"
+                for u, (ok, why) in report))
 
     def set_commands(self, u):
         """Меню команд конкретного человека: у студии — /users, /partners; у поставщика — /team, /invite."""
@@ -310,7 +331,7 @@ class Bot:
             self.api("setMyCommands", scope=scope, commands=cmds)
         else:
             self.api("deleteMyCommands", scope=scope)
-        self.sync_buttons(u)
+        return self.sync_buttons(u)
 
     # ---------- кнопки студии ----------
     def stats_app_url(self):
@@ -332,17 +353,23 @@ class Bot:
         return {"reply_markup": KEYBOARDS[u["role"]]}
 
     def sync_buttons(self, u):
-        """Кнопки под полем ввода и кнопка «Графики» слева — у разработчика и дизайнера; у остальных — убрать."""
+        """Кнопки под полем ввода и кнопка «Графики» слева — у разработчика и дизайнера; у остальных — убрать.
+        Вернёт (доставлено, причина), если отправляли сообщение о новых кнопках, иначе None."""
         uid, flag = u["tg_id"], f"kbd:{u['tg_id']}"
         if self.is_admin(u):
             url = self.stats_app_url()
             self.api("setChatMenuButton", chat_id=uid, menu_button=(
                 {"type": "web_app", "text": "Графики", "web_app": {"url": url}} if url else {"type": "commands"}))
             if self.s.get(flag) != KEYBOARD_VERSION[u["role"]]:
-                self.send(uid, "Кнопки студии — внизу экрана: пользователи и партнёры"
-                          + (", сайт." if u["role"] == "owner" else ".")
-                          + (" Статистика посетителей — кнопка «Графики» слева от поля ввода." if url else ""),
-                          **self.keyboard_extra(u))
+                got = self.send_r(uid, "Кнопки студии — внизу экрана: пользователи и партнёры"
+                                  + (", сайт." if u["role"] == "owner" else ".")
+                                  + (" Статистика посетителей — кнопка «Графики» слева от поля ввода: кто был на сайте "
+                                     "за последний час, что смотрел и откуда, а также итоги за сутки, неделю и месяц."
+                                     if url else ""),
+                                  reply_markup=KEYBOARDS[u["role"]])
+                if got[0]:                     # отметка — только после доставки, иначе попробуем при следующем запуске
+                    self.s.put(flag, KEYBOARD_VERSION[u["role"]])
+                return got
         elif self.s.get(flag):
             self.s.drop(flag)
             self.send(uid, "Кнопки студии убраны.", reply_markup={"remove_keyboard": True})
