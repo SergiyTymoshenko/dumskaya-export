@@ -336,7 +336,8 @@
       tile('Просмотры страниц', tot.views, prev && prev.views),
       tile('Заявки с сайта', tot.leads, prev && prev.leads));
     app.append(tiles);
-    if (tot.own) app.append(el('p', 'note', '🏠 Ваши собственные просмотры (' + fmt(tot.own) + ') не учтены — адреса в блоке «Не считать нас» внизу.'));
+    if (tot.own) app.append(el('p', 'note', me ? '🏠 Ваши собственные просмотры (' + fmt(tot.own) + ') не учтены — адреса в блоке «Не считать нас» внизу.'
+      : '🏠 Просмотры студии (' + fmt(tot.own) + ') не учтены.'));
 
     const c1 = card('Посетители по дням', 'Нажмите на график — покажет день целиком');
     c1.append(lineChart(d.days, 'visitors', (r) => [['Посетители', r.visitors, true], ['Просмотры', r.views], ['Заявки', r.leads]]));
@@ -375,7 +376,7 @@
       const c8 = card('Не найдено (404)', 'Адреса, по которым посетители получили ошибку — их стоит перенаправить');
       c8.append(barList(tot.notfound)); app.append(c8);
     }
-    app.append(ownCard());
+    if (me) app.append(ownCard());        // блок есть только у разработчика (сервер отдаёт его только ему)
   }
 
   // «Не считать нас»: свой домашний интернет — визиты с него в статистику не попадают
@@ -412,8 +413,8 @@
   async function loadMe() {
     try {
       const r = await fetch('/api/stats/me', { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' });
-      if (r.ok) me = await r.json();
-    } catch (e) {}
+      me = r.ok ? await r.json() : false;
+    } catch (e) { me = false; }
   }
   async function ownAction(body, btn) {
     btn.disabled = true;
@@ -440,7 +441,7 @@
       if (r.status === 503) throw new Error('Сервис не может прочитать журнал сайта. Выложите сайт ещё раз — выкладка откроет журнал для чтения.');
       if (!r.ok) throw new Error('Сервер не ответил (' + r.status + '). Попробуйте ещё раз через минуту.');
       data = await r.json();
-      if (!me) await loadMe();
+      if (me === null) await loadMe();
       render();
     } catch (e) {
       app.replaceChildren(el('div', 'err', e.message || String(e)));

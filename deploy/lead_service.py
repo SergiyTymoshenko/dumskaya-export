@@ -158,8 +158,8 @@ class Handler(BaseHTTPRequestHandler):
             except OSError:
                 return self.reply(404, {"ok": False})
             return self.reply(200, None, html_page=page, telegram_frame=True)
-        if path.rstrip("/") == "/api/stats/me":            # «Не считать нас»: с какого адреса открыто приложение
-            if not self.stats_admin():
+        if path.rstrip("/") == "/api/stats/me":            # «Не считать нас»: только у разработчика
+            if not self.stats_owner():
                 return self.reply(403, {"ok": False})
             return self.reply(200, me_data(self.client_ip()))
         if path.rstrip("/") == "/api/stats/data":
@@ -185,9 +185,14 @@ class Handler(BaseHTTPRequestHandler):
         u = BOT.user(uid) if uid and BOT else None
         return u if u and BOT.is_admin(u) else None
 
+    def stats_owner(self):
+        """Только разработчик: список своих адресов меняет он (дизайнеру этот блок не показывается)."""
+        u = self.stats_admin()
+        return u if u and u["role"] == "owner" else None
+
     def do_POST(self):
         if self.path.split("?")[0].rstrip("/") == "/api/stats/exclude":
-            u = self.stats_admin()
+            u = self.stats_owner()
             if not u:
                 return self.reply(403, {"ok": False})
             try:
