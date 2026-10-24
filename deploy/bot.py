@@ -15,8 +15,9 @@ Telegram-бот студии DUMSKAYA DESIGN — внутренний инстр
   4) сотрудники поставщиков — их добавляет сам поставщик: /invite даёт одноразовую ссылку,
      сотрудник открывает её и нажимает «Старт», поставщик подтверждает. Сотрудникам приходят заявки
      на товары компании, как и поставщику. Студия видит их в /users и может закрыть доступ;
-  5) заказчики и подрядчики проектов — только по ссылке из проекта в «Студии» (t.me/<бот>?start=pj_…): кабинет
-     «Мой проект», переписка с дизайнером, подтверждение сумм — см. portal_bot.py.
+  5) заказчики, подрядчики и работники подрядчиков — только по личной ссылке t.me/<бот>?start=pj_… (заказчику и
+     подрядчику — из «Студии», работнику — от его подрядчика): кабинет «Мой проект», разговоры, подтверждение сумм,
+     документы — см. portal_bot.py.
 
 Попасть в бот можно только по одобрению: человек нажимает «Старт», разработчику и дизайнерам приходит
 запрос с кнопками ролей (или, по ссылке-приглашению, — поставщику). Данные — в SQLite (BOT_DB, по умолчанию
@@ -52,7 +53,8 @@ ROLES = {
     "foreman": "Прораб",
     "contractor": "Независимый подрядчик",
     "client": "Заказчик",                  # кабинет проекта — только по ссылке-приглашению из «Студии»
-    "crew": "Подрядчик проекта",
+    "crew": "Подрядчик проекта",           # подрядчик (руководитель) — ссылку один раз даёт «Студия»
+    "worker": "Работник подрядчика",       # технолог, установщик… — ссылку даёт его подрядчик
 }
 ROLE_ORDER = list(ROLES)
 ADMIN_ROLES = ("owner", "designer")
@@ -472,7 +474,7 @@ class Bot(CrmBotMixin, PortalBotMixin):
             return
         if u["role"] == "designer" and self.file_of(m):       # фото или документ — сохранить в проект (учёт — у дизайнера)
             return self.crm_intake(u, m)
-        if u["role"] in PORTAL_ROLES:                          # заказчик или подрядчик проекта: переписка, кабинет
+        if u["role"] in PORTAL_ROLES:                          # заказчик, подрядчик, работник: разговоры, кабинет
             return self.portal_message(u, m, text, cmd)
         if text in ADMIN_BUTTONS and self.is_admin(u) and (text != BTN_SITE or u["role"] == "owner"):   # кнопка = команда
             self.s.drop(f"await:{uid}")
@@ -498,6 +500,8 @@ class Bot(CrmBotMixin, PortalBotMixin):
         if self.is_admin(u):
             return self.send(uid, "Всё для работы студии — в «Студии»: кнопка слева от поля ввода. Что где — /help.",
                              **self.keyboard_extra(u))
+        if not cmd and getattr(self, "portal", None) and self.portal.has_cabinet(uid):   # партнёр студии — и подрядчик проекта
+            return self.portal_message(u, m, text, cmd)
         self.send(uid, "Команды — в меню слева от поля ввода или /help.")
 
     def stranger(self, uid, name, username, u):
@@ -546,8 +550,8 @@ class Bot(CrmBotMixin, PortalBotMixin):
                            "и вашим сотрудникам в боте.\n\n/team — ваши сотрудники в боте\n/invite — пригласить сотрудника")
         if role == "staff":
             return head + "Сюда будут приходить заявки с сайта dumskaya-design.com на товары вашей компании."
-        if role in PORTAL_ROLES:                    # заказчик и подрядчик проекта — на своём языке
-            return self.portal_welcome(u)
+        if role in PORTAL_ROLES or (getattr(self, "portal", None) and self.portal.has_cabinet(u["tg_id"])):
+            return self.portal_welcome(u)           # заказчик, подрядчик, работник (и партнёр с кабинетом) — на своём языке
         return head + "Уведомления для вашей роли появятся позже — студия сообщит об этом."
 
     # ---------- кнопки ----------

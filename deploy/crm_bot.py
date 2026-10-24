@@ -269,14 +269,16 @@ class CrmBotMixin:
         """Прислать файл проекта в чат: из Telegram по ссылке на него или с сервера (до 50 МБ)."""
         return self.send_file_r(chat_id, f, path)[:2]
 
-    def send_file_r(self, chat_id, f, path, caption=None, rows=None):
-        """Файл в чат: (доставлено, причина, номер сообщения). caption — подпись в HTML (иначе имя файла), rows — кнопки.
-        Фото с сервера уходит фотографией (до 10 МБ), остальное — документом."""
+    def send_file_r(self, chat_id, f, path, caption=None, rows=None, silent=False):
+        """Файл в чат: (доставлено, причина, номер сообщения). caption — подпись в HTML (иначе имя файла), rows — кнопки,
+        silent — без звука. Фото с сервера уходит фотографией (до 10 МБ), остальное — документом."""
         html_caption = caption is not None
         caption = (caption if html_caption else (f["name"] or ""))[:1024]
         extra = {"parse_mode": "HTML"} if html_caption else {}
         if rows:
             extra["reply_markup"] = self.kb(rows)
+        if silent:
+            extra["disable_notification"] = True
         ref = f.get("tg_file_id") or ""
         if ":" in ref:
             kind, fid = ref.split(":", 1)
@@ -306,6 +308,8 @@ class CrmBotMixin:
             parts.append(part("parse_mode", "HTML"))
         if rows:
             parts.append(part("reply_markup", json.dumps(self.kb(rows), ensure_ascii=False)))
+        if silent:
+            parts.append(part("disable_notification", "true"))
         parts += [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{field}\"; filename*=UTF-8''{urllib.parse.quote(name)}\r\n"
                   f"Content-Type: {mime}\r\n\r\n".encode(), data, b"\r\n", f"--{boundary}--\r\n".encode()]
         req = urllib.request.Request(f"https://api.telegram.org/bot{self.token}/{method}", data=b"".join(parts),

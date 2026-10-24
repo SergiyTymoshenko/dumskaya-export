@@ -8,7 +8,9 @@
 Что делает:
   1) Telegram: проверяет токен бота студии, записывает ID разработчика, бот пишет вам пробное сообщение;
   2) почта: проверяет вход в Gmail по паролю приложения;
-  3) перевод сообщений заказчиков на русский: проверяет ключ DeepL или Claude пробным переводом;
+  3) перевод сообщений заказчиков и переписки: модели ChatGPT — ключ из проекта УЧЕТ на этом сервере (вы указываете
+     путь к его файлу настроек, мастер берёт из него только переменные OpenAI; решено 24.10.2026), или ключ
+     вставляется вручную (OpenAI, DeepL, Claude); проверяет пробным переводом;
   4) записывает ~/dumskaya/lead.env (доступ только у владельца), перезапускает сервис заявок
      (нужен пароль sudo) и отправляет пробную заявку тем же путём, что и форма на сайте.
 Только перевод (с Mac — npm run translate):  python3 ~/dumskaya/deploy/lead_setup.py --translate
@@ -17,6 +19,7 @@
 import getpass
 import json
 import os
+import re
 import smtplib
 import ssl
 import subprocess
@@ -197,52 +200,174 @@ def setup_mail(vals):
 
 
 # ---------- Перевод ----------
-def check_translate(var, key):
+TR_VARS = ("OPENAI_API_KEY", "OPENAI_BASE_URL", "OPENAI_MODEL", "DEEPL_API_KEY", "ANTHROPIC_API_KEY", "TRANSLATE_PROVIDER")
+OPENAI_PREFER = ("gpt-5.4-mini", "gpt-5-mini", "gpt-4.1-mini", "gpt-4o-mini")
+NAME = r"(?:OPENAI|CHATGPT)[A-Z0-9_]*"
+
+
+def check_translate(env):
+    """Пробный перевод с этими настройками (без записи в lead.env): (получилось ли, перевод или причина)."""
     sys.path.insert(0, os.path.join(APP, "deploy"))
     try:
         import translate
     except ImportError:
         return False, "на сервере ещё нет translate.py — сначала выложите сайт (npm run deploy)"
-    saved = {k: os.environ.pop(k, None) for k in ("DEEPL_API_KEY", "ANTHROPIC_API_KEY")}
-    os.environ[var] = key
+    saved = {k: os.environ.pop(k, None) for k in TR_VARS}
+    os.environ.update({k: v for k, v in env.items() if v})
     try:
         r = translate.to_russian("Hello! I would like a quote for a sofa with delivery to Vienna.")
-        if r and any("\u0400" <= c <= "\u04ff" for c in r[1]):
+        if r and any("Ѐ" <= c <= "ӿ" for c in r[1]):
             return True, f"«{r[1][:90]}»"
         return False, f"сервис ответил без перевода: {r}"
     except Exception as e:  # noqa: BLE001
         return False, str(e)[:300]
     finally:
-        os.environ.pop(var, None)
+        for k in TR_VARS:
+            os.environ.pop(k, None)
         os.environ.update({k: v for k, v in saved.items() if v})
 
 
+def parse_env(text):
+    """Только переменные OpenAI / ChatGPT из указанного файла настроек: .env (KEY=VALUE, export KEY=VALUE),
+    systemd (Environment=…), docker compose (KEY: value, - KEY=value). Остальное в файле не читается в настройки,
+    значения на экран не выводятся."""
+    out = {}
+    for ln in text.splitlines():
+        ln = ln.strip()
+        if not ln or ln.startswith("#"):
+            continue
+        if ln.startswith("Environment="):
+            for m in re.finditer(r'"?(' + NAME + r')=([^"\s]*)"?', ln[len("Environment="):]):
+                out.setdefault(m.group(1), m.group(2))
+            continue
+        m = re.match(r"(?:export\s+|-\s*)?(" + NAME + r")\s*[=:]\s*(.*)$", ln)
+        if m:
+            v = re.sub(r"\s+#.*$", "", m.group(2)).strip().strip("\"'")
+            if v:
+                out.setdefault(m.group(1), v)
+    return out
+
+
+def read_project_env(path):
+    """Файл настроек проекта УЧЕТ по пути, который указали вы: обычным чтением, а если файл чужого пользователя — через
+    sudo cat (только чтение). Возвращает переменные OpenAI / ChatGPT из него."""
+    path = os.path.expanduser(path.strip())
+    try:
+        with open(path, encoding="utf-8") as fh:
+            text = fh.read(256 * 1024)
+    except PermissionError:
+        r = subprocess.run(["sudo", "cat", "--", path], capture_output=True, text=True)
+        if r.returncode != 0:
+            raise OSError(r.stderr.strip() or "не удалось прочитать файл") from None
+        text = r.stdout
+    return parse_env(text)
+
+
+def openai_from(env):
+    """Ключ, адрес и модель из найденных переменных (в проектах их называют по-разному)."""
+    pick = lambda pat: next((v for k, v in env.items() if re.search(pat, k)), "")   # noqa: E731
+    return {"OPENAI_API_KEY": pick(r"KEY|TOKEN"), "OPENAI_BASE_URL": pick(r"BASE|URL|ENDPOINT|HOST"),
+            "OPENAI_MODEL": pick(r"MODEL")}
+
+
+def pick_model(key, base):
+    """Модель для перевода: из доступных этому ключу — первая из предпочтительных (небольшие и быстрые)."""
+    url = (base or "https://api.openai.com/v1").rstrip("/") + "/models"
+    try:
+        req = urllib.request.Request(url, headers={"Authorization": "Bearer " + key})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            ids = [m.get("id", "") for m in json.loads(r.read()).get("data", [])]
+    except Exception:  # noqa: BLE001
+        return OPENAI_PREFER[0]
+    for m in OPENAI_PREFER:
+        if m in ids:
+            return m
+    minis = sorted((i for i in ids if i.startswith("gpt-") and "mini" in i), reverse=True)
+    return minis[0] if minis else OPENAI_PREFER[0]
+
+
+def use_openai(vals, env, where):
+    env = dict(env)
+    if not env.get("OPENAI_MODEL"):
+        env["OPENAI_MODEL"] = pick_model(env["OPENAI_API_KEY"], env.get("OPENAI_BASE_URL"))
+    env["TRANSLATE_PROVIDER"] = "openai"
+    say(f"  Проверяю: модель {env['OPENAI_MODEL']}" + (f", адрес {env['OPENAI_BASE_URL']}" if env.get("OPENAI_BASE_URL") else "") + "…")
+    good, info = check_translate(env)
+    if not good:
+        bad(f"ключ из {where} не сработал: {info}")
+        m = ask("Другая модель — впишите её название (Enter — пропустить)")
+        if not m:
+            return False
+        env["OPENAI_MODEL"] = m
+        good, info = check_translate(env)
+        if not good:
+            bad(f"и с моделью {m} не сработало: {info}")
+            return False
+    ok(f"ChatGPT переводит: {info}")
+    for k in TR_VARS:
+        vals[k] = env.get(k, "")
+    return True
+
+
 def setup_translate(vals, step="3"):
-    head(f"{step}. Перевод сообщений заказчиков на русский — в боте и в письме")
-    cur = "DeepL" if vals.get("DEEPL_API_KEY") else "Claude" if vals.get("ANTHROPIC_API_KEY") else ""
+    head(f"{step}. Перевод: сообщения заказчиков, переписка в кабинете проекта, названия на языке заказчика")
+    cur = {"openai": "ChatGPT", "deepl": "DeepL", "claude": "Claude"}.get(
+        vals.get("TRANSLATE_PROVIDER") or ("openai" if vals.get("OPENAI_API_KEY") else "deepl" if vals.get("DEEPL_API_KEY")
+                                           else "claude" if vals.get("ANTHROPIC_API_KEY") else ""), "")
     if cur:
-        say(f"  Сейчас перевод через {cur}.")
-    say(f"  {D}Нужен ключ одного из сервисов (сообщения на русском не переводятся и знаки не тратят):")
-    say("  • DeepL API Free — бесплатно до 500 000 знаков в месяц (это сотни заявок):")
-    say("      www.deepl.com/pro-api → «API Free» → регистрация (карта нужна только для проверки, на Free не списывают);")
-    say("      затем www.deepl.com/your-account/keys → скопировать ключ (оканчивается на :fx);")
-    say("  • или Claude API — оплата по факту, перевод одной заявки — доли цента:")
-    say(f"      console.anthropic.com → Billing (пополнить от $5) → Settings → API keys → Create key (начинается с sk-ant-).{X}")
+        say(f"  Сейчас перевод через {cur}" + (f" ({vals.get('OPENAI_MODEL')})" if cur == "ChatGPT" and vals.get("OPENAI_MODEL") else "") + ".")
+    say(f"  {D}1 — модели ChatGPT с ключом из проекта УЧЕТ: укажите путь к его файлу настроек на этом сервере")
+    say("      (например, /home/<пользователь>/<проект>/.env). Из файла берутся только переменные OpenAI / ChatGPT,")
+    say("      сам файл не меняется, ключ на экран не выводится; если файл чужого пользователя — спросит пароль sudo;")
+    say("  2 — вставить ключ вручную: OpenAI (sk-…), DeepL (…:fx) или Claude (sk-ant-…);")
+    say(f"  «-» — выключить перевод; Enter — оставить как есть.{X}")
+    choice = ask("Ваш выбор", "" if cur else "1")
+    if not choice:
+        note("Перевод не изменён." if cur else "Перевод не включён — заявки приходят как есть.")
+        return
+    if choice == "-":
+        for k in TR_VARS:
+            vals[k] = ""
+        note("Перевод выключен.")
+        return
+    if choice == "1":
+        for attempt in range(3):
+            path = ask("Путь к файлу настроек проекта УЧЕТ (Enter — вставить ключ вручную)")
+            if not path:
+                break
+            try:
+                env = read_project_env(path)
+            except OSError as e:
+                bad(f"не получилось прочитать: {e}")
+                continue
+            if not env:
+                bad("в этом файле нет переменных OpenAI / ChatGPT — проверьте путь")
+                continue
+            say(f"  В файле: {', '.join(env)}")
+            env = openai_from(env)
+            if not env["OPENAI_API_KEY"]:
+                bad("ключа (…KEY или …TOKEN) среди них нет")
+                continue
+            if use_openai(vals, env, path):
+                ok(f"ключ взят из {path}; если в проекте УЧЕТ его поменяют — запустите npm run translate ещё раз")
+                return
     for attempt in range(3):
-        key = ask_secret("Вставьте ключ (Enter — оставить как есть, «-» — выключить перевод)")
+        key = ask_secret("Вставьте ключ (Enter — оставить как есть)")
         if not key:
             note("Перевод не изменён." if cur else "Перевод не включён — заявки приходят как есть.")
             return
-        if key == "-":
-            vals["DEEPL_API_KEY"] = vals["ANTHROPIC_API_KEY"] = ""
-            note("Перевод выключен.")
-            return
+        if key.startswith("sk-") and not key.startswith("sk-ant-"):
+            base = ask("Адрес сервиса (Enter — обычный api.openai.com)", vals.get("OPENAI_BASE_URL") or "")
+            if use_openai(vals, {"OPENAI_API_KEY": key, "OPENAI_BASE_URL": base}, "ввода"):
+                return
+            continue
         var = "ANTHROPIC_API_KEY" if key.startswith("sk-ant-") else "DEEPL_API_KEY"
-        good, info = check_translate(var, key)
+        good, info = check_translate({var: key})
         if good:
             ok(f"{'Claude' if var == 'ANTHROPIC_API_KEY' else 'DeepL'} переводит: {info}")
-            vals["DEEPL_API_KEY"] = key if var == "DEEPL_API_KEY" else ""
-            vals["ANTHROPIC_API_KEY"] = key if var == "ANTHROPIC_API_KEY" else ""
+            for k in TR_VARS:
+                vals[k] = ""
+            vals[var] = key
             return
         bad(f"ключ не сработал: {info}")
     note("Перевод не включён. Запустите ещё раз с правильным ключом: с Mac — npm run translate")
@@ -310,7 +435,7 @@ def main():
         SAVED = True
         ok(f"настройки записаны в {ENV}")
         msg = ("Hello! This is a test request. If a Russian translation is shown below, translation of client "
-               "messages works." if vals.get("DEEPL_API_KEY") or vals.get("ANTHROPIC_API_KEY") else
+               "messages works." if vals.get("OPENAI_API_KEY") or vals.get("DEEPL_API_KEY") or vals.get("ANTHROPIC_API_KEY") else
                "Это пробная заявка: перевод выключен.")
         restart_and_test(vals, step="2", message=msg)
         say(f"\n{B}Готово.{X} Поменять ключ или выключить перевод: с Mac — npm run translate")

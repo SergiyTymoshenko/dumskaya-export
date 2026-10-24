@@ -20,7 +20,7 @@
 Ещё: заказчики (телефон, почта, как удобнее связаться; у проекта — основной и ещё несколько), файлы проекта (обмерный план,
 опросник, до, визуализации, документация, после, другое) — в ~/dumskaya/crm/files, ссылки на них подписаны и действуют
 12 часов; удалённые файлы 30 дней лежат в ~/dumskaya/crm/trash.
-Кабинет заказчика и подрядчика в боте и переписка с заказчиками — crm_portal.py.
+Кабинет заказчика, подрядчика и его работников в боте, разговоры и права на документы — crm_portal.py.
 
 Данные — ~/dumskaya/crm.db (SQLite). Каждый день — копия базы студии и базы бота в ~/dumskaya/backups (30 дней);
 с Мака `npm run backup` (и каждая выкладка) делает свежую копию и скачивает копии и файлы на Мак.
@@ -71,7 +71,7 @@ FILE_CATS = [("measure", "Обмерный план"), ("brief", "Опросни
              ("docs", "Документация"), ("after", "После"), ("other", "Другое")]
 PHOTO_CATS = ("before", "visual", "after")
 # служебные разделы файлов: фото товаров (в карточке товара) и вложения переписки — в разделах «Файлы проекта» их нет
-EXTRA_CATS = [("goods", "Фото товаров"), ("chat", "Из переписки")]
+EXTRA_CATS = [("goods", "Фото товаров"), ("chat", "Из переписки"), ("work", "От подрядчиков")]
 # что видно в кабинете: заказчику — всё, кроме «Другое» (там бывают счета с закупкой); подрядчику — обмеры, фото,
 # визуализации и документация (опросник заказчика — нет)
 CLIENT_CATS = ("measure", "brief", "before", "visual", "docs", "after")
@@ -159,12 +159,27 @@ CREATE INDEX IF NOT EXISTS services_project ON services(project_id);
 CREATE TABLE IF NOT EXISTS invites (           -- одноразовые ссылки в кабинет: заказчику или подрядчику
   token TEXT PRIMARY KEY, kind TEXT NOT NULL, ref_id INTEGER NOT NULL, project_id INTEGER, lang TEXT,
   created_by TEXT, created TEXT, expires TEXT, used_by INTEGER, used TEXT);
-CREATE TABLE IF NOT EXISTS messages (          -- переписка студии с заказчиками проекта (подрядчики не участвуют)
+CREATE TABLE IF NOT EXISTS crew (              -- работники подрядчика (технолог, установщик…): подключает сам подрядчик
+  id INTEGER PRIMARY KEY AUTOINCREMENT, contractor_id INTEGER NOT NULL, name TEXT NOT NULL, position TEXT, phone TEXT,
+  tg_id INTEGER, tg_name TEXT, tg_since TEXT, removed TEXT, created_by TEXT, created TEXT, updated TEXT);
+CREATE INDEX IF NOT EXISTS crew_contractor ON crew(contractor_id);
+CREATE TABLE IF NOT EXISTS project_crew (      -- кто из работников подрядчика на этом объекте (выбирает подрядчик)
+  project_id INTEGER NOT NULL, crew_id INTEGER NOT NULL, created_by TEXT, created TEXT, PRIMARY KEY(project_id, crew_id));
+CREATE TABLE IF NOT EXISTS threads (           -- разговоры проекта: client — студия и заказчики; pc — заказчики и подрядчик
+  id INTEGER PRIMARY KEY AUTOINCREMENT,        -- (студия видит); org — студия и подрядчик; worker — студия и работник
+  project_id INTEGER NOT NULL, kind TEXT NOT NULL,   -- (подрядчик видит); group — группа, которую собрала студия
+  contractor_id INTEGER, crew_id INTEGER, title TEXT, studio_joined TEXT, created_by TEXT, created TEXT, updated TEXT);
+CREATE INDEX IF NOT EXISTS threads_project ON threads(project_id);
+CREATE TABLE IF NOT EXISTS thread_members (thread_id INTEGER NOT NULL, kind TEXT NOT NULL, ref_id INTEGER NOT NULL,
+  PRIMARY KEY(thread_id, kind, ref_id));       -- участники группы: contractor (руководитель) или crew (работник)
+CREATE TABLE IF NOT EXISTS thread_read (thread_id INTEGER NOT NULL, tg_id INTEGER NOT NULL, last_id INTEGER NOT NULL,
+  PRIMARY KEY(thread_id, tg_id));              -- до какого сообщения прочитано; tg_id 0 — студия
+CREATE TABLE IF NOT EXISTS messages (
   id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, author_kind TEXT NOT NULL, author_tg INTEGER,
-  author_name TEXT, text TEXT, lang TEXT, tr TEXT, file_id INTEGER, created TEXT NOT NULL, deleted TEXT);
+  author_name TEXT, text TEXT, lang TEXT, tr TEXT, file_id INTEGER, created TEXT NOT NULL, deleted TEXT, thread_id INTEGER);
 CREATE INDEX IF NOT EXISTS messages_project ON messages(project_id, id);
 CREATE TABLE IF NOT EXISTS chat_read (project_id INTEGER NOT NULL, tg_id INTEGER NOT NULL, last_id INTEGER NOT NULL,
-  PRIMARY KEY(project_id, tg_id));
+  PRIMARY KEY(project_id, tg_id));             -- из первой версии переписки (переносится в thread_read)
 CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT);
 CREATE TABLE IF NOT EXISTS audit (
   id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT, who TEXT, action TEXT, entity TEXT, entity_id INTEGER, details TEXT);
@@ -356,9 +371,16 @@ class Crm:
                                     ("stages", "disputed", "TEXT"), ("stages", "disputed_by", "TEXT"), ("stages", "dispute_note", "TEXT"),
                                     ("clients", "tg_id", "INTEGER"), ("clients", "tg_name", "TEXT"), ("clients", "tg_since", "TEXT"),
                                     ("contractors", "tg_id", "INTEGER"), ("contractors", "tg_name", "TEXT"),
-                                    ("contractors", "tg_since", "TEXT"), ("contractors", "messenger", "TEXT")):
+                                    ("contractors", "tg_since", "TEXT"), ("contractors", "messenger", "TEXT"),
+                                    # работники подрядчиков, разговоры, права на документы, наблюдатель (24.10.2026, вечер)
+                                    ("contractors", "observer", "INTEGER"), ("messages", "thread_id", "INTEGER"),
+                                    ("files", "owner_kind", "TEXT"), ("files", "owner_contractor", "INTEGER"),
+                                    ("files", "owner_crew", "INTEGER"), ("files", "vis", "TEXT"), ("files", "see_client", "INTEGER"),
+                                    ("files", "see_crew", "INTEGER"), ("files", "thread_id", "INTEGER"), ("files", "title", "TEXT")):
                 if col not in {r[1] for r in self.db.execute(f"PRAGMA table_info({table})")}:
                     self.db.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
+            self.db.execute("CREATE INDEX IF NOT EXISTS messages_thread ON messages(thread_id, id)")
+            self._threads_from_v1()
         try:
             os.chmod(path, 0o600)
         except OSError:
@@ -384,6 +406,19 @@ class Crm:
             return r["value"] if r else None
         self.run("INSERT OR REPLACE INTO settings(key, value) VALUES(?, ?)", key, value)
         return value
+
+    def _threads_from_v1(self):
+        """Переписка первой версии (одна на проект, студия и заказчики) → разговор «client» проекта; прочитанное — туда же."""
+        for r in self.db.execute("SELECT DISTINCT project_id FROM messages WHERE thread_id IS NULL").fetchall():
+            pid = r[0]
+            t = self.db.execute("SELECT id FROM threads WHERE project_id=? AND kind='client'", (pid,)).fetchone()
+            tid = t[0] if t else self.db.execute("INSERT INTO threads(project_id, kind, created) VALUES(?, 'client', ?)",
+                                                 (pid, now())).lastrowid
+            self.db.execute("UPDATE messages SET thread_id=? WHERE project_id=? AND thread_id IS NULL", (tid, pid))
+            self.db.execute("UPDATE files SET thread_id=? WHERE category='chat' AND thread_id IS NULL AND id IN "
+                            "(SELECT file_id FROM messages WHERE thread_id=? AND file_id IS NOT NULL)", (tid, tid))
+            for cr in self.db.execute("SELECT tg_id, last_id FROM chat_read WHERE project_id=?", (pid,)).fetchall():
+                self.db.execute("INSERT OR IGNORE INTO thread_read(thread_id, tg_id, last_id) VALUES(?, ?, ?)", (tid, cr[0], cr[1]))
 
     def _new_secret(self):
         return self.setting("link_secret", secrets.token_hex(24))
@@ -528,12 +563,16 @@ class Crm:
             link["money"] = money.get(link["link_id"]) or _debt([], [])
         files = [self.file_view(f) for f in self.q("SELECT * FROM files WHERE project_id=? AND category NOT IN ('goods', 'chat') "
                                                    "ORDER BY id DESC", p["id"])]
+        names = {c["id"]: c["name"] for c in self.q("SELECT id, name FROM contractors")}
+        crew_names = {c["id"]: c["name"] for c in self.q("SELECT id, name FROM crew")}
+        for f in files:                     # кто загрузил (подрядчик или его работник) — для раздела «От подрядчиков»
+            f["owner_name"] = crew_names.get(f.get("owner_crew")) or names.get(f.get("owner_contractor")) or ""
         client = self.one("SELECT * FROM clients WHERE id=?", p["client_id"]) if p["client_id"] else None
         ex = self.extras(p["id"]).get(p["id"]) or {"services": [], "orders": []}
         for o in ex["orders"]:
             o["photo"] = self.order_photo(o)
         history = self.q("SELECT ts, who, action, entity, entity_id FROM audit WHERE (entity='project' AND entity_id=?) OR "
-                         "(entity IN ('op', 'file', 'link', 'stage', 'order', 'service', 'pclient', 'access') AND (details LIKE ? OR details LIKE ?)) "
+                         "(entity IN ('op', 'file', 'link', 'stage', 'order', 'service', 'pclient', 'access', 'pcrew', 'thread') AND (details LIKE ? OR details LIKE ?)) "
                          "ORDER BY id DESC LIMIT 50", p["id"], f'%"project_id": {p["id"]},%', f'%"project_id": {p["id"]}}}%')
         invites = self.q("SELECT kind, ref_id, expires, created FROM invites WHERE project_id=? AND used_by IS NULL AND expires > ?",
                          p["id"], now())
@@ -1032,8 +1071,11 @@ class Crm:
 
     def link_contractor(self, d, who):
         pid, cid = int(d.get("project_id") or 0), int(d.get("contractor_id") or 0)
-        if not self.one("SELECT id FROM projects WHERE id=?", pid) or not self.one("SELECT id FROM contractors WHERE id=?", cid):
+        c = self.one("SELECT id, observer FROM contractors WHERE id=?", cid)
+        if not self.one("SELECT id FROM projects WHERE id=?", pid) or not c:
             raise CrmError("Проект или подрядчик не найден")
+        if c["observer"]:
+            raise CrmError("«Разработчик ПО» — наблюдатель: он и так видит все проекты, добавлять его не нужно")
         trade, note = _text(d.get("trade"), 60), _text(d.get("note"), 500)
         lid = int(d.get("id") or 0)
         if lid:
@@ -1063,6 +1105,9 @@ class Crm:
             if self.one("SELECT id FROM stages WHERE link_id=? LIMIT 1", rid) or self.one("SELECT id FROM ops WHERE link_id=? LIMIT 1", rid):
                 raise CrmError("У подрядчика в этом проекте есть этапы или полученные бонусы — сначала удалите их")
             self.run("DELETE FROM project_contractors WHERE id=?", rid)
+            if not self.one("SELECT id FROM project_contractors WHERE project_id=? AND contractor_id=?", link["project_id"], link["contractor_id"]):
+                self.run("DELETE FROM project_crew WHERE project_id=? AND crew_id IN (SELECT id FROM crew WHERE contractor_id=?)",
+                         link["project_id"], link["contractor_id"])
             self.audit(who, "delete", "link", rid, link)
             return self.project(link["project_id"])
         if entity == "stage":
@@ -1124,6 +1169,11 @@ class Crm:
                 raise CrmError("В проекте есть операции, товары, услуги, переписка или файлы — удалить нельзя. Поставьте статус «Отменён».")
             self.run("DELETE FROM project_contractors WHERE project_id=?", rid)
             self.run("DELETE FROM project_clients WHERE project_id=?", rid)
+            self.run("DELETE FROM project_crew WHERE project_id=?", rid)
+            for t in self.q("SELECT id FROM threads WHERE project_id=?", rid):
+                self.run("DELETE FROM thread_members WHERE thread_id=?", t["id"])
+                self.run("DELETE FROM thread_read WHERE thread_id=?", t["id"])
+            self.run("DELETE FROM threads WHERE project_id=?", rid)
             self.run("DELETE FROM projects WHERE id=?", rid)
             self.audit(who, "delete", "project", rid, p)
             return {}
@@ -1143,6 +1193,7 @@ class Crm:
                 raise CrmError("Подрядчик не найден")
             if self.one("SELECT id FROM project_contractors WHERE contractor_id=? LIMIT 1", rid):
                 raise CrmError("Подрядчик указан в проектах — сначала уберите его оттуда")
+            self.run("UPDATE crew SET removed=?, tg_id=NULL WHERE contractor_id=? AND removed IS NULL", now(), rid)
             self.run("DELETE FROM contractors WHERE id=?", rid)
             self.audit(who, "delete", "contractor", rid, c)
             return {}
@@ -1231,6 +1282,20 @@ class Crm:
         with open(os.path.join(self.files_dir, rel), "wb") as out:
             out.write(data)
         self.run("UPDATE files SET thumb=? WHERE id=?", rel, f["id"])
+        return self.file_view(self.one("SELECT * FROM files WHERE id=?", f["id"]))
+
+    def set_file_vis(self, d, who):
+        """Кто видит файл (решает студия): see_client / see_crew — 1 видят, 0 не видят, None — по умолчанию
+        (у файлов студии — по разделу, у файлов подрядчиков — как выбрал подрядчик, у вложений разговора — только участники)."""
+        f = self.one("SELECT * FROM files WHERE id=?", int(d.get("id") or 0))
+        if not f:
+            raise CrmError("Файл не найден")
+        vals = []
+        for k in ("see_client", "see_crew"):
+            v = d.get(k, f[k])
+            vals.append(None if v in (None, "", "default") else 1 if str(v) in ("1", "True", "true") else 0)
+        self.run("UPDATE files SET see_client=?, see_crew=? WHERE id=?", vals[0], vals[1], f["id"])
+        self.audit(who, "edit", "file", f["id"], {"project_id": f["project_id"], "see_client": vals[0], "see_crew": vals[1]})
         return self.file_view(self.one("SELECT * FROM files WHERE id=?", f["id"]))
 
     def move_file(self, fid, category, who):
@@ -1392,14 +1457,16 @@ class Crm:
     # ---------- переписка: сколько непрочитанного у студии ----------
     # студия читает переписку вместе (tg_id 0 в chat_read): открыла Ирина — прочитано у студии
     def unread_for_studio(self):
+        """Непрочитанные у студии по проектам: все разговоры (и те, где заказчик пишет подрядчику — студия их видит)."""
         return {r["project_id"]: r["n"] for r in self.q("""
-            SELECT m.project_id, COUNT(*) AS n FROM messages m LEFT JOIN chat_read r ON r.project_id=m.project_id AND r.tg_id=0
-            WHERE m.author_kind='client' AND m.deleted IS NULL AND m.id > COALESCE(r.last_id, 0) GROUP BY m.project_id""")}
+            SELECT m.project_id, COUNT(*) AS n FROM messages m LEFT JOIN thread_read r ON r.thread_id=m.thread_id AND r.tg_id=0
+            WHERE m.author_kind!='studio' AND m.deleted IS NULL AND m.id > COALESCE(r.last_id, 0) GROUP BY m.project_id""")}
 
     def chat_summary(self, pid):
         last = self.one("SELECT * FROM messages WHERE project_id=? AND deleted IS NULL ORDER BY id DESC LIMIT 1", int(pid))
         n = self.one("SELECT COUNT(*) AS n FROM messages WHERE project_id=? AND deleted IS NULL", int(pid))["n"]
-        out = {"count": n, "unread": self.unread_for_studio().get(int(pid), 0), "last": None}
+        out = {"count": n, "unread": self.unread_for_studio().get(int(pid), 0), "last": None,
+               "threads": self.one("SELECT COUNT(*) AS n FROM threads WHERE project_id=?", int(pid))["n"]}
         if last:
             try:
                 ru = (json.loads(last["tr"] or "{}") or {}).get("ru")
@@ -1426,7 +1493,10 @@ class Crm:
         for c in clients:
             c["projects"] = by_client.get(c["id"], [])
         contractors = self.q("""SELECT c.*, (SELECT COUNT(*) FROM project_contractors l WHERE l.contractor_id=c.id) AS projects
-                                FROM contractors c ORDER BY c.trade, c.name COLLATE NOCASE""")
+                                FROM contractors c ORDER BY c.observer IS NOT NULL, c.trade, c.name COLLATE NOCASE""")
+        crew = self.q("SELECT id, contractor_id, name, position, phone, tg_id, tg_name, tg_since FROM crew WHERE removed IS NULL ORDER BY name")
+        for c in contractors:
+            c["crew"] = [w for w in crew if w["contractor_id"] == c["id"]]
         status = {p["id"]: p["status"] for p in projects}
         links = []
         for m in self.link_money().values():

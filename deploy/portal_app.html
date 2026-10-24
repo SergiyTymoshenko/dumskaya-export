@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>DUMSKAYA DESIGN</title>
-<!-- Кабинет заказчика и подрядчика DUMSKAYA DESIGN («Мой проект» в боте студии): мини-приложение Telegram.
-     Данные отдаёт сервис заявок (/api/portal/*) — по подписи Telegram, только свои проекты. Тексты — RU, UA, EN, SK, DE. -->
+<!-- Кабинет DUMSKAYA DESIGN («Мой проект» в боте студии): мини-приложение Telegram для заказчика, подрядчика,
+     работника подрядчика и наблюдателя «Разработчик ПО». Данные отдаёт сервис заявок (/api/portal/*) — по подписи
+     Telegram, только своё (что кому видно — deploy/crm_portal.py). Тексты — RU, UA, EN, SK, DE. -->
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
   :root {
@@ -178,6 +179,25 @@
   :root[data-size="xl"] .order { grid-template-columns: 1fr; }
   :root[data-size="xl"] .order .ph { max-width: 160px; }
   :root[data-size="l"] :focus-visible, :root[data-size="xl"] :focus-visible { outline: 3px solid var(--series); outline-offset: 2px; }
+  /* разговоры, документы подрядчиков, бригада */
+  .threads > li { padding: 0; }
+  .trow { display: flex; gap: 12px; align-items: center; width: 100%; text-align: left; background: none; border: 0; padding: 12px 0; cursor: pointer; min-height: 64px; }
+  .trow .ava { width: calc(44px * min(var(--k), 1.25)); height: calc(44px * min(var(--k), 1.25)); border-radius: 50%; background: var(--ghost); display: flex;
+    align-items: center; justify-content: center; flex: 0 0 auto; font-size: calc(20px * min(var(--k), 1.25)); }
+  .trow b { display: block; font-size: calc(17px * var(--k)); overflow-wrap: anywhere; }
+  .trow .sub { display: block; }
+  .trow .last { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .badge-n { min-width: 26px; height: 26px; padding: 0 8px; border-radius: 13px; background: var(--series); color: var(--on-series); font-size: calc(14px * min(var(--k), 1.2));
+    line-height: 26px; text-align: center; flex: 0 0 auto; }
+  .drow { display: grid; grid-template-columns: calc(72px * min(var(--k), 1.25)) 1fr; gap: 12px; align-items: start; }
+  .tick { width: calc(44px * min(var(--k), 1.3)); height: calc(44px * min(var(--k), 1.3)); border-radius: 12px; border: 2px solid var(--border); background: var(--raised);
+    font-size: calc(20px * var(--k)); font-weight: 700; color: var(--on-series); cursor: pointer; flex: 0 0 auto; }
+  .tick.on { background: var(--series); border-color: var(--series); }
+  .pick { display: grid; gap: 8px; }
+  .pick .btn { justify-content: flex-start; text-align: left; }
+  .top .seg { flex: 1 1 auto; }
+  :root[data-size="xl"] .drow { grid-template-columns: 1fr; }
+  :root[data-size="xl"] .drow .doc, :root[data-size="xl"] .drow .thumb { max-width: 140px; }
 </style>
 </head>
 <body>
@@ -191,7 +211,7 @@
   const INIT = tg ? tg.initData : '';
   const app = document.getElementById('app');
   const Q = new URLSearchParams(location.search);
-  const PREVIEW = Q.get('preview');                 // дизайнер студии смотрит кабинет глазами заказчика или подрядчика
+  const PREVIEW = Q.get('preview');                 // дизайнер студии или наблюдатель смотрит глазами заказчика, подрядчика, работника
   const LANGS = [['ru', 'Русский'], ['uk', 'Українська'], ['en', 'English'], ['sk', 'Slovenčina'], ['de', 'Deutsch']];
   const LOCALE = { ru: 'ru-RU', uk: 'uk-UA', en: 'en-GB', sk: 'sk-SK', de: 'de-AT' };
 
@@ -202,7 +222,7 @@
       no_access: 'Кабинет пока недоступен. Попросите у студии ссылку-приглашение.', error: 'Не получилось загрузить. Проверьте интернет и попробуйте ещё раз.',
       retry: 'Повторить', projects: 'Мои проекты', role_client: 'Заказчик', role_contractor: 'Подрядчик',
       st_active: 'В работе', st_paused: 'На паузе', st_done: 'Завершён',
-      nav_home: 'Проект', nav_pay: 'Оплаты', nav_docs: 'Документы', nav_chat: 'Переписка', nav_work: 'Мой подряд',
+      nav_home: 'Проект', nav_pay: 'Оплаты', nav_docs: 'Документы', nav_chat: 'Сообщения', nav_work: 'Мой подряд',
       package: 'Пакет «{x}»', to_pay: 'Осталось оплатить', all_paid: 'Всё оплачено', design: 'Дизайн-проект', services: 'Доп. услуги', goods: 'Товары',
       next_pay: 'Следующий платёж', details: 'Подробнее', confirm_needed: 'Подтвердите суммы работ', new_msgs: 'Новые сообщения в переписке',
       open_chat: 'Открыть переписку', your_designer: 'Ваш дизайнер', studio: 'Студия', write: 'Написать в переписке', call: 'Позвонить',
@@ -232,13 +252,40 @@
       s_waiting: 'Ждёт подтверждения заказчика', s_disputed: '⚠️ Заказчик не согласен', fees_given: 'Передано студии',
       need_title: 'Напишите, что за работа', need_amount: 'Введите сумму больше нуля', auto_names: 'Названия переведены автоматически.',
       new_stage: 'Сумма работ', stages: 'Этапы работ', back_projects: 'Все проекты',
+      nav_team: 'Бригада', role_worker: 'Работник', role_observer: 'Наблюдатель',
+      msgs_hint_client: 'Напишите Ирине или подрядчику вашего проекта. Переписку с подрядчиками Ирина тоже видит.',
+      msgs_hint_contractor: 'Переписка со студией и с заказчиком. Разговоры студии с вашими работниками вы видите, отвечают в них они.',
+      msgs_hint_worker: 'Переписка со студией. Ваш руководитель её тоже видит.',
+      start_chat: 'Написать', pc_note: 'Ирина видит этот разговор и может подключиться.',
+      watch_note: 'Это переписка студии с вашим работником — вы её видите, ответить может только он.',
+      head_sees: 'Ваш руководитель тоже видит этот разговор.', members: 'В группе: {x}', read_only: 'Только чтение', no_threads: 'Разговоров пока нет.',
+      chat_empty2: 'Сообщений пока нет. Напишите первым — придёт сообщение в Telegram.', back_msgs: 'Сообщения',
+      sec_work: 'От подрядчиков', sec_shared: 'Из переписки', sec_approved: 'Согласовано', cat_other: 'Другое',
+      add_doc: '＋ Фото или документ', doc_title: 'Подпись (по желанию)', doc_ph: 'Например: шторы в гостиной повешены', who_sees: 'Кто видит',
+      vis_client: 'Заказчик, студия и моя бригада', vis_studio: 'Только студия', vis_team: 'Студия и моя бригада',
+      vis_head: 'Руководитель и студия', vis_wteam: 'Вся бригада и студия', vis_wclient: 'И заказчик тоже', vis_note: 'Студия видит все документы.',
+      pick_files: 'Выбрать фото или файлы', n_files: 'Выбрано файлов: {n}', need_file: 'Выберите файл', upload_n: 'Загружаю {i} из {n}…', uploaded: 'Загружено',
+      delete_doc_q: 'Удалить этот документ?', file_big: 'Файл больше 60 МБ',
+      team_hint: 'Подключите работников, которых отправляете на объекты, и отметьте, кто где работает. Они видят объект без сумм и документы и пишут студии.',
+      team_empty: 'В бригаде пока никого. Добавьте работника и отправьте ему ссылку в бот.',
+      add_worker: '＋ Работник', w_name: 'Имя', w_position: 'Должность', w_position_ph: 'Технолог, установщик, плиточник…', w_phone: 'Телефон',
+      in_bot: '✓ В боте', link_until: 'Ссылка действует до {d}', not_in_bot: 'Ещё не в боте', invite_btn: '🔗 Ссылка в бот', new_link: '🔗 Новая ссылка',
+      invite_title: 'Ссылка для работника', invite_hint: 'Ссылка личная, для одного человека, и действует 14 дней. Перешлите её работнику.',
+      share_tg: '✈︎ Отправить в Telegram', share_wa: '🟢 Отправить в WhatsApp', copy: '📋 Скопировать текст', copied: 'Скопировано', msg_lang: 'Язык сообщения',
+      remove_worker: 'Убрать из бригады', remove_q: 'Убрать «{x}» из бригады? Доступ к боту закроется.', on_sites: 'Объекты', no_sites: 'Пока ни на одном объекте',
+      crew_here: 'Бригада на этом объекте', crew_here_hint: 'Отметьте, кого вы отправляете сюда: они увидят объект (без сумм), документы и смогут писать студии.',
+      manage_team: 'Вся бригада →', your_head: 'Ваш руководитель', no_projects_yet: 'Проектов пока нет. Когда вас добавят на объект, он появится здесь.',
+      obs_banner: '🧪 Наблюдатель: вы видите всё, ничего не меняете и не отправляете.', participants: 'Участники', see_as: 'Посмотреть глазами',
+      write_client: '💬 Написать заказчику', group: 'Группа', need_name: 'Напишите имя', edit_worker: 'Работник', team_of: 'Бригада · {x}',
+      connected: 'в боте', not_connected: 'не в боте', assigned: 'Отмечено', unassigned: 'Снято', mine_doc: 'Ваш документ', to_studio: 'Написать студии',
+      docs_crew_hint: 'Фото выполненных работ и документы по вашей части работ — выберите, кто их видит.',
     },
     uk: {
       loading: 'Завантажую…', open_from_bot: 'Відкрийте кабінет кнопкою «Мій проєкт» у боті студії DUMSKAYA DESIGN.',
       no_access: 'Кабінет поки недоступний. Попросіть у студії посилання-запрошення.', error: 'Не вдалося завантажити. Перевірте інтернет і спробуйте ще раз.',
       retry: 'Повторити', projects: 'Мої проєкти', role_client: 'Замовник', role_contractor: 'Підрядник',
       st_active: 'У роботі', st_paused: 'На паузі', st_done: 'Завершено',
-      nav_home: 'Проєкт', nav_pay: 'Оплати', nav_docs: 'Документи', nav_chat: 'Листування', nav_work: 'Мій підряд',
+      nav_home: 'Проєкт', nav_pay: 'Оплати', nav_docs: 'Документи', nav_chat: 'Повідомлення', nav_work: 'Мій підряд',
       package: 'Пакет «{x}»', to_pay: 'Залишилося сплатити', all_paid: 'Усе сплачено', design: 'Дизайн-проєкт', services: 'Додаткові послуги', goods: 'Товари',
       next_pay: 'Наступний платіж', details: 'Докладніше', confirm_needed: 'Підтвердіть суми робіт', new_msgs: 'Нові повідомлення в листуванні',
       open_chat: 'Відкрити листування', your_designer: 'Ваш дизайнер', studio: 'Студія', write: 'Написати в листуванні', call: 'Зателефонувати',
@@ -268,13 +315,40 @@
       s_waiting: 'Чекає підтвердження замовника', s_disputed: '⚠️ Замовник не згоден', fees_given: 'Передано студії',
       need_title: 'Напишіть, що за робота', need_amount: 'Введіть суму, більшу за нуль', auto_names: 'Назви перекладено автоматично.',
       new_stage: 'Сума робіт', stages: 'Етапи робіт', back_projects: 'Усі проєкти',
+      nav_team: 'Бригада', role_worker: 'Працівник', role_observer: 'Спостерігач',
+      msgs_hint_client: 'Напишіть Ірині або підряднику вашого проєкту. Листування з підрядниками Ірина теж бачить.',
+      msgs_hint_contractor: 'Листування зі студією та із замовником. Розмови студії з вашими працівниками ви бачите, відповідають у них вони.',
+      msgs_hint_worker: 'Листування зі студією. Ваш керівник його теж бачить.',
+      start_chat: 'Написати', pc_note: 'Ірина бачить цю розмову й може підключитися.',
+      watch_note: 'Це листування студії з вашим працівником — ви його бачите, відповісти може лише він.',
+      head_sees: 'Ваш керівник теж бачить цю розмову.', members: 'У групі: {x}', read_only: 'Лише читання', no_threads: 'Розмов поки немає.',
+      chat_empty2: 'Повідомлень поки немає. Напишіть першим — прийде повідомлення в Telegram.', back_msgs: 'Повідомлення',
+      sec_work: 'Від підрядників', sec_shared: 'З листування', sec_approved: 'Погоджено', cat_other: 'Інше',
+      add_doc: '＋ Фото або документ', doc_title: 'Підпис (за бажанням)', doc_ph: 'Наприклад: штори у вітальні повішено', who_sees: 'Хто бачить',
+      vis_client: 'Замовник, студія і моя бригада', vis_studio: 'Лише студія', vis_team: 'Студія і моя бригада',
+      vis_head: 'Керівник і студія', vis_wteam: 'Уся бригада і студія', vis_wclient: 'І замовник теж', vis_note: 'Студія бачить усі документи.',
+      pick_files: 'Вибрати фото або файли', n_files: 'Вибрано файлів: {n}', need_file: 'Виберіть файл', upload_n: 'Завантажую {i} з {n}…', uploaded: 'Завантажено',
+      delete_doc_q: 'Видалити цей документ?', file_big: 'Файл більший за 60 МБ',
+      team_hint: 'Підключіть працівників, яких направляєте на об’єкти, і позначте, хто де працює. Вони бачать об’єкт без сум і документи та пишуть студії.',
+      team_empty: 'У бригаді поки нікого. Додайте працівника й надішліть йому посилання в бот.',
+      add_worker: '＋ Працівник', w_name: 'Ім’я', w_position: 'Посада', w_position_ph: 'Технолог, монтажник, плиточник…', w_phone: 'Телефон',
+      in_bot: '✓ У боті', link_until: 'Посилання діє до {d}', not_in_bot: 'Ще не в боті', invite_btn: '🔗 Посилання в бот', new_link: '🔗 Нове посилання',
+      invite_title: 'Посилання для працівника', invite_hint: 'Посилання особисте, для однієї людини, і діє 14 днів. Перешліть його працівнику.',
+      share_tg: '✈︎ Надіслати в Telegram', share_wa: '🟢 Надіслати у WhatsApp', copy: '📋 Скопіювати текст', copied: 'Скопійовано', msg_lang: 'Мова повідомлення',
+      remove_worker: 'Прибрати з бригади', remove_q: 'Прибрати «{x}» з бригади? Доступ до бота закриється.', on_sites: 'Об’єкти', no_sites: 'Поки на жодному об’єкті',
+      crew_here: 'Бригада на цьому об’єкті', crew_here_hint: 'Позначте, кого ви направляєте сюди: вони побачать об’єкт (без сум), документи й зможуть писати студії.',
+      manage_team: 'Уся бригада →', your_head: 'Ваш керівник', no_projects_yet: 'Проєктів поки немає. Коли вас додадуть на об’єкт, він з’явиться тут.',
+      obs_banner: '🧪 Спостерігач: ви бачите все, нічого не змінюєте й не надсилаєте.', participants: 'Учасники', see_as: 'Подивитися очима',
+      write_client: '💬 Написати замовнику', group: 'Група', need_name: 'Напишіть ім’я', edit_worker: 'Працівник', team_of: 'Бригада · {x}',
+      connected: 'у боті', not_connected: 'не в боті', assigned: 'Позначено', unassigned: 'Знято', mine_doc: 'Ваш документ', to_studio: 'Написати студії',
+      docs_crew_hint: 'Фото виконаних робіт і документи щодо вашої частини робіт — виберіть, хто їх бачить.',
     },
     en: {
       loading: 'Loading…', open_from_bot: 'Open the app with the “My project” button in the DUMSKAYA DESIGN bot.',
       no_access: 'The app is not available yet. Please ask the studio for an invitation link.', error: 'Couldn’t load. Please check your connection and try again.',
       retry: 'Try again', projects: 'My projects', role_client: 'Client', role_contractor: 'Contractor',
       st_active: 'In progress', st_paused: 'On hold', st_done: 'Completed',
-      nav_home: 'Project', nav_pay: 'Payments', nav_docs: 'Documents', nav_chat: 'Chat', nav_work: 'My work',
+      nav_home: 'Project', nav_pay: 'Payments', nav_docs: 'Documents', nav_chat: 'Messages', nav_work: 'My work',
       package: '“{x}” package', to_pay: 'Left to pay', all_paid: 'All paid', design: 'Design project', services: 'Extra services', goods: 'Furniture & items',
       next_pay: 'Next payment', details: 'Details', confirm_needed: 'Please confirm the prices of work', new_msgs: 'New messages in the chat',
       open_chat: 'Open chat', your_designer: 'Your designer', studio: 'Studio', write: 'Write in the chat', call: 'Call',
@@ -304,13 +378,40 @@
       s_waiting: 'Waiting for the client’s confirmation', s_disputed: '⚠️ The client disagrees', fees_given: 'Paid to the studio',
       need_title: 'Please describe the work', need_amount: 'Enter an amount greater than zero', auto_names: 'Names are translated automatically.',
       new_stage: 'Price of work', stages: 'Stages of work', back_projects: 'All projects',
+      nav_team: 'Team', role_worker: 'Worker', role_observer: 'Observer',
+      msgs_hint_client: 'Write to Irina or to a contractor on your project. Irina can also see your chats with contractors.',
+      msgs_hint_contractor: 'Chats with the studio and the client. You can read the studio’s chats with your workers; they reply there themselves.',
+      msgs_hint_worker: 'Your chat with the studio. Your manager can see it too.',
+      start_chat: 'Write', pc_note: 'Irina can see this conversation and may join in.',
+      watch_note: 'This is the studio’s chat with your worker — you can read it, only the worker can reply.',
+      head_sees: 'Your manager can see this conversation too.', members: 'Members: {x}', read_only: 'Read only', no_threads: 'No conversations yet.',
+      chat_empty2: 'No messages yet. Write first — they will get a message in Telegram.', back_msgs: 'Messages',
+      sec_work: 'From contractors', sec_shared: 'From chats', sec_approved: 'Approved', cat_other: 'Other',
+      add_doc: '＋ Photo or document', doc_title: 'Caption (optional)', doc_ph: 'E.g. living room curtains hung', who_sees: 'Who can see it',
+      vis_client: 'Client, studio and my team', vis_studio: 'Studio only', vis_team: 'Studio and my team',
+      vis_head: 'My manager and the studio', vis_wteam: 'The whole team and the studio', vis_wclient: 'The client too', vis_note: 'The studio sees all documents.',
+      pick_files: 'Choose photos or files', n_files: 'Files selected: {n}', need_file: 'Please choose a file', upload_n: 'Uploading {i} of {n}…', uploaded: 'Uploaded',
+      delete_doc_q: 'Delete this document?', file_big: 'The file is larger than 60 MB',
+      team_hint: 'Connect the workers you send to sites and mark who works where. They see the site without prices and the documents, and can write to the studio.',
+      team_empty: 'No one in the team yet. Add a worker and send them a link to the bot.',
+      add_worker: '＋ Worker', w_name: 'Name', w_position: 'Role', w_position_ph: 'Technologist, installer, tiler…', w_phone: 'Phone',
+      in_bot: '✓ In the bot', link_until: 'Link valid until {d}', not_in_bot: 'Not in the bot yet', invite_btn: '🔗 Bot link', new_link: '🔗 New link',
+      invite_title: 'Link for the worker', invite_hint: 'The link is personal, for one person, and is valid for 14 days. Forward it to the worker.',
+      share_tg: '✈︎ Send via Telegram', share_wa: '🟢 Send via WhatsApp', copy: '📋 Copy text', copied: 'Copied', msg_lang: 'Message language',
+      remove_worker: 'Remove from team', remove_q: 'Remove “{x}” from the team? Their access to the bot will be closed.', on_sites: 'Sites', no_sites: 'Not on any site yet',
+      crew_here: 'Team on this site', crew_here_hint: 'Mark whom you send here: they will see the site (without prices), the documents and can write to the studio.',
+      manage_team: 'Whole team →', your_head: 'Your manager', no_projects_yet: 'No projects yet. When you are added to a site, it will appear here.',
+      obs_banner: '🧪 Observer: you see everything and cannot change or send anything.', participants: 'Participants', see_as: 'View as',
+      write_client: '💬 Write to the client', group: 'Group', need_name: 'Please enter a name', edit_worker: 'Worker', team_of: 'Team · {x}',
+      connected: 'in the bot', not_connected: 'not in the bot', assigned: 'Assigned', unassigned: 'Removed', mine_doc: 'Your document', to_studio: 'Write to the studio',
+      docs_crew_hint: 'Photos of finished work and documents for your part of the job — choose who can see them.',
     },
     sk: {
       loading: 'Načítavam…', open_from_bot: 'Aplikáciu otvoríte tlačidlom „Môj projekt“ v bote štúdia DUMSKAYA DESIGN.',
       no_access: 'Aplikácia zatiaľ nie je dostupná. Požiadajte štúdio o pozývací odkaz.', error: 'Nepodarilo sa načítať. Skontrolujte pripojenie a skúste to znova.',
       retry: 'Skúsiť znova', projects: 'Moje projekty', role_client: 'Klient', role_contractor: 'Dodávateľ',
       st_active: 'Prebieha', st_paused: 'Pozastavený', st_done: 'Dokončený',
-      nav_home: 'Projekt', nav_pay: 'Platby', nav_docs: 'Dokumenty', nav_chat: 'Konverzácia', nav_work: 'Moje práce',
+      nav_home: 'Projekt', nav_pay: 'Platby', nav_docs: 'Dokumenty', nav_chat: 'Správy', nav_work: 'Moje práce',
       package: 'Balík „{x}“', to_pay: 'Zostáva zaplatiť', all_paid: 'Všetko je zaplatené', design: 'Dizajnový projekt', services: 'Doplnkové služby', goods: 'Tovar',
       next_pay: 'Ďalšia platba', details: 'Podrobnosti', confirm_needed: 'Potvrďte ceny prác', new_msgs: 'Nové správy v konverzácii',
       open_chat: 'Otvoriť konverzáciu', your_designer: 'Vaša dizajnérka', studio: 'Štúdio', write: 'Napísať do konverzácie', call: 'Zavolať',
@@ -340,13 +441,40 @@
       s_waiting: 'Čaká na potvrdenie klienta', s_disputed: '⚠️ Klient nesúhlasí', fees_given: 'Odovzdané štúdiu',
       need_title: 'Napíšte, o akú prácu ide', need_amount: 'Zadajte sumu väčšiu ako nula', auto_names: 'Názvy sú preložené automaticky.',
       new_stage: 'Cena prác', stages: 'Etapy prác', back_projects: 'Všetky projekty',
+      nav_team: 'Tím', role_worker: 'Pracovník', role_observer: 'Pozorovateľ',
+      msgs_hint_client: 'Napíšte Irine alebo remeselníkovi vášho projektu. Konverzácie s remeselníkmi vidí aj Irina.',
+      msgs_hint_contractor: 'Konverzácie so štúdiom a s klientom. Konverzácie štúdia s vašimi pracovníkmi vidíte, odpovedajú v nich oni.',
+      msgs_hint_worker: 'Konverzácia so štúdiom. Vidí ju aj váš vedúci.',
+      start_chat: 'Napísať', pc_note: 'Irina vidí túto konverzáciu a môže sa zapojiť.',
+      watch_note: 'Toto je konverzácia štúdia s vaším pracovníkom — vidíte ju, odpovedať môže len on.',
+      head_sees: 'Túto konverzáciu vidí aj váš vedúci.', members: 'V skupine: {x}', read_only: 'Len na čítanie', no_threads: 'Zatiaľ žiadne konverzácie.',
+      chat_empty2: 'Zatiaľ žiadne správy. Napíšte prvý — príde správa v Telegrame.', back_msgs: 'Správy',
+      sec_work: 'Od remeselníkov', sec_shared: 'Z konverzácií', sec_approved: 'Schválené', cat_other: 'Iné',
+      add_doc: '＋ Fotka alebo dokument', doc_title: 'Popis (nepovinné)', doc_ph: 'Napr. záclony v obývačke zavesené', who_sees: 'Kto to vidí',
+      vis_client: 'Klient, štúdio a môj tím', vis_studio: 'Len štúdio', vis_team: 'Štúdio a môj tím',
+      vis_head: 'Vedúci a štúdio', vis_wteam: 'Celý tím a štúdio', vis_wclient: 'Aj klient', vis_note: 'Štúdio vidí všetky dokumenty.',
+      pick_files: 'Vybrať fotky alebo súbory', n_files: 'Vybrané súbory: {n}', need_file: 'Vyberte súbor', upload_n: 'Nahrávam {i} z {n}…', uploaded: 'Nahrané',
+      delete_doc_q: 'Vymazať tento dokument?', file_big: 'Súbor má viac ako 60 MB',
+      team_hint: 'Pripojte pracovníkov, ktorých posielate na stavby, a označte, kto kde pracuje. Vidia stavbu bez súm a dokumenty a píšu štúdiu.',
+      team_empty: 'V tíme zatiaľ nikto nie je. Pridajte pracovníka a pošlite mu odkaz do bota.',
+      add_worker: '＋ Pracovník', w_name: 'Meno', w_position: 'Pozícia', w_position_ph: 'Technológ, montážnik, obkladač…', w_phone: 'Telefón',
+      in_bot: '✓ V bote', link_until: 'Odkaz platí do {d}', not_in_bot: 'Zatiaľ nie je v bote', invite_btn: '🔗 Odkaz do bota', new_link: '🔗 Nový odkaz',
+      invite_title: 'Odkaz pre pracovníka', invite_hint: 'Odkaz je osobný, pre jednu osobu, a platí 14 dní. Pošlite ho pracovníkovi.',
+      share_tg: '✈︎ Poslať cez Telegram', share_wa: '🟢 Poslať cez WhatsApp', copy: '📋 Kopírovať text', copied: 'Skopírované', msg_lang: 'Jazyk správy',
+      remove_worker: 'Odstrániť z tímu', remove_q: 'Odstrániť „{x}“ z tímu? Prístup do bota sa zruší.', on_sites: 'Stavby', no_sites: 'Zatiaľ na žiadnej stavbe',
+      crew_here: 'Tím na tejto stavbe', crew_here_hint: 'Označte, koho sem posielate: uvidia stavbu (bez súm), dokumenty a budú môcť písať štúdiu.',
+      manage_team: 'Celý tím →', your_head: 'Váš vedúci', no_projects_yet: 'Zatiaľ žiadne projekty. Keď vás pridajú na stavbu, objaví sa tu.',
+      obs_banner: '🧪 Pozorovateľ: vidíte všetko, nič nemeníte ani neposielate.', participants: 'Účastníci', see_as: 'Pozrieť očami',
+      write_client: '💬 Napísať klientovi', group: 'Skupina', need_name: 'Napíšte meno', edit_worker: 'Pracovník', team_of: 'Tím · {x}',
+      connected: 'v bote', not_connected: 'nie je v bote', assigned: 'Označené', unassigned: 'Zrušené', mine_doc: 'Váš dokument', to_studio: 'Napísať štúdiu',
+      docs_crew_hint: 'Fotky hotovej práce a dokumenty k vašej časti prác — vyberte, kto ich vidí.',
     },
     de: {
       loading: 'Wird geladen…', open_from_bot: 'Öffnen Sie die App über „Mein Projekt“ im Bot von DUMSKAYA DESIGN.',
       no_access: 'Die App ist noch nicht verfügbar. Bitte fragen Sie das Studio nach einem Einladungslink.', error: 'Laden fehlgeschlagen. Bitte prüfen Sie die Verbindung und versuchen Sie es erneut.',
       retry: 'Erneut versuchen', projects: 'Meine Projekte', role_client: 'Kunde', role_contractor: 'Handwerker',
       st_active: 'In Arbeit', st_paused: 'Pausiert', st_done: 'Abgeschlossen',
-      nav_home: 'Projekt', nav_pay: 'Zahlungen', nav_docs: 'Unterlagen', nav_chat: 'Chat', nav_work: 'Meine Arbeiten',
+      nav_home: 'Projekt', nav_pay: 'Zahlungen', nav_docs: 'Unterlagen', nav_chat: 'Nachrichten', nav_work: 'Meine Arbeiten',
       package: 'Paket „{x}“', to_pay: 'Noch zu zahlen', all_paid: 'Alles bezahlt', design: 'Designprojekt', services: 'Zusatzleistungen', goods: 'Möbel & Artikel',
       next_pay: 'Nächste Zahlung', details: 'Details', confirm_needed: 'Bitte bestätigen Sie die Preise der Arbeiten', new_msgs: 'Neue Nachrichten im Chat',
       open_chat: 'Chat öffnen', your_designer: 'Ihre Designerin', studio: 'Studio', write: 'Im Chat schreiben', call: 'Anrufen',
@@ -376,6 +504,33 @@
       s_waiting: 'Wartet auf Bestätigung des Kunden', s_disputed: '⚠️ Der Kunde ist nicht einverstanden', fees_given: 'An das Studio gezahlt',
       need_title: 'Bitte beschreiben Sie die Arbeit', need_amount: 'Bitte einen Betrag größer als null eingeben', auto_names: 'Bezeichnungen werden automatisch übersetzt.',
       new_stage: 'Preis der Arbeiten', stages: 'Arbeitsabschnitte', back_projects: 'Alle Projekte',
+      nav_team: 'Team', role_worker: 'Mitarbeiter', role_observer: 'Beobachter',
+      msgs_hint_client: 'Schreiben Sie Irina oder einem Handwerker Ihres Projekts. Die Chats mit den Handwerkern sieht Irina ebenfalls.',
+      msgs_hint_contractor: 'Chats mit dem Studio und dem Kunden. Die Chats des Studios mit Ihren Mitarbeitern können Sie lesen, antworten tun die Mitarbeiter selbst.',
+      msgs_hint_worker: 'Ihr Chat mit dem Studio. Ihr Chef sieht ihn auch.',
+      start_chat: 'Schreiben', pc_note: 'Irina sieht dieses Gespräch und kann sich einschalten.',
+      watch_note: 'Das ist der Chat des Studios mit Ihrem Mitarbeiter — Sie lesen mit, antworten kann nur er.',
+      head_sees: 'Ihr Chef sieht dieses Gespräch ebenfalls.', members: 'Mitglieder: {x}', read_only: 'Nur lesen', no_threads: 'Noch keine Gespräche.',
+      chat_empty2: 'Noch keine Nachrichten. Schreiben Sie zuerst — es kommt eine Nachricht in Telegram an.', back_msgs: 'Nachrichten',
+      sec_work: 'Von Handwerkern', sec_shared: 'Aus den Chats', sec_approved: 'Freigegeben', cat_other: 'Sonstiges',
+      add_doc: '＋ Foto oder Dokument', doc_title: 'Beschriftung (optional)', doc_ph: 'Z. B. Vorhänge im Wohnzimmer aufgehängt', who_sees: 'Wer sieht es',
+      vis_client: 'Kunde, Studio und mein Team', vis_studio: 'Nur das Studio', vis_team: 'Studio und mein Team',
+      vis_head: 'Chef und Studio', vis_wteam: 'Das ganze Team und das Studio', vis_wclient: 'Auch der Kunde', vis_note: 'Das Studio sieht alle Unterlagen.',
+      pick_files: 'Fotos oder Dateien auswählen', n_files: 'Ausgewählte Dateien: {n}', need_file: 'Bitte eine Datei auswählen', upload_n: 'Lade {i} von {n} hoch…', uploaded: 'Hochgeladen',
+      delete_doc_q: 'Dieses Dokument löschen?', file_big: 'Die Datei ist größer als 60 MB',
+      team_hint: 'Verbinden Sie die Mitarbeiter, die Sie auf Baustellen schicken, und markieren Sie, wer wo arbeitet. Sie sehen die Baustelle ohne Beträge und die Unterlagen und schreiben dem Studio.',
+      team_empty: 'Noch niemand im Team. Fügen Sie einen Mitarbeiter hinzu und senden Sie ihm einen Link zum Bot.',
+      add_worker: '＋ Mitarbeiter', w_name: 'Name', w_position: 'Funktion', w_position_ph: 'Techniker, Monteur, Fliesenleger…', w_phone: 'Telefon',
+      in_bot: '✓ Im Bot', link_until: 'Link gültig bis {d}', not_in_bot: 'Noch nicht im Bot', invite_btn: '🔗 Link zum Bot', new_link: '🔗 Neuer Link',
+      invite_title: 'Link für den Mitarbeiter', invite_hint: 'Der Link ist persönlich, für eine Person, und 14 Tage gültig. Leiten Sie ihn an den Mitarbeiter weiter.',
+      share_tg: '✈︎ Per Telegram senden', share_wa: '🟢 Per WhatsApp senden', copy: '📋 Text kopieren', copied: 'Kopiert', msg_lang: 'Sprache der Nachricht',
+      remove_worker: 'Aus dem Team entfernen', remove_q: '„{x}“ aus dem Team entfernen? Der Zugang zum Bot wird beendet.', on_sites: 'Baustellen', no_sites: 'Noch auf keiner Baustelle',
+      crew_here: 'Team auf dieser Baustelle', crew_here_hint: 'Markieren Sie, wen Sie hierher schicken: Diese Personen sehen die Baustelle (ohne Beträge), die Unterlagen und können dem Studio schreiben.',
+      manage_team: 'Ganzes Team →', your_head: 'Ihr Chef', no_projects_yet: 'Noch keine Projekte. Sobald Sie einer Baustelle zugeteilt werden, erscheint sie hier.',
+      obs_banner: '🧪 Beobachter: Sie sehen alles und ändern oder senden nichts.', participants: 'Beteiligte', see_as: 'Ansehen als',
+      write_client: '💬 Dem Kunden schreiben', group: 'Gruppe', need_name: 'Bitte einen Namen eingeben', edit_worker: 'Mitarbeiter', team_of: 'Team · {x}',
+      connected: 'im Bot', not_connected: 'nicht im Bot', assigned: 'Zugeteilt', unassigned: 'Entfernt', mine_doc: 'Ihr Dokument', to_studio: 'Dem Studio schreiben',
+      docs_crew_hint: 'Fotos fertiger Arbeiten und Unterlagen zu Ihrem Teil der Arbeiten — wählen Sie, wer sie sieht.',
     },
   };
   let LANG = (() => { const c = ((tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) || navigator.language || 'en').slice(0, 2).toLowerCase();
@@ -387,6 +542,7 @@
   }
 
   let ME = null, V = null, PID = null, tab = 'home', cat = null, CHAT = [], chatTimer = null, sending = false;
+  let TH = null, TID = null, TEAMC = null, TEAM = null;      // разговоры проекта, открытый разговор, бригада подрядчика
   const sheets = [];
 
   // ---------- оформление и размер текста ----------
@@ -462,55 +618,81 @@
     return out;
   }
   const statusName = (s) => T('st_' + s) || s;
-  const isClient = () => V && V.role === 'client';
+  const role = () => (V ? V.role : '');
+  const isClient = () => role() === 'client';
+  const readonly = () => !!(V && V.readonly);
+  const designerName = () => { const st = (V && V.studio) || (ME && ME.studio) || {}; return (st.designer && st.designer[LANG]) || st.designer_latin || 'DUMSKAYA DESIGN'; };
+  const TABS = { client: ['home', 'pay', 'docs', 'chat'], contractor: ['home', 'work', 'docs', 'chat'], worker: ['home', 'docs', 'chat'], observer: ['home', 'docs', 'chat'] };
+
+  // дизайнер и наблюдатель могут смотреть глазами заказчика, подрядчика или работника — параметры просмотра
+  function pq(extra) {
+    const q = new URLSearchParams(extra || {});
+    if (PREVIEW) { q.set('preview', PREVIEW); ['link', 'crew'].forEach((k) => { if (Q.get(k)) q.set(k, Q.get(k)); }); }
+    return q;
+  }
 
   // ---------- навигация ----------
+  function unreadAll() {
+    if (TH) return TH.reduce((s, t) => s + (t.unread || 0), 0);
+    const p = ME && ME.projects.find((x) => x.id === PID);
+    return p ? p.unread || 0 : 0;
+  }
   function setNav() {
     const nav = document.getElementById('nav'), inn = nav.querySelector('.in');
-    if (!V) { nav.hidden = true; document.body.classList.add('no-nav'); return; }
-    const items = isClient() ? [['home', '🏠', T('nav_home')], ['pay', '💶', T('nav_pay')], ['docs', '📄', T('nav_docs')], ['chat', '💬', T('nav_chat')]]
-      : [['home', '🏠', T('nav_home')], ['work', '🧾', T('nav_work')], ['docs', '📄', T('nav_docs')]];
-    inn.replaceChildren(...items.map(([k, ic, name]) => {
-      const n = k === 'chat' && V.chat ? V.chat.unread || 0 : 0;
+    if (!V || TEAMC) { nav.hidden = true; document.body.classList.add('no-nav'); return; }
+    const icons = { home: ['🏠', T('nav_home')], pay: ['💶', T('nav_pay')], work: ['🧾', T('nav_work')], docs: ['📄', T('nav_docs')], chat: ['💬', T('nav_chat')] };
+    inn.replaceChildren(...(TABS[role()] || ['home']).map((k) => {
+      const n = k === 'chat' && role() !== 'observer' ? unreadAll() : 0;
       return el('button', { type: 'button', 'aria-current': String(tab === k ? 'page' : 'false'), onclick: () => go(k) },
-        el('span', null, ic), el('em', null, name), n ? el('b', 'dot', n > 99 ? '99+' : String(n)) : null);
+        el('span', null, icons[k][0]), el('em', null, icons[k][1]), n ? el('b', 'dot', n > 99 ? '99+' : String(n)) : null);
     }));
     nav.hidden = false; document.body.classList.remove('no-nav');
   }
-  function go(t) { tab = t; render(); window.scrollTo(0, 0); }
+  function go(t) { tab = t; TID = null; render(); window.scrollTo(0, 0); }
+  const canList = () => !PREVIEW && ME && (ME.projects.length > 1 || (ME.heads || []).length > 0);
   function backBtn() {
     if (!tg || !tg.BackButton) return;
-    if (sheets.length || document.querySelector('.viewer') || (V && ME && ME.projects.length > 1 && !PREVIEW)) tg.BackButton.show(); else tg.BackButton.hide();
+    if (sheets.length || document.querySelector('.viewer') || TID || TEAMC || (V && canList())) tg.BackButton.show(); else tg.BackButton.hide();
   }
-  if (tg && tg.BackButton) tg.BackButton.onClick(() => {
+  function goBack() {
     const v = document.querySelector('.viewer');
     if (v) { v.remove(); return backBtn(); }
     if (sheets.length) return closeSheet(sheets[sheets.length - 1].el);
-    if (V && ME && ME.projects.length > 1 && !PREVIEW) { V = null; PID = null; stopChat(); render(); }
-  });
+    if (TID) { TID = null; return render(); }
+    if (TEAMC) { TEAMC = null; TEAM = null; if (V) reload(); else render(); return; }
+    if (V && canList()) { V = null; PID = null; TH = null; stopChat(); render(); }
+  }
+  if (tg && tg.BackButton) tg.BackButton.onClick(goBack);
 
   // ---------- загрузка ----------
-  async function openProject(id, as, startTab) {
+  async function openProject(id, as, startTab, thread) {
     app.classList.add('loading');
     try {
-      const q = new URLSearchParams({ id });
-      if (PREVIEW) { q.set('preview', PREVIEW); if (Q.get('link')) q.set('link', Q.get('link')); q.set('lang', LANG); }
+      const q = pq({ id });
+      if (PREVIEW) q.set('lang', LANG);
       if (as) q.set('as', as);
       V = await api('/api/portal/project?' + q.toString());
-      PID = Number(id); cat = null;
-      tab = startTab && (isClient() ? ['home', 'pay', 'docs', 'chat'] : ['home', 'work', 'docs']).includes(startTab) ? startTab : (tab && tab !== 'list' ? tab : 'home');
-      if (!isClient() && (tab === 'pay' || tab === 'chat')) tab = 'home';
-      if (isClient() && tab === 'work') tab = 'home';
+      if (PID !== Number(id)) { TH = null; cat = null; }
+      PID = Number(id); TEAMC = null;
+      const tabs = TABS[role()] || ['home'];
+      tab = startTab && tabs.includes(startTab) ? startTab : tabs.includes(tab) ? tab : 'home';
+      TID = thread ? Number(thread) : null;
+      if (TID) { tab = 'chat'; await loadThreads(); }
       render(); window.scrollTo(0, 0);
+      if (!TID) loadThreads().then(() => { setNav(); if (tab === 'chat' && !TID) render(); });
     } catch (e) { fail(e); }
     finally { app.classList.remove('loading'); }
   }
   async function reload() {
-    const q = new URLSearchParams({ id: PID });
-    if (PREVIEW) { q.set('preview', PREVIEW); if (Q.get('link')) q.set('link', Q.get('link')); q.set('lang', LANG); }
-    if (V && V.role === 'contractor' && V.both) q.set('as', 'contractor');
+    const q = pq({ id: PID });
+    if (PREVIEW) q.set('lang', LANG);
+    if (V && V.roles && V.roles.length > 1) q.set('as', role());
     try { V = await api('/api/portal/project?' + q.toString()); } catch (e) {}
     render();
+  }
+  async function loadThreads() {
+    try { const q = pq({ project: PID }); if (PREVIEW) q.set('lang', LANG); const r = await api('/api/portal/threads?' + q.toString()); TH = r.threads || []; } catch (e) { if (!TH) TH = []; }
+    return TH;
   }
   function fail(e) {
     V = null; setNav();
@@ -523,37 +705,51 @@
     setNav(); backBtn();
     app.replaceChildren();
     if (PREVIEW) app.append(previewBanner());
+    if (TEAMC) return teamView();
     if (!V) return projectsView();
+    if (role() === 'observer' && !PREVIEW) app.append(el('div', 'banner', T('obs_banner')));
     if (tab === 'pay' && isClient()) return payView();
     if (tab === 'docs') return docsView();
-    if (tab === 'chat' && isClient()) return chatView();
-    if (tab === 'work' && !isClient()) return workView();
-    return isClient() ? homeClient() : homeContractor();
+    if (tab === 'chat') return TID ? chatView() : threadsView();
+    if (tab === 'work' && role() === 'contractor') return workView();
+    if (isClient()) return homeClient();
+    if (role() === 'contractor') return homeContractor();
+    if (role() === 'worker') return homeWorker();
+    return homeObserver();
   }
   function topBar() {
-    const back = ME && ME.projects.length > 1 && !PREVIEW
-      ? el('button', { class: 'btn small', type: 'button', onclick: () => { V = null; PID = null; render(); } }, '← ' + T('back_projects')) : null;
-    return el('div', 'top', back, el('span', 'grow', ''), el('button', { class: 'icon-btn', type: 'button', title: T('settings'), 'aria-label': T('settings'), onclick: settingsSheet }, '⚙︎'));
+    const back = canList() ? el('button', { class: 'btn small', type: 'button', onclick: () => { V = null; PID = null; TH = null; render(); } }, '← ' + T('back_projects')) : null;
+    const roles = V && V.roles && V.roles.length > 1 && !PREVIEW ? el('div', 'seg', ...V.roles.map((r) => el('button', { type: 'button', 'aria-pressed': String(role() === r),
+      onclick: () => openProject(PID, r, 'home') }, T('role_' + r)))) : null;
+    const bar = el('div', 'top', back, el('span', 'grow', ''), el('button', { class: 'icon-btn', type: 'button', title: T('settings'), 'aria-label': T('settings'), onclick: settingsSheet }, '⚙︎'));
+    return roles ? el('div', null, bar, el('div', { style: 'margin:0 0 10px' }, roles)) : bar;
   }
-  function previewBanner() {                          // дизайнер студии: так видит заказчик или подрядчик (по-русски — это для Ирины)
+  function previewBanner() {                // дизайнер студии или наблюдатель: так видит заказчик, подрядчик, работник (по-русски)
     const langs = el('div', 'chips', ...LANGS.map(([k]) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(LANG === k),
       onclick: () => { LANG = k; PID ? openProject(PID, null, tab) : render(); } }, k.toUpperCase())));
-    return el('div', 'banner', el('b', null, PREVIEW === 'contractor' ? '👁 Так видит подрядчик' : '👁 Так видит заказчик'),
+    const who = { contractor: '👁 Так видит подрядчик', worker: '👁 Так видит работник подрядчика' }[PREVIEW] || '👁 Так видит заказчик';
+    const studio = ME && ME.designer;
+    return el('div', 'banner', el('b', null, who),
       el('div', 'small', 'Здесь ничего не меняется и не отправляется. Язык — как у него:'), langs,
-      el('button', { class: 'btn small', type: 'button', onclick: () => { location.href = '/api/crm/app' + (PID ? '?project=' + PID : ''); } }, '← В «Студию»'));
+      el('button', { class: 'btn small', type: 'button', onclick: () => {
+        location.href = studio ? '/api/crm/app' + (PID ? '?project=' + PID : '') : '/api/portal/app' + (PID ? '?project=' + PID : '');
+      } }, studio ? '← В «Студию»' : '← Наблюдатель'));
   }
 
   // ---------- список проектов ----------
   function projectsView() {
     if (!ME) return;
     app.append(topBar(), el('h1', null, T('projects')));
-    ME.projects.forEach((p) => app.append(el('button', { class: 'pcard', type: 'button', onclick: () => openProject(p.id, p.roles.includes('client') ? 'client' : 'contractor') },
+    if (!ME.projects.length) app.append(el('div', 'card empty', T('no_projects_yet')));
+    ME.projects.forEach((p) => app.append(el('button', { class: 'pcard', type: 'button', onclick: () => openProject(p.id, p.roles[0]) },
       el('div', 'row between', el('span', 'small muted', p.roles.map((r) => T('role_' + r)).join(' · ')), el('span', 'status ' + (p.status === 'done' ? 'ok' : 'info'), statusName(p.status))),
       el('div', 'title', p.title), el('div', 'sub', [p.city, p.number ? '№ ' + p.number : ''].filter(Boolean).join(' · ') || ' '),
       p.unread ? el('div', { class: 'small', style: 'margin-top:6px;color:var(--series);font-weight:650' }, '💬 ' + T('new_msgs') + ': ' + p.unread) : null)));
+    (ME.heads || []).forEach((h) => app.append(el('button', { class: 'pcard', type: 'button', onclick: () => openTeam(h.id) },
+      el('div', 'small muted', h.name + (h.company ? ' · ' + h.company : '')), el('div', 'title', '👷 ' + T('nav_team')), el('div', 'sub', T('team_hint')))));
   }
 
-  // ---------- заказчик: проект ----------
+  // ---------- шапка проекта ----------
   function headCard() {
     const p = V.project;
     return el('section', 'card',
@@ -571,6 +767,8 @@
     });
     return best;
   }
+
+  // ---------- заказчик: проект ----------
   function homeClient() {
     app.append(topBar(), headCard());
     const m = V.money;
@@ -592,8 +790,9 @@
     if (waiting.length && !PREVIEW) app.append(el('button', { class: 'pcard', type: 'button', style: 'border-color:var(--warn)',
       onclick: () => { const x = document.getElementById('sec-contractors'); if (x) x.scrollIntoView({ behavior: 'smooth' }); } },
       el('div', { class: 'title', style: 'color:var(--warn)' }, '🧾 ' + T('confirm_needed') + ' · ' + waiting.length)));
-    if (V.chat && V.chat.unread) app.append(el('button', { class: 'pcard', type: 'button', style: 'border-color:var(--series)', onclick: () => go('chat') },
-      el('div', { class: 'title', style: 'color:var(--series)' }, '💬 ' + T('new_msgs') + ' · ' + V.chat.unread)));
+    const un = unreadAll();
+    if (un) app.append(el('button', { class: 'pcard', type: 'button', style: 'border-color:var(--series)', onclick: () => go('chat') },
+      el('div', { class: 'title', style: 'color:var(--series)' }, '💬 ' + T('new_msgs') + ' · ' + un)));
     if ((V.contractors || []).length) {
       const k = el('section', { class: 'card', id: 'sec-contractors' }, el('h2', null, T('contractors')), el('p', { class: 'small muted', style: 'margin:-4px 0 6px' }, T('contractors_hint')));
       const ul = el('ul', 'list');
@@ -608,7 +807,8 @@
   function contractorItem(c) {
     const li = el('li');
     li.append(el('div', 'person', el('b', null, c.name), el('span', 'sub', [c.trade, c.company].filter(Boolean).join(' · '))),
-      el('div', 'contacts', ...contactButtons(c)));
+      el('div', 'contacts', ...contactButtons(c),
+        c.can_write && !PREVIEW ? el('button', { class: 'btn small grow', type: 'button', onclick: () => openThread({ kind: 'pc', contractor_id: c.id }) }, '💬 ' + T('start_chat')) : null));
     c.stages.forEach((s) => {
       const box = el('div', 'stage');
       box.append(el('div', 'line', el('b', null, s.title || '—'), el('span', 'amt num', money(s.amount, s.currency))),
@@ -627,7 +827,7 @@
     return li;
   }
   async function stageAct(s, action, note) {
-    try { V = await api('/api/portal/stage', { json: { action, id: s.id, note: note || '' } }); toast(T('saved')); render(); }
+    try { V = await api('/api/portal/stage', { json: { action, id: s.id, note: note || '' } }); V.roles = V.roles || ['client']; toast(T('saved')); render(); }
     catch (e) { toast(e.message); }
   }
   function disputeSheet(s) {
@@ -636,11 +836,12 @@
       async () => { await stageAct(s, 'dispute', t.value); }, T('send'));
   }
   function studioCard() {
-    const st = V.studio || {}, name = (st.designer && st.designer[LANG]) || st.designer_latin || '';
+    const st = V.studio || {};
+    const kind = { client: 'client', contractor: 'org', worker: 'worker' }[role()];
     return el('section', 'card', el('div', 'small muted', T('your_designer') + ' · DUMSKAYA DESIGN'),
-      el('div', 'person', el('b', null, name)),
+      el('div', 'person', el('b', null, designerName())),
       el('div', 'contacts', ...contactButtons({ phone: st.phone, email: st.email, contact_pref: 'WhatsApp' }),
-        isClient() && !PREVIEW ? el('button', { class: 'btn primary grow', type: 'button', onclick: () => go('chat') }, '💬 ' + T('write')) : null),
+        kind && !readonly() ? el('button', { class: 'btn primary grow', type: 'button', onclick: () => openThread({ kind }) }, '💬 ' + T(isClient() ? 'write' : 'to_studio')) : null),
       el('div', { class: 'small muted', style: 'margin-top:8px' }, [st.phone, st.email].filter(Boolean).join(' · ')));
   }
 
@@ -714,22 +915,43 @@
   }
 
   // ---------- документы ----------
+  const SECTIONS = ['visual', 'measure', 'docs', 'before', 'after', 'brief', 'other', 'work', 'shared'];
+  const secName = (k) => k === 'work' ? T('sec_work') : k === 'shared' ? T(isClient() ? 'sec_approved' : 'sec_shared') : T('cat_' + k);
+  const canUpload = () => !readonly() && (role() === 'contractor' || role() === 'worker');
+  const VIS = (crew) => ((crew === undefined ? role() === 'worker' : crew) ? [['head', T('vis_head')], ['team', T('vis_wteam')], ['client', T('vis_wclient')]]
+    : [['client', T('vis_client')], ['team', T('vis_team')], ['studio', T('vis_studio')]]);
+  const visName = (f) => {
+    const all = [['client', f.owner_kind === 'crew' ? T('vis_wclient') : T('vis_client')], ['studio', T('vis_studio')], ['head', T('vis_head')],
+      ['team', f.owner_kind === 'crew' ? T('vis_wteam') : T('vis_team')]];
+    return (all.find((x) => x[0] === f.vis) || ['', ''])[1];
+  };
   function docsView() {
     app.append(topBar(), el('h1', null, T('nav_docs')));
     const files = V.files || [];
-    const cats = (V.cats || []).filter((c) => files.some((f) => f.category === c));
-    if (!cats.length) { app.append(el('div', 'card empty', T('docs_empty'))); return; }
-    if (!cats.includes(cat)) cat = cats.includes('visual') ? 'visual' : cats[0];
-    app.append(el('div', 'chips', ...cats.map((c) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(cat === c), onclick: () => { cat = c; render(); } },
-      T('cat_' + c) + ' · ' + files.filter((f) => f.category === c).length))));
-    const list = files.filter((f) => f.category === cat);
+    const secs = SECTIONS.filter((c) => files.some((f) => f.section === c));
+    if (canUpload()) app.append(el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, T('docs_crew_hint')),
+      el('button', { class: 'btn primary wide', type: 'button', style: 'margin:0 0 12px', onclick: () => uploadSheet() }, T('add_doc')));
+    if (!secs.length) { app.append(el('div', 'card empty', T('docs_empty'))); return; }
+    if (!secs.includes(cat)) cat = secs.includes('visual') ? 'visual' : secs[0];
+    app.append(el('div', 'chips', ...secs.map((c) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(cat === c), onclick: () => { cat = c; render(); } },
+      secName(c) + ' · ' + files.filter((f) => f.section === c).length))));
+    const list = files.filter((f) => f.section === cat);
+    if (cat === 'work' || cat === 'shared') {          // от подрядчиков и из переписки: кто прислал, подпись, кто видит
+      const ul = el('ul', 'list');
+      list.forEach((f) => ul.append(el('li', null, el('div', 'drow', fileTile(f, list), el('div', 'grow',
+        el('b', { style: 'display:block;overflow-wrap:anywhere' }, f.title || f.name),
+        el('div', 'sub', [f.owner_name, f.owner_role, dfmt(f.created, true)].filter(Boolean).join(' · ')),
+        f.audience ? el('div', 'sub', '👁 ' + f.audience) : f.can_edit && f.vis ? el('div', 'sub', '👁 ' + visName(f)) : null)))));
+      app.append(el('section', 'card', ul));
+      return;
+    }
     const g = el('div', 'gallery');
     list.forEach((f) => g.append(fileTile(f, list)));
     app.append(el('section', 'card', g));
   }
   function fileTile(f, list) {
     const doc = () => el('button', { class: 'doc', type: 'button', onclick: () => viewer(f) },
-      el('span', 'ext', ((f.name || '').split('.').pop() || '').slice(0, 5).toUpperCase()), el('span', 'nm', f.name), el('span', 'muted', ''));
+      el('span', 'ext', ((f.name || '').split('.').pop() || '').slice(0, 5).toUpperCase()), el('span', 'nm', f.title || f.name), el('span', 'muted', ''));
     if (f.image && (f.thumb_url || f.url)) {
       const b = el('button', { class: 'thumb', type: 'button', 'aria-label': f.name, onclick: () => viewer(f) });
       const img = el('img', { src: f.thumb_url || f.url, alt: f.name, loading: 'lazy' });
@@ -743,26 +965,138 @@
     const box = el('div', 'img');
     if (f.image && f.url) { const pic = el('img', { src: f.url, alt: f.name }); box.append(pic); }
     else box.append(el('div', { style: 'color:#fff;text-align:center' }, el('div', { style: 'font-size:calc(48px * var(--k))' }, '📄'), f.name));
-    v.append(el('div', 'cap', f.name), box, el('div', 'bar2',
+    const own = f.can_edit && !readonly();
+    v.append(el('div', 'cap', [f.title, f.name].filter(Boolean).join(' · ') + (f.owner_name ? ' · ' + f.owner_name : '') + (f.vis && own ? ' · 👁 ' + visName(f) : '')), box, el('div', 'bar2',
       f.url ? el('button', { class: 'btn small', type: 'button', onclick: () => openLink(f.url) }, '↗ ' + T('open')) : null,
+      own ? el('button', { class: 'btn small', type: 'button', onclick: () => { v.remove(); docSheet(f); } }, '👁 ' + T('who_sees')) : null,
+      own ? el('button', { class: 'btn small', type: 'button', style: 'color:#ff8a8a', onclick: async () => {
+        if (!(await confirmBox(T('delete_doc_q')))) return;
+        try { await api('/api/portal/file', { json: { id: f.id, delete: true } }); v.remove(); backBtn(); toast(T('saved')); reload(); } catch (e) { toast(e.message); }
+      } }, T('delete')) : null,
       el('button', { class: 'btn small', type: 'button', onclick: () => { v.remove(); backBtn(); } }, T('close'))));
     document.body.append(v); backBtn();
   }
+  function visPicker(cur, crew) {      // кто видит документ — крупные кнопки по одной в строке (документ работника — свои варианты)
+    let val = cur;
+    const box = el('div', 'pick');
+    const draw = () => box.replaceChildren(...VIS(crew).map(([k, n]) => el('button', { class: 'btn' + (val === k ? ' primary' : ''), type: 'button', 'aria-pressed': String(val === k),
+      onclick: () => { val = k; draw(); } }, (val === k ? '✓ ' : '') + n)));
+    draw();
+    return { el: box, value: () => val };
+  }
+  function docSheet(f) {
+    const title = el('input', { value: f.title || '', placeholder: T('doc_ph') });
+    const vis = visPicker(f.vis, f.owner_kind === 'crew');
+    sheet(T('who_sees'), el('div', el('p', 'muted', f.name), field(T('doc_title'), title), el('div', 'field', el('span', 'lab', T('who_sees')), vis.el, el('div', 'hint', T('vis_note')))),
+      async () => { await api('/api/portal/file', { json: { id: f.id, vis: vis.value(), title: title.value } }); toast(T('saved')); await reload(); });
+  }
+  async function makeThumb(file) {
+    if (!file.type.startsWith('image/')) return null;
+    try {
+      const bmp = await createImageBitmap(file);
+      const k = Math.min(1, 640 / Math.max(bmp.width, bmp.height));
+      const c = document.createElement('canvas'); c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+      c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+      return await new Promise((ok) => c.toBlob(ok, 'image/jpeg', 0.8));
+    } catch (e) { return null; }
+  }
+  function uploadSheet() {
+    const input = el('input', { type: 'file', multiple: true, style: 'display:none' });
+    const info = el('p', 'small muted', '');
+    input.addEventListener('change', () => { info.textContent = input.files.length ? T('n_files', { n: input.files.length }) : ''; });
+    const title = el('input', { placeholder: T('doc_ph') });
+    const vis = visPicker(role() === 'worker' ? 'head' : 'client');
+    sheet(T('add_doc').replace('＋ ', ''), el('div', input, el('button', { class: 'btn wide', type: 'button', onclick: () => input.click() }, '📎 ' + T('pick_files')), info,
+      field(T('doc_title'), title), el('div', 'field', el('span', 'lab', T('who_sees')), vis.el, el('div', 'hint', T('vis_note')))),
+    async () => {
+      const files = [...input.files];
+      if (!files.length) throw new Error(T('need_file'));
+      if (files.some((f) => f.size > 60 * 1024 * 1024)) throw new Error(T('file_big'));
+      const t = el('div', 'toast', ''); document.body.append(t);
+      try {
+        for (let i = 0; i < files.length; i++) {
+          t.textContent = T('upload_n', { i: i + 1, n: files.length });
+          const f = files[i];
+          const q = new URLSearchParams({ project: PID, name: f.name || 'file', vis: vis.value(), title: title.value });
+          const rec = await api('/api/portal/upload?' + q.toString(), { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
+          const th = await makeThumb(f);
+          if (th) { try { await api('/api/portal/thumb?id=' + rec.id, { body: th, headers: { 'Content-Type': 'image/jpeg' } }); } catch (e) {} }
+        }
+      } finally { t.remove(); }
+      toast(T('uploaded')); cat = 'work'; await reload();
+    }, T('send'));
+  }
 
-  // ---------- переписка ----------
+  // ---------- разговоры ----------
   function stopChat() { if (chatTimer) { clearInterval(chatTimer); chatTimer = null; } document.body.classList.remove('typing'); }
-  async function loadChat(after) {
-    const q = new URLSearchParams({ project: PID, after: after || 0 });
-    if (PREVIEW) q.set('preview', '1');
-    const r = await api('/api/portal/chat?' + q.toString());
-    return r.messages || [];
+  function names(list) { return (list || []).map((x) => x.name).filter(Boolean).join(', '); }
+  function thTitle(t) {
+    const r = role(), st = designerName(), c = t.contractor || {}, w = t.crew || {};
+    if (t.kind === 'group') return t.title || T('group');
+    if (t.kind === 'client') return r === 'client' ? st : st + ' ↔ ' + T('clients');
+    if (t.kind === 'pc') return r === 'client' ? c.name : r === 'contractor' ? (names(V.clients) || T('clients')) : T('clients') + ' ↔ ' + c.name;
+    if (t.kind === 'org') return r === 'contractor' ? st : st + ' ↔ ' + c.name;
+    if (t.kind === 'worker') return r === 'worker' ? st : st + ' ↔ ' + w.name;
+    return '';
+  }
+  function thSub(t) {
+    const r = role(), c = t.contractor || {}, w = t.crew || {};
+    if (t.kind === 'group') return T('members', { x: names(t.members) });
+    if (t.kind === 'pc') return r === 'client' ? [c.trade, c.company].filter(Boolean).join(' · ') : r === 'contractor' ? T('client') : c.trade;
+    if (t.kind === 'worker' && r !== 'worker') return [w.position, w.head].filter(Boolean).join(' · ');
+    if (t.kind === 'org' && r !== 'contractor') return c.trade;
+    return 'DUMSKAYA DESIGN';
+  }
+  function thNote(t) {
+    const r = role();
+    if (t.kind === 'pc') return T('pc_note');
+    if (t.kind === 'worker' && r === 'contractor') return T('watch_note');
+    if (t.kind === 'worker' && r === 'worker') return T('head_sees');
+    if (t.kind === 'group') return T('members', { x: names(t.members) });
+    return '';
+  }
+  async function openThread(spec) {
+    if (!TH) await loadThreads();
+    let t = (TH || []).find((x) => x.id && x.kind === spec.kind && (!spec.contractor_id || (x.contractor && x.contractor.id === spec.contractor_id)));
+    if (!t) {
+      try { t = await api('/api/portal/thread', { json: Object.assign({ project_id: PID }, spec) }); await loadThreads(); }
+      catch (e) { return toast(e.message); }
+    }
+    tab = 'chat'; TID = t.id; render(); window.scrollTo(0, 0);
+  }
+  function threadsView() {
+    app.append(topBar(), el('h1', null, T('nav_chat')));
+    const hint = { client: 'msgs_hint_client', contractor: 'msgs_hint_contractor', worker: 'msgs_hint_worker' }[role()];
+    if (hint && !readonly()) app.append(el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, T(hint)));
+    if (TH === null) { app.append(el('p', 'empty', T('loading'))); loadThreads().then(() => { if (tab === 'chat' && !TID) render(); }); return; }
+    if (!TH.length) { app.append(el('div', 'card empty', T('no_threads'))); return; }
+    const ul = el('ul', 'list threads');
+    TH.forEach((t) => {
+      const last = t.last;
+      const lastText = last ? (last.author_kind === 'studio' ? designerName() : last.author_name) + ': ' + (last.file ? '📎 ' : '') + (last.text || '') : '';
+      const ro = t.access === 'read' && role() !== 'observer';
+      ul.append(el('li', null, el('button', { class: 'trow', type: 'button', onclick: () => t.start ? openThread({ kind: 'pc', contractor_id: t.contractor.id }) : (TID = t.id, render(), window.scrollTo(0, 0)) },
+        el('span', 'ava', t.kind === 'group' ? '👥' : t.kind === 'pc' && !isClient() ? '🏠' : t.kind === 'client' || t.kind === 'org' || (t.kind === 'worker' && role() === 'worker') ? '✏️' : '🔧'),
+        el('span', 'grow', el('b', null, thTitle(t)), el('span', 'sub', thSub(t) || ' '),
+          t.start ? el('span', { class: 'sub', style: 'color:var(--series);font-weight:600' }, '💬 ' + T('start_chat')) : lastText ? el('span', 'sub last', lastText) : null,
+          ro ? el('span', 'sub', '👁 ' + T('read_only')) : null),
+        t.unread ? el('b', 'badge-n', String(t.unread)) : null)));
+    });
+    app.append(el('section', 'card', ul));
   }
   function chatView() {
-    app.append(topBar(), el('h1', null, T('nav_chat')));
+    const t = (TH || []).find((x) => x.id === TID) || { id: TID, kind: '', members: [] };
+    app.append(el('div', 'top', el('button', { class: 'btn small', type: 'button', onclick: () => { TID = null; render(); } }, '← ' + T('back_msgs')), el('span', 'grow', ''),
+      el('button', { class: 'icon-btn', type: 'button', title: T('settings'), 'aria-label': T('settings'), onclick: settingsSheet }, '⚙︎')));
+    const head = el('section', 'card', el('h2', { style: 'margin:0' }, thTitle(t) || T('nav_chat')), el('div', 'sub', thSub(t) || ''));
+    const note = thNote(t);
+    if (note && t.kind !== 'group') head.append(el('p', { class: 'small muted', style: 'margin:8px 0 0' }, '👁 ' + note));
+    app.append(head);
     const box = el('div', 'chat'); app.append(box);
+    let ro = readonly() || t.access === 'read';
     const draw = () => {
       box.replaceChildren();
-      if (!CHAT.length) box.append(el('div', 'card empty', T('chat_empty')));
+      if (!CHAT.length) box.append(el('div', 'card empty', isClient() && t.kind === 'client' ? T('chat_empty') : T('chat_empty2')));
       let lastDay = '';
       CHAT.forEach((m) => {
         const d = new Date(m.created), day = d.toDateString();
@@ -774,7 +1108,11 @@
       });
     };
     const scrollDown = () => window.scrollTo(0, document.body.scrollHeight);
-    if (!PREVIEW) {
+    const composer = el('div');
+    app.append(composer);
+    function drawComposer() {
+      composer.replaceChildren();
+      if (ro) { composer.append(el('p', { class: 'small muted', style: 'text-align:center' }, '👁 ' + T('read_only'))); return; }
       const ta = el('textarea', { rows: 1, placeholder: T('placeholder'), 'aria-label': T('placeholder') });
       const file = el('input', { type: 'file', accept: 'image/*,application/pdf', style: 'display:none' });
       const grow = () => { ta.style.height = 'auto'; ta.style.height = Math.min(ta.scrollHeight, window.innerHeight * 0.4) + 'px'; };
@@ -785,7 +1123,7 @@
         const text = ta.value.trim();
         if ((!text && !fileId) || sending) return;
         sending = true;
-        try { await api('/api/portal/chat', { json: { project_id: PID, text, file_id: fileId || null } }); ta.value = ''; grow(); }
+        try { await api('/api/portal/chat', { json: { thread_id: TID, text, file_id: fileId || null } }); ta.value = ''; grow(); }
         catch (e) { toast(e.message); }
         finally { sending = false; }
         await refreshChat(true);
@@ -794,35 +1132,41 @@
         const f = file.files[0]; file.value = '';
         if (!f) return;
         if (f.size > 20 * 1024 * 1024) return toast(T('too_big'));
-        const t = el('div', 'toast', T('uploading')); document.body.append(t);
+        const tt = el('div', 'toast', T('uploading')); document.body.append(tt);
         try {
-          const r = await api('/api/portal/upload?project=' + PID + '&name=' + encodeURIComponent(f.name || 'file'), { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
-          t.remove(); await send(r.id);
-        } catch (e) { t.remove(); toast(e.code === 'file_too_big' ? T('too_big') : e.message); }
+          const r = await api('/api/portal/upload?thread=' + TID + '&name=' + encodeURIComponent(f.name || 'file'), { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
+          tt.remove(); await send(r.id);
+        } catch (e) { tt.remove(); toast(e.code === 'file_too_big' ? T('too_big') : e.message); }
       });
-      app.append(el('div', 'composer', el('button', { class: 'icon-btn', type: 'button', title: T('attach'), 'aria-label': T('attach'), onclick: () => file.click() }, '📎'), ta, file,
+      composer.append(el('div', 'composer', el('button', { class: 'icon-btn', type: 'button', title: T('attach'), 'aria-label': T('attach'), onclick: () => file.click() }, '📎'), ta, file,
         el('button', { class: 'icon-btn send', type: 'button', title: T('send'), 'aria-label': T('send'), onclick: () => send() }, '➤')));
     }
     async function refreshChat(scroll) {
       try {
         const after = CHAT.length ? CHAT[CHAT.length - 1].id : 0;
-        const fresh = await loadChat(after);
+        const r = await api('/api/portal/chat?' + pq({ thread: TID, after }).toString());
+        const fresh = r.messages || [];
+        if (!after) {
+          const nro = readonly() || r.readonly;
+          if (nro !== ro) { ro = nro; drawComposer(); }
+          const ti = (TH || []).find((x) => x.id === TID);
+          if (ti) ti.unread = 0; else if (r.thread) (TH = TH || []).push(Object.assign(r.thread, { unread: 0 }));
+        }
         if (fresh.length || !after) {
           const near = window.innerHeight + window.scrollY > document.body.scrollHeight - 160;
           CHAT = after ? CHAT.concat(fresh) : fresh;
-          if (V.chat) V.chat.unread = 0;
           draw(); setNav();
           if (scroll || near || !after) scrollDown();
         }
       } catch (e) { if (!CHAT.length) box.replaceChildren(el('p', 'err', e.message)); }
     }
-    CHAT = []; draw(); refreshChat(true);
-    chatTimer = setInterval(() => { if (!document.hidden && tab === 'chat') refreshChat(false); }, 8000);
+    CHAT = []; draw(); drawComposer(); refreshChat(true);
+    chatTimer = setInterval(() => { if (!document.hidden && tab === 'chat' && TID) refreshChat(false); }, 8000);
   }
   function bubble(m, d) {
     const mine = m.mine;
     const b = el('div', 'msg' + (mine ? ' mine' : ''));
-    if (!mine) b.append(el('span', 'who', m.author_kind === 'studio' ? ((V.studio.designer && V.studio.designer[LANG]) || V.studio.designer_latin) : m.author_name));
+    if (!mine) b.append(el('span', 'who', m.author_kind === 'studio' ? designerName() : m.author_name));
     if (m.file) {
       const f = m.file;
       if (f.image && (f.thumb_url || f.url)) { const img = el('img', { src: f.thumb_url || f.url, alt: f.name, loading: 'lazy', onclick: () => viewer(f) }); b.append(img); }
@@ -847,12 +1191,33 @@
     const ul = el('ul', 'list');
     (V.clients || []).forEach((x) => ul.append(el('li', null, el('div', 'person', el('b', null, x.name),
       el('span', 'sub', [x.phone, x.email].filter(Boolean).join(' · '))), el('div', 'contacts', ...contactButtons(x)))));
-    c.append(ul); app.append(c);
+    c.append(ul);
+    if (!readonly() && (V.clients || []).length && (V.mine || [])[0]) c.append(el('button', { class: 'btn wide', type: 'button', style: 'margin-top:10px',
+      onclick: () => openThread({ kind: 'pc', contractor_id: V.mine[0].id }) }, T('write_client')));
+    app.append(c);
     const sum = mineSummary();
     if (sum) app.append(el('button', { class: 'pcard', type: 'button', onclick: () => go('work') }, el('div', 'small muted', T('nav_work')),
       el('div', 'title num', sum), el('div', 'sub', T('details') + ' →')));
+    app.append(crewHere());
     app.append(studioCard());
     if (!(LANG === 'ru' || LANG === 'uk')) app.append(el('p', { class: 'small muted', style: 'text-align:center' }, T('auto_names')));
+  }
+  function crewHere() {                       // кто из бригады на этом объекте — отметить и снять одним нажатием
+    const team = V.team || [];
+    const box = el('section', 'card', el('h2', null, T('crew_here')), el('p', { class: 'small muted', style: 'margin:-4px 0 8px' }, T('crew_here_hint')));
+    if (!team.length) box.append(el('p', 'muted', T('team_empty')));
+    const ul = el('ul', 'list');
+    team.forEach((w) => ul.append(el('li', null, el('div', 'row',
+      el('button', { class: 'tick' + (w.assigned ? ' on' : ''), type: 'button', role: 'switch', 'aria-checked': String(!!w.assigned), 'aria-label': w.name, disabled: readonly() ? true : null,
+        onclick: async () => {
+          try { await api('/api/portal/team', { json: { action: 'assign', crew_id: w.id, project_id: PID, on: !w.assigned } }); toast(T(w.assigned ? 'unassigned' : 'assigned')); await reload(); }
+          catch (e) { toast(e.message); }
+        } }, w.assigned ? '✓' : ''),
+      el('div', 'grow', el('b', null, w.name), el('div', 'sub', [w.position, w.tg ? T('connected') : T('not_connected')].filter(Boolean).join(' · ')))))));
+    if (team.length) box.append(ul);
+    const cid = (team[0] && team[0].contractor_id) || ((V.mine || [])[0] || {}).id;
+    if (cid && !readonly()) box.append(el('button', { class: 'btn wide', type: 'button', style: 'margin-top:10px', onclick: () => openTeam(cid) }, team.length ? T('manage_team') : T('add_worker')));
+    return box;
   }
   function mineSummary() {
     const m = (V.mine || [])[0];
@@ -882,15 +1247,15 @@
         box.append(el('div', { class: 'small ' + (s.confirmed ? 'good' : s.disputed ? 'owe' : 'muted'), style: 'margin-top:6px;font-weight:600' },
           s.confirmed ? T('s_confirmed') + (s.confirmed_by ? ' — ' + s.confirmed_by : '') : s.disputed ? T('s_disputed') + (s.dispute_note ? ': «' + s.dispute_note + '»' : '') : T('s_waiting')));
         if (s.note) box.append(el('div', 'sub', s.note));
-        if (s.mine && !s.confirmed && !PREVIEW) box.append(el('div', 'acts',
+        if (s.mine && !s.confirmed && !readonly()) box.append(el('div', 'acts',
           el('button', { class: 'btn', type: 'button', onclick: () => stageSheet(k, s) }, T('edit')),
           el('button', { class: 'btn danger', type: 'button', onclick: async () => {
             if (!(await confirmBox(T('delete_q')))) return;
-            try { V = await api('/api/portal/stage', { json: { action: 'delete', id: s.id } }); toast(T('saved')); render(); } catch (e) { toast(e.message); }
+            try { V = Object.assign(await api('/api/portal/stage', { json: { action: 'delete', id: s.id } }), { roles: V.roles }); toast(T('saved')); render(); } catch (e) { toast(e.message); }
           } }, T('delete'))));
         st.append(box);
       });
-      if (!PREVIEW) st.append(el('button', { class: 'btn primary wide', type: 'button', style: 'margin-top:12px', onclick: () => stageSheet(k, null) }, T('add_stage')));
+      if (!readonly()) st.append(el('button', { class: 'btn primary wide', type: 'button', style: 'margin-top:12px', onclick: () => stageSheet(k, null) }, T('add_stage')));
       app.append(st);
       if (k.bonuses.length) {
         const b = el('section', 'card', el('h2', null, T('fees_given')));
@@ -912,13 +1277,120 @@
       el('div', 'field', el('label', null, T('amount')), el('div', 'pair', amount, cur)), field(T('comment'), note),
       el('p', 'small muted', T('stage_hint', { p: (Math.round(pct * 100) / 100).toLocaleString(loc()) })));
     sheet(T('new_stage'), body, async () => {
-      const a = parseFloat(amount.value.replace(/[\s ]/g, '').replace(',', '.'));
+      const a = parseFloat(amount.value.replace(/[\s ]/g, '').replace(',', '.'));
       if (!title.value.trim()) throw new Error(T('need_title'));
       if (!(a > 0)) throw new Error(T('need_amount'));
-      V = await api('/api/portal/stage', { json: { action: 'save', id: s.id || null, project_id: PID, link_id: k.link_id, title: title.value, day: day.value,
-        amount: a, currency: cur.value, note: note.value } });
+      V = Object.assign(await api('/api/portal/stage', { json: { action: 'save', id: s.id || null, project_id: PID, link_id: k.link_id, title: title.value, day: day.value,
+        amount: a, currency: cur.value, note: note.value } }), { roles: V.roles });
       toast(T('saved')); render();
     }, T('save'));
+  }
+
+  // ---------- бригада подрядчика ----------
+  async function openTeam(cid) {
+    TEAMC = cid; TEAM = null; render(); window.scrollTo(0, 0);
+    try { TEAM = await api('/api/portal/team?contractor=' + cid); } catch (e) { toast(e.message); TEAMC = null; }
+    render();
+  }
+  function teamView() {
+    const back = el('button', { class: 'btn small', type: 'button', onclick: goBack }, '← ' + (V ? T('nav_home') : T('back_projects')));
+    app.append(el('div', 'top', back, el('span', 'grow', ''), el('button', { class: 'icon-btn', type: 'button', title: T('settings'), 'aria-label': T('settings'), onclick: settingsSheet }, '⚙︎')));
+    if (!TEAM) { app.append(el('p', 'empty', T('loading'))); return; }
+    app.append(el('h1', null, T('nav_team')), el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, TEAM.contractor.name + ' · ' + T('team_hint')));
+    app.append(el('button', { class: 'btn primary wide', type: 'button', style: 'margin:0 0 12px', onclick: () => workerSheet(null) }, T('add_worker')));
+    if (!TEAM.team.length) { app.append(el('div', 'card empty', T('team_empty'))); return; }
+    TEAM.team.forEach((w) => {
+      const card = el('section', 'card');
+      card.append(el('div', 'person', el('b', null, w.name), el('span', 'sub', [w.position, w.phone].filter(Boolean).join(' · '))),
+        el('div', { class: 'small ' + (w.tg ? 'good' : 'muted'), style: 'margin-top:4px;font-weight:600' },
+          w.tg ? T('in_bot') + (w.tg_name ? ' · ' + w.tg_name : '') : w.invite_until ? '⏳ ' + T('link_until', { d: dfmt(w.invite_until, true) }) : T('not_in_bot')));
+      if (TEAM.projects.length) {
+        card.append(el('div', { class: 'small muted', style: 'margin:10px 0 6px' }, T('on_sites')));
+        card.append(el('div', 'chips', ...TEAM.projects.map((p) => {
+          const on = w.projects.some((x) => x.id === p.id);
+          return el('button', { class: 'chip', type: 'button', 'aria-pressed': String(on), onclick: async () => {
+            try { const r = await api('/api/portal/team', { json: { action: 'assign', crew_id: w.id, project_id: p.id, on: !on } }); TEAM.team = r.team; toast(T(on ? 'unassigned' : 'assigned')); render(); }
+            catch (e) { toast(e.message); }
+          } }, (on ? '✓ ' : '') + p.title);
+        })));
+      } else card.append(el('div', 'sub', T('no_sites')));
+      card.append(el('div', { class: 'contacts' }, ...contactButtons({ phone: w.phone }),
+        el('button', { class: 'btn small' + (w.tg ? '' : ' primary'), type: 'button', onclick: () => inviteSheet(w) }, w.tg ? T('new_link') : T('invite_btn')),
+        el('button', { class: 'btn small', type: 'button', onclick: () => workerSheet(w) }, T('edit'))));
+      app.append(card);
+    });
+  }
+  function workerSheet(w) {
+    w = w || {};
+    const name = el('input', { value: w.name || '', autocomplete: 'off' }), pos = el('input', { value: w.position || '', placeholder: T('w_position_ph') });
+    const phone = el('input', { type: 'tel', value: w.phone || '', placeholder: '+421 …' });
+    const del = w.id ? el('button', { class: 'btn danger wide', type: 'button', style: 'margin-top:8px', onclick: async () => {
+      if (!(await confirmBox(T('remove_q', { x: w.name })))) return;
+      try { const r = await api('/api/portal/team', { json: { action: 'remove', crew_id: w.id } }); TEAM.team = r.team; closeSheets(); toast(T('saved')); render(); } catch (e) { toast(e.message); }
+    } }, T('remove_worker')) : null;
+    sheet(w.id ? T('edit_worker') : T('add_worker').replace('＋ ', ''), el('div', field(T('w_name'), name), field(T('w_position'), pos), field(T('w_phone'), phone), del), async () => {
+      if (!name.value.trim()) throw new Error(T('need_name'));
+      const r = await api('/api/portal/team', { json: w.id ? { action: 'edit', crew_id: w.id, name: name.value, position: pos.value, phone: phone.value }
+        : { action: 'add', contractor_id: TEAMC, name: name.value, position: pos.value, phone: phone.value } });
+      TEAM.team = r.team; toast(T('saved')); render();
+      if (!w.id && r.crew_id) { const nw = r.team.find((x) => x.id === r.crew_id); if (nw) inviteSheet(nw); }
+    });
+  }
+  function inviteSheet(w) {                 // ссылка работнику: текст на его языке — переслать в Telegram, WhatsApp или скопировать
+    let lang = LANG, cur = null;
+    const seg = el('div', 'seg five'), box = el('div'), info = el('p', 'small muted', T('invite_hint'));
+    async function make() {
+      box.replaceChildren(el('p', 'muted', T('loading')));
+      try { cur = await api('/api/portal/team', { json: { action: 'invite', crew_id: w.id, lang } }); TEAM.team = cur.team; }
+      catch (e) { box.replaceChildren(el('p', 'err', e.message)); return; }
+      const t = el('textarea', { readonly: true, style: 'min-height:180px' }); t.value = cur.text;
+      requestAnimationFrame(() => { t.style.height = t.scrollHeight + 4 + 'px'; });
+      const plain = cur.text.replace(cur.link, '').replace(/\n{3,}/g, '\n\n').trim(), ph = digits(w.phone);
+      box.replaceChildren(el('div', 'field', t), el('div', 'pick',
+        el('button', { class: 'btn primary', type: 'button', onclick: () => {
+          const u = 'https://t.me/share/url?url=' + encodeURIComponent(cur.link) + '&text=' + encodeURIComponent(plain);
+          if (tg && tg.openTelegramLink) tg.openTelegramLink(u); else openLink(u);
+        } }, T('share_tg')),
+        ph ? el('button', { class: 'btn', type: 'button', onclick: () => openLink('https://wa.me/' + ph.replace('+', '') + '?text=' + encodeURIComponent(cur.text)) }, T('share_wa')) : null,
+        el('button', { class: 'btn', type: 'button', onclick: async () => {
+          try { await navigator.clipboard.writeText(cur.text); toast(T('copied')); } catch (e) { t.focus(); t.select(); }
+        } }, T('copy'))));
+    }
+    const draw = () => seg.replaceChildren(...LANGS.map(([k]) => el('button', { type: 'button', 'aria-pressed': String(lang === k), onclick: () => { lang = k; draw(); make(); } }, k.toUpperCase())));
+    draw(); make();
+    sheet(T('invite_title'), el('div', el('p', 'muted', w.name + (w.position ? ' · ' + w.position : '')), el('div', 'field', el('span', 'lab', T('msg_lang')), seg), box, info));
+  }
+
+  // ---------- работник подрядчика: объект без денег ----------
+  function homeWorker() {
+    app.append(topBar(), headCard());
+    (V.heads || []).forEach((h) => app.append(el('section', 'card', el('div', 'small muted', T('your_head')),
+      el('div', 'person', el('b', null, h.name), el('span', 'sub', [h.trade, h.company].filter(Boolean).join(' · '))), el('div', 'contacts', ...contactButtons(h)))));
+    const n = (V.files || []).length;
+    app.append(el('button', { class: 'pcard', type: 'button', onclick: () => go('docs') }, el('div', 'small muted', T('nav_docs')),
+      el('div', 'title', '📄 ' + n), el('div', 'sub', T('details') + ' →')));
+    app.append(studioCard());
+  }
+
+  // ---------- наблюдатель: участники и «посмотреть глазами» ----------
+  function homeObserver() {
+    app.append(topBar(), headCard());
+    const P = V.participants || { clients: [], contractors: [] };
+    const box = el('section', 'card', el('h2', null, T('participants')));
+    const ul = el('ul', 'list');
+    P.clients.forEach((c) => ul.append(el('li', null, el('b', null, c.name), el('div', 'sub', T('client') + ' · ' + (c.tg ? T('connected') : T('not_connected'))))));
+    P.contractors.forEach((c) => {
+      const li = el('li', null, el('b', null, c.name), el('div', 'sub', [c.trade, c.company, c.tg ? T('connected') : T('not_connected')].filter(Boolean).join(' · ')));
+      c.crew.filter((w) => w.assigned).forEach((w) => li.append(el('div', { class: 'sub', style: 'padding-left:14px' }, '└ ' + w.name + (w.position ? ' · ' + w.position : '') + ' · ' + (w.tg ? T('connected') : T('not_connected')))));
+      ul.append(li);
+    });
+    box.append(ul); app.append(box);
+    const pv = (q) => { location.href = '/api/portal/app?' + new URLSearchParams(Object.assign({ project: PID }, q)).toString(); };
+    const L = V.preview_links || { contractors: [], crew: [] };
+    app.append(el('section', 'card', el('h2', null, T('see_as')), el('div', 'pick',
+      el('button', { class: 'btn', type: 'button', onclick: () => pv({ preview: 'client' }) }, '👁 ' + T('client')),
+      ...L.contractors.map((c) => el('button', { class: 'btn', type: 'button', onclick: () => pv({ preview: 'contractor', link: c.link }) }, '👁 ' + c.name + (c.trade ? ' · ' + c.trade : ''))),
+      ...L.crew.map((w) => el('button', { class: 'btn', type: 'button', onclick: () => pv({ preview: 'worker', crew: w.id }) }, '👁 ' + w.name + (w.position ? ' · ' + w.position : ''))))));
   }
 
   // ---------- формы ----------
@@ -958,7 +1430,7 @@
     const draw = () => {
       langSeg.replaceChildren(...LANGS.map(([k, n]) => el('button', { type: 'button', 'aria-pressed': String(LANG === k), title: n, onclick: async () => {
         LANG = k; draw(); if (!PREVIEW) { try { await api('/api/portal/ui', { json: { lang: k } }); } catch (e) {} }
-        closeSheets(); if (PID) await openProject(PID, V && V.role === 'contractor' && V.both ? 'contractor' : null, tab); else render(); } }, k.toUpperCase())));
+        closeSheets(); if (PID) await openProject(PID, V && V.roles && V.roles.length > 1 ? role() : null, tab, TID); else render(); } }, k.toUpperCase())));
       sizeSeg.replaceChildren(...[['m', T('size_m')], ['l', T('size_l')], ['xl', T('size_xl')]].map(([k, n]) => el('button', { type: 'button',
         'aria-pressed': String((document.documentElement.dataset.size || 'm') === k), onclick: async () => {
           applySize(k); draw(); render(); syncSheets(); if (!PREVIEW) { try { await api('/api/portal/ui', { json: { size: k } }); } catch (e) {} } } }, n)));
@@ -979,9 +1451,10 @@
     if (ME.size) applySize(ME.size);
     document.documentElement.lang = LANG === 'uk' ? 'uk' : LANG;
     const want = Number(Q.get('project') || 0);
-    if (PREVIEW && want) return openProject(want, null, Q.get('tab'));
+    if (PREVIEW && want) return openProject(want, null, Q.get('tab'), Q.get('thread'));
+    if (Q.get('team') && (ME.heads || []).length) return openTeam(ME.heads[0].id);
     const p = ME.projects.find((x) => x.id === want) || (ME.projects.length === 1 ? ME.projects[0] : null);
-    if (p) return openProject(p.id, p.roles.includes('client') ? 'client' : 'contractor', Q.get('tab'));
+    if (p) return openProject(p.id, p.roles[0], Q.get('tab'), Q.get('thread'));
     render();
   }
   start();

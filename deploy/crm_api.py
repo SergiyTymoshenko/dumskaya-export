@@ -4,8 +4,10 @@
 
 Всё, кроме самой страницы и файлов, — только разработчику и дизайнеру: по подписи Telegram (заголовок
 X-Telegram-Init-Data), как у графиков. Здесь же — товары и доп. услуги заказчика, заказчики проекта, ссылки в кабинет
-(/api/crm/invite), закрыть кабинет (/api/crm/unlink), карточка товара с нашего сайта (/api/crm/card); после сохранения —
-сообщения в Telegram (after_save). Кабинет заказчика и подрядчика и переписка — portal_api.py. Файлы отдаются по подписанным ссылкам (действуют 12 часов): так их можно
+(/api/crm/invite — заказчику из проекта, подрядчику один раз, работнику подрядчика), закрыть кабинет (/api/crm/unlink),
+карточка товара с нашего сайта (/api/crm/card), группы проекта, бригады подрядчиков, кто видит документ; после сохранения —
+сообщения в Telegram (after_save). К проекту добавляются участники и разговоры (crm_portal.py); сами разговоры —
+portal_api.py (те же адреса, что у кабинетов). Файлы отдаются по подписанным ссылкам (действуют 12 часов): так их можно
 открыть в браузере и скачать. Опасные для сайта типы (HTML, SVG…) отдаются только как вложение и в «песочнице».
 """
 import hashlib
@@ -85,6 +87,18 @@ def portal_bg(fn, *args, **kw):
     threading.Thread(target=run, daemon=True).start()
 
 
+def enrich(r):
+    """Проект для «Студии»: ещё участники (заказчики, подрядчики и их бригады) и разговоры с непрочитанным."""
+    if PORTAL and isinstance(r, dict) and isinstance(r.get("project"), dict):
+        pid = r["project"]["id"]
+        v = PORTAL.viewer(0, pid, designer=True)
+        r["participants"] = PORTAL.participants(pid)
+        r["threads"] = PORTAL.threads_for(v, pid, "ru")         # последнее сообщение — в переводе на русский
+        for f in r.get("files", []):
+            f["audience"] = PORTAL.audience(f)
+    return r
+
+
 def after_save(entity, d, r, who):
     """Что сообщить в Telegram после сохранения в «Студии»: заказчику — новый товар или услуга (если отмечено
     «Сообщить заказчику»), товар доставлен; сумма работ подрядчика — заказчику на подтверждение; подрядчику — что его
@@ -106,10 +120,74 @@ def after_save(entity, d, r, who):
             portal_bg(BOT.portal_event, "stage_saved", stage_id=sid, was=was, by=who, by_contractor=False)
     elif entity == "link" and r.get("new"):
         portal_bg(BOT.portal_event, "link_new", link_id=sid)
+    elif entity == "group":                                # группа: новым участникам — сообщение на их языке
+        if r.get("new_members"):
+            portal_bg(BOT.portal_event, "group_new", thread_id=r["thread_id"], only=r["new_members"])
+    elif entity == "pcrew" and d.get("on") and r.get("changed_tg"):
+        portal_bg(BOT.portal_event, "crew_assigned", crew_id=int(d.get("crew_id") or 0), project_id=int(d.get("project_id") or 0))
     elif entity in ("pclient", "pclient_remove"):          # убран из проекта: других проектов нет — кабинет закрывается;
         c = CRM.one("SELECT tg_id FROM clients WHERE id=?", int(d.get("client_id") or 0)) or {}   # добавлен снова — открывается
         if c.get("tg_id"):
             portal_bg(BOT.portal_unlinked if entity == "pclient_remove" else BOT.portal_relinked, c["tg_id"])
+
+
+def inv_ref(data):
+    return int(data.get("ref_id") or 0)
+
+
+def portal_save(entity):
+    """Сохранения кабинетов из «Студии»: группа, бригада подрядчика, работник на объекте, кто видит документ."""
+    if not PORTAL:
+        return None
+
+    def group(d, who):
+        old = {(m["kind"], m["ref_id"]) for m in PORTAL.members(d["id"])} if d.get("id") else set()
+        th = PORTAL.save_group(d.get("project_id"), d, who)
+        new = [m for m in PORTAL.members(th["id"]) if (m["kind"], m["ref_id"]) not in old]
+        return dict(CRM.project(th["project_id"]), saved_id=th["id"], thread_id=th["id"], new_members=new)
+
+    def group_delete(d, who):
+        th = PORTAL.thread(d.get("id"))
+        if not th or th["kind"] != "group":
+            raise CrmError("Группа не найдена")
+        if CRM.one("SELECT id FROM messages WHERE thread_id=? LIMIT 1", th["id"]):
+            raise CrmError("В группе уже есть сообщения — удалить её нельзя (переписка проекта сохраняется)")
+        CRM.run("DELETE FROM thread_members WHERE thread_id=?", th["id"])
+        CRM.run("DELETE FROM threads WHERE id=?", th["id"])
+        CRM.audit(who, "delete", "thread", th["id"], {"project_id": th["project_id"]})
+        return CRM.project(th["project_id"])
+
+    def crew(d, who):
+        if d.get("id"):
+            wid = PORTAL.crew_edit(d["id"], d, who)
+        else:
+            if not CRM.one("SELECT id FROM contractors WHERE id=? AND observer IS NULL", int(d.get("contractor_id") or 0)):
+                raise CrmError("Подрядчик не найден")
+            wid = PORTAL.crew_add(d["contractor_id"], d, who)
+        r = {"ok": True, "saved_id": wid}
+        if d.get("project_id"):
+            PORTAL.crew_assign(d["project_id"], wid, True, who)
+            r = dict(CRM.project(int(d["project_id"])), saved_id=wid)
+        return r
+
+    def crew_remove(d, who):
+        tg = PORTAL.crew_remove(d.get("id"), who)
+        if tg and BOT:
+            portal_bg(BOT.portal_unlinked, tg)
+        return CRM.project(int(d["project_id"])) if d.get("project_id") else {"ok": True}
+
+    def pcrew(d, who):
+        r = PORTAL.crew_assign(d.get("project_id"), d.get("crew_id"), bool(d.get("on")), who)
+        if r["changed"] and not d.get("on") and r["crew"]["tg_id"] and BOT:
+            portal_bg(BOT.sync_portal_menu, r["crew"]["tg_id"])
+        return dict(CRM.project(int(d["project_id"])), changed_tg=bool(r["changed"] and r["crew"]["tg_id"]))
+
+    def file_vis(d, who):
+        f = CRM.set_file_vis(d, who)
+        return CRM.project(f["project_id"])
+
+    return {"group": group, "group_delete": group_delete, "crew": crew, "crew_remove": crew_remove, "pcrew": pcrew,
+            "file_vis": file_vis}.get(entity)
 
 
 CARD_HOSTS = ("dumskaya-design.com", "www.dumskaya-design.com", "dumskaya-home.com", "www.dumskaya-home.com")
@@ -219,7 +297,8 @@ def handle_get(h, path, query):
         return True
     if path == "/api/crm/ui":                       # размер текста и роль — нужны и графикам, работает и без учёта
         u = h.stats_admin()
-        return h.reply(200, {"size": ui_size(u), "role": u["role"]} if u else {"size": "m"}) or True
+        return h.reply(200, {"size": ui_size(u), "role": u["role"], "observer": bool(PORTAL and PORTAL.is_observer(u["tg_id"]))}
+                       if u else {"size": "m"}) or True
     if path == "/api/crm/mail":                     # письмо заказчику: открыть «Почту» из браузера (адрес и текст — в #…)
         h.reply(200, None, html_page=MAIL_PAGE)
         return True
@@ -241,7 +320,7 @@ def handle_get(h, path, query):
             out["me"] = {"name": u["name"], "role": u["role"], "size": ui_size(u)}
             return h.reply(200, out) or True
         if path == "/api/crm/project":
-            return h.reply(200, CRM.project(q.get("id"))) or True
+            return h.reply(200, enrich(CRM.project(q.get("id")))) or True
         if path == "/api/crm/stats":
             p = q.get("p", "month")
             return h.reply(200, CRM.stats(p if p in ("month", "quarter", "year", "all") else "month")) or True
@@ -316,19 +395,26 @@ def handle_post(h, path, query):
                   "lists": CRM.save_lists, "order": CRM.save_order, "service": CRM.save_service,
                   "pclient": CRM.add_project_client, "pclient_remove": CRM.remove_project_client}.get(entity)
             if not fn:
+                fn = portal_save(entity)
+            if not fn:
                 raise CrmError("Неизвестно, что сохранять")
             r = fn(d, who)
             if isinstance(r, dict):
                 after_save(entity, d, r, who)
-                r.pop("was", None)
-            return h.reply(200, r) or True
+                for k in ("was", "new_members", "thread_id", "changed_tg"):
+                    r.pop(k, None)
+            return h.reply(200, enrich(r)) or True
         if path == "/api/crm/invite":                    # ссылка в кабинет заказчику или подрядчику
             if not PORTAL or not BOT or not BOT.username:
                 raise CrmError("Бот сейчас недоступен — попробуйте через минуту")
             inv = PORTAL.make_invite(data.get("kind"), data.get("ref_id"), data.get("project_id"), data.get("lang") or "ru", who)
             link = f"https://t.me/{BOT.username}?start=pj_{inv['token']}"
-            p = CRM.one("SELECT title FROM projects WHERE id=?", int(data.get("project_id") or 0)) or {}
-            title = BOT.loc(p.get("title") or "", inv["lang"]) if hasattr(BOT, "loc") else p.get("title") or ""   # название — на его языке
+            if inv["kind"] == "crew":                    # работнику — от имени его подрядчика
+                w = CRM.one("SELECT c.name FROM crew w JOIN contractors c ON c.id=w.contractor_id WHERE w.id=?", inv_ref(data)) or {}
+                title = w.get("name") or ""
+            else:
+                p = CRM.one("SELECT title FROM projects WHERE id=?", int(data.get("project_id") or 0)) or {}
+                title = BOT.loc(p.get("title") or "", inv["lang"]) if hasattr(BOT, "loc") else p.get("title") or ""   # название — на его языке
             return h.reply(200, dict(inv, link=link, text=BOT.invite_text(inv["lang"], inv["kind"], inv["name"], title, link),
                                      token=None)) or True
         if path == "/api/crm/unlink":                    # закрыть кабинет: Telegram отвязать от заказчика или подрядчика
@@ -338,13 +424,22 @@ def handle_post(h, path, query):
             if tg and BOT:
                 portal_bg(BOT.portal_unlinked, tg)
             pid = int(data.get("project_id") or 0)
-            return h.reply(200, CRM.project(pid) if pid else {"ok": True}) or True
+            return h.reply(200, enrich(CRM.project(pid)) if pid else {"ok": True}) or True
         if path == "/api/crm/delete":
             if data.get("entity") == "leads":           # несколько заявок сразу (например, весь спам)
                 return h.reply(200, CRM.delete_leads(data.get("ids") or [], who)) or True
-            return h.reply(200, CRM.delete(data.get("entity"), data.get("id"), who)) or True
+            tgs = []
+            if data.get("entity") == "contractor":      # удалён подрядчик (и наблюдатель): у него и его бригады кабинет закрывается
+                rid = int(data.get("id") or 0)
+                tgs = [r["tg_id"] for r in CRM.q("SELECT tg_id FROM contractors WHERE id=? AND tg_id IS NOT NULL UNION "
+                                                 "SELECT tg_id FROM crew WHERE contractor_id=? AND removed IS NULL AND tg_id IS NOT NULL", rid, rid)]
+            r = CRM.delete(data.get("entity"), data.get("id"), who)
+            for tg in tgs:
+                if BOT:
+                    portal_bg(BOT.portal_unlinked, tg)
+            return h.reply(200, enrich(r)) or True
         if path == "/api/crm/move":
-            return h.reply(200, CRM.move_file(data.get("id"), data.get("category"), who)) or True
+            return h.reply(200, enrich(CRM.move_file(data.get("id"), data.get("category"), who))) or True
         if path == "/api/crm/send":                      # прислать файл проекта в чат с ботом
             fpath, f = CRM.file_path(data.get("id"), "o")
             if not f:

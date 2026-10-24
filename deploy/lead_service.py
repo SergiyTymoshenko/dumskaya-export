@@ -12,7 +12,7 @@
 не отвечает, разработчику в бот приходит сообщение — см. site_monitor.py.
 И статистика посетителей по журналу Caddy (site_stats.py): мини-приложение «Графики» в боте, утром — строка разработчику.
 И учёт проектов студии (crm.py, crm_api.py, страница crm_app.html — кнопка «Студия» в боте).
-И кабинет заказчика и подрядчика с перепиской (crm_portal.py, portal_api.py, portal_bot.py, страница portal_app.html —
+И кабинеты заказчика, подрядчика и его работников с разговорами (crm_portal.py, portal_api.py, portal_bot.py, страница portal_app.html —
 кнопка «Мой проект» в боте); напоминания об оплате доп. услуг — раз в минуту вместе с остальными фоновыми делами.
 Только стандартная библиотека Python 3, без установки пакетов.
 
@@ -377,6 +377,8 @@ def main():
             crm_api.PORTAL = portal_api.PORTAL = BOT.portal = Portal(BOT.crm)
             portal_api.CRM, portal_api.BOT, portal_api.CHECK, portal_api.TOKEN = BOT.crm, BOT, check_init_data, TG_TOKEN
             BOT.stats.hooks.append(BOT.portal_reminders)
+            if BOT.portal.ensure_observer(BOT.owner):        # «Разработчик ПО» — наблюдатель для тестирования (один раз)
+                log("кабинет: создан наблюдатель «Разработчик ПО» (видит всё; удалить — в «Студии», Контакты → Подрядчики)")
         except Exception as e:  # noqa: BLE001
             log(f"учёт проектов не запущен: {type(e).__name__}: {e}")
         BOT.start()

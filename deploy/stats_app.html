@@ -729,6 +729,10 @@
     .then((r) => (r.ok ? r.json() : null)).then((x) => {
       if (x && x.role === 'owner') {           // у разработчика в «Студии» только сайт и доступ к боту (решено 24.10.2026)
         const b = document.getElementById('back'); b.textContent = '👥 Доступ к боту'; b.href = '/api/crm/app?tab=access';
+        if (x.observer) {                     // «Разработчик ПО» — наблюдатель: кабинеты глазами всех, для тестирования
+          const o = document.createElement('a'); o.className = 'back'; o.href = '/api/portal/app'; o.textContent = '🧪 Кабинеты (наблюдатель)';
+          o.style.marginLeft = '16px'; b.after(o);
+        }
       }
       if (x && applySize(x.size) && data) render();
     }).catch(() => {});

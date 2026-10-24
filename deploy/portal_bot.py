@@ -1,18 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Кабинет заказчика и подрядчика в боте студии (часть класса Bot) и переписка студии с заказчиками.
+"""Кабинеты в боте студии (часть класса Bot): заказчик, подрядчик, работник подрядчика, наблюдатель — и разговоры проекта.
 
-  • Ссылка-приглашение t.me/<бот>?start=pj_… (её даёт «Студия»): человек нажимает «Старт» — его Telegram привязан
-    к заказчику или подрядчику проекта, слева от поля ввода появляется кнопка «Мой проект» (на его языке).
-  • Переписка: заказчик пишет в кабинете или прямо в чат бота — Ирине приходит сообщение с переводом на русский
-    (если написано не по-русски и не по-украински); Ирина отвечает свайпом по этому сообщению или в «Студии» — заказчикам
-    уходит её ответ с переводом на их язык. Фото и документы — тоже. Подрядчики в переписке не участвуют.
+  • Ссылка-приглашение t.me/<бот>?start=pj_… : заказчику — из проекта в «Студии»; подрядчику — один раз из «Студии»
+    (дальше он видит все проекты, куда его добавят); работнику — от его подрядчика из кабинета («Бригада»).
+    Человек нажимает «Старт» — Telegram привязан, слева от поля ввода появляется кнопка «Мой проект» (на его языке).
+  • Разговоры (crm_portal.py): заказчик — со студией и с любым подрядчиком проекта (студия видит, вступает, когда
+    ответит); подрядчик — со студией, с заказчиками, в группах; работник — со студией и в группах (его разговоры видит
+    его подрядчик); группы собирает Ирина. Написанное прямо в чат бота уходит в «свой» разговор со студией, ответ свайпом —
+    в тот разговор, на сообщение которого отвечают. Каждому — с переводом на его язык; Ирине — на русский.
+  • Наблюдатель «Разработчик ПО» получает тихие копии всех сообщений (🧪) — для тестирования.
   • Суммы работ подрядчиков: внесла студия или сам подрядчик — заказчику приходит «Подтверждаю / Не согласен».
   • Товары и доп. услуги: заказчику — сообщение о новом товаре, услуге, доставке (если в «Студии» отмечено «Сообщить»).
+  • Документы подрядчиков и работников: студии — всегда; подрядчику — от его работников; заказчику — если открыт ему.
   • Напоминания об оплате доп. услуг (помесячно и разовых): заказчику и Ирине — в день оплаты и через 7 дней, если
     не оплачено (днём, 10:00–20:00 по Братиславе).
-Тексты для заказчиков и подрядчиков — на пяти языках (RU, UA, EN, SK, DE) по языку их Telegram или выбранному в кабинете.
-Только стандартная библиотека Python 3."""
+Тексты для заказчиков, подрядчиков и работников — на пяти языках (RU, UA, EN, SK, DE) по языку их Telegram или выбранному
+в кабинете. Только стандартная библиотека Python 3."""
 import html
 import json
 import threading
@@ -34,7 +38,7 @@ except ImportError:                    # pragma: no cover
     def lang_from(code):
         return ""
 
-PORTAL_ROLES = ("client", "crew")
+PORTAL_ROLES = ("client", "crew", "worker")   # заказчик, подрядчик (руководитель), работник подрядчика
 CHAT_FILE_MAX = 20 * 1024 * 1024       # больше Telegram боту скачать не даёт
 CHAT_MAP_DAYS = 180                    # ответ свайпом работает на сообщения не старше полугода
 
@@ -46,36 +50,63 @@ T = {
                   "de": "💬 Chat öffnen"},
     "welcome_client": {
         "ru": "Здравствуйте, {name}! Это кабинет вашего проекта «{project}» в студии DUMSKAYA DESIGN: оплаты и что осталось "
-              "оплатить, доп. услуги и товары, документы и визуализации, контакты подрядчиков и переписка с Ириной.\n\n"
+              "оплатить, доп. услуги и товары, документы и визуализации, подрядчики и переписка с Ириной и с подрядчиками.\n\n"
               "Открыть кабинет — кнопка «{menu}» слева от поля ввода. Написать Ирине можно прямо сюда, в чат.",
         "uk": "Добрий день, {name}! Це кабінет вашого проєкту «{project}» у студії DUMSKAYA DESIGN: оплати і що залишилося "
-              "сплатити, додаткові послуги й товари, документи й візуалізації, контакти підрядників і листування з Іриною.\n\n"
+              "сплатити, додаткові послуги й товари, документи й візуалізації, підрядники і листування з Іриною та з підрядниками.\n\n"
               "Відкрити кабінет — кнопка «{menu}» ліворуч від поля введення. Написати Ірині можна просто сюди, в чат.",
         "en": "Hello {name}! This is the app for your project “{project}” with DUMSKAYA DESIGN: payments and what is left to pay, "
-              "extra services and furniture orders, documents and renderings, contractors’ contacts and your chat with Irina.\n\n"
+              "extra services and furniture orders, documents and renderings, contractors and your chats with Irina and the contractors.\n\n"
               "To open it, tap “{menu}” next to the message field. You can also write to Irina right here in this chat.",
         "sk": "Dobrý deň, {name}! Toto je aplikácia vášho projektu „{project}“ v štúdiu DUMSKAYA DESIGN: platby a čo ešte "
-              "zostáva zaplatiť, doplnkové služby a objednaný tovar, dokumenty a vizualizácie, kontakty na remeselníkov "
-              "a konverzácia s Irinou.\n\nOtvoríte ju tlačidlom „{menu}“ vedľa poľa na písanie. Irine môžete napísať aj priamo sem do chatu.",
+              "zostáva zaplatiť, doplnkové služby a objednaný tovar, dokumenty a vizualizácie, remeselníci a konverzácie s Irinou "
+              "aj s remeselníkmi.\n\nOtvoríte ju tlačidlom „{menu}“ vedľa poľa na písanie. Irine môžete napísať aj priamo sem do chatu.",
         "de": "Guten Tag, {name}! Das ist die App zu Ihrem Projekt „{project}“ bei DUMSKAYA DESIGN: Zahlungen und offene Beträge, "
-              "Zusatzleistungen und bestellte Möbel, Unterlagen und Visualisierungen, Kontakte der Handwerker und der Chat mit Irina.\n\n"
+              "Zusatzleistungen und bestellte Möbel, Unterlagen und Visualisierungen, Handwerker und die Chats mit Irina und den Handwerkern.\n\n"
               "Öffnen Sie sie über „{menu}“ neben dem Eingabefeld. Sie können Irina auch direkt hier im Chat schreiben."},
     "welcome_crew": {
-        "ru": "Здравствуйте, {name}! Это кабинет подрядчика студии DUMSKAYA DESIGN по проекту «{project}»: обмерный план, "
-              "визуализации и документация, контакты заказчика и ваши расчёты со студией. Сумму работ можно внести самому — "
-              "заказчик её подтвердит.\n\nОткрыть кабинет — кнопка «{menu}» слева от поля ввода.",
-        "uk": "Добрий день, {name}! Це кабінет підрядника студії DUMSKAYA DESIGN за проєктом «{project}»: обмірний план, "
-              "візуалізації й документація, контакти замовника і ваші розрахунки зі студією. Суму робіт можна внести самому — "
-              "замовник її підтвердить.\n\nВідкрити кабінет — кнопка «{menu}» ліворуч від поля введення.",
-        "en": "Hello {name}! This is the contractor app of DUMSKAYA DESIGN for the project “{project}”: measured plan, renderings "
-              "and documentation, the client’s contacts and your account with the studio. You can enter the price of your work "
-              "yourself — the client will confirm it.\n\nTo open it, tap “{menu}” next to the message field.",
-        "sk": "Dobrý deň, {name}! Toto je aplikácia pre dodávateľov štúdia DUMSKAYA DESIGN k projektu „{project}“: zameranie, "
-              "vizualizácie a dokumentácia, kontakty na klienta a vaše vyúčtovanie so štúdiom. Cenu prác môžete zadať aj sami — "
-              "klient ju potvrdí.\n\nOtvoríte ju tlačidlom „{menu}“ vedľa poľa na písanie.",
-        "de": "Guten Tag, {name}! Das ist die Handwerker-App von DUMSKAYA DESIGN zum Projekt „{project}“: Aufmaß, Visualisierungen "
-              "und Unterlagen, Kontakte des Kunden und Ihre Abrechnung mit dem Studio. Den Preis Ihrer Arbeiten können Sie selbst "
-              "eintragen — der Kunde bestätigt ihn.\n\nÖffnen Sie sie über „{menu}“ neben dem Eingabefeld."},
+        "ru": "Здравствуйте, {name}! Это кабинет подрядчика студии DUMSKAYA DESIGN. Здесь все проекты студии, в которых вы "
+              "участвуете{now}: документация и визуализации, контакты заказчика, ваши расчёты со студией, переписка со студией "
+              "и с заказчиком. Можно подключить своих работников («Бригада») и прикреплять фото выполненных работ и документы.\n\n"
+              "Открыть кабинет — кнопка «{menu}» слева от поля ввода. Написать студии можно прямо сюда, в чат.",
+        "uk": "Добрий день, {name}! Це кабінет підрядника студії DUMSKAYA DESIGN. Тут усі проєкти студії, у яких ви "
+              "берете участь{now}: документація й візуалізації, контакти замовника, ваші розрахунки зі студією, листування зі студією "
+              "і з замовником. Можна підключити своїх працівників («Бригада») і додавати фото виконаних робіт і документи.\n\n"
+              "Відкрити кабінет — кнопка «{menu}» ліворуч від поля введення. Написати студії можна просто сюди, в чат.",
+        "en": "Hello {name}! This is the contractor app of DUMSKAYA DESIGN. Here are all the studio’s projects you work on{now}: "
+              "documents and renderings, the client’s contacts, your account with the studio, chats with the studio and the client. "
+              "You can connect your workers (“Team”) and attach photos of finished work and documents.\n\n"
+              "To open it, tap “{menu}” next to the message field. You can also write to the studio right here in this chat.",
+        "sk": "Dobrý deň, {name}! Toto je aplikácia pre dodávateľov štúdia DUMSKAYA DESIGN. Nájdete tu všetky projekty štúdia, "
+              "na ktorých pracujete{now}: dokumentáciu a vizualizácie, kontakty na klienta, vyúčtovanie so štúdiom, konverzácie "
+              "so štúdiom a s klientom. Môžete pripojiť svojich pracovníkov („Tím“) a pridávať fotky hotovej práce a dokumenty.\n\n"
+              "Otvoríte ju tlačidlom „{menu}“ vedľa poľa na písanie. Štúdiu môžete napísať aj priamo sem do chatu.",
+        "de": "Guten Tag, {name}! Das ist die Handwerker-App von DUMSKAYA DESIGN. Hier finden Sie alle Projekte des Studios, an denen "
+              "Sie arbeiten{now}: Unterlagen und Visualisierungen, Kontakte des Kunden, Ihre Abrechnung mit dem Studio, Chats mit dem "
+              "Studio und dem Kunden. Sie können Ihre Mitarbeiter verbinden („Team“) und Fotos fertiger Arbeiten und Unterlagen anhängen.\n\n"
+              "Öffnen Sie sie über „{menu}“ neben dem Eingabefeld. Sie können dem Studio auch direkt hier im Chat schreiben."},
+    "now": {"ru": " (сейчас — «{project}»)", "uk": " (зараз — «{project}»)", "en": " (now: “{project}”)", "sk": " (teraz: „{project}“)",
+            "de": " (derzeit: „{project}“)"},
+    "welcome_worker": {
+        "ru": "Здравствуйте, {name}! Это кабинет работника студии DUMSKAYA DESIGN, вас подключил(а) {head}. Здесь объекты, "
+              "на которые вас отправляют: адрес, документация и визуализации, переписка со студией. Можно прикреплять фото и "
+              "документы и выбирать, кто их видит.\n\nОткрыть кабинет — кнопка «{menu}» слева от поля ввода. Написать студии "
+              "можно прямо сюда, в чат.",
+        "uk": "Добрий день, {name}! Це кабінет працівника студії DUMSKAYA DESIGN, вас підключив(-ла) {head}. Тут об’єкти, "
+              "на які вас направляють: адреса, документація й візуалізації, листування зі студією. Можна додавати фото й "
+              "документи і вибирати, хто їх бачить.\n\nВідкрити кабінет — кнопка «{menu}» ліворуч від поля введення. Написати "
+              "студії можна просто сюди, в чат.",
+        "en": "Hello {name}! This is the worker app of DUMSKAYA DESIGN — {head} has connected you. Here are the sites you are sent to: "
+              "address, documents and renderings, your chat with the studio. You can attach photos and documents and choose who sees them.\n\n"
+              "To open it, tap “{menu}” next to the message field. You can also write to the studio right here in this chat.",
+        "sk": "Dobrý deň, {name}! Toto je aplikácia pre pracovníkov štúdia DUMSKAYA DESIGN, pripojil(a) vás {head}. Nájdete tu "
+              "stavby, na ktoré vás posielajú: adresu, dokumentáciu a vizualizácie, konverzáciu so štúdiom. Môžete pridávať fotky "
+              "a dokumenty a vybrať, kto ich vidí.\n\nOtvoríte ju tlačidlom „{menu}“ vedľa poľa na písanie. Štúdiu môžete "
+              "napísať aj priamo sem do chatu.",
+        "de": "Guten Tag, {name}! Das ist die Mitarbeiter-App von DUMSKAYA DESIGN — {head} hat Sie verbunden. Hier finden Sie die "
+              "Baustellen, auf die Sie geschickt werden: Adresse, Unterlagen und Visualisierungen, Ihren Chat mit dem Studio. Sie können "
+              "Fotos und Unterlagen anhängen und auswählen, wer sie sieht.\n\nÖffnen Sie sie über „{menu}“ neben dem Eingabefeld. "
+              "Sie können dem Studio auch direkt hier im Chat schreiben."},
     "invite_bad": {
         "ru": "Ссылка недействительна: она уже использована или устарела. Попросите у студии DUMSKAYA DESIGN новую.",
         "uk": "Посилання недійсне: його вже використано або воно застаріло. Попросіть у студії DUMSKAYA DESIGN нове.",
@@ -96,14 +127,43 @@ T = {
                 "en": "The file is larger than 20 MB — Telegram doesn’t let the bot download it. Please send it to Irina another way.",
                 "sk": "Súbor má viac ako 20 MB — Telegram ho botovi nedovolí stiahnuť. Pošlite ho Irine inak.",
                 "de": "Die Datei ist größer als 20 MB — Telegram lässt den Bot sie nicht herunterladen. Bitte senden Sie sie Irina auf anderem Weg."},
-    "crew_no_chat": {
-        "ru": "Сообщения отсюда студии не передаются. Связаться со студией: {phone}, {email}.",
-        "uk": "Повідомлення звідси студії не передаються. Зв’язатися зі студією: {phone}, {email}.",
-        "en": "Messages from here are not passed on to the studio. To contact the studio: {phone}, {email}.",
-        "sk": "Správy odtiaľto sa štúdiu neodovzdávajú. Kontakt na štúdio: {phone}, {email}.",
-        "de": "Nachrichten von hier werden nicht an das Studio weitergeleitet. Kontakt zum Studio: {phone}, {email}."},
-    "no_projects": {"ru": "В кабинете пока нет проектов.", "uk": "У кабінеті поки немає проєктів.", "en": "There are no projects in your app yet.",
-                    "sk": "V aplikácii zatiaľ nie sú žiadne projekty.", "de": "In Ihrer App gibt es noch keine Projekte."},
+    "read_only": {
+        "ru": "Эту переписку вы только видите — ответить в ней нельзя. Написать студии — просто отправьте сообщение сюда, без ответа.",
+        "uk": "Це листування ви лише бачите — відповісти в ньому не можна. Написати студії — просто надішліть повідомлення сюди, без відповіді.",
+        "en": "You can only read this conversation — replies are not possible here. To write to the studio, just send a message here, not as a reply.",
+        "sk": "Túto konverzáciu môžete len čítať — odpovedať v nej nemožno. Ak chcete napísať štúdiu, pošlite správu sem, nie ako odpoveď.",
+        "de": "Diesen Chat können Sie nur lesen — antworten ist hier nicht möglich. Um dem Studio zu schreiben, senden Sie einfach eine Nachricht hierher, nicht als Antwort."},
+    "reply_hint": {"ru": "↩︎ Ответить: потяните сообщение влево", "uk": "↩︎ Відповісти: потягніть повідомлення вліво",
+                   "en": "↩︎ To reply, swipe this message to the left", "sk": "↩︎ Odpovedať: potiahnite správu doľava",
+                   "de": "↩︎ Antworten: Nachricht nach links ziehen"},
+    "ctx_group": {"ru": "Группа «{title}»", "uk": "Група «{title}»", "en": "Group “{title}”", "sk": "Skupina „{title}“", "de": "Gruppe „{title}“"},
+    "ctx_watch": {"ru": "👁 Студия и {name} — вы видите, отвечает {name}", "uk": "👁 Студія і {name} — ви бачите, відповідає {name}",
+                  "en": "👁 Studio and {name} — you can read along, {name} replies", "sk": "👁 Štúdio a {name} — vidíte, odpovedá {name}",
+                  "de": "👁 Studio und {name} — Sie lesen mit, {name} antwortet"},
+    "role_client": {"ru": "заказчик", "uk": "замовник", "en": "client", "sk": "klient", "de": "Kunde"},
+    "crew_joined": {"ru": "✅ {name} — в боте. Отметьте в кабинете («Бригада»), на каких объектах работает этот человек.",
+                    "uk": "✅ {name} — у боті. Позначте в кабінеті («Бригада»), на яких об’єктах працює ця людина.",
+                    "en": "✅ {name} has joined the bot. Mark in the app (“Team”) which sites this person works on.",
+                    "sk": "✅ {name} je v bote. V aplikácii („Tím“) označte, na ktorých stavbách táto osoba pracuje.",
+                    "de": "✅ {name} ist jetzt im Bot. Markieren Sie in der App („Team“), auf welchen Baustellen diese Person arbeitet."},
+    "crew_assigned": {"ru": "📁 Вас отметили на объекте «{project}». Документация и переписка со студией — в кабинете.",
+                      "uk": "📁 Вас позначили на об’єкті «{project}». Документація й листування зі студією — у кабінеті.",
+                      "en": "📁 You have been assigned to the site “{project}”. Documents and the chat with the studio are in the app.",
+                      "sk": "📁 Priradili vás na stavbu „{project}“. Dokumentácia a konverzácia so štúdiom sú v aplikácii.",
+                      "de": "📁 Sie wurden der Baustelle „{project}“ zugeteilt. Unterlagen und der Chat mit dem Studio sind in der App."},
+    "group_new": {"ru": "👥 {who} создала группу «{title}» · «{project}»\nВ группе: {members}.\nПисать в группу — в кабинете или ответом на её сообщения (потяните сообщение влево).",
+                  "uk": "👥 {who} створила групу «{title}» · «{project}»\nУ групі: {members}.\nПисати в групу — у кабінеті або відповіддю на її повідомлення (потягніть повідомлення вліво).",
+                  "en": "👥 {who} has created the group “{title}” · “{project}”\nMembers: {members}.\nWrite to the group in the app or reply to its messages (swipe a message to the left).",
+                  "sk": "👥 {who} vytvorila skupinu „{title}“ · „{project}“\nV skupine: {members}.\nDo skupiny píšte v aplikácii alebo odpoveďou na jej správy (potiahnite správu doľava).",
+                  "de": "👥 {who} hat die Gruppe „{title}“ erstellt · „{project}“\nMitglieder: {members}.\nIn die Gruppe schreiben Sie in der App oder als Antwort auf ihre Nachrichten (Nachricht nach links ziehen)."},
+    "doc_new": {"ru": "📎 <b>Новый документ</b> · «{project}»\n{who}: {title}", "uk": "📎 <b>Новий документ</b> · «{project}»\n{who}: {title}",
+                "en": "📎 <b>New document</b> · “{project}”\n{who}: {title}", "sk": "📎 <b>Nový dokument</b> · „{project}“\n{who}: {title}",
+                "de": "📎 <b>Neues Dokument</b> · „{project}“\n{who}: {title}"},
+    "no_projects": {"ru": "В кабинете пока нет проектов. Когда студия добавит вас в проект, он появится здесь сам.",
+                    "uk": "У кабінеті поки немає проєктів. Коли студія додасть вас до проєкту, він з’явиться тут сам.",
+                    "en": "There are no projects in your app yet. When the studio adds you to a project, it will appear here.",
+                    "sk": "V aplikácii zatiaľ nie sú žiadne projekty. Keď vás štúdio pridá do projektu, objaví sa tu.",
+                    "de": "In Ihrer App gibt es noch keine Projekte. Sobald das Studio Sie zu einem Projekt hinzufügt, erscheint es hier."},
     "stage_ask": {
         "ru": "🧾 <b>Сумма работ на подтверждение</b> · «{project}»\n{who}: {title} — <b>{amount}</b>\n\nЕсли сумма верная — нажмите «Подтверждаю».",
         "uk": "🧾 <b>Сума робіт на підтвердження</b> · «{project}»\n{who}: {title} — <b>{amount}</b>\n\nЯкщо сума правильна — натисніть «Підтверджую».",
@@ -137,11 +197,11 @@ T = {
                     "en": "🧾 The studio has entered the price of your work · “{project}”\n{title} — <b>{amount}</b>",
                     "sk": "🧾 Štúdio zadalo cenu vašich prác · „{project}“\n{title} — <b>{amount}</b>",
                     "de": "🧾 Das Studio hat den Preis Ihrer Arbeiten eingetragen · „{project}“\n{title} — <b>{amount}</b>"},
-    "link_new": {"ru": "📁 Вас добавили в проект «{project}»{trade}. Документация и контакты заказчика — в кабинете.",
-                 "uk": "📁 Вас додали до проєкту «{project}»{trade}. Документація й контакти замовника — у кабінеті.",
-                 "en": "📁 You have been added to the project “{project}”{trade}. Documents and the client’s contacts are in the app.",
-                 "sk": "📁 Pridali vás do projektu „{project}“{trade}. Dokumentácia a kontakty na klienta sú v aplikácii.",
-                 "de": "📁 Sie wurden zum Projekt „{project}“{trade} hinzugefügt. Unterlagen und Kontakte des Kunden finden Sie in der App."},
+    "link_new": {"ru": "📁 Вас добавили в проект «{project}»{trade}. Документация, контакты заказчика и переписка — в кабинете.",
+                 "uk": "📁 Вас додали до проєкту «{project}»{trade}. Документація, контакти замовника й листування — у кабінеті.",
+                 "en": "📁 You have been added to the project “{project}”{trade}. Documents, the client’s contacts and chats are in the app.",
+                 "sk": "📁 Pridali vás do projektu „{project}“{trade}. Dokumentácia, kontakty na klienta a konverzácie sú v aplikácii.",
+                 "de": "📁 Sie wurden zum Projekt „{project}“{trade} hinzugefügt. Unterlagen, Kontakte des Kunden und Chats finden Sie in der App."},
     "order_new": {"ru": "🛋 <b>Новый товар в проекте</b> «{project}»\n{title} — <b>{amount}</b>{planned}",
                   "uk": "🛋 <b>Новий товар у проєкті</b> «{project}»\n{title} — <b>{amount}</b>{planned}",
                   "en": "🛋 <b>New item in your project</b> “{project}”\n{title} — <b>{amount}</b>{planned}",
@@ -199,20 +259,41 @@ T = {
               "und Visualisierungen, Kontakte der Handwerker und der Chat mit Irina. Öffnen Sie ihn in Telegram und tippen Sie unten auf die Schaltfläche („Starten“):\n"
               "{link}\n\nDer Link ist persönlich, für eine Person, und 14 Tage gültig."},
     "invite_contractor": {
-        "ru": "Здравствуйте, {name}! Это ссылка на кабинет подрядчика по проекту «{project}» студии DUMSKAYA DESIGN: обмерный план, "
-              "визуализации и документация, контакты заказчика и расчёты со студией. Откройте её в Telegram и нажмите кнопку внизу экрана («Старт»):\n"
+        "ru": "Здравствуйте, {name}! Это ссылка на кабинет подрядчика студии DUMSKAYA DESIGN в Telegram: проекты студии, в которых "
+              "вы участвуете, документация и визуализации, контакты заказчика, расчёты и переписка со студией; там же можно подключить "
+              "своих работников. Откройте её в Telegram и нажмите кнопку внизу экрана («Старт»):\n{link}\n\n"
+              "Ссылка личная, для одного человека, и действует 14 дней. Подключиться нужно один раз — новые проекты появятся в кабинете сами.",
+        "uk": "Добрий день, {name}! Це посилання на кабінет підрядника студії DUMSKAYA DESIGN у Telegram: проєкти студії, у яких "
+              "ви берете участь, документація й візуалізації, контакти замовника, розрахунки й листування зі студією; там само можна "
+              "підключити своїх працівників. Відкрийте його в Telegram і натисніть кнопку внизу екрана («Почати»):\n{link}\n\n"
+              "Посилання особисте, для однієї людини, і діє 14 днів. Підключитися треба один раз — нові проєкти з’являться в кабінеті самі.",
+        "en": "Hello {name}! Here is the link to the DUMSKAYA DESIGN contractor app in Telegram: the studio’s projects you work on, "
+              "documents and renderings, the client’s contacts, your account and chat with the studio; you can also connect your workers there. "
+              "Open it in Telegram and tap the button at the bottom (“Start”):\n{link}\n\n"
+              "The link is personal, for one person, and is valid for 14 days. You only need to connect once — new projects will appear in the app automatically.",
+        "sk": "Dobrý deň, {name}! Posielame odkaz na aplikáciu pre dodávateľov štúdia DUMSKAYA DESIGN v Telegrame: projekty štúdia, "
+              "na ktorých pracujete, dokumentácia a vizualizácie, kontakty na klienta, vyúčtovanie a konverzácia so štúdiom; môžete tam "
+              "pripojiť aj svojich pracovníkov. Otvorte ho v Telegrame a ťuknite na tlačidlo dole („Štart“):\n{link}\n\n"
+              "Odkaz je osobný, pre jednu osobu, a platí 14 dní. Pripojiť sa stačí raz — nové projekty sa v aplikácii objavia samy.",
+        "de": "Guten Tag, {name}! Hier ist der Link zur Handwerker-App von DUMSKAYA DESIGN in Telegram: die Projekte des Studios, an denen "
+              "Sie arbeiten, Unterlagen und Visualisierungen, Kontakte des Kunden, Abrechnung und Chat mit dem Studio; dort können Sie auch "
+              "Ihre Mitarbeiter verbinden. Öffnen Sie ihn in Telegram und tippen Sie unten auf die Schaltfläche („Starten“):\n{link}\n\n"
+              "Der Link ist persönlich, für eine Person, und 14 Tage gültig. Verbinden müssen Sie sich nur einmal — neue Projekte erscheinen automatisch in der App."},
+    "invite_crew": {
+        "ru": "Здравствуйте, {name}! {head} приглашает вас в кабинет работника студии DUMSKAYA DESIGN в Telegram: объекты, на которые "
+              "вас отправляют, документация и переписка со студией. Откройте ссылку в Telegram и нажмите кнопку внизу экрана («Старт»):\n"
               "{link}\n\nСсылка личная, для одного человека, и действует 14 дней.",
-        "uk": "Добрий день, {name}! Це посилання на кабінет підрядника за проєктом «{project}» студії DUMSKAYA DESIGN: обмірний план, "
-              "візуалізації й документація, контакти замовника і розрахунки зі студією. Відкрийте його в Telegram і натисніть кнопку внизу екрана («Почати»):\n"
+        "uk": "Добрий день, {name}! {head} запрошує вас до кабінету працівника студії DUMSKAYA DESIGN у Telegram: об’єкти, на які "
+              "вас направляють, документація й листування зі студією. Відкрийте посилання в Telegram і натисніть кнопку внизу екрана («Почати»):\n"
               "{link}\n\nПосилання особисте, для однієї людини, і діє 14 днів.",
-        "en": "Hello {name}! Here is the link to the contractor app of DUMSKAYA DESIGN for the project “{project}”: measured plan, "
-              "renderings and documentation, the client’s contacts and your account with the studio. Open it in Telegram and tap the button at the bottom (“Start”):\n"
+        "en": "Hello {name}! {head} invites you to the DUMSKAYA DESIGN worker app in Telegram: the sites you are sent to, documents and "
+              "your chat with the studio. Open the link in Telegram and tap the button at the bottom (“Start”):\n"
               "{link}\n\nThe link is personal, for one person, and is valid for 14 days.",
-        "sk": "Dobrý deň, {name}! Posielame odkaz na aplikáciu pre dodávateľov štúdia DUMSKAYA DESIGN k projektu „{project}“: zameranie, "
-              "vizualizácie a dokumentácia, kontakty na klienta a vyúčtovanie so štúdiom. Otvorte ho v Telegrame a ťuknite na tlačidlo dole („Štart“):\n"
+        "sk": "Dobrý deň, {name}! {head} vás pozýva do aplikácie pre pracovníkov štúdia DUMSKAYA DESIGN v Telegrame: stavby, na ktoré "
+              "vás posielajú, dokumentácia a konverzácia so štúdiom. Otvorte odkaz v Telegrame a ťuknite na tlačidlo dole („Štart“):\n"
               "{link}\n\nOdkaz je osobný, pre jednu osobu, a platí 14 dní.",
-        "de": "Guten Tag, {name}! Hier ist der Link zur Handwerker-App von DUMSKAYA DESIGN für das Projekt „{project}“: Aufmaß, "
-              "Visualisierungen und Unterlagen, Kontakte des Kunden und die Abrechnung mit dem Studio. Öffnen Sie ihn in Telegram und tippen Sie unten auf die Schaltfläche („Starten“):\n"
+        "de": "Guten Tag, {name}! {head} lädt Sie in die Mitarbeiter-App von DUMSKAYA DESIGN in Telegram ein: die Baustellen, auf die "
+              "Sie geschickt werden, Unterlagen und Ihr Chat mit dem Studio. Öffnen Sie den Link in Telegram und tippen Sie unten auf die Schaltfläche („Starten“):\n"
               "{link}\n\nDer Link ist persönlich, für eine Person, und 14 Tage gültig."},
 }
 SYM = {"EUR": "€", "USD": "$", "UAH": "₴", "PLN": "zł", "CZK": "Kč", "GBP": "£", "CHF": "CHF"}
@@ -286,13 +367,16 @@ class PortalBotMixin:
     def designer_name(self, lang):
         return STUDIO["designer"].get(lang) or STUDIO["designer_latin"]
 
+    def has_portal(self):
+        return bool(getattr(self, "portal", None))
+
     def sync_portal_menu(self, uid):
-        """Кнопка «Мой проект» слева от поля ввода — у тех, у кого есть проекты в кабинете (у студии — своя кнопка «Студия»)."""
+        """Кнопка «Мой проект» слева от поля ввода — у тех, у кого есть кабинет (у студии — своя кнопка «Студия»)."""
         u = self.user(uid)
-        if not u or self.is_admin(u) or not getattr(self, "portal", None):
+        if not u or self.is_admin(u) or not self.has_portal():
             return
         url = self.portal_url()
-        if u["status"] == "active" and url and self.portal.projects_for(uid):
+        if u["status"] == "active" and url and self.portal.has_cabinet(uid):
             self.api("setChatMenuButton", chat_id=uid, menu_button={"type": "web_app", "text": t(self.lang_of(uid), "menu"),
                                                                      "web_app": {"url": url}})
             self.s.put(f"pmenu:{uid}", "1")
@@ -301,27 +385,46 @@ class PortalBotMixin:
             self.s.drop(f"pmenu:{uid}")
 
     def portal_welcome(self, u):
-        lang = self.lang_of(u["tg_id"])
-        ps = self.portal.projects_for(u["tg_id"]) if getattr(self, "portal", None) else []
-        if not ps:
+        """Что это за бот — заказчику, подрядчику, работнику (на его языке)."""
+        uid = u["tg_id"]
+        lang = self.lang_of(uid)
+        if not self.has_portal():
             return t(lang, "no_projects")
-        p = ps[0]
-        key = "welcome_client" if "client" in p["roles"] else "welcome_crew"
-        title = ", ".join(self.loc(x["title"], lang) for x in ps[:3])
-        return t(lang, key, name=esc(u["name"] or ""), project=esc(title), menu=t(lang, "menu"))
+        ps = self.portal.projects_for(uid)
+        name = esc(u["name"] or "")
+        mine = [p for p in ps if "client" in p["roles"]]
+        if mine:
+            return t(lang, "welcome_client", name=name, project=esc(", ".join(self.loc(x["title"], lang) for x in mine[:3])), menu=t(lang, "menu"))
+        if self.portal.my_contractors(uid):
+            heads = [p for p in ps if "contractor" in p["roles"]]
+            now_ = t(lang, "now", project=esc(", ".join(self.loc(x["title"], lang) for x in heads[:3]))) if heads else ""
+            return t(lang, "welcome_crew", name=name, now=now_, menu=t(lang, "menu"))
+        crews = self.portal.crews_of(uid)
+        if crews:
+            return t(lang, "welcome_worker", name=name, head=esc(crews[0]["head_name"]), menu=t(lang, "menu"))
+        return t(lang, "no_projects")
 
     def invite_text(self, lang, kind, name, project, link):
-        return t(ui_lang(lang), "invite_client" if kind == "client" else "invite_contractor", name=name, project=project, link=link)
+        """Текст ссылки-приглашения. kind: client (project — проект), contractor, crew (project — имя подрядчика)."""
+        lang = ui_lang(lang)
+        if kind == "client":
+            return t(lang, "invite_client", name=name, project=project, link=link)
+        if kind == "crew":
+            return t(lang, "invite_crew", name=name, head=project, link=link)
+        return t(lang, "invite_contractor", name=name, link=link)
 
     # ---------- вход по ссылке-приглашению ----------
+    ROLE_OF = {"client": "client", "contractor": "crew", "crew": "worker"}
+    RANK = {"client": 3, "crew": 2, "worker": 1}
+
     def join_portal(self, uid, name, username, lang_code, u, token):
         if lang_code and not self.s.get(f"tg:lang:{uid}"):
             self.s.put(f"tg:lang:{uid}", str(lang_code)[:8])
         if u and u["status"] == "active" and self.is_admin(u):
-            return self.send(uid, "Это ссылка для заказчика или подрядчика — по ней он попадёт в кабинет проекта. "
-                                  "Вы в студии: кабинет глазами заказчика или подрядчика можно посмотреть в «Студии» — "
-                                  "проект → «👁 Как видит заказчик». Ссылка осталась действующей.")
-        if not getattr(self, "portal", None):
+            return self.send(uid, "Это ссылка для заказчика, подрядчика или работника — по ней он попадёт в кабинет. "
+                                  "Вы в студии: кабинет глазами заказчика, подрядчика или работника можно посмотреть в «Студии» — "
+                                  "проект → «👁 Как видит…». Ссылка осталась действующей.")
+        if not self.has_portal():
             return self.send(uid, t(self.lang_of(uid), "invite_bad"))
         inv = self.portal.invite(token)
         if inv and not lang_code and not self.s.get(f"tg:lang:{uid}"):
@@ -330,13 +433,13 @@ class PortalBotMixin:
         lang = self.lang_of(uid)
         if not r:
             return self.send(uid, t(lang, "invite_bad"))
-        role = "client" if r["kind"] == "client" else "crew"
+        role = self.ROLE_OF[r["kind"]]
         if not u:
             self.s.run("INSERT INTO users(tg_id, name, username, role, status, created, updated) VALUES(?, ?, ?, ?, 'active', ?, ?)",
                        uid, name, username, role, _now(), _now())
         elif u["status"] != "active" or u["role"] in (None,) + PORTAL_ROLES:
-            if u["role"] == "client" and role == "crew" and u["status"] == "active":
-                role = "client"                           # и заказчик, и подрядчик — главное, что заказчик
+            if u["status"] == "active" and self.RANK.get(u["role"], 0) > self.RANK[role]:
+                role = u["role"]                          # и заказчик, и подрядчик — главное, что заказчик
             self.s.run("UPDATE users SET role=?, status='active', partner_id=NULL, updated=? WHERE tg_id=?", role, _now(), uid)
         if r.get("replaced"):                             # к этой записи был привязан другой Telegram — у него доступа больше нет
             self.portal_unlinked(r["replaced"])
@@ -344,22 +447,31 @@ class PortalBotMixin:
         self.set_commands(u)
         self.sync_portal_menu(uid)
         p = r["project"] or {}
-        self.send(uid, t(lang, "welcome_client" if r["kind"] == "client" else "welcome_crew", name=esc(name),
-                         project=esc(self.loc(p.get("title") or "", lang)), menu=t(lang, "menu")),
-                  [self.portal_row(lang, f"project={p.get('id')}")] if self.portal_row(lang) else None)
-        what = "заказчик" if r["kind"] == "client" else "подрядчик"
+        row = self.portal_row(lang, f"project={p['id']}" if p.get("id") else "")
+        self.send(uid, self.portal_welcome(u), [row] if row else None)
+        tgline = f"\nTelegram: {esc(name)}" + (f" (@{esc(username)})" if username else "")
+        if r["kind"] == "crew":
+            head = r.get("head") or {}
+            pos = r["ref"].get("position") or ""
+            self.notify(f"✅ <b>{esc(r['ref']['name'])}</b>{(' (' + esc(pos) + ')') if pos else ''} из бригады подрядчика "
+                        f"<b>{esc(head.get('name') or '')}</b> подключился к кабинету{tgline}", roles=("designer",))
+            if head.get("tg_id") and self._active(head["tg_id"]):
+                hl = self.lang_of(head["tg_id"])
+                hrow = self.portal_row(hl, "team=1")
+                self.send(head["tg_id"], t(hl, "crew_joined", name=esc(r["ref"]["name"])), [hrow] if hrow else None)
+            return
+        what = "заказчик проекта «" + esc(p.get("title") or "") + "»" if r["kind"] == "client" else \
+            "подрядчик" + (" (сейчас в проекте «" + esc(p.get("title") or "") + "»)" if p.get("id") else " — проекты, куда его добавят, увидит сам")
         btn = self.studio_button("📁 Открыть проект", p.get("id")) if p.get("id") else None
-        self.notify(f"✅ <b>{esc(r['ref']['name'])}</b> подключился к кабинету — {what} проекта «{esc(p.get('title') or '')}»"
-                    f"\nTelegram: {esc(name)}" + (f" (@{esc(username)})" if username else ""),
+        self.notify(f"✅ <b>{esc(r['ref']['name'])}</b> подключился к кабинету — {what}{tgline}",
                     roles=("designer",), rows=[btn] if btn else None)
 
     def portal_unlinked(self, tg_id):
-        """Telegram отвязан от заказчика или подрядчика: если других проектов в кабинете нет — доступ к боту закрыт."""
+        """Telegram отвязан (заказчик, подрядчик или работник): если кабинета у него больше нет — доступ к боту закрыт."""
         u = self.user(tg_id)
         if not u:
             return
-        left = self.portal.projects_for(tg_id) if getattr(self, "portal", None) else []
-        if not left and u["role"] in PORTAL_ROLES and u["status"] == "active":
+        if u["role"] in PORTAL_ROLES and u["status"] == "active" and not (self.has_portal() and self.portal.has_cabinet(tg_id)):
             self.s.run("UPDATE users SET status='removed', updated=? WHERE tg_id=?", _now(), tg_id)
             self.send(tg_id, t(self.lang_of(tg_id), "closed"))
         self.sync_portal_menu(tg_id)
@@ -368,64 +480,74 @@ class PortalBotMixin:
         """Заказчика или подрядчика с привязанным Telegram снова добавили в проект — открыть доступ к боту обратно
         (если его закрыли, когда проектов не осталось; закрытое студией вручную — тоже, раз студия добавила снова)."""
         u = self.user(tg_id)
-        if u and u["role"] in PORTAL_ROLES and u["status"] == "removed" and self.portal.projects_for(tg_id):
+        if u and u["role"] in PORTAL_ROLES and u["status"] == "removed" and self.portal.has_cabinet(tg_id):
             self.s.run("UPDATE users SET status='active', updated=? WHERE tg_id=?", _now(), tg_id)
             row = self.portal_row(self.lang_of(tg_id))
             self.send(tg_id, self.portal_welcome(self.user(tg_id)), [row] if row else None)
         self.sync_portal_menu(tg_id)
 
     # ---------- сообщения в чате бота ----------
-    def _map_put(self, chat_id, message_id, pid):
+    def _map_put(self, chat_id, message_id, pid, tid):
         if message_id:
-            self.s.put(f"chatmap:{chat_id}:{message_id}", json.dumps({"p": int(pid), "t": int(time.time())}))
+            self.s.put(f"chatmap:{chat_id}:{message_id}", json.dumps({"p": int(pid), "th": int(tid), "t": int(time.time())}))
 
     def _map_get(self, chat_id, message_id):
+        """Разговор, на сообщение которого отвечают свайпом (или None)."""
         try:
-            return int(json.loads(self.s.get(f"chatmap:{chat_id}:{message_id}") or "{}").get("p") or 0) or None
+            d = json.loads(self.s.get(f"chatmap:{chat_id}:{message_id}") or "{}")
         except (ValueError, TypeError):
             return None
+        th = int(d.get("th") or 0)
+        if not th and d.get("p") and self.has_portal():          # ответ на сообщение первой версии — переписка с заказчиками
+            t0 = self.crm.one("SELECT id FROM threads WHERE project_id=? AND kind='client'", int(d["p"]))
+            th = t0["id"] if t0 else 0
+        return self.portal.thread(th) if th and self.has_portal() else None
 
     def chat_reply(self, u, m):
-        """Ответ студии свайпом на сообщение заказчика (или на своё сообщение в переписке) — в переписку проекта."""
+        """Ответ студии свайпом на сообщение разговора — в этот разговор (в разговоре заказчика с подрядчиком студия так вступает)."""
         r = m.get("reply_to_message") or {}
-        pid = self._map_get(u["tg_id"], r.get("message_id")) if r else None
-        if not pid or not getattr(self, "portal", None):
+        th = self._map_get(u["tg_id"], r.get("message_id")) if r else None
+        if not th:
             return False
-        self._chat_in(u, pid, (m.get("text") or m.get("caption") or "").strip(), self.file_of(m), "studio")
+        v = self.portal.viewer(u["tg_id"], th["project_id"], designer=True)
+        self._chat_in(u, th, (m.get("text") or m.get("caption") or "").strip(), self.file_of(m), v)
         return True
 
     def portal_message(self, u, m, text, cmd):
-        """Заказчик или подрядчик пишет в чат бота. Заказчик — в переписку своего проекта (один проект — сразу,
-        несколько — спросить, к какому; ответ свайпом — в тот же проект). Подрядчику — как связаться со студией."""
+        """Заказчик, подрядчик или работник пишет в чат бота. Ответ свайпом — в тот разговор; иначе — в свой разговор со
+        студией (один проект — сразу, несколько — спросить, к какому)."""
         uid, lang = u["tg_id"], self.lang_of(u["tg_id"])
-        if not getattr(self, "portal", None):
+        if not self.has_portal():
             return
-        ps = self.portal.projects_for(uid)
         if cmd:                                           # /start, /help и любые команды — что это за бот
             row = self.portal_row(lang)
-            return self.send(uid, self.portal_welcome(u), [row] if row and ps else None)
-        mine = [p for p in ps if "client" in p["roles"]]
-        if not mine:
-            if not ps:
-                return self.send(uid, t(lang, "no_projects"))
-            return self.send(uid, t(lang, "crew_no_chat", phone=STUDIO["phone"], email=STUDIO["email"]))
+            return self.send(uid, self.portal_welcome(u), [row] if row and self.portal.has_cabinet(uid) else None)
         f = self.file_of(m)
         body = (m.get("text") or m.get("caption") or "").strip()
         if not body and not f:
             return
         r = m.get("reply_to_message") or {}
-        pid = self._map_get(uid, r.get("message_id")) if r else None
-        if pid not in [p["id"] for p in mine]:
-            pid = mine[0]["id"] if len(mine) == 1 else None
-        if not pid:
-            self.s.put(f"pchat:{uid}", json.dumps({"text": body, "file": f, "ts": time.time()}, ensure_ascii=False))
-            return self.send(uid, t(lang, "pick"), [[(p["title"][:60], f"pp:{p['id']}")] for p in mine[:8]])
-        self._chat_in(u, pid, body, f, "client")
+        th = self._map_get(uid, r.get("message_id")) if r else None
+        if th:
+            v = self.portal.viewer(uid, th["project_id"])
+            acc = self.portal.access(v, th)
+            if acc == "write":
+                return self._chat_in(u, th, body, f, v)
+            if acc == "read":
+                return self.send(uid, t(lang, "read_only"))
+        opts = self.portal.default_threads(uid)
+        if not opts:
+            return self.send(uid, t(lang, "no_projects"))
+        if len(opts) == 1:
+            p, th = opts[0]
+            return self._chat_in(u, th, body, f, self.portal.viewer(uid, p["id"]))
+        self.s.put(f"pchat:{uid}", json.dumps({"text": body, "file": f, "ts": time.time()}, ensure_ascii=False))
+        return self.send(uid, t(lang, "pick"), [[(self.loc(p["title"], lang)[:60], f"pp:{p['id']}")] for p, _ in opts[:8]])
 
-    def _chat_in(self, u, pid, text, f, kind):
-        """Сообщение из чата бота → в переписку проекта (вложение — в файлы переписки) → остальным участникам."""
+    def _chat_in(self, u, th, text, f, v):
+        """Сообщение из чата бота → в разговор (вложение — в файлы разговора) → остальным участникам."""
         uid = u["tg_id"]
-        lang = "ru" if kind == "studio" else self.lang_of(uid)
+        lang = "ru" if v["studio"] else self.lang_of(uid)
         fid = None
         if f:
             if f.get("size") and f["size"] > CHAT_FILE_MAX:
@@ -433,94 +555,142 @@ class PortalBotMixin:
             try:
                 with self._download(f["id"]) as r:
                     size = int(r.headers.get("Content-Length") or f["size"] or 0)
-                    rec = self.crm.add_file(pid, "chat", f["name"], r, size, f["mime"], u["name"] or str(uid),
+                    rec = self.crm.add_file(th["project_id"], "chat", f["name"], r, size, f["mime"], u["name"] or str(uid),
                                             tg_file_id=f"{f['kind']}:{f['id']}")
                 fid = rec["id"]
             except Exception as e:  # noqa: BLE001
                 self.log(f"переписка: файл не сохранён: {type(e).__name__}: {e}")
                 if not text:
                     return self.send(uid, "⚠️ " + esc(str(e))[:300])
-        author = STUDIO["designer"]["ru"] if kind == "studio" else (u["name"] or str(uid))
         try:
-            msg = self.portal.post(pid, kind, uid, author, text, fid)
+            kind, author = self.portal.author(v, th)
+            msg = self.portal.post(th["id"], kind, uid, author, text, fid)
         except CrmError as e:
             return self.send(uid, "⚠️ " + esc(e))
         threading.Thread(target=self.chat_fanout, args=(msg["id"],), kwargs={"confirm_to": uid}, daemon=True).start()
 
-    # ---------- рассылка сообщения переписки ----------
-    def _recipients(self, pid, author_kind, author_tg):
-        """Кому доставить: сообщение студии — заказчикам проекта; сообщение заказчика — дизайнерам и остальным заказчикам."""
-        out = []
-        if author_kind == "client":
-            out += [(d["tg_id"], "ru", "studio", d["name"] or "") for d in self.active(("designer",))]
-        for c in self.portal.chat_people(pid):
-            tg = int(c["tg_id"])
-            if tg == int(author_tg or 0):
-                continue
-            uu = self.user(tg)
-            if uu and uu["status"] == "active":
-                out.append((tg, self.lang_of(tg), "client", c["name"]))
-        return out
+    # ---------- рассылка сообщения разговора ----------
+    def _thread_bits(self, th):
+        """Подрядчик и работник разговора — для подписей."""
+        c = self.crm.one("""SELECT c.name, COALESCE(l.trade, c.trade) AS trade FROM contractors c
+                            LEFT JOIN project_contractors l ON l.contractor_id=c.id AND l.project_id=? WHERE c.id=?""",
+                         th["project_id"], th["contractor_id"] or 0) or {}
+        w = self.crm.one("SELECT w.name, w.position, c.name AS head FROM crew w JOIN contractors c ON c.id=w.contractor_id WHERE w.id=?",
+                         th["crew_id"] or 0) or {}
+        return c, w
+
+    def _ctx_ru(self, th, m):
+        """Чей это разговор — подпись для студии (и наблюдателя), по-русски."""
+        k, a = th["kind"], m["author_kind"]
+        c, w = self._thread_bits(th)
+        cname = (c.get("name") or "") + (f" ({c['trade']})" if c.get("trade") else "")
+        if k == "pc":
+            line = ("Заказчик → подрядчику " + cname if a == "client" else "Подрядчик → заказчику" if a == "contractor"
+                    else "В разговоре заказчика с подрядчиком " + cname)
+            if not th["studio_joined"]:
+                line += "\nВы видите, но не участвуете — пока не ответите (потяните сообщение влево)."
+            return line
+        if k == "org":
+            return ("Студия → подрядчику " if a == "studio" else "Подрядчик ") + cname
+        if k == "worker":
+            who = (w.get("name") or "") + (f" ({w['position']})" if w.get("position") else "") + (f", бригада {w['head']}" if w.get("head") else "")
+            return ("Студия → " if a == "studio" else "Работник ") + who
+        if k == "group":
+            return f"Группа «{th['title'] or ''}»"
+        return "Студия → заказчикам" if a == "studio" else ""
+
+    DEFAULT_KIND = {"client": "client", "contractor": "org", "crew": "worker"}
 
     def chat_fanout(self, mid, confirm_to=None):
         m = self.portal.message(mid)
-        if not m:
+        th = self.portal.thread(m["thread_id"]) if m else None
+        if not th:
             return
         pid = m["project_id"]
         p = self.crm.one("SELECT id, title FROM projects WHERE id=?", pid) or {"id": pid, "title": ""}
-        rec = self._recipients(pid, m["author_kind"], m["author_tg"])
+        r = self.portal.recipients(th["id"], m["author_tg"], m["author_kind"])
+        rec = []                                          # (tg, язык, кто, имя, со звуком)
+        if r["studio"]:
+            rec += [(d["tg_id"], "ru", "studio", d["name"] or "", r["studio"]["loud"]) for d in self.active(("designer",))]
+        for x in r["people"]:
+            if self._active(x["tg"]):
+                rec.append((x["tg"], "ru" if x["who"] == "observer" else self.lang_of(x["tg"]), x["who"], x["name"], x["loud"]))
         text = m["text"] or ""
         tr, src = {}, None
         if text and self.can_translate():
-            for lang in sorted({x[1] for x in rec} | ({"ru"} if m["author_kind"] == "client" else set())):
+            for lang in sorted({x[1] for x in rec}):
                 try:
-                    r = translate_text(text, lang)
+                    res = translate_text(text, lang)
                 except Exception as e:  # noqa: BLE001
                     self.log(f"перевод переписки ({lang}): ошибка {type(e).__name__}: {e}")
-                    r = None
-                if r:
-                    src, tr[lang] = r
-                    self.portal.set_translation(mid, lang, r[1], r[0])
+                    res = None
+                if res:
+                    src, tr[lang] = res
+                    self.portal.set_translation(mid, lang, res[1], res[0])
         f = self.crm.one("SELECT * FROM files WHERE id=?", m["file_id"]) if m["file_id"] else None
+        c, w = self._thread_bits(th)
         delivered, failed = [], []
-        for tg, lang, kind, name in rec:
-            if kind == "studio":
-                head = f"💬 <b>{esc(m['author_name'])}</b> · «{esc(p['title'])}»"
+        for tg, lang, who, name, loud in rec:
+            if who in ("studio", "observer"):
+                ctx = self._ctx_ru(th, m)
+                author = STUDIO["designer"]["ru"] if m["author_kind"] == "studio" else m["author_name"]
+                head = ("🧪 " if who == "observer" else "💬 ") + f"<b>{esc(author)}</b> · «{esc(p['title'])}»" + (f"\n<i>{esc(ctx)}</i>" if ctx else "")
                 body = esc(text)
                 if tr.get("ru"):
                     body += f"\n\n<i>Перевод на русский{(' ' + esc(lang_from(src))) if src else ''}:</i>\n{esc(tr['ru'])}"
-                body += "\n\n<i>↩︎ Ответить: потяните сообщение влево</i>"
-                rows = [self.studio_button("💬 Открыть переписку", query=f"project={pid}&chat=1")]
+                if who == "studio":
+                    body += "\n\n<i>↩︎ Ответить: потяните сообщение влево</i>"
+                    rows = [self.studio_button("💬 Открыть разговор", query=f"project={pid}&thread={th['id']}")]
+                else:
+                    rows = [self.portal_row("ru", f"project={pid}&thread={th['id']}", "open_chat")]
             else:
-                who = self.designer_name(lang) if m["author_kind"] == "studio" else m["author_name"]
-                head = f"💬 <b>{esc(who)}</b> · «{esc(self.loc(p['title'], lang))}»"
+                if m["author_kind"] == "studio":
+                    author = self.designer_name(lang)
+                elif m["author_kind"] == "contractor":
+                    author = m["author_name"] + (f" · {self.loc(c['trade'], lang)}" if th["kind"] == "pc" and who == "client" and c.get("trade") else "")
+                elif m["author_kind"] == "client" and who != "client":
+                    author = m["author_name"] + " · " + t(lang, "role_client")
+                else:
+                    author = m["author_name"]
+                ctx = ""
+                if th["kind"] == "group":
+                    ctx = t(lang, "ctx_group", title=th["title"] or "")
+                elif th["kind"] == "worker" and who == "contractor":
+                    ctx = t(lang, "ctx_watch", name=w.get("name") or "")
+                if th["kind"] == "group" and not loud:
+                    ctx = "👁 " + ctx
+                head = f"💬 <b>{esc(author)}</b> · «{esc(self.loc(p['title'], lang))}»" + (f"\n<i>{esc(ctx)}</i>" if ctx else "")
                 body = esc(tr.get(lang) or text)
                 if tr.get(lang):
                     body += f"\n\n<i>{t(lang, 'auto_tr')}</i>"
-                rows = [self.portal_row(lang, f"project={pid}&tab=chat", "open_chat")]
-            rows = [r for r in rows if r] or None
-            ok, why, msg_id = self._send_chat(tg, head, body if text else "", f, rows)
+                if loud and th["kind"] != self.DEFAULT_KIND.get(who):     # не «свой» разговор — ответ только свайпом
+                    body += f"\n\n<i>{t(lang, 'reply_hint')}</i>"
+                rows = [self.portal_row(lang, f"project={pid}&thread={th['id']}", "open_chat")]
+            rows = [x for x in rows if x] or None
+            ok, why, msg_id = self._send_chat(tg, head, body.strip(), f, rows, silent=not loud)
             if ok:
-                delivered.append(name)
-                self._map_put(tg, msg_id, pid)
-            else:
+                if who != "observer":
+                    delivered.append(name)
+                    self._map_put(tg, msg_id, pid, th["id"])
+            elif who != "observer":
                 failed.append((name, why))
         if confirm_to:
             u = self.user(confirm_to)
+            to = [x for x in rec if x[2] != "observer"]
             if u and self.is_admin(u):
                 line = ("✓ Отправлено: " + ", ".join(esc(x) for x in delivered)) if delivered else "⚠️ Никому не доставлено"
-                if any(tr.get(x[1]) for x in rec if x[2] == "client"):
+                if any(tr.get(x[1]) for x in to if x[2] != "studio"):
                     line += " (с переводом)"
                 if failed:
-                    line += "\n" + "\n".join(f"⚠️ {esc(n)} — не доставлено: {esc(self.why(w))}" for n, w in failed)
-                if not rec:
-                    line = "⚠️ Заказчики проекта ещё не подключены к кабинету — сообщение сохранено в переписке, но никому не отправлено."
+                    line += "\n" + "\n".join(f"⚠️ {esc(n)} — не доставлено: {esc(self.why(w_))}" for n, w_ in failed)
+                if not to:
+                    line = "⚠️ Здесь пока никто не подключён к боту — сообщение сохранено в разговоре, но никому не отправлено."
                 self.send(confirm_to, line)
             elif u:
                 self.send(confirm_to, t(self.lang_of(confirm_to), "sent", project=esc(self.loc(p["title"], self.lang_of(confirm_to)))))
         elif m["author_kind"] == "studio" and failed:
-            self.notify("⚠️ Сообщение в переписке «" + esc(p["title"]) + "» не доставлено:\n" +
-                        "\n".join(f"{esc(n)} — {esc(self.why(w))}" for n, w in failed), roles=("designer",))
+            self.notify("⚠️ Сообщение в разговоре «" + esc(p["title"]) + "» не доставлено:\n" +
+                        "\n".join(f"{esc(n)} — {esc(self.why(w_))}" for n, w_ in failed), roles=("designer",))
 
     @staticmethod
     def why(desc):
@@ -530,26 +700,28 @@ class PortalBotMixin:
         except ImportError:
             return desc
 
-    def _send_chat(self, chat_id, head, body, f, rows):
-        """Сообщение переписки в Telegram: текст или файл с подписью. (доставлено, причина, номер сообщения)."""
+    def _send_chat(self, chat_id, head, body, f, rows, silent=False):
+        """Сообщение разговора в Telegram: текст или файл с подписью. (доставлено, причина, номер сообщения)."""
         text = head + ("\n" + body if body else "")
         if not f:
             p = {"chat_id": chat_id, "text": text[:4090], "parse_mode": "HTML", "link_preview_options": {"is_disabled": True}}
             if rows:
                 p["reply_markup"] = self.kb(rows)
+            if silent:
+                p["disable_notification"] = True
             r = self.api("sendMessage", **p)
             return bool(r.get("ok")), str(r.get("description") or ""), (r.get("result") or {}).get("message_id")
         caption = text if len(text) <= 1000 else head
-        ok, why, mid = self.send_file_r(chat_id, f, self.crm.file_path(f["id"], "o")[0], caption=caption, rows=rows)
+        ok, why, mid = self.send_file_r(chat_id, f, self.crm.file_path(f["id"], "o")[0], caption=caption, rows=rows, silent=silent)
         if ok and caption != text:
-            self.send_r(chat_id, text[:4090])
+            self.send_r(chat_id, text[:4090], disable_notification=True)
         return ok, why, mid
 
-    # ---------- кнопки заказчика ----------
+    # ---------- кнопки в чате ----------
     def portal_callback(self, who, msg, parts):
         uid, lang = who["tg_id"], self.lang_of(who["tg_id"])
         act = parts[0]
-        if not getattr(self, "portal", None):
+        if not self.has_portal():
             return
         if act in ("pc", "pd"):
             sid = int(parts[1])
@@ -561,18 +733,19 @@ class PortalBotMixin:
             row = self.portal_row(lang, f"project={st['project_id']}")
             return self.edit(msg, self._stage_text(st["id"], lang) + "\n\n" + t(lang, "you_confirmed" if act == "pc" else "you_disputed"),
                              [row] if row else None)
-        if act == "pp":                                     # к какому проекту сообщение (у заказчика несколько проектов)
+        if act == "pp":                                     # к какому проекту сообщение (несколько проектов)
             pid = int(parts[1])
             try:
                 d = json.loads(self.s.get(f"pchat:{uid}") or "{}")
             except ValueError:
                 d = {}
             self.s.drop(f"pchat:{uid}")
-            if not d or time.time() - d.get("ts", 0) > 1800 or not self.portal.client_of(uid, pid):
+            th = next((x for p, x in self.portal.default_threads(uid) if p["id"] == pid), None)
+            if not d or time.time() - d.get("ts", 0) > 1800 or not th:
                 return self.edit(msg, t(lang, "stage_gone"))
             p = self.crm.one("SELECT title FROM projects WHERE id=?", pid) or {}
-            self.edit(msg, "→ «" + esc(p.get("title") or "") + "»")
-            self._chat_in(who, pid, d.get("text") or "", d.get("file"), "client")
+            self.edit(msg, "→ «" + esc(self.loc(p.get("title") or "", lang)) + "»")
+            self._chat_in(who, th, d.get("text") or "", d.get("file"), self.portal.viewer(uid, pid))
 
     # ---------- события из кабинета и «Студии» ----------
     def _stage_info(self, sid):
@@ -645,7 +818,7 @@ class PortalBotMixin:
                                         title=esc(self.loc(st["title"], lang) or "—"), amount=money(st["amount"], st["currency"], lang)),
                           [row] if row else None)
             return
-        if kind == "link_new":
+        if kind == "link_new":                              # подрядчика добавили в проект
             link = self.crm.one("""SELECT l.project_id, l.trade AS link_trade, c.trade, c.tg_id FROM project_contractors l
                                    JOIN contractors c ON c.id=l.contractor_id WHERE l.id=?""", int(kw.get("link_id") or 0))
             if not link or not link["tg_id"]:
@@ -693,6 +866,74 @@ class PortalBotMixin:
                          per=t(lang, "per_month") if monthly else "", when=t(lang, "first_pay" if monthly else "pay_by", date=dmy(s["start"])))
                 row = self.portal_row(lang, f"project={s['project_id']}&tab=money")
                 self.send(tg, text, [row] if row else None)
+            return
+        if kind == "crew_assigned":                         # работника отметили на объекте — ему сообщение и кнопка
+            w = self.crm.one("SELECT * FROM crew WHERE id=? AND removed IS NULL", int(kw.get("crew_id") or 0))
+            if not w or not w["tg_id"]:
+                return
+            self.portal_relinked(w["tg_id"])
+            if not self._active(w["tg_id"]):
+                return
+            p = self.crm.one("SELECT id, title FROM projects WHERE id=?", int(kw.get("project_id") or 0)) or {}
+            lang = self.lang_of(w["tg_id"])
+            row = self.portal_row(lang, f"project={p.get('id')}")
+            self.sync_portal_menu(w["tg_id"])
+            self.send(w["tg_id"], t(lang, "crew_assigned", project=esc(self.loc(p.get("title") or "", lang))), [row] if row else None)
+            return
+        if kind == "group_new":                             # Ирина собрала группу — участникам сообщение на их языке
+            th = self.portal.thread(kw.get("thread_id"))
+            if not th:
+                return
+            p = self.crm.one("SELECT id, title FROM projects WHERE id=?", th["project_id"]) or {}
+            names, tgs = [], []
+            for m in self.portal.members(th["id"]):
+                if m["kind"] == "contractor":
+                    x = self.crm.one("SELECT name, tg_id FROM contractors WHERE id=?", m["ref_id"]) or {}
+                else:
+                    x = self.crm.one("SELECT name, tg_id FROM crew WHERE id=? AND removed IS NULL", m["ref_id"]) or {}
+                if x.get("name"):
+                    names.append(x["name"])
+                if x.get("tg_id") and (not kw.get("only") or m in kw["only"]):
+                    tgs.append(int(x["tg_id"]))
+            for tg in dict.fromkeys(tgs):
+                if not self._active(tg):
+                    continue
+                lang = self.lang_of(tg)
+                row = self.portal_row(lang, f"project={p.get('id')}&thread={th['id']}", "open_chat")
+                ok, _, mid = self._send_chat(tg, t(lang, "group_new", who=esc(self.designer_name(lang)), title=esc(th["title"] or ""),
+                                                   project=esc(self.loc(p.get("title") or "", lang)), members=esc(", ".join(names))),
+                                             "", None, [row] if row else None)
+                if ok:
+                    self._map_put(tg, mid, th["project_id"], th["id"])     # ответ свайпом на это сообщение — в группу
+            return
+        if kind == "doc_new":                               # документ подрядчика или работника: студии, подрядчику, заказчику
+            f = self.crm.one("SELECT * FROM files WHERE id=?", int(kw.get("file_id") or 0))
+            if not f:
+                return
+            p = self.crm.one("SELECT id, title FROM projects WHERE id=?", f["project_id"]) or {}
+            head = self.crm.one("SELECT id, name, trade, tg_id FROM contractors WHERE id=?", f["owner_contractor"] or 0) or {}
+            wk = self.crm.one("SELECT name, position, tg_id FROM crew WHERE id=?", f["owner_crew"] or 0) if f["owner_crew"] else None
+            who = (wk["name"] + (f" ({wk['position']})" if wk.get("position") else "") + f", бригада {head.get('name') or ''}") if wk \
+                else (head.get("name") or "") + (f" ({head['trade']})" if head.get("trade") else "")
+            title = f["title"] or f["name"] or ""
+            aud = self.portal.audience(f)
+            studio = self.studio_button("📁 Открыть проект", p.get("id"))
+            self.notify(f"📎 <b>Новый документ</b> · «{esc(p.get('title') or '')}»\n{esc(who)}: {esc(title)}\n<i>Видят: {esc(aud)}</i>",
+                        roles=("designer",), rows=[studio] if studio else None)
+            name = wk["name"] if wk else head.get("name") or ""
+            targets = []
+            if wk and head.get("tg_id") and head["tg_id"] != wk.get("tg_id"):
+                targets.append(int(head["tg_id"]))
+            if f["vis"] == "client" or f["see_client"] == 1:
+                targets += self._client_tgs(f["project_id"])
+            for tg in dict.fromkeys(targets):
+                if not self._active(tg):
+                    continue
+                lang = self.lang_of(tg)
+                row = self.portal_row(lang, f"project={p.get('id')}&tab=docs")
+                self.send(tg, t(lang, "doc_new", project=esc(self.loc(p.get("title") or "", lang)), who=esc(name), title=esc(title)),
+                          [row] if row else None)
+            return
 
     def _active(self, tg):
         uu = self.user(tg)

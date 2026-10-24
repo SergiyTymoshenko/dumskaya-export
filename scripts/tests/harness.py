@@ -48,7 +48,17 @@ def fake_api(self, method, **params):
     return {"ok": True, "result": True}
 
 
+def fake_send_file_r(self, chat_id, f, path, caption=None, rows=None, silent=False):
+    """Файл в Telegram (на самом деле — запрос с файлом напрямую): только записываем."""
+    _mid[0] += 1
+    method = "sendPhoto" if (f.get("mime") or "").startswith("image/") else "sendDocument"
+    CALLS.append((method, {"chat_id": chat_id, "caption": caption or f["name"], "disable_notification": silent, "file": f["name"],
+                           "reply_markup": self.kb(rows) if rows else None}))
+    return True, "", _mid[0]
+
+
 Bot.api = fake_api
+Bot.send_file_r = fake_send_file_r
 Bot.stats_app_url = lambda self: "https://dumskaya-design.com/api/stats/app"
 
 
@@ -67,7 +77,7 @@ lead_service.TG_TOKEN = TOKEN
 crm_api.CRM, crm_api.BOT, crm_api.PORTAL = crm, bot, portal
 portal_api.CRM, portal_api.BOT, portal_api.PORTAL, portal_api.CHECK, portal_api.TOKEN = crm, bot, portal, check_init_data, TOKEN
 
-IRINA, CLIENT, CLIENT2, CREW = 2, 100, 101, 200
+IRINA, CLIENT, CLIENT2, CREW, CREW2, WORKER, WORKER2, OWNER = 2, 100, 101, 200, 201, 300, 301, 1
 bot.s.run("INSERT INTO users(tg_id, name, role, status, created, updated) VALUES(?, 'Ирина', 'designer', 'active', '', '')", IRINA)
 
 
@@ -95,7 +105,7 @@ def update(uid, text="", first="Анна", lang="sk", reply_to=None, photo=None,
 
 
 def seed(full=True):
-    """Проект с двумя заказчиками, подрядчиками, этапами, товарами, услугами, файлами и перепиской."""
+    """Проект с двумя заказчиками, подрядчиками, этапами, товарами, услугами, файлами и разговором со студией."""
     w = "Ирина"
     p = crm.save_project({"title": "Квартира 127 м², Ружинов", "number": "2026-014", "city": "Братислава", "country": "Словакия",
                           "address": "Ružinovská 12", "area": 127, "tariff": "Премиум", "total_eur": 6350, "status": "active",
@@ -143,22 +153,34 @@ def seed(full=True):
                       ("before", "do-01.png"), ("docs", "razvertki-kuhni.pdf"), ("other", "schet-baxter-zakupka.pdf"), ("brief", "oprosnik.pdf")):
         data = png if name.endswith(".png") else b"%PDF-1.4 test"
         crm.add_file(pid, cat, name, BytesIO(data), len(data), "image/png" if name.endswith(".png") else "application/pdf", w)
-    portal.post(pid, "client", CLIENT, "Anna Nováková", "Dobrý deň, kedy presne príde sedačka? Budeme doma od 15:00.")
-    m1 = portal.post(pid, "studio", IRINA, "Ирина Думская", "Добрый день! Диван приедет 20 ноября, между 15 и 18 часами.")
+    th = portal.ensure_thread(pid, "client")
+    portal.post(th["id"], "client", CLIENT, "Anna Nováková", "Dobrý deň, kedy presne príde sedačka? Budeme doma od 15:00.")
+    m1 = portal.post(th["id"], "studio", IRINA, "Ирина Думская", "Добрый день! Диван приедет 20 ноября, между 15 и 18 часами.")
     portal.set_translation(m1["id"], "sk", "Dobrý deň! Sedačka príde 20. novembra medzi 15:00 a 18:00.", "ru")
     m0 = crm.one("SELECT id FROM messages WHERE project_id=? ORDER BY id LIMIT 1", pid)
     portal.set_translation(m0["id"], "ru", "Добрый день, когда точно приедет диван? Мы будем дома с 15:00.", "sk")
     return locals()
 
 
-def link_people(env):
-    """Привязать Telegram: Анна — заказчик, Михаил — подрядчик (как будто прошли по ссылкам)."""
+def link_people(env, team=True):
+    """Привязать Telegram (как будто прошли по ссылкам): Анна — заказчик, Михаил — подрядчик (прораб); с team — ещё
+    Лукаш (мебельщик) с технологом и плиточник из бригады Михаила, все на этом объекте, и наблюдатель «Разработчик ПО»."""
     crm.run("UPDATE clients SET tg_id=?, tg_name='Anna' WHERE id=?", CLIENT, env["a"]["id"])
     crm.run("UPDATE contractors SET tg_id=?, tg_name='Михаил' WHERE id=?", CREW, env["k1"]["id"])
-    for uid, role, name in ((CLIENT, "client", "Anna"), (CREW, "crew", "Михаил")):
+    people = [(CLIENT, "client", "Anna", "sk"), (CREW, "crew", "Михаил", "uk")]
+    if team:
+        crm.run("UPDATE contractors SET tg_id=?, tg_name='Lukáš' WHERE id=?", CREW2, env["k2"]["id"])
+        env["w1"] = portal.crew_add(env["k1"]["id"], {"name": "Олег Кравец", "position": "плиточник", "phone": "+421 948 100 200"}, "Михаил")
+        env["w2"] = portal.crew_add(env["k2"]["id"], {"name": "Jana Kováčová", "position": "технолог", "phone": "+421 948 300 400"}, "Lukáš")
+        crm.run("UPDATE crew SET tg_id=?, tg_name='Олег' WHERE id=?", WORKER, env["w1"])
+        crm.run("UPDATE crew SET tg_id=?, tg_name='Jana' WHERE id=?", WORKER2, env["w2"])
+        portal.crew_assign(env["pid"], env["w1"], True, "Михаил")
+        portal.crew_assign(env["pid"], env["w2"], True, "Lukáš")
+        portal.ensure_observer(OWNER)
+        people += [(CREW2, "crew", "Lukáš", "sk"), (WORKER, "worker", "Олег", "ru"), (WORKER2, "worker", "Jana", "sk")]
+    for uid, role, name, lang in people:
         bot.s.run("INSERT OR REPLACE INTO users(tg_id, name, role, status, created, updated) VALUES(?, ?, ?, 'active', '', '')", uid, name, role)
-    bot.s.put(f"tg:lang:{CLIENT}", "sk")
-    bot.s.put(f"tg:lang:{CREW}", "uk")
+        bot.s.put(f"tg:lang:{uid}", lang)
 
 
 def serve(port):
