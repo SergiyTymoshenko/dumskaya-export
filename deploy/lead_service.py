@@ -71,7 +71,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
 from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
-                        is_own, mark_own, me_data, record_hit, remember, web)
+                        is_own, mark_own, me_data, record_hit, record_time, web)
 from translate import lang_from, provider, translate_lead  # noqa: E402
 
 BOT = None
@@ -205,9 +205,9 @@ class Handler(BaseHTTPRequestHandler):
         return u if u and u["role"] == "owner" else None
 
     def hit(self):
-        """Сообщение скрипта на страницах сайта: нажатие на телефон, e-mail или мессенджер (тип и страница —
-        в hits.jsonl, без IP) или «время на странице» (сколько секунд страница была на экране — только в памяти,
-        для карточек посетителей в «1 час»)."""
+        """Сообщение скрипта на страницах сайта: нажатие на телефон, e-mail или мессенджер (hits.jsonl) или «время
+        на странице» — сколько секунд страница была на экране (times.jsonl). В оба файла — страница и обезличенный ключ
+        посетителя (хеш IP + браузера с солью сервера), без самого IP."""
         try:
             n = int(self.headers.get("Content-Length") or 0)
             data = json.loads(self.rfile.read(n).decode("utf-8", "replace")) if 0 < n <= 400 else {}
@@ -224,11 +224,13 @@ class Handler(BaseHTTPRequestHandler):
             except (TypeError, ValueError):
                 secs = 0
             if 0 < secs <= 6 * 3600 and self.allow(TIME_RATE, ip, TIME_MAX):
-                remember("time", ip, ua, page, secs)
+                try:
+                    record_time(page, secs, ip, ua)
+                except OSError as e:
+                    log(f"время на странице: не записано: {e}")
         elif valid and kind in CONTACTS and self.allow(HIT_RATE, ip, HIT_MAX):
-            remember(kind, ip, ua, page)
             try:
-                record_hit(kind, page)
+                record_hit(kind, page, ip, ua)
             except OSError as e:
                 log(f"нажатия: не записано: {e}")
         self.send_response(204)

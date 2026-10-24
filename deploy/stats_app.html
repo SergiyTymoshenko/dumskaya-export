@@ -86,6 +86,7 @@
   .pages .top { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; }
   .pages .top .t { overflow-wrap: anywhere; }
   .pages .top .n { color: var(--text-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .pages .avg { color: var(--text-2); font-size: 12px; margin-top: -2px; }
   .pages .line { height: 4px; background: var(--series); border-radius: 0 2px 2px 0; min-width: 2px; }
   details { margin-top: 10px; }
   summary { cursor: pointer; color: var(--text-2); font-size: 13px; }
@@ -208,12 +209,12 @@
     const c = el('section', 'card'); c.append(el('h2', null, title)); if (note) c.append(el('p', 'note', note)); return c;
   }
 
-  function delta(cur, prev) {
+  function delta(cur, prev, show) {
     const d = el('div', 'delta');
-    if (prev == null) { d.textContent = 'сравнения пока нет'; return d; }
+    if (prev == null || cur == null) { d.textContent = 'сравнения пока нет'; return d; }
     const diff = cur - prev;
     if (!diff) { d.textContent = hourly() ? 'столько же, сколько в прошлые 24 часа' : 'столько же, сколько в прошлые ' + period + ' дней'; return d; }
-    const s = el('span', diff > 0 ? 'up' : 'down', (diff > 0 ? '▲ ' : '▼ ') + (diff > 0 ? '+' : '−') + fmt(Math.abs(diff)));
+    const s = el('span', diff > 0 ? 'up' : 'down', (diff > 0 ? '▲ ' : '▼ ') + (diff > 0 ? '+' : '−') + (show || fmt)(Math.abs(diff)));
     const pct = prev ? ' (' + (diff > 0 ? '+' : '−') + Math.round(Math.abs(diff) / prev * 100) + ' %)' : '';
     d.append(s, document.createTextNode(pct + ' к ' + prevLabel()));
     return d;
@@ -222,9 +223,9 @@
   function tile(label, value, opts) {
     const o = opts || {};
     const t = el('div', 'tile' + (o.kind ? ' ' + o.kind : ''));
-    t.append(el('div', 'label', label), el('div', 'value', fmt(value)));
+    t.append(el('div', 'label', label), el('div', 'value', value == null ? '—' : (o.show || fmt)(value)));
     if (o.split) t.append(el('div', 'split', o.split));
-    if (o.compare) t.append(delta(value, o.prev));
+    if (o.compare) t.append(delta(value, o.prev, o.show));
     return t;
   }
 
@@ -290,7 +291,7 @@
       else tipRows(r).forEach(([name, v, keyed]) => {
         const row = el('div', 'row'); const lab = el('span');
         if (keyed) lab.append(el('i', 'key')); lab.append(document.createTextNode(name));
-        row.append(lab, el('b', null, fmt(v))); tip.append(row);
+        row.append(lab, el('b', null, typeof v === 'string' ? v : fmt(v))); tip.append(row);
       });
       tip.style.display = 'block';
       const scale = svg.getBoundingClientRect().width / W;
@@ -399,15 +400,20 @@
       + (d.coverage < n ? ' · есть данные за ' + d.coverage + ' из ' + n + (hourly() ? ' ч' : ' дн.') : '');
     if (!d.coverage) { app.append(el('p', 'empty', 'За этот период в журнале сайта ещё нет записей.')); return; }
     const tiles = el('div', 'tiles');
+    const tv = tot.time_visitors;
     tiles.append(tile('Посетители', tot.visitors, { prev: prev && prev.visitors, kind: 'hero', compare: true }),
+      tile('Среднее время на сайте', tot.avg_time, { prev: prev && prev.avg_time, compare: tot.avg_time != null, show: dur,
+        split: tot.avg_time != null ? 'по ' + fmt(tv) + ' ' + plural(tv, 'посетителю', 'посетителям', 'посетителям') + ' из\u00a0' + fmt(tot.visitors)
+          : 'Время присылают страницы сайта, когда их закрывают, — пока его нет' }),
       tile('Просмотры страниц', tot.views, { prev: prev && prev.views, compare: true }),
       tile('Заявки с сайта', tot.leads, { prev: prev && prev.leads, compare: true }),
-      tile('Нажали на телефон, e-mail, мессенджер', tot.contacts, { prev: prev && prev.contacts, kind: 'wide', compare: true,
-        split: tot.contact_types.map(([nm, v]) => nm + ' ' + fmt(v)).join(' · ') || null }));
+      tile('Нажатия на контакты', tot.contacts, { prev: prev && prev.contacts, compare: true,
+        split: tot.contact_types.map(([nm, v]) => nm + ' ' + fmt(v)).join(' · ') || 'телефон, e-mail, мессенджеры' }));
     app.append(tiles);
 
     const c1 = card(hourly() ? 'Посетители по часам' : 'Посетители по дням', 'Нажмите на график — покажет ' + (hourly() ? 'час' : 'день') + ' целиком');
-    c1.append(lineChart(rows, 'visitors', (r) => [['Посетители', r.visitors, true], ['Просмотры', r.views], ['Заявки', r.leads], ['Нажатия на контакты', r.contacts]]));
+    c1.append(lineChart(rows, 'visitors', (r) => [['Посетители', r.visitors, true], ['Просмотры', r.views], ['Заявки', r.leads], ['Нажатия на контакты', r.contacts]]
+      .concat(r.avg_time != null ? [['Среднее время на сайте', dur(r.avg_time)]] : [])));
     if (rows[n - 1].partial) c1.append(el('p', 'note', hourly() ? 'Полая точка — текущий час, он ещё идёт.' : 'Полая точка — сегодня, день ещё идёт.'));
     c1.append(table(rows));
     app.append(c1);
@@ -419,13 +425,15 @@
     const c4 = card('Устройства');
     c4.append(barList(tot.devices)); app.append(c4);
 
-    const c5 = card('Популярные страницы', 'Просмотры за период');
+    const c5 = card('Популярные страницы', 'Просмотры за период и сколько в среднем на странице проводят');
     if (tot.pages.length) {
       const ul = el('ol', 'pages'); const max = tot.pages[0][1];
-      tot.pages.forEach(([title, k]) => {
+      tot.pages.forEach(([title, k, avg]) => {
         const li = el('li'); const top = el('div', 'top'); top.append(el('span', 't', title), el('span', 'n', fmt(k)));
         const ln = el('div', 'line'); ln.style.width = Math.max(1, (k / max) * 100) + '%';
-        li.append(top, ln); ul.append(li);
+        li.append(top);
+        if (avg != null) li.append(el('div', 'avg', 'в среднем ' + dur(avg) + ' на странице'));
+        li.append(ln); ul.append(li);
       });
       c5.append(ul);
     } else c5.append(el('p', 'note', 'Пока нет данных'));
@@ -499,6 +507,7 @@
     document.getElementById('sub').textContent = 'dumskaya-design.com · обновлено в ' + hm(d.generated_ts) + ' · обновляется само раз в минуту';
     const tiles = el('div', 'tiles');
     const split = ['сейчас на сайте — ' + sm.active, 'просмотров — ' + sm.views];
+    if (sm.avg_time != null) split.push('в среднем на сайте — ' + dur(sm.avg_time));
     if (sm.contacts) split.push('нажатий на контакты — ' + sm.contacts);
     if (sm.leads) split.push('заявок — ' + sm.leads);
     tiles.append(tile('Посетители за последний час', sm.visitors, { kind: 'hero', split: split.join(' · ') }));

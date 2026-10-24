@@ -39,7 +39,7 @@ import re
 import sys
 import threading
 import time
-from collections import Counter, deque
+from collections import Counter
 from datetime import date, datetime, timedelta, timezone
 from urllib.parse import parse_qsl, unquote, urlsplit
 
@@ -59,13 +59,18 @@ LOG_GLOB = os.environ.get("SITE_LOG_GLOB", "/var/log/caddy/dumskaya*.log*")
 SITE_DIR = os.environ.get("SITE_DIR", "/var/www/dumskaya/site")
 LEADS_FILE = os.environ.get("LEADS_FILE", os.path.join(APP, "leads.jsonl"))
 HITS_FILE = os.environ.get("HITS_FILE", os.path.join(APP, "hits.jsonl"))   # нажатия на телефон, e-mail, мессенджеры
+TIMES_FILE = os.environ.get("TIMES_FILE", os.path.join(APP, "times.jsonl"))   # сколько секунд страница была на экране
+TIMES_KEEP_DAYS = 90          # столько же, сколько журнал: при пересчёте дней время на сайте не теряется
+PAGE_CAP = 30 * 60            # в средних страница дольше 30 минут считается за 30 (забыли на экране)
 CONTACTS = {"tel": "телефон", "mail": "e-mail", "whatsapp": "WhatsApp", "telegram": "Telegram"}
 STATS_DIR = os.environ.get("STATS_DIR", os.path.join(APP, "stats"))
 EXCLUDE_FILE = os.path.join(STATS_DIR, "exclude.json")   # «свои» адреса (дома у студии) — их визиты не считаются
 OWN_FILE = os.path.join(STATS_DIR, "own_devices.json")    # откуда студия открывала «Графики» — эти визиты тоже свои
 OWN_WINDOW = 3 * 3600                                     # …за 3 часа до и после открытия
 VERSION_FILE = os.path.join(STATS_DIR, "version")
-STATS_VERSION = "2"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются (2: отсев сканеров)
+STATS_VERSION = "3"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
+                              # (2: отсев сканеров; 3: время на сайте и роботы без оформления и времени)
+SECRET_FILE = os.path.join(STATS_DIR, "secret")           # соль для обезличенного ключа посетителя, с сервера не уходит
 REPORT_HOUR = 9
 APP_URL = os.environ.get("STATS_APP_URL", "https://dumskaya-design.com/api/stats/app")   # мини-приложение с графиками
 KEEP_DAYS = 800
@@ -538,54 +543,156 @@ def hits_between(since_ts, until_ts, with_ts=False):
     return out
 
 
-def record_hit(kind, path):
-    """Записать нажатие (вызывает сервис заявок после своих проверок)."""
-    os.makedirs(os.path.dirname(HITS_FILE), exist_ok=True)
-    with open(HITS_FILE, "a", encoding="utf-8") as fh:
-        fh.write(json.dumps({"ts": int(time.time()), "t": kind, "p": path}, ensure_ascii=False) + "\n")
+def record_hit(kind, path, ip="", ua=""):
+    """Записать нажатие (вызывает сервис заявок после своих проверок): тип, страница и обезличенный ключ посетителя."""
+    d = {"ts": int(time.time()), "t": kind, "p": path}
+    if ip:
+        d["v"] = vkey(ip, ua)
+    _append(HITS_FILE, d)
 
 
-# ---------- события на страницах для «1 час»: только в памяти сервиса ----------
-RECENT_KEEP = 26 * 3600
-_recent = deque()
-_recent_lock = threading.Lock()
+# ---------- события со страниц: время на странице и нажатия — с обезличенным ключом посетителя ----------
+_write_lock = threading.Lock()
+_salt = {"v": None}
 
 
-def remember(kind, ip, ua, path, secs=0):
-    """Время на странице (kind="time", secs — сколько секунд страница была на экране) или нажатие на контакт —
-    для карточек посетителей. На диск не пишется; после перезапуска сервиса начинается заново."""
-    now = time.time()
-    with _recent_lock:
-        _recent.append((now, ip + "|" + ua, kind, norm_path(path), int(secs)))
-        while _recent and (now - _recent[0][0] > RECENT_KEEP or len(_recent) > 50000):
-            _recent.popleft()
+def vkey(ip, ua):
+    """Обезличенный ключ посетителя (IP + браузер → 16 знаков хеша с солью этого сервера): по нему время на странице
+    связывается с просмотрами из журнала, но сам IP в файлы времени и нажатий не пишется."""
+    if _salt["v"] is None:
+        try:
+            with open(SECRET_FILE, encoding="utf-8") as fh:
+                _salt["v"] = fh.read().strip()
+        except OSError:
+            _salt["v"] = ""
+        if len(_salt["v"]) < 32:
+            _salt["v"] = os.urandom(24).hex()
+            os.makedirs(STATS_DIR, exist_ok=True)
+            fd = os.open(SECRET_FILE, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+            with os.fdopen(fd, "w", encoding="utf-8") as fh:
+                fh.write(_salt["v"])
+    return hashlib.sha256(f"{_salt['v']}|{ip}|{ua}".encode()).hexdigest()[:16]
 
 
-def recent_events(since_ts):
-    with _recent_lock:
-        return [x for x in _recent if x[0] >= since_ts]
+def _append(path, obj):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with _write_lock, open(path, "a", encoding="utf-8") as fh:
+        fh.write(json.dumps(obj, ensure_ascii=False) + "\n")
+
+
+def record_time(path, secs, ip, ua):
+    """Страница сообщила, сколько секунд была на экране (её закрыли или свернули)."""
+    _append(TIMES_FILE, {"ts": int(time.time()), "p": norm_path(path), "s": int(secs), "v": vkey(ip, ua)})
+
+
+def prune_times(now=None):
+    """Оставить в файле времени последние TIMES_KEEP_DAYS дней."""
+    cutoff = (now or time.time()) - TIMES_KEEP_DAYS * 86400
+    try:
+        with _write_lock:
+            with open(TIMES_FILE, encoding="utf-8") as fh:
+                keep = [line for line in fh if _line_ts(line.encode()) is None or _line_ts(line.encode()) >= cutoff]
+            with open(TIMES_FILE + ".tmp", "w", encoding="utf-8") as fh:
+                fh.writelines(keep)
+            os.replace(TIMES_FILE + ".tmp", TIMES_FILE)
+    except OSError:
+        pass
+
+
+def beacon_start():
+    """Когда со страниц начало приходить время (первая запись файла времени) или None — ещё не приходило."""
+    try:
+        with open(TIMES_FILE, "rb") as fh:
+            for line in fh:
+                ts = _line_ts(line)
+                if ts is not None:
+                    return ts
+    except OSError:
+        pass
+    return None
+
+
+def events_between(since_ts, until_ts):
+    """События со страниц за период: [(время, ключ, вид, страница, секунды)]; вид — time или тип контакта."""
+    out = []
+    for path in (TIMES_FILE, HITS_FILE):
+        try:
+            with open(path, "rb") as fh:
+                for line in fh:
+                    t = _line_ts(line)
+                    if t is not None and not since_ts <= t < until_ts:
+                        continue
+                    try:
+                        d = json.loads(line)
+                        ts = float(d["ts"])
+                    except (ValueError, KeyError, TypeError):
+                        continue
+                    if not since_ts <= ts < until_ts or not d.get("v"):
+                        continue
+                    kind = "time" if path == TIMES_FILE else d.get("t")
+                    if kind == "time" or kind in CONTACTS:
+                        out.append((ts, d["v"], kind, str(d.get("p") or "/"), int(d.get("s") or 0)))
+        except OSError:
+            pass
+    return sorted(out)
+
+
+def beacons_by_key(events):
+    """{ключ: [(время, страница, секунды)]} — только сообщения о времени на странице."""
+    out = {}
+    for ts, v, kind, path, secs in events:
+        if kind == "time":
+            out.setdefault(v, []).append((ts, path, secs))
+    return out
+
+
+def page_times(views, beacons):
+    """Секунды на каждом просмотре: views — [(время, страница)] по порядку, beacons — [(время, страница, секунды)].
+    Страница присылает, сколько всего была на экране, — берётся наибольшее до следующего открытия той же страницы."""
+    out = []
+    for i, (ts, path) in enumerate(views):
+        nxt = next((v[0] for v in views[i + 1:] if v[1] == path), float("inf"))
+        out.append(max((s for t, p, s in beacons if p == path and ts - 2 <= t < nxt), default=0) or None)
+    return out
+
+
+_ua_ok = {}
+PENDING = 30 * 60             # столько ждём от страницы сообщения о времени, прежде чем решить, что это робот
+
+
+def browser_ua(ua):
+    """Подпись браузера (Mozilla…), а не робота; результат запоминается для каждой подписи."""
+    ok = _ua_ok.get(ua)
+    if ok is None:
+        if len(_ua_ok) > 20000:
+            _ua_ok.clear()
+        ok = _ua_ok[ua] = ua.startswith("Mozilla/") and not BOT.search(ua)
+    return ok
 
 
 def is_human(ua, h):
-    return (ua.startswith("Mozilla/") and not BOT.search(ua) and bool(header(h, "Accept-Language"))
+    return (browser_ua(ua) and bool(header(h, "Accept-Language"))
             and "prefetch" not in (header(h, "Sec-Purpose") + header(h, "Purpose")).lower())
 
 
 def parse(e):
     """Запись журнала → (вид, ip, браузер, страница, заголовки, адрес с параметрами) или None.
     Вид: view — открыта страница; 404 — страница не нашлась; probe — запрос адреса админки или служебного файла
-    (так делают только сканеры); google, bing — роботы поисковиков прочитали страницу."""
+    (так делают только сканеры); asset — браузер загрузил оформление или фото (/_astro, /img);
+    google, bing — роботы поисковиков прочитали страницу."""
     r = e.get("request") or {}
     if r.get("method") != "GET":
         return None
     uri = r.get("uri") or "/"
     path = norm_path(uri)
-    if path.startswith(("/img/", "/_astro/", "/api/")) or ASSET.search(path):
-        return None
     ip = r.get("client_ip") or r.get("remote_ip") or ""
     h = r.get("headers") or {}
     ua = header(h, "User-Agent")
     status = e.get("status")
+    if path.startswith(("/_astro/", "/img/")):
+        return ("asset", ip, ua, path, h, uri) if status in (200, 206, 304) and browser_ua(ua) else None
+    if path.startswith("/api/") or ASSET.search(path):
+        return None
     if "Googlebot" in ua or "bingbot" in ua.lower():
         return ("google" if "Googlebot" in ua else "bing", ip, ua, path, h, uri) if status in (200, 304) else None
     if not is_human(ua, h):
@@ -598,12 +705,32 @@ def parse(e):
     return ("view", ip, ua, path, h, uri)
 
 
+def navigates(h):
+    """Настоящий браузер при переходе на страницу присылает заголовки Sec-Fetch-* (Chrome, Firefox, Safari 16.4+)."""
+    return bool(header(h, "Sec-Fetch-Mode") or header(h, "Sec-Fetch-Dest"))
+
+
+def quiet_robot(v, beacons, now):
+    """Не загрузил ни оформления, ни фото и не прислал время на странице — так ведут себя программы, а не браузеры.
+    Без заголовков перехода браузера — робот сразу; с ними — если и через 30 минут после последней страницы времени нет
+    (вернувшийся посетитель берёт оформление из кэша, но время на странице присылает)."""
+    if v["assets"] or beacons:
+        return False
+    last = max((t for t, k, _ in v["hits"] if k in ("view", "404")), default=0)
+    return not v["nav"] or now - last > PENDING
+
+
+def split_key(k):
+    ip, _, ua = k.partition("|")
+    return ip, ua
+
+
 class Agg:
     """Накопитель итогов за один период (час, день или «сегодня до текущего часа»): только числа, без IP.
     Кто робот, решается в конце (result), по всем запросам этого IP + браузера за период."""
 
     def __init__(self):
-        self.keys = {}                              # ключ (IP+браузер) → {src, dev, hits}; только в памяти
+        self.keys = {}                              # ключ (IP+браузер) → {src, dev, hits, assets, nav}; только в памяти
         self.google, self.google_lang, self.bing, self.requests = 0, Counter(), 0, 0
         self.own = 0                                # просмотры студии (не считаются)
 
@@ -625,33 +752,62 @@ class Agg:
             return
         v = self.keys.get(ip + "|" + ua)
         if v is None:
-            v = self.keys[ip + "|" + ua] = {"src": None, "dev": device(ua), "hits": []}
+            v = self.keys[ip + "|" + ua] = {"src": None, "dev": device(ua), "hits": [], "assets": False, "nav": False}
+        if kind == "asset":
+            v["assets"] = True
+            return
         if kind == "view" and v["src"] is None:
             v["src"] = source(header(h, "Referer"), uri)
+        if kind != "probe" and navigates(h):
+            v["nav"] = True
         v["hits"].append((ts or 0, kind, path))
 
-    def robots(self):
-        return {k for k, v in self.keys.items() if is_robot(v["hits"])}
+    def robots(self, times=None, now=None):
+        """Ключи роботов: сканеры (is_robot) и «молчащие» программы (quiet_robot) — последние только среди тех,
+        кто заходил, когда страницы уже присылали время (раньше его не было ни у кого)."""
+        now, times, since = now or time.time(), times or {}, beacon_start()
+        out = set()
+        for k, v in self.keys.items():
+            if not v["hits"]:
+                continue
+            if is_robot(v["hits"]) or (since is not None and min(t for t, _, _ in v["hits"]) >= since
+                                       and quiet_robot(v, times.get(vkey(*split_key(k))), now)):
+                out.add(k)
+        return out
 
-    def result(self, leads, hits=(), robots=None):
-        robots = self.robots() if robots is None else robots
+    def result(self, leads, hits=(), robots=None, times=None, now=None):
+        times = times or {}
+        robots = self.robots(times, now) if robots is None else robots
         views, lang_views, notfound = Counter(), Counter(), Counter()
         lang_visitors, sources, devices = Counter(), Counter(), Counter()
-        visitors = bots = 0
+        page_time = {}
+        visitors = bots = time_total = time_visitors = 0
         for k, v in self.keys.items():
+            if not v["hits"]:
+                continue
             if k in robots:
                 bots += 1
                 continue
             notfound.update(p for _, kind, p in v["hits"] if kind == "404")
-            seen = [p for _, kind, p in v["hits"] if kind == "view"]
+            seen = [(t, p) for t, kind, p in v["hits"] if kind == "view"]
             if not seen:
                 continue
             visitors += 1
-            views.update(seen)
-            lang_views.update(lang_of(p) for p in seen)
-            lang_visitors.update({lang_of(p) for p in seen})
+            views.update(p for _, p in seen)
+            lang_views.update(lang_of(p) for _, p in seen)
+            lang_visitors.update({lang_of(p) for _, p in seen})
             sources[v["src"]] += 1
             devices[v["dev"]] += 1
+            secs = page_times(seen, times.get(vkey(*split_key(k)), [])) if times else []
+            known = [(p, min(x, PAGE_CAP)) for (_, p), x in zip(seen, secs) if x]
+            if known:                               # время — только по тем, чья страница его прислала
+                time_visitors += 1
+                time_total += sum(x for _, x in known)
+                for p, x in known:
+                    pt = page_time.setdefault(p, [0, 0])
+                    pt[0] += x
+                    pt[1] += 1
+        top = dict(views.most_common(50))
         return {
             "requests": self.requests,              # 0 — за этот период журнала нет (ещё не вёлся или удалён)
             "visitors": visitors,
@@ -660,9 +816,11 @@ class Agg:
             "lang_views": dict(lang_views),
             "sources": dict(sources),
             "devices": dict(devices),
-            "pages": dict(views.most_common(50)),
+            "pages": top,
             "notfound": dict(notfound.most_common(20)),
             "bots": bots,                           # отсеянные программы, назвавшиеся браузером
+            "time_total": time_total, "time_visitors": time_visitors,   # секунды на сайте и сколько посетителей с временем
+            "page_time": {p: page_time[p] for p in top if p in page_time},   # страница → [секунды, просмотров с временем]
             "google": self.google, "google_lang": dict(self.google_lang), "bing": self.bing, "own": self.own,
             "leads": len(leads), "lead_pages": dict(Counter(x["page"] for x in leads if x["page"])),
             "contacts": dict(Counter(t for t, _ in hits)),
@@ -675,7 +833,8 @@ def aggregate(since_ts, until_ts):
     a = Agg()
     for ts, e in entries(since_ts, until_ts):
         a.add(e, ts)
-    return a.result(leads_between(since_ts, until_ts), hits_between(since_ts, until_ts))
+    times = beacons_by_key(events_between(since_ts, until_ts + 3600))
+    return a.result(leads_between(since_ts, until_ts), hits_between(since_ts, until_ts), times=times, now=time.time())
 
 
 def aggregate_days(days):
@@ -689,7 +848,8 @@ def aggregate_days(days):
         d = datetime.fromtimestamp(ts, TZ).date()
         if d in aggs:
             aggs[d].add(e, ts)
-    return {d: aggs[d].result(leads_between(*bounds[d]), hits_between(*bounds[d])) for d in days}
+    times, now = beacons_by_key(events_between(lo, hi + 3600)), time.time()
+    return {d: aggs[d].result(leads_between(*bounds[d]), hits_between(*bounds[d]), times=times, now=now) for d in days}
 
 
 # ---------- дни и хранение ----------
@@ -790,15 +950,27 @@ def merge(aggs):
     aggs = list(aggs)
     if not aggs or any(a is None for a in aggs):
         return None
-    out = {"visitors": 0, "views": 0, "google": 0, "bing": 0, "leads": 0, "own": 0}
+    sums = ("visitors", "views", "google", "bing", "leads", "own", "time_total", "time_visitors")
+    out = dict.fromkeys(sums, 0)
     for k in MERGE_DICTS:
         out[k] = Counter()
+    out["page_time"] = {}
     for a in aggs:
-        for k in ("visitors", "views", "google", "bing", "leads", "own"):
+        for k in sums:
             out[k] += a.get(k, 0)
         for k in MERGE_DICTS:
             out[k].update(a.get(k) or {})
+        for p, (secs, n) in (a.get("page_time") or {}).items():
+            pt = out["page_time"].setdefault(p, [0, 0])
+            pt[0] += secs
+            pt[1] += n
     return out
+
+
+def avg_time(a):
+    """Среднее время на сайте одного посетителя, секунды (по тем, чьи страницы прислали время), или None."""
+    n = (a or {}).get("time_visitors") or 0
+    return round(a["time_total"] / n) if n else None
 
 
 # ---------- текст отчёта ----------
@@ -1006,7 +1178,7 @@ def _row(a, **extra):
     gl = a.get("google_lang") or {}
     return dict(extra, visitors=a.get("visitors", 0), views=a.get("views", 0), leads=a.get("leads", 0),
                 google=a.get("google", 0), contacts=sum((a.get("contacts") or {}).values()),
-                google_sk=gl.get("sk", 0), google_de=gl.get("de", 0))
+                google_sk=gl.get("sk", 0), google_de=gl.get("de", 0), avg_time=avg_time(a))
 
 
 def _top(counter, k=8, other="другие"):
@@ -1018,13 +1190,20 @@ def _top(counter, k=8, other="другие"):
 def _total(tot):
     """Итоги периода для плиток и карточек (tot — результат merge или None)."""
     total = {"visitors": 0, "views": 0, "leads": 0, "google": 0, "own": 0, "contacts": 0, "contact_types": [],
-             "contact_pages": [], "langs": [], "sources": [], "devices": [], "pages": [], "notfound": [], "leads_pages": []}
+             "contact_pages": [], "langs": [], "sources": [], "devices": [], "pages": [], "notfound": [], "leads_pages": [],
+             "avg_time": None, "time_visitors": 0}
+
+    def page_avg(p):                                # среднее время на странице — когда оно пришло хотя бы 3 раза
+        secs, n = tot["page_time"].get(p, (0, 0))
+        return round(secs / n) if n >= 3 else None
+
     if tot:
         total.update(
             visitors=tot["visitors"], views=tot["views"], leads=tot["leads"], google=tot["google"], own=tot["own"],
+            avg_time=avg_time(tot), time_visitors=tot["time_visitors"],
             langs=[[LANG_NAMES[k], tot["lang_visitors"][k]] for k in LANG_NAMES if tot["lang_visitors"].get(k)],
             sources=_top(tot["sources"]), devices=_top(tot["devices"]),
-            pages=[[title_of(p), v] for p, v in tot["pages"].most_common(15)],
+            pages=[[title_of(p), v, page_avg(p)] for p, v in tot["pages"].most_common(15)],
             notfound=[[p, v] for p, v in tot["notfound"].most_common(10)],
             leads_pages=[[title_of(p), v] for p, v in tot["lead_pages"].most_common(8)],
             contacts=sum(tot["contacts"].values()),
@@ -1037,7 +1216,7 @@ def _prev(pv, contacts_known=True):
     if not pv:
         return None
     return dict({k: pv[k] for k in ("visitors", "views", "leads", "google")},
-                contacts=sum(pv["contacts"].values()) if contacts_known else None)
+                contacts=sum(pv["contacts"].values()) if contacts_known else None, avg_time=avg_time(pv))
 
 
 def _stamp(now=None):
@@ -1079,19 +1258,22 @@ def web_hours(now=None):
             buckets[min(23, int((ts - start) // 3600))].add(e, ts)
         else:
             prev.add(e, ts)
-    robots = whole.robots()                                    # кто робот — по всем двум суткам, а не по одному часу
+    times = beacons_by_key(events_between(pstart, now + 1))
+    robots = whole.robots(times, now)                          # кто робот — по всем двум суткам, а не по одному часу
     leads, hits = leads_between(pstart, now + 1), hits_between(pstart, now + 1, with_ts=True)
     rows = []
     ls = logs_start()
     for i, b in enumerate(buckets):
         bs = start + i * 3600
         r = b.result([x for x in leads if bs <= x["ts"] < bs + 3600], [(t, p) for ts, t, p in hits if bs <= ts < bs + 3600],
-                     robots)
+                     robots, times)
         rows.append(_row(r, ts=bs, missing=ls is None or bs + 3600 <= ls, partial=i == 23))
-    tot = merge([cur.result([x for x in leads if x["ts"] >= start], [(t, p) for ts, t, p in hits if ts >= start], robots)])
+    tot = merge([cur.result([x for x in leads if x["ts"] >= start], [(t, p) for ts, t, p in hits if ts >= start],
+                            robots, times)])
     pv = None
     if ls is not None and ls <= pstart + 300:                  # журнал помнит и предыдущие сутки целиком
-        pv = merge([prev.result([x for x in leads if x["ts"] < start], [(t, p) for ts, t, p in hits if ts < start], robots)])
+        pv = merge([prev.result([x for x in leads if x["ts"] < start], [(t, p) for ts, t, p in hits if ts < start],
+                                robots, times)])
     return dict(_stamp(now), period="24h", unit="hour", rows=rows, coverage=sum(not r["missing"] for r in rows),
                 total=_total(tot), prev=_prev(pv))
 
@@ -1140,7 +1322,8 @@ def _session(info, views, evs, leads, before, now):
             "active": last["secs"] is None and now - views[-1][0] < 15 * 60,   # последнюю страницу ещё не закрыли
             "geo": geo.lookup(ip) if geo else None, "device": dev, "os": os_name, "browser": browser,
             "lang": browser_lang(accept), "source": source(first[4], first[3]),
-            "total": sum(p["secs"] or 0 for p in pages), "before": before, "pages": pages}
+            "total": sum(p["secs"] or 0 for p in pages), "before": before, "pages": pages,
+            "timed": sum(min(p["secs"], PAGE_CAP) for p in pages if p["secs"] and not p["approx"])}
 
 
 def web_live(now=None):
@@ -1148,26 +1331,36 @@ def web_live(now=None):
     (заход целиком, даже если начался раньше). Строится из журнала за сутки; IP наружу не отдаётся."""
     now = now or time.time()
     since = now - 86400
-    views, info, hits, own = {}, {}, {}, set()
+    views, info, meta, own = {}, {}, {}, set()
     for ts, e in entries(since, now + 1):
         p = parse(e)
-        if not p or p[0] not in ("view", "404", "probe"):
+        if not p or p[0] not in ("view", "404", "probe", "asset"):
             continue
         kind, ip, ua, path, h, uri = p
         key = ip + "|" + ua
         if is_own(ip, ts):                                    # студия: «Не считать нас» и телефоны, где открывали «Графики»
-            if ts >= now - LIVE_WINDOW:
+            if ts >= now - LIVE_WINDOW and kind != "asset":
                 own.add(key)
             continue
-        hits.setdefault(key, []).append((ts, kind, path))
+        m = meta.setdefault(key, {"hits": [], "assets": False, "nav": False})
+        if kind == "asset":
+            m["assets"] = True
+            continue
+        m["hits"].append((ts, kind, path))
         if kind != "probe":
+            m["nav"] = m["nav"] or navigates(h)
             views.setdefault(key, []).append((ts, path, kind, uri, header(h, "Referer")))
             info.setdefault(key, (ip, ua, header(h, "Accept-Language")))
-    for key in [k for k in views if is_robot(hits[k])]:      # сканеры, назвавшиеся браузером, — не посетители
-        del views[key]
-    events = {}
-    for t, key, kind, path, secs in recent_events(since):
-        events.setdefault(key, []).append((t, kind, path, secs))
+    events = {}                                               # обезличенный ключ → [(время, вид, страница, секунды)]
+    for t, v, kind, path, secs in events_between(since, now + 1):
+        events.setdefault(v, []).append((t, kind, path, secs))
+    started = beacon_start()
+    for key in list(views):                                   # роботы, назвавшиеся браузером, — не посетители
+        m = meta[key]
+        beacons = [x for x in events.get(vkey(*split_key(key)), []) if x[1] == "time"]
+        if is_robot(m["hits"]) or (started is not None and min(t for t, _, _ in m["hits"]) >= started
+                                   and quiet_robot(m, beacons, now)):
+            del views[key]
     leads = leads_between(since, now + 1)
     sessions, last = [], None
     for key, vs in views.items():
@@ -1180,7 +1373,7 @@ def web_live(now=None):
                 groups[-1].append(v)
         if last is None or vs[-1][0] > last[0]:
             last = (vs[-1][0], info[key][0])
-        evs = sorted(events.get(key, []))
+        evs = sorted(events.get(vkey(*split_key(key)), []))
         lds = [x for x in leads if x["ip"] == info[key][0]]
         for gi, g in enumerate(groups):
             lo, hi = g[0][0] - 5, groups[gi + 1][0][0] if gi + 1 < len(groups) else float("inf")
@@ -1196,6 +1389,8 @@ def web_live(now=None):
                "views": sum(1 for s in sessions for p in s["pages"] if p["ts"] >= hour),
                "contacts": sum(1 for s in sessions for p in s["pages"] for x in p["events"] if x["t"] in CONTACTS and x["ts"] >= hour),
                "leads": sum(1 for s in sessions for p in s["pages"] for x in p["events"] if x["t"] == "lead" and x["ts"] >= hour)}
+    timed = [s["timed"] for s in sessions if s["timed"]]
+    summary["avg_time"] = round(sum(timed) / len(timed)) if timed else None     # по тем, чьи страницы прислали время
     lastv = None
     if not sessions and last:
         g = geo.lookup(last[1]) if geo else None
@@ -1291,6 +1486,7 @@ class SiteStats:
             text = NO_ACCESS.format(esc(LOG_GLOB))
         self.bot.s.put("stats:daily", d.isoformat())
         self.bot.notify(text, roles=("owner",), rows=BUTTON)
+        prune_times()                               # раз в день: время на страницах старше 90 дней — удалить
 
     def start(self):
         t = threading.Thread(target=self.loop, name="site-stats", daemon=True)
