@@ -47,6 +47,8 @@ MAIL_TO = os.environ.get("MAIL_TO", SMTP_USER)
 LIMITS = {"name": 120, "contact": 160, "message": 3000, "page": 300, "model": 40, "lang": 5}
 RATE = defaultdict(deque)          # ip → время последних заявок
 RATE_MAX, RATE_WINDOW = 5, 600     # не больше 5 заявок за 10 минут с одного адреса
+HIT_RATE = defaultdict(deque)      # ip → время последних нажатий на контакты
+HIT_MAX = 20                       # не больше 20 нажатий за 10 минут с одного адреса
 lock = threading.Lock()
 
 THANKS = {
@@ -65,7 +67,8 @@ def log(msg):
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
-from site_stats import SiteStats, check_init_data, exclude_add, exclude_remove, me_data, web_data  # noqa: E402
+from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
+                        is_excluded, me_data, record_hit, web_data)
 from translate import lang_from, provider, translate_lead  # noqa: E402
 
 BOT = None
@@ -190,7 +193,37 @@ class Handler(BaseHTTPRequestHandler):
         u = self.stats_admin()
         return u if u and u["role"] == "owner" else None
 
+    def hit(self):
+        """Нажатие на телефон, e-mail или мессенджер (скрипт на страницах сайта): записать тип и страницу."""
+        try:
+            n = int(self.headers.get("Content-Length") or 0)
+            data = json.loads(self.rfile.read(n).decode("utf-8", "replace")) if 0 < n <= 400 else {}
+        except ValueError:
+            data = {}
+        kind, page = str(data.get("t") or ""), str(data.get("p") or "")[:200]
+        ua, ip = self.headers.get("User-Agent", ""), self.client_ip()
+        if kind in CONTACTS and page.startswith("/") and ua.startswith("Mozilla/") and not BOT_UA.search(ua) \
+                and not is_excluded(ip):
+            now = time.time()
+            with lock:
+                q = HIT_RATE[ip]
+                while q and now - q[0] > RATE_WINDOW:
+                    q.popleft()
+                ok = len(q) < HIT_MAX
+                if ok:
+                    q.append(now)
+            if ok:
+                try:
+                    record_hit(kind, page)
+                except OSError as e:
+                    log(f"нажатия: не записано: {e}")
+        self.send_response(204)
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+
     def do_POST(self):
+        if self.path.split("?")[0].rstrip("/") == "/api/hit":
+            return self.hit()
         if self.path.split("?")[0].rstrip("/") == "/api/stats/exclude":
             u = self.stats_owner()
             if not u:

@@ -49,6 +49,8 @@ APP = os.path.expanduser("~/dumskaya")
 LOG_GLOB = os.environ.get("SITE_LOG_GLOB", "/var/log/caddy/dumskaya*.log*")
 SITE_DIR = os.environ.get("SITE_DIR", "/var/www/dumskaya/site")
 LEADS_FILE = os.environ.get("LEADS_FILE", os.path.join(APP, "leads.jsonl"))
+HITS_FILE = os.environ.get("HITS_FILE", os.path.join(APP, "hits.jsonl"))   # нажатия на телефон, e-mail, мессенджеры
+CONTACTS = {"tel": "телефон", "mail": "e-mail", "whatsapp": "WhatsApp", "telegram": "Telegram"}
 STATS_DIR = os.environ.get("STATS_DIR", os.path.join(APP, "stats"))
 EXCLUDE_FILE = os.path.join(STATS_DIR, "exclude.json")   # «свои» адреса (дома у студии) — их визиты не считаются
 REPORT_HOUR = 9
@@ -314,6 +316,31 @@ def leads_between(since_ts, until_ts):
     return out
 
 
+def hits_between(since_ts, until_ts):
+    """Нажатия на контакты за период: [(тип, страница)] (пишет /api/hit; без IP, свои адреса не записываются)."""
+    out = []
+    try:
+        with open(HITS_FILE, encoding="utf-8") as fh:
+            for line in fh:
+                try:
+                    d = json.loads(line)
+                    ts = float(d["ts"])
+                except (ValueError, KeyError, TypeError):
+                    continue
+                if since_ts <= ts < until_ts and d.get("t") in CONTACTS:
+                    out.append((d["t"], str(d.get("p") or "")))
+    except OSError:
+        pass
+    return out
+
+
+def record_hit(kind, path):
+    """Записать нажатие (вызывает сервис заявок после своих проверок)."""
+    os.makedirs(os.path.dirname(HITS_FILE), exist_ok=True)
+    with open(HITS_FILE, "a", encoding="utf-8") as fh:
+        fh.write(json.dumps({"ts": int(time.time()), "t": kind, "p": path}, ensure_ascii=False) + "\n")
+
+
 class Agg:
     """Накопитель итогов за один период (день или «сегодня до текущего часа»): только числа, без IP."""
 
@@ -368,7 +395,7 @@ class Agg:
         self.views[path] += 1
         self.lang_views[lang_of(path)] += 1
 
-    def result(self, leads):
+    def result(self, leads, hits=()):
         vs = self.visitors.values()
         return {
             "requests": self.requests,              # 0 — за этот период журнала нет (ещё не вёлся или удалён)
@@ -382,6 +409,8 @@ class Agg:
             "notfound": dict(self.notfound.most_common(20)),
             "google": self.google, "google_lang": dict(self.google_lang), "bing": self.bing, "own": self.own,
             "leads": len(leads), "lead_pages": dict(Counter(x["page"] for x in leads if x["page"])),
+            "contacts": dict(Counter(t for t, _ in hits)),
+            "contact_pages": dict(Counter(p for _, p in hits if p).most_common(30)),
         }
 
 
@@ -390,7 +419,7 @@ def aggregate(since_ts, until_ts):
     a = Agg()
     for _, e in entries(since_ts, until_ts):
         a.add(e)
-    return a.result(leads_between(since_ts, until_ts))
+    return a.result(leads_between(since_ts, until_ts), hits_between(since_ts, until_ts))
 
 
 def aggregate_days(days):
@@ -404,7 +433,7 @@ def aggregate_days(days):
         d = datetime.fromtimestamp(ts, TZ).date()
         if d in aggs:
             aggs[d].add(e)
-    return {d: aggs[d].result(leads_between(*bounds[d])) for d in days}
+    return {d: aggs[d].result(leads_between(*bounds[d]), hits_between(*bounds[d])) for d in days}
 
 
 # ---------- дни и хранение ----------
@@ -477,18 +506,22 @@ def day_stats(d):
     return days_stats([d])[d]
 
 
+MERGE_DICTS = ("lang_visitors", "lang_views", "sources", "devices", "pages", "notfound", "google_lang", "lead_pages",
+               "contacts", "contact_pages")
+
+
 def merge(aggs):
     """Сумма дней; None — если хотя бы за один день нет данных."""
     aggs = list(aggs)
     if not aggs or any(a is None for a in aggs):
         return None
     out = {"visitors": 0, "views": 0, "google": 0, "bing": 0, "leads": 0, "own": 0}
-    for k in ("lang_visitors", "lang_views", "sources", "devices", "pages", "notfound", "google_lang", "lead_pages"):
+    for k in MERGE_DICTS:
         out[k] = Counter()
     for a in aggs:
         for k in ("visitors", "views", "google", "bing", "leads", "own"):
             out[k] += a.get(k, 0)
-        for k in ("lang_visitors", "lang_views", "sources", "devices", "pages", "notfound", "google_lang", "lead_pages"):
+        for k in MERGE_DICTS:
             out[k].update(a.get(k) or {})
     return out
 
@@ -568,6 +601,16 @@ def body(a, prev=None, top=7, trend=None, trend_label=""):
     lp = Counter(a.get("lead_pages") or {})
     out.append(f"✉️ Заявки: <b>{leads}</b>{delta(leads, prev and prev.get('leads'))}"
                + (f" — {', '.join(esc(title_of(p)) for p, _ in lp.most_common(3))}" if lp else ""))
+    c = Counter(a.get("contacts") or {})
+    n = sum(c.values())
+    pn = sum((prev.get("contacts") or {}).values()) if prev and "contacts" in prev else None
+    line_c = f"📞 Нажатия на контакты: <b>{n}</b>{delta(n, pn)}"
+    if n:
+        line_c += " — " + " · ".join(f"{CONTACTS[k]} {c[k]}" for k in CONTACTS if c.get(k))
+        cp = Counter(a.get("contact_pages") or {}).most_common(2)
+        if cp:
+            line_c += "\n      чаще со страниц: " + ", ".join(esc(title_of(p)) for p, _ in cp)
+    out.append(line_c)
     if trend:
         out.append(f"\n<code>{trend}</code> {esc(trend_label)}")
     if a["visitors"]:
@@ -700,6 +743,7 @@ def web_data(n):
         rows.append({"date": d.isoformat(), "missing": a is None, "partial": d == t,
                      "visitors": (a or {}).get("visitors", 0), "views": (a or {}).get("views", 0),
                      "leads": (a or {}).get("leads", 0), "google": (a or {}).get("google", 0),
+                     "contacts": sum(((a or {}).get("contacts") or {}).values()),
                      "google_sk": gl.get("sk", 0), "google_de": gl.get("de", 0)})
     cur = [got[d] for d in days if got[d]]
     prev = [got[d] for d in prev_days]
@@ -711,8 +755,8 @@ def web_data(n):
         rest = sum(v for _, v in items[k:])
         return [list(x) for x in items[:k]] + ([[other, rest]] if rest else [])
 
-    total = {"visitors": 0, "views": 0, "leads": 0, "google": 0, "own": 0, "langs": [], "sources": [], "devices": [],
-             "pages": [], "notfound": [], "leads_pages": []}
+    total = {"visitors": 0, "views": 0, "leads": 0, "google": 0, "own": 0, "contacts": 0, "contact_types": [],
+             "contact_pages": [], "langs": [], "sources": [], "devices": [], "pages": [], "notfound": [], "leads_pages": []}
     if tot:
         total.update(
             visitors=tot["visitors"], views=tot["views"], leads=tot["leads"], google=tot["google"], own=tot["own"],
@@ -720,9 +764,13 @@ def web_data(n):
             sources=top(tot["sources"]), devices=top(tot["devices"]),
             pages=[[title_of(p), v] for p, v in tot["pages"].most_common(15)],
             notfound=[[p, v] for p, v in tot["notfound"].most_common(10)],
-            leads_pages=[[title_of(p), v] for p, v in tot["lead_pages"].most_common(8)])
+            leads_pages=[[title_of(p), v] for p, v in tot["lead_pages"].most_common(8)],
+            contacts=sum(tot["contacts"].values()),
+            contact_types=[[CONTACTS[k], tot["contacts"][k]] for k in CONTACTS if tot["contacts"].get(k)],
+            contact_pages=[[title_of(p), v] for p, v in tot["contact_pages"].most_common(8)])
     return {"days": rows, "coverage": len(cur), "total": total,
-            "prev": {k: pv[k] for k in ("visitors", "views", "leads", "google")} if pv else None,
+            "prev": dict({k: pv[k] for k in ("visitors", "views", "leads", "google")},
+                         contacts=sum(pv["contacts"].values()) if all("contacts" in x for x in prev) else None) if pv else None,
             "generated": datetime.now(TZ).strftime("%H:%M")}
 
 

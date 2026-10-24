@@ -69,6 +69,10 @@
       },
       {
        "t": "p",
+       "html": "To understand traffic, we count page views from the server log and clicks on our phone numbers, e-mail address and messengers — without cookies or third-party services. Only totals are kept: how many visitors and clicks there were and on which pages."
+      },
+      {
+       "t": "p",
        "html": "If the message in an enquiry is written in neither Russian nor Ukrainian, its text (without your name and contact details) is sent to a machine translation service so that we receive a Russian translation. The service uses the text only for translation."
       }
      ]

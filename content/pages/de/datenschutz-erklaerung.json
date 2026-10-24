@@ -69,6 +69,10 @@
       },
       {
        "t": "p",
+       "html": "Um die Besucherzahlen zu verstehen, zählen wir Seitenaufrufe anhand des Server-Protokolls sowie Klicks auf Telefonnummer, E-Mail-Adresse und Messenger — ohne Cookies und ohne Drittanbieter. Gespeichert werden nur Summen: wie viele Besucher und Klicks es gab und auf welchen Seiten."
+      },
+      {
+       "t": "p",
        "html": "Ist die Nachricht in einer Anfrage weder auf Russisch noch auf Ukrainisch verfasst, wird ihr Text (ohne Namen und Kontaktdaten) an einen maschinellen Übersetzungsdienst übermittelt, damit wir eine russische Übersetzung erhalten. Der Dienst verwendet den Text nur für die Übersetzung."
       }
      ]

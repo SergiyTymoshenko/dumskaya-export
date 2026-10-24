@@ -66,5 +66,16 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
   <Footer page={page} />
   <Lightbox lang={lang} />
   {analytics && <CookieBanner lang={lang} gtm={site.analytics.gtm} ga4={site.analytics.ga4} />}
+  <script is:inline>
+    // Нажатия на телефон, e-mail и мессенджеры — в статистику студии: только что нажали и на какой странице, без cookie
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+      var h = a.getAttribute('href') || '';
+      var t = /^tel:/i.test(h) ? 'tel' : /^mailto:/i.test(h) ? 'mail' : /\/\/wa\.me\//i.test(h) ? 'whatsapp' : /\/\/t\.me\//i.test(h) ? 'telegram' : '';
+      if (!t) return;
+      try { navigator.sendBeacon('/api/hit', new Blob([JSON.stringify({ t: t, p: location.pathname })], { type: 'text/plain' })); } catch (err) {}
+      if (window.gtag) window.gtag('event', 'contact_click', { method: t });   // Google Analytics — если принят cookie
+    }, true);
+  </script>
 </body>
 </html>

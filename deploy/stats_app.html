@@ -53,11 +53,13 @@
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin: 0 0 12px; }
   .card h2 { font-size: 15px; font-weight: 600; margin: 0 0 2px; }
   .card .note { color: var(--text-2); font-size: 13px; margin: 0 0 10px; }
+  .card .bars + .note { margin-top: 14px; }
   .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 12px; }
   .tile { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 12px 14px; min-width: 0; }
   .tile .label { color: var(--text-2); font-size: 13px; }
   .tile .value { font-size: 26px; font-weight: 600; line-height: 1.15; margin-top: 2px; }
-  .tile.hero { grid-column: 1 / -1; }
+  .tile.hero, .tile.wide { grid-column: 1 / -1; }
+  .tile .split { color: var(--text-2); font-size: 13px; margin-top: 2px; }
   .tile.hero .value { font-size: 48px; }
   .delta { font-size: 13px; color: var(--text-2); margin-top: 2px; }
   .delta .up { color: var(--up); font-weight: 600; }
@@ -156,9 +158,11 @@
     return d;
   }
 
-  function tile(label, value, prev, hero) {
-    const t = el('div', 'tile' + (hero ? ' hero' : ''));
-    t.append(el('div', 'label', label), el('div', 'value', fmt(value)), delta(value, prev, 'прошлым ' + days + ' дням'));
+  function tile(label, value, prev, kind, split) {
+    const t = el('div', 'tile' + (kind ? ' ' + kind : ''));
+    t.append(el('div', 'label', label), el('div', 'value', fmt(value)));
+    if (split) t.append(el('div', 'split', split));
+    t.append(delta(value, prev, 'прошлым ' + days + ' дням'));
     return t;
   }
 
@@ -313,12 +317,12 @@
   function table(rows) {
     const det = el('details'); det.append(el('summary', null, 'Таблица по дням'));
     const t = el('table'); const head = el('tr');
-    ['День', 'Посетители', 'Просмотры', 'Заявки', 'Google'].forEach((h) => head.append(el('th', null, h)));
+    ['День', 'Посетители', 'Просмотры', 'Заявки', 'Контакты', 'Google'].forEach((h) => head.append(el('th', null, h)));
     t.append(head);
     rows.slice().reverse().forEach((r) => {
       const tr = el('tr');
       tr.append(el('td', null, dshort(r.date) + (r.partial ? ' *' : '')));
-      [r.visitors, r.views, r.leads, r.google].forEach((v) => tr.append(el('td', null, r.missing ? '—' : fmt(v))));
+      [r.visitors, r.views, r.leads, r.contacts, r.google].forEach((v) => tr.append(el('td', null, r.missing ? '—' : fmt(v))));
       t.append(tr);
     });
     det.append(t, el('p', 'note', '* сегодня, до ' + data.generated + '. Посетители за период — сумма по дням.'));
@@ -332,15 +336,17 @@
       + (d.coverage < d.days.length ? ' · есть данные за ' + d.coverage + ' из ' + d.days.length + ' дн.' : '');
     if (!d.coverage) { app.append(el('p', 'empty', 'За этот период в журнале сайта ещё нет записей.')); return; }
     const tiles = el('div', 'tiles');
-    tiles.append(tile('Посетители', tot.visitors, prev && prev.visitors, true),
+    tiles.append(tile('Посетители', tot.visitors, prev && prev.visitors, 'hero'),
       tile('Просмотры страниц', tot.views, prev && prev.views),
-      tile('Заявки с сайта', tot.leads, prev && prev.leads));
+      tile('Заявки с сайта', tot.leads, prev && prev.leads),
+      tile('Нажали на телефон, e-mail, мессенджер', tot.contacts, prev && prev.contacts, 'wide',
+        tot.contact_types.map(([n, v]) => n + ' ' + fmt(v)).join(' · ') || null));
     app.append(tiles);
     if (tot.own) app.append(el('p', 'note', me ? '🏠 Ваши собственные просмотры (' + fmt(tot.own) + ') не учтены — адреса в блоке «Не считать нас» внизу.'
       : '🏠 Просмотры студии (' + fmt(tot.own) + ') не учтены.'));
 
     const c1 = card('Посетители по дням', 'Нажмите на график — покажет день целиком');
-    c1.append(lineChart(d.days, 'visitors', (r) => [['Посетители', r.visitors, true], ['Просмотры', r.views], ['Заявки', r.leads]]));
+    c1.append(lineChart(d.days, 'visitors', (r) => [['Посетители', r.visitors, true], ['Просмотры', r.views], ['Заявки', r.leads], ['Нажатия на контакты', r.contacts]]));
     if (d.days[d.days.length - 1].partial) c1.append(el('p', 'note', 'Полая точка — сегодня, день ещё идёт.'));
     c1.append(table(d.days));
     app.append(c1);
@@ -369,6 +375,15 @@
     c6.append(columnChart(d.days, 'google', (r) => [['Всего страниц', r.google], ['Словацкие', r.google_sk], ['Немецкие', r.google_de]]));
     app.append(c6);
 
+    if (tot.contacts) {
+      const cc = card('Как с вами связывались', 'Нажатия на телефон, e-mail, WhatsApp и Telegram на сайте');
+      cc.append(barList(tot.contact_types));
+      if (tot.contact_pages.length) {
+        cc.append(el('p', 'note', 'Чаще всего — со страниц:'));
+        cc.append(barList(tot.contact_pages));
+      }
+      app.append(cc);
+    }
     if (tot.leads_pages.length) {
       const c7 = card('С каких страниц заявки'); c7.append(barList(tot.leads_pages)); app.append(c7);
     }
