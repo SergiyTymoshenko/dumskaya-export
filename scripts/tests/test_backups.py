@@ -8,6 +8,7 @@ import os
 import shutil
 import sqlite3
 import sys
+import time
 import zipfile
 from datetime import timedelta
 
@@ -36,6 +37,8 @@ FAIL = {"on": False}
 def fake_send_file_r(self, chat_id, f, path, caption=None, rows=None, silent=False):
     if FAIL["on"]:
         return False, "Telegram не ответил", None
+    if f.get("tg_file_id") == "video:BROKEN":         # ссылка на файл в Telegram, которую Telegram больше не принимает
+        return False, "Bad Request: wrong file identifier/HTTP URL specified", None
     rec = {"chat": chat_id, "name": f.get("name"), "caption": caption, "silent": silent, "ref": f.get("tg_file_id")}
     if path:
         rec["copy"] = os.path.join(GOT, f"{len(SENT):03d}-{f['name']}")
@@ -164,6 +167,67 @@ check(len(warn) == 1 and warn[0]["chat_id"] == bot.owner, "после трёх �
 FAIL["on"] = False
 bot.s.put("backup:sent_day", "")
 check(B.daily_tick(bot, crm, log=lambda *a: None, now=t + 10900) == "data" and not bot.s.get("backup:fails"), "связь вернулась — отправилось")
+bot.s.put("backup:retry_at", str(time.time() + 3600))
+B.on_start(bot)
+check(not bot.s.get("backup:retry_at"), "после перезапуска сервиса (выкладки) — пробует сразу, без часа ожидания")
+
+# ---------- 3а. файл только в Telegram, которого Telegram больше не отдаёт, не держит очередь ----------
+fz = crm.add_tg_only(pid, "visual", "старое видео.mp4", 30 * 2**20, "video/mp4", "Ирина", "video:BROKEN")["id"]
+fg = crm.add_tg_only(pid, "visual", "новое видео.mp4", 30 * 2**20, "video/mp4", "Ирина", "video:GOOD")["id"]
+n3 = len(H.CALLS)
+r = B.daily_tick(bot, crm, log=lambda *a: None)
+lost = [m for m in msgs(n3) if "больше не отдаёт" in m["text"]]
+check(r == "forwarded" and SENT[-1]["ref"] == "video:GOOD", "соседний файл переслан")
+check(len(lost) == 1 and "старое видео.mp4" in lost[0]["text"] and lost[0].get("disable_notification"), "о потерянном — одно тихое сообщение")
+check(not bot.s.get("backup:fails") and not bot.s.get("backup:retry_at"), "это не сбой — очередь не встала")
+check(B.daily_tick(bot, crm, log=lambda *a: None) is None, "второй раз не пытается")
+
+# ---------- 3б. отправка файла в Telegram: имя файла — так, как его понимает Telegram ----------
+import crm_bot  # noqa: E402
+import email.parser  # noqa: E402
+from email import policy  # noqa: E402
+CAP = {}
+
+
+class FakeResp:
+    def __enter__(self):
+        return self
+
+    def __exit__(self, *a):
+        return False
+
+    def read(self):
+        return b'{"ok": true, "result": {"message_id": 7}}'
+
+
+def fake_urlopen(req, timeout=0):
+    CAP["req"] = req
+    return FakeResp()
+
+
+real_urlopen = crm_bot.urllib.request.urlopen
+crm_bot.urllib.request.urlopen = fake_urlopen
+try:
+    for name, mime, raw in (("dumskaya-data-2026-10-25.zip", "application/zip", b"PK\x03\x04 data"),
+                            ("Смета кухни «вариант 2».pdf", "application/pdf", b"%PDF-1.4 x"),
+                            ('a"b.jpg', "image/jpeg", b"\xff\xd8\xff jpeg")):
+        tmpf = os.path.join(H.TMP, "upload.bin")
+        with open(tmpf, "wb") as fh:
+            fh.write(raw)
+        ok_, why, mid = crm_bot.CrmBotMixin.send_file_r(bot, bot.owner, {"name": name, "mime": mime}, tmpf, caption="<b>x</b>", silent=True)
+        req = CAP["req"]
+        body = req.data
+        msg = email.parser.BytesParser(policy=policy.HTTP).parsebytes(b"Content-Type: " + req.get_header("Content-type").encode() + b"\r\n\r\n" + body)
+        got = {p.get_param("name", header="content-disposition"): p for p in msg.iter_parts()}
+        field = "photo" if mime == "image/jpeg" else "document"
+        f_part = got.get(field)
+        check(ok_ and mid == 7 and f_part is not None and f_part.get_filename() and f_part.get_payload(decode=True) == raw,
+              f"{name}: файл — с именем файла, содержимое на месте")
+        check(b"filename*" not in body and ('filename="' + name.replace('"', "%22") + '"').encode() in body, f"{name}: filename=\"…\" (UTF-8), без filename*")
+        check(got["chat_id"].get_payload() == str(bot.owner) and got["disable_notification"].get_payload() == "true"
+              and got["parse_mode"].get_payload() == "HTML", f"{name}: остальные поля на месте")
+finally:
+    crm_bot.urllib.request.urlopen = real_urlopen
 
 # ---------- 4. хранение 7 дней ----------
 d0 = B.today()

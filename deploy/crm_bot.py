@@ -21,6 +21,22 @@ from crm import FILE_CATS, TZ, CrmError
 PENDING_MAX_AGE = 30 * 60          # присланные файлы ждут выбора проекта полчаса
 TG_DOWNLOAD_MAX = 20 * 1024 * 1024  # больше Telegram боту скачать не даёт
 TG_UPLOAD_MAX = 50 * 1024 * 1024
+
+
+def multipart(fields, file_field, filename, mime, data):
+    """Тело запроса multipart/form-data для Telegram: (байты, Content-Type). Имя файла — обычным filename="…" в UTF-8
+    (как браузеры): Telegram не понимает форму filename*=UTF-8''…, и без filename принимает содержимое файла за ссылку
+    («invalid file HTTP URL specified») — так 24.10.2026 не уходили копии в Telegram и файлы из «Студии»."""
+    boundary = uuid.uuid4().hex
+    name = "".join(ch for ch in str(filename or "file") if ch >= " ").replace("\\", "_").replace('"', "%22") or "file"
+    out = []
+    for k, v in fields:
+        out.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n".encode() + str(v).encode() + b"\r\n")
+    out += [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{file_field}\"; filename=\"{name}\"\r\n"
+            f"Content-Type: {mime}\r\n\r\n".encode(), data, b"\r\n", f"--{boundary}--\r\n".encode()]
+    return b"".join(out), f"multipart/form-data; boundary={boundary}"
+
+
 PAGE = 8
 
 
@@ -263,22 +279,15 @@ class CrmBotMixin:
         mime = f.get("mime") or "application/octet-stream"
         method, field = ("sendPhoto", "photo") if mime in ("image/jpeg", "image/png", "image/webp") and size <= 10 * 2**20 \
             else ("sendDocument", "document")
-        boundary = uuid.uuid4().hex
-        name = (f["name"] or "file").replace('"', "")
-
-        def part(k, v):
-            return f"--{boundary}\r\nContent-Disposition: form-data; name=\"{k}\"\r\n\r\n".encode() + str(v).encode() + b"\r\n"
-        parts = [part("chat_id", chat_id), part("caption", caption)]
+        fields = [("chat_id", chat_id), ("caption", caption)]
         if html_caption:
-            parts.append(part("parse_mode", "HTML"))
+            fields.append(("parse_mode", "HTML"))
         if rows:
-            parts.append(part("reply_markup", json.dumps(self.kb(rows), ensure_ascii=False)))
+            fields.append(("reply_markup", json.dumps(self.kb(rows), ensure_ascii=False)))
         if silent:
-            parts.append(part("disable_notification", "true"))
-        parts += [f"--{boundary}\r\nContent-Disposition: form-data; name=\"{field}\"; filename*=UTF-8''{urllib.parse.quote(name)}\r\n"
-                  f"Content-Type: {mime}\r\n\r\n".encode(), data, b"\r\n", f"--{boundary}--\r\n".encode()]
-        req = urllib.request.Request(f"https://api.telegram.org/bot{self.token}/{method}", data=b"".join(parts),
-                                     headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+            fields.append(("disable_notification", "true"))
+        body, ctype = multipart(fields, field, f["name"] or "file", mime, data)
+        req = urllib.request.Request(f"https://api.telegram.org/bot{self.token}/{method}", data=body, headers={"Content-Type": ctype})
         try:
             with urllib.request.urlopen(req, timeout=180) as r:
                 res = json.loads(r.read())

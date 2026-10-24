@@ -46,6 +46,8 @@ WARN_AFTER = 3                          # после трёх неудач по�
 FORWARDS_PER_TICK = 5
 MIN_FREE = 2 * 1024 ** 3                # сервер общий: архив файлов не собирать, если свободно меньше 2 ГБ
 SECRET = {"lead.env", "stats/secret"}   # в Telegram не отправляются
+# ответ Telegram «такого файла нет» (ссылка на файл в Telegram устарела или неверна) — переслать его не выйдет никогда
+GONE_RE = re.compile(r"(?i)wrong (remote )?file identifier|file_id|invalid file http url|file reference")
 NAME_RE = re.compile(r"^(?:dumskaya-data|crm|bot)-(\d{4}-\d{2}-\d{2})\.(?:zip|db)$")
 SERVICE = "dumskaya-lead"
 
@@ -327,18 +329,27 @@ def telegram_tick(bot, crm=None, log=print, now=None, backup_dir=None):
         _mark(s, [f["id"] for f, _ in too_big])
         return "too_big"
     if tg_only:                     # хранятся только в Telegram — переслать ссылкой, без скачивания
-        done = []
+        done, lost = [], []
         for f in tg_only[:FORWARDS_PER_TICK]:
             ok, why, _ = bot.send_file_r(bot.owner, f, None, caption=f"📁 {_esc(file_label(crm, f))}", silent=True)
+            if not ok and GONE_RE.search(why or ""):    # Telegram этот файл больше не отдаёт — не держать из-за него очередь
+                lost.append(f)
+                continue
             if not ok:
                 _fail(bot, why, now, log)
                 break
             done.append(f["id"])
-        if done:
-            _mark(s, done)
-            s.drop("backup:fails")
-            log(f"копия в Telegram: переслано файлов {len(done)}")
-        return "forwarded" if done else False
+        if lost:
+            bot.send(bot.owner, "📁 Эти файлы проектов хранились только в Telegram, и Telegram их больше не отдаёт — "
+                                "в копию они не попали:\n" + "\n".join(f"• {_esc(file_label(crm, f))}" for f in lost),
+                     disable_notification=True)
+            log(f"копия в Telegram: файлов не отдал Telegram — {len(lost)}")
+        if done or lost:
+            _mark(s, done + [f["id"] for f in lost])
+            if done:
+                s.drop("backup:fails")
+                log(f"копия в Telegram: переслано файлов {len(done)}")
+        return "forwarded" if done else "lost" if lost else False
     small = [x for x in local if x[2] <= PART_MAX]
     if small and shutil.disk_usage(backup_dir if os.path.isdir(backup_dir) else APP).free < MIN_FREE + PART_MAX:
         _fail(bot, "на сервере мало свободного места — архив файлов не собирается (сервер общий)", now, log)
@@ -380,6 +391,14 @@ def telegram_tick(bot, crm=None, log=print, now=None, backup_dir=None):
         log(f"копия в Telegram: крупный файл {f['id']} ({human(size)})")
         return "file"
     return None
+
+
+def on_start(bot):
+    """Сервис запущен (обычно — после выкладки нового кода): копию в Telegram пробуем сразу, не ждём часа после сбоя."""
+    try:
+        bot.s.drop("backup:retry_at")
+    except Exception:  # noqa: BLE001
+        pass
 
 
 def daily_tick(bot, crm=None, log=print, now=None, backup_dir=None):

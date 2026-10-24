@@ -399,6 +399,7 @@ def main():
             log(f"учёт проектов не запущен: {type(e).__name__}: {e}")
         # резервные копии: каждую ночь архив данных на сервере (7 дней) и копия разработчику в Telegram,
         # новые файлы проектов — туда же архивами (решено 24.10.2026: на Мак больше не копируем)
+        backups.on_start(BOT)                       # после выкладки — копия в Telegram сразу, без часа ожидания после сбоя
         BOT.stats.hooks.append(lambda log=log: backups.daily_tick(BOT, getattr(BOT, "crm", None), log=log))
         BOT.start()
         BOT.monitor.start()
