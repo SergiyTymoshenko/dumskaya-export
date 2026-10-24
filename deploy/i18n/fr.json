@@ -250,7 +250,13 @@
   "staff_docs_hint": "Plans de relevé, rendus 3D, plans techniques — ajoutez-les dans les rubriques du projet.",
   "section": "Rubrique",
   "vis_s_all": "Tous ceux qui voient cette rubrique (client, artisans)",
-  "vis_s_studio": "Studio uniquement — Irina le montrera elle-même au client"
+  "vis_s_studio": "Studio uniquement — Irina le montrera elle-même au client",
+  "role_hired": "Prestataire du studio",
+  "hired_hint": "Ce travail vous est commandé et payé par le studio. Vous échangez uniquement avec Irina : le client et les artisans ne voient pas ces échanges.",
+  "msgs_hint_hired": "Ici, vous écrivez à Irina. Le client et les artisans ne voient pas cette conversation.",
+  "docs_hired_hint": "Plans de relevé, plans techniques, rendus 3D — ajoutez-les ici. Le studio les voit ; Irina les partagera avec le client.",
+  "staff_note": "Cette conversation n’est visible que par vous et Irina.",
+  "sgroup_note": "Ce groupe n’est visible que par Irina et les employés du studio qui en font partie."
  },
  "bot": {
   "menu": "Mon projet",
@@ -309,7 +315,10 @@
   "invite_assistant": "Bonjour {name} ! {head} vous invite dans l’application des employés du studio DUMSKAYA DESIGN sur Telegram : les projets qui vous seront confiés, les documents et les discussions avec les clients et les artisans. Ouvrez le lien dans Telegram et appuyez sur le bouton en bas de l’écran (« Démarrer ») :\n{link}\n\nLe lien est personnel, pour une seule personne, et valable 14 jours.",
   "assistant_assigned": "📁 {who} vous a confié le projet « {project} ». Les documents et les discussions du projet sont dans l’application.",
   "assistant_hint": "Pour écrire dans une discussion du projet, répondez à l’un de ses messages (faites glisser le message vers la gauche) ou ouvrez la discussion dans l’application.",
-  "ctx_thread": "Discussion : {title}"
+  "ctx_thread": "Discussion : {title}",
+  "welcome_hired": "Bonjour {name} ! Voici l’application des prestataires du studio DUMSKAYA DESIGN. Vous y trouverez les projets sur lesquels vous travaillez pour le studio{now} : adresse du chantier, documents et rendus 3D, discussion avec Irina. Joignez vos plans de relevé, plans techniques et rendus 3D dans l’application — le studio les verra.\n\nPour l’ouvrir, appuyez sur « {menu} » à côté du champ de saisie. Vous pouvez aussi écrire à Irina directement ici, dans cette conversation.",
+  "invite_hired": "Bonjour {name} ! Voici le lien vers l’application des prestataires du studio DUMSKAYA DESIGN dans Telegram : les projets sur lesquels vous travaillez pour le studio, l’adresse du chantier, les documents et rendus 3D, et votre discussion avec Irina. Ouvrez-le dans Telegram et appuyez sur le bouton en bas de l’écran (« Démarrer ») :\n{link}\n\nLe lien est personnel, pour une seule personne, et valable 14 jours. Il suffit de vous connecter une seule fois — les nouveaux projets apparaîtront automatiquement dans l’application.",
+  "link_new_hired": "📁 Le studio vous a ajouté au projet « {project} »{trade}. L’adresse du chantier, les documents et la discussion avec Irina sont dans l’application."
  },
  "fixed": {
   "Прораб": "Chef de chantier",
@@ -341,6 +350,9 @@
   "Кухни": "Cuisines",
   "Бытовая техника": "Électroménager",
   "Шторы и текстиль": "Rideaux et textiles",
-  "Декор": "Décoration"
+  "Декор": "Décoration",
+  "Замерщик": "Métreur",
+  "Чертёжник": "Dessinateur",
+  "3D-визуализатор": "Infographiste 3D"
  }
 }

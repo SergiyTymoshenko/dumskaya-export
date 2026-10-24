@@ -29,6 +29,10 @@
     документация (кроме «Другое»), документы подрядчиков, все разговоры проекта — пишет в них от имени студии;
     добавляет файлы в разделы проекта (заказчику — сразу или после Ирины, как выберет);
   • Ирина (студия) — всё; пишет любому участнику, собирает группы, решает, видит ли заказчик документ.
+Исполнитель студии (contractors.kind = 'hired': замерщик, чертёжник, 3D-визуализатор — им платит студия): в проекте как
+подрядчик, но пишет ему только Ирина (заказчик, подрядчики и сотрудники — нет, в группы не входит); заказчик его не видит;
+в кабинете — адрес и документация без денег и контактов заказчика; его файлы видит только студия.
+Личные разговоры Ирины с сотрудниками (staff — с одним, sgroup — с группой сотрудников проекта) видят только участники.
 Документы подрядчика: «заказчик, студия и бригада», «только студия», «только бригада»; работника — «руководитель и
 студия», «вся бригада», «заказчик тоже». Ирина видит всё и может открыть любой документ заказчику.
 Только стандартная библиотека Python 3."""
@@ -50,7 +54,8 @@ STUDIO = {"name": "DUMSKAYA DESIGN", "designer": {"ru": "Ирина Думска
           "designer_latin": "Irina Dumskaya",
           "phone": "+421 918 17 77 85", "email": "irina@dumskaya-design.com", "site": "https://dumskaya-design.com"}
 OBSERVER_NAME = "Разработчик ПО"
-THREAD_KINDS = ("client", "pc", "org", "worker", "group")
+THREAD_KINDS = ("client", "pc", "org", "worker", "group", "staff", "sgroup")
+PRIVATE_KINDS = ("staff", "sgroup")             # Ирина и её сотрудники: видят только участники (ни наблюдатель, ни другие)
 VIS_HEAD = ("client", "studio", "team")        # документ подрядчика: заказчик, студия и бригада / только студия / бригада
 VIS_CREW = ("head", "team", "client")          # документ работника: руководитель и студия / вся бригада / заказчик тоже
 
@@ -80,6 +85,10 @@ FIXED = {
     "Бытовая техника": ("Побутова техніка", "Home appliances", "Domáce spotrebiče", "Haushaltsgeräte"),
     "Шторы и текстиль": ("Штори та текстиль", "Curtains and textiles", "Záclony, závesy a textil", "Vorhänge und Textilien"),
     "Декор": ("Декор", "Decor", "Dekorácie", "Deko"),
+    # исполнители студии (crm.DEFAULTS["hired_cats"]): им платит студия
+    "Замерщик": ("Замірник", "Measurer", "Zameriavač", "Aufmaß-Techniker"),
+    "Чертёжник": ("Кресляр", "Draftsman", "Kreslič", "Bauzeichner"),
+    "3D-визуализатор": ("3D-візуалізатор", "3D visualiser", "3D vizualizátor", "3D-Visualisierer"),
     "Другое": ("Інше", "Other", "Iné", "Sonstiges"),
     "Экспресс": ("Експрес", "Express", "Express", "Express"),
     "Мебель": ("Меблі", "Furniture", "Nábytok", "Möbel"),
@@ -175,9 +184,24 @@ class Portal:
         (staff) — может быть несколько ролей."""
         t = int(tg_id or 0)
         if designer:
-            return {"tg": t, "studio": True, "observer": False, "client": None, "heads": set(), "crew": set(), "staff": set()}
+            return {"tg": t, "studio": True, "observer": False, "client": None, "heads": set(), "crew": set(), "staff": set(), "hired": set()}
+        heads = set(self.contractor_ids(t, pid))
         return {"tg": t, "studio": False, "observer": self.is_observer(t), "client": self.client_of(t, pid),
-                "heads": set(self.contractor_ids(t, pid)), "crew": set(self.crew_ids(t, pid)), "staff": set(self.assistant_ids(t, pid))}
+                "heads": heads, "crew": set(self.crew_ids(t, pid)), "staff": set(self.assistant_ids(t, pid)),
+                "hired": {c for c in heads if self.is_hired(c)}}
+
+    def is_hired(self, contractor_id):
+        """Исполнитель студии (ему платит студия): пишет ему только Ирина."""
+        return bool(contractor_id) and bool(self.crm.one("SELECT 1 FROM contractors WHERE id=? AND kind='hired'", int(contractor_id)))
+
+    def thread_hired(self, t):
+        """Разговор с исполнителем студии (или с его помощником): в нём только Ирина и он."""
+        if t["kind"] in ("org", "pc"):
+            return self.is_hired(t["contractor_id"])
+        if t["kind"] == "worker":
+            w = self.crm.one("SELECT contractor_id FROM crew WHERE id=?", t["crew_id"] or 0)
+            return bool(w) and self.is_hired(w["contractor_id"])
+        return False
 
     def has_cabinet(self, tg_id):
         """Есть ли у Telegram кабинет: заказчик проекта (не отменённого), подключённый подрядчик, работник бригады
@@ -197,7 +221,8 @@ class Portal:
 
     def default_threads(self, tg_id):
         """Куда идёт сообщение, написанное прямо в чат бота (без ответа свайпом): заказчику — разговор со студией,
-        подрядчику — его разговор со студией, работнику — его разговор со студией. [(проект, разговор)]"""
+        подрядчику — его разговор со студией, работнику — его разговор со студией, сотруднику студии — его разговор
+        с Ириной. [(проект, разговор)]"""
         t = int(tg_id or 0)
         out = []
         for p in self.projects_for(t):
@@ -209,6 +234,8 @@ class Portal:
                 th = self.ensure_thread(p["id"], "org", contractor_id=sorted(v["heads"])[0])
             elif v["crew"]:
                 th = self.ensure_thread(p["id"], "worker", crew_id=sorted(v["crew"])[0])
+            elif v["staff"]:                              # сотрудник студии — в свой разговор с Ириной
+                th = self.ensure_thread(p["id"], "staff", assistant_id=sorted(v["staff"])[0])
             if th:
                 out.append((p, th))
         return out
@@ -507,16 +534,29 @@ class Portal:
             raise CrmError("Этого подрядчика нет в проекте")
         return c
 
-    def ensure_thread(self, pid, kind, contractor_id=None, crew_id=None, who=""):
-        """Разговор проекта (создаётся при первом обращении): client, pc и org — с подрядчиком, worker — с работником."""
+    def ensure_thread(self, pid, kind, contractor_id=None, crew_id=None, who="", assistant_id=None):
+        """Разговор проекта (создаётся при первом обращении): client, pc и org — с подрядчиком, worker — с работником,
+        staff — Ирина и сотрудник студии, назначенный на проект."""
         pid = int(pid or 0)
-        if kind not in ("client", "pc", "org", "worker"):
+        if kind not in ("client", "pc", "org", "worker", "staff"):
             raise CrmError("Неизвестный разговор")
         if not self.crm.one("SELECT id FROM projects WHERE id=?", pid):
             raise CrmError("Проект не найден")
+        if kind == "staff":
+            aid = int(assistant_id or 0)
+            if not self.crm.one("SELECT 1 FROM project_assistants x JOIN assistants a ON a.id=x.assistant_id WHERE x.project_id=? "
+                                "AND x.assistant_id=? AND a.removed IS NULL", pid, aid):
+                raise CrmError("Этот сотрудник не назначен на проект")
+            t = self.crm.one("SELECT * FROM threads WHERE project_id=? AND kind='staff' AND assistant_id=?", pid, aid)
+            if t:
+                return t
+            return self.thread(self.crm.run("INSERT INTO threads(project_id, kind, assistant_id, created_by, created, updated) "
+                                            "VALUES(?, 'staff', ?, ?, ?, ?)", pid, aid, _text(who, 120), now(), now()))
         cid = wid = None
         if kind in ("pc", "org"):
             cid = self._linked(pid, contractor_id)["id"]
+            if kind == "pc" and self.is_hired(cid):
+                raise CrmError("Исполнителю студии пишет только Ирина")
         if kind == "worker":
             w = self.crew_get(crew_id)
             self._linked(pid, w["contractor_id"])
@@ -540,10 +580,14 @@ class Portal:
         for m in d.get("members") or []:
             kind, ref = (m.get("kind"), m.get("id")) if isinstance(m, dict) else m
             if kind == "contractor":
-                mem.add(("contractor", self._linked(pid, ref)["id"]))
+                c = self._linked(pid, ref)
+                if c["kind"] == "hired":
+                    raise CrmError(f"«{c['name']}» — исполнитель студии: ему пишет только Ирина, в группу его не добавить")
+                mem.add(("contractor", c["id"]))
             elif kind == "crew":
                 w = self.crew_get(ref)
-                self._linked(pid, w["contractor_id"])
+                if self._linked(pid, w["contractor_id"])["kind"] == "hired":
+                    raise CrmError(f"«{w['name']}» — из команды исполнителя студии: ему пишет только Ирина, в группу не добавить")
                 self.crew_assign(pid, w["id"], True, who)
                 mem.add(("crew", w["id"]))
         if not mem:
@@ -563,14 +607,49 @@ class Portal:
         self.crm.audit(who, "edit" if d.get("id") else "add", "thread", tid, {"project_id": pid, "title": title, "members": sorted(mem)})
         return self.thread(tid)
 
+    def save_staff_group(self, pid, d, who):
+        """Группа Ирины с сотрудниками студии этого проекта: видят и пишут только они и Ирина."""
+        pid = int(pid or 0)
+        title = _text(d.get("title"), 120)
+        if not title:
+            raise CrmError("Назовите группу, например «Визуализации и чертежи»")
+        here = {r["assistant_id"] for r in self.crm.q("SELECT assistant_id FROM project_assistants WHERE project_id=?", pid)}
+        mem = {int(x) for x in (d.get("members") or []) if int(x) in here}
+        if not mem:
+            raise CrmError("Отметьте сотрудников, назначенных на проект")
+        tid = int(d.get("id") or 0)
+        if tid:
+            t = self.thread(tid)
+            if not t or t["project_id"] != pid or t["kind"] != "sgroup":
+                raise CrmError("Группа не найдена")
+            self.crm.run("UPDATE threads SET title=?, updated=? WHERE id=?", title, now(), tid)
+            self.crm.run("DELETE FROM thread_members WHERE thread_id=?", tid)
+        else:
+            tid = self.crm.run("INSERT INTO threads(project_id, kind, title, created_by, created, updated) VALUES(?, 'sgroup', ?, ?, ?, ?)",
+                               pid, title, _text(who, 120), now(), now())
+        for a in sorted(mem):
+            self.crm.run("INSERT INTO thread_members(thread_id, kind, ref_id) VALUES(?, 'assistant', ?)", tid, a)
+        self.crm.audit(who, "edit" if d.get("id") else "add", "thread", tid, {"project_id": pid, "title": title, "staff": sorted(mem)})
+        return self.thread(tid)
+
     def access(self, v, t):
         """Что этот человек может с разговором: write — читать и писать, read — только читать, None — не видит."""
         if not t:
             return None
-        if v["studio"] or v.get("staff"):               # сотрудник студии — во всех разговорах своих проектов
+        k = t["kind"]
+        if k in PRIVATE_KINDS:                          # Ирина и её сотрудники: только участники
+            if v["studio"]:
+                return "write"
+            mine = v.get("staff") or set()
+            if k == "staff":
+                return "write" if t["assistant_id"] in mine else None
+            return "write" if any(m["kind"] == "assistant" and m["ref_id"] in mine for m in self.members(t["id"])) else None
+        if v["studio"]:
+            return "write"
+        hired = self.thread_hired(t)
+        if v.get("staff") and not hired:                # сотрудник студии — в разговорах своих проектов (исполнителям студии — нет)
             return "write"
         best = "read" if v["observer"] else None
-        k = t["kind"]
         if v["client"] and k in ("client", "pc"):
             return "write"
         heads, crew = v["heads"], v["crew"]
@@ -597,19 +676,25 @@ class Portal:
         """Разговор для списка: кто в нём, последнее сообщение (с переводом на язык lang, если есть), непрочитанные."""
         acc = acc or self.access(v, t)
         out = {"id": t["id"], "kind": t["kind"], "title": t["title"] or "", "access": acc, "studio_joined": bool(t["studio_joined"]),
-               "contractor": None, "crew": None, "members": []}
+               "contractor": None, "crew": None, "assistant": None, "members": []}
         if t["contractor_id"]:
-            c = self.crm.one("SELECT id, name, trade, company FROM contractors WHERE id=?", t["contractor_id"]) or {}
+            c = self.crm.one("SELECT id, name, trade, company, kind FROM contractors WHERE id=?", t["contractor_id"]) or {}
             link = self.crm.one("SELECT trade FROM project_contractors WHERE project_id=? AND contractor_id=?", t["project_id"], t["contractor_id"]) or {}
             out["contractor"] = {"id": c.get("id"), "name": c.get("name") or "", "trade": link.get("trade") or c.get("trade") or "",
-                                 "company": c.get("company") or ""}
+                                 "company": c.get("company") or "", "kind": c.get("kind") or ""}
+        if t["assistant_id"]:
+            a = self.crm.one("SELECT id, name, position FROM assistants WHERE id=?", t["assistant_id"]) or {}
+            out["assistant"] = {"id": a.get("id"), "name": a.get("name") or "", "position": a.get("position") or ""}
         if t["crew_id"]:
             w = self.crm.one("SELECT w.id, w.name, w.position, c.name AS head FROM crew w JOIN contractors c ON c.id=w.contractor_id WHERE w.id=?",
                              t["crew_id"]) or {}
             out["crew"] = {"id": w.get("id"), "name": w.get("name") or "", "position": w.get("position") or "", "head": w.get("head") or ""}
-        if t["kind"] == "group":
+        if t["kind"] in ("group", "sgroup"):
             for m in self.members(t["id"]):
-                if m["kind"] == "contractor":
+                if m["kind"] == "assistant":
+                    a = self.crm.one("SELECT name, position FROM assistants WHERE id=?", m["ref_id"]) or {}
+                    out["members"].append({"kind": "assistant", "id": m["ref_id"], "name": a.get("name") or "", "role": a.get("position") or ""})
+                elif m["kind"] == "contractor":
                     c = self.crm.one("SELECT name, trade FROM contractors WHERE id=?", m["ref_id"]) or {}
                     out["members"].append({"kind": "contractor", "id": m["ref_id"], "name": c.get("name") or "", "role": c.get("trade") or ""})
                 else:
@@ -648,6 +733,8 @@ class Portal:
             self.ensure_thread(pid, "org", contractor_id=h)
         for w in v["crew"]:
             self.ensure_thread(pid, "worker", crew_id=w)
+        for a in v.get("staff") or set():
+            self.ensure_thread(pid, "staff", assistant_id=a)
         out = []
         for t in self.crm.q("SELECT * FROM threads WHERE project_id=? ORDER BY id", pid):
             acc = self.access(v, t)
@@ -657,7 +744,7 @@ class Portal:
             have = {x["contractor"]["id"] for x in out if x["kind"] == "pc" and x["contractor"]}
             for k in self.crm.q("""SELECT DISTINCT c.id, c.name, c.trade, c.company, l.trade AS link_trade FROM project_contractors l
                                    JOIN contractors c ON c.id=l.contractor_id WHERE l.project_id=? AND c.observer IS NULL
-                                   AND c.tg_id IS NOT NULL""", pid):
+                                   AND c.tg_id IS NOT NULL AND COALESCE(c.kind, '') != 'hired'""", pid):
                 if k["id"] not in have:
                     trade = k["link_trade"] or k["trade"] or ""
                     out.append({"id": None, "kind": "pc", "start": True, "access": "write", "unread": 0, "count": 0, "last": None,
@@ -665,7 +752,8 @@ class Portal:
                                                "company": k["company"] or ""}, "crew": None, "members": [], "updated": ""})
         def own(x):                                   # свой разговор со студией — первым
             return (x["kind"] == "client" and v["client"]) or (x["kind"] == "org" and (x["contractor"] or {}).get("id") in v["heads"]) or \
-                (x["kind"] == "worker" and (x["crew"] or {}).get("id") in v["crew"])
+                (x["kind"] == "worker" and (x["crew"] or {}).get("id") in v["crew"]) or \
+                (x["kind"] == "staff" and (x["assistant"] or {}).get("id") in (v.get("staff") or set()))
         # дальше — свежие сверху; «только чтение» и «написать подрядчику» — в конце
         out.sort(key=lambda x: x.get("updated") or "", reverse=True)
         out.sort(key=lambda x: (not own(x), x.get("start", False), x["access"] == "read" and not v["studio"] and not v["observer"]))
@@ -754,6 +842,12 @@ class Portal:
             if not p or (loud and not p["loud"]):
                 res[int(tg)] = {"tg": int(tg), "who": who, "name": name or "", "loud": loud}
         k = t["kind"]
+        if k in PRIVATE_KINDS:                       # Ирина и её сотрудники: только участники, без наблюдателя
+            ids = [t["assistant_id"]] if k == "staff" else [m["ref_id"] for m in self.members(t["id"]) if m["kind"] == "assistant"]
+            for aid in ids:
+                x = self.crm.one("SELECT tg_id, name FROM assistants WHERE id=? AND removed IS NULL", aid or 0) or {}
+                add(x.get("tg_id"), "assistant", x.get("name"), True)
+            return {"thread": t, "studio": {"loud": True} if author_kind != "studio" else None, "people": list(res.values())}
         if k in ("client", "pc"):
             for c in self.crm.project_people(t["project_id"]):
                 add(c.get("tg_id"), "client", c["name"], True)
@@ -779,9 +873,10 @@ class Portal:
                 c = self.crm.one("SELECT tg_id, name FROM contractors WHERE id=?", cid or 0) or {}
                 add(c.get("tg_id"), "contractor", c.get("name"), False)
         watching = k == "pc" and not t["studio_joined"]            # заказчик с подрядчиком, студия ещё не вступила — тихо
-        for a in self.crm.q("""SELECT a.tg_id, a.name FROM assistants a JOIN project_assistants x ON x.assistant_id=a.id
-                               WHERE x.project_id=? AND a.removed IS NULL AND a.tg_id IS NOT NULL""", t["project_id"]):
-            add(a["tg_id"], "assistant", a["name"], author_kind not in ("studio", "assistant") and not watching)
+        if not self.thread_hired(t):                                # исполнителю студии пишет только Ирина
+            for x in self.crm.q("""SELECT a.tg_id, a.name FROM assistants a JOIN project_assistants j ON j.assistant_id=a.id
+                                   WHERE j.project_id=? AND a.removed IS NULL AND a.tg_id IS NOT NULL""", t["project_id"]):
+                add(x["tg_id"], "assistant", x["name"], author_kind not in ("studio", "assistant") and not watching)
         for o in self.observers():
             add(o["tg_id"], "observer", o["name"], False)
         studio = None
@@ -795,17 +890,24 @@ class Portal:
     STAGE_KEYS = ("id", "title", "day", "amount", "currency", "src", "confirmed", "confirmed_by", "disputed", "disputed_by", "dispute_note")
 
     def can_see_file(self, v, f):
-        if v["studio"] or v["observer"]:
+        if v["studio"]:
             return True
         cat = f["category"]
+        if f.get("thread_id"):                       # вложение разговора — участникам; заказчику — если студия открыла
+            t = self.thread(f["thread_id"])
+            if t and t["kind"] in PRIVATE_KINDS:     # личный разговор Ирины с сотрудниками — только им
+                return bool(self.access(v, t))
+            if v["observer"] or self.access(v, t):
+                return True
+            return bool(v["client"]) and f.get("see_client") == 1
+        if v["observer"]:
+            return True
         if v.get("staff"):                           # сотрудник студии: всё, кроме «Другое» (счета, договоры) и фото товаров
             return cat not in ("goods", "other")
         if cat == "goods":
             return False
-        if f.get("thread_id"):                       # вложение разговора — участникам; заказчику — если студия открыла
-            if self.access(v, self.thread(f["thread_id"])):
-                return True
-            return bool(v["client"]) and f.get("see_client") == 1
+        if v.get("hired") and cat in CLIENT_CATS and f.get("see_crew") != 0:   # исполнителю студии — вся документация
+            return True
         if cat == "work":                            # документ подрядчика или его работника
             org = f.get("owner_contractor")
             if org in v["heads"]:
@@ -897,6 +999,8 @@ class Portal:
         """Документ от подрядчика или работника (фото выполненных работ, техническая документация) — раздел «От подрядчиков»."""
         if v["heads"]:
             org = sorted(v["heads"])[0]
+            if org in (v.get("hired") or set()):      # исполнитель студии: файлы видит студия, заказчику откроет Ирина
+                vis = "studio"
             if vis not in VIS_HEAD:
                 raise CrmError("Выберите, кто видит документ")
             owner = ("contractor", org, None)
@@ -949,6 +1053,8 @@ class Portal:
                          _text(d.get("title", f["title"]), 200), f["id"])
             return self._file_out(self.crm.one("SELECT * FROM files WHERE id=?", f["id"]), v)
         vis = d.get("vis", f["vis"])
+        if f["owner_kind"] == "contractor" and self.is_hired(f["owner_contractor"]):
+            vis = "studio"                           # исполнитель студии: файлы видит студия, заказчику откроет Ирина
         if vis not in (VIS_HEAD if f["owner_kind"] == "contractor" else VIS_CREW):
             raise CrmError("Выберите, кто видит документ")
         self.crm.run("UPDATE files SET vis=?, title=? WHERE id=?", vis, _text(d.get("title", f["title"]), 200), f["id"])
@@ -997,7 +1103,7 @@ class Portal:
         v = dict(v, client=v["client"] or {"id": 0}, heads=set(), crew=set(), observer=False, staff=set())   # смотрит именно как заказчик
         contractors = []
         for k in P["contractors"]:
-            if k.get("observer") or any(c["id"] == k["id"] for c in contractors):
+            if k.get("observer") or k.get("kind") == "hired" or any(c["id"] == k["id"] for c in contractors):
                 continue
             stages = [_pick(s, self.STAGE_KEYS) for x in P["contractors"] if x["id"] == k["id"] for s in x["money"]["stages"]]
             contractors.append({"id": k["id"], "link_id": k["link_id"], "name": k["name"], "trade": k["link_trade"] or k["trade"] or "",
@@ -1038,13 +1144,19 @@ class Portal:
                          "bonuses": bonuses.get(k["link_id"], [])})
         if not mine:
             raise CrmError("Проект недоступен")
-        v = {"tg": int(viewer_tg or 0), "studio": False, "observer": False, "client": None, "heads": ids, "crew": set(), "staff": set()}
+        hired = {k["id"] for k in mine if k["kind"] == "hired"}
+        for k in mine:                                # исполнителю студии: без денег — ему платит студия
+            if k["kind"] == "hired":
+                k.update(stages=[], money={"currency": "EUR"}, bonuses=[])
+        v = {"tg": int(viewer_tg or 0), "studio": False, "observer": False, "client": None, "heads": ids, "crew": set(), "staff": set(),
+             "hired": hired}
         team = []
-        for cid in sorted(ids):
+        for cid in sorted(ids - hired):
             for w in self.team(cid, pid):
                 team.append(dict(w, contractor_id=cid))
+        only_hired = hired == ids                     # исполнитель студии: контакты заказчика не видит — пишет только Ирине
         return {"role": "contractor", "project": _pick(p, self.PROJECT_KEYS),
-                "clients": [_pick(c, ("name", "phone", "email", "messenger", "contact_pref")) for c in P["people"]],
+                "clients": [] if only_hired else [_pick(c, ("name", "phone", "email", "messenger", "contact_pref")) for c in P["people"]],
                 "files": self.files_for(v, p["id"]), "mine": mine, "team": team,
                 "default_pct": self.crm.lists()["default_pct"], "studio": STUDIO}
 

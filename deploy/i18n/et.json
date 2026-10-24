@@ -250,7 +250,13 @@
   "staff_docs_hint": "Mõõdistusplaanid, visualiseeringud, joonised — lisage need projekti jaotistesse.",
   "section": "Jaotis",
   "vis_s_all": "Kõik, kes seda jaotist näevad (klient, töövõtjad)",
-  "vis_s_studio": "Ainult stuudio — Irina näitab seda kliendile ise"
+  "vis_s_studio": "Ainult stuudio — Irina näitab seda kliendile ise",
+  "role_hired": "Stuudio spetsialist",
+  "hired_hint": "Selle töö tellib ja tasub stuudio. Vestlete ainult Irinaga: klient ja töövõtjad seda vestlust ei näe.",
+  "msgs_hint_hired": "Siin kirjutate Irinale. Klient ja töövõtjad seda vestlust ei näe.",
+  "docs_hired_hint": "Lisage siia mõõdistused, joonised ja visualiseeringud. Stuudio näeb neid; kliendile näitab neid Irina.",
+  "staff_note": "Seda vestlust näete ainult Teie ja Irina.",
+  "sgroup_note": "Seda gruppi näevad ainult Irina ja selles olevad stuudio töötajad."
  },
  "bot": {
   "menu": "Minu projekt",
@@ -309,7 +315,10 @@
   "invite_assistant": "Tere, {name}! {head} kutsub Teid stuudio DUMSKAYA DESIGN töötajate rakendusse Telegramis: projektid, kuhu Teid määratakse, dokumendid ning vestlused klientide ja töövõtjatega. Avage link Telegramis ja puudutage ekraani allservas olevat nuppu („Alusta“):\n{link}\n\nLink on isiklik, ühele inimesele, ja kehtib 14 päeva.",
   "assistant_assigned": "📁 {who} määras Teid projekti „{project}“. Dokumendid ja projekti vestlused on rakenduses.",
   "assistant_hint": "Projekti vestlusesse kirjutamiseks vastake mõnele selle sõnumile (libistage sõnumit vasakule) või avage vestlus rakenduses.",
-  "ctx_thread": "Vestlus: {title}"
+  "ctx_thread": "Vestlus: {title}",
+  "welcome_hired": "Tere, {name}! See on stuudio DUMSKAYA DESIGN spetsialistide rakendus. Siin on projektid, mille kallal töötate stuudio heaks{now}: objekti aadress, dokumendid ja visualiseeringud, vestlus Irinaga. Mõõdistused, joonised ja visualiseeringud lisage rakenduses — stuudio näeb neid.\n\nRakenduse avamiseks puudutage sõnumivälja kõrval nuppu „{menu}“. Irinale võite kirjutada ka otse siia vestlusesse.",
+  "invite_hired": "Tere, {name}! Siin on link stuudio DUMSKAYA DESIGN spetsialistide rakendusele Telegramis: projektid, mille kallal töötate stuudio heaks, objekti aadress, dokumendid ja visualiseeringud ning vestlus Irinaga. Avage see Telegramis ja puudutage ekraani allservas olevat nuppu („Alusta“):\n{link}\n\nLink on isiklik, ühele inimesele, ja kehtib 14 päeva. Liituda tuleb ainult üks kord — uued projektid ilmuvad rakendusse automaatselt.",
+  "link_new_hired": "📁 Stuudio lisas Teid projekti „{project}“{trade}. Aadress, dokumendid ja vestlus Irinaga on rakenduses."
  },
  "fixed": {
   "Прораб": "Objektijuht",
@@ -341,6 +350,9 @@
   "Кухни": "Köögid",
   "Бытовая техника": "Kodumasinad",
   "Шторы и текстиль": "Kardinad ja tekstiil",
-  "Декор": "Dekoor"
+  "Декор": "Dekoor",
+  "Замерщик": "Mõõdistaja",
+  "Чертёжник": "Joonestaja",
+  "3D-визуализатор": "3D-visualiseerija"
  }
 }

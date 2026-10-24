@@ -20,6 +20,8 @@ import json
 import os
 import re
 import sys
+import threading
+import time
 import urllib.error
 import urllib.request
 
@@ -53,6 +55,49 @@ PROMPT = ("Ты переводчик студии дизайна интерье�
 
 
 KEYS = {"openai": "OPENAI_API_KEY", "deepl": "DEEPL_API_KEY", "claude": "ANTHROPIC_API_KEY"}
+
+# учёт расхода (страница разработчика «Сервер и ИИ»): сервис ставит сюда функцию, она получает каждый вызов —
+# сервис, модель, на что (purpose), токены или знаки, время, ошибку. Ключи в учёт не попадают.
+USAGE_HOOK = None
+_CTX = threading.local()
+
+
+class purpose:
+    """with purpose("chat"): … — на что ушли вызовы внутри: chat (переписка), names (названия), lead (заявка)."""
+    def __init__(self, name):
+        self.name = name
+
+    def __enter__(self):
+        self.prev = getattr(_CTX, "purpose", None)
+        _CTX.purpose = self.name
+        return self
+
+    def __exit__(self, *exc):
+        _CTX.purpose = self.prev
+        return False
+
+
+def _report(service, model, t0, ok, tokens_in=0, tokens_out=0, chars=0, error=None):
+    hook = USAGE_HOOK
+    if not hook:
+        return
+    try:
+        hook({"provider": service, "model": model or service, "purpose": getattr(_CTX, "purpose", None) or "other", "ok": bool(ok),
+              "tokens_in": int(tokens_in or 0), "tokens_out": int(tokens_out or 0), "chars": int(chars or 0),
+              "ms": int((time.time() - t0) * 1000), "error": error})
+    except Exception:  # noqa: BLE001 — учёт никогда не мешает переводу
+        pass
+
+
+def _deepl_call(url, body, key, chars):
+    t0 = time.time()
+    try:
+        r = _post(url, body, {"Authorization": f"DeepL-Auth-Key {key}"})
+    except Exception as e:
+        _report("deepl", "deepl", t0, False, chars=chars, error=f"{type(e).__name__}: {e}")
+        raise
+    _report("deepl", "deepl", t0, True, chars=chars)
+    return r
 
 
 def provider():
@@ -100,7 +145,7 @@ def _post(url, body, headers, timeout=TIMEOUT):
 
 def _deepl(text, key):
     host = os.environ.get("DEEPL_API_URL") or ("https://api-free.deepl.com" if key.endswith(":fx") else "https://api.deepl.com")
-    r = _post(f"{host}/v2/translate", {"text": [text], "target_lang": "RU"}, {"Authorization": f"DeepL-Auth-Key {key}"})
+    r = _deepl_call(f"{host}/v2/translate", {"text": [text], "target_lang": "RU"}, key, len(text))
     t = (r.get("translations") or [{}])[0]
     return (t.get("detected_source_language") or "").lower(), t.get("text") or ""
 
@@ -115,9 +160,16 @@ def _json_reply(out):
 def _claude_raw(system, text):
     url = os.environ.get("ANTHROPIC_API_URL") or "https://api.anthropic.com"
     model = os.environ.get("TRANSLATE_MODEL", "").strip() or "claude-haiku-5-5"
-    r = _post(f"{url}/v1/messages", {"model": model, "max_tokens": 4000, "system": system,
-                                      "messages": [{"role": "user", "content": text}]},
-              {"x-api-key": os.environ["ANTHROPIC_API_KEY"].strip(), "anthropic-version": "2023-06-01"}, TIMEOUT_LLM)
+    t0 = time.time()
+    try:
+        r = _post(f"{url}/v1/messages", {"model": model, "max_tokens": 4000, "system": system,
+                                          "messages": [{"role": "user", "content": text}]},
+                  {"x-api-key": os.environ["ANTHROPIC_API_KEY"].strip(), "anthropic-version": "2023-06-01"}, TIMEOUT_LLM)
+    except Exception as e:
+        _report("claude", model, t0, False, error=f"{type(e).__name__}: {e}")
+        raise
+    u = r.get("usage") or {}
+    _report("claude", model, t0, True, u.get("input_tokens"), u.get("output_tokens"))
     return "".join(b.get("text", "") for b in r.get("content") or [] if b.get("type") == "text")
 
 
@@ -134,14 +186,21 @@ def _openai_raw(system, text):
     if re.match(r"(gpt-5|gpt-6|o\d)", model):
         body["reasoning_effort"] = "low"          # перевод — простая задача: быстрее и дешевле
     headers = {"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"].strip()}
+    t0 = time.time()
     try:
-        r = _post(openai_base() + "/chat/completions", body, headers, TIMEOUT_LLM)
-    except RuntimeError as e:
-        if "ответ 400" not in str(e):
-            raise
-        for k in ("reasoning_effort", "response_format"):
-            body.pop(k, None)
-        r = _post(openai_base() + "/chat/completions", body, headers, TIMEOUT_LLM)
+        try:
+            r = _post(openai_base() + "/chat/completions", body, headers, TIMEOUT_LLM)
+        except RuntimeError as e:
+            if "ответ 400" not in str(e):
+                raise
+            for k in ("reasoning_effort", "response_format"):
+                body.pop(k, None)
+            r = _post(openai_base() + "/chat/completions", body, headers, TIMEOUT_LLM)
+    except Exception as e:
+        _report("openai", model, t0, False, error=f"{type(e).__name__}: {e}")
+        raise
+    u = r.get("usage") or {}
+    _report("openai", model, t0, True, u.get("prompt_tokens"), u.get("completion_tokens"))
     return ((r.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
 
 
@@ -206,8 +265,7 @@ def translate_text(text, target):
     if p == "deepl":
         key = os.environ["DEEPL_API_KEY"].strip()
         host = os.environ.get("DEEPL_API_URL") or ("https://api-free.deepl.com" if key.endswith(":fx") else "https://api.deepl.com")
-        r = _post(f"{host}/v2/translate", {"text": [text], "target_lang": DEEPL_TARGET.get(target, "EN-GB")},
-                  {"Authorization": f"DeepL-Auth-Key {key}"})
+        r = _deepl_call(f"{host}/v2/translate", {"text": [text], "target_lang": DEEPL_TARGET.get(target, "EN-GB")}, key, len(text))
         t = (r.get("translations") or [{}])[0]
         src, out = _lang(t.get("detected_source_language")), t.get("text") or ""
     else:

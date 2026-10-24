@@ -250,7 +250,13 @@
   "staff_docs_hint": "Felmérési rajzok, látványtervek, tervrajzok — adja hozzá őket a projekt rovataihoz.",
   "section": "Rovat",
   "vis_s_all": "Mindenki, aki látja ezt a rovatot (megrendelő, kivitelezők)",
-  "vis_s_studio": "Csak a stúdió — Irina maga mutatja meg a megrendelőnek"
+  "vis_s_studio": "Csak a stúdió — Irina maga mutatja meg a megrendelőnek",
+  "role_hired": "A stúdió szakembere",
+  "hired_hint": "Ezt a munkát a stúdió rendeli meg és fizeti. A beszélgetés csak Irinával folyik: a megrendelő és a kivitelezők nem látják.",
+  "msgs_hint_hired": "Itt Irinának írhat. A megrendelő és a kivitelezők nem látják ezt a beszélgetést.",
+  "docs_hired_hint": "Felmérési rajzok, tervrajzok, látványtervek — itt adja hozzá őket. A stúdió látja őket; a megrendelővel Irina osztja meg.",
+  "staff_note": "Ezt a beszélgetést csak Ön és Irina látja.",
+  "sgroup_note": "Ezt a csoportot csak Irina és a benne lévő stúdiómunkatársak látják."
  },
  "bot": {
   "menu": "Projektem",
@@ -309,7 +315,10 @@
   "invite_assistant": "Üdvözöljük, {name}! {head} meghívja Önt a DUMSKAYA DESIGN stúdió munkatársainak alkalmazásába a Telegramban: a projektek, amelyekhez hozzárendelik, dokumentáció és beszélgetések a megrendelőkkel és a kivitelezőkkel. Nyissa meg a linket a Telegramban, és koppintson a képernyő alján lévő gombra („Indítás”):\n{link}\n\nA link személyes, egy személynek szól, és 14 napig érvényes.",
   "assistant_assigned": "📁 {who} hozzárendelte Önt egy projekthez: „{project}”. A dokumentáció és a projekt beszélgetései az alkalmazásban találhatók.",
   "assistant_hint": "Ha a projekt egyik beszélgetésébe szeretne írni, válaszoljon annak egyik üzenetére (húzza balra az üzenetet), vagy nyissa meg a beszélgetést az alkalmazásban.",
-  "ctx_thread": "Beszélgetés: {title}"
+  "ctx_thread": "Beszélgetés: {title}",
+  "welcome_hired": "Üdvözöljük, {name}! Ez a DUMSKAYA DESIGN alkalmazása a stúdiónak dolgozó szakemberek számára. Itt találja azokat a projekteket, amelyeken a stúdiónak dolgozik{now}: a helyszín címe, dokumentáció és látványtervek, beszélgetés Irinával. A felmérési rajzokat, tervrajzokat és látványterveket az alkalmazásban csatolja — a stúdió látni fogja őket.\n\nMegnyitásához koppintson a „{menu}” gombra az üzenetmező mellett. Irinának közvetlenül itt, ebben a csevegésben is írhat.",
+  "invite_hired": "Üdvözöljük, {name}! Itt a link a DUMSKAYA DESIGN stúdió szakembereinek szóló alkalmazáshoz a Telegramban: a projektek, amelyeken a stúdiónak dolgozik, a helyszín címe, dokumentáció és látványtervek, beszélgetés Irinával. Nyissa meg a Telegramban, és koppintson a képernyő alján lévő gombra („Indítás”):\n{link}\n\nA link személyes, egy személynek szól, és 14 napig érvényes. Csak egyszer kell csatlakoznia — az új projektek automatikusan megjelennek az alkalmazásban.",
+  "link_new_hired": "📁 A stúdió hozzáadta Önt egy projekthez: „{project}”{trade}. A cím, a dokumentáció és az Irinával folytatott beszélgetés az alkalmazásban található."
  },
  "fixed": {
   "Прораб": "Építésvezető",
@@ -341,6 +350,9 @@
   "Кухни": "Konyhák",
   "Бытовая техника": "Háztartási gépek",
   "Шторы и текстиль": "Függönyök és textíliák",
-  "Декор": "Dekoráció"
+  "Декор": "Dekoráció",
+  "Замерщик": "Felmérő",
+  "Чертёжник": "Műszaki rajzoló",
+  "3D-визуализатор": "3D látványtervező"
  }
 }

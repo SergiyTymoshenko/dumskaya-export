@@ -250,7 +250,13 @@
   "staff_docs_hint": "Snimke postojećeg stanja, vizualizacije, nacrti — dodajte ih u odjeljke projekta.",
   "section": "Odjeljak",
   "vis_s_all": "Svi koji vide ovaj odjeljak (klijent, izvođači)",
-  "vis_s_studio": "Samo studio — Irina će to sama pokazati klijentu"
+  "vis_s_studio": "Samo studio — Irina će to sama pokazati klijentu",
+  "role_hired": "Suradnik studija",
+  "hired_hint": "Ovaj posao Vam naručuje i plaća studio. Razgovor vodite samo s Irinom: klijent i izvođači ga ne vide.",
+  "msgs_hint_hired": "Ovdje pišete Irini. Klijent i izvođači ne vide ovaj razgovor.",
+  "docs_hired_hint": "Izmjere, nacrte i vizualizacije dodajte ovdje. Studio ih vidi, a Irina će ih podijeliti s klijentom.",
+  "staff_note": "Ovaj razgovor vidite samo Vi i Irina.",
+  "sgroup_note": "Ovu grupu vide samo Irina i zaposlenici studija koji su u njoj."
  },
  "bot": {
   "menu": "Moj projekt",
@@ -309,7 +315,10 @@
   "invite_assistant": "Dobar dan, {name}! {head} Vas poziva u aplikaciju za zaposlenike studija DUMSKAYA DESIGN u Telegramu: projekti koji će Vam biti dodijeljeni, dokumentacija i razgovori s klijentima i izvođačima. Otvorite poveznicu u Telegramu i dodirnite gumb na dnu zaslona („Pokreni“):\n{link}\n\nPoveznica je osobna, za jednu osobu, i vrijedi 14 dana.",
   "assistant_assigned": "📁 {who} Vas je dodijelila projektu „{project}“. Dokumentacija i razgovori projekta su u aplikaciji.",
   "assistant_hint": "Da biste pisali u razgovor projekta, odgovorite na neku od njegovih poruka (povucite poruku ulijevo) ili otvorite razgovor u aplikaciji.",
-  "ctx_thread": "Razgovor: {title}"
+  "ctx_thread": "Razgovor: {title}",
+  "welcome_hired": "Dobar dan, {name}! Ovo je aplikacija za suradnike studija DUMSKAYA DESIGN. Ovdje su projekti na kojima radite za studio{now}: adresa objekta, dokumentacija i vizualizacije, razgovor s Irinom. Izmjere, nacrte i vizualizacije prilažite u aplikaciji — vidjet će ih studio.\n\nAplikaciju otvorite dodirom na „{menu}“ pokraj polja za poruku. Irini možete pisati i izravno ovdje, u ovom razgovoru.",
+  "invite_hired": "Dobar dan, {name}! Ovo je poveznica na aplikaciju za suradnike studija DUMSKAYA DESIGN u Telegramu: projekti na kojima radite za studio, adresa objekta, dokumentacija i vizualizacije, razgovor s Irinom. Otvorite je u Telegramu i dodirnite gumb na dnu zaslona („Pokreni“):\n{link}\n\nPoveznica je osobna, za jednu osobu, i vrijedi 14 dana. Povezati se trebate samo jednom — novi projekti pojavit će se u aplikaciji automatski.",
+  "link_new_hired": "📁 Studio Vas je dodao u projekt „{project}“{trade}. Adresa, dokumentacija i razgovor s Irinom su u aplikaciji."
  },
  "fixed": {
   "Прораб": "Voditelj gradilišta",
@@ -341,6 +350,9 @@
   "Кухни": "Kuhinje",
   "Бытовая техника": "Kućanski aparati",
   "Шторы и текстиль": "Zavjese i tekstil",
-  "Декор": "Dekoracije"
+  "Декор": "Dekoracije",
+  "Замерщик": "Mjeritelj",
+  "Чертёжник": "Tehnički crtač",
+  "3D-визуализатор": "3D vizualizator"
  }
 }

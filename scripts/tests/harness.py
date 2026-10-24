@@ -79,6 +79,7 @@ portal_api.CRM, portal_api.BOT, portal_api.PORTAL, portal_api.CHECK, portal_api.
 
 IRINA, CLIENT, CLIENT2, CREW, CREW2, WORKER, WORKER2, OWNER = 2, 100, 101, 200, 201, 300, 301, 1
 ASSIST, SUPP, SUPPW = 400, 500, 501      # сотрудник студии; поставщик плитки и его менеджер
+ASSIST2, ASSIST3, HIRED = 401, 402, 600   # ещё двое сотрудников студии; исполнитель студии (замерщик)
 bot.s.run("INSERT INTO users(tg_id, name, role, status, created, updated) VALUES(?, 'Ирина', 'designer', 'active', '', '')", IRINA)
 
 

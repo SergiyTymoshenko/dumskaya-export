@@ -250,7 +250,13 @@
   "staff_docs_hint": "Uppmätningar, visualiseringar, ritningar — lägg till dem i projektets avsnitt.",
   "section": "Avsnitt",
   "vis_s_all": "Alla som ser det här avsnittet (kund, hantverkare)",
-  "vis_s_studio": "Endast studion — Irina visar det för kunden själv"
+  "vis_s_studio": "Endast studion — Irina visar det för kunden själv",
+  "role_hired": "Studiospecialist",
+  "hired_hint": "Det här arbetet beställs och betalas av studion. Du chattar bara med Irina: kunden och hantverkarna ser inte chatten.",
+  "msgs_hint_hired": "Här skriver du till Irina. Kunden och hantverkarna ser inte den här chatten.",
+  "docs_hired_hint": "Lägg till uppmätningar, ritningar och visualiseringar här. Studion ser dem; Irina visar dem för kunden.",
+  "staff_note": "Bara du och Irina ser den här konversationen.",
+  "sgroup_note": "Bara Irina och de studiomedarbetare som är med i gruppen kan se den."
  },
  "bot": {
   "menu": "Mitt projekt",
@@ -309,7 +315,10 @@
   "invite_assistant": "Hej {name}! {head} bjuder in dig till appen för studiomedarbetare från DUMSKAYA DESIGN i Telegram: projekten du tilldelas, dokument och chattar med kunder och hantverkare. Öppna länken i Telegram och tryck på knappen längst ned (”Starta”):\n{link}\n\nLänken är personlig, för en person, och gäller i 14 dagar.",
   "assistant_assigned": "📁 {who} har tilldelat dig projektet ”{project}”. Dokument och projektets chattar finns i appen.",
   "assistant_hint": "Om du vill skriva i en projektchatt svarar du på ett av dess meddelanden (dra meddelandet åt vänster) eller öppnar chatten i appen.",
-  "ctx_thread": "Chatt: {title}"
+  "ctx_thread": "Chatt: {title}",
+  "welcome_hired": "Hej {name}! Det här är appen för studions specialister från DUMSKAYA DESIGN. Här finns projekten som du arbetar med åt studion{now}: adress till objektet, dokument och visualiseringar, din chatt med Irina. Bifoga uppmätningar, ritningar och visualiseringar i appen — studion ser dem.\n\nÖppna den genom att trycka på ”{menu}” bredvid meddelandefältet. Du kan också skriva till Irina direkt här i chatten.",
+  "invite_hired": "Hej {name}! Här är länken till appen för studions specialister från DUMSKAYA DESIGN i Telegram: projekten som du arbetar med åt studion, adress till objektet, dokument och visualiseringar, din chatt med Irina. Öppna den i Telegram och tryck på knappen längst ned (”Starta”):\n{link}\n\nLänken är personlig, för en person, och gäller i 14 dagar. Du behöver bara ansluta en gång — nya projekt visas automatiskt i appen.",
+  "link_new_hired": "📁 Studion har lagt till dig i projektet ”{project}”{trade}. Adress, dokument och din chatt med Irina finns i appen."
  },
  "fixed": {
   "Прораб": "Platschef",
@@ -341,6 +350,9 @@
   "Кухни": "Kök",
   "Бытовая техника": "Vitvaror",
   "Шторы и текстиль": "Gardiner och textilier",
-  "Декор": "Dekoration"
+  "Декор": "Dekoration",
+  "Замерщик": "Uppmätare",
+  "Чертёжник": "Ritare",
+  "3D-визуализатор": "3D-visualiserare"
  }
 }

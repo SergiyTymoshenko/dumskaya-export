@@ -250,7 +250,13 @@
   "staff_docs_hint": "Relevee, randări, desene tehnice — adăugați-le în secțiunile proiectului.",
   "section": "Secțiune",
   "vis_s_all": "Toți cei care văd această secțiune (clientul, executanții)",
-  "vis_s_studio": "Doar studioul — Irina i-o va arăta clientului ea însăși"
+  "vis_s_studio": "Doar studioul — Irina i-o va arăta clientului ea însăși",
+  "role_hired": "Specialist al studioului",
+  "hired_hint": "Această lucrare vă este comandată și plătită de studio. Conversația este doar cu Irina: clientul și executanții nu o văd.",
+  "msgs_hint_hired": "Aici îi scrieți Irinei. Clientul și executanții nu văd această conversație.",
+  "docs_hired_hint": "Relevee, desene tehnice, randări — adăugați-le aici. Studioul le vede; Irina le va face vizibile clientului.",
+  "staff_note": "Această conversație o vedeți doar dumneavoastră și Irina.",
+  "sgroup_note": "Acest grup îl văd doar Irina și angajații studioului care fac parte din el."
  },
  "bot": {
   "menu": "Proiectul meu",
@@ -309,7 +315,10 @@
   "invite_assistant": "Bună ziua, {name}! {head} vă invită în aplicația pentru angajații DUMSKAYA DESIGN în Telegram: proiectele care vă vor fi atribuite, documente și conversații cu clienții și executanții. Deschideți linkul în Telegram și apăsați butonul din partea de jos („Start”):\n{link}\n\nLinkul este personal, pentru o singură persoană, și este valabil 14 zile.",
   "assistant_assigned": "📁 {who} v-a atribuit proiectul „{project}”. Documentația și conversațiile proiectului sunt în aplicație.",
   "assistant_hint": "Pentru a scrie într-o conversație a proiectului, răspundeți la unul dintre mesajele ei (glisați mesajul spre stânga) sau deschideți conversația în aplicație.",
-  "ctx_thread": "Conversație: {title}"
+  "ctx_thread": "Conversație: {title}",
+  "welcome_hired": "Bună ziua, {name}! Aceasta este aplicația DUMSKAYA DESIGN pentru specialiștii care lucrează pentru studio. Aici sunt proiectele la care lucrați pentru studio{now}: adresa șantierului, documentație și randări, conversația cu Irina. Atașați relevee, desene tehnice și randări în aplicație — studioul le va vedea.\n\nPentru a o deschide, apăsați „{menu}” lângă câmpul de mesaj. Îi puteți scrie Irinei și direct aici, în acest chat.",
+  "invite_hired": "Bună ziua, {name}! Iată linkul către aplicația DUMSKAYA DESIGN pentru specialiștii studioului în Telegram: proiectele la care lucrați pentru studio, adresa șantierului, documentație și randări, conversația cu Irina. Deschideți-l în Telegram și apăsați butonul din partea de jos („Start”):\n{link}\n\nLinkul este personal, pentru o singură persoană, și este valabil 14 zile. Trebuie să vă conectați o singură dată — proiectele noi vor apărea automat în aplicație.",
+  "link_new_hired": "📁 Studioul v-a adăugat la proiectul „{project}”{trade}. Adresa, documentația și conversația cu Irina sunt în aplicație."
  },
  "fixed": {
   "Прораб": "Șef de șantier",
@@ -341,6 +350,9 @@
   "Кухни": "Bucătării",
   "Бытовая техника": "Electrocasnice",
   "Шторы и текстиль": "Draperii și textile",
-  "Декор": "Decor"
+  "Декор": "Decor",
+  "Замерщик": "Tehnician măsurători",
+  "Чертёжник": "Desenator",
+  "3D-визуализатор": "Specialist randări 3D"
  }
 }

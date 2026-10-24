@@ -250,7 +250,13 @@
   "staff_docs_hint": "Pleananna tomhaiste, amharcléirithe, líníochtaí — cuir iad le rannóga an tionscadail.",
   "section": "Rannóg",
   "vis_s_all": "Gach duine a fheiceann an rannóg seo (an cliant, na conraitheoirí)",
-  "vis_s_studio": "An stiúideo amháin — taispeánfaidh Irina don chliant é í féin"
+  "vis_s_studio": "An stiúideo amháin — taispeánfaidh Irina don chliant é í féin",
+  "role_hired": "Speisialtóir an stiúideo",
+  "hired_hint": "Is é an stiúideo a ordaíonn agus a íocann as an obair seo. Ní dhéanann tú comhrá ach le hIrina: ní fheiceann an cliant ná na conraitheoirí é.",
+  "msgs_hint_hired": "Anseo scríobhann tú chuig Irina. Ní fheiceann an cliant ná na conraitheoirí an comhrá seo.",
+  "docs_hired_hint": "Cuir tomhais, líníochtaí agus amharcléirithe anseo. Feiceann an stiúideo iad; taispeánfaidh Irina don chliant iad.",
+  "staff_note": "Ní fheiceann aon duine an comhrá seo ach tusa agus Irina.",
+  "sgroup_note": "Ní fheiceann aon duine an grúpa seo ach Irina agus baill d’fhoireann an stiúideo atá ann."
  },
  "bot": {
   "menu": "Mo thionscadal",
@@ -309,7 +315,10 @@
   "invite_assistant": "Dia duit, {name}! Tugann {head} cuireadh duit chuig aip DUMSKAYA DESIGN d’fhoireann an stiúideo ar Telegram: na tionscadail a sannfar duit, doiciméid agus comhráite le cliaint agus le conraitheoirí. Oscail an nasc san aip Telegram agus tapáil an cnaipe ag bun an scáileáin (“Tosaigh”):\n{link}\n\nIs nasc pearsanta é, do dhuine amháin, agus tá sé bailí ar feadh 14 lá.",
   "assistant_assigned": "📁 Shann {who} thú don tionscadal “{project}”. Tá na doiciméid agus comhráite an tionscadail san aip.",
   "assistant_hint": "Chun scríobh i gcomhrá tionscadail, tabhair freagra ar cheann dá theachtaireachtaí (tarraing an teachtaireacht ar chlé) nó oscail an comhrá san aip.",
-  "ctx_thread": "Comhrá: {title}"
+  "ctx_thread": "Comhrá: {title}",
+  "welcome_hired": "Dia duit, {name}! Seo aip DUMSKAYA DESIGN do speisialtóirí an stiúideo. Anseo gheobhaidh tú na tionscadail a bhfuil tú ag obair orthu don stiúideo{now}: seoladh an láithreáin, doiciméid agus amharcléirithe, do chomhrá le hIrina. Ceangail tomhais, líníochtaí agus amharcléirithe san aip — feicfidh an stiúideo iad.\n\nChun í a oscailt, tapáil “{menu}” in aice leis an mbosca teachtaireachta. Is féidir leat scríobh chuig Irina anseo sa chomhrá freisin.",
+  "invite_hired": "Dia duit, {name}! Seo an nasc chuig aip DUMSKAYA DESIGN do speisialtóirí an stiúideo ar Telegram: na tionscadail a bhfuil tú ag obair orthu don stiúideo, seoladh an láithreáin, doiciméid agus amharcléirithe, do chomhrá le hIrina. Oscail é san aip Telegram agus tapáil an cnaipe ag bun an scáileáin (“Tosaigh”):\n{link}\n\nIs nasc pearsanta é, do dhuine amháin, agus tá sé bailí ar feadh 14 lá. Ní gá duit ceangal ach uair amháin — beidh tionscadail nua le feiceáil san aip go huathoibríoch.",
+  "link_new_hired": "📁 Chuir an stiúideo thú leis an tionscadal “{project}”{trade}. Tá an seoladh, na doiciméid agus do chomhrá le hIrina san aip."
  },
  "fixed": {
   "Прораб": "Bainisteoir láithreáin",
@@ -341,6 +350,9 @@
   "Кухни": "Cistineacha",
   "Бытовая техника": "Fearais tí",
   "Шторы и текстиль": "Cuirtíní agus teicstílí",
-  "Декор": "Maisiúchán"
+  "Декор": "Maisiúchán",
+  "Замерщик": "Tomhasóir",
+  "Чертёжник": "Líníochtóir",
+  "3D-визуализатор": "Amharcléiritheoir 3D"
  }
 }

@@ -99,8 +99,10 @@ DEFAULTS = {
     # что поставляют поставщики (плитка, свет, полы, сантехника…) — поставщик работает в проекте как подрядчик (решено 24.10.2026)
     "supply_cats": ["Плитка", "Свет", "Напольные покрытия", "Сантехника", "Обои и краски", "Двери", "Окна", "Кухни", "Мебель",
                     "Бытовая техника", "Шторы и текстиль", "Камень и столешницы", "Стекло и зеркала", "Декор", "Другое"],
+    # исполнители, которым платит студия (замерщик, чертёжник, 3D-визуализатор): пишет им только Ирина (решено 24.10.2026)
+    "hired_cats": ["Замерщик", "Чертёжник", "3D-визуализатор", "Другое"],
 }
-CONTRACTOR_KINDS = [("", "Подрядчик (работы)"), ("supplier", "Поставщик (материалы)")]
+CONTRACTOR_KINDS = [("", "Подрядчик (работы)"), ("supplier", "Поставщик (материалы)"), ("hired", "Исполнитель студии (платит студия)")]
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS clients (
@@ -174,7 +176,8 @@ CREATE TABLE IF NOT EXISTS project_assistants (  -- на какие проект
   project_id INTEGER NOT NULL, assistant_id INTEGER NOT NULL, created_by TEXT, created TEXT, PRIMARY KEY(project_id, assistant_id));
 CREATE TABLE IF NOT EXISTS threads (           -- разговоры проекта: client — студия и заказчики; pc — заказчики и подрядчик
   id INTEGER PRIMARY KEY AUTOINCREMENT,        -- (студия видит); org — студия и подрядчик; worker — студия и работник
-  project_id INTEGER NOT NULL, kind TEXT NOT NULL,   -- (подрядчик видит); group — группа, которую собрала студия
+  project_id INTEGER NOT NULL, kind TEXT NOT NULL,   -- (подрядчик видит); group — группа, которую собрала студия;
+                                                     -- staff — Ирина и сотрудник студии; sgroup — Ирина и сотрудники (видят только они)
   contractor_id INTEGER, crew_id INTEGER, title TEXT, studio_joined TEXT, created_by TEXT, created TEXT, updated TEXT);
 CREATE INDEX IF NOT EXISTS threads_project ON threads(project_id);
 CREATE TABLE IF NOT EXISTS thread_members (thread_id INTEGER NOT NULL, kind TEXT NOT NULL, ref_id INTEGER NOT NULL,
@@ -361,7 +364,9 @@ class Crm:
                                     ("files", "owner_crew", "INTEGER"), ("files", "vis", "TEXT"), ("files", "see_client", "INTEGER"),
                                     ("files", "see_crew", "INTEGER"), ("files", "thread_id", "INTEGER"), ("files", "title", "TEXT"),
                                     # поставщики и сотрудники студии (24.10.2026, ночь)
-                                    ("contractors", "kind", "TEXT"), ("files", "owner_assistant", "INTEGER")):
+                                    ("contractors", "kind", "TEXT"), ("files", "owner_assistant", "INTEGER"),
+                                    # личные разговоры Ирины с сотрудником студии (staff) — 24.10.2026, ночь
+                                    ("threads", "assistant_id", "INTEGER")):
                 if col not in {r[1] for r in self.db.execute(f"PRAGMA table_info({table})")}:
                     self.db.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
             self.db.execute("CREATE INDEX IF NOT EXISTS messages_thread ON messages(thread_id, id)")
@@ -1016,8 +1021,11 @@ class Crm:
         """Этап подрядчика. Вносит студия или сам подрядчик (origin="contractor", из кабинета); заказчик подтверждает сумму.
         Изменилась сумма или валюта — подтверждение снимается, заказчика спросят снова."""
         sid, pid, lid = int(d.get("id") or 0), int(d.get("project_id") or 0), int(d.get("link_id") or 0)
-        if not self.one("SELECT id FROM project_contractors WHERE id=? AND project_id=?", lid, pid):
+        link = self.one("SELECT c.kind FROM project_contractors l JOIN contractors c ON c.id=l.contractor_id WHERE l.id=? AND l.project_id=?", lid, pid)
+        if not link:
             raise CrmError("Подрядчик в этом проекте не найден")
+        if link["kind"] == "hired":
+            raise CrmError("Исполнителю студии платит студия: суммы работ на подтверждение заказчику у него не ведутся")
         day = _day(d.get("day") or today().isoformat())
         cur = _cur(d.get("currency"))
         amount = _money(d.get("amount") or 0, "Сумма заказа", allow_zero=True)
@@ -1077,7 +1085,7 @@ class Crm:
         if not name:
             raise CrmError("Укажите имя подрядчика")
         pref = _text(d.get("contact_pref"), 30)
-        kind = "supplier" if d.get("kind") == "supplier" else None          # поставщик (материалы) или подрядчик (работы)
+        kind = d.get("kind") if d.get("kind") in ("supplier", "hired") else None   # поставщик, исполнитель студии или подрядчик
         f = dict(name=name, kind=kind, trade=_text(d.get("trade"), 60), company=_text(d.get("company"), 120),
                  phone=_text(d.get("phone"), 60), email=_text(d.get("email"), 120), messenger=_text(d.get("messenger"), 120),
                  contact_pref=pref if pref in CONTACT_PREFS else "", city=_text(d.get("city"), 80), note=_text(d.get("note"), 2000))

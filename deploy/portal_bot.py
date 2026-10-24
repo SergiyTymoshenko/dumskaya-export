@@ -28,8 +28,10 @@ from crm_portal import STUDIO, ui_lang
 from langs import pack
 
 try:
-    from translate import lang_from, provider as translate_provider, translate_text
+    from translate import lang_from, provider as translate_provider, purpose as translate_purpose, translate_text
 except ImportError:                    # pragma: no cover
+    from contextlib import nullcontext as translate_purpose
+
     def translate_provider():
         return None
 
@@ -403,6 +405,46 @@ T = {
                        "sk": "Ak chcete napísať do konverzácie projektu, odpovedzte na jej správu (potiahnite správu doľava) alebo otvorte konverzáciu v aplikácii.",
                        "de": "Um in einen Projektchat zu schreiben, antworten Sie auf eine seiner Nachrichten (Nachricht nach links wischen) oder öffnen Sie den Chat in der App."},
     "ctx_thread": {"ru": "Разговор: {title}", "uk": "Розмова: {title}", "en": "Chat: {title}", "sk": "Konverzácia: {title}", "de": "Chat: {title}"},
+    # исполнители студии (замерщик, чертёжник, 3D-визуализатор): им платит студия и пишет только Ирина (24.10.2026)
+    "welcome_hired": {
+        "ru": "Здравствуйте, {name}! Это кабинет исполнителя студии DUMSKAYA DESIGN. Здесь проекты, над которыми вы работаете для студии{now}: "
+              "адрес объекта, документация и визуализации, переписка с Ириной. Замеры, чертежи и визуализации прикрепляйте в кабинете — их увидит студия.\n\n"
+              "Открыть кабинет — кнопка «{menu}» слева от поля ввода. Написать Ирине можно прямо сюда, в чат.",
+        "uk": "Добрий день, {name}! Це кабінет виконавця студії DUMSKAYA DESIGN. Тут проєкти, над якими ви працюєте для студії{now}: "
+              "адреса об’єкта, документація й візуалізації, листування з Іриною. Обміри, креслення й візуалізації додавайте в кабінеті — їх побачить студія.\n\n"
+              "Відкрити кабінет — кнопка «{menu}» ліворуч від поля введення. Написати Ірині можна просто сюди, в чат.",
+        "en": "Hello {name}! This is the DUMSKAYA DESIGN app for the studio’s specialists. Here are the projects you work on for the studio{now}: "
+              "the site address, documents and renderings, and your chat with Irina. Attach measurements, drawings and renderings in the app — the studio will see them.\n\n"
+              "To open it, tap “{menu}” next to the message field. You can also write to Irina right here in this chat.",
+        "sk": "Dobrý deň, {name}! Toto je aplikácia pre odborníkov, ktorí pracujú pre štúdio DUMSKAYA DESIGN. Nájdete tu projekty, na ktorých pre štúdio "
+              "pracujete{now}: adresu objektu, dokumentáciu a vizualizácie a konverzáciu s Irinou. Zamerania, výkresy a vizualizácie pridávajte v aplikácii — uvidí ich štúdio.\n\n"
+              "Otvoríte ju tlačidlom „{menu}“ vedľa poľa na písanie. Irine môžete napísať aj priamo sem do chatu.",
+        "de": "Guten Tag, {name}! Das ist die App von DUMSKAYA DESIGN für Fachleute, die für das Studio arbeiten. Hier finden Sie die Projekte, an denen Sie "
+              "für das Studio arbeiten{now}: die Adresse des Objekts, Unterlagen und Visualisierungen sowie Ihren Chat mit Irina. Aufmaße, Zeichnungen und "
+              "Visualisierungen laden Sie in der App hoch — das Studio sieht sie.\n\n"
+              "Öffnen Sie sie über „{menu}“ neben dem Eingabefeld. Sie können Irina auch direkt hier im Chat schreiben."},
+    "invite_hired": {
+        "ru": "Здравствуйте, {name}! Это ссылка на кабинет исполнителя студии DUMSKAYA DESIGN в Telegram: проекты, над которыми вы работаете для студии, "
+              "адрес объекта, документация и визуализации, переписка с Ириной. Откройте её в Telegram и нажмите кнопку внизу экрана («Старт»):\n{link}\n\n"
+              "Ссылка личная, для одного человека, и действует 14 дней. Подключиться нужно один раз — новые проекты появятся в кабинете сами.",
+        "uk": "Добрий день, {name}! Це посилання на кабінет виконавця студії DUMSKAYA DESIGN у Telegram: проєкти, над якими ви працюєте для студії, "
+              "адреса об’єкта, документація й візуалізації, листування з Іриною. Відкрийте його в Telegram і натисніть кнопку внизу екрана («Почати»):\n{link}\n\n"
+              "Посилання особисте, для однієї людини, і діє 14 днів. Підключитися треба один раз — нові проєкти з’являться в кабінеті самі.",
+        "en": "Hello {name}! Here is the link to the DUMSKAYA DESIGN app for the studio’s specialists in Telegram: the projects you work on for the studio, "
+              "the site address, documents and renderings, and your chat with Irina. Open it in Telegram and tap the button at the bottom (“Start”):\n{link}\n\n"
+              "The link is personal, for one person, and is valid for 14 days. You only need to connect once — new projects will appear in the app automatically.",
+        "sk": "Dobrý deň, {name}! Posielame odkaz na aplikáciu pre odborníkov štúdia DUMSKAYA DESIGN v Telegrame: projekty, na ktorých pre štúdio pracujete, "
+              "adresa objektu, dokumentácia a vizualizácie a konverzácia s Irinou. Otvorte ho v Telegrame a ťuknite na tlačidlo dole („Štart“):\n{link}\n\n"
+              "Odkaz je osobný, pre jednu osobu, a platí 14 dní. Pripojiť sa stačí raz — nové projekty sa v aplikácii objavia samy.",
+        "de": "Guten Tag, {name}! Hier ist der Link zur App von DUMSKAYA DESIGN für Fachleute des Studios in Telegram: die Projekte, an denen Sie für das Studio "
+              "arbeiten, die Adresse des Objekts, Unterlagen und Visualisierungen sowie Ihr Chat mit Irina. Öffnen Sie ihn in Telegram und tippen Sie unten auf "
+              "die Schaltfläche („Starten“):\n{link}\n\n"
+              "Der Link ist persönlich, für eine Person, und 14 Tage gültig. Verbinden müssen Sie sich nur einmal — neue Projekte erscheinen automatisch in der App."},
+    "link_new_hired": {"ru": "📁 Студия добавила вас в проект «{project}»{trade}. Адрес, документация и переписка с Ириной — в кабинете.",
+                       "uk": "📁 Студія додала вас до проєкту «{project}»{trade}. Адреса, документація й листування з Іриною — у кабінеті.",
+                       "en": "📁 The studio has added you to the project “{project}”{trade}. The address, documents and your chat with Irina are in the app.",
+                       "sk": "📁 Štúdio vás pridalo do projektu „{project}“{trade}. Adresa, dokumentácia a konverzácia s Irinou sú v aplikácii.",
+                       "de": "📁 Das Studio hat Sie zum Projekt „{project}“{trade} hinzugefügt. Adresse, Unterlagen und Ihr Chat mit Irina finden Sie in der App."},
 }
 SYM = {"EUR": "€", "USD": "$", "UAH": "₴", "PLN": "zł", "CZK": "Kč", "GBP": "£", "CHF": "CHF"}
 
@@ -467,7 +509,8 @@ class PortalBotMixin:
         if not self.can_translate():
             return text
         try:
-            r = translate_text(text, lang)
+            with translate_purpose("names"):             # учёт расхода: названия в кабинетах
+                r = translate_text(text, lang)
         except Exception as e:  # noqa: BLE001
             self.log(f"перевод названия ({lang}): ошибка {type(e).__name__}: {e}")
             return text
@@ -513,7 +556,8 @@ class PortalBotMixin:
             return t(lang, "welcome_assistant", name=name, now=now_of("assistant"), menu=t(lang, "menu"))
         heads = self.portal.my_contractors(uid)
         if heads:                                         # подрядчик или поставщик
-            key = "welcome_supplier" if all(c.get("kind") == "supplier" for c in heads) else "welcome_crew"
+            kinds = {c.get("kind") or "" for c in heads}
+            key = "welcome_supplier" if kinds == {"supplier"} else "welcome_hired" if kinds == {"hired"} else "welcome_crew"
             return t(lang, key, name=name, now=now_of("contractor"), menu=t(lang, "menu"))
         crews = self.portal.crews_of(uid)
         if crews:
@@ -521,7 +565,7 @@ class PortalBotMixin:
         return t(lang, "no_projects")
 
     def invite_text(self, lang, kind, name, project, link):
-        """Текст ссылки-приглашения. kind: client (project — проект), contractor, supplier, crew (project — имя подрядчика),
+        """Текст ссылки-приглашения. kind: client (project — проект), contractor, supplier, hired, crew (project — имя подрядчика),
         assistant (сотрудник студии — от имени Ирины)."""
         lang = ui_lang(lang)
         if kind == "client":
@@ -530,7 +574,8 @@ class PortalBotMixin:
             return t(lang, "invite_crew", name=name, head=project, link=link)
         if kind == "assistant":
             return t(lang, "invite_assistant", name=name, head=self.designer_name(lang), link=link)
-        return t(lang, "invite_supplier" if kind == "supplier" else "invite_contractor", name=name, link=link)
+        key = {"supplier": "invite_supplier", "hired": "invite_hired"}.get(kind, "invite_contractor")
+        return t(lang, key, name=name, link=link)
 
     # ---------- вход по ссылке-приглашению ----------
     ROLE_OF = {"client": "client", "contractor": "crew", "crew": "worker", "assistant": "assistant"}
@@ -590,7 +635,7 @@ class PortalBotMixin:
                         roles=("designer",))
             return
         what = "заказчик проекта «" + esc(p.get("title") or "") + "»" if r["kind"] == "client" else \
-            ("поставщик" if r["ref"].get("kind") == "supplier" else "подрядчик") + \
+            {"supplier": "поставщик", "hired": "исполнитель студии"}.get(r["ref"].get("kind"), "подрядчик") + \
             (" (сейчас в проекте «" + esc(p.get("title") or "") + "»)" if p.get("id") else " — проекты, куда его добавят, увидит сам")
         btn = self.studio_button("📁 Открыть проект", p.get("id")) if p.get("id") else None
         self.notify(f"✅ <b>{esc(r['ref']['name'])}</b> подключился к кабинету — {what}{tgline}",
@@ -715,6 +760,12 @@ class PortalBotMixin:
     def _ctx_ru(self, th, m):
         """Чей это разговор — подпись для студии (и наблюдателя), по-русски."""
         k, a = th["kind"], m["author_kind"]
+        if k == "staff":                                  # личный разговор Ирины с сотрудником
+            x = self.crm.one("SELECT name, position FROM assistants WHERE id=?", th["assistant_id"] or 0) or {}
+            who = (x.get("name") or "") + (f" ({x['position']})" if x.get("position") else "")
+            return ("Сотрудник студии " if a == "assistant" else "Студия → сотруднику ") + who + " · видите только вы двое"
+        if k == "sgroup":
+            return f"Группа сотрудников «{th['title'] or ''}» · видят только вы и они"
         if a == "assistant":
             a = "studio"                                  # сотрудник студии пишет от студии
         c, w = self._thread_bits(th)
@@ -726,6 +777,8 @@ class PortalBotMixin:
                 line += "\nВы видите, но не участвуете — пока не ответите (потяните сообщение влево)."
             return line
         if k == "org":
+            if c.get("kind") == "hired":                  # исполнитель студии: видите только вы
+                return ("Студия → исполнителю студии " if a == "studio" else "Исполнитель студии ") + cname
             return ("Студия → " + ("поставщику " if c.get("kind") == "supplier" else "подрядчику ") if a == "studio"
                     else "Поставщик " if c.get("kind") == "supplier" else "Подрядчик ") + cname
         if k == "worker":
@@ -735,7 +788,7 @@ class PortalBotMixin:
             return f"Группа «{th['title'] or ''}»"
         return "Студия → заказчикам" if a == "studio" else ""
 
-    DEFAULT_KIND = {"client": "client", "contractor": "org", "crew": "worker"}
+    DEFAULT_KIND = {"client": "client", "contractor": "org", "crew": "worker", "assistant": "staff"}
 
     def _thread_name(self, th, lang):
         """Название разговора для сотрудника студии (на его языке): кто в нём."""
@@ -771,7 +824,8 @@ class PortalBotMixin:
         if text and self.can_translate():
             for lang in sorted({x[1] for x in rec}):
                 try:
-                    res = translate_text(text, lang)
+                    with translate_purpose("chat"):      # учёт расхода: переписка
+                        res = translate_text(text, lang)
                 except Exception as e:  # noqa: BLE001
                     self.log(f"перевод переписки ({lang}): ошибка {type(e).__name__}: {e}")
                     res = None
@@ -807,7 +861,9 @@ class PortalBotMixin:
                 else:
                     author = m["author_name"]
                 ctx = ""
-                if who == "assistant":                    # сотруднику студии — в каком разговоре
+                if who == "assistant" and th["kind"] == "sgroup":
+                    ctx = t(lang, "ctx_group", title=th["title"] or "")
+                elif who == "assistant" and th["kind"] != "staff":   # сотруднику студии — в каком разговоре (свой с Ириной — без подписи)
                     ctx = t(lang, "ctx_thread", title=self._thread_name(th, lang))
                 elif th["kind"] == "group":
                     ctx = t(lang, "ctx_group", title=th["title"] or "")
@@ -978,7 +1034,7 @@ class PortalBotMixin:
                           [row] if row else None)
             return
         if kind == "link_new":                              # подрядчика добавили в проект
-            link = self.crm.one("""SELECT l.project_id, l.trade AS link_trade, c.trade, c.tg_id FROM project_contractors l
+            link = self.crm.one("""SELECT l.project_id, l.trade AS link_trade, c.trade, c.tg_id, c.kind FROM project_contractors l
                                    JOIN contractors c ON c.id=l.contractor_id WHERE l.id=?""", int(kw.get("link_id") or 0))
             if not link or not link["tg_id"]:
                 return
@@ -990,7 +1046,8 @@ class PortalBotMixin:
             trade = link["link_trade"] or link["trade"] or ""
             row = self.portal_row(lang, f"project={link['project_id']}")
             self.sync_portal_menu(link["tg_id"])
-            self.send(link["tg_id"], t(lang, "link_new", project=esc(self.loc(p.get("title"), lang)), trade=f" ({esc(self.loc(trade, lang))})" if trade else ""),
+            self.send(link["tg_id"], t(lang, "link_new_hired" if link["kind"] == "hired" else "link_new", project=esc(self.loc(p.get("title"), lang)),
+                                       trade=f" ({esc(self.loc(trade, lang))})" if trade else ""),
                       [row] if row else None)
             return
         if kind in ("order_new", "order_delivered"):
@@ -1062,6 +1119,8 @@ class PortalBotMixin:
             for m in self.portal.members(th["id"]):
                 if m["kind"] == "contractor":
                     x = self.crm.one("SELECT name, tg_id FROM contractors WHERE id=?", m["ref_id"]) or {}
+                elif m["kind"] == "assistant":             # группа Ирины с сотрудниками студии
+                    x = self.crm.one("SELECT name, tg_id FROM assistants WHERE id=? AND removed IS NULL", m["ref_id"]) or {}
                 else:
                     x = self.crm.one("SELECT name, tg_id FROM crew WHERE id=? AND removed IS NULL", m["ref_id"]) or {}
                 if x.get("name"):

@@ -250,7 +250,13 @@
   "staff_docs_hint": "Matavimų planai, vizualizacijos, brėžiniai — įkelkite juos į projekto skiltis.",
   "section": "Skiltis",
   "vis_s_all": "Visi, kurie mato šią skiltį (klientas, rangovai)",
-  "vis_s_studio": "Tik studija — Irina pati parodys klientui"
+  "vis_s_studio": "Tik studija — Irina pati parodys klientui",
+  "role_hired": "Studijos specialistas",
+  "hired_hint": "Šį darbą Jums užsako ir apmoka studija. Bendraujate tik su Irina: klientas ir rangovai šio pokalbio nemato.",
+  "msgs_hint_hired": "Čia rašote Irinai. Klientas ir rangovai šio pokalbio nemato.",
+  "docs_hired_hint": "Matavimus, brėžinius ir vizualizacijas įkelkite čia. Juos mato studija; klientui juos pateiks Irina.",
+  "staff_note": "Šį pokalbį matote tik Jūs ir Irina.",
+  "sgroup_note": "Šią grupę mato tik Irina ir joje esantys studijos darbuotojai."
  },
  "bot": {
   "menu": "Mano projektas",
@@ -309,7 +315,10 @@
   "invite_assistant": "Sveiki, {name}! {head} kviečia Jus į DUMSKAYA DESIGN studijos darbuotojų programėlę Telegram programoje: projektai, kuriems būsite priskirti, dokumentai ir pokalbiai su klientais bei rangovais. Atidarykite nuorodą ir spustelėkite mygtuką ekrano apačioje („Pradėti“):\n{link}\n\nNuoroda asmeninė, skirta vienam žmogui, ir galioja 14 dienų.",
   "assistant_assigned": "📁 {who} priskyrė Jus projektui „{project}“. Dokumentai ir projekto pokalbiai — programėlėje.",
   "assistant_hint": "Norėdami parašyti į projekto pokalbį, atsakykite į vieną iš jo žinučių (braukite žinutę į kairę) arba atidarykite pokalbį programėlėje.",
-  "ctx_thread": "Pokalbis: {title}"
+  "ctx_thread": "Pokalbis: {title}",
+  "welcome_hired": "Sveiki, {name}! Tai studijos DUMSKAYA DESIGN specialistų programėlė. Čia rasite projektus, kuriuose dirbate studijai{now}: objekto adresą, dokumentus ir vizualizacijas, pokalbį su Irina. Matavimus, brėžinius ir vizualizacijas pridėkite programėlėje — juos matys studija.\n\nNorėdami ją atidaryti, spustelėkite „{menu}“ šalia žinutės laukelio. Irinai galite rašyti ir tiesiog čia, šiame pokalbyje.",
+  "invite_hired": "Sveiki, {name}! Štai nuoroda į studijos DUMSKAYA DESIGN specialistų programėlę Telegram programoje: projektai, kuriuose dirbate studijai, objekto adresas, dokumentai ir vizualizacijos, pokalbis su Irina. Atidarykite nuorodą Telegram programoje ir spustelėkite mygtuką ekrano apačioje („Pradėti“):\n{link}\n\nNuoroda asmeninė, skirta vienam žmogui, ir galioja 14 dienų. Prisijungti reikia tik kartą — nauji projektai programėlėje atsiras automatiškai.",
+  "link_new_hired": "📁 Studija Jus pridėjo prie projekto „{project}“{trade}. Adresas, dokumentai ir pokalbis su Irina — programėlėje."
  },
  "fixed": {
   "Прораб": "Darbų vadovas",
@@ -341,6 +350,9 @@
   "Кухни": "Virtuvės",
   "Бытовая техника": "Buitinė technika",
   "Шторы и текстиль": "Užuolaidos ir tekstilė",
-  "Декор": "Dekoras"
+  "Декор": "Dekoras",
+  "Замерщик": "Matuotojas",
+  "Чертёжник": "Braižytojas",
+  "3D-визуализатор": "3D vizualizuotojas"
  }
 }

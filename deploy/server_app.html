@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Сервер и ИИ</title>
+<!-- Мини-приложение Telegram только для разработчика: «Графики» → «🖥 Сервер и ИИ». Данные — /api/stats/server
+     (сервис заявок отдаёт их только разработчику по подписи Telegram): нагрузка, память и диск сервера (он общий
+     с EuroExchange), наши базы, файлы и копии, бот и кабинеты, расход языковых моделей на перевод. Ключей здесь нет —
+     только «ключ есть». Страница ничего не меняет на сервере. -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface: #fcfcfb; --text-1: #0b0b0b; --text-2: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11, 11, 11, 0.10);
+    --series: #2a78d6; --series-wash: rgba(42, 120, 214, 0.10); --track: rgba(11, 11, 11, 0.07);
+    --up: #006300; --warn: #9a5b00; --down: #d03b3b; --ghost: rgba(11, 11, 11, 0.05);
+    --k: 1;                                 /* размер текста — как выбран в «Студии» (⚙︎ → «Размер текста») */
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --text-1: #f0efec; --text-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255, 255, 255, 0.10);
+    --series: #3987e5; --series-wash: rgba(57, 135, 229, 0.10); --track: rgba(255, 255, 255, 0.08);
+    --up: #0ca30c; --warn: #e0a030; --down: #e66767; --ghost: rgba(255, 255, 255, 0.06);
+  }
+  :root[data-size="l"] { --k: 1.25; }
+  :root[data-size="xl"] { --k: 1.5; }
+  :root[data-size="l"], :root[data-size="xl"] {
+    --text-2: #2f2e2b; --muted: #4f4e49; --border: rgba(11, 11, 11, 0.32); --grid: #c4c3ba; --axis: #8f8e86;
+    --series: #1a5cb0; --series-wash: rgba(26, 92, 176, 0.12); --up: #005200; --warn: #7a4600; --down: #b42323; --ghost: rgba(11, 11, 11, 0.08);
+    --track: rgba(11, 11, 11, 0.12);
+  }
+  :root[data-theme="dark"][data-size="l"], :root[data-theme="dark"][data-size="xl"] {
+    --text-2: #e4e3df; --muted: #bdbcb5; --border: rgba(255, 255, 255, 0.34); --grid: #4a4a45; --axis: #6a6a64;
+    --series: #6aa9f2; --series-wash: rgba(106, 169, 242, 0.16); --up: #4fd14f; --warn: #f0b850; --down: #ff8f8f; --ghost: rgba(255, 255, 255, 0.10);
+    --track: rgba(255, 255, 255, 0.14);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--page); color: var(--text-1); }
+  body { font: calc(15px * var(--k))/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 16px 16px 40px; max-width: 760px; margin: 0 auto; }
+  h1 { font-size: calc(20px * var(--k)); font-weight: 600; margin: 0 0 2px; }
+  .back { display: inline-block; color: var(--series); text-decoration: none; font-size: calc(14px * var(--k)); margin: 0 0 6px; padding: 4px 0; }
+  .sub { color: var(--text-2); font-size: calc(13px * var(--k)); margin: 0 0 14px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin: 0 0 12px; }
+  .card h2 { font-size: calc(16px * var(--k)); font-weight: 650; margin: 0 0 2px; }
+  .card .note { color: var(--text-2); font-size: calc(13px * var(--k)); margin: 0 0 10px; }
+  .tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 10px 0 0; }
+  .tile { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; min-width: 0; }
+  .tile .label { color: var(--text-2); font-size: calc(13px * var(--k)); }
+  .tile .value { font-size: calc(22px * var(--k)); font-weight: 600; line-height: 1.2; margin-top: 2px; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
+  .tile .split { color: var(--text-2); font-size: calc(13px * var(--k)); margin-top: 2px; }
+  .tile.wide { grid-column: 1 / -1; }
+  .meter { height: 8px; background: var(--track); border-radius: 999px; overflow: hidden; margin-top: 8px; }
+  .meter i { display: block; height: 100%; background: var(--series); border-radius: 999px; }
+  .meter.warn i { background: var(--warn); }
+  .meter.bad i { background: var(--down); }
+  .state { font-weight: 650; }
+  .state.ok { color: var(--up); }
+  .state.warn { color: var(--warn); }
+  .state.bad { color: var(--down); }
+  dl.kv { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; margin: 10px 0 0; font-size: calc(14px * var(--k)); }
+  dl.kv dt { color: var(--text-2); min-width: 0; overflow-wrap: anywhere; }
+  dl.kv dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; }
+  dl.kv .head { grid-column: 1 / -1; color: var(--text-1); font-weight: 650; margin-top: 8px; border-top: 1px solid var(--grid); padding-top: 8px; }
+  .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: var(--ghost); padding: 3px; border-radius: 12px; margin: 10px 0 0; }
+  .seg button { font: inherit; border: 0; background: transparent; color: var(--text-1); border-radius: 9px; min-height: 44px; font-size: calc(15px * var(--k)); cursor: pointer; padding: 4px; }
+  .seg button[aria-pressed="true"] { background: var(--surface); font-weight: 650; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  .chart { position: relative; margin-top: 12px; }
+  .chart svg { display: block; width: 100%; height: auto; overflow: visible; touch-action: pan-y; }
+  .chart text { fill: var(--muted); font-size: calc(11px * var(--k)); font-variant-numeric: tabular-nums; }
+  .tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 8px 10px; font-size: calc(13px * var(--k)); box-shadow: 0 4px 16px rgba(0,0,0,.12); min-width: 150px; display: none; z-index: 2; }
+  .tip .d { color: var(--text-2); margin-bottom: 4px; }
+  .tip .row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+  .tip .row b { font-weight: 600; }
+  .tip .row span { color: var(--text-2); }
+  .bars { display: grid; gap: 10px; margin-top: 10px; }
+  .bar .top { display: flex; justify-content: space-between; gap: 10px; font-size: calc(14px * var(--k)); }
+  .bar .top .t { overflow-wrap: anywhere; min-width: 0; }
+  .bar .top .n { color: var(--text-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .bar .sub2 { color: var(--text-2); font-size: calc(12px * var(--k)); }
+  .bar .line { height: 6px; background: var(--series); border-radius: 0 4px 4px 0; min-width: 2px; margin-top: 4px; }
+  .err { color: var(--down); font-size: calc(13px * var(--k)); margin-top: 10px; overflow-wrap: anywhere; }
+  .empty { color: var(--text-2); padding: 24px 0; text-align: center; }
+  .ver { color: var(--text-2); font-size: calc(12px * min(var(--k), 1.1)); text-align: center; margin: 22px 0 0; opacity: .8; overflow-wrap: anywhere; }
+  details { margin-top: 10px; }
+  summary { cursor: pointer; color: var(--text-2); font-size: calc(13px * var(--k)); min-height: 32px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: calc(13px * var(--k)); font-variant-numeric: tabular-nums; }
+  th, td { text-align: right; padding: 5px 4px; border-bottom: 1px solid var(--grid); }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--text-2); font-weight: 500; }
+  /* крупный текст: всё в один столбец, ничего не обрезается */
+  :root[data-size="l"] body, :root[data-size="xl"] body { font-weight: 500; }
+  :root[data-size="l"] .tiles, :root[data-size="xl"] .tiles { grid-template-columns: 1fr; }
+  :root[data-size="l"] .card, :root[data-size="xl"] .card, :root[data-size="l"] .tile, :root[data-size="xl"] .tile { border-width: 2px; }
+  :root[data-size="xl"] dl.kv { grid-template-columns: 1fr; gap: 0 0; }
+  :root[data-size="xl"] dl.kv dd { text-align: left; margin-bottom: 8px; }
+  :root[data-size="l"] details, :root[data-size="xl"] details { overflow-x: auto; }
+</style>
+</head>
+<body>
+  <a class="back" href="/api/stats/app">← Графики</a>
+  <h1>Сервер и ИИ</h1>
+  <p class="sub" id="sub">Загружаю…</p>
+  <main id="app"></main>
+  <p class="ver">Студия · версия __STUDIO_VERSION__</p>
+
+<script>
+(() => {
+  const tg = window.Telegram && window.Telegram.WebApp;
+  const app = document.getElementById('app'), sub = document.getElementById('sub');
+  const MONTHS = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+  const WD = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+  const N = ' ';
+  let D = null, period = 'day';
+  const SIZES = ['m', 'l', 'xl'];
+  const applySize = (z) => { if (!SIZES.includes(z)) return false; const was = document.documentElement.dataset.size; document.documentElement.dataset.size = z;
+    try { localStorage.setItem('ui-size', z); } catch (e) {} return was !== z; };
+  try { applySize(localStorage.getItem('ui-size')); } catch (e) {}
+  try { const p = localStorage.getItem('server-period'); if (['day', 'week', 'month'].includes(p)) period = p; } catch (e) {}
+  const K = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--k')) || 1;
+  function theme() {
+    const dark = tg && tg.colorScheme ? tg.colorScheme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    if (tg) { try { const bg = dark ? '#0d0d0d' : '#f9f9f7'; tg.setHeaderColor(bg); tg.setBackgroundColor(bg); } catch (e) {} }
+  }
+  if (tg) { tg.ready(); tg.expand(); tg.onEvent('themeChanged', () => { theme(); if (D) render(); }); }
+  theme();
+
+  const el = (tag, cls, ...kids) => { const n = document.createElement(tag); if (cls) n.className = cls; kids.flat().forEach((k) => { if (k != null && k !== false) n.append(k); }); return n; };
+  const num = (n) => String(Math.round(n || 0)).replace(/\B(?=(\d{3})+(?!\d))/g, N);
+  const short = (n) => (n >= 1e6 ? (n / 1e6).toFixed(n >= 1e7 ? 0 : 1).replace('.', ',') + N + 'млн' : n >= 1e4 ? (n / 1e3).toFixed(n >= 1e5 ? 0 : 1).replace('.', ',') + N + 'тыс.' : num(n));
+  const bytes = (b) => {
+    if (b == null) return '—';
+    const u = ['Б', 'КБ', 'МБ', 'ГБ', 'ТБ']; let i = 0, v = b;
+    while (v >= 1024 && i < u.length - 1) { v /= 1024; i++; }
+    return (i && v < 10 ? v.toFixed(1).replace('.', ',') : Math.round(v)) + N + u[i];
+  };
+  const plural = (n, one, few, many) => { const a = Math.abs(n) % 100, b = a % 10; return a > 10 && a < 20 ? many : b === 1 ? one : b >= 2 && b <= 4 ? few : many; };
+  const dur = (s) => {
+    if (s == null) return '—';
+    const d = Math.floor(s / 86400), h = Math.floor((s % 86400) / 3600), m = Math.floor((s % 3600) / 60);
+    if (d) return d + N + 'дн.' + (h ? N + h + N + 'ч' : '');
+    if (h) return h + N + 'ч' + (m ? N + m + N + 'мин' : '');
+    return Math.max(1, m) + N + 'мин';
+  };
+  const two = (n) => String(n).padStart(2, '0');
+  const hm = (ts) => { const d = new Date(ts * 1000); return two(d.getHours()) + ':' + two(d.getMinutes()); };
+  const pd = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+  const dshort = (s) => { const d = pd(s); return d.getDate() + ' ' + MONTHS[d.getMonth()]; };
+  const dlong = (s) => { const d = pd(s); return WD[d.getDay()] + ', ' + d.getDate() + ' ' + MONTHS[d.getMonth()]; };
+  const when = (ts) => { const d = new Date(ts * 1000); return d.getDate() + ' ' + MONTHS[d.getMonth()] + ', ' + hm(ts); };
+  const pct = (a, b) => (b ? Math.round((a / b) * 100) : 0);
+  const SVG = 'http://www.w3.org/2000/svg';
+  const sv = (tag, attrs) => { const n = document.createElementNS(SVG, tag); for (const k in attrs) n.setAttribute(k, attrs[k]); return n; };
+  function niceMax(v) { if (v <= 4) return 4; const p = Math.pow(10, Math.floor(Math.log10(v))); for (const m of [1, 2, 2.5, 5, 10]) if (m * p >= v) return m * p; return 10 * p; }
+
+  function card(title, note) { const c = el('section', 'card', el('h2', null, title)); if (note) c.append(el('p', 'note', note)); return c; }
+  function tile(label, value, split, wide) { return el('div', 'tile' + (wide ? ' wide' : ''), el('div', 'label', label), el('div', 'value', value), split ? el('div', 'split', split) : null); }
+  function meter(share, level) { const m = el('div', 'meter' + (level ? ' ' + level : '')); const i = el('i'); i.style.width = Math.max(1, Math.min(100, share)) + '%'; m.append(i); return m; }
+  function kv(rows) {
+    const dl = el('dl', 'kv');
+    rows.filter(Boolean).forEach((r) => { if (typeof r === 'string') dl.append(el('dt', 'head', r)); else dl.append(el('dt', null, r[0]), el('dd', null, r[1])); });
+    return dl;
+  }
+
+  // ---------- сервер ----------
+  function serverCard(s) {
+    const c = card('🖥 Сервер', 'Сервер общий с EuroExchange: здесь цифры всего сервера. Наш сервис — отдельной строкой.');
+    const t = el('div', 'tiles');
+    if (s.load) {
+      const per = s.load[0] / s.cpus, lvl = per >= 1.5 ? 'bad' : per >= 0.8 ? 'warn' : '';
+      t.append(el('div', 'tile', el('div', 'label', 'Нагрузка процессора'), el('div', 'value', s.load[0].toFixed(2).replace('.', ',')),
+        el('div', 'split', 'за 5 и 15 мин: ' + s.load[1].toFixed(2).replace('.', ',') + ' и ' + s.load[2].toFixed(2).replace('.', ',') + ' · ядер: ' + s.cpus),
+        meter(pct(s.load[0], s.cpus), lvl)));
+    }
+    if (s.mem.total) {
+      const share = pct(s.mem.used, s.mem.total);
+      t.append(el('div', 'tile', el('div', 'label', 'Память'), el('div', 'value', bytes(s.mem.used) + ' из ' + bytes(s.mem.total)),
+        el('div', 'split', 'занято ' + share + N + '%' + (s.swap.total ? ' · подкачка ' + bytes(s.swap.used) + ' из ' + bytes(s.swap.total) : '')),
+        meter(share, share >= 90 ? 'bad' : share >= 75 ? 'warn' : '')));
+    }
+    const dk = s.disk, dshare = pct(dk.used, dk.total), low = dk.free < dk.min_free * 2;
+    t.append(el('div', 'tile', el('div', 'label', 'Диск'), el('div', 'value', 'свободно ' + bytes(dk.free)),
+      el('div', 'split', 'из ' + bytes(dk.total) + ' · занято ' + dshare + N + '%' + (low ? ' — мало: файлы проектов перестанут приниматься при ' + bytes(dk.min_free) : '')),
+      meter(dshare, dk.free < dk.min_free ? 'bad' : low ? 'warn' : '')));
+    t.append(tile('Работает без перезагрузки', dur(s.uptime), 'наш сервис — ' + dur(s.service.uptime) + ' (с последней выкладки или перезапуска)'));
+    c.append(t, kv(['Наш сервис (заявки, бот, «Студия», кабинеты)', ['Память сервиса', bytes(s.service.rss)], ['Потоков', num(s.service.threads)],
+      ['Python', s.service.python]]));
+    return c;
+  }
+
+  // ---------- данные ----------
+  function dataCard(d) {
+    const c = card('💾 Наши данные');
+    if (d.error) { c.append(el('p', 'err', 'Не удалось посчитать: ' + d.error)); return c; }
+    const b = d.backups, today = new Date(), iso = today.getFullYear() + '-' + two(today.getMonth() + 1) + '-' + two(today.getDate());
+    const fresh = b.last === iso;
+    c.append(kv([['Учёт студии (crm.db)', bytes(d.crm_db)], ['Бот (bot.db)', bytes(d.bot_db)],
+      ['Файлы проектов', num(d.files.count) + ' · ' + bytes(d.files.size)], ['Статистика сайта', bytes(d.stats)],
+      'Резервные копии', ['Последняя', b.last ? dshort(b.last) + ' · ' + bytes(b.last_size) : 'ещё нет'],
+      ['На сервере', b.count + ' ' + plural(b.count, 'копия', 'копии', 'копий') + ' (храним ' + b.keep_days + ' дней) · ' + bytes(b.size)],
+      ['В Telegram отправлена', b.sent_day ? dshort(b.sent_day) : 'ещё нет'],
+      b.fails ? ['Неудачных отправок подряд', String(b.fails)] : null]));
+    const good = !!b.last && (fresh || b.last >= isoShift(-1));
+    c.append(el('p', 'note', el('span', 'state ' + (good ? 'ok' : 'bad'), good ? '✓ Копии делаются' : '⚠️ Свежей копии нет'),
+      ' · копия — раз в сутки, в начале нового дня по Братиславе · размеры папок пересчитаны в ' + hm(d.counted)));
+    c.lastChild.style.margin = '10px 0 0';
+    return c;
+  }
+  const isoShift = (days) => { const t = new Date(); t.setDate(t.getDate() + days); return t.getFullYear() + '-' + two(t.getMonth() + 1) + '-' + two(t.getDate()); };
+
+  // ---------- бот и кабинеты ----------
+  const ROLE = { owner: 'разработчик', designer: 'дизайнер', client: 'заказчики', crew: 'подрядчики', worker: 'работники', assistant: 'сотрудники студии',
+    supplier: 'поставщики (магазин)', staff: 'их сотрудники', maker: 'фабрики', foreman: 'прорабы', contractor: 'подрядчики (магазин)' };
+  function botCard(b) {
+    const c = card('🤖 Бот и кабинеты');
+    if (!b) { c.append(el('p', 'note', 'Бот не запущен.')); return c; }
+    if (b.error) { c.append(el('p', 'err', 'Не удалось посчитать: ' + b.error)); return c; }
+    const roles = Object.entries(b.users || {}).sort((x, y) => y[1] - x[1]);
+    const rows = ['В боте (подключены)'].concat(roles.map(([r, n]) => [ROLE[r] || r, num(n)]));
+    if (b.pending) rows.push(['ждут доступа', num(b.pending)]);
+    if (b.cabinets) rows.push('Кабинеты «Мой проект»', ['заказчики', num(b.cabinets.clients)], ['подрядчики, поставщики, исполнители', num(b.cabinets.contractors)],
+      ['работники подрядчиков', num(b.cabinets.crew)], ['сотрудники студии', num(b.cabinets.assistants)]);
+    if (b.projects) {
+      const P = b.projects;
+      rows.push('Проекты', ['в работе', num(P.active || 0)], ['на паузе', num(P.paused || 0)], ['завершены', num(P.done || 0)]);
+      if (P.cancelled) rows.push(['отменены', num(P.cancelled)]);
+    }
+    if (b.leads) rows.push('Сутки · неделя · месяц', ['заявки с сайта', num(b.leads.day) + ' · ' + num(b.leads.week) + ' · ' + num(b.leads.month)],
+      ['сообщения в разговорах', num(b.messages.day) + ' · ' + num(b.messages.week) + ' · ' + num(b.messages.month)]);
+    c.append(kv(rows));
+    return c;
+  }
+
+  // ---------- языковые модели ----------
+  const PNAME = { day: 'Сегодня', week: '7 дней', month: '30 дней' };
+  function llmCard(cfg, L) {
+    const c = card('🧠 Языковые модели', 'Перевод переписки, названий в кабинетах и заявок с сайта. Русский и украинский не переводятся — вызовов на них нет.');
+    const keys = (cfg.keys || []).map((k) => k.service + ': ' + (k.present ? 'ключ есть ✓' : 'нет')).join(' · ');
+    c.append(kv([['Сейчас работает', cfg.provider ? cfg.service : 'перевод выключен'], cfg.model ? ['Модель', cfg.model] : null,
+      cfg.via ? ['Через адрес', cfg.via] : null]));
+    if (keys) c.append(el('p', 'note', keys + '. Сами ключи здесь не показываются.'));
+    if (!L) { c.append(el('p', 'note', 'Учёт вызовов не включён.')); return c; }
+    const seg = el('div', 'seg');
+    ['day', 'week', 'month'].forEach((k) => seg.append(el('button', null, PNAME[k])));
+    [...seg.children].forEach((b, i) => {
+      const k = ['day', 'week', 'month'][i];
+      b.type = 'button'; b.setAttribute('aria-pressed', String(period === k));
+      b.onclick = () => { period = k; try { localStorage.setItem('server-period', k); } catch (e) {} render(); };
+    });
+    c.append(seg);
+    const P = L.periods[period];
+    const t = el('div', 'tiles');
+    t.append(tile('Вызовов', num(P.calls), P.errors ? 'с ошибкой: ' + num(P.errors) : 'без ошибок'),
+      tile('Токенов', short(P.tokens_in + P.tokens_out), 'вход ' + short(P.tokens_in) + ' · ответ ' + short(P.tokens_out)));
+    if (P.chars) t.append(tile('Знаков (DeepL)', short(P.chars)));
+    t.append(tile('Среднее время ответа', P.calls ? (P.avg_ms >= 1000 ? (P.avg_ms / 1000).toFixed(1).replace('.', ',') + N + 'с' : num(P.avg_ms) + N + 'мс') : '—'));
+    c.append(t);
+    // по дням, 30 дней: одна серия — вызовы; подсказка — токены и ошибки
+    if (L.series.some((r) => r.calls)) {
+      c.append(head('Вызовы по дням, 30 дней'), columnChart(L.series));
+      const det = el('details', null, el('summary', null, 'Таблица по дням'));
+      const tb = el('table', null, el('tr', null, el('th', null, 'День'), el('th', null, 'Вызовы'), el('th', null, 'Токены'), el('th', null, 'Ошибки')));
+      L.series.slice().reverse().filter((r) => r.calls).forEach((r) => tb.append(el('tr', null, el('td', null, dshort(r.day)), el('td', null, num(r.calls)),
+        el('td', null, short(r.tokens || r.chars)), el('td', null, num(r.errors)))));
+      det.append(tb); c.append(det);
+    }
+    const what = L.by_purpose.filter((x) => x[period].calls);
+    if (what.length) c.append(head('На что · ' + PNAME[period].toLowerCase()), bars(what.map((x) => [x.name, x[period]])));
+    const models = L.by_model.filter((x) => x[period].calls);
+    if (models.length) c.append(head('Модели · ' + PNAME[period].toLowerCase()), bars(models.map((x) => [x.model + ' · ' + x.service, x[period]])));
+    if (!P.calls) c.append(el('p', 'note', period === 'day' ? 'Сегодня вызовов ещё не было.' : 'За этот период вызовов не было.'));
+    if (L.last_error) c.append(el('p', 'err', '⚠️ Последняя ошибка — ' + when(L.last_error.ts) + ' (' + (L.last_error.model || L.last_error.provider || '') + '): ' + (L.last_error.error || '')));
+    if (L.since) c.append(el('p', 'note', 'Учёт ведётся с ' + dshort(L.since) + ' · всего вызовов ' + num(L.all_calls) + '.'));
+    return c;
+  }
+  const head = (t) => { const p = el('p', 'note', t); p.style.margin = '14px 0 0'; return p; };
+  // полосы: название и цифры над полосой (длинные названия моделей не сжимают полосу)
+  function bars(items) {
+    const box = el('div', 'bars'), max = Math.max(1, ...items.map((x) => x[1].calls));
+    items.forEach(([name, s]) => {
+      const line = el('div', 'line'); line.style.width = Math.max(1, (s.calls / max) * 100) + '%';
+      box.append(el('div', 'bar', el('div', 'top', el('span', 't', name), el('span', 'n', num(s.calls) + N + plural(s.calls, 'вызов', 'вызова', 'вызовов'))),
+        el('div', 'sub2', (s.tokens_in + s.tokens_out ? short(s.tokens_in + s.tokens_out) + ' токенов' : s.chars ? short(s.chars) + ' знаков' : '') + (s.errors ? ' · ошибок ' + num(s.errors) : '')),
+        line));
+    });
+    return box;
+  }
+  // столбики по дням (одна серия): ≤ 24 px, скругление 4 px сверху, зазор 2 px; подсказка — по нажатию и наведению
+  function columnChart(rows) {
+    const wrap = el('div', 'chart');
+    const k = K(), W = Math.max(300, app.clientWidth - 30), H = Math.round(150 * Math.sqrt(k)), Lp = Math.round(34 * k), R = 6, T = 10, B = Math.round(24 * k);
+    const pw = W - Lp - R, ph = H - T - B;
+    const vals = rows.map((r) => r.calls), max = niceMax(Math.max(1, ...vals));
+    const band = pw / rows.length, bw = Math.max(2, Math.min(24, band - 2));
+    const y = (v) => T + ph - (v / max) * ph;
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Вызовы языковых моделей по дням за 30 дней' });
+    for (const g of [0, max / 2, max]) {
+      svg.append(sv('line', { x1: Lp, x2: W - R, y1: y(g), y2: y(g), stroke: g === 0 ? 'var(--axis)' : 'var(--grid)', 'stroke-width': 1 }));
+      const t = sv('text', { x: Lp - 6, y: y(g) + 4, 'text-anchor': 'end' }); t.textContent = short(g); svg.append(t);
+    }
+    const tip = el('div', 'tip'), marks = [];
+    rows.forEach((r, i) => {
+      const v = vals[i], cx = Lp + band * i + band / 2, h = (v / max) * ph, x0 = cx - bw / 2, top = T + ph - h, rr = Math.min(4, bw / 2, h);
+      const d = h <= 0 ? '' : `M${x0},${T + ph} V${top + rr} Q${x0},${top} ${x0 + rr},${top} H${x0 + bw - rr} Q${x0 + bw},${top} ${x0 + bw},${top + rr} V${T + ph} Z`;
+      const p = sv('path', { d, fill: 'var(--series)' }); svg.append(p); marks.push(p);
+      const hit = sv('rect', { x: Lp + band * i, y: T, width: band, height: ph + B, fill: 'transparent', tabindex: 0 });
+      const on = () => {
+        marks.forEach((m, j) => m.setAttribute('opacity', j === i ? 1 : 0.5));
+        tip.replaceChildren(el('div', 'd', dlong(r.day)));
+        [['Вызовов', num(r.calls)], ['Токенов', short(r.tokens)], r.chars ? ['Знаков', short(r.chars)] : null, ['Ошибок', num(r.errors)]].filter(Boolean)
+          .forEach(([a, b]) => tip.append(el('div', 'row', el('span', null, a), el('b', null, b))));
+        tip.style.display = 'block';
+        const scale = svg.getBoundingClientRect().width / W, tw = tip.offsetWidth;
+        tip.style.left = Math.min(Math.max(0, cx * scale - tw / 2), wrap.clientWidth - tw) + 'px'; tip.style.top = '-8px';
+      };
+      const off = () => { marks.forEach((m) => m.setAttribute('opacity', 1)); tip.style.display = 'none'; };
+      hit.addEventListener('pointerenter', on); hit.addEventListener('pointerdown', on); hit.addEventListener('focus', on);
+      hit.addEventListener('pointerleave', (ev) => { if (ev.pointerType === 'mouse') off(); }); hit.addEventListener('blur', off);
+      svg.append(hit);
+    });
+    [0, Math.round((rows.length - 1) / 2), rows.length - 1].forEach((i, j) => {
+      const t = sv('text', { x: Lp + band * i + band / 2, y: H - 6, 'text-anchor': j === 0 ? 'start' : j === 2 ? 'end' : 'middle' });
+      t.textContent = dshort(rows[i].day); svg.append(t);
+    });
+    wrap.append(svg, tip);
+    return wrap;
+  }
+
+  function render() {
+    if (!D) return;
+    app.replaceChildren(serverCard(D.server), llmCard(D.llm_config || {}, D.llm), dataCard(D.data || {}), botCard(D.bot));
+    sub.textContent = 'Обновлено в ' + hm(D.ts) + ' · само обновляется раз в минуту, пока открыто';
+  }
+  async function load() {
+    if (!tg || !tg.initData) { sub.textContent = 'Откройте страницу кнопкой в боте студии.'; return; }
+    try {
+      const r = await fetch('/api/stats/server', { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' });
+      if (r.status === 403) { sub.textContent = 'Эта страница — только для разработчика.'; app.replaceChildren(); return; }
+      if (!r.ok) throw new Error('ответ ' + r.status);
+      D = await r.json(); render();
+    } catch (e) { sub.textContent = 'Не удалось загрузить: ' + e.message + '. Попробуйте ещё раз через минуту.'; }
+  }
+  if (tg && tg.initData) fetch('/api/crm/ui', { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' })
+    .then((r) => (r.ok ? r.json() : null)).then((x) => { if (x && applySize(x.size)) render(); }).catch(() => {});
+  load();
+  setInterval(() => { if (document.visibilityState === 'visible') load(); }, 60000);
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(render, 150); });
+})();
+</script>
+</body>
+</html>

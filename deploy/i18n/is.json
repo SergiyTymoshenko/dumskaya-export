@@ -250,7 +250,13 @@
   "staff_docs_hint": "Uppmælingar, þrívíddarmyndir, teikningar — bættu þeim við í hluta verkefnisins.",
   "section": "Hluti",
   "vis_s_all": "Allir sem sjá þennan hluta (viðskiptavinur, verktakar)",
-  "vis_s_studio": "Aðeins stofan — Irina sýnir viðskiptavininum það sjálf"
+  "vis_s_studio": "Aðeins stofan — Irina sýnir viðskiptavininum það sjálf",
+  "role_hired": "Sérfræðingur stofunnar",
+  "hired_hint": "Stofan pantar þessa vinnu hjá þér og greiðir fyrir hana. Þú spjallar aðeins við Irinu: viðskiptavinurinn og verktakarnir sjá það ekki.",
+  "msgs_hint_hired": "Hér skrifar þú Irinu. Viðskiptavinurinn og verktakarnir sjá ekki þetta spjall.",
+  "docs_hired_hint": "Bættu uppmælingum, teikningum og þrívíddarmyndum við hér. Stofan sér þær; Irina sýnir viðskiptavininum þær.",
+  "staff_note": "Aðeins þú og Irina sjáið þetta samtal.",
+  "sgroup_note": "Aðeins Irina og starfsfólk stofunnar í hópnum sjá þennan hóp."
  },
  "bot": {
   "menu": "Verkefnið mitt",
@@ -309,7 +315,10 @@
   "invite_assistant": "Halló, {name}! {head} býður þér að tengjast appi DUMSKAYA DESIGN fyrir starfsfólk stofunnar í Telegram: verkefnin sem þér verður úthlutað, skjöl og spjall við viðskiptavini og verktaka. Opnaðu hlekkinn í Telegram og ýttu á hnappinn neðst („Byrja“):\n{link}\n\nHlekkurinn er persónulegur, fyrir einn einstakling, og gildir í 14 daga.",
   "assistant_assigned": "📁 {who} hefur úthlutað þér verkefninu „{project}“. Skjöl og spjall verkefnisins eru í appinu.",
   "assistant_hint": "Til að skrifa í spjall verkefnis skaltu svara skilaboðum þar (draga skilaboðin til vinstri) eða opna spjallið í appinu.",
-  "ctx_thread": "Spjall: {title}"
+  "ctx_thread": "Spjall: {title}",
+  "welcome_hired": "Halló, {name}! Þetta er app DUMSKAYA DESIGN fyrir sérfræðinga stofunnar. Hér eru verkefnin sem þú vinnur að fyrir stofuna{now}: heimilisfang verkstaðarins, skjöl og þrívíddarmyndir, spjall þitt við Irinu. Hengdu uppmælingar, teikningar og þrívíddarmyndir við í appinu — stofan sér þær.\n\nTil að opna það skaltu ýta á „{menu}“ við hliðina á innsláttarreitnum. Þú getur líka skrifað Irinu beint hér í spjallinu.",
+  "invite_hired": "Halló, {name}! Hér er hlekkurinn á app DUMSKAYA DESIGN fyrir sérfræðinga stofunnar í Telegram: verkefnin sem þú vinnur að fyrir stofuna, heimilisfang verkstaðarins, skjöl og þrívíddarmyndir, spjall þitt við Irinu. Opnaðu hann í Telegram og ýttu á hnappinn neðst („Byrja“):\n{link}\n\nHlekkurinn er persónulegur, fyrir einn einstakling, og gildir í 14 daga. Þú þarft aðeins að tengjast einu sinni — ný verkefni birtast sjálfkrafa í appinu.",
+  "link_new_hired": "📁 Stofan hefur bætt þér við verkefnið „{project}“{trade}. Heimilisfang, skjöl og spjall þitt við Irinu eru í appinu."
  },
  "fixed": {
   "Прораб": "Verkstjóri",
@@ -341,6 +350,9 @@
   "Кухни": "Eldhús",
   "Бытовая техника": "Heimilistæki",
   "Шторы и текстиль": "Gardínur og vefnaðarvara",
-  "Декор": "Skrautmunir"
+  "Декор": "Skrautmunir",
+  "Замерщик": "Uppmælingamaður",
+  "Чертёжник": "Teiknari",
+  "3D-визуализатор": "Þrívíddarteiknari"
  }
 }

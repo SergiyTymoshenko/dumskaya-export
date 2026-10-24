@@ -250,7 +250,13 @@
   "staff_docs_hint": "Levantamentos, renders, desenhos técnicos — adicione-os às secções do projeto.",
   "section": "Secção",
   "vis_s_all": "Todos os que veem esta secção (cliente, profissionais)",
-  "vis_s_studio": "Só o estúdio — a própria Irina vai mostrá-lo ao cliente"
+  "vis_s_studio": "Só o estúdio — a própria Irina vai mostrá-lo ao cliente",
+  "role_hired": "Especialista do estúdio",
+  "hired_hint": "Este trabalho é-lhe encomendado e pago pelo estúdio. A conversa é só com a Irina: o cliente e os profissionais não a veem.",
+  "msgs_hint_hired": "Aqui escreve à Irina. O cliente e os profissionais não veem esta conversa.",
+  "docs_hired_hint": "Levantamentos, desenhos técnicos, renders — adicione-os aqui. O estúdio vê-os; a Irina vai partilhá-los com o cliente.",
+  "staff_note": "Esta conversa só é visível para si e para a Irina.",
+  "sgroup_note": "Este grupo só é visível para a Irina e para os colaboradores do estúdio que dele fazem parte."
  },
  "bot": {
   "menu": "O meu projeto",
@@ -309,7 +315,10 @@
   "invite_assistant": "Olá, {name}! {head} enviou-lhe um convite para a aplicação de colaboradores do estúdio DUMSKAYA DESIGN no Telegram: os projetos que lhe forem atribuídos, documentos e conversas com clientes e profissionais. Abra o link no Telegram e toque no botão na parte inferior do ecrã («Iniciar»):\n{link}\n\nO link é pessoal, para uma só pessoa, e é válido durante 14 dias.",
   "assistant_assigned": "📁 {who} atribuiu-lhe o projeto «{project}». Os documentos e as conversas do projeto estão na aplicação.",
   "assistant_hint": "Para escrever numa conversa do projeto, responda a uma das suas mensagens (deslize a mensagem para a esquerda) ou abra a conversa na aplicação.",
-  "ctx_thread": "Conversa: {title}"
+  "ctx_thread": "Conversa: {title}",
+  "welcome_hired": "Olá, {name}! Esta é a aplicação de especialistas do estúdio DUMSKAYA DESIGN. Aqui encontra os projetos em que trabalha para o estúdio{now}: morada da obra, documentos e renders, e a conversa com a Irina. Anexe levantamentos, desenhos técnicos e renders na aplicação — o estúdio irá vê-los.\n\nPara a abrir, toque em «{menu}» junto ao campo de mensagem. Também pode escrever à Irina diretamente aqui, nesta conversa.",
+  "invite_hired": "Olá, {name}! Este é o link para a aplicação de especialistas do estúdio DUMSKAYA DESIGN no Telegram: os projetos em que trabalha para o estúdio, a morada da obra, documentos e renders, e a conversa com a Irina. Abra-o no Telegram e toque no botão na parte inferior do ecrã («Iniciar»):\n{link}\n\nO link é pessoal, para uma só pessoa, e é válido durante 14 dias. Só precisa de fazer isto uma vez — os novos projetos aparecerão automaticamente na aplicação.",
+  "link_new_hired": "📁 O estúdio atribuiu-lhe o projeto «{project}»{trade}. A morada, os documentos e a conversa com a Irina estão na aplicação."
  },
  "fixed": {
   "Прораб": "Encarregado de obra",
@@ -341,6 +350,9 @@
   "Кухни": "Cozinhas",
   "Бытовая техника": "Eletrodomésticos",
   "Шторы и текстиль": "Cortinados e têxteis",
-  "Декор": "Decoração"
+  "Декор": "Decoração",
+  "Замерщик": "Técnico de levantamentos",
+  "Чертёжник": "Desenhador",
+  "3D-визуализатор": "Visualizador 3D"
  }
 }

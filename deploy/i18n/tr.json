@@ -250,7 +250,13 @@
   "staff_docs_hint": "Rölöve planları, görselleştirmeler, çizimler — bunları proje bölümlerine ekleyin.",
   "section": "Bölüm",
   "vis_s_all": "Bu bölümü gören herkes (müşteri, yükleniciler)",
-  "vis_s_studio": "Yalnızca stüdyo — Irina müşteriye kendisi gösterecek"
+  "vis_s_studio": "Yalnızca stüdyo — Irina müşteriye kendisi gösterecek",
+  "role_hired": "Stüdyo uzmanı",
+  "hired_hint": "Bu işi size stüdyo veriyor ve ücretini de stüdyo ödüyor. Yalnızca Irina ile yazışırsınız: müşteri ve yükleniciler bu yazışmayı görmez.",
+  "msgs_hint_hired": "Burada Irina’ya yazarsınız. Müşteri ve yükleniciler bu yazışmayı görmez.",
+  "docs_hired_hint": "Ölçümleri, çizimleri ve görselleştirmeleri buraya ekleyin. Bunları stüdyo görür; müşteriyle Irina paylaşır.",
+  "staff_note": "Bu yazışmayı yalnızca siz ve Irina görebilirsiniz.",
+  "sgroup_note": "Bu grubu yalnızca Irina ve gruptaki stüdyo personeli görebilir."
  },
  "bot": {
   "menu": "Projem",
@@ -309,7 +315,10 @@
   "invite_assistant": "Merhaba {name}! {head} sizi DUMSKAYA DESIGN’ın Telegram’daki stüdyo personeli uygulamasına davet ediyor: atanacağınız projeler, belgeler ve müşterilerle, yüklenicilerle yazışmalar. Bağlantıyı Telegram’da açın ve alttaki düğmeye (“Başlat”) dokunun:\n{link}\n\nBağlantı kişiye özeldir, tek bir kişi içindir ve 14 gün geçerlidir.",
   "assistant_assigned": "📁 {who} sizi “{project}” projesine atadı. Belgeler ve projenin yazışmaları uygulamada.",
   "assistant_hint": "Bir proje yazışmasına yazmak için yazışmadaki mesajlardan birini yanıtlayın (mesajı sola kaydırın) veya yazışmayı uygulamada açın.",
-  "ctx_thread": "Yazışma: {title}"
+  "ctx_thread": "Yazışma: {title}",
+  "welcome_hired": "Merhaba {name}! Bu, DUMSKAYA DESIGN’ın stüdyo uzmanlarına yönelik uygulamasıdır. Burada stüdyo için çalıştığınız projeler yer alır{now}: proje adresi, belgeler ve görselleştirmeler, Irina ile yazışmanız. Ölçümleri, çizimleri ve görselleştirmeleri uygulamaya ekleyin — stüdyo bunları görecek.\n\nAçmak için mesaj alanının yanındaki “{menu}” düğmesine dokunun. Irina’ya doğrudan bu sohbetten de yazabilirsiniz.",
+  "invite_hired": "Merhaba {name}! DUMSKAYA DESIGN’ın Telegram’daki stüdyo uzmanları uygulamasına bağlantı aşağıdadır. Uygulamada stüdyo için çalıştığınız projeleri, proje adresini, belgeleri, görselleştirmeleri ve Irina ile yazışmanızı bulursunuz. Bağlantıyı Telegram’da açın ve alttaki düğmeye (“Başlat”) dokunun:\n{link}\n\nBağlantı kişiye özeldir, tek bir kişi içindir ve 14 gün geçerlidir. Yalnızca bir kez bağlanmanız yeterli — yeni projeler uygulamada otomatik olarak görünecek.",
+  "link_new_hired": "📁 Stüdyo sizi “{project}” projesine ekledi{trade}. Proje adresi, belgeler ve Irina ile yazışmanız uygulamada."
  },
  "fixed": {
   "Прораб": "Şantiye şefi",
@@ -341,6 +350,9 @@
   "Кухни": "Mutfaklar",
   "Бытовая техника": "Ev aletleri",
   "Шторы и текстиль": "Perde ve tekstil",
-  "Декор": "Dekorasyon"
+  "Декор": "Dekorasyon",
+  "Замерщик": "Ölçüm teknisyeni",
+  "Чертёжник": "Teknik ressam",
+  "3D-визуализатор": "3D görselleştirme uzmanı"
  }
 }

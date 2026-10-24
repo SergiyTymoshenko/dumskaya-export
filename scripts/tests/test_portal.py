@@ -5,6 +5,7 @@
    python3 scripts/tests/test_portal.py      — на Маке или в любой папке с репозиторием; в конце «OK: N проверок»"""
 import json
 import os
+import re
 import sys
 import time
 import urllib.error
@@ -609,7 +610,9 @@ settle()
 check(any(not p.get("disable_notification") for p in msgs(H.ASSIST, n)), "сотруднику — со звуком")
 n = len(H.CALLS)
 H.update(H.ASSIST, "Просто текст", first="Мария", lang="ru")
-check(any("ответьте на его сообщение" in x for x in texts(H.ASSIST, n)), "без ответа свайпом — подсказка, никому не ушло")
+check(wait(lambda: any("Просто текст" in x and "видите только вы двое" in x for x in texts(H.IRINA, n))), "без ответа свайпом — Ирине, в их личный разговор")
+settle()
+check(not any("Просто текст" in x for u in (H.CLIENT, H.CREW, H.OWNER) for x in texts(u, n)), "больше никому не ушло")
 png = bytes.fromhex("89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d49444154789c6360f8cfc0f01f0005fe02fea7d6a40000000049454e44ae426082")
 n = len(H.CALLS)
 code, f1 = call(f"/api/portal/upload?project={pid}&cat=visual&vis=studio&name=spalnya-variant-2.png&title=" + urllib.parse.quote("Спальня, вариант 2"), H.ASSIST,
@@ -683,5 +686,206 @@ code, r = call("/api/crm/save", H.IRINA, {"entity": "project_status", "data": {"
 check(code == 200 and r["project"]["status"] == "active" and not r["project"]["finished"], "вернула в работу: окончание стёрто")
 h = H.crm.q("SELECT details FROM audit WHERE entity='project' AND entity_id=? ORDER BY id DESC LIMIT 2", pid)
 check('"status": "active"' in h[0]["details"] and '"status": "done"' in h[1]["details"], "в истории проекта — и завершение, и возврат")
+# ---------- личные разговоры Ирины с сотрудниками: видят только участники ----------
+ids = []
+for tg_id, name, pos in ((H.ASSIST2, "Ольга Мельник", "визуализатор"), (H.ASSIST3, "Денис Коваль", "комплектатор")):
+    code, r = call("/api/crm/save", H.IRINA, {"entity": "assistant", "data": {"name": name, "position": pos}}, lang="ru")
+    H.crm.run("UPDATE assistants SET tg_id=?, tg_name=? WHERE id=?", tg_id, name, r["saved_id"])
+    H.bot.s.run("INSERT OR REPLACE INTO users(tg_id, name, role, status, created, updated) VALUES(?, ?, 'assistant', 'active', '', '')", tg_id, name)
+    H.bot.s.put(f"tg:lang:{tg_id}", "ru")
+    ids.append(r["saved_id"])
+aA, aB = ids
+code, r = call("/api/crm/save", H.IRINA, {"entity": "passist", "data": {"project_id": pid, "assistant_id": aA, "on": True}}, lang="ru")
+check(code == 200, "Ирина назначила Ольгу на проект")
+code, x = call("/api/portal/thread", H.IRINA, {"project_id": pid, "kind": "staff", "assistant_id": aB}, lang="ru")
+check(code == 400, "сотруднику, не назначенному на проект, разговор по проекту не начать")
+call("/api/crm/save", H.IRINA, {"entity": "passist", "data": {"project_id": pid, "assistant_id": aB, "on": True}}, lang="ru")
+code, tS = call("/api/portal/thread", H.IRINA, {"project_id": pid, "kind": "staff", "assistant_id": aA}, lang="ru")
+check(code == 200 and tS["kind"] == "staff" and tS["assistant"]["name"] == "Ольга Мельник", "Ирина начала личный разговор с Ольгой")
+thS = P.thread(tS["id"])
+vA, vB, vO = P.viewer(H.ASSIST2, pid), P.viewer(H.ASSIST3, pid), P.viewer(H.OWNER, pid)
+check(P.access(vA, thS) == "write" and P.access(P.viewer(H.IRINA, pid, designer=True), thS) == "write", "пишут Ирина и Ольга")
+check(all(P.access(v, thS) is None for v in (vB, vC, vK, vL, vW, vO)), "Денис, заказчик, подрядчики, работник и наблюдатель его не видят")
+check(not any(t["id"] == tS["id"] for v in (vB, vC, vK, vO) for t in P.threads_for(v, pid)), "и в их списках разговоров его нет")
+code, x = call(f"/api/portal/chat?thread={tS['id']}", H.CLIENT)
+check(code == 403, "заказчик не откроет его и по адресу")
+code, x = call("/api/portal/chat", H.ASSIST3, {"thread_id": tS["id"], "text": "Можно мне тоже?"}, lang="ru")
+check(code == 403, "Денис в него не пишет")
+code, x = call("/api/portal/thread", H.ASSIST3, {"project_id": pid, "kind": "staff", "assistant_id": aA}, lang="ru")
+check(code == 400, "сотрудник не начинает разговор Ирины с другим сотрудником")
+n = len(H.CALLS)
+code, x = call("/api/portal/chat", H.IRINA, {"thread_id": tS["id"], "text": "Оля, визуализации спальни нужны к пятнице."}, lang="ru")
+check(code == 200 and wait(lambda: any("визуализации спальни" in x for x in texts(H.ASSIST2, n))), "Ольге — сообщение Ирины")
+settle()
+check(not any("визуализации спальни" in x for u in (H.ASSIST3, H.CLIENT, H.CREW, H.OWNER, H.WORKER) for x in texts(u, n)),
+      "больше никому — ни Денису, ни заказчику, ни подрядчику, ни наблюдателю")
+check(not any("Разговор:" in x for x in texts(H.ASSIST2, n)), "свой разговор с Ириной — без подписи «Разговор»")
+n = len(H.CALLS)
+H.update(H.ASSIST2, "Хорошо, пришлю в четверг.", first="Ольга", lang="ru")
+check(wait(lambda: any("пришлю в четверг" in x for x in texts(H.IRINA, n))), "Ольга пишет прямо в бот — Ирине, в их разговор")
+settle()
+to_i = [p for p in msgs(H.IRINA, n) if "пришлю в четверг" in (p.get("text") or "")][0]
+check("видите только вы двое" in to_i["text"] and not to_i.get("disable_notification"), "Ирине — со звуком и пометкой, что видят только они")
+check(not any("пришлю в четверг" in x for u in (H.ASSIST3, H.OWNER, H.CLIENT) for x in texts(u, n)), "Денис и наблюдатель не получают")
+m = H.crm.one("SELECT * FROM messages WHERE thread_id=? ORDER BY id DESC LIMIT 1", tS["id"])
+check(m["author_kind"] == "assistant", "в разговоре — от сотрудника")
+fid = H.crm.add_file(pid, "chat", "eskiz.png", __import__("io").BytesIO(png), len(png), "image/png", "Ольга")["id"]
+H.crm.run("UPDATE files SET thread_id=?, see_client=1 WHERE id=?", tS["id"], fid)
+fr = H.crm.one("SELECT * FROM files WHERE id=?", fid)
+check(P.can_see_file(vA, fr) and not P.can_see_file(vC, fr) and not P.can_see_file(vO, fr) and not P.can_see_file(vB, fr),
+      "вложение личного разговора — только его участникам, даже если отмечено «заказчику»")
+# группа сотрудников
+n = len(H.CALLS)
+code, r = call("/api/crm/save", H.IRINA, {"entity": "sgroup", "data": {"project_id": pid, "title": "Визуализации и комплектация",
+                                                                       "members": [aA, aB, 99999]}}, lang="ru")
+check(code == 200 and r["saved_id"], "Ирина собрала группу сотрудников")
+tG = P.thread(r["saved_id"])
+check(tG["kind"] == "sgroup" and sorted(m["ref_id"] for m in P.members(tG["id"])) == sorted([aA, aB]), "в группе — только назначенные на проект")
+check(wait(lambda: all(any("Визуализации и комплектация" in x for x in texts(u, n)) for u in (H.ASSIST2, H.ASSIST3))),
+      "обоим пришло сообщение о группе")
+check(P.access(vA, tG) == "write" and P.access(vB, tG) == "write" and all(P.access(v, tG) is None for v in (vC, vK, vO, vW)),
+      "группу видят только Ирина и сотрудники в ней")
+n = len(H.CALLS)
+code, x = call("/api/portal/chat", H.ASSIST3, {"thread_id": tG["id"], "text": "Каталог плитки скинул в группу."}, lang="ru")
+check(code == 200 and wait(lambda: any("Каталог плитки" in x for x in texts(H.ASSIST2, n))), "сообщение в группе — Ольге")
+settle()
+check(any("Каталог плитки" in x and "Группа сотрудников" in x for x in texts(H.IRINA, n)), "Ирине — с названием группы")
+check(not any("Каталог плитки" in x for u in (H.CLIENT, H.OWNER, H.CREW) for x in texts(u, n)), "заказчику, подрядчику и наблюдателю — нет")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "sgroup", "data": {"project_id": pid, "title": "Пусто", "members": [99999]}}, lang="ru")
+check(code == 400, "группа без сотрудников проекта — нельзя")
+call("/api/crm/save", H.IRINA, {"entity": "passist", "data": {"project_id": pid, "assistant_id": aB, "on": False}}, lang="ru")
+check(P.access(P.viewer(H.ASSIST3, pid), tG) is None, "снятый с проекта сотрудник группу больше не видит")
+
+# ---------- исполнитель студии (замерщик): платит студия, пишет только Ирина ----------
+code, kH = call("/api/crm/save", H.IRINA, {"entity": "contractor", "data": {"name": "Віктор Литвин", "kind": "hired", "trade": "Замерщик",
+                                                                            "phone": "+421 907 000 111"}}, lang="ru")
+check(code == 200 and kH["kind"] == "hired", "исполнитель студии в контактах")
+check("hired_cats" in H.crm.lists() and "3D-визуализатор" in H.crm.lists()["hired_cats"], "список: замерщик, чертёжник, 3D-визуализатор")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "link", "data": {"project_id": pid, "contractor_id": kH["id"], "trade": "Замерщик"}}, lang="ru")
+lH = r["saved_id"]
+code, inv = call("/api/crm/invite", H.IRINA, {"kind": "contractor", "ref_id": kH["id"], "project_id": pid, "lang": "uk"}, lang="ru")
+check(code == 200 and "кабінет виконавця студії" in inv["text"] and "контакти замовника" not in inv["text"], "ссылка — текст исполнителя студии, по-украински")
+n = len(H.CALLS)
+H.update(H.HIRED, "/start " + inv["link"].split("start=")[1], first="Віктор", lang="uk")
+check(any("кабінет виконавця студії" in x for x in texts(H.HIRED, n)), "исполнителю — его приветствие")
+check(any("исполнитель студии" in x for x in texts(H.IRINA, n)), "Ирине — подключился исполнитель студии")
+hv = P.contractor_view(pid, P.contractor_ids(H.HIRED, pid), H.HIRED)
+blob = json.dumps(hv, ensure_ascii=False)
+check(hv["clients"] == [] and hv["team"] == [] and hv["mine"][0]["kind"] == "hired" and hv["mine"][0]["stages"] == [], "без контактов заказчика, бригады и сумм")
+for bad in ("+421 905 111 222", "anna@example.sk", "Lukáš", "18000", '"expected"', '"commission"', "schet-baxter"):
+    check(bad not in blob, f"исполнитель не видит {bad}")
+check({"measure", "visual", "docs"} <= {f["category"] for f in hv["files"]} and hv["project"]["address"] == "Ružinovská 12",
+      "видит адрес и документацию")
+vH = P.viewer(H.HIRED, pid)
+check(kinds(vH) == [("org", kH["id"], None, False)], f"разговоры: только с Ириной {kinds(vH)}")
+check(not any(t.get("contractor") and t["contractor"]["id"] == kH["id"] for t in P.threads_for(vC, pid)), "заказчику написать ему нельзя — его нет в списке")
+check(not any(c["id"] == kH["id"] for c in P.client_view(pid, H.CLIENT)["contractors"]), "заказчик его не видит")
+code, x = call("/api/portal/thread", H.CLIENT, {"project_id": pid, "kind": "pc", "contractor_id": kH["id"]})
+check(code == 400, "заказчик не начнёт с ним разговор и по адресу")
+code, x = call("/api/portal/thread", H.HIRED, {"project_id": pid, "kind": "pc", "contractor_id": kH["id"]}, lang="uk")
+check(code == 400, "и он сам — с заказчиком")
+tH = P.ensure_thread(pid, "org", contractor_id=kH["id"])
+check(P.access(vA, tH) is None and P.access(vK, tH) is None and P.access(vC, tH) is None, "сотрудники, подрядчики и заказчик его разговор не видят")
+code, x = call("/api/portal/thread", H.ASSIST2, {"project_id": pid, "kind": "org", "contractor_id": kH["id"]}, lang="ru")
+check(code == 400, "сотрудник студии ему не пишет")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "group", "data": {"project_id": pid, "title": "Замер", "members": [{"kind": "contractor", "id": kH["id"]}]}}, lang="ru")
+check(code == 400, "в группу его не добавить")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "stage", "data": {"project_id": pid, "link_id": lH, "title": "Замер", "amount": 150, "mode": "unknown"}}, lang="ru")
+check(code == 400, "сумм на подтверждение заказчику у него нет — ему платит студия")
+code, x = call("/api/portal/stage", H.HIRED, {"action": "save", "project_id": pid, "link_id": lH, "title": "Замер", "amount": 150}, lang="uk")
+check(code == 400, "и сам он их не вносит")
+n = len(H.CALLS)
+code, x = call("/api/portal/chat", H.IRINA, {"thread_id": tH["id"], "text": "Виктор, замер в четверг в 10:00, ключи у консьержа."}, lang="ru")
+check(code == 200 and wait(lambda: any("замер в четверг" in x for x in texts(H.HIRED, n))), "Ирина пишет исполнителю")
+settle()
+check(not any("замер в четверг" in x for u in (H.ASSIST2, H.CLIENT, H.CREW) for x in texts(u, n)), "сотрудникам, заказчику и подрядчикам — нет")
+n = len(H.CALLS)
+H.update(H.HIRED, "Добре, буду о 10:00.", first="Віктор", lang="uk")
+check(wait(lambda: any("буду о 10:00" in x for x in texts(H.IRINA, n))), "исполнитель пишет в бот — Ирине")
+settle()
+check(any("Исполнитель студии" in x for x in texts(H.IRINA, n)) and not any("буду о 10:00" in x for x in texts(H.ASSIST2, n)),
+      "Ирине — «Исполнитель студии», сотруднику — нет")
+code, fH = call(f"/api/portal/upload?project={pid}&vis=client&name=zamer-kvartira.pdf&title=" + urllib.parse.quote("Замер"), H.HIRED,
+                raw=b"%PDF-1.4 zamer", ctype="application/pdf", lang="uk")
+check(code == 200 and H.crm.one("SELECT vis FROM files WHERE id=?", fH["id"])["vis"] == "studio", "его файл — только студии, даже если выбрал «заказчику»")
+check(not any(f["id"] == fH["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "заказчик замер не видит")
+code, x = call("/api/portal/file", H.HIRED, {"id": fH["id"], "vis": "client"}, lang="uk")
+check(code == 200 and H.crm.one("SELECT vis FROM files WHERE id=?", fH["id"])["vis"] == "studio", "открыть заказчику сам не может")
+code, x = call("/api/crm/save", H.IRINA, {"entity": "file_vis", "data": {"id": fH["id"], "see_client": 1}}, lang="ru")
+check(code == 200 and any(f["id"] == fH["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "Ирина открыла — заказчик видит")
+code, me = call("/api/portal/me", H.HIRED, lang="uk")
+check(code == 200 and me["heads"][0]["kind"] == "hired", "в кабинете — вид «исполнитель студии»")
+check(P.label("Замерщик", "de") == "Aufmaß-Techniker" and P.label("3D-визуализатор", "fr") == langs.pack("fr")["fixed"]["3D-визуализатор"],
+      "виды исполнителей — по словарю на всех языках")
+check(H.bot.invite_text("pl", "hired", "Jan", "", "L") == langs.pack("pl")["bot"]["invite_hired"].format(name="Jan", link="L"), "ссылка исполнителю — по-польски")
+
+# ---------- украинский: заказчику и подрядчику на украинском ничего не переводим, Ирине с украинского — тоже ----------
+import translate  # noqa: E402
+import server_info  # noqa: E402
+LLM = []
+real_post = translate._post
+
+
+def fake_post(url, body, headers, timeout=12):
+    LLM.append((url, body["messages"][-1]["content"]))
+    if "boom" in body["messages"][-1]["content"]:
+        raise RuntimeError("ответ 401: invalid key sk-proj-ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+    lang = re.search(r"into (\w+)", body["messages"][0]["content"]).group(1)
+    return {"model": "gpt-test", "usage": {"prompt_tokens": 120, "completion_tokens": 30},
+            "choices": [{"message": {"content": json.dumps({"lang": "sk", "text": f"[{lang}] " + body["messages"][-1]["content"]})}}]}
+
+
+os.environ["OPENAI_API_KEY"] = "sk-test-not-real-0123456789abcdef"
+translate._post = fake_post
+usage = server_info.install(H.bot.s)
+portal_bot.translate_text = translate.translate_text
+check(translate.translate_text("Добрий день, коли приїде диван?", "ru") is None and translate.translate_text("Добрый день, диван приедет в пятницу.", "uk") is None
+      and not LLM, "русский и украинский друг для друга не переводятся — без обращения к модели")
+check(translate.translate_text("Dobrý deň, kedy príde sedačka?", "uk")[1].startswith("[Ukrainian]") and len(LLM) == 1, "словацкий — на украинский переводится")
+LLM.clear()
+H.crm.run("UPDATE contractors SET tg_id=? WHERE id=?", H.CREW, env["k1"]["id"])       # Михаилу (кабинет по-украински) кабинет снова открыт
+H.bot.s.run("UPDATE users SET status='active' WHERE tg_id=?", H.CREW)
+H.bot.s.put(f"tg:lang:{H.CREW}", "uk")
+n = len(H.CALLS)
+tK = P.ensure_thread(pid, "org", contractor_id=env["k1"]["id"])
+code, x = call("/api/portal/chat", H.IRINA, {"thread_id": tK["id"], "text": "Михаил, плитку в ванной кладём в понедельник."}, lang="ru")
+check(code == 200 and wait(lambda: any("плитку в ванной" in x for x in texts(H.CREW, n))), "подрядчику (украинский) — сообщение Ирины")
+settle()
+check(not any("Перекладено автоматично" in x for x in texts(H.CREW, n)) and not LLM, "без перевода и без обращения к модели")
+n = len(H.CALLS)
+code, x = call("/api/portal/chat", H.CREW, {"thread_id": tK["id"], "text": "Добре, у понеділок зранку почнемо."}, lang="uk")
+check(code == 200 and wait(lambda: any("у понеділок зранку" in x for x in texts(H.IRINA, n))), "его ответ по-украински — Ирине")
+settle()
+check(not any("Перевод на русский" in x for x in texts(H.IRINA, n)) and not LLM, "Ирине — без перевода с украинского")
+tPC = P.ensure_thread(pid, "pc", contractor_id=env["k1"]["id"])
+n = len(H.CALLS)
+code, x = call("/api/portal/chat", H.CLIENT, {"thread_id": tPC["id"], "text": "Dobrý deň, môžeme prísť pozrieť obklady v utorok?"})
+check(code == 200 and wait(lambda: any("[Ukrainian]" in x for x in texts(H.CREW, n))), "сообщение заказчицы по-словацки — подрядчику по-украински")
+settle()
+check(any("[Russian]" in x for x in texts(H.IRINA, n)), "Ирине — по-русски")
+day = usage.summary()["periods"]["day"]
+check(day["calls"] >= 3 and day["tokens_in"] >= 360 and day["tokens_out"] >= 90, f"расход посчитан: вызовы и токены {day}")
+check(any(x["purpose"] == "chat" and x["day"]["calls"] >= 2 for x in usage.summary()["by_purpose"]), "переписка — отдельной строкой")
+try:
+    with translate.purpose("names"):
+        translate.translate_text("boom", "de")
+except RuntimeError:
+    pass
+S2 = usage.summary()
+check(S2["periods"]["day"]["errors"] == 1 and S2["last_error"] and "sk-proj" not in S2["last_error"]["error"] and "ответ 401" in S2["last_error"]["error"],
+      "ошибка посчитана, ключ в её тексте не показывается")
+code, x = call("/api/stats/server", H.OWNER, lang="ru")
+dump = json.dumps(x, ensure_ascii=False)
+check(code == 200 and x["server"]["disk"]["total"] > 0 and x["llm"]["periods"]["day"]["calls"] >= 3 and x["llm_config"]["provider"] == "openai",
+      "разработчику — «Сервер и ИИ»: сервер, расход")
+check(x["data"]["crm_db"] > 0 and x["data"]["files"]["count"] >= 7 and x["bot"]["messages"]["day"] >= 1 and x["bot"]["users"]["designer"] == 1,
+      "данные: базы, файлы, сообщения, кто в боте")
+check("sk-test-not-real" not in dump and "sk-proj" not in dump and any(k["present"] for k in x["llm_config"]["keys"]), "ключей на странице нет — только «ключ есть»")
+check(call("/api/stats/server", H.IRINA, lang="ru")[0] == 403 and call("/api/stats/server", H.CLIENT)[0] == 403, "дизайнеру и заказчику — нет")
+with urllib.request.urlopen(BASE + "/api/stats/server/app", timeout=10) as r:
+    check(r.status == 200 and "Сервер и ИИ" in r.read().decode(), "страница «Сервер и ИИ» открывается")
+translate._post = real_post
+del os.environ["OPENAI_API_KEY"]
+translate.USAGE_HOOK = None
 srv.shutdown()
 print(f"OK: {ok} проверок")

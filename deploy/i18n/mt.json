@@ -250,7 +250,13 @@
   "staff_docs_hint": "Pjanti tal-kejl, viżwalizzazzjonijiet, tpinġijiet — żidhom fit-taqsimiet tal-proġett.",
   "section": "Taqsima",
   "vis_s_all": "Kull min jara din it-taqsima (il-klijent, il-kuntratturi)",
-  "vis_s_studio": "L-istudjo biss — Irina se turih lill-klijent hi stess"
+  "vis_s_studio": "L-istudjo biss — Irina se turih lill-klijent hi stess",
+  "role_hired": "Speċjalista tal-istudjo",
+  "hired_hint": "Dan ix-xogħol huwa ordnat u mħallas mill-istudjo. Tikkomunika biss ma' Irina: il-klijent u l-kuntratturi ma jarawx il-konversazzjoni.",
+  "msgs_hint_hired": "Hawn tikteb lil Irina. Il-klijent u l-kuntratturi ma jarawx din iċ-chat.",
+  "docs_hired_hint": "Żid hawn il-kejl, it-tpinġijiet u l-viżwalizzazzjonijiet. L-istudjo jarahom; Irina se turihom lill-klijent.",
+  "staff_note": "Int u Irina biss tistgħu taraw din il-konversazzjoni.",
+  "sgroup_note": "Dan il-grupp jistgħu jarawh biss Irina u l-impjegati tal-istudjo li huma fih."
  },
  "bot": {
   "menu": "Il-proġett tiegħi",
@@ -309,7 +315,10 @@
   "invite_assistant": "Merħba, {name}! Għandek stedina minn {head} għall-app tal-impjegati tal-istudjo DUMSKAYA DESIGN fuq Telegram: il-proġetti li jiġu assenjati lilek, dokumenti u chats mal-klijenti u mal-kuntratturi. Iftaħ il-link fuq Telegram u agħfas il-buttuna fil-qiegħ tal-iskrin (“Start”):\n{link}\n\nIl-link huwa personali, għal persuna waħda, u jibqa' validu għal 14-il jum.",
   "assistant_assigned": "📁 Il-proġett “{project}” ġie assenjat lilek minn {who}. Id-dokumenti u ċ-chats tal-proġett jinsabu fl-app.",
   "assistant_hint": "Biex tikteb f'chat tal-proġett, wieġeb għal wieħed mill-messaġġi tiegħu (kaxkar il-messaġġ lejn ix-xellug) jew iftaħ iċ-chat fl-app.",
-  "ctx_thread": "Chat: {title}"
+  "ctx_thread": "Chat: {title}",
+  "welcome_hired": "Merħba, {name}! Din hija l-app tal-ispeċjalisti tal-istudjo DUMSKAYA DESIGN. Hawn issib il-proġetti li qed taħdem fuqhom għall-istudjo{now}: l-indirizz tas-sit, dokumenti u viżwalizzazzjonijiet, u ċ-chat tiegħek ma' Irina. Ehmeż il-kejl, it-tpinġijiet u l-viżwalizzazzjonijiet fl-app — l-istudjo se jarahom.\n\nBiex tiftaħha, agħfas “{menu}” ħdejn il-kaxxa tal-messaġġ. Tista' wkoll tikteb lil Irina direttament hawn, f'din iċ-chat.",
+  "invite_hired": "Merħba, {name}! Hawn hu l-link għall-app tal-ispeċjalisti tal-istudjo DUMSKAYA DESIGN fuq Telegram: il-proġetti li qed taħdem fuqhom għall-istudjo, l-indirizz tas-sit, dokumenti u viżwalizzazzjonijiet, u ċ-chat tiegħek ma' Irina. Iftħu fuq Telegram u agħfas il-buttuna fil-qiegħ tal-iskrin (“Start”):\n{link}\n\nIl-link huwa personali, għal persuna waħda, u jibqa' validu għal 14-il jum. Trid tikkonnettja darba biss — il-proġetti l-ġodda jidhru fl-app awtomatikament.",
+  "link_new_hired": "📁 L-istudjo żiedek mal-proġett “{project}”{trade}. L-indirizz, id-dokumenti u ċ-chat tiegħek ma' Irina jinsabu fl-app."
  },
  "fixed": {
   "Прораб": "Maniġer tas-sit",
@@ -341,6 +350,9 @@
   "Кухни": "Kċejjen",
   "Бытовая техника": "Apparat tad-dar",
   "Шторы и текстиль": "Purtieri u tessuti",
-  "Декор": "Dekorazzjoni"
+  "Декор": "Dekorazzjoni",
+  "Замерщик": "Ħaddiem tal-kejl",
+  "Чертёжник": "Tekniku tat-tpinġijiet",
+  "3D-визуализатор": "Viżwalizzatur 3D"
  }
 }

@@ -75,13 +75,14 @@ from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
 from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
                         is_own, mark_own, me_data, record_hit, record_time, web)
-from translate import lang_from, provider, translate_lead  # noqa: E402
+from translate import lang_from, provider, purpose as translate_purpose, translate_lead  # noqa: E402
 import crm_api  # noqa: E402  учёт проектов студии: /api/crm/*
 import portal_api  # noqa: E402  кабинет заказчика и подрядчика, переписка: /api/portal/*
 from crm import Crm  # noqa: E402
 from crm_portal import Portal  # noqa: E402
 from fx import Rates  # noqa: E402
 import backups  # noqa: E402  резервные копии: архив на сервере (7 дней) и копия в Telegram
+import server_info  # noqa: E402  страница разработчика «Сервер и ИИ»: сервер, данные, расход языковых моделей
 
 BOT = None
 
@@ -125,7 +126,8 @@ def send_mail(lead):
 
 
 def deliver(lead):
-    translate_lead(lead, log=log)      # перевод сообщения на русский (если оно не по-русски и задан ключ сервиса)
+    with translate_purpose("lead"):    # перевод сообщения на русский (если оно не по-русски и задан ключ сервиса)
+        translate_lead(lead, log=log)
     crm = getattr(BOT, "crm", None)
     if crm:                            # в «Студию» → «Заявки»; номер нужен для кнопки «Открыть заявку» в сообщении
         try:
@@ -191,6 +193,16 @@ class Handler(BaseHTTPRequestHandler):
                 return self.reply(403, {"ok": False})
             mon = getattr(BOT, "monitor", None)
             return self.reply(200, mon.status_data() if mon else {"running": False})
+        if path.rstrip("/") == "/api/stats/server/app":    # «Сервер и ИИ» — страница (данные — только разработчику)
+            try:
+                page = crm_api.page("server_app.html")
+            except OSError:
+                return self.reply(404, {"ok": False})
+            return self.reply(200, None, html_page=page, telegram_frame=True)
+        if path.rstrip("/") == "/api/stats/server":        # нагрузка, память, диск, данные, бот, расход ИИ: только разработчику
+            if not self.stats_owner():
+                return self.reply(403, {"ok": False})
+            return self.reply(200, server_info.snapshot(BOT))
         if path.rstrip("/") == "/api/stats/me":            # «Не считать нас»: только у разработчика
             if not self.stats_owner():
                 return self.reply(403, {"ok": False})
@@ -359,6 +371,10 @@ def main():
     global BOT
     if TG_TOKEN:
         BOT = Bot(TG_TOKEN, BOT_OWNER, BOT_DB, log=log)
+        try:                                        # учёт вызовов языковых моделей (страница «Сервер и ИИ»)
+            server_info.install(BOT.s)
+        except Exception as e:  # noqa: BLE001
+            log(f"учёт расхода ИИ не включён: {type(e).__name__}: {e}")
     if "--test" in sys.argv:
         lead = {"name": "Проверка", "contact": "test@example.com", "message": "Тестовая заявка с сервера",
                 "page": "/contact", "model": "", "lang": "ru", "time": datetime.now(timezone.utc).isoformat()}
@@ -388,7 +404,7 @@ def main():
         BOT.monitor.start()
         BOT.stats.start()
     log(f"слушаю 127.0.0.1:{PORT}; бот={'да' if BOT else 'нет'}, почта={'да' if SMTP_USER and SMTP_PASSWORD else 'нет'}, "
-        f"перевод={ {'deepl': 'DeepL', 'claude': 'Claude'}.get(provider(), 'нет') }")
+        f"перевод={ {'openai': 'ChatGPT', 'deepl': 'DeepL', 'claude': 'Claude'}.get(provider(), 'нет') }")
     srv.serve_forever()
 
 

@@ -123,7 +123,7 @@ def after_save(entity, d, r, who):
             portal_bg(BOT.portal_event, "stage_saved", stage_id=sid, was=was, by=who, by_contractor=False)
     elif entity == "link" and r.get("new"):
         portal_bg(BOT.portal_event, "link_new", link_id=sid)
-    elif entity == "group":                                # группа: новым участникам — сообщение на их языке
+    elif entity in ("group", "sgroup"):                    # группа: новым участникам — сообщение на их языке
         if r.get("new_members"):
             portal_bg(BOT.portal_event, "group_new", thread_id=r["thread_id"], only=r["new_members"])
     elif entity == "passist" and d.get("on") and r.get("changed_tg"):   # сотрудника студии назначили на проект
@@ -151,9 +151,15 @@ def portal_save(entity):
         new = [m for m in PORTAL.members(th["id"]) if (m["kind"], m["ref_id"]) not in old]
         return dict(CRM.project(th["project_id"]), saved_id=th["id"], thread_id=th["id"], new_members=new)
 
+    def sgroup(d, who):                                    # группа Ирины с сотрудниками студии проекта
+        old = {m["ref_id"] for m in PORTAL.members(d["id"])} if d.get("id") else set()
+        th = PORTAL.save_staff_group(d.get("project_id"), d, who)
+        new = [m for m in PORTAL.members(th["id"]) if m["ref_id"] not in old]
+        return dict(CRM.project(th["project_id"]), saved_id=th["id"], thread_id=th["id"], new_members=new)
+
     def group_delete(d, who):
         th = PORTAL.thread(d.get("id"))
-        if not th or th["kind"] != "group":
+        if not th or th["kind"] not in ("group", "sgroup"):
             raise CrmError("Группа не найдена")
         if CRM.one("SELECT id FROM messages WHERE thread_id=? LIMIT 1", th["id"]):
             raise CrmError("В группе уже есть сообщения — удалить её нельзя (переписка проекта сохраняется)")
@@ -210,7 +216,7 @@ def portal_save(entity):
             portal_bg(BOT.sync_portal_menu, r["assistant"]["tg_id"])
         return dict(CRM.project(int(d["project_id"])), changed_tg=bool(r["changed"] and r["assistant"]["tg_id"]))
 
-    return {"group": group, "group_delete": group_delete, "crew": crew, "crew_remove": crew_remove, "pcrew": pcrew,
+    return {"group": group, "sgroup": sgroup, "group_delete": group_delete, "crew": crew, "crew_remove": crew_remove, "pcrew": pcrew,
             "file_vis": file_vis, "assistant": assistant, "assistant_remove": assistant_remove, "passist": passist}.get(entity)
 
 
@@ -442,8 +448,8 @@ def handle_post(h, path, query):
             elif kind in ("contractor", "assistant"):    # подрядчику (поставщику) и сотруднику студии — без проекта
                 title = ""
                 c = CRM.one("SELECT kind FROM contractors WHERE id=?", inv_ref(data)) if kind == "contractor" else None
-                if c and c.get("kind") == "supplier":
-                    kind = "supplier"
+                if c and c.get("kind") in ("supplier", "hired"):   # поставщику и исполнителю студии — свой текст
+                    kind = c["kind"]
             else:
                 p = CRM.one("SELECT title FROM projects WHERE id=?", int(data.get("project_id") or 0)) or {}
                 title = BOT.loc(p.get("title") or "", inv["lang"]) if hasattr(BOT, "loc") else p.get("title") or ""   # название — на его языке

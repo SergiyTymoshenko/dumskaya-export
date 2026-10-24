@@ -364,16 +364,22 @@ def handle_post(h, path, query):
             if v.get("preview") or (v["observer"] and not v["studio"]):
                 raise Denied()
             kind = d.get("kind")
-            if v["studio"] or v["staff"]:
+            if v["studio"]:                              # Ирина: с заказчиком, подрядчиком, работником, своим сотрудником
+                if kind not in ("client", "org", "worker", "staff"):
+                    raise CrmError("Неизвестный разговор")
+            elif v["staff"]:                             # сотрудник студии: не с исполнителями студии — им пишет только Ирина
                 if kind not in ("client", "org", "worker"):
                     raise CrmError("Неизвестный разговор")
+                if kind == "org" and PORTAL.is_hired(d.get("contractor_id")) or kind == "worker" and PORTAL.thread_hired(
+                        {"kind": "worker", "crew_id": int(d.get("crew_id") or 0)}):
+                    raise CrmError("Исполнителю студии пишет только Ирина")
             elif kind == "pc" and (v["client"] or int(d.get("contractor_id") or 0) in v["heads"]):
                 c = CRM.one("SELECT tg_id FROM contractors WHERE id=?", int(d.get("contractor_id") or 0)) or {}
                 if v["client"] and not c.get("tg_id"):
                     raise CrmError("Этот подрядчик ещё не подключён к боту")
             else:
                 raise Denied()
-            t = PORTAL.ensure_thread(pid, kind, d.get("contractor_id"), d.get("crew_id"), w["name"])
+            t = PORTAL.ensure_thread(pid, kind, d.get("contractor_id"), d.get("crew_id"), w["name"], assistant_id=d.get("assistant_id"))
             return h.reply(200, PORTAL.thread_info(t, v, None, "ru" if v["studio"] else w["lang"])) or True
         if path == "/api/portal/read":
             t, v, _ = thread_for(w, d.get("thread_id"), q)

@@ -250,7 +250,13 @@
   "staff_docs_hint": "Uzmērījumu plāni, vizualizācijas, rasējumi — pievienojiet tos projekta sadaļām.",
   "section": "Sadaļa",
   "vis_s_all": "Visi, kas redz šo sadaļu (klients, darbuzņēmēji)",
-  "vis_s_studio": "Tikai studija — Irina pati parādīs to klientam"
+  "vis_s_studio": "Tikai studija — Irina pati parādīs to klientam",
+  "role_hired": "Studijas speciālists",
+  "hired_hint": "Šo darbu Jums pasūta un apmaksā studija. Sarakste notiek tikai ar Irinu: klients un darbuzņēmēji to neredz.",
+  "msgs_hint_hired": "Šeit Jūs rakstāt Irinai. Klients un darbuzņēmēji šo saraksti neredz.",
+  "docs_hired_hint": "Uzmērījumus, rasējumus un vizualizācijas pievienojiet šeit. Tos redz studija; klientam tos parādīs Irina.",
+  "staff_note": "Šo saraksti redzat tikai Jūs un Irina.",
+  "sgroup_note": "Šo grupu redz tikai Irina un tajā esošie studijas darbinieki."
  },
  "bot": {
   "menu": "Mans projekts",
@@ -309,7 +315,10 @@
   "invite_assistant": "Labdien, {name}! {head} aicina Jūs pievienoties DUMSKAYA DESIGN studijas darbinieku lietotnei Telegram vidē: projekti, kuriem Jūs norīkos, dokumenti un sarakste ar klientiem un darbuzņēmējiem. Atveriet saiti Telegram lietotnē un pieskarieties pogai ekrāna apakšā (“Sākt”):\n{link}\n\nSaite ir personiska, paredzēta vienam cilvēkam, un derīga 14 dienas.",
   "assistant_assigned": "📁 {who} Jūs norīkoja projektam “{project}”. Dokumenti un projekta sarakstes ir lietotnē.",
   "assistant_hint": "Lai rakstītu projekta sarakstē, atbildiet uz kādu no tās ziņām (pavelciet ziņu pa kreisi) vai atveriet saraksti lietotnē.",
-  "ctx_thread": "Sarakste: {title}"
+  "ctx_thread": "Sarakste: {title}",
+  "welcome_hired": "Labdien, {name}! Šī ir studijas DUMSKAYA DESIGN speciālistu lietotne. Šeit ir projekti, pie kuriem strādājat studijas uzdevumā{now}: objekta adrese, dokumenti un vizualizācijas, sarakste ar Irinu. Uzmērījumus, rasējumus un vizualizācijas pievienojiet lietotnē — tos redzēs studija.\n\nLai to atvērtu, pieskarieties “{menu}” blakus ziņas laukam. Irinai varat rakstīt arī tepat šajā sarakstē.",
+  "invite_hired": "Labdien, {name}! Šeit ir saite uz studijas DUMSKAYA DESIGN speciālistu lietotni Telegram vidē: projekti, pie kuriem strādājat studijas uzdevumā, objekta adrese, dokumenti un vizualizācijas, sarakste ar Irinu. Atveriet to Telegram lietotnē un pieskarieties pogai ekrāna apakšā (“Sākt”):\n{link}\n\nSaite ir personiska, paredzēta vienam cilvēkam, un derīga 14 dienas. Pievienoties vajag tikai vienreiz — jauni projekti lietotnē parādīsies automātiski.",
+  "link_new_hired": "📁 Studija Jūs pievienoja projektam “{project}”{trade}. Adrese, dokumenti un sarakste ar Irinu ir lietotnē."
  },
  "fixed": {
   "Прораб": "Būvdarbu vadītājs",
@@ -341,6 +350,9 @@
   "Кухни": "Virtuves",
   "Бытовая техника": "Sadzīves tehnika",
   "Шторы и текстиль": "Aizkari un tekstils",
-  "Декор": "Dekors"
+  "Декор": "Dekors",
+  "Замерщик": "Uzmērītājs",
+  "Чертёжник": "Rasētājs",
+  "3D-визуализатор": "3D vizualizētājs"
  }
 }

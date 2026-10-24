@@ -250,7 +250,13 @@
   "staff_docs_hint": "Opmetingen, visualisaties, tekeningen — voeg ze toe aan de secties van het project.",
   "section": "Sectie",
   "vis_s_all": "Iedereen die deze sectie ziet (klant, vakmensen)",
-  "vis_s_studio": "Alleen de studio — Irina laat het zelf aan de klant zien"
+  "vis_s_studio": "Alleen de studio — Irina laat het zelf aan de klant zien",
+  "role_hired": "Studiospecialist",
+  "hired_hint": "Dit werk wordt door de studio bij u besteld en betaald. U chat alleen met Irina: de klant en de vakmensen zien dit niet.",
+  "msgs_hint_hired": "Hier schrijft u Irina. De klant en de vakmensen zien deze chat niet.",
+  "docs_hired_hint": "Opmetingen, tekeningen, visualisaties — voeg ze hier toe. De studio ziet ze; Irina deelt ze met de klant.",
+  "staff_note": "Alleen u en Irina zien dit gesprek.",
+  "sgroup_note": "Deze groep is alleen zichtbaar voor Irina en de studiomedewerkers die erin zitten."
  },
  "bot": {
   "menu": "Mijn project",
@@ -309,7 +315,10 @@
   "invite_assistant": "Hallo {name}! {head} nodigt u uit voor de app voor studiomedewerkers van DUMSKAYA DESIGN in Telegram: de projecten waaraan u wordt toegewezen, documenten en chats met klanten en vakmensen. Open de link in Telegram en tik onderaan op de knop (“Start”):\n{link}\n\nDe link is persoonlijk, voor één persoon, en 14 dagen geldig.",
   "assistant_assigned": "📁 {who} heeft u toegewezen aan het project “{project}”. Documenten en chats van het project vindt u in de app.",
   "assistant_hint": "Om in een projectchat te schrijven, antwoordt u op een van de berichten (veeg het bericht naar links) of opent u de chat in de app.",
-  "ctx_thread": "Chat: {title}"
+  "ctx_thread": "Chat: {title}",
+  "welcome_hired": "Hallo {name}! Dit is de app van DUMSKAYA DESIGN voor specialisten die voor de studio werken. Hier vindt u de projecten waaraan u voor de studio werkt{now}: het adres van de bouwplaats, documenten en visualisaties, en uw chat met Irina. Voeg opmetingen, tekeningen en visualisaties toe in de app — de studio ziet ze dan.\n\nTik op “{menu}” naast het invoerveld om de app te openen. U kunt Irina ook direct hier in deze chat schrijven.",
+  "invite_hired": "Hallo {name}! Hier is de link naar de app van DUMSKAYA DESIGN voor specialisten van de studio in Telegram: de projecten waaraan u voor de studio werkt, het adres van de bouwplaats, documenten en visualisaties, en uw chat met Irina. Open de link in Telegram en tik onderaan op de knop (“Start”):\n{link}\n\nDe link is persoonlijk, voor één persoon, en 14 dagen geldig. U hoeft zich maar één keer aan te melden — nieuwe projecten verschijnen automatisch in de app.",
+  "link_new_hired": "📁 De studio heeft u toegevoegd aan het project “{project}”{trade}. Het adres, de documenten en uw chat met Irina vindt u in de app."
  },
  "fixed": {
   "Прораб": "Uitvoerder",
@@ -341,6 +350,9 @@
   "Кухни": "Keukens",
   "Бытовая техника": "Huishoudelijke apparaten",
   "Шторы и текстиль": "Gordijnen en textiel",
-  "Декор": "Decoratie"
+  "Декор": "Decoratie",
+  "Замерщик": "Opmeter",
+  "Чертёжник": "Tekenaar",
+  "3D-визуализатор": "3D-visualisator"
  }
 }

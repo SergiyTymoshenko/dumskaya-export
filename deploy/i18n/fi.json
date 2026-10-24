@@ -250,7 +250,13 @@
   "staff_docs_hint": "Mittauspiirustukset, visualisoinnit, työpiirustukset — lisää ne projektin osioihin.",
   "section": "Osio",
   "vis_s_all": "Kaikki, jotka näkevät tämän osion (asiakas, urakoitsijat)",
-  "vis_s_studio": "Vain studio — Irina näyttää sen asiakkaalle itse"
+  "vis_s_studio": "Vain studio — Irina näyttää sen asiakkaalle itse",
+  "role_hired": "Studion asiantuntija",
+  "hired_hint": "Studio tilaa tämän työn sinulta ja maksaa sen. Keskustelet vain Irinan kanssa: asiakas ja urakoitsijat eivät näe keskustelua.",
+  "msgs_hint_hired": "Täällä kirjoitat Irinalle. Asiakas ja urakoitsijat eivät näe tätä keskustelua.",
+  "docs_hired_hint": "Lisää mittaukset, piirustukset ja visualisoinnit tänne. Studio näkee ne; Irina näyttää ne asiakkaalle.",
+  "staff_note": "Vain sinä ja Irina näette tämän keskustelun.",
+  "sgroup_note": "Tämän ryhmän näkevät vain Irina ja siihen kuuluvat studion työntekijät."
  },
  "bot": {
   "menu": "Oma projekti",
@@ -309,7 +315,10 @@
   "invite_assistant": "Hei {name}! {head} kutsuu sinut DUMSKAYA DESIGN -studion henkilöstösovellukseen Telegramissa: projektit, joihin sinut lisätään, asiakirjat ja keskustelut asiakkaiden ja urakoitsijoiden kanssa. Avaa linkki Telegramissa ja napauta näytön alareunan painiketta (”Aloita”):\n{link}\n\nLinkki on henkilökohtainen, yhdelle henkilölle, ja voimassa 14 päivää.",
   "assistant_assigned": "📁 {who} on lisännyt sinut projektiin ”{project}”. Asiakirjat ja projektin keskustelut ovat sovelluksessa.",
   "assistant_hint": "Kirjoita projektin keskusteluun vastaamalla johonkin sen viestiin (pyyhkäise viestiä vasemmalle) tai avaa keskustelu sovelluksessa.",
-  "ctx_thread": "Keskustelu: {title}"
+  "ctx_thread": "Keskustelu: {title}",
+  "welcome_hired": "Hei {name}! Tämä on DUMSKAYA DESIGN -studion asiantuntijoiden sovellus. Täällä ovat projektit, joissa teet töitä studiolle{now}: kohteen osoite, asiakirjat ja visualisoinnit sekä keskustelusi Irinan kanssa. Liitä mittaukset, piirustukset ja visualisoinnit sovellukseen — studio näkee ne.\n\nAvaa sovellus napauttamalla ”{menu}” viestikentän vieressä. Voit myös kirjoittaa Irinalle suoraan tähän keskusteluun.",
+  "invite_hired": "Hei {name}! Tässä on linkki DUMSKAYA DESIGN -studion asiantuntijoiden sovellukseen Telegramissa: projektit, joissa teet töitä studiolle, kohteen osoite, asiakirjat ja visualisoinnit sekä keskustelusi Irinan kanssa. Avaa linkki Telegramissa ja napauta näytön alareunan painiketta (”Aloita”):\n{link}\n\nLinkki on henkilökohtainen, yhdelle henkilölle, ja voimassa 14 päivää. Yhdistäminen tehdään vain kerran — uudet projektit näkyvät sovelluksessa automaattisesti.",
+  "link_new_hired": "📁 Studio on lisännyt sinut projektiin ”{project}”{trade}. Osoite, asiakirjat ja keskustelusi Irinan kanssa ovat sovelluksessa."
  },
  "fixed": {
   "Прораб": "Työnjohtaja",
@@ -341,6 +350,9 @@
   "Кухни": "Keittiöt",
   "Бытовая техника": "Kodinkoneet",
   "Шторы и текстиль": "Verhot ja tekstiilit",
-  "Декор": "Sisustustuotteet"
+  "Декор": "Sisustustuotteet",
+  "Замерщик": "Mittaaja",
+  "Чертёжник": "Piirtäjä",
+  "3D-визуализатор": "3D-visualisoija"
  }
 }
