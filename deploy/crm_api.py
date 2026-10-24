@@ -61,6 +61,45 @@ def app_page():
     return page("crm_app.html")
 
 
+def studio_user(h):
+    """Заявки, проекты, деньги, заказчики и подрядчики — только у дизайнера. Разработчику в «Студии» — сайт и доступ
+    к боту (решено 24.10.2026)."""
+    u = h.stats_admin()
+    return u if u and u["role"] == "designer" else None
+
+
+# Письмо заказчику. Кнопка ✉️ в «Студии» открывает эту страницу в браузере (из Telegram ссылки mailto: открываются не везде),
+# а она — «Почту» с готовым письмом. Адрес, тема и текст — после «#»: на сервер не уходят и в журнал не попадают.
+MAIL_PAGE = r"""<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
+<title>Письмо — DUMSKAYA DESIGN</title>
+<style>
+:root { color-scheme: light dark; --bg: #f6f5f2; --fg: #141414; --mut: #505050; --btn: #1a5fb4; }
+@media (prefers-color-scheme: dark) { :root { --bg: #161616; --fg: #f2f2f2; --mut: #c4c4c4; --btn: #3d8bfd; } }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 20px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: 32px 20px; max-width: 560px; margin: 0 auto; text-align: center; }
+a.btn { display: block; background: var(--btn); color: #fff; text-decoration: none; font-weight: 600; border-radius: 14px;
+  padding: 18px 16px; margin: 24px 0 16px; }
+p { color: var(--mut); margin: 10px 0; overflow-wrap: anywhere; }
+b { color: var(--fg); }
+</style></head><body>
+<h1 style="font-size:24px;margin:0 0 8px">Письмо заказчику</h1>
+<p id="to"></p>
+<a class="btn" id="go" href="#">✉️ Открыть в «Почте»</a>
+<p>Если «Почта» не открылась сама — нажмите кнопку. Потом вернитесь в Telegram.</p>
+<script>
+(function () {
+  var q = new URLSearchParams(location.hash.slice(1)), to = (q.get('to') || '').trim();
+  if (!/^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/.test(to)) { document.getElementById('to').textContent = 'Нет адреса e-mail.'; document.getElementById('go').remove(); return; }
+  var enc = function (s) { return encodeURIComponent(s || '').replace(/%0A/g, '%0D%0A'); };
+  var url = 'mailto:' + encodeURIComponent(to).replace('%40', '@') + '?subject=' + enc(q.get('s')) + '&body=' + enc(q.get('b'));
+  var t = document.getElementById('to'); t.append('Кому: '); var b = document.createElement('b'); b.textContent = to; t.append(b);
+  document.getElementById('go').href = url;
+  setTimeout(function () { location.href = url; }, 150);
+})();
+</script></body></html>"""
+
+
 def _json_body(h, limit=300_000):
     n = int(h.headers.get("Content-Length") or 0)
     if n <= 0 or n > limit:
@@ -86,9 +125,12 @@ def handle_get(h, path, query):
     if path == "/api/crm/file":
         serve_file(h, q)
         return True
-    if path == "/api/crm/ui":                       # размер текста — нужен и графикам, работает и без учёта
+    if path == "/api/crm/ui":                       # размер текста и роль — нужны и графикам, работает и без учёта
         u = h.stats_admin()
-        return h.reply(200, {"size": ui_size(u)} if u else {"size": "m"}) or True
+        return h.reply(200, {"size": ui_size(u), "role": u["role"]} if u else {"size": "m"}) or True
+    if path == "/api/crm/mail":                     # письмо заказчику: открыть «Почту» из браузера (адрес и текст — в #…)
+        h.reply(200, None, html_page=MAIL_PAGE)
+        return True
     if path == "/api/crm/access":                   # доступ к боту: люди, запросы, партнёры — работает и без учёта
         u = h.stats_admin()
         if not u or not BOT:
@@ -97,9 +139,9 @@ def handle_get(h, path, query):
     if not CRM:
         h.reply(503, {"ok": False, "error": "Учёт не запущен"})
         return True
-    u = h.stats_admin()
+    u = studio_user(h)
     if not u:
-        h.reply(403, {"ok": False, "error": "Нет доступа: учёт открыт разработчику и дизайнеру студии."})
+        h.reply(403, {"ok": False, "error": "Нет доступа: заявки и проекты студии — у дизайнера."})
         return True
     try:
         if path == "/api/crm/state":
@@ -151,9 +193,9 @@ def handle_post(h, path, query):
     if not CRM:
         h.reply(503, {"ok": False, "error": "Учёт не запущен"})
         return True
-    u = h.stats_admin()
+    u = studio_user(h)
     if not u:
-        h.reply(403, {"ok": False, "error": "Нет доступа"})
+        h.reply(403, {"ok": False, "error": "Нет доступа: заявки и проекты студии — у дизайнера."})
         return True
     q = dict(urllib.parse.parse_qsl(query))
     who = _who(u)
@@ -176,11 +218,14 @@ def handle_post(h, path, query):
             entity, d = data.get("entity"), data.get("data") or {}
             fn = {"project": CRM.save_project, "op": CRM.save_op, "client": CRM.save_client,
                   "contractor": CRM.save_contractor, "link": CRM.link_contractor, "stage": CRM.save_stage,
-                  "lead": CRM.save_lead, "lead_project": CRM.lead_to_project, "lists": CRM.save_lists}.get(entity)
+                  "lead": CRM.save_lead, "lead_project": CRM.lead_to_project, "lead_restore": CRM.restore_lead,
+                  "lists": CRM.save_lists}.get(entity)
             if not fn:
                 raise CrmError("Неизвестно, что сохранять")
             return h.reply(200, fn(d, who)) or True
         if path == "/api/crm/delete":
+            if data.get("entity") == "leads":           # несколько заявок сразу (например, весь спам)
+                return h.reply(200, CRM.delete_leads(data.get("ids") or [], who)) or True
             return h.reply(200, CRM.delete(data.get("entity"), data.get("id"), who)) or True
         if path == "/api/crm/move":
             return h.reply(200, CRM.move_file(data.get("id"), data.get("category"), who)) or True

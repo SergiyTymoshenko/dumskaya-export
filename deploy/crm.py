@@ -72,6 +72,7 @@ LEAD_FLOW = ["work", "project", "closed"]               # «как идёт» �
 LEAD_HIDDEN = ["ad", "spam", "ignore"]                  # не заявки: во «Все» не попадают, у каждого своя кнопка
 TEST_CONTACTS = ("заявка отправлена с сервера", "test@example.com")   # пробные заявки мастера настройки и проверки
 LEADS_ARCHIVE_DAYS = 30             # заявки, пришедшие до «Студии»: за 30 дней — «В работе», старше — «Закрыта»
+LEADS_TRASH_DAYS = 30               # удалённая заявка 30 дней в «Удалённых» (можно вернуть), потом имя, контакт и текст стираются
 PAY_METHODS = ["Банковский перевод", "Наличные", "Карта", "Другое"]
 DEFAULTS = {
     "tariffs": ["Экспресс", "Мебель", "Базовый", "Премиум", "Премиум+", "Авторское сопровождение", "Индивидуальный"],
@@ -119,7 +120,7 @@ CREATE TABLE IF NOT EXISTS leads (            -- заявки с сайта (в 
   id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, name TEXT, contact TEXT, message TEXT, message_ru TEXT,
   message_lang TEXT, page TEXT, model TEXT, model_name TEXT, lang TEXT, routed TEXT,
   status TEXT NOT NULL DEFAULT 'new', note TEXT, project_id INTEGER, updated TEXT, updated_by TEXT,
-  src TEXT UNIQUE);                          -- src: время + имя + контакт — одна заявка не попадёт дважды
+  src TEXT UNIQUE, deleted TEXT);            -- src: время + имя + контакт — одна заявка не попадёт дважды (и удалённая не вернётся)
 CREATE INDEX IF NOT EXISTS leads_ts ON leads(ts);
 CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT);
 CREATE TABLE IF NOT EXISTS audit (
@@ -252,6 +253,8 @@ class Crm:
             for c in ("link_id", "stage_id"):                  # базы, созданные до этапов подрядчиков
                 if c not in cols:
                     self.db.execute(f"ALTER TABLE ops ADD COLUMN {c} INTEGER")
+            if "deleted" not in {r[1] for r in self.db.execute("PRAGMA table_info(leads)")}:   # до удаления заявок
+                self.db.execute("ALTER TABLE leads ADD COLUMN deleted TEXT")
         try:
             os.chmod(path, 0o600)
         except OSError:
@@ -532,13 +535,67 @@ class Crm:
 
     def leads_list(self):
         rows = self.q("""SELECT l.id, l.ts, l.name, l.contact, substr(COALESCE(NULLIF(l.message_ru, ''), l.message), 1, 160) AS snippet,
-                                l.model, l.model_name, l.lang, l.status, l.project_id, l.routed, p.title AS project_title
-                         FROM leads l LEFT JOIN projects p ON p.id=l.project_id WHERE l.status != 'test' ORDER BY l.ts DESC, l.id DESC""")
-        return {"leads": rows, "statuses": LEAD_STATUSES}
+                                l.model, l.model_name, l.lang, l.status, l.project_id, l.routed, p.title AS project_title, l.deleted
+                         FROM leads l LEFT JOIN projects p ON p.id=l.project_id
+                         WHERE l.status != 'test' AND (l.deleted IS NULL OR l.deleted >= ?) ORDER BY l.ts DESC, l.id DESC""",
+                      self._trash_cutoff())
+        return {"leads": rows, "statuses": LEAD_STATUSES, "trash_days": LEADS_TRASH_DAYS}
+
+    @staticmethod
+    def _trash_cutoff():
+        return (datetime.now(timezone.utc) - timedelta(days=LEADS_TRASH_DAYS)).isoformat(timespec="seconds")
+
+    def _live_lead(self, lid):
+        """Заявка, которую можно менять: есть и не удалена."""
+        r = self.one("SELECT id, name, status, note, project_id, deleted FROM leads WHERE id=? AND status != 'test'", int(lid or 0))
+        if not r:
+            raise CrmError("Заявка не найдена")
+        if r["deleted"]:
+            raise CrmError("Заявка удалена — сначала верните её")
+        return r
+
+    def delete_leads(self, ids, who):
+        """Удалить заявки: 30 дней лежат в «Удалённых» (можно вернуть), потом имя, контакт и текст стираются.
+        Сама строка остаётся отметкой, чтобы заявка не вернулась из файла leads.jsonl. Проект из заявки остаётся."""
+        if not isinstance(ids, (list, tuple)):
+            ids = [ids]
+        done = 0
+        for lid in ids[:1000]:
+            try:
+                r = self._live_lead(int(lid))
+            except (CrmError, TypeError, ValueError):
+                continue
+            self.run("UPDATE leads SET deleted=?, updated=?, updated_by=? WHERE id=?", now(), now(), who, r["id"])
+            self.audit(who, "delete", "lead", r["id"], {"status": r["status"]})
+            done += 1
+        if not done:
+            raise CrmError("Заявка не найдена")
+        return {"deleted": done}
+
+    def restore_lead(self, d, who):
+        lid = int(d.get("id") or 0)
+        r = self.one("SELECT id FROM leads WHERE id=? AND deleted IS NOT NULL AND deleted >= ?", lid, self._trash_cutoff())
+        if not r:
+            raise CrmError("Заявки нет среди удалённых")
+        self.run("UPDATE leads SET deleted=NULL, updated=?, updated_by=? WHERE id=?", now(), who, lid)
+        self.audit(who, "restore", "lead", lid, {})
+        return self.lead(lid)
+
+    def purge_leads(self):
+        """Удалённые больше 30 дней назад: имя, контакт, текст и заметки стираются (и в истории изменений)."""
+        old = [r["id"] for r in self.q("""SELECT id FROM leads WHERE deleted IS NOT NULL AND deleted < ?
+                                          AND (name IS NOT NULL OR contact IS NOT NULL OR message IS NOT NULL)""",
+                                       self._trash_cutoff())]
+        for lid in old:
+            self.run("""UPDATE leads SET name=NULL, contact=NULL, message=NULL, message_ru=NULL, note=NULL, page=NULL,
+                        routed=NULL, model_name=NULL WHERE id=?""", lid)
+            self.run("UPDATE audit SET details=NULL WHERE entity='lead' AND entity_id=?", lid)
+        return len(old)
 
     def lead(self, lid):
         r = self.one("""SELECT l.*, p.title AS project_title, p.number AS project_number FROM leads l
-                        LEFT JOIN projects p ON p.id=l.project_id WHERE l.id=?""", int(lid or 0))
+                        LEFT JOIN projects p ON p.id=l.project_id WHERE l.id=? AND (l.deleted IS NULL OR l.deleted >= ?)""",
+                     int(lid or 0), self._trash_cutoff())
         if not r:
             raise CrmError("Заявка не найдена")
         r.pop("src", None)
@@ -547,9 +604,7 @@ class Crm:
 
     def save_lead(self, d, who):
         lid = int(d.get("id") or 0)
-        row = self.one("SELECT project_id FROM leads WHERE id=?", lid)
-        if not row:
-            raise CrmError("Заявка не найдена")
+        row = self._live_lead(lid)
         status = d.get("status")
         if status not in dict(LEAD_STATUSES):
             raise CrmError("Неизвестный статус заявки")
@@ -562,16 +617,12 @@ class Crm:
 
     def set_lead_status(self, lid, status, who):
         """Статус заявки кнопкой в сообщении бота; заметка остаётся."""
-        cur = self.one("SELECT status, note FROM leads WHERE id=?", int(lid or 0))
-        if not cur:
-            raise CrmError("Заявка не найдена")
+        cur = self._live_lead(lid)
         return self.save_lead({"id": lid, "status": status, "note": cur["note"] or ""}, who)
 
     def lead_to_project(self, d, who):
         """Из заявки — заказчик (новый или выбранный) и проект; заявка → «Стала проектом»."""
-        lid = int(d.get("lead_id") or 0)
-        if not self.one("SELECT id FROM leads WHERE id=?", lid):
-            raise CrmError("Заявка не найдена")
+        lid = self._live_lead(d.get("lead_id"))["id"]
         c, pd = d.get("client") or {}, d.get("project") or {}
         if not _text(pd.get("title"), 200):                       # проверить до того, как создавать заказчика
             raise CrmError("Укажите название проекта")
@@ -724,6 +775,8 @@ class Crm:
             self.run("DELETE FROM files WHERE id=?", rid)
             self.audit(who, "delete", "file", rid, f)
             return self.project(f["project_id"])
+        if entity == "lead":
+            return self.delete_leads([rid], who)
         if entity == "project":
             p = self.one("SELECT * FROM projects WHERE id=?", rid)
             if not p:
@@ -996,7 +1049,7 @@ class Crm:
             c["debt_eur"] = round(sum(x["debt_eur"] for x in mine), 2)
             c["received_eur"] = round(sum(x["received_eur"] for x in mine), 2)
         cities = sorted({x for x in [p["city"] for p in projects] + [c["city"] for c in clients] + [c["city"] for c in contractors] if x})
-        leads_new = self.one("SELECT COUNT(*) AS n FROM leads WHERE status='new'")["n"]
+        leads_new = self.one("SELECT COUNT(*) AS n FROM leads WHERE status='new' AND deleted IS NULL")["n"]
         return {"projects": projects, "clients": clients, "contractors": contractors, "links": links, "cities": cities,
                 "lists": self.lists(), "disk": self.disk(), "leads_new": leads_new}
 
@@ -1022,6 +1075,7 @@ class Crm:
             for day_dir in os.listdir(self.trash_dir):
                 if re.fullmatch(r"\d{4}-\d{2}-\d{2}", day_dir) and day_dir < old:
                     shutil.rmtree(os.path.join(self.trash_dir, day_dir), ignore_errors=True)
+        self.purge_leads()
         self.setting("backup_day", d)
         return True
 

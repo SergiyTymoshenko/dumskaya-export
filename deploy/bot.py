@@ -72,7 +72,7 @@ KEYBOARDS = {
               "resize_keyboard": True, "is_persistent": True},
     "designer": {"keyboard": [[{"text": BTN_USERS}, {"text": BTN_PARTNERS}]], "resize_keyboard": True, "is_persistent": True},
 }
-KEYBOARD_VERSION = {"owner": "4", "designer": "6"}   # сменить — и сообщение о кнопках этой роли придёт заново
+KEYBOARD_VERSION = {"owner": "5", "designer": "6"}   # сменить — и сообщение о кнопках этой роли придёт заново
 SUPPLIER_COMMANDS = [{"command": "team", "description": "Мои сотрудники"},
                      {"command": "invite", "description": "Пригласить сотрудника"},
                      {"command": "help", "description": "Что умеет бот"}]
@@ -261,6 +261,16 @@ class Bot(CrmBotMixin):
                 sent.append(u["tg_id"])
         return sent
 
+    def notify_leads(self, text, rows=None, skip=()):
+        """Заявка с сайта — дизайнерам (с кнопками «Студии»). Разработчику — только если никому из них не доставлено,
+        чтобы заявка не потерялась (решено 24.10.2026: заявки и проекты студии ему не нужны)."""
+        sent = self.notify(text, roles=("designer",), skip=skip, rows=rows)
+        if not sent:
+            names = ", ".join(u["name"] or str(u["tg_id"]) for u in self.active(("designer",))) or "дизайнера в боте нет"
+            sent = self.notify(f"⚠️ <b>Не доставлено: {esc(names)}</b> — передайте заявку сами.\n\n" + text,
+                               roles=("owner",), skip=skip)
+        return sent
+
     def notify_owner(self, text):
         if self.owner:
             self.send(self.owner, text)
@@ -386,6 +396,12 @@ class Bot(CrmBotMixin):
         return {"reply_markup": {"remove_keyboard": True} if self.studio_url() else KEYBOARDS[u["role"]]}
 
     def studio_text(self, u):
+        if u["role"] == "owner":                    # решено 24.10.2026: заявки и проекты студии разработчику не нужны
+            return ("В <b>«Студии»</b> (кнопка слева от поля ввода) у вас теперь только:\n\n"
+                    "• <b>Сайт</b> — графики посетителей и работает ли сайт\n"
+                    "• <b>Доступ</b> — запросы, роли, партнёры, кто отвечает за товары магазина\n\n"
+                    "Заявки, проекты, деньги и подрядчики — у дизайнера студии. Заявки с сайта сюда больше не приходят — "
+                    "только если дизайнеру бот не смог их доставить (чтобы не потерялись).")
         return ("Всё для работы студии — в <b>«Студии»</b>: кнопка слева от поля ввода.\n\n"
                 "• <b>Заявки</b> с сайта — со статусами; из заявки одним нажатием — заказчик и проект\n"
                 "• <b>Проекты</b> — оплаты, подрядчики и их бонусы, файлы\n"
@@ -441,7 +457,7 @@ class Bot(CrmBotMixin):
             return self.join_invite(uid, name, f.get("username"), u, arg[4:])
         if not u or u["status"] != "active":
             return self.stranger(uid, name, f.get("username"), u)
-        if self.is_admin(u) and self.file_of(m):            # фото или документ — сохранить в проект
+        if u["role"] == "designer" and self.file_of(m):       # фото или документ — сохранить в проект (учёт — у дизайнера)
             return self.crm_intake(u, m)
         if text in ADMIN_BUTTONS and self.is_admin(u) and (text != BTN_SITE or u["role"] == "owner"):   # кнопка = команда
             self.s.drop(f"await:{uid}")
@@ -501,7 +517,7 @@ class Bot(CrmBotMixin):
         role = u["role"]
         head = f"<b>DUMSKAYA DESIGN</b> — внутренний бот студии.\nВаша роль: {esc(self.role_line(u))}.\n\n"
         if role == "owner":
-            return head + ("Сюда приходят все уведомления: заявки с сайта, заявки партнёрам, запросы доступа и ошибки, "
+            return head + ("Сюда приходят запросы доступа и ошибки, заявки с сайта — только если дизайнеру не доставлено, "
                            "а если сайт перестанет отвечать — «🔴 Сайт не отвечает» (и «🟢 снова работает»); "
                            "каждый день в 9:00 — короткая сводка за вчера с кнопкой «Графики».\n\n" + self.studio_text(u))
         if role == "designer":
@@ -1000,8 +1016,8 @@ class Bot(CrmBotMixin):
 
     # ---------- заявки с сайта ----------
     def route_lead(self, lead, products=None):
-        """Заявку — разработчику и дизайнерам; если это товар партнёра — ещё и людям этого партнёра
-        (поставщику и его сотрудникам). Возвращает список Telegram ID, кому доставлено."""
+        """Заявку — дизайнерам (разработчику — только если им не доставлено); если это товар партнёра — ещё и людям
+        этого партнёра (поставщику и его сотрудникам). Возвращает список Telegram ID, кому доставлено."""
         products = products if products is not None else load_products()
         model = (lead.get("model") or "").strip()
         prod = products.get(model.upper()) if model else None
@@ -1026,18 +1042,17 @@ class Bot(CrmBotMixin):
                 head = f"<b>Заявка на товар партнёра «{esc(p['name'])}»</b> — передана: {esc(who)}"
             else:
                 head = f"⚠️ <b>Заявка на товар партнёра «{esc(p['name'])}»</b> — партнёр не подключён к боту, передайте заявку вручную"
-            delivered += self.notify(head + "\n\n" + body, rows=rows)
-        elif prod:                                   # товар магазина студии — ответственному, разработчику копия
+            delivered += self.notify_leads(head + "\n\n" + body, rows=rows)
+        elif prod:                                   # товар магазина студии — ответственному
             m = self.shop_manager()
-            if m and self.send(m["tg_id"], "<b>🛒 Заявка на товар магазина</b> — закреплён за вами\n\n" + body, rows):
+            if m and self.send(m["tg_id"], "<b>🛒 Заявка на товар магазина</b> — закреплён за вами\n\n" + body,
+                               rows if m["role"] == "designer" else None):
                 delivered.append(m["tg_id"])
                 lead["routed"] = f"товар магазина студии — {self.label(m)}"
-                delivered += self.notify(f"<b>🛒 Заявка на товар магазина</b> — передана: {esc(self.label(m))}\n\n" + body,
-                                         roles=("owner",), skip=(m["tg_id"],), rows=rows)
             else:
-                delivered += self.notify("<b>🛒 Заявка на товар магазина</b>\n\n" + body, rows=rows)
+                delivered += self.notify_leads("<b>🛒 Заявка на товар магазина</b>\n\n" + body, rows=rows)
         else:
-            delivered += self.notify("<b>Заявка с сайта</b>\n\n" + body, rows=rows)
+            delivered += self.notify_leads("<b>Заявка с сайта</b>\n\n" + body, rows=rows)
         return delivered
 
 

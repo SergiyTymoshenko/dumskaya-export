@@ -70,6 +70,8 @@ class CrmBotMixin:
 
     def lead_button(self, admin, msg, parts):
         lid, status = int(parts[1]), parts[2]
+        if admin["role"] != "designer":                # заявки — у дизайнера (решено 24.10.2026)
+            return
         if status not in [k for k, _, _ in self.TRIAGE_BUTTONS] or not getattr(self, "crm", None):
             return
         try:

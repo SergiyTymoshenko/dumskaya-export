@@ -191,7 +191,7 @@
   .status.closed { color: var(--text-2); }
   .status.spam { color: var(--down); background: rgba(208, 59, 59, 0.10); }
   .status.lead { color: var(--series); background: var(--series-wash); }
-  .status.ad, .status.ignore { color: var(--text-2); }
+  .status.ad, .status.ignore, .status.deleted { color: var(--text-2); }
   .msg { white-space: pre-wrap; overflow-wrap: anywhere; }
   .seg.seg2 { grid-template-columns: 1fr 1fr; }
   .seg.seg2 button:last-child:nth-child(odd) { grid-column: 1 / -1; }
@@ -254,6 +254,7 @@
   const MON = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
   let S = null, P = null, tab = 'projects', view = 'list', filter = 'work', query = '', fileTab = 'measure', peopleTab = 'clients', period = 'month', M = null, lastPid = null;
   let L = null, LS = null, A = null, leadFilter = 'new', leadQuery = '';   // заявка, список заявок, доступ к боту
+  let OWNER = false;          // разработчик: в «Студии» только сайт и доступ к боту (решено 24.10.2026)
   const sheets = [];                        // открытые формы и карточки поверх страницы, последняя — сверху
 
   // ---------- оформление ----------
@@ -330,6 +331,29 @@
   const absUrl = (u) => new URL(u, location.href).href;
   const srcText = (s) => (s || '').replace(/(\d{4})-(\d{2})-(\d{2})/, '$3.$2.$1');
   function openLink(u) { if (tg && tg.openLink) tg.openLink(absUrl(u)); else window.open(u, '_blank'); }
+  // письмо: «Почта» с готовым письмом. Из Telegram — через страницу в браузере (mailto: в Telegram открывается не везде);
+  // адрес и текст — после «#», на сервер не уходят
+  function openMail(to, subject, body) {
+    if (tg && tg.initData) return openLink('/api/crm/mail#' + new URLSearchParams({ to, s: subject, b: body }).toString());
+    const enc = (s) => encodeURIComponent(s).replace(/%0A/g, '%0D%0A');
+    location.href = 'mailto:' + to + '?subject=' + enc(subject) + '&body=' + enc(body);
+  }
+  const MAIL = {      // тема, приветствие, благодарность, подпись, «ваше сообщение» — на языке страницы, с которой пришла заявка
+    ru: ['DUMSKAYA DESIGN — ваша заявка на сайте', (n) => 'Здравствуйте' + (n ? ', ' + n : '') + '!', 'Спасибо за заявку на сайте dumskaya-design.com.', 'С уважением,\nИрина Думская', 'Ваше сообщение'],
+    ua: ['DUMSKAYA DESIGN — ваша заявка на сайті', (n) => 'Добрий день' + (n ? ', ' + n : '') + '!', 'Дякуємо за заявку на сайті dumskaya-design.com.', 'З повагою,\nІрина Думська', 'Ваше повідомлення'],
+    en: ['DUMSKAYA DESIGN — your enquiry', (n) => 'Hello' + (n ? ' ' + n : '') + ',', 'Thank you for your enquiry on dumskaya-design.com.', 'Kind regards,\nIrina Dumskaya', 'Your message'],
+    sk: ['DUMSKAYA DESIGN — váš dopyt', (n) => 'Dobrý deň' + (n ? ', ' + n : '') + ',', 'ďakujeme za váš dopyt na dumskaya-design.com.', 'S pozdravom\nIrina Dumskaya', 'Vaša správa'],
+    de: ['DUMSKAYA DESIGN — Ihre Anfrage', (n) => 'Guten Tag' + (n ? ' ' + n : '') + ',', 'vielen Dank für Ihre Anfrage auf dumskaya-design.com.', 'Mit freundlichen Grüßen\nIrina Dumskaya', 'Ihre Nachricht'],
+  };
+  function mailLead(x, to) {             // ответ на заявку: приветствие, место для текста, подпись и её сообщение ниже
+    const lang = x.lang === 'uk' ? 'ua' : x.lang, m = MAIL[lang] || MAIL.ru, msg = (x.message || '').trim();
+    const body = m[1]((x.name || '').trim()) + '\n\n' + m[2] + '\n\n\n\n' + m[3] + '\nDUMSKAYA DESIGN · dumskaya-design.com'
+      + (msg ? '\n\n— — —\n' + m[4] + ' (' + new Date(x.ts).toLocaleDateString('ru-RU') + '):\n' + (msg.length > 1200 ? msg.slice(0, 1200) + '…' : msg) : '');
+    openMail(to, m[0], body);
+  }
+  function mailPerson(p) {               // заказчику из «Контактов»: тема и приветствие, без заявки
+    openMail(p.email, 'DUMSKAYA DESIGN', 'Здравствуйте' + (p.name ? ', ' + p.name : '') + '!\n\n\n\nС уважением,\nИрина Думская\nDUMSKAYA DESIGN · dumskaya-design.com');
+  }
   const digits = (s) => (s || '').replace(/[^\d+]/g, '');
   const parseNum = (v) => parseFloat(String(v == null ? '' : v).replace(/[\s\u00a0]/g, '').replace(',', '.'));
   const curMoney = (x, c) => (!c || c === 'EUR' ? eur(x) : money(x, c));
@@ -373,7 +397,7 @@
   function markNav() {
     document.querySelectorAll('.nav button').forEach((b) => b.setAttribute('aria-current', b.dataset.tab === tab ? 'page' : 'false'));
     const dot = document.getElementById('leads-dot'), n = S ? S.leads_new || 0 : 0;   // новые заявки — число на вкладке
-    dot.hidden = !n; dot.textContent = n > 99 ? '99+' : String(n);
+    if (dot) { dot.hidden = !n; dot.textContent = n > 99 ? '99+' : String(n); }       // у разработчика вкладки «Заявки» нет
   }
 
   // ---------- загрузка ----------
@@ -397,6 +421,7 @@
   function render() {
     markNav();
     app.replaceChildren();
+    if (OWNER) return ownerView();
     if (!S) return;
     if (tab === 'leads') return view === 'lead' && L ? leadView() : leadsView();
     if (tab === 'projects') return view === 'project' && P ? projectView() : projectsView();
@@ -694,18 +719,31 @@
       try { await loadLeads(); } catch (e) { list.replaceChildren(el('p', 'err', e.message)); return; }
       if (tab !== 'leads' || view === 'lead') return;
     }
-    const count = (st) => LS.leads.filter((x) => x.status === st).length;
-    const draw = () => {                    // реклама, спам, «игнорировать» во «Все» не попадают — у каждого своя кнопка, когда они есть
-      const hidden = [['ad', 'Реклама'], ['spam', 'Спам'], ['ignore', 'Игнор']].filter(([k]) => count(k));
-      if (S.lists.lead_hidden.includes(leadFilter) && !count(leadFilter)) leadFilter = 'all';
+    const live = () => LS.leads.filter((x) => !x.deleted);
+    const count = (st) => (st === 'deleted' ? LS.leads.length - live().length : live().filter((x) => x.status === st).length);
+    const draw = () => {                    // реклама, спам, «игнорировать», удалённые во «Все» не попадают — у каждого своя кнопка, когда они есть
+      const hidden = [['ad', 'Реклама'], ['spam', 'Спам'], ['ignore', 'Игнор'], ['deleted', 'Удалённые']].filter(([k]) => count(k));
+      if ((S.lists.lead_hidden.includes(leadFilter) || leadFilter === 'deleted') && !count(leadFilter)) leadFilter = 'all';
       chips.replaceChildren(...[['new', 'Новые'], ['lead', 'Заявки'], ['work', 'В работе'], ['all', 'Все']].concat(hidden).map(([k, t]) => {
-        const n = k === 'all' ? LS.leads.filter((x) => isReal(x.status)).length : count(k);
+        const n = k === 'all' ? live().filter((x) => isReal(x.status)).length : count(k);
         return el('button', { class: 'chip', type: 'button', 'aria-pressed': String(leadFilter === k), onclick: () => { leadFilter = k; draw(); } }, t + (n ? ' · ' + n : ''));
       }));
       list.replaceChildren();
       const q = leadQuery.trim().toLowerCase();
-      const items = LS.leads.filter((x) => (leadFilter === 'all' ? isReal(x.status) : x.status === leadFilter)
+      const items = (leadFilter === 'deleted' ? LS.leads.filter((x) => x.deleted) : live()).filter((x) =>
+        (leadFilter === 'all' ? isReal(x.status) : leadFilter === 'deleted' || x.status === leadFilter)
         && (!q || [x.name, x.contact, x.snippet, x.model, x.model_name].join(' ').toLowerCase().includes(q)));
+      if (leadFilter === 'deleted') list.append(el('p', { class: 'small muted', style: 'margin:0 0 4px' },
+        'Удалённую заявку можно вернуть ' + (LS.trash_days || 30) + ' дней, потом имя, контакт и текст стираются.'));
+      else if (S.lists.lead_hidden.includes(leadFilter) && items.length && !q) list.append(el('button', { class: 'btn danger wide', type: 'button',
+        onclick: async () => {                                      // весь спам (рекламу, «игнорировать») — одним нажатием
+          const what = { ad: 'рекламу и предложения сотрудничества', spam: 'весь спам', ignore: 'все «Игнорировать»' }[leadFilter];
+          if (!await confirmBox('Удалить ' + what + ' — ' + items.length + ' ' + plural(items.length, 'заявку', 'заявки', 'заявок') + '? '
+            + (LS.trash_days || 30) + ' дней их можно вернуть в «Удалённых».')) return;
+          try { await api('/api/crm/delete', { json: { entity: 'leads', ids: items.map((x) => x.id) } }); }
+          catch (e) { return toast(e.message); }
+          LS = null; toast('Удалено'); try { await loadState(); } catch (e) {} render();
+        } }, '🗑 Удалить все: ' + items.length));
       if (!items.length) {
         list.append(el('div', 'empty', !LS.leads.length ? 'Заявок пока нет. Как только кто-то отправит форму на сайте, она появится здесь.'
           : q ? 'Ничего не нашлось' : leadFilter === 'new' ? 'Новых заявок нет. Все заявки — «Все».' : 'Здесь пусто. Все заявки — «Все».'));
@@ -717,8 +755,8 @@
     draw();
   }
   function leadCard(x) {
-    return el('button', { class: 'pcard lead' + (x.status === 'new' ? ' new' : ''), type: 'button', onclick: () => openLead(x.id) },
-      el('div', 'top', el('span', 'num', dtime(x.ts)), el('span', 'status ' + x.status, leadStatus(x.status, true))),
+    return el('button', { class: 'pcard lead' + (x.status === 'new' && !x.deleted ? ' new' : ''), type: 'button', onclick: () => openLead(x.id) },
+      el('div', 'top', el('span', 'num', dtime(x.ts)), x.deleted ? el('span', 'status deleted', 'Удалена') : el('span', 'status ' + x.status, leadStatus(x.status, true))),
       el('div', 'title', x.name || 'Без имени'),
       el('div', 'sub', [x.contact, x.model ? x.model + (x.model_name ? ' — ' + x.model_name : '') : ''].filter(Boolean).join(' · ') || ' '),
       x.snippet ? el('div', 'snip', x.snippet) : null,
@@ -733,8 +771,21 @@
       el('span', 'status ' + x.status, leadStatus(x.status, true))));
     head.append(el('div', { class: 'row', style: 'margin-top:6px' },
       el('div', 'grow', el('h1', { style: 'margin:0 0 2px;overflow-wrap:anywhere' }, x.name || 'Без имени'), el('div', { class: 'muted', style: 'overflow-wrap:anywhere' }, x.contact || '')),
-      ...contactButtons(person)));
+      ...contactButtons(person, () => mailLead(x, person.email))));
+    if (person.email && !x.deleted) head.append(el('button', { class: 'btn wide', type: 'button', style: 'margin-top:12px', onclick: () => mailLead(x, person.email) },
+      '✉️ Ответить письмом'));
     app.append(head);
+    if (x.deleted) {                                    // удалена: только посмотреть и вернуть
+      app.append(el('section', 'card', el('h2', null, '🗑 Удалена ' + dtime(x.deleted)),
+        el('p', { class: 'small muted', style: 'margin:0 0 12px' }, 'Через ' + (LS && LS.trash_days || 30) + ' дней после удаления имя, контакт и текст сотрутся.'),
+        el('button', { class: 'btn primary wide', type: 'button', onclick: async () => {
+          try { L = await save('lead_restore', { id: x.id }); } catch (e) { return toast(e.message); }
+          LS = null; toast('Заявка возвращена'); try { await loadState(); } catch (e) {} render();
+        } }, '↩︎ Вернуть заявку')));
+      const mm = el('section', 'card', el('h2', null, 'Сообщение'), x.message ? el('div', 'msg', x.message) : el('p', 'muted', 'Без сообщения.'));
+      app.append(mm);
+      return;
+    }
     // что это — как при получении (то же — кнопками в сообщении бота); у настоящих заявок — как идёт работа
     const st = el('section', 'card');
     const real = isReal(x.status) && x.status !== 'new';
@@ -776,10 +827,18 @@
     if (x.history && x.history.length) {
       const ul = el('ul', { class: 'people small' });
       x.history.forEach((h) => { let d = {}; try { d = JSON.parse(h.details || '{}'); } catch (e) {}
-        ul.append(el('li', null, el('div', 'who', el('span', null, dtime(h.ts) + ' · ' + (h.who || '') + (d.status ? ' — «' + leadStatus(d.status) + '»' : ' — заметка'))))); });
+        const what = h.action === 'delete' ? ' — удалена' : h.action === 'restore' ? ' — возвращена' : d.status ? ' — «' + leadStatus(d.status) + '»' : ' — заметка';
+        ul.append(el('li', null, el('div', 'who', el('span', null, dtime(h.ts) + ' · ' + (h.who || '') + what)))); });
       n.append(el('details', { style: 'margin-top:12px' }, el('summary', null, 'История'), ul));
     }
     app.append(n);
+    app.append(el('button', { class: 'btn danger wide', type: 'button', style: 'margin-top:4px', onclick: async () => {
+      if (!await confirmBox('Удалить заявку «' + (x.name || 'без имени') + '»?' + (x.project_id ? ' Проект из неё останется.' : '')
+        + ' ' + (LS && LS.trash_days || 30) + ' дней её можно вернуть в «Удалённых».')) return;
+      try { await api('/api/crm/delete', { json: { entity: 'lead', id: x.id } }); } catch (e) { return toast(e.message); }
+      LS = null; L = null; toast('Удалено'); try { await loadState(); } catch (e) {}
+      stack.length = 0; tab = 'leads'; view = 'list'; render(); window.scrollTo(0, 0); backBtn();
+    } }, '🗑 Удалить заявку'));
   }
   async function setLead(ch) {
     try {
@@ -926,7 +985,7 @@
   }
 
   // ---------- контакты ----------
-  function contactButtons(p) {
+  function contactButtons(p, mail) {
     const out = [], ph = digits(p.phone);
     if (ph) out.push(el('a', { class: 'icon-btn', href: 'tel:' + ph, title: 'Позвонить' }, '📞'));
     if (ph && (p.contact_pref === 'WhatsApp' || !p.contact_pref)) out.push(el('button', { class: 'icon-btn', type: 'button', title: 'WhatsApp', onclick: () => openLink('https://wa.me/' + ph.replace('+', '')) }, '🟢'));
@@ -935,7 +994,7 @@
       out.push(el('button', { class: 'icon-btn', type: 'button', title: 'Telegram', onclick: () => openLink(m.startsWith('@') ? 'https://t.me/' + m.slice(1) : 'https://t.me/' + (ph || m).replace(/^\+?/, '+')) }, '✈︎'));
     }
     if (p.contact_pref === 'Viber' && ph) out.push(el('a', { class: 'icon-btn', href: 'viber://chat?number=' + encodeURIComponent(ph), title: 'Viber' }, '🟣'));
-    if (p.email) out.push(el('a', { class: 'icon-btn', href: 'mailto:' + p.email, title: 'Написать письмо' }, '✉️'));
+    if (p.email) out.push(el('button', { class: 'icon-btn', type: 'button', title: 'Написать письмо', onclick: () => (mail ? mail() : mailPerson(p)) }, '✉️'));
     return out;
   }
 
@@ -1493,13 +1552,34 @@
     });
   }
 
+  // ---------- разработчик: только сайт и доступ к боту ----------
+  function ownerView() {
+    app.append(el('h1', null, 'Доступ к боту'));
+    const box = el('div'); app.append(box); accessView(box);
+  }
+  function ownerMode() {
+    OWNER = true;
+    document.querySelectorAll('.nav button').forEach((b) => {
+      if (b.dataset.tab !== 'people' && b.dataset.tab !== 'charts') b.remove();
+      else if (b.dataset.tab === 'people') b.replaceChildren(el('span', null, '👥'), 'Доступ');
+    });
+    tab = 'people'; peopleTab = 'access';
+  }
+
   // ---------- старт ----------
   async function start() {
     if (!INIT) { app.replaceChildren(el('div', 'card muted', 'Откройте «Студию» кнопкой в боте студии DUMSKAYA DESIGN.')); return; }
+    const q = new URLSearchParams(location.search);            // из кнопки в сообщении бота: проект, заявка, доступ
+    let me = null;
+    try { me = await api('/api/crm/ui'); } catch (e) {}
+    if (me && me.role === 'owner') {                           // разработчику — графики и состояние сайта, доступ к боту
+      if (me.size) applySize(me.size);
+      if (q.get('tab') !== 'access') { location.replace('/api/stats/app'); return; }
+      ownerMode(); render(); return;
+    }
     try { await loadState(); }
     catch (e) { app.replaceChildren(el('div', 'card muted', e.message)); return; }
     if (S.me && S.me.size) applySize(S.me.size);
-    const q = new URLSearchParams(location.search);            // из кнопки в сообщении бота: проект, заявка, доступ
     if (q.get('project')) return openProject(q.get('project'), false);
     if (q.get('lead')) { tab = 'leads'; return openLead(q.get('lead'), false); }
     if (q.get('tab') === 'access') { tab = 'people'; peopleTab = 'access'; }

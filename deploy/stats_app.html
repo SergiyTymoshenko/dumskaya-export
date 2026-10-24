@@ -163,7 +163,7 @@
 </style>
 </head>
 <body>
-  <a class="back" href="/api/crm/app">← Студия</a>
+  <a class="back" id="back" href="/api/crm/app">← Студия</a>
   <h1>Посетители сайта</h1>
   <p class="sub" id="sub">dumskaya-design.com</p>
   <section class="card site" id="site" hidden></section>
@@ -726,7 +726,12 @@
   loadSite();
   setInterval(() => { if (document.visibilityState === 'visible' && !siteBox.hidden) loadSite(); }, 60000);
   if (tg && tg.initData) fetch('/api/crm/ui', { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' })
-    .then((r) => (r.ok ? r.json() : null)).then((x) => { if (x && applySize(x.size) && data) render(); }).catch(() => {});
+    .then((r) => (r.ok ? r.json() : null)).then((x) => {
+      if (x && x.role === 'owner') {           // у разработчика в «Студии» только сайт и доступ к боту (решено 24.10.2026)
+        const b = document.getElementById('back'); b.textContent = '👥 Доступ к боту'; b.href = '/api/crm/app?tab=access';
+      }
+      if (x && applySize(x.size) && data) render();
+    }).catch(() => {});
   // «1 час» обновляется сам, пока приложение открыто
   setInterval(() => { if (period === '1h' && document.visibilityState === 'visible') load(true); }, 60000);
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => data && render(), 150); });
