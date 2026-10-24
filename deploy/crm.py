@@ -63,7 +63,7 @@ FILE_CATS = [("measure", "Обмерный план"), ("brief", "Опросни
              ("docs", "Документация"), ("after", "После"), ("other", "Другое")]
 PHOTO_CATS = ("before", "visual", "after")
 CONTACT_PREFS = ["Звонок", "WhatsApp", "Telegram", "Viber", "E-mail", "SMS"]
-LEAD_STATUSES = [("new", "Новая"), ("work", "В работе"), ("project", "Стала проектом"), ("closed", "Закрыта")]
+LEAD_STATUSES = [("new", "Новая"), ("work", "В работе"), ("project", "Стала проектом"), ("closed", "Закрыта"), ("spam", "Спам")]
 TEST_CONTACTS = ("заявка отправлена с сервера", "test@example.com")   # пробные заявки мастера настройки и проверки
 LEADS_ARCHIVE_DAYS = 30             # заявки, пришедшие до «Студии»: за 30 дней — «В работе», старше — «Закрыта»
 PAY_METHODS = ["Банковский перевод", "Наличные", "Карта", "Другое"]

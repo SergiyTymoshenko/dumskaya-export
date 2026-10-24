@@ -188,8 +188,10 @@
   .status.work { color: var(--warn); background: rgba(154, 91, 0, 0.12); }
   .status.project { color: var(--up); background: rgba(0, 99, 0, 0.10); }
   .status.closed { color: var(--text-2); }
+  .status.spam { color: var(--down); background: rgba(208, 59, 59, 0.10); }
   .msg { white-space: pre-wrap; overflow-wrap: anywhere; }
   .seg.seg2 { grid-template-columns: 1fr 1fr; }
+  .seg.seg2 button:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .btn[aria-pressed="true"] { border-color: var(--series); background: var(--series-wash); font-weight: 650; }
   /* подрядчики проекта: этапы и бонусы */
   .kcard { border-top: 1px solid var(--grid); padding: 14px 0 4px; margin-top: 12px; }
@@ -687,14 +689,16 @@
       if (tab !== 'leads' || view === 'lead') return;
     }
     const count = (st) => LS.leads.filter((x) => x.status === st).length;
-    const draw = () => {
-      chips.replaceChildren(...[['new', 'Новые'], ['work', 'В работе'], ['all', 'Все']].map(([k, t]) => {
-        const n = k === 'all' ? LS.leads.length : count(k);
+    const draw = () => {                                  // спам — отдельно: во «Все» не попадает, своя кнопка, когда он есть
+      const spam = count('spam');
+      if (leadFilter === 'spam' && !spam) leadFilter = 'all';
+      chips.replaceChildren(...[['new', 'Новые'], ['work', 'В работе'], ['all', 'Все']].concat(spam ? [['spam', 'Спам']] : []).map(([k, t]) => {
+        const n = k === 'all' ? LS.leads.length - spam : count(k);
         return el('button', { class: 'chip', type: 'button', 'aria-pressed': String(leadFilter === k), onclick: () => { leadFilter = k; draw(); } }, t + (n ? ' · ' + n : ''));
       }));
       list.replaceChildren();
       const q = leadQuery.trim().toLowerCase();
-      const items = LS.leads.filter((x) => (leadFilter === 'all' || x.status === leadFilter)
+      const items = LS.leads.filter((x) => (leadFilter === 'all' ? x.status !== 'spam' : x.status === leadFilter)
         && (!q || [x.name, x.contact, x.snippet, x.model, x.model_name].join(' ').toLowerCase().includes(q)));
       if (!items.length) {
         list.append(el('div', 'empty', !LS.leads.length ? 'Заявок пока нет. Как только кто-то отправит форму на сайте, она появится здесь.'
@@ -732,6 +736,7 @@
     st.append(seg);
     if (x.project_id) st.append(el('button', { class: 'btn wide', type: 'button', style: 'margin-top:12px', onclick: () => openProject(x.project_id) },
       '📁 Открыть проект' + (x.project_title ? ' «' + x.project_title + '»' : '')));
+    else if (x.status === 'spam') st.append(el('p', { class: 'small muted', style: 'margin:10px 0 0' }, 'Спам не показывается во «Все» — только на отдельной кнопке «Спам».'));
     else st.append(el('button', { class: 'btn primary wide', type: 'button', style: 'margin-top:12px', onclick: () => leadProjectSheet(x) }, '＋ Сделать проектом'),
       el('p', { class: 'small muted', style: 'margin:6px 0 0' }, 'Создаст заказчика и проект, заявка станет «Стала проектом».'));
     app.append(st);
