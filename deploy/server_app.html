@@ -202,12 +202,10 @@
     c.append(kv([['Учёт студии (crm.db)', bytes(d.crm_db)], ['Бот (bot.db)', bytes(d.bot_db)],
       ['Файлы проектов', num(d.files.count) + ' · ' + bytes(d.files.size)], ['Статистика сайта', bytes(d.stats)],
       'Резервные копии', ['Последняя', b.last ? dshort(b.last) + ' · ' + bytes(b.last_size) : 'ещё нет'],
-      ['На сервере', b.count + ' ' + plural(b.count, 'копия', 'копии', 'копий') + ' (храним ' + b.keep_days + ' дней) · ' + bytes(b.size)],
-      ['В Telegram отправлена', b.sent_day ? dshort(b.sent_day) : 'ещё нет'],
-      b.fails ? ['Неудачных отправок подряд', String(b.fails)] : null]));
+      ['На сервере', b.count + ' ' + plural(b.count, 'копия', 'копии', 'копий') + ' (храним ' + b.keep_days + ' дней) · ' + bytes(b.size)]]));
     const good = !!b.last && (fresh || b.last >= isoShift(-1));
     c.append(el('p', 'note', el('span', 'state ' + (good ? 'ok' : 'bad'), good ? '✓ Копии делаются' : '⚠️ Свежей копии нет'),
-      ' · копия — раз в сутки, в начале нового дня по Братиславе · размеры папок пересчитаны в ' + hm(d.counted)));
+      ' · копия — раз в сутки, в начале нового дня по Братиславе, только на сервере (и весь сервер — в копиях Hetzner) · размеры папок пересчитаны в ' + hm(d.counted)));
     c.lastChild.style.margin = '10px 0 0';
     return c;
   }
@@ -240,10 +238,14 @@
   const PNAME = { day: 'Сегодня', week: '7 дней', month: '30 дней' };
   function llmCard(cfg, L) {
     const c = card('🧠 Языковые модели', 'Перевод переписки, названий в кабинетах и заявок с сайта. Русский и украинский не переводятся — вызовов на них нет.');
-    const keys = (cfg.keys || []).map((k) => k.service + ': ' + (k.present ? 'ключ есть ✓' : 'нет')).join(' · ');
-    c.append(kv([['Сейчас работает', cfg.provider ? cfg.service : 'перевод выключен'], cfg.model ? ['Модель', cfg.model] : null,
-      cfg.via ? ['Через адрес', cfg.via] : null]));
-    if (keys) c.append(el('p', 'note', keys + '. Сами ключи здесь не показываются.'));
+    // порядок (решено 25.10.2026): подписка ChatGPT → платный ChatGPT → Claude; ошибка или лимит — переводит следующий
+    const on = (cfg.chain || []).filter((x) => x.configured);
+    const st = (x) => x.paused_until ? '⏸ пропускается до ' + hm(x.paused_until) + ' (' + x.paused_why + ')' : '✓ в работе';
+    c.append(kv([['Сейчас первым', cfg.provider ? cfg.service : 'перевод выключен']].concat(on.map((x, i) => [(i + 1) + '. ' + x.service,
+      [x.model, x.via ? 'через ' + x.via : '', x.provider === 'sub' ? (x.key ? 'ключ есть' : 'без ключа') : 'ключ есть', st(x)].filter(Boolean).join(' · ')]))));
+    const off = (cfg.chain || []).filter((x) => !x.configured && x.provider !== 'deepl').map((x) => x.service);
+    c.append(el('p', 'note', (off.length ? 'Не настроено: ' + off.join(', ') + ' (с Мака — npm run translate). ' : '')
+      + 'Порядок: подписка ChatGPT → платный ChatGPT → Claude; не ответил или кончился лимит — тот же текст переводит следующий. Сами ключи здесь не показываются.'));
     if (!L) { c.append(el('p', 'note', 'Учёт вызовов не включён.')); return c; }
     const seg = el('div', 'seg');
     ['day', 'week', 'month'].forEach((k) => seg.append(el('button', null, PNAME[k])));
@@ -269,6 +271,8 @@
         el('td', null, short(r.tokens || r.chars)), el('td', null, num(r.errors)))));
       det.append(tb); c.append(det);
     }
+    const svc = (L.by_service || []).filter((x) => x[period].calls);
+    if (svc.length) c.append(head('Кто переводил · ' + PNAME[period].toLowerCase()), bars(svc.map((x) => [x.service, x[period]])));
     const what = L.by_purpose.filter((x) => x[period].calls);
     if (what.length) c.append(head('На что · ' + PNAME[period].toLowerCase()), bars(what.map((x) => [x.name, x[period]])));
     const models = L.by_model.filter((x) => x[period].calls);

@@ -28,7 +28,7 @@ except Exception:  # noqa: BLE001  pragma: no cover
 APP = os.path.expanduser("~/dumskaya")
 STARTED = time.time()                     # когда запущен сервис (этот процесс)
 PURPOSES = [("chat", "Переписка"), ("names", "Названия в кабинетах"), ("lead", "Заявки с сайта"), ("other", "Другое")]
-SERVICES = {"openai": "ChatGPT (OpenAI)", "deepl": "DeepL", "claude": "Claude (Anthropic)"}
+SERVICES = {"sub": "ChatGPT · подписка", "openai": "ChatGPT · платный API", "deepl": "DeepL", "claude": "Claude (Anthropic)"}
 KEEP_DAYS = 400                           # учёт вызовов храним чуть больше года
 SIZE_CACHE = 600                          # размер папок считаем не чаще раза в 10 минут (файлов может быть много)
 SCHEMA = """CREATE TABLE IF NOT EXISTS llm_usage (
@@ -101,6 +101,13 @@ class Usage:
             x.update({k: self._sum([r for r in m["rows"] if r["day"] >= v]) for k, v in since.items()})
             by_model.append(x)
         by_model.sort(key=lambda x: -x["month"]["calls"])
+        by_service = []                          # сколько перевела подписка, сколько платные модели (решено 25.10.2026)
+        for key in ("sub", "openai", "claude", "deepl"):
+            mine = [r for r in rows if r["provider"] == key]
+            if mine:
+                x = {"provider": key, "service": SERVICES[key]}
+                x.update({k: self._sum([r for r in mine if r["day"] >= v]) for k, v in since.items()})
+                by_service.append(x)
         by_purpose = []
         for key, name in PURPOSES:
             mine = [r for r in rows if r["purpose"] == key]
@@ -118,7 +125,7 @@ class Usage:
         except ValueError:
             last = None
         total = self.s.one("SELECT MIN(day) AS since, SUM(calls) AS calls FROM llm_usage")
-        return {"periods": periods, "by_model": by_model, "by_purpose": by_purpose, "series": series, "last_error": last,
+        return {"periods": periods, "by_model": by_model, "by_service": by_service, "by_purpose": by_purpose, "series": series, "last_error": last,
                 "since": total["since"] if total else None, "all_calls": int((total["calls"] if total else 0) or 0)}
 
 
@@ -139,21 +146,34 @@ def install(store):
 
 
 def llm_config():
-    """Что настроено для перевода — без ключей: сервис, модель, «ключ есть»."""
+    """Что настроено для перевода — без ключей: сервисы по порядку (подписка ChatGPT → платный ChatGPT → Claude → DeepL),
+    модель, адрес шлюза (только имя хоста), «ключ есть», пропускается ли сейчас после ошибки."""
     try:
         import translate
     except ImportError:  # pragma: no cover
-        return {"provider": None}
-    p = translate.provider()
-    keys = {k: bool(os.environ.get(v, "").strip()) for k, v in translate.KEYS.items()}
-    model = {"openai": os.environ.get("OPENAI_MODEL", "").strip() or translate.OPENAI_DEFAULT_MODEL,
-             "claude": os.environ.get("TRANSLATE_MODEL", "").strip() or "claude-haiku-5-5", "deepl": "DeepL API"}.get(p)
-    via = ""
-    if p == "openai":                                   # свой адрес сервиса (шлюз) — только имя хоста, без пути и параметров
-        host = re.sub(r"^https?://", "", translate.openai_base()).split("/")[0].split("@")[-1]
-        via = "" if host == "api.openai.com" else host
-    return {"provider": p, "service": SERVICES.get(p, ""), "model": model or "", "via": via,
-            "keys": [{"service": SERVICES[k], "present": v} for k, v in keys.items()]}
+        return {"provider": None, "chain": []}
+    now = time.time()
+    chain = []
+    for p in translate.ORDER:
+        x = {"provider": p, "service": SERVICES.get(p, p), "configured": translate.configured(p)}
+        if p in ("sub", "openai"):
+            base, key, model = translate.openai_cfg(p)
+            host = re.sub(r"^https?://", "", base).split("/")[0].split("@")[-1]
+            x.update({"model": model if x["configured"] else "", "via": "" if host == "api.openai.com" or not x["configured"] else host,
+                      "key": bool(key)})
+        elif p == "claude":
+            x.update({"model": (os.environ.get("TRANSLATE_MODEL", "").strip() or translate.CLAUDE_DEFAULT_MODEL) if x["configured"] else "",
+                      "key": x["configured"]})
+        else:
+            x.update({"model": "DeepL API" if x["configured"] else "", "key": x["configured"]})
+        pause = translate.paused(p, now)
+        if pause and x["configured"]:
+            x["paused_until"], x["paused_why"] = int(pause[0]), pause[1]
+        chain.append(x)
+    active = [x for x in chain if x["configured"]]
+    first = active[0] if active else {}
+    return {"provider": first.get("provider"), "service": first.get("service", ""), "model": first.get("model", ""), "via": first.get("via", ""),
+            "chain": chain, "keys": [{"service": x["service"], "present": x["key"]} for x in chain]}
 
 
 def _meminfo():
@@ -244,13 +264,11 @@ def data(store=None):
     zips = sorted(f for f in os.listdir(bdir) if backups.NAME_RE.match(f)) if os.path.isdir(bdir) else []
     data_zips = [f for f in zips if f.startswith("dumskaya-data-")]
     last = data_zips[-1] if data_zips else None
-    s = store
     return {"crm_db": _file_size(crm.CRM_DB), "bot_db": _file_size(crm.BOT_DB),
             "files": {"size": sizes["files"][0], "count": sizes["files"][1]}, "stats": sizes["stats"],
             "backups": {"count": len(data_zips), "size": sum(os.path.getsize(os.path.join(bdir, f)) for f in zips),
                         "last": backups.NAME_RE.match(last).group(1) if last else None,
-                        "last_size": os.path.getsize(os.path.join(bdir, last)) if last else 0, "keep_days": backups.KEEP_DAYS,
-                        "sent_day": s.get("backup:sent_day") if s else None, "fails": int((s.get("backup:fails") if s else 0) or 0)},
+                        "last_size": os.path.getsize(os.path.join(bdir, last)) if last else 0, "keep_days": backups.KEEP_DAYS},
             "counted": int(_sizes_at)}
 
 

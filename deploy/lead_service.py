@@ -20,7 +20,8 @@
   TELEGRAM_BOT_TOKEN  BOT_OWNER_ID (Telegram ID разработчика)  BOT_DB=/home/deploy/dumskaya/bot.db
   SMTP_HOST=smtp.gmail.com  SMTP_PORT=587  SMTP_USER  SMTP_PASSWORD  MAIL_TO
   LEADS_FILE=/home/deploy/dumskaya/leads.jsonl  PORT=8095
-  Перевод сообщений заказчиков на русский (translate.py): DEEPL_API_KEY или ANTHROPIC_API_KEY (+ TRANSLATE_MODEL)
+  Перевод (translate.py), по порядку: OPENAI_SUB_BASE_URL (ChatGPT по подписке) → OPENAI_API_KEY (платный ChatGPT)
+  → ANTHROPIC_API_KEY (Claude) → DEEPL_API_KEY; вписывает мастер: с Mac — npm run translate
 """
 import json
 import os
@@ -76,7 +77,7 @@ from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
 from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
                         is_own, mark_own, me_data, record_hit, record_time, web)
-from translate import lang_from, provider, purpose as translate_purpose, translate_lead  # noqa: E402
+from translate import chain as translate_chain, lang_from, purpose as translate_purpose, translate_lead  # noqa: E402
 import crm_api  # noqa: E402  учёт проектов студии: /api/crm/*
 import portal_api  # noqa: E402  кабинет заказчика и подрядчика, переписка: /api/portal/*
 from crm import Crm  # noqa: E402
@@ -400,15 +401,15 @@ def main():
                 log("кабинет: создан наблюдатель «Разработчик ПО» (видит всё; удалить — в «Студии», Контакты → Подрядчики)")
         except Exception as e:  # noqa: BLE001
             log(f"учёт проектов не запущен: {type(e).__name__}: {e}")
-        # резервные копии: каждую ночь архив данных на сервере (7 дней) и копия разработчику в Telegram,
-        # новые файлы проектов — туда же архивами (решено 24.10.2026: на Мак больше не копируем)
-        backups.on_start(BOT)                       # после выкладки — копия в Telegram сразу, без часа ожидания после сбоя
+        # резервные копии: каждую ночь архив данных на сервере (7 дней); в Telegram не копируем (решено 25.10.2026),
+        # на Мак — тоже (24.10.2026); весь сервер копирует Hetzner
+        backups.on_start(BOT)                       # убрать отметки прежней копии в Telegram
         BOT.stats.hooks.append(lambda log=log: backups.daily_tick(BOT, getattr(BOT, "crm", None), log=log))
         BOT.start()
         BOT.monitor.start()
         BOT.stats.start()
     log(f"слушаю 127.0.0.1:{PORT}; бот={'да' if BOT else 'нет'}, почта={'да' if SMTP_USER and SMTP_PASSWORD else 'нет'}, "
-        f"перевод={ {'openai': 'ChatGPT', 'deepl': 'DeepL', 'claude': 'Claude'}.get(provider(), 'нет') }")
+        f"перевод={' → '.join({'sub': 'ChatGPT-подписка', 'openai': 'ChatGPT', 'deepl': 'DeepL', 'claude': 'Claude'}[p] for p in translate_chain()) or 'нет'}")
     srv.serve_forever()
 
 

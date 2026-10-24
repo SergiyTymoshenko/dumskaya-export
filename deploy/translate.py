@@ -3,19 +3,23 @@
 """Перевод сообщений заказчиков на русский — для бота студии и письма с заявкой; и переписка в кабинете проекта:
 сообщения заказчика — на русский для студии, ответы студии — на язык заказчика (translate_text), названия в кабинете.
 
-Сервис перевода выбирается по ключу в lead.env (вписывает мастер настройки: с Mac — npm run translate):
-  OPENAI_API_KEY     — модели ChatGPT (OpenAI): решено 24.10.2026 — для перевода переписки ключ берётся из проекта УЧЕТ
-                       на этом же сервере; OPENAI_MODEL — модель (по умолчанию gpt-5.4-mini), OPENAI_BASE_URL — свой адрес
-                       сервиса, если он задан в проекте УЧЕТ (например, шлюз подписки);
-  DEEPL_API_KEY      — DeepL API (тариф Free: 500 000 знаков в месяц бесплатно; ключ вида …:fx);
-  ANTHROPIC_API_KEY  — Claude API (оплата по факту, перевод одной заявки — доли цента);
-                       модель — TRANSLATE_MODEL (по умолчанию claude-haiku-5-5).
-Порядок: TRANSLATE_PROVIDER (openai, deepl или claude), если задан, иначе OpenAI → DeepL → Claude.
-Ключа нет — заявки и сообщения приходят как раньше, без перевода.
+Сервисы перевода — по порядку (решено 25.10.2026: подписку используем по максимуму, потом платные модели ChatGPT,
+потом уже Anthropic); не ответил сервис или кончился лимит — тот же текст сразу переводит следующий, а сервис
+с ошибкой пропускается на время (лимит — сколько скажет сервис, иначе 15 минут; ключ не принят — 30 минут;
+не отвечает — 2 минуты). Настройки — в lead.env, вписывает мастер (с Mac: npm run translate):
+  1. OPENAI_SUB_BASE_URL — модели ChatGPT по подписке: адрес API (шлюза) подписки на этом сервере,
+     OPENAI_SUB_API_KEY — его ключ (если шлюз его просит), OPENAI_SUB_MODEL — модель;
+  2. OPENAI_API_KEY      — платный API ChatGPT (OpenAI): ключ из проекта УЧЕТ на этом сервере (решено 24.10.2026),
+     OPENAI_MODEL — модель (по умолчанию gpt-5.4-mini), OPENAI_BASE_URL — свой адрес, если задан;
+  3. ANTHROPIC_API_KEY   — Claude API; модель — TRANSLATE_MODEL (по умолчанию claude-haiku-5-5);
+  4. DEEPL_API_KEY       — DeepL, последним (если ключ когда-то вписали; на языки, которых у DeepL нет, не идёт).
+TRANSLATE_ORDER — свой порядок через запятую (sub,openai,claude,deepl), обычно пусто. Прежний TRANSLATE_PROVIDER
+больше не учитывается. Ничего не настроено — заявки и сообщения приходят как раньше, без перевода.
 Сообщения на русском и украинском не переводятся (проверка на месте, без обращения к сервису).
 Только стандартная библиотека Python 3.
 
-   python3 translate.py "Hello, how much is the sofa?"     — проверка с сервера (берёт ключ из окружения)"""
+   python3 ~/dumskaya/deploy/translate.py                 — проверка с сервера: порядок сервисов и пробный перевод каждым
+                                                            (настройки берёт из ~/dumskaya/lead.env, ключи не печатает)"""
 import json
 import os
 import re
@@ -54,7 +58,11 @@ PROMPT = ("Ты переводчик студии дизайна интерье�
           'Если сообщение на русском или украинском — {"lang": "ru" или "uk", "ru": ""}.')
 
 
-KEYS = {"openai": "OPENAI_API_KEY", "deepl": "DEEPL_API_KEY", "claude": "ANTHROPIC_API_KEY"}
+# порядок сервисов (решено 25.10.2026) и чем каждый задаётся в lead.env
+ORDER = ("sub", "openai", "claude", "deepl")
+KEYS = {"sub": "OPENAI_SUB_BASE_URL", "openai": "OPENAI_API_KEY", "claude": "ANTHROPIC_API_KEY", "deepl": "DEEPL_API_KEY"}
+NAMES = {"sub": "ChatGPT · подписка", "openai": "ChatGPT · платный API", "claude": "Claude (Anthropic)", "deepl": "DeepL"}
+CLAUDE_DEFAULT_MODEL = "claude-haiku-5-5"
 
 # учёт расхода (страница разработчика «Сервер и ИИ»): сервис ставит сюда функцию, она получает каждый вызов —
 # сервис, модель, на что (purpose), токены или знаки, время, ошибку. Ключи в учёт не попадают.
@@ -100,12 +108,86 @@ def _deepl_call(url, body, key, chars):
     return r
 
 
+def configured(p):
+    return bool(os.environ.get(KEYS[p], "").strip())
+
+
+def chain():
+    """Настроенные сервисы по порядку: подписка ChatGPT → платный ChatGPT → Claude → DeepL."""
+    want = [x.strip().lower() for x in os.environ.get("TRANSLATE_ORDER", "").split(",") if x.strip()] or list(ORDER)
+    seen = []
+    for p in want:
+        if p in KEYS and p not in seen and configured(p):
+            seen.append(p)
+    return seen
+
+
 def provider():
-    have = {p: bool(os.environ.get(k, "").strip()) for p, k in KEYS.items()}
-    want = os.environ.get("TRANSLATE_PROVIDER", "").strip().lower()
-    if want in have and have[want]:
-        return want
-    return next((p for p in ("openai", "deepl", "claude") if have[p]), None)
+    """Первый по порядку настроенный сервис (None — перевод выключен)."""
+    c = chain()
+    return c[0] if c else None
+
+
+# пауза сервиса после ошибки: следующий перевод сразу идёт к следующему по порядку
+_PAUSE = {}
+_PAUSE_LOCK = threading.Lock()
+
+
+def _pause_for(err):
+    """(сколько секунд пропускать сервис, почему) по ошибке; 0 — не пропускать (ошибка этого текста, не сервиса)."""
+    t = str(err)
+    m = re.search(r"ответ (\d{3})", t)
+    code = int(m.group(1)) if m else 0
+    ra = re.search(r"retry-after (\d+)", t, re.I)
+    if code == 429 or re.search(r"(?i)rate.?limit|quota|usage.?limit|too many requests|insufficient", t):
+        return min(int(ra.group(1)) if ra else 900, 6 * 3600), "лимит"
+    if code in (401, 403):
+        return 1800, "ключ не принят"
+    if code in (400, 404, 413, 422) or isinstance(err, ValueError) or "непонятный ответ" in t:
+        return 0, ""
+    return 120, "не отвечает"
+
+
+def _pause(p, err):
+    sec, why = _pause_for(err)
+    if sec:
+        with _PAUSE_LOCK:
+            _PAUSE[p] = (time.time() + sec, why)
+
+
+def _resume(p):
+    if p in _PAUSE:
+        with _PAUSE_LOCK:
+            _PAUSE.pop(p, None)
+
+
+def paused(p, now=None):
+    """(до какого времени, почему) — если сервис сейчас пропускается после ошибки, иначе None."""
+    x = _PAUSE.get(p)
+    return x if x and x[0] > (now or time.time()) else None
+
+
+def reset_pauses():
+    with _PAUSE_LOCK:
+        _PAUSE.clear()
+
+
+def _attempt(tiers, call):
+    """call(сервис) по порядку; сервисы на паузе пропускаются (если на паузе все — пробуем всё равно по порядку).
+    Ошибка — исключение последнего сервиса."""
+    now = time.time()
+    live = [p for p in tiers if not paused(p, now)] or list(tiers)
+    last = None
+    for p in live:
+        try:
+            r = call(p)
+        except Exception as e:  # noqa: BLE001 — любой сбой сервиса: следующий по порядку
+            last = e
+            _pause(p, e)
+            continue
+        _resume(p)
+        return r
+    raise last or RuntimeError("перевод не настроен")
 
 
 # языки, которые студия читает без перевода
@@ -140,7 +222,8 @@ def _post(url, body, headers, timeout=TIMEOUT):
             return json.loads(r.read())
     except urllib.error.HTTPError as e:
         detail = e.read()[:300].decode("utf-8", "replace")
-        raise RuntimeError(f"ответ {e.code}: {detail}") from None
+        ra = (e.headers.get("Retry-After") or "").strip() if e.headers else ""
+        raise RuntimeError(f"ответ {e.code}" + (f" retry-after {ra}" if ra.isdigit() else "") + f": {detail}") from None
 
 
 def _deepl(text, key):
@@ -159,7 +242,7 @@ def _json_reply(out):
 
 def _claude_raw(system, text):
     url = os.environ.get("ANTHROPIC_API_URL") or "https://api.anthropic.com"
-    model = os.environ.get("TRANSLATE_MODEL", "").strip() or "claude-haiku-5-5"
+    model = os.environ.get("TRANSLATE_MODEL", "").strip() or CLAUDE_DEFAULT_MODEL
     t0 = time.time()
     try:
         r = _post(f"{url}/v1/messages", {"model": model, "max_tokens": 4000, "system": system,
@@ -173,44 +256,53 @@ def _claude_raw(system, text):
     return "".join(b.get("text", "") for b in r.get("content") or [] if b.get("type") == "text")
 
 
-def openai_base():
-    return (os.environ.get("OPENAI_BASE_URL", "").strip() or "https://api.openai.com/v1").rstrip("/")
+def openai_cfg(tier="openai"):
+    """(адрес, ключ, модель) для «sub» (подписка ChatGPT) или «openai» (платный API)."""
+    e = lambda k: os.environ.get(k, "").strip()   # noqa: E731
+    if tier == "sub":
+        return e("OPENAI_SUB_BASE_URL").rstrip("/"), e("OPENAI_SUB_API_KEY"), e("OPENAI_SUB_MODEL") or OPENAI_DEFAULT_MODEL
+    return (e("OPENAI_BASE_URL") or "https://api.openai.com/v1").rstrip("/"), e("OPENAI_API_KEY"), e("OPENAI_MODEL") or OPENAI_DEFAULT_MODEL
 
 
-def _openai_raw(system, text):
-    """Chat Completions (OpenAI или совместимый шлюз): ответ одним JSON. Если модель или шлюз не принимает
-    необязательные параметры (формат JSON, глубина рассуждения) — повтор без них."""
-    model = os.environ.get("OPENAI_MODEL", "").strip() or OPENAI_DEFAULT_MODEL
+def openai_base(tier="openai"):
+    return openai_cfg(tier)[0]
+
+
+def _openai_raw(system, text, tier="openai"):
+    """Chat Completions (OpenAI, шлюз подписки или другой совместимый): ответ одним JSON. Если модель или шлюз
+    не принимает необязательные параметры (формат JSON, глубина рассуждения) — повтор без них."""
+    base, key, model = openai_cfg(tier)
     body = {"model": model, "messages": [{"role": "system", "content": system}, {"role": "user", "content": text}],
             "max_completion_tokens": 8000, "response_format": {"type": "json_object"}}
     if re.match(r"(gpt-5|gpt-6|o\d)", model):
         body["reasoning_effort"] = "low"          # перевод — простая задача: быстрее и дешевле
-    headers = {"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"].strip()}
+    headers = {"Authorization": "Bearer " + key} if key else {}
     t0 = time.time()
     try:
         try:
-            r = _post(openai_base() + "/chat/completions", body, headers, TIMEOUT_LLM)
+            r = _post(base + "/chat/completions", body, headers, TIMEOUT_LLM)
         except RuntimeError as e:
             if "ответ 400" not in str(e):
                 raise
             for k in ("reasoning_effort", "response_format"):
                 body.pop(k, None)
-            r = _post(openai_base() + "/chat/completions", body, headers, TIMEOUT_LLM)
+            r = _post(base + "/chat/completions", body, headers, TIMEOUT_LLM)
     except Exception as e:
-        _report("openai", model, t0, False, error=f"{type(e).__name__}: {e}")
+        _report(tier, model, t0, False, error=f"{type(e).__name__}: {e}")
         raise
     u = r.get("usage") or {}
-    _report("openai", model, t0, True, u.get("prompt_tokens"), u.get("completion_tokens"))
+    _report(tier, model, t0, True, u.get("prompt_tokens"), u.get("completion_tokens"))
     return ((r.get("choices") or [{}])[0].get("message") or {}).get("content") or ""
 
 
 def _llm(system, text, p=None):
-    return _openai_raw(system, text) if (p or provider()) == "openai" else _claude_raw(system, text)
+    p = p or provider()
+    return _openai_raw(system, text, p) if p in ("sub", "openai") else _claude_raw(system, text)
 
 
-def _claude(text, key=None):
-    """Перевод заявки на русский через языковую модель (Claude или ChatGPT — что настроено)."""
-    d = _json_reply(_llm(PROMPT, text))
+def _claude(text, key=None, p=None):
+    """Перевод заявки на русский через языковую модель (подписка ChatGPT, платный ChatGPT или Claude)."""
+    d = _json_reply(_llm(PROMPT, text, p))
     return str(d.get("lang") or "").lower(), str(d.get("ru") or "")
 
 
@@ -218,10 +310,10 @@ def to_russian(text):
     """(код языка оригинала, перевод) или None — если переводить не нужно или сервис не настроен.
     Ошибка сервиса — исключение (заявку всё равно отправить, без перевода)."""
     text = (text or "").strip()
-    p = provider()
-    if not text or not p or is_russian(text):
+    tiers = chain()
+    if not text or not tiers or is_russian(text):
         return None
-    lang, ru = _deepl(text, os.environ["DEEPL_API_KEY"].strip()) if p == "deepl" else _claude(text)
+    lang, ru = _attempt(tiers, lambda p: _deepl(text, os.environ["DEEPL_API_KEY"].strip()) if p == "deepl" else _claude(text, p=p))
     if lang.split("-")[0] in NO_TRANSLATE or not ru.strip() or ru.strip() == text:
         return None
     return lang, ru.strip()
@@ -253,25 +345,24 @@ def translate_text(text, target):
     (русский и украинский друг для друга не переводим, как в заявках), сервис не настроен или текст уже на этом языке.
     Ошибка сервиса — исключение."""
     text, target = (text or "").strip(), _lang(target) or "ru"
-    p = provider()
-    if not text or not p:
+    tiers = [p for p in chain() if p != "deepl" or target in DEEPL_TARGET]     # языка нет у DeepL — без него
+    if not text or not tiers:
         return None
     if target in NO_TRANSLATE and is_russian(text):
         return None
-    if p == "deepl" and target not in DEEPL_TARGET:      # этого языка у DeepL нет — через ChatGPT или Claude, если ключ есть
-        p = next((x for x in ("openai", "claude") if os.environ.get(KEYS[x], "").strip()), None)
-        if not p:
-            return None
-    if p == "deepl":
-        key = os.environ["DEEPL_API_KEY"].strip()
-        host = os.environ.get("DEEPL_API_URL") or ("https://api-free.deepl.com" if key.endswith(":fx") else "https://api.deepl.com")
-        r = _deepl_call(f"{host}/v2/translate", {"text": [text], "target_lang": DEEPL_TARGET.get(target, "EN-GB")}, key, len(text))
-        t = (r.get("translations") or [{}])[0]
-        src, out = _lang(t.get("detected_source_language")), t.get("text") or ""
-    else:
+
+    def call(p):
+        if p == "deepl":
+            key = os.environ["DEEPL_API_KEY"].strip()
+            host = os.environ.get("DEEPL_API_URL") or ("https://api-free.deepl.com" if key.endswith(":fx") else "https://api.deepl.com")
+            r = _deepl_call(f"{host}/v2/translate", {"text": [text], "target_lang": DEEPL_TARGET.get(target, "EN-GB")}, key, len(text))
+            t = (r.get("translations") or [{}])[0]
+            return _lang(t.get("detected_source_language")), t.get("text") or ""
         name = LANG_EN.get(target, "English")
         d = _json_reply(_llm(PROMPT_TO.format(lang=name, code=target if target in LANG_EN else "en"), text, p))
-        src, out = _lang(d.get("lang")), str(d.get("text") or "")
+        return _lang(d.get("lang")), str(d.get("text") or "")
+
+    src, out = _attempt(tiers, call)
     if not out.strip() or out.strip() == text or src == target or (target in NO_TRANSLATE and src in NO_TRANSLATE):
         return None
     return src, out.strip()
@@ -290,10 +381,39 @@ def translate_lead(lead, log=print):
     return lead
 
 
+def describe(p):
+    """Сервис для подписи (без ключей): «ChatGPT · подписка (gpt-5.4-mini, 127.0.0.1:8317)»."""
+    if p in ("sub", "openai"):
+        base, _, model = openai_cfg(p)
+        host = re.sub(r"^https?://", "", base).split("/")[0].split("@")[-1]
+        return f"{NAMES[p]} ({model}" + ("" if host == "api.openai.com" else f", {host}") + ")"
+    if p == "claude":
+        return f"{NAMES[p]} ({os.environ.get('TRANSLATE_MODEL', '').strip() or CLAUDE_DEFAULT_MODEL})"
+    return NAMES.get(p, p)
+
+
+def load_env(path=os.path.expanduser("~/dumskaya/lead.env")):
+    """Для проверки с сервера: настройки перевода из lead.env (только они; то, что уже есть в окружении, не трогается)."""
+    try:
+        with open(path, encoding="utf-8") as fh:
+            for ln in fh:
+                k, sep, v = ln.strip().partition("=")
+                if sep and not k.startswith("#") and re.match(r"(OPENAI_|ANTHROPIC_|DEEPL_|TRANSLATE_)", k) and k not in os.environ:
+                    os.environ[k] = v.strip()
+    except OSError:
+        pass
+
+
 if __name__ == "__main__":
+    load_env()
     sample = " ".join(sys.argv[1:]) or "Hello! I'd like a quote for the Viktor sofa, delivery to Vienna. Phone +43 660 000 0000."
-    p = provider()
-    print("сервис:", {"openai": f"ChatGPT ({os.environ.get('OPENAI_MODEL') or OPENAI_DEFAULT_MODEL}, {openai_base()})",
-                      "deepl": "DeepL", "claude": "Claude"}.get(p, "не настроен (нет OPENAI_API_KEY / DEEPL_API_KEY / ANTHROPIC_API_KEY)"))
-    r = to_russian(sample)
-    print("перевод:", f"{lang_from(r[0])}: {r[1]}" if r else "не нужен")
+    c = chain()
+    print("сервисы по порядку:", " → ".join(describe(p) for p in c) if c else
+          "не настроены (нет OPENAI_SUB_BASE_URL / OPENAI_API_KEY / ANTHROPIC_API_KEY / DEEPL_API_KEY)")
+    for p in c:
+        os.environ["TRANSLATE_ORDER"] = p
+        try:
+            r = to_russian(sample)
+            print(f"  {describe(p)}: " + (f"{lang_from(r[0])}: {r[1]}" if r else "перевод не нужен"))
+        except Exception as e:  # noqa: BLE001
+            print(f"  {describe(p)}: ошибка — {str(e)[:200]}")

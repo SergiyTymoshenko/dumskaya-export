@@ -909,6 +909,7 @@ with urllib.request.urlopen(BASE + "/api/stats/server/app", timeout=10) as r:
 translate._post = real_post
 del os.environ["OPENAI_API_KEY"]
 translate.USAGE_HOOK = None
+translate.reset_pauses()
 # ---------- документы: планировки, варианты и правки, помещения; заказчик только смотрит (решено 25.10.2026) ----------
 def up_studio(cat, name, extra=""):
     data = png if name.endswith(".png") else b"%PDF-1.4 x"

@@ -22,7 +22,7 @@
 12 часов; удалённые файлы 30 дней лежат в ~/dumskaya/crm/trash.
 Кабинет заказчика, подрядчика и его работников в боте, разговоры и права на документы — crm_portal.py.
 
-Данные — ~/dumskaya/crm.db (SQLite). Резервные копии (на сервере 7 дней и в Telegram) — backups.py.
+Данные — ~/dumskaya/crm.db (SQLite). Резервные копии (на сервере, 7 дней) — backups.py.
 Только стандартная библиотека Python 3.
 
    python3 crm.py --backup-now     — архив данных сейчас (то же, что python3 backups.py --now)
@@ -1802,7 +1802,7 @@ class Crm:
     # ---------- уборка раз в день ----------
     def backup_if_due(self, log=print):
         """Раз в день: из корзины удаляются файлы, удалённые больше 30 дней назад, и старые удалённые заявки.
-        (Резервные копии баз — backups.py: архив на сервере за 7 дней и копия в Telegram.)"""
+        (Резервные копии баз — backups.py: архив на сервере за 7 дней.)"""
         d = today().isoformat()
         if self.setting("backup_day") == d:
             return False
