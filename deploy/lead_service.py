@@ -71,7 +71,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
 from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
-                        is_excluded, me_data, record_hit, remember, web)
+                        is_own, mark_own, me_data, record_hit, remember, web)
 from translate import lang_from, provider, translate_lead  # noqa: E402
 
 BOT = None
@@ -187,10 +187,17 @@ class Handler(BaseHTTPRequestHandler):
         self.reply(404, {"ok": False})
 
     def stats_admin(self):
-        """Разработчик или дизайнер студии — по подписи Telegram из мини-приложения; иначе None."""
+        """Разработчик или дизайнер студии — по подписи Telegram из мини-приложения; иначе None.
+        Адрес, с которого студия открыла «Графики», запоминается: её визиты на сайт с него не считаются."""
         uid = check_init_data(self.headers.get("X-Telegram-Init-Data", ""), TG_TOKEN)
         u = BOT.user(uid) if uid and BOT else None
-        return u if u and BOT.is_admin(u) else None
+        if not (u and BOT.is_admin(u)):
+            return None
+        try:
+            mark_own(self.client_ip(), u["name"] or str(u["tg_id"]))
+        except OSError as e:
+            log(f"статистика: свой адрес не записан: {e}")
+        return u
 
     def stats_owner(self):
         """Только разработчик: список своих адресов меняет он (дизайнеру этот блок не показывается)."""
@@ -210,7 +217,7 @@ class Handler(BaseHTTPRequestHandler):
             data = {}
         kind, page = str(data.get("t") or ""), str(data.get("p") or "")[:200]
         ua, ip = self.headers.get("User-Agent", ""), self.client_ip()
-        valid = page.startswith("/") and ua.startswith("Mozilla/") and not BOT_UA.search(ua) and not is_excluded(ip)
+        valid = page.startswith("/") and ua.startswith("Mozilla/") and not BOT_UA.search(ua) and not is_own(ip)
         if valid and kind == "time":
             try:
                 secs = int(data.get("s") or 0)

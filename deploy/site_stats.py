@@ -62,6 +62,10 @@ HITS_FILE = os.environ.get("HITS_FILE", os.path.join(APP, "hits.jsonl"))   # н�
 CONTACTS = {"tel": "телефон", "mail": "e-mail", "whatsapp": "WhatsApp", "telegram": "Telegram"}
 STATS_DIR = os.environ.get("STATS_DIR", os.path.join(APP, "stats"))
 EXCLUDE_FILE = os.path.join(STATS_DIR, "exclude.json")   # «свои» адреса (дома у студии) — их визиты не считаются
+OWN_FILE = os.path.join(STATS_DIR, "own_devices.json")    # откуда студия открывала «Графики» — эти визиты тоже свои
+OWN_WINDOW = 3 * 3600                                     # …за 3 часа до и после открытия
+VERSION_FILE = os.path.join(STATS_DIR, "version")
+STATS_VERSION = "2"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются (2: отсев сканеров)
 REPORT_HOUR = 9
 APP_URL = os.environ.get("STATS_APP_URL", "https://dumskaya-design.com/api/stats/app")   # мини-приложение с графиками
 KEEP_DAYS = 800
@@ -75,6 +79,13 @@ ASSET = re.compile(r"\.(css|js|mjs|map|png|jpe?g|webp|avif|gif|svg|ico|woff2?|tt
                    r"pdf|mp4|webm|zip|gz)$", re.I)
 JUNK = re.compile(r"\.(php\d?|aspx?|jsp|cgi|env|ini|sql|bak|old|yml|yaml|git|ds_store)\b|wp-|wordpress|/\.|"
                   r"admin|xmlrpc|phpmyadmin|cgi-bin|/vendor/|/\.well-known/", re.I)
+# адреса входа в админки и служебные файлы: на сайте их нет, ищут их только сканеры уязвимостей
+PROBE = re.compile(r"(^|/)(log-?in|log-?on|sign-?in|sign-?up|register|auth|oauth2?|sso|users?|accounts?|admin\w*|"
+                   r"console|dashboard|panel|cpanel|webadmin|manager|portal|ci|cd|jenkins|gitlab|actuator|api-docs|"
+                   r"swagger(-ui)?|graphql|telescope|_ignition|debug|phpinfo|server-(status|info)|owa|ecp|boaform|"
+                   r"hnap1|solr|geoserver|druid|nacos|cgi-bin|shell|cmd|config|backups?|phpmyadmin|pma|mysql|xmlrpc|"
+                   r"wp-\w*|wordpress|vendor|\.git|\.svn|\.env|\.aws|\.ssh)(/|\.|$)", re.I)
+BURST = (10, 15)              # 10 страниц за 15 секунд — так листает только программа
 BOT = re.compile(r"bot\b|bot/|crawl|spider|slurp|scrap|preview|monitor|uptime|lighthouse|pagespeed|headless|"
                  r"phantom|python|curl|wget|httpclient|okhttp|axios|go-http|java/|libwww|perl|ruby|php/|node-fetch|"
                  r"scan|ahrefs|semrush|mj12|dotbot|petal|bytespider|yandex|baidu|sogou|facebookexternalhit|"
@@ -361,6 +372,93 @@ def touch_seen(ip):
         _save_excluded(items, recount=False)
 
 
+_own = {"mtime": None, "items": [], "hit": {}}
+
+
+def _own_items():
+    try:
+        mtime = os.stat(OWN_FILE).st_mtime
+    except OSError:
+        mtime = None
+    if mtime != _own["mtime"]:
+        items = []
+        if mtime is not None:
+            try:
+                with open(OWN_FILE, encoding="utf-8") as fh:
+                    items = json.load(fh)
+            except (OSError, ValueError):
+                items = []
+        _own.update(mtime=mtime, items=items, hit={})
+    return _own["items"]
+
+
+def is_own(ip, ts=None):
+    """Визит студии: адрес из «Не считать нас» или адрес, с которого разработчик или дизайнер открывал «Графики»
+    (за 3 часа до и после: телефон с мобильным интернетом не добавишь в «Не считать нас» — адрес общий и меняется)."""
+    if not ip:
+        return False
+    if is_excluded(ip):
+        return True
+    items = _own_items()
+    if not items:
+        return False
+    spans = _own["hit"].get(ip)
+    if spans is None:
+        spans = []
+        try:
+            a = ipaddress.ip_address(ip)
+            for x in items:
+                try:
+                    if a in ipaddress.ip_network(x["net"], strict=False):
+                        spans.append((float(x["from"]) - OWN_WINDOW, float(x["to"]) + OWN_WINDOW))
+                except (ValueError, KeyError, TypeError):
+                    pass
+        except ValueError:
+            pass
+        _own["hit"][ip] = spans
+    ts = time.time() if ts is None else ts
+    return any(lo <= ts <= hi for lo, hi in spans)
+
+
+def mark_own(ip, who=""):
+    """Разработчик или дизайнер открыл «Графики» с этого адреса (IPv6 — сеть /64): его визиты на сайт
+    за 3 часа до и после не считаются. Пишет ~/dumskaya/stats/own_devices.json не чаще раза в 5 минут."""
+    try:
+        net = net_of(ip)
+    except ValueError:
+        return
+    now = time.time()
+    items = [dict(x) for x in _own_items() if now - float(x.get("to", 0)) < 100 * 86400]
+    for x in items:
+        if x.get("net") == net and now - float(x["to"]) <= 2 * OWN_WINDOW:    # то же окно продолжается
+            if now - float(x["to"]) < 300:
+                return
+            x["to"] = int(now)
+            break
+    else:
+        items.append({"net": net, "from": int(now), "to": int(now), "who": who})
+        y = datetime.fromtimestamp(now - OWN_WINDOW, TZ).date()      # окно задело вчера — вчерашний итог пересчитать
+        if y < today():
+            try:
+                os.remove(day_file(y))
+            except OSError:
+                pass
+    os.makedirs(STATS_DIR, exist_ok=True)
+    with open(OWN_FILE + ".tmp", "w", encoding="utf-8") as fh:
+        json.dump(items, fh, ensure_ascii=False, indent=1)
+    os.replace(OWN_FILE + ".tmp", OWN_FILE)
+
+
+def is_robot(hits):
+    """Программа, а не человек, хотя назвалась браузером: искала адреса админок (/login, /console, .env…)
+    или открыла 10 страниц за 15 секунд. hits — [(время, вид, страница)] одного IP + браузера."""
+    if any(k == "probe" for _, k, _ in hits):
+        return True
+    n, span = BURST
+    ts = sorted(t for t, _, _ in hits)
+    return any(ts[i + n - 1] - ts[i] <= span for i in range(len(ts) - n + 1))
+
+
 def logs_start():
     """Время первой записи в самой старой части журнала (до него журнала уже нет)."""
     for f in sorted(glob.glob(LOG_GLOB), key=os.path.getmtime):
@@ -411,7 +509,7 @@ def leads_between(since_ts, until_ts):
                     continue
                 if d.get("ip") in ("127.0.0.1", "::1") or str(d.get("name", "")).startswith("Проверка"):
                     continue                                  # пробные заявки мастера настройки и сторожа
-                if is_excluded(d.get("ip")):
+                if is_own(d.get("ip"), ts):
                     continue                                  # заявка со своего адреса (проверка формы)
                 out.append({"page": d.get("page", ""), "lang": d.get("lang", "ru"), "model": d.get("model", ""),
                             "ts": ts, "ip": d.get("ip", "")})
@@ -475,8 +573,8 @@ def is_human(ua, h):
 
 def parse(e):
     """Запись журнала → (вид, ip, браузер, страница, заголовки, адрес с параметрами) или None.
-    Вид: view — человек открыл страницу; 404 — человек не нашёл страницу (мусор сканеров не в счёт);
-    google, bing — роботы поисковиков прочитали страницу."""
+    Вид: view — открыта страница; 404 — страница не нашлась; probe — запрос адреса админки или служебного файла
+    (так делают только сканеры); google, bing — роботы поисковиков прочитали страницу."""
     r = e.get("request") or {}
     if r.get("method") != "GET":
         return None
@@ -493,22 +591,23 @@ def parse(e):
     if not is_human(ua, h):
         return None
     if status == 404:
-        return None if JUNK.search(path) else ("404", ip, ua, path, h, uri)
+        probe = PROBE.search(path) or (JUNK.search(path) and "/.well-known/" not in path)
+        return ("probe" if probe else "404", ip, ua, path, h, uri)
     if status not in (200, 304):
         return None
     return ("view", ip, ua, path, h, uri)
 
 
 class Agg:
-    """Накопитель итогов за один период (час, день или «сегодня до текущего часа»): только числа, без IP."""
+    """Накопитель итогов за один период (час, день или «сегодня до текущего часа»): только числа, без IP.
+    Кто робот, решается в конце (result), по всем запросам этого IP + браузера за период."""
 
     def __init__(self):
-        self.visitors = {}                          # ключ (IP+браузер) → {src, dev, langs}; только в памяти
-        self.views, self.lang_views, self.notfound = Counter(), Counter(), Counter()
+        self.keys = {}                              # ключ (IP+браузер) → {src, dev, hits}; только в памяти
         self.google, self.google_lang, self.bing, self.requests = 0, Counter(), 0, 0
-        self.own = 0                                # просмотры со своих адресов (не считаются)
+        self.own = 0                                # просмотры студии (не считаются)
 
-    def add(self, e):
+    def add(self, e, ts=None):
         self.requests += 1
         p = parse(e)
         if not p:
@@ -521,33 +620,49 @@ class Agg:
         if kind == "bing":
             self.bing += 1
             return
-        if kind == "404":
-            if not is_excluded(ip):
-                self.notfound[path] += 1
+        if is_own(ip, ts):
+            self.own += kind == "view"
             return
-        if is_excluded(ip):
-            self.own += 1
-            return
-        key = ip + "|" + ua
-        v = self.visitors.get(key)
+        v = self.keys.get(ip + "|" + ua)
         if v is None:
-            v = self.visitors[key] = {"src": source(header(h, "Referer"), uri), "dev": device(ua), "langs": set()}
-        v["langs"].add(lang_of(path))
-        self.views[path] += 1
-        self.lang_views[lang_of(path)] += 1
+            v = self.keys[ip + "|" + ua] = {"src": None, "dev": device(ua), "hits": []}
+        if kind == "view" and v["src"] is None:
+            v["src"] = source(header(h, "Referer"), uri)
+        v["hits"].append((ts or 0, kind, path))
 
-    def result(self, leads, hits=()):
-        vs = self.visitors.values()
+    def robots(self):
+        return {k for k, v in self.keys.items() if is_robot(v["hits"])}
+
+    def result(self, leads, hits=(), robots=None):
+        robots = self.robots() if robots is None else robots
+        views, lang_views, notfound = Counter(), Counter(), Counter()
+        lang_visitors, sources, devices = Counter(), Counter(), Counter()
+        visitors = bots = 0
+        for k, v in self.keys.items():
+            if k in robots:
+                bots += 1
+                continue
+            notfound.update(p for _, kind, p in v["hits"] if kind == "404")
+            seen = [p for _, kind, p in v["hits"] if kind == "view"]
+            if not seen:
+                continue
+            visitors += 1
+            views.update(seen)
+            lang_views.update(lang_of(p) for p in seen)
+            lang_visitors.update({lang_of(p) for p in seen})
+            sources[v["src"]] += 1
+            devices[v["dev"]] += 1
         return {
             "requests": self.requests,              # 0 — за этот период журнала нет (ещё не вёлся или удалён)
-            "visitors": len(self.visitors),
-            "views": sum(self.views.values()),
-            "lang_visitors": dict(Counter(l for v in vs for l in v["langs"])),
-            "lang_views": dict(self.lang_views),
-            "sources": dict(Counter(v["src"] for v in vs)),
-            "devices": dict(Counter(v["dev"] for v in vs)),
-            "pages": dict(self.views.most_common(50)),
-            "notfound": dict(self.notfound.most_common(20)),
+            "visitors": visitors,
+            "views": sum(views.values()),
+            "lang_visitors": dict(lang_visitors),
+            "lang_views": dict(lang_views),
+            "sources": dict(sources),
+            "devices": dict(devices),
+            "pages": dict(views.most_common(50)),
+            "notfound": dict(notfound.most_common(20)),
+            "bots": bots,                           # отсеянные программы, назвавшиеся браузером
             "google": self.google, "google_lang": dict(self.google_lang), "bing": self.bing, "own": self.own,
             "leads": len(leads), "lead_pages": dict(Counter(x["page"] for x in leads if x["page"])),
             "contacts": dict(Counter(t for t, _ in hits)),
@@ -558,8 +673,8 @@ class Agg:
 def aggregate(since_ts, until_ts):
     """Итоги за период одним проходом по журналу."""
     a = Agg()
-    for _, e in entries(since_ts, until_ts):
-        a.add(e)
+    for ts, e in entries(since_ts, until_ts):
+        a.add(e, ts)
     return a.result(leads_between(since_ts, until_ts), hits_between(since_ts, until_ts))
 
 
@@ -573,7 +688,7 @@ def aggregate_days(days):
     for ts, e in entries(lo, hi):
         d = datetime.fromtimestamp(ts, TZ).date()
         if d in aggs:
-            aggs[d].add(e)
+            aggs[d].add(e, ts)
     return {d: aggs[d].result(leads_between(*bounds[d]), hits_between(*bounds[d])) for d in days}
 
 
@@ -616,11 +731,30 @@ def save_day(d, agg):
 
 
 _empty = {}                                         # дни без записей в журнале: {день: дата проверки}
+_checked = {"version": False}
+
+
+def _upgrade():
+    """Правила подсчёта изменились (STATS_VERSION) — дни, которые журнал ещё помнит, посчитать заново."""
+    if _checked["version"]:
+        return
+    _checked["version"] = True
+    try:
+        with open(VERSION_FILE, encoding="utf-8") as fh:
+            if fh.read().strip() == STATS_VERSION:
+                return
+    except OSError:
+        pass
+    forget_recent()
+    os.makedirs(STATS_DIR, exist_ok=True)
+    with open(VERSION_FILE, "w", encoding="utf-8") as fh:
+        fh.write(STATS_VERSION)
 
 
 def days_stats(days):
     """Итоги прошедших дней {день: итоги или None, если данных нет}: сохранённые файлы, недостающие —
     из журнала одним проходом (и сохранить). Сегодняшний день не сохраняется — он ещё не закончился."""
+    _upgrade()
     t = today()
     out, missing = {}, []
     for d in days:
@@ -937,24 +1071,27 @@ def web_hours(now=None):
     now = now or time.time()
     start = int(now // 3600) * 3600 - 23 * 3600
     pstart = start - (now - start)
-    buckets, cur, prev = [Agg() for _ in range(24)], Agg(), Agg()
+    buckets, cur, prev, whole = [Agg() for _ in range(24)], Agg(), Agg(), Agg()
     for ts, e in entries(pstart, now + 1):
+        whole.add(e, ts)
         if ts >= start:
-            cur.add(e)
-            buckets[min(23, int((ts - start) // 3600))].add(e)
+            cur.add(e, ts)
+            buckets[min(23, int((ts - start) // 3600))].add(e, ts)
         else:
-            prev.add(e)
+            prev.add(e, ts)
+    robots = whole.robots()                                    # кто робот — по всем двум суткам, а не по одному часу
     leads, hits = leads_between(pstart, now + 1), hits_between(pstart, now + 1, with_ts=True)
     rows = []
     ls = logs_start()
     for i, b in enumerate(buckets):
         bs = start + i * 3600
-        r = b.result([x for x in leads if bs <= x["ts"] < bs + 3600], [(t, p) for ts, t, p in hits if bs <= ts < bs + 3600])
+        r = b.result([x for x in leads if bs <= x["ts"] < bs + 3600], [(t, p) for ts, t, p in hits if bs <= ts < bs + 3600],
+                     robots)
         rows.append(_row(r, ts=bs, missing=ls is None or bs + 3600 <= ls, partial=i == 23))
-    tot = merge([cur.result([x for x in leads if x["ts"] >= start], [(t, p) for ts, t, p in hits if ts >= start])])
+    tot = merge([cur.result([x for x in leads if x["ts"] >= start], [(t, p) for ts, t, p in hits if ts >= start], robots)])
     pv = None
     if ls is not None and ls <= pstart + 300:                  # журнал помнит и предыдущие сутки целиком
-        pv = merge([prev.result([x for x in leads if x["ts"] < start], [(t, p) for ts, t, p in hits if ts < start])])
+        pv = merge([prev.result([x for x in leads if x["ts"] < start], [(t, p) for ts, t, p in hits if ts < start], robots)])
     return dict(_stamp(now), period="24h", unit="hour", rows=rows, coverage=sum(not r["missing"] for r in rows),
                 total=_total(tot), prev=_prev(pv))
 
@@ -1011,19 +1148,23 @@ def web_live(now=None):
     (заход целиком, даже если начался раньше). Строится из журнала за сутки; IP наружу не отдаётся."""
     now = now or time.time()
     since = now - 86400
-    views, info, own = {}, {}, set()
+    views, info, hits, own = {}, {}, {}, set()
     for ts, e in entries(since, now + 1):
         p = parse(e)
-        if not p or p[0] not in ("view", "404"):
+        if not p or p[0] not in ("view", "404", "probe"):
             continue
         kind, ip, ua, path, h, uri = p
         key = ip + "|" + ua
-        if is_excluded(ip):
+        if is_own(ip, ts):                                    # студия: «Не считать нас» и телефоны, где открывали «Графики»
             if ts >= now - LIVE_WINDOW:
                 own.add(key)
             continue
-        views.setdefault(key, []).append((ts, path, kind, uri, header(h, "Referer")))
-        info.setdefault(key, (ip, ua, header(h, "Accept-Language")))
+        hits.setdefault(key, []).append((ts, kind, path))
+        if kind != "probe":
+            views.setdefault(key, []).append((ts, path, kind, uri, header(h, "Referer")))
+            info.setdefault(key, (ip, ua, header(h, "Accept-Language")))
+    for key in [k for k in views if is_robot(hits[k])]:      # сканеры, назвавшиеся браузером, — не посетители
+        del views[key]
     events = {}
     for t, key, kind, path, secs in recent_events(since):
         events.setdefault(key, []).append((t, kind, path, secs))

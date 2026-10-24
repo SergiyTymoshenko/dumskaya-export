@@ -405,8 +405,6 @@
       tile('Нажали на телефон, e-mail, мессенджер', tot.contacts, { prev: prev && prev.contacts, kind: 'wide', compare: true,
         split: tot.contact_types.map(([nm, v]) => nm + ' ' + fmt(v)).join(' · ') || null }));
     app.append(tiles);
-    if (tot.own) app.append(el('p', 'note', me ? '🏠 Ваши собственные просмотры (' + fmt(tot.own) + ') не учтены — адреса в блоке «Не считать нас» внизу.'
-      : '🏠 Просмотры студии (' + fmt(tot.own) + ') не учтены.'));
 
     const c1 = card(hourly() ? 'Посетители по часам' : 'Посетители по дням', 'Нажмите на график — покажет ' + (hourly() ? 'час' : 'день') + ' целиком');
     c1.append(lineChart(rows, 'visitors', (r) => [['Посетители', r.visitors, true], ['Просмотры', r.views], ['Заявки', r.leads], ['Нажатия на контакты', r.contacts]]));
@@ -480,7 +478,9 @@
     s.pages.forEach((p, i) => {
       const li = el('li', p.nf ? 'nf' : null);
       const last = i === n - 1;
-      const du = p.secs != null ? el('span', 'du', (p.approx ? '≈ ' : '') + dur(p.secs)) : last && s.active ? el('span', 'du now', 'сейчас') : el('span', 'du', '—');
+      // ≈ — страница не сообщила своё время (закрыли без сигнала), считаем до открытия следующей; меньше 2 с — неизвестно
+      const known = p.secs != null && !(p.approx && p.secs < 2);
+      const du = known ? el('span', 'du', (p.approx ? '≈ ' : '') + dur(p.secs)) : last && s.active ? el('span', 'du now', 'сейчас') : el('span', 'du', '—');
       li.append(el('span', 'tm', hm(p.ts)), el('span', 'pt', p.nf ? 'Страница не найдена: ' + p.path : p.title), du);
       if (p.events.length) {
         const evs = el('div', 'evs');
@@ -503,7 +503,6 @@
     if (sm.leads) split.push('заявок — ' + sm.leads);
     tiles.append(tile('Посетители за последний час', sm.visitors, { kind: 'hero', split: split.join(' · ') }));
     app.append(tiles);
-    if (d.own) app.append(el('p', 'note', (me ? '🏠 Ваши визиты (' : '🏠 Визиты студии (') + d.own + ') здесь не показаны.'));
     if (!d.sessions.length) {
       const c = card('За последний час на сайте никого не было');
       if (d.last) c.append(el('p', 'note', 'Последний посетитель — ' + dayword(d.last.ts) + ' в ' + hm(d.last.ts) + (d.last.place ? ', ' + d.last.place : '') + '.'));
@@ -511,7 +510,8 @@
       app.append(c);
     }
     d.sessions.forEach((s) => app.append(visitCard(s)));
-    app.append(el('p', 'foot', 'Время на странице — пока она была на экране; «≈» — до перехода на следующую страницу. '
+    app.append(el('p', 'foot', 'Справа — сколько человек провёл на странице (пока она была на экране); «≈» — примерно, до перехода на следующую. '
+      + 'Красным — адрес, которого на сайте нет (ошибка 404). Роботы, которые назвались браузером, и визиты студии не показываются. '
       + 'Город — по IP-адресу, примерно: мобильный интернет часто показывает город оператора. '
       + (d.geo ? 'База городов: ' + d.credit + '.' : 'База городов загружается — города появятся через несколько минут.')));
   }
