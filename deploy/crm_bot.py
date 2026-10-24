@@ -22,9 +22,6 @@ PENDING_MAX_AGE = 30 * 60          # присланные файлы ждут в
 TG_DOWNLOAD_MAX = 20 * 1024 * 1024  # больше Telegram боту скачать не даёт
 TG_UPLOAD_MAX = 50 * 1024 * 1024
 PAGE = 8
-MAC_BACKUP_FILE = os.path.expanduser(os.environ.get("MAC_BACKUP_FILE", "~/dumskaya/mac-backup.txt"))   # пишет npm run backup
-MAC_BACKUP_DAYS = 7                 # копия на Маке старше недели — напомнить разработчику
-REMIND_EVERY = 3 * 86400
 
 
 def esc(s):
@@ -231,38 +228,6 @@ class CrmBotMixin:
             text += "\n\nНе сохранились:\n" + "\n".join(esc(x)[:200] for x in failed[:5])
         btn = self.studio_button("📁 Открыть проект", pid)
         self.edit(msg, text, [btn] if btn else None)
-
-    # ---------- копия учёта на Маке ----------
-    def crm_backup_reminder(self, log=print, now=None):
-        """Учёт уже ведётся, а копия на Маке старше 7 дней (или её не было) — напомнить разработчику,
-        днём и не чаще раза в 3 дня. На сервере копии делаются сами каждый день; копия на Маке — на случай беды с сервером."""
-        crm = getattr(self, "crm", None)
-        if not crm or not self.owner:
-            return False
-        now = now or datetime.now(timezone.utc)
-        if not 10 <= now.astimezone(TZ).hour < 20:
-            return False
-        first = (crm.one("SELECT MIN(created) AS c FROM projects") or {}).get("c")
-        if not first:
-            return False
-        try:
-            with open(MAC_BACKUP_FILE, encoding="utf-8") as fh:
-                last = datetime.fromisoformat(fh.read().strip())
-        except (OSError, ValueError):
-            last = None
-        days = (now - (last or datetime.fromisoformat(first))).days
-        if days < MAC_BACKUP_DAYS:
-            return False
-        sent = self.s.get("crm:mac_backup_reminded")
-        if sent and now.timestamp() - float(sent) < REMIND_EVERY:
-            return False
-        self.s.put("crm:mac_backup_reminded", str(now.timestamp()))
-        when = f"не обновлялась {days} дн." if last else "ещё не скачивалась"
-        self.send(self.owner, f"💾 Копия учёта студии на Маке {when}\n\nСкачать свежую — в Терминале на Маке:\n"
-                              "<code>cd ~/dumskaya-site &amp;&amp; npm run backup</code>\n\n"
-                              "На сервере копии делаются каждый день сами; копия на Маке — на случай, если с сервером что-то случится.")
-        log(f"учёт: напоминание о копии на Маке ({when})")
-        return True
 
     # ---------- файл проекта → в чат ----------
     def send_file(self, chat_id, f, path):

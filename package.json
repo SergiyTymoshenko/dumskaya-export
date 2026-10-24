@@ -9,7 +9,6 @@
     "preview": "astro preview",
     "check": "python3 scripts/check_site.py",
     "deploy": "bash scripts/deploy.sh",
-    "backup": "bash scripts/backup.sh",
     "tunnel": "echo 'Сайт: http://localhost:8088  (Ctrl+C — закрыть)'; (sleep 2; command -v open >/dev/null && open http://localhost:8088) & ssh -N -o ExitOnForwardFailure=yes -L 8088:127.0.0.1:8088 ${DEPLOY_HOST:-eurox}",
     "leads": "bash scripts/leads.sh",
     "translate": "bash scripts/leads.sh --translate"

@@ -71,8 +71,6 @@ case "$STATE" in
     ssh "$HOST" /usr/local/lib/dumskaya/autodeploy restart \
       || { echo "  сервис не ответил после перезапуска. Журнал: ssh $HOST 'tail -20 ~/dumskaya/autodeploy.log; sudo journalctl -u dumskaya-lead -n 30'"; exit 1; } ;;
 esac
-# копия учёта студии на этот Мак (свежая копия баз + файлы проектов) — то же, что npm run backup
-DEPLOY_HOST="$HOST" bash scripts/backup.sh || echo "  копия учёта студии не скачалась — запустите позже: npm run backup"
 MODE="$(ssh "$HOST" 'cat ~/dumskaya/mode 2>/dev/null || echo preview')"
 if [ "$MODE" = live ]; then
   # проверка с этого Мака, как у посетителя: сайт должен ответить 200 по HTTPS

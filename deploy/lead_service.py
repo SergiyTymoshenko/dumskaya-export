@@ -81,6 +81,7 @@ import portal_api  # noqa: E402  кабинет заказчика и подря
 from crm import Crm  # noqa: E402
 from crm_portal import Portal  # noqa: E402
 from fx import Rates  # noqa: E402
+import backups  # noqa: E402  резервные копии: архив на сервере (7 дней) и копия в Telegram
 
 BOT = None
 
@@ -369,9 +370,8 @@ def main():
         BOT.stats = SiteStats(BOT, log=log)         # посетители по журналу Caddy: «Графики» и строка в 9:00
         crm_api.BOT = BOT                           # размер текста в «Студии» и графиках, файлы проекта → в чат
         try:                                        # учёт проектов студии (кнопка «Студия»)
-            crm_api.CRM = BOT.crm = Crm(rates=Rates(), extra_backups=[BOT_DB])
-            BOT.stats.hooks.append(BOT.crm.backup_if_due)   # каждый день — копия баз в ~/dumskaya/backups
-            BOT.stats.hooks.append(BOT.crm_backup_reminder)  # копия на Маке старше недели — напомнить разработчику
+            crm_api.CRM = BOT.crm = Crm(rates=Rates())
+            BOT.stats.hooks.append(BOT.crm.backup_if_due)   # раз в день — уборка корзины и старых удалённых заявок
             BOT.crm.import_leads(LEADS_FILE, log=log)         # заявки из файла, которых ещё нет в «Студии»
             # кабинет заказчика и подрядчика («Мой проект»), переписка с заказчиками, напоминания об оплате услуг
             crm_api.PORTAL = portal_api.PORTAL = BOT.portal = Portal(BOT.crm)
@@ -381,6 +381,9 @@ def main():
                 log("кабинет: создан наблюдатель «Разработчик ПО» (видит всё; удалить — в «Студии», Контакты → Подрядчики)")
         except Exception as e:  # noqa: BLE001
             log(f"учёт проектов не запущен: {type(e).__name__}: {e}")
+        # резервные копии: каждую ночь архив данных на сервере (7 дней) и копия разработчику в Telegram,
+        # новые файлы проектов — туда же архивами (решено 24.10.2026: на Мак больше не копируем)
+        BOT.stats.hooks.append(lambda log=log: backups.daily_tick(BOT, getattr(BOT, "crm", None), log=log))
         BOT.start()
         BOT.monitor.start()
         BOT.stats.start()

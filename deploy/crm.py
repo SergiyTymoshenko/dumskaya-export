@@ -22,11 +22,10 @@
 12 часов; удалённые файлы 30 дней лежат в ~/dumskaya/crm/trash.
 Кабинет заказчика, подрядчика и его работников в боте, разговоры и права на документы — crm_portal.py.
 
-Данные — ~/dumskaya/crm.db (SQLite). Каждый день — копия базы студии и базы бота в ~/dumskaya/backups (30 дней);
-с Мака `npm run backup` (и каждая выкладка) делает свежую копию и скачивает копии и файлы на Мак.
+Данные — ~/dumskaya/crm.db (SQLite). Резервные копии (на сервере 7 дней и в Telegram) — backups.py.
 Только стандартная библиотека Python 3.
 
-   python3 crm.py --backup-now     — свежая копия баз сейчас (её делает npm run backup с Мака)
+   python3 crm.py --backup-now     — архив данных сейчас (то же, что python3 backups.py --now)
 """
 import calendar
 import hashlib
@@ -58,7 +57,6 @@ CRM_DB = os.environ.get("CRM_DB", os.path.join(APP, "crm.db"))
 FILES_DIR = os.environ.get("CRM_FILES", os.path.join(APP, "crm", "files"))
 BACKUP_DIR = os.environ.get("BACKUP_DIR", os.path.join(APP, "backups"))
 BOT_DB = os.environ.get("BOT_DB", os.path.join(APP, "bot.db"))
-BACKUP_KEEP = 30
 TRASH_KEEP = 30                         # удалённые файлы проектов лежат в корзине 30 дней
 DEFAULT_PCT = 10                        # бонус студии с заказа подрядчика по умолчанию, %
 FILE_MAX = 60 * 1024 * 1024            # один файл — до 60 МБ
@@ -327,35 +325,11 @@ def order_money(o, pays):
             "rest_eur": round(rest / k, 2) if k else rest, "status": st, "margin": margin if st != "cancelled" else None}
 
 
-def backup_dbs(sources, backup_dir, day, log=print):
-    """Копии баз SQLite (стандартным способом SQLite — целостные и во время работы сервиса): name-день.db."""
-    os.makedirs(backup_dir, exist_ok=True)
-    made = []
-    for src, name in sources:
-        if not os.path.exists(src):
-            continue
-        dst = os.path.join(backup_dir, f"{name}-{day}.db")
-        try:
-            s = sqlite3.connect(src)
-            t = sqlite3.connect(dst + ".tmp")
-            with t:
-                s.backup(t)
-            s.close()
-            t.close()
-            os.replace(dst + ".tmp", dst)
-            os.chmod(dst, 0o600)
-            made.append(dst)
-        except (sqlite3.Error, OSError) as e:
-            log(f"копия {name}: ошибка {e}")
-    return made
-
-
 class Crm:
-    def __init__(self, path=CRM_DB, rates=None, files_dir=FILES_DIR, backup_dir=BACKUP_DIR, extra_backups=()):
+    def __init__(self, path=CRM_DB, rates=None, files_dir=FILES_DIR, backup_dir=BACKUP_DIR):
         os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
         self.path, self.files_dir, self.backup_dir = path, files_dir, backup_dir
         self.trash_dir = os.path.join(os.path.dirname(os.path.abspath(files_dir)), "trash")
-        self.extra_backups = list(extra_backups)       # другие базы SQLite для ежедневной копии (база бота)
         self.db = sqlite3.connect(path, check_same_thread=False, isolation_level=None)
         self.db.row_factory = sqlite3.Row
         self.lock = threading.RLock()
@@ -1512,23 +1486,13 @@ class Crm:
         return {"projects": projects, "clients": clients, "contractors": contractors, "links": links, "cities": cities,
                 "lists": self.lists(), "disk": self.disk(), "leads_new": leads_new, "unread": sum(unread.values())}
 
-    # ---------- копии ----------
+    # ---------- уборка раз в день ----------
     def backup_if_due(self, log=print):
-        """Раз в день — копия базы студии (и базы бота) в ~/dumskaya/backups; старше 30 дней — удаляются.
-        Заодно из корзины удаляются файлы, удалённые больше 30 дней назад."""
+        """Раз в день: из корзины удаляются файлы, удалённые больше 30 дней назад, и старые удалённые заявки.
+        (Резервные копии баз — backups.py: архив на сервере за 7 дней и копия в Telegram.)"""
         d = today().isoformat()
         if self.setting("backup_day") == d:
             return False
-        backup_dbs([(self.path, "crm")] + [(p, os.path.splitext(os.path.basename(p))[0]) for p in self.extra_backups],
-                   self.backup_dir, d, log)
-        cutoff = (today() - timedelta(days=BACKUP_KEEP)).isoformat()
-        for f in os.listdir(self.backup_dir):
-            m = re.search(r"-(\d{4}-\d{2}-\d{2})\.db$", f)
-            if m and m.group(1) < cutoff:
-                try:
-                    os.remove(os.path.join(self.backup_dir, f))
-                except OSError:
-                    pass
         if os.path.isdir(self.trash_dir):
             old = (today() - timedelta(days=TRASH_KEEP)).isoformat()
             for day_dir in os.listdir(self.trash_dir):
@@ -1540,8 +1504,8 @@ class Crm:
 
 
 if __name__ == "__main__":
-    if "--backup-now" in sys.argv:          # npm run backup на Маке: свежая копия перед скачиванием
-        made = backup_dbs([(CRM_DB, "crm"), (BOT_DB, "bot")], BACKUP_DIR, today().isoformat())
-        print("копии: " + (", ".join(os.path.basename(x) for x in made) or "баз пока нет"))
+    if "--backup-now" in sys.argv:          # архив данных сейчас — то же, что python3 backups.py --now
+        import backups
+        sys.exit(0 if backups.make_data_zip() else 1)
     else:
         print(__doc__)
