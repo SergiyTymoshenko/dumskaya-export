@@ -4,7 +4,8 @@
 
 Всё, кроме самой страницы и файлов, — только разработчику и дизайнеру: по подписи Telegram (заголовок
 X-Telegram-Init-Data), как у графиков. Здесь же — товары и доп. услуги заказчика, заказчики проекта, ссылки в кабинет
-(/api/crm/invite — заказчику из проекта, подрядчику один раз, работнику подрядчика), закрыть кабинет (/api/crm/unlink),
+(/api/crm/invite — заказчику из проекта, подрядчику или поставщику один раз, работнику подрядчика, сотруднику студии),
+закрыть кабинет (/api/crm/unlink), сотрудники студии и на каких они проектах,
 карточка товара с нашего сайта (/api/crm/card), группы проекта, бригады подрядчиков, кто видит документ; после сохранения —
 сообщения в Telegram (after_save). К проекту добавляются участники и разговоры (crm_portal.py); сами разговоры —
 portal_api.py (те же адреса, что у кабинетов). Файлы отдаются по подписанным ссылкам (действуют 12 часов): так их можно
@@ -94,6 +95,7 @@ def enrich(r):
         pid = r["project"]["id"]
         v = PORTAL.viewer(0, pid, designer=True)
         r["participants"] = PORTAL.participants(pid)
+        r["assistants"] = PORTAL.project_assistants(pid)        # сотрудники студии: кто назначен на проект
         r["threads"] = PORTAL.threads_for(v, pid, "ru")         # последнее сообщение — в переводе на русский
         for f in r.get("files", []):
             f["audience"] = PORTAL.audience(f)
@@ -124,6 +126,8 @@ def after_save(entity, d, r, who):
     elif entity == "group":                                # группа: новым участникам — сообщение на их языке
         if r.get("new_members"):
             portal_bg(BOT.portal_event, "group_new", thread_id=r["thread_id"], only=r["new_members"])
+    elif entity == "passist" and d.get("on") and r.get("changed_tg"):   # сотрудника студии назначили на проект
+        portal_bg(BOT.portal_event, "assistant_assigned", assistant_id=int(d.get("assistant_id") or 0), project_id=int(d.get("project_id") or 0))
     elif entity == "pcrew" and d.get("on") and r.get("changed_tg"):
         portal_bg(BOT.portal_event, "crew_assigned", crew_id=int(d.get("crew_id") or 0), project_id=int(d.get("project_id") or 0))
     elif entity in ("pclient", "pclient_remove"):          # убран из проекта: других проектов нет — кабинет закрывается;
@@ -187,8 +191,27 @@ def portal_save(entity):
         f = CRM.set_file_vis(d, who)
         return CRM.project(f["project_id"])
 
+    def assistant(d, who):                                 # сотрудник студии: добавить или изменить
+        aid = PORTAL.assistant_save(d, who)
+        if d.get("project_id") and not d.get("id"):        # добавлен из проекта — сразу назначен на него
+            PORTAL.assistant_assign(d["project_id"], aid, True, who)
+            return dict(CRM.project(int(d["project_id"])), saved_id=aid)
+        return {"ok": True, "saved_id": aid}
+
+    def assistant_remove(d, who):
+        tg = PORTAL.assistant_remove(d.get("id"), who)
+        if tg and BOT:
+            portal_bg(BOT.portal_unlinked, tg)
+        return CRM.project(int(d["project_id"])) if d.get("project_id") else {"ok": True}
+
+    def passist(d, who):                                   # сотрудник на проекте (или снят)
+        r = PORTAL.assistant_assign(d.get("project_id"), d.get("assistant_id"), bool(d.get("on")), who)
+        if r["changed"] and not d.get("on") and r["assistant"]["tg_id"] and BOT:
+            portal_bg(BOT.sync_portal_menu, r["assistant"]["tg_id"])
+        return dict(CRM.project(int(d["project_id"])), changed_tg=bool(r["changed"] and r["assistant"]["tg_id"]))
+
     return {"group": group, "group_delete": group_delete, "crew": crew, "crew_remove": crew_remove, "pcrew": pcrew,
-            "file_vis": file_vis}.get(entity)
+            "file_vis": file_vis, "assistant": assistant, "assistant_remove": assistant_remove, "passist": passist}.get(entity)
 
 
 CARD_HOSTS = ("dumskaya-design.com", "www.dumskaya-design.com", "dumskaya-home.com", "www.dumskaya-home.com")
@@ -411,13 +434,19 @@ def handle_post(h, path, query):
                 raise CrmError("Бот сейчас недоступен — попробуйте через минуту")
             inv = PORTAL.make_invite(data.get("kind"), data.get("ref_id"), data.get("project_id"), data.get("lang") or "ru", who)
             link = f"https://t.me/{BOT.username}?start=pj_{inv['token']}"
-            if inv["kind"] == "crew":                    # работнику — от имени его подрядчика
+            kind = inv["kind"]
+            if kind == "crew":                           # работнику — от имени его подрядчика
                 w = CRM.one("SELECT c.name FROM crew w JOIN contractors c ON c.id=w.contractor_id WHERE w.id=?", inv_ref(data)) or {}
                 title = w.get("name") or ""
+            elif kind in ("contractor", "assistant"):    # подрядчику (поставщику) и сотруднику студии — без проекта
+                title = ""
+                c = CRM.one("SELECT kind FROM contractors WHERE id=?", inv_ref(data)) if kind == "contractor" else None
+                if c and c.get("kind") == "supplier":
+                    kind = "supplier"
             else:
                 p = CRM.one("SELECT title FROM projects WHERE id=?", int(data.get("project_id") or 0)) or {}
                 title = BOT.loc(p.get("title") or "", inv["lang"]) if hasattr(BOT, "loc") else p.get("title") or ""   # название — на его языке
-            return h.reply(200, dict(inv, link=link, text=BOT.invite_text(inv["lang"], inv["kind"], inv["name"], title, link),
+            return h.reply(200, dict(inv, link=link, text=BOT.invite_text(inv["lang"], kind, inv["name"], title, link),
                                      token=None)) or True
         if path == "/api/crm/unlink":                    # закрыть кабинет: Telegram отвязать от заказчика или подрядчика
             if not PORTAL:

@@ -1,4 +1,4 @@
-"""Проверка кабинетов: заказчик, подрядчик, работник подрядчика, наблюдатель «Разработчик ПО» — приглашения, права
+"""Проверка кабинетов: заказчик, подрядчик и поставщик, работник подрядчика, сотрудник студии, наблюдатель «Разработчик ПО» — приглашения, права
 (деньги, документы, разговоры), разговоры с переводом и уведомлениями, группы, бригада, подтверждение сумм, напоминания
 об оплате, адреса /api/portal и /api/crm. Временные базы, Telegram подменён.
 
@@ -8,6 +8,7 @@ import os
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from datetime import date, datetime, timezone
 
@@ -556,5 +557,115 @@ code, x = call(f"/api/portal/project?id={pid}", H.CLIENT2, lang="en")
 check(code == 200 and x["lang"] == "pl", "кабинет открывается на выбранном языке")
 code, x = call(f"/api/portal/project?id={pid}&preview=client&lang=fi", H.IRINA, lang="ru")
 check(code == 200 and x["lang"] == "fi", "Ирина: как видит заказчик — на любом языке")
+# ---------- сотрудник студии: Ирина добавляет, даёт ссылку, назначает на проекты; без денег и контактов ----------
+code, r = call("/api/crm/save", H.IRINA, {"entity": "assistant", "data": {"name": "Мария Петренко", "position": "визуализатор",
+                                                                          "phone": "+421 900 000 111"}}, lang="ru")
+check(code == 200 and r["saved_id"], "Ирина добавила сотрудника студии")
+aid = r["saved_id"]
+code, st = call("/api/crm/state", H.IRINA, lang="ru")
+check(code == 200 and any(a["id"] == aid and a["position"] == "визуализатор" and a["projects"] == [] for a in st["assistants"]), "сотрудник — в «Студии»")
+code, inv = call("/api/crm/invite", H.IRINA, {"kind": "assistant", "ref_id": aid, "lang": "ru"}, lang="ru")
+check(code == 200 and "кабинет сотрудника студии" in inv["text"] and "Ирина Думская" in inv["text"], "ссылка сотруднику — от имени Ирины")
+n = len(H.CALLS)
+H.update(H.ASSIST, "/start " + inv["link"].split("start=")[1], first="Мария", lang="ru")
+u = H.bot.user(H.ASSIST)
+check(u and u["role"] == "assistant" and u["status"] == "active", "сотрудник подключился: роль «Сотрудник студии»")
+check(any("кабинет сотрудника студии" in x for x in texts(H.ASSIST, n)), "сотруднику — приветствие")
+check(any("сотрудник студии" in x and "Пока ни на одном проекте" in x for x in texts(H.IRINA, n)), "Ирине — подключился, назначьте на проект")
+code, me = call("/api/portal/me", H.ASSIST, lang="ru")
+check(code == 200 and me["staff"] and not me["projects"], "кабинет есть, проектов пока нет")
+code, x = call(f"/api/portal/project?id={pid}", H.ASSIST, lang="ru")
+check(code == 403, "проект без назначения — закрыт")
+n = len(H.CALLS)
+code, r = call("/api/crm/save", H.IRINA, {"entity": "passist", "data": {"project_id": pid, "assistant_id": aid, "on": True}}, lang="ru")
+check(code == 200 and any(a["id"] == aid and a["assigned"] for a in r["assistants"]), "Ирина назначила сотрудника на проект")
+check(wait(lambda: any("назначила вас на проект" in x for x in texts(H.ASSIST, n))), "сотруднику — сообщение о назначении")
+code, me = call("/api/portal/me", H.ASSIST, lang="ru")
+check(code == 200 and [p["roles"] for p in me["projects"] if p["id"] == pid] == [["assistant"]], "проект в кабинете сотрудника")
+code, av = call(f"/api/portal/project?id={pid}", H.ASSIST, lang="ru")
+dump = json.dumps(av, ensure_ascii=False)
+check(code == 200 and av["role"] == "assistant" and not av["readonly"], "кабинет сотрудника студии")
+check(not any(w in dump for w in ("+421 905", "+421 911", "+421 944", "+421 948", "@example", "anna@", "lukas@", "@mb_stav", "18000", "21400", "6350", "commission", "total_eur", "buy")),
+      "сотруднику — ни денег, ни контактов заказчиков и подрядчиков")
+check({c["name"] for c in av["participants"]["contractors"]} >= {"Михаил Бондаренко", "Lukáš Horváth"} and av["participants"]["clients"],
+      "участники проекта — по именам")
+names = {f["name"] for f in av["files"]}
+check("obmernyj-plan.pdf" in names and "oprosnik.pdf" in names and "schet-baxter-zakupka.pdf" not in names, "документация — да, «Другое» — нет")
+code, th = call(f"/api/portal/threads?project={pid}", H.ASSIST, lang="ru")
+check(code == 200 and {t["kind"] for t in th["threads"]} >= {"client", "pc", "org", "worker", "group"} and all(t["access"] == "write" for t in th["threads"]),
+      "все разговоры проекта — и писать в них")
+n = len(H.CALLS)
+code, x = call("/api/portal/chat", H.ASSIST, {"thread_id": tC["id"], "text": "Добрый день! Визуализации спальни пришлю в пятницу."}, lang="ru")
+check(code == 200, "сотрудник пишет заказчикам")
+check(wait(lambda: any("Мария Петренко · DUMSKAYA DESIGN" in x for x in texts(H.CLIENT, n))), "заказчику — от имени студии")
+settle()
+check(any(p.get("disable_notification") and "сотрудник студии" in (p.get("text") or "") for p in msgs(H.IRINA, n)), "Ирине — тихая копия")
+m = H.crm.one("SELECT * FROM messages WHERE thread_id=? ORDER BY id DESC LIMIT 1", tC["id"])
+check(m["author_kind"] == "assistant" and m["author_name"] == "Мария Петренко", "в разговоре — сотрудник студии")
+n = len(H.CALLS)
+code, x = call("/api/portal/chat", H.CLIENT, {"thread_id": tC["id"], "text": "Ďakujeme, čakáme."})
+check(code == 200 and wait(lambda: any("Разговор:" in x for x in texts(H.ASSIST, n))), "сообщение заказчика — сотруднику, с названием разговора")
+settle()
+check(any(not p.get("disable_notification") for p in msgs(H.ASSIST, n)), "сотруднику — со звуком")
+n = len(H.CALLS)
+H.update(H.ASSIST, "Просто текст", first="Мария", lang="ru")
+check(any("ответьте на его сообщение" in x for x in texts(H.ASSIST, n)), "без ответа свайпом — подсказка, никому не ушло")
+png = bytes.fromhex("89504e470d0a1a0a0000000d49484452000000010000000108060000001f15c4890000000d49444154789c6360f8cfc0f01f0005fe02fea7d6a40000000049454e44ae426082")
+n = len(H.CALLS)
+code, f1 = call(f"/api/portal/upload?project={pid}&cat=visual&vis=studio&name=spalnya-variant-2.png&title=" + urllib.parse.quote("Спальня, вариант 2"), H.ASSIST,
+                raw=png, ctype="image/png", lang="ru")
+check(code == 200 and f1["mine"] and f1["can_edit"], "сотрудник добавил визуализацию (пока только студии)")
+check(wait(lambda: any("Новый файл" in x and "Визуализации" in x and "Заказчику не видно" in x for x in texts(H.IRINA, n))), "Ирине — новый файл")
+cv = P.client_view(pid, H.CLIENT)
+check(not any(f["id"] == f1["id"] for f in cv["files"]), "заказчик его не видит")
+code, x = call(f"/api/portal/thumb?id={f1['id']}", H.ASSIST, raw=png, ctype="image/jpeg", lang="ru")
+check(code == 200 and H.crm.one("SELECT thumb FROM files WHERE id=?", f1["id"])["thumb"], "превью своей визуализации сотрудник делает сам")
+code, x = call(f"/api/portal/thumb?id={f1['id']}", H.CLIENT, raw=png, ctype="image/jpeg")
+check(code == 403, "чужому файлу превью не поставить")
+code, x = call("/api/portal/file", H.ASSIST, {"id": f1["id"], "vis": "default"}, lang="ru")
+check(code == 200 and any(f["id"] == f1["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "сотрудник открыл — заказчик видит")
+code, x = call(f"/api/portal/upload?project={pid}&cat=other&vis=default&name=schet.pdf", H.ASSIST, raw=b"%PDF", ctype="application/pdf", lang="ru")
+check(code == 400, "в «Другое» сотрудник не добавляет")
+code, x = call(f"/api/portal/project?id={pid}&preview=assistant&assistant={aid}", H.IRINA, lang="ru")
+check(code == 200 and x["role"] == "assistant" and x["readonly"], "Ирина: как видит сотрудник")
+code, x = call("/api/crm/state", H.ASSIST, lang="ru")
+check(code == 403, "в «Студию» сотруднику нельзя")
+code, x = call("/api/portal/stage", H.ASSIST, {"action": "save", "project_id": pid, "link_id": env["l1"], "title": "x", "amount": 1}, lang="ru")
+check(code == 400, "суммы подрядчиков сотрудник не вносит")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "passist", "data": {"project_id": pid, "assistant_id": aid, "on": False}}, lang="ru")
+code, x = call(f"/api/portal/project?id={pid}", H.ASSIST, lang="ru")
+check(code == 403 and P.has_cabinet(H.ASSIST), "снят с проекта — проект закрыт, кабинет остаётся")
+n = len(H.CALLS)
+code, r = call("/api/crm/save", H.IRINA, {"entity": "assistant_remove", "data": {"id": aid}}, lang="ru")
+check(code == 200 and wait(lambda: H.bot.user(H.ASSIST)["status"] == "removed"), "сотрудник убран — доступ к боту закрыт")
+
+# ---------- поставщик (плитка): как подрядчик, вместо работ — поставки ----------
+code, k3 = call("/api/crm/save", H.IRINA, {"entity": "contractor", "data": {"name": "Keramika Plus", "kind": "supplier", "trade": "Плитка",
+                                                                            "phone": "+421 903 777 888"}}, lang="ru")
+check(code == 200 and k3["kind"] == "supplier", "поставщик в контактах")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "link", "data": {"project_id": pid, "contractor_id": k3["id"], "trade": "Плитка"}}, lang="ru")
+l3 = r["saved_id"]
+code, inv = call("/api/crm/invite", H.IRINA, {"kind": "contractor", "ref_id": k3["id"], "project_id": pid, "lang": "sk"}, lang="ru")
+check(code == 200 and "dodávateľov materiálu" in inv["text"], "ссылка поставщику — текст поставщика")
+n = len(H.CALLS)
+H.update(H.SUPP, "/start " + inv["link"].split("start=")[1], first="Peter", lang="sk")
+check(any("dodávate materiál" in x for x in texts(H.SUPP, n)), "поставщику — его приветствие")
+check(any("поставщик" in x for x in texts(H.IRINA, n)), "Ирине — подключился поставщик")
+n = len(H.CALLS)
+code, x = call("/api/portal/stage", H.SUPP, {"action": "save", "project_id": pid, "link_id": l3, "title": "Obklady kúpeľne", "amount": 2400}, lang="sk")
+check(code == 200 and x["mine"][0]["kind"] == "supplier", "поставщик внёс сумму поставки")
+check(wait(lambda: any("Potvrďte sumu dodávky" in x for x in texts(H.CLIENT, n)) or any("сумму поставки" in x for x in texts(H.IRINA, n))),
+      "заказчику — подтвердить сумму поставки")
+settle()
+check(any("Поставщик Keramika Plus" in x and "сумму поставки" in x for x in texts(H.IRINA, n)), "Ирине — поставщик внёс сумму поставки")
+cv = P.client_view(pid, H.CLIENT)
+check(any(c["kind"] == "supplier" and c["trade"] == "Плитка" for c in cv["contractors"]), "заказчик видит поставщика")
+check(P.label("Плитка", "sk") == "Obklady a dlažba" and P.label("Напольные покрытия", "de") == "Bodenbeläge", "категории поставщиков — по словарю")
+PLB = langs.pack("pl")["bot"]
+check(H.bot.invite_text("pl", "supplier", "Jan", "", "L") == PLB["invite_supplier"].format(name="Jan", link="L"), "ссылка поставщику — по-польски")
+check(H.bot.invite_text("fr", "assistant", "Marie", "", "L") == FR["bot"]["invite_assistant"].format(name="Marie", head="Irina Dumskaya", link="L"),
+      "ссылка сотруднику студии — по-французски, от имени Ирины")
+check(P.label("Плитка", "fi") == langs.pack("fi")["fixed"]["Плитка"] and P.label("Сантехника", "el") == langs.pack("el")["fixed"]["Сантехника"],
+      "категории поставщиков — на всех языках")
 srv.shutdown()
 print(f"OK: {ok} проверок")

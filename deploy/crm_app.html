@@ -98,8 +98,10 @@
   .ops .amt { font-weight: 650; white-space: nowrap; text-align: right; }
   .ops .amt.plus { color: var(--up); }
   .tabs { display: flex; gap: 4px; background: var(--ghost); padding: 3px; border-radius: 12px; margin: 0 0 10px; }
-  .tabs button { flex: 1 1 0; border: 0; background: transparent; padding: 9px 2px; border-radius: 9px; font-size: calc(15px * min(var(--k), 1.15)); cursor: pointer; min-width: 0; white-space: nowrap; min-height: 42px; }
+  .tabs button { flex: 1 1 auto; border: 0; background: transparent; padding: 9px 4px; overflow: hidden; text-overflow: ellipsis; border-radius: 9px; font-size: calc(15px * min(var(--k), 1.15)); cursor: pointer; min-width: 0; white-space: nowrap; min-height: 42px; }
   .tabs button[aria-pressed="true"] { background: var(--raised); font-weight: 650; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  /* крупный текст: четыре вкладки «Контакты» — по две в ряд, чтобы слова не обрезались */
+  :root[data-size="l"] .tabs, :root[data-size="xl"] .tabs { display: grid; grid-template-columns: 1fr 1fr; }
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .thumb { aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: var(--ghost); border: 0; padding: 0; cursor: pointer; position: relative; }
   .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -530,7 +532,7 @@
     if (p.services_debt > 0.005 || p.orders_rest > 0.005) c.append(el('div', 'small owe num', 'Заказчик должен всего: ' + eur(p.client_debt)
       + ' (услуги ' + eur(p.services_debt) + ', товары ' + eur(p.orders_rest) + ')'));
     if (p.extra) c.append(el('div', 'small muted num', 'Доп. доход: ' + eur(p.extra)));
-    if (p.contractor_debt > 0) c.append(el('div', 'small owe num', 'Подрядчики должны бонусы: ' + eur(p.contractor_debt)));
+    if (p.contractor_debt > 0) c.append(el('div', 'small owe num', 'Должны бонусы (подрядчики, поставщики): ' + eur(p.contractor_debt)));
     if (p.unread) c.append(el('div', { class: 'small', style: 'margin-top:6px;color:var(--series);font-weight:650' }, '💬 Новых сообщений: ' + p.unread));
     return c;
   }
@@ -559,7 +561,9 @@
     const jump = el('div', 'jump');                       // длинная страница на телефоне: сразу к нужному блоку
     [['sec-chat', 'Разговоры' + (chat.unread ? ' · ' + chat.unread + ' нов.' : chat.count ? ' · ' + chat.count : '')], ['sec-money', 'Деньги'],
       ['sec-orders', 'Товары' + (orders.length ? ' · ' + orders.length : '')], ['sec-services', 'Услуги' + (services.length ? ' · ' + services.length : '')],
-      ['sec-contractors', 'Подрядчики' + (contractors.length ? ' · ' + contractors.length : '')], ['sec-client', 'Заказчики' + (ppl.length ? ' · ' + ppl.length : '')],
+      ['sec-contractors', (contractors.some(isSup) ? 'Подрядчики и поставщики' : 'Подрядчики') + (contractors.length ? ' · ' + contractors.length : '')],
+      ['sec-client', 'Заказчики' + (ppl.length ? ' · ' + ppl.length : '')],
+      ['sec-team', 'Сотрудники' + ((P.assistants || []).filter((a) => a.assigned).length ? ' · ' + P.assistants.filter((a) => a.assigned).length : '')],
       ['sec-files', 'Файлы' + (files.length ? ' · ' + files.length : '')], ['sec-ops', 'Операции' + (ops.length ? ' · ' + ops.length : '')]].forEach(([id, t]) =>
       jump.append(el('button', { class: 'chip', type: 'button', onclick: () => document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' }) }, t)));
     app.append(jump);
@@ -593,7 +597,8 @@
     m.append(el('div', 'small muted num', 'Доп. доход: ', el('b', { style: 'color:var(--text-1)' }, eur(p.extra)),
       p.extra ? ' (бонусы ' + eur(p.bonus) + ', наценка ' + eur(p.margin) + ')' : '', ' · Всего доход по проекту: ', el('b', { style: 'color:var(--text-1)' }, eur(p.income))));
     if (p.contractor_debt > 0) m.append(el('div', { class: 'small num', style: 'margin-top:4px' },
-      el('span', 'owe', 'Подрядчики должны бонусы: ' + eur(p.contractor_debt)), el('span', 'muted', ' — подробно в блоке «Подрядчики»')));
+      el('span', 'owe', (contractors.some(isSup) ? 'Подрядчики и поставщики' : 'Подрядчики') + ' должны бонусы: ' + eur(p.contractor_debt)),
+      el('span', 'muted', ' — подробно в блоке «' + (contractors.some(isSup) ? 'Подрядчики и поставщики' : 'Подрядчики') + '»')));
     m.append(el('div', 'actions four',
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('payment') }, el('span', null, '💶'), 'Оплата'),
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission') }, el('span', null, '🎁'), 'Бонус'),
@@ -641,11 +646,13 @@
 
     // подрядчики: этапы, бонус студии, долг, кабинет
     const k = el('section', { class: 'card', id: 'sec-contractors' });
-    k.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Подрядчики'), el('button', { class: 'btn small', type: 'button', onclick: linkSheet }, '＋ Добавить')));
-    if (!contractors.length) k.append(el('p', 'muted small', 'Прораб, мебельщик, шторница, кондиционерщик, двери, окна… Добавьте подрядчика и его этапы с суммой заказа — бонус студии (по умолчанию '
-      + pctText(S.lists.default_pct) + ') посчитается сам, а долг подрядчика будет виден здесь. Подрядчику можно дать ссылку в кабинет: он увидит документацию, '
-      + 'визуализации, контакты заказчика и свои расчёты со студией, сможет сам внести сумму работ.'));
-    contractors.forEach((x) => k.append(contractorBlock(x)));
+    k.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Подрядчики и поставщики'), el('button', { class: 'btn small', type: 'button', onclick: linkSheet }, '＋ Добавить')));
+    if (!contractors.length) k.append(el('p', 'muted small', 'Прораб, мебельщик, шторница, двери, окна… и поставщики: плитка, свет, полы, сантехника. Добавьте подрядчика '
+      + 'с этапами работ или поставщика с поставками и суммой — бонус студии (по умолчанию ' + pctText(S.lists.default_pct) + ') посчитается сам, а долг будет виден здесь. '
+      + 'Ссылка в кабинет: он увидит документацию, визуализации, контакты заказчика и свои расчёты со студией, сможет сам внести сумму.'));
+    contractors.filter((x) => !isSup(x)).forEach((x) => k.append(contractorBlock(x)));
+    const sups = contractors.filter(isSup);
+    if (sups.length) { k.append(el('h3', { style: 'margin:18px 0 0' }, 'Поставщики')); sups.forEach((x) => k.append(contractorBlock(x))); }
     app.append(k);
 
     // заказчики проекта и их кабинет
@@ -662,8 +669,25 @@
       c.append(box);
     });
     if (ppl.length) c.append(el('p', { class: 'small muted', style: 'margin:10px 0 0' }, 'Заказчик видит: оплаты и что осталось, доп. услуги, товары (без закупки), файлы — кроме «Другое», '
-      + 'подрядчиков с контактами и суммами работ (без бонусов), разговоры с вами и с подрядчиками (их вы тоже видите). Работников подрядчиков заказчик не видит.'));
+      + 'подрядчиков и поставщиков с контактами и суммами (без бонусов), разговоры с вами и с ними (их вы тоже видите). Работников подрядчиков и ваших сотрудников заказчик не видит.'));
     app.append(c);
+
+    // сотрудники студии на проекте: кого Ирина назначила (видят проект без денег и контактов, пишут от студии)
+    const tm = el('section', { class: 'card', id: 'sec-team' }), staff = P.assistants || [];
+    tm.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Сотрудники студии'),
+      el('button', { class: 'btn small', type: 'button', onclick: () => assistantSheet({}, p.id) }, '＋ Сотрудник')));
+    if (!staff.length) tm.append(el('p', 'muted small', 'Ассистент, визуализатор, чертёжник, комплектатор. Добавьте сотрудника, дайте ссылку в бот и отметьте, '
+      + 'на каких проектах он работает.'));
+    staff.forEach((a) => tm.append(el('div', 'crow',
+      el('button', { class: 'tick' + (a.assigned ? ' on' : ''), type: 'button', role: 'switch', 'aria-checked': String(a.assigned), title: a.assigned ? 'Снять с проекта' : 'Назначить на проект',
+        onclick: async () => { try { await refresh(await save('passist', { project_id: p.id, assistant_id: a.id, on: !a.assigned })); toast(a.assigned ? 'Снят с проекта' : 'Назначен на проект' + (a.tg ? ' — ему пришло сообщение' : '')); } catch (e) { toast(e.message); } } }, a.assigned ? '✓' : ''),
+      el('div', { class: 'grow', style: 'cursor:pointer', onclick: () => assistantCard(a) }, el('b', null, a.name),
+        el('div', 'small muted', [a.position, a.tg ? '✓ в боте' : a.invite_until ? '⏳ ссылка до ' + dfmt(a.invite_until) : 'не в боте'].filter(Boolean).join(' · '))),
+      !a.tg ? el('button', { class: 'icon-btn', type: 'button', title: 'Ссылка в бот', 'aria-label': 'Ссылка в бот для ' + a.name, onclick: () => inviteSheet('assistant', a, { project: a.assigned ? p.id : null }) }, '🔗') : null,
+      a.assigned ? el('button', { class: 'icon-btn', type: 'button', title: 'Как видит сотрудник', 'aria-label': 'Как видит ' + a.name, onclick: () => preview({ preview: 'assistant', project: p.id, assistant: a.id }) }, '👁') : null)));
+    if (staff.length) tm.append(el('p', { class: 'small muted', style: 'margin:10px 0 0' }, 'Сотрудник видит назначенные проекты: участников по именам, документацию (кроме «Другое»), '
+      + 'документы подрядчиков и все разговоры — пишет в них от имени студии, вам приходят тихие копии. Денег, бонусов, контактов заказчиков и подрядчиков не видит.'));
+    app.append(tm);
 
     // файлы
     const f = el('section', { class: 'card', id: 'sec-files' });
@@ -725,7 +749,7 @@
       const det = el('details', { style: 'margin-top:12px' }, el('summary', null, 'История изменений'));
       const ul = el('ul', { class: 'people small' });
       const what = { project: 'проект', op: 'операцию', file: 'файл', link: 'подрядчика', stage: 'этап подрядчика', order: 'товар', service: 'услугу',
-        pclient: 'заказчика в проекте', access: 'доступ к кабинету', pcrew: 'работника на объекте', thread: 'группу' }, act = { add: 'добавил(а)', edit: 'изменил(а)', delete: 'удалил(а)' };
+        pclient: 'заказчика в проекте', access: 'доступ к кабинету', pcrew: 'работника на объекте', thread: 'группу', passist: 'сотрудника студии на проекте' }, act = { add: 'добавил(а)', edit: 'изменил(а)', delete: 'удалил(а)' };
       P.history.forEach((h) => ul.append(el('li', null, el('div', 'who', el('span', null, dfmt(h.ts) + ' · ' + (h.who || '') + ' ' + (act[h.action] || h.action) + ' ' + (what[h.entity] || h.entity))))));
       det.append(ul); d.append(det);
     }
@@ -798,14 +822,16 @@
           try { await navigator.clipboard.writeText(cur.text); toast('Скопировано'); } catch (e) { t.focus(); t.select(); toast('Выделено — скопируйте'); }
         } }, '📋 Скопировать текст')));
       info.textContent = 'Ссылка для одного человека — для ' + rec.name + '. Действует 14 дней, до ' + dfmt(cur.expires) + '. Прежняя неиспользованная ссылка ему больше не работает.'
-        + (kind === 'contractor' ? ' Подключиться подрядчику нужно один раз: дальше он сам видит все проекты, куда вы его добавите.' : '')
+        + (kind === 'contractor' ? ' Подключиться ' + (isSup(rec) ? 'поставщику' : 'подрядчику') + ' нужно один раз: дальше он сам видит все проекты, куда вы его добавите.' : '')
+        + (kind === 'assistant' ? ' Подключиться сотруднику нужно один раз: дальше он видит проекты, на которые вы его назначите.' : '')
         + (rec.tg_id ? ' Сейчас кабинет открыт с Telegram «' + (rec.tg_name || '') + '» — по новой ссылке он перейдёт на тот Telegram, где её откроют.' : '');
       try { if (P && view !== 'list') await refresh(await api('/api/crm/project?id=' + P.project.id)); else await refresh(); } catch (e) {}
     }
     const draw = () => seg.replaceChildren(el('select', { 'aria-label': 'Язык сообщения и кабинета', onchange: (e) => { lang = e.target.value; make(); } },
       ...langList().map(([k, n]) => el('option', { value: k, selected: k === lang ? true : null }, n))));
     draw(); make();
-    sheet('Ссылка в бот', el('div', el('p', 'muted', ({ client: 'Заказчик: ', contractor: 'Подрядчик: ', crew: 'Работник подрядчика' + (o.head ? ' ' + o.head : '') + ': ' }[kind] || '') + rec.name),
+    sheet('Ссылка в бот', el('div', el('p', 'muted', ({ client: 'Заказчик: ', contractor: isSup(rec) ? 'Поставщик: ' : 'Подрядчик: ', crew: 'Работник подрядчика' + (o.head ? ' ' + o.head : '') + ': ',
+      assistant: 'Сотрудник студии: ' }[kind] || '') + rec.name),
       el('div', 'field', el('span', 'lab', 'Язык сообщения и кабинета'), seg, el('div', 'hint', 'Кабинет откроется на этом языке, переписку и подписи документов бот будет '
         + 'переводить на него. Человек может сменить язык сам — кнопка 🌐 в кабинете.')), box, info));
   }
@@ -1284,12 +1310,13 @@
   function peopleView() {
     app.append(el('h1', null, 'Контакты'));
     const tabs = el('div', 'tabs');
-    [['clients', 'Заказчики'], ['contractors', 'Подрядчики'], ['access', 'Доступ']].forEach(([k, n]) => tabs.append(el('button', { type: 'button',
+    [['clients', 'Заказчики'], ['contractors', 'Подрядчики'], ['staff', 'Сотрудники'], ['access', 'Доступ']].forEach(([k, n]) => tabs.append(el('button', { type: 'button',
       'aria-pressed': String(peopleTab === k), onclick: () => { peopleTab = k; if (k === 'access') A = null; render(); } }, n)));
     app.append(tabs);
     if (peopleTab === 'access') {                        // доступ к боту: запросы, студия, партнёры
       const box = el('div'); app.append(box); accessView(box); return;
     }
+    if (peopleTab === 'staff') return staffView();
     const s = el('input', { class: 'search', type: 'search', placeholder: 'Поиск: имя, телефон, город' });
     app.append(s);
     const box = el('div', 'card'); app.append(box);
@@ -1302,9 +1329,10 @@
       if (peopleTab === 'contractors') {
         let last = null;
         items.forEach((p) => {
-          if ((p.trade || 'Другое') !== last) { last = p.trade || 'Другое'; ul.append(el('li', { style: 'border:0;padding:12px 0 2px' }, el('span', 'small muted', last))); }
+          const grp = (isSup(p) ? 'Поставщики · ' : '') + (p.trade || 'Другое');
+          if (grp !== last) { last = grp; ul.append(el('li', { style: 'border:0;padding:12px 0 2px' }, el('span', 'small muted', last))); }
           ul.append(personRow(p, () => contractorCard(p), p.observer ? '🧪 наблюдатель для тестирования — видит всё' : [p.company, p.phone, p.tg_id ? '✓ в боте' : '',
-            p.projects ? p.projects + ' ' + plural(p.projects, 'проект', 'проекта', 'проектов') : '', (p.crew || []).length ? 'бригада ' + p.crew.length : ''].filter(Boolean).join(' · '),
+            p.projects ? p.projects + ' ' + plural(p.projects, 'проект', 'проекта', 'проектов') : '', (p.crew || []).length ? (isSup(p) ? 'сотрудников ' : 'бригада ') + p.crew.length : ''].filter(Boolean).join(' · '),
             p.debt_eur > 0 ? el('span', { class: 'badge owe num', title: 'Должен бонусы' }, eur(p.debt_eur)) : null));
         });
       } else items.forEach((p) => ul.append(personRow(p, () => clientCard(p), [p.phone, p.city, p.projects.length ? p.projects.length + ' ' + plural(p.projects.length, 'проект', 'проекта', 'проектов') : ''].filter(Boolean).join(' · '))));
@@ -1313,7 +1341,60 @@
     s.addEventListener('input', draw);
     draw();
     app.append(el('button', { class: 'btn primary wide', type: 'button', onclick: () => (peopleTab === 'clients' ? clientSheet(null) : contractorSheet(null)) },
-      peopleTab === 'clients' ? '＋ Новый заказчик' : '＋ Новый подрядчик'));
+      peopleTab === 'clients' ? '＋ Новый заказчик' : '＋ Новый подрядчик или поставщик'));
+  }
+  const isSup = (c) => !!c && c.kind === 'supplier';
+
+  // сотрудники студии: ассистент, визуализатор, чертёжник, комплектатор — ссылка в бот, на каких проектах
+  function staffView() {
+    const list = S.assistants || [];
+    const box = el('div', 'card');
+    if (!list.length) box.append(el('div', 'empty', 'Сотрудников пока нет'));
+    else {
+      const ul = el('ul', 'people');
+      list.forEach((a) => ul.append(personRow(a, () => assistantCard(a), [a.position, a.tg_id ? '✓ в боте' : a.invite_until ? '⏳ ссылка до ' + dfmt(a.invite_until) : 'не в боте',
+        a.projects.length ? a.projects.length + ' ' + plural(a.projects.length, 'проект', 'проекта', 'проектов') : 'без проектов'].filter(Boolean).join(' · '))));
+      box.append(ul);
+    }
+    app.append(box, el('p', 'small muted', 'Сотрудник видит только проекты, на которые вы его назначили: участников по именам, документацию (кроме «Другое»), документы '
+      + 'подрядчиков и все разговоры проекта — пишет в них от имени студии, вам приходят тихие копии. Денег, бонусов, контактов заказчиков и подрядчиков не видит. '
+      + 'Назначить — в проекте, блок «Сотрудники студии».'),
+      el('button', { class: 'btn primary wide', type: 'button', onclick: () => assistantSheet({}, null) }, '＋ Новый сотрудник'));
+  }
+  function assistantCard(a0) {
+    const a = (S.assistants || []).find((y) => y.id === a0.id) || a0;
+    const body = el('div', el('div', 'card', a.position ? el('div', { class: 'small muted', style: 'margin-bottom:4px' }, a.position) : null, personBlock(a)));
+    const cab = el('section', 'card', el('h2', null, 'Кабинет в боте'));
+    cab.append(el('div', { class: 'tgline ' + (a.tg_id ? 'on' : 'muted') }, a.tg_id ? '✓ В боте' + (a.tg_name ? ' · Telegram: ' + a.tg_name : '') + (a.tg_since ? ', с ' + dfmt(a.tg_since) : '')
+      : a.invite_until ? '⏳ Ссылка выдана, действует до ' + dfmt(a.invite_until) : 'Ещё не подключён. Ссылку даёте один раз.'));
+    cab.append(el('div', 'kactions', el('button', { class: 'btn' + (a.tg_id ? '' : ' primary'), type: 'button', onclick: () => inviteSheet('assistant', a, { project: null }) },
+      a.tg_id ? '🔗 Новая ссылка' : '🔗 Ссылка в бот'),
+      a.tg_id ? el('button', { class: 'btn danger', type: 'button', onclick: async () => {
+        if (!(await confirmBox('Закрыть кабинет сотруднику «' + a.name + '»? Он перестанет видеть проекты студии.'))) return;
+        try { await api('/api/crm/unlink', { json: { kind: 'assistant', ref_id: a.id } }); await refresh(); closeSheets(); toast('Кабинет закрыт'); } catch (e) { toast(e.message); }
+      } }, 'Закрыть кабинет') : el('span')));
+    body.append(cab);
+    const ps = (a.projects || []).map((id) => S.projects.find((p) => p.id === id)).filter(Boolean);
+    const pr = el('section', 'card', el('h2', null, 'Проекты' + (ps.length ? ' · ' + ps.length : '')));
+    if (!ps.length) pr.append(el('p', 'small muted', 'Пока ни на одном проекте. Назначить — в проекте, блок «Сотрудники студии».'));
+    else { const l = el('div', 'plist'); ps.forEach((p) => l.append(projectCard(p))); pr.append(l); }
+    body.append(pr);
+    sheet('Сотрудник студии', body, null, null, [el('button', { class: 'btn', type: 'button', style: 'flex:1', onclick: () => { closeSheets(); assistantSheet(a, null); } }, '✎ Изменить')]);
+  }
+  function assistantSheet(a, pid) {
+    const f = { name: inp(a.name, { placeholder: 'Имя и фамилия', autocomplete: 'off' }), position: inp(a.position, { placeholder: 'Ассистент, визуализатор, чертёжник, комплектатор…' }),
+      phone: inp(a.phone, { type: 'tel', placeholder: '+421 …' }), email: inp(a.email, { type: 'email' }), note: area(a.note, { placeholder: 'Только для вас' }) };
+    const del = a.id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Убрать сотрудника «' + a.name + '»? Доступ к боту закроется, со всех проектов он будет снят. Его сообщения и файлы в проектах останутся.'))) return;
+      try { await save('assistant_remove', { id: a.id }); await refresh(); closeSheets(); toast('Сотрудник убран'); } catch (e) { toast(e.message); }
+    } }, 'Убрать')] : [];
+    sheet(a.id ? 'Сотрудник студии' : 'Новый сотрудник', el('div', field('Имя', f.name), field('Должность', f.position), field('Телефон', f.phone), field('E-mail', f.email),
+      field('Заметки', f.note), el('p', 'small muted', pid ? 'Сотрудник будет назначен на этот проект. Ссылку в бот дадите следующим шагом.' : 'Потом дайте ему ссылку в бот и назначьте на проекты.')), async () => {
+      const r = await save('assistant', { id: a.id || null, name: f.name.value, position: f.position.value, phone: f.phone.value, email: f.email.value, note: f.note.value, project_id: pid || null });
+      if (r.project) await refresh(r); else await refresh();
+      toast('Сохранено');
+      if (!a.id) { const n = (S.assistants || []).find((y) => y.id === r.saved_id); if (n) inviteSheet('assistant', n, { project: pid || null }); }
+    }, null, del);
   }
   const personRow = (p, open, sub, badge) => el('li', null, el('div', { class: 'who', onclick: open }, el('b', null, p.name), el('span', null, sub || ' ')), badge, ...contactButtons(p).slice(0, badge ? 1 : 2));
 
@@ -1341,7 +1422,7 @@
       box.append(el('h2', { style: 'margin:16px 0 2px' }, 'Проекты'), ul);
       body.append(box);
     }
-    const cab = el('section', 'card', el('h2', null, 'Кабинет в боте'));
+    const cab = el('section', 'card', el('h2', null, 'Кабинет в боте')), sup = isSup(base);
     if (base.observer) cab.append(el('p', 'small', '🧪 «Разработчик ПО» — наблюдатель для тестирования: видит все проекты, разговоры и документы в кабинетах, ничего не меняет '
       + 'и не пишет; получает тихие копии сообщений. Заказчики и подрядчики его не видят. Когда тестирование закончится — удалите его: «✎ Изменить контакты» → «Удалить».'));
     else {
@@ -1354,9 +1435,10 @@
           try { await api('/api/crm/unlink', { json: { kind: 'contractor', ref_id: base.id } }); await refresh(); closeSheets(); toast('Кабинет закрыт'); } catch (e) { toast(e.message); }
         } }, 'Закрыть кабинет') : el('span')));
       const crew = base.crew || [];
-      cab.append(el('div', 'row between', el('h2', { style: 'margin:16px 0 4px' }, 'Бригада' + (crew.length ? ' · ' + crew.length : '')),
-        el('button', { class: 'btn small', type: 'button', onclick: () => crewSheet({ contractor_id: base.id }, null) }, '＋ Работник')));
-      if (!crew.length) cab.append(el('p', 'small muted', 'Работников подрядчик подключает сам в своём кабинете («Бригада») и отмечает, кто на каком объекте. Можно добавить и здесь.'));
+      cab.append(el('div', 'row between', el('h2', { style: 'margin:16px 0 4px' }, (sup ? 'Сотрудники' : 'Бригада') + (crew.length ? ' · ' + crew.length : '')),
+        el('button', { class: 'btn small', type: 'button', onclick: () => crewSheet({ contractor_id: base.id, sup }, null) }, sup ? '＋ Сотрудник' : '＋ Работник')));
+      if (!crew.length) cab.append(el('p', 'small muted', sup ? 'Менеджеров и сотрудников поставщик подключает сам в своём кабинете («Сотрудники») и отмечает, кто с каким проектом работает. Можно добавить и здесь.'
+        : 'Работников подрядчик подключает сам в своём кабинете («Бригада») и отмечает, кто на каком объекте. Можно добавить и здесь.'));
       const ul = el('ul', 'people');
       crew.forEach((w) => ul.append(el('li', null, el('div', { class: 'who', onclick: () => crewSheet(w, null) }, el('b', null, w.name),
         el('span', null, [w.position, w.phone, w.tg_id ? '✓ в боте' : 'не в боте'].filter(Boolean).join(' · '))),
@@ -1364,7 +1446,7 @@
       if (crew.length) cab.append(ul);
     }
     body.append(cab);
-    sheet('Подрядчик', body, null, null, [el('button', { class: 'btn', type: 'button', style: 'flex:1', onclick: () => { closeSheets(); contractorSheet(base); } }, '✎ Изменить контакты')]);
+    sheet(sup ? 'Поставщик' : 'Подрядчик', body, null, null, [el('button', { class: 'btn', type: 'button', style: 'flex:1', onclick: () => { closeSheets(); contractorSheet(base); } }, '✎ Изменить контакты')]);
   }
 
   function clientCard(c) {
@@ -1408,8 +1490,8 @@
     box.append(o);
     if (M.owe_contractors.length) {
       const k = el('section', 'card');
-      k.append(el('h2', null, 'Подрядчики должны бонусы'), el('div', { class: 'hero num', style: 'font-size:calc(28px * var(--k));color:var(--warn)' }, eur(M.contractors_owe)),
-        el('p', 'small muted', 'Бонус студии с этапов минус то, что подрядчик уже отдал. По всем проектам, кроме отменённых.'));
+      k.append(el('h2', null, 'Подрядчики и поставщики должны бонусы'), el('div', { class: 'hero num', style: 'font-size:calc(28px * var(--k));color:var(--warn)' }, eur(M.contractors_owe)),
+        el('p', 'small muted', 'Бонус студии с этапов и поставок минус то, что уже отдали. По всем проектам, кроме отменённых.'));
       const ul = el('ul', 'people');
       M.owe_contractors.forEach((x) => ul.append(el('li', { style: 'display:block' },
         el('div', 'row between', el('div', { class: 'who', onclick: () => contractorCard({ id: x.id, name: x.name }) }, el('b', null, x.name), el('span', null, x.trade || ' ')), el('b', 'num owe badge', eur(x.debt_eur))),
@@ -1868,7 +1950,7 @@
         const d = new Date(m.created), k = d.toDateString();
         if (k !== last) { last = k; box.append(el('div', 'daysep', dfmt(m.created))); }
         const b = el('div', 'bub' + (m.mine ? ' mine' : ''));
-        if (!m.mine) b.append(el('span', 'who', m.author_name || ''));
+        if (!m.mine) b.append(el('span', 'who', (m.author_name || '') + (m.author_kind === 'assistant' ? ' (сотрудник студии)' : '')));
         if (m.file) {
           const f = m.file;
           if (f.image && (f.thumb_url || f.url)) b.append(el('img', { src: f.thumb_url || f.url, alt: f.name, loading: 'lazy', onclick: () => openLink(f.url) }));
@@ -1946,7 +2028,7 @@
   }
 
   function contractorBlock(x) {
-    const m = x.money, c = m.currency;
+    const m = x.money, c = m.currency, sup = isSup(x);
     const box = el('div', 'kcard');
     box.append(el('div', 'row',
       el('div', { class: 'grow', style: 'cursor:pointer', onclick: () => contractorCard(x) },
@@ -1961,9 +2043,9 @@
       m.stages.forEach((st, i) => {
         const bonus = st.commission == null ? 'бонус пока неизвестен' : 'бонус ' + (st.pct != null ? pctText(st.pct) + ' — ' : '') + curMoney(st.commission, st.currency);
         ul.append(el('li', { onclick: () => stageSheet(x, st) },
-          el('span', 't', st.title || 'Этап ' + (i + 1)),
+          el('span', 't', st.title || (sup ? 'Поставка ' : 'Этап ') + (i + 1)),
           el('span', 'a num', st.amount ? curMoney(st.amount, st.currency) : ''),
-          el('span', 'm num', [bonus, st.received ? 'отдал ' + curMoney(st.received, c) : '', dfmt(st.day), st.src === 'contractor' ? 'внёс подрядчик' : ''].filter(Boolean).join(' · ')),
+          el('span', 'm num', [bonus, st.received ? 'отдал ' + curMoney(st.received, c) : '', dfmt(st.day), st.src === 'contractor' ? (sup ? 'внёс поставщик' : 'внёс подрядчик') : ''].filter(Boolean).join(' · ')),
           el('span', { class: 'm', style: 'font-weight:600;color:' + (st.confirmed ? 'var(--up)' : st.disputed ? 'var(--down)' : 'var(--warn)') },
             st.confirmed ? '✓ заказчик подтвердил' + (st.confirmed_by ? ' (' + st.confirmed_by + ')' : '') : st.disputed ? '⚠️ заказчик не согласен' + (st.dispute_note ? ': «' + st.dispute_note + '»' : '')
               : people().some((q) => q.tg_id) ? 'ждёт подтверждения заказчика' : 'не подтверждено — заказчик не в кабинете')));
@@ -1977,10 +2059,10 @@
       else if (m.received > 0) line = el('div', 'debt', el('span', null, 'Отдал бонусов'), el('b', 'num', curMoney(m.received, c)));
       else line = el('div', 'debt', el('span', 'muted', 'Бонус пока неизвестен'), el('span'));
       box.append(line, el('div', 'small muted num', [m.expected > 0 ? 'ожидается ' + curMoney(m.expected, c) : '', m.received > 0 && (m.debt > 0 || m.expected > 0) ? 'отдал ' + curMoney(m.received, c) : '',
-        m.unknown ? m.unknown + ' ' + plural(m.unknown, 'этап', 'этапа', 'этапов') + ' без бонуса' : ''].filter(Boolean).join(' · ')));
+        m.unknown ? m.unknown + ' ' + (sup ? plural(m.unknown, 'поставка', 'поставки', 'поставок') : plural(m.unknown, 'этап', 'этапа', 'этапов')) + ' без бонуса' : ''].filter(Boolean).join(' · ')));
     }
     box.append(el('div', 'kactions',
-      el('button', { class: 'btn', type: 'button', onclick: () => stageSheet(x, null) }, '＋ Этап'),
+      el('button', { class: 'btn', type: 'button', onclick: () => stageSheet(x, null) }, sup ? '＋ Поставка' : '＋ Этап'),
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission', null, { link_id: x.link_id, currency: c, amount: m.debt > 0 ? m.debt : '' }) }, '🎁 Отдал бонус')));
     box.append(tgLine('contractor', x), el('div', 'kactions',
       x.tg_id ? el('button', { class: 'btn', type: 'button', onclick: () => startThread({ kind: 'org', contractor_id: x.id }) }, '💬 Написать')
@@ -1989,7 +2071,7 @@
     if (x.tg_id) box.append(el('div', { class: 'row wrap', style: 'gap:8px;margin-top:8px' },
       el('button', { class: 'btn small', type: 'button', onclick: () => inviteSheet('contractor', x, { project: P.project.id }) }, '🔗 Новая ссылка'),
       el('button', { class: 'btn danger small', type: 'button', onclick: async () => {
-        if (!(await confirmBox('Закрыть кабинет подрядчику «' + x.name + '»? Он перестанет видеть все проекты студии, где он есть, а его бригада — объекты.'))) return;
+        if (!(await confirmBox('Закрыть кабинет «' + x.name + '»? Он перестанет видеть все проекты студии, где он есть, а его ' + (sup ? 'сотрудники' : 'бригада') + ' — объекты.'))) return;
         try { await refresh(await api('/api/crm/unlink', { json: { kind: 'contractor', ref_id: x.id, project_id: P.project.id } })); toast('Кабинет закрыт'); } catch (e) { toast(e.message); }
       } }, 'Закрыть кабинет')));
     box.append(crewBlock(x));
@@ -2001,9 +2083,11 @@
     const part = ((P.participants || {}).contractors || []).find((c) => c.id === x.id);
     const crew = part ? part.crew : [];
     const box = el('div', 'crew');
-    box.append(el('div', 'row between', el('b', { class: 'small' }, 'Бригада на объекте' + (crew.filter((w) => w.assigned).length ? ' · ' + crew.filter((w) => w.assigned).length : '')),
-      el('button', { class: 'btn small', type: 'button', onclick: () => crewSheet({ contractor_id: x.id }, P.project.id) }, '＋ Работник')));
-    if (!crew.length) box.append(el('p', { class: 'small muted', style: 'margin:4px 0 0' }, 'Технолог, установщики, мастера — их подключает сам подрядчик в своём кабинете («Бригада»), или вы здесь.'));
+    const sup = isSup(x);
+    box.append(el('div', 'row between', el('b', { class: 'small' }, (sup ? 'Сотрудники на проекте' : 'Бригада на объекте') + (crew.filter((w) => w.assigned).length ? ' · ' + crew.filter((w) => w.assigned).length : '')),
+      el('button', { class: 'btn small', type: 'button', onclick: () => crewSheet({ contractor_id: x.id, sup }, P.project.id) }, sup ? '＋ Сотрудник' : '＋ Работник')));
+    if (!crew.length) box.append(el('p', { class: 'small muted', style: 'margin:4px 0 0' }, sup ? 'Менеджер, логист, монтажник — их подключает сам поставщик в своём кабинете («Сотрудники»), или вы здесь.'
+      : 'Технолог, установщики, мастера — их подключает сам подрядчик в своём кабинете («Бригада»), или вы здесь.'));
     crew.forEach((w) => {
       box.append(el('div', 'crow',
         el('button', { class: 'tick' + (w.assigned ? ' on' : ''), type: 'button', role: 'switch', 'aria-checked': String(w.assigned), title: w.assigned ? 'Снять с объекта' : 'Отметить на объекте',
@@ -2016,12 +2100,12 @@
     return box;
   }
   function crewSheet(w, pid) {
-    const name = inp(w.name, { autocomplete: 'off' }), pos = inp(w.position, { placeholder: 'Технолог, установщик, плиточник…' }), phone = inp(w.phone, { type: 'tel', placeholder: '+421 …' });
+    const name = inp(w.name, { autocomplete: 'off' }), pos = inp(w.position, { placeholder: w.sup ? 'Менеджер, логист, монтажник…' : 'Технолог, установщик, плиточник…' }), phone = inp(w.phone, { type: 'tel', placeholder: '+421 …' });
     const del = w.id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
       if (!(await confirmBox('Убрать «' + w.name + '» из бригады подрядчика? Доступ к боту у него закроется.'))) return;
       try { const r = await save('crew_remove', { id: w.id, project_id: pid || null }); if (r.project) await refresh(r); else await refresh(); closeSheets(); toast('Убран из бригады'); } catch (e) { toast(e.message); }
     } }, 'Убрать')] : [];
-    sheet(w.id ? 'Работник подрядчика' : 'Новый работник', el('div', field('Имя', name), field('Должность', pos), field('Телефон', phone),
+    sheet(w.sup ? (w.id ? 'Сотрудник поставщика' : 'Новый сотрудник поставщика') : w.id ? 'Работник подрядчика' : 'Новый работник', el('div', field('Имя', name), field('Должность', pos), field('Телефон', phone),
       el('p', 'small muted', pid ? 'Работник появится в бригаде подрядчика и будет отмечен на этом объекте. Ссылку в бот можно дать здесь же — или её даст сам подрядчик.'
         : 'Работник появится в бригаде подрядчика. На какие объекты его отправить, отмечает подрядчик (или вы — в проекте).')), async () => {
       const r = await save('crew', { id: w.id, contractor_id: w.contractor_id, name: name.value, position: pos.value, phone: phone.value, project_id: pid || null });
@@ -2042,7 +2126,7 @@
   const threadIcon = (t) => ({ client: '🏠', pc: '🏠↔🔧', org: '🔧', worker: '👷', group: '👥' }[t.kind] || '💬');
   function threadRow(t) {
     const last = t.last;
-    const sub = last ? (last.author_kind === 'studio' ? 'Вы: ' : (last.author_name || '') + ': ') + (last.file ? '📎 ' : '') + (last.text || '').slice(0, 90) + ((last.text || '').length > 90 ? '…' : '') : 'Сообщений пока нет';
+    const sub = last ? (last.author_kind === 'studio' ? 'Вы: ' : (last.author_name || '') + (last.author_kind === 'assistant' ? ' (сотрудник)' : '') + ': ') + (last.file ? '📎 ' : '') + (last.text || '').slice(0, 90) + ((last.text || '').length > 90 ? '…' : '') : 'Сообщений пока нет';
     return el('li', null, el('div', { class: 'who', onclick: () => openThreadView(t.id) },
       el('b', null, (t.kind === 'group' ? '' : threadIcon(t) + ' ') + threadTitle(t)),
       el('span', null, sub),
@@ -2063,7 +2147,7 @@
     const opt = (label, sub, on, ok) => el('button', { class: 'btn', type: 'button', disabled: ok ? null : true, onclick: on }, el('span', 'grow', el('b', null, label), el('span', 'small muted', sub ? ' · ' + sub : '')));
     if (part.clients.length) list.append(opt('🏠 Заказчикам', part.clients.map((c) => c.name + (c.tg ? '' : ' (не в боте)')).join(', '), () => startThread({ kind: 'client' }), true));
     part.contractors.forEach((c) => {
-      list.append(opt('🔧 ' + c.name, [c.trade, c.tg ? '' : 'не в боте — сначала дайте ссылку'].filter(Boolean).join(' · '), () => startThread({ kind: 'org', contractor_id: c.id }), c.tg));
+      list.append(opt((isSup(c) ? '📦 ' : '🔧 ') + c.name, [c.trade, c.tg ? '' : 'не в боте — сначала дайте ссылку'].filter(Boolean).join(' · '), () => startThread({ kind: 'org', contractor_id: c.id }), c.tg));
       c.crew.filter((w) => w.assigned).forEach((w) => list.append(opt('👷 ' + w.name, [w.position, 'бригада ' + c.name, w.tg ? '' : 'не в боте'].filter(Boolean).join(' · '),
         () => startThread({ kind: 'worker', crew_id: w.id }), w.tg)));
     });
@@ -2102,20 +2186,20 @@
 
   // этап работ подрядчика: сумма заказа и бонус студии — процент (по умолчанию из настроек), сумма или «пока неизвестно»
   function stageSheet(x, st) {
-    const isNew = !st;
+    const isNew = !st, sup = isSup(x);
     const last = x.money.stages[x.money.stages.length - 1];
     st = st || { day: todayISO(), currency: last ? last.currency : 'EUR' };
     let mode = isNew ? 'pct' : st.commission == null ? 'unknown' : st.pct != null ? 'pct' : 'sum';
     const day = inp(st.day, { type: 'date' });
-    const title = inp(st.title, { placeholder: 'Кухня, черновые, 1-й этап…' });
-    const amt = moneyField('Сумма заказа', st.amount || '', st.currency, st.rate_src === 'вручную' ? st.rate : '', st.rate_src === 'вручную', day,
-      'На какую сумму подрядчик делает эту работу');
+    const title = inp(st.title, { placeholder: sup ? 'Плитка для ванной, 1-я партия…' : 'Кухня, черновые, 1-й этап…' });
+    const amt = moneyField(sup ? 'Сумма поставки' : 'Сумма заказа', st.amount || '', st.currency, st.rate_src === 'вручную' ? st.rate : '', st.rate_src === 'вручную', day,
+      sup ? 'На какую сумму поставщик поставляет заказчику' : 'На какую сумму подрядчик делает эту работу');
     const pct = inp(st.pct != null ? num(st.pct, 2).replace(/\s/g, '') : num(S.lists.default_pct, 2), { inputmode: 'decimal', 'aria-label': 'Процент' });
     const sum = inp(mode === 'sum' ? st.commission : '', { inputmode: 'decimal', placeholder: '0', 'aria-label': 'Сумма бонуса' });
     const curLab = el('span', 'muted');
-    const pctBox = el('div', { class: 'pair', style: 'margin-top:8px;grid-template-columns:1fr auto;align-items:center' }, pct, el('span', 'muted', '% от суммы заказа'));
+    const pctBox = el('div', { class: 'pair', style: 'margin-top:8px;grid-template-columns:1fr auto;align-items:center' }, pct, el('span', 'muted', sup ? '% от суммы поставки' : '% от суммы заказа'));
     const sumBox = el('div', { class: 'pair', style: 'margin-top:8px;grid-template-columns:1fr auto;align-items:center' }, sum, curLab);
-    const unk = el('div', 'hint', 'Когда подрядчик отдаст бонус — нажмите «Отдал бонус» у него в проекте: сумма засчитается в доход проекта.');
+    const unk = el('div', 'hint', 'Когда ' + (sup ? 'поставщик' : 'подрядчик') + ' отдаст бонус — нажмите «Отдал бонус» у него в проекте: сумма засчитается в доход проекта.');
     const out = el('div', 'rate');
     const seg = el('div', 'seg');
     const modes = [['pct', 'Процент'], ['sum', 'Сумма'], ['unknown', 'Неизвестно']];
@@ -2136,15 +2220,15 @@
     const ask = el('input', { type: 'checkbox' }); ask.checked = true;
     const linked = people().some((q) => q.tg_id);
     const body = el('div', el('p', 'muted small', x.name + ((x.link_trade || x.trade) ? ' · ' + (x.link_trade || x.trade) : '')),
-      field('Что делают', title), field('Дата', day), amt,
+      field(sup ? 'Что поставляет' : 'Что делают', title), field('Дата', day), amt,
       el('div', 'field', el('span', 'lab', 'Бонус студии'), seg, pctBox, sumBox, unk, out), field('Комментарий', note),
       linked ? el('div', 'field', el('label', 'check', ask, 'Попросить заказчика подтвердить сумму (сообщение в Telegram, если сумма новая или изменилась)')) : null,
       st.confirmed ? el('p', 'small muted', '✓ Заказчик подтвердил эту сумму. Если её изменить — подтверждение снимется и заказчика спросят снова.') : null);
     const del = st.id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
-      if (!(await confirmBox('Удалить этап «' + (st.title || 'без названия') + '»? Полученные бонусы останутся за подрядчиком.'))) return;
-      try { await refresh(await api('/api/crm/delete', { json: { entity: 'stage', id: st.id } })); closeSheets(); toast('Этап удалён'); } catch (e) { toast(e.message); }
+      if (!(await confirmBox('Удалить ' + (sup ? 'поставку' : 'этап') + ' «' + (st.title || 'без названия') + '»? Полученные бонусы останутся за ним.'))) return;
+      try { await refresh(await api('/api/crm/delete', { json: { entity: 'stage', id: st.id } })); closeSheets(); toast(sup ? 'Поставка удалена' : 'Этап удалён'); } catch (e) { toast(e.message); }
     } }, 'Удалить')] : [];
-    sheet(isNew ? 'Новый этап' : 'Этап работ', body, async () => {
+    sheet(sup ? (isNew ? 'Новая поставка' : 'Поставка') : isNew ? 'Новый этап' : 'Этап работ', body, async () => {
       const v = amt.value();
       await refresh(await save('stage', { id: st.id, project_id: P.project.id, link_id: x.link_id, title: title.value, day: day.value,
         amount: v.amount || 0, currency: v.currency, manual_rate: v.manual_rate, rate: v.rate, mode, pct: pct.value, commission: sum.value, note: note.value, ask: linked && ask.checked }));
@@ -2173,20 +2257,29 @@
 
   function contractorSheet(c, after) {
     c = c || {};
-    const f = { name: inp(c.name, { placeholder: 'Имя', autocomplete: 'off' }), trade: sel([['', '— выберите —']].concat(S.lists.trades), c.trade),
+    let kind = c.kind || '';
+    const tradeBox = el('div'), kindSeg = el('div', 'seg');
+    const f = { name: inp(c.name, { placeholder: 'Имя', autocomplete: 'off' }), trade: null,
       company: inp(c.company, { placeholder: 'Фирма (по желанию)' }), phone: inp(c.phone, { type: 'tel', placeholder: '+421 …' }),
       email: inp(c.email, { type: 'email' }), messenger: inp(c.messenger, { placeholder: '@ник в Telegram или номер' }),
       contact_pref: sel([['', '— не указано —']].concat(S.lists.contact_prefs), c.contact_pref),
       city: cityInput(c.city), note: area(c.note, { placeholder: 'Цены, качество, сроки…' }) };
-    const body = el('div', field('Имя', f.name), field('Вид работ', f.trade), field('Компания', f.company), field('Телефон', f.phone), field('E-mail', f.email),
+    const drawKind = () => {                            // подрядчик (работы) или поставщик (материалы): свой список видов
+      kindSeg.replaceChildren(...S.lists.contractor_kinds.map(([k, n]) => el('button', { type: 'button', 'aria-pressed': String(kind === k), onclick: () => { kind = k; drawKind(); } }, n)));
+      const list = kind === 'supplier' ? S.lists.supply_cats : S.lists.trades, cur = f.trade ? f.trade.value : c.trade;
+      f.trade = sel([['', '— выберите —']].concat(list.includes(cur) || !cur ? list : [cur].concat(list)), cur);
+      tradeBox.replaceChildren(field(kind === 'supplier' ? 'Что поставляет' : 'Вид работ', f.trade));
+    };
+    drawKind();
+    const body = el('div', el('div', 'field', el('span', 'lab', 'Кто это'), kindSeg), field('Имя', f.name), tradeBox, field('Компания', f.company), field('Телефон', f.phone), field('E-mail', f.email),
       field('Мессенджер', f.messenger), field('Как удобнее связаться', f.contact_pref), field('Город', f.city), field('Заметки', f.note),
-      el('p', 'small muted', 'Телефон, e-mail и мессенджер подрядчика видят заказчики его проектов в кабинете. Заметки — только вы.'));
+      el('p', 'small muted', 'Телефон, e-mail и мессенджер видят заказчики его проектов в кабинете (ваши сотрудники — нет). Заметки — только вы.'));
     const del = c.id && !c.link_id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
-      if (!(await confirmBox('Удалить подрядчика «' + c.name + '»?'))) return;
+      if (!(await confirmBox('Удалить «' + c.name + '» из контактов?'))) return;
       try { await api('/api/crm/delete', { json: { entity: 'contractor', id: c.id } }); closeSheets(); toast('Удалено'); await refresh(); } catch (e) { toast(e.message); }
     } }, 'Удалить')] : [];
-    sheet(c.id ? 'Подрядчик' : 'Новый подрядчик', body, async () => {
-      const saved = await save('contractor', { id: c.id, name: f.name.value, trade: f.trade.value, company: f.company.value, phone: f.phone.value,
+    sheet(c.id ? (isSup(c) ? 'Поставщик' : 'Подрядчик') : 'Новый подрядчик или поставщик', body, async () => {
+      const saved = await save('contractor', { id: c.id, kind, name: f.name.value, trade: f.trade.value, company: f.company.value, phone: f.phone.value,
         email: f.email.value, messenger: f.messenger.value, contact_pref: f.contact_pref.value, city: f.city.input.value, note: f.note.value });
       toast('Сохранено');
       if (after) await after(saved); else { if (P) P = await api('/api/crm/project?id=' + P.project.id); await refresh(); }
@@ -2194,12 +2287,21 @@
   }
 
   function linkSheet() {
-    const trade = sel([['', 'Все виды работ']].concat(S.lists.trades), '');
+    let kind = '';
+    const kindSeg = el('div', 'seg'), tradeBox = el('div');
+    let trade = null;
     const list = el('div', 'pick');
+    const drawKind = () => {
+      kindSeg.replaceChildren(...[['', 'Подрядчики'], ['supplier', 'Поставщики']].map(([k, n]) => el('button', { type: 'button', 'aria-pressed': String(kind === k), onclick: () => { kind = k; drawKind(); } }, n)));
+      trade = sel([['', kind === 'supplier' ? 'Все поставщики' : 'Все виды работ']].concat(kind === 'supplier' ? S.lists.supply_cats : S.lists.trades), '');
+      trade.addEventListener('change', draw);
+      tradeBox.replaceChildren(field(kind === 'supplier' ? 'Что поставляет' : 'Вид работ', trade));
+      draw();
+    };
     const draw = () => {
       list.replaceChildren();
-      const items = S.contractors.filter((c) => !c.observer && (!trade.value || c.trade === trade.value));
-      if (!items.length) list.append(el('p', 'muted small', 'Здесь пока никого. Добавьте нового подрядчика — он сохранится в контактах.'));
+      const items = S.contractors.filter((c) => !c.observer && (c.kind || '') === kind && (!trade.value || c.trade === trade.value));
+      if (!items.length) list.append(el('p', 'muted small', 'Здесь пока никого. Добавьте нового — он сохранится в контактах.'));
       items.forEach((c) => list.append(el('button', { class: 'btn', type: 'button', onclick: () => attach(c) },
         el('span', 'grow', el('b', null, c.name), el('span', 'small muted', ' · ' + [c.trade, c.phone].filter(Boolean).join(' · '))))));
     };
@@ -2207,14 +2309,14 @@
       try { await refresh(await save('link', { project_id: P.project.id, contractor_id: c.id, trade: trade.value || c.trade })); closeSheets(); toast('Добавлено в проект'); }
       catch (e) { toast(e.message); }
     }
-    trade.addEventListener('change', draw); draw();
-    sheet('Подрядчик в проект', el('div', field('Вид работ', trade), list), null, null,
-      [el('button', { class: 'btn primary', type: 'button', style: 'flex:1', onclick: () => contractorSheet({ trade: trade.value }, attach) }, '＋ Новый подрядчик')]);
+    drawKind();
+    sheet('В проект', el('div', kindSeg, tradeBox, list), null, null,
+      [el('button', { class: 'btn primary', type: 'button', style: 'flex:1', onclick: () => contractorSheet({ trade: trade.value, kind }, attach) }, kind === 'supplier' ? '＋ Новый поставщик' : '＋ Новый подрядчик')]);
   }
 
   function settingsSheet() {
     const L = S.lists;
-    const f = { tariffs: area(L.tariffs.join('\n')), trades: area(L.trades.join('\n')), commission_cats: area(L.commission_cats.join('\n')),
+    const f = { tariffs: area(L.tariffs.join('\n')), trades: area(L.trades.join('\n')), supply_cats: area(L.supply_cats.join('\n')), commission_cats: area(L.commission_cats.join('\n')),
       default_pct: inp(num(L.default_pct, 2), { inputmode: 'decimal' }) };
     // размер текста — сразу, без «Сохранить», и только для того, кто открыл (у каждого свой)
     const sizeSeg = el('div', 'seg');
@@ -2225,13 +2327,13 @@
       } }, t)));
     drawSize();
     const body = el('div', el('div', 'field', el('span', 'lab', 'Размер текста'), sizeSeg, el('div', 'hint', 'Только для вас, на всех ваших устройствах — и в «Студии», и в графиках сайта')),
-      field('Бонус студии с заказа подрядчика, %', f.default_pct, 'Подставляется в каждый новый этап; в самом этапе можно поменять'),
+      field('Бонус студии с заказа подрядчика или поставщика, %', f.default_pct, 'Подставляется в каждый новый этап или поставку; там его можно поменять'),
       el('p', 'muted small', 'Списки: каждый пункт — с новой строки. Уже внесённые проекты не меняются.'),
-      field('Тарифы', f.tariffs), field('Виды работ подрядчиков', f.trades), field('За что бывают бонусы от поставщиков', f.commission_cats),
+      field('Тарифы', f.tariffs), field('Виды работ подрядчиков', f.trades), field('Что поставляют поставщики', f.supply_cats), field('За что бывают бонусы от поставщиков', f.commission_cats),
       el('p', 'small muted', 'Файлы проектов на сервере: ' + num((S.disk.used || 0) / 1048576, 1) + ' МБ' + (S.disk.free ? ' · свободно ' + num(S.disk.free / 1073741824, 1) + ' ГБ' : '')));
     sheet('Настройки', body, async () => {
       const split = (t) => t.value.split('\n').map((x) => x.trim()).filter(Boolean);
-      S.lists = Object.assign(S.lists, await save('lists', { tariffs: split(f.tariffs), trades: split(f.trades), commission_cats: split(f.commission_cats), default_pct: f.default_pct.value }));
+      S.lists = Object.assign(S.lists, await save('lists', { tariffs: split(f.tariffs), trades: split(f.trades), supply_cats: split(f.supply_cats), commission_cats: split(f.commission_cats), default_pct: f.default_pct.value }));
       toast('Сохранено'); render();
     });
   }

@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""Адреса /api/portal/* сервиса заявок — кабинеты в боте («Мой проект», страница portal_app.html): заказчик, подрядчик,
-работник подрядчика, наблюдатель — и разговоры проекта (в том числе для «Студии»).
+"""Адреса /api/portal/* сервиса заявок — кабинеты в боте («Мой проект», страница portal_app.html): заказчик, подрядчик
+(и поставщик), работник подрядчика, сотрудник студии, наблюдатель — и разговоры проекта (в том числе для «Студии»).
 
 Кто есть кто — по подписи Telegram (заголовок X-Telegram-Init-Data), как в «Студии»; что кому видно — crm_portal.py:
   • заказчик, подрядчик и работник видят только свои проекты и только то, что им положено (работнику — без денег);
-  • дизайнер студии пишет в любой разговор и может посмотреть кабинет глазами заказчика, подрядчика или работника
-    (?preview=client | contractor&link=… | worker&crew=…);
+  • дизайнер студии пишет в любой разговор и может посмотреть кабинет глазами заказчика, подрядчика, работника
+    или своего сотрудника (?preview=client | contractor&link=… | worker&crew=… | assistant&assistant=…);
+  • сотрудник студии — назначенные проекты без денег и контактов; пишет во все разговоры проекта от имени студии;
   • наблюдатель «Разработчик ПО» (подрядчик-заглушка для тестирования, привязан к Telegram разработчика) видит всё,
     тоже может смотреть глазами любого, но ничего не пишет и не меняет.
 Уведомления в Telegram (новое сообщение, сумма на подтверждение, документ…) отправляет бот в фоне — ответ не ждёт Telegram."""
@@ -92,7 +93,7 @@ def _body(h, limit=20000):
 
 
 def _fake(**kw):
-    v = {"tg": 0, "studio": False, "observer": False, "client": None, "heads": set(), "crew": set(), "preview": True}
+    v = {"tg": 0, "studio": False, "observer": False, "client": None, "heads": set(), "crew": set(), "staff": set(), "preview": True}
     v.update(kw)
     return v
 
@@ -117,10 +118,15 @@ def viewer_for(w, pid, q):
             if not x:
                 raise CrmError("Этого работника нет на объекте")
             return _fake(crew={x["crew_id"]})
+        if pv == "assistant":
+            x = CRM.one("SELECT assistant_id FROM project_assistants WHERE project_id=? AND assistant_id=?", pid, int(q.get("assistant") or 0))
+            if not x:
+                raise CrmError("Этот сотрудник не назначен на проект")
+            return _fake(staff={x["assistant_id"]})
     if w["designer"]:
         return dict(PORTAL.viewer(w["tg"], pid, designer=True), preview=False)
     v = dict(PORTAL.viewer(w["tg"], pid), preview=False)
-    if not (v["client"] or v["heads"] or v["crew"] or v["observer"]):
+    if not (v["client"] or v["heads"] or v["crew"] or v["observer"] or v["staff"]):
         raise Denied()
     if PORTAL.crm.one("SELECT status FROM projects WHERE id=?", pid)["status"] == "cancelled":
         raise Denied()
@@ -128,7 +134,7 @@ def viewer_for(w, pid, q):
 
 
 def roles_of(v):
-    return [r for r, ok in (("client", v["client"]), ("contractor", v["heads"]), ("worker", v["crew"]),
+    return [r for r, ok in (("assistant", v.get("staff")), ("client", v["client"]), ("contractor", v["heads"]), ("worker", v["crew"]),
                             ("observer", v["observer"] and not v.get("preview"))) if ok]
 
 
@@ -146,6 +152,8 @@ def project_view(w, q):
         out = PORTAL.contractor_view(pid, v["heads"], v["tg"] or None)
     elif role == "worker":
         out = PORTAL.worker_view(pid, v["crew"], v["tg"] or None)
+    elif role == "assistant":
+        out = PORTAL.assistant_view(pid, v["staff"], v["tg"] or None)
     elif role == "observer":
         out = PORTAL.observer_view(pid, v["tg"])
     else:
@@ -195,13 +203,14 @@ def handle_get(h, path, query):
     try:
         if path == "/api/portal/me":
             projects = PORTAL.projects_for(w["tg"])
-            heads = [{"id": c["id"], "name": c["name"], "trade": c["trade"] or "", "company": c["company"] or ""}
+            heads = [{"id": c["id"], "name": c["name"], "trade": c["trade"] or "", "company": c["company"] or "", "kind": c["kind"] or ""}
                      for c in PORTAL.my_contractors(w["tg"])]
             crews = [{"id": x["id"], "name": x["name"], "position": x["position"] or "", "head": x["head_name"]} for x in PORTAL.crews_of(w["tg"])]
-            if not (projects or heads or crews or w["designer"] or w["observer"]):
+            staff = [{"id": a["id"], "name": a["name"], "position": a["position"] or ""} for a in PORTAL.assistants_of(w["tg"])]
+            if not (projects or heads or crews or staff or w["designer"] or w["observer"]):
                 return _deny(h, 403, "no_projects")
             return h.reply(200, {"name": w["name"], "lang": w["lang"], "size": w["size"], "designer": w["designer"],
-                                 "observer": w["observer"], "projects": projects, "heads": heads, "crews": crews,
+                                 "observer": w["observer"], "projects": projects, "heads": heads, "crews": crews, "staff": staff,
                                  "studio": STUDIO, "translate": BOT.can_translate(), "langs": public_list()}) or True
         if path == "/api/portal/project":
             v = project_view(w, q)
@@ -231,7 +240,7 @@ def handle_get(h, path, query):
                                 WHERE l.contractor_id=? AND p.status != 'cancelled' ORDER BY p.id DESC""", c["id"])
             for p in projects:
                 p["title"] = BOT.loc(p["title"], w["lang"])
-            return h.reply(200, {"contractor": {"id": c["id"], "name": c["name"], "trade": c["trade"] or ""},
+            return h.reply(200, {"contractor": {"id": c["id"], "name": c["name"], "trade": c["trade"] or "", "kind": c["kind"] or ""},
                                  "team": PORTAL.team(c["id"]), "projects": projects}) or True
     except Denied:
         return _deny(h)
@@ -313,19 +322,23 @@ def handle_post(h, path, query):
                 if v["studio"] and q.get("client") == "1" and t["kind"] not in ("client", "pc"):   # студия: «заказчик тоже увидит»
                     CRM.run("UPDATE files SET see_client=1 WHERE id=?", f["id"])
                 return h.reply(200, {"id": f["id"], "name": f["name"], "url": f["url"], "image": f["image"]}) or True
-            pid = int(q.get("project") or 0)              # документ подрядчика или работника — «От подрядчиков»
-            v = viewer_for(w, pid, q)
-            if v.get("preview") or not (v["heads"] or v["crew"]):
+            pid = int(q.get("project") or 0)              # документ подрядчика или работника — «От подрядчиков»;
+            v = viewer_for(w, pid, q)                      # сотрудник студии — в раздел проекта (cat)
+            if v.get("preview") or not (v["heads"] or v["crew"] or v["staff"]):
                 raise Denied()
             if n > FILE_MAX:
                 h.close_connection = True
                 return h.reply(413, {"ok": False, "error": "file_too_big"}) or True
+            if v["staff"] and not (v["heads"] or v["crew"]):
+                f = PORTAL.upload_studio(v, pid, q.get("cat"), q.get("name") or "file", h.rfile, n, mime, q.get("vis"), q.get("title"), w["name"])
+                bg(BOT.portal_event, "doc_new", file_id=f["id"])
+                return h.reply(200, f) or True
             f = PORTAL.upload(v, pid, q.get("name") or "file", h.rfile, n, mime, q.get("vis"), q.get("title"), w["name"])
             bg(BOT.portal_event, "doc_new", file_id=f["id"])
             return h.reply(200, f) or True
-        if path == "/api/portal/thumb":                   # превью фото документа (делает телефон)
+        if path == "/api/portal/thumb":                   # превью фото документа (делает телефон): подрядчика, работника, сотрудника студии
             fid = int(q.get("id") or 0)
-            f = CRM.one("SELECT * FROM files WHERE id=? AND category='work'", fid)
+            f = CRM.one("SELECT * FROM files WHERE id=? AND (category='work' OR owner_kind='assistant')", fid)
             if not f:
                 raise Denied()
             v = viewer_for(w, f["project_id"], q)
@@ -351,7 +364,7 @@ def handle_post(h, path, query):
             if v.get("preview") or (v["observer"] and not v["studio"]):
                 raise Denied()
             kind = d.get("kind")
-            if v["studio"]:
+            if v["studio"] or v["staff"]:
                 if kind not in ("client", "org", "worker"):
                     raise CrmError("Неизвестный разговор")
             elif kind == "pc" and (v["client"] or int(d.get("contractor_id") or 0) in v["heads"]):

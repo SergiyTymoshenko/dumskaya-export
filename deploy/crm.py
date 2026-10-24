@@ -96,7 +96,11 @@ DEFAULTS = {
                "Плиточник", "Маляр", "Полы", "Свет", "Камень и столешницы", "Стекло и зеркала", "Другое"],
     "commission_cats": ["Мебель", "Шторы", "Свет", "Кухня", "Сантехника", "Двери", "Окна", "Отделочные материалы",
                         "Техника", "Декор", "Другое"],
+    # что поставляют поставщики (плитка, свет, полы, сантехника…) — поставщик работает в проекте как подрядчик (решено 24.10.2026)
+    "supply_cats": ["Плитка", "Свет", "Напольные покрытия", "Сантехника", "Обои и краски", "Двери", "Окна", "Кухни", "Мебель",
+                    "Бытовая техника", "Шторы и текстиль", "Камень и столешницы", "Стекло и зеркала", "Декор", "Другое"],
 }
+CONTRACTOR_KINDS = [("", "Подрядчик (работы)"), ("supplier", "Поставщик (материалы)")]
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS clients (
@@ -163,6 +167,11 @@ CREATE TABLE IF NOT EXISTS crew (              -- работники подря�
 CREATE INDEX IF NOT EXISTS crew_contractor ON crew(contractor_id);
 CREATE TABLE IF NOT EXISTS project_crew (      -- кто из работников подрядчика на этом объекте (выбирает подрядчик)
   project_id INTEGER NOT NULL, crew_id INTEGER NOT NULL, created_by TEXT, created TEXT, PRIMARY KEY(project_id, crew_id));
+CREATE TABLE IF NOT EXISTS assistants (        -- сотрудники студии (ассистент, визуализатор, чертёжник, комплектатор):
+  id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, position TEXT, phone TEXT, email TEXT,   -- добавляет Ирина
+  tg_id INTEGER, tg_name TEXT, tg_since TEXT, note TEXT, removed TEXT, created_by TEXT, created TEXT, updated TEXT);
+CREATE TABLE IF NOT EXISTS project_assistants (  -- на какие проекты Ирина назначила сотрудника (видит только их, без денег)
+  project_id INTEGER NOT NULL, assistant_id INTEGER NOT NULL, created_by TEXT, created TEXT, PRIMARY KEY(project_id, assistant_id));
 CREATE TABLE IF NOT EXISTS threads (           -- разговоры проекта: client — студия и заказчики; pc — заказчики и подрядчик
   id INTEGER PRIMARY KEY AUTOINCREMENT,        -- (студия видит); org — студия и подрядчик; worker — студия и работник
   project_id INTEGER NOT NULL, kind TEXT NOT NULL,   -- (подрядчик видит); group — группа, которую собрала студия
@@ -350,7 +359,9 @@ class Crm:
                                     ("contractors", "observer", "INTEGER"), ("messages", "thread_id", "INTEGER"),
                                     ("files", "owner_kind", "TEXT"), ("files", "owner_contractor", "INTEGER"),
                                     ("files", "owner_crew", "INTEGER"), ("files", "vis", "TEXT"), ("files", "see_client", "INTEGER"),
-                                    ("files", "see_crew", "INTEGER"), ("files", "thread_id", "INTEGER"), ("files", "title", "TEXT")):
+                                    ("files", "see_crew", "INTEGER"), ("files", "thread_id", "INTEGER"), ("files", "title", "TEXT"),
+                                    # поставщики и сотрудники студии (24.10.2026, ночь)
+                                    ("contractors", "kind", "TEXT"), ("files", "owner_assistant", "INTEGER")):
                 if col not in {r[1] for r in self.db.execute(f"PRAGMA table_info({table})")}:
                     self.db.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
             self.db.execute("CREATE INDEX IF NOT EXISTS messages_thread ON messages(thread_id, id)")
@@ -411,7 +422,8 @@ class Crm:
             pct = DEFAULT_PCT
         out.update(statuses=STATUSES, lead_statuses=LEAD_STATUSES, lead_triage=LEAD_TRIAGE, lead_flow=LEAD_FLOW, lead_hidden=LEAD_HIDDEN, kinds=KINDS, file_cats=FILE_CATS, photo_cats=PHOTO_CATS, contact_prefs=CONTACT_PREFS,
                    pay_methods=PAY_METHODS, currencies=CURRENCIES, default_pct=pct, order_statuses=ORDER_STATUSES,
-                   service_kinds=SERVICE_KINDS, client_cats=CLIENT_CATS, contractor_cats=CONTRACTOR_CATS, people_max=PROJECT_PEOPLE_MAX)
+                   service_kinds=SERVICE_KINDS, client_cats=CLIENT_CATS, contractor_cats=CONTRACTOR_CATS, people_max=PROJECT_PEOPLE_MAX,
+                   contractor_kinds=CONTRACTOR_KINDS)
         return out
 
     def save_lists(self, data, who):
@@ -546,7 +558,7 @@ class Crm:
         for o in ex["orders"]:
             o["photo"] = self.order_photo(o)
         history = self.q("SELECT ts, who, action, entity, entity_id FROM audit WHERE (entity='project' AND entity_id=?) OR "
-                         "(entity IN ('op', 'file', 'link', 'stage', 'order', 'service', 'pclient', 'access', 'pcrew', 'thread') AND (details LIKE ? OR details LIKE ?)) "
+                         "(entity IN ('op', 'file', 'link', 'stage', 'order', 'service', 'pclient', 'access', 'pcrew', 'thread', 'passist') AND (details LIKE ? OR details LIKE ?)) "
                          "ORDER BY id DESC LIMIT 50", p["id"], f'%"project_id": {p["id"]},%', f'%"project_id": {p["id"]}}}%')
         invites = self.q("SELECT kind, ref_id, expires, created FROM invites WHERE project_id=? AND used_by IS NULL AND expires > ?",
                          p["id"], now())
@@ -1024,7 +1036,8 @@ class Crm:
         if not name:
             raise CrmError("Укажите имя подрядчика")
         pref = _text(d.get("contact_pref"), 30)
-        f = dict(name=name, trade=_text(d.get("trade"), 60), company=_text(d.get("company"), 120),
+        kind = "supplier" if d.get("kind") == "supplier" else None          # поставщик (материалы) или подрядчик (работы)
+        f = dict(name=name, kind=kind, trade=_text(d.get("trade"), 60), company=_text(d.get("company"), 120),
                  phone=_text(d.get("phone"), 60), email=_text(d.get("email"), 120), messenger=_text(d.get("messenger"), 120),
                  contact_pref=pref if pref in CONTACT_PREFS else "", city=_text(d.get("city"), 80), note=_text(d.get("note"), 2000))
         if f["email"] and not re.match(r"[^@\s]+@[^@\s]+\.[^@\s]+$", f["email"]):
@@ -1144,6 +1157,7 @@ class Crm:
             self.run("DELETE FROM project_contractors WHERE project_id=?", rid)
             self.run("DELETE FROM project_clients WHERE project_id=?", rid)
             self.run("DELETE FROM project_crew WHERE project_id=?", rid)
+            self.run("DELETE FROM project_assistants WHERE project_id=?", rid)
             for t in self.q("SELECT id FROM threads WHERE project_id=?", rid):
                 self.run("DELETE FROM thread_members WHERE thread_id=?", t["id"])
                 self.run("DELETE FROM thread_read WHERE thread_id=?", t["id"])
@@ -1467,7 +1481,7 @@ class Crm:
         for c in clients:
             c["projects"] = by_client.get(c["id"], [])
         contractors = self.q("""SELECT c.*, (SELECT COUNT(*) FROM project_contractors l WHERE l.contractor_id=c.id) AS projects
-                                FROM contractors c ORDER BY c.observer IS NOT NULL, c.trade, c.name COLLATE NOCASE""")
+                                FROM contractors c ORDER BY c.observer IS NOT NULL, c.kind IS NOT NULL, c.trade, c.name COLLATE NOCASE""")
         crew = self.q("SELECT id, contractor_id, name, position, phone, tg_id, tg_name, tg_since FROM crew WHERE removed IS NULL ORDER BY name")
         for c in contractors:
             c["crew"] = [w for w in crew if w["contractor_id"] == c["id"]]
@@ -1481,9 +1495,19 @@ class Crm:
             mine = [x for x in links if x["contractor_id"] == c["id"] and status.get(x["project_id"]) != "cancelled"]
             c["debt_eur"] = round(sum(x["debt_eur"] for x in mine), 2)
             c["received_eur"] = round(sum(x["received_eur"] for x in mine), 2)
+        assistants = self.q("SELECT id, name, position, phone, email, tg_id, tg_name, tg_since, note FROM assistants WHERE removed IS NULL "
+                            "ORDER BY name COLLATE NOCASE")
+        on = {}
+        for x in self.q("SELECT x.assistant_id, x.project_id FROM project_assistants x JOIN projects p ON p.id=x.project_id "
+                        "WHERE p.status != 'cancelled'"):
+            on.setdefault(x["assistant_id"], []).append(x["project_id"])
+        for a in assistants:
+            a["projects"] = on.get(a["id"], [])
+            inv = self.one("SELECT expires FROM invites WHERE kind='assistant' AND ref_id=? AND used_by IS NULL AND expires > ?", a["id"], now())
+            a["invite_until"] = inv["expires"] if inv else None
         cities = sorted({x for x in [p["city"] for p in projects] + [c["city"] for c in clients] + [c["city"] for c in contractors] if x})
         leads_new = self.one("SELECT COUNT(*) AS n FROM leads WHERE status='new' AND deleted IS NULL")["n"]
-        return {"projects": projects, "clients": clients, "contractors": contractors, "links": links, "cities": cities,
+        return {"projects": projects, "clients": clients, "contractors": contractors, "links": links, "cities": cities, "assistants": assistants,
                 "lists": self.lists(), "disk": self.disk(), "leads_new": leads_new, "unread": sum(unread.values())}
 
     # ---------- уборка раз в день ----------

@@ -78,6 +78,7 @@ crm_api.CRM, crm_api.BOT, crm_api.PORTAL = crm, bot, portal
 portal_api.CRM, portal_api.BOT, portal_api.PORTAL, portal_api.CHECK, portal_api.TOKEN = crm, bot, portal, check_init_data, TOKEN
 
 IRINA, CLIENT, CLIENT2, CREW, CREW2, WORKER, WORKER2, OWNER = 2, 100, 101, 200, 201, 300, 301, 1
+ASSIST, SUPP, SUPPW = 400, 500, 501      # сотрудник студии; поставщик плитки и его менеджер
 bot.s.run("INSERT INTO users(tg_id, name, role, status, created, updated) VALUES(?, 'Ирина', 'designer', 'active', '', '')", IRINA)
 
 

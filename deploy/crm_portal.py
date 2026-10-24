@@ -10,7 +10,11 @@
   • работник подрядчика (технолог, установщик…) — ссылку даёт сам подрядчик из кабинета («Бригада»); на каждый проект
     подрядчик сам отмечает, кто из бригады там работает (подключённый работник не попадает во все проекты сразу);
   • наблюдатель «Разработчик ПО» — подрядчик-заглушка для тестирования: видит все проекты, все разговоры и документы
-    (только чтение); заказчики и подрядчики его не видят; удалить — как обычного подрядчика в «Студии» (Контакты).
+    (только чтение); заказчики и подрядчики его не видят; удалить — как обычного подрядчика в «Студии» (Контакты);
+  • сотрудник студии (ассистент, визуализатор, чертёжник, комплектатор) — ссылку даёт Ирина («Контакты» → «Сотрудники»);
+    видит только проекты, на которые его назначила Ирина.
+Поставщик (плитка, свет, полы, сантехника…) — тот же подрядчик (contractors.kind = 'supplier'): кабинет, свои сотрудники,
+разговоры, документы, вместо этапов работ — поставки с суммой и бонусом студии (решено 24.10.2026).
 
 Что кто видит:
   • заказчик — оплаты, долг, доп. услуги, товары (без закупки), документы студии (кроме «Другое»), документы подрядчиков,
@@ -21,6 +25,9 @@
   • работник — проект без денег (ни суммы проекта, ни вознаграждения студии), контакты руководителя и студии,
     документацию, документы бригады, открытые для неё; разговоры — свой со студией и группы, куда его добавили.
     Заказчику писать не может (и заказчик ему — только руководителю).
+  • сотрудник студии — назначенные проекты без денег и бонусов, без контактов заказчиков и подрядчиков: участники,
+    документация (кроме «Другое»), документы подрядчиков, все разговоры проекта — пишет в них от имени студии;
+    добавляет файлы в разделы проекта (заказчику — сразу или после Ирины, как выберет);
   • Ирина (студия) — всё; пишет любому участнику, собирает группы, решает, видит ли заказчик документ.
 Документы подрядчика: «заказчик, студия и бригада», «только студия», «только бригада»; работника — «руководитель и
 студия», «вся бригада», «заказчик тоже». Ирина видит всё и может открыть любой документ заказчику.
@@ -64,6 +71,15 @@ FIXED = {
     "Свет": ("Світло", "Lighting", "Svetlo", "Licht"),
     "Камень и столешницы": ("Камінь і стільниці", "Stone and worktops", "Kameň a pracovné dosky", "Stein und Arbeitsplatten"),
     "Стекло и зеркала": ("Скло і дзеркала", "Glass and mirrors", "Sklo a zrkadlá", "Glas und Spiegel"),
+    # что поставляют поставщики (crm.DEFAULTS["supply_cats"]; «Свет», «Двери», «Окна», «Мебель», «Камень…», «Стекло…» — выше и ниже)
+    "Плитка": ("Плитка", "Tiles", "Obklady a dlažba", "Fliesen"),
+    "Напольные покрытия": ("Підлогові покриття", "Flooring", "Podlahové krytiny", "Bodenbeläge"),
+    "Сантехника": ("Сантехніка", "Sanitaryware", "Sanita", "Sanitär"),
+    "Обои и краски": ("Шпалери та фарби", "Wallpaper and paint", "Tapety a farby", "Tapeten und Farben"),
+    "Кухни": ("Кухні", "Kitchens", "Kuchyne", "Küchen"),
+    "Бытовая техника": ("Побутова техніка", "Home appliances", "Domáce spotrebiče", "Haushaltsgeräte"),
+    "Шторы и текстиль": ("Штори та текстиль", "Curtains and textiles", "Záclony, závesy a textil", "Vorhänge und Textilien"),
+    "Декор": ("Декор", "Decor", "Dekorácie", "Deko"),
     "Другое": ("Інше", "Other", "Iné", "Sonstiges"),
     "Экспресс": ("Експрес", "Express", "Express", "Express"),
     "Мебель": ("Меблі", "Furniture", "Nábytok", "Möbel"),
@@ -142,13 +158,26 @@ class Portal:
                JOIN projects p ON p.id=x.project_id WHERE x.project_id=? AND w.tg_id=? AND w.removed IS NULL
                AND p.status != 'cancelled'""", int(pid or 0), t)]
 
+    def assistant_ids(self, tg_id, pid):
+        """Сотрудники студии с этим Telegram, которых Ирина назначила на этот проект."""
+        t = int(tg_id or 0)
+        if not t:
+            return []
+        return [r["id"] for r in self.crm.q(
+            """SELECT a.id FROM assistants a JOIN project_assistants x ON x.assistant_id=a.id JOIN projects p ON p.id=x.project_id
+               WHERE x.project_id=? AND a.tg_id=? AND a.removed IS NULL AND p.status != 'cancelled'""", int(pid or 0), t)]
+
+    def assistants_of(self, tg_id):
+        return self.crm.q("SELECT * FROM assistants WHERE tg_id=? AND removed IS NULL ORDER BY id", int(tg_id or 0))
+
     def viewer(self, tg_id, pid, designer=False):
-        """Кто смотрит этот проект: студия, наблюдатель, заказчик, руководитель подрядчика, работник (может быть несколько ролей)."""
+        """Кто смотрит этот проект: студия, наблюдатель, заказчик, руководитель подрядчика, работник, сотрудник студии
+        (staff) — может быть несколько ролей."""
         t = int(tg_id or 0)
         if designer:
-            return {"tg": t, "studio": True, "observer": False, "client": None, "heads": set(), "crew": set()}
+            return {"tg": t, "studio": True, "observer": False, "client": None, "heads": set(), "crew": set(), "staff": set()}
         return {"tg": t, "studio": False, "observer": self.is_observer(t), "client": self.client_of(t, pid),
-                "heads": set(self.contractor_ids(t, pid)), "crew": set(self.crew_ids(t, pid))}
+                "heads": set(self.contractor_ids(t, pid)), "crew": set(self.crew_ids(t, pid)), "staff": set(self.assistant_ids(t, pid))}
 
     def has_cabinet(self, tg_id):
         """Есть ли у Telegram кабинет: заказчик проекта (не отменённого), подключённый подрядчик, работник бригады
@@ -156,7 +185,8 @@ class Portal:
         t = int(tg_id or 0)
         if not t:
             return False
-        if self.crm.one("SELECT id FROM contractors WHERE tg_id=?", t) or self.crm.one("SELECT id FROM crew WHERE tg_id=? AND removed IS NULL", t):
+        if self.crm.one("SELECT id FROM contractors WHERE tg_id=?", t) or self.crm.one("SELECT id FROM crew WHERE tg_id=? AND removed IS NULL", t) \
+                or self.crm.one("SELECT id FROM assistants WHERE tg_id=? AND removed IS NULL", t):
             return True
         return any("client" in p["roles"] for p in self.projects_for(t))
 
@@ -188,6 +218,9 @@ class Portal:
         k = t["kind"]
         if v["studio"]:
             return "studio", STUDIO["designer"]["ru"]
+        if v.get("staff"):                               # сотрудник студии — от имени студии, со своим именем
+            a = self.crm.one("SELECT name FROM assistants WHERE id=?", sorted(v["staff"])[0]) or {}
+            return "assistant", a.get("name") or ""
         if v["client"] and (k == "client" or (k == "pc" and t["contractor_id"] not in v["heads"])):
             return "client", v["client"].get("name") or ""
         head = None
@@ -210,7 +243,7 @@ class Portal:
         raise CrmError("Нет доступа")
 
     def projects_for(self, tg_id):
-        """Проекты в кабинете и роли в них: client, contractor, worker, observer (отменённые проекты — нет)."""
+        """Проекты в кабинете и роли в них: client, contractor, worker, assistant, observer (отменённые проекты — нет)."""
         t = int(tg_id or 0)
         out = {}
         cols = "p.id, p.title, p.number, p.city, p.status, p.started"
@@ -229,6 +262,9 @@ class Portal:
         add(self.crm.q(f"""SELECT DISTINCT {cols} FROM projects p JOIN project_crew x ON x.project_id=p.id JOIN crew w ON w.id=x.crew_id
                            JOIN project_contractors l ON l.project_id=p.id AND l.contractor_id=w.contractor_id
                            WHERE p.status != 'cancelled' AND w.tg_id=? AND w.removed IS NULL""", t), "worker")
+        add(self.crm.q(f"""SELECT DISTINCT {cols} FROM projects p JOIN project_assistants x ON x.project_id=p.id
+                           JOIN assistants a ON a.id=x.assistant_id WHERE p.status != 'cancelled' AND a.tg_id=? AND a.removed IS NULL""", t),
+            "assistant")
         if self.is_observer(t):
             add(self.crm.q(f"SELECT {cols} FROM projects p WHERE p.status != 'cancelled'"), "observer")
         for p in out.values():
@@ -237,13 +273,13 @@ class Portal:
         return sorted(out.values(), key=lambda p: (p["status"] not in ("active", "paused"), -(p["id"])))
 
     # ---------- приглашения и привязка Telegram ----------
-    TABLES = {"client": "clients", "contractor": "contractors", "crew": "crew"}
+    TABLES = {"client": "clients", "contractor": "contractors", "crew": "crew", "assistant": "assistants"}
 
     def _record(self, kind, ref_id):
         if kind not in self.TABLES:
             raise CrmError("Неизвестно, кого приглашать")
         rec = self.crm.one(f"SELECT * FROM {self.TABLES[kind]} WHERE id=?", int(ref_id or 0))
-        if not rec or (kind == "crew" and rec["removed"]):
+        if not rec or (kind in ("crew", "assistant") and rec["removed"]):
             raise CrmError("Человек не найден")
         if kind == "contractor" and rec["observer"]:
             raise CrmError("Наблюдателю ссылка не нужна — он уже подключён")
@@ -258,6 +294,9 @@ class Portal:
             raise CrmError("Сначала добавьте заказчика в проект")
         if kind == "contractor" and pid and not self.crm.one("SELECT id FROM project_contractors WHERE project_id=? AND contractor_id=?",
                                                              pid, rec["id"]):
+            pid = None
+        if kind == "assistant" and pid and not self.crm.one("SELECT 1 FROM project_assistants WHERE project_id=? AND assistant_id=?",
+                                                            pid, rec["id"]):
             pid = None
         self.crm.run("DELETE FROM invites WHERE expires < ?", (datetime.now(timezone.utc) - timedelta(days=30)).isoformat())
         self.crm.run("DELETE FROM invites WHERE kind=? AND ref_id=? AND used_by IS NULL", kind, rec["id"])
@@ -284,7 +323,7 @@ class Portal:
             return None
         table = self.TABLES.get(inv["kind"])
         rec = self.crm.one(f"SELECT * FROM {table} WHERE id=?", inv["ref_id"]) if table else None
-        if not rec or (inv["kind"] == "crew" and rec["removed"]):
+        if not rec or (inv["kind"] in ("crew", "assistant") and rec["removed"]):
             return None
         self.crm.run(f"UPDATE {table} SET tg_id=?, tg_name=?, tg_since=?, updated=? WHERE id=?",
                      int(tg_id), _text(tg_name, 120), now(), now(), rec["id"])
@@ -382,6 +421,63 @@ class Portal:
             self.crm.audit(who, "add" if on else "delete", "pcrew", w["id"], {"project_id": pid, "crew_id": w["id"]})
         return {"changed": bool(on) != was, "crew": w}
 
+    # ---------- сотрудники студии ----------
+    def assistant_get(self, aid):
+        a = self.crm.one("SELECT * FROM assistants WHERE id=? AND removed IS NULL", int(aid or 0))
+        if not a:
+            raise CrmError("Сотрудник не найден")
+        return a
+
+    def assistant_save(self, d, who):
+        """Новый сотрудник студии или правка: имя, должность, телефон, e-mail, заметка (её видит только Ирина)."""
+        name = _text(d.get("name"), 120)
+        if not name:
+            raise CrmError("Напишите имя сотрудника")
+        f = (name, _text(d.get("position"), 80), _text(d.get("phone"), 60), _text(d.get("email"), 120), _text(d.get("note"), 1000))
+        if d.get("id"):
+            a = self.assistant_get(d["id"])
+            self.crm.run("UPDATE assistants SET name=?, position=?, phone=?, email=?, note=?, updated=? WHERE id=?", *f, now(), a["id"])
+            self.crm.audit(who, "edit", "assistant", a["id"], {"name": name})
+            return a["id"]
+        aid = self.crm.run("INSERT INTO assistants(name, position, phone, email, note, created_by, created, updated) VALUES(?, ?, ?, ?, ?, ?, ?, ?)",
+                           *f, _text(who, 120), now(), now())
+        self.crm.audit(who, "add", "assistant", aid, {"name": name})
+        return aid
+
+    def assistant_remove(self, aid, who):
+        """Убрать сотрудника: доступ к боту закрывается, со всех проектов снимается. Возвращает его Telegram ID."""
+        a = self.assistant_get(aid)
+        self.crm.run("UPDATE assistants SET removed=?, tg_id=NULL, updated=? WHERE id=?", now(), now(), a["id"])
+        self.crm.run("DELETE FROM project_assistants WHERE assistant_id=?", a["id"])
+        self.crm.run("DELETE FROM invites WHERE kind='assistant' AND ref_id=? AND used_by IS NULL", a["id"])
+        self.crm.audit(who, "delete", "assistant", a["id"], {"name": a["name"]})
+        return a["tg_id"]
+
+    def assistant_assign(self, pid, aid, on, who):
+        """Сотрудник на этом проекте (или нет)."""
+        a = self.assistant_get(aid)
+        pid = int(pid or 0)
+        if not self.crm.one("SELECT id FROM projects WHERE id=?", pid):
+            raise CrmError("Проект не найден")
+        was = bool(self.crm.one("SELECT 1 FROM project_assistants WHERE project_id=? AND assistant_id=?", pid, a["id"]))
+        if on and not was:
+            self.crm.run("INSERT INTO project_assistants(project_id, assistant_id, created_by, created) VALUES(?, ?, ?, ?)", pid, a["id"], who, now())
+        elif not on and was:
+            self.crm.run("DELETE FROM project_assistants WHERE project_id=? AND assistant_id=?", pid, a["id"])
+        if bool(on) != was:
+            self.crm.audit(who, "add" if on else "delete", "passist", a["id"], {"project_id": pid, "assistant_id": a["id"], "name": a["name"]})
+        return {"changed": bool(on) != was, "assistant": a}
+
+    def project_assistants(self, pid):
+        """Сотрудники студии для проекта в «Студии»: все, assigned — назначен сюда."""
+        here = {r["assistant_id"] for r in self.crm.q("SELECT assistant_id FROM project_assistants WHERE project_id=?", int(pid))}
+        out = []
+        for a in self.crm.q("SELECT * FROM assistants WHERE removed IS NULL ORDER BY name COLLATE NOCASE"):
+            inv = self.crm.one("SELECT expires FROM invites WHERE kind='assistant' AND ref_id=? AND used_by IS NULL AND expires > ?", a["id"], now())
+            out.append(dict(_pick(a, ("id", "name", "position", "phone", "email", "tg_id", "tg_name")), tg=bool(a["tg_id"]),
+                            assigned=a["id"] in here, invite_until=inv["expires"] if inv else None))
+        return out
+
     def participants(self, pid):
         """Все подключённые к проекту (для Ирины и наблюдателя): заказчики, подрядчики (без наблюдателя) и их бригада."""
         pid = int(pid)
@@ -393,7 +489,7 @@ class Portal:
             if any(x["id"] == k["id"] for x in out):
                 continue
             out.append({"id": k["id"], "link_id": k["link_id"], "name": k["name"], "trade": k["link_trade"] or k["trade"] or "",
-                        "company": k["company"] or "", "tg": bool(k["tg_id"]), "tg_name": k["tg_name"] or "",
+                        "kind": k["kind"] or "", "company": k["company"] or "", "tg": bool(k["tg_id"]), "tg_name": k["tg_name"] or "",
                         "crew": [dict(w, projects=None) for w in self.team(k["id"], pid)]})
         return {"clients": clients, "contractors": out}
 
@@ -471,7 +567,7 @@ class Portal:
         """Что этот человек может с разговором: write — читать и писать, read — только читать, None — не видит."""
         if not t:
             return None
-        if v["studio"]:
+        if v["studio"] or v.get("staff"):               # сотрудник студии — во всех разговорах своих проектов
             return "write"
         best = "read" if v["observer"] else None
         k = t["kind"]
@@ -590,7 +686,7 @@ class Portal:
                            _text(author_name, 120), text, fid, now())
         if fid:
             self.crm.run("UPDATE files SET thread_id=? WHERE id=?", t["id"], fid)
-        if author_kind == "studio" and t["kind"] == "pc" and not t["studio_joined"]:
+        if author_kind in ("studio", "assistant") and t["kind"] == "pc" and not t["studio_joined"]:
             self.crm.run("UPDATE threads SET studio_joined=? WHERE id=?", now(), t["id"])   # студия вступила в разговор
         self.crm.run("UPDATE threads SET updated=? WHERE id=?", now(), t["id"])
         self.mark_read(t["id"], 0 if author_kind == "studio" else author_tg, mid)
@@ -682,11 +778,15 @@ class Portal:
             for cid in heads_of_crew:
                 c = self.crm.one("SELECT tg_id, name FROM contractors WHERE id=?", cid or 0) or {}
                 add(c.get("tg_id"), "contractor", c.get("name"), False)
+        watching = k == "pc" and not t["studio_joined"]            # заказчик с подрядчиком, студия ещё не вступила — тихо
+        for a in self.crm.q("""SELECT a.tg_id, a.name FROM assistants a JOIN project_assistants x ON x.assistant_id=a.id
+                               WHERE x.project_id=? AND a.removed IS NULL AND a.tg_id IS NOT NULL""", t["project_id"]):
+            add(a["tg_id"], "assistant", a["name"], author_kind not in ("studio", "assistant") and not watching)
         for o in self.observers():
             add(o["tg_id"], "observer", o["name"], False)
         studio = None
-        if author_kind != "studio":
-            studio = {"loud": not (k == "pc" and not t["studio_joined"])}
+        if author_kind != "studio":                                 # сообщение сотрудника студии Ирине — тихой копией
+            studio = {"loud": author_kind != "assistant" and not watching}
         return {"thread": t, "studio": studio, "people": list(res.values())}
 
     # ---------- документы ----------
@@ -698,6 +798,8 @@ class Portal:
         if v["studio"] or v["observer"]:
             return True
         cat = f["category"]
+        if v.get("staff"):                           # сотрудник студии: всё, кроме «Другое» (счета, договоры) и фото товаров
+            return cat not in ("goods", "other")
         if cat == "goods":
             return False
         if f.get("thread_id"):                       # вложение разговора — участникам; заказчику — если студия открыла
@@ -770,7 +872,12 @@ class Portal:
             c = self.crm.one("SELECT name, trade FROM contractors WHERE id=?", f["owner_contractor"]) or {}
             x["owner_name"] = c.get("name") or ""
             x["owner_role"] = c.get("trade") or ""
-        x["mine"] = bool(f.get("owner_crew") in v["crew"] or (f.get("owner_kind") == "contractor" and f.get("owner_contractor") in v["heads"]))
+        if f.get("owner_assistant"):
+            a = self.crm.one("SELECT name, position FROM assistants WHERE id=?", f["owner_assistant"]) or {}
+            x["owner_name"] = a.get("name") or ""
+            x["owner_role"] = a.get("position") or ""
+        x["mine"] = bool(f.get("owner_crew") in v["crew"] or (f.get("owner_kind") == "contractor" and f.get("owner_contractor") in v["heads"])
+                         or (f.get("owner_assistant") and f.get("owner_assistant") in (v.get("staff") or set())))
         x["can_edit"] = bool(x["mine"] or (f["category"] == "work" and f.get("owner_contractor") in v["heads"]))
         if v["studio"] or v["observer"]:
             x["audience"] = self.audience(f)
@@ -806,10 +913,27 @@ class Portal:
                      owner[0], owner[1], owner[2], vis, _text(title, 200), f["id"])
         return self._file_out(self.crm.one("SELECT * FROM files WHERE id=?", f["id"]), v)
 
+    STAFF_CATS = tuple(c for c, _ in FILE_CATS if c != "other")      # куда сотрудник студии добавляет файлы
+
+    def upload_studio(self, v, pid, cat, name, stream, size, mime, vis, title, who):
+        """Файл от сотрудника студии — в раздел проекта (обмерный план, визуализации, документация…). vis: default — видят,
+        как обычно в этом разделе (заказчик, подрядчики); studio — только студия, заказчику Ирина откроет сама."""
+        aid = sorted(v.get("staff") or [0])[0]
+        if not aid:
+            raise CrmError("Нет доступа")
+        if cat not in self.STAFF_CATS:
+            raise CrmError("Выберите раздел")
+        if vis not in ("default", "studio"):
+            raise CrmError("Выберите, кто видит файл")
+        f = self.crm.add_file(pid, cat, name, stream, size, mime, who)
+        self.crm.run("UPDATE files SET owner_kind='assistant', owner_assistant=?, see_client=?, title=? WHERE id=?",
+                     aid, 0 if vis == "studio" else None, _text(title, 200), f["id"])
+        return self._file_out(self.crm.one("SELECT * FROM files WHERE id=?", f["id"]), v)
+
     def edit_file(self, v, d, who):
         """Свой документ (или документ своей бригады — у подрядчика): кто видит, подпись, удалить."""
-        f = self.crm.one("SELECT * FROM files WHERE id=? AND category='work'", int(d.get("id") or 0))
-        if not f:
+        f = self.crm.one("SELECT * FROM files WHERE id=?", int(d.get("id") or 0))
+        if not f or (f["category"] != "work" and f.get("owner_kind") != "assistant"):
             raise CrmError("Файл не найден")
         x = self._file_out(f, v)
         if not x["can_edit"]:
@@ -817,6 +941,13 @@ class Portal:
         if d.get("delete"):
             self.crm.delete("file", f["id"], who)
             return None
+        if f.get("owner_kind") == "assistant":       # файл сотрудника студии: видят как обычно / только студия
+            vis = d.get("vis", "studio" if f["see_client"] == 0 else "default")
+            if vis not in ("default", "studio"):
+                raise CrmError("Выберите, кто видит файл")
+            self.crm.run("UPDATE files SET see_client=?, title=? WHERE id=?", 0 if vis == "studio" else None,
+                         _text(d.get("title", f["title"]), 200), f["id"])
+            return self._file_out(self.crm.one("SELECT * FROM files WHERE id=?", f["id"]), v)
         vis = d.get("vis", f["vis"])
         if vis not in (VIS_HEAD if f["owner_kind"] == "contractor" else VIS_CREW):
             raise CrmError("Выберите, кто видит документ")
@@ -863,14 +994,14 @@ class Portal:
             raise CrmError("Проект недоступен")
         t = int(viewer_tg or 0)
         v = self.viewer(t, pid) if t else {"tg": 0, "studio": False, "observer": False, "client": {"id": 0}, "heads": set(), "crew": set()}
-        v = dict(v, client=v["client"] or {"id": 0}, heads=set(), crew=set(), observer=False)   # смотрит именно как заказчик
+        v = dict(v, client=v["client"] or {"id": 0}, heads=set(), crew=set(), observer=False, staff=set())   # смотрит именно как заказчик
         contractors = []
         for k in P["contractors"]:
             if k.get("observer") or any(c["id"] == k["id"] for c in contractors):
                 continue
             stages = [_pick(s, self.STAGE_KEYS) for x in P["contractors"] if x["id"] == k["id"] for s in x["money"]["stages"]]
             contractors.append({"id": k["id"], "link_id": k["link_id"], "name": k["name"], "trade": k["link_trade"] or k["trade"] or "",
-                                "company": k["company"] or "", "phone": k["phone"] or "", "email": k["email"] or "",
+                                "kind": k.get("kind") or "", "company": k["company"] or "", "phone": k["phone"] or "", "email": k["email"] or "",
                                 "messenger": k.get("messenger") or "", "contact_pref": k["contact_pref"] or "",
                                 "can_write": bool(k.get("tg_id")), "stages": stages})
         files = self.files_for(v, p["id"])
@@ -903,11 +1034,11 @@ class Portal:
                 x["mine"] = s.get("src") == "contractor"
                 stages.append(x)
             mine.append({"id": k["id"], "link_id": k["link_id"], "name": k["name"], "trade": k["link_trade"] or k["trade"] or "",
-                         "stages": stages, "money": _pick(m, ("currency", "order", "expected", "received", "debt", "unknown")),
+                         "kind": k.get("kind") or "", "stages": stages, "money": _pick(m, ("currency", "order", "expected", "received", "debt", "unknown")),
                          "bonuses": bonuses.get(k["link_id"], [])})
         if not mine:
             raise CrmError("Проект недоступен")
-        v = {"tg": int(viewer_tg or 0), "studio": False, "observer": False, "client": None, "heads": ids, "crew": set()}
+        v = {"tg": int(viewer_tg or 0), "studio": False, "observer": False, "client": None, "heads": ids, "crew": set(), "staff": set()}
         team = []
         for cid in sorted(ids):
             for w in self.team(cid, pid):
@@ -930,10 +1061,12 @@ class Portal:
             link = self.crm.one("SELECT trade FROM project_contractors WHERE project_id=? AND contractor_id=?", p["id"], c.get("id") or 0) or {}
             me.append({"id": w["id"], "name": w["name"], "position": w["position"] or "", "head": c.get("name") or ""})
             if not any(h["name"] == c.get("name") for h in heads):
-                heads.append({"name": c.get("name") or "", "trade": link.get("trade") or c.get("trade") or "", "company": c.get("company") or "",
+                heads.append({"name": c.get("name") or "", "trade": link.get("trade") or c.get("trade") or "", "kind": c.get("kind") or "",
+                              "company": c.get("company") or "",
                               "phone": c.get("phone") or "", "email": c.get("email") or "", "messenger": c.get("messenger") or "",
                               "contact_pref": c.get("contact_pref") or ""})
-        v = {"tg": int(viewer_tg or 0), "studio": False, "observer": False, "client": None, "heads": set(), "crew": set(int(x) for x in crew_ids)}
+        v = {"tg": int(viewer_tg or 0), "studio": False, "observer": False, "client": None, "heads": set(), "crew": set(int(x) for x in crew_ids),
+             "staff": set()}
         return {"role": "worker", "project": _pick(p, ("id", "number", "title", "city", "country", "address", "area", "status", "started")),
                 "me": me, "heads": heads, "files": self.files_for(v, p["id"]), "studio": STUDIO}
 
@@ -942,9 +1075,26 @@ class Portal:
         p = self.crm.one("SELECT * FROM projects WHERE id=?", int(pid))
         if not p or p["status"] == "cancelled":
             raise CrmError("Проект недоступен")
-        v = {"tg": int(viewer_tg or 0), "studio": False, "observer": True, "client": None, "heads": set(), "crew": set()}
+        v = {"tg": int(viewer_tg or 0), "studio": False, "observer": True, "client": None, "heads": set(), "crew": set(), "staff": set()}
         return {"role": "observer", "project": _pick(p, self.PROJECT_KEYS), "participants": self.participants(pid),
                 "files": self.files_for(v, pid), "threads": self.threads_for(v, pid), "studio": STUDIO}
+
+    # ---------- что видит сотрудник студии: назначенный проект без денег и контактов ----------
+    def assistant_view(self, pid, assistant_ids, viewer_tg=None):
+        """Проект без денег (ни договора, ни оплат, ни сумм работ и поставок, ни бонусов) и без контактов заказчиков
+        и подрядчиков: участники по именам, документация (кроме «Другое»), документы подрядчиков, все разговоры."""
+        p = self.crm.one("SELECT * FROM projects WHERE id=?", int(pid))
+        if not p or p["status"] == "cancelled" or not assistant_ids:
+            raise CrmError("Проект недоступен")
+        v = {"tg": int(viewer_tg or 0), "studio": False, "observer": False, "client": None, "heads": set(), "crew": set(),
+             "staff": set(int(x) for x in assistant_ids)}
+        part = self.participants(pid)
+        for k in part["contractors"]:
+            k["crew"] = [_pick(w, ("id", "name", "position", "tg", "assigned")) for w in k["crew"] if w["assigned"]]
+        part["clients"] = [_pick(c, ("id", "name", "tg", "main")) for c in part["clients"]]
+        me = [_pick(self.assistant_get(a), ("id", "name", "position")) for a in sorted(v["staff"])]
+        return {"role": "assistant", "project": _pick(p, self.PROJECT_KEYS), "participants": part, "me": me,
+                "files": self.files_for(v, p["id"]), "studio": STUDIO, "staff_cats": list(self.STAFF_CATS)}
 
     # ---------- этапы: подрядчик вносит сумму, заказчик подтверждает ----------
     def contractor_stage(self, tg_id, d, who):
@@ -1056,7 +1206,7 @@ class Portal:
         for f in v.get("files", []):                  # кто прислал документ и подпись к нему
             tr(f, "owner_role")
             tr(f, "title")
-        for k in v.get("contractors", []) + v.get("mine", []) + v.get("heads", []):
+        for k in v.get("contractors", []) + v.get("mine", []) + v.get("heads", []) + (v.get("participants") or {}).get("contractors", []):
             tr(k, "trade")
             for s in k.get("stages", []):
                 tr(s, "title")
