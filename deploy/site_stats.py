@@ -69,9 +69,9 @@ EXCLUDE_FILE = os.path.join(STATS_DIR, "exclude.json")   # «свои» адре
 OWN_FILE = os.path.join(STATS_DIR, "own_devices.json")    # откуда студия открывала «Графики» — эти визиты тоже свои
 OWN_WINDOW = 3 * 3600                                     # …за 3 часа до и после открытия
 VERSION_FILE = os.path.join(STATS_DIR, "version")
-STATS_VERSION = "4"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
+STATS_VERSION = "5"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
                               # (2: отсев сканеров; 3: время на сайте и роботы без оформления и времени;
-                              #  4: страница — не больше 5 минут)
+                              #  4: страница — не больше 5 минут; 5: роботы без оформления и заголовков — и в старых днях)
 SECRET_FILE = os.path.join(STATS_DIR, "secret")           # соль для обезличенного ключа посетителя, с сервера не уходит
 REPORT_HOUR = 9
 APP_URL = os.environ.get("STATS_APP_URL", "https://dumskaya-design.com/api/stats/app")   # мини-приложение с графиками
@@ -711,14 +711,17 @@ def navigates(h):
     return bool(header(h, "Sec-Fetch-Mode") or header(h, "Sec-Fetch-Dest"))
 
 
-def quiet_robot(v, beacons, now):
+def quiet_robot(v, beacons, now, timed=True):
     """Не загрузил ни оформления, ни фото и не прислал время на странице — так ведут себя программы, а не браузеры.
-    Без заголовков перехода браузера — робот сразу; с ними — если и через 30 минут после последней страницы времени нет
-    (вернувшийся посетитель берёт оформление из кэша, но время на странице присылает)."""
+    Без заголовков перехода браузера (Sec-Fetch-*) — робот сразу: этот признак работает и для дней, когда страницы
+    ещё не присылали время (timed=False). С заголовками — робот, если и через 30 минут после последней страницы
+    времени нет; только когда время уже присылают (вернувшийся посетитель берёт оформление из кэша, но время присылает)."""
     if v["assets"] or beacons:
         return False
+    if not v["nav"]:
+        return True
     last = max((t for t, k, _ in v["hits"] if k in ("view", "404")), default=0)
-    return not v["nav"] or now - last > PENDING
+    return timed and now - last > PENDING
 
 
 def split_key(k):
@@ -764,15 +767,15 @@ class Agg:
         v["hits"].append((ts or 0, kind, path))
 
     def robots(self, times=None, now=None):
-        """Ключи роботов: сканеры (is_robot) и «молчащие» программы (quiet_robot) — последние только среди тех,
-        кто заходил, когда страницы уже присылали время (раньше его не было ни у кого)."""
+        """Ключи роботов: сканеры (is_robot) и «молчащие» программы (quiet_robot); правило «30 минут без времени» —
+        только для тех, кто заходил, когда страницы уже присылали время (раньше его не было ни у кого)."""
         now, times, since = now or time.time(), times or {}, beacon_start()
         out = set()
         for k, v in self.keys.items():
             if not v["hits"]:
                 continue
-            if is_robot(v["hits"]) or (since is not None and min(t for t, _, _ in v["hits"]) >= since
-                                       and quiet_robot(v, times.get(vkey(*split_key(k))), now)):
+            timed = since is not None and min(t for t, _, _ in v["hits"]) >= since
+            if is_robot(v["hits"]) or quiet_robot(v, times.get(vkey(*split_key(k))), now, timed):
                 out.add(k)
         return out
 
@@ -1359,8 +1362,8 @@ def web_live(now=None):
     for key in list(views):                                   # роботы, назвавшиеся браузером, — не посетители
         m = meta[key]
         beacons = [x for x in events.get(vkey(*split_key(key)), []) if x[1] == "time"]
-        if is_robot(m["hits"]) or (started is not None and min(t for t, _, _ in m["hits"]) >= started
-                                   and quiet_robot(m, beacons, now)):
+        timed = started is not None and min(t for t, _, _ in m["hits"]) >= started
+        if is_robot(m["hits"]) or quiet_robot(m, beacons, now, timed):
             del views[key]
     leads = leads_between(since, now + 1)
     sessions, last = [], None
