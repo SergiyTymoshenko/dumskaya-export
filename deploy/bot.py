@@ -60,9 +60,13 @@ ADMIN_COMMANDS = [{"command": "users", "description": "Пользователи 
 # кнопки под полем ввода у разработчика и дизайнера (нажатие = команда); «Графики» — кнопка меню слева от поля
 BTN_SITE, BTN_USERS, BTN_PARTNERS = "🌐 Сайт", "👥 Пользователи", "🤝 Партнёры"
 ADMIN_BUTTONS = {BTN_SITE: "/site", BTN_USERS: "/users", BTN_PARTNERS: "/partners"}
-ADMIN_KEYBOARD = {"keyboard": [[{"text": BTN_USERS}, {"text": BTN_PARTNERS}], [{"text": BTN_SITE}]],
-                  "resize_keyboard": True, "is_persistent": True}
-KEYBOARD_VERSION = "2"               # сменить — и кнопки придут всем заново (если поменялся набор)
+# «Сайт» (работает ли сайт) — только у разработчика
+KEYBOARDS = {
+    "owner": {"keyboard": [[{"text": BTN_USERS}, {"text": BTN_PARTNERS}], [{"text": BTN_SITE}]],
+              "resize_keyboard": True, "is_persistent": True},
+    "designer": {"keyboard": [[{"text": BTN_USERS}, {"text": BTN_PARTNERS}]], "resize_keyboard": True, "is_persistent": True},
+}
+KEYBOARD_VERSION = {"owner": "2", "designer": "3"}   # сменить — и кнопки этой роли придут заново
 SUPPLIER_COMMANDS = [{"command": "team", "description": "Мои сотрудники"},
                      {"command": "invite", "description": "Пригласить сотрудника"},
                      {"command": "help", "description": "Что умеет бот"}]
@@ -300,7 +304,8 @@ class Bot:
     def set_commands(self, u):
         """Меню команд конкретного человека: у студии — /users, /partners; у поставщика — /team, /invite."""
         scope = {"type": "chat", "chat_id": u["tg_id"]}
-        cmds = ADMIN_COMMANDS if self.is_admin(u) else SUPPLIER_COMMANDS if self.is_supplier(u) else None
+        cmds = (ADMIN_COMMANDS if u["role"] == "owner" else [c for c in ADMIN_COMMANDS if c["command"] != "site"]) \
+            if self.is_admin(u) else SUPPLIER_COMMANDS if self.is_supplier(u) else None
         if cmds:
             self.api("setMyCommands", scope=scope, commands=cmds)
         else:
@@ -323,8 +328,8 @@ class Bot:
         """Для отправки сообщения разработчику или дизайнеру — с кнопками студии под полем ввода."""
         if not self.is_admin(u):
             return {}
-        self.s.put(f"kbd:{u['tg_id']}", KEYBOARD_VERSION)
-        return {"reply_markup": ADMIN_KEYBOARD}
+        self.s.put(f"kbd:{u['tg_id']}", KEYBOARD_VERSION[u["role"]])
+        return {"reply_markup": KEYBOARDS[u["role"]]}
 
     def sync_buttons(self, u):
         """Кнопки под полем ввода и кнопка «Графики» слева — у разработчика и дизайнера; у остальных — убрать."""
@@ -333,8 +338,9 @@ class Bot:
             url = self.stats_app_url()
             self.api("setChatMenuButton", chat_id=uid, menu_button=(
                 {"type": "web_app", "text": "Графики", "web_app": {"url": url}} if url else {"type": "commands"}))
-            if self.s.get(flag) != KEYBOARD_VERSION:
-                self.send(uid, "Кнопки студии — внизу экрана: пользователи, партнёры и сайт."
+            if self.s.get(flag) != KEYBOARD_VERSION[u["role"]]:
+                self.send(uid, "Кнопки студии — внизу экрана: пользователи и партнёры"
+                          + (", сайт." if u["role"] == "owner" else ".")
                           + (" Статистика посетителей — кнопка «Графики» слева от поля ввода." if url else ""),
                           **self.keyboard_extra(u))
         elif self.s.get(flag):
@@ -365,7 +371,7 @@ class Bot:
             return self.join_invite(uid, name, f.get("username"), u, arg[4:])
         if not u or u["status"] != "active":
             return self.stranger(uid, name, f.get("username"), u)
-        if text in ADMIN_BUTTONS and self.is_admin(u):     # кнопка под полем ввода = команда
+        if text in ADMIN_BUTTONS and self.is_admin(u) and (text != BTN_SITE or u["role"] == "owner"):   # кнопка = команда
             self.s.drop(f"await:{uid}")
             cmd, arg = ADMIN_BUTTONS[text], ""
         if cmd == "/cancel":
@@ -379,7 +385,7 @@ class Bot:
             return self.users_list(uid)
         if cmd == "/partners" and self.is_admin(u):
             return self.partners_list(uid)
-        if cmd == "/site" and self.is_admin(u):
+        if cmd == "/site" and u["role"] == "owner":
             mon = getattr(self, "monitor", None)
             return self.send(uid, mon.status() if mon else "Сторож сайта не запущен.")
         if cmd == "/team" and self.is_supplier(u):
@@ -432,7 +438,7 @@ class Bot:
             shop = ("Товары магазина студии закреплены за вами — заявки на них тоже приходят сюда.\n\n"
                     if mgr and mgr["tg_id"] == u["tg_id"] else "")
             return head + ("Сюда приходят заявки с сайта, уведомления о заявках партнёрам и запросы на доступ к боту.\n"
-                           + shop + "\nКнопки внизу экрана: 👥 Пользователи, 🤝 Партнёры, 🌐 Сайт (работает ли); "
+                           + shop + "\nКнопки внизу экрана: 👥 Пользователи, 🤝 Партнёры; "
                            "статистика посетителей — кнопка «Графики» слева от поля ввода.")
         if role == "supplier":
             return head + ("Сюда будут приходить заявки с сайта dumskaya-design.com на ваши товары — вам "
