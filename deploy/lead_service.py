@@ -65,7 +65,7 @@ def log(msg):
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
-from site_stats import SiteStats, check_init_data, web_data  # noqa: E402
+from site_stats import SiteStats, check_init_data, exclude_add, exclude_remove, me_data, web_data  # noqa: E402
 from translate import lang_from, provider, translate_lead  # noqa: E402
 
 BOT = None
@@ -158,9 +158,12 @@ class Handler(BaseHTTPRequestHandler):
             except OSError:
                 return self.reply(404, {"ok": False})
             return self.reply(200, None, html_page=page, telegram_frame=True)
+        if path.rstrip("/") == "/api/stats/me":            # «Не считать нас»: с какого адреса открыто приложение
+            if not self.stats_admin():
+                return self.reply(403, {"ok": False})
+            return self.reply(200, me_data(self.client_ip()))
         if path.rstrip("/") == "/api/stats/data":
-            uid = check_init_data(self.headers.get("X-Telegram-Init-Data", ""), TG_TOKEN)
-            if not uid or not BOT or not BOT.is_admin(BOT.user(uid)):
+            if not self.stats_admin():
                 return self.reply(403, {"ok": False})
             days = dict(urllib.parse.parse_qsl(query)).get("days", "7")
             try:
@@ -176,7 +179,33 @@ class Handler(BaseHTTPRequestHandler):
                                     "email": bool(SMTP_USER and SMTP_PASSWORD)})
         self.reply(404, {"ok": False})
 
+    def stats_admin(self):
+        """Разработчик или дизайнер студии — по подписи Telegram из мини-приложения; иначе None."""
+        uid = check_init_data(self.headers.get("X-Telegram-Init-Data", ""), TG_TOKEN)
+        u = BOT.user(uid) if uid and BOT else None
+        return u if u and BOT.is_admin(u) else None
+
     def do_POST(self):
+        if self.path.split("?")[0].rstrip("/") == "/api/stats/exclude":
+            u = self.stats_admin()
+            if not u:
+                return self.reply(403, {"ok": False})
+            try:
+                data = json.loads(self.rfile.read(min(int(self.headers.get("Content-Length") or 0), 2000)) or b"{}")
+            except ValueError:
+                return self.reply(400, {"ok": False})
+            ip = self.client_ip()
+            try:
+                if data.get("action") == "add":           # адрес берётся из самого запроса, а не из присланных данных
+                    exclude_add(ip, u["name"] or str(u["tg_id"]))
+                elif data.get("action") == "remove":
+                    exclude_remove(str(data.get("net") or ""))
+                else:
+                    return self.reply(400, {"ok": False})
+            except ValueError:
+                return self.reply(400, {"ok": False})
+            log(f"статистика: свои адреса изменены ({data.get('action')}) — {u['name']}")
+            return self.reply(200, me_data(ip))
         if self.path.split("?")[0].rstrip("/") != "/api/lead":
             return self.reply(404, {"ok": False})
         length = int(self.headers.get("Content-Length") or 0)

@@ -28,6 +28,7 @@ import gzip
 import hashlib
 import hmac
 import html
+import ipaddress
 import json
 import os
 import re
@@ -49,6 +50,7 @@ LOG_GLOB = os.environ.get("SITE_LOG_GLOB", "/var/log/caddy/dumskaya*.log*")
 SITE_DIR = os.environ.get("SITE_DIR", "/var/www/dumskaya/site")
 LEADS_FILE = os.environ.get("LEADS_FILE", os.path.join(APP, "leads.jsonl"))
 STATS_DIR = os.environ.get("STATS_DIR", os.path.join(APP, "stats"))
+EXCLUDE_FILE = os.path.join(STATS_DIR, "exclude.json")   # «свои» адреса (дома у студии) — их визиты не считаются
 REPORT_HOUR = 9
 APP_URL = os.environ.get("STATS_APP_URL", "https://dumskaya-design.com/api/stats/app")   # мини-приложение с графиками
 KEEP_DAYS = 800
@@ -155,6 +157,141 @@ def entries(since_ts, until_ts):
                     yield ts, e
 
 
+# ---------- свои адреса (не считать) ----------
+_excl = {"mtime": None, "nets": [], "items": []}
+_excl_hit = {}
+
+
+def excluded_list():
+    """Адреса, визиты с которых не считаются: [{net, who, added, seen}] из ~/dumskaya/stats/exclude.json."""
+    try:
+        mtime = os.stat(EXCLUDE_FILE).st_mtime
+    except OSError:
+        mtime = None
+    if mtime != _excl["mtime"]:
+        items = []
+        if mtime is not None:
+            try:
+                with open(EXCLUDE_FILE, encoding="utf-8") as fh:
+                    items = json.load(fh)
+            except (OSError, ValueError):
+                items = []
+        nets = []
+        for it in items:
+            try:
+                nets.append(ipaddress.ip_network(it["net"], strict=False))
+            except (ValueError, KeyError, TypeError):
+                pass
+        _excl.update(mtime=mtime, nets=nets, items=items)
+        _excl_hit.clear()
+    return _excl["items"]
+
+
+def is_excluded(ip):
+    if not ip:
+        return False
+    excluded_list()
+    if not _excl["nets"]:
+        return False
+    hit = _excl_hit.get(ip)
+    if hit is None:
+        try:
+            a = ipaddress.ip_address(ip)
+            hit = any(a in n for n in _excl["nets"])
+        except ValueError:
+            hit = False
+        _excl_hit[ip] = hit
+    return hit
+
+
+def net_of(ip):
+    """IPv4 — сам адрес; IPv6 — сеть /64 (адреса устройств внутри дома меняются, сеть — нет)."""
+    a = ipaddress.ip_address(ip)
+    return str(ipaddress.ip_network(f"{a}/{32 if a.version == 4 else 64}", strict=False))
+
+
+def _save_excluded(items, recount=True):
+    os.makedirs(STATS_DIR, exist_ok=True)
+    tmp = EXCLUDE_FILE + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as fh:
+        json.dump(items, fh, ensure_ascii=False, indent=1)
+    os.replace(tmp, EXCLUDE_FILE)
+    if recount:
+        forget_recent()
+
+
+def exclude_add(ip, who):
+    net, stamp = net_of(ip), datetime.now(TZ).strftime("%Y-%m-%d")
+    items = [dict(x) for x in excluded_list()]
+    for x in items:
+        if x.get("net") == net:
+            x["seen"] = stamp
+            _save_excluded(items, recount=False)
+            return items
+    items.append({"net": net, "who": who, "added": stamp, "seen": stamp})
+    _save_excluded(items)
+    return items
+
+
+def exclude_remove(net):
+    items = [dict(x) for x in excluded_list() if x.get("net") != net]
+    _save_excluded(items)
+    return items
+
+
+def touch_seen(ip):
+    """Отметить, что свой адрес снова встречался (видно, какой адрес давно не попадался — значит, сменился)."""
+    if not is_excluded(ip):
+        return
+    stamp = datetime.now(TZ).strftime("%Y-%m-%d")
+    items = [dict(x) for x in excluded_list()]
+    changed = False
+    for x in items:
+        try:
+            if ipaddress.ip_address(ip) in ipaddress.ip_network(x["net"], strict=False) and x.get("seen") != stamp:
+                x["seen"], changed = stamp, True
+        except (ValueError, KeyError, TypeError):
+            pass
+    if changed:
+        _save_excluded(items, recount=False)
+
+
+def logs_start():
+    """Время первой записи в самой старой части журнала (до него журнала уже нет)."""
+    for f in sorted(glob.glob(LOG_GLOB), key=os.path.getmtime):
+        opener = gzip.open if f.endswith(".gz") else open
+        try:
+            with opener(f, "rt", encoding="utf-8", errors="replace") as fh:
+                for line in fh:
+                    try:
+                        ts = json.loads(line).get("ts")
+                    except ValueError:
+                        continue
+                    if isinstance(ts, (int, float)):
+                        return ts
+        except OSError:
+            continue
+    return None
+
+
+def forget_recent():
+    """Список своих адресов изменился — итоги дней, которые журнал ещё помнит, посчитать заново."""
+    start = logs_start()
+    _empty.clear()
+    if start is None:
+        return
+    for f in glob.glob(os.path.join(STATS_DIR, "[0-9]*.json")):
+        try:
+            d = date.fromisoformat(os.path.basename(f)[:10])
+        except ValueError:
+            continue
+        if day_bounds(d)[1] > start:            # день (хотя бы частично) ещё есть в журнале
+            try:
+                os.remove(f)
+            except OSError:
+                pass
+
+
 def leads_between(since_ts, until_ts):
     out = []
     try:
@@ -169,6 +306,8 @@ def leads_between(since_ts, until_ts):
                     continue
                 if d.get("ip") in ("127.0.0.1", "::1") or str(d.get("name", "")).startswith("Проверка"):
                     continue                                  # пробные заявки мастера настройки и сторожа
+                if is_excluded(d.get("ip")):
+                    continue                                  # заявка со своего адреса (проверка формы)
                 out.append({"page": d.get("page", ""), "lang": d.get("lang", "ru"), "model": d.get("model", "")})
     except OSError:
         pass
@@ -182,12 +321,14 @@ class Agg:
         self.visitors = {}                          # ключ (IP+браузер) → {src, dev, langs}; только в памяти
         self.views, self.lang_views, self.notfound = Counter(), Counter(), Counter()
         self.google, self.google_lang, self.bing, self.requests = 0, Counter(), 0, 0
+        self.own = 0                                # просмотры со своих адресов (не считаются)
 
     def add(self, e):
         self.requests += 1
         r = e.get("request") or {}
         if r.get("method") != "GET":
             return
+        ip = r.get("client_ip") or r.get("remote_ip") or ""
         h = r.get("headers") or {}
         ua = header(h, "User-Agent")
         path = unquote(urlsplit(r.get("uri") or "/").path) or "/"
@@ -208,13 +349,18 @@ class Agg:
                  and "prefetch" not in (header(h, "Sec-Purpose") + header(h, "Purpose")).lower())
         if not human:
             return
+        if status == 404 and is_excluded(ip):
+            return
         if status == 404:
             if not JUNK.search(path):
                 self.notfound[path] += 1
             return
         if status not in (200, 304):
             return
-        key = (r.get("client_ip") or r.get("remote_ip") or "") + "|" + ua
+        if is_excluded(ip):
+            self.own += 1
+            return
+        key = ip + "|" + ua
         v = self.visitors.get(key)
         if v is None:
             v = self.visitors[key] = {"src": source(header(h, "Referer")), "dev": device(ua), "langs": set()}
@@ -234,7 +380,7 @@ class Agg:
             "devices": dict(Counter(v["dev"] for v in vs)),
             "pages": dict(self.views.most_common(50)),
             "notfound": dict(self.notfound.most_common(20)),
-            "google": self.google, "google_lang": dict(self.google_lang), "bing": self.bing,
+            "google": self.google, "google_lang": dict(self.google_lang), "bing": self.bing, "own": self.own,
             "leads": len(leads), "lead_pages": dict(Counter(x["page"] for x in leads if x["page"])),
         }
 
@@ -291,7 +437,7 @@ def save_day(d, agg):
         json.dump(agg, fh, ensure_ascii=False)
     os.replace(tmp, day_file(d))
     cutoff = (d - timedelta(days=KEEP_DAYS)).isoformat()
-    for f in glob.glob(os.path.join(STATS_DIR, "*.json")):
+    for f in glob.glob(os.path.join(STATS_DIR, "[0-9]*.json")):
         if os.path.basename(f)[:10] < cutoff:
             try:
                 os.remove(f)
@@ -336,11 +482,11 @@ def merge(aggs):
     aggs = list(aggs)
     if not aggs or any(a is None for a in aggs):
         return None
-    out = {"visitors": 0, "views": 0, "google": 0, "bing": 0, "leads": 0}
+    out = {"visitors": 0, "views": 0, "google": 0, "bing": 0, "leads": 0, "own": 0}
     for k in ("lang_visitors", "lang_views", "sources", "devices", "pages", "notfound", "google_lang", "lead_pages"):
         out[k] = Counter()
     for a in aggs:
-        for k in ("visitors", "views", "google", "bing", "leads"):
+        for k in ("visitors", "views", "google", "bing", "leads", "own"):
             out[k] += a.get(k, 0)
         for k in ("lang_visitors", "lang_views", "sources", "devices", "pages", "notfound", "google_lang", "lead_pages"):
             out[k].update(a.get(k) or {})
@@ -441,6 +587,8 @@ def body(a, prev=None, top=7, trend=None, trend_label=""):
     new = " · ".join(f"{LANG_NAMES[k]} {gl[k]}" for k in ("sk", "de") if gl.get(k))
     out.append(f"\n🤖 Робот Google: {a.get('google', 0)} стр." + (f" (из них {new})" if new else "")
                + f" · Bing: {a.get('bing', 0)}")
+    if a.get("own"):
+        out.append(f"🏠 Свои просмотры не учтены: {a['own']}")
     return "\n".join(out)
 
 
@@ -524,6 +672,16 @@ def check_init_data(init_data, token, max_age=86400):
         return None
 
 
+def me_data(ip):
+    """Для блока «Не считать нас»: адрес, с которого открыто приложение, и список своих адресов."""
+    touch_seen(ip)
+    try:
+        net = net_of(ip)
+    except ValueError:
+        net = ""
+    return {"ip": ip, "net": net, "excluded": is_excluded(ip), "items": excluded_list()}
+
+
 def web_data(n):
     """Данные для графиков: n дней, последний — сегодня (неполный), и сравнение с предыдущими n днями."""
     n = n if n in (7, 30, 90) else 7
@@ -553,11 +711,11 @@ def web_data(n):
         rest = sum(v for _, v in items[k:])
         return [list(x) for x in items[:k]] + ([[other, rest]] if rest else [])
 
-    total = {"visitors": 0, "views": 0, "leads": 0, "google": 0, "langs": [], "sources": [], "devices": [],
+    total = {"visitors": 0, "views": 0, "leads": 0, "google": 0, "own": 0, "langs": [], "sources": [], "devices": [],
              "pages": [], "notfound": [], "leads_pages": []}
     if tot:
         total.update(
-            visitors=tot["visitors"], views=tot["views"], leads=tot["leads"], google=tot["google"],
+            visitors=tot["visitors"], views=tot["views"], leads=tot["leads"], google=tot["google"], own=tot["own"],
             langs=[[LANG_NAMES[k], tot["lang_visitors"][k]] for k in LANG_NAMES if tot["lang_visitors"].get(k)],
             sources=top(tot["sources"]), devices=top(tot["devices"]),
             pages=[[title_of(p), v] for p, v in tot["pages"].most_common(15)],

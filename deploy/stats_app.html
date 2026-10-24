@@ -92,6 +92,17 @@
   th { color: var(--text-2); font-weight: 500; }
   .empty { color: var(--text-2); padding: 24px 0; text-align: center; }
   .loading { opacity: .5; transition: opacity .2s; }
+  .btn { font: inherit; font-size: 14px; font-weight: 600; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
+    background: var(--series); color: #fff; }
+  .btn.ghost { background: transparent; color: var(--text-1); border: 1px solid var(--border); font-weight: 500; }
+  .btn:disabled { opacity: .6; cursor: default; }
+  .own { display: grid; gap: 10px; }
+  .own .now { font-size: 14px; }
+  .own .now b { font-variant-numeric: tabular-nums; }
+  .own .ok { color: var(--up); font-weight: 600; }
+  .own ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .own li { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 14px; border-top: 1px solid var(--grid); padding-top: 8px; }
+  .own li .meta { color: var(--text-2); font-size: 12px; }
   .err { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; color: var(--text-2); }
 </style>
 </head>
@@ -325,6 +336,7 @@
       tile('Просмотры страниц', tot.views, prev && prev.views),
       tile('Заявки с сайта', tot.leads, prev && prev.leads));
     app.append(tiles);
+    if (tot.own) app.append(el('p', 'note', '🏠 Ваши собственные просмотры (' + fmt(tot.own) + ') не учтены — адреса в блоке «Не считать нас» внизу.'));
 
     const c1 = card('Посетители по дням', 'Нажмите на график — покажет день целиком');
     c1.append(lineChart(d.days, 'visitors', (r) => [['Посетители', r.visitors, true], ['Просмотры', r.views], ['Заявки', r.leads]]));
@@ -363,6 +375,56 @@
       const c8 = card('Не найдено (404)', 'Адреса, по которым посетители получили ошибку — их стоит перенаправить');
       c8.append(barList(tot.notfound)); app.append(c8);
     }
+    app.append(ownCard());
+  }
+
+  // «Не считать нас»: свой домашний интернет — визиты с него в статистику не попадают
+  let me = null;
+  function ownCard() {
+    const c = card('Не считать нас в статистике',
+      'Нажмите дома, подключившись к домашнему Wi-Fi: телефоны и компьютеры дома выходят в интернет с одного адреса. '
+      + 'Мобильный интернет не добавляйте — его адрес общий с другими людьми.');
+    const box = el('div', 'own'); c.append(box);
+    if (!me) { box.append(el('p', 'note', 'Загружаю…')); return c; }
+    const now = el('div', 'now'); now.append(document.createTextNode('Вы сейчас в интернете с адреса '), el('b', null, me.ip));
+    box.append(now);
+    if (me.excluded) box.append(el('div', 'ok', '✓ Этот интернет уже не считается'));
+    else {
+      const b = el('button', 'btn', 'Не считать этот интернет'); b.type = 'button';
+      b.addEventListener('click', () => ownAction({ action: 'add' }, b));
+      box.append(b);
+      if (me.items.length) box.append(el('p', 'note', 'Если дома этот адрес новый — провайдер мог его сменить (например, после перезагрузки роутера). Нажмите кнопку ещё раз, старый адрес можно убрать.'));
+    }
+    if (me.items.length) {
+      const ul = el('ul');
+      me.items.forEach((it) => {
+        const li = el('li'); const left = el('div');
+        left.append(el('div', null, it.net.replace(/\/32$/, '')),
+          el('div', 'meta', [it.who, 'добавлен ' + dshort(it.added), it.seen && it.seen !== it.added ? 'был ' + dshort(it.seen) : ''].filter(Boolean).join(' · ')));
+        const rm = el('button', 'btn ghost', 'Убрать'); rm.type = 'button';
+        rm.addEventListener('click', () => ownAction({ action: 'remove', net: it.net }, rm));
+        li.append(left, rm); ul.append(li);
+      });
+      box.append(ul);
+    }
+    return c;
+  }
+  async function loadMe() {
+    try {
+      const r = await fetch('/api/stats/me', { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' });
+      if (r.ok) me = await r.json();
+    } catch (e) {}
+  }
+  async function ownAction(body, btn) {
+    btn.disabled = true;
+    try {
+      const r = await fetch('/api/stats/exclude', { method: 'POST', cache: 'no-store',
+        headers: { 'X-Telegram-Init-Data': tg.initData, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      if (!r.ok) throw new Error();
+      me = await r.json();
+      if (tg && tg.HapticFeedback) try { tg.HapticFeedback.notificationOccurred('success'); } catch (e) {}
+      await load();                       // цифры пересчитаны без своих визитов
+    } catch (e) { btn.disabled = false; btn.textContent = 'Не получилось — ещё раз'; }
   }
 
   async function load() {
@@ -378,6 +440,7 @@
       if (r.status === 503) throw new Error('Сервис не может прочитать журнал сайта. Выложите сайт ещё раз — выкладка откроет журнал для чтения.');
       if (!r.ok) throw new Error('Сервер не ответил (' + r.status + '). Попробуйте ещё раз через минуту.');
       data = await r.json();
+      if (!me) await loadMe();
       render();
     } catch (e) {
       app.replaceChildren(el('div', 'err', e.message || String(e)));
