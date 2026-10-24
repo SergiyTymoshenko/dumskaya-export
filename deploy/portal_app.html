@@ -97,8 +97,25 @@
   .charges { list-style: none; margin: 10px 0 0; padding: 0; }
   .charges li { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-top: 1px dashed var(--grid); font-size: calc(15px * var(--k)); flex-wrap: wrap; }
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  h3.grp { font-size: calc(15px * var(--k)); font-weight: 650; margin: 14px 0 8px; }
+  h3.grp:first-child { margin-top: 0; }
+  details.older { margin: 2px 0 8px; }
+  details.older summary { cursor: pointer; color: var(--text-2); font-size: calc(14px * var(--k)); padding: 6px 0; min-height: 32px; }
+  ol.stages { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 8px; }
+  ol.stages li { display: grid; grid-template-columns: calc(22px * var(--k)) 1fr auto; gap: 8px; align-items: baseline; }
+  ol.stages .ic { text-align: center; }
+  ol.stages .d { color: var(--text-2); font-size: calc(13px * var(--k)); white-space: nowrap; }
+  ol.stages .done { color: var(--text-2); }
+  ol.stages .done .ic { color: var(--up); }
+  ol.stages .now { font-weight: 650; }
+  ol.stages .now .ic { color: var(--series); }
+  ol.stages .next { color: var(--muted); }
   .thumb { aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: var(--ghost); border: 0; padding: 0; cursor: pointer; }
   .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb { position: relative; }
+  .thumb .appr { position: absolute; top: 4px; right: 4px; min-width: calc(24px * var(--k)); height: calc(24px * var(--k)); padding: 0 4px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; font-size: calc(13px * var(--k)); font-weight: 700; color: #fff; background: rgba(0,0,0,.6); }
+  .thumb .appr-wait { background: var(--warn); color: var(--page); } .thumb .appr-yes { background: var(--up); color: var(--page); }
   .doc { aspect-ratio: 1; border-radius: 10px; background: var(--ghost); border: 0; padding: 8px; cursor: pointer; display: flex; flex-direction: column;
     justify-content: space-between; text-align: left; font-size: calc(12px * var(--k)); overflow: hidden; }
   .doc .ext { font-weight: 700; font-size: calc(13px * var(--k)); color: var(--series); }
@@ -273,8 +290,8 @@
       chat_empty2: 'Сообщений пока нет. Напишите первым — придёт сообщение в Telegram.', back_msgs: 'Сообщения',
       sec_work: 'От подрядчиков', sec_shared: 'Из переписки', sec_approved: 'Согласовано', cat_other: 'Другое',
       add_doc: '＋ Фото или документ', doc_title: 'Подпись (по желанию)', doc_ph: 'Например: шторы в гостиной повешены', who_sees: 'Кто видит',
-      vis_client: 'Заказчик, студия и моя бригада', vis_studio: 'Только студия', vis_team: 'Студия и моя бригада',
-      vis_head: 'Руководитель и студия', vis_wteam: 'Вся бригада и студия', vis_wclient: 'И заказчик тоже', vis_note: 'Студия видит все документы.',
+      vis_client: 'Студия и моя бригада, заказчик — после одобрения Ирины', vis_studio: 'Только студия', vis_team: 'Студия и моя бригада',
+      vis_head: 'Руководитель и студия', vis_wteam: 'Вся бригада и студия', vis_wclient: 'И заказчик — после одобрения Ирины', vis_note: 'Студия видит все документы.',
       pick_files: 'Выбрать фото или файлы', n_files: 'Выбрано файлов: {n}', need_file: 'Выберите файл', upload_n: 'Загружаю {i} из {n}…', uploaded: 'Загружено',
       delete_doc_q: 'Удалить этот документ?', file_big: 'Файл больше 60 МБ',
       team_hint: 'Подключите работников, которых отправляете на объекты, и отметьте, кто где работает. Они видят объект без сумм и документы и пишут студии.',
@@ -301,8 +318,9 @@
       remove_staff: "Убрать из сотрудников", remove_q_sup: "Убрать «{x}» из сотрудников? Доступ к боту закроется.", invite_title_sup: "Ссылка для сотрудника",
       staff_here: "Сотрудники на этом проекте", staff_here_hint: "Отметьте, кто из ваших сотрудников работает с этим проектом: они увидят проект (без сумм), документы и смогут писать студии.", manage_staff: "Все сотрудники →",
       role_hired: "Исполнитель студии", hired_hint: "Эту работу вам заказывает и оплачивает студия. Переписка — только с Ириной: заказчик и подрядчики её не видят.", msgs_hint_hired: "Здесь вы пишете Ирине. Заказчик и подрядчики этот разговор не видят.", docs_hired_hint: "Замеры, чертежи, визуализации — добавляйте сюда. Их видит студия; заказчику их откроет Ирина.", staff_note: "Этот разговор видите только вы и Ирина.", sgroup_note: "Эту группу видят только Ирина и сотрудники студии в ней.",
+      cat_plan: "Планировочные решения", ver_plan: "Вариант {n}", ver_first: "Первый вариант", ver_rev: "Правка {n}", ver_n: "Версия {n}", agreed: "Согласовано", stage: "Стадия проекта", revisions_in: "В ваш пакет входит правок: {n}", room: "Помещение", no_room: "Без помещения", prev_versions: "Предыдущие версии · {n}", version: "Версия", new_version: "＋ Новая версия", new_doc: "Новый документ", version_of: "Это новая версия документа", appr_wait: "⏳ Ждёт одобрения Ирины", appr_yes: "✓ Заказчик видит", appr_no: "Ирина не показала заказчику",
       on_projects: "Проекты", msgs_hint_assistant: "Все разговоры проекта. Вы пишете от имени студии; Ирина видит переписку.", staff_docs_hint: "Обмерные планы, визуализации, чертежи — добавляйте в разделы проекта.",
-      section: "Раздел", vis_s_all: "Всем, кто видит этот раздел (заказчик, подрядчики)", vis_s_studio: "Только студия — Ирина откроет заказчику сама",
+      section: "Раздел", vis_s_all: "Подрядчикам сразу, заказчику — после одобрения Ирины", vis_s_studio: "Только студия — Ирина откроет заказчику сама",
     },
     uk: {
       loading: 'Завантажую…', open_from_bot: 'Відкрийте кабінет кнопкою «Мій проєкт» у боті студії DUMSKAYA DESIGN.',
@@ -349,8 +367,8 @@
       chat_empty2: 'Повідомлень поки немає. Напишіть першим — прийде повідомлення в Telegram.', back_msgs: 'Повідомлення',
       sec_work: 'Від підрядників', sec_shared: 'З листування', sec_approved: 'Погоджено', cat_other: 'Інше',
       add_doc: '＋ Фото або документ', doc_title: 'Підпис (за бажанням)', doc_ph: 'Наприклад: штори у вітальні повішено', who_sees: 'Хто бачить',
-      vis_client: 'Замовник, студія і моя бригада', vis_studio: 'Лише студія', vis_team: 'Студія і моя бригада',
-      vis_head: 'Керівник і студія', vis_wteam: 'Уся бригада і студія', vis_wclient: 'І замовник теж', vis_note: 'Студія бачить усі документи.',
+      vis_client: 'Студія і моя бригада, замовник — після схвалення Ірини', vis_studio: 'Лише студія', vis_team: 'Студія і моя бригада',
+      vis_head: 'Керівник і студія', vis_wteam: 'Уся бригада і студія', vis_wclient: 'І замовник — після схвалення Ірини', vis_note: 'Студія бачить усі документи.',
       pick_files: 'Вибрати фото або файли', n_files: 'Вибрано файлів: {n}', need_file: 'Виберіть файл', upload_n: 'Завантажую {i} з {n}…', uploaded: 'Завантажено',
       delete_doc_q: 'Видалити цей документ?', file_big: 'Файл більший за 60 МБ',
       team_hint: 'Підключіть працівників, яких направляєте на об’єкти, і позначте, хто де працює. Вони бачать об’єкт без сум і документи та пишуть студії.',
@@ -377,8 +395,9 @@
       remove_staff: "Прибрати зі співробітників", remove_q_sup: "Прибрати «{x}» зі співробітників? Доступ до бота закриється.", invite_title_sup: "Посилання для співробітника",
       staff_here: "Співробітники на цьому проєкті", staff_here_hint: "Позначте, хто з ваших співробітників працює з цим проєктом: вони побачать проєкт (без сум), документи й зможуть писати студії.", manage_staff: "Усі співробітники →",
       role_hired: "Виконавець студії", hired_hint: "Цю роботу вам замовляє й оплачує студія. Листування — лише з Іриною: замовник і підрядники його не бачать.", msgs_hint_hired: "Тут ви пишете Ірині. Замовник і підрядники цю розмову не бачать.", docs_hired_hint: "Обміри, креслення, візуалізації — додавайте сюди. Їх бачить студія; замовнику їх відкриє Ірина.", staff_note: "Цю розмову бачите лише ви та Ірина.", sgroup_note: "Цю групу бачать лише Ірина та співробітники студії в ній.",
+      cat_plan: "Планувальні рішення", ver_plan: "Варіант {n}", ver_first: "Перший варіант", ver_rev: "Правка {n}", ver_n: "Версія {n}", agreed: "Погоджено", stage: "Стадія проєкту", revisions_in: "У ваш пакет входить правок: {n}", room: "Приміщення", no_room: "Без приміщення", prev_versions: "Попередні версії · {n}", version: "Версія", new_version: "＋ Нова версія", new_doc: "Новий документ", version_of: "Це нова версія документа", appr_wait: "⏳ Чекає схвалення Ірини", appr_yes: "✓ Замовник бачить", appr_no: "Ірина не показала замовнику",
       on_projects: "Проєкти", msgs_hint_assistant: "Усі розмови проєкту. Ви пишете від імені студії; Ірина бачить листування.", staff_docs_hint: "Обмірні плани, візуалізації, креслення — додавайте в розділи проєкту.",
-      section: "Розділ", vis_s_all: "Усім, хто бачить цей розділ (замовник, підрядники)", vis_s_studio: "Тільки студія — Ірина відкриє замовнику сама",
+      section: "Розділ", vis_s_all: "Підрядникам одразу, замовнику — після схвалення Ірини", vis_s_studio: "Тільки студія — Ірина відкриє замовнику сама",
     },
     en: {
       loading: 'Loading…', open_from_bot: 'Open the app with the “My project” button in the DUMSKAYA DESIGN bot.',
@@ -425,8 +444,8 @@
       chat_empty2: 'No messages yet. Write first — they will get a message in Telegram.', back_msgs: 'Messages',
       sec_work: 'From contractors', sec_shared: 'From chats', sec_approved: 'Approved', cat_other: 'Other',
       add_doc: '＋ Photo or document', doc_title: 'Caption (optional)', doc_ph: 'E.g. living room curtains hung', who_sees: 'Who can see it',
-      vis_client: 'Client, studio and my team', vis_studio: 'Studio only', vis_team: 'Studio and my team',
-      vis_head: 'My manager and the studio', vis_wteam: 'The whole team and the studio', vis_wclient: 'The client too', vis_note: 'The studio sees all documents.',
+      vis_client: 'Studio and my team; the client after Irina approves', vis_studio: 'Studio only', vis_team: 'Studio and my team',
+      vis_head: 'My manager and the studio', vis_wteam: 'The whole team and the studio', vis_wclient: 'The client too, after Irina approves', vis_note: 'The studio sees all documents.',
       pick_files: 'Choose photos or files', n_files: 'Files selected: {n}', need_file: 'Please choose a file', upload_n: 'Uploading {i} of {n}…', uploaded: 'Uploaded',
       delete_doc_q: 'Delete this document?', file_big: 'The file is larger than 60 MB',
       team_hint: 'Connect the workers you send to sites and mark who works where. They see the site without prices and the documents, and can write to the studio.',
@@ -453,8 +472,9 @@
       remove_staff: "Remove from staff", remove_q_sup: "Remove “{x}” from your staff? Their access to the bot will be closed.", invite_title_sup: "Link for a staff member",
       staff_here: "Staff on this project", staff_here_hint: "Mark which of your staff work on this project: they will see the project (without amounts) and the documents, and can write to the studio.", manage_staff: "All staff →",
       role_hired: "Studio specialist", hired_hint: "This work is ordered and paid for by the studio. You chat only with Irina: the client and contractors do not see it.", msgs_hint_hired: "Here you write to Irina. The client and contractors do not see this chat.", docs_hired_hint: "Add measurements, drawings and renderings here. The studio sees them; Irina will share them with the client.", staff_note: "Only you and Irina can see this chat.", sgroup_note: "Only Irina and the studio staff in this group can see it.",
+      cat_plan: "Layout plans", ver_plan: "Option {n}", ver_first: "First version", ver_rev: "Revision {n}", ver_n: "Version {n}", agreed: "Approved", stage: "Project stage", revisions_in: "Revisions included in your package: {n}", room: "Room", no_room: "No room", prev_versions: "Earlier versions · {n}", version: "Version", new_version: "＋ New version", new_doc: "New document", version_of: "This is a new version of", appr_wait: "⏳ Waiting for Irina’s approval", appr_yes: "✓ The client can see it", appr_no: "Irina has not shared it with the client",
       on_projects: "Projects", msgs_hint_assistant: "All project chats. You write on behalf of the studio; Irina sees the conversation.", staff_docs_hint: "Measured plans, renderings, drawings — add them to the project sections.",
-      section: "Section", vis_s_all: "Everyone who sees this section (client, contractors)", vis_s_studio: "Studio only — Irina will show it to the client herself",
+      section: "Section", vis_s_all: "Contractors right away; the client after Irina approves", vis_s_studio: "Studio only — Irina will show it to the client herself",
     },
     sk: {
       loading: 'Načítavam…', open_from_bot: 'Aplikáciu otvoríte tlačidlom „Môj projekt“ v bote štúdia DUMSKAYA DESIGN.',
@@ -501,8 +521,8 @@
       chat_empty2: 'Zatiaľ žiadne správy. Napíšte prvý — príde správa v Telegrame.', back_msgs: 'Správy',
       sec_work: 'Od remeselníkov', sec_shared: 'Z konverzácií', sec_approved: 'Schválené', cat_other: 'Iné',
       add_doc: '＋ Fotka alebo dokument', doc_title: 'Popis (nepovinné)', doc_ph: 'Napr. záclony v obývačke zavesené', who_sees: 'Kto to vidí',
-      vis_client: 'Klient, štúdio a môj tím', vis_studio: 'Len štúdio', vis_team: 'Štúdio a môj tím',
-      vis_head: 'Vedúci a štúdio', vis_wteam: 'Celý tím a štúdio', vis_wclient: 'Aj klient', vis_note: 'Štúdio vidí všetky dokumenty.',
+      vis_client: 'Štúdio a môj tím, klient — po schválení Irinou', vis_studio: 'Len štúdio', vis_team: 'Štúdio a môj tím',
+      vis_head: 'Vedúci a štúdio', vis_wteam: 'Celý tím a štúdio', vis_wclient: 'Aj klient — po schválení Irinou', vis_note: 'Štúdio vidí všetky dokumenty.',
       pick_files: 'Vybrať fotky alebo súbory', n_files: 'Vybrané súbory: {n}', need_file: 'Vyberte súbor', upload_n: 'Nahrávam {i} z {n}…', uploaded: 'Nahrané',
       delete_doc_q: 'Vymazať tento dokument?', file_big: 'Súbor má viac ako 60 MB',
       team_hint: 'Pripojte pracovníkov, ktorých posielate na stavby, a označte, kto kde pracuje. Vidia stavbu bez súm a dokumenty a píšu štúdiu.',
@@ -529,8 +549,9 @@
       remove_staff: "Odstrániť zo zamestnancov", remove_q_sup: "Odstrániť „{x}“ zo zamestnancov? Prístup do bota sa zatvorí.", invite_title_sup: "Odkaz pre zamestnanca",
       staff_here: "Zamestnanci na tomto projekte", staff_here_hint: "Označte, kto z vašich zamestnancov pracuje na tomto projekte: uvidia projekt (bez súm) a dokumenty a môžu písať štúdiu.", manage_staff: "Všetci zamestnanci →",
       role_hired: "Odborník štúdia", hired_hint: "Túto prácu vám objednáva a platí štúdio. Konverzácia je len s Irinou: klient ani remeselníci ju nevidia.", msgs_hint_hired: "Tu píšete Irine. Klient ani remeselníci túto konverzáciu nevidia.", docs_hired_hint: "Zamerania, výkresy, vizualizácie pridávajte sem. Vidí ich štúdio; klientovi ich sprístupní Irina.", staff_note: "Túto konverzáciu vidíte len vy a Irina.", sgroup_note: "Túto skupinu vidí len Irina a zamestnanci štúdia v nej.",
+      cat_plan: "Dispozičné riešenia", ver_plan: "Variant {n}", ver_first: "Prvý návrh", ver_rev: "Úprava {n}", ver_n: "Verzia {n}", agreed: "Schválené", stage: "Fáza projektu", revisions_in: "Počet úprav vo vašom balíku: {n}", room: "Miestnosť", no_room: "Bez miestnosti", prev_versions: "Predchádzajúce verzie · {n}", version: "Verzia", new_version: "＋ Nová verzia", new_doc: "Nový dokument", version_of: "Toto je nová verzia dokumentu", appr_wait: "⏳ Čaká na schválenie Irinou", appr_yes: "✓ Klient ho vidí", appr_no: "Irina ho klientovi nesprístupnila",
       on_projects: "Projekty", msgs_hint_assistant: "Všetky konverzácie projektu. Píšete v mene štúdia; Irina konverzáciu vidí.", staff_docs_hint: "Zamerania, vizualizácie, výkresy — pridávajte ich do sekcií projektu.",
-      section: "Sekcia", vis_s_all: "Všetci, kto vidia túto sekciu (klient, remeselníci)", vis_s_studio: "Len štúdio — Irina to klientovi ukáže sama",
+      section: "Sekcia", vis_s_all: "Remeselníkom hneď, klientovi — po schválení Irinou", vis_s_studio: "Len štúdio — Irina to klientovi ukáže sama",
     },
     de: {
       loading: 'Wird geladen…', open_from_bot: 'Öffnen Sie die App über „Mein Projekt“ im Bot von DUMSKAYA DESIGN.',
@@ -577,8 +598,8 @@
       chat_empty2: 'Noch keine Nachrichten. Schreiben Sie zuerst — es kommt eine Nachricht in Telegram an.', back_msgs: 'Nachrichten',
       sec_work: 'Von Handwerkern', sec_shared: 'Aus den Chats', sec_approved: 'Freigegeben', cat_other: 'Sonstiges',
       add_doc: '＋ Foto oder Dokument', doc_title: 'Beschriftung (optional)', doc_ph: 'Z. B. Vorhänge im Wohnzimmer aufgehängt', who_sees: 'Wer sieht es',
-      vis_client: 'Kunde, Studio und mein Team', vis_studio: 'Nur das Studio', vis_team: 'Studio und mein Team',
-      vis_head: 'Chef und Studio', vis_wteam: 'Das ganze Team und das Studio', vis_wclient: 'Auch der Kunde', vis_note: 'Das Studio sieht alle Unterlagen.',
+      vis_client: 'Studio und mein Team, der Kunde nach Irinas Freigabe', vis_studio: 'Nur das Studio', vis_team: 'Studio und mein Team',
+      vis_head: 'Chef und Studio', vis_wteam: 'Das ganze Team und das Studio', vis_wclient: 'Auch der Kunde — nach Irinas Freigabe', vis_note: 'Das Studio sieht alle Unterlagen.',
       pick_files: 'Fotos oder Dateien auswählen', n_files: 'Ausgewählte Dateien: {n}', need_file: 'Bitte eine Datei auswählen', upload_n: 'Lade {i} von {n} hoch…', uploaded: 'Hochgeladen',
       delete_doc_q: 'Dieses Dokument löschen?', file_big: 'Die Datei ist größer als 60 MB',
       team_hint: 'Verbinden Sie die Mitarbeiter, die Sie auf Baustellen schicken, und markieren Sie, wer wo arbeitet. Sie sehen die Baustelle ohne Beträge und die Unterlagen und schreiben dem Studio.',
@@ -605,8 +626,9 @@
       remove_staff: "Aus den Mitarbeitern entfernen", remove_q_sup: "„{x}“ aus den Mitarbeitern entfernen? Der Zugang zum Bot wird geschlossen.", invite_title_sup: "Link für einen Mitarbeiter",
       staff_here: "Mitarbeiter in diesem Projekt", staff_here_hint: "Markieren Sie, wer von Ihren Mitarbeitern an diesem Projekt arbeitet: Sie sehen das Projekt (ohne Beträge) und die Unterlagen und können dem Studio schreiben.", manage_staff: "Alle Mitarbeiter →",
       role_hired: "Fachkraft des Studios", hired_hint: "Diese Arbeit beauftragt und bezahlt das Studio. Sie schreiben nur mit Irina: Der Kunde und die Handwerker sehen das nicht.", msgs_hint_hired: "Hier schreiben Sie Irina. Der Kunde und die Handwerker sehen diesen Chat nicht.", docs_hired_hint: "Aufmaße, Zeichnungen, Visualisierungen laden Sie hier hoch. Das Studio sieht sie; dem Kunden gibt Irina sie frei.", staff_note: "Nur Sie und Irina sehen diesen Chat.", sgroup_note: "Diese Gruppe sehen nur Irina und die Studiomitarbeiter darin.",
+      cat_plan: "Grundrisse", ver_plan: "Variante {n}", ver_first: "Erster Entwurf", ver_rev: "Überarbeitung {n}", ver_n: "Version {n}", agreed: "Abgestimmt", stage: "Projektphase", revisions_in: "Überarbeitungen in Ihrem Paket: {n}", room: "Raum", no_room: "Ohne Raum", prev_versions: "Frühere Versionen · {n}", version: "Version", new_version: "＋ Neue Version", new_doc: "Neues Dokument", version_of: "Neue Version von", appr_wait: "⏳ Wartet auf Irinas Freigabe", appr_yes: "✓ Der Kunde sieht es", appr_no: "Irina hat es dem Kunden nicht freigegeben",
       on_projects: "Projekte", msgs_hint_assistant: "Alle Chats des Projekts. Sie schreiben im Namen des Studios; Irina sieht die Unterhaltung.", staff_docs_hint: "Aufmaße, Visualisierungen, Zeichnungen — fügen Sie sie den Projektbereichen hinzu.",
-      section: "Bereich", vis_s_all: "Alle, die diesen Bereich sehen (Kunde, Handwerker)", vis_s_studio: "Nur das Studio — Irina zeigt es dem Kunden selbst",
+      section: "Bereich", vis_s_all: "Handwerker sofort, der Kunde nach Irinas Freigabe", vis_s_studio: "Nur das Studio — Irina zeigt es dem Kunden selbst",
     },
   };
   const pickLang = (code) => { const c = String(code || '').toLowerCase().split(/[-_]/)[0]; return KNOWN.includes(c) ? c : ALIAS[c] || 'en'; };
@@ -624,7 +646,7 @@
     return s;
   }
 
-  let ME = null, V = null, PID = null, tab = 'home', cat = null, CHAT = [], chatTimer = null, sending = false;
+  let ME = null, V = null, PID = null, tab = 'home', cat = null, catPicked = false, CHAT = [], chatTimer = null, sending = false;
   let TH = null, TID = null, TEAMC = null, TEAM = null;      // разговоры проекта, открытый разговор, бригада подрядчика
   const sheets = [];
 
@@ -802,7 +824,7 @@
       if (PREVIEW) q.set('lang', LANG);
       if (as) q.set('as', as);
       V = await api('/api/portal/project?' + q.toString());
-      if (PID !== Number(id)) { TH = null; cat = null; }
+      if (PID !== Number(id)) { TH = null; cat = null; catPicked = false; }
       PID = Number(id); TEAMC = null;
       const tabs = tabsOf();
       tab = startTab && tabs.includes(startTab) ? startTab : tabs.includes(tab) ? tab : 'home';
@@ -893,7 +915,8 @@
       el('h1', { style: 'margin:6px 0 4px' }, p.title),
       el('div', 'sub', [[p.city, p.country].filter(Boolean).join(', '), p.area ? (Math.round(p.area * 10) / 10).toLocaleString(loc()) + ' m²' : '',
         p.tariff && isClient() ? T('package', { x: p.tariff }) : ''].filter(Boolean).join(' · ')),
-      !isClient() && p.address ? el('div', { class: 'sub', style: 'margin-top:4px' }, '📍 ' + p.address) : null);
+      !isClient() && p.address ? el('div', { class: 'sub', style: 'margin-top:4px' }, '📍 ' + p.address) : null,
+      V.stage && !isClient() ? el('div', { class: 'stage-now', style: 'margin-top:8px' }, el('span', 'small muted', T('stage') + ': '), el('b', null, stageName(V.stage))) : null);
   }
   function nextPayment() {
     let best = null;
@@ -905,8 +928,22 @@
   }
 
   // ---------- заказчик: проект ----------
+  // стадия проекта: что пройдено (с датами), где сейчас, что дальше (пока идёт проект дизайна)
+  function stageCard() {
+    if (!V.stage) return null;
+    const last = new Map();                       // стадия → когда началась (последний раз)
+    (V.stage_log || []).forEach((x) => { last.delete(x.stage); last.set(x.stage, x.day); });
+    const ol = el('ol', 'stages');
+    last.forEach((day, k) => { if (k !== V.stage) ol.append(el('li', 'done', el('span', 'ic', '✓'), el('span', 'nm', stageName(k)), el('span', 'd', dfmt(day, true)))); });
+    ol.append(el('li', 'now', el('span', 'ic', '●'), el('span', 'nm', stageName(V.stage)), el('span', 'd', last.has(V.stage) ? dfmt(last.get(V.stage), true) : '')));
+    const ds = V.design_stages || [], i = ds.indexOf(V.stage);
+    if (i >= 0) ds.slice(i + 1).filter((k) => !last.has(k)).forEach((k) => ol.append(el('li', 'next', el('span', 'ic', '○'), el('span', 'nm', stageName(k)), el('span', 'd', ''))));
+    return el('section', 'card', el('h2', null, T('stage')), ol);
+  }
   function homeClient() {
     app.append(topBar(), headCard());
+    const sc = stageCard();
+    if (sc) app.append(sc);
     const m = V.money;
     const pay = el('section', 'card');
     if (m.total_debt > 0.005) {
@@ -1055,7 +1092,16 @@
   }
 
   // ---------- документы ----------
-  const SECTIONS = ['visual', 'measure', 'docs', 'before', 'after', 'brief', 'other', 'work', 'shared'];
+  const SECTIONS = ['plan', 'visual', 'measure', 'docs', 'before', 'after', 'brief', 'other', 'work', 'shared'];
+  // варианты и правки (решено 25.10.2026): планировки — «Вариант N», визуализации — «Первый вариант», «Правка N»;
+  // в остальных разделах — версии документа с одним названием. Фото и визуализации — по помещениям.
+  const isRound = (c) => ((V && V.round_cats) || []).includes(c);
+  const isRoom = (c) => ((V && V.room_cats) || []).includes(c);
+  const verName = (c, n) => (c === 'plan' ? T('ver_plan', { n }) : c === 'visual' ? (n <= 1 ? T('ver_first') : T('ver_rev', { n: n - 1 })) : T('ver_n', { n }));
+  const agreedOf = (c, n) => ((V && V.rounds) || []).find((r) => r.category === c && r.ver === n);
+  const apprText = (f) => ({ wait: T('appr_wait'), yes: T('appr_yes'), no: T('appr_no') }[f.approval] || '');
+  const verSel = {};
+  function stageName(k) { const x = ((V && V.stages) || []).find((s) => s[0] === k); return x ? x[1] : ''; }
   const secName = (k) => k === 'work' ? T('sec_work') : k === 'shared' ? T(isClient() ? 'sec_approved' : 'sec_shared') : T('cat_' + k);
   const canUpload = () => !readonly() && (role() === 'contractor' || role() === 'worker' || role() === 'assistant');
   const VIS = (crew) => ((crew === undefined ? role() === 'worker' : crew) ? [['head', T('vis_head')], ['team', T('vis_wteam')], ['client', T('vis_wclient')]]
@@ -1075,22 +1121,75 @@
       dropTo = (fs) => uploadSheet(fs);
     }
     if (!secs.length) { app.append(el('div', 'card empty', T('docs_empty'))); return; }
-    if (!secs.includes(cat)) cat = secs.includes('visual') ? 'visual' : secs[0];
-    app.append(el('div', 'chips', ...secs.map((c) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(cat === c), onclick: () => { cat = c; render(); } },
+    if (!secs.includes(cat)) cat = secs.includes('visual') ? 'visual' : secs.includes('plan') ? 'plan' : secs[0];
+    app.append(el('div', 'chips', ...secs.map((c) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(cat === c), onclick: () => { cat = c; catPicked = true; render(); } },
       secName(c) + ' · ' + files.filter((f) => f.section === c).length))));
-    const list = files.filter((f) => f.section === cat);
+    let list = files.filter((f) => f.section === cat);
     if (cat === 'work' || cat === 'shared') {          // от подрядчиков и из переписки: кто прислал, подпись, кто видит
-      const ul = el('ul', 'list');
-      list.forEach((f) => ul.append(el('li', null, el('div', 'drow', fileTile(f, list), el('div', 'grow',
-        el('b', { style: 'display:block;overflow-wrap:anywhere' }, f.title || f.name),
-        el('div', 'sub', [f.owner_name, f.owner_role, dfmt(f.created, true)].filter(Boolean).join(' · ')),
-        f.audience ? el('div', 'sub', '👁 ' + f.audience) : f.can_edit && f.vis ? el('div', 'sub', '👁 ' + visName(f)) : null)))));
-      app.append(el('section', 'card', ul));
+      app.append(el('section', 'card', docRows(list)));
       return;
     }
+    const box = el('section', 'card');
+    if (isRound(cat)) {                                 // варианты планировки и правки визуализаций — каждый отдельно
+      const vers = [...new Set(list.map((f) => f.ver || 1))].sort((a, b) => a - b);
+      const cur = vers.includes(verSel[cat]) ? verSel[cat] : vers[vers.length - 1];
+      if (vers.length > 1 || agreedOf(cat, cur)) box.append(el('div', 'chips', ...vers.map((n) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(n === cur),
+        onclick: () => { verSel[cat] = n; render(); } }, verName(cat, n) + (agreedOf(cat, n) ? ' ✓' : '')))));
+      const ag = agreedOf(cat, cur);
+      box.append(el('div', { class: 'row between', style: 'margin:0 0 10px;gap:8px;flex-wrap:wrap' }, el('b', null, verName(cat, cur)),
+        ag ? el('span', 'status ok', '✓ ' + T('agreed') + ' · ' + dfmt(ag.agreed, true)) : null));
+      if (cat === 'visual' && isClient() && V.revisions) box.append(el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, T('revisions_in', { n: V.revisions })));
+      list = list.filter((f) => (f.ver || 1) === cur);
+    }
+    box.append(isRoom(cat) ? byRoom(list) : byTitle(list));
+    app.append(box);
+  }
+  // фото и визуализации — группами по помещениям (в порядке списка студии), без помещения — в конце
+  function byRoom(list) {
+    const order = (V.rooms || []).map((r) => r[1]);
+    list.forEach((f) => { if (f.room && !order.includes(f.room)) order.push(f.room); });
+    const groups = order.map((r) => [r, list.filter((f) => f.room === r)]).filter(([, l]) => l.length);
+    const rest = list.filter((f) => !f.room);
+    if (!groups.length) return gallery(rest);
+    const out = el('div');
+    groups.concat(rest.length ? [[T('no_room'), rest]] : []).forEach(([r, l]) => out.append(el('h3', { class: 'grp' }, r + ' · ' + l.length), gallery(l)));
+    return out;
+  }
+  // документы: версии одного документа (одна подпись) — последняя сверху, прежние — свёрнуты
+  function byTitle(list) {
+    const keyOf = (f) => (f.title || f.name || '').trim();
+    if (!list.some((f) => (f.ver || 1) > 1)) return list.some((f) => f.approval) ? docRows(list) : gallery(list);
+    const groups = new Map();
+    list.forEach((f) => { const k = keyOf(f); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(f); });
+    const out = el('div');
+    groups.forEach((l) => {
+      l.sort((a, b) => (b.ver || 1) - (a.ver || 1) || b.id - a.id);
+      out.append(docRows([l[0]], true));
+      if (l.length > 1) {
+        const det = el('details', { class: 'older' }, el('summary', null, T('prev_versions', { n: l.length - 1 })));
+        det.append(docRows(l.slice(1), true)); out.append(det);
+      }
+    });
+    return out;
+  }
+  function gallery(list) {
     const g = el('div', 'gallery');
     list.forEach((f) => g.append(fileTile(f, list)));
-    app.append(el('section', 'card', g));
+    // исполнителям и подрядчикам — что видит заказчик: ⏳ ждёт одобрения Ирины, ✓ видит, — не показан
+    const cnt = {};
+    list.forEach((f) => { if (f.approval) cnt[f.approval] = (cnt[f.approval] || 0) + 1; });
+    const keys = ['wait', 'yes', 'no'].filter((k) => cnt[k]);
+    if (!keys.length) return g;
+    return el('div', null, g, el('div', { class: 'sub', style: 'margin-top:6px' }, keys.map((k) => apprText({ approval: k }) + ' · ' + cnt[k]).join('\n')));
+  }
+  function docRows(list, withVer) {
+    const ul = el('ul', 'list');
+    list.forEach((f) => ul.append(el('li', null, el('div', 'drow', fileTile(f, list), el('div', 'grow',
+      el('b', { style: 'display:block;overflow-wrap:anywhere' }, f.title || f.name),
+      el('div', 'sub', [withVer || (f.ver || 1) > 1 ? T('ver_n', { n: f.ver || 1 }) : '', f.owner_name, f.owner_role, f.room, dfmt(f.created, true)].filter(Boolean).join(' · ')),
+      f.audience ? el('div', 'sub', '👁 ' + f.audience) : f.can_edit && f.vis && !f.approval ? el('div', 'sub', '👁 ' + visName(f)) : null,
+      f.approval ? el('div', { class: 'sub', style: 'font-weight:600;color:' + (f.approval === 'yes' ? 'var(--up)' : f.approval === 'wait' ? 'var(--warn)' : 'var(--text-2)') }, apprText(f)) : null)))));
+    return ul;
   }
   function fileTile(f, list) {
     const doc = () => el('button', { class: 'doc', type: 'button', onclick: () => viewer(f) },
@@ -1099,7 +1198,9 @@
       const b = el('button', { class: 'thumb', type: 'button', 'aria-label': f.name, onclick: () => viewer(f) });
       const img = el('img', { src: f.thumb_url || f.url, alt: f.name, loading: 'lazy' });
       img.addEventListener('error', () => b.replaceWith(doc()));
-      b.append(img); return b;
+      b.append(img);
+      if (f.approval) { b.setAttribute('aria-label', f.name + ' · ' + apprText(f)); b.append(el('span', 'appr appr-' + f.approval, { wait: '⏳', yes: '✓', no: '—' }[f.approval])); }
+      return b;
     }
     return doc();
   }
@@ -1109,7 +1210,7 @@
     if (f.image && f.url) { const pic = el('img', { src: f.url, alt: f.name }); box.append(pic); }
     else box.append(el('div', { style: 'color:#fff;text-align:center' }, el('div', { style: 'font-size:calc(48px * var(--k))' }, '📄'), f.name));
     const own = f.can_edit && !readonly();
-    v.append(el('div', 'cap', [f.title, f.name].filter(Boolean).join(' · ') + (f.owner_name ? ' · ' + f.owner_name : '') + (f.vis && own ? ' · 👁 ' + visName(f) : '')), box, el('div', 'bar2',
+    v.append(el('div', 'cap', [f.title, f.name].filter(Boolean).join(' · ') + (f.owner_name ? ' · ' + f.owner_name : '') + (f.vis && own && !f.approval ? ' · 👁 ' + visName(f) : '') + (f.approval ? ' · ' + apprText(f) : '')), box, el('div', 'bar2',
       f.url ? el('button', { class: 'btn small', type: 'button', onclick: () => openLink(f.url) }, '↗ ' + T('open')) : null,
       own ? el('button', { class: 'btn small', type: 'button', onclick: () => { v.remove(); docSheet(f); } }, '👁 ' + T('who_sees')) : null,
       own ? el('button', { class: 'btn small', type: 'button', style: 'color:#ff8a8a', onclick: async () => {
@@ -1169,13 +1270,45 @@
     const title = el('input', { placeholder: T('doc_ph') });
     const staff = role() === 'assistant', hired = isHired();
     const vis = staff ? staffVis('studio') : hired ? { el: el('div', 'hint', T('docs_hired_hint')), value: () => 'studio' } : visPicker(role() === 'worker' ? 'head' : 'client');
-    let sec = staff ? ((V.staff_cats || []).includes(cat) ? cat : 'visual') : null;
-    const secBox = el('div', 'chips');
-    const drawSec = () => secBox.replaceChildren(...(V.staff_cats || []).map((c) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(sec === c),
-      onclick: () => { sec = c; drawSec(); } }, T('cat_' + c))));
-    if (staff) drawSec();
+    // раздел (фото работ — «От подрядчиков»; замер, планировка, визуализации, чертежи — в раздел проекта), помещение, вариант
+    const cats = staff ? (V.staff_cats || []) : (V.work_cats || ['work']);
+    // по умолчанию: раздел, который человек сам открыл; иначе сотруднику — визуализации, исполнителю — по его работе, подрядчику — «От подрядчиков»
+    const trade = (V.mine || []).map((k) => k.trade || '').join(' ');
+    const byTrade = /визуал|візуал|3d|рендер|render/i.test(trade) ? 'visual' : /черт|кресл|draft|технолог/i.test(trade) ? 'docs' : /замер|обмер|замір|обмір|measur/i.test(trade) ? 'measure' : 'visual';
+    const first = staff ? 'visual' : hired ? byTrade : 'work';
+    let sec = catPicked && cats.includes(cat) ? cat : cats.includes(first) ? first : cats[0];
+    let room = '', ver = null, newVer = false;
+    const secBox = el('div', 'chips'), extra = el('div');
+    const mineIn = (c) => (V.files || []).filter((f) => f.section === c);
+    const drawExtra = () => {
+      extra.replaceChildren();
+      if (isRoom(sec)) {
+        const rs = el('select', { 'aria-label': T('room'), onchange: (e) => { room = e.target.value; } },
+          el('option', { value: '' }, T('no_room')), ...(V.rooms || []).map(([k, n]) => el('option', { value: k, selected: room === k ? true : null }, n)));
+        extra.append(field(T('room'), rs));
+      }
+      if (isRound(sec)) {                                     // к последнему варианту (правке) или новый
+        const vers = [...new Set(mineIn(sec).map((f) => f.ver || 1))].sort((a, b) => a - b);
+        if (!vers.includes(ver) && !newVer) ver = vers.length ? vers[vers.length - 1] : null;
+        const box = el('div', 'chips', ...vers.map((n) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(!newVer && ver === n),
+          onclick: () => { ver = n; newVer = false; drawExtra(); } }, verName(sec, n))),
+          vers.length ? el('button', { class: 'chip', type: 'button', 'aria-pressed': String(newVer), onclick: () => { newVer = true; drawExtra(); } },
+            T('new_version') + ' · ' + verName(sec, vers[vers.length - 1] + 1)) : null);
+        if (vers.length) extra.append(el('div', 'field', el('span', 'lab', T('version')), box));
+      } else {                                                // новая версия своего документа — та же подпись
+        const own = [...new Set(mineIn(sec).filter((f) => f.mine).map((f) => (f.title || f.name || '').trim()).filter(Boolean))];
+        if (own.length) {
+          const vs = el('select', { 'aria-label': T('version_of'), onchange: (e) => { newVer = !!e.target.value; if (newVer) title.value = e.target.value; } },
+            el('option', { value: '' }, T('new_doc')), ...own.map((t) => el('option', { value: t }, t)));
+          extra.append(field(T('version_of'), vs));
+        }
+      }
+    };
+    const drawSec = () => secBox.replaceChildren(...cats.map((c) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(sec === c),
+      onclick: () => { sec = c; ver = null; newVer = false; drawSec(); drawExtra(); } }, c === 'work' ? T('sec_work') : T('cat_' + c))));
+    drawSec(); drawExtra();
     sheet(T('add_doc').replace('＋ ', ''), el('div', input, el('button', { class: 'btn wide', type: 'button', onclick: () => input.click() }, '📎 ' + T('pick_files')), info,
-      staff ? el('div', 'field', el('span', 'lab', T('section')), secBox) : null,
+      cats.length > 1 ? el('div', 'field', el('span', 'lab', T('section')), secBox) : null, extra,
       field(T('doc_title'), title), el('div', 'field', el('span', 'lab', T('who_sees')), vis.el, staff || hired ? null : el('div', 'hint', T('vis_note')))),
     async () => {
       const files = picked;
@@ -1186,14 +1319,17 @@
         for (let i = 0; i < files.length; i++) {
           t.textContent = T('upload_n', { i: i + 1, n: files.length });
           const f = files[i];
-          const q = new URLSearchParams({ project: PID, name: f.name || 'file', vis: vis.value(), title: title.value });
-          if (staff) q.set('cat', sec);
+          const q = new URLSearchParams({ project: PID, name: f.name || 'file', vis: vis.value(), title: title.value, cat: sec });
+          if (room) q.set('room', room);
+          if (newVer) q.set('new', '1');
+          else if (ver) q.set('ver', ver);
           const rec = await api('/api/portal/upload?' + q.toString(), { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
+          if (newVer && isRound(sec)) { ver = rec.ver; newVer = false; }      // остальные файлы — в этот же новый вариант
           const th = await makeThumb(f);
           if (th) { try { await api('/api/portal/thumb?id=' + rec.id, { body: th, headers: { 'Content-Type': 'image/jpeg' } }); } catch (e) {} }
         }
       } finally { t.remove(); }
-      toast(T('uploaded')); cat = staff ? sec : 'work'; await reload();
+      toast(T('uploaded')); cat = sec; catPicked = true; if (isRound(sec) && ver) verSel[sec] = ver; await reload();
     }, T('send'));
     sheets[sheets.length - 1].files = add;      // перетащили или вставили файлы, пока форма открыта
     if (start) add(start);

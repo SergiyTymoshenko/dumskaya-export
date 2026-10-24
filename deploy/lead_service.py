@@ -55,6 +55,7 @@ HIT_MAX = 20                       # не больше 20 нажатий за 10
 TIME_RATE = defaultdict(deque)     # ip → время последних сообщений «время на странице»
 TIME_MAX = 120                     # не больше 120 за 10 минут с одного адреса
 PERIODS = ("1h", "24h", "7", "30", "90", "365", "all")
+ROBOTS = "noindex, nofollow, noarchive, nosnippet, noimageindex"   # всё под /api — не в поиск (robots.txt тоже закрывает /api/)
 lock = threading.Lock()
 
 THANKS = {
@@ -171,6 +172,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(body)))
         self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Robots-Tag", ROBOTS)          # ответы сервиса (кабинеты, «Студия», файлы) — не для поисковиков
         if telegram_frame:       # мини-приложение: Telegram Web открывает его во фрейме
             self.send_header("Content-Security-Policy", "frame-ancestors 'self' https://web.telegram.org")
         else:
@@ -274,6 +276,7 @@ class Handler(BaseHTTPRequestHandler):
                 log(f"нажатия: не записано: {e}")
         self.send_response(204)
         self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Robots-Tag", ROBOTS)
         self.end_headers()
 
     @staticmethod

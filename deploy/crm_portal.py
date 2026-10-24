@@ -41,7 +41,7 @@ import json
 import secrets
 from datetime import date, datetime, timedelta, timezone
 
-from crm import CLIENT_CATS, CONTRACTOR_CATS, FILE_CATS, CrmError, _text, now, today
+from crm import CLIENT_CATS, CONTRACTOR_CATS, DESIGN_STAGES, FILE_CATS, ROOM_CATS, ROUND_CATS, STAGES, CrmError, _text, now, today
 from langs import CODES, pack
 from langs import ui_lang as _ui_lang
 
@@ -89,6 +89,38 @@ FIXED = {
     "Замерщик": ("Замірник", "Measurer", "Zameriavač", "Aufmaß-Techniker"),
     "Чертёжник": ("Кресляр", "Draftsman", "Kreslič", "Bauzeichner"),
     "3D-визуализатор": ("3D-візуалізатор", "3D visualiser", "3D vizualizátor", "3D-Visualisierer"),
+    # стадии проекта (crm.STAGES, решено 25.10.2026)
+    "Замер": ("Обмір", "Measurement", "Zameranie", "Aufmaß"),
+    "Разработка планировочных решений": ("Розробка планувальних рішень", "Layout planning", "Návrh dispozičného riešenia", "Grundrissplanung"),
+    "Согласование планировочных решений": ("Погодження планувальних рішень", "Layout approval", "Schválenie dispozičného riešenia",
+                                           "Abstimmung der Grundrisse"),
+    "Разработка концепции": ("Розробка концепції", "Design concept", "Návrh koncepcie", "Entwurfskonzept"),
+    "Разработка 3D-визуализаций": ("Розробка 3D-візуалізацій", "3D renderings", "Tvorba 3D vizualizácií", "3D-Visualisierungen"),
+    "Согласование визуализаций": ("Погодження візуалізацій", "Renderings approval", "Schválenie vizualizácií", "Abstimmung der Visualisierungen"),
+    "Разработка технической документации": ("Розробка технічної документації", "Technical drawings", "Tvorba technickej dokumentácie",
+                                            "Ausführungsplanung"),
+    "Ремонтные работы": ("Ремонтні роботи", "Renovation works", "Rekonštrukčné práce", "Renovierungsarbeiten"),
+    "Согласование мебельных чертежей с производством": ("Погодження меблевих креслень з виробництвом", "Furniture drawings approval with the workshop",
+                                                        "Schválenie výkresov nábytku s výrobou", "Abstimmung der Möbelzeichnungen mit der Werkstatt"),
+    "Изготовление мебели": ("Виготовлення меблів", "Furniture production", "Výroba nábytku", "Möbelfertigung"),
+    "Установка мебели": ("Встановлення меблів", "Furniture installation", "Montáž nábytku", "Möbelmontage"),
+    "Комплектация мягкой мебелью": ("Комплектація м’якими меблями", "Upholstered furniture and furnishing", "Doplnenie čalúneného nábytku",
+                                    "Ausstattung mit Polstermöbeln"),
+    "Завершён": ("Завершено", "Completed", "Dokončený", "Abgeschlossen"),
+    # помещения — группы фото и визуализаций (crm.DEFAULTS["rooms"])
+    "Гостиная-кухня": ("Вітальня-кухня", "Living room with kitchen", "Obývačka s kuchyňou", "Wohnküche"),
+    "Гостиная": ("Вітальня", "Living room", "Obývačka", "Wohnzimmer"),
+    "Кухня": ("Кухня", "Kitchen", "Kuchyňa", "Küche"),
+    "Хозяйская спальня": ("Спальня господарів", "Master bedroom", "Hlavná spálňa", "Elternschlafzimmer"),
+    "Санузел хозяев": ("Санвузол господарів", "Master bathroom", "Hlavná kúpeľňa", "Elternbad"),
+    "Кабинет": ("Кабінет", "Study", "Pracovňa", "Arbeitszimmer"),
+    "Детская": ("Дитяча", "Children’s room", "Detská izba", "Kinderzimmer"),
+    "Гостевая спальня": ("Гостьова спальня", "Guest bedroom", "Hosťovská spálňa", "Gästezimmer"),
+    "Гостевой санузел": ("Гостьовий санвузол", "Guest bathroom", "Hosťovská kúpeľňa", "Gäste-WC"),
+    "Гардеробная": ("Гардеробна", "Walk-in wardrobe", "Šatník", "Ankleide"),
+    "Постирочная": ("Пральня", "Laundry room", "Práčovňa", "Waschraum"),
+    "Прихожая": ("Передпокій", "Hallway", "Predsieň", "Diele"),
+    "Балкон, терраса": ("Балкон, тераса", "Balcony, terrace", "Balkón, terasa", "Balkon, Terrasse"),
     "Другое": ("Інше", "Other", "Iné", "Sonstiges"),
     "Экспресс": ("Експрес", "Express", "Express", "Express"),
     "Мебель": ("Меблі", "Furniture", "Nábytok", "Möbel"),
@@ -890,6 +922,9 @@ class Portal:
     STAGE_KEYS = ("id", "title", "day", "amount", "currency", "src", "confirmed", "confirmed_by", "disputed", "disputed_by", "dispute_note")
 
     def can_see_file(self, v, f):
+        """Кто видит файл. Решено 25.10.2026: документы, которые присылают подрядчики, исполнители студии, работники
+        и сотрудники студии, заказчик видит только после одобрения Ирины (see_client = 1); файлы Ирины — по разделу
+        или как она решила. Заказчик документы только смотрит."""
         if v["studio"]:
             return True
         cat = f["category"]
@@ -906,11 +941,13 @@ class Portal:
             return cat not in ("goods", "other")
         if cat == "goods":
             return False
-        if v.get("hired") and cat in CLIENT_CATS and f.get("see_crew") != 0:   # исполнителю студии — вся документация
-            return True
-        if cat == "work":                            # документ подрядчика или его работника
+        foreign = f.get("owner_kind") in ("contractor", "crew", "assistant")
+        if v.get("hired") and cat in CLIENT_CATS and f.get("see_crew") != 0 and (not foreign or f.get("owner_kind") == "assistant"
+                                                                                 or f.get("see_client") == 1):
+            return True                              # исполнителю студии — вся документация (чужие черновики — когда одобрены)
+        if f.get("owner_kind") in ("contractor", "crew"):
             org = f.get("owner_contractor")
-            if org in v["heads"]:
+            if org in v["heads"]:                    # свой документ или документ своей бригады
                 return True
             if v["crew"]:
                 if f.get("owner_crew") in v["crew"]:
@@ -919,19 +956,18 @@ class Portal:
                                                                 *v["crew"])}
                 if org in orgs and f.get("vis") in ("team", "client"):
                     return True
-            if v["client"]:
-                sc = f.get("see_client")
-                return sc == 1 or (sc is None and f.get("vis") == "client")
-            return False
-        if cat not in dict(FILE_CATS):
-            return False
-        if v["client"]:                              # документ студии — по разделу или как решила Ирина
+        if v["client"]:
             sc = f.get("see_client")
-            if sc == 1 or (sc is None and cat in CLIENT_CATS):
+            if foreign:                              # чужой документ — только одобренный Ириной
+                if sc == 1:
+                    return True
+            elif cat in dict(FILE_CATS) and (sc == 1 or (sc is None and cat in CLIENT_CATS)):
                 return True
         if v["heads"] or v["crew"]:
-            sc = f.get("see_crew")
-            if sc == 1 or (sc is None and cat in CONTRACTOR_CATS):
+            sw = f.get("see_crew")
+            if f.get("owner_kind") in ("contractor", "crew"):
+                return sw == 1                       # документ другого подрядчика — если Ирина открыла
+            if cat in dict(FILE_CATS) and (sw == 1 or (sw is None and cat in CONTRACTOR_CATS)):
                 return True
         return False
 
@@ -944,15 +980,28 @@ class Portal:
             if f.get("see_client") == 1 and (not t or t["kind"] not in ("client", "pc")):
                 who.append("заказчик")
             return ", ".join(who)
-        if f["category"] == "work":
+        if f.get("owner_kind") in ("contractor", "crew"):
             org = self.crm.one("SELECT name FROM contractors WHERE id=?", f.get("owner_contractor") or 0) or {}
             vis = f.get("vis")
             who.append(org.get("name") or "подрядчик")
             if vis in ("team", "client"):
                 who.append("его бригада")
-            sc = f.get("see_client")
-            if sc == 1 or (sc is None and vis == "client"):
+            if f.get("see_client") == 1:
                 who.append("заказчик")
+            elif f.get("review"):
+                who.append("заказчик — когда вы одобрите")
+            if f.get("see_crew") == 1:
+                who.append("подрядчики")
+            return ", ".join(who)
+        if f.get("owner_kind") == "assistant":
+            who.append("сотрудники")
+            if f.get("see_client") == 1:
+                who.append("заказчик")
+            elif f.get("review"):
+                who.append("заказчик — когда вы одобрите")
+            sw = f.get("see_crew")
+            if sw == 1 or (sw is None and f["category"] in CONTRACTOR_CATS):
+                who.append("подрядчики и их бригады")
             return ", ".join(who)
         sc, sw = f.get("see_client"), f.get("see_crew")
         if sc == 1 or (sc is None and f["category"] in CLIENT_CATS):
@@ -978,9 +1027,13 @@ class Portal:
             a = self.crm.one("SELECT name, position FROM assistants WHERE id=?", f["owner_assistant"]) or {}
             x["owner_name"] = a.get("name") or ""
             x["owner_role"] = a.get("position") or ""
+        x["room"], x["ver"] = f.get("room") or "", f.get("ver")
+        # одобрение Ирины (видно тому, кто прислал, и студии): wait — ждёт, yes — заказчик видит, no — Ирина не показала
+        if f.get("owner_kind") in ("contractor", "crew", "assistant") and not v["client"]:
+            x["approval"] = "yes" if f.get("see_client") == 1 else "wait" if f.get("review") else "no" if f.get("see_client") == 0 else ""
         x["mine"] = bool(f.get("owner_crew") in v["crew"] or (f.get("owner_kind") == "contractor" and f.get("owner_contractor") in v["heads"])
                          or (f.get("owner_assistant") and f.get("owner_assistant") in (v.get("staff") or set())))
-        x["can_edit"] = bool(x["mine"] or (f["category"] == "work" and f.get("owner_contractor") in v["heads"]))
+        x["can_edit"] = bool(x["mine"] or (f.get("owner_kind") in ("contractor", "crew") and f.get("owner_contractor") in v["heads"]))
         if v["studio"] or v["observer"]:
             x["audience"] = self.audience(f)
         return x
@@ -995,12 +1048,19 @@ class Portal:
                 out.append(x)
         return out
 
-    def upload(self, v, pid, name, stream, size, mime, vis, title, who):
-        """Документ от подрядчика или работника (фото выполненных работ, техническая документация) — раздел «От подрядчиков»."""
+    WORK_CATS = ("work", "measure", "plan", "visual", "docs")      # куда добавляют подрядчик, исполнитель студии, работник
+
+    def upload(self, v, pid, name, stream, size, mime, vis, title, who, cat="work", ver=None, room=None, new=False):
+        """Документ от подрядчика, исполнителя студии или работника: фото работ и документы («От подрядчиков») или замер,
+        планировка, визуализация, чертежи — в раздел проекта, с вариантом (правкой) и помещением. Заказчик увидит его,
+        только когда Ирина одобрит (решено 25.10.2026)."""
+        cat = cat or "work"
+        if cat not in self.WORK_CATS:
+            raise CrmError("Выберите раздел")
         if v["heads"]:
             org = sorted(v["heads"])[0]
-            if org in (v.get("hired") or set()):      # исполнитель студии: файлы видит студия, заказчику откроет Ирина
-                vis = "studio"
+            if org in (v.get("hired") or set()):      # исполнитель студии: заказчику — когда Ирина одобрит
+                vis = "client"
             if vis not in VIS_HEAD:
                 raise CrmError("Выберите, кто видит документ")
             owner = ("contractor", org, None)
@@ -1012,16 +1072,17 @@ class Portal:
             owner = ("crew", w["contractor_id"], wid)
         else:
             raise CrmError("Нет доступа")
-        f = self.crm.add_file(pid, "work", name, stream, size, mime, who)
-        self.crm.run("UPDATE files SET owner_kind=?, owner_contractor=?, owner_crew=?, vis=?, title=? WHERE id=?",
-                     owner[0], owner[1], owner[2], vis, _text(title, 200), f["id"])
+        f = self.crm.add_file(pid, cat, name, stream, size, mime, who)
+        self.crm.run("UPDATE files SET owner_kind=?, owner_contractor=?, owner_crew=?, vis=?, title=?, review=? WHERE id=?",
+                     owner[0], owner[1], owner[2], vis, _text(title, 200), 1 if vis == "client" else None, f["id"])
+        self.crm.file_meta(dict(f, category=cat), ver, room, title, new)
         return self._file_out(self.crm.one("SELECT * FROM files WHERE id=?", f["id"]), v)
 
     STAFF_CATS = tuple(c for c, _ in FILE_CATS if c != "other")      # куда сотрудник студии добавляет файлы
 
-    def upload_studio(self, v, pid, cat, name, stream, size, mime, vis, title, who):
-        """Файл от сотрудника студии — в раздел проекта (обмерный план, визуализации, документация…). vis: default — видят,
-        как обычно в этом разделе (заказчик, подрядчики); studio — только студия, заказчику Ирина откроет сама."""
+    def upload_studio(self, v, pid, cat, name, stream, size, mime, vis, title, who, ver=None, room=None, new=False):
+        """Файл от сотрудника студии — в раздел проекта (обмерный план, планировка, визуализации, документация…).
+        vis: default — подрядчикам как обычно в этом разделе, заказчику — когда Ирина одобрит; studio — только студия."""
         aid = sorted(v.get("staff") or [0])[0]
         if not aid:
             raise CrmError("Нет доступа")
@@ -1030,14 +1091,16 @@ class Portal:
         if vis not in ("default", "studio"):
             raise CrmError("Выберите, кто видит файл")
         f = self.crm.add_file(pid, cat, name, stream, size, mime, who)
-        self.crm.run("UPDATE files SET owner_kind='assistant', owner_assistant=?, see_client=?, title=? WHERE id=?",
-                     aid, 0 if vis == "studio" else None, _text(title, 200), f["id"])
+        self.crm.run("UPDATE files SET owner_kind='assistant', owner_assistant=?, see_client=?, see_crew=?, review=?, title=? WHERE id=?",
+                     aid, 0 if vis == "studio" else None, 0 if vis == "studio" else None, None if vis == "studio" else 1,
+                     _text(title, 200), f["id"])
+        self.crm.file_meta(f, ver, room, title, new)
         return self._file_out(self.crm.one("SELECT * FROM files WHERE id=?", f["id"]), v)
 
     def edit_file(self, v, d, who):
         """Свой документ (или документ своей бригады — у подрядчика): кто видит, подпись, удалить."""
         f = self.crm.one("SELECT * FROM files WHERE id=?", int(d.get("id") or 0))
-        if not f or (f["category"] != "work" and f.get("owner_kind") != "assistant"):
+        if not f or f.get("owner_kind") not in ("contractor", "crew", "assistant") or f.get("thread_id"):
             raise CrmError("Файл не найден")
         x = self._file_out(f, v)
         if not x["can_edit"]:
@@ -1045,20 +1108,41 @@ class Portal:
         if d.get("delete"):
             self.crm.delete("file", f["id"], who)
             return None
-        if f.get("owner_kind") == "assistant":       # файл сотрудника студии: видят как обычно / только студия
+        title = _text(d.get("title", f["title"]), 200)
+        if f.get("owner_kind") == "assistant":       # файл сотрудника студии: подрядчикам и заказчику (после Ирины) / только студия
             vis = d.get("vis", "studio" if f["see_client"] == 0 else "default")
             if vis not in ("default", "studio"):
                 raise CrmError("Выберите, кто видит файл")
-            self.crm.run("UPDATE files SET see_client=?, title=? WHERE id=?", 0 if vis == "studio" else None,
-                         _text(d.get("title", f["title"]), 200), f["id"])
+            if vis == "studio":
+                self.crm.run("UPDATE files SET see_client=0, see_crew=0, review=NULL, title=? WHERE id=?", title, f["id"])
+            elif f["see_client"] != 1:
+                self.crm.run("UPDATE files SET see_client=NULL, see_crew=NULL, review=1, title=? WHERE id=?", title, f["id"])
+            else:
+                self.crm.run("UPDATE files SET see_crew=NULL, title=? WHERE id=?", title, f["id"])
             return self._file_out(self.crm.one("SELECT * FROM files WHERE id=?", f["id"]), v)
         vis = d.get("vis", f["vis"])
         if f["owner_kind"] == "contractor" and self.is_hired(f["owner_contractor"]):
-            vis = "studio"                           # исполнитель студии: файлы видит студия, заказчику откроет Ирина
+            vis = "client"                           # исполнитель студии: заказчику — когда Ирина одобрит
         if vis not in (VIS_HEAD if f["owner_kind"] == "contractor" else VIS_CREW):
             raise CrmError("Выберите, кто видит документ")
-        self.crm.run("UPDATE files SET vis=?, title=? WHERE id=?", vis, _text(d.get("title", f["title"]), 200), f["id"])
+        if vis == "client":                          # просит показать заказчику — решает Ирина (одобренный остаётся)
+            self.crm.run("UPDATE files SET vis=?, title=?, review=CASE WHEN see_client=1 THEN NULL ELSE 1 END, "
+                         "see_client=CASE WHEN see_client=1 THEN 1 ELSE NULL END WHERE id=?", vis, title, f["id"])
+        else:                                        # заказчику больше не показывать
+            self.crm.run("UPDATE files SET vis=?, title=?, review=NULL, see_client=NULL WHERE id=?", vis, title, f["id"])
         return self._file_out(self.crm.one("SELECT * FROM files WHERE id=?", f["id"]), v)
+
+    def doc_info(self, pid):
+        """Для кабинета: стадия проекта и её история, согласованные варианты планировок и правки визуализаций, помещения
+        (порядок групп фото), сколько правок входит в пакет."""
+        p = self.crm.one("SELECT stage, tariff FROM projects WHERE id=?", int(pid)) or {}
+        lists = self.crm.lists()
+        info = lists["tariff_info"].get(p.get("tariff") or "") or {}
+        return {"stage": p.get("stage") or "", "stages": [[k, n] for k, n in STAGES], "design_stages": list(DESIGN_STAGES),
+                "stage_log": [{"stage": x["stage"], "day": x["day"]} for x in self.crm.stage_log(pid)],
+                "rounds": [_pick(r, ("category", "ver", "agreed")) for r in self.crm.rounds(pid)],
+                "rooms": list(lists["rooms"]), "revisions": info.get("revisions"),
+                "round_cats": list(ROUND_CATS), "room_cats": list(ROOM_CATS), "work_cats": list(self.WORK_CATS)}
 
     # ---------- что видит заказчик ----------
     def _money_view(self, P):
@@ -1315,9 +1399,21 @@ class Portal:
             tr(o, "note_client")
         for p in v.get("payments", []):
             tr(p, "title")
-        for f in v.get("files", []):                  # кто прислал документ и подпись к нему
+        for f in v.get("files", []):                  # кто прислал документ, подпись к нему, помещение
             tr(f, "owner_role")
             tr(f, "title")
+            tr(f, "room")
+        for st in v.get("stages", []):                # стадии проекта и помещения — из словаря
+            x = self.label(st[1], lang)
+            st[1] = x if x is not None else st[1]
+        rooms = []                                    # [как в учёте (для загрузки), на языке человека]
+        for r in v.get("rooms", []):
+            x = self.label(r, lang)
+            if x is None:
+                misses.add(r)
+            rooms.append([r, x or r])
+        if "rooms" in v:
+            v["rooms"] = rooms
         for k in v.get("contractors", []) + v.get("mine", []) + v.get("heads", []) + (v.get("participants") or {}).get("contractors", []):
             tr(k, "trade")
             for s in k.get("stages", []):

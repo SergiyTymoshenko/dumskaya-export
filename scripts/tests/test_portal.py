@@ -311,10 +311,14 @@ for uid, vis, name, lang in ((H.CREW2, "client", "kuhnya-smontirovana.png", "sk"
     check(code == 200 and f["vis"] == vis, f"документ {name} ({vis})")
     ups[name] = H.crm.one("SELECT * FROM files WHERE id=?", f["id"])
 check(wait(lambda: len([x for x in texts(H.IRINA, n0) if "Новый документ" in x]) == 6), "Ирине — о каждом новом документе")
-check(wait(lambda: any("Nový dokument" in x and "kuhnya-smontirovana" in x for x in texts(H.CLIENT, n0))), "заказчику — документ, открытый ему")
 check(wait(lambda: any("zamery-tehnologa" in x for x in texts(H.CREW2, n0))), "мебельщику — документ технолога")
 settle()
-check(not any("smeta-fabriki" in x for x in texts(H.CLIENT, n0)), "заказчику о закрытом документе — нет")
+check(not texts(H.CLIENT, n0), "заказчику — ничего, пока Ирина не одобрит (решено 25.10.2026)")
+asks = [p_ for p_ in msgs(H.IRINA, n0) if "Показать заказчику?" in (p_.get("text") or "")]
+check(len(asks) == 2 and all("fa:" in json.dumps(p_.get("reply_markup"), ensure_ascii=False) for p_ in asks),
+      "Ирине — «Показать заказчику?» с кнопками у двух документов, которые просят показать заказчику")
+check(sorted(r["name"] for r in H.crm.q("SELECT name FROM files WHERE review=1")) == ["kuhnya-smontirovana.png", "plitka-gotovo.png"],
+      "ждут решения Ирины — эти два")
 code, f = call(f"/api/portal/upload?project={pid}&name=x.pdf&vis=head", H.CREW2, raw=b"%PDF", ctype="application/pdf")
 check(code == 400, "у подрядчика нет статуса «только руководитель»")
 code, f = call(f"/api/portal/upload?project={pid}&name=x.pdf&vis=client", H.CLIENT, raw=b"%PDF", ctype="application/pdf")
@@ -325,7 +329,15 @@ def see(v):
     return {k for k, f in ups.items() if P.can_see_file(v, f)}
 
 
-check(see(vC) == {"kuhnya-smontirovana.png", "plitka-gotovo.png"}, f"заказчик: только открытые ему {see(vC)}")
+check(see(vC) == set(), f"заказчик: пока Ирина не одобрила — ничего {see(vC)}")
+n = len(H.CALLS)
+H.update(H.IRINA, data=f"fa:{ups['kuhnya-smontirovana.png']['id']}:1", first="Ирина", lang="ru")
+check(wait(lambda: any("Nový dokument" in x for x in texts(H.CLIENT, n))), "Ирина нажала «Показать заказчику» — заказчику сообщение")
+check(wait(lambda: any("klientovi" in x or "показала" in x for x in texts(H.CREW2, n))), "мебельщику — Ирина показала ваш документ заказчику")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "file_approve", "data": {"id": ups["plitka-gotovo.png"]["id"], "show": True}}, lang="ru")
+check(code == 200 and not H.crm.q("SELECT id FROM files WHERE review=1"), "второй — из «Студии»; ждущих решения нет")
+ups = {k: H.crm.one("SELECT * FROM files WHERE id=?", f["id"]) for k, f in ups.items()}
+check(see(vC) == {"kuhnya-smontirovana.png", "plitka-gotovo.png"}, f"заказчик: только одобренные Ириной {see(vC)}")
 check(see(vL) == {"kuhnya-smontirovana.png", "smeta-fabriki.pdf", "chertezh-dlya-montazha.pdf", "zamery-tehnologa.pdf"}, f"мебельщик: свои и технолога {see(vL)}")
 check(see(vJ) == {"kuhnya-smontirovana.png", "chertezh-dlya-montazha.pdf", "zamery-tehnologa.pdf"}, f"технолог: для бригады и свои {see(vJ)}")
 check(see(vK) == {"raskladka-plitki.pdf", "plitka-gotovo.png"}, f"прораб: только своей бригады {see(vK)}")
@@ -334,7 +346,12 @@ vI = P.viewer(H.IRINA, pid, designer=True)
 check(see(vI) == set(ups), "Ирина видит все документы")
 check("заказчик" in P.audience(ups["kuhnya-smontirovana.png"]) and "заказчик" not in P.audience(ups["smeta-fabriki.pdf"]), "кто видит — подпись для Ирины")
 code, x = call("/api/portal/file", H.CREW2, {"id": ups["smeta-fabriki.pdf"]["id"], "vis": "client"})
-check(code == 200 and P.can_see_file(vC, H.crm.one("SELECT * FROM files WHERE id=?", ups["smeta-fabriki.pdf"]["id"])), "подрядчик открыл документ заказчику")
+fsm = H.crm.one("SELECT * FROM files WHERE id=?", ups["smeta-fabriki.pdf"]["id"])
+check(code == 200 and x["file"]["approval"] == "wait" and not P.can_see_file(vC, fsm) and fsm["review"] == 1,
+      "подрядчик попросил показать заказчику — ждёт Ирину, заказчик пока не видит")
+H.crm.approve_file({"id": fsm["id"], "show": False}, "Ирина")
+code, x = call(f"/api/portal/project?id={pid}", H.CREW2)
+check(any(f["id"] == fsm["id"] and f["approval"] == "no" for f in x["files"]), "Ирина не показала — подрядчик это видит")
 code, x = call("/api/portal/file", H.CREW, {"id": ups["smeta-fabriki.pdf"]["id"], "delete": True}, lang="uk")
 check(code == 400, "чужой документ удалить нельзя")
 code, x = call("/api/portal/file", H.CREW2, {"id": ups["zamery-tehnologa.pdf"]["id"], "vis": "team"})
@@ -618,7 +635,8 @@ n = len(H.CALLS)
 code, f1 = call(f"/api/portal/upload?project={pid}&cat=visual&vis=studio&name=spalnya-variant-2.png&title=" + urllib.parse.quote("Спальня, вариант 2"), H.ASSIST,
                 raw=png, ctype="image/png", lang="ru")
 check(code == 200 and f1["mine"] and f1["can_edit"], "сотрудник добавил визуализацию (пока только студии)")
-check(wait(lambda: any("Новый файл" in x and "Визуализации" in x and "Заказчику не видно" in x for x in texts(H.IRINA, n))), "Ирине — новый файл")
+check(wait(lambda: any("Новый файл" in x and "Визуализации" in x and "Видят:" in x and "Показать заказчику?" not in x for x in texts(H.IRINA, n))),
+      "Ирине — новый файл (только студии — спрашивать про заказчика не нужно)")
 cv = P.client_view(pid, H.CLIENT)
 check(not any(f["id"] == f1["id"] for f in cv["files"]), "заказчик его не видит")
 code, x = call(f"/api/portal/thumb?id={f1['id']}", H.ASSIST, raw=png, ctype="image/jpeg", lang="ru")
@@ -626,7 +644,10 @@ check(code == 200 and H.crm.one("SELECT thumb FROM files WHERE id=?", f1["id"])[
 code, x = call(f"/api/portal/thumb?id={f1['id']}", H.CLIENT, raw=png, ctype="image/jpeg")
 check(code == 403, "чужому файлу превью не поставить")
 code, x = call("/api/portal/file", H.ASSIST, {"id": f1["id"], "vis": "default"}, lang="ru")
-check(code == 200 and any(f["id"] == f1["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "сотрудник открыл — заказчик видит")
+check(code == 200 and x["file"]["approval"] == "wait" and not any(f["id"] == f1["id"] for f in P.client_view(pid, H.CLIENT)["files"]),
+      "сотрудник открыл — заказчик увидит, когда одобрит Ирина")
+H.crm.approve_file({"id": f1["id"], "show": True}, "Ирина")
+check(any(f["id"] == f1["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "Ирина одобрила — заказчик видит")
 code, x = call(f"/api/portal/upload?project={pid}&cat=other&vis=default&name=schet.pdf", H.ASSIST, raw=b"%PDF", ctype="application/pdf", lang="ru")
 check(code == 400, "в «Другое» сотрудник не добавляет")
 code, x = call(f"/api/portal/project?id={pid}&preview=assistant&assistant={aid}", H.IRINA, lang="ru")
@@ -805,14 +826,15 @@ check(wait(lambda: any("буду о 10:00" in x for x in texts(H.IRINA, n))), "�
 settle()
 check(any("Исполнитель студии" in x for x in texts(H.IRINA, n)) and not any("буду о 10:00" in x for x in texts(H.ASSIST2, n)),
       "Ирине — «Исполнитель студии», сотруднику — нет")
-code, fH = call(f"/api/portal/upload?project={pid}&vis=client&name=zamer-kvartira.pdf&title=" + urllib.parse.quote("Замер"), H.HIRED,
+code, fH = call(f"/api/portal/upload?project={pid}&cat=measure&vis=studio&name=zamer-kvartira.pdf&title=" + urllib.parse.quote("Замер"), H.HIRED,
                 raw=b"%PDF-1.4 zamer", ctype="application/pdf", lang="uk")
-check(code == 200 and H.crm.one("SELECT vis FROM files WHERE id=?", fH["id"])["vis"] == "studio", "его файл — только студии, даже если выбрал «заказчику»")
-check(not any(f["id"] == fH["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "заказчик замер не видит")
-code, x = call("/api/portal/file", H.HIRED, {"id": fH["id"], "vis": "client"}, lang="uk")
-check(code == 200 and H.crm.one("SELECT vis FROM files WHERE id=?", fH["id"])["vis"] == "studio", "открыть заказчику сам не может")
-code, x = call("/api/crm/save", H.IRINA, {"entity": "file_vis", "data": {"id": fH["id"], "see_client": 1}}, lang="ru")
-check(code == 200 and any(f["id"] == fH["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "Ирина открыла — заказчик видит")
+fh = H.crm.one("SELECT * FROM files WHERE id=?", fH["id"])
+check(code == 200 and fh["category"] == "measure" and fh["review"] == 1, "замер — в «Обмерный план», ждёт решения Ирины")
+check(not any(f["id"] == fH["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "заказчик замер пока не видит")
+code, x = call("/api/portal/file", H.HIRED, {"id": fH["id"], "vis": "studio", "title": "Замер, 24.10"}, lang="uk")
+check(code == 200 and not any(f["id"] == fH["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "открыть заказчику сам не может")
+code, x = call("/api/crm/save", H.IRINA, {"entity": "file_approve", "data": {"id": fH["id"], "show": True}}, lang="ru")
+check(code == 200 and any(f["id"] == fH["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "Ирина одобрила — заказчик видит")
 code, me = call("/api/portal/me", H.HIRED, lang="uk")
 check(code == 200 and me["heads"][0]["kind"] == "hired", "в кабинете — вид «исполнитель студии»")
 check(P.label("Замерщик", "de") == "Aufmaß-Techniker" and P.label("3D-визуализатор", "fr") == langs.pack("fr")["fixed"]["3D-визуализатор"],
@@ -887,5 +909,116 @@ with urllib.request.urlopen(BASE + "/api/stats/server/app", timeout=10) as r:
 translate._post = real_post
 del os.environ["OPENAI_API_KEY"]
 translate.USAGE_HOOK = None
+# ---------- документы: планировки, варианты и правки, помещения; заказчик только смотрит (решено 25.10.2026) ----------
+def up_studio(cat, name, extra=""):
+    data = png if name.endswith(".png") else b"%PDF-1.4 x"
+    code, f = call(f"/api/crm/upload?project={pid}&cat={cat}&name={urllib.parse.quote(name)}{extra}", H.IRINA, raw=data,
+                   ctype="image/png" if name.endswith(".png") else "application/pdf", lang="ru")
+    assert code == 200, f
+    return H.crm.one("SELECT * FROM files WHERE id=?", f["id"])
+
+
+pl1 = up_studio("plan", "planirovka-variant-1.pdf")
+pl2 = up_studio("plan", "planirovka-variant-2.pdf", "&new=1")
+check(pl1["ver"] == 1 and pl2["ver"] == 2, "планировочные решения: вариант 1 и вариант 2")
+v1 = up_studio("visual", "gostinaya-1.png", "&room=" + urllib.parse.quote("Гостиная"))
+v2 = up_studio("visual", "spalnya-1.png", "&room=" + urllib.parse.quote("Хозяйская спальня"))
+r1 = up_studio("visual", "gostinaya-pravka-1.png", "&new=1&room=" + urllib.parse.quote("Гостиная"))
+r1b = up_studio("visual", "spalnya-pravka-1.png", "&room=" + urllib.parse.quote("Хозяйская спальня"))
+check(v1["ver"] == v2["ver"] == 1 and r1["ver"] == r1b["ver"] == 2 and r1["room"] == "Гостиная", "визуализации: первый вариант, правка 1 — по помещениям")
+old_v = H.crm.one("SELECT * FROM files WHERE project_id=? AND category='visual' AND id NOT IN (?, ?, ?, ?) ORDER BY id LIMIT 1", pid, v1["id"], v2["id"], r1["id"], r1b["id"])
+check(old_v["ver"] is None, "старые файлы без версии — считаются первым вариантом")
+d1 = up_studio("docs", "kuhnya-chertezhi.pdf", "&title=" + urllib.parse.quote("Кухня — чертежи"))
+d2 = up_studio("docs", "kuhnya-chertezhi-2.pdf", "&new=1&title=" + urllib.parse.quote("Кухня — чертежи"))
+check(d1["ver"] is None and d2["ver"] == 2 and d2["title"] == "Кухня — чертежи", "документ с тем же названием — версия 2")
+B_today = date.today().isoformat()
+code, r = call("/api/crm/save", H.IRINA, {"entity": "round", "data": {"project_id": pid, "category": "plan", "ver": 2, "agreed": True}}, lang="ru")
+check(code == 200 and r["rounds"] == [{"category": "plan", "ver": 2, "agreed": B_today, "agreed_by": "Ирина"}],
+      "Ирина отметила: вариант 2 планировки заказчик согласовал")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "file_meta", "data": {"id": v2["id"], "room": "Детская"}}, lang="ru")
+check(code == 200 and H.crm.one("SELECT room FROM files WHERE id=?", v2["id"])["room"] == "Детская", "Ирина поменяла помещение")
+code, x = call(f"/api/portal/project?id={pid}", H.CLIENT, lang="sk")
+vis_ = {f["id"]: f for f in x["files"]}
+check(code == 200 and {pl1["id"], pl2["id"], v1["id"], r1["id"], d2["id"]} <= set(vis_) and x["rounds"] == [{"category": "plan", "ver": 2, "agreed": B_today}],
+      "заказчик видит варианты, правки и отметку «согласовано»")
+room_l = P.label("Гостиная", x["lang"])
+check(x["lang"] != "ru" and vis_[r1["id"]]["ver"] == 2 and vis_[r1["id"]]["room"] == room_l != "Гостиная" and ["Гостиная", room_l] in x["rooms"] and x["revisions"] == 2,
+      f"помещения — на языке заказчика ({x['lang']}); в пакет «Премиум» входят 2 правки")
+# заказчик только смотрит: не добавляет, не правит, не удаляет
+code, _ = call(f"/api/portal/upload?project={pid}&cat=visual&vis=client&name=x.png", H.CLIENT, raw=png, ctype="image/png")
+check(code == 403, "заказчик не добавляет документы")
+code, _ = call("/api/portal/file", H.CLIENT, {"id": v1["id"], "delete": True})
+check(code in (400, 403) and H.crm.one("SELECT id FROM files WHERE id=?", v1["id"]), "заказчик не удаляет документы")
+code, _ = call("/api/portal/file", H.CLIENT, {"id": v1["id"], "title": "x"})
+check(code in (400, 403), "и не правит")
+code, _ = call(f"/api/portal/thumb?id={v1['id']}", H.CLIENT, raw=png, ctype="image/jpeg")
+check(code == 403, "и превью не меняет")
+for path in ("/api/crm/save", "/api/crm/delete", "/api/crm/move"):
+    code, _ = call(path, H.CLIENT, {"entity": "file", "id": v1["id"], "category": "other"})
+    check(code == 403, f"«Студия» ({path}) заказчику закрыта")
+# исполнитель-визуализатор: правка 1 по помещению — заказчику только после одобрения Ирины
+code, fv = call(f"/api/portal/upload?project={pid}&cat=visual&ver=2&room=" + urllib.parse.quote("Кухня") + "&name=kuhnya-pravka-1.png&title=" + urllib.parse.quote("Kuchyňa"),
+                H.HIRED, raw=png, ctype="image/png", lang="uk")
+fvr = H.crm.one("SELECT * FROM files WHERE id=?", fv["id"])
+check(code == 200 and fvr["category"] == "visual" and fvr["ver"] == 2 and fvr["room"] == "Кухня" and fvr["review"] == 1, "исполнитель добавил правку 1 кухни")
+check(not any(f["id"] == fv["id"] for f in P.client_view(pid, H.CLIENT)["files"]), "заказчик её пока не видит")
+code, x = call(f"/api/portal/project?id={pid}", H.HIRED, lang="uk")
+check(any(f["id"] == fv["id"] and f["approval"] == "wait" for f in x["files"]), "исполнитель видит: ждёт одобрения Ирины")
+code, x = call(f"/api/portal/upload?project={pid}&cat=other&vis=client&name=x.pdf", H.HIRED, raw=b"%PDF", ctype="application/pdf", lang="uk")
+check(code == 400, "в «Другое» подрядчики не добавляют")
+code, pst = call("/api/crm/state", H.IRINA, lang="ru")
+check(any(p_["id"] == pid and p_["review"] >= 1 for p_ in pst["projects"]), "в списке проектов «Студии» — сколько ждёт решения Ирины")
+
+# ---------- стадия проекта ----------
+n = len(H.CALLS)
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_stage", "data": {"id": pid, "stage": "measure", "day": "2026-07-02"}}, lang="ru")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_stage", "data": {"id": pid, "stage": "plan_ok"}}, lang="ru")
+check(code == 200 and r["project"]["stage"] == "plan_ok" and [x_["stage"] for x_ in r["stages"]][-2:] == ["measure", "plan_ok"], "Ирина поставила стадию")
+cl = H.bot.lang_of(H.CLIENT)
+st_name = P.label("Согласование планировочных решений", cl)
+check(cl != "ru" and st_name != "Согласование планировочных решений" and wait(lambda: any(x_.startswith("📍") and st_name in x_ for x_ in texts(H.CLIENT, n))),
+      f"заказчику — новая стадия на его языке ({cl}: {st_name})")
+code, x = call(f"/api/portal/project?id={pid}", H.CLIENT, lang="sk")
+check(x["stage"] == "plan_ok" and dict(x["stages"])["plan_ok"] == st_name and [y["stage"] for y in x["stage_log"]][-2:] == ["measure", "plan_ok"], "в кабинете — стадия и история")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_stage", "data": {"id": pid, "stage": "repair", "notify": False}}, lang="ru")
+settle()
+n = len(H.CALLS)
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_stage", "data": {"id": pid, "stage": "done", "day": "2026-10-24"}}, lang="ru")
+check(code == 200 and r["project"]["status"] == "done" and r["project"]["stage"] == "done", "стадия «Завершён» — проект завершён")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_status", "data": {"id": pid, "status": "active"}}, lang="ru")
+check(r["project"]["stage"] == "repair", "вернули в работу — прежняя стадия")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_stage", "data": {"id": pid, "stage": "furniture_make"}}, lang="ru")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_status", "data": {"id": pid, "status": "done", "finished": "2026-10-24"}}, lang="ru")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "project_stage", "data": {"id": pid, "stage": "furniture_install"}}, lang="ru")
+check(r["project"]["status"] == "active" and r["project"]["stage"] == "furniture_install", "заказчик продолжил: рабочая стадия возвращает проект в работу")
+
+# ---------- смена пакета: пересчёт только вверх или прежняя сумма; доход по пакетам ----------
+base = H.crm.save_project({"title": "Квартира 80 м², Петржалка", "area": 80, "tariff": "Базовый", "total_eur": 2800, "status": "active",
+                           "started": "2026-09-01"}, "Ирина")["project"]
+H.crm.save_op({"project_id": base["id"], "kind": "payment", "day": "2026-09-02", "amount": 1400, "currency": "EUR"}, "Ирина")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "tariff", "data": {"id": base["id"], "tariff": "Экспресс", "mode": "recalc", "rate": 20}}, lang="ru")
+check(code == 400 and "только растёт" in r.get("error", ""), "пересчёт вниз — нельзя")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "tariff", "data": {"id": base["id"], "tariff": "Премиум", "mode": "recalc", "rate": 50,
+                                                                        "day": "2026-10-01"}}, lang="ru")
+check(code == 200 and r["project"]["tariff"] == "Премиум" and r["project"]["total_eur"] == 4000 and r["tariff_changes"][0]["old_total"] == 2800,
+      "Базовый → Премиум: 80 м² × 50 € = 4000 €")
+H.crm.save_op({"project_id": base["id"], "kind": "payment", "day": "2026-10-02", "amount": 1000, "currency": "EUR"}, "Ирина")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "tariff", "data": {"id": base["id"], "tariff": "Премиум+", "mode": "keep", "day": "2026-10-03"}}, lang="ru")
+check(code == 200 and r["project"]["total_eur"] == 4000 and r["project"]["tariff"] == "Премиум+", "сменить пакет и оставить прежнюю сумму")
+st = H.crm.stats("all")
+bt = dict(st["by_tariff"])
+check(bt.get("Базовый", 0) >= 1400 and bt.get("Премиум", 0) >= 1000, f"доход до смены — старому пакету, после — новому {bt}")
+ups_ = {(u["from"], u["to"]): u for u in st["tariff_ups"]}
+check(ups_[("Базовый", "Премиум")]["plus"] == 1200 and ups_[("Премиум", "Премиум+")]["plus"] == 0, f"смены пакета в статистике {st['tariff_ups']}")
+code, x = call("/api/crm/save", H.IRINA, {"entity": "lists", "data": {"tariff_info": {"Премиум": {"rate": 55, "revisions": 3}}}}, lang="ru")
+check(code == 200 and x["tariff_info"]["Премиум"] == {"rate": 55, "revisions": 3} and x["tariff_info"]["Базовый"]["revisions"] == 1, "пакеты: цена за м² и правки — в настройках")
+
+# ---------- документы не попадают в поиск ----------
+req = urllib.request.Request(BASE + f"/api/portal/project?id={pid}", headers={"X-Telegram-Init-Data": H.init_data(H.CLIENT, lang="sk")})
+with urllib.request.urlopen(req, timeout=10) as resp:
+    check("noindex" in (resp.headers.get("X-Robots-Tag") or ""), "ответы кабинета — noindex")
+fu = H.crm.file_view(H.crm.one("SELECT * FROM files WHERE id=?", v1["id"]))["url"]
+with urllib.request.urlopen(BASE + fu, timeout=10) as resp:
+    check("noindex" in (resp.headers.get("X-Robots-Tag") or "") and resp.headers.get("Cache-Control", "").startswith("private"), "файлы проектов — noindex, private")
 srv.shutdown()
 print(f"OK: {ok} проверок")

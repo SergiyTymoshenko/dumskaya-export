@@ -65,15 +65,30 @@ LINK_HOURS = 12
 
 STATUSES = [("active", "В работе"), ("paused", "На паузе"), ("done", "Завершён"), ("cancelled", "Отменён")]
 KINDS = {"payment": "Оплата заказчика", "commission": "Бонус", "resale": "Перепродажа"}
-FILE_CATS = [("measure", "Обмерный план"), ("brief", "Опросник"), ("before", "До"), ("visual", "Визуализации"),
-             ("docs", "Документация"), ("after", "После"), ("other", "Другое")]
+FILE_CATS = [("measure", "Обмерный план"), ("brief", "Опросник"), ("before", "До"), ("plan", "Планировочные решения"),
+             ("visual", "Визуализации"), ("docs", "Документация"), ("after", "После"), ("other", "Другое")]
 PHOTO_CATS = ("before", "visual", "after")
 # служебные разделы файлов: фото товаров (в карточке товара) и вложения переписки — в разделах «Файлы проекта» их нет
 EXTRA_CATS = [("goods", "Фото товаров"), ("chat", "Из переписки"), ("work", "От подрядчиков")]
 # что видно в кабинете: заказчику — всё, кроме «Другое» (там бывают счета с закупкой); подрядчику — обмеры, фото,
 # визуализации и документация (опросник заказчика — нет)
-CLIENT_CATS = ("measure", "brief", "before", "visual", "docs", "after")
-CONTRACTOR_CATS = ("measure", "before", "visual", "docs", "after")
+CLIENT_CATS = ("measure", "brief", "before", "plan", "visual", "docs", "after")
+CONTRACTOR_CATS = ("measure", "before", "plan", "visual", "docs", "after")
+# версии документов (решено 25.10.2026): планировочные решения — «Вариант 1, 2…», визуализации — «Первый вариант, Правка 1,
+# Правка 2…» (раунд — весь раздел; сколько правок входит в пакет — «Пакеты» в ⚙︎); в остальных разделах версии у документа
+# с одним названием (чертежи технолога: версия 1, 2…). Фото и визуализации — по помещениям.
+ROUND_CATS = ("plan", "visual")
+ROOM_CATS = ("before", "visual", "after")
+# стадия проекта (решено 25.10.2026): первые семь — проект дизайна; дальше — если заказчик продолжил со студией
+STAGES = [("measure", "Замер"), ("plan", "Разработка планировочных решений"), ("plan_ok", "Согласование планировочных решений"),
+          ("concept", "Разработка концепции"), ("visual", "Разработка 3D-визуализаций"), ("visual_ok", "Согласование визуализаций"),
+          ("docs", "Разработка технической документации"), ("repair", "Ремонтные работы"),
+          ("furniture_ok", "Согласование мебельных чертежей с производством"), ("furniture_make", "Изготовление мебели"),
+          ("furniture_install", "Установка мебели"), ("soft", "Комплектация мягкой мебелью"), ("done", "Завершён")]
+DESIGN_STAGES = ("measure", "plan", "plan_ok", "concept", "visual", "visual_ok", "docs")
+# пакеты: цена за м² для пересчёта при смене пакета и сколько правок визуализаций входит (по сайту; меняется в ⚙︎)
+TARIFF_INFO = {"Экспресс": {"rate": 20, "revisions": 1}, "Мебель": {"rate": 35, "revisions": 1}, "Базовый": {"rate": 35, "revisions": 1},
+               "Премиум": {"rate": 50, "revisions": 2}, "Премиум+": {"rate": 70, "revisions": 2}}
 ORDER_STATUSES = [("ordered", "Заказан"), ("delivered", "Доставлен — ждёт доплаты"), ("done", "Выполнено"), ("cancelled", "Отменён")]
 SERVICE_KINDS = [("once", "Разовая"), ("monthly", "Помесячно")]
 PROJECT_PEOPLE_MAX = 10              # заказчиков у проекта (обычно до 5)
@@ -101,6 +116,9 @@ DEFAULTS = {
                     "Бытовая техника", "Шторы и текстиль", "Камень и столешницы", "Стекло и зеркала", "Декор", "Другое"],
     # исполнители, которым платит студия (замерщик, чертёжник, 3D-визуализатор): пишет им только Ирина (решено 24.10.2026)
     "hired_cats": ["Замерщик", "Чертёжник", "3D-визуализатор", "Другое"],
+    # помещения — группы фото и визуализаций (решено 25.10.2026); порядок — как фото в проектах на сайте
+    "rooms": ["Гостиная-кухня", "Гостиная", "Кухня", "Хозяйская спальня", "Санузел хозяев", "Кабинет", "Детская",
+              "Гостевая спальня", "Гостевой санузел", "Гардеробная", "Постирочная", "Прихожая", "Балкон, терраса"],
 }
 CONTRACTOR_KINDS = [("", "Подрядчик (работы)"), ("supplier", "Поставщик (материалы)"), ("hired", "Исполнитель студии (платит студия)")]
 
@@ -137,6 +155,15 @@ CREATE INDEX IF NOT EXISTS stages_link ON stages(link_id);
 CREATE TABLE IF NOT EXISTS files (
   id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, category TEXT NOT NULL, name TEXT, path TEXT,
   thumb TEXT, mime TEXT, size INTEGER, tg_file_id TEXT, note TEXT, created_by TEXT, created TEXT);
+CREATE TABLE IF NOT EXISTS project_stages (    -- стадии проекта: когда какая началась (решено 25.10.2026)
+  id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, stage TEXT NOT NULL, day TEXT NOT NULL, who TEXT, created TEXT);
+CREATE INDEX IF NOT EXISTS project_stages_p ON project_stages(project_id, id);
+CREATE TABLE IF NOT EXISTS tariff_changes (    -- смена пакета: сумма договора пересчитана (только вверх) или прежняя
+  id INTEGER PRIMARY KEY AUTOINCREMENT, project_id INTEGER NOT NULL, day TEXT NOT NULL, old_tariff TEXT, new_tariff TEXT,
+  old_total REAL, new_total REAL, area REAL, rate REAL, recalc INTEGER, note TEXT, who TEXT, created TEXT);
+CREATE TABLE IF NOT EXISTS doc_rounds (        -- вариант планировки или правка визуализаций, которую заказчик согласовал
+  project_id INTEGER NOT NULL, category TEXT NOT NULL, ver INTEGER NOT NULL, agreed TEXT, agreed_by TEXT,
+  PRIMARY KEY(project_id, category, ver));
 CREATE INDEX IF NOT EXISTS files_project ON files(project_id);
 CREATE TABLE IF NOT EXISTS leads (            -- заявки с сайта (в файле leads.jsonl — они же, без статусов)
   id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, name TEXT, contact TEXT, message TEXT, message_ru TEXT,
@@ -366,11 +393,21 @@ class Crm:
                                     # поставщики и сотрудники студии (24.10.2026, ночь)
                                     ("contractors", "kind", "TEXT"), ("files", "owner_assistant", "INTEGER"),
                                     # личные разговоры Ирины с сотрудником студии (staff) — 24.10.2026, ночь
-                                    ("threads", "assistant_id", "INTEGER")):
+                                    ("threads", "assistant_id", "INTEGER"),
+                                    # стадия проекта; помещение, версия и «ждёт решения Ирины» у файлов (25.10.2026)
+                                    ("projects", "stage", "TEXT"), ("files", "room", "TEXT"), ("files", "ver", "INTEGER"),
+                                    ("files", "review", "INTEGER")):
                 if col not in {r[1] for r in self.db.execute(f"PRAGMA table_info({table})")}:
                     self.db.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
             self.db.execute("CREATE INDEX IF NOT EXISTS messages_thread ON messages(thread_id, id)")
             self._threads_from_v1()
+            # 25.10.2026: документы подрядчиков и сотрудников заказчик видит только одобренные Ириной — то, что он уже
+            # видел до этого, остаётся видимым (считается одобренным)
+            if not self.db.execute("SELECT 1 FROM settings WHERE key='mig_approval'").fetchone():
+                self.db.execute("UPDATE files SET see_client=1 WHERE owner_kind IN ('contractor', 'crew') AND vis='client' AND see_client IS NULL")
+                self.db.execute("UPDATE files SET see_client=1 WHERE owner_kind='assistant' AND see_client IS NULL AND category IN "
+                                f"({','.join('?' * len(CLIENT_CATS))})", CLIENT_CATS)
+                self.db.execute("INSERT OR REPLACE INTO settings(key, value) VALUES('mig_approval', '2026-10-25')")
         try:
             os.chmod(path, 0o600)
         except OSError:
@@ -428,7 +465,20 @@ class Crm:
         out.update(statuses=STATUSES, lead_statuses=LEAD_STATUSES, lead_triage=LEAD_TRIAGE, lead_flow=LEAD_FLOW, lead_hidden=LEAD_HIDDEN, kinds=KINDS, file_cats=FILE_CATS, photo_cats=PHOTO_CATS, contact_prefs=CONTACT_PREFS,
                    pay_methods=PAY_METHODS, currencies=CURRENCIES, default_pct=pct, order_statuses=ORDER_STATUSES,
                    service_kinds=SERVICE_KINDS, client_cats=CLIENT_CATS, contractor_cats=CONTRACTOR_CATS, people_max=PROJECT_PEOPLE_MAX,
-                   contractor_kinds=CONTRACTOR_KINDS)
+                   contractor_kinds=CONTRACTOR_KINDS, round_cats=ROUND_CATS, room_cats=ROOM_CATS, stages=STAGES,
+                   design_stages=DESIGN_STAGES, tariff_info=self.tariff_info())
+        return out
+
+    def tariff_info(self):
+        """Пакеты: цена за м² и сколько правок визуализаций входит — по сайту, Ирина меняет в ⚙︎."""
+        try:
+            saved = json.loads(self.setting("tariff_info") or "{}") or {}
+        except ValueError:
+            saved = {}
+        out = {k: dict(v) for k, v in TARIFF_INFO.items()}
+        for k, v in saved.items():
+            if isinstance(v, dict):
+                out.setdefault(k, {}).update({x: v[x] for x in ("rate", "revisions") if x in v})
         return out
 
     def save_lists(self, data, who):
@@ -438,6 +488,22 @@ class Crm:
                 if not items:
                     raise CrmError("Список не может быть пустым")
                 self.setting(k, json.dumps(list(dict.fromkeys(items)), ensure_ascii=False))
+        if isinstance(data.get("tariff_info"), dict):          # пакеты: цена за м² и правки
+            info = {}
+            for k, v in data["tariff_info"].items():
+                name = _text(k, 60)
+                if not name or not isinstance(v, dict):
+                    continue
+                x = {}
+                if v.get("rate") not in (None, ""):
+                    x["rate"] = _money(v["rate"], f"Цена за м² — «{name}»", allow_zero=True)
+                if v.get("revisions") not in (None, ""):
+                    r = int(_money(v["revisions"], f"Правки — «{name}»", allow_zero=True))
+                    if r > 10:
+                        raise CrmError(f"Правки — «{name}»: не больше 10")
+                    x["revisions"] = r
+                info[name] = x
+            self.setting("tariff_info", json.dumps(info, ensure_ascii=False))
         if "default_pct" in data:
             pct = _money(data["default_pct"], "Бонус по умолчанию")
             if pct > 100:
@@ -501,7 +567,8 @@ class Crm:
               COALESCE((SELECT SUM(amount_eur) FROM ops o WHERE o.project_id=p.id AND o.kind='commission'), 0) AS bonus,
               COALESCE((SELECT SUM(amount_eur - buy_eur) FROM ops o WHERE o.project_id=p.id AND o.kind='resale'), 0) AS margin,
               (SELECT MAX(day) FROM ops o WHERE o.project_id=p.id) AS last_op,
-              (SELECT COUNT(*) FROM files f WHERE f.project_id=p.id AND f.category NOT IN ('goods', 'chat')) AS files
+              (SELECT COUNT(*) FROM files f WHERE f.project_id=p.id AND f.category NOT IN ('goods', 'chat')) AS files,
+              (SELECT COUNT(*) FROM files f WHERE f.project_id=p.id AND f.review=1) AS review
             FROM projects p LEFT JOIN clients c ON c.id=p.client_id ORDER BY p.updated DESC""")
         debts = {}
         for m in self.link_money().values():
@@ -569,7 +636,9 @@ class Crm:
                          p["id"], now())
         return {"project": p, "ops": ops, "contractors": links, "files": files, "client": client, "history": history,
                 "people": self.project_people(p["id"]), "services": ex["services"], "orders": ex["orders"],
-                "chat": self.chat_summary(p["id"]), "invites": invites}
+                "chat": self.chat_summary(p["id"]), "invites": invites, "stages": self.stage_log(p["id"]),
+                "rounds": self.rounds(p["id"]),
+                "tariff_changes": self.q("SELECT * FROM tariff_changes WHERE project_id=? ORDER BY id", p["id"])}
 
     def order_photo(self, o):
         """Фото товара: загруженное в карточку (подписанная ссылка) или картинка со страницы товара."""
@@ -701,11 +770,158 @@ class Crm:
                     stopped.append(sv["title"])
             self.run("UPDATE projects SET status='done', finished=?, updated=? WHERE id=?", fin, now(), pid)
             details.update(finished=fin, stopped_services=stopped)
+            if p["stage"] != "done":                       # стадия «Завершён» — вместе со статусом
+                self._log_stage(pid, "done", fin, who)
         else:
             self.run("UPDATE projects SET status=?, finished=CASE WHEN ?='done' THEN finished ELSE NULL END, updated=? WHERE id=?",
                      status, status, now(), pid)
+            if p["stage"] == "done" and status != "cancelled":   # вернули в работу — прежняя стадия (Ирина поставит новую)
+                prev = self.one("SELECT stage FROM project_stages WHERE project_id=? AND stage!='done' ORDER BY id DESC LIMIT 1", pid)
+                self._log_stage(pid, prev["stage"] if prev else None, today().isoformat(), who)
         self.audit(who, "edit", "project", pid, details)
         return self.project(pid)
+
+    # ---------- стадия проекта (решено 25.10.2026) ----------
+    def stage_log(self, pid):
+        return self.q("SELECT stage, day, who FROM project_stages WHERE project_id=? AND stage IS NOT NULL ORDER BY id", int(pid))
+
+    def _log_stage(self, pid, stage, day, who):
+        self.run("UPDATE projects SET stage=?, updated=? WHERE id=?", stage, now(), pid)
+        if stage:
+            self.run("INSERT INTO project_stages(project_id, stage, day, who, created) VALUES(?, ?, ?, ?, ?)",
+                     pid, stage, day, _text(who, 120), now())
+
+    def set_project_stage(self, d, who):
+        """Текущая стадия проекта (замер, планировки, концепция, визуализации, документация, ремонт, мебель…). «Завершён» —
+        то же, что «Завершить проект»; рабочая стадия у завершённого проекта возвращает его в работу (заказчик продолжил)."""
+        pid = int(d.get("id") or d.get("project_id") or 0)
+        p = self.one("SELECT * FROM projects WHERE id=?", pid)
+        if not p:
+            raise CrmError("Проект не найден")
+        stage = d.get("stage")
+        if stage not in dict(STAGES):
+            raise CrmError("Выберите стадию")
+        if stage == "done":
+            r = self.set_project_status({"id": pid, "status": "done", "finished": d.get("day"), "stop_services": d.get("stop_services")}, who)
+            return dict(r, stage_changed=p["stage"] != "done")
+        day = _day(d.get("day") or today().isoformat(), "Дата")
+        if p["stage"] == stage:
+            return dict(self.project(pid), stage_changed=False)
+        if p["status"] in ("done", "cancelled"):
+            self.run("UPDATE projects SET status='active', finished=NULL WHERE id=?", pid)
+        self._log_stage(pid, stage, day, who)
+        self.audit(who, "edit", "project", pid, {"project_id": pid, "stage": stage, "was_stage": p["stage"], "day": day})
+        return dict(self.project(pid), stage_changed=True)
+
+    # ---------- смена пакета: пересчёт только вверх или прежняя сумма (решено 25.10.2026) ----------
+    def change_tariff(self, d, who):
+        pid = int(d.get("id") or d.get("project_id") or 0)
+        p = self.one("SELECT * FROM projects WHERE id=?", pid)
+        if not p:
+            raise CrmError("Проект не найден")
+        new = _text(d.get("tariff"), 60)
+        if not new:
+            raise CrmError("Выберите пакет")
+        if new == (p["tariff"] or ""):
+            raise CrmError("Это и есть текущий пакет проекта")
+        day = _day(d.get("day") or today().isoformat(), "Дата")
+        old_total = round(p["total_eur"] or 0, 2)
+        area, rate = p["area"], None
+        if d.get("mode") == "recalc":
+            area = _money(d.get("area") or p["area"] or 0, "Площадь")
+            rate = _money(d.get("rate"), "Цена за м²")
+            new_total = round(area * rate, 2)
+            if new_total < old_total - 0.005:
+                raise CrmError(f"Пересчёт даёт {new_total:.2f} €, это меньше нынешней суммы договора {old_total:.2f} €. "
+                               "Сумма при смене пакета только растёт — оставьте прежнюю")
+        elif d.get("mode") == "keep":
+            new_total = old_total
+        else:
+            raise CrmError("Пересчитать сумму или оставить прежнюю?")
+        self.run("UPDATE projects SET tariff=?, total_eur=?, area=?, updated=? WHERE id=?", new, new_total, area, now(), pid)
+        self.run("""INSERT INTO tariff_changes(project_id, day, old_tariff, new_tariff, old_total, new_total, area, rate, recalc, note, who, created)
+                    VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""", pid, day, p["tariff"], new, old_total, new_total, area, rate,
+                 1 if d.get("mode") == "recalc" else 0, _text(d.get("note"), 500), _text(who, 120), now())
+        self.audit(who, "edit", "project", pid, {"project_id": pid, "tariff": new, "was_tariff": p["tariff"], "total_eur": new_total,
+                                                 "was_total": old_total, "day": day})
+        return self.project(pid)
+
+    # ---------- документы: версии, помещения, одобрение Ирины (решено 25.10.2026) ----------
+    def rounds(self, pid):
+        """Согласованные заказчиком варианты планировок и правки визуализаций."""
+        return self.q("SELECT category, ver, agreed, agreed_by FROM doc_rounds WHERE project_id=? AND agreed IS NOT NULL ORDER BY category, ver",
+                      int(pid))
+
+    def set_round(self, d, who):
+        pid, cat, ver = int(d.get("project_id") or 0), d.get("category"), int(d.get("ver") or 0)
+        if cat not in ROUND_CATS or ver < 1 or not self.one("SELECT id FROM projects WHERE id=?", pid):
+            raise CrmError("Вариант не найден")
+        if d.get("agreed"):
+            self.run("""INSERT INTO doc_rounds(project_id, category, ver, agreed, agreed_by) VALUES(?, ?, ?, ?, ?)
+                        ON CONFLICT(project_id, category, ver) DO UPDATE SET agreed=excluded.agreed, agreed_by=excluded.agreed_by""",
+                     pid, cat, ver, _day(d.get("day") or today().isoformat(), "Дата"), _text(who, 120))
+        else:
+            self.run("DELETE FROM doc_rounds WHERE project_id=? AND category=? AND ver=?", pid, cat, ver)
+        self.audit(who, "edit", "file", 0, {"project_id": pid, "round": [cat, ver], "agreed": bool(d.get("agreed"))})
+        return self.project(pid)
+
+    def next_ver(self, pid, cat, title=None):
+        """Номер новой версии: в планировках и визуализациях — следующий вариант (правка) всего раздела, в остальных
+        разделах — следующая версия документа с этим названием."""
+        if cat in ROUND_CATS:
+            r = self.one("SELECT MAX(COALESCE(ver, 1)) AS v FROM files WHERE project_id=? AND category=?", int(pid), cat)
+        else:
+            r = self.one("SELECT MAX(COALESCE(ver, 1)) AS v FROM files WHERE project_id=? AND category=? AND COALESCE(title, name)=?",
+                         int(pid), cat, title or "")
+        return int((r or {}).get("v") or 0) + 1
+
+    def file_meta(self, f, ver=None, room=None, title=None, new_version=False):
+        """Версия, помещение и подпись нового файла: ver — номер (в планировках и визуализациях) или «новая» (new_version)."""
+        cat = f["category"]
+        ttl = _text(title, 200) or None
+        v = None
+        if cat in ROUND_CATS:                             # последний вариант раздела (без этого файла): к нему или новый
+            r = self.one("SELECT MAX(COALESCE(ver, 1)) AS v FROM files WHERE project_id=? AND category=? AND id!=?",
+                         f["project_id"], cat, f["id"])
+            top = int((r or {}).get("v") or 0)
+            v = top + 1 if new_version and top else max(1, min(int(ver or top or 1), top or 1))
+        elif new_version and ttl:                         # новая версия документа с тем же названием
+            r = self.one("SELECT MAX(COALESCE(ver, 1)) AS v FROM files WHERE project_id=? AND category=? AND COALESCE(title, name)=? AND id!=?",
+                         f["project_id"], cat, ttl, f["id"])
+            v = int((r or {}).get("v") or 0) + 1 if r and r.get("v") else None
+        rm = _text(room, 60) if cat in ROOM_CATS else ""
+        self.run("UPDATE files SET ver=?, room=?, title=COALESCE(?, title) WHERE id=?", v, rm or None, ttl, f["id"])
+
+    def set_file_meta(self, d, who):
+        """Ирина в «Студии»: помещение, вариант (правка) и подпись файла."""
+        f = self.one("SELECT * FROM files WHERE id=?", int(d.get("id") or 0))
+        if not f:
+            raise CrmError("Файл не найден")
+        sets = {}
+        if "room" in d:
+            sets["room"] = (_text(d.get("room"), 60) or None) if f["category"] in ROOM_CATS else None
+        if "ver" in d:
+            v = int(d.get("ver") or 0) or None
+            if v is not None and not 1 <= v <= 50:
+                raise CrmError("Номер версии — от 1 до 50")
+            sets["ver"] = v
+        if "title" in d:
+            sets["title"] = _text(d.get("title"), 200) or None
+        if sets:
+            self.run(f"UPDATE files SET {', '.join(k + '=?' for k in sets)} WHERE id=?", *sets.values(), f["id"])
+            self.audit(who, "edit", "file", f["id"], dict(sets, project_id=f["project_id"]))
+        return self.project(f["project_id"])
+
+    def approve_file(self, d, who):
+        """Документ подрядчика, исполнителя, работника или сотрудника студии: Ирина показывает его заказчику (show) или нет.
+        Возвращает (файл, стал ли он видим заказчику только что)."""
+        f = self.one("SELECT * FROM files WHERE id=?", int(d.get("id") or 0))
+        if not f:
+            raise CrmError("Файл не найден")
+        show = bool(d.get("show"))
+        self.run("UPDATE files SET see_client=?, review=NULL WHERE id=?", 1 if show else 0, f["id"])
+        self.audit(who, "edit", "file", f["id"], {"project_id": f["project_id"], "approved": show})
+        return self.one("SELECT * FROM files WHERE id=?", f["id"]), show and f["see_client"] != 1
 
     def touch(self, pid):
         self.run("UPDATE projects SET updated=? WHERE id=?", now(), pid)
@@ -1331,7 +1547,9 @@ class Crm:
         for k in ("see_client", "see_crew"):
             v = d.get(k, f[k])
             vals.append(None if v in (None, "", "default") else 1 if str(v) in ("1", "True", "true") else 0)
-        self.run("UPDATE files SET see_client=?, see_crew=? WHERE id=?", vals[0], vals[1], f["id"])
+        # решила про заказчика (да или нет) — документ больше не ждёт её решения
+        self.run("UPDATE files SET see_client=?, see_crew=?, review=CASE WHEN ? IS NULL THEN review ELSE NULL END WHERE id=?",
+                 vals[0], vals[1], vals[0], f["id"])
         self.audit(who, "edit", "file", f["id"], {"project_id": f["project_id"], "see_client": vals[0], "see_crew": vals[1]})
         return self.file_view(self.one("SELECT * FROM files WHERE id=?", f["id"]))
 
@@ -1422,14 +1640,35 @@ class Crm:
             return 0.0 if o.get("order_id") else o["amount_eur"] - (o["buy_eur"] or 0) if o["kind"] == "resale" else o["amount_eur"]
         tot = {"payment": 0.0, "commission": 0.0, "resale": 0.0}
         cities, tariffs, projects = {}, {}, {}
+        changes = {}                                 # смена пакета: доход до смены — старому пакету, после — новому
+        for c in self.q("SELECT * FROM tariff_changes ORDER BY day, id"):
+            changes.setdefault(c["project_id"], []).append(c)
+
+        def tariff_on(o):
+            ch = changes.get(o["project_id"])
+            if not ch:
+                return o["tariff"]
+            t = ch[0]["old_tariff"]
+            for c in ch:
+                if o["day"] >= c["day"]:
+                    t = c["new_tariff"]
+            return t
         for o in rows:
             x = income(o)
             if not x:
                 continue
             tot[o["kind"]] += x
             cities[o["city"] or "—"] = cities.get(o["city"] or "—", 0) + x
-            tariffs[o["tariff"] or "—"] = tariffs.get(o["tariff"] or "—", 0) + x
+            tk = tariff_on(o) or "—"
+            tariffs[tk] = tariffs.get(tk, 0) + x
             projects[o["project_id"]] = projects.get(o["project_id"], 0) + x
+        # смены пакета за период: сколько проектов и на сколько выросли договоры
+        ups = {}
+        for c in self.q("SELECT * FROM tariff_changes" + (" WHERE day>=? AND day<=?" if a else ""), *args):
+            u = ups.setdefault((c["old_tariff"] or "—", c["new_tariff"] or "—"), {"from": c["old_tariff"] or "—", "to": c["new_tariff"] or "—",
+                                                                                  "n": 0, "plus": 0.0})
+            u["n"] += 1
+            u["plus"] += (c["new_total"] or 0) - (c["old_total"] or 0)
         # по месяцам: последние 12 месяцев, за «всё время» — с первой операции
         first = self.one("SELECT MIN(day) AS d FROM ops")["d"]
         t = today()
@@ -1483,6 +1722,7 @@ class Crm:
             "months": months_out,
             "by_city": [[k, round(v, 2)] for k, v in sorted(cities.items(), key=lambda kv: -kv[1]) if abs(v) > 0.005],
             "by_tariff": [[k, round(v, 2)] for k, v in sorted(tariffs.items(), key=lambda kv: -kv[1]) if abs(v) > 0.005],
+            "tariff_ups": [dict(u, plus=round(u["plus"], 2)) for u in sorted(ups.values(), key=lambda u: -u["plus"])],
             "top_projects": [[names[k]["number"] or "", names[k]["title"], round(v, 2), k] for k, v in top if k in names],
             "owing": round(sum(p["client_debt"] for p in owing), 2),
             "owing_projects": [[p["number"] or "", p["title"], p["client_debt"], p["id"]] for p in sorted(owing, key=lambda p: -p["client_debt"])[:10]],

@@ -23,7 +23,7 @@ import threading
 import time
 from datetime import date, datetime, timezone
 
-from crm import FILE_CATS, TZ, CrmError
+from crm import FILE_CATS, STAGES, TZ, CrmError
 from crm_portal import STUDIO, ui_lang
 from langs import pack
 
@@ -440,6 +440,15 @@ T = {
               "arbeiten, die Adresse des Objekts, Unterlagen und Visualisierungen sowie Ihr Chat mit Irina. Öffnen Sie ihn in Telegram und tippen Sie unten auf "
               "die Schaltfläche („Starten“):\n{link}\n\n"
               "Der Link ist persönlich, für eine Person, und 14 Tage gültig. Verbinden müssen Sie sich nur einmal — neue Projekte erscheinen automatisch in der App."},
+    # стадия проекта и документы после одобрения Ирины (решено 25.10.2026)
+    "stage_new": {"ru": "📍 <b>Новая стадия проекта</b> · «{project}»\n{stage}", "uk": "📍 <b>Нова стадія проєкту</b> · «{project}»\n{stage}",
+                  "en": "📍 <b>New project stage</b> · “{project}”\n{stage}", "sk": "📍 <b>Nová fáza projektu</b> · „{project}“\n{stage}",
+                  "de": "📍 <b>Neue Projektphase</b> · „{project}“\n{stage}"},
+    "doc_approved": {"ru": "✓ {who} показала заказчику ваш документ · «{project}»\n{title}",
+                     "uk": "✓ {who} показала замовнику ваш документ · «{project}»\n{title}",
+                     "en": "✓ {who} has shared your document with the client · “{project}”\n{title}",
+                     "sk": "✓ {who} sprístupnila váš dokument klientovi · „{project}“\n{title}",
+                     "de": "✓ {who} hat Ihr Dokument für den Kunden freigegeben · „{project}“\n{title}"},
     "link_new_hired": {"ru": "📁 Студия добавила вас в проект «{project}»{trade}. Адрес, документация и переписка с Ириной — в кабинете.",
                        "uk": "📁 Студія додала вас до проєкту «{project}»{trade}. Адреса, документація й листування з Іриною — у кабінеті.",
                        "en": "📁 The studio has added you to the project “{project}”{trade}. The address, documents and your chat with Irina are in the app.",
@@ -1138,43 +1147,87 @@ class PortalBotMixin:
                 if ok:
                     self._map_put(tg, mid, th["project_id"], th["id"])     # ответ свайпом на это сообщение — в группу
             return
-        if kind == "doc_new":                               # документ подрядчика или работника: студии, подрядчику, заказчику
+        if kind == "doc_new":                               # документ подрядчика, исполнителя, работника, сотрудника студии
             f = self.crm.one("SELECT * FROM files WHERE id=?", int(kw.get("file_id") or 0))
             if not f:
                 return
             p = self.crm.one("SELECT id, title FROM projects WHERE id=?", f["project_id"]) or {}
             studio = self.studio_button("📁 Открыть проект", p.get("id"))
-            if f["owner_assistant"]:                        # файл сотрудника студии — Ирине (заказчику — как решили при загрузке)
+            cat = dict(FILE_CATS + [("work", "От подрядчиков")]).get(f["category"], f["category"])
+            title = f["title"] or f["name"] or ""
+            where = cat + (f" · {f['room']}" if f.get("room") else "") + (f" · {self.ver_name(f['category'], f['ver'])}" if f.get("ver") else "")
+            # заказчик увидит, только когда Ирина одобрит (решено 25.10.2026) — кнопки прямо в сообщении
+            ask = [("✓ Показать заказчику", f"fa:{f['id']}:1"), ("Не показывать", f"fa:{f['id']}:0")] if f["review"] else None
+            tail = ("\n\n<b>Показать заказчику?</b> Пока не решите, он этот документ не видит." if f["review"]
+                    else f"\n<i>Видят: {esc(self.portal.audience(f))}</i>")
+            rows = [r for r in (ask, studio) if r]
+            if f["owner_assistant"]:                        # файл сотрудника студии — Ирине
                 a = self.crm.one("SELECT name, position FROM assistants WHERE id=?", f["owner_assistant"]) or {}
-                cat = dict(FILE_CATS).get(f["category"], f["category"])
-                self.notify(f"📎 <b>Новый файл</b> · «{esc(p.get('title') or '')}» → «{esc(cat)}»\n{esc(a.get('name') or '')}"
-                            f"{(' (' + esc(a['position']) + ')') if a.get('position') else ''}, сотрудник студии: {esc(f['title'] or f['name'] or '')}"
-                            f"\n<i>Видят: {esc(self.portal.audience(f))}</i>"
-                            + ("\nЗаказчику не видно — открыть можно в «Студии»: проект → файл → «Кто видит»." if f["see_client"] == 0 else ""),
-                            roles=("designer",), rows=[studio] if studio else None)
+                self.notify(f"📎 <b>Новый файл</b> · «{esc(p.get('title') or '')}» → «{esc(where)}»\n{esc(a.get('name') or '')}"
+                            f"{(' (' + esc(a['position']) + ')') if a.get('position') else ''}, сотрудник студии: {esc(title)}" + tail,
+                            roles=("designer",), rows=rows or None)
                 return
-            head = self.crm.one("SELECT id, name, trade, tg_id FROM contractors WHERE id=?", f["owner_contractor"] or 0) or {}
+            head = self.crm.one("SELECT id, name, trade, tg_id, kind FROM contractors WHERE id=?", f["owner_contractor"] or 0) or {}
             wk = self.crm.one("SELECT name, position, tg_id FROM crew WHERE id=?", f["owner_crew"] or 0) if f["owner_crew"] else None
             who = (wk["name"] + (f" ({wk['position']})" if wk.get("position") else "") + f", бригада {head.get('name') or ''}") if wk \
-                else (head.get("name") or "") + (f" ({head['trade']})" if head.get("trade") else "")
-            title = f["title"] or f["name"] or ""
-            aud = self.portal.audience(f)
-            self.notify(f"📎 <b>Новый документ</b> · «{esc(p.get('title') or '')}»\n{esc(who)}: {esc(title)}\n<i>Видят: {esc(aud)}</i>",
-                        roles=("designer",), rows=[studio] if studio else None)
+                else (head.get("name") or "") + (f" ({head['trade']})" if head.get("trade") else "") \
+                + (", исполнитель студии" if head.get("kind") == "hired" else "")
+            self.notify(f"📎 <b>Новый документ</b> · «{esc(p.get('title') or '')}» → «{esc(where)}»\n{esc(who)}: {esc(title)}" + tail,
+                        roles=("designer",), rows=rows or None)
             name = wk["name"] if wk else head.get("name") or ""
-            targets = []
-            if wk and head.get("tg_id") and head["tg_id"] != wk.get("tg_id"):
-                targets.append(int(head["tg_id"]))
-            if f["vis"] == "client" or f["see_client"] == 1:
-                targets += self._client_tgs(f["project_id"])
-            for tg in dict.fromkeys(targets):
+            if wk and head.get("tg_id") and head["tg_id"] != wk.get("tg_id") and self._active(head["tg_id"]):
+                lang = self.lang_of(head["tg_id"])                  # руководителю — документ его работника
+                row = self.portal_row(lang, f"project={p.get('id')}&tab=docs")
+                self.send(head["tg_id"], t(lang, "doc_new", project=esc(self.loc(p.get("title") or "", lang)), who=esc(name), title=esc(title)),
+                          [row] if row else None)
+            return
+        if kind == "doc_shown":                             # Ирина показала документ заказчику: заказчикам и тому, кто прислал
+            f = self.crm.one("SELECT * FROM files WHERE id=?", int(kw.get("file_id") or 0))
+            if not f or f["see_client"] != 1:
+                return
+            p = self.crm.one("SELECT id, title FROM projects WHERE id=?", f["project_id"]) or {}
+            title = f["title"] or f["name"] or ""
+            for tg in dict.fromkeys(self._client_tgs(f["project_id"])):
                 if not self._active(tg):
                     continue
                 lang = self.lang_of(tg)
                 row = self.portal_row(lang, f"project={p.get('id')}&tab=docs")
-                self.send(tg, t(lang, "doc_new", project=esc(self.loc(p.get("title") or "", lang)), who=esc(name), title=esc(title)),
+                self.send(tg, t(lang, "doc_new", project=esc(self.loc(p.get("title") or "", lang)), who=esc(self.designer_name(lang)),
+                                title=esc(self.loc(title, lang))), [row] if row else None)
+            owner = None
+            if f["owner_crew"]:
+                owner = (self.crm.one("SELECT tg_id FROM crew WHERE id=? AND removed IS NULL", f["owner_crew"]) or {}).get("tg_id")
+            elif f["owner_kind"] == "contractor":
+                owner = (self.crm.one("SELECT tg_id FROM contractors WHERE id=?", f["owner_contractor"] or 0) or {}).get("tg_id")
+            elif f["owner_assistant"]:
+                owner = (self.crm.one("SELECT tg_id FROM assistants WHERE id=? AND removed IS NULL", f["owner_assistant"]) or {}).get("tg_id")
+            if owner and self._active(owner):
+                lang = self.lang_of(owner)
+                row = self.portal_row(lang, f"project={p.get('id')}&tab=docs")
+                self.send(owner, t(lang, "doc_approved", project=esc(self.loc(p.get("title") or "", lang)), title=esc(title),
+                                   who=esc(self.designer_name(lang))), [row] if row else None, disable_notification=True)
+            return
+        if kind == "stage_new":                             # новая стадия проекта — заказчикам на их языке
+            p = self.crm.one("SELECT id, title, stage FROM projects WHERE id=?", int(kw.get("project_id") or 0)) or {}
+            name = dict(STAGES).get(p.get("stage") or "")
+            if not name:
+                return
+            for tg in dict.fromkeys(self._client_tgs(p["id"])):
+                if not self._active(tg):
+                    continue
+                lang = self.lang_of(tg)
+                row = self.portal_row(lang, f"project={p['id']}")
+                self.send(tg, t(lang, "stage_new", project=esc(self.loc(p.get("title") or "", lang)), stage=esc(self.loc(name, lang))),
                           [row] if row else None)
             return
+
+    def ver_name(self, cat, ver):
+        """«Вариант 2», «Правка 1», «версия 3» — по-русски, для Ирины."""
+        if cat == "plan":
+            return f"вариант {ver}"
+        if cat == "visual":
+            return "первый вариант" if int(ver or 1) <= 1 else f"правка {int(ver) - 1}"
+        return f"версия {ver}"
 
     def _active(self, tg):
         uu = self.user(tg)

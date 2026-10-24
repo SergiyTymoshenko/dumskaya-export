@@ -158,6 +158,7 @@ def project_view(w, q):
         out = PORTAL.observer_view(pid, v["tg"])
     else:
         raise Denied()
+    out.update(PORTAL.doc_info(pid))                # стадия проекта, варианты и правки, помещения (решено 25.10.2026)
     out["roles"] = roles if not v.get("preview") else [role]
     out["preview"] = bool(v.get("preview"))
     out["readonly"] = bool(v.get("preview") or role == "observer")
@@ -329,16 +330,17 @@ def handle_post(h, path, query):
             if n > FILE_MAX:
                 h.close_connection = True
                 return h.reply(413, {"ok": False, "error": "file_too_big"}) or True
+            meta = dict(ver=q.get("ver"), room=q.get("room"), new=q.get("new") == "1")   # вариант (правка), помещение, новая версия
             if v["staff"] and not (v["heads"] or v["crew"]):
-                f = PORTAL.upload_studio(v, pid, q.get("cat"), q.get("name") or "file", h.rfile, n, mime, q.get("vis"), q.get("title"), w["name"])
+                f = PORTAL.upload_studio(v, pid, q.get("cat"), q.get("name") or "file", h.rfile, n, mime, q.get("vis"), q.get("title"), w["name"], **meta)
                 bg(BOT.portal_event, "doc_new", file_id=f["id"])
                 return h.reply(200, f) or True
-            f = PORTAL.upload(v, pid, q.get("name") or "file", h.rfile, n, mime, q.get("vis"), q.get("title"), w["name"])
+            f = PORTAL.upload(v, pid, q.get("name") or "file", h.rfile, n, mime, q.get("vis"), q.get("title"), w["name"], cat=q.get("cat") or "work", **meta)
             bg(BOT.portal_event, "doc_new", file_id=f["id"])
             return h.reply(200, f) or True
         if path == "/api/portal/thumb":                   # превью фото документа (делает телефон): подрядчика, работника, сотрудника студии
             fid = int(q.get("id") or 0)
-            f = CRM.one("SELECT * FROM files WHERE id=? AND (category='work' OR owner_kind='assistant')", fid)
+            f = CRM.one("SELECT * FROM files WHERE id=? AND owner_kind IN ('contractor', 'crew', 'assistant')", fid)
             if not f:
                 raise Denied()
             v = viewer_for(w, f["project_id"], q)

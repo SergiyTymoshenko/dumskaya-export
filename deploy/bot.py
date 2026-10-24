@@ -573,12 +573,29 @@ class Bot(CrmBotMixin, PortalBotMixin):
         except (IndexError, ValueError):
             return
 
+    def approve_button(self, admin, msg, fid, show):
+        """Ирина решает прямо в сообщении о новом документе, показывать ли его заказчику (решено 25.10.2026)."""
+        crm = getattr(self, "crm", None)
+        if admin["role"] != "designer" or not crm:
+            return self.send(admin["tg_id"], "Показывать документы заказчику решает дизайнер студии.")
+        try:
+            f, shown = crm.approve_file({"id": fid, "show": show}, admin["name"] or str(admin["tg_id"]))
+        except Exception as e:  # noqa: BLE001  файл удалили
+            return self.edit(msg, (msg.get("text") or "") + f"\n\n⚠️ {esc(str(e))}")
+        note = "✓ Заказчик видит этот документ — ему пришло сообщение." if show else "Заказчику не показан. Передумаете — в «Студии»: проект → файл."
+        btn = self.studio_button("📁 Открыть проект", f["project_id"]) if hasattr(self, "studio_button") else None
+        self.edit(msg, esc(msg.get("text") or "") + "\n\n" + note, [btn] if btn else None)
+        if shown and hasattr(self, "portal_event"):
+            self.portal_event("doc_shown", file_id=f["id"])
+
     def admin_button(self, admin, msg, parts):
         act = parts[0]
         if act == "cf":                            # файлы в проект: cf:p:проект / cf:c:раздел / cf:m:сдвиг / cf:b / cf:x
             return self.crm_button(admin, msg, parts)
         if act == "ld":                            # заявка с сайта: ld:номер:что это (lead, ad, spam, ignore)
             return self.lead_button(admin, msg, parts)
+        if act == "fa":                            # документ подрядчика или сотрудника: fa:файл:1 — показать заказчику, 0 — нет
+            return self.approve_button(admin, msg, int(parts[1]), parts[2] == "1")
         if act == "ro":                            # ro:режим:uid:роль — выбрана роль
             mode, uid, role = parts[1], int(parts[2]), parts[3]
             return self.pick_role(admin, msg, mode, uid, role)

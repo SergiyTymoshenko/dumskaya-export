@@ -102,6 +102,12 @@ def enrich(r):
     return r
 
 
+def file_approve(d, who):
+    """Ирина решила, видит ли заказчик документ подрядчика, исполнителя, работника или сотрудника студии."""
+    f, shown = CRM.approve_file(d, who)
+    return dict(CRM.project(f["project_id"]), approved_id=f["id"], shown=shown)
+
+
 def after_save(entity, d, r, who):
     """Что сообщить в Telegram после сохранения в «Студии»: заказчику — новый товар или услуга (если отмечено
     «Сообщить заказчику»), товар доставлен; сумма работ подрядчика — заказчику на подтверждение; подрядчику — что его
@@ -126,6 +132,10 @@ def after_save(entity, d, r, who):
     elif entity in ("group", "sgroup"):                    # группа: новым участникам — сообщение на их языке
         if r.get("new_members"):
             portal_bg(BOT.portal_event, "group_new", thread_id=r["thread_id"], only=r["new_members"])
+    elif entity == "project_stage" and r.get("stage_changed") and d.get("notify", True):   # новая стадия — заказчикам
+        portal_bg(BOT.portal_event, "stage_new", project_id=int(r["project"]["id"]))
+    elif entity == "file_approve" and r.get("shown"):      # Ирина показала документ заказчику — ему и тому, кто прислал
+        portal_bg(BOT.portal_event, "doc_shown", file_id=r["approved_id"])
     elif entity == "passist" and d.get("on") and r.get("changed_tg"):   # сотрудника студии назначили на проект
         portal_bg(BOT.portal_event, "assistant_assigned", assistant_id=int(d.get("assistant_id") or 0), project_id=int(d.get("project_id") or 0))
     elif entity == "pcrew" and d.get("on") and r.get("changed_tg"):
@@ -411,7 +421,9 @@ def handle_post(h, path, query):
                 return h.reply(413, {"ok": False, "error": f"Файл больше {FILE_MAX // 2**20} МБ"}) or True
             f = CRM.add_file(q.get("project"), q.get("cat"), q.get("name") or "файл", h.rfile, n,
                              h.headers.get("Content-Type", "application/octet-stream"), who)
-            return h.reply(200, f) or True
+            # вариант (правка) и помещение — куда Ирина добавляет; «новая версия» документа — с тем же названием
+            CRM.file_meta(f, q.get("ver"), q.get("room"), q.get("title"), q.get("new") == "1")
+            return h.reply(200, CRM.file_view(CRM.one("SELECT * FROM files WHERE id=?", f["id"]))) or True
         if path == "/api/crm/thumb":
             n = int(h.headers.get("Content-Length") or 0)
             if n <= 0 or n > 2 * 1024 * 1024:
@@ -425,7 +437,9 @@ def handle_post(h, path, query):
                   "lead": CRM.save_lead, "lead_project": CRM.lead_to_project, "lead_restore": CRM.restore_lead,
                   "lists": CRM.save_lists, "order": CRM.save_order, "service": CRM.save_service,
                   "pclient": CRM.add_project_client, "pclient_remove": CRM.remove_project_client,
-                  "project_status": CRM.set_project_status}.get(entity)
+                  "project_status": CRM.set_project_status, "project_stage": CRM.set_project_stage,
+                  "tariff": CRM.change_tariff, "file_meta": CRM.set_file_meta, "round": CRM.set_round,
+                  "file_approve": file_approve}.get(entity)
             if not fn:
                 fn = portal_save(entity)
             if not fn:
@@ -433,7 +447,7 @@ def handle_post(h, path, query):
             r = fn(d, who)
             if isinstance(r, dict):
                 after_save(entity, d, r, who)
-                for k in ("was", "new_members", "thread_id", "changed_tg"):
+                for k in ("was", "new_members", "thread_id", "changed_tg", "stage_changed", "shown", "approved_id"):
                     r.pop(k, None)
             return h.reply(200, enrich(r)) or True
         if path == "/api/crm/invite":                    # ссылка в кабинет заказчику или подрядчику
@@ -512,6 +526,7 @@ def serve_file(h, q):
     h.send_header("Content-Disposition", f"{'inline' if inline else 'attachment'}; filename*=UTF-8''{urllib.parse.quote(name)}")
     h.send_header("Cache-Control", "private, max-age=3600")
     h.send_header("X-Content-Type-Options", "nosniff")
+    h.send_header("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet, noimageindex")   # файлы проектов — не в поиск
     if not inline:                                       # вложение: в браузере как страница не выполнится
         h.send_header("Content-Security-Policy", "sandbox; default-src 'none'")
     h.end_headers()
