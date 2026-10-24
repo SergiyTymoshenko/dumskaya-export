@@ -108,6 +108,7 @@ systemctl is-active --quiet dumskaya-lead && echo "Сервис заявок р�
 
 echo "$MODE" > "$APP/mode"; chown "$USER_NAME":"$USER_NAME" "$APP/mode"
 sha256sum "$HERE/lead_service.py" "$HERE/bot.py" "$HERE/site_monitor.py" "$HERE/site_stats.py" "$HERE/geo.py" "$HERE/geo_names_ru.json" \
+  "$HERE/crm.py" "$HERE/crm_api.py" "$HERE/crm_bot.py" "$HERE/fx.py" \
   "$HERE/translate.py" "$HERE/caddy/"* "$HERE/dumskaya-lead.service" > "$APP/installed.sha256"
 chown "$USER_NAME":"$USER_NAME" "$APP/installed.sha256"
 echo "Готово."

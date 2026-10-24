@@ -61,6 +61,13 @@ esac
 if [ -n "$STATE" ]; then
   ssh -t "$HOST" 'sudo bash ~/dumskaya/deploy/server-setup.sh "$(cat ~/dumskaya/mode 2>/dev/null || echo preview)"'
 fi
+# копия учёта студии на этот Мак: ежедневные копии баз с сервера (30 дней) и файлы проектов
+BK="${STUDIO_BACKUP_DIR:-$HOME/Documents/dumskaya-backups}"
+mkdir -p "$BK/db" "$BK/files"
+if ssh "$HOST" 'test -d ~/dumskaya/backups' 2>/dev/null; then
+  rsync -az "$HOST:dumskaya/backups/" "$BK/db/" && { ! ssh "$HOST" 'test -d ~/dumskaya/crm/files' || rsync -az "$HOST:dumskaya/crm/files/" "$BK/files/"; } \
+    && echo "  копия учёта студии: $BK" || echo "  копия учёта студии не скачалась — в следующую выкладку попробую снова"
+fi
 MODE="$(ssh "$HOST" 'cat ~/dumskaya/mode 2>/dev/null || echo preview')"
 if [ "$MODE" = live ]; then
   # проверка с этого Мака, как у посетителя: сайт должен ответить 200 по HTTPS

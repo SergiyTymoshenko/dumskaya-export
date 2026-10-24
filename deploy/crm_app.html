@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Студия</title>
+<!-- «Студия» — учёт проектов DUMSKAYA DESIGN: мини-приложение Telegram (кнопка «Студия» в боте).
+     Данные отдаёт сервис заявок (/api/crm/*) только разработчику и дизайнеру — по подписи Telegram. -->
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+  :root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface: #fcfcfb; --raised: #ffffff; --text-1: #0b0b0b; --text-2: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11, 11, 11, 0.10); --series: #2a78d6; --series-wash: rgba(42, 120, 214, 0.10);
+    --up: #006300; --down: #d03b3b; --ghost: rgba(11, 11, 11, 0.05); --warn: #9a5b00;
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface: #1a1a19; --raised: #222221; --text-1: #f0efec; --text-2: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --axis: #383835; --border: rgba(255, 255, 255, 0.10); --series: #3987e5; --series-wash: rgba(57, 135, 229, 0.12);
+    --up: #0ca30c; --down: #e66767; --ghost: rgba(255, 255, 255, 0.06); --warn: #e0a040;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--page); color: var(--text-1); }
+  body { font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; max-width: 760px; margin: 0 auto;
+    padding: 14px 16px calc(84px + env(safe-area-inset-bottom)); }
+  h1 { font-size: 24px; font-weight: 650; margin: 2px 0 12px; letter-spacing: -0.01em; }
+  h2 { font-size: 17px; font-weight: 650; margin: 0 0 10px; }
+  .muted { color: var(--text-2); }
+  .small { font-size: 13px; }
+  .num { font-variant-numeric: tabular-nums; }
+  button { font: inherit; color: inherit; }
+  a { color: var(--series); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px; margin: 0 0 12px; }
+  .row { display: flex; align-items: center; gap: 10px; }
+  .between { justify-content: space-between; }
+  .wrap { flex-wrap: wrap; }
+  .grow { flex: 1 1 auto; min-width: 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 44px; padding: 10px 16px;
+    border-radius: 12px; border: 1px solid var(--border); background: var(--raised); cursor: pointer; font-weight: 550; font-size: 15px; }
+  .btn.primary { background: var(--series); border-color: var(--series); color: #fff; }
+  .btn.wide { width: 100%; }
+  .btn.danger { color: var(--down); }
+  .btn.small { min-height: 36px; padding: 6px 12px; font-size: 14px; }
+  .btn:disabled { opacity: .55; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 12px; }
+  .chip { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 7px 13px; font-size: 14px; cursor: pointer; min-height: 36px; }
+  .chip[aria-pressed="true"] { background: var(--text-1); color: var(--page); border-color: var(--text-1); font-weight: 600; }
+  .search { width: 100%; border: 1px solid var(--border); background: var(--surface); border-radius: 12px; padding: 11px 14px; font: inherit; color: inherit; margin: 0 0 10px; }
+  .status { display: inline-block; font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--ghost); color: var(--text-2); white-space: nowrap; }
+  .status.active { color: var(--series); background: var(--series-wash); }
+  .status.done { color: var(--up); }
+  .status.cancelled { color: var(--muted); text-decoration: line-through; }
+  .plist { display: grid; gap: 10px; }
+  .pcard { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 13px 14px; cursor: pointer; text-align: left; width: 100%; }
+  .pcard .top { display: flex; justify-content: space-between; gap: 8px; align-items: center; font-size: 13px; color: var(--text-2); }
+  .pcard .title { font-size: 17px; font-weight: 650; margin: 3px 0 2px; overflow-wrap: anywhere; }
+  .pcard .sub { font-size: 14px; color: var(--text-2); }
+  .bar { height: 8px; border-radius: 4px; background: var(--ghost); overflow: hidden; margin: 10px 0 6px; }
+  .bar i { display: block; height: 100%; background: var(--series); border-radius: 4px; }
+  .money { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; flex-wrap: wrap; }
+  .money b { font-weight: 650; }
+  .owe { color: var(--warn); font-weight: 600; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 4px 0 4px; }
+  .tile { background: var(--page); border-radius: 12px; padding: 10px; min-width: 0; }
+  .tile .l { font-size: 12px; color: var(--text-2); }
+  .tile .v { font-size: 19px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sum { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; margin: 0; font-size: 16px; }
+  .sum dt { color: var(--text-2); }
+  .sum dd { margin: 0; font-weight: 700; text-align: right; white-space: nowrap; }
+  .actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px; }
+  .actions .btn { padding: 8px 6px; font-size: 14px; flex-direction: column; gap: 2px; min-height: 58px; }
+  .actions .btn span { font-size: 19px; line-height: 1; }
+  .ops { list-style: none; margin: 0; padding: 0; }
+  .ops li { display: grid; grid-template-columns: 1fr auto; gap: 2px 10px; padding: 11px 0; border-top: 1px solid var(--grid); cursor: pointer; }
+  .ops li:first-child { border-top: 0; }
+  .ops .what { font-weight: 600; font-size: 15px; overflow-wrap: anywhere; }
+  .ops .meta { font-size: 13px; color: var(--text-2); grid-column: 1 / -1; overflow-wrap: anywhere; }
+  .ops .amt { font-weight: 650; white-space: nowrap; text-align: right; }
+  .ops .amt.plus { color: var(--up); }
+  .tabs { display: flex; gap: 4px; background: var(--ghost); padding: 3px; border-radius: 12px; margin: 0 0 10px; }
+  .tabs button { flex: 1 1 0; border: 0; background: transparent; padding: 8px 4px; border-radius: 9px; font-size: 13px; cursor: pointer; min-width: 0; white-space: nowrap; }
+  .tabs button[aria-pressed="true"] { background: var(--raised); font-weight: 650; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .thumb { aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: var(--ghost); border: 0; padding: 0; cursor: pointer; position: relative; }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .doc { aspect-ratio: 1; border-radius: 10px; background: var(--ghost); border: 0; padding: 8px; cursor: pointer; display: flex; flex-direction: column;
+    justify-content: space-between; text-align: left; font-size: 12px; overflow: hidden; }
+  .doc .ext { font-weight: 700; font-size: 13px; color: var(--series); }
+  .doc .nm { overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .people { list-style: none; margin: 0; padding: 0; }
+  .people li { padding: 11px 0; border-top: 1px solid var(--grid); display: flex; gap: 10px; align-items: center; }
+  .people li:first-child { border-top: 0; }
+  .people .who { flex: 1 1 auto; min-width: 0; cursor: pointer; }
+  .people .who b { display: block; font-weight: 600; overflow-wrap: anywhere; }
+  .people .who span { font-size: 13px; color: var(--text-2); }
+  .icon-btn { width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--border); background: var(--raised); display: inline-flex;
+    align-items: center; justify-content: center; font-size: 18px; text-decoration: none; color: inherit; flex: 0 0 auto; cursor: pointer; }
+  .kv { display: grid; grid-template-columns: minmax(110px, 38%) 1fr; gap: 6px 12px; font-size: 15px; }
+  .kv dt { color: var(--text-2); }
+  .kv dd { margin: 0; overflow-wrap: anywhere; }
+  .empty { color: var(--text-2); text-align: center; padding: 26px 8px; }
+  .nav { position: fixed; left: 0; right: 0; bottom: 0; background: var(--surface); border-top: 1px solid var(--border);
+    display: flex; justify-content: center; padding: 6px 6px calc(6px + env(safe-area-inset-bottom)); z-index: 5; }
+  .nav .in { display: flex; width: 100%; max-width: 760px; }
+  .nav button { flex: 1 1 0; border: 0; background: transparent; display: flex; flex-direction: column; align-items: center; gap: 2px;
+    font-size: 12px; color: var(--text-2); padding: 4px; cursor: pointer; min-height: 48px; }
+  .nav button span { font-size: 20px; line-height: 1.1; }
+  .nav button[aria-current="page"] { color: var(--series); font-weight: 650; }
+  /* формы */
+  .sheet { position: fixed; inset: 0; background: var(--page); z-index: 10; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+  .sheet .in { max-width: 760px; margin: 0 auto; padding: 0 16px calc(96px + env(safe-area-inset-bottom)); }
+  .sheet header { position: sticky; top: 0; background: var(--page); display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    padding: 12px 0; z-index: 2; border-bottom: 1px solid var(--grid); margin-bottom: 14px; }
+  .sheet header h2 { margin: 0; font-size: 18px; }
+  .sheet footer { position: fixed; left: 0; right: 0; bottom: 0; background: var(--page); border-top: 1px solid var(--grid);
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom)); }
+  .sheet footer .in2 { max-width: 728px; margin: 0 auto; display: flex; gap: 8px; }
+  .field { margin: 0 0 14px; }
+  .field label, .field .lab { display: block; font-size: 14px; font-weight: 600; margin: 0 0 5px; }
+  .field .hint { font-size: 13px; color: var(--text-2); margin-top: 5px; }
+  .field input, .field select, .field textarea { width: 100%; border: 1px solid var(--border); background: var(--surface); color: inherit;
+    border-radius: 12px; padding: 11px 13px; font: inherit; min-height: 46px; }
+  .field textarea { min-height: 90px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: 2px solid var(--series); outline-offset: -1px; }
+  .pair { display: grid; grid-template-columns: 1fr 112px; gap: 8px; }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .rate { font-size: 13px; color: var(--text-2); margin-top: 6px; }
+  .rate b { color: var(--text-1); }
+  .check, .field label.check { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 400; margin: 8px 0 0; }
+  .check input { width: 20px; height: 20px; min-height: 0; }
+  .err { color: var(--down); font-size: 14px; margin: 0 0 10px; }
+  .toast { position: fixed; left: 50%; bottom: calc(90px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: var(--text-1); color: var(--page);
+    padding: 10px 16px; border-radius: 12px; font-size: 14px; z-index: 30; box-shadow: 0 6px 20px rgba(0,0,0,.2); max-width: 90%; text-align: center; }
+  .viewer { position: fixed; inset: 0; background: #0b0b0b; z-index: 20; display: flex; flex-direction: column; }
+  .viewer .img { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-height: 0; padding: 10px; }
+  .viewer img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
+  .viewer .bar2 { display: flex; gap: 8px; padding: 10px 12px calc(12px + env(safe-area-inset-bottom)); flex-wrap: wrap; justify-content: center; }
+  .viewer .bar2 .btn { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.18); }
+  .viewer .cap { color: #ddd; font-size: 13px; text-align: center; padding: 10px 12px 0; overflow-wrap: anywhere; }
+  .chart { position: relative; }
+  .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .chart text { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+  .tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 8px 10px;
+    font-size: 13px; box-shadow: 0 4px 16px rgba(0,0,0,.12); min-width: 160px; display: none; z-index: 2; }
+  .tip .d { color: var(--text-2); margin-bottom: 4px; }
+  .tip .r { display: flex; justify-content: space-between; gap: 10px; }
+  .bars { display: grid; gap: 8px; }
+  .hb { display: grid; grid-template-columns: minmax(84px, 36%) 1fr; gap: 10px; align-items: center; font-size: 14px; }
+  .hb .track { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .hb .fill { height: 12px; background: var(--series); border-radius: 0 4px 4px 0; min-width: 2px; }
+  .hb .n { color: var(--text-2); font-size: 13px; white-space: nowrap; }
+  .hero { font-size: 40px; font-weight: 700; line-height: 1.1; margin: 2px 0 6px; letter-spacing: -0.02em; }
+  details summary { cursor: pointer; color: var(--text-2); font-size: 14px; }
+  .loading { opacity: .55; transition: opacity .2s; }
+  .pick { display: grid; gap: 8px; }
+  .pick button { text-align: left; }
+</style>
+</head>
+<body>
+<main id="app"><p class="empty">Загружаю…</p></main>
+<nav class="nav" id="nav"><div class="in">
+  <button type="button" data-tab="projects"><span>📁</span>Проекты</button>
+  <button type="button" data-tab="money"><span>💶</span>Деньги</button>
+  <button type="button" data-tab="people"><span>👥</span>Контакты</button>
+  <button type="button" data-tab="charts"><span>📈</span>Сайт</button>
+</div></nav>
+
+<script>
+(() => {
+  const tg = window.Telegram && window.Telegram.WebApp;
+  const INIT = tg ? tg.initData : '';
+  const app = document.getElementById('app');
+  const MONTHS = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+  const MON = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+  let S = null, P = null, tab = 'projects', view = 'list', filter = 'work', query = '', fileTab = 'visual', peopleTab = 'clients', period = 'month', M = null;
+
+  // ---------- оформление ----------
+  function theme() {
+    const dark = tg && tg.colorScheme ? tg.colorScheme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+    if (tg) { try { const bg = dark ? '#0d0d0d' : '#f9f9f7'; tg.setHeaderColor(bg); tg.setBackgroundColor(bg); } catch (e) {} }
+  }
+  if (tg) { tg.ready(); tg.expand(); tg.onEvent('themeChanged', theme); }
+  theme();
+
+  // ---------- мелочи ----------
+  const el = (tag, attrs, ...kids) => {
+    if (attrs && (attrs.nodeType || Array.isArray(attrs))) { kids.unshift(attrs); attrs = null; }   // el('div', дочерний, …)
+    const n = document.createElement(tag);
+    if (typeof attrs === 'string') n.className = attrs;
+    else if (attrs) for (const k in attrs) {
+      if (k === 'class') n.className = attrs[k];
+      else if (k.startsWith('on')) n.addEventListener(k.slice(2), attrs[k]);
+      else if (attrs[k] !== null && attrs[k] !== undefined && attrs[k] !== false) n.setAttribute(k, attrs[k] === true ? '' : attrs[k]);
+    }
+    for (const kid of kids.flat()) if (kid !== null && kid !== undefined && kid !== false) n.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+    return n;
+  };
+  const NB = ' ';
+  const SYM = { EUR: '€', USD: '$', UAH: '₴', CZK: 'Kč', PLN: 'zł', GBP: '£', CHF: 'CHF', HUF: 'Ft', AED: 'AED' };
+  function num(x, digits) {
+    const dg = digits == null ? 2 : digits, k = Math.pow(10, dg);
+    const v = Math.round((x || 0) * k) / k;
+    const [i, f] = Math.abs(v).toFixed(dg).split('.');
+    const s = i.replace(/\B(?=(\d{3})+(?!\d))/g, NB) + (f && Number(f) ? ',' + f : '');
+    return (v < 0 ? '−' : '') + s;
+  }
+  const eur = (x) => num(x) + NB + '€';
+  const money = (x, c) => num(x) + NB + (SYM[c] || c);
+  const pd = (s) => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d); };
+  const dfmt = (s) => { if (!s) return ''; const d = pd(s.slice(0, 10)); return d.getDate() + ' ' + MONTHS[d.getMonth()] + ' ' + d.getFullYear(); };
+  const todayISO = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
+  const status = (s) => (S.lists.statuses.find((x) => x[0] === s) || [s, s])[1];
+  const plural = (n, a, b, c) => { const x = Math.abs(n) % 100, y = x % 10; return x > 10 && x < 20 ? c : y === 1 ? a : y >= 2 && y <= 4 ? b : c; };
+  function toast(text) {
+    const t = el('div', 'toast', text); document.body.append(t);
+    if (tg && tg.HapticFeedback) try { tg.HapticFeedback.notificationOccurred('success'); } catch (e) {}
+    setTimeout(() => t.remove(), 2200);
+  }
+  function confirmBox(text) {
+    return new Promise((ok) => { if (tg && tg.showConfirm) { try { return tg.showConfirm(text, ok); } catch (e) {} } ok(window.confirm(text)); });
+  }
+  async function api(path, opts) {
+    const o = opts || {};
+    const headers = { 'X-Telegram-Init-Data': INIT };
+    if (o.json) headers['Content-Type'] = 'application/json';
+    Object.assign(headers, o.headers || {});
+    const r = await fetch(path, { method: o.method || (o.json || o.body ? 'POST' : 'GET'), headers, body: o.json ? JSON.stringify(o.json) : o.body, cache: 'no-store' });
+    let data = null; try { data = await r.json(); } catch (e) {}
+    if (!r.ok) throw new Error((data && data.error) || ('Сервер не ответил (' + r.status + ')'));
+    return data;
+  }
+  const save = (entity, data) => api('/api/crm/save', { json: { entity, data } });
+  const absUrl = (u) => new URL(u, location.href).href;
+  const srcText = (s) => (s || '').replace(/(\d{4})-(\d{2})-(\d{2})/, '$3.$2.$1');
+  function openLink(u) { if (tg && tg.openLink) tg.openLink(absUrl(u)); else window.open(u, '_blank'); }
+  const digits = (s) => (s || '').replace(/[^\d+]/g, '');
+
+  // ---------- навигация ----------
+  const stack = [];
+  function go(v, push) {
+    if (push !== false) stack.push({ tab, view, pid: P && P.project.id });
+    view = v; render(); window.scrollTo(0, 0); backBtn();
+  }
+  function back() {
+    const prev = stack.pop();
+    if (!prev) return;
+    tab = prev.tab; view = prev.view; render(); backBtn();
+  }
+  function backBtn() {
+    if (!tg || !tg.BackButton) return;
+    if (stack.length) tg.BackButton.show(); else tg.BackButton.hide();
+  }
+  if (tg && tg.BackButton) tg.BackButton.onClick(() => { const sh = document.querySelector('.sheet, .viewer'); if (sh) sh.remove(); else back(); backBtn(); });
+  document.querySelectorAll('.nav button').forEach((b) => b.addEventListener('click', () => {
+    if (b.dataset.tab === 'charts') { location.href = '/api/stats/app'; return; }
+    tab = b.dataset.tab; view = 'list'; stack.length = 0; render(); window.scrollTo(0, 0); backBtn();
+  }));
+  function markNav() { document.querySelectorAll('.nav button').forEach((b) => b.setAttribute('aria-current', b.dataset.tab === tab ? 'page' : 'false')); }
+
+  // ---------- загрузка ----------
+  async function loadState() { S = await api('/api/crm/state'); }
+  async function openProject(id, push) {
+    app.classList.add('loading');
+    try { P = await api('/api/crm/project?id=' + id); tab = 'projects'; go('project', push); }
+    catch (e) { toast(e.message); }
+    finally { app.classList.remove('loading'); }
+  }
+  async function refresh(detail) {
+    if (detail && detail.project) P = detail;
+    try { await loadState(); } catch (e) {}
+    render();
+  }
+
+  function render() {
+    markNav();
+    app.replaceChildren();
+    if (!S) return;
+    if (tab === 'projects') return view === 'project' && P ? projectView() : projectsView();
+    if (tab === 'money') return moneyView();
+    if (tab === 'people') return peopleView();
+  }
+
+  // ---------- список проектов ----------
+  function projectsView() {
+    const head = el('div', 'row', el('h1', { class: 'grow' }, 'Проекты'),
+      el('button', { class: 'btn primary small', type: 'button', onclick: () => projectSheet() }, '＋ Новый проект'),
+      el('button', { class: 'icon-btn', type: 'button', title: 'Списки: тарифы, виды работ', onclick: settingsSheet }, '⚙︎'));
+    app.append(head);
+    const s = el('input', { class: 'search', type: 'search', placeholder: 'Найти: номер, заказчик, город', value: query });
+    s.addEventListener('input', () => { query = s.value; drawList(); });
+    app.append(s);
+    const chips = el('div', 'chips');
+    [['work', 'В работе'], ['done', 'Завершённые'], ['all', 'Все']].forEach(([k, t]) => chips.append(
+      el('button', { class: 'chip', type: 'button', 'aria-pressed': String(filter === k), onclick: () => { filter = k; render(); } }, t)));
+    app.append(chips);
+    const list = el('div', 'plist'); app.append(list);
+    function drawList() {
+      list.replaceChildren();
+      const q = query.trim().toLowerCase();
+      const items = S.projects.filter((p) => (filter === 'all' || (filter === 'work' ? ['active', 'paused'].includes(p.status) : p.status === 'done'))
+        && (!q || [p.number, p.title, p.client_name, p.city, p.tariff].join(' ').toLowerCase().includes(q)));
+      if (!items.length) {
+        list.append(el('div', 'empty', S.projects.length ? 'Ничего не нашлось' : 'Проектов пока нет. Нажмите «Новый проект» — и начнём.'));
+        return;
+      }
+      items.forEach((p) => list.append(projectCard(p)));
+    }
+    drawList();
+  }
+
+  function projectCard(p) {
+    const pct = p.total_eur > 0 ? Math.min(100, (p.paid / p.total_eur) * 100) : 0;
+    const c = el('button', { class: 'pcard', type: 'button', onclick: () => openProject(p.id) },
+      el('div', 'top', el('span', 'num', p.number ? '№ ' + p.number : 'без номера'), el('span', 'status ' + p.status, status(p.status))),
+      el('div', 'title', p.title),
+      el('div', 'sub', [p.client_name, p.city, p.tariff].filter(Boolean).join(' · ') || ' '));
+    if (p.total_eur > 0) {
+      const bar = el('div', 'bar'); bar.append(el('i', { style: 'width:' + pct + '%' }));
+      c.append(bar, el('div', 'money num', el('span', null, 'Оплачено ', el('b', null, eur(p.paid)), ' из ' + eur(p.total_eur)),
+        p.balance > 0.005 ? el('span', 'owe', 'Остаток ' + eur(p.balance)) : el('span', 'muted', p.balance < -0.005 ? 'Переплата ' + eur(-p.balance) : 'Оплачено полностью')));
+    } else if (p.paid) c.append(el('div', 'money num', el('span', null, 'Оплачено ', el('b', null, eur(p.paid)))));
+    if (p.extra) c.append(el('div', 'small muted num', 'Доп. доход: ' + eur(p.extra)));
+    return c;
+  }
+
+  // ---------- проект ----------
+  function projectView() {
+    const { project: p, ops, files, contractors, client } = P;
+    const head = el('div', 'card');
+    head.append(el('div', 'row between', el('span', 'muted num', p.number ? '№ ' + p.number : 'без номера'), el('span', 'status ' + p.status, status(p.status))),
+      el('h1', { style: 'margin:4px 0 4px' }, p.title),
+      el('div', 'muted', [p.city, p.country, p.area ? num(p.area) + NB + 'м²' : '', p.tariff ? 'тариф «' + p.tariff + '»' : ''].filter(Boolean).join(' · ')));
+    head.append(el('div', { style: 'margin-top:10px' }, el('button', { class: 'btn small', type: 'button', onclick: () => projectSheet(p) }, '✎ Изменить проект')));
+    app.append(head);
+
+    // деньги
+    const m = el('section', 'card');
+    m.append(el('h2', null, 'Деньги'));
+    m.append(el('dl', 'sum num',
+      el('dt', null, 'Договор'), el('dd', null, eur(p.total_eur)),
+      el('dt', null, 'Оплачено'), el('dd', null, eur(p.paid)),
+      el('dt', null, p.balance < -0.005 ? 'Переплата' : 'Остаток к оплате'), el('dd', { class: p.balance > 0.005 ? 'owe' : '' }, eur(Math.abs(p.balance)))));
+    if (p.total_eur > 0) { const bar = el('div', 'bar'); bar.append(el('i', { style: 'width:' + Math.min(100, (p.paid / p.total_eur) * 100) + '%' })); m.append(bar); }
+    m.append(el('div', 'small muted num', 'Доп. доход: ', el('b', { style: 'color:var(--text-1)' }, eur(p.extra)),
+      p.extra ? ' (бонусы ' + eur(p.bonus) + ', наценка ' + eur(p.margin) + ')' : '', ' · Всего доход по проекту: ', el('b', { style: 'color:var(--text-1)' }, eur(p.income))));
+    m.append(el('div', 'actions',
+      el('button', { class: 'btn', type: 'button', onclick: () => opSheet('payment') }, el('span', null, '💶'), 'Оплата'),
+      el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission') }, el('span', null, '🎁'), 'Бонус'),
+      el('button', { class: 'btn', type: 'button', onclick: () => opSheet('resale') }, el('span', null, '🔁'), 'Перепродажа')));
+    app.append(m);
+
+    // операции
+    const o = el('section', 'card');
+    o.append(el('h2', null, 'Операции'));
+    if (!ops.length) o.append(el('p', 'muted small', 'Пока нет. Оплаты заказчика, бонусы от поставщиков и перепродажи появятся здесь — нажмите кнопку выше.'));
+    else {
+      const ul = el('ul', 'ops');
+      ops.forEach((x) => ul.append(opRow(x)));
+      o.append(ul);
+    }
+    app.append(o);
+
+    // заказчик
+    const c = el('section', 'card');
+    c.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Заказчик'),
+      el('button', { class: 'btn small', type: 'button', onclick: () => clientSheet(client, (saved) => saveProjectField('client_id', saved.id)) }, client ? '✎' : '＋ Добавить')));
+    if (client) c.append(personBlock(client));
+    else c.append(el('p', 'muted small', 'Не указан. Нажмите «Добавить» или выберите в «Изменить проект».'));
+    app.append(c);
+
+    // подрядчики
+    const k = el('section', 'card');
+    k.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Подрядчики'), el('button', { class: 'btn small', type: 'button', onclick: linkSheet }, '＋ Добавить')));
+    if (!contractors.length) k.append(el('p', 'muted small', 'Прораб, мебельщик, шторница, кондиционерщик, двери, окна… — кто работает на объекте.'));
+    else {
+      const ul = el('ul', 'people');
+      contractors.forEach((x) => ul.append(el('li', null,
+        el('div', { class: 'who', onclick: () => contractorSheet(x) }, el('b', null, x.name), el('span', null, [x.link_trade || x.trade, x.company, x.phone].filter(Boolean).join(' · '))),
+        ...contactButtons(x).slice(0, 2),
+        el('button', { class: 'icon-btn', type: 'button', title: 'Убрать из проекта', onclick: async () => {
+          if (!(await confirmBox('Убрать «' + x.name + '» из этого проекта? В списке подрядчиков он останется.'))) return;
+          try { await refresh(await api('/api/crm/delete', { json: { entity: 'link', id: x.link_id } })); } catch (e) { toast(e.message); }
+        } }, '✕'))));
+      k.append(ul);
+    }
+    app.append(k);
+
+    // файлы
+    const f = el('section', 'card');
+    f.append(el('h2', null, 'Фото и документы'));
+    const tabs = el('div', 'chips');
+    S.lists.file_cats.forEach(([key, name]) => {
+      const n = files.filter((x) => x.category === key).length;
+      tabs.append(el('button', { class: 'chip', type: 'button', 'aria-pressed': String(fileTab === key), onclick: () => { fileTab = key; render(); } }, name + (n ? ' · ' + n : '')));
+    });
+    f.append(tabs);
+    const list = files.filter((x) => x.category === fileTab);
+    if (!list.length) f.append(el('p', 'muted small', 'Пока пусто. Добавьте файлы кнопкой ниже — или просто пришлите их боту в чат: он спросит, в какой проект.'));
+    else {
+      const g = el('div', 'gallery');
+      list.forEach((x) => g.append(fileTile(x, list)));
+      f.append(g);
+    }
+    const input = el('input', { type: 'file', multiple: true, style: 'display:none', accept: fileTab === 'docs' ? null : 'image/*,video/*,application/pdf' });
+    input.addEventListener('change', () => upload([...input.files], fileTab));
+    f.append(input, el('div', { style: 'height:10px' }), el('button', { class: 'btn wide', type: 'button', onclick: () => input.click() }, '＋ Добавить файлы'));
+    app.append(f);
+
+    // подробности
+    const d = el('section', 'card');
+    d.append(el('h2', null, 'Подробности'));
+    const kv = el('dl', 'kv');
+    [['Номер', p.number], ['Тариф', p.tariff], ['Площадь', p.area ? num(p.area) + ' м²' : ''], ['Город', [p.city, p.country].filter(Boolean).join(', ')],
+      ['Адрес', p.address], ['Начало', dfmt(p.started)], ['Окончание', dfmt(p.finished)], ['Заметки', p.note]].forEach(([a, b]) => { if (b) kv.append(el('dt', null, a), el('dd', null, b)); });
+    d.append(kv);
+    if (P.history && P.history.length) {
+      const det = el('details', { style: 'margin-top:12px' }, el('summary', null, 'История изменений'));
+      const ul = el('ul', { class: 'people small' });
+      const what = { project: 'проект', op: 'операцию', file: 'файл', link: 'подрядчика' }, act = { add: 'добавил(а)', edit: 'изменил(а)', delete: 'удалил(а)' };
+      P.history.forEach((h) => ul.append(el('li', null, el('div', 'who', el('span', null, dfmt(h.ts) + ' · ' + (h.who || '') + ' ' + (act[h.action] || h.action) + ' ' + (what[h.entity] || h.entity))))));
+      det.append(ul); d.append(det);
+    }
+    d.append(el('div', { style: 'height:10px' }), el('button', { class: 'btn danger small', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Удалить проект «' + p.title + '»? Удалить можно только пустой проект — без операций и файлов.'))) return;
+      try { await api('/api/crm/delete', { json: { entity: 'project', id: p.id } }); P = null; toast('Проект удалён'); stack.length = 0; view = 'list'; await refresh(); backBtn(); }
+      catch (e) { toast(e.message); }
+    } }, 'Удалить проект'));
+    app.append(d);
+  }
+
+  function opRow(x) {
+    const kinds = { payment: 'Оплата заказчика', commission: 'Бонус от поставщика', resale: 'Перепродажа' };
+    let what = kinds[x.kind], meta = [dfmt(x.day)];
+    if (x.kind === 'payment') { if (x.method) meta.push(x.method); }
+    if (x.kind === 'commission') { what = 'Бонус' + (x.category ? ' · ' + x.category.toLowerCase() : ''); if (x.counterparty) meta.push(x.counterparty); }
+    if (x.kind === 'resale') { what = x.title || 'Перепродажа'; meta.push('закупка ' + money(x.buy, x.buy_currency) + (x.buy_currency !== 'EUR' ? ' (' + eur(x.buy_eur) + ')' : ''),
+      'продажа ' + money(x.amount, x.currency) + (x.currency !== 'EUR' ? ' (' + eur(x.amount_eur) + ')' : '')); if (x.counterparty) meta.push(x.counterparty); }
+    else if (x.currency !== 'EUR') meta.push(money(x.amount, x.currency) + ', курс ' + srcText(x.rate_src) + ': 1 € = ' + num(x.rate, 4) + NB + (SYM[x.currency] || x.currency));
+    if (x.note) meta.push(x.note);
+    return el('li', { onclick: () => opSheet(x.kind, x) },
+      el('div', 'what', what),
+      el('div', { class: 'amt num' + (x.income > 0 ? ' plus' : '') }, (x.income >= 0 ? '+' : '') + eur(x.income)),
+      el('div', 'meta', meta.join(' · ')));
+  }
+
+  function fileTile(x, list) {
+    if (x.image && (x.thumb_url || x.url)) {
+      const b = el('button', { class: 'thumb', type: 'button', onclick: () => viewer(x, list) });
+      b.append(el('img', { src: x.thumb_url || x.url, alt: x.name, loading: 'lazy' }));
+      return b;
+    }
+    const ext = ((x.name || '').split('.').pop() || 'файл').slice(0, 5).toUpperCase();
+    return el('button', { class: 'doc', type: 'button', onclick: () => viewer(x, list) },
+      el('span', 'ext', x.url ? ext : 'TG'), el('span', 'nm', x.name), el('span', 'muted', x.size ? num(x.size / 1048576, 1) + ' МБ' : ''));
+  }
+
+  function viewer(x, list) {
+    const v = el('div', 'viewer');
+    const img = el('div', 'img');
+    if (x.image && x.url) img.append(el('img', { src: x.url, alt: x.name }));
+    else img.append(el('div', { style: 'color:#fff;text-align:center;font-size:15px' }, el('div', { style: 'font-size:48px' }, '📄'), x.name,
+      el('div', { style: 'color:#aaa;font-size:13px;margin-top:6px' }, x.url ? (x.size ? num(x.size / 1048576, 1) + ' МБ' : '') : 'Файл больше 20 МБ хранится в Telegram — его можно прислать себе в чат.')));
+    const cats = S.lists.file_cats;
+    const sel = el('select', { class: 'btn', style: 'background:rgba(255,255,255,.12);color:#fff' });
+    cats.forEach(([k, n]) => sel.append(el('option', { value: k, selected: k === x.category }, 'Раздел: ' + n)));
+    sel.addEventListener('change', async () => { try { await refresh(await api('/api/crm/move', { json: { id: x.id, category: sel.value } })); v.remove(); toast('Перенесено'); } catch (e) { toast(e.message); } });
+    v.append(el('div', 'cap', x.name + ' · ' + dfmt(x.created) + (x.created_by ? ' · ' + x.created_by : '')), img, el('div', 'bar2',
+      x.url ? el('button', { class: 'btn small', type: 'button', onclick: () => openLink(x.url) }, '↗ Открыть') : null,
+      el('button', { class: 'btn small', type: 'button', onclick: async () => { try { await api('/api/crm/send', { json: { id: x.id } }); toast('Отправлено в чат с ботом'); } catch (e) { toast(e.message); } } }, '✈︎ В чат'),
+      sel,
+      el('button', { class: 'btn small', type: 'button', style: 'color:#ff8a8a', onclick: async () => {
+        if (!(await confirmBox('Удалить файл «' + x.name + '»?'))) return;
+        try { await refresh(await api('/api/crm/delete', { json: { entity: 'file', id: x.id } })); v.remove(); toast('Файл удалён'); } catch (e) { toast(e.message); }
+      } }, 'Удалить'),
+      el('button', { class: 'btn small', type: 'button', onclick: () => v.remove() }, 'Закрыть')));
+    document.body.append(v);
+    if (tg && tg.BackButton) tg.BackButton.show();
+  }
+
+  async function makeThumb(file) {
+    if (!file.type.startsWith('image/')) return null;
+    try {
+      const bmp = await createImageBitmap(file);
+      const k = Math.min(1, 640 / Math.max(bmp.width, bmp.height));
+      const c = document.createElement('canvas'); c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+      c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+      return await new Promise((ok) => c.toBlob(ok, 'image/jpeg', 0.8));
+    } catch (e) { return null; }
+  }
+
+  async function upload(files, cat) {
+    if (!files.length) return;
+    const pid = P.project.id;
+    let done = 0;
+    const t = el('div', 'toast', 'Загружаю 1 из ' + files.length + '…'); document.body.append(t);
+    try {
+      for (const f of files) {
+        t.textContent = 'Загружаю ' + (done + 1) + ' из ' + files.length + '…';
+        const rec = await api('/api/crm/upload?project=' + pid + '&cat=' + cat + '&name=' + encodeURIComponent(f.name),
+          { body: f, headers: { 'Content-Type': f.type || 'application/octet-stream' } });
+        const th = await makeThumb(f);
+        if (th) { try { await api('/api/crm/thumb?id=' + rec.id, { body: th, headers: { 'Content-Type': 'image/jpeg' } }); } catch (e) {} }
+        done++;
+      }
+      t.remove(); toast('Загружено: ' + done);
+    } catch (e) { t.remove(); toast((done ? 'Загружено ' + done + ' из ' + files.length + '. ' : '') + e.message); }
+    P = await api('/api/crm/project?id=' + pid); await refresh();
+  }
+
+  // ---------- контакты ----------
+  function contactButtons(p) {
+    const out = [], ph = digits(p.phone);
+    if (ph) out.push(el('a', { class: 'icon-btn', href: 'tel:' + ph, title: 'Позвонить' }, '📞'));
+    if (ph && (p.contact_pref === 'WhatsApp' || !p.contact_pref)) out.push(el('button', { class: 'icon-btn', type: 'button', title: 'WhatsApp', onclick: () => openLink('https://wa.me/' + ph.replace('+', '')) }, '🟢'));
+    if (p.contact_pref === 'Telegram') {
+      const m = (p.messenger || '').trim();
+      out.push(el('button', { class: 'icon-btn', type: 'button', title: 'Telegram', onclick: () => openLink(m.startsWith('@') ? 'https://t.me/' + m.slice(1) : 'https://t.me/' + (ph || m).replace(/^\+?/, '+')) }, '✈︎'));
+    }
+    if (p.contact_pref === 'Viber' && ph) out.push(el('a', { class: 'icon-btn', href: 'viber://chat?number=' + encodeURIComponent(ph), title: 'Viber' }, '🟣'));
+    if (p.email) out.push(el('a', { class: 'icon-btn', href: 'mailto:' + p.email, title: 'Написать письмо' }, '✉️'));
+    return out;
+  }
+
+  function personBlock(c) {
+    const box = el('div');
+    box.append(el('div', 'row', el('div', 'grow', el('b', { style: 'font-size:17px' }, c.name),
+      el('div', 'small muted', [c.contact_pref ? 'удобнее: ' + c.contact_pref : '', c.city].filter(Boolean).join(' · '))), ...contactButtons(c)));
+    const kv = el('dl', { class: 'kv', style: 'margin-top:10px' });
+    [['Телефон', c.phone], ['E-mail', c.email], ['Мессенджер', c.messenger], ['Заметки', c.note]].forEach(([a, b]) => { if (b) kv.append(el('dt', null, a), el('dd', null, b)); });
+    box.append(kv);
+    return box;
+  }
+
+  function peopleView() {
+    app.append(el('h1', null, 'Контакты'));
+    const tabs = el('div', 'tabs');
+    [['clients', 'Заказчики'], ['contractors', 'Подрядчики']].forEach(([k, n]) => tabs.append(el('button', { type: 'button', 'aria-pressed': String(peopleTab === k), onclick: () => { peopleTab = k; render(); } }, n)));
+    app.append(tabs);
+    const s = el('input', { class: 'search', type: 'search', placeholder: 'Поиск: имя, телефон, город' });
+    app.append(s);
+    const box = el('div', 'card'); app.append(box);
+    const draw = () => {
+      box.replaceChildren();
+      const q = s.value.trim().toLowerCase();
+      const items = (peopleTab === 'clients' ? S.clients : S.contractors).filter((p) => !q || [p.name, p.phone, p.email, p.city, p.trade, p.company].join(' ').toLowerCase().includes(q));
+      if (!items.length) { box.append(el('div', 'empty', peopleTab === 'clients' ? 'Заказчиков пока нет' : 'Подрядчиков пока нет')); return; }
+      const ul = el('ul', 'people');
+      if (peopleTab === 'contractors') {
+        let last = null;
+        items.forEach((p) => {
+          if ((p.trade || 'Другое') !== last) { last = p.trade || 'Другое'; ul.append(el('li', { style: 'border:0;padding:12px 0 2px' }, el('span', 'small muted', last))); }
+          ul.append(personRow(p, () => contractorSheet(p), [p.company, p.phone, p.projects ? p.projects + ' ' + plural(p.projects, 'проект', 'проекта', 'проектов') : ''].filter(Boolean).join(' · ')));
+        });
+      } else items.forEach((p) => ul.append(personRow(p, () => clientCard(p), [p.phone, p.city, p.projects.length ? p.projects.length + ' ' + plural(p.projects.length, 'проект', 'проекта', 'проектов') : ''].filter(Boolean).join(' · '))));
+      box.append(ul);
+    };
+    s.addEventListener('input', draw);
+    draw();
+    app.append(el('button', { class: 'btn primary wide', type: 'button', onclick: () => (peopleTab === 'clients' ? clientSheet(null) : contractorSheet(null)) },
+      peopleTab === 'clients' ? '＋ Новый заказчик' : '＋ Новый подрядчик'));
+  }
+  const personRow = (p, open, sub) => el('li', null, el('div', { class: 'who', onclick: open }, el('b', null, p.name), el('span', null, sub || ' ')), ...contactButtons(p).slice(0, 2));
+
+  function clientCard(c) {
+    const body = el('div');
+    body.append(el('div', 'card', personBlock(c)));
+    const ps = S.projects.filter((p) => p.client_id === c.id);
+    if (ps.length) { const l = el('div', 'plist'); ps.forEach((p) => l.append(projectCard(p))); body.append(el('h2', null, 'Проекты'), l); }
+    sheet(c.name, body, null, null, [el('button', { class: 'btn', type: 'button', onclick: () => { closeSheets(); clientSheet(c); } }, '✎ Изменить')]);
+  }
+
+  // ---------- деньги ----------
+  async function moneyView() {
+    app.append(el('h1', null, 'Деньги'));
+    const chips = el('div', 'chips');
+    [['month', 'Месяц'], ['quarter', 'Квартал'], ['year', 'Год'], ['all', 'Всё время']].forEach(([k, t]) => chips.append(
+      el('button', { class: 'chip', type: 'button', 'aria-pressed': String(period === k), onclick: () => { period = k; M = null; render(); } }, t)));
+    app.append(chips);
+    const box = el('div'); app.append(box);
+    if (!M || M.period !== period) {
+      box.append(el('p', 'empty', 'Считаю…'));
+      try { M = await api('/api/crm/stats?p=' + period); } catch (e) { box.replaceChildren(el('p', 'err', e.message)); return; }
+      if (tab !== 'money') return;
+      box.replaceChildren();
+    }
+    const range = M.from ? dfmt(M.from) + ' — ' + dfmt(M.to) : 'за всё время';
+    const h = el('section', 'card');
+    h.append(el('div', 'muted small', 'Доход студии · ' + range), el('div', 'hero num', eur(M.income)));
+    h.append(el('dl', 'sum num',
+      el('dt', null, 'Оплаты заказчиков'), el('dd', null, eur(M.payments)),
+      el('dt', null, 'Бонусы поставщиков'), el('dd', null, eur(M.bonuses)),
+      el('dt', null, 'Наценка на перепродаже'), el('dd', null, eur(M.margin))), el('p', 'small muted', 'Новых проектов: ' + M.new_projects + (M.new_contracts ? ' на ' + eur(M.new_contracts) : '') + ' · операций: ' + M.ops));
+    box.append(h);
+    const o = el('section', 'card');
+    o.append(el('h2', null, 'Заказчики ещё должны'), el('div', { class: 'hero num', style: 'font-size:28px;color:var(--warn)' }, eur(M.owing)),
+      el('p', 'small muted', 'Остаток по договорам проектов в работе и на паузе'));
+    if (M.owing_projects.length) {
+      const ul = el('ul', 'people');
+      M.owing_projects.forEach(([n, title, bal, id]) => ul.append(el('li', null, el('div', { class: 'who', onclick: () => openProject(id) }, el('b', null, title), el('span', null, n ? '№ ' + n : '')), el('b', 'num owe', eur(bal)))));
+      o.append(ul);
+    }
+    box.append(o);
+    const c = el('section', 'card');
+    c.append(el('h2', null, 'Доход по месяцам'), el('p', 'small muted', 'Нажмите на столбик — покажет, из чего доход'), monthChart(M.months));
+    box.append(c);
+    if (M.by_city.length) { const k = el('section', 'card'); k.append(el('h2', null, 'По городам'), hbars(M.by_city)); box.append(k); }
+    if (M.by_tariff.length) { const k = el('section', 'card'); k.append(el('h2', null, 'По тарифам'), hbars(M.by_tariff)); box.append(k); }
+    if (M.top_projects.length) {
+      const k = el('section', 'card'); k.append(el('h2', null, 'Проекты с наибольшим доходом'));
+      const ul = el('ul', 'people');
+      M.top_projects.forEach(([n, title, v, id]) => ul.append(el('li', null, el('div', { class: 'who', onclick: () => openProject(id) }, el('b', null, title), el('span', null, n ? '№ ' + n : '')), el('b', 'num', eur(v)))));
+      k.append(ul); box.append(k);
+    }
+  }
+
+  function hbars(items) {
+    const box = el('div', 'bars'); const max = Math.max(...items.map((x) => x[1]), 1);
+    items.forEach(([n, v]) => { const f = el('div', 'fill'); f.style.width = Math.max(1, (v / max) * 78) + '%'; box.append(el('div', 'hb', el('div', null, n), el('div', 'track', f, el('span', 'n num', eur(v))))); });
+    return box;
+  }
+
+  // столбики по месяцам: одна серия (доход), подсказка — из чего он
+  function monthChart(rows) {
+    const SVG = 'http://www.w3.org/2000/svg';
+    const sv = (tag, a) => { const n = document.createElementNS(SVG, tag); for (const k in a) n.setAttribute(k, a[k]); return n; };
+    const wrap = el('div', 'chart');
+    const W = Math.max(300, app.clientWidth - 30), H = 180, L = 44, R = 6, T = 10, B = 24, pw = W - L - R, ph = H - T - B;
+    const vals = rows.map((r) => Math.max(0, r.total));
+    let max = Math.max(1, ...vals); const p10 = Math.pow(10, Math.floor(Math.log10(max))); max = [1, 2, 2.5, 5, 10].map((m) => m * p10).find((m) => m >= max);
+    const band = pw / rows.length, bw = Math.max(3, Math.min(24, band - 2)), y = (v) => T + ph - (v / max) * ph;
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Доход по месяцам' });
+    [0, max / 2, max].forEach((g) => {
+      svg.append(sv('line', { x1: L, x2: W - R, y1: y(g), y2: y(g), stroke: g === 0 ? 'var(--axis)' : 'var(--grid)', 'stroke-width': 1 }));
+      const t = sv('text', { x: L - 6, y: y(g) + 4, 'text-anchor': 'end' }); t.textContent = num(Math.round(g), 0); svg.append(t);
+    });
+    const tip = el('div', 'tip');
+    const bars = [];
+    let right = -Infinity, year = null;
+    rows.forEach((r, i) => {
+      const v = vals[i], cx = L + band * i + band / 2, h = (v / max) * ph, x0 = cx - bw / 2, top = T + ph - h, rr = Math.min(4, bw / 2, h);
+      const d = h <= 0 ? '' : `M${x0},${T + ph} V${top + rr} Q${x0},${top} ${x0 + rr},${top} H${x0 + bw - rr} Q${x0 + bw},${top} ${x0 + bw},${top + rr} V${T + ph} Z`;
+      const p = sv('path', { d, fill: 'var(--series)' }); svg.append(p); bars.push(p);
+      const [yy, mm] = r.month.split('-').map(Number);
+      const label = MON[mm - 1] + (yy !== year ? ' ' + yy : ''), w = label.length * 6.3, lx = cx - w / 2;
+      if (lx > right + 6 && (rows.length <= 12 || mm % 3 === 1 || i === 0)) { right = lx + w; year = yy; const t = sv('text', { x: cx, y: H - 6, 'text-anchor': 'middle' }); t.textContent = label; svg.append(t); }
+      const hit = sv('rect', { x: L + band * i, y: T, width: band, height: ph + B, fill: 'transparent', tabindex: 0 });
+      const on = () => {
+        bars.forEach((b, k) => b.setAttribute('opacity', k === i ? 1 : 0.5));
+        tip.replaceChildren(el('div', 'd', MON[mm - 1] + ' ' + yy),
+          el('div', 'r', el('span', null, 'Оплаты заказчиков'), el('b', 'num', eur(r.payment))), el('div', 'r', el('span', null, 'Бонусы'), el('b', 'num', eur(r.commission))),
+          el('div', 'r', el('span', null, 'Наценка'), el('b', 'num', eur(r.resale))), el('div', 'r', el('span', null, 'Всего'), el('b', 'num', eur(r.total))));
+        tip.style.display = 'block'; const sc = svg.getBoundingClientRect().width / W, tw = tip.offsetWidth;
+        tip.style.left = Math.min(Math.max(0, cx * sc - tw / 2), wrap.clientWidth - tw) + 'px'; tip.style.top = '-8px';
+      };
+      const off = () => { bars.forEach((b) => b.setAttribute('opacity', 1)); tip.style.display = 'none'; };
+      hit.addEventListener('pointerenter', on); hit.addEventListener('pointerdown', on); hit.addEventListener('focus', on);
+      hit.addEventListener('pointerleave', (ev) => { if (ev.pointerType === 'mouse') off(); }); hit.addEventListener('blur', off);
+      svg.append(hit);
+    });
+    wrap.append(svg, tip);
+    return wrap;
+  }
+
+  // ---------- формы ----------
+  function closeSheets() { document.querySelectorAll('.sheet').forEach((s) => s.remove()); backBtn(); }
+  function sheet(title, body, onSave, saveLabel, extra) {
+    const err = el('p', 'err', ''); err.hidden = true;
+    const sh = el('div', 'sheet');
+    const inner = el('div', 'in');
+    inner.append(el('header', null, el('h2', null, title), el('button', { class: 'btn small', type: 'button', onclick: () => { sh.remove(); backBtn(); } }, 'Закрыть')), err, body);
+    sh.append(inner);
+    const foot = el('footer', null, el('div', 'in2', ...(extra || []),
+      onSave ? el('button', { class: 'btn primary', type: 'button', style: 'flex:1', onclick: async (ev) => {
+        const b = ev.currentTarget; b.disabled = true; err.hidden = true;
+        try { await onSave(); sh.remove(); backBtn(); } catch (e) { err.textContent = e.message; err.hidden = false; sh.scrollTo(0, 0); } finally { b.disabled = false; }
+      } }, saveLabel || 'Сохранить') : null));
+    if (onSave || (extra && extra.length)) sh.append(foot);
+    document.body.append(sh);
+    if (tg && tg.BackButton) tg.BackButton.show();
+    return sh;
+  }
+  function field(label, input, hint) { return el('div', 'field', el('label', null, label), input, hint ? el('div', 'hint', hint) : null); }
+  const inp = (value, a) => el('input', Object.assign({ value: value == null ? '' : value }, a || {}));
+  function sel(options, value, a) {
+    const s = el('select', a || {});
+    options.forEach((o) => { const [v, t] = Array.isArray(o) ? o : [o, o]; s.append(el('option', { value: v, selected: String(v) === String(value == null ? '' : value) }, t)); });
+    return s;
+  }
+  const area = (value, a) => { const t = el('textarea', a || {}); t.value = value || ''; return t; };
+  function cityInput(value) {
+    const id = 'cities' + Math.random().toString(36).slice(2);
+    const dl = el('datalist', { id }); S.cities.forEach((c) => dl.append(el('option', { value: c })));
+    const i = inp(value, { list: id, placeholder: 'Братислава', autocomplete: 'off' });
+    const w = el('div'); w.append(i, dl); w.input = i; return w;
+  }
+
+  function projectSheet(p) {
+    p = p || { status: 'active', started: todayISO() };
+    const f = {
+      number: inp(p.number, { placeholder: '2026-014' }), title: inp(p.title, { placeholder: 'Например: Квартира 85 м², Ружинов' }),
+      client_id: sel([['', '— не выбран —']].concat(S.clients.map((c) => [c.id, c.name])), p.client_id),
+      city: cityInput(p.city), country: inp(p.country, { placeholder: 'Словакия' }), address: inp(p.address, { placeholder: 'Улица, дом (по желанию)' }),
+      area: inp(p.area, { inputmode: 'decimal', placeholder: 'м²' }), tariff: sel([['', '— не выбран —']].concat(S.lists.tariffs), p.tariff),
+      total_eur: inp(p.total_eur || '', { inputmode: 'decimal', placeholder: '0' }), status: sel(S.lists.statuses, p.status),
+      started: inp(p.started, { type: 'date' }), finished: inp(p.finished, { type: 'date' }), note: area(p.note, { placeholder: 'Всё, что важно помнить' }),
+    };
+    const newClient = el('button', { class: 'btn small', type: 'button', style: 'margin-top:8px', onclick: () => clientSheet(null, (c) => {
+      S.clients.push(Object.assign({ projects: [] }, c)); f.client_id.append(el('option', { value: c.id, selected: true }, c.name)); f.client_id.value = c.id;
+    }) }, '＋ Новый заказчик');
+    const body = el('div',
+      field('Название', f.title, 'Как вы называете проект между собой'),
+      el('div', 'two', field('Номер', f.number, 'По внутреннему учёту'), field('Статус', f.status)),
+      el('div', 'field', el('label', null, 'Заказчик'), f.client_id, newClient),
+      el('div', 'two', field('Город', f.city), field('Страна', f.country)),
+      field('Адрес', f.address),
+      el('div', 'two', field('Площадь, м²', f.area), field('Тариф', f.tariff)),
+      field('Сумма договора, €', f.total_eur, 'Итог проекта всегда в евро. Оплаты можно вносить в любой валюте — они пересчитаются по курсу на дату оплаты.'),
+      el('div', 'two', field('Начало', f.started), field('Окончание', f.finished)),
+      field('Заметки', f.note));
+    sheet(p.id ? 'Изменить проект' : 'Новый проект', body, async () => {
+      const d = { id: p.id, number: f.number.value, title: f.title.value, client_id: f.client_id.value, city: f.city.input.value, country: f.country.value,
+        address: f.address.value, area: f.area.value, tariff: f.tariff.value, total_eur: f.total_eur.value || 0, status: f.status.value,
+        started: f.started.value, finished: f.finished.value, note: f.note.value };
+      const r = await save('project', d);
+      toast(p.id ? 'Сохранено' : 'Проект создан');
+      P = r; await refresh();
+      if (!p.id) { stack.length = 0; tab = 'projects'; go('project'); }
+    });
+  }
+
+  async function saveProjectField(key, value) {
+    const p = Object.assign({}, P.project, { [key]: value });
+    P = await save('project', p); await refresh();
+  }
+
+  // сумма + валюта + курс (подтягивается сам; можно ввести вручную)
+  function moneyField(label, amount, currency, rateVal, manual, dayInput, hint) {
+    const a = inp(amount, { inputmode: 'decimal', placeholder: '0' });
+    const c = sel(S.lists.currencies.map(([code, sym, name]) => [code, code + ' ' + sym]), currency || 'EUR', { 'aria-label': 'Валюта' });
+    const info = el('div', 'rate');
+    const man = el('input', { type: 'checkbox' }); man.checked = !!manual;
+    const r = inp(rateVal || '', { inputmode: 'decimal', placeholder: 'Сколько ' + (currency || '') + ' в 1 €' });
+    const rateBox = el('div', { style: 'margin-top:8px' }, r);
+    const manWrap = el('label', 'check', man, 'Ввести курс вручную (например, курс банка)');
+    const w = el('div', 'field', el('label', null, label), el('div', 'pair', a, c), info, manWrap, rateBox, hint ? el('div', 'hint', hint) : null);
+    let auto = null, seq = 0, inEur = null;
+    const done = (v) => { inEur = v; w.dispatchEvent(new Event('eur')); };
+    async function upd() {
+      const cur = c.value, amt = parseFloat((a.value || '').replace(/\s/g, '').replace(',', '.'));
+      const isEur = cur === 'EUR';
+      manWrap.hidden = isEur; rateBox.hidden = isEur || !man.checked;
+      r.placeholder = 'Сколько ' + cur + ' в 1 €';
+      if (isEur) { info.textContent = ''; return done(amt > 0 ? amt : null); }
+      if (man.checked) {
+        const rv = parseFloat((r.value || '').replace(',', '.'));
+        info.replaceChildren(rv > 0 && amt > 0 ? el('span', null, 'Это ', el('b', null, eur(amt / rv)), ' по вашему курсу') : '');
+        return done(rv > 0 && amt > 0 ? amt / rv : null);
+      }
+      const my = ++seq;
+      info.textContent = 'Узнаю курс…';
+      try {
+        auto = await api('/api/crm/rate?cur=' + cur + '&day=' + (dayInput.value || todayISO()));
+        if (my !== seq) return;
+        info.replaceChildren(el('span', null, 'Курс ' + srcText(auto.src) + ': 1 € = ', el('b', null, num(auto.rate, 4) + ' ' + (SYM[cur] || cur)),
+          amt > 0 ? el('span', null, ' · это ', el('b', null, eur(amt / auto.rate))) : ''));
+        done(amt > 0 ? amt / auto.rate : null);
+      } catch (e) { if (my === seq) { info.replaceChildren(el('span', { style: 'color:var(--down)' }, e.message)); done(null); } }
+    }
+    [a, r].forEach((x) => x.addEventListener('input', upd)); [c, man, dayInput].forEach((x) => x.addEventListener('change', upd));
+    upd();
+    w.value = () => ({ amount: a.value, currency: c.value, manual_rate: c.value !== 'EUR' && man.checked, rate: r.value });
+    w.eur = () => inEur;
+    return w;
+  }
+
+  function opSheet(kind, o) {
+    o = o || { kind, day: todayISO(), currency: 'EUR' };
+    const day = inp(o.day, { type: 'date' });
+    const titles = { payment: 'Оплата заказчика', commission: 'Бонус от поставщика', resale: 'Перепродажа' };
+    const body = el('div');
+    const note = area(o.note, { placeholder: 'Комментарий (по желанию)' });
+    let main, buy, extra = {};
+    body.append(field('Дата', day));
+    if (kind === 'payment') {
+      main = moneyField('Сколько заплатил заказчик', o.amount, o.currency, o.rate_src === 'вручную' ? o.rate : '', o.rate_src === 'вручную', day);
+      extra.method = sel([['', '— не указан —']].concat(S.lists.pay_methods), o.method);
+      body.append(main, field('Как заплатил', extra.method));
+    } else if (kind === 'commission') {
+      main = moneyField('Сумма бонуса', o.amount, o.currency, o.rate_src === 'вручную' ? o.rate : '', o.rate_src === 'вручную', day, 'Откат, агентское вознаграждение от поставщика или фабрики');
+      extra.category = sel([['', '— выберите —']].concat(S.lists.commission_cats), o.category);
+      extra.counterparty = inp(o.counterparty, { placeholder: 'Фабрика, салон, мастер' });
+      body.append(main, field('За что', extra.category), field('От кого', extra.counterparty));
+    } else {
+      extra.title = inp(o.title, { placeholder: 'Например: шторы в гостиную' });
+      extra.counterparty = inp(o.counterparty, { placeholder: 'Где купили' });
+      buy = moneyField('Закупка — сколько заплатила студия', o.buy, o.buy_currency || o.currency, o.buy_rate_src === 'вручную' ? o.buy_rate : '', o.buy_rate_src === 'вручную', day);
+      main = moneyField('Продажа — сколько заплатил заказчик', o.amount, o.currency, o.rate_src === 'вручную' ? o.rate : '', o.rate_src === 'вручную', day,
+        'Доход студии — разница между продажей и закупкой в евро');
+      const marginLine = el('div', { class: 'card small', style: 'margin:0 0 14px' });
+      const upd = () => {
+        const b = buy.eur(), s2 = main.eur();
+        marginLine.replaceChildren(b != null && s2 != null ? el('span', null, 'Доход студии (наценка): ', el('b', { class: 'num', style: s2 - b < 0 ? 'color:var(--down)' : 'color:var(--up)' }, eur(s2 - b)))
+          : el('span', 'muted', 'Введите закупку и продажу — покажу наценку в евро'));
+      };
+      buy.addEventListener('eur', upd); main.addEventListener('eur', upd); upd();
+      body.append(field('Что перепродали', extra.title), field('Поставщик', extra.counterparty), buy, main, marginLine);
+    }
+    body.append(field('Комментарий', note));
+    const del = o.id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Удалить эту операцию?'))) return;
+      try { await refresh(await api('/api/crm/delete', { json: { entity: 'op', id: o.id } })); closeSheets(); toast('Удалено'); } catch (e) { toast(e.message); }
+    } }, 'Удалить')] : [];
+    const fresh = { payment: 'Новая оплата заказчика', commission: 'Новый бонус от поставщика', resale: 'Новая перепродажа' };
+    sheet(o.id ? titles[kind] : fresh[kind], body, async () => {
+      const m = main.value();
+      const d = { id: o.id, project_id: P.project.id, kind, day: day.value, note: note.value, amount: m.amount, currency: m.currency, manual_rate: m.manual_rate, rate: m.rate };
+      for (const k in extra) d[k] = extra[k].value;
+      if (buy) { const b = buy.value(); Object.assign(d, { buy: b.amount, buy_currency: b.currency, manual_buy_rate: b.manual_rate, buy_rate: b.rate }); }
+      await refresh(await save('op', d));
+      toast('Сохранено');
+    }, null, del);
+  }
+
+  function clientSheet(c, after) {
+    c = c || {};
+    const f = { name: inp(c.name, { placeholder: 'Имя и фамилия', autocomplete: 'off' }), phone: inp(c.phone, { type: 'tel', placeholder: '+421 …' }),
+      email: inp(c.email, { type: 'email', placeholder: 'name@example.com' }), messenger: inp(c.messenger, { placeholder: '@ник в Telegram или номер' }),
+      contact_pref: sel([['', '— не указано —']].concat(S.lists.contact_prefs), c.contact_pref), city: cityInput(c.city), note: area(c.note, { placeholder: 'Как познакомились, пожелания, дни рождения…' }) };
+    const body = el('div', field('Имя', f.name), field('Телефон', f.phone), field('E-mail', f.email), field('Мессенджер', f.messenger),
+      field('Как удобнее связаться', f.contact_pref), field('Город', f.city), field('Заметки', f.note));
+    const del = c.id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Удалить заказчика «' + c.name + '»?'))) return;
+      try { await api('/api/crm/delete', { json: { entity: 'client', id: c.id } }); closeSheets(); toast('Удалено'); await refresh(); } catch (e) { toast(e.message); }
+    } }, 'Удалить')] : [];
+    sheet(c.id ? 'Заказчик' : 'Новый заказчик', body, async () => {
+      const saved = await save('client', { id: c.id, name: f.name.value, phone: f.phone.value, email: f.email.value, messenger: f.messenger.value,
+        contact_pref: f.contact_pref.value, city: f.city.input.value, note: f.note.value });
+      toast('Сохранено');
+      if (after) await after(saved); else await refresh();
+    }, null, del);
+  }
+
+  function contractorSheet(c, after) {
+    c = c || {};
+    const f = { name: inp(c.name, { placeholder: 'Имя', autocomplete: 'off' }), trade: sel([['', '— выберите —']].concat(S.lists.trades), c.trade),
+      company: inp(c.company, { placeholder: 'Фирма (по желанию)' }), phone: inp(c.phone, { type: 'tel', placeholder: '+421 …' }),
+      email: inp(c.email, { type: 'email' }), contact_pref: sel([['', '— не указано —']].concat(S.lists.contact_prefs), c.contact_pref),
+      city: cityInput(c.city), note: area(c.note, { placeholder: 'Цены, качество, сроки…' }) };
+    const body = el('div', field('Имя', f.name), field('Вид работ', f.trade), field('Компания', f.company), field('Телефон', f.phone), field('E-mail', f.email),
+      field('Как удобнее связаться', f.contact_pref), field('Город', f.city), field('Заметки', f.note));
+    const del = c.id && !c.link_id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Удалить подрядчика «' + c.name + '»?'))) return;
+      try { await api('/api/crm/delete', { json: { entity: 'contractor', id: c.id } }); closeSheets(); toast('Удалено'); await refresh(); } catch (e) { toast(e.message); }
+    } }, 'Удалить')] : [];
+    sheet(c.id ? 'Подрядчик' : 'Новый подрядчик', body, async () => {
+      const saved = await save('contractor', { id: c.id, name: f.name.value, trade: f.trade.value, company: f.company.value, phone: f.phone.value,
+        email: f.email.value, contact_pref: f.contact_pref.value, city: f.city.input.value, note: f.note.value });
+      toast('Сохранено');
+      if (after) await after(saved); else { if (P) P = await api('/api/crm/project?id=' + P.project.id); await refresh(); }
+    }, null, del);
+  }
+
+  function linkSheet() {
+    const trade = sel([['', 'Все виды работ']].concat(S.lists.trades), '');
+    const list = el('div', 'pick');
+    const draw = () => {
+      list.replaceChildren();
+      const items = S.contractors.filter((c) => !trade.value || c.trade === trade.value);
+      if (!items.length) list.append(el('p', 'muted small', 'Здесь пока никого. Добавьте нового подрядчика — он сохранится в контактах.'));
+      items.forEach((c) => list.append(el('button', { class: 'btn', type: 'button', onclick: () => attach(c) },
+        el('span', 'grow', el('b', null, c.name), el('span', 'small muted', ' · ' + [c.trade, c.phone].filter(Boolean).join(' · '))))));
+    };
+    async function attach(c) {
+      try { await refresh(await save('link', { project_id: P.project.id, contractor_id: c.id, trade: trade.value || c.trade })); closeSheets(); toast('Добавлено в проект'); }
+      catch (e) { toast(e.message); }
+    }
+    trade.addEventListener('change', draw); draw();
+    sheet('Подрядчик в проект', el('div', field('Вид работ', trade), list), null, null,
+      [el('button', { class: 'btn primary', type: 'button', style: 'flex:1', onclick: () => contractorSheet({ trade: trade.value }, attach) }, '＋ Новый подрядчик')]);
+  }
+
+  function settingsSheet() {
+    const L = S.lists;
+    const f = { tariffs: area(L.tariffs.join('\n')), trades: area(L.trades.join('\n')), commission_cats: area(L.commission_cats.join('\n')) };
+    const body = el('div', el('p', 'muted small', 'Каждый пункт — с новой строки. Уже внесённые проекты не меняются.'),
+      field('Тарифы', f.tariffs), field('Виды работ подрядчиков', f.trades), field('За что бывают бонусы', f.commission_cats),
+      el('p', 'small muted', 'Файлы проектов на сервере: ' + num((S.disk.used || 0) / 1048576, 1) + ' МБ' + (S.disk.free ? ' · свободно ' + num(S.disk.free / 1073741824, 1) + ' ГБ' : '')));
+    sheet('Списки', body, async () => {
+      const split = (t) => t.value.split('\n').map((x) => x.trim()).filter(Boolean);
+      S.lists = Object.assign(S.lists, await save('lists', { tariffs: split(f.tariffs), trades: split(f.trades), commission_cats: split(f.commission_cats) }));
+      toast('Сохранено'); render();
+    });
+  }
+
+  // ---------- старт ----------
+  async function start() {
+    if (!INIT) { app.replaceChildren(el('div', 'card muted', 'Откройте «Студию» кнопкой в боте студии DUMSKAYA DESIGN.')); return; }
+    try { await loadState(); }
+    catch (e) { app.replaceChildren(el('div', 'card muted', e.message)); return; }
+    const pid = new URLSearchParams(location.search).get('project');
+    if (pid) await openProject(pid, false); else render();
+  }
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (tab === 'money') render(); }, 200); });
+  start();
+})();
+</script>
+</body>
+</html>

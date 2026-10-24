@@ -45,6 +45,7 @@
   html, body { margin: 0; background: var(--page); color: var(--text-1); }
   body { font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; padding: 16px 16px 40px; max-width: 760px; margin: 0 auto; }
   h1 { font-size: 20px; font-weight: 600; margin: 0 0 2px; }
+  .back { display: inline-block; color: var(--series); text-decoration: none; font-size: 14px; margin: 0 0 6px; padding: 4px 0; }
   .sub { color: var(--text-2); font-size: 13px; margin: 0 0 14px; }
   /* периоды: 4 кнопки в первом ряду, 3 — во втором (сетка из 12 колонок) */
   .filters { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; margin: 0 0 14px; }
@@ -133,6 +134,7 @@
 </style>
 </head>
 <body>
+  <a class="back" href="/api/crm/app">← Студия</a>
   <h1>Посетители сайта</h1>
   <p class="sub" id="sub">dumskaya-design.com</p>
   <div class="filters" role="group" aria-label="Период">

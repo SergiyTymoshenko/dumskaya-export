@@ -30,6 +30,8 @@ import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
+from crm_bot import CrmBotMixin        # учёт проектов в чате: фото и документы в проект
+
 try:                                   # перевод сообщений заказчиков (translate.py рядом)
     from translate import lang_from
 except ImportError:                    # pragma: no cover
@@ -57,7 +59,8 @@ ADMIN_COMMANDS = [{"command": "users", "description": "Пользователи 
                   {"command": "site", "description": "Работает ли сайт"},
                   {"command": "help", "description": "Что умеет бот"},
                   {"command": "cancel", "description": "Отменить ввод"}]
-# кнопки под полем ввода у разработчика и дизайнера (нажатие = команда); «Графики» — кнопка меню слева от поля
+# кнопки под полем ввода у разработчика и дизайнера (нажатие = команда); «Студия» — кнопка меню слева от поля
+# (учёт проектов и графики сайта)
 BTN_SITE, BTN_USERS, BTN_PARTNERS = "🌐 Сайт", "👥 Пользователи", "🤝 Партнёры"
 ADMIN_BUTTONS = {BTN_SITE: "/site", BTN_USERS: "/users", BTN_PARTNERS: "/partners"}
 # «Сайт» (работает ли сайт) — только у разработчика
@@ -66,7 +69,7 @@ KEYBOARDS = {
               "resize_keyboard": True, "is_persistent": True},
     "designer": {"keyboard": [[{"text": BTN_USERS}, {"text": BTN_PARTNERS}]], "resize_keyboard": True, "is_persistent": True},
 }
-KEYBOARD_VERSION = {"owner": "2", "designer": "4"}   # сменить — и кнопки этой роли придут заново
+KEYBOARD_VERSION = {"owner": "3", "designer": "5"}   # сменить — и кнопки этой роли придут заново
 SUPPLIER_COMMANDS = [{"command": "team", "description": "Мои сотрудники"},
                      {"command": "invite", "description": "Пригласить сотрудника"},
                      {"command": "help", "description": "Что умеет бот"}]
@@ -156,7 +159,7 @@ class Store:
         self.run("DELETE FROM state WHERE key=?", key)
 
 
-class Bot:
+class Bot(CrmBotMixin):
     def __init__(self, token, owner_id, db_path, log=print):
         self.token = token
         self.owner = int(owner_id) if str(owner_id or "").strip().isdigit() else None
@@ -353,19 +356,20 @@ class Bot:
         return {"reply_markup": KEYBOARDS[u["role"]]}
 
     def sync_buttons(self, u):
-        """Кнопки под полем ввода и кнопка «Графики» слева — у разработчика и дизайнера; у остальных — убрать.
+        """Кнопки под полем ввода и кнопка «Студия» слева — у разработчика и дизайнера; у остальных — убрать.
         Вернёт (доставлено, причина), если отправляли сообщение о новых кнопках, иначе None."""
         uid, flag = u["tg_id"], f"kbd:{u['tg_id']}"
         if self.is_admin(u):
-            url = self.stats_app_url()
+            url = self.studio_url()
             self.api("setChatMenuButton", chat_id=uid, menu_button=(
-                {"type": "web_app", "text": "Графики", "web_app": {"url": url}} if url else {"type": "commands"}))
+                {"type": "web_app", "text": "Студия", "web_app": {"url": url}} if url else {"type": "commands"}))
             if self.s.get(flag) != KEYBOARD_VERSION[u["role"]]:
                 got = self.send_r(uid, "Кнопки студии — внизу экрана: пользователи и партнёры"
                                   + (", сайт." if u["role"] == "owner" else ".")
-                                  + (" Статистика посетителей — кнопка «Графики» слева от поля ввода: кто был на сайте "
-                                     "за последний час, что смотрел и откуда, а также итоги за сутки, неделю и месяц."
-                                     if url else ""),
+                                  + ("\n\nСлева от поля ввода — кнопка <b>«Студия»</b>: проекты, оплаты и доход, заказчики, "
+                                     "подрядчики, фото и документы проектов, а также графики посетителей сайта.\n\n"
+                                     "Фото и документы проекта можно присылать прямо сюда, в чат: бот спросит, "
+                                     "в какой проект их сохранить." if url else ""),
                                   reply_markup=KEYBOARDS[u["role"]])
                 if got[0]:                     # отметка — только после доставки, иначе попробуем при следующем запуске
                     self.s.put(flag, KEYBOARD_VERSION[u["role"]])
@@ -398,6 +402,8 @@ class Bot:
             return self.join_invite(uid, name, f.get("username"), u, arg[4:])
         if not u or u["status"] != "active":
             return self.stranger(uid, name, f.get("username"), u)
+        if self.is_admin(u) and self.file_of(m):            # фото или документ — сохранить в проект
+            return self.crm_intake(u, m)
         if text in ADMIN_BUTTONS and self.is_admin(u) and (text != BTN_SITE or u["role"] == "owner"):   # кнопка = команда
             self.s.drop(f"await:{uid}")
             cmd, arg = ADMIN_BUTTONS[text], ""
@@ -420,7 +426,7 @@ class Bot:
         if cmd == "/invite" and self.is_supplier(u):
             return self.make_invite(u)
         if self.is_admin(u):
-            return self.send(uid, "Кнопки — внизу экрана; статистика посетителей — «Графики» слева от поля ввода. "
+            return self.send(uid, "Кнопки — внизу экрана; проекты студии и графики сайта — «Студия» слева от поля ввода. "
                                   "Все возможности — /help.", **self.keyboard_extra(u))
         self.send(uid, "Команды — в меню слева от поля ввода или /help.")
 
@@ -457,16 +463,18 @@ class Bot:
         if role == "owner":
             return head + ("Сюда приходят все уведомления: заявки с сайта, заявки партнёрам, запросы доступа и ошибки, "
                            "а если сайт перестанет отвечать — «🔴 Сайт не отвечает» (и «🟢 снова работает»).\n\n"
-                           "Статистика посетителей сайта — кнопка «Графики» слева от поля ввода; каждый день в 9:00 — "
-                           "короткая сводка за вчера с этой же кнопкой.\n\n"
+                           "Учёт проектов студии и статистика посетителей сайта — кнопка «Студия» слева от поля ввода; "
+                           "каждый день в 9:00 — короткая сводка за вчера с кнопкой «Графики».\n\n"
+                           "Фото и документы проекта можно присылать прямо в чат — бот спросит, в какой проект.\n\n"
                            "Кнопки внизу экрана: 👥 Пользователи, 🤝 Партнёры, 🌐 Сайт (работает ли).")
         if role == "designer":
             mgr = self.shop_manager()
             shop = ("Товары магазина студии закреплены за вами — заявки на них тоже приходят сюда.\n\n"
                     if mgr and mgr["tg_id"] == u["tg_id"] else "")
             return head + ("Сюда приходят заявки с сайта, уведомления о заявках партнёрам и запросы на доступ к боту.\n"
-                           + shop + "\nКнопки внизу экрана: 👥 Пользователи, 🤝 Партнёры; "
-                           "статистика посетителей — кнопка «Графики» слева от поля ввода.")
+                           + shop + "\nСлева от поля ввода — кнопка «Студия»: ваши проекты, оплаты и доход, заказчики, "
+                           "подрядчики, фото и документы, графики сайта. Фото и документы проекта можно присылать прямо "
+                           "в чат — бот спросит, в какой проект.\n\nКнопки внизу экрана: 👥 Пользователи, 🤝 Партнёры.")
         if role == "supplier":
             return head + ("Сюда будут приходить заявки с сайта dumskaya-design.com на ваши товары — вам "
                            "и вашим сотрудникам в боте.\n\n/team — ваши сотрудники в боте\n/invite — пригласить сотрудника")
@@ -492,6 +500,8 @@ class Bot:
 
     def admin_button(self, admin, msg, parts):
         act = parts[0]
+        if act == "cf":                            # файлы в проект: cf:p:проект / cf:c:раздел / cf:m:сдвиг / cf:b / cf:x
+            return self.crm_button(admin, msg, parts)
         if act == "ro":                            # ro:режим:uid:роль — выбрана роль
             mode, uid, role = parts[1], int(parts[2]), parts[3]
             return self.pick_role(admin, msg, mode, uid, role)

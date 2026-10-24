@@ -11,6 +11,7 @@
 В этом же процессе работает сам бот (приём пользователей, роли) — см. bot.py, и сторож сайта: если сайт
 не отвечает, разработчику в бот приходит сообщение — см. site_monitor.py.
 И статистика посетителей по журналу Caddy (site_stats.py): мини-приложение «Графики» в боте, утром — строка разработчику.
+И учёт проектов студии (crm.py, crm_api.py, страница crm_app.html — кнопка «Студия» в боте).
 Только стандартная библиотека Python 3, без установки пакетов.
 
 Настройки — переменные окружения (файл lead.env, его читает systemd):
@@ -73,6 +74,9 @@ from site_monitor import SiteMonitor  # noqa: E402
 from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
                         is_own, mark_own, me_data, record_hit, record_time, web)
 from translate import lang_from, provider, translate_lead  # noqa: E402
+import crm_api  # noqa: E402  учёт проектов студии: /api/crm/*
+from crm import Crm  # noqa: E402
+from fx import Rates  # noqa: E402
 
 BOT = None
 
@@ -158,6 +162,8 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path, _, query = self.path.partition("?")
+        if crm_api.handle_get(self, path.rstrip("/"), query):
+            return
         if path.rstrip("/") == "/api/stats/app":           # графики посетителей — мини-приложение Telegram
             try:
                 page = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "stats_app.html"), encoding="utf-8").read()
@@ -254,6 +260,9 @@ class Handler(BaseHTTPRequestHandler):
             return True
 
     def do_POST(self):
+        path, _, query = self.path.partition("?")
+        if crm_api.handle_post(self, path.rstrip("/"), query):
+            return
         if self.path.split("?")[0].rstrip("/") == "/api/hit":
             return self.hit()
         if self.path.split("?")[0].rstrip("/") == "/api/stats/exclude":
@@ -338,6 +347,12 @@ def main():
     if BOT:
         BOT.monitor = SiteMonitor(BOT, log=log)     # сторож сайта: «сайт не отвечает» разработчику в бот
         BOT.stats = SiteStats(BOT, log=log)         # посетители по журналу Caddy: «Графики» и строка в 9:00
+        try:                                        # учёт проектов студии (кнопка «Студия»)
+            crm_api.CRM = BOT.crm = Crm(rates=Rates(), extra_backups=[BOT_DB])
+            crm_api.BOT = BOT
+            BOT.stats.hooks.append(BOT.crm.backup_if_due)   # каждый день — копия баз в ~/dumskaya/backups
+        except Exception as e:  # noqa: BLE001
+            log(f"учёт проектов не запущен: {type(e).__name__}: {e}")
         BOT.start()
         BOT.monitor.start()
         BOT.stats.start()

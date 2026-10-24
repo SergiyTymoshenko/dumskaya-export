@@ -1519,6 +1519,7 @@ class SiteStats:
         self.live_fn = live_fn or self.is_live
         self.clock = clock or (lambda: datetime.now(TZ))
         self.stop = threading.Event()
+        self.hooks = []                             # ещё дела раз в минуту (копии баз студии): функция(log=…)
 
     @staticmethod
     def is_live():
@@ -1562,6 +1563,11 @@ class SiteStats:
                     geo.update(log=self.log)
                 except Exception as e:  # noqa: BLE001
                     self.log(f"гео: ошибка {type(e).__name__}: {e}")
+            for hook in self.hooks:
+                try:
+                    hook(log=self.log)
+                except Exception as e:  # noqa: BLE001
+                    self.log(f"фоновая задача: ошибка {type(e).__name__}: {e}")
             self.stop.wait(60)
 
 
