@@ -55,15 +55,14 @@ INVITE_DAYS = 7
 ADMIN_COMMANDS = [{"command": "users", "description": "Пользователи и запросы"},
                   {"command": "partners", "description": "Партнёры и их товары"},
                   {"command": "site", "description": "Работает ли сайт"},
-                  {"command": "stats", "description": "Посетители сайта"},
                   {"command": "help", "description": "Что умеет бот"},
                   {"command": "cancel", "description": "Отменить ввод"}]
 # кнопки под полем ввода у разработчика и дизайнера (нажатие = команда); «Графики» — кнопка меню слева от поля
-BTN_STATS, BTN_SITE, BTN_USERS, BTN_PARTNERS = "📊 Статистика", "🌐 Сайт", "👥 Пользователи", "🤝 Партнёры"
-ADMIN_BUTTONS = {BTN_STATS: "/stats", BTN_SITE: "/site", BTN_USERS: "/users", BTN_PARTNERS: "/partners"}
-ADMIN_KEYBOARD = {"keyboard": [[{"text": BTN_STATS}, {"text": BTN_SITE}], [{"text": BTN_USERS}, {"text": BTN_PARTNERS}]],
+BTN_SITE, BTN_USERS, BTN_PARTNERS = "🌐 Сайт", "👥 Пользователи", "🤝 Партнёры"
+ADMIN_BUTTONS = {BTN_SITE: "/site", BTN_USERS: "/users", BTN_PARTNERS: "/partners"}
+ADMIN_KEYBOARD = {"keyboard": [[{"text": BTN_USERS}, {"text": BTN_PARTNERS}], [{"text": BTN_SITE}]],
                   "resize_keyboard": True, "is_persistent": True}
-KEYBOARD_VERSION = "1"               # сменить — и кнопки придут всем заново (если поменялся набор)
+KEYBOARD_VERSION = "2"               # сменить — и кнопки придут всем заново (если поменялся набор)
 SUPPLIER_COMMANDS = [{"command": "team", "description": "Мои сотрудники"},
                      {"command": "invite", "description": "Пригласить сотрудника"},
                      {"command": "help", "description": "Что умеет бот"}]
@@ -335,8 +334,8 @@ class Bot:
             self.api("setChatMenuButton", chat_id=uid, menu_button=(
                 {"type": "web_app", "text": "Графики", "web_app": {"url": url}} if url else {"type": "commands"}))
             if self.s.get(flag) != KEYBOARD_VERSION:
-                self.send(uid, "Кнопки студии — внизу экрана: статистика, сайт, пользователи и партнёры."
-                          + (" Слева от поля ввода — «Графики» посетителей сайта." if url else ""),
+                self.send(uid, "Кнопки студии — внизу экрана: пользователи, партнёры и сайт."
+                          + (" Статистика посетителей — кнопка «Графики» слева от поля ввода." if url else ""),
                           **self.keyboard_extra(u))
         elif self.s.get(flag):
             self.s.drop(flag)
@@ -383,15 +382,13 @@ class Bot:
         if cmd == "/site" and self.is_admin(u):
             mon = getattr(self, "monitor", None)
             return self.send(uid, mon.status() if mon else "Сторож сайта не запущен.")
-        if cmd == "/stats" and self.is_admin(u):
-            st = getattr(self, "stats", None)
-            if not st:
-                return self.send(uid, "Статистика посетителей не запущена.")
-            return self.send(uid, st.command(), st.button())
         if cmd == "/team" and self.is_supplier(u):
             return self.team_list(u)
         if cmd == "/invite" and self.is_supplier(u):
             return self.make_invite(u)
+        if self.is_admin(u):
+            return self.send(uid, "Кнопки — внизу экрана; статистика посетителей — «Графики» слева от поля ввода. "
+                                  "Все возможности — /help.", **self.keyboard_extra(u))
         self.send(uid, "Команды — в меню слева от поля ввода или /help.")
 
     def stranger(self, uid, name, username, u):
@@ -427,16 +424,16 @@ class Bot:
         if role == "owner":
             return head + ("Сюда приходят все уведомления: заявки с сайта, заявки партнёрам, запросы доступа и ошибки, "
                            "а если сайт перестанет отвечать — «🔴 Сайт не отвечает» (и «🟢 снова работает»).\n\n"
-                           "Каждый день в 9:00 — отчёт о посетителях сайта за вчера, по понедельникам — и за неделю.\n\n"
-                           "Кнопки внизу экрана: 📊 Статистика, 🌐 Сайт, 👥 Пользователи, 🤝 Партнёры; "
-                           "слева от поля ввода — «Графики» посетителей.")
+                           "Статистика посетителей сайта — кнопка «Графики» слева от поля ввода; каждый день в 9:00 — "
+                           "короткая сводка за вчера с этой же кнопкой.\n\n"
+                           "Кнопки внизу экрана: 👥 Пользователи, 🤝 Партнёры, 🌐 Сайт (работает ли).")
         if role == "designer":
             mgr = self.shop_manager()
             shop = ("Товары магазина студии закреплены за вами — заявки на них тоже приходят сюда.\n\n"
                     if mgr and mgr["tg_id"] == u["tg_id"] else "")
             return head + ("Сюда приходят заявки с сайта, уведомления о заявках партнёрам и запросы на доступ к боту.\n"
-                           + shop + "\nКнопки внизу экрана: 📊 Статистика (посетители сайта), 🌐 Сайт (работает ли), "
-                           "👥 Пользователи, 🤝 Партнёры; слева от поля ввода — «Графики» посетителей.")
+                           + shop + "\nКнопки внизу экрана: 👥 Пользователи, 🤝 Партнёры, 🌐 Сайт (работает ли); "
+                           "статистика посетителей — кнопка «Графики» слева от поля ввода.")
         if role == "supplier":
             return head + ("Сюда будут приходить заявки с сайта dumskaya-design.com на ваши товары — вам "
                            "и вашим сотрудникам в боте.\n\n/team — ваши сотрудники в боте\n/invite — пригласить сотрудника")

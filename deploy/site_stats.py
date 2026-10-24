@@ -774,6 +774,46 @@ def web_data(n):
             "generated": datetime.now(TZ).strftime("%H:%M")}
 
 
+def plural(n, one, few, many):
+    n = abs(n) % 100
+    if 11 <= n <= 19:
+        return many
+    return one if n % 10 == 1 else few if 2 <= n % 10 <= 4 else many
+
+
+def arrow(cur, prev):
+    if prev is None or cur == prev:
+        return ""
+    return f" {'▲' if cur > prev else '▼'}{abs(cur - prev)}"
+
+
+def summary(a, prev=None):
+    """«34 посетителя ▲6 · 1 заявка · 3 нажатия на контакты» — для утреннего сообщения."""
+    c, pc = sum((a.get("contacts") or {}).values()), None
+    if prev and "contacts" in prev:
+        pc = sum((prev.get("contacts") or {}).values())
+    v, l = a["visitors"], a.get("leads", 0)
+    return (f"<b>{v}</b> {plural(v, 'посетитель', 'посетителя', 'посетителей')}{arrow(v, prev and prev['visitors'])} · "
+            f"{l} {plural(l, 'заявка', 'заявки', 'заявок')}{arrow(l, prev and prev.get('leads'))} · "
+            f"{c} {plural(c, 'нажатие', 'нажатия', 'нажатий')} на контакты{arrow(c, pc)}")
+
+
+def morning_note(d):
+    """Утреннее сообщение: одна строка за вчера (по понедельникам — и за неделю), подробности — в «Графиках»."""
+    y = d - timedelta(days=1)
+    got = days_stats([y - timedelta(days=k) for k in range(14)])
+    a, prev = got[y], got[y - timedelta(days=1)]
+    lines = [f"📈 Сайт за {day_name(y)}: " + (summary(a, prev) if a else "в журнале нет записей")]
+    if d.weekday() == 0:
+        week = [got[y - timedelta(days=k)] for k in range(7)]
+        before = [got[y - timedelta(days=k)] for k in range(7, 14)]
+        cur = merge(x for x in week if x) if any(week) else None
+        if cur:
+            lines.append("За неделю: " + summary(cur, merge(before) if all(before) else None))
+    lines.append("Графики — кнопкой ниже.")
+    return "\n".join(lines)
+
+
 NO_ACCESS = ("Не могу прочитать журнал сайта ({}) — у сервиса нет доступа. Выложите сайт ещё раз "
              "(npm run deploy спросит пароль sudo и откроет журнал для чтения).")
 
@@ -796,20 +836,6 @@ class SiteStats:
         except OSError:
             return False
 
-    def button(self):
-        """Кнопка «Графики» — только когда сайт на домене (мини-приложение открывается по HTTPS)."""
-        return BUTTON if self.live_fn() else None
-
-    def command(self):
-        """Текст для команды /stats."""
-        try:
-            return today_report()
-        except PermissionError:
-            return NO_ACCESS.format(esc(LOG_GLOB))
-        except Exception as e:  # noqa: BLE001
-            self.log(f"статистика: ошибка {type(e).__name__}: {e}")
-            return "Не получилось посчитать посетителей — ошибка записана в журнал сервиса."
-
     def tick(self):
         if not self.live_fn():
             return
@@ -818,18 +844,14 @@ class SiteStats:
         last = self.bot.s.get("stats:daily") or ""
         if now.hour < REPORT_HOUR or last == d.isoformat():
             return
-        y = d - timedelta(days=1)
         try:
             # дни, пропущенные, пока сервис не работал, — сохранить итоги, пока журнал их ещё помнит
             days_stats([d - timedelta(days=k) for k in range(7, 1, -1)])
-            texts = [daily_report(y)]
-            if d.weekday() == 0:
-                texts.append(weekly_report(d - timedelta(days=7)))
+            text = morning_note(d)
         except PermissionError:
-            texts = [NO_ACCESS.format(esc(LOG_GLOB))]
+            text = NO_ACCESS.format(esc(LOG_GLOB))
         self.bot.s.put("stats:daily", d.isoformat())
-        for t in texts:
-            self.bot.notify(t, roles=("owner",), rows=BUTTON)
+        self.bot.notify(text, roles=("owner",), rows=BUTTON)
 
     def start(self):
         t = threading.Thread(target=self.loop, name="site-stats", daemon=True)
