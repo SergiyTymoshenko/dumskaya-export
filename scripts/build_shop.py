@@ -8,7 +8,8 @@ content/pages/ru/shop/<товар>.json), заявка уходит людям �
 уведомление. Без поля "partner" товар студии — заявка как обычно.
 Товары партнёрских фабрик из content/shop/catalog/<фабрика>.json (ещё до выкладки их страниц) тоже попадают
 в список: партнёр — название компании из content/shop/manufacturers.json, плюс подсказка для студии и партнёра —
-изготовитель, его артикул и коллекция (клиент их не видит).
+изготовитель, его артикул и коллекция, а для дизайнера — где у фабрики скачать 2D/3D модели изделия
+(«models»: сами файлы не качаем; клиент этого не видит).
 Запускается при выкладке (scripts/deploy.sh); файл не хранится в git.
    python3 scripts/build_shop.py"""
 import glob, json, os, re, sys
@@ -56,6 +57,31 @@ def sheet_ref(it, mf):
             "pages": [[n, str(n), "чертёж"] for n in pages] or [[1, "1", None]]}
 
 
+FMT = re.compile(r"\b(DWG|DXF|3DM|FBX|MAX|SKP|OBJ|3DS|RFA|IFC|STEP|STP)\b")
+
+
+def models_ref(it):
+    """2D/3D модели изделия. Сами файлы в базу не качаем — дизайнеру подсказка: что есть, где скачать и нужен ли вход.
+    [{"what": "2D/3D", "formats": ["DWG", "SKP"], "url": страница или файл у фабрики, "how": как получить}]"""
+    links, out = it.get("links") or {}, []
+    gated = list(dict.fromkeys(m for f in it.get("files_after_login") or [] for m in FMT.findall(f.get("title") or "")))
+    for key, what in (("files_2d3d", "2D/3D"), ("bim", "BIM"), ("files_2d", "2D"), ("model_3d", "3D")):
+        v = links.get(key)
+        if not v:
+            continue
+        url, _, note = v.partition("  (")
+        if "после формы" in note:
+            how = "один раз заполнить форму на сайте фабрики"
+        elif "после входа" in note:
+            how = "нужен вход на сайте фабрики"
+        else:
+            how = "скачивается сразу"
+        ext = re.search(r"\.([a-z0-9]{2,4})$", url, re.I)
+        formats = gated if key == "files_2d3d" else [ext.group(1).upper()] if ext and ext.group(1).lower() != "html" else []
+        out.append({"what": what, "formats": formats, "url": url.strip(), "how": how})
+    return out
+
+
 mfrs = json.load(open(os.path.join(ROOT, "content/shop/manufacturers.json"), encoding="utf-8"))
 for key, mf in mfrs.items():
     if not os.path.exists(os.path.join(ROOT, mf["catalog"])):
@@ -78,6 +104,9 @@ for key, mf in mfrs.items():
         ref = catalog_ref(it, sources) or sheet_ref(it, mf)
         if ref:
             out[code]["catalog"] = ref
+        models = models_ref(it)
+        if models:
+            out[code]["models"] = models
 dst = os.path.join(ROOT, "deploy", "shop-products.json")
 json.dump(out, open(dst, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 own = sum(1 for v in out.values() if v["partner"])

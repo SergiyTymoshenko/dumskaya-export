@@ -18,6 +18,7 @@ import os
 import re
 import threading
 import urllib.parse
+import urllib.request
 
 from crm import FILE_MAX, CrmError
 from langs import studio_list
@@ -233,23 +234,33 @@ def portal_save(entity):
 CARD_HOSTS = ("dumskaya-design.com", "www.dumskaya-design.com", "dumskaya-home.com", "www.dumskaya-home.com")
 
 
+def factory_hint(it):
+    """Для дизайнера (заказчик не видит): чей товар, артикул и страница у фабрики, где скачать 2D/3D модели."""
+    if not it or not it.get("mfr"):
+        return None
+    return {k: it.get(k) for k in ("mfr", "mfr_code", "collection", "mfr_url", "models") if it.get(k)}
+
+
 def product_card(url, code=""):
-    """Карточка товара для заказа: по артикулу магазина студии (TDD-001…) или по ссылке на наш сайт — название, фото
-    (og:image) и ссылка. Чужие сайты не открываем: ссылка на товар у фабрики сохраняется как есть, фото — загрузить."""
+    """Карточка товара для заказа: по артикулу магазина (TDD-001…, DF-…, DL-…) или по ссылке на наш сайт — название, фото
+    (og:image) и ссылка. Чужие сайты не открываем: ссылка на товар у фабрики сохраняется как есть, фото — загрузить.
+    У товара партнёрской фабрики — ещё подсказка для дизайнера (factory): изготовитель и где скачать 2D/3D модели."""
     url, code = url.strip(), code.strip().upper()
+    try:
+        from bot import SITE, load_products
+        products = load_products()
+    except ImportError:
+        SITE, products = "", {}
     if code and not url:
-        try:
-            from bot import SITE, load_products
-            it = load_products().get(code)
-        except ImportError:
-            it = None
+        it = products.get(code)
         if not it:
             raise CrmError(f"Артикула {code} нет в магазине на сайте")
+        if not it.get("path"):                       # товар фабрики: своей страницы на сайте пока нет — только из базы
+            return {"url": "", "title": it.get("name") or code, "image_url": "", "code": code, "factory": factory_hint(it)}
         url = SITE + it["path"]
     p = urllib.parse.urlparse(url)
     if p.scheme != "https" or p.hostname not in CARD_HOSTS:
         raise CrmError("Карточку можно подтянуть только с dumskaya-design.com или dumskaya-home.com")
-    import urllib.request
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (DUMSKAYA DESIGN studio card)"})
     try:
         with urllib.request.urlopen(req, timeout=8) as resp:
@@ -267,8 +278,9 @@ def product_card(url, code=""):
     if image and not image.startswith("http"):
         image = urllib.parse.urljoin(url, image)
     m = re.search(r"\((TDD-[\w-]+|[A-Z]{2,5}-[A-Z]?\d+)\)", title)
+    code = code or (m.group(1) if m else "")
     return {"url": url, "title": re.sub(r"\s*\([^)]*\)\s*$", "", title), "image_url": image if image.startswith("https://") else "",
-            "code": code or (m.group(1) if m else "")}
+            "code": code, "factory": factory_hint(products.get(code.upper())) if code else None}
 
 
 # Письмо заказчику. Кнопка ✉️ в «Студии» открывает эту страницу в браузере (из Telegram ссылки mailto: открываются не везде),

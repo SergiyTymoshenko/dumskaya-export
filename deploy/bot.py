@@ -1103,6 +1103,18 @@ class Bot(CrmBotMixin, PortalBotMixin):
         return delivered
 
 
+def models_lines(prod):
+    """Подсказка дизайнеру: у изделия есть 2D/3D модели — где у фабрики скачать и нужен ли вход (сами файлы не качаем)."""
+    out = []
+    for m in (prod or {}).get("models") or []:
+        if not str(m.get("url") or "").startswith("http"):
+            continue
+        fm = ", ".join(m.get("formats") or [])
+        out.append(f"<b>📐 {esc(m.get('what') or '2D/3D')}:</b> " + (f"{esc(fm)} — " if fm else "")
+                   + f'<a href="{esc(m["url"])}">скачать у фабрики</a>' + (f" ({esc(m['how'])})" if m.get("how") else ""))
+    return out
+
+
 def format_lead(lead, model, prod):
     lines = [f"<b>Имя:</b> {esc(lead.get('name'))}", f"<b>Контакт:</b> {esc(lead.get('contact'))}"]
     if model:
@@ -1126,6 +1138,7 @@ def format_lead(lead, model, prod):
                 return txt + (f" ({esc(what)})" if what else "")
             lines.append(f"<b>{esc(ref.get('label') or 'Каталог')}:</b> {esc(ref.get('catalog', ''))}, стр. "
                          + ", ".join(pg(p) for p in ref["pages"]))
+        lines += models_lines(prod)
     msg, ru = lead.get("message") or "", lead.get("message_ru") or ""
     if msg:
         if ru and len(msg) + len(ru) > 3300:          # Telegram берёт до 4096 знаков; полностью — в письме и файле заявок

@@ -1024,6 +1024,23 @@ check(ups_[("Базовый", "Премиум")]["plus"] == 1200 and ups_[("Пр
 code, x = call("/api/crm/save", H.IRINA, {"entity": "lists", "data": {"tariff_info": {"Премиум": {"rate": 55, "revisions": 3}}}}, lang="ru")
 check(code == 200 and x["tariff_info"]["Премиум"] == {"rate": 55, "revisions": 3} and x["tariff_info"]["Базовый"]["revisions"] == 1, "пакеты: цена за м² и правки — в настройках")
 
+# ---------- товар фабрики: подсказка дизайнеру, где скачать 2D/3D (сами модели не качаем, заказчик не видит) ----------
+import bot as botmod  # noqa: E402
+fake_goods = {"DF-T7902": {"name": "Стол Adrien", "path": None, "partner": "Александр Замлинский (Италия)", "mfr": "Poliform (Италия)",
+                           "mfr_url": "https://www.poliform.it/en/products/adrien-tables/",
+                           "models": [{"what": "2D/3D", "formats": ["DWG", "SKP"], "url": "https://www.poliform.it/en/products/adrien-tables/",
+                                       "how": "один раз заполнить форму на сайте фабрики"}]}}
+real_load = botmod.load_products
+botmod.load_products = lambda path=None: fake_goods
+code, r = call("/api/crm/card?code=DF-T7902", H.IRINA, lang="ru")
+check(code == 200 and r["url"] == "" and r["title"] == "Стол Adrien" and r["factory"]["models"][0]["formats"] == ["DWG", "SKP"],
+      "артикул фабрики в «Студии»: без ссылки для заказчика, с подсказкой, где скачать 2D/3D")
+code, r = call("/api/crm/card?code=DF-T7902", H.CLIENT, lang="sk")
+check(code in (401, 403, 404), "подсказку о фабрике заказчик получить не может")
+lead_txt = botmod.format_lead({"name": "Тест", "contact": "+421"}, "DF-T7902", fake_goods["DF-T7902"])
+check("📐 2D/3D:</b> DWG, SKP" in lead_txt and "adrien-tables" in lead_txt, "в заявке на товар фабрики — где скачать 2D/3D")
+botmod.load_products = real_load
+
 # ---------- документы не попадают в поиск ----------
 req = urllib.request.Request(BASE + f"/api/portal/project?id={pid}", headers={"X-Telegram-Init-Data": H.init_data(H.CLIENT, lang="sk")})
 with urllib.request.urlopen(req, timeout=10) as resp:

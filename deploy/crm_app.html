@@ -2086,6 +2086,20 @@
       finally { t.remove(); }
     });
     drawPic();
+    // подсказка для Ирины у товара фабрики: изготовитель и где скачать 2D/3D модели (заказчик этого не видит)
+    const fac = el('div', { class: 'card small', style: 'margin:8px 0 0;display:none' });
+    const drawFac = (f) => {
+      if (!f || !f.mfr) { fac.style.display = 'none'; return; }
+      const rows = [el('div', null, '🏭 ', el('b', null, f.mfr), f.mfr_code ? ' · артикул фабрики ' + f.mfr_code : '', f.collection ? ' · ' + f.collection : '')];
+      if (f.mfr_url) rows.push(el('div', null, el('a', { href: '#', onclick: (e) => { e.preventDefault(); openLink(f.mfr_url); } }, '↗ Страница у фабрики')));
+      (f.models || []).forEach((m) => rows.push(el('div', { style: 'margin-top:6px' }, '📐 ', el('b', null, m.what || '2D/3D'),
+        (m.formats && m.formats.length ? ': ' + m.formats.join(', ') : '') + ' — ',
+        el('a', { href: '#', onclick: (e) => { e.preventDefault(); openLink(m.url); } }, 'скачать у фабрики'),
+        m.how ? el('div', 'muted', m.how) : null)));
+      rows.push(el('div', { class: 'muted', style: 'margin-top:6px' }, '🔒 Видите только вы'));
+      fac.replaceChildren(...rows); fac.style.display = '';
+    };
+    if (o.code && !o.url) api('/api/crm/card?code=' + encodeURIComponent(o.code)).then((c) => drawFac(c.factory)).catch(() => {});
     const fetchCard = async () => {
       const v = link.value.trim();
       if (!v) return toast('Вставьте ссылку на товар или артикул');
@@ -2094,7 +2108,9 @@
         const c = await api('/api/crm/card?' + q);
         link.value = c.url; if (c.title) title.value = c.title; if (c.code && !code.value) code.value = c.code;
         if (c.image_url && !fileId) { image = c.image_url; drawPic(); }
-        toast('Карточка подтянута');
+        if (c.factory && c.factory.mfr && !supplier.value) supplier.value = c.factory.mfr;
+        drawFac(c.factory);
+        toast(c.url ? 'Карточка подтянута' : 'Товар фабрики — фото добавьте сами');
       } catch (e) { toast(e.message); }
     };
     const price = moneyField('Цена для заказчика', o.price || '', o.currency, o.rate_src === 'вручную' ? o.rate : '', o.rate_src === 'вручную', day, 'Её заказчик видит в кабинете');
@@ -2114,7 +2130,7 @@
     const linked = people().some((q) => q.tg_id);
     const body = el('div',
       el('div', 'field', el('label', null, 'Карточка с сайта'), el('div', 'pair', link, el('button', { class: 'btn', type: 'button', onclick: fetchCard }, 'Подтянуть')),
-        el('div', 'hint', 'Ссылка на товар dumskaya-design.com или dumskaya-home.com (или артикул магазина) — название и фото подставятся сами. Ссылку на сайт фабрики тоже можно вставить — она сохранится как есть.')),
+        el('div', 'hint', 'Ссылка на товар dumskaya-design.com или dumskaya-home.com (или артикул магазина) — название и фото подставятся сами. Ссылку на сайт фабрики тоже можно вставить — она сохранится как есть.'), fac),
       el('div', 'field', el('span', 'lab', 'Фото'), pic, file),
       field('Что за товар', title), el('div', 'two', field('Артикул', code), field('Количество, шт.', qty)),
       field('Дата заказа', day), price, buy, field('Поставщик', supplier), marginLine,
