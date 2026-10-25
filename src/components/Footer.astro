@@ -1,6 +1,6 @@
 ---
 import { ui, LANGS, LANG_LABEL, HREFLANG, type Lang } from '../lib/i18n';
-import { site, type Page, altPath, localize, pagePhones } from '../lib/data';
+import { site, type Page, altPath, localize, pagePhones, homeCatalog } from '../lib/data';
 
 interface Props { page: Page }
 const { page } = Astro.props;
@@ -8,11 +8,13 @@ const lang = page.lang as Lang;
 const T = ui(lang);
 const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
 const year = new Date().getFullYear();
+const catalog = homeCatalog(lang);
 ---
 <footer class="ftr wrap">
   <div class="ftr__brand">
     <a class="ftr__logo" href={lang === 'ru' ? '/' : `/${lang}`}><img src="/logo.svg" alt="DUMSKAYA DESIGN — studio interior" width="150" height="89" loading="lazy" /></a>
     <p class="muted">{T.city}</p>
+    {catalog && <p class="ftr__catalog"><a href={catalog} hreflang={lang === 'ua' ? 'ru' : undefined}>{T.catalogFooter}</a></p>}
   </div>
   <div class="ftr__contacts">
     <h2 class="visually-hidden">{T.contacts}</h2>
@@ -55,6 +57,8 @@ const year = new Date().getFullYear();
   .ftr li > a, .ftr__social a, .ftr__langs > * { display: inline-block; padding-block: 10px; }
   .ftr__langs > * { min-width: 32px; }
   .ftr a:hover { text-decoration: underline; }
+  .ftr__catalog { margin: 10px 0 0; }
+  .ftr__catalog a { display: inline-block; padding-block: 10px; text-decoration: underline; text-decoration-color: var(--line); }
   .ftr__logo { display: inline-block; line-height: 0; margin-bottom: 14px; }
   .ftr__logo img { width: 150px; height: auto; }
   .ftr__contacts { display: grid; gap: 20px; align-content: start; justify-items: start; }

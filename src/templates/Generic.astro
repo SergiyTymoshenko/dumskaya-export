@@ -6,7 +6,7 @@ import Blocks from '../components/Blocks.astro';
 import Crumbs from '../components/Crumbs.astro';
 import Caps from '../components/Caps.astro';
 import { ui, LANGS, type Lang } from '../lib/i18n';
-import { site, homePath, localize, isServicesSection, plain, phoneFor, type Page } from '../lib/data';
+import { site, homePath, localize, isServicesSection, plain, phoneFor, homeCatalog, catalogNoteOn, type Page } from '../lib/data';
 import { packFor } from '../lib/packs';
 import { typo } from '../lib/typo';
 interface Props { page: Page }
@@ -29,6 +29,8 @@ const services = page.sections.filter(isServicesSection);
 const contact = localize('/contact-studio-interior-design-bratislava-vienna', lang);
 const overview = localize('/price-interior-design-bratislava-wien-praha', lang);
 const summary = pack?.parts.find((p) => p.t === 'p');
+// фраза со ссылкой на каталог фабрик — на страницах дизайна квартир и дизайн-пакетов (content/site.json → home_catalog)
+const catalog = catalogNoteOn(page) ? homeCatalog(lang) : null;
 ---
 <div class="wrap" style="padding-top:20px">
   <Crumbs items={crumbs} />
@@ -57,8 +59,12 @@ const summary = pack?.parts.find((p) => p.t === 'p');
     <Blocks sections={main} lang={lang} phone={regPhone} />
   </>
 )}
+{catalog && (
+  <p class="wrap gcat">{typo(T.catalogNote[0])}<a href={catalog} hreflang={lang === 'ua' ? 'ru' : undefined}>{T.catalogNote[1]}</a>{typo(T.catalogNote[2])}</p>
+)}
 <Blocks sections={services} lang={lang} />
 <style>
+  .gcat { max-width: calc(var(--measure) + 2 * var(--pad)); margin-block: 8px 32px; font-size: 17px; }
   .gh1 { font-size: clamp(20px, 2.4vw, 30px); margin-block: 32px 16px; max-width: 30em; }
   .gpack { display: grid; grid-template-areas: 'h' 'a' 'b'; }
   .gpack__h1 { grid-area: h; }

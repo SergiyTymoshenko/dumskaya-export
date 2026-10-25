@@ -1,6 +1,6 @@
 ---
 import { LANGS, LANG_LABEL, HREFLANG, ui, type Lang } from '../lib/i18n';
-import { site, type Page, altPath, localize, phoneFor, pagePhones } from '../lib/data';
+import { site, type Page, altPath, localize, phoneFor, pagePhones, homeCatalog } from '../lib/data';
 
 interface Props { page: Page }
 const { page } = Astro.props;
@@ -13,6 +13,14 @@ const home = lang === 'ru' ? '/' : `/${lang}`;
 const { phone } = phoneFor(page);
 // в меню — Братислава и Вена (на посадочной региона — ещё его телефон); все страны — на странице «Контакты»
 const menuPhones = pagePhones(page);
+const catalog = homeCatalog(lang);
+// каталог фабрик DUMSKAYA HOME — отдельный сайт, пункт сразу за «Магазином»; украинская версия ведёт на русский каталог
+// (решено 25.10.2026); пока каталог не открыт на домене, пункта нет (content/site.json → home_catalog.enabled)
+const mainItems: any[] = menu.filter((m) => !m.children);
+if (catalog) {
+  const shop = mainItems.findIndex((m) => /\/(shop|obchod)$/.test(m.href || ''));
+  mainItems.splice(shop >= 0 ? shop + 1 : mainItems.length, 0, { href: catalog, label: T.catalogMenu, catalog: true });
+}
 ---
 <header class="hdr">
   <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
@@ -53,9 +61,9 @@ const menuPhones = pagePhones(page);
         : <a href={altPath(page, l)} hreflang={HREFLANG[l]} lang={HREFLANG[l]}>{LANG_LABEL[l]}</a>)}
     </p>
     <ul class="menu__main">
-      {menu.filter((m) => !m.children).map((m) => (
-        <li><a class="display" href={m.href} aria-current={m.href === page.path ? 'page' : undefined}>{m.label}</a></li>
-      ))}
+      {mainItems.map((m) => m.catalog
+        ? <li><a class="display" href={m.href} hreflang={lang === 'ua' ? 'ru' : undefined}>{m.label}</a></li>
+        : <li><a class="display" href={m.href} aria-current={m.href === page.path ? 'page' : undefined}>{m.label}</a></li>)}
     </ul>
     <div class="menu__groups">
       {menu.filter((m) => m.children).map((g) => (

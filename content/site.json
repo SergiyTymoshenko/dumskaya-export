@@ -848,5 +848,23 @@
   "google": "hkM2OL42d2zA2UTxPKWKPvWX4kvx5UNz8sqkaWGz7NE",
   "yandex": "f4f337792bf40bdb",
   "bing": "D6F05839A58343A885922C8383C70536"
+ },
+ "home_catalog": {
+  "_about": "Ссылки на каталог фабрик DUMSKAYA HOME с сайта студии: пункт меню, строка внизу страниц и фраза на страницах из pages (русские адреса; на других языках — их версии). enabled: false — ссылок нет; включаем, когда dumskaya-home.com открыт на домене с первой фабрикой (до этого ссылка вела бы на неработающий адрес). Язык каталога: RU и UA → русский (решено 25.10.2026), EN и SK → английский, DE → немецкий.",
+  "enabled": false,
+  "url": {
+   "ru": "https://dumskaya-home.com/ru",
+   "ua": "https://dumskaya-home.com/ru",
+   "en": "https://dumskaya-home.com/",
+   "sk": "https://dumskaya-home.com/",
+   "de": "https://dumskaya-home.com/de"
+  },
+  "pages": [
+   "/interior-design-apartments-bratislava",
+   "/basic-interior-design-package-bratislava-vienna",
+   "/express-interior-design-package-bratislava-vienna",
+   "/premium-interior-design-package-bratislava-vienna",
+   "/premium-plus-interior-design-package-bratislava-vienna"
+  ]
  }
 }
