@@ -36,6 +36,20 @@ const forms = { one: T.products(1).replace('1', '{n}'), few: T.products(2).repla
     )}
   </div>
 )}
+{/* до основного скрипта, пока сетка не нарисована: сразу показать только подходящие под ?brand= и ?outdoor= и первые 24 —
+     иначе на ссылке «Показать все» с главной фабрики сначала мелькают все товары раздела (сдвиг вёрстки) */}
+<script is:inline>
+  (function () {
+    var q = new URLSearchParams(location.search), b = q.get('brand'), sel = '.pc', n = 24;
+    try { n = Math.max(24, Number(history.state && history.state.limit) || 0); } catch (e) {}
+    if (b && window.CSS && CSS.escape) sel += '[data-brand="' + CSS.escape(b) + '"]';
+    if (q.get('outdoor') === '1') sel += '[data-out]';
+    var st = document.createElement('style');
+    st.id = 'pre-filter';
+    st.textContent = '[data-grid]>.pc:not(' + sel + '),[data-grid]>:nth-child(n+' + (n + 1) + ' of ' + sel + '){display:none}';
+    document.head.appendChild(st);
+  })();
+</script>
 <div class="grid wrap" data-grid>
   {ps.map((p, i) => <ProductCard p={p} lang={l} eager={i < 4} />)}
 </div>
@@ -110,4 +124,5 @@ const forms = { one: T.products(1).replace('1', '{n}'), few: T.products(2).repla
     first?.focus({ preventScroll: true });             // с клавиатуры — дальше с первого нового товара
   });
   apply();
+  document.getElementById('pre-filter')?.remove();   // дальше видимость задаёт apply()
 </script>
