@@ -3,24 +3,25 @@ import json, re, sys, collections
 from urllib.parse import unquote, urlparse
 def safe(n): return re.sub(r'[^\w.\-]+', '_', unquote(n)).strip('_')
 def build(f, items):
-    """Один файл на адрес; уже скачанным (есть в прошлом dl-<f>.tsv) путь не меняется."""
+    """Один файл на адрес; уже скачанным (есть в прошлом dl-<f>.tsv) путь не меняется. Пути уникальны без учёта
+    регистра: на Маке «Cesar.jpg» и «CESAR.jpg» — один файл, поэтому второму — «_2»."""
     import os
     prev = {}
     if os.path.exists(f'dl-{f}.tsv'):
         for l in open(f'dl-{f}.tsv'):
             if '\t' in l:
                 d, u = l.rstrip('\n').split('\t'); prev.setdefault(u, d)
-    rows, mp, used = [], {}, collections.defaultdict(set)
-    keep = {u for _, u in items if u in prev}
-    used[f] |= {prev[u] for u in keep}
+    mp, used = {}, set()
+    for _, url in items:                            # сначала — прежние пути (если не совпали без учёта регистра)
+        if url not in mp and url in prev and prev[url].lower() not in used:
+            mp[url] = prev[url]; used.add(prev[url].lower())
     for dest, url in items:
         if url in mp: continue
-        if url in keep:
-            mp[url] = prev[url]; rows.append((prev[url], url)); continue
         d = dest; base, dot, ext = d.rpartition('.')
         i = 2
-        while d in used[f]: d = f'{base}_{i}.{ext}'; i += 1
-        used[f].add(d); mp[url] = d; rows.append((d, url))
+        while d.lower() in used: d = f'{base}_{i}.{ext}'; i += 1
+        used.add(d.lower()); mp[url] = d
+    rows = [(mp[u], u) for u in dict.fromkeys(u for _, u in items)]
     open(f'dl-{f}.tsv', 'w').write(''.join(f'{d}\t{u}\n' for d, u in rows))
     json.dump(mp, open(f'map-{f}.json', 'w'), ensure_ascii=False, indent=0)
     print(f, len(rows))
