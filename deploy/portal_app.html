@@ -1119,7 +1119,7 @@
   }
 
   // ---------- документы ----------
-  const SECTIONS = ['plan', 'visual', 'measure', 'docs', 'before', 'after', 'brief', 'other', 'work', 'shared'];
+  const SECTIONS = ['visual', 'plan', 'measure', 'docs', 'before', 'after', 'brief', 'other', 'work', 'shared'];   // визуализации — первыми
   // варианты и правки (решено 25.10.2026): планировки — «Вариант N», визуализации — «Первый вариант», «Правка N»;
   // в остальных разделах — версии документа с одним названием. Фото и визуализации — по помещениям.
   const isRound = (c) => ((V && V.round_cats) || []).includes(c);

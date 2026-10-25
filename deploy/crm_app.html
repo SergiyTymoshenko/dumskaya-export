@@ -544,7 +544,9 @@
     app.classList.add('loading');
     try {
       P = await api('/api/crm/project?id=' + id);
-      if (P.project.id !== lastPid) { fileTab = P.files.length ? P.files[0].category : 'measure'; lastPid = P.project.id; }   // раздел последнего файла
+      if (P.project.id !== lastPid) {             // визуализации, если есть (их смотрят чаще всего), иначе — раздел последнего файла
+        fileTab = P.files.some((x) => x.category === 'visual') ? 'visual' : P.files.length ? P.files[0].category : 'measure'; lastPid = P.project.id;
+      }
       tab = 'projects'; go('project', push);
     }
     catch (e) { toast(e.message); }
@@ -651,12 +653,13 @@
       closed ? null : el('button', { class: 'btn small', type: 'button', onclick: () => finishSheet() }, '✓ Завершить проект')));
     app.append(head);
     const jump = el('div', 'jump');                       // длинная страница на телефоне: сразу к нужному блоку
-    [OWNER ? null : ['sec-chat', 'Разговоры' + (chat.unread ? ' · ' + chat.unread + ' нов.' : chat.count ? ' · ' + chat.count : '')], ['sec-money', 'Деньги'],
+    [['sec-files', 'Файлы' + (files.length ? ' · ' + files.length : '')],
+      OWNER ? null : ['sec-chat', 'Разговоры' + (chat.unread ? ' · ' + chat.unread + ' нов.' : chat.count ? ' · ' + chat.count : '')], ['sec-money', 'Деньги'],
       ['sec-orders', 'Товары' + (orders.length ? ' · ' + orders.length : '')], ['sec-services', 'Услуги' + (services.length ? ' · ' + services.length : '')],
       ['sec-contractors', (contractors.some(isSup) ? 'Подрядчики и поставщики' : 'Подрядчики') + (contractors.length ? ' · ' + contractors.length : '')],
       ['sec-client', 'Заказчики' + (ppl.length ? ' · ' + ppl.length : '')],
       (P.assistants || []).length ? ['sec-team', 'Сотрудники' + (P.assistants.filter((a) => a.assigned).length ? ' · ' + P.assistants.filter((a) => a.assigned).length : '')] : null,
-      ['sec-files', 'Файлы' + (files.length ? ' · ' + files.length : '')], ['sec-ops', 'Операции' + (ops.length ? ' · ' + ops.length : '')]].filter(Boolean).forEach(([id, t]) =>
+      ['sec-ops', 'Операции' + (ops.length ? ' · ' + ops.length : '')]].filter(Boolean).forEach(([id, t]) =>
       jump.append(el('button', { class: 'chip', type: 'button', onclick: () => document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' }) }, t)));
     app.append(jump);
 
@@ -805,7 +808,8 @@
       f.append(rb);
     }
     const tabs = el('div', 'chips');
-    const cats = S.lists.file_cats.concat(files.some((x) => x.category === 'work') ? [['work', 'От подрядчиков']] : []);
+    const cats = S.lists.file_cats.filter((c) => c[0] === 'visual').concat(S.lists.file_cats.filter((c) => c[0] !== 'visual'),   // визуализации — первыми
+      files.some((x) => x.category === 'work') ? [['work', 'От подрядчиков']] : []);
     if (fileTab === 'work' && !files.some((x) => x.category === 'work')) fileTab = 'measure';
     cats.forEach(([key, name]) => {
       const n = files.filter((x) => x.category === key).length;
@@ -887,7 +891,7 @@
     if (!OWNER) f.addEventListener('dragover', (e) => { if (e.dataTransfer && [...e.dataTransfer.types].includes('Files')) { e.preventDefault(); f.classList.add('drop'); } });
     f.addEventListener('dragleave', (e) => { if (!f.contains(e.relatedTarget)) f.classList.remove('drop'); });
     if (!OWNER) f.addEventListener('drop', (e) => { e.preventDefault(); f.classList.remove('drop'); const fs = [...((e.dataTransfer && e.dataTransfer.files) || [])]; if (fs.length && fileTab !== 'work') upload(fs, fileTab, target()); });
-    app.append(f);
+    jump.after(f);                                       // файлы с визуализациями — сразу под шапкой проекта (решено 26.10.2026)
 
     // операции
     const o = el('section', { class: 'card', id: 'sec-ops' });
