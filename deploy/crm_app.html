@@ -60,6 +60,7 @@
   .btn.wide { width: 100%; }
   .btn.danger { color: var(--down); }
   .btn.small { min-height: 40px; padding: 6px 13px; font-size: calc(15px * var(--k)); }
+  .row.between > .btn.small:last-child { flex: 0 0 auto; white-space: nowrap; }   /* «＋ Добавить» у заголовка — в одну строку, заголовок переносится сам */
   .btn:disabled { opacity: .55; }
   .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 12px; }
   .chip { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 8px 14px; font-size: calc(15px * var(--k)); cursor: pointer; min-height: 40px; white-space: nowrap; }
@@ -118,6 +119,10 @@
   .people .who span + span { display: block; }            /* вторая и следующие строки — с новой строки */
   .icon-btn { width: calc(44px * (1 + (var(--k) - 1) / 2)); height: calc(44px * (1 + (var(--k) - 1) / 2)); border-radius: 12px; border: 1px solid var(--border); background: var(--raised); display: inline-flex;
     align-items: center; justify-content: center; font-size: calc(18px * var(--k)); text-decoration: none; color: inherit; flex: 0 0 auto; cursor: pointer; }
+  .icon-btn.cap { width: auto; height: auto; min-width: calc(58px * (1 + (var(--k) - 1) / 2)); min-height: calc(52px * (1 + (var(--k) - 1) / 2));
+    flex-direction: column; gap: 1px; padding: 4px 8px; line-height: 1.1; }
+  .icon-btn.cap .cap-t { font-size: calc(12px * var(--k)); font-weight: 600; color: var(--text-1); white-space: nowrap; }
+  .cbar { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
   .kv { display: grid; grid-template-columns: minmax(110px, 38%) 1fr; gap: 6px 12px; font-size: calc(16px * var(--k)); }
   .kv dt { color: var(--text-2); }
   .kv dd { margin: 0; overflow-wrap: anywhere; }
@@ -216,6 +221,10 @@
   .review .kactions .btn { padding-left: 10px; padding-right: 10px; }
   .seg.stack button { text-align: left; padding: 6px 12px; }
   .seg.seg2 button:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .seg.choice { background: transparent; padding: 0; gap: 8px; }
+  .seg.choice button { border: 1px solid var(--border); background: var(--raised); }
+  :root[data-size="l"] .seg.choice button, :root[data-size="xl"] .seg.choice button { border-width: 2px; }
+  .seg.choice button[aria-pressed="true"] { background: var(--text-1); color: var(--page); border-color: var(--text-1); }
   .btn[aria-pressed="true"] { border-color: var(--series); background: var(--series-wash); font-weight: 650; }
   /* подрядчики проекта: этапы и бонусы */
   .kcard { border-top: 1px solid var(--grid); padding: 14px 0 4px; margin-top: 12px; }
@@ -230,7 +239,7 @@
   .seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; background: var(--ghost); padding: 3px; border-radius: 12px; }
   .seg button { border: 0; background: transparent; border-radius: 9px; min-height: 44px; font-size: calc(15px * var(--k)); cursor: pointer; padding: 4px; }
   .seg button[aria-pressed="true"] { background: var(--raised); font-weight: 650; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
-  .jump { display: flex; gap: 6px; overflow-x: auto; margin: 0 -16px 12px; padding: 0 16px; scrollbar-width: none; }
+  .jump { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }   /* все разделы видны сразу — без скрытой прокрутки вбок */
   .jump::-webkit-scrollbar { display: none; }
   .badge { font-weight: 650; white-space: nowrap; font-size: calc(15px * var(--k)); }
   .drop { outline: 2px dashed var(--series); outline-offset: -6px; }
@@ -587,11 +596,11 @@
     head.append(el('button', { class: 'btn wide stagebtn', type: 'button', style: 'margin-top:10px', onclick: () => projectStageSheet() },
       el('span', 'grow', el('span', 'small muted', 'Стадия проекта'), el('b', { style: 'display:block' }, p.stage ? stageName(p.stage) : 'Не указана — выбрать')), el('span', 'muted', '▾')));
     head.append(el('div', { class: 'row wrap', style: 'margin-top:10px;gap:8px' },
-      closed ? el('button', { class: 'btn small primary', type: 'button', onclick: () => reopenProject() }, '↺ Вернуть в работу')
-        : el('button', { class: 'btn small', type: 'button', onclick: () => finishSheet() }, '✓ Завершить проект'),
+      closed ? el('button', { class: 'btn small primary', type: 'button', onclick: () => reopenProject() }, '↺ Вернуть в работу') : null,
       el('button', { class: 'btn small', type: 'button', onclick: () => projectSheet(p) }, '✎ Изменить проект'),
       el('button', { class: 'btn small', type: 'button', onclick: () => tariffSheet() }, '📦 ' + (p.tariff ? 'Пакет «' + p.tariff + '»' : 'Пакет')),
-      ppl.length ? el('button', { class: 'btn small', type: 'button', onclick: () => preview({ preview: 'client', project: p.id }) }, '👁 Как видит заказчик') : null));
+      ppl.length ? el('button', { class: 'btn small', type: 'button', onclick: () => preview({ preview: 'client', project: p.id }) }, '👁 Как видит заказчик') : null,
+      closed ? null : el('button', { class: 'btn small', type: 'button', onclick: () => finishSheet() }, '✓ Завершить проект')));
     app.append(head);
     const jump = el('div', 'jump');                       // длинная страница на телефоне: сразу к нужному блоку
     [['sec-chat', 'Разговоры' + (chat.unread ? ' · ' + chat.unread + ' нов.' : chat.count ? ' · ' + chat.count : '')], ['sec-money', 'Деньги'],
@@ -723,7 +732,7 @@
       el('button', { class: 'tick' + (a.assigned ? ' on' : ''), type: 'button', role: 'switch', 'aria-checked': String(a.assigned), title: a.assigned ? 'Снять с проекта' : 'Назначить на проект',
         onclick: async () => { try { await refresh(await save('passist', { project_id: p.id, assistant_id: a.id, on: !a.assigned })); toast(a.assigned ? 'Снят с проекта' : 'Назначен на проект' + (a.tg ? ' — ему пришло сообщение' : '')); } catch (e) { toast(e.message); } } }, a.assigned ? '✓' : ''),
       el('div', { class: 'grow', style: 'cursor:pointer', onclick: () => assistantCard(a) }, el('b', null, a.name),
-        el('div', 'small muted', [a.position, a.tg ? '✓ в боте' : a.invite_until ? '⏳ ссылка до ' + dfmt(a.invite_until) : 'не в боте'].filter(Boolean).join(' · '))),
+        el('div', 'small muted', [a.assigned ? 'на проекте' : 'не на проекте', a.position, a.tg ? '✓ в боте' : a.invite_until ? '⏳ ссылка до ' + dfmt(a.invite_until) : 'не в боте'].filter(Boolean).join(' · '))),
       a.assigned && a.tg ? el('button', { class: 'icon-btn', type: 'button', title: 'Написать (видите только вы двое)', 'aria-label': 'Написать ' + a.name, onclick: () => startThread({ kind: 'staff', assistant_id: a.id }) }, '💬') : null,
       !a.tg ? el('button', { class: 'icon-btn', type: 'button', title: 'Ссылка в бот', 'aria-label': 'Ссылка в бот для ' + a.name, onclick: () => inviteSheet('assistant', a, { project: a.assigned ? p.id : null }) }, '🔗') : null,
       a.assigned ? el('button', { class: 'icon-btn', type: 'button', title: 'Как видит сотрудник', 'aria-label': 'Как видит ' + a.name, onclick: () => preview({ preview: 'assistant', project: p.id, assistant: a.id }) }, '👁') : null)));
@@ -1321,8 +1330,9 @@
     head.append(el('div', 'row between', el('span', 'muted num', dtime(x.ts) + (x.lang ? ' · сайт ' + x.lang.toUpperCase() : '')),
       el('span', 'status ' + x.status, leadStatus(x.status, true))));
     head.append(el('div', { class: 'row', style: 'margin-top:6px' },
-      el('div', 'grow', el('h1', { style: 'margin:0 0 2px;overflow-wrap:anywhere' }, x.name || 'Без имени'), el('div', { class: 'muted', style: 'overflow-wrap:anywhere' }, x.contact || '')),
-      ...contactButtons(person, () => mailLead(x, person.email))));
+      el('div', 'grow', el('h1', { style: 'margin:0 0 2px;overflow-wrap:anywhere' }, x.name || 'Без имени'), el('div', { class: 'muted', style: 'overflow-wrap:anywhere' }, x.contact || ''))));
+    const lcb = contactButtons(Object.assign({}, person, { email: '' }));
+    if (lcb.length) head.append(el('div', 'cbar', ...lcb));
     if (person.email && !x.deleted) head.append(el('button', { class: 'btn wide', type: 'button', style: 'margin-top:12px', onclick: () => mailLead(x, person.email) },
       '✉️ Ответить письмом'));
     app.append(head);
@@ -1343,7 +1353,7 @@
     if (!x.project_id) {                                // из заявки сделан проект — это точно заявка, «что это» не нужно
       st.append(el('h2', null, 'Что это'));
       if (x.status === 'new') st.append(el('p', { class: 'small muted', style: 'margin:-4px 0 8px' }, 'Отметьте сразу — так же можно кнопками прямо в сообщении бота о заявке.'));
-      const seg = el('div', 'seg seg2');
+      const seg = el('div', 'seg seg2 choice');
       TRIAGE.forEach(([k, t]) => seg.append(el('button', { type: 'button', 'aria-pressed': String(k === 'lead' ? real : x.status === k),
         onclick: () => { if (!(k === 'lead' && real)) setLead({ status: k }); } }, t)));
       st.append(seg);
@@ -1548,21 +1558,24 @@
   // ---------- контакты ----------
   function contactButtons(p, mail) {
     const out = [], ph = digits(p.phone);
-    if (ph) out.push(el('a', { class: 'icon-btn', href: 'tel:' + ph, title: 'Позвонить' }, '📞'));
-    if (ph && (p.contact_pref === 'WhatsApp' || !p.contact_pref)) out.push(el('button', { class: 'icon-btn', type: 'button', title: 'WhatsApp', onclick: () => openLink('https://wa.me/' + ph.replace('+', '')) }, '🟢'));
+    const cap = (ic, t) => [el('span', { 'aria-hidden': 'true' }, ic), el('span', 'cap-t', t)];   // значок и подпись: понятно без угадывания
+    if (ph) out.push(el('a', { class: 'icon-btn cap', href: 'tel:' + ph, title: 'Позвонить', 'aria-label': 'Позвонить ' + (p.name || '') }, ...cap('📞', 'Звонок')));
+    if (ph && (p.contact_pref === 'WhatsApp' || !p.contact_pref)) out.push(el('button', { class: 'icon-btn cap', type: 'button', title: 'WhatsApp', 'aria-label': 'WhatsApp ' + (p.name || ''), onclick: () => openLink('https://wa.me/' + ph.replace('+', '')) }, ...cap('💬', 'WhatsApp')));
     if (p.contact_pref === 'Telegram') {
       const m = (p.messenger || '').trim();
-      out.push(el('button', { class: 'icon-btn', type: 'button', title: 'Telegram', onclick: () => openLink(m.startsWith('@') ? 'https://t.me/' + m.slice(1) : 'https://t.me/' + (ph || m).replace(/^\+?/, '+')) }, '✈︎'));
+      out.push(el('button', { class: 'icon-btn cap', type: 'button', title: 'Telegram', 'aria-label': 'Telegram ' + (p.name || ''), onclick: () => openLink(m.startsWith('@') ? 'https://t.me/' + m.slice(1) : 'https://t.me/' + (ph || m).replace(/^\+?/, '+')) }, ...cap('✈︎', 'Telegram')));
     }
-    if (p.contact_pref === 'Viber' && ph) out.push(el('a', { class: 'icon-btn', href: 'viber://chat?number=' + encodeURIComponent(ph), title: 'Viber' }, '🟣'));
-    if (p.email) out.push(el('button', { class: 'icon-btn', type: 'button', title: 'Написать письмо', onclick: () => (mail ? mail() : mailPerson(p)) }, '✉️'));
+    if (p.contact_pref === 'Viber' && ph) out.push(el('a', { class: 'icon-btn cap', href: 'viber://chat?number=' + encodeURIComponent(ph), title: 'Viber', 'aria-label': 'Viber ' + (p.name || '') }, ...cap('📳', 'Viber')));
+    if (p.email) out.push(el('button', { class: 'icon-btn cap', type: 'button', title: 'Написать письмо', 'aria-label': 'Письмо ' + (p.name || ''), onclick: () => (mail ? mail() : mailPerson(p)) }, ...cap('✉️', 'Письмо')));
     return out;
   }
 
   function personBlock(c) {
     const box = el('div');
     box.append(el('div', 'row', el('div', 'grow', el('b', { style: 'font-size:calc(17px * var(--k))' }, c.name),
-      el('div', 'small muted', [c.contact_pref ? 'удобнее: ' + c.contact_pref : '', c.city].filter(Boolean).join(' · '))), ...contactButtons(c)));
+      el('div', 'small muted', [c.contact_pref ? 'удобнее: ' + c.contact_pref : '', c.city].filter(Boolean).join(' · ')))));
+    const cb = contactButtons(c);
+    if (cb.length) box.append(el('div', 'cbar', ...cb));
     const kv = el('dl', { class: 'kv', style: 'margin-top:10px' });
     [['Телефон', c.phone], ['E-mail', c.email], ['Мессенджер', c.messenger], ['Заметки', c.note]].forEach(([a, b]) => { if (b) kv.append(el('dt', null, a), el('dd', null, b)); });
     box.append(kv);
@@ -2331,12 +2344,9 @@
     const box = el('div', 'kcard');
     box.append(el('div', 'row',
       el('div', { class: 'grow', style: 'cursor:pointer', onclick: () => contractorCard(x) },
-        el('b', { style: 'font-size:calc(18px * var(--k));display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' ')),
-      ...contactButtons(x).slice(0, 2),
-      el('button', { class: 'icon-btn', type: 'button', title: 'Убрать из проекта', 'aria-label': 'Убрать из проекта', onclick: async () => {
-        if (!(await confirmBox('Убрать «' + x.name + '» из этого проекта? В контактах он останется.'))) return;
-        try { await refresh(await api('/api/crm/delete', { json: { entity: 'link', id: x.link_id } })); } catch (e) { toast(e.message); }
-      } }, '✕')));
+        el('b', { style: 'font-size:calc(18px * var(--k));display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' '))));
+    const cb = contactButtons(x).slice(0, 3);
+    if (cb.length) box.append(el('div', 'cbar', ...cb));
     if (m.stages.length) {
       const ul = el('ul', 'stages');
       m.stages.forEach((st, i) => {
@@ -2373,21 +2383,24 @@
         if (!(await confirmBox('Закрыть кабинет «' + x.name + '»? Он перестанет видеть все проекты студии, где он есть, а его ' + (sup ? 'сотрудники' : 'бригада') + ' — объекты.'))) return;
         try { await refresh(await api('/api/crm/unlink', { json: { kind: 'contractor', ref_id: x.id, project_id: P.project.id } })); toast('Кабинет закрыт'); } catch (e) { toast(e.message); }
       } }, 'Закрыть кабинет')));
-    box.append(crewBlock(x));
+    box.append(crewBlock(x), unlinkBtn(x));
     return box;
   }
+
+  // «Убрать из проекта» — словами и внизу блока, а не крестиком рядом с «Звонок» (легко нажать по ошибке)
+  const unlinkBtn = (x) => el('button', { class: 'btn danger small', type: 'button', style: 'margin-top:10px', onclick: async () => {
+    if (!(await confirmBox('Убрать «' + x.name + '» из этого проекта? В контактах он останется.'))) return;
+    try { await refresh(await api('/api/crm/delete', { json: { entity: 'link', id: x.link_id } })); } catch (e) { toast(e.message); }
+  } }, 'Убрать из проекта');
 
   // исполнитель студии (замерщик, чертёжник, 3D-визуализатор): платит студия — без этапов и бонусов; пишет ему только Ирина
   function hiredBlock(x) {
     const box = el('div', 'kcard');
     box.append(el('div', 'row',
       el('div', { class: 'grow', style: 'cursor:pointer', onclick: () => contractorCard(x) },
-        el('b', { style: 'font-size:calc(18px * var(--k));display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' ')),
-      ...contactButtons(x).slice(0, 2),
-      el('button', { class: 'icon-btn', type: 'button', title: 'Убрать из проекта', 'aria-label': 'Убрать из проекта', onclick: async () => {
-        if (!(await confirmBox('Убрать «' + x.name + '» из этого проекта? В контактах он останется.'))) return;
-        try { await refresh(await api('/api/crm/delete', { json: { entity: 'link', id: x.link_id } })); } catch (e) { toast(e.message); }
-      } }, '✕')));
+        el('b', { style: 'font-size:calc(18px * var(--k));display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' '))));
+    const cb = contactButtons(x).slice(0, 3);
+    if (cb.length) box.append(el('div', 'cbar', ...cb));
     box.append(tgLine('contractor', x), el('div', 'kactions',
       x.tg_id ? el('button', { class: 'btn', type: 'button', onclick: () => startThread({ kind: 'org', contractor_id: x.id }) }, '💬 Написать')
         : el('button', { class: 'btn primary', type: 'button', onclick: () => inviteSheet('contractor', x, { project: P.project.id }) }, '🔗 Ссылка в бот'),
@@ -2398,7 +2411,7 @@
         if (!(await confirmBox('Закрыть кабинет «' + x.name + '»? Он перестанет видеть все проекты студии, где он есть.'))) return;
         try { await refresh(await api('/api/crm/unlink', { json: { kind: 'contractor', ref_id: x.id, project_id: P.project.id } })); toast('Кабинет закрыт'); } catch (e) { toast(e.message); }
       } }, 'Закрыть кабинет')));
-    box.append(el('p', { class: 'small muted', style: 'margin:8px 0 0' }, 'Видит адрес, документацию и визуализации (без денег и контактов заказчика). Его файлы видите вы — заказчику откроете сами.'));
+    box.append(el('p', { class: 'small muted', style: 'margin:8px 0 0' }, 'Видит адрес, документацию и визуализации (без денег и контактов заказчика). Его файлы видите вы — заказчику откроете сами.'), unlinkBtn(x));
     return box;
   }
 
@@ -2416,7 +2429,7 @@
       box.append(el('div', 'crow',
         el('button', { class: 'tick' + (w.assigned ? ' on' : ''), type: 'button', role: 'switch', 'aria-checked': String(w.assigned), title: w.assigned ? 'Снять с объекта' : 'Отметить на объекте',
           onclick: async () => { try { await refresh(await save('pcrew', { project_id: P.project.id, crew_id: w.id, on: !w.assigned })); toast(w.assigned ? 'Снят с объекта' : 'Отмечен на объекте'); } catch (e) { toast(e.message); } } }, w.assigned ? '✓' : ''),
-        el('div', 'grow', el('b', null, w.name), el('div', 'small muted', [w.position, w.tg ? '✓ в боте' : w.invite_until ? '⏳ ссылка до ' + dfmt(w.invite_until) : 'не в боте'].filter(Boolean).join(' · '))),
+        el('div', 'grow', el('b', null, w.name), el('div', 'small muted', [w.assigned ? 'на объекте' : 'не на объекте', w.position, w.tg ? '✓ в боте' : w.invite_until ? '⏳ ссылка до ' + dfmt(w.invite_until) : 'не в боте'].filter(Boolean).join(' · '))),
         w.assigned && w.tg ? el('button', { class: 'icon-btn', type: 'button', title: 'Написать', 'aria-label': 'Написать ' + w.name, onclick: () => startThread({ kind: 'worker', crew_id: w.id }) }, '💬') : null,
         !w.tg ? el('button', { class: 'icon-btn', type: 'button', title: 'Ссылка в бот', 'aria-label': 'Ссылка в бот для ' + w.name, onclick: () => inviteSheet('crew', w, { project: null, head: x.name }) }, '🔗') : null,
         w.assigned ? el('button', { class: 'icon-btn', type: 'button', title: 'Как видит работник', 'aria-label': 'Как видит ' + w.name, onclick: () => preview({ preview: 'worker', project: P.project.id, crew: w.id }) }, '👁') : null));
