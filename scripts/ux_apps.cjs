@@ -51,6 +51,8 @@ const SIZES = QUICK ? ['pm'] : ['pm', 'm', 'tg'];
 const RUNS = [
   { app: '/api/crm/app', role: 'irina', name: 'studio', text: QUICK ? ['l'] : ['l', 'xl', 'm'], save: '/api/crm/ui' },
   { app: '/api/crm/app', role: 'owner', name: 'studio-owner', text: ['m'], save: '/api/crm/ui' },
+  // разработчик: проекты только для просмотра (решено 25.10.2026) — ни одной кнопки, которая что-то меняет
+  { app: '/api/crm/app?tab=projects', role: 'owner', name: 'studio-owner-projects', text: ['m', 'xl'], save: '/api/crm/ui' },
   { app: '/api/stats/app', role: 'irina', name: 'stats', text: QUICK ? ['l'] : ['l', 'xl'], save: '/api/crm/ui' },
   { app: '/api/stats/server/app', role: 'owner', name: 'server', text: ['m'], save: '/api/crm/ui' },
   { app: '/api/portal/app', role: 'client', name: 'cabinet-client', text: QUICK ? ['m'] : ['m', 'xl'], save: '/api/portal/ui' },
@@ -90,6 +92,9 @@ const RUNS = [
               .filter((x) => { const r = x.getBoundingClientRect(); const cs = getComputedStyle(x); return r.width && r.height && cs.visibility !== 'hidden' && !x.closest('[hidden]') && (r.height < 40 || r.width < 40); })
               .slice(0, 6).map((x) => `${(x.innerText || x.getAttribute('aria-label') || x.title || x.name || x.type || '').trim().replace(/\s+/g, ' ').slice(0, 24)} ${Math.round(x.getBoundingClientRect().width)}×${Math.round(x.getBoundingClientRect().height)}`));
             if (tiny.length) bad.push(`кнопки меньше 40 px: ${tiny.join('; ')}`);
+            // «null» / «undefined» на экране — пустое значение попало в страницу текстом (так было у разработчика в проекте)
+            const junk = await p.evaluate(() => (document.body.innerText.match(/(^|[\s·(«])(null|undefined|NaN)(?=$|[\s·)»,.])/m) || [])[2] || '');
+            if (junk) bad.push(`на экране текст «${junk}»`);
             if (errs.length) bad.push(`ошибки скрипта: ${errs.splice(0).join(' | ')}`);
             R.ok(!bad.length, `${tag}: ${screen}`, bad.join('; '));
             await p.screenshot({ path: path.join(OUT, `${run.name}-${z}-${sz}-${String(++shot).padStart(2, '0')}-${screen.replace(/[^a-zа-яё0-9]+/gi, '_')}.png`), fullPage: true });
@@ -113,16 +118,17 @@ const RUNS = [
           }
           if (!tabs.length && await clickFirst('#app button.pcard')) { await look('карточка'); await back(); }
           // последняя вкладка «Студии» («Сайт») уводит в графики — настройки и новый проект проверять в самом приложении
-          if (!new URL(p.url()).pathname.startsWith(run.app)) { await p.goto(BASE + run.app, { waitUntil: 'load' }); await p.waitForTimeout(1200); }
+          if (new URL(p.url()).pathname !== run.app.split('?')[0]) { await p.goto(BASE + run.app, { waitUntil: 'load' }); await p.waitForTimeout(1200); }
           // настройки (⚙︎) — форма поверх страницы
           if (await clickFirst('button.icon-btn[aria-label*="астро"], button.icon-btn:has-text("⚙")')) { await look('настройки'); await back(); }
           // форма нового проекта (у Ирины)
           if (run.role === 'irina' && run.app === '/api/crm/app' && await clickFirst('#nav .in > button[data-tab="projects"]') && await clickFirst('button.btn.primary.small')) { await look('новый проект'); await back(); }
           // просмотр фото (решено 25.10.2026): «Визуализации» проекта — счётчик «1 / N», стрелка ›, клавиша ←, на телефоне — свайп пальцем
-          if ((run.role === 'irina' && run.app === '/api/crm/app') || run.role === 'client') {
+          const studio = run.app.startsWith('/api/crm/app') && (run.role === 'irina' || run.app.includes('tab=projects'));
+          if (studio || run.role === 'client') {
             let opened = false;
             await p.goto(BASE + run.app, { waitUntil: 'load' }); await p.waitForTimeout(1200);   // вкладка «Сайт» уводит в графики — начать заново
-            if (run.role === 'irina') opened = await clickFirst('#nav .in > button[data-tab="projects"]') && await clickFirst('#app button.pcard');
+            if (studio) opened = await clickFirst('#nav .in > button[data-tab="projects"]') && await clickFirst('#app button.pcard');
             else { const d = p.locator('#nav button', { hasText: /Документы/ }); if (await d.count()) { await d.first().click(); await p.waitForTimeout(500); opened = true; } }
             const chip = p.locator('button.chip', { hasText: /^Визуализации/ });
             if (opened && await chip.count()) { await chip.first().click(); await p.waitForTimeout(500); }
@@ -150,9 +156,23 @@ const RUNS = [
                 await sw(-160); steps.push(['свайп влево → второе', (await pos()) === `2 / ${n}`, await pos()]);
                 await sw(160); steps.push(['свайп вправо → первое', (await pos()) === `1 / ${n}`, await pos()]);
               }
+              // имя файла не показываем; у Ирины раздел, вариант и кто видит — в свёрнутой панели «Настроить», у разработчика её нет
+              const names = await p.$$eval('.viewer .vtop, .viewer .vbar', (xs) => xs.map((x) => x.innerText).join(' '));
+              steps.push(['без имени файла', !/\.(png|jpe?g|webp|heic|pdf)\b/i.test(names), names.slice(0, 80)]);
+              const set = await p.$('.viewer .vbar button[aria-controls]');
+              if (run.role === 'irina') {
+                if (set) { await set.click(); await p.waitForTimeout(300); await look('просмотр фото — «Настроить»');
+                  steps.push(['«Настроить»: раздел и кто видит', (await p.$$('.viewer .vpanel:not([hidden]) select')).length >= 2, String((await p.$$('.viewer .vpanel select')).length)]);
+                  await set.click(); await p.waitForTimeout(200); }
+                else steps.push(['кнопка «Настроить»', false, 'нет']);
+              } else if (run.role === 'owner') steps.push(['разработчик: нечего менять в просмотре', !set && !(await p.$('.viewer .vpanel')), set ? 'есть «Настроить»' : 'есть панель']);
               const bad = steps.filter((x) => !x[1]);
               R.ok(!bad.length, `${tag}: листание фото`, bad.map((x) => `${x[0]}: ${x[2]}`).join('; '));
               await p.keyboard.press('Escape'); await p.waitForTimeout(300);
+              if (run.role === 'owner') {                    // проект у разработчика: только просмотр — кнопок изменений нет
+                const rw = await p.$$eval('#app button', (xs) => xs.map((x) => x.innerText.trim()).filter((t) => /＋|Изменить|Удалить|Ссылка в бот|Написать|Оплата|Бонус|Завершить|Убрать|Закрыть кабинет|Отметить/.test(t)));
+                R.ok(!rw.length, `${tag}: проект — только просмотр`, rw.slice(0, 6).join('; '));
+              }
             }
           }
           } catch (e) { R.ok(false, `${tag}: проверка прервалась`, e.message.split('\n')[0]); }

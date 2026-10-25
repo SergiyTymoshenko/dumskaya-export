@@ -166,19 +166,33 @@
   .err { color: var(--down); font-size: calc(14px * var(--k)); margin: 0 0 10px; }
   .toast { position: fixed; left: 50%; bottom: calc(90px + var(--sab)); transform: translateX(-50%); background: var(--text-1); color: var(--page);
     padding: 10px 16px; border-radius: 12px; font-size: calc(14px * var(--k)); z-index: 30; box-shadow: 0 6px 20px rgba(0,0,0,.2); max-width: 90%; text-align: center; }
-  .viewer { position: fixed; inset: 0; background: #0b0b0b; z-index: 20; display: flex; flex-direction: column; }
-  .viewer .img { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-height: 0; padding: 10px; }
-  .viewer img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
-  .viewer .bar2 { display: flex; gap: 8px; padding: 10px 12px calc(12px + var(--sab)); flex-wrap: wrap; justify-content: center; }
-  .viewer .bar2 .btn { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.18); }
-  .viewer .bar2 select.btn { max-width: 100%; min-width: 0; text-overflow: ellipsis; }
-  .viewer .cap { color: #ddd; font-size: calc(13px * var(--k)); text-align: center; padding: 10px 12px 0; overflow-wrap: anywhere; }
-  /* листание фото раздела: счётчик «3 / 12», стрелки по бокам (крупные — для плохого зрения), свайп пальцем, ← → на компьютере */
-  .viewer .img { position: relative; }
-  .viewer .pos { color: #fff; font-weight: 700; font-size: calc(15px * var(--k)); text-align: center; padding: 10px 12px 0; font-variant-numeric: tabular-nums; }
-  .viewer .pos + .cap { padding-top: 4px; }
-  .viewer .vnav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; width: calc(48px * var(--k)); height: calc(64px * var(--k));
-    border-radius: 14px; border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.5); color: #fff; font-size: calc(34px * var(--k)); line-height: 1;
+  /* просмотр файла (решено 25.10.2026): фото — на весь экран; сверху счётчик «6 / 26» и подпись в одну строку (без имени файла);
+     внизу — короткая строка кнопок; раздел, вариант и кто видит — небольшими списками в свёрнутой панели «Настроить».
+     Рамка просмотра не растёт с «очень крупным» текстом так сильно, как страница: фото важнее */
+  .viewer { position: fixed; inset: 0; background: #0b0b0b; color: #fff; z-index: 20; display: flex; flex-direction: column; color-scheme: dark; }
+  .viewer .vtop { padding: 8px 14px 6px; text-align: center; }
+  .viewer .pos { font-weight: 700; font-size: calc(15px * min(var(--k), 1.25)); font-variant-numeric: tabular-nums; }
+  .viewer .cap { color: #bbb; font-size: calc(13px * min(var(--k), 1.2)); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .viewer .img { position: relative; flex: 1 1 auto; min-height: 140px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .viewer .img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .viewer .vbar { display: flex; gap: 8px; padding: 8px 10px calc(10px + var(--sab)); flex-wrap: wrap; justify-content: center; }
+  .viewer .vbar .btn, .viewer .vpanel .btn { min-height: 40px; padding: 6px 12px; font-size: calc(14px * min(var(--k), 1.2)); font-weight: 600;
+    background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.2); }
+  .viewer .vbar .btn[aria-expanded="true"] { background: rgba(255,255,255,.28); border-color: rgba(255,255,255,.45); }
+  .viewer .vbar .vx { min-width: 44px; padding: 6px 10px; }
+  .viewer .vbar .ok { background: var(--up); border-color: var(--up); }
+  .viewer .vpanel { flex: 0 1 auto; max-height: 52%; overflow-y: auto; padding: 6px 14px 2px; border-top: 1px solid rgba(255,255,255,.14); }
+  .viewer .vpanel[hidden] { display: none; }
+  .viewer .vwho { color: #bbb; font-size: calc(13px * min(var(--k), 1.2)); margin: 2px 0 6px; }
+  .viewer .vrow { display: grid; grid-template-columns: 7.4em minmax(0, 1fr); align-items: center; gap: 10px; padding: 4px 0; font-size: calc(13px * min(var(--k), 1.2)); }
+  .viewer .vrow > span { color: #bbb; }
+  .viewer .vrow select { width: 100%; min-width: 0; min-height: 40px; padding: 6px 10px; border-radius: 10px; font: inherit; font-size: calc(14px * min(var(--k), 1.2));
+    color: #fff; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); text-overflow: ellipsis; }
+  .viewer .vacts { display: flex; gap: 8px; flex-wrap: wrap; justify-content: space-between; padding: 8px 0 4px; }
+  .viewer .vpanel .vdel { color: #ff9a9a; margin-left: auto; }
+  /* листание фото раздела: стрелки по бокам, свайп пальцем, ← → на компьютере */
+  .viewer .vnav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; width: calc(44px * min(var(--k), 1.25)); height: calc(60px * min(var(--k), 1.25));
+    border-radius: 14px; border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.45); color: #fff; font-size: calc(32px * min(var(--k), 1.25)); line-height: 1;
     display: flex; align-items: center; justify-content: center; padding: 0 0 4px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .viewer .vnav.prev { left: 6px; } .viewer .vnav.next { right: 6px; }
   .viewer .vnav:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
@@ -296,7 +310,6 @@
   .bub .vis.on { border-color: var(--up); color: var(--up); font-weight: 600; }
   .drow { display: grid; grid-template-columns: calc(72px * min(var(--k), 1.25)) 1fr; gap: 12px; align-items: start; width: 100%; }
   .gallery .custom { outline: 2px dashed var(--warn); outline-offset: -2px; }
-  .viewer .cap { white-space: pre-line; }
   .badge-n { display: inline-block; min-width: 24px; padding: 0 7px; border-radius: 12px; background: var(--down); color: #fff; font-size: calc(13px * var(--k)); font-weight: 700; line-height: 24px; text-align: center; }
   .seg.seg5 { grid-template-columns: repeat(5, 1fr); }
   /* крупный текст: раскладка, чтобы ничего не обрезалось */
@@ -341,7 +354,8 @@
   let S = null, P = null, tab = 'projects', view = 'list', filter = 'work', query = '', fileTab = 'measure', peopleTab = 'clients', period = 'month', M = null, lastPid = null;
   let fileVer = {}, fileVerNew = {}, fileRoom = {};   // в файлах проекта: выбранный вариант (правка), новая правка, помещение для загрузки
   let L = null, LS = null, A = null, leadFilter = 'new', leadQuery = '';   // заявка, список заявок, доступ к боту
-  let OWNER = false;          // разработчик: в «Студии» только сайт и доступ к боту (решено 24.10.2026)
+  let OWNER = false;          // разработчик: в «Студии» сайт, доступ к боту и проекты — только просмотр (решено 25.10.2026)
+  const rw = (n) => (OWNER ? null : n);   // кнопка или поле, которые что-то меняют: у разработчика их нет
   let CH = [], chatTimer = null, chatBusy = false, CHT = null, chatDrop = null;   // chatDrop — файлы, брошенные или вставленные в разговор               // открытый разговор проекта (заказчики, подрядчики, работники, группа)
   const sheets = [];                        // открытые формы и карточки поверх страницы, последняя — сверху
 
@@ -505,7 +519,7 @@
     const dot = document.getElementById('leads-dot'), n = S ? S.leads_new || 0 : 0;   // новые заявки — число на вкладке
     if (dot) { dot.hidden = !n; dot.textContent = n > 99 ? '99+' : String(n); }       // у разработчика вкладки «Заявки» нет
     const cd = document.getElementById('chat-dot'), u = S ? S.unread || 0 : 0;        // непрочитанная переписка с заказчиками
-    if (cd) { cd.hidden = !u; cd.textContent = u > 99 ? '99+' : String(u); }
+    if (cd) { cd.hidden = !u || OWNER; cd.textContent = u > 99 ? '99+' : String(u); }   // переписка Ирины — не разработчику
   }
 
   // ---------- загрузка ----------
@@ -530,7 +544,7 @@
     stopChat(); chatDrop = null;
     markNav();
     app.replaceChildren();
-    if (OWNER) return ownerView();
+    if (OWNER && !(tab === 'projects' && S)) return ownerView();
     if (!S) return;
     if (tab === 'leads') return view === 'lead' && L ? leadView() : leadsView();
     if (tab === 'projects') return view === 'chat' && P ? chatView() : view === 'project' && P ? projectView() : projectsView();
@@ -541,9 +555,10 @@
   // ---------- список проектов ----------
   function projectsView() {
     const head = el('div', 'row', el('h1', { class: 'grow' }, 'Проекты'),
-      el('button', { class: 'btn primary small', type: 'button', onclick: () => projectSheet() }, '＋ Новый проект'),
-      el('button', { class: 'icon-btn', type: 'button', title: 'Настройки: размер текста, бонус по умолчанию, тарифы, виды работ', 'aria-label': 'Настройки', onclick: settingsSheet }, '⚙︎'));
+      rw(el('button', { class: 'btn primary small', type: 'button', onclick: () => projectSheet() }, '＋ Новый проект')),
+      rw(el('button', { class: 'icon-btn', type: 'button', title: 'Настройки: размер текста, бонус по умолчанию, тарифы, виды работ', 'aria-label': 'Настройки', onclick: settingsSheet }, '⚙︎')));
     app.append(head);
+    if (OWNER) app.append(roNote());
     const s = el('input', { class: 'search', type: 'search', placeholder: 'Найти: номер, заказчик, город', value: query });
     s.addEventListener('input', () => { query = s.value; drawList(); });
     app.append(s);
@@ -581,8 +596,8 @@
       + ' (услуги ' + eur(p.services_debt) + ', товары ' + eur(p.orders_rest) + ')'));
     if (p.extra) c.append(el('div', 'small muted num', 'Доп. доход: ' + eur(p.extra)));
     if (p.contractor_debt > 0) c.append(el('div', 'small owe num', 'Должны бонусы (подрядчики, поставщики): ' + eur(p.contractor_debt)));
-    if (p.unread) c.append(el('div', { class: 'small', style: 'margin-top:6px;color:var(--series);font-weight:650' }, '💬 Новых сообщений: ' + p.unread));
-    if (p.review) c.append(el('div', { class: 'small', style: 'margin-top:6px;color:var(--warn);font-weight:650' }, '📎 Ждут вашего решения: ' + p.review));
+    if (p.unread && !OWNER) c.append(el('div', { class: 'small', style: 'margin-top:6px;color:var(--series);font-weight:650' }, '💬 Новых сообщений: ' + p.unread));
+    if (p.review && !OWNER) c.append(el('div', { class: 'small', style: 'margin-top:6px;color:var(--warn);font-weight:650' }, '📎 Ждут вашего решения: ' + p.review));
     if (p.stage && p.status !== 'done') c.append(el('div', 'small muted', '📍 ' + stageName(p.stage)));
     return c;
   }
@@ -598,6 +613,7 @@
     return el('div', 'tgline muted', 'Не подключён к кабинету');
   }
   const preview = (q) => { location.href = '/api/portal/app?' + new URLSearchParams(q).toString(); };
+  const roNote = () => el('p', { class: 'small muted', style: 'margin:8px 0 0' }, '👁 Только просмотр — менять проекты может Ирина.');
   function projectView() {
     const { project: p, ops, files, contractors } = P;
     const orders = P.orders || [], services = P.services || [], ppl = people(), chat = P.chat || { count: 0, unread: 0 };
@@ -608,9 +624,10 @@
     const closed = p.status === 'done' || p.status === 'cancelled';
     if (p.status === 'done') head.append(el('div', { class: 'small', style: 'margin-top:8px;color:var(--up);font-weight:600' }, '✓ Проект завершён' + (p.finished ? ' ' + dfmt(p.finished) : '')));
     // стадия проекта — видят заказчик (с историей), подрядчики и сотрудники; пакет — смена с пересчётом только вверх
-    head.append(el('button', { class: 'btn wide stagebtn', type: 'button', style: 'margin-top:10px', onclick: () => projectStageSheet() },
+    if (OWNER) head.append(el('div', { style: 'margin-top:10px' }, el('span', 'small muted', 'Стадия проекта'), el('b', { style: 'display:block' }, p.stage ? stageName(p.stage) : 'не указана')), roNote());
+    else head.append(el('button', { class: 'btn wide stagebtn', type: 'button', style: 'margin-top:10px', onclick: () => projectStageSheet() },
       el('span', 'grow', el('span', 'small muted', 'Стадия проекта'), el('b', { style: 'display:block' }, p.stage ? stageName(p.stage) : 'Не указана — выбрать')), el('span', 'muted', '▾')));
-    head.append(el('div', { class: 'row wrap', style: 'margin-top:10px;gap:8px' },
+    if (!OWNER) head.append(el('div', { class: 'row wrap', style: 'margin-top:10px;gap:8px' },
       closed ? el('button', { class: 'btn small primary', type: 'button', onclick: () => reopenProject() }, '↺ Вернуть в работу') : null,
       el('button', { class: 'btn small', type: 'button', onclick: () => projectSheet(p) }, '✎ Изменить проект'),
       el('button', { class: 'btn small', type: 'button', onclick: () => tariffSheet() }, '📦 ' + (p.tariff ? 'Пакет «' + p.tariff + '»' : 'Пакет')),
@@ -618,7 +635,7 @@
       closed ? null : el('button', { class: 'btn small', type: 'button', onclick: () => finishSheet() }, '✓ Завершить проект')));
     app.append(head);
     const jump = el('div', 'jump');                       // длинная страница на телефоне: сразу к нужному блоку
-    [['sec-chat', 'Разговоры' + (chat.unread ? ' · ' + chat.unread + ' нов.' : chat.count ? ' · ' + chat.count : '')], ['sec-money', 'Деньги'],
+    [OWNER ? null : ['sec-chat', 'Разговоры' + (chat.unread ? ' · ' + chat.unread + ' нов.' : chat.count ? ' · ' + chat.count : '')], ['sec-money', 'Деньги'],
       ['sec-orders', 'Товары' + (orders.length ? ' · ' + orders.length : '')], ['sec-services', 'Услуги' + (services.length ? ' · ' + services.length : '')],
       ['sec-contractors', (contractors.some(isSup) ? 'Подрядчики и поставщики' : 'Подрядчики') + (contractors.length ? ' · ' + contractors.length : '')],
       ['sec-client', 'Заказчики' + (ppl.length ? ' · ' + ppl.length : '')],
@@ -639,7 +656,7 @@
       el('button', { class: 'btn', type: 'button', onclick: () => groupSheet(null) }, '👥 Группа')),
       el('p', { class: 'small muted', style: 'margin:8px 0 0' }, 'Сообщения приходят и в бот, с переводом на русский. Ответить можно там — потяните сообщение влево — или здесь. '
         + 'Разговоры заказчика с подрядчиком приходят без звука: вы их видите, а вступаете, когда ответите.'));
-    app.append(cc);
+    if (!OWNER) app.append(cc);                          // переписка Ирины с заказчиками — не разработчику
 
     // деньги
     const m = el('section', { class: 'card', id: 'sec-money' });
@@ -658,7 +675,7 @@
     if (p.contractor_debt > 0) m.append(el('div', { class: 'small num', style: 'margin-top:4px' },
       el('span', 'owe', (contractors.some(isSup) ? 'Подрядчики и поставщики' : 'Подрядчики') + ' должны бонусы: ' + eur(p.contractor_debt)),
       el('span', 'muted', ' — подробно в блоке «' + (contractors.some(isSup) ? 'Подрядчики и поставщики' : 'Подрядчики') + '»')));
-    m.append(el('div', 'actions four',
+    if (!OWNER) m.append(el('div', 'actions four',
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('payment') }, el('span', null, '💶'), 'Оплата'),
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission') }, el('span', null, '🎁'), 'Бонус'),
       el('button', { class: 'btn', type: 'button', onclick: () => ensureWorking(() => orderSheet(null)) }, el('span', null, '🛋'), 'Товар'),
@@ -667,7 +684,7 @@
 
     // товары заказчика
     const og = el('section', { class: 'card', id: 'sec-orders' });
-    og.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Товары заказчика'), el('button', { class: 'btn small', type: 'button', onclick: () => ensureWorking(() => orderSheet(null)) }, '＋ Товар')));
+    og.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Товары заказчика'), rw(el('button', { class: 'btn small', type: 'button', onclick: () => ensureWorking(() => orderSheet(null)) }, '＋ Товар'))));
     if (!orders.length) og.append(el('p', 'muted small', 'Мебель, свет, декор, которые заказчик покупает через студию: цена для него, авансы, поставка. '
       + 'Заказчик видит цену, свои оплаты и дату поставки; закупку и наценку — нет.'));
     else {
@@ -675,7 +692,7 @@
       orders.forEach((o) => {
         const mo = o.money, st = ORDER_ST[mo.status] || ['', ''];
         const ph = o.photo ? el('img', { class: 'ph', src: o.photo, alt: '', loading: 'lazy' }) : el('div', 'ph', '🛋');
-        ul.append(el('li', { onclick: () => orderSheet(o) }, el('div', 'ogrid', ph, el('div', null,
+        ul.append(el('li', { onclick: OWNER ? null : () => orderSheet(o) }, el('div', 'ogrid', ph, el('div', null,
           el('div', 'row between', el('span', 't', o.title), el('span', 'status ' + st[1], st[0])),
           el('div', 'm num', 'цена ' + curMoney(o.price, o.currency) + ' · оплачено ' + curMoney(mo.paid, o.currency) + (mo.rest > 0.005 && mo.status !== 'cancelled' ? ' · осталось ' + curMoney(mo.rest, o.currency) : '')),
           el('div', 'm num', o.buy != null ? 'закупка ' + curMoney(o.buy, o.buy_currency) + (mo.margin != null ? ' · наценка ' + eur(mo.margin) : '') : 'закупка не внесена'),
@@ -687,7 +704,7 @@
 
     // доп. услуги
     const sv = el('section', { class: 'card', id: 'sec-services' });
-    sv.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Доп. услуги'), el('button', { class: 'btn small', type: 'button', onclick: () => ensureWorking(() => serviceSheet(null)) }, '＋ Услуга')));
+    sv.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Доп. услуги'), rw(el('button', { class: 'btn small', type: 'button', onclick: () => ensureWorking(() => serviceSheet(null)) }, '＋ Услуга'))));
     if (!services.length) sv.append(el('p', 'muted small', 'Чертежи, авторское сопровождение с помесячной оплатой и т. п. Заказчик видит услугу и что оплачено; '
       + 'о неоплаченном платеже бот напомнит ему и вам — в день оплаты и через 7 дней.'));
     else {
@@ -696,7 +713,7 @@
         const sm = s.money;
         const what = s.kind === 'monthly' ? 'помесячно ' + eur(s.amount) + ' с ' + dfmt(s.start) + (s.months ? ', ' + s.months + ' мес.' : '') : 'разовая ' + eur(s.amount) + ', оплата до ' + dfmt(s.start);
         const state = s.cancelled ? 'отменена' : sm.debt > 0.005 ? (sm.overdue ? '⚠️ ' : '') + 'не оплачено ' + eur(sm.debt) : '✓ оплачено' + (sm.prepaid > 0.005 ? ', предоплата ' + eur(sm.prepaid) : '');
-        ul.append(el('li', { onclick: () => serviceSheet(s) }, el('div', 't', s.title), el('div', 'm num', what + (s.stopped ? ' · остановлена с ' + dfmt(s.stopped) : '')),
+        ul.append(el('li', { onclick: OWNER ? null : () => serviceSheet(s) }, el('div', 't', s.title), el('div', 'm num', what + (s.stopped ? ' · остановлена с ' + dfmt(s.stopped) : '')),
           el('div', { class: 'm num ' + (sm.debt > 0.005 && !s.cancelled ? 'owe' : ''), style: 'font-weight:600' }, state + (sm.next ? ' · следующий платёж ' + dfmt(sm.next.due) : ''))));
       });
       sv.append(ul);
@@ -705,7 +722,7 @@
 
     // подрядчики: этапы, бонус студии, долг, кабинет
     const k = el('section', { class: 'card', id: 'sec-contractors' });
-    k.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Подрядчики и поставщики'), el('button', { class: 'btn small', type: 'button', onclick: () => ensureWorking(linkSheet) }, '＋ Добавить')));
+    k.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Подрядчики и поставщики'), rw(el('button', { class: 'btn small', type: 'button', onclick: () => ensureWorking(linkSheet) }, '＋ Добавить'))));
     if (!contractors.length) k.append(el('p', 'muted small', 'Прораб, мебельщик, шторница, двери, окна… и поставщики: плитка, свет, полы, сантехника. Добавьте подрядчика '
       + 'с этапами работ или поставщика с поставками и суммой — бонус студии (по умолчанию ' + pctText(S.lists.default_pct) + ') посчитается сам, а долг будет виден здесь. '
       + 'Ссылка в кабинет: он увидит документацию, визуализации, контакты заказчика и свои расчёты со студией, сможет сам внести сумму. '
@@ -723,12 +740,12 @@
     // заказчики проекта и их кабинет
     const c = el('section', { class: 'card', id: 'sec-client' });
     c.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Заказчики'),
-      ppl.length < (S.lists.people_max || 10) ? el('button', { class: 'btn small', type: 'button', onclick: addClientSheet }, '＋ Добавить') : null));
+      ppl.length < (S.lists.people_max || 10) ? rw(el('button', { class: 'btn small', type: 'button', onclick: addClientSheet }, '＋ Добавить')) : null));
     if (!ppl.length) c.append(el('p', 'muted small', 'Не указаны. Добавьте заказчика — и дайте ему ссылку в кабинет: оплаты, документы, подрядчики и переписка с вами.'));
     ppl.forEach((x, i) => {
       const box = el('div', { class: i ? 'kcard' : '', style: i ? null : 'margin-top:10px' });
       box.append(personBlock(x), tgLine('client', x));
-      box.append(el('div', 'kactions',
+      if (!OWNER) box.append(el('div', 'kactions',
         el('button', { class: 'btn' + (x.tg_id ? '' : ' primary'), type: 'button', onclick: () => inviteSheet('client', x) }, x.tg_id ? '🔗 Новая ссылка' : '🔗 Ссылка в бот'),
         el('button', { class: 'btn', type: 'button', onclick: () => clientMoreSheet(x) }, 'Ещё…')));
       c.append(box);
@@ -741,18 +758,18 @@
     // Пока сотрудников у студии нет — блока нет (добавляют в «Контакты» → «Сотрудники»)
     const tm = el('section', { class: 'card', id: 'sec-team' }), staff = P.assistants || [], onP = staff.filter((a) => a.assigned);
     tm.append(el('div', 'row between', el('h2', { style: 'margin:0' }, 'Сотрудники студии'),
-      el('button', { class: 'btn small', type: 'button', onclick: () => assistantSheet({}, p.id) }, '＋ Сотрудник')));
-    if (staff.length && !onP.length) tm.append(el('p', { class: 'small muted', style: 'margin:6px 0 0' }, 'Отметьте ✓, кто работает над этим проектом.'));
+      rw(el('button', { class: 'btn small', type: 'button', onclick: () => assistantSheet({}, p.id) }, '＋ Сотрудник'))));
+    if (staff.length && !onP.length && !OWNER) tm.append(el('p', { class: 'small muted', style: 'margin:6px 0 0' }, 'Отметьте ✓, кто работает над этим проектом.'));
     staff.forEach((a) => tm.append(el('div', 'crow',
-      el('button', { class: 'tick' + (a.assigned ? ' on' : ''), type: 'button', role: 'switch', 'aria-checked': String(a.assigned), title: a.assigned ? 'Снять с проекта' : 'Назначить на проект',
+      OWNER ? null : el('button', { class: 'tick' + (a.assigned ? ' on' : ''), type: 'button', role: 'switch', 'aria-checked': String(a.assigned), title: a.assigned ? 'Снять с проекта' : 'Назначить на проект',
         onclick: async () => { try { await refresh(await save('passist', { project_id: p.id, assistant_id: a.id, on: !a.assigned })); toast(a.assigned ? 'Снят с проекта' : 'Назначен на проект' + (a.tg ? ' — ему пришло сообщение' : '')); } catch (e) { toast(e.message); } } }, a.assigned ? '✓' : ''),
-      el('div', { class: 'grow', style: 'cursor:pointer', onclick: () => assistantCard(a) }, el('b', null, a.name),
+      el('div', { class: 'grow', style: OWNER ? null : 'cursor:pointer', onclick: OWNER ? null : () => assistantCard(a) }, el('b', null, a.name),
         el('div', 'small muted', [a.assigned ? 'на проекте' : 'не на проекте', a.position, a.tg ? '✓ в боте' : a.invite_until ? '⏳ ссылка до ' + dfmt(a.invite_until) : 'не в боте'].filter(Boolean).join(' · '))),
-      a.assigned && a.tg ? el('button', { class: 'icon-btn', type: 'button', title: 'Написать (видите только вы двое)', 'aria-label': 'Написать ' + a.name, onclick: () => startThread({ kind: 'staff', assistant_id: a.id }) }, '💬') : null,
-      !a.tg ? el('button', { class: 'icon-btn', type: 'button', title: 'Ссылка в бот', 'aria-label': 'Ссылка в бот для ' + a.name, onclick: () => inviteSheet('assistant', a, { project: a.assigned ? p.id : null }) }, '🔗') : null,
-      a.assigned ? el('button', { class: 'icon-btn', type: 'button', title: 'Как видит сотрудник', 'aria-label': 'Как видит ' + a.name, onclick: () => preview({ preview: 'assistant', project: p.id, assistant: a.id }) }, '👁') : null)));
-    if (onP.length > 1) tm.append(el('div', 'kactions', el('button', { class: 'btn', type: 'button', onclick: () => sgroupSheet(null) }, '👥 Группа сотрудников')));
-    if (onP.length) tm.append(el('p', { class: 'small muted', style: 'margin:10px 0 0' }, 'Сотрудник видит назначенные проекты: участников по именам, документацию (кроме «Другое»), '
+      a.assigned && a.tg && !OWNER ? el('button', { class: 'icon-btn', type: 'button', title: 'Написать (видите только вы двое)', 'aria-label': 'Написать ' + a.name, onclick: () => startThread({ kind: 'staff', assistant_id: a.id }) }, '💬') : null,
+      !a.tg && !OWNER ? el('button', { class: 'icon-btn', type: 'button', title: 'Ссылка в бот', 'aria-label': 'Ссылка в бот для ' + a.name, onclick: () => inviteSheet('assistant', a, { project: a.assigned ? p.id : null }) }, '🔗') : null,
+      a.assigned && !OWNER ? el('button', { class: 'icon-btn', type: 'button', title: 'Как видит сотрудник', 'aria-label': 'Как видит ' + a.name, onclick: () => preview({ preview: 'assistant', project: p.id, assistant: a.id }) }, '👁') : null)));
+    if (onP.length > 1 && !OWNER) tm.append(el('div', 'kactions', el('button', { class: 'btn', type: 'button', onclick: () => sgroupSheet(null) }, '👥 Группа сотрудников')));
+    if (onP.length && !OWNER) tm.append(el('p', { class: 'small muted', style: 'margin:10px 0 0' }, 'Сотрудник видит назначенные проекты: участников по именам, документацию (кроме «Другое»), '
       + 'документы подрядчиков и разговоры с ними и с заказчиком — пишет в них от имени студии, вам приходят тихие копии. Денег, бонусов, контактов заказчиков и подрядчиков '
       + 'и исполнителей студии не видит. 🔒 Ваш разговор с сотрудником (💬) и группу сотрудников видите только вы и они — больше никто.'));
     if (staff.length) app.append(tm);
@@ -762,7 +779,7 @@
     const f = el('section', { class: 'card', id: 'sec-files' });
     f.append(el('h2', null, 'Файлы проекта'));
     const review = files.filter((x) => x.review);
-    if (review.length) {
+    if (review.length && !OWNER) {
       const rb = el('div', 'review');
       rb.append(el('b', null, '📎 Ждут вашего решения: ' + review.length), el('p', { class: 'small muted', style: 'margin:2px 0 8px' }, 'Прислали подрядчики, исполнители или сотрудники. Заказчик увидит, только когда вы покажете.'));
       review.forEach((x) => rb.append(el('div', 'rrow', fileTile(x, review), el('div', 'grow', el('b', null, x.title || x.name),
@@ -780,7 +797,7 @@
     });
     f.append(tabs);
     const who = [S.lists.client_cats.includes(fileTab) ? 'заказчик' : '', S.lists.contractor_cats.includes(fileTab) ? 'подрядчики и их бригады' : ''].filter(Boolean);
-    f.append(el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, fileTab === 'work'
+    if (!OWNER) f.append(el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, fileTab === 'work'
       ? '📎 Фото и документы от подрядчиков и их работников. Кто видит — выбрал тот, кто загрузил; заказчику — только после вашего одобрения.'
       : (who.length ? '👁 В кабинете видят: ' + who.join(' и ') : '🔒 Видно только вам — в кабинеты не попадает') + '. У отдельного файла можно поменять — в просмотре файла.'
         + (fileTab === 'measure' ? ' Сюда же — план от застройщика, если его прислал заказчик.' : '')));
@@ -795,7 +812,7 @@
       const agreed = (n) => (P.rounds || []).find((r) => r.category === fileTab && r.ver === n);
       const vchips = el('div', 'chips', ...vers.map((n) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(n === curVer),
         onclick: () => { fileVer[fileTab] = n; render(); } }, verName(fileTab, n) + (agreed(n) ? ' ✓' : '') + ' · ' + list.filter((x) => (x.ver || 1) === n).length)),
-        list.length ? el('button', { class: 'chip', type: 'button', onclick: () => { fileVer[fileTab] = nextV; fileVerNew[fileTab] = true; render(); } }, '＋ ' + verName(fileTab, nextV)) : null);
+        list.length && !OWNER ? el('button', { class: 'chip', type: 'button', onclick: () => { fileVer[fileTab] = nextV; fileVerNew[fileTab] = true; render(); } }, '＋ ' + verName(fileTab, nextV)) : null);
       if (fileVerNew[fileTab] && !vers.includes(fileVer[fileTab])) {          // новая правка — пока пустая, файлы пойдут в неё
         curVer = fileVer[fileTab];
         vchips.append(el('button', { class: 'chip', type: 'button', 'aria-pressed': 'true' }, verName(fileTab, curVer) + ' · новая'));
@@ -805,14 +822,15 @@
       const ag = agreed(curVer);
       f.append(el('div', { class: 'row between', style: 'gap:8px;flex-wrap:wrap;margin:0 0 10px' },
         el('span', 'small muted', fileTab === 'visual' && tarif.revisions != null ? 'По пакету «' + p.tariff + '» правок: ' + tarif.revisions + (curVer - 1 > tarif.revisions ? ' — эта сверх пакета' : '') : ''),
-        list.some((x) => (x.ver || 1) === curVer) ? el('button', { class: 'btn small' + (ag ? ' primary' : ''), type: 'button',
+        OWNER ? (ag ? el('span', { class: 'small', style: 'color:var(--up);font-weight:650' }, '✓ Заказчик согласовал · ' + dfmt(ag.agreed)) : null)
+        : list.some((x) => (x.ver || 1) === curVer) ? el('button', { class: 'btn small' + (ag ? ' primary' : ''), type: 'button',
           style: 'white-space:normal;flex:0 1 auto;max-width:100%;text-align:center', onclick: async () => {   // очень крупный текст на узком телефоне — в две строки, без прокрутки вбок
           try { await refresh(await save('round', { project_id: p.id, category: fileTab, ver: curVer, agreed: !ag })); toast(ag ? 'Отметка снята' : 'Отмечено: заказчик согласовал'); } catch (e) { toast(e.message); }
         } }, ag ? '✓ Заказчик согласовал · ' + dfmt(ag.agreed) : 'Отметить: заказчик согласовал') : null));
       list = list.filter((x) => (x.ver || 1) === curVer);
     }
     let curRoom = roomCat ? (fileRoom[fileTab] || '') : '';
-    if (!list.length) f.append(el('p', 'muted small', 'Пока пусто. Добавьте файлы кнопкой ниже — или пришлите их боту в чат: он спросит, в какой проект и раздел.'));
+    if (!list.length) f.append(el('p', 'muted small', OWNER ? 'Пока пусто.' : 'Пока пусто. Добавьте файлы кнопкой ниже — или пришлите их боту в чат: он спросит, в какой проект и раздел.'));
     else if (fileTab === 'work') {
       const ul = el('ul', 'people');
       list.forEach((x) => ul.append(el('li', null, el('div', 'drow', fileTile(x, list), el('div', { class: 'who', style: 'cursor:default' },
@@ -846,7 +864,7 @@
     const input = el('input', { type: 'file', multiple: true, style: 'display:none', accept: S.lists.photo_cats.includes(fileTab) ? 'image/*,video/*,application/pdf' : null });
     const target = () => ({ ver: round ? curVer : null, isNew: round && fileVerNew[fileTab] && !files.some((x) => x.category === fileTab && (x.ver || 1) === curVer), room: curRoom });
     input.addEventListener('change', () => upload([...input.files], fileTab, target()));
-    if (fileTab !== 'work') {
+    if (fileTab !== 'work' && !OWNER) {
       if (roomCat) {
         const rs = sel([['', 'Без помещения']].concat((S.lists.rooms || []).map((r) => [r, r])), curRoom, { 'aria-label': 'Помещение' });
         rs.addEventListener('change', () => { fileRoom[fileTab] = curRoom = rs.value; });
@@ -856,15 +874,15 @@
         '＋ Добавить в «' + catName(fileTab) + '»' + (round ? ' · ' + verName(fileTab, curVer) : '')),
         el('p', { class: 'dnd-hint small muted', style: 'margin:8px 0 0;text-align:center' }, 'или перетащите файлы сюда, или вставьте из буфера (⌘V / Ctrl+V)'));
     }
-    f.addEventListener('dragover', (e) => { if (e.dataTransfer && [...e.dataTransfer.types].includes('Files')) { e.preventDefault(); f.classList.add('drop'); } });
+    if (!OWNER) f.addEventListener('dragover', (e) => { if (e.dataTransfer && [...e.dataTransfer.types].includes('Files')) { e.preventDefault(); f.classList.add('drop'); } });
     f.addEventListener('dragleave', (e) => { if (!f.contains(e.relatedTarget)) f.classList.remove('drop'); });
-    f.addEventListener('drop', (e) => { e.preventDefault(); f.classList.remove('drop'); const fs = [...((e.dataTransfer && e.dataTransfer.files) || [])]; if (fs.length && fileTab !== 'work') upload(fs, fileTab, target()); });
+    if (!OWNER) f.addEventListener('drop', (e) => { e.preventDefault(); f.classList.remove('drop'); const fs = [...((e.dataTransfer && e.dataTransfer.files) || [])]; if (fs.length && fileTab !== 'work') upload(fs, fileTab, target()); });
     app.append(f);
 
     // операции
     const o = el('section', { class: 'card', id: 'sec-ops' });
     o.append(el('h2', null, 'Операции'));
-    if (!ops.length) o.append(el('p', 'muted small', 'Пока нет. Оплаты заказчика, бонусы и оплаты за товары появятся здесь — кнопки в блоке «Деньги».'));
+    if (!ops.length) o.append(el('p', 'muted small', OWNER ? 'Пока нет.' : 'Пока нет. Оплаты заказчика, бонусы и оплаты за товары появятся здесь — кнопки в блоке «Деньги».'));
     else {
       const ul = el('ul', 'ops');
       ops.forEach((x) => ul.append(opRow(x)));
@@ -887,7 +905,7 @@
       P.history.forEach((h) => ul.append(el('li', null, el('div', 'who', el('span', null, dfmt(h.ts) + ' · ' + (h.who || '') + ' ' + (act[h.action] || h.action) + ' ' + (what[h.entity] || h.entity))))));
       det.append(ul); d.append(det);
     }
-    d.append(el('div', { style: 'height:10px' }), el('button', { class: 'btn danger small', type: 'button', onclick: async () => {
+    if (!OWNER) d.append(el('div', { style: 'height:10px' }), el('button', { class: 'btn danger small', type: 'button', onclick: async () => {
       if (!(await confirmBox('Удалить проект «' + p.title + '»? Удалить можно только пустой проект — без операций, товаров, услуг, переписки и файлов.'))) return;
       try { await api('/api/crm/delete', { json: { entity: 'project', id: p.id } }); P = null; toast('Проект удалён'); stack.length = 0; view = 'list'; await refresh(); backBtn(); }
       catch (e) { toast(e.message); }
@@ -1108,7 +1126,7 @@
       'продажа ' + money(x.amount, x.currency) + (x.currency !== 'EUR' ? ' (' + eur(x.amount_eur) + ')' : '')); if (x.counterparty) meta.push(x.counterparty); }
     else if (x.currency !== 'EUR') meta.push(money(x.amount, x.currency) + ', курс ' + srcText(x.rate_src) + ': 1 € = ' + num(x.rate, 4) + NB + (SYM[x.currency] || x.currency));
     if (x.note) meta.push(x.note);
-    return el('li', { onclick: () => opSheet(x.kind, x) },
+    return el('li', { onclick: OWNER ? null : () => opSheet(x.kind, x) },
       el('div', 'what', what),
       el('div', { class: 'amt num' + (x.income > 0 ? ' plus' : '') }, x.order_id ? money(x.amount, x.currency) : (x.income >= 0 ? '+' : '') + eur(x.income)),
       el('div', 'meta', meta.join(' · ')));
@@ -1144,15 +1162,20 @@
     return docTile(x, list);
   }
 
-  // просмотр файла; фото листаются по всему разделу (list — в том порядке, как на экране): свайп, стрелки ‹ ›, ← → на компьютере
+  // просмотр файла (решено 25.10.2026): фото — на весь экран и листается по разделу (list — в том порядке, как на экране):
+  // свайп, стрелки ‹ ›, ← → на компьютере. Сверху — счётчик и подпись, дата, кто добавил (имя файла не показываем).
+  // Раздел, вариант и кто видит — компактно, в свёрнутой панели «Настроить»; помещение здесь не меняется (выбирается при добавлении).
+  // Разработчик смотрит: только «Открыть» и «Закрыть»
+  let vPanel = false;                                    // панель «Настроить» открыли — при листании остаётся открытой
   function viewer(x, list, dir) {
-    const v = el('div', { class: 'viewer', role: 'dialog', 'aria-modal': 'true', 'aria-label': x.title || x.name || '' });
+    const v = el('div', { class: 'viewer', role: 'dialog', 'aria-modal': 'true', 'aria-label': x.title || (x.image ? 'Фото' : x.name) || 'Файл' });
     const img = el('div', 'img');
-    const docBox = () => el('div', { style: 'color:#fff;text-align:center;font-size:calc(15px * var(--k))' }, el('div', { style: 'font-size:calc(48px * var(--k))' }, '📄'), x.name,
-      el('div', { style: 'color:#aaa;font-size:calc(13px * var(--k));margin-top:6px' }, x.url ? fsize(x.size) : 'Файл больше 20 МБ хранится в Telegram — его можно прислать себе в чат.'));
+    const docBox = () => el('div', { style: 'color:#fff;text-align:center;font-size:calc(15px * min(var(--k), 1.25));padding:0 16px' },
+      el('div', { style: 'font-size:calc(48px * min(var(--k), 1.25))' }, '📄'), x.title || x.name,
+      el('div', { style: 'color:#aaa;font-size:calc(13px * min(var(--k), 1.25));margin-top:6px' }, x.url ? fsize(x.size) : 'Файл больше 20 МБ хранится в Telegram — его можно прислать себе в чат.'));
     let pic = null;
     if (x.image && x.url) {
-      pic = el('img', { src: x.url, alt: x.name, class: dir > 0 ? 'in-next' : dir < 0 ? 'in-prev' : '' });
+      pic = el('img', { src: x.url, alt: x.title || 'Фото', class: dir > 0 ? 'in-next' : dir < 0 ? 'in-prev' : '' });
       pic.addEventListener('error', () => pic.replaceWith(docBox()));
       img.append(pic);
     } else img.append(docBox());
@@ -1172,56 +1195,60 @@
       swipe(img, pic, go, i > 0, i < seq.length - 1);
       [seq[i - 1], seq[i + 1]].forEach((y) => { if (y) new Image().src = y.url; });   // соседние фото — заранее, чтобы листалось без ожидания
     }
-    const cats = S.lists.file_cats;
-    const dark = 'background:rgba(255,255,255,.12);color:#fff';
-    const sel = x.category === 'work' ? null : el('select', { class: 'btn', style: dark, 'aria-label': 'Раздел' });
-    if (sel) {
-      cats.forEach(([k, n]) => sel.append(el('option', { value: k, selected: k === x.category }, 'Раздел: ' + n)));
-      sel.addEventListener('change', async () => { try { await refresh(await api('/api/crm/move', { json: { id: x.id, category: sel.value } })); closeViewer(v); toast('Перенесено'); } catch (e) { toast(e.message); } });
+    const meta = [x.title, dfmt(x.created), x.owner_name || x.created_by].filter(Boolean).join(' · ');
+    const top = el('div', 'vtop', many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null, meta ? el('div', 'cap', meta) : null);
+    const close = el('button', { class: 'btn vx', type: 'button', 'aria-label': 'Закрыть', title: 'Закрыть (Esc)', onclick: () => closeViewer(v) }, '✕');
+    const open = x.url ? el('button', { class: 'btn', type: 'button', onclick: () => openLink(x.url) }, '↗ Открыть') : null;
+    if (OWNER) {                                         // разработчик — только смотрит
+      v.append(top, img, el('div', 'vbar', open, close));
+      document.body.append(v); backBtn();
+      return v;
     }
-    // кто видит файл: заказчик, подрядчики с бригадами — по разделу (или как выбрал подрядчик), всегда или никогда
-    const three = (key, label, def) => {
-      const s2 = el('select', { class: 'btn', style: dark, 'aria-label': label });
-      [['default', label + ': ' + def], ['1', label + ': да'], ['0', label + ': нет']].forEach(([k, n]) => s2.append(el('option', { value: k, selected: String(x[key] == null ? 'default' : x[key]) === k }, n)));
-      s2.addEventListener('change', async () => {
-        try { await refresh(await save('file_vis', { id: x.id, [key]: s2.value })); closeViewer(v); toast('Сохранено'); } catch (e) { toast(e.message); }
-      });
+    // панель «Настроить»: строка — подпись слева, небольшой список справа
+    const row = (label, ctl) => el('label', 'vrow', el('span', null, label), ctl);
+    const change = (s2, fn) => { s2.addEventListener('change', async () => { try { await fn(s2.value); } catch (e) { toast(e.message); } }); return s2; };
+    const pick = (opts, cur, label) => {
+      const s2 = el('select', { 'aria-label': label });
+      opts.forEach(([k, n]) => s2.append(el('option', { value: k, selected: String(cur) === String(k) ? true : null }, n)));
       return s2;
     };
-    const foreign = ['contractor', 'crew', 'assistant'].includes(x.owner_kind);
-    const defC = foreign ? 'после вашего одобрения' : S.lists.client_cats.includes(x.category) ? 'по разделу (да)' : 'по разделу (нет)';
-    // помещение и вариант (правка) — для фото и визуализаций, планировок; новая версия документа — с той же подписью
-    const metaSel = (label, opts, cur, key) => {
-      const m = el('select', { class: 'btn', style: dark, 'aria-label': label });
-      opts.forEach(([k, n]) => m.append(el('option', { value: k, selected: String(cur) === String(k) ? true : null }, label + ': ' + n)));
-      m.addEventListener('change', async () => { try { await refresh(await save('file_meta', { id: x.id, [key]: m.value })); closeViewer(v); toast('Сохранено'); } catch (e) { toast(e.message); } });
-      return m;
-    };
-    const roomSel = (S.lists.room_cats || []).includes(x.category)
-      ? metaSel('Помещение', [['', 'не указано']].concat((S.lists.rooms || []).concat(x.room && !(S.lists.rooms || []).includes(x.room) ? [x.room] : []).map((r) => [r, r])), x.room || '', 'room') : null;
-    let verSel = null, newVer = null;
-    if ((S.lists.round_cats || []).includes(x.category)) {
+    const rows = [];
+    if (x.category !== 'work') rows.push(row('Раздел', change(pick(S.lists.file_cats, x.category, 'Раздел'), async (val) => {
+      await refresh(await api('/api/crm/move', { json: { id: x.id, category: val } })); closeViewer(v); toast('Перенесено');
+    })));
+    let newVer = null;
+    if ((S.lists.round_cats || []).includes(x.category)) {           // вариант планировки / правка визуализации
       const vs = [...new Set((P.files || []).filter((y) => y.category === x.category).map((y) => y.ver || 1))].sort((a, b) => a - b);
       vs.push(vs[vs.length - 1] + 1);
-      verSel = metaSel('Вариант', vs.map((n) => [n, verName(x.category, n)]), x.ver || 1, 'ver');
-    } else if (x.category !== 'work') {
-      const fi = el('input', { type: 'file', style: 'display:none' });
+      rows.push(row('Вариант', change(pick(vs.map((n) => [n, verName(x.category, n)]), x.ver || 1, 'Вариант'), async (val) => {
+        await refresh(await save('file_meta', { id: x.id, ver: val })); closeViewer(v); toast('Сохранено');
+      })));
+    } else if (x.category !== 'work') {                               // новая версия документа — с той же подписью
+      const fi = el('input', { type: 'file', style: 'display:none', 'aria-hidden': 'true', tabindex: '-1' });
       fi.addEventListener('change', () => { closeViewer(v); upload([...fi.files], x.category, { title: x.title || x.name, isNew: true }); });
-      newVer = el('button', { class: 'btn small', type: 'button', onclick: () => fi.click() }, '＋ Новая версия', fi);
+      newVer = el('button', { class: 'btn', type: 'button', onclick: () => fi.click() }, '＋ Новая версия', fi);
     }
-    const appr = x.review ? [el('button', { class: 'btn small', type: 'button', style: 'background:var(--up);color:#fff', onclick: async () => { closeViewer(v); await approve(x, true); } }, '✓ Показать заказчику'),
-      el('button', { class: 'btn small', type: 'button', onclick: async () => { closeViewer(v); await approve(x, false); } }, 'Не показывать')] : [];
-    const defK = S.lists.contractor_cats.includes(x.category) ? 'по разделу (да)' : 'по разделу (нет)';
-    v.append(many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null, el('div', 'cap', (x.title ? x.title + ' · ' : '') + x.name + ' · ' + dfmt(x.created) + (x.owner_name || x.created_by ? ' · ' + (x.owner_name || x.created_by) : '')
-      + (x.audience ? '\n👁 Видят: ' + x.audience : '')), img, el('div', 'bar2',
-      x.url ? el('button', { class: 'btn small', type: 'button', onclick: () => openLink(x.url) }, '↗ Открыть') : null,
-      el('button', { class: 'btn small', type: 'button', onclick: async () => { try { await api('/api/crm/send', { json: { id: x.id } }); toast('Отправлено в чат с ботом'); } catch (e) { toast(e.message); } } }, '✈︎ В чат'),
-      ...appr, sel, roomSel, verSel, newVer, three('see_client', 'Заказчик', defC), x.category === 'work' ? null : three('see_crew', 'Подрядчики', defK),
-      el('button', { class: 'btn small', type: 'button', style: 'color:#ff8a8a', onclick: async () => {
-        if (!(await confirmBox('Удалить файл «' + x.name + '»?'))) return;
-        try { await refresh(await api('/api/crm/delete', { json: { entity: 'file', id: x.id } })); closeViewer(v); toast('Файл удалён'); } catch (e) { toast(e.message); }
-      } }, 'Удалить'),
-      el('button', { class: 'btn small', type: 'button', onclick: () => closeViewer(v) }, 'Закрыть')));
+    // кто видит файл: заказчик, подрядчики с бригадами — по разделу (или как выбрал подрядчик), всегда или никогда
+    const foreign = ['contractor', 'crew', 'assistant'].includes(x.owner_kind);
+    const vis = (key, label, def) => row(label, change(pick([['default', def], ['1', 'да'], ['0', 'нет']], x[key] == null ? 'default' : x[key], label + ' видит'), async (val) => {
+      await refresh(await save('file_vis', { id: x.id, [key]: val })); closeViewer(v); toast('Сохранено');
+    }));
+    rows.push(vis('see_client', 'Заказчик', foreign ? 'после вашего одобрения' : S.lists.client_cats.includes(x.category) ? 'по разделу (да)' : 'по разделу (нет)'));
+    if (x.category !== 'work') rows.push(vis('see_crew', 'Подрядчики', S.lists.contractor_cats.includes(x.category) ? 'по разделу (да)' : 'по разделу (нет)'));
+    const del = el('button', { class: 'btn vdel', type: 'button', onclick: async () => {
+      if (!(await confirmBox('Удалить файл' + (x.title ? ' «' + x.title + '»' : '') + '?'))) return;
+      try { await refresh(await api('/api/crm/delete', { json: { entity: 'file', id: x.id } })); closeViewer(v); toast('Файл удалён'); } catch (e) { toast(e.message); }
+    } }, 'Удалить файл');
+    const pid = 'vpanel-' + x.id;
+    const panel = el('div', { class: 'vpanel', id: pid, hidden: vPanel ? null : true },
+      x.audience ? el('div', 'vwho', '👁 Видят: ' + x.audience) : null, ...rows, el('div', 'vacts', newVer, del));
+    const setBtn = el('button', { class: 'btn', type: 'button', 'aria-expanded': String(vPanel), 'aria-controls': pid, onclick: () => {
+      vPanel = !vPanel; panel.hidden = !vPanel; setBtn.setAttribute('aria-expanded', String(vPanel));
+    } }, '⚙︎ Настроить');
+    const appr = x.review ? [el('button', { class: 'btn ok', type: 'button', onclick: async () => { closeViewer(v); await approve(x, true); } }, '✓ Показать заказчику'),
+      el('button', { class: 'btn', type: 'button', onclick: async () => { closeViewer(v); await approve(x, false); } }, 'Не показывать')] : [];
+    const toChat = el('button', { class: 'btn', type: 'button', onclick: async () => { try { await api('/api/crm/send', { json: { id: x.id } }); toast('Отправлено в чат с ботом'); } catch (e) { toast(e.message); } } }, '✈︎ В чат');
+    v.append(top, img, panel, el('div', 'vbar', ...appr, open, toChat, setBtn, close));
     document.body.append(v);
     backBtn();
     return v;
@@ -2424,7 +2451,7 @@
     const m = x.money, c = m.currency, sup = isSup(x);
     const box = el('div', 'kcard');
     box.append(el('div', 'row',
-      el('div', { class: 'grow', style: 'cursor:pointer', onclick: () => contractorCard(x) },
+      el('div', { class: 'grow', style: OWNER ? null : 'cursor:pointer', onclick: OWNER ? null : () => contractorCard(x) },
         el('b', { style: 'font-size:calc(18px * var(--k));display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' '))));
     const cb = contactButtons(x).slice(0, 3);
     if (cb.length) box.append(el('div', 'cbar', ...cb));
@@ -2432,7 +2459,7 @@
       const ul = el('ul', 'stages');
       m.stages.forEach((st, i) => {
         const bonus = st.commission == null ? 'бонус пока неизвестен' : 'бонус ' + (st.pct != null ? pctText(st.pct) + ' — ' : '') + curMoney(st.commission, st.currency);
-        ul.append(el('li', { onclick: () => stageSheet(x, st) },
+        ul.append(el('li', { onclick: OWNER ? null : () => stageSheet(x, st) },
           el('span', 't', st.title || (sup ? 'Поставка ' : 'Этап ') + (i + 1)),
           el('span', 'a num', st.amount ? curMoney(st.amount, st.currency) : ''),
           el('span', 'm num', [bonus, st.received ? 'отдал ' + curMoney(st.received, c) : '', dfmt(st.day), st.src === 'contractor' ? (sup ? 'внёс поставщик' : 'внёс подрядчик') : ''].filter(Boolean).join(' · ')),
@@ -2451,20 +2478,22 @@
       box.append(line, el('div', 'small muted num', [m.expected > 0 ? 'ожидается ' + curMoney(m.expected, c) : '', m.received > 0 && (m.debt > 0 || m.expected > 0) ? 'отдал ' + curMoney(m.received, c) : '',
         m.unknown ? m.unknown + ' ' + (sup ? plural(m.unknown, 'поставка', 'поставки', 'поставок') : plural(m.unknown, 'этап', 'этапа', 'этапов')) + ' без бонуса' : ''].filter(Boolean).join(' · ')));
     }
-    box.append(el('div', 'kactions',
+    if (!OWNER) box.append(el('div', 'kactions',
       el('button', { class: 'btn', type: 'button', onclick: () => ensureWorking(() => stageSheet(x, null)) }, sup ? '＋ Поставка' : '＋ Этап'),
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission', null, { link_id: x.link_id, currency: c, amount: m.debt > 0 ? m.debt : '' }) }, '🎁 Отдал бонус')));
-    box.append(tgLine('contractor', x), el('div', 'kactions',
+    box.append(tgLine('contractor', x));
+    if (!OWNER) box.append(el('div', 'kactions',
       x.tg_id ? el('button', { class: 'btn', type: 'button', onclick: () => startThread({ kind: 'org', contractor_id: x.id }) }, '💬 Написать')
         : el('button', { class: 'btn primary', type: 'button', onclick: () => inviteSheet('contractor', x, { project: P.project.id }) }, '🔗 Ссылка в бот'),
       el('button', { class: 'btn', type: 'button', onclick: () => preview({ preview: 'contractor', project: P.project.id, link: x.link_id }) }, '👁 Как видит')));
-    if (x.tg_id) box.append(el('div', { class: 'row wrap', style: 'gap:8px;margin-top:8px' },
+    if (x.tg_id && !OWNER) box.append(el('div', { class: 'row wrap', style: 'gap:8px;margin-top:8px' },
       el('button', { class: 'btn small', type: 'button', onclick: () => inviteSheet('contractor', x, { project: P.project.id }) }, '🔗 Новая ссылка'),
       el('button', { class: 'btn danger small', type: 'button', onclick: async () => {
         if (!(await confirmBox('Закрыть кабинет «' + x.name + '»? Он перестанет видеть все проекты студии, где он есть, а его ' + (sup ? 'сотрудники' : 'бригада') + ' — объекты.'))) return;
         try { await refresh(await api('/api/crm/unlink', { json: { kind: 'contractor', ref_id: x.id, project_id: P.project.id } })); toast('Кабинет закрыт'); } catch (e) { toast(e.message); }
       } }, 'Закрыть кабинет')));
-    box.append(crewBlock(x), unlinkBtn(x));
+    box.append(crewBlock(x));
+    if (!OWNER) box.append(unlinkBtn(x));
     return box;
   }
 
@@ -2478,21 +2507,23 @@
   function hiredBlock(x) {
     const box = el('div', 'kcard');
     box.append(el('div', 'row',
-      el('div', { class: 'grow', style: 'cursor:pointer', onclick: () => contractorCard(x) },
+      el('div', { class: 'grow', style: OWNER ? null : 'cursor:pointer', onclick: OWNER ? null : () => contractorCard(x) },
         el('b', { style: 'font-size:calc(18px * var(--k));display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' '))));
     const cb = contactButtons(x).slice(0, 3);
     if (cb.length) box.append(el('div', 'cbar', ...cb));
-    box.append(tgLine('contractor', x), el('div', 'kactions',
+    box.append(tgLine('contractor', x));
+    if (!OWNER) box.append(el('div', 'kactions',
       x.tg_id ? el('button', { class: 'btn', type: 'button', onclick: () => startThread({ kind: 'org', contractor_id: x.id }) }, '💬 Написать')
         : el('button', { class: 'btn primary', type: 'button', onclick: () => inviteSheet('contractor', x, { project: P.project.id }) }, '🔗 Ссылка в бот'),
       el('button', { class: 'btn', type: 'button', onclick: () => preview({ preview: 'contractor', project: P.project.id, link: x.link_id }) }, '👁 Как видит')));
-    if (x.tg_id) box.append(el('div', { class: 'row wrap', style: 'gap:8px;margin-top:8px' },
+    if (x.tg_id && !OWNER) box.append(el('div', { class: 'row wrap', style: 'gap:8px;margin-top:8px' },
       el('button', { class: 'btn small', type: 'button', onclick: () => inviteSheet('contractor', x, { project: P.project.id }) }, '🔗 Новая ссылка'),
       el('button', { class: 'btn danger small', type: 'button', onclick: async () => {
         if (!(await confirmBox('Закрыть кабинет «' + x.name + '»? Он перестанет видеть все проекты студии, где он есть.'))) return;
         try { await refresh(await api('/api/crm/unlink', { json: { kind: 'contractor', ref_id: x.id, project_id: P.project.id } })); toast('Кабинет закрыт'); } catch (e) { toast(e.message); }
       } }, 'Закрыть кабинет')));
-    box.append(el('p', { class: 'small muted', style: 'margin:8px 0 0' }, 'Видит адрес, документацию и визуализации (без денег и контактов заказчика). Его файлы видите вы — заказчику откроете сами.'), unlinkBtn(x));
+    box.append(el('p', { class: 'small muted', style: 'margin:8px 0 0' }, 'Видит адрес, документацию и визуализации (без денег и контактов заказчика). Его файлы видите вы — заказчику откроете сами.'));
+    if (!OWNER) box.append(unlinkBtn(x));
     return box;
   }
 
@@ -2503,17 +2534,17 @@
     const box = el('div', 'crew');
     const sup = isSup(x);
     box.append(el('div', 'row between', el('b', { class: 'small' }, (sup ? 'Сотрудники на проекте' : 'Бригада на объекте') + (crew.filter((w) => w.assigned).length ? ' · ' + crew.filter((w) => w.assigned).length : '')),
-      el('button', { class: 'btn small', type: 'button', onclick: () => crewSheet({ contractor_id: x.id, sup }, P.project.id) }, sup ? '＋ Сотрудник' : '＋ Работник')));
-    if (!crew.length) box.append(el('p', { class: 'small muted', style: 'margin:4px 0 0' }, sup ? 'Менеджер, логист, монтажник — их подключает сам поставщик в своём кабинете («Сотрудники»), или вы здесь.'
+      rw(el('button', { class: 'btn small', type: 'button', onclick: () => crewSheet({ contractor_id: x.id, sup }, P.project.id) }, sup ? '＋ Сотрудник' : '＋ Работник'))));
+    if (!crew.length && !OWNER) box.append(el('p', { class: 'small muted', style: 'margin:4px 0 0' }, sup ? 'Менеджер, логист, монтажник — их подключает сам поставщик в своём кабинете («Сотрудники»), или вы здесь.'
       : 'Технолог, установщики, мастера — их подключает сам подрядчик в своём кабинете («Бригада»), или вы здесь.'));
     crew.forEach((w) => {
       box.append(el('div', 'crow',
-        el('button', { class: 'tick' + (w.assigned ? ' on' : ''), type: 'button', role: 'switch', 'aria-checked': String(w.assigned), title: w.assigned ? 'Снять с объекта' : 'Отметить на объекте',
+        OWNER ? null : el('button', { class: 'tick' + (w.assigned ? ' on' : ''), type: 'button', role: 'switch', 'aria-checked': String(w.assigned), title: w.assigned ? 'Снять с объекта' : 'Отметить на объекте',
           onclick: async () => { try { await refresh(await save('pcrew', { project_id: P.project.id, crew_id: w.id, on: !w.assigned })); toast(w.assigned ? 'Снят с объекта' : 'Отмечен на объекте'); } catch (e) { toast(e.message); } } }, w.assigned ? '✓' : ''),
         el('div', 'grow', el('b', null, w.name), el('div', 'small muted', [w.assigned ? 'на объекте' : 'не на объекте', w.position, w.tg ? '✓ в боте' : w.invite_until ? '⏳ ссылка до ' + dfmt(w.invite_until) : 'не в боте'].filter(Boolean).join(' · '))),
-        w.assigned && w.tg ? el('button', { class: 'icon-btn', type: 'button', title: 'Написать', 'aria-label': 'Написать ' + w.name, onclick: () => startThread({ kind: 'worker', crew_id: w.id }) }, '💬') : null,
-        !w.tg ? el('button', { class: 'icon-btn', type: 'button', title: 'Ссылка в бот', 'aria-label': 'Ссылка в бот для ' + w.name, onclick: () => inviteSheet('crew', w, { project: null, head: x.name }) }, '🔗') : null,
-        w.assigned ? el('button', { class: 'icon-btn', type: 'button', title: 'Как видит работник', 'aria-label': 'Как видит ' + w.name, onclick: () => preview({ preview: 'worker', project: P.project.id, crew: w.id }) }, '👁') : null));
+        w.assigned && w.tg && !OWNER ? el('button', { class: 'icon-btn', type: 'button', title: 'Написать', 'aria-label': 'Написать ' + w.name, onclick: () => startThread({ kind: 'worker', crew_id: w.id }) }, '💬') : null,
+        !w.tg && !OWNER ? el('button', { class: 'icon-btn', type: 'button', title: 'Ссылка в бот', 'aria-label': 'Ссылка в бот для ' + w.name, onclick: () => inviteSheet('crew', w, { project: null, head: x.name }) }, '🔗') : null,
+        w.assigned && !OWNER ? el('button', { class: 'icon-btn', type: 'button', title: 'Как видит работник', 'aria-label': 'Как видит ' + w.name, onclick: () => preview({ preview: 'worker', project: P.project.id, crew: w.id }) }, '👁') : null));
     });
     return box;
   }
@@ -2810,15 +2841,16 @@
     });
   }
 
-  // ---------- разработчик: только сайт и доступ к боту ----------
+  // ---------- разработчик: сайт, доступ к боту, проекты только для просмотра ----------
   function ownerView() {
+    if (tab === 'projects') app.append(el('div', 'card muted', 'Проекты сейчас не загрузились. Откройте «Проекты» ещё раз.'));
     app.append(el('h1', null, 'Доступ к боту'));
     const box = el('div'); app.append(box); accessView(box);
   }
   function ownerMode() {
     OWNER = true;
     document.querySelectorAll('.nav button').forEach((b) => {
-      if (b.dataset.tab !== 'people' && b.dataset.tab !== 'charts') b.remove();
+      if (!['projects', 'people', 'charts'].includes(b.dataset.tab)) b.remove();
       else if (b.dataset.tab === 'people') b.replaceChildren(el('span', null, '👥'), 'Доступ');
     });
     tab = 'people'; peopleTab = 'access';
@@ -2830,10 +2862,14 @@
     const q = new URLSearchParams(location.search);            // из кнопки в сообщении бота: проект, заявка, доступ
     let me = null;
     try { me = await api('/api/crm/ui'); } catch (e) {}
-    if (me && me.role === 'owner') {                           // разработчику — графики и состояние сайта, доступ к боту
+    if (me && me.role === 'owner') {                           // разработчику — графики и состояние сайта, доступ к боту, проекты (просмотр)
       if (me.size) applySize(me.size);
-      if (q.get('tab') !== 'access') { location.replace('/api/stats/app'); return; }
-      ownerMode(); render(); return;
+      if (!['access', 'projects'].includes(q.get('tab')) && !q.get('project')) { location.replace('/api/stats/app'); return; }
+      ownerMode();
+      try { await loadState(); } catch (e) {}                 // проекты не загрузились — остаётся доступ к боту
+      if (S && (q.get('tab') === 'projects' || q.get('project'))) tab = 'projects';
+      if (S && q.get('project')) return openProject(q.get('project'), false);
+      render(); return;
     }
     try { await loadState(); }
     catch (e) { app.replaceChildren(el('div', 'card muted', e.message)); return; }

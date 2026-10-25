@@ -771,8 +771,10 @@
     .then((r) => (r.ok ? r.json() : null)).then((x) => {
       if (x && x.role === 'owner') {           // у разработчика в «Студии» только сайт и доступ к боту (решено 24.10.2026)
         const b = document.getElementById('back'); b.textContent = '👥 Доступ к боту'; b.href = '/api/crm/app?tab=access';
+        const pr = document.createElement('a'); pr.className = 'back'; pr.href = '/api/crm/app?tab=projects'; pr.textContent = '📁 Проекты';
+        pr.style.marginLeft = '16px'; b.after(pr);                     // проекты студии — только просмотр (решено 25.10.2026)
         const srv = document.createElement('a'); srv.className = 'back'; srv.href = '/api/stats/server/app'; srv.textContent = '🖥 Сервер и ИИ';
-        srv.style.marginLeft = '16px'; b.after(srv);                   // техданные сервера и расход языковых моделей
+        srv.style.marginLeft = '16px'; pr.after(srv);                  // техданные сервера и расход языковых моделей
         if (x.observer) {                     // «Разработчик ПО» — наблюдатель: кабинеты глазами всех, для тестирования
           const o = document.createElement('a'); o.className = 'back'; o.href = '/api/portal/app'; o.textContent = '🧪 Кабинеты (наблюдатель)';
           o.style.marginLeft = '16px'; srv.after(o);

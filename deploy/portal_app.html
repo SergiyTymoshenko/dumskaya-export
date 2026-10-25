@@ -177,18 +177,22 @@
   .seg button[aria-pressed="true"] { background: var(--raised); font-weight: 650; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
   .toast { position: fixed; left: 50%; bottom: calc(90px + var(--sab)); transform: translateX(-50%); background: var(--text-1); color: var(--page);
     padding: 10px 16px; border-radius: 12px; font-size: calc(15px * var(--k)); z-index: 30; box-shadow: 0 6px 20px rgba(0,0,0,.2); max-width: 90%; text-align: center; }
-  .viewer { position: fixed; inset: 0; background: #0b0b0b; z-index: 20; display: flex; flex-direction: column; }
-  .viewer .img { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-height: 0; padding: 10px; }
-  .viewer img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 6px; }
-  .viewer .bar2 { display: flex; gap: 8px; padding: 10px 12px calc(12px + var(--sab)); justify-content: center; flex-wrap: wrap; }
-  .viewer .bar2 .btn { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.18); }
-  .viewer .cap { color: #ddd; font-size: calc(14px * var(--k)); text-align: center; padding: 10px 12px 0; overflow-wrap: anywhere; }
-  /* листание фото раздела: счётчик «3 / 12», стрелки по бокам, свайп пальцем, ← → на компьютере */
-  .viewer .img { position: relative; }
-  .viewer .pos { color: #fff; font-weight: 700; font-size: calc(15px * var(--k)); text-align: center; padding: 10px 12px 0; font-variant-numeric: tabular-nums; }
-  .viewer .pos + .cap { padding-top: 4px; }
-  .viewer .vnav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; width: calc(48px * var(--k)); height: calc(64px * var(--k));
-    border-radius: 14px; border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.5); color: #fff; font-size: calc(34px * var(--k)); line-height: 1;
+  /* просмотр файла (решено 25.10.2026): фото — на весь экран; сверху счётчик и подпись в одну строку (без имени файла);
+     внизу — короткая строка кнопок; рамка просмотра не растёт с «очень крупным» текстом так сильно, как страница */
+  .viewer { position: fixed; inset: 0; background: #0b0b0b; color: #fff; z-index: 20; display: flex; flex-direction: column; color-scheme: dark; }
+  .viewer .vtop { padding: 8px 14px 6px; text-align: center; }
+  .viewer .pos { font-weight: 700; font-size: calc(15px * min(var(--k), 1.25)); font-variant-numeric: tabular-nums; }
+  .viewer .cap { color: #bbb; font-size: calc(13px * min(var(--k), 1.2)); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .viewer .img { position: relative; flex: 1 1 auto; min-height: 140px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .viewer .img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+  .viewer .vbar { display: flex; gap: 8px; padding: 8px 10px calc(10px + var(--sab)); flex-wrap: wrap; justify-content: center; }
+  .viewer .vbar .btn { min-height: 40px; padding: 6px 12px; font-size: calc(14px * min(var(--k), 1.2)); font-weight: 600;
+    background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.2); }
+  .viewer .vbar .vx { min-width: 44px; padding: 6px 10px; }
+  .viewer .vbar .vdel { color: #ff9a9a; }
+  /* листание фото раздела: стрелки по бокам, свайп пальцем, ← → на компьютере */
+  .viewer .vnav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; width: calc(44px * min(var(--k), 1.25)); height: calc(60px * min(var(--k), 1.25));
+    border-radius: 14px; border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.45); color: #fff; font-size: calc(32px * min(var(--k), 1.25)); line-height: 1;
     display: flex; align-items: center; justify-content: center; padding: 0 0 4px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
   .viewer .vnav.prev { left: 6px; } .viewer .vnav.next { right: 6px; }
   .viewer .vnav:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
@@ -1226,11 +1230,11 @@
   }
   // просмотр файла; фото листаются по всему разделу (list — в том порядке, как на экране): свайп, стрелки ‹ ›, ← → на компьютере
   function viewer(f, list, dir) {
-    const v = el('div', { class: 'viewer', role: 'dialog', 'aria-modal': 'true', 'aria-label': f.title || f.name || '' });
+    const v = el('div', { class: 'viewer', role: 'dialog', 'aria-modal': 'true', 'aria-label': f.title || (f.image ? T('nav_docs') : f.name) || '' });
     const box = el('div', 'img');
     let pic = null;
-    if (f.image && f.url) { pic = el('img', { src: f.url, alt: f.name, class: dir > 0 ? 'in-next' : dir < 0 ? 'in-prev' : '' }); box.append(pic); }
-    else box.append(el('div', { style: 'color:#fff;text-align:center' }, el('div', { style: 'font-size:calc(48px * var(--k))' }, '📄'), f.name));
+    if (f.image && f.url) { pic = el('img', { src: f.url, alt: f.title || '', class: dir > 0 ? 'in-next' : dir < 0 ? 'in-prev' : '' }); box.append(pic); }
+    else box.append(el('div', { style: 'color:#fff;text-align:center;padding:0 16px' }, el('div', { style: 'font-size:calc(48px * min(var(--k), 1.25))' }, '📄'), f.title || f.name));
     const seq = (list || []).filter(isPic), i = seq.indexOf(f), many = i >= 0 && seq.length > 1;
     if (many) {
       const go = (d) => {
@@ -1248,14 +1252,16 @@
       [seq[i - 1], seq[i + 1]].forEach((y) => { if (y) new Image().src = y.url; });   // соседние фото — заранее
     }
     const own = f.can_edit && !readonly();
-    v.append(many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null, el('div', 'cap', [f.title, f.name].filter(Boolean).join(' · ') + (f.owner_name ? ' · ' + f.owner_name : '') + (f.vis && own && !f.approval ? ' · 👁 ' + visName(f) : '') + (f.approval ? ' · ' + apprText(f) : '')), box, el('div', 'bar2',
-      f.url ? el('button', { class: 'btn small', type: 'button', onclick: () => openLink(f.url) }, '↗ ' + T('open')) : null,
-      own ? el('button', { class: 'btn small', type: 'button', onclick: () => { v.remove(); docSheet(f); } }, '👁 ' + T('who_sees')) : null,
-      own ? el('button', { class: 'btn small', type: 'button', style: 'color:#ff8a8a', onclick: async () => {
+    // сверху — счётчик и подпись, кто добавил, кто видит (имя файла не показываем — решено 25.10.2026)
+    const meta = [f.title, f.owner_name, f.vis && own && !f.approval ? '👁 ' + visName(f) : '', f.approval ? apprText(f) : ''].filter(Boolean).join(' · ');
+    v.append(el('div', 'vtop', many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null, meta ? el('div', 'cap', meta) : null), box, el('div', 'vbar',
+      f.url ? el('button', { class: 'btn', type: 'button', onclick: () => openLink(f.url) }, '↗ ' + T('open')) : null,
+      own ? el('button', { class: 'btn', type: 'button', onclick: () => { v.remove(); docSheet(f); } }, '👁 ' + T('who_sees')) : null,
+      own ? el('button', { class: 'btn vdel', type: 'button', onclick: async () => {
         if (!(await confirmBox(T('delete_doc_q')))) return;
         try { await api('/api/portal/file', { json: { id: f.id, delete: true } }); v.remove(); backBtn(); toast(T('saved')); reload(); } catch (e) { toast(e.message); }
       } }, T('delete')) : null,
-      el('button', { class: 'btn small', type: 'button', onclick: () => { v.remove(); backBtn(); } }, T('close'))));
+      el('button', { class: 'btn vx', type: 'button', 'aria-label': T('close'), title: T('close') + ' (Esc)', onclick: () => { v.remove(); backBtn(); } }, '✕')));
     document.body.append(v); backBtn();
     return v;
   }

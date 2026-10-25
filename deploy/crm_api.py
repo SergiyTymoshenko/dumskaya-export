@@ -73,10 +73,22 @@ def app_page():
 
 
 def studio_user(h):
-    """Заявки, проекты, деньги, заказчики и подрядчики — только у дизайнера. Разработчику в «Студии» — сайт и доступ
-    к боту (решено 24.10.2026)."""
+    """Заявки, проекты, деньги, заказчики и подрядчики — только у дизайнера: она же единственная, кто что-то меняет.
+    Разработчику в «Студии» — сайт, доступ к боту и проекты только для просмотра (studio_reader)."""
     u = h.stats_admin()
     return u if u and u["role"] == "designer" else None
+
+
+OWNER_READ = ("/api/crm/state", "/api/crm/project", "/api/crm/rate")
+
+
+def studio_reader(h, path):
+    """Кто может прочитать: дизайнер — всё; разработчик — проекты, только просмотр (решено 25.10.2026: «добавь меня
+    к просмотру проектов»), без заявок и раздела «Деньги». Всё, что меняет данные (POST), — по-прежнему только дизайнер."""
+    u = h.stats_admin()
+    if u and (u["role"] == "designer" or (u["role"] == "owner" and path in OWNER_READ)):
+        return u
+    return None
 
 
 def portal_bg(fn, *args, **kw):
@@ -362,7 +374,7 @@ def handle_get(h, path, query):
     if not CRM:
         h.reply(503, {"ok": False, "error": "Учёт не запущен"})
         return True
-    u = studio_user(h)
+    u = studio_reader(h, path)
     if not u:
         h.reply(403, {"ok": False, "error": "Нет доступа: заявки и проекты студии — у дизайнера."})
         return True
@@ -421,7 +433,9 @@ def handle_post(h, path, query):
         return True
     u = studio_user(h)
     if not u:
-        h.reply(403, {"ok": False, "error": "Нет доступа: заявки и проекты студии — у дизайнера."})
+        r = h.stats_admin()                           # разработчик смотрит проекты — менять их может только дизайнер
+        h.reply(403, {"ok": False, "error": "Только просмотр: менять проекты может дизайнер." if r and r["role"] == "owner"
+                      else "Нет доступа: заявки и проекты студии — у дизайнера."})
         return True
     q = dict(urllib.parse.parse_qsl(query))
     who = _who(u)
