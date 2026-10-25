@@ -1,4 +1,4 @@
-# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto)
+# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto, Minotti)
 
 Откуда берутся `content/shop/sources/<фабрика>/` и каталоги `content/shop/catalog/<фабрика>.json`.
 У IDL — свой путь: `scripts/shop/idl_factory/README.md`.
@@ -19,22 +19,29 @@
    python3 molteni.py && python3 molteni_post.py  # → molteni.json → molteni2.json (только фото и техкарты этого изделия)
    python3 maxalto.py                             # → maxalto.json
    python3 delta_run.py                           # → delta.json, dl-delta.tsv и файлы в delta_files/ (долго: 20 с на запрос)
+   python3 minotti.py                             # → minotti.json (≈ 20 минут: 1 запрос в секунду)
    ```
 
    Страницы кешируются в `cache/` — повторный запуск не ходит на сайт заново. Ничего из этого не хранится в git.
 
-2. **Списки файлов**: `python3 gen_dl.py olev baxter flexform molteni maxalto` → `dl-<фабрика>.tsv`
-   («путь в выгрузке<TAB>адрес»): до 8 фото на изделие и техкарты PDF. Уже скачанным путь не меняется.
+2. **Списки файлов**: `python3 gen_dl.py olev baxter flexform molteni maxalto minotti` → `dl-<фабрика>.tsv`
+   («путь в выгрузке<TAB>адрес»): до 8 фото на изделие и техкарты PDF (у Minotti ещё чертежи элементов
+   с сайта — `images/shop/minotti/<изделие>/drawings/`). Уже скачанным путь не меняется.
 
 3. **Скачать на Mac** (Терминал Mac): списки и `dl.sh` положить в `~/Documents/dumskaya-export/_work/`, затем
    `cd ~/Documents/dumskaya-export/_work && bash dl.sh dl-baxter.tsv 600` — повторять, пока не напишет
    «не скачано: 0» (уже скачанное пропускает). Фото — в `images/shop/<фабрика>/<изделие>/`, техкарты —
    в `catalogs/<фабрика>/`. Файлы Delta Light скачиваются шагом 1 (`delta_files/`) — их перенести в выгрузку.
+   Если каталог фабрики уже в репозитории, скачать её файлы на Mac проще так (из папки сайта, Терминал Mac):
+   `python3 scripts/shop/factories/dl.py minotti` — по `content/shop/sources/<фабрика>/files.json`,
+   в `~/Documents/dumskaya-export`, по 4 файла сразу; уже скачанное пропускает.
 
 4. **Размеры фото и чертежи** (там же, нужны `pip install pillow pymupdf`):
    `python3 manifest.py <фабрика>` → `manifest-<фабрика>.json` (размеры фото, текст техкарт);
    `python3 drawings.py <фабрика>` → чертежи с размерами, вырезанные из техкарт
-   (`images/shop/<фабрика>/drawings/`, сведения — `drawings-<фабрика>.json`).
+   (`images/shop/<фабрика>/drawings/`, сведения — `drawings-<фабрика>.json`). У Minotti этот шаг не нужен:
+   чертежи элементов с размерами (см и дюймы) фабрика сама выкладывает на странице изделия.
+   У Minotti `manifest.py` ещё берёт из техкарты английскую колонку описания (она там вторая из четырёх: IT, EN, DE, FR).
 
 5. **Исходники в репозиторий**: собрать в одну папку `<фабрика>.json` из шага 1, `dl-*.tsv`, `manifest-*.json`,
    `drawings-*.json` и запустить `python3 scripts/shop/factories/make_sources.py <папка>` →
@@ -56,7 +63,13 @@
 | Flexform | EN и RU тексты и материалы, техкарты (коды исполнений), архив 2D (ссылка) | чертёж из техкарты |
 | Molteni&C | EN тексты, техкарты (материалы, отделки) | чертёж из техкарты |
 | Maxalto | EN тексты, техкарты (материалы) | чертёж из техкарты |
+| Minotti | EN тексты, дизайнер, элементы из «Technical Features» с чертежом каждого (см и дюймы), техкарты (материалы), схемы композиций (ссылка) | в названии элемента + его чертёж |
 
 Чертежи Delta Light — векторные SVG; `width`/`height` в каталоге — размеры из `viewBox` (у многих 128×128),
 это не пиксели. На сайт их отдавать как SVG или растрировать с повышенной плотностью
 (`sharp(svg, { density: 600 })`), иначе картинка получится крошечной.
+
+Minotti: список изделий — сервис их страницы списка (`/WS/wsMinottiProducts.asmx/GetList`, разделы Indoor, Outdoor,
+«2026 Collection» → новинки); тип товара — по разделу списка (Sofas, Coffee tables…), уточняется по названию
+и элементам. Имена файлов у Minotti бывают с пробелами («AERON MOD A.jpg») — адреса кодируются при сборе.
+Файлы 2D/3D, фото высокого разрешения и «архив» у Minotti — после входа; в каталоге только ссылка на страницу.

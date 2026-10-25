@@ -1,4 +1,4 @@
-# Списки на скачивание (dest \t url) + карта url → локальный путь, для baxter / molteni / flexform / delta
+# Списки на скачивание (dest \t url) + карта url → локальный путь, для baxter / molteni / flexform / maxalto / minotti
 import json, re, sys, collections
 from urllib.parse import unquote, urlparse
 def safe(n): return re.sub(r'[^\w.\-]+', '_', unquote(n)).strip('_')
@@ -79,5 +79,19 @@ def flexform():
         for u in p.get('datasheets') or []:
             out.append((f"catalogs/flexform/datasheets/{slug}_{safe(u.rsplit('/', 1)[-1])}", u))
     build('flexform', out)
+def minotti():
+    """Minotti: до 8 фото на изделие, чертежи элементов с размерами (с сайта — у каждого исполнения свой) и техкарты."""
+    out = []
+    for p in json.load(open('minotti.json')):
+        s = safe(p['slug']).lower()
+        for u in (p.get('images') or [])[:8]:
+            out.append((f"images/shop/minotti/{s}/{re.sub(r'^[0-9]+_z_', '', safe(u.rsplit('/', 1)[-1]))}", u))
+        for v in p.get('versions') or []:
+            u = v.get('drawing')
+            if u:
+                out.append((f"images/shop/minotti/{s}/drawings/{re.sub(r'^[0-9]+_n_', '', safe(u.rsplit('/', 1)[-1]))}", u))
+        for sh in p.get('tech_sheets') or []:
+            out.append((f"catalogs/minotti/sheets/{safe(sh['url'].rsplit('/', 1)[-1])}", sh['url']))
+    build('minotti', out)
 if __name__ == '__main__':
     for f in sys.argv[1:]: globals()[f]()

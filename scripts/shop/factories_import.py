@@ -529,6 +529,91 @@ def delta():
     return out
 
 
+def cm_dims(name):
+    """Размеры из названия исполнения Minotti: «Bed 192x246xh102 cm», «CM 98X98 H116», «Sofa 214 cm»,
+    «coffee table d100 h40,5», «Ø 150». Ширина × глубина (× высота) → l, w (h); диаметр → d."""
+    s = (name or "").lower().replace(",", ".")
+    n = r"(\d+(?:\.\d+)?)"
+    num = lambda x: int(float(x)) if float(x) == int(float(x)) else float(x)
+    out = {}
+    m = re.search(n + r"\s*x\s*" + n + r"(?:\s*x\s*h?\s*" + n + r")?", s)
+    if m:
+        out["l"], out["w"] = num(m.group(1)), num(m.group(2))
+        if m.group(3):
+            out["h"] = num(m.group(3))
+    m = re.search(r"[ø∅]\s*" + n + r"|(?<![a-z])d\s?" + n + r"\b", s)
+    if m and "l" not in out:
+        out["d"] = num(m.group(1) or m.group(2))
+    m = re.search(r"(?<![a-z])h\s?" + n, s)
+    if m and "h" not in out:
+        out["h"] = num(m.group(1))
+    if not out:
+        m = re.search(r"\bcm\s*" + n + r"|" + n + r"\s*cm\b", s)
+        if m:
+            out["l"] = num(m.group(1) or m.group(2))
+    return out or None
+
+
+def minotti():
+    """Minotti: товар — страница изделия; исполнения — элементы из «Technical Features» (у каждого свой чертёж
+    с размерами в см и дюймах, он и идёт в чертежи), текст техкарты — английская колонка её описания."""
+    from urllib.parse import unquote
+    files, sheets = files_of("minotti")
+    # раздел списка на сайте Minotti → тип; внутри раздела уточняем по названию изделия и его исполнений
+    HEAD = {"sofas": "sofa", "armchairs": "armchair", "chaise-longue and daybed": "chaise", "coffee tables": "coffee_table",
+            "little armchairs and stools": "chair", "accessories": "decor", "rugs": "rug", "bookcases – sideboards": "storage",
+            "tables and writing desks": "table", "tables": "table", "console tables": "console", "beds": "bed",
+            "night storage units": "bedside", "bedwear": "bedding", "sunloungers": "sunbed"}
+    FAMILY = {"sofa": {"sofa", "sofa_bed"}, "coffee_table": {"coffee_table", "side_table"}, "chair": {"chair", "stool", "bench"},
+              "storage": {"bookcase", "sideboard", "storage", "drawers"}, "table": {"table", "desk"},
+              "bedside": {"bedside", "drawers"}, "bedding": {"bedding", "throw", "cushion"}, "bed": {"bed", "headboard"},
+              "chaise": {"chaise", "sunbed"}, "decor": None}
+    Q = r"[\"“”]"
+    out = []
+    for p in json.load(open(os.path.join(SRC, "minotti/site.json"), encoding="utf-8")):
+        vers, drw = [], []
+        for v in p.get("versions") or []:
+            nm = v.get("name_en") or ""
+            if not nm and v.get("drawing"):                       # подписи нет — из имени файла чертежа
+                f = unquote(v["drawing"].rsplit("/", 1)[-1].rsplit(".", 1)[0])
+                nm = re.sub(r"\s+", " ", re.sub(r"[_-]+", " ", re.sub(r"^\d+_n_", "", f))).strip().capitalize()
+            vers.append({"name": {"en": nm}, "dims_cm": cm_dims(nm)})
+            d = img(files, v.get("drawing"))
+            if d:
+                drw.append({k: d[k] for k in ("file", "width", "height", "bytes")} | {"source": {"site": d["src"], "version": nm}})
+        heads = p.get("list_heads") or []
+        t = next((HEAD[h.lower()] for h in heads if h.lower() in HEAD), None) or "decor"
+        title_t = kw(re.sub(Q, " ", p.get("title") or ""))
+        fam = FAMILY.get(t, set())
+        if t in FAMILY:
+            t = (title_t if title_t and (fam is None or title_t in fam) else None) or majority([x["name"]["en"] for x in vers], fam) or t
+        if t == "lamp":
+            t = "floor" if re.search(r"floor|terra", p.get("title") or "", re.I) else "table_lamp"
+        # «Saki "Table"», «Fynn "Stool"» — слово-тип в кавычках: без кавычек, чтобы в названии не было «Стол Saki "Table"»
+        model = re.sub(Q + r"([^\"“”]+)" + Q, lambda m: m.group(1) if kw(m.group(1)) and kw(m.group(1)) != "lamp" else m.group(0),
+                       smart_title(p.get("title")))
+        base = re.sub(r"\s+", " ", re.sub(Q + r"[^\"“”]*" + Q + r"|\boutdoor\b", " ", model, flags=re.I)).strip() or model
+        sh, tech = [], ""
+        for u in p.get("tech_sheets") or []:
+            s, info = sheet(files, sheets, u)
+            if s:
+                sh.append(s)
+                tech = tech or info.get("tech_en", "")
+        links = {"page": p["url"]}
+        if p.get("has_2d3d_login"):
+            links["files_2d3d"] = p["url"] + "  (2D/3D — после входа на сайте Minotti)"
+        if p.get("arrangements"):
+            links["arrangements"] = p["url"] + f"  (схемы композиций PDF на странице изделия: {len(p['arrangements'])})"
+        out.append({"mfr_key": p["slug"], "model": model, "type": t, "collection": slug(model_for_name(base, t)),
+                    "category": (heads or [p.get("category")])[0], "designer": ", ".join(p.get("designers") or []) or None,
+                    "place": p.get("place") or ["indoor"], "new": bool(p.get("new")), "mfr_code": None,
+                    "text": {"en": p.get("text_en")}, "tech": {"en": tech} if tech else None,
+                    "versions": [{k: v for k, v in x.items() if v} for x in vers],
+                    "images": [x for x in (img(files, u) for u in p.get("images") or []) if x],
+                    "drawings": drw, "sheets": sh, "links": links})
+    return out
+
+
 FACT = {
     "olev": {"fn": olev, "kind": "light", "range": (3000, 3399), "name": "OLEV", "site": "https://www.olevlight.com/en/"},
     "delta": {"fn": delta, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
@@ -536,6 +621,7 @@ FACT = {
     "flexform": {"fn": flexform, "kind": "furn", "range": (5600, 6199), "name": "Flexform", "site": "https://www.flexform.it/en/products"},
     "molteni": {"fn": molteni, "kind": "furn", "range": (6200, 6799), "name": "Molteni&C", "site": "https://www.molteni.it/en/eu"},
     "maxalto": {"fn": maxalto, "kind": "furn", "range": (6800, 7099), "name": "Maxalto", "site": "https://www.maxalto.com/en"},
+    "minotti": {"fn": minotti, "kind": "furn", "range": (7100, 7899), "name": "Minotti", "site": "https://www.minotti.com/en"},
 }
 
 

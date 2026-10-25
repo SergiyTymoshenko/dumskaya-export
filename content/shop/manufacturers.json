@@ -110,5 +110,21 @@
   "catalog": "content/shop/catalog/maxalto.json",
   "sku_range": "DF-…6800–7099 (свет — DL- с теми же номерами)",
   "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
+ },
+ "minotti": {
+  "name": "Minotti",
+  "legal": "Minotti S.p.A.",
+  "country": "Италия",
+  "site": "https://www.minotti.com",
+  "address": "Via Indipendenza 152, 20821 Meda (MB), Italia",
+  "phone": "+39 0362 343499",
+  "email": "info@minotti.it",
+  "partner": "Александр Замлинский (Италия)",
+  "categories": [
+   "furniture"
+  ],
+  "catalog": "content/shop/catalog/minotti.json",
+  "sku_range": "DF-…7100–7899 (свет — DL- с теми же номерами)",
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
  }
 }

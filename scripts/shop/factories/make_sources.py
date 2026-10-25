@@ -6,7 +6,7 @@
 
 В папке с данными:
   <фабрика>.json          — что собрали краулеры этой папки (olev.json + olev_ds.json, baxter.json, flexform.json,
-                            molteni2.json, maxalto.json, delta.json);
+                            molteni2.json, maxalto.json, delta.json, minotti.json);
   dl-<фабрика>.tsv        — список скачанного: «путь в выгрузке<TAB>адрес» (его же качает dl.sh на Маке);
   manifest-<фабрика>.json — размеры фото и текст PDF (manifest.py на Маке);
   drawings-<фабрика>.json — чертежи, вырезанные из техкарт (drawings.py на Маке).
@@ -21,7 +21,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-FACTORIES = ["olev", "baxter", "flexform", "molteni", "maxalto", "delta"]
+FACTORIES = ["olev", "baxter", "flexform", "molteni", "maxalto", "delta", "minotti"]
 SITE_FILE = {"molteni": "molteni2.json"}
 
 
@@ -146,7 +146,26 @@ def flexform_sheet(texts):
     return {"codes": codes}
 
 
-SHEET = {"baxter": baxter_sheet, "molteni": molteni_sheet, "maxalto": maxalto_sheet, "flexform": flexform_sheet}
+def minotti_sheet(texts):
+    """Техкарта Minotti: английская колонка описания (manifest.py берёт её отдельно) — абзацы «Structure: …»;
+    подписи отделок КАПСОМ (парами ит./англ.) в конце колонки отбрасываем."""
+    L = [l for t in texts for l in lines_of(t)]
+    while L and re.fullmatch(r"[^a-z]{2,}", L[-1]):
+        L.pop()
+    out = []
+    for l in L:
+        head = re.match(r"^[A-Z][A-Za-z /()-]{2,40}:", l) or re.fullmatch(r"[A-Z0-9 ’'&/()-]{4,}", l)
+        if not out or head or re.search(r"[.:;]$", out[-1]) and re.match(r"^[A-Z]", l):
+            out.append(l)
+        elif out[-1].endswith("-") and re.match(r"^[a-z]", l):
+            out[-1] = out[-1][:-1] + l
+        else:
+            out[-1] += " " + l
+    return {"tech_en": "\n".join(out)}
+
+
+SHEET = {"baxter": baxter_sheet, "molteni": molteni_sheet, "maxalto": maxalto_sheet, "flexform": flexform_sheet,
+         "minotti": minotti_sheet}
 
 
 def files_json(work, f):
@@ -161,7 +180,7 @@ def files_json(work, f):
         elif dest in man["pdfs"] and "pages" in man["pdfs"][dest]:
             p = man["pdfs"][dest]
             files[url] = {"file": dest, "pages": p["pages"], "bytes": p["bytes"]}
-            info = SHEET[f](p.get("text") or []) if f in SHEET else {}
+            info = SHEET[f](p.get("text_en" if f == "minotti" else "text") or []) if f in SHEET else {}
             info["drawings"] = [d for d in drw.get(dest) or [] if isinstance(d, dict)]
             sheets[dest] = {k: v for k, v in info.items() if v}
         else:
@@ -234,6 +253,19 @@ def site_delta(work):
         q = {k: v for k, v in p.items() if k not in ("projects", "variants")}
         q["variants"] = [{"sku": v.get("sku"), "base": v.get("base"), "colour": v.get("colour"),
                           "props": {k: x for k, x in (v.get("props") or {}).items() if k != "Certificates"}} for v in p.get("variants") or []]
+        out.append(q)
+    return out
+
+
+def site_minotti(work):
+    out = []
+    for p in load(work, "minotti.json"):
+        q = {k: p.get(k) for k in ("url", "slug", "title", "category", "list_heads", "designers", "place", "new", "images",
+                                   "has_2d3d_login")}
+        q["tagline"], q["text_en"] = clean(p.get("tagline")), clean(p.get("text_en"))
+        q["tech_sheets"] = [s["url"] for s in p.get("tech_sheets") or []]
+        q["versions"] = [{"name_en": clean(v.get("name_en")), "drawing": v.get("drawing")} for v in p.get("versions") or []]
+        q["arrangements"] = [{"url": a["url"], "items": [clean(x) for x in a.get("items") or []]} for a in p.get("arrangements") or []]
         out.append(q)
     return out
 
