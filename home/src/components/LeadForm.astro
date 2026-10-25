@@ -18,8 +18,8 @@ const prefill = product ? `${T.form.about}: ${product}${model ? ` (${model})` : 
   <label class="lead__f"><span>{T.form.name}</span><input type="text" name="name" required autocomplete="name" maxlength="120" /></label>
   <label class="lead__f"><span>{T.form.contact}</span><input type="text" name="contact" required autocomplete="email" maxlength="160" /></label>
   {/* страна доставки — каталог отправляет заказы по всему миру; без неё не посчитать доставку */}
-  <label class="lead__f"><span>{T.form.country}</span><input type="text" name="country" autocomplete="country-name" maxlength="100" /></label>
-  <label class="lead__f"><span>{T.form.message}</span><textarea name="message" rows="4" maxlength="3000">{prefill}</textarea></label>
+  <label class="lead__f"><span>{T.form.country} <i class="lead__opt">({T.form.optional})</i></span><input type="text" name="country" autocomplete="country-name" maxlength="100" /></label>
+  <label class="lead__f"><span>{T.form.message} <i class="lead__opt">({T.form.optional})</i></span><textarea name="message" rows="4" maxlength="3000">{prefill}</textarea></label>
   <p class="lead__consent">{T.form.consent} <a href={paths.privacy[lang]}>{T.privacy}</a>.</p>
   <button class="btn btn--solid" type="submit" data-send>{T.form.send}</button>
   <p class="lead__status" role="status" aria-live="polite" data-status></p>
@@ -56,6 +56,7 @@ const prefill = product ? `${T.form.about}: ${product}${model ? ` (${model})` : 
   .lead textarea { resize: vertical; border: 1px solid var(--ink); padding: 10px 12px; }
   .lead input:focus-visible, .lead textarea:focus-visible { outline: 2px solid var(--oak); outline-offset: 2px; }
   .lead__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .lead__opt { font-style: normal; font-size: 13px; }
   .lead__consent { font-size: 13px; color: var(--stone); margin: 0; }
   .lead button { justify-self: start; }
   .lead__status { margin: 0; min-height: 1.5em; }

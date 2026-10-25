@@ -5,13 +5,13 @@ import ProductCard from '../components/ProductCard.astro';
 import Img from '../components/Img.astro';
 import { ui } from '../lib/i18n';
 import { typo } from '../lib/typo';
-import { departments, byCategory, byBrand, outdoorProducts, brandList, brandsInfo, paths, catName, sortProducts, countryName, type HPage, type Product } from '../lib/catalog';
+import { departments, byCategory, byBrand, outdoorProducts, brandList, brandsInfo, paths, catName, sortProducts, mixByBrand, countryName, type HPage, type Product } from '../lib/catalog';
 interface Props { page: HPage }
 const { page } = Astro.props;
 const l = page.lang;
 const T = ui(l);
 const order = departments.flatMap((d: any) => d.categories);
-const groupBy = (ps: Product[]) => order.map((c: string) => ({ c, ps: sortProducts(ps.filter((p) => p.category === c), l) })).filter((g: any) => g.ps.length);
+const groupBy = (ps: Product[], mix = false) => order.map((c: string) => ({ c, ps: (mix ? mixByBrand : sortProducts)(ps.filter((p) => p.category === c), l) })).filter((g: any) => g.ps.length);
 let lead = '';
 let groups: { c: string; ps: Product[]; more?: string }[] = [];
 let tiles: { href: string; image?: string; title: string; sub: string }[] = [];
@@ -23,7 +23,7 @@ if (page.kind === 'dept') {
   tiles = brandList.map((b) => ({ href: paths.brand(b.slug)[l], image: byBrand[b.slug].find((p) => p.images[0])?.images[0].name, title: b.name, sub: T.products(byBrand[b.slug].length) }));
 } else if (page.kind === 'outdoor') {
   lead = T.outdoorLead;
-  groups = groupBy(outdoorProducts).map((g: any) => ({ ...g, more: g.ps.length > 8 ? `${paths.cat(g.c)[l]}?outdoor=1` : undefined, ps: g.ps.slice(0, 8) }));
+  groups = groupBy(outdoorProducts, true).map((g: any) => ({ ...g, more: g.ps.length > 8 ? `${paths.cat(g.c)[l]}?outdoor=1` : undefined, ps: g.ps.slice(0, 8) }));
 } else if (page.kind === 'brand') {
   const ps = byBrand[page.key!];
   const ru = l === 'ru' ? brandsInfo[ps[0].factory]?.ru : '';             // по-русски ищут и «Минотти», «Полиформ»

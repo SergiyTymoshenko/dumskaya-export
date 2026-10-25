@@ -1,62 +1,113 @@
 ---
-// Категория: все товары категории, фильтр по фабрике и «для улицы» (на месте, без перезагрузки; ?brand=minotti — сразу с фильтром).
+// Категория: все товары категории, фильтр по фабрике и «для улицы» (на месте, без перезагрузки; ?brand=minotti&outdoor=1 — сразу с фильтром).
+// В HTML — все товары (для поиска и без скриптов); со скриптом видно первые 24, дальше — «Показать ещё».
+// Фабрики идут вперемешку (новинки первыми), чтобы первые ряды не занимала одна фабрика.
 import Crumbs from '../components/Crumbs.astro';
 import ProductCard from '../components/ProductCard.astro';
 import { ui } from '../lib/i18n';
-import { byCategory, sortProducts, type HPage } from '../lib/catalog';
+import { byCategory, mixByBrand, type HPage } from '../lib/catalog';
 interface Props { page: HPage }
 const { page } = Astro.props;
 const l = page.lang;
 const T = ui(l);
-const ps = sortProducts(byCategory[page.key!] || [], l);
+const ps = mixByBrand(byCategory[page.key!] || [], l);
 const brands = [...new Map(ps.map((p) => [p.brand_slug, p.brand])).entries()]
   .map(([slug, name]) => ({ slug, name, n: ps.filter((p) => p.brand_slug === slug).length })).sort((a, b) => b.n - a.n);
 const outdoor = ps.filter((p) => p.place !== 'indoor').length;
+const hasOut = outdoor > 0 && outdoor < ps.length;
+// подписи «N товаров» для скрипта: формы для 1, 2 и 5 (по-русски — товар, товара, товаров)
+const forms = { one: T.products(1).replace('1', '{n}'), few: T.products(2).replace('2', '{n}'), many: T.products(5).replace('5', '{n}') };
 ---
 <Crumbs items={page.crumbs} />
 <header class="lhead wrap">
   <h1 class="display">{page.h1}</h1>
-  <p class="muted">{T.products(ps.length)}</p>
+  <p class="muted" data-count data-lang={l} data-forms={JSON.stringify(forms)} aria-live="polite">{T.products(ps.length)}</p>
 </header>
-{(brands.length > 1 || (outdoor > 0 && outdoor < ps.length)) && (
+{(brands.length > 1 || hasOut) && (
   <div class="filters wrap" data-filters>
     {brands.length > 1 && (
       <div class="chips" role="group" aria-label={T.filterBrand}>
         <button type="button" class="chip" aria-pressed="true" data-brand="">{T.all}</button>
-        {brands.map((b) => <button type="button" class="chip" aria-pressed="false" data-brand={b.slug}>{b.name} <span class="muted">{b.n}</span></button>)}
+        {brands.map((b) => <button type="button" class="chip" aria-pressed="false" data-brand={b.slug}>{b.name} <span class="muted" data-n>{b.n}</span></button>)}
       </div>
     )}
-    {outdoor > 0 && outdoor < ps.length && (
-      <label class="chk"><input type="checkbox" data-out /> {T.forOutdoor} <span class="muted">{outdoor}</span></label>
+    {hasOut && (
+      <label class="chk"><input type="checkbox" data-out /> {T.forOutdoor} <span class="muted" data-n>{outdoor}</span></label>
     )}
   </div>
 )}
 <div class="grid wrap" data-grid>
   {ps.map((p, i) => <ProductCard p={p} lang={l} eager={i < 4} />)}
 </div>
+<div class="wrap lempty" data-empty hidden>
+  <p>{T.noResults}</p>
+  <button type="button" class="btn" data-reset>{T.resetFilters}</button>
+</div>
+<p class="wrap lmore" data-more-box hidden><button type="button" class="btn" data-more>{T.showMore} <span class="muted" data-rest></span></button></p>
 
 <script>
+  const PAGE = 24;                                     // делится на 2, 3 и 4 — ряды в сетке полные
   const box = document.querySelector('[data-filters]');
   const cards = [...document.querySelectorAll<HTMLElement>('[data-grid] .pc')];
-  if (box) {
-    const q = new URLSearchParams(location.search);
-    let brand = q.get('brand') || '', out = q.get('outdoor') === '1';
-    const ob = box.querySelector<HTMLInputElement>('[data-out]');
-    if (ob) ob.checked = out; else out = false;
-    const chips = [...box.querySelectorAll<HTMLButtonElement>('[data-brand]')];
-    const apply = () => {
-      chips.forEach((c) => c.setAttribute('aria-pressed', String((c.dataset.brand || '') === brand)));
-      cards.forEach((c) => { c.hidden = (!!brand && c.dataset.brand !== brand) || (out && !c.dataset.out); });
-    };
-    if (brand && !chips.some((c) => c.dataset.brand === brand)) brand = '';
-    chips.forEach((c) => c.addEventListener('click', () => {
-      brand = c.dataset.brand || '';
-      const u = new URL(location.href);
-      brand ? u.searchParams.set('brand', brand) : u.searchParams.delete('brand');
-      history.replaceState(null, '', u);
-      apply();
-    }));
-    ob?.addEventListener('change', (e) => { out = (e.target as HTMLInputElement).checked; apply(); });
-    apply();
-  }
+  const grid = document.querySelector<HTMLElement>('[data-grid]');
+  const countEl = document.querySelector<HTMLElement>('[data-count]');
+  const empty = document.querySelector<HTMLElement>('[data-empty]');
+  const moreBox = document.querySelector<HTMLElement>('[data-more-box]');
+  const rest = document.querySelector<HTMLElement>('[data-rest]');
+  const forms = JSON.parse(countEl?.dataset.forms || '{}');
+  const rules = new Intl.PluralRules(countEl?.dataset.lang || 'en');
+  const label = (n: number) => (forms[rules.select(n)] || forms.many || '{n}').replace('{n}', String(n));
+  const q = new URLSearchParams(location.search);
+  const ob = box?.querySelector<HTMLInputElement>('[data-out]') || null;
+  const chips = [...(box?.querySelectorAll<HTMLButtonElement>('[data-brand]') || [])];
+  let brand = q.get('brand') || '', out = !!ob && q.get('outdoor') === '1';
+  if (brand && !chips.some((c) => c.dataset.brand === brand)) brand = '';
+  if (ob) ob.checked = out;
+  // сколько показано — в истории, чтобы «назад» с карточки товара вернул на то же место
+  let limit = Math.max(PAGE, Number(history.state?.limit) || 0);
+
+  const fits = (c: HTMLElement, b: string, o: boolean) => (!b || c.dataset.brand === b) && (!o || !!c.dataset.out);
+  const apply = () => {
+    const shown = cards.filter((c) => fits(c, brand, out));
+    cards.forEach((c) => (c.hidden = true));
+    shown.forEach((c, i) => (c.hidden = i >= limit));
+    if (countEl) countEl.textContent = label(shown.length);
+    if (empty) empty.hidden = shown.length > 0;
+    if (grid) grid.hidden = shown.length === 0;
+    if (moreBox) moreBox.hidden = shown.length <= limit;
+    if (rest) rest.textContent = String(shown.length - limit);
+    // число у каждой фабрики — с учётом «для улицы», у «для улицы» — с учётом фабрики; пустые фильтры — неактивны
+    chips.forEach((c) => {
+      const b = c.dataset.brand || '';
+      c.setAttribute('aria-pressed', String(b === brand));
+      if (!b) return;
+      const n = cards.filter((x) => fits(x, b, out)).length;
+      const nEl = c.querySelector('[data-n]');
+      if (nEl) nEl.textContent = String(n);
+      c.disabled = n === 0 && b !== brand;
+    });
+    if (ob) {
+      const n = cards.filter((x) => fits(x, brand, true)).length;
+      const nEl = ob.parentElement?.querySelector('[data-n]');
+      if (nEl) nEl.textContent = String(n);
+      ob.disabled = n === 0 && !out;
+    }
+  };
+  const save = () => {
+    const u = new URL(location.href);
+    brand ? u.searchParams.set('brand', brand) : u.searchParams.delete('brand');
+    out ? u.searchParams.set('outdoor', '1') : u.searchParams.delete('outdoor');
+    history.replaceState({ ...(history.state || {}), limit }, '', u);
+  };
+  const changed = () => { limit = PAGE; save(); apply(); };
+  chips.forEach((c) => c.addEventListener('click', () => { brand = c.dataset.brand || ''; changed(); }));
+  ob?.addEventListener('change', () => { out = ob.checked; changed(); });
+  document.querySelector('[data-reset]')?.addEventListener('click', () => { brand = ''; out = false; if (ob) ob.checked = false; changed(); });
+  document.querySelector('[data-more]')?.addEventListener('click', () => {
+    const first = cards.filter((c) => fits(c, brand, out))[limit];
+    limit += PAGE * 2;
+    save(); apply();
+    first?.focus({ preventScroll: true });             // с клавиатуры — дальше с первого нового товара
+  });
+  apply();
 </script>

@@ -9,6 +9,26 @@ const l = page.lang;
 const T = ui(l);
 const tel = phones(l);
 const altOf = (x: typeof l) => page.alt[x] || homePath(x);
+// Колонки меню на компьютере: большой раздел — своя колонка (мебель — двойная, список в две колонки),
+// маленькие складываются в одну колонку по ~10 строк; последняя колонка — «Для улицы», фабрики, контакты.
+// На телефоне колонок нет: разделы — строки, категории раскрываются по нажатию (открыт раздел текущей страницы).
+type Sec = { id: string; href: string; title: string; items?: { href: string; label: string }[]; wide?: boolean; gap?: boolean };
+const cols: { wide?: boolean; secs: Sec[] }[] = [];
+let small: Sec[] = [], size = 0;
+for (const d of departments) {
+  const items = d.categories.map((c: string) => ({ href: paths.cat(c)[l], label: catName(c, l) }));
+  const sec: Sec = { id: `m-${d.id}`, href: paths.dept(d)[l], title: d.name[l], items, wide: items.length > 12 };
+  if (items.length >= 6) { cols.push({ wide: sec.wide, secs: [sec] }); continue; }
+  if (size && size + items.length + 1 > 10) { cols.push({ secs: small }); small = []; size = 0; }
+  small.push(sec); size += items.length + 1;
+}
+if (small.length) cols.push({ secs: small });
+cols.push({ secs: [
+  ...(outdoorProducts.length ? [{ id: 'm-outdoor', href: paths.outdoor()[l], title: tax.outdoor.name[l] }] : []),
+  { id: 'm-brands', href: paths.brands[l], title: T.brands, items: brandList.map((b) => ({ href: paths.brand(b.slug)[l], label: b.name })) },
+  { id: 'm-contact', href: paths.contact[l], title: T.contact, gap: true },
+] });
+const here = (s: Sec) => s.href === page.path || !!s.items?.some((x) => x.href === page.path);
 ---
 <header class="hdr">
   <button class="hdr__burger" type="button" aria-expanded="false" aria-controls="menu" data-menu-open>
@@ -51,18 +71,19 @@ const altOf = (x: typeof l) => page.alt[x] || homePath(x);
       {LANGS.map((x) => x === l ? <span aria-current="true">{LANG_LABEL[x]}</span> : <a href={altOf(x)} hreflang={HREFLANG[x]} lang={HREFLANG[x]}>{LANG_LABEL[x]}</a>)}
     </p>
     <div class="menu__groups">
-      {departments.map((d: any) => (
-        <section>
-          <h2 class="menu__group"><a href={paths.dept(d)[l]}>{d.name[l]}</a></h2>
-          <ul>{d.categories.map((c: string) => <li><a href={paths.cat(c)[l]} aria-current={paths.cat(c)[l] === page.path ? 'page' : undefined}>{catName(c, l)}</a></li>)}</ul>
-        </section>
+      {cols.map((c) => (
+        <div class:list={['menu__col', c.wide && 'menu__col--wide']}>
+          {c.secs.map((s) => (
+            <section class:list={['menu__sec', s.gap && 'menu__sec--gap', here(s) && 'is-open']}>
+              <h2 class="menu__group">
+                <a href={s.href} aria-current={s.href === page.path ? 'page' : undefined}>{s.title}</a>
+                {s.items && <button type="button" class="menu__tog" aria-expanded={here(s) ? 'true' : 'false'} aria-controls={s.id} aria-label={`${T.showCats}: ${s.title}`}></button>}
+              </h2>
+              {s.items && <ul id={s.id} class:list={[s.wide && 'menu__ul--2']}>{s.items.map((x) => <li><a href={x.href} aria-current={x.href === page.path ? 'page' : undefined}>{x.label}</a></li>)}</ul>}
+            </section>
+          ))}
+        </div>
       ))}
-      <section>
-        {outdoorProducts.length > 0 && <h2 class="menu__group"><a href={paths.outdoor()[l]}>{tax.outdoor.name[l]}</a></h2>}
-        <h2 class="menu__group"><a href={paths.brands[l]}>{T.brands}</a></h2>
-        <ul>{brandList.map((b) => <li><a href={paths.brand(b.slug)[l]}>{b.name}</a></li>)}</ul>
-        <h2 class="menu__group menu__group--gap"><a href={paths.contact[l]}>{T.contact}</a></h2>
-      </section>
     </div>
     <div class="menu__foot">
       {tel.length > 0 && <p>{tel.map((p: any) => <span class="menu__phone"><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{cityName(p, l)}</span></span>)}</p>}
@@ -79,6 +100,13 @@ const altOf = (x: typeof l) => page.alt[x] || homePath(x);
   const open = () => { menu.hidden = false; document.documentElement.classList.add('menu-open'); openBtn.setAttribute('aria-expanded', 'true'); closeBtn.focus(); };
   const close = () => { menu.hidden = true; document.documentElement.classList.remove('menu-open'); openBtn.setAttribute('aria-expanded', 'false'); openBtn.focus(); };
   openBtn.addEventListener('click', open);
+  // на телефоне категории раздела раскрываются по стрелке; без скрипта видно всё
+  menu.dataset.acc = '';
+  menu.querySelectorAll<HTMLButtonElement>('.menu__tog').forEach((b) => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-expanded') !== 'true';
+    b.setAttribute('aria-expanded', String(on));
+    b.closest('.menu__sec')?.classList.toggle('is-open', on);
+  }));
   closeBtn.addEventListener('click', close);
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) close(); });
 </script>
@@ -101,7 +129,8 @@ const altOf = (x: typeof l) => page.alt[x] || homePath(x);
   .hdr__logo img { display: block; height: 24px; width: auto; }
   @media (min-width: 720px) { .hdr__logo img { height: 32px; } }
   .hdr__right { justify-self: end; display: flex; align-items: center; gap: 20px; }
-  .hdr__langs { display: none; gap: 12px; font-size: 13px; letter-spacing: 0.06em; }
+  .hdr__langs { display: none; gap: 2px; font-size: 13px; letter-spacing: 0.06em; }
+  .hdr__langs > * { display: inline-grid; place-items: center; min-width: 32px; min-height: 44px; }
   .hdr__langs a { color: var(--stone); text-decoration: none; }
   .hdr__langs a:hover, .hdr__langs [aria-current] { color: var(--ink); }
   @media (min-width: 720px) { .hdr__langs { display: flex; } }
@@ -112,14 +141,32 @@ const altOf = (x: typeof l) => page.alt[x] || homePath(x);
   .menu { position: fixed; inset: 0; z-index: 50; overflow-y: auto; background: var(--paper); }
   .menu__body { padding: clamp(16px, 4vw, 48px) var(--pad) 48px; display: grid; gap: 32px; }
   .menu__groups { display: grid; gap: 32px; }
-  @media (min-width: 720px) { .menu__groups { grid-template-columns: repeat(2, 1fr); } }
-  @media (min-width: 1100px) { .menu__groups { grid-template-columns: repeat(4, 1fr); } }
-  .menu__group { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; margin-bottom: 10px; color: var(--ink); }
+  .menu__col { display: grid; gap: 24px; align-content: start; }
+  @media (min-width: 720px) { .menu__groups { grid-template-columns: repeat(2, minmax(0, 1fr)); } .menu__col--wide { grid-column: span 2; } }
+  @media (min-width: 1100px) { .menu__groups { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 32px 28px; } }
+  .menu__ul--2 { columns: 2; column-gap: 28px; }
+  .menu__ul--2 li { break-inside: avoid; }
+  .menu__group { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-family: var(--display); text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; margin-bottom: 10px; color: var(--ink); }
   .menu__group a { text-decoration: none; }
-  .menu__group--gap { margin-top: 24px; }
-  .menu__groups ul { list-style: none; margin: 0 0 18px; padding: 0; }
+  .menu__sec--gap { margin-top: 8px; }
+  .menu__tog { display: none; }
+  .menu__groups ul { list-style: none; margin: 0; padding: 0; }
   .menu__groups li a { display: inline-block; padding-block: 5px; text-decoration: none; }
   .menu__groups a[aria-current] { color: var(--oak); }
+  /* телефон: разделы — строки с линией, категории под стрелкой */
+  @media (max-width: 719px) {
+    .menu__groups, .menu__col { gap: 0; }
+    .menu__sec { border-bottom: 1px solid var(--line); }
+    .menu__sec--gap { margin-top: 0; }
+    .menu__group { margin: 0; }
+    .menu__group a { flex: 1; padding-block: 15px; }
+    .menu__tog { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-right: -12px; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; }
+    .menu__tog::before { content: ''; width: 8px; height: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+    .menu__tog[aria-expanded='true']::before { transform: translateY(2px) rotate(-135deg); }
+    .menu__groups ul { padding-bottom: 12px; }
+    .menu__groups li a { padding-block: 9px; font-size: 16px; }
+    .menu[data-acc] .menu__sec:not(.is-open) > ul { display: none; }
+  }
   .menu__foot { font-size: 15px; border-top: 1px solid var(--line); padding-top: 24px; display: grid; gap: 8px; }
   .menu__foot p { margin: 0; }
   .menu__phone { display: inline-block; margin-right: 24px; }

@@ -127,16 +127,35 @@ const meta: [string, string, string?][] = [
   <button type="button" class="lb__nav lb__nav--prev" data-lb-prev aria-label={T.photoPrev}>‹</button>
   <img alt="" data-lb-img />
   <button type="button" class="lb__nav lb__nav--next" data-lb-next aria-label={T.photoNext}>›</button>
+  <p class="lb__n" data-lb-n aria-hidden="true"></p>
 </dialog>
 
 <script>
   const lb = document.querySelector<HTMLDialogElement>('[data-lb]')!;
   const img = lb.querySelector<HTMLImageElement>('[data-lb-img]')!;
+  const num = lb.querySelector<HTMLElement>('[data-lb-n]')!;
   let list: HTMLElement[] = [], at = 0;
-  const show = (i: number) => { at = (i + list.length) % list.length; const b = list[at]; img.src = b.dataset.full!; img.alt = b.querySelector('img')?.alt || ''; };
+  const load = (src: string) => new Promise<void>((ok) => { const x = new Image(); x.onload = x.onerror = () => ok(); x.src = src; });
+  // сразу — уже загруженная миниатюра (без белого экрана), большое фото подменяет её, когда загрузится; соседнее — заранее
+  const show = (i: number) => {
+    at = (i + list.length) % list.length;
+    const b = list[at], th = b.querySelector('img'), full = b.dataset.full!;
+    img.alt = th?.alt || b.textContent?.trim() || '';
+    img.src = th?.currentSrc || full;
+    num.textContent = `${at + 1} / ${list.length}`;
+    load(full).then(() => { if (list[at] === b) img.src = full; });
+    if (list.length > 1) load(list[(at + 1) % list.length].dataset.full!);
+  };
   document.querySelectorAll<HTMLElement>('[data-gallery]').forEach((g) => {
     const items = [...g.querySelectorAll<HTMLElement>('[data-full]')].filter((b) => b.dataset.full);
-    items.forEach((b, i) => b.addEventListener('click', () => { list = items; show(i); lb.showModal(); }));
+    items.forEach((b, i) => b.addEventListener('click', () => { list = items; lb.classList.toggle('lb--one', items.length < 2); show(i); lb.showModal(); }));
+  });
+  // на телефоне — листать пальцем
+  let x0 = 0, y0 = 0;
+  lb.addEventListener('touchstart', (e) => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  lb.addEventListener('touchend', (e) => {
+    const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (list.length > 1 && Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(at + (dx < 0 ? 1 : -1));
   });
   lb.querySelector('[data-lb-close]')!.addEventListener('click', () => lb.close());
   lb.querySelector('[data-lb-prev]')!.addEventListener('click', () => show(at - 1));

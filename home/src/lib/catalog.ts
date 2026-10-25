@@ -51,6 +51,18 @@ export function brandNames(l: Lang, max = 6) {
 }
 /** Продукты по порядку: новинки, потом по названию (фабрики перемешаны) */
 export const sortProducts = (ps: Product[], l: Lang) => [...ps].sort((a, b) => Number(b.new) - Number(a.new) || a.name[l].localeCompare(b.name[l]));
+/** Для списков нескольких фабрик (раздел, новинки на главной): фабрики вперемешку по одной — в первом ряду
+ *  все фабрики раздела, а не одна (у Baxter новинок больше всех); у каждой фабрики сначала её новинки, потом по названию.
+ *  Первыми идут фабрики с новинками. */
+export function mixByBrand(ps: Product[], l: Lang) {
+  const groups = new Map<string, Product[]>();
+  for (const p of sortProducts(ps, l)) { if (!groups.has(p.brand_slug)) groups.set(p.brand_slug, []); groups.get(p.brand_slug)!.push(p); }
+  const fresh = (x: Product[]) => x.filter((p) => p.new).length;
+  const lists = [...groups.values()].sort((a, b) => fresh(b) - fresh(a) || b.length - a.length);
+  const out: Product[] = [];
+  for (let i = 0; lists.some((x) => i < x.length); i++) for (const x of lists) if (i < x.length) out.push(x[i]);
+  return out;
+}
 
 // ---------- страницы ----------
 export type Crumb = { label: string; href?: string };

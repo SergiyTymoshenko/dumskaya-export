@@ -7,6 +7,7 @@ const { d } = Astro.props;
 const full = manifest[d.name]?.files.at(-1)?.[1];
 ---
 <button type="button" class="draws__i" data-full={full ? `/img/${full}` : ''}>
-  <Img name={d.name} alt={d.title || ''} sizes="(min-width: 960px) 33vw, 50vw" />
+  {/* подпись под чертежом и так называет кнопку — у фото alt пустой, чтобы не читалось дважды */}
+  <Img name={d.name} alt="" sizes="(min-width: 960px) 33vw, 50vw" />
   {d.title && <span class="draws__t">{d.title}</span>}
 </button>

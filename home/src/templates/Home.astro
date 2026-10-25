@@ -6,7 +6,7 @@ import ProductCard from '../components/ProductCard.astro';
 import LeadForm from '../components/LeadForm.astro';
 import { ui } from '../lib/i18n';
 import { typo } from '../lib/typo';
-import { products, departments, outdoorProducts, brandList, byBrand, byCategory, paths, tax, manifest, brandNames, sortProducts, type HPage, type Product } from '../lib/catalog';
+import { products, departments, outdoorProducts, brandList, byBrand, byCategory, paths, tax, manifest, brandNames, sortProducts, mixByBrand, type HPage, type Product } from '../lib/catalog';
 interface Props { page: HPage }
 const { page } = Astro.props;
 const l = page.lang;
@@ -15,15 +15,23 @@ const T = ui(l);
 const wide = (p: Product) => p.images.find((im) => im.w / im.h > 1.45 && im.w >= 1600 && manifest[im.name]);
 const heroP = [...products].sort((a, b) => Number(b.new) - Number(a.new)).find(wide);
 const hero = heroP ? wide(heroP)!.name : products[0]?.images[0]?.name;
+// плитки разделов: у каждой своё фото (не как в шапке и не как у соседней); у разделов — снимки из дома, у «Для улицы» — с улицы
+const used = new Set<string>([hero].filter(Boolean) as string[]);
+const pickPic = (ps: Product[]) => {
+  const im = [...ps.filter((p) => p.place === 'indoor'), ...ps].map((p) => p.images.find((x) => wide(p) === x && !used.has(x.name))).find(Boolean)
+    || ps.flatMap((p) => p.images).find((x) => !used.has(x.name)) || ps[0]?.images[0];
+  if (im) used.add(im.name);
+  return im?.name;
+};
+const outPic = outdoorProducts.length ? pickPic(outdoorProducts.filter((p) => p.place === 'outdoor').concat(outdoorProducts)) : undefined;
 const deptTiles = [
   ...departments.map((d: any) => {
     const ps = products.filter((p) => p.department === d.id);
-    const pic = ps.map(wide).find(Boolean) || ps[0]?.images[0];
-    return { href: paths.dept(d)[l], title: d.name[l], sub: T.products(ps.length), image: pic?.name };
+    return { href: paths.dept(d)[l], title: d.name[l], sub: T.products(ps.length), image: pickPic(ps) };
   }),
-  ...(outdoorProducts.length ? [{ href: paths.outdoor()[l], title: tax.outdoor.name[l], sub: T.products(outdoorProducts.length), image: (outdoorProducts.map(wide).find(Boolean) || outdoorProducts[0].images[0])?.name }] : []),
+  ...(outdoorProducts.length ? [{ href: paths.outdoor()[l], title: tax.outdoor.name[l], sub: T.products(outdoorProducts.length), image: outPic }] : []),
 ];
-const fresh = sortProducts(products.filter((p) => p.new), l).slice(0, 8);
+const fresh = mixByBrand(products.filter((p) => p.new), l).slice(0, 8);   // новинки разных фабрик, а не восемь одной
 const pick = fresh.length >= 4 ? fresh : sortProducts(products, l).filter((_, i) => i % Math.max(1, Math.floor(products.length / 8)) === 0).slice(0, 8);
 const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-design.com/', de: 'https://dumskaya-design.com/de', fr: 'https://dumskaya-design.com/en', es: 'https://dumskaya-design.com/en' }[l];
 ---
@@ -44,12 +52,16 @@ const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-des
 <section class="home-sec">
   <h2 class="section-title wrap">{T.sections}</h2>
   <div class="tiles tiles--3 home-depts">
-    {deptTiles.map((t, i) => (
-      <a class="tile" href={t.href}>
-        <Img name={t.image} alt={t.title} sizes="(min-width: 960px) 33vw, 50vw" eager={i < 3} />
+    {deptTiles.map((t, i) => {
+      // последняя плитка одна в ряду — на всю ширину (в два ряда по 2 на телефоне, по 3 на компьютере)
+      const last = i === deptTiles.length - 1, w2 = last && deptTiles.length % 2 === 1, w3 = last && deptTiles.length % 3 === 1;
+      return (
+      <a class:list={['tile', w2 && 'tile--w2', w3 && 'tile--w3']} href={t.href}>
+        <Img name={t.image} alt={t.title} sizes={w3 ? '100vw' : w2 ? '(min-width: 960px) 33vw, 100vw' : '(min-width: 960px) 33vw, 50vw'} eager={i < 3} />
         <span class="tile__cap"><span class="tile__title">{t.title}</span><span class="tile__sub" style="display:block">{t.sub}</span></span>
       </a>
-    ))}
+      );
+    })}
   </div>
 </section>
 

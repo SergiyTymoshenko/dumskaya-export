@@ -75,7 +75,7 @@ const verify = homeSite.verification || {};
 <body>
   <a class="skip" href="#main">{ui(page.lang).skip}</a>
   {/* полоса над шапкой на всех страницах: доставка по всему миру — главное, что надо знать покупателю из другой страны */}
-  <p class="topbar"><a href={`${homePath(page.lang)}#delivery`}>{ui(page.lang).ship_bar}</a></p>
+  <aside class="topbar" aria-label={ui(page.lang).ship_h}><a href={`${homePath(page.lang)}#delivery`}>{ui(page.lang).ship_bar}</a></aside>
   <Header page={page} />
   <main id="main">
     <slot />

@@ -1,5 +1,6 @@
 /* DUMSKAYA HOME: то, чего нет в стилях сайта студии (src/styles/global.css) — каталог, карточка товара. */
-.crumbs { padding-block: 20px 0; }
+.crumbs { padding-block: 10px 0; }
+.crumbs a { display: inline-block; padding-block: 10px; }   /* больше места для пальца, крошки той же высоты */
 .lhead { padding-block: 16px 20px; display: grid; gap: 4px; }
 .lhead h1 { font-size: clamp(22px, 2.6vw, 32px); }
 .lhead p { margin: 0; }
@@ -26,6 +27,17 @@
 .chip[aria-pressed='true'] .muted { color: #cfcac2; }
 .chk { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; min-height: 40px; cursor: pointer; }
 .chk input { width: 18px; height: 18px; accent-color: var(--ink); }
+.chip:disabled { opacity: .4; cursor: default; }
+.chk:has(input:disabled) { opacity: .4; cursor: default; }
+.lempty { display: grid; gap: 16px; justify-items: start; padding-bottom: clamp(40px, 6vw, 80px); }
+.lempty p { margin: 0; }
+.lmore { margin: calc(-1 * clamp(16px, 3vw, 40px)) 0 0; padding-bottom: clamp(40px, 6vw, 80px); text-align: center; }
+.lmore .muted { margin-left: 6px; }
+.lmore .btn:hover .muted { color: inherit; }
+
+/* плитки разделов на главной: последняя, если одна в ряду, — на всю ширину */
+@media (max-width: 959px) { .home-depts .tile--w2 { grid-column: 1 / -1; } .home-depts .tile.tile--w2 img, .home-depts .tile.tile--w2 .ph { aspect-ratio: 8 / 3; } }
+@media (min-width: 960px) { .home-depts .tile--w3 { grid-column: 1 / -1; } .home-depts .tile.tile--w3 img, .home-depts .tile.tile--w3 .ph { aspect-ratio: 4 / 1; } }
 
 /* разделы и фабрики: плитки с фото и подписью под ним */
 .cats { display: grid; gap: 28px 16px; grid-template-columns: repeat(2, 1fr); padding-bottom: clamp(48px, 7vw, 96px); }
@@ -38,8 +50,8 @@
 @media (hover: hover) { .cat:hover { color: var(--oak); } }
 
 .group { padding-top: 8px; }
-.group__h { font: 400 clamp(15px, 1.5vw, 18px)/1.4 var(--display); text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 20px; color: var(--ink); }
-.group__h a { text-decoration: none; }
+.group__h { font: 400 clamp(15px, 1.5vw, 18px)/1.4 var(--display); text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 14px; color: var(--ink); }
+.group__h a { display: inline-block; padding-block: 6px 6px; text-decoration: none; }
 .group__more { margin: -24px 0 48px; }
 
 /* главная */
@@ -52,8 +64,8 @@
 .home-sec { padding-block: clamp(24px, 4vw, 48px); }
 .home-sec .section-title { margin-bottom: 20px; }
 .home-depts .tile img { aspect-ratio: 4 / 3; }
-.brands { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 36px; font: 400 clamp(14px, 1.4vw, 17px)/1.5 var(--display); text-transform: uppercase; letter-spacing: 0.14em; }
-.brands a { text-decoration: none; }
+.brands { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0 36px; font: 400 clamp(14px, 1.4vw, 17px)/1.5 var(--display); text-transform: uppercase; letter-spacing: 0.14em; }
+.brands a { display: inline-block; padding-block: 8px; text-decoration: none; }
 .brands .muted { font-family: var(--body); letter-spacing: 0; font-size: 13px; }
 /* доставка по всему миру: полоса над шапкой на всех страницах и блок на главной */
 .topbar { margin: 0; background: var(--ink); color: var(--paper); text-align: center; font: 400 12px/1.4 var(--display);
@@ -127,6 +139,8 @@
 .lb__x { top: 8px; right: 8px; }
 .lb__nav--prev { left: 4px; top: 50%; transform: translateY(-50%); }
 .lb__nav--next { right: 4px; top: 50%; transform: translateY(-50%); }
+.lb__n { position: absolute; left: 0; right: 0; bottom: 12px; margin: 0; text-align: center; font-size: 13px; letter-spacing: 0.08em; color: var(--stone); }
+.lb--one .lb__nav, .lb--one .lb__n { display: none; }
 
 /* контакты, политика */
 .contact { display: grid; gap: 48px; padding-block: 16px clamp(48px, 7vw, 96px); }
@@ -134,8 +148,9 @@
 .contact h1 { font-size: clamp(22px, 2.6vw, 32px); margin-bottom: 12px; }
 .contact .section-title { font-size: 14px; margin: 28px 0 8px; }
 .contact__lead { max-width: var(--measure); }
-.contact__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.contact__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .contact address { font-style: normal; }
+.contact__list a, .contact address a { display: inline-block; padding-block: 4px; }
 .policy { padding-block: 16px clamp(48px, 7vw, 96px); }
 .policy h1 { font-size: clamp(22px, 2.6vw, 32px); margin-bottom: 24px; }
 .policy .section-title { font-size: 15px; margin: 28px 0 10px; }
