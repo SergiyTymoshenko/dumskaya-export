@@ -28,8 +28,18 @@ if ! ssh "$HOST" 'test -d /var/www/dumskaya-home/site'; then
   echo "Сервер ещё не настроен под dumskaya-home.com. Сначала выложите сайт студии: npm run deploy (один раз спросит пароль sudo)."
   exit 1
 fi
-MODE="$(ssh "$HOST" 'cat ~/dumskaya/home-mode 2>/dev/null || echo preview')"
+SERVER_MODE="$(ssh "$HOST" 'cat ~/dumskaya/home-mode 2>/dev/null || echo preview')"
+# HOME_MODE=live — собрать для домена (только выложенные фабрики), пока сервер ещё в просмотре: так при включении
+# домена в папке сайта уже лежит то, что можно показывать (и IndexNow не отправит поисковикам страницы просмотра)
+MODE="${HOME_MODE:-$SERVER_MODE}"
+case "$MODE" in preview|live) ;; *) echo "HOME_MODE: preview или live"; exit 1 ;; esac
+if [ "$SERVER_MODE" = live ] && [ "$MODE" = preview ]; then
+  echo "Каталог открыт на домене — собирать все фабрики (просмотр) нельзя: их увидели бы посетители и поисковики."; exit 1
+fi
 if [ "$MODE" = preview ]; then export HOME_ALL=1; else unset HOME_ALL HOME_FACTORIES; fi
+if [ "$MODE" = live ] && ! python3 -c 'import json,sys; sys.exit(0 if json.load(open("content/home/publish.json"))["factories"] else 1)' 2>/dev/null; then
+  echo "Для домена нечего собирать: ни одна фабрика ещё не выложена (content/home/publish.json)."; exit 1
+fi
 
 echo "▸ 1/5 Каталог ($([ "$MODE" = preview ] && echo "просмотр: все фабрики${HOME_FACTORIES:+ — $HOME_FACTORIES}" || echo "на домене: выложенные фабрики"))"
 python3 scripts/shop/catalog_index.py --write --quiet
@@ -62,7 +72,9 @@ DELAY=""; case "$(rsync --help 2>&1)" in *--delay-updates*) DELAY="--delay-updat
 rsync -az --exclude '.DS_Store' home/img/ "$HOST:/var/www/dumskaya-home/site/img/"
 rsync -az --delete $DELAY --exclude '.DS_Store' --exclude '/img/' home/dist/ "$HOST:/var/www/dumskaya-home/site/"
 rsync -az --delete --exclude '.DS_Store' home/img/ "$HOST:/var/www/dumskaya-home/site/img/"
-if [ "$MODE" = live ]; then
+if [ "$MODE" = live ] && [ "$SERVER_MODE" != live ]; then
+  echo "Готово: собрано для домена (только выложенные фабрики). Сам домен ещё закрыт — откроется командой server-setup.sh … home-live."
+elif [ "$MODE" = live ]; then
   CODE=000
   for _ in 1 2 3 4 5; do CODE="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 https://dumskaya-home.com/ || true)"; [ "$CODE" = 200 ] && break; sleep 3; done
   [ "$CODE" = 200 ] && echo "Готово: https://dumskaya-home.com — сайт отвечает." || { echo "ВНИМАНИЕ: файлы выложены, но https://dumskaya-home.com не отвечает (код $CODE). Пришлите Claude этот вывод."; exit 1; }
