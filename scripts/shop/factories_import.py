@@ -614,6 +614,52 @@ def minotti():
     return out
 
 
+def poliform():
+    """Poliform: товар — страница изделия (EN + RU). Исполнения — подписи чертежей из вкладки DIMENSIONS (у Poliform
+    размеры нарисованы на чертежах SVG, числами в тексте их нет); материалы — пары «Structure: …»; отделки с кодами.
+    Файлы 2D/3D у Poliform — после формы подписки: не скачаны, их список (формат, размер, адрес) — в files_after_login."""
+    files, _ = files_of("poliform")
+    out = []
+    for p in json.load(open(os.path.join(SRC, "poliform/site.json"), encoding="utf-8")):
+        props = p.get("props") or {}
+        kind = props.get("Type") or props.get("Typology") or ""
+        CAT = {"day systems": "storage", "night systems": "wardrobe"}
+        t = kw(kind)
+        if t in (None, "decor", "lamp"):
+            t = (CAT.get((p.get("category") or "").lower()) or kw(p.get("category")) or kw(p["slug"].replace("-", " "))
+                 or kw(p.get("title")) or kw(p.get("collection_line")) or t or "decor")
+        if t == "lamp":                                   # какой именно светильник — по типу, названию и тексту
+            about = " ".join(x for x in (kind, p.get("title"), (p.get("text_en") or "")[:400]) if x)
+            t = next((x for x, _ in KW if x in LIGHT and kw(about) == x), None) or \
+                ("floor" if re.search(r"floor|standing", about, re.I) else "table_lamp")
+        model = smart_title(p.get("title"), mixed=True)
+        vers, drw = [], []
+        for v in p.get("dimensions") or []:
+            nm = " — ".join(x for x in (v.get("section"), v.get("group"), v.get("title")) if x)
+            if nm and nm not in [x["name"]["en"] for x in vers]:
+                vers.append({"name": {"en": nm}})
+            d = img(files, v.get("drawing"))
+            if d:
+                drw.append({k: d[k] for k in ("file", "width", "height", "bytes")} | {"source": {"site": d["src"], "version": nm or None}})
+        tech = "\n".join(f"{k}: {v}" for k, v in props.items())
+        gated = [{"title": f.get("title"), "size": f.get("size"), "url": f.get("url")} for f in p.get("files_2d3d_form") or []]
+        links = {"page": p["url"], "page_ru": p.get("url_ru") or None}
+        if gated:
+            links["files_2d3d"] = p["url"] + "  (2D/3D — после формы подписки на сайте Poliform; список файлов — files_after_login)"
+        place = ["outdoor"] if re.search(r"outdoor", " ".join(x for x in (p.get("slug"), p.get("category"), kind,
+                                                                         (p.get("text_en") or "")[:200]) if x), re.I) else ["indoor"]
+        out.append({"mfr_key": p["slug"], "model": model, "type": t,
+                    "collection": slug(model_for_name(re.sub(r"\boutdoor\b", "", model, flags=re.I).strip() or model, t)),
+                    "category": p.get("category"), "line": p.get("collection_line"), "designer": p.get("designer") or None,
+                    "year": p.get("year") or None, "place": place, "new": bool(p.get("new")), "mfr_code": None,
+                    "text": {"en": p.get("text_en"), "ru": p.get("text_ru")}, "tech": {"en": tech} if tech else None,
+                    "finishes": p.get("finishes") or None, "versions": vers,
+                    "images": [x for x in (img(files, u) for u in p.get("images") or []) if x],
+                    "drawings": drw, "sheets": [], "links": {k: v for k, v in links.items() if v},
+                    "files_after_login": gated})
+    return out
+
+
 FACT = {
     "olev": {"fn": olev, "kind": "light", "range": (3000, 3399), "name": "OLEV", "site": "https://www.olevlight.com/en/"},
     "delta": {"fn": delta, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
@@ -622,6 +668,7 @@ FACT = {
     "molteni": {"fn": molteni, "kind": "furn", "range": (6200, 6799), "name": "Molteni&C", "site": "https://www.molteni.it/en/eu"},
     "maxalto": {"fn": maxalto, "kind": "furn", "range": (6800, 7099), "name": "Maxalto", "site": "https://www.maxalto.com/en"},
     "minotti": {"fn": minotti, "kind": "furn", "range": (7100, 7899), "name": "Minotti", "site": "https://www.minotti.com/en"},
+    "poliform": {"fn": poliform, "kind": "furn", "range": (7900, 8399), "name": "Poliform", "site": "https://www.poliform.it/en/"},
 }
 
 
@@ -676,7 +723,8 @@ def build(f):
     for p in items:                                     # поля в одном порядке, пустые — не пишем
         q = {"sku": p["sku"]}
         for k in ("name", "model", "type", "collection", "category", "category_ru", "line", "designer", "year", "place", "new",
-                  "mfr_key", "mfr_code", "text", "tech", "finishes", "versions", "images", "drawings", "sheets", "links"):
+                  "mfr_key", "mfr_code", "text", "tech", "finishes", "versions", "images", "drawings", "sheets", "links",
+                  "files_after_login"):
             v = p.get(k)
             if isinstance(v, dict):
                 v = {kk: vv for kk, vv in v.items() if vv not in (None, "", [], {})}

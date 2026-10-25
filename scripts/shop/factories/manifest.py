@@ -33,7 +33,12 @@ for top, kind in ((f'images/shop/{f}', 'images'), (f'catalogs/{f}', 'pdfs')):
             if rel in M[kind]: continue
             if time.time() > end: save(); print('пауза, сделано', len(M['images']), len(M['pdfs'])); sys.exit(0)
             try:
-                if kind == 'images':
+                if kind == 'images' and name.lower().endswith('.svg'):      # чертёж SVG — размеры по viewBox
+                    t = open(p, 'rb').read(8192).decode('utf-8', 'ignore')
+                    m = re.search(r'viewBox="\s*[-\d.]+[ ,]+[-\d.]+[ ,]+([\d.]+)[ ,]+([\d.]+)', t) or \
+                        re.search(r'<svg[^>]*\swidth="([\d.]+)(?:px)?"[^>]*\sheight="([\d.]+)(?:px)?"', t)
+                    M[kind][rel] = [round(float(m.group(1))), round(float(m.group(2))), os.path.getsize(p)] if m else {'error': 'svg без размеров'}
+                elif kind == 'images':
                     with Image.open(p) as im: M[kind][rel] = [im.width, im.height, os.path.getsize(p)]
                 elif name.lower().endswith('.pdf'):
                     d = pymupdf.open(p)

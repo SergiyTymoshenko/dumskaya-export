@@ -6,7 +6,7 @@
 
 В папке с данными:
   <фабрика>.json          — что собрали краулеры этой папки (olev.json + olev_ds.json, baxter.json, flexform.json,
-                            molteni2.json, maxalto.json, delta.json, minotti.json);
+                            molteni2.json, maxalto.json, delta.json, minotti.json, poliform.json);
   dl-<фабрика>.tsv        — список скачанного: «путь в выгрузке<TAB>адрес» (его же качает dl.sh на Маке);
   manifest-<фабрика>.json — размеры фото и текст PDF (manifest.py на Маке);
   drawings-<фабрика>.json — чертежи, вырезанные из техкарт (drawings.py на Маке).
@@ -21,7 +21,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-FACTORIES = ["olev", "baxter", "flexform", "molteni", "maxalto", "delta", "minotti"]
+FACTORIES = ["olev", "baxter", "flexform", "molteni", "maxalto", "delta", "minotti", "poliform"]
 SITE_FILE = {"molteni": "molteni2.json"}
 
 
@@ -266,6 +266,17 @@ def site_minotti(work):
         q["tech_sheets"] = [s["url"] for s in p.get("tech_sheets") or []]
         q["versions"] = [{"name_en": clean(v.get("name_en")), "drawing": v.get("drawing")} for v in p.get("versions") or []]
         q["arrangements"] = [{"url": a["url"], "items": [clean(x) for x in a.get("items") or []]} for a in p.get("arrangements") or []]
+        out.append(q)
+    return out
+
+
+def site_poliform(work):
+    out = []
+    for p in load(work, "poliform.json"):
+        q = {k: p.get(k) for k in ("url", "url_ru", "slug", "title", "title_ru", "designer", "year", "props", "collection_line",
+                                   "category", "new", "short_page", "images", "finishes", "files_2d3d_form")}
+        q["text_en"], q["text_ru"] = clean(p.get("text_en")), clean(p.get("text_ru"))
+        q["dimensions"] = p.get("dimensions") or []
         out.append(q)
     return out
 

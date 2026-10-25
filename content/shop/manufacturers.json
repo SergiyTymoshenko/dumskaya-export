@@ -126,5 +126,21 @@
   "catalog": "content/shop/catalog/minotti.json",
   "sku_range": "DF-…7100–7899 (свет — DL- с теми же номерами)",
   "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
+ },
+ "poliform": {
+  "name": "Poliform",
+  "legal": "Poliform S.p.A.",
+  "country": "Италия",
+  "site": "https://www.poliform.it",
+  "address": "Via Montesanto 28, 22044 Inverigo (CO), Italia",
+  "partner": "Александр Замлинский (Италия)",
+  "categories": [
+   "furniture",
+   "storage",
+   "kitchens"
+  ],
+  "catalog": "content/shop/catalog/poliform.json",
+  "sku_range": "DF-…7900–8399 (свет — DL- с теми же номерами)",
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
  }
 }

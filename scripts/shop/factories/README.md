@@ -1,4 +1,4 @@
-# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto, Minotti)
+# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto, Minotti, Poliform)
 
 Откуда берутся `content/shop/sources/<фабрика>/` и каталоги `content/shop/catalog/<фабрика>.json`.
 У IDL — свой путь: `scripts/shop/idl_factory/README.md`.
@@ -20,11 +20,12 @@
    python3 maxalto.py                             # → maxalto.json
    python3 delta_run.py                           # → delta.json, dl-delta.tsv и файлы в delta_files/ (долго: 20 с на запрос)
    python3 minotti.py                             # → minotti.json (≈ 20 минут: 1 запрос в секунду)
+   python3 poliform.py                            # → poliform.json (EN + RU страницы, ≈ 25 минут)
    ```
 
    Страницы кешируются в `cache/` — повторный запуск не ходит на сайт заново. Ничего из этого не хранится в git.
 
-2. **Списки файлов**: `python3 gen_dl.py olev baxter flexform molteni maxalto minotti` → `dl-<фабрика>.tsv`
+2. **Списки файлов**: `python3 gen_dl.py olev baxter flexform molteni maxalto minotti poliform` → `dl-<фабрика>.tsv`
    («путь в выгрузке<TAB>адрес»): до 8 фото на изделие и техкарты PDF (у Minotti ещё чертежи элементов
    с сайта — `images/shop/minotti/<изделие>/drawings/`). Уже скачанным путь не меняется.
 
@@ -64,6 +65,7 @@
 | Molteni&C | EN тексты, техкарты (материалы, отделки) | чертёж из техкарты |
 | Maxalto | EN тексты, техкарты (материалы) | чертёж из техкарты |
 | Minotti | EN тексты, дизайнер, элементы из «Technical Features» с чертежом каждого (см и дюймы), техкарты (материалы), схемы композиций (ссылка) | в названии элемента + его чертёж |
+| Poliform | EN и RU тексты, дизайнер и год, материалы (пары «Structure: …»), отделки с кодами, чертежи SVG из вкладки DIMENSIONS; техкарт PDF нет | на чертежах SVG (`manifest.py` берёт размер SVG по viewBox) |
 
 Чертежи Delta Light — векторные SVG; `width`/`height` в каталоге — размеры из `viewBox` (у многих 128×128),
 это не пиксели. На сайт их отдавать как SVG или растрировать с повышенной плотностью
@@ -73,3 +75,12 @@ Minotti: список изделий — сервис их страницы сп
 «2026 Collection» → новинки); тип товара — по разделу списка (Sofas, Coffee tables…), уточняется по названию
 и элементам. Имена файлов у Minotti бывают с пробелами («AERON MOD A.jpg») — адреса кодируются при сборе.
 Файлы 2D/3D, фото высокого разрешения и «архив» у Minotti — после входа; в каталоге только ссылка на страницу.
+
+Poliform: файлы 2D/3D (DWG, 3DM, FBX, MAX, SKP) отдаются только после формы подписки — не качаем, но их адреса
+видны на странице: `poliform.py` записывает список (формат, размер, адрес), в каталоге он — `files_after_login`.
+Фото — галерея между заголовком и техническими вкладками (в ней бывают соседние изделия — берём те, где в имени
+файла есть название модели).
+
+**Не терять то, что за регистрацией.** Что фабрика даёт только после входа (2D/3D, BIM, фото высокого разрешения,
+размеры у Rugiano), в каталоге отмечено ссылкой `links.files_2d3d`, а если адреса видны — списком `files_after_login`.
+Сводка по фабрикам — в «Плане работы по фабрикам».

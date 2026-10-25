@@ -1,4 +1,4 @@
-# Списки на скачивание (dest \t url) + карта url → локальный путь, для baxter / molteni / flexform / maxalto / minotti
+# Списки на скачивание (dest \t url) + карта url → локальный путь, для baxter / molteni / flexform / maxalto / minotti / poliform
 import json, re, sys, collections
 from urllib.parse import unquote, urlparse
 def safe(n): return re.sub(r'[^\w.\-]+', '_', unquote(n)).strip('_')
@@ -93,5 +93,16 @@ def minotti():
         for sh in p.get('tech_sheets') or []:
             out.append((f"catalogs/minotti/sheets/{safe(sh['url'].rsplit('/', 1)[-1])}", sh['url']))
     build('minotti', out)
+def poliform():
+    """Poliform: до 8 фото на изделие и чертежи с размерами (SVG/JPG из вкладки DIMENSIONS). Техкарт PDF нет;
+    файлы 2D/3D только после формы подписки — не качаем (их список — в каталоге)."""
+    out = []
+    for p in json.load(open('poliform.json')):
+        s = safe(p['slug']).lower()
+        for u in (p.get('images') or [])[:8]:
+            out.append((f"images/shop/poliform/{s}/{safe(u.rsplit('/', 1)[-1])}", u))
+        for v in p.get('dimensions') or []:
+            out.append((f"images/shop/poliform/{s}/drawings/{safe(v['drawing'].rsplit('/', 1)[-1])}", v['drawing']))
+    build('poliform', out)
 if __name__ == '__main__':
     for f in sys.argv[1:]: globals()[f]()
