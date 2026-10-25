@@ -192,13 +192,13 @@ S.SiteStats(H.bot, live_fn=lambda: True, clock=clock, home_live_fn=lambda: True)
 msgs = [p for m, p in H.CALLS if m == "sendMessage"]
 txt = msgs[0]["text"] if msgs else ""
 kb = json.dumps(msgs[0].get("reply_markup") if msgs else {}, ensure_ascii=False)
-check("📈 Сайт за" in txt and "🛋 Каталог dumskaya-home.com" in txt, "утром: строка сайта и строка каталога")
-check("site=home" in kb and "Каталог" in kb, "утром: кнопка «Каталог» открывает графики каталога")
+check("📈 Сайт за" in txt and "🛋 Магазин dumskaya-home.com" in txt, "утром: строка сайта и строка магазина")
+check("site=home" in kb and "Магазин" in kb and "Студия" in kb, "утром: кнопки «Студия» и «Магазин»")
 H.CALLS.clear()
 H.bot.s.put("stats:daily", "")
 S.SiteStats(H.bot, live_fn=lambda: True, clock=clock, home_live_fn=lambda: False).tick()
 msgs = [p for m, p in H.CALLS if m == "sendMessage"]
-check(bool(msgs) and "Каталог" not in msgs[0]["text"] and "site=home" not in json.dumps(msgs[0].get("reply_markup"), ensure_ascii=False),
+check(bool(msgs) and "Магазин" not in msgs[0]["text"] and "site=home" not in json.dumps(msgs[0].get("reply_markup"), ensure_ascii=False),
       "каталог не на домене — утром только сайт студии")
 
 # журнал каталога не попадает в студию и через сжатую часть
@@ -212,7 +212,7 @@ for per in ("7", "24h", "30", "365", "all"):
     check(ok_tot and sum(r["visitors"] for r in x["rows"]) == sa and x["site"] == "all", f"«Все», {per}: итоги и строки — сумма двух сайтов")
 x = S.web_all("7")
 check(dict(x["total"]["langs"]).get("RU") == 2 and dict(x["total"]["langs"]).get("DE") == 1, f"«Все»: языки сложены ({x['total']['langs']})")
-check(any(p[0].startswith("Каталог: ") for p in x["total"]["pages"]), "«Все»: страницы каталога подписаны «Каталог:»")
+check(any(p[0].startswith("Магазин: ") for p in x["total"]["pages"]), "«Оба»: страницы магазина подписаны «Магазин:»")
 check(x["total"]["avg_time"] is not None and 40 <= x["total"]["avg_time"] <= 75, f"«Все»: среднее время — между сайтами ({x['total']['avg_time']})")
 lv = S.web_all("1h")
 check(lv["summary"]["visitors"] == 3 and {s_["site"] for s_ in lv["sessions"]} == {"studio", "home"}, "«Все», «1 час»: заходы обоих сайтов, у каждого — сайт")

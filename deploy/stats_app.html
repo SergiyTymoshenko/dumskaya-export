@@ -8,7 +8,7 @@
 <!-- Мини-приложение Telegram: «Студия» → вкладка «Сайт» (и кнопка «Графики» в утренней сводке). Данные отдаёт сервис
      заявок (/api/stats/data?p=1h|24h|7|30|90|365|all&site=studio|home) только тем, кому Telegram подписал запуск
      (разработчик и дизайнер); работает ли сайт (/api/stats/site) — только разработчику.
-     Два сайта: «Сайт студии» (dumskaya-design.com), «Каталог» (dumskaya-home.com) и «Все» — оба вместе, цифры
+     Два сайта: «Студия» (dumskaya-design.com), «Магазин» (каталог dumskaya-home.com) и «Оба» — вместе, цифры
      складываются; переключатель над периодами, выбор запоминается на устройстве, ?site=home в адресе открывает каталог
      (кнопка в утренней строке). -->
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
@@ -70,12 +70,11 @@
   .filters button:nth-child(n+5) { grid-column: span 4; }
   @media (max-width: 359px) { .filters { gap: 4px; } .filters button { font-size: calc(12px * var(--k)); padding: 7px 2px; } }
   .filters button[aria-pressed="true"] { background: var(--text-1); color: var(--page); border-color: var(--text-1); font-weight: 600; }
-  /* какой сайт: студия или каталог — две половины одной кнопки */
-  .sites { display: grid; grid-template-columns: 1.15fr 1.15fr 0.7fr; margin: 0 0 12px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+  /* какой сайт: «Студия», «Магазин» (dumskaya-home.com), «Оба» — три равные части одной кнопки, адрес — в подсказке */
+  .sites { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0 0 12px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
   .sites button { font: inherit; font-size: calc(14px * var(--k)); color: var(--text-1); background: transparent; border: 0; padding: 9px 6px; cursor: pointer; min-width: 0; }
   .sites button + button { border-left: 1px solid var(--border); }
   .sites button[aria-pressed="true"] { background: var(--series); color: #fff; font-weight: 600; }
-  .sites small { display: block; font-size: calc(11px * var(--k)); opacity: .8; font-weight: 400; overflow-wrap: anywhere; }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin: 0 0 12px; }
   .card h2 { font-size: calc(15px * var(--k)); font-weight: 600; margin: 0 0 2px; }
   .card .note { color: var(--text-2); font-size: calc(13px * var(--k)); margin: 0 0 10px; }
@@ -177,9 +176,9 @@
   <h1>Посетители сайта</h1>
   <p class="sub" id="sub">dumskaya-design.com</p>
   <div class="sites" role="group" aria-label="Сайт">
-    <button type="button" data-s="studio" aria-pressed="true">Сайт студии<small>dumskaya-design.com</small></button>
-    <button type="button" data-s="home" aria-pressed="false">Каталог<small>dumskaya-home.com</small></button>
-    <button type="button" data-s="all" aria-pressed="false">Все<small>оба сайта</small></button>
+    <button type="button" data-s="studio" aria-pressed="true" title="dumskaya-design.com">Студия</button>
+    <button type="button" data-s="home" aria-pressed="false" title="dumskaya-home.com">Магазин</button>
+    <button type="button" data-s="all" aria-pressed="false" title="оба сайта вместе">Оба</button>
   </div>
   <section class="card site" id="site" hidden></section>
   <div class="filters" role="group" aria-label="Период">
@@ -581,7 +580,7 @@
     else place.textContent = data.geo ? 'Место не определилось' : 'Город появится после загрузки базы городов';
     top.append(place, s.active ? el('span', 'live', 'на сайте') : el('span', 'when', (dayword(s.start) === 'сегодня' ? '' : dayword(s.start) + ' ') + hm(s.start) + '–' + hm(s.end)));
     c.append(top);
-    if (s.site) c.append(el('div', 'meta', s.site === 'home' ? '🛋 Каталог · dumskaya-home.com' : 'Сайт студии · dumskaya-design.com'));
+    if (s.site) c.append(el('div', 'meta', s.site === 'home' ? '🛋 Магазин · dumskaya-home.com' : 'Студия · dumskaya-design.com'));
     c.append(el('div', 'meta', [s.device, s.os, s.browser].filter(Boolean).join(' · ') + (s.lang ? ' · язык браузера: ' + s.lang : '')));
     const m2 = el('div', 'meta'); m2.append(document.createTextNode('Откуда: '), el('b', null, s.source === 'прямые заходы' ? 'прямой заход' : s.source));
     const n = s.pages.length;
@@ -640,7 +639,7 @@
   // каталог ещё в режиме просмотра (не на домене): посетителей нет — объяснить, а не показывать пустые нули без причины
   const notLive = () => data && data.site === 'home' && data.live === false;
   function notLiveCard() {
-    return card('Каталог ещё не открыт на домене', 'Сейчас dumskaya-home.com видите только вы — через туннель с Мака, такие просмотры не считаются. '
+    return card('Магазин ещё не открыт на домене', 'Сейчас dumskaya-home.com видите только вы — через туннель с Мака, такие просмотры не считаются. '
       + 'Посетители, роботы Google и заявки появятся здесь, когда каталог включат на домене.');
   }
 

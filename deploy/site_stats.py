@@ -69,7 +69,7 @@ SHARED_DIR = os.environ.get("STATS_DIR", os.path.join(APP, "stats"))   # «св�
 LEADS_FILE = os.environ.get("LEADS_FILE", os.path.join(APP, "leads.jsonl"))
 if SITE == "home":
     HOST = "dumskaya-home.com"
-    TITLE = "Каталог DUMSKAYA HOME"
+    TITLE = "Магазин DUMSKAYA HOME"
     LOG_GLOB = os.environ.get("HOME_LOG_GLOB", "/var/log/caddy/dumskaya-home*.log*")
     LOG_SKIP = None
     HOSTS = (HOST, "www." + HOST)          # только запросы к домену: просмотр через туннель (localhost:8089) — не посетители
@@ -1586,7 +1586,7 @@ def _merge_rows(a_rows, b_rows, key):
 
 def _merge_total(a, b):
     tv = a["time_visitors"] + b["time_visitors"]
-    pages = sorted([[p[0], p[1], p[2]] for p in a["pages"]] + [["Каталог: " + p[0], p[1], p[2]] for p in b["pages"]],
+    pages = sorted([[p[0], p[1], p[2]] for p in a["pages"]] + [["Магазин: " + p[0], p[1], p[2]] for p in b["pages"]],
                    key=lambda x: -x[1])[:15]
     return {
         **{k: a[k] + b[k] for k in ("visitors", "views", "leads", "google", "own", "contacts")},
@@ -1594,8 +1594,8 @@ def _merge_total(a, b):
         "langs": _sum_items([a["langs"], b["langs"]]), "sources": _sum_items([a["sources"], b["sources"]], 9),
         "devices": _sum_items([a["devices"], b["devices"]]), "contact_types": _sum_items([a["contact_types"], b["contact_types"]]),
         "pages": pages,
-        "contact_pages": _sum_items([a["contact_pages"], [["Каталог: " + n, v] for n, v in b["contact_pages"]]], 8),
-        "leads_pages": _sum_items([a["leads_pages"], [["Каталог: " + n, v] for n, v in b["leads_pages"]]], 8),
+        "contact_pages": _sum_items([a["contact_pages"], [["Магазин: " + n, v] for n, v in b["contact_pages"]]], 8),
+        "leads_pages": _sum_items([a["leads_pages"], [["Магазин: " + n, v] for n, v in b["leads_pages"]]], 8),
         "notfound": _sum_items([a["notfound"], [["dumskaya-home.com" + n, v] for n, v in b["notfound"]]], 10),
     }
 
@@ -1684,11 +1684,11 @@ def summary(a, prev=None):
 
 
 def morning_lines(d):
-    """Строка за вчера (по понедельникам — и за неделю): у студии «📈 Сайт за …», у каталога «🛋 Каталог dumskaya-home.com»."""
+    """Строка за вчера (по понедельникам — и за неделю): у студии «📈 Сайт за …», у каталога «🛋 Магазин dumskaya-home.com»."""
     y = d - timedelta(days=1)
     got = days_stats([y - timedelta(days=k) for k in range(14)])
     a, prev = got[y], got[y - timedelta(days=1)]
-    head = f"🛋 Каталог {HOST}: " if SITE == "home" else f"📈 Сайт за {day_name(y)}: "
+    head = f"🛋 Магазин {HOST}: " if SITE == "home" else f"📈 Сайт за {day_name(y)}: "
     lines = [head + (summary(a, prev) if a else "в журнале нет записей")]
     if d.weekday() == 0:
         week = [got[y - timedelta(days=k)] for k in range(7)]
@@ -1709,8 +1709,8 @@ NO_ACCESS = ("Не могу прочитать журнал сайта ({}) — 
 
 
 BUTTON = [[("📈 Графики", {"web_app": {"url": APP_URL}})]]
-BUTTONS_BOTH = [[("📈 Сайт студии", {"web_app": {"url": APP_URL}}),
-                 ("🛋 Каталог", {"web_app": {"url": APP_URL + "?site=home"}})]]
+BUTTONS_BOTH = [[("📈 Студия", {"web_app": {"url": APP_URL}}),
+                 ("🛋 Магазин", {"web_app": {"url": APP_URL + "?site=home"}})]]
 
 
 # ---------- второй сайт: каталог dumskaya-home.com ----------
@@ -1782,7 +1782,7 @@ class SiteStats:
                 h.days_stats([d - timedelta(days=k) for k in range(7, 1, -1)])
                 lines += h.morning_lines(d)
             except PermissionError:
-                lines.append("🛋 Каталог: " + NO_ACCESS.format(esc(h.LOG_GLOB)))
+                lines.append("🛋 Магазин: " + NO_ACCESS.format(esc(h.LOG_GLOB)))
         lines.append("Графики — кнопкой ниже.")
         self.bot.s.put("stats:daily", d.isoformat())
         self.bot.notify("\n".join(lines), roles=("owner",), rows=BUTTONS_BOTH if h is not None else BUTTON)
