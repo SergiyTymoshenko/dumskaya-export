@@ -30,5 +30,6 @@ const fallback = m ? m.files[Math.min(1, m.files.length - 1)][1] : null;
     fetchpriority={eager ? 'high' : undefined}
   />
 ) : (
-  <span class:list={['ph', cls]} role="img" aria-label={alt} style={style}></span>
+  /* заглушка вместо фото; без подписи — просто фон (как фото с пустым alt) */
+  alt ? <span class:list={['ph', cls]} role="img" aria-label={alt} style={style}></span> : <span class:list={['ph', cls]} aria-hidden="true" style={style}></span>
 )}

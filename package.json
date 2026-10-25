@@ -13,6 +13,8 @@
     "tunnel": "echo 'Сайт: http://localhost:8088  (Ctrl+C — закрыть)'; (sleep 2; command -v open >/dev/null && open http://localhost:8088) & ssh -N -o ExitOnForwardFailure=yes -L 8088:127.0.0.1:8088 ${DEPLOY_HOST:-eurox}",
     "tunnel:home": "bash scripts/tunnel_home.sh",
     "check:ux-home": "node scripts/ux_home.cjs",
+    "check:ux-site": "node scripts/ux_site.cjs",
+    "check:ux-apps": "node scripts/ux_apps.cjs",
     "leads": "bash scripts/leads.sh",
     "translate": "bash scripts/leads.sh --translate"
   },

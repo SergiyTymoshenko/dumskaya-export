@@ -76,6 +76,8 @@ h2.section-title {
 .prose p { margin: 0 0 1em; }
 .prose ul { margin: 0 0 1em; padding-left: 1.1em; }
 .prose li { margin: 0 0 0.4em; }
+.prose li > a:only-child { display: inline-block; padding-block: 3px; }   /* список ссылок — не текст, нужна зона нажатия ≥ 24 px */
+td > a:only-child { display: inline-block; padding-block: 4px; }          /* ссылка — всё содержимое ячейки (адрес студии) */
 .prose strong { font-weight: 500; color: var(--ink); }
 .muted { color: var(--stone); }
 
@@ -128,7 +130,7 @@ h2.section-title {
 .tile--below::after { display: none; }
 .tile--below .tile__cap { position: static; padding: 12px 8px 20px; }
 .tile--below .tile__title { letter-spacing: 0.12em; padding-left: 0.12em; }
-.tile--below .tile__sub { color: var(--stone); }
+.tile--below .tile__sub { color: var(--stone); opacity: 1; }   /* серый на белом — без прозрачности, иначе контраст < 4,5 : 1 */
 @media (hover: hover) { .tile--below:hover { color: var(--oak); } }
 @media (hover: hover) { .tile:hover img { transform: scale(1.025); } .tile:not(.tile--below):hover { color: #fff; } }
 
@@ -137,6 +139,9 @@ h2.section-title {
 
 .crumbs { font-size: 13px; color: var(--stone); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .crumbs a { color: var(--text); text-decoration: underline; text-decoration-color: var(--line); }
+/* место для пальца (24 px и больше) — отступ внутри ссылки, крошки на том же месте и той же высоты */
+.crumbs { margin-block: -10px; }
+.crumbs a { display: inline-block; padding-block: 10px; }
 .crumbs a:hover { color: var(--oak); text-decoration-color: currentColor; }
 .crumbs span[aria-current] { color: var(--stone); }
 

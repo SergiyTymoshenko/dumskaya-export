@@ -16,7 +16,8 @@ const { href, image, alt = '', title, sub, sizes = '(min-width: 720px) 50vw, 100
 const Tag = href ? 'a' : 'div';
 ---
 <Tag class:list={['tile', below && 'tile--below']} href={href || undefined}>
-  <Img id={image} alt={alt || title} sizes={sizes} eager={eager} />
+  {/* подпись под фото и так называет ссылку: alt, равный подписи, читался бы дважды — тогда alt пустой */}
+  <Img id={image} alt={alt && alt !== title ? alt : ''} sizes={sizes} eager={eager} />
   <span class="tile__cap">
     <span class="tile__title"><Caps text={title} /></span>
     {sub && <span class="tile__sub" style="display:block">{sub}</span>}

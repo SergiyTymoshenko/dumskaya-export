@@ -11,53 +11,26 @@
 //  • меню: на телефоне разделы свёрнуты (открыт раздел текущей страницы) и раскрываются, на компьютере — всё на первом экране;
 //  • галерея товара: счётчик, листание пальцем; форма: необязательные поля подписаны.
 // Скриншоты — в папку из --out (по умолчанию — временная папка), их тоже смотреть глазами.
-const http = require('http');
 const fs = require('fs');
-const os = require('os');
 const path = require('path');
+const L = require('./ux_lib.cjs');
 
-const ROOT = path.resolve(__dirname, '..');
-const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
-const DIST = path.resolve(arg('--dist', path.join(ROOT, 'home/dist')));
-const IMG = path.join(ROOT, 'home/img');
-const OUT = path.resolve(arg('--out', path.join(os.tmpdir(), 'dumskaya-ux-home')));
-const PORT = Number(arg('--port', 8097));
+const DIST = path.resolve(L.arg('--dist', path.join(L.ROOT, 'home/dist')));
+const IMG = path.join(L.ROOT, 'home/img');
+const OUT = L.outDir('dumskaya-ux-home');
+const PORT = Number(L.arg('--port', 8097));
 const BASE = `http://127.0.0.1:${PORT}`;
-
-let chromium;
-try { ({ chromium } = require('playwright')); } catch {
-  console.log('Нет Playwright. Установить: npm i --no-save playwright axe-core && npx playwright install chromium');
-  process.exit(2);
-}
-let AXE = '';
-try { AXE = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8'); } catch {
-  try { AXE = fs.readFileSync(process.env.UX_AXE || '', 'utf8'); } catch { /* ниже — предупреждение */ }
-}
+const { chromium } = L.playwright();
+const AXE = L.axeSource();
 if (!fs.existsSync(path.join(DIST, 'index.html'))) { console.log(`Нет сборки каталога: ${DIST}. Сначала: npx astro build --root home`); process.exit(2); }
-fs.mkdirSync(OUT, { recursive: true });
-
-// просмотр сборки как на сервере: /адрес → адрес.html, фото — из home/img, /api/* — заглушка
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.woff2': 'font/woff2', '.xml': 'application/xml', '.txt': 'text/plain', '.ico': 'image/x-icon' };
-const server = http.createServer((req, res) => {
-  const u = decodeURIComponent(req.url.split('?')[0]);
-  if (u.startsWith('/api/')) { res.writeHead(200, { 'content-type': 'application/json' }); return res.end('{"ok":true}'); }
-  let f = path.join(DIST, u === '/' ? 'index.html' : u);
-  if (u.startsWith('/img/') && !fs.existsSync(f)) f = path.join(IMG, u.slice(5));
-  if (!fs.existsSync(f) || fs.statSync(f).isDirectory()) f += '.html';
-  if (!f.startsWith(DIST) && !f.startsWith(IMG)) { res.writeHead(403); return res.end(); }
-  if (!fs.existsSync(f)) { res.writeHead(404, { 'content-type': TYPES['.html'] }); return res.end(fs.readFileSync(path.join(DIST, '404.html'))); }
-  res.writeHead(200, { 'content-type': TYPES[path.extname(f)] || 'application/octet-stream' });
-  fs.createReadStream(f).pipe(res);
-});
-
-const lines = [];
-let fails = 0;
-const ok = (c, what, extra = '') => { if (!c) fails++; lines.push(`${c ? '✓' : '✗'} ${what}${extra ? ' — ' + extra : ''}`); };
-const SIZES = { d: { viewport: { width: 1440, height: 900 } }, m: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
-  pm: { viewport: { width: 440, height: 956 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true } };
+const R = L.report();
+const ok = R.ok;
+const lines = { push: (x) => R.warn(x.replace(/^⚠ /, '')) };
+const SIZES = { d: L.SIZES.d, m: L.SIZES.m, pm: L.SIZES.pm };
+let server;
 
 (async () => {
-  await new Promise((r) => server.listen(PORT, '127.0.0.1', r));
+  server = await L.staticServer([DIST, IMG.replace(/img$/, '')], PORT);   // фото /img/… — из home/img
   const b = await chromium.launch();
   try {
     // адреса страниц — из меню собранного сайта, а не вписаны руками (каталог меняется)
@@ -88,39 +61,9 @@ const SIZES = { d: { viewport: { width: 1440, height: 900 } }, m: { viewport: { 
       if (!url) { ok(false, `${name}: не нашёлся адрес в меню`); continue; }
       for (const [sz, opt] of Object.entries(SIZES)) {
         ctx = await b.newContext(opt); p = await ctx.newPage();
-        await p.addInitScript(() => {
-          window.__cls = 0;
-          new PerformanceObserver((l) => { for (const e of l.getEntries()) if (!e.hadRecentInput) window.__cls += e.value; }).observe({ type: 'layout-shift', buffered: true });
-        });
+        await L.watchCls(p);
         const resp = await p.goto(BASE + url, { waitUntil: 'networkidle' });
-        await p.waitForTimeout(250);
-        const m = await p.evaluate(() => {
-          const vw = document.documentElement.clientWidth;
-          const small = [];
-          for (const a of document.querySelectorAll('a[href], button, input, select, textarea, summary, [role=button]')) {
-            const r = a.getBoundingClientRect(), cs = getComputedStyle(a);
-            if (!r.width || !r.height || cs.visibility === 'hidden' || a.closest('[hidden], .lead__hp, .menu')) continue;
-            if (a.closest('p, li > p, address') && !a.matches('.btn, button')) continue;      // ссылки в тексте — исключение WCAG 2.5.8
-            const lab = a.closest('label'); if (lab && lab.getBoundingClientRect().height >= 24) continue;  // галочка с подписью — нажимается вся подпись
-            if (r.width < 24 || r.height < 24) small.push(`${a.tagName.toLowerCase()}「${(a.innerText || a.getAttribute('aria-label') || '').trim().slice(0, 30)}」${Math.round(r.width)}×${Math.round(r.height)}`);
-          }
-          return { overflow: document.documentElement.scrollWidth > vw + 1, small, h1: document.querySelectorAll('h1').length,
-            noAlt: [...document.images].filter((i) => !i.hasAttribute('alt')).length, cls: window.__cls };
-        });
-        let axe = [];
-        if (AXE) {
-          await p.addScriptTag({ content: AXE });
-          axe = await p.evaluate(async () => (await window.axe.run(document, { resultTypes: ['violations'], runOnly: ['wcag2a', 'wcag2aa', 'best-practice'] }))
-            .violations.map((v) => `${v.id} ×${v.nodes.length}: ${v.nodes[0].target.join(' ')}`));
-        }
-        const bad = [];
-        if (resp.status() !== (name === '404' ? 404 : 200)) bad.push(`ответ ${resp.status()}`);
-        if (m.overflow) bad.push('прокрутка вбок');
-        if (m.small.length) bad.push(`мелкие зоны: ${m.small.slice(0, 3).join('; ')}`);
-        if (m.h1 !== 1) bad.push(`H1: ${m.h1}`);
-        if (m.noAlt) bad.push(`фото без alt: ${m.noAlt}`);
-        if (m.cls >= 0.1) bad.push(`сдвиг вёрстки ${m.cls.toFixed(2)}`);
-        if (axe.length) bad.push(`доступность: ${axe.slice(0, 3).join(' | ')}`);
+        const bad = await L.checkPage(p, AXE, { skip: '.menu', status: resp.status(), expect: name === '404' ? 404 : 200 });
         ok(!bad.length, `${name} (${sz}) ${url}`, bad.join('; '));
         await p.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 800) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 40)); } window.scrollTo(0, 0); });
         await p.waitForTimeout(250);
@@ -204,6 +147,7 @@ const SIZES = { d: { viewport: { width: 1440, height: 900 } }, m: { viewport: { 
     await p.click('[data-menu-open]'); await p.waitForTimeout(250);
     const openLists = () => p.evaluate(() => [...document.querySelectorAll('.menu__sec > ul')].filter((u) => u.offsetHeight > 0).length);
     ok((await openLists()) === 0, 'меню (телефон): разделы свёрнуты');
+    { const bad = await L.checkPage(p, AXE, { oneH1: false }); ok(!bad.length, 'меню (телефон): доступность и зоны нажатия', bad.join('; ')); }
     await p.screenshot({ path: path.join(OUT, 'flow-menu-pm.png') });
     await p.click('.menu__tog'); await p.waitForTimeout(150);
     ok((await openLists()) === 1, 'меню (телефон): стрелка раскрывает раздел');
@@ -218,6 +162,7 @@ const SIZES = { d: { viewport: { width: 1440, height: 900 } }, m: { viewport: { 
     await p.click('[data-menu-open]'); await p.waitForTimeout(250);
     const mb = await p.evaluate(() => Math.round(Math.max(...[...document.querySelectorAll('.menu__sec')].map((x) => x.getBoundingClientRect().bottom))));
     ok(mb <= 900, 'меню (компьютер): все разделы на первом экране', `низ ${mb} px`);
+    { const bad = await L.checkPage(p, AXE, { oneH1: false }); ok(!bad.length, 'меню (компьютер): доступность и зоны нажатия', bad.join('; ')); }
     await p.screenshot({ path: path.join(OUT, 'flow-menu-d.png') });
     await ctx.close();
 
@@ -248,7 +193,5 @@ const SIZES = { d: { viewport: { width: 1440, height: 900 } }, m: { viewport: { 
     await b.close();
     server.close();
   }
-  console.log(lines.join('\n'));
-  console.log(`\n${fails ? `Ошибок: ${fails}` : 'UI/UX: всё в порядке'}. Скриншоты: ${OUT}`);
-  process.exit(fails ? 1 : 0);
+  process.exit(R.done(OUT) ? 1 : 0);
 })().catch((e) => { console.error(e); server.close(); process.exit(1); });

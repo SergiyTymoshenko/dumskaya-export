@@ -62,6 +62,8 @@ const privacy = localize('/privacy', lang) || '/privacy';
   }
   .cookie p { margin: 0; }
   .cookie__btns { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
-  .cookie .btn { min-height: 40px; padding: 8px 18px; font-size: 14px; }
+  .cookie .btn { min-height: 44px; padding: 8px 18px; font-size: 14px; }
   @media (min-width: 720px) { .cookie { grid-template-columns: 1fr auto; align-items: center; } }
+  /* на компьютере — в углу: главная кнопка первого экрана (по центру) остаётся открытой */
+  @media (min-width: 1100px) { .cookie { right: auto; left: 24px; bottom: 24px; max-width: 440px; grid-template-columns: 1fr; } .cookie__btns { justify-content: flex-start; } }
 </style>

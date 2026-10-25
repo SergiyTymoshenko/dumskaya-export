@@ -57,7 +57,7 @@ const here = (s: Sec) => s.href === page.path || !!s.items?.some((x) => x.href =
   </div>
 </header>
 
-<div class="menu" id="menu" hidden>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label={T.menu} hidden>
   <div class="menu__top">
     <button class="hdr__burger" type="button" data-menu-close>
       <span class="burger burger--x" aria-hidden="true"><i></i><i></i></span>
@@ -147,7 +147,7 @@ const here = (s: Sec) => s.href === page.path || !!s.items?.some((x) => x.href =
   .menu__ul--2 { columns: 2; column-gap: 28px; }
   .menu__ul--2 li { break-inside: avoid; }
   .menu__group { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-family: var(--display); text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; margin-bottom: 10px; color: var(--ink); }
-  .menu__group a { text-decoration: none; }
+  .menu__group a { display: inline-block; padding-block: 4px; margin-block: -4px; text-decoration: none; }
   .menu__sec--gap { margin-top: 8px; }
   .menu__tog { display: none; }
   .menu__groups ul { list-style: none; margin: 0; padding: 0; }
@@ -159,7 +159,7 @@ const here = (s: Sec) => s.href === page.path || !!s.items?.some((x) => x.href =
     .menu__sec { border-bottom: 1px solid var(--line); }
     .menu__sec--gap { margin-top: 0; }
     .menu__group { margin: 0; }
-    .menu__group a { flex: 1; padding-block: 15px; }
+    .menu__group a { flex: 1; padding-block: 15px; margin-block: 0; }
     .menu__tog { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-right: -12px; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; }
     .menu__tog::before { content: ''; width: 8px; height: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
     .menu__tog[aria-expanded='true']::before { transform: translateY(2px) rotate(-135deg); }

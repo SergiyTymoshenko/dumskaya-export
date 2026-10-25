@@ -1,6 +1,5 @@
 /* DUMSKAYA HOME: то, чего нет в стилях сайта студии (src/styles/global.css) — каталог, карточка товара. */
-.crumbs { padding-block: 10px 0; }
-.crumbs a { display: inline-block; padding-block: 10px; }   /* больше места для пальца, крошки той же высоты */
+.crumbs { padding-block: 20px 0; }   /* ссылки крошек — с отступом для пальца (global.css) */
 .lhead { padding-block: 16px 20px; display: grid; gap: 4px; }
 .lhead h1 { font-size: clamp(22px, 2.6vw, 32px); }
 .lhead p { margin: 0; }
@@ -79,6 +78,7 @@
 .ship__list li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 8px; height: 1px; background: var(--oak); }
 .ship__cta { margin: 28px 0 0; }
 .how { display: grid; gap: 32px; }
+.how__studio p > a:only-child { display: inline-block; padding-block: 6px; margin-block: -6px; }   /* отдельная ссылка — зона нажатия ≥ 24 px */
 @media (min-width: 960px) { .how { grid-template-columns: 1fr 1fr; gap: 64px; } }
 .how__list { margin: 0; padding-left: 1.2em; display: grid; gap: 12px; max-width: var(--measure); }
 .how__studio { align-self: end; color: var(--text); }
@@ -150,6 +150,7 @@
 .contact__lead { max-width: var(--measure); }
 .contact__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
 .contact address { font-style: normal; }
+.contact p > a { display: inline-block; padding-block: 6px; margin-block: -6px; }   /* почта и мессенджеры — отдельные ссылки, не текст */
 .contact__list a, .contact address a { display: inline-block; padding-block: 4px; }
 .policy { padding-block: 16px clamp(48px, 7vw, 96px); }
 .policy h1 { font-size: clamp(22px, 2.6vw, 32px); margin-bottom: 24px; }

@@ -11,5 +11,5 @@ const fallback = m ? m.files[Math.min(1, m.files.length - 1)][1] : null;
   <img src={`/img/${fallback}`} srcset={srcset} sizes={sizes} width={m.width} height={m.height} alt={alt} class={cls}
     loading={eager ? 'eager' : 'lazy'} decoding={eager ? 'sync' : 'async'} fetchpriority={eager ? 'high' : undefined} />
 ) : (
-  <span class:list={['ph', cls]} role="img" aria-label={alt}></span>
+  alt ? <span class:list={['ph', cls]} role="img" aria-label={alt}></span> : <span class:list={['ph', cls]} aria-hidden="true"></span>
 )}

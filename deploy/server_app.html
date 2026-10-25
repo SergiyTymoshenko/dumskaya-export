@@ -15,7 +15,7 @@
     color-scheme: light;
     --page: #f9f9f7; --surface: #fcfcfb; --text-1: #0b0b0b; --text-2: #52514e; --muted: #898781;
     --grid: #e1e0d9; --axis: #c3c2b7; --border: rgba(11, 11, 11, 0.10);
-    --series: #2a78d6; --series-wash: rgba(42, 120, 214, 0.10); --track: rgba(11, 11, 11, 0.07);
+    --series: #1f6bc4; --series-wash: rgba(31, 107, 196, 0.10); --track: rgba(11, 11, 11, 0.07);
     --up: #006300; --warn: #9a5b00; --down: #d03b3b; --ghost: rgba(11, 11, 11, 0.05);
     --k: 1;                                 /* размер текста — как выбран в «Студии» (⚙︎ → «Размер текста») */
   }
@@ -23,8 +23,8 @@
     color-scheme: dark;
     --page: #0d0d0d; --surface: #1a1a19; --text-1: #f0efec; --text-2: #c3c2b7; --muted: #898781;
     --grid: #2c2c2a; --axis: #383835; --border: rgba(255, 255, 255, 0.10);
-    --series: #3987e5; --series-wash: rgba(57, 135, 229, 0.10); --track: rgba(255, 255, 255, 0.08);
-    --up: #0ca30c; --warn: #e0a030; --down: #e66767; --ghost: rgba(255, 255, 255, 0.06);
+    --series: #4a93ea; --series-wash: rgba(74, 147, 234, 0.10); --track: rgba(255, 255, 255, 0.08);
+    --up: #22b422; --warn: #e0a030; --down: #e66767; --ghost: rgba(255, 255, 255, 0.06);
   }
   :root[data-size="l"] { --k: 1.25; }
   :root[data-size="xl"] { --k: 1.5; }
@@ -85,7 +85,7 @@
   .bar .line { height: 6px; background: var(--series); border-radius: 0 4px 4px 0; min-width: 2px; margin-top: 4px; }
   .err { color: var(--down); font-size: calc(13px * var(--k)); margin-top: 10px; overflow-wrap: anywhere; }
   .empty { color: var(--text-2); padding: 24px 0; text-align: center; }
-  .ver { color: var(--text-2); font-size: calc(12px * min(var(--k), 1.1)); text-align: center; margin: 22px 0 0; opacity: .8; overflow-wrap: anywhere; }
+  .ver { color: var(--text-2); font-size: calc(12px * min(var(--k), 1.1)); text-align: center; margin: 22px 0 0; overflow-wrap: anywhere; }
   details { margin-top: 10px; }
   summary { cursor: pointer; color: var(--text-2); font-size: calc(13px * var(--k)); min-height: 32px; }
   table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: calc(13px * var(--k)); font-variant-numeric: tabular-nums; }
@@ -102,11 +102,13 @@
 </style>
 </head>
 <body>
+  <header class="top">
   <a class="back" href="/api/stats/app">← Графики</a>
   <h1>Сервер и ИИ</h1>
   <p class="sub" id="sub">Загружаю…</p>
+  </header>
   <main id="app"></main>
-  <p class="ver">Студия · версия __STUDIO_VERSION__</p>
+  <footer class="ver">Студия · версия __STUDIO_VERSION__</footer>
 
 <script>
 (() => {

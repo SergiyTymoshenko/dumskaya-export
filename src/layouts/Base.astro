@@ -30,7 +30,8 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  {(['en', 'sk', 'de'].includes(lang) ? [fontDisplayLat, fontBodyLat] : [fontDisplayCyr, fontBodyCyr]).map((f) => <link rel="preload" href={f} as="font" type="font/woff2" crossorigin />)}
+  {/* латиница нужна и русским страницам: в ней цифры, пробелы и знаки препинания — без неё текст перестраивается при загрузке */}
+  {(['en', 'sk', 'de'].includes(lang) ? [fontDisplayLat, fontBodyLat] : [fontDisplayLat, fontBodyLat, fontDisplayCyr, fontBodyCyr]).map((f) => <link rel="preload" href={f} as="font" type="font/woff2" crossorigin />)}
   <title>{page.title}</title>
   {page.description && <meta name="description" content={page.description} />}
   {noindex ? <meta name="robots" content="noindex, follow" /> : <link rel="canonical" href={url(page.path)} />}

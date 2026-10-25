@@ -23,8 +23,8 @@
     --grid: #e1e0d9;
     --axis: #c3c2b7;
     --border: rgba(11, 11, 11, 0.10);
-    --series: #2a78d6;
-    --series-wash: rgba(42, 120, 214, 0.10);
+    --series: #1f6bc4;
+    --series-wash: rgba(31, 107, 196, 0.10);
     --up: #006300;
     --down: #d03b3b;
     --ghost: rgba(11, 11, 11, 0.05);
@@ -40,9 +40,10 @@
     --grid: #2c2c2a;
     --axis: #383835;
     --border: rgba(255, 255, 255, 0.10);
-    --series: #3987e5;
-    --series-wash: rgba(57, 135, 229, 0.10);
-    --up: #0ca30c;
+    --series: #4a93ea;
+    --on-series: #0b0b0b;
+    --series-wash: rgba(74, 147, 234, 0.10);
+    --up: #22b422;
     --down: #e66767;
     --ghost: rgba(255, 255, 255, 0.06);
   }
@@ -66,15 +67,15 @@
   /* периоды: 4 кнопки в первом ряду, 3 — во втором (сетка из 12 колонок) */
   .filters { display: grid; grid-template-columns: repeat(12, 1fr); gap: 6px; margin: 0 0 14px; }
   .filters button { grid-column: span 3; min-width: 0; font: inherit; font-size: calc(13px * var(--k)); color: var(--text-1); background: var(--surface);
-    border: 1px solid var(--border); border-radius: 999px; padding: 7px 4px; cursor: pointer; white-space: nowrap; }
+    border: 1px solid var(--border); border-radius: 999px; padding: 7px 4px; min-height: 44px; cursor: pointer; white-space: nowrap; }
   .filters button:nth-child(n+5) { grid-column: span 4; }
   @media (max-width: 359px) { .filters { gap: 4px; } .filters button { font-size: calc(12px * var(--k)); padding: 7px 2px; } }
   .filters button[aria-pressed="true"] { background: var(--text-1); color: var(--page); border-color: var(--text-1); font-weight: 600; }
   /* какой сайт: «Студия», «Магазин» (dumskaya-home.com), «Оба» — три равные части одной кнопки, адрес — в подсказке */
   .sites { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0 0 12px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
-  .sites button { font: inherit; font-size: calc(14px * var(--k)); color: var(--text-1); background: transparent; border: 0; padding: 9px 6px; cursor: pointer; min-width: 0; }
+  .sites button { font: inherit; font-size: calc(14px * var(--k)); color: var(--text-1); background: transparent; border: 0; padding: 9px 6px; cursor: pointer; min-width: 0; min-height: 44px; }
   .sites button + button { border-left: 1px solid var(--border); }
-  .sites button[aria-pressed="true"] { background: var(--series); color: #fff; font-weight: 600; }
+  .sites button[aria-pressed="true"] { background: var(--series); color: var(--on-series, #fff); font-weight: 600; }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin: 0 0 12px; }
   .card h2 { font-size: calc(15px * var(--k)); font-weight: 600; margin: 0 0 2px; }
   .card .note { color: var(--text-2); font-size: calc(13px * var(--k)); margin: 0 0 10px; }
@@ -114,16 +115,16 @@
   .pages .avg { color: var(--text-2); font-size: calc(12px * var(--k)); margin-top: -2px; }
   .pages .line { height: 4px; background: var(--series); border-radius: 0 2px 2px 0; min-width: 2px; }
   details { margin-top: 10px; }
-  summary { cursor: pointer; color: var(--text-2); font-size: calc(13px * var(--k)); }
+  summary { cursor: pointer; color: var(--text-2); font-size: calc(13px * var(--k)); padding-block: 12px; margin-block: -8px; }   /* место для пальца */
   table { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: calc(13px * var(--k)); font-variant-numeric: tabular-nums; }
   th, td { text-align: right; padding: 5px 4px; border-bottom: 1px solid var(--grid); }
   th:first-child, td:first-child { text-align: left; }
   th { color: var(--text-2); font-weight: 500; }
   .empty { color: var(--text-2); padding: 24px 0; text-align: center; }
-  .ver { color: var(--text-2); font-size: calc(12px * min(var(--k), 1.1)); text-align: center; margin: 22px 0 0; opacity: .8; overflow-wrap: anywhere; }
+  .ver { color: var(--text-2); font-size: calc(12px * min(var(--k), 1.1)); text-align: center; margin: 22px 0 0; overflow-wrap: anywhere; }
   .loading { opacity: .5; transition: opacity .2s; }
   .btn { font: inherit; font-size: calc(14px * var(--k)); font-weight: 600; border: 0; border-radius: 10px; padding: 10px 14px; cursor: pointer;
-    background: var(--series); color: #fff; }
+    background: var(--series); color: var(--on-series, #fff); }
   .btn.ghost { background: transparent; color: var(--text-1); border: 1px solid var(--border); font-weight: 500; }
   .btn:disabled { opacity: .6; cursor: default; }
   .own { display: grid; gap: 10px; }
@@ -172,6 +173,7 @@
 </style>
 </head>
 <body>
+  <header class="top">
   <a class="back" id="back" href="/api/crm/app">← Студия</a>
   <h1>Посетители сайта</h1>
   <p class="sub" id="sub">dumskaya-design.com</p>
@@ -190,8 +192,9 @@
     <button type="button" data-p="365" aria-pressed="false">Год</button>
     <button type="button" data-p="all" aria-pressed="false">Всё время</button>
   </div>
+  </header>
   <main id="app"><p class="empty">Загружаю…</p></main>
-  <p class="ver">Студия · версия __STUDIO_VERSION__</p>
+  <footer class="ver">Студия · версия __STUDIO_VERSION__</footer>
 
 <script>
 (() => {

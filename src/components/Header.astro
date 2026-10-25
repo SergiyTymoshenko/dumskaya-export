@@ -45,7 +45,7 @@ if (catalog) {
   </div>
 </header>
 
-<div class="menu" id="menu" hidden>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label={T.menu} hidden>
   <div class="menu__top">
     <button class="hdr__burger" type="button" data-menu-close>
       <span class="burger burger--x" aria-hidden="true"><i></i><i></i></span>
@@ -65,19 +65,25 @@ if (catalog) {
         ? <li><a class="display" href={m.href} hreflang={lang === 'ua' ? 'ru' : undefined}>{m.label}</a></li>
         : <li><a class="display" href={m.href} aria-current={m.href === page.path ? 'page' : undefined}>{m.label}</a></li>)}
     </ul>
+    {/* на телефоне разделы свёрнуты (открыт раздел текущей страницы), раскрываются нажатием на строку; на компьютере — всё видно */}
     <div class="menu__groups">
-      {menu.filter((m) => m.children).map((g) => (
-        <section>
-          {g.label === T.prices2 && priceOverview
-            ? <h2 class="menu__group"><a href={priceOverview}>{g.label}</a></h2>
-            : <h2 class="menu__group">{g.label}</h2>}
-          <ul>
+      {menu.filter((m) => m.children).map((g, gi) => {
+        const link = g.label === T.prices2 && priceOverview ? priceOverview : '';
+        const here = g.children.some((c: any) => c.href === page.path) || link === page.path;
+        return (
+        <section class:list={['menu__sec', here && 'is-open', !link && 'menu__sec--plain']}>
+          <h2 class="menu__group">
+            {link ? <a href={link}>{g.label}</a> : <span>{g.label}</span>}
+            <button type="button" class="menu__tog" aria-expanded={here ? 'true' : 'false'} aria-controls={`menu-g${gi}`} aria-label={g.label}></button>
+          </h2>
+          <ul id={`menu-g${gi}`}>
             {g.children.map((c: any) => (
               <li><a href={c.href} aria-current={c.href === page.path ? 'page' : undefined}>{c.label}</a></li>
             ))}
           </ul>
         </section>
-      ))}
+        );
+      })}
     </div>
     <div class="menu__foot">
       <p>
@@ -108,6 +114,12 @@ if (catalog) {
   }
   openBtn.addEventListener('click', open);
   closeBtn.addEventListener('click', close);
+  menu.dataset.acc = '';
+  menu.querySelectorAll<HTMLButtonElement>('.menu__tog').forEach((b) => b.addEventListener('click', () => {
+    const on = b.getAttribute('aria-expanded') !== 'true';
+    b.setAttribute('aria-expanded', String(on));
+    b.closest('.menu__sec')?.classList.toggle('is-open', on);
+  }));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) close(); });
 </script>
 
@@ -136,7 +148,8 @@ if (catalog) {
   .hdr__logo img { display: block; height: 26px; width: auto; }
   @media (min-width: 720px) { .hdr__logo img { height: 34px; } }
   .hdr__right { justify-self: end; display: flex; align-items: center; gap: 20px; }
-  .hdr__langs { display: none; gap: 12px; font-size: 13px; letter-spacing: 0.06em; }
+  .hdr__langs { display: none; gap: 2px; font-size: 13px; letter-spacing: 0.06em; }
+  .hdr__langs > * { display: inline-grid; place-items: center; min-width: 32px; min-height: 44px; }
   .hdr__langs a { color: var(--stone); text-decoration: none; }
   .hdr__langs a:hover { color: var(--ink); }
   .hdr__langs [aria-current] { color: var(--ink); }
@@ -149,15 +162,31 @@ if (catalog) {
   .menu { position: fixed; inset: 0; z-index: 50; overflow-y: auto; background: var(--paper); }
   .menu__body { padding: clamp(24px, 5vw, 64px) var(--pad) 48px; display: grid; gap: 40px; }
   @media (min-width: 960px) { .menu__body { grid-template-columns: 1fr 2fr; column-gap: 64px; } }
-  .menu__main { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; align-content: start; }
-  .menu__main a { text-decoration: none; font-size: clamp(18px, 2.4vw, 26px); }
+  .menu__main { list-style: none; margin: -7px 0; padding: 0; display: grid; gap: 0; align-content: start; }
+  .menu__main a { display: inline-block; padding-block: 7px; text-decoration: none; font-size: clamp(18px, 2.4vw, 26px); }
   .menu__main a[aria-current] { color: var(--oak); }
   .menu__groups { display: grid; gap: 32px; }
   @media (min-width: 720px) { .menu__groups { grid-template-columns: repeat(2, 1fr); gap: 32px; } }
   @media (min-width: 1100px) { .menu__groups { grid-template-columns: repeat(4, 1fr); } }
   .menu__group { font-family: var(--display); text-transform: uppercase; letter-spacing: 0.18em; font-size: 13px; margin-bottom: 12px; color: var(--ink); }
-  .menu__group a { text-decoration: none; }
+  .menu__group { display: flex; align-items: center; justify-content: space-between; gap: 8px; position: relative; }
+  .menu__group a { display: inline-block; padding-block: 4px; margin-block: -4px; text-decoration: none; }
+  .menu__tog { display: none; }
   .menu__groups ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  /* телефон: разделы — строки с линией; нажатие на строку (или на стрелку у «Цен» со ссылкой) раскрывает список */
+  @media (max-width: 719px) {
+    .menu__groups { gap: 0; border-top: 1px solid var(--line); }
+    .menu__sec { border-bottom: 1px solid var(--line); }
+    .menu__group { margin: 0; min-height: 52px; }
+    .menu__group a { flex: 1; padding-block: 16px; margin-block: 0; }
+    .menu__tog { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-right: -12px; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; }
+    .menu__sec--plain .menu__tog::after { content: ''; position: absolute; inset: 0; }
+    .menu__tog::before { content: ''; width: 8px; height: 8px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+    .menu__tog[aria-expanded='true']::before { transform: translateY(2px) rotate(-135deg); }
+    .menu__groups ul { padding-bottom: 12px; }
+    .menu[data-acc] .menu__sec:not(.is-open) > ul { display: none; }
+    .menu__foot { border-top: 0; padding-top: 0; }   /* разделы уже закончились линией */
+  }
   .menu__groups li a { display: inline-block; padding-block: 6px; }
   .menu__groups a { text-decoration: none; }
   .menu__groups a[aria-current] { color: var(--oak); }
