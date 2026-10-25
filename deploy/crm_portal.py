@@ -1028,6 +1028,7 @@ class Portal:
             x["owner_name"] = a.get("name") or ""
             x["owner_role"] = a.get("position") or ""
         x["room"], x["ver"] = f.get("room") or "", f.get("ver")
+        x["agreed"] = f.get("agreed") if f.get("category") in ROUND_CATS else None   # заказчик согласовал это фото
         # одобрение Ирины (видно тому, кто прислал, и студии): wait — ждёт, yes — заказчик видит, no — Ирина не показала
         if f.get("owner_kind") in ("contractor", "crew", "assistant") and not v["client"]:
             x["approval"] = "yes" if f.get("see_client") == 1 else "wait" if f.get("review") else "no" if f.get("see_client") == 0 else ""

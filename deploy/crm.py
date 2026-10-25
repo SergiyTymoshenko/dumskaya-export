@@ -396,7 +396,9 @@ class Crm:
                                     ("threads", "assistant_id", "INTEGER"),
                                     # стадия проекта; помещение, версия и «ждёт решения Ирины» у файлов (25.10.2026)
                                     ("projects", "stage", "TEXT"), ("files", "room", "TEXT"), ("files", "ver", "INTEGER"),
-                                    ("files", "review", "INTEGER")):
+                                    ("files", "review", "INTEGER"),
+                                    # заказчик согласовал конкретное фото (решено 25.10.2026, вечер): дата и кто отметил
+                                    ("files", "agreed", "TEXT"), ("files", "agreed_by", "TEXT")):
                 if col not in {r[1] for r in self.db.execute(f"PRAGMA table_info({table})")}:
                     self.db.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
             self.db.execute("CREATE INDEX IF NOT EXISTS messages_thread ON messages(thread_id, id)")
@@ -408,6 +410,17 @@ class Crm:
                 self.db.execute("UPDATE files SET see_client=1 WHERE owner_kind='assistant' AND see_client IS NULL AND category IN "
                                 f"({','.join('?' * len(CLIENT_CATS))})", CLIENT_CATS)
                 self.db.execute("INSERT OR REPLACE INTO settings(key, value) VALUES('mig_approval', '2026-10-25')")
+            # 25.10.2026, вечер: согласование — у каждого фото, а не у всего варианта (правки). Вариант, отмеченный раньше
+            # «Заказчик согласовал», переносится на все его файлы с той же датой; doc_rounds остаётся как было
+            if not self.db.execute("SELECT 1 FROM settings WHERE key='mig_file_agreed'").fetchone():
+                self.db.execute("""UPDATE files SET
+                      agreed = (SELECT r.agreed FROM doc_rounds r WHERE r.project_id=files.project_id AND r.category=files.category
+                                AND r.ver=COALESCE(files.ver, 1) AND r.agreed IS NOT NULL),
+                      agreed_by = (SELECT r.agreed_by FROM doc_rounds r WHERE r.project_id=files.project_id AND r.category=files.category
+                                AND r.ver=COALESCE(files.ver, 1) AND r.agreed IS NOT NULL)
+                    WHERE agreed IS NULL AND EXISTS (SELECT 1 FROM doc_rounds r WHERE r.project_id=files.project_id
+                          AND r.category=files.category AND r.ver=COALESCE(files.ver, 1) AND r.agreed IS NOT NULL)""")
+                self.db.execute("INSERT OR REPLACE INTO settings(key, value) VALUES('mig_file_agreed', '2026-10-25')")
         try:
             os.chmod(path, 0o600)
         except OSError:
@@ -910,6 +923,18 @@ class Crm:
         if sets:
             self.run(f"UPDATE files SET {', '.join(k + '=?' for k in sets)} WHERE id=?", *sets.values(), f["id"])
             self.audit(who, "edit", "file", f["id"], dict(sets, project_id=f["project_id"]))
+        return self.project(f["project_id"])
+
+    def set_file_agreed(self, d, who):
+        """Ирина отмечает под фото (вариант планировки, визуализация): заказчик его согласовал — или снимает отметку."""
+        f = self.one("SELECT * FROM files WHERE id=?", int(d.get("id") or 0))
+        if not f:
+            raise CrmError("Файл не найден")
+        if f["category"] not in ROUND_CATS:
+            raise CrmError("Согласование отмечается только у планировок и визуализаций")
+        on = bool(d.get("agreed"))
+        self.run("UPDATE files SET agreed=?, agreed_by=? WHERE id=?", today().isoformat() if on else None, _text(who, 120) if on else None, f["id"])
+        self.audit(who, "edit", "file", f["id"], {"project_id": f["project_id"], "agreed": on})
         return self.project(f["project_id"])
 
     def approve_file(self, d, who):

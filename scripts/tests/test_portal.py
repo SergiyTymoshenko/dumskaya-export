@@ -967,6 +967,28 @@ code, x = call(f"/api/portal/project?id={pid}", H.CLIENT, lang="sk")
 vis_ = {f["id"]: f for f in x["files"]}
 check(code == 200 and {pl1["id"], pl2["id"], v1["id"], r1["id"], d2["id"]} <= set(vis_) and x["rounds"] == [{"category": "plan", "ver": 2, "agreed": B_today}],
       "заказчик видит варианты, правки и отметку «согласовано»")
+# согласование — у каждого фото (решено 25.10.2026, вечер): Ирина ставит галочку под фото, у всех — зелёная галочка на фото
+code, r = call("/api/crm/save", H.IRINA, {"entity": "file_agreed", "data": {"id": r1["id"], "agreed": True}}, lang="ru")
+fa = {f["id"]: f for f in r.get("files", [])}
+check(code == 200 and fa[r1["id"]]["agreed"] == B_today and fa[r1["id"]]["agreed_by"] == "Ирина" and not fa[r1b["id"]]["agreed"],
+      "Ирина отметила: заказчик согласовал это фото (правка 1, гостиная) — только его")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "file_agreed", "data": {"id": d2["id"], "agreed": True}}, lang="ru")
+check(code == 400, "у документов (не планировки и не визуализации) согласования нет")
+code, r = call("/api/crm/save", H.OWNER, {"entity": "file_agreed", "data": {"id": r1b["id"], "agreed": True}}, lang="ru")
+check(code == 403 and not H.crm.one("SELECT agreed FROM files WHERE id=?", r1b["id"])["agreed"], "разработчик отметку не ставит")
+code, x2 = call(f"/api/portal/project?id={pid}", H.CLIENT, lang="sk")
+fa = {f["id"]: f for f in x2["files"]}
+check(code == 200 and fa[r1["id"]]["agreed"] == B_today and not fa[r1b["id"]]["agreed"] and "agreed_by" not in fa[r1["id"]],
+      "заказчик видит, какие фото согласованы (без того, кто отметил)")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "file_agreed", "data": {"id": r1["id"], "agreed": False}}, lang="ru")
+check(code == 200 and not H.crm.one("SELECT agreed FROM files WHERE id=?", r1["id"])["agreed"], "отметку можно снять")
+# прежняя отметка «вариант согласован» переносится на все его файлы (один раз, при запуске)
+H.crm.run("DELETE FROM settings WHERE key='mig_file_agreed'")
+H.crm.run("UPDATE files SET agreed=NULL WHERE project_id=?", pid)
+from crm import Crm  # noqa: E402
+Crm(path=os.environ["CRM_DB"], rates=H.FakeRates(), files_dir=os.environ["CRM_FILES"], backup_dir=os.environ["BACKUP_DIR"])
+got = {f["id"]: f["agreed"] for f in H.crm.q("SELECT id, agreed FROM files WHERE project_id=? AND category='plan'", pid)}
+check(got.get(pl2["id"]) == B_today and not got.get(pl1["id"]), "согласованный раньше вариант 2 планировки — галочка на его файле")
 room_l = P.label("Гостиная", x["lang"])
 check(x["lang"] != "ru" and vis_[r1["id"]]["ver"] == 2 and vis_[r1["id"]]["room"] == room_l != "Гостиная" and ["Гостиная", room_l] in x["rooms"] and x["revisions"] == 2,
       f"помещения — на языке заказчика ({x['lang']}); в пакет «Премиум» входят 2 правки")

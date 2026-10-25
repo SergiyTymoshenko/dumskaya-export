@@ -24,7 +24,7 @@
     --grid: #2c2c2a; --axis: #383835; --border: rgba(255, 255, 255, 0.10); --series: #4a93ea; --series-wash: rgba(74, 147, 234, 0.12); --on-series: #0b0b0b;
     --up: #22b422; --down: #e66767; --ghost: rgba(255, 255, 255, 0.06); --warn: #e0a040;
   }
-  /* Крупный текст (⚙︎ → «Размер текста»; у дизайнера по умолчанию «Крупный»): весь текст в 1,25 или 1,5 раза больше,
+  /* Крупный текст (⚙︎ → «Размер текста»; по умолчанию у всех «Обычный» — решено 25.10.2026): весь текст в 1,25 или 1,5 раза больше,
      второстепенный текст и рамки — контрастнее (не светло-серые), поля ввода и кнопки — заметнее. */
   :root[data-size="l"] { --k: 1.25; }
   :root[data-size="xl"] { --k: 1.5; }
@@ -310,6 +310,22 @@
   .bub .vis.on { border-color: var(--up); color: var(--up); font-weight: 600; }
   .drow { display: grid; grid-template-columns: calc(72px * min(var(--k), 1.25)) 1fr; gap: 12px; align-items: start; width: 100%; }
   .gallery .custom { outline: 2px dashed var(--warn); outline-offset: -2px; }
+  /* согласованное заказчиком фото (решено 25.10.2026): аккуратная зелёная галочка в углу; у Ирины под фото — галочка «согласовано» */
+  .thumb, .doc { position: relative; }
+  .okmark { position: absolute; right: 6px; bottom: 6px; width: 22px; height: 22px; border-radius: 50%; pointer-events: none;
+    background: #1e8e3e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 15px no-repeat; box-shadow: 0 0 0 2px #fff, 0 1px 4px rgba(0,0,0,.35); }
+  .gcell { display: flex; flex-direction: column; min-width: 0; }
+  .agree { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 34px; padding-top: 2px; cursor: pointer;
+    font-size: calc(13px * var(--k)); color: var(--text-2); -webkit-user-select: none; user-select: none; }
+  .agree input { -webkit-appearance: none; appearance: none; flex: 0 0 auto; width: 24px; height: 24px; margin: 0; border-radius: 7px;
+    border: 1.5px solid var(--axis); background: var(--surface); cursor: pointer; }
+  .agree input:checked { background: #1e8e3e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; border-color: #1e8e3e; }
+  .agree input:focus-visible { outline: 2px solid var(--series); outline-offset: 2px; }
+  .agree input:checked + span { color: var(--up); font-weight: 650; }
+  .viewer .agree { justify-content: flex-start; color: #ddd; font-size: calc(14px * min(var(--k), 1.2)); }
+  .viewer .agree input:not(:checked) { background: transparent; border-color: rgba(255,255,255,.55); }
+  .viewer .agree input:checked + span { color: #7fe08f; }
+  .viewer .cap .okt { color: #7fe08f; font-weight: 650; }
   .badge-n { display: inline-block; min-width: 24px; padding: 0 7px; border-radius: 12px; background: var(--down); color: #fff; font-size: calc(13px * var(--k)); font-weight: 700; line-height: 24px; text-align: center; }
   .seg.seg5 { grid-template-columns: repeat(5, 1fr); }
   /* крупный текст: раскладка, чтобы ничего не обрезалось */
@@ -365,7 +381,7 @@
     document.documentElement.dataset.theme = dark ? 'dark' : 'light';
     if (tg) { try { const bg = dark ? '#0d0d0d' : '#f9f9f7'; tg.setHeaderColor(bg); tg.setBackgroundColor(bg); } catch (e) {} }
   }
-  // размер текста: свой у каждого (хранится на сервере, у дизайнера по умолчанию «Крупный»); на этом устройстве помним,
+  // размер текста: свой у каждого (хранится на сервере, по умолчанию «Обычный»); на этом устройстве помним,
   // чтобы при открытии сразу показать нужный размер
   const SIZES = [['m', 'Обычный'], ['l', 'Крупный'], ['xl', 'Очень крупный']];
   function applySize(z) {
@@ -420,7 +436,7 @@
   const status = (s) => (S.lists.statuses.find((x) => x[0] === s) || [s, s])[1];
   const plural = (n, a, b, c) => { const x = Math.abs(n) % 100, y = x % 10; return x > 10 && x < 20 ? c : y === 1 ? a : y >= 2 && y <= 4 ? b : c; };
   function toast(text) {
-    const t = el('div', 'toast', text); document.body.append(t);
+    const t = el('div', { class: 'toast', role: 'status', 'aria-live': 'polite' }, text); document.body.append(t);   // экранный диктор зачитает
     if (tg && tg.HapticFeedback) try { tg.HapticFeedback.notificationOccurred('success'); } catch (e) {}
     setTimeout(() => t.remove(), 2200);
   }
@@ -809,24 +825,18 @@
       if (!vers.length) vers.push(1);
       curVer = vers.includes(fileVer[fileTab]) ? fileVer[fileTab] : vers[vers.length - 1];
       const nextV = vers[vers.length - 1] + 1;
-      const agreed = (n) => (P.rounds || []).find((r) => r.category === fileTab && r.ver === n);
       const vchips = el('div', 'chips', ...vers.map((n) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(n === curVer),
-        onclick: () => { fileVer[fileTab] = n; render(); } }, verName(fileTab, n) + (agreed(n) ? ' ✓' : '') + ' · ' + list.filter((x) => (x.ver || 1) === n).length)),
+        onclick: () => { fileVer[fileTab] = n; render(); } }, verName(fileTab, n) + ' · ' + list.filter((x) => (x.ver || 1) === n).length)),
         list.length && !OWNER ? el('button', { class: 'chip', type: 'button', onclick: () => { fileVer[fileTab] = nextV; fileVerNew[fileTab] = true; render(); } }, '＋ ' + verName(fileTab, nextV)) : null);
       if (fileVerNew[fileTab] && !vers.includes(fileVer[fileTab])) {          // новая правка — пока пустая, файлы пойдут в неё
         curVer = fileVer[fileTab];
         vchips.append(el('button', { class: 'chip', type: 'button', 'aria-pressed': 'true' }, verName(fileTab, curVer) + ' · новая'));
       }
       f.append(vchips);
+      // согласование — у каждого фото (галочка под фото), над группой не пишем (решено 25.10.2026)
       const tarif = (S.lists.tariff_info || {})[p.tariff] || {};
-      const ag = agreed(curVer);
-      f.append(el('div', { class: 'row between', style: 'gap:8px;flex-wrap:wrap;margin:0 0 10px' },
-        el('span', 'small muted', fileTab === 'visual' && tarif.revisions != null ? 'По пакету «' + p.tariff + '» правок: ' + tarif.revisions + (curVer - 1 > tarif.revisions ? ' — эта сверх пакета' : '') : ''),
-        OWNER ? (ag ? el('span', { class: 'small', style: 'color:var(--up);font-weight:650' }, '✓ Заказчик согласовал · ' + dfmt(ag.agreed)) : null)
-        : list.some((x) => (x.ver || 1) === curVer) ? el('button', { class: 'btn small' + (ag ? ' primary' : ''), type: 'button',
-          style: 'white-space:normal;flex:0 1 auto;max-width:100%;text-align:center', onclick: async () => {   // очень крупный текст на узком телефоне — в две строки, без прокрутки вбок
-          try { await refresh(await save('round', { project_id: p.id, category: fileTab, ver: curVer, agreed: !ag })); toast(ag ? 'Отметка снята' : 'Отмечено: заказчик согласовал'); } catch (e) { toast(e.message); }
-        } }, ag ? '✓ Заказчик согласовал · ' + dfmt(ag.agreed) : 'Отметить: заказчик согласовал') : null));
+      if (fileTab === 'visual' && tarif.revisions != null) f.append(el('p', { class: 'small muted', style: 'margin:0 0 10px' },
+        'По пакету «' + p.tariff + '» правок: ' + tarif.revisions + (curVer - 1 > tarif.revisions ? ' — эта сверх пакета' : '')));
       list = list.filter((x) => (x.ver || 1) === curVer);
     }
     let curRoom = roomCat ? (fileRoom[fileTab] || '') : '';
@@ -1142,9 +1152,29 @@
   const verName = (c, n) => (c === 'plan' ? 'Вариант ' + n : c === 'visual' ? (n <= 1 ? 'Первый вариант' : 'Правка ' + (n - 1)) : 'Версия ' + n);
   function galleryOf(list, seq) {                 // seq — по чему листать в просмотре (весь раздел), по умолчанию — эта же сетка
     const g = el('div', 'gallery');
-    list.forEach((x) => { const t = fileTile(x, seq || list); if (x.see_client != null || x.see_crew != null) t.classList.add('custom'); g.append(t); });
+    list.forEach((x) => {
+      const t = fileTile(x, seq || list);
+      if (x.see_client != null || x.see_crew != null) t.classList.add('custom');
+      g.append(canAgree(x) && !OWNER ? el('div', 'gcell', t, agreeBox(x)) : t);   // под фото — «согласовано» (только у Ирины)
+    });
     return g;
   }
+  // согласование заказчиком — у каждого фото (вариант планировки, визуализация), решено 25.10.2026
+  const canAgree = (x) => (S.lists.round_cats || []).includes(x.category);
+  function agreeBox(x) {
+    const cb = el('input', { type: 'checkbox', 'aria-label': 'Заказчик согласовал' + (x.title ? ': ' + x.title : ' это фото') });
+    cb.checked = !!x.agreed;
+    cb.addEventListener('change', async () => {
+      const on = cb.checked;
+      try { await refresh(await save('file_agreed', { id: x.id, agreed: on })); x.agreed = on ? todayISO() : null; toast(on ? 'Отмечено: заказчик согласовал' : 'Отметка снята'); }
+      catch (e) { cb.checked = !on; toast(e.message); }
+    });
+    return el('label', 'agree', cb, el('span', null, 'согласовано'));
+  }
+  const okMark = (t, x) => {                        // зелёная галочка в углу плитки — заказчик согласовал
+    if (x.agreed && canAgree(x)) { t.append(el('span', { class: 'okmark', 'aria-hidden': 'true' })); t.setAttribute('aria-label', (x.title || 'Фото') + ' — согласовано'); }
+    return t;
+  };
   async function approve(x, show) {             // документ подрядчика, исполнителя, работника, сотрудника — заказчику или нет
     try {
       await refresh(await save('file_approve', { id: x.id, show }));
@@ -1154,12 +1184,12 @@
   function fileTile(x, list) {
     if (x.image && (x.thumb_url || x.url)) {
       const b = el('button', { class: 'thumb', type: 'button', onclick: () => viewer(x, list) });
-      const img = el('img', { src: x.thumb_url || x.url, alt: x.name, loading: 'lazy' });
-      img.addEventListener('error', () => b.replaceWith(docTile(x, list)));   // формат, который этот экран не показывает (HEIC и т. п.)
+      const img = el('img', { src: x.thumb_url || x.url, alt: x.title || 'Фото', loading: 'lazy' });
+      img.addEventListener('error', () => b.replaceWith(okMark(docTile(x, list), x)));   // формат, который этот экран не показывает (HEIC и т. п.)
       b.append(img);
-      return b;
+      return okMark(b, x);
     }
-    return docTile(x, list);
+    return okMark(docTile(x, list), x);
   }
 
   // просмотр файла (решено 25.10.2026): фото — на весь экран и листается по разделу (list — в том порядке, как на экране):
@@ -1196,7 +1226,9 @@
       [seq[i - 1], seq[i + 1]].forEach((y) => { if (y) new Image().src = y.url; });   // соседние фото — заранее, чтобы листалось без ожидания
     }
     const meta = [x.title, dfmt(x.created), x.owner_name || x.created_by].filter(Boolean).join(' · ');
-    const top = el('div', 'vtop', many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null, meta ? el('div', 'cap', meta) : null);
+    const ok = x.agreed && canAgree(x) ? el('span', 'okt', '✓ согласовано') : null;
+    const top = el('div', 'vtop', many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null,
+      meta || ok ? el('div', 'cap', ok, ok && meta ? ' · ' : '', meta) : null);
     const close = el('button', { class: 'btn vx', type: 'button', 'aria-label': 'Закрыть', title: 'Закрыть (Esc)', onclick: () => closeViewer(v) }, '✕');
     const open = x.url ? el('button', { class: 'btn', type: 'button', onclick: () => openLink(x.url) }, '↗ Открыть') : null;
     if (OWNER) {                                         // разработчик — только смотрит
@@ -1213,6 +1245,7 @@
       return s2;
     };
     const rows = [];
+    if (canAgree(x)) rows.push(el('div', 'vrow', el('span', null, 'Согласование'), agreeBox(x)));   // заказчик согласовал это фото
     if (x.category !== 'work') rows.push(row('Раздел', change(pick(S.lists.file_cats, x.category, 'Раздел'), async (val) => {
       await refresh(await api('/api/crm/move', { json: { id: x.id, category: val } })); closeViewer(v); toast('Перенесено');
     })));

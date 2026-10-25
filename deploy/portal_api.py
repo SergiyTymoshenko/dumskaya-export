@@ -73,7 +73,7 @@ def who(h):
             BOT.s.put(f"tg:lang:{uid}", code)
     name = " ".join(x for x in (tu.get("first_name"), tu.get("last_name")) if x) or u["name"] or str(uid)
     designer = u["role"] == "designer"
-    return {"tg": uid, "name": name, "lang": BOT.lang_of(uid), "size": BOT.s.get(f"ui:size:{uid}") or ("l" if designer else "m"),
+    return {"tg": uid, "name": name, "lang": BOT.lang_of(uid), "size": BOT.s.get(f"ui:size:{uid}") or "m",
             "designer": designer, "observer": not designer and PORTAL.is_observer(uid), "user": u}
 
 

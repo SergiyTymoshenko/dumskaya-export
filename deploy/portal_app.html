@@ -116,6 +116,11 @@
   .thumb .appr { position: absolute; top: 4px; right: 4px; min-width: calc(24px * var(--k)); height: calc(24px * var(--k)); padding: 0 4px; border-radius: 12px;
     display: flex; align-items: center; justify-content: center; font-size: calc(13px * var(--k)); font-weight: 700; color: #fff; background: rgba(0,0,0,.6); }
   .thumb .appr-wait { background: var(--warn); color: var(--page); } .thumb .appr-yes { background: var(--up); color: var(--page); }
+  /* заказчик согласовал это фото (вариант планировки, визуализация) — аккуратная зелёная галочка в углу (решено 25.10.2026) */
+  .doc { position: relative; }
+  .okmark { position: absolute; right: 6px; bottom: 6px; width: 22px; height: 22px; border-radius: 50%; pointer-events: none;
+    background: #1e8e3e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 15px no-repeat; box-shadow: 0 0 0 2px #fff, 0 1px 4px rgba(0,0,0,.35); }
+  .viewer .cap .okt { color: #7fe08f; font-weight: 650; }
   .doc { aspect-ratio: 1; border-radius: 10px; background: var(--ghost); border: 0; padding: 8px; cursor: pointer; display: flex; flex-direction: column;
     justify-content: space-between; text-align: left; font-size: calc(12px * var(--k)); overflow: hidden; }
   .doc .ext { font-weight: 700; font-size: calc(13px * var(--k)); color: var(--series); }
@@ -706,7 +711,7 @@
   const hm = (d) => String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
   const digits = (s) => (s || '').replace(/[^\d+]/g, '');
   function toast(text) {
-    const t = el('div', 'toast', text); document.body.append(t);
+    const t = el('div', { class: 'toast', role: 'status', 'aria-live': 'polite' }, text); document.body.append(t);   // экранный диктор зачитает
     if (tg && tg.HapticFeedback) try { tg.HapticFeedback.notificationOccurred('success'); } catch (e) {}
     setTimeout(() => t.remove(), 2400);
   }
@@ -1120,7 +1125,6 @@
   const isRound = (c) => ((V && V.round_cats) || []).includes(c);
   const isRoom = (c) => ((V && V.room_cats) || []).includes(c);
   const verName = (c, n) => (c === 'plan' ? T('ver_plan', { n }) : c === 'visual' ? (n <= 1 ? T('ver_first') : T('ver_rev', { n: n - 1 })) : T('ver_n', { n }));
-  const agreedOf = (c, n) => ((V && V.rounds) || []).find((r) => r.category === c && r.ver === n);
   const apprText = (f) => ({ wait: T('appr_wait'), yes: T('appr_yes'), no: T('appr_no') }[f.approval] || '');
   const verSel = {};
   function stageName(k) { const x = ((V && V.stages) || []).find((s) => s[0] === k); return x ? x[1] : ''; }
@@ -1155,11 +1159,10 @@
     if (isRound(cat)) {                                 // варианты планировки и правки визуализаций — каждый отдельно
       const vers = [...new Set(list.map((f) => f.ver || 1))].sort((a, b) => a - b);
       const cur = vers.includes(verSel[cat]) ? verSel[cat] : vers[vers.length - 1];
-      if (vers.length > 1 || agreedOf(cat, cur)) box.append(el('div', 'chips', ...vers.map((n) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(n === cur),
-        onclick: () => { verSel[cat] = n; render(); } }, verName(cat, n) + (agreedOf(cat, n) ? ' ✓' : '')))));
-      const ag = agreedOf(cat, cur);
-      box.append(el('div', { class: 'row between', style: 'margin:0 0 10px;gap:8px;flex-wrap:wrap' }, el('b', null, verName(cat, cur)),
-        ag ? el('span', 'status ok', '✓ ' + T('agreed') + ' · ' + dfmt(ag.agreed, true)) : null));
+      if (vers.length > 1) box.append(el('div', 'chips', ...vers.map((n) => el('button', { class: 'chip', type: 'button', 'aria-pressed': String(n === cur),
+        onclick: () => { verSel[cat] = n; render(); } }, verName(cat, n)))));
+      // согласование — зелёная галочка на каждом согласованном фото; над группой не пишем (решено 25.10.2026)
+      box.append(el('div', { style: 'margin:0 0 10px' }, el('b', null, verName(cat, cur))));
       if (cat === 'visual' && isClient() && V.revisions) box.append(el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, T('revisions_in', { n: V.revisions })));
       list = list.filter((f) => (f.ver || 1) === cur);
     }
@@ -1221,13 +1224,17 @@
     if (f.image && (f.thumb_url || f.url)) {
       const b = el('button', { class: 'thumb', type: 'button', 'aria-label': f.name, onclick: () => viewer(f, list) });
       const img = el('img', { src: f.thumb_url || f.url, alt: f.name, loading: 'lazy' });
-      img.addEventListener('error', () => b.replaceWith(doc()));
+      img.addEventListener('error', () => b.replaceWith(okMark(doc(), f)));
       b.append(img);
       if (f.approval) { b.setAttribute('aria-label', f.name + ' · ' + apprText(f)); b.append(el('span', 'appr appr-' + f.approval, { wait: '⏳', yes: '✓', no: '—' }[f.approval])); }
-      return b;
+      return okMark(b, f);
     }
-    return doc();
+    return okMark(doc(), f);
   }
+  const okMark = (t, f) => {                          // заказчик согласовал это фото — зелёная галочка в углу
+    if (f.agreed) { t.append(el('span', { class: 'okmark', 'aria-hidden': 'true' })); t.setAttribute('aria-label', (f.title || f.name || '') + ' — ' + T('agreed')); }
+    return t;
+  };
   // просмотр файла; фото листаются по всему разделу (list — в том порядке, как на экране): свайп, стрелки ‹ ›, ← → на компьютере
   function viewer(f, list, dir) {
     const v = el('div', { class: 'viewer', role: 'dialog', 'aria-modal': 'true', 'aria-label': f.title || (f.image ? T('nav_docs') : f.name) || '' });
@@ -1254,7 +1261,9 @@
     const own = f.can_edit && !readonly();
     // сверху — счётчик и подпись, кто добавил, кто видит (имя файла не показываем — решено 25.10.2026)
     const meta = [f.title, f.owner_name, f.vis && own && !f.approval ? '👁 ' + visName(f) : '', f.approval ? apprText(f) : ''].filter(Boolean).join(' · ');
-    v.append(el('div', 'vtop', many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null, meta ? el('div', 'cap', meta) : null), box, el('div', 'vbar',
+    const ok = f.agreed ? el('span', 'okt', '✓ ' + T('agreed')) : null;
+    v.append(el('div', 'vtop', many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null,
+      meta || ok ? el('div', 'cap', ok, ok && meta ? ' · ' : '', meta) : null), box, el('div', 'vbar',
       f.url ? el('button', { class: 'btn', type: 'button', onclick: () => openLink(f.url) }, '↗ ' + T('open')) : null,
       own ? el('button', { class: 'btn', type: 'button', onclick: () => { v.remove(); docSheet(f); } }, '👁 ' + T('who_sees')) : null,
       own ? el('button', { class: 'btn vdel', type: 'button', onclick: async () => {

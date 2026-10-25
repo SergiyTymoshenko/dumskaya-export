@@ -47,9 +47,9 @@ function startStand() {
 }
 
 const SIZES = QUICK ? ['pm'] : ['pm', 'm', 'tg'];
-// роль → приложение, размеры текста (у Ирины по умолчанию «Крупный»)
+// роль → приложение, размеры текста (по умолчанию у всех «Обычный» — решено 25.10.2026; крупные проверяются тоже)
 const RUNS = [
-  { app: '/api/crm/app', role: 'irina', name: 'studio', text: QUICK ? ['l'] : ['l', 'xl', 'm'], save: '/api/crm/ui' },
+  { app: '/api/crm/app', role: 'irina', name: 'studio', text: QUICK ? ['m'] : ['m', 'l', 'xl'], save: '/api/crm/ui' },
   { app: '/api/crm/app', role: 'owner', name: 'studio-owner', text: ['m'], save: '/api/crm/ui' },
   // разработчик: проекты только для просмотра (решено 25.10.2026) — ни одной кнопки, которая что-то меняет
   { app: '/api/crm/app?tab=projects', role: 'owner', name: 'studio-owner-projects', text: ['m', 'xl'], save: '/api/crm/ui' },
@@ -132,7 +132,23 @@ const RUNS = [
             else { const d = p.locator('#nav button', { hasText: /Документы/ }); if (await d.count()) { await d.first().click(); await p.waitForTimeout(500); opened = true; } }
             const chip = p.locator('button.chip', { hasText: /^Визуализации/ });
             if (opened && await chip.count()) { await chip.first().click(); await p.waitForTimeout(500); }
-            const tiles = opened ? await p.$$('.gallery .thumb') : [];
+            let tiles = opened ? await p.$$('.gallery .thumb') : [];
+            // согласование — у каждого фото (решено 25.10.2026): у Ирины под фото галочка, отмеченное — с зелёной галочкой на фото
+            if (run.role === 'irina' && tiles.length) {
+              const boxes = await p.$$('.gallery .gcell .agree input[type=checkbox]');
+              const before = (await p.$$('.gallery .okmark')).length;
+              if (boxes.length < tiles.length) R.ok(false, `${tag}: галочки «согласовано» под фото`, `${boxes.length} из ${tiles.length}`);
+              else {
+                await boxes[0].click(); await p.waitForTimeout(700);
+                const after = (await p.$$('.gallery .okmark')).length;
+                await look('визуализации — фото согласовано');
+                const again = await p.$$('.gallery .gcell .agree input[type=checkbox]');
+                if (again[0]) { await again[0].click(); await p.waitForTimeout(700); }
+                const back = (await p.$$('.gallery .okmark')).length;
+                R.ok(after === before + 1 && back === before, `${tag}: галочка «согласовано» под фото`, `зелёных галочек: ${before} → ${after} → ${back}`);
+              }
+              tiles = await p.$$('.gallery .thumb');
+            }
             if (tiles.length < 2) R.ok(false, `${tag}: листание фото`, `в «Визуализациях» фото: ${tiles.length}, нужно не меньше двух`);
             else {
               await tiles[0].scrollIntoViewIfNeeded(); await tiles[0].click(); await p.waitForTimeout(500);

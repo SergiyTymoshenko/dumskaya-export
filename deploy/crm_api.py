@@ -31,9 +31,17 @@ SIZES = ("m", "l", "xl")       # размер текста в «Студии» �
 
 
 def ui_size(u):
-    """Размер текста у человека: что выбрал сам, иначе у дизайнера — крупный (решено 24.10.2026), у остальных — обычный."""
-    v = BOT.s.get(f"ui:size:{u['tg_id']}") if BOT else None
-    return v if v in SIZES else ("l" if u["role"] == "designer" else "m")
+    """Размер текста у человека: что выбрал сам, иначе обычный. У дизайнера — тоже обычный, как у разработчика
+    (решено 25.10.2026; было «Крупный» по умолчанию): выбранный раньше крупный размер один раз сбрасывается на обычный,
+    дальше — что она выберет сама (⚙︎ → «Размер текста»)."""
+    if not BOT:
+        return "m"
+    key = f"ui:size:{u['tg_id']}"
+    if u["role"] == "designer" and not BOT.s.get(f"ui:size_reset:{u['tg_id']}"):
+        BOT.s.put(key, "m")
+        BOT.s.put(f"ui:size_reset:{u['tg_id']}", "2026-10-25")
+    v = BOT.s.get(key)
+    return v if v in SIZES else "m"
 
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -464,7 +472,7 @@ def handle_post(h, path, query):
                   "lists": CRM.save_lists, "order": CRM.save_order, "service": CRM.save_service,
                   "pclient": CRM.add_project_client, "pclient_remove": CRM.remove_project_client,
                   "project_status": CRM.set_project_status, "project_stage": CRM.set_project_stage,
-                  "tariff": CRM.change_tariff, "file_meta": CRM.set_file_meta, "round": CRM.set_round,
+                  "tariff": CRM.change_tariff, "file_meta": CRM.set_file_meta, "round": CRM.set_round, "file_agreed": CRM.set_file_agreed,
                   "file_approve": file_approve}.get(entity)
             if not fn:
                 fn = portal_save(entity)
