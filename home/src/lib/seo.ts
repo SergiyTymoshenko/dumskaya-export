@@ -12,7 +12,21 @@ import type { Lang } from './i18n';
 export const T_MAX = 60, D_MAX = 155;
 export const SUFFIX = ' | DUMSKAYA HOME';
 export const fit = (xs: string[], max: number) => xs.find((x) => x.length <= max) || xs[xs.length - 1].slice(0, max - 1).trimEnd() + '…';
-export const fitTitle = (base: string[]) => fit([...base.map((b) => b + SUFFIX), ...base], T_MAX);
+/** Длинное название в title — без середины: начало (серия) и конец (исполнение и тип изделия) остаются, иначе у товаров
+ *  одной серии (Delta Light: «Femtoline 35 Flush HE Trimless … Low Glare Control») заголовки совпадают. */
+export function cutMiddle(s: string, max: number) {
+  if (s.length <= max) return s;
+  const words = s.split(' ');
+  let head = '', tail = '';
+  for (const w of words) { if ((head ? head + ' ' + w : w).length > max * 0.55) break; head = head ? head + ' ' + w : w; }
+  for (const w of [...words].reverse()) { if ((tail ? w + ' ' + tail : w).length > max - head.length - 3) break; tail = tail ? w + ' ' + tail : w; }
+  if (!head || !tail) return s.slice(0, max - 1).trimEnd() + '…';
+  return `${head.replace(/[\s,–—-]+$/, '')} … ${tail.replace(/^[\s,–—-]+/, '')}`;
+}
+export const fitTitle = (base: string[]) => {
+  const xs = [...base.map((b) => b + SUFFIX), ...base];
+  return xs.find((x) => x.length <= T_MAX) || cutMiddle(xs[xs.length - 1], T_MAX);
+};
 
 const AND: Record<Lang, string> = { en: 'and', ru: 'и', de: 'und', fr: 'et', es: 'y' };
 export const join = (xs: string[], l: Lang, max = 3) => {

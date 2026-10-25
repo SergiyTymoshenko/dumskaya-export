@@ -37,6 +37,11 @@ MARKERS = {"en": TM.EN, "ru": TM.RU, "de": TM.DE, "fr": TM.FR, "es": TM.ES}
 SITE_JSON = json.load(open(os.path.join(ROOT, "content/site.json"), encoding="utf-8"))
 PHONES = {p["key"]: p for p in SITE_JSON["contacts"]["phones"]}
 HOME_EMAIL = (json.load(open(os.path.join(ROOT, "content/home/site.json"), encoding="utf-8")).get("email") or "").strip()
+# названия моделей, коллекций и фабрик из каталога: в проверке штампов не считаются (с заглавной буквы — имя, а не оборот:
+# «Sofá modular Oasis» — модель, «un oasis de calma» — штамп)
+_CAT = json.load(open(os.path.join(ROOT, "home/data/catalog.json"), encoding="utf-8")) if os.path.exists(os.path.join(ROOT, "home/data/catalog.json")) else {"products": []}
+_NAMES = sorted({str(x.get(k) or "").strip() for x in _CAT["products"] for k in ("model", "full_model", "collection_name", "brand")} - {""}, key=len, reverse=True)
+NAMES = re.compile(r"(?<![\w-])(?:" + "|".join(re.escape(n) for n in _NAMES) + r")(?![\w-])") if _NAMES else re.compile(r"(?!x)x")
 
 
 def lang_of(u):
@@ -241,7 +246,7 @@ def main():
             if m != HOME_EMAIL:
                 errs.append(f"e-mail {m} на странице (на сайте — только {HOME_EMAIL or 'форма, e-mail пока нет'}): {u}")
         own = " ".join([t, p.desc or ""] + p.own)
-        hits = TM.scan(own, MARKERS[l])
+        hits = TM.scan(NAMES.sub(" ", own), MARKERS[l])     # названия моделей (Flexform «Oasis») — не штампы
         if hits:
             errs.append(f"шаблонные обороты ({l}): {', '.join(hits)}: {u}")
         if re.search(r'class="ph[\s"]', raw[u]):

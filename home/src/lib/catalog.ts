@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { LANGS, DEFAULT, prefix, homePath, ui, type Lang } from './i18n';
-import { SUFFIX, fitTitle, productTitle, productDesc, listTitle, listDesc, brandTitle, brandDesc, homeDesc } from './seo';
+import { SUFFIX, T_MAX, D_MAX, fit, fitTitle, cutMiddle, productTitle, productDesc, listTitle, listDesc, brandTitle, brandDesc, homeDesc } from './seo';
 
 const DATA = import.meta.env.HOME_DATA as string;
 const read = (f: string, d: any) => { try { return JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8')); } catch { return d; } };
@@ -109,7 +109,8 @@ export function allPages(): HPage[] {
     }
     if (outdoorProducts.length) list('outdoor', undefined, tax.outdoor.name[l], outdoorProducts, paths.outdoor(), [home, { label: tax.outdoor.name[l] }]);
     out.push({ kind: 'brands', lang: l, path: paths.brands[l], alt: paths.brands, h1: T.brandsTitle, title: fitTitle([T.brandsTitle]),
-      description: T.brandsLead + ' ' + brandNames(l, 12) + '.', crumbs: [home, { label: T.brandsTitle }] });
+      // фабрик всё больше — в описание (до 155 знаков) берём столько, сколько помещается
+      description: fit([12, 10, 8, 6, 4, 3].map((k) => `${T.brandsLead} ${brandNames(l, k)}.`), D_MAX), crumbs: [home, { label: T.brandsTitle }] });
     for (const b of brandList) {
       const ps = byBrand[b.slug];
       const cats = [...new Set(ps.map((p) => p.category))].sort((x, y) => ps.filter((p) => p.category === y).length - ps.filter((p) => p.category === x).length).map((c) => catName(c, l));
@@ -130,6 +131,12 @@ export function allPages(): HPage[] {
     out.push({ kind: 'privacy', lang: l, path: paths.privacy[l], alt: paths.privacy, h1: T.privacy, title: fitTitle([T.privacy]),
       description: T.privacyDesc, crumbs: [home, { label: T.privacy }] });
   }
+  // заголовки не повторяются: если у двух товаров они всё же совпали (длинные названия одной серии),
+  // к названию добавляется наш артикул — он в конце и остаётся после сокращения
+  const seen = new Map<string, number>();
+  for (const pg of out) seen.set(pg.title, (seen.get(pg.title) || 0) + 1);
+  for (const pg of out) if (pg.kind === 'product' && (seen.get(pg.title) || 0) > 1 && pg.product)
+    pg.title = cutMiddle(`${pg.product.name[pg.lang]} ${pg.product.sku}`, T_MAX);
   return out;
 }
 
