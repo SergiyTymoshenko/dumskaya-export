@@ -82,6 +82,7 @@ FURN = {
     "decor": ("D", "Аксессуар", "accessory"),
     "kitchen": ("E", "Кухня", "kitchen"),
     "kitchen_unit": ("E", "Кухонный модуль", "kitchen unit"),
+    "partition": ("H", "Перегородка", "partition system"),
 }
 ORDER_L = "SCWTFG"
 ORDER_F = "SACTKBHDE"
@@ -725,6 +726,49 @@ def misuraemme():
     return out
 
 
+def rimadesio():
+    """Rimadesio: товар — страница изделия (EN + RU): двери, перегородки, системы хранения, гардеробные, мебель.
+    Техническая документация — PDF коллекции (открыта; одна на несколько изделий, размеры — в ней). 2D/3D — в Reserved
+    Area после входа: не скачаны, подсказка дизайнеру — ссылка на Reserved Area."""
+    files, sheets = files_of("rimadesio")
+    out = []
+    for p in json.load(open(os.path.join(SRC, "rimadesio/site.json"), encoding="utf-8")):
+        crumbs = p.get("crumbs") or []
+        kind = p.get("type") or ""
+        # разделы сайта Rimadesio → тип (слова «Day», «Night», «Office» под заголовком — это линейка, не тип)
+        SECT = {"modular furniture": "storage", "day systems": "storage", "closets": "wardrobe", "walk-in closets": "wardrobe",
+                "beauty corner": "storage", "wall partition systems": "partition", "partition system": "partition",
+                "modulor wall paneling system": "boiserie", "mobili tv": "storage", "comodini": "bedside", "scrittoi": "desk",
+                "bar cabinet": "storage", "bar cabinets": "storage", "glass cabinets": "storage",
+                "glass cabinets and display cases": "storage", "shelves": "storage", "bookshelves": "bookcase",
+                "sliding doors": "doors", "syncro": "doors", "office": "desk"}
+        t = kw(kind) if kind.lower() not in SECT else SECT[kind.lower()]
+        if not t or t in ("decor", "lamp"):
+            t = next((SECT[c.lower()] for c in reversed(crumbs) if c.lower() in SECT), None)
+        for src in ((crumbs[-1] if crumbs else ""), " ".join(crumbs), p.get("title"), p["slug"].replace("-", " ")):
+            if t and t not in ("decor", "lamp"):
+                break
+            t = kw(src)
+        if not t or t in ("decor", "lamp"):
+            first = re.split(r"(?<=[.!?])\s", p.get("text_en") or "", maxsplit=1)[0]
+            t = kw(first) or ("boiserie" if re.search(r"panel+ing|boiserie", " ".join(crumbs) + " " + first, re.I) else "storage")
+        model = smart_title(p.get("title"), mixed=True)
+        sh = [s for s in (sheet(files, sheets, d["url"])[0] for d in p.get("pdfs") or []) if s]
+        links = {"page": p["url"], "page_ru": p.get("url_ru") or None}
+        gate = p.get("files_2d3d_login")
+        if gate:
+            links["files_2d3d"] = gate + "  (2D/3D — после входа в Reserved Area на сайте Rimadesio)"
+        out.append({"mfr_key": p["slug"], "model": model, "type": t, "collection": slug(model_for_name(model, t)),
+                    "category": " / ".join(crumbs) or None, "line": kind or None, "designer": p.get("designer") or None,
+                    "place": ["indoor"], "mfr_code": None,
+                    "text": {"en": p.get("text_en"), "ru": p.get("text_ru")},
+                    "tech": {"en": "\n".join(p.get("details") or [])} if p.get("details") else None,
+                    "versions": [], "images": [x for x in (img(files, u) for u in p.get("images") or []) if x],
+                    "drawings": [], "sheets": sh, "links": {k: v for k, v in links.items() if v},
+                    "files_after_login": [{"title": "2D/3D (Reserved Area)", "url": gate}] if gate else []})
+    return out
+
+
 FACT = {
     "olev": {"fn": olev, "kind": "light", "range": (3000, 3399), "name": "OLEV", "site": "https://www.olevlight.com/en/"},
     "delta": {"fn": delta, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
@@ -735,6 +779,7 @@ FACT = {
     "minotti": {"fn": minotti, "kind": "furn", "range": (7100, 7899), "name": "Minotti", "site": "https://www.minotti.com/en"},
     "poliform": {"fn": poliform, "kind": "furn", "range": (7900, 8399), "name": "Poliform", "site": "https://www.poliform.it/en/"},
     "misuraemme": {"fn": misuraemme, "kind": "furn", "range": (8400, 8699), "name": "MisuraEmme", "site": "https://www.misuraemme.it/en/"},
+    "rimadesio": {"fn": rimadesio, "kind": "furn", "range": (8700, 8999), "name": "Rimadesio", "site": "https://www.rimadesio.it/en/"},
 }
 
 

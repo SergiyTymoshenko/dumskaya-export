@@ -1,4 +1,4 @@
-# Списки на скачивание (dest \t url) + карта url → локальный путь, для baxter / molteni / flexform / maxalto / minotti / poliform / misuraemme
+# Списки на скачивание (dest \t url) + карта url → локальный путь, для baxter / molteni / flexform / maxalto / minotti / poliform / misuraemme / rimadesio
 import json, re, sys, collections
 from urllib.parse import unquote, urlparse
 def safe(n): return re.sub(r'[^\w.\-]+', '_', unquote(n)).strip('_')
@@ -116,5 +116,16 @@ def misuraemme():
         for v in p.get('dimensions') or []:
             out.append((f"images/shop/misuraemme/{s}/drawings/{safe(v['drawing'].rsplit('/', 1)[-1])}", v['drawing']))
     build('misuraemme', out)
+def rimadesio():
+    """Rimadesio: до 8 фото на изделие и техническая документация PDF коллекции (открыта; одна на несколько изделий).
+    2D/3D — только в Reserved Area после входа, не качаем."""
+    out = []
+    for p in json.load(open('rimadesio.json')):
+        s = safe(p['slug']).lower()
+        for u in (p.get('images') or [])[:8]:
+            out.append((f"images/shop/rimadesio/{s}/{safe(u.rsplit('/', 1)[-1])}", u))
+        for d in p.get('pdfs') or []:
+            out.append((f"catalogs/rimadesio/sheets/{safe(d['url'].rsplit('/', 1)[-1])}", d['url']))
+    build('rimadesio', out)
 if __name__ == '__main__':
     for f in sys.argv[1:]: globals()[f]()

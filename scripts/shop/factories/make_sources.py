@@ -7,7 +7,7 @@
 В папке с данными:
   <фабрика>.json          — что собрали краулеры этой папки (olev.json + olev_ds.json, baxter.json, flexform.json,
                             molteni2.json, maxalto.json, delta.json, minotti.json, poliform.json,
-                            misuraemme.json);
+                            misuraemme.json, rimadesio.json);
   dl-<фабрика>.tsv        — список скачанного: «путь в выгрузке<TAB>адрес» (его же качает dl.sh на Маке);
   manifest-<фабрика>.json — размеры фото и текст PDF (manifest.py на Маке);
   drawings-<фабрика>.json — чертежи, вырезанные из техкарт (drawings.py на Маке).
@@ -22,7 +22,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-FACTORIES = ["olev", "baxter", "flexform", "molteni", "maxalto", "delta", "minotti", "poliform", "misuraemme"]
+FACTORIES = ["olev", "baxter", "flexform", "molteni", "maxalto", "delta", "minotti", "poliform", "misuraemme", "rimadesio"]
 SITE_FILE = {"molteni": "molteni2.json"}
 
 
@@ -288,6 +288,16 @@ def site_misuraemme(work):
         q = {k: p.get(k) for k in ("url", "slug", "title", "designer", "type", "images", "finishes", "dimensions",
                                    "downloads_open", "downloads_login")}
         q["text_en"], q["tech_en"] = clean(p.get("text_en")), clean(p.get("tech_en"))
+        out.append(q)
+    return out
+
+
+def site_rimadesio(work):
+    out = []
+    for p in load(work, "rimadesio.json"):
+        q = {k: p.get(k) for k in ("url", "url_ru", "slug", "title", "title_ru", "type", "family", "crumbs", "designer", "details",
+                                   "images", "pdfs", "files_2d3d_login")}
+        q["text_en"], q["text_ru"] = clean(p.get("text_en")), clean(p.get("text_ru"))
         out.append(q)
     return out
 

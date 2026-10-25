@@ -1,0 +1,4554 @@
+{
+ "files": {
+  "https://static.rimadesio.it/media/2018/08/IMG_Abacus-Living_06.jpg": {
+   "file": "images/shop/rimadesio/abacus-living/IMG_Abacus-Living_06.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 359076
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Abacus-Living_05.jpg": {
+   "file": "images/shop/rimadesio/abacus-living/IMG_Abacus-Living_05.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 473241
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Abacus-Living_07.jpg": {
+   "file": "images/shop/rimadesio/abacus-living/IMG_Abacus-Living_07.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 85011
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Abacus-Living_08.jpg": {
+   "file": "images/shop/rimadesio/abacus-living/IMG_Abacus-Living_08.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 552442
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Abacus-Living_04.jpg": {
+   "file": "images/shop/rimadesio/abacus-living/IMG_Abacus-Living_04.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 476337
+  },
+  "https://static.rimadesio.it/media/2018/08/abacus-living-pagina-prodotto-agg-maggio-2024-1b.jpg": {
+   "file": "images/shop/rimadesio/abacus-living/abacus-living-pagina-prodotto-agg-maggio-2024-1b.jpg",
+   "width": 1188,
+   "height": 592,
+   "bytes": 78895
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Abacus-Living_02.jpg": {
+   "file": "images/shop/rimadesio/abacus-living/IMG_Abacus-Living_02.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 531815
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Abacus-Living_03.jpg": {
+   "file": "images/shop/rimadesio/abacus-living/IMG_Abacus-Living_03.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 428318
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_ABACUS-LIVING_.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ABACUS-LIVING_.pdf",
+   "pages": 19,
+   "bytes": 5819344
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-482-483.jpg": {
+   "file": "images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-482-483.jpg",
+   "width": 2000,
+   "height": 1125,
+   "bytes": 189795
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-Ottobre-2019_29755-RID_mod-sito.jpg": {
+   "file": "images/shop/rimadesio/abacus/RIMADESIO-Ottobre-2019_29755-RID_mod-sito.jpg",
+   "width": 2354,
+   "height": 2354,
+   "bytes": 423625
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-481.jpg": {
+   "file": "images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-481.jpg",
+   "width": 1131,
+   "height": 1130,
+   "bytes": 114312
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-485.jpg": {
+   "file": "images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-485.jpg",
+   "width": 1129,
+   "height": 1130,
+   "bytes": 171503
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10245-okok_corr74-RIDrgb.jpg": {
+   "file": "images/shop/rimadesio/abacus/Lavoro_10245-okok_corr74-RIDrgb.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 417807
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-488.jpg": {
+   "file": "images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-488.jpg",
+   "width": 1131,
+   "height": 1130,
+   "bytes": 131094
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-489.jpg": {
+   "file": "images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-489.jpg",
+   "width": 1131,
+   "height": 1130,
+   "bytes": 294090
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Abacus_08.jpg": {
+   "file": "images/shop/rimadesio/abacus/IMG_Abacus_08.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 325193
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_ABACUS_.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ABACUS_.pdf",
+   "pages": 19,
+   "bytes": 6534388
+  },
+  "https://static.rimadesio.it/media/2026/04/sistema-di-scorrimento-syncro-4.jpg": {
+   "file": "images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-4.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 397721
+  },
+  "https://static.rimadesio.it/media/2026/04/sistema-di-scorrimento-syncro-5.jpg": {
+   "file": "images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-5.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 438309
+  },
+  "https://static.rimadesio.it/media/2026/04/sistema-di-scorrimento-syncro-6.jpg": {
+   "file": "images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-6.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 401996
+  },
+  "https://static.rimadesio.it/media/2026/04/sistema-di-scorrimento-syncro-7.jpg": {
+   "file": "images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-7.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 428444
+  },
+  "https://static.rimadesio.it/media/2026/04/sistema-di-scorrimento-syncro-8.jpg": {
+   "file": "images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-8.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 423311
+  },
+  "https://static.rimadesio.it/media/2026/04/sistema-di-scorrimento-syncro-9.jpg": {
+   "file": "images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-9.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 535606
+  },
+  "https://static.rimadesio.it/media/2026/04/air-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/air-syncro/air-pagina-prodotto.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 172073
+  },
+  "https://static.rimadesio.it/media/2026/04/air-pagina-prodotto2.jpg": {
+   "file": "images/shop/rimadesio/air-syncro/air-pagina-prodotto2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 186914
+  },
+  "https://static.rimadesio.it/media/2024/06/air-system-pagina-prodotto-agg.jpg": {
+   "file": "images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1908614
+  },
+  "https://static.rimadesio.it/media/2024/06/air-system-pagina-prodotto-agg-2.jpg": {
+   "file": "images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 871706
+  },
+  "https://static.rimadesio.it/media/2024/06/air-system-pagina-prodotto-agg-3.jpg": {
+   "file": "images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 998988
+  },
+  "https://static.rimadesio.it/media/2024/06/air-system-pagina-prodotto-agg-6.jpg": {
+   "file": "images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-6.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1867671
+  },
+  "https://static.rimadesio.it/media/2024/06/air-system-pagina-prodotto-agg-7.jpg": {
+   "file": "images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-7.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1482587
+  },
+  "https://static.rimadesio.it/media/2024/06/air-system-pagina-prodotto-agg-8.jpg": {
+   "file": "images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-8.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 974043
+  },
+  "https://static.rimadesio.it/media/2024/06/air-system-pagina-prodotto-agg-9.jpg": {
+   "file": "images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-9.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1456507
+  },
+  "https://static.rimadesio.it/media/2024/06/air-system-pagina-prodotto-agg-15.jpg": {
+   "file": "images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-15.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 933707
+  },
+  "https://static.rimadesio.it/media/2024/06/WEB_Scheda-prodotto_AIR-SYSTEM.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_AIR-SYSTEM.pdf",
+   "pages": 18,
+   "bytes": 16415333
+  },
+  "https://static.rimadesio.it/media/2024/04/air-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/air/air-pagina-prodotto-1.jpg",
+   "width": 4500,
+   "height": 4500,
+   "bytes": 14447322
+  },
+  "https://static.rimadesio.it/media/2024/04/air-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/air/air-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 712952
+  },
+  "https://static.rimadesio.it/media/2024/03/air-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/air/air-pagina-prodotto-1_2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1024453
+  },
+  "https://static.rimadesio.it/media/2024/03/air-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/air/air-pagina-prodotto-2_2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1039058
+  },
+  "https://static.rimadesio.it/media/2024/03/air-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/air/air-pagina-prodotto-3.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1050820
+  },
+  "https://static.rimadesio.it/media/2024/04/WEB_Scheda-prodotto_AIR.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_AIR.pdf",
+   "pages": 19,
+   "bytes": 6354690
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Ala_01.jpg": {
+   "file": "images/shop/rimadesio/ala/IMG_Ala_01.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 111969
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Ala_03.jpg": {
+   "file": "images/shop/rimadesio/ala/IMG_Ala_03.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 544927
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Ala_02.jpg": {
+   "file": "images/shop/rimadesio/ala/IMG_Ala_02.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 501674
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_ALA.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ALA.pdf",
+   "pages": 10,
+   "bytes": 1906096
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Alambra_05.jpg": {
+   "file": "images/shop/rimadesio/alambra-bar-cabinet/IMG_Alambra_05.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 345362
+  },
+  "https://static.rimadesio.it/media/2018/08/Alambra-18-RID.jpg": {
+   "file": "images/shop/rimadesio/alambra-bar-cabinet/Alambra-18-RID.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 568944
+  },
+  "https://static.rimadesio.it/media/2024/08/alambra-pag-prodotto-agg5-h.jpg": {
+   "file": "images/shop/rimadesio/alambra-bar-cabinet/alambra-pag-prodotto-agg5-h.jpg",
+   "width": 2560,
+   "height": 1440,
+   "bytes": 214561
+  },
+  "https://static.rimadesio.it/media/2018/08/Alambra-Lavoro_10379-ok-var-rifALAMBRA-SERR-2-correz70_no-serrat-RID.jpg": {
+   "file": "images/shop/rimadesio/alambra-bar-cabinet/Alambra-Lavoro_10379-ok-var-rifALAMBRA-SERR-2-correz70_no-serrat-RID.jpg",
+   "width": 1250,
+   "height": 1250,
+   "bytes": 134574
+  },
+  "https://static.rimadesio.it/media/2018/08/Alambra-Lavoro_10379-ok-var-rifALAMBRA-SERR-2-correz70-RID.jpg": {
+   "file": "images/shop/rimadesio/alambra-bar-cabinet/Alambra-Lavoro_10379-ok-var-rifALAMBRA-SERR-2-correz70-RID.jpg",
+   "width": 1250,
+   "height": 1251,
+   "bytes": 137648
+  },
+  "https://static.rimadesio.it/media/2018/08/Render_Alambra_01.jpg": {
+   "file": "images/shop/rimadesio/alambra-bar-cabinet/Render_Alambra_01.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 40736
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_ALAMBRA.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ALAMBRA.pdf",
+   "pages": 35,
+   "bytes": 8949335
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Alambra-Isola_01.jpg": {
+   "file": "images/shop/rimadesio/alambra-isola/IMG_Alambra-Isola_01.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 157844
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Alambra-Isola_04.jpg": {
+   "file": "images/shop/rimadesio/alambra-isola/IMG_Alambra-Isola_04.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 381390
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Alambra-Isola_02.jpg": {
+   "file": "images/shop/rimadesio/alambra-isola/IMG_Alambra-Isola_02.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 176737
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Alambra-Isola_03.jpg": {
+   "file": "images/shop/rimadesio/alambra-isola/IMG_Alambra-Isola_03.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 139482
+  },
+  "https://static.rimadesio.it/media/2023/05/alambra-2022-01.jpg": {
+   "file": "images/shop/rimadesio/alambra/alambra-2022-01.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 483260
+  },
+  "https://static.rimadesio.it/media/2023/05/alambra-2022-03.jpg": {
+   "file": "images/shop/rimadesio/alambra/alambra-2022-03.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 530934
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Alambra_02.jpg": {
+   "file": "images/shop/rimadesio/alambra/IMG_Alambra_02.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 423007
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Alambra_NEW-2.jpg": {
+   "file": "images/shop/rimadesio/alambra/IMG_Alambra_NEW-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 603981
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Alambra_09.jpg": {
+   "file": "images/shop/rimadesio/alambra/IMG_Alambra_09.jpg",
+   "width": 2500,
+   "height": 2499,
+   "bytes": 394187
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Alambra_10-1.jpg": {
+   "file": "images/shop/rimadesio/alambra/IMG_Alambra_10-1.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 368396
+  },
+  "https://static.rimadesio.it/media/2018/08/Alambra-Lavoro_10146-OK-NO_FONDO_RID.jpg": {
+   "file": "images/shop/rimadesio/alambra/Alambra-Lavoro_10146-OK-NO_FONDO_RID.jpg",
+   "width": 2300,
+   "height": 2300,
+   "bytes": 86908
+  },
+  "https://static.rimadesio.it/media/2018/08/alambra-pag-prodotto-agg-1.jpg": {
+   "file": "images/shop/rimadesio/alambra/alambra-pag-prodotto-agg-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 60936
+  },
+  "https://static.rimadesio.it/media/2023/07/aliante-pagina-prodotto-32.jpg": {
+   "file": "images/shop/rimadesio/aliante/aliante-pagina-prodotto-32.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 492742
+  },
+  "https://static.rimadesio.it/media/2023/07/aliante-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/aliante/aliante-pagina-prodotto-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 476319
+  },
+  "https://static.rimadesio.it/media/2023/07/aliante-paginaprodotto-4.jpg": {
+   "file": "images/shop/rimadesio/aliante/aliante-paginaprodotto-4.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 2304015
+  },
+  "https://static.rimadesio.it/media/2023/07/aliante-paginaprodotto-2.jpg": {
+   "file": "images/shop/rimadesio/aliante/aliante-paginaprodotto-2.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 2628674
+  },
+  "https://static.rimadesio.it/media/2023/07/aliante-paginaprodotto.jpg": {
+   "file": "images/shop/rimadesio/aliante/aliante-paginaprodotto.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 2822510
+  },
+  "https://static.rimadesio.it/media/2023/07/aliante-paginaprodotto-3-agg.jpg": {
+   "file": "images/shop/rimadesio/aliante/aliante-paginaprodotto-3-agg.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 1768536
+  },
+  "https://static.rimadesio.it/media/2023/07/aliante-paginaprodotto-5-agg.jpg": {
+   "file": "images/shop/rimadesio/aliante/aliante-paginaprodotto-5-agg.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 2066473
+  },
+  "https://static.rimadesio.it/media/2023/07/aliante-paginaprodotto-7.jpg": {
+   "file": "images/shop/rimadesio/aliante/aliante-paginaprodotto-7.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 992689
+  },
+  "https://static.rimadesio.it/media/2023/07/Scheda-prodotto_ALIANTE_2026.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ALIANTE_2026.pdf",
+   "pages": 20,
+   "bytes": 5263385
+  },
+  "https://static.rimadesio.it/media/2024/03/altair-pagina-prodotto2.jpg": {
+   "file": "images/shop/rimadesio/altair/altair-pagina-prodotto2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1206286
+  },
+  "https://static.rimadesio.it/media/2024/03/altair-pagina-prodotto3.jpg": {
+   "file": "images/shop/rimadesio/altair/altair-pagina-prodotto3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 687878
+  },
+  "https://static.rimadesio.it/media/2024/03/altair-pagina-prodotto4.jpg": {
+   "file": "images/shop/rimadesio/altair/altair-pagina-prodotto4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 864098
+  },
+  "https://static.rimadesio.it/media/2024/03/altair-pagina-prodotto5-agg.jpg": {
+   "file": "images/shop/rimadesio/altair/altair-pagina-prodotto5-agg.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 113421
+  },
+  "https://static.rimadesio.it/media/2024/03/altair-pagina-prodotto6.jpg": {
+   "file": "images/shop/rimadesio/altair/altair-pagina-prodotto6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 154510
+  },
+  "https://static.rimadesio.it/media/2024/03/rimadesio-altair-1.jpg": {
+   "file": "images/shop/rimadesio/altair/rimadesio-altair-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 340705
+  },
+  "https://static.rimadesio.it/media/2024/03/rimadesio-altair-2.jpg": {
+   "file": "images/shop/rimadesio/altair/rimadesio-altair-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 202415
+  },
+  "https://static.rimadesio.it/media/2024/03/rimadesio-altair-3.jpg": {
+   "file": "images/shop/rimadesio/altair/rimadesio-altair-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 227074
+  },
+  "https://static.rimadesio.it/media/2024/03/Scheda-prodotto_ALTAIR_2025.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ALTAIR_2025.pdf",
+   "pages": 21,
+   "bytes": 27095521
+  },
+  "https://static.rimadesio.it/media/2026/04/rimadesio-althea-poltrona-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/althea/rimadesio-althea-poltrona-pagina-prodotto.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 443834
+  },
+  "https://static.rimadesio.it/media/2026/04/tagli-althea-poltrona1.jpg": {
+   "file": "images/shop/rimadesio/althea/tagli-althea-poltrona1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 41707
+  },
+  "https://static.rimadesio.it/media/2026/04/tagli-althea-poltrona2.jpg": {
+   "file": "images/shop/rimadesio/althea/tagli-althea-poltrona2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 47155
+  },
+  "https://static.rimadesio.it/media/2026/04/tagli-althea-poltrona3.jpg": {
+   "file": "images/shop/rimadesio/althea/tagli-althea-poltrona3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 259489
+  },
+  "https://static.rimadesio.it/media/2026/04/tagli-althea-poltrona4.jpg": {
+   "file": "images/shop/rimadesio/althea/tagli-althea-poltrona4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 96546
+  },
+  "https://static.rimadesio.it/media/2026/04/tagli-althea-poltrona5.jpg": {
+   "file": "images/shop/rimadesio/althea/tagli-althea-poltrona5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 65349
+  },
+  "https://static.rimadesio.it/media/2026/04/tagli-althea-poltrona6.jpg": {
+   "file": "images/shop/rimadesio/althea/tagli-althea-poltrona6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 96002
+  },
+  "https://static.rimadesio.it/media/2026/04/tagli-althea-poltrona7.jpg": {
+   "file": "images/shop/rimadesio/althea/tagli-althea-poltrona7.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 80819
+  },
+  "https://static.rimadesio.it/media/2026/04/Scheda-prodotto_ALTHEA_poltrona_2026.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ALTHEA_poltrona_2026.pdf",
+   "pages": 15,
+   "bytes": 19069886
+  },
+  "https://static.rimadesio.it/media/2026/04/ascot-poltrona-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 401632
+  },
+  "https://static.rimadesio.it/media/2026/04/ascot-poltrona-pagina-prodotto2.jpg": {
+   "file": "images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 269635
+  },
+  "https://static.rimadesio.it/media/2026/04/ascot-poltrona-pagina-prodotto3.jpg": {
+   "file": "images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 350887
+  },
+  "https://static.rimadesio.it/media/2026/04/ascot-poltrona-pagina-prodotto16.jpg": {
+   "file": "images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto16.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 40159
+  },
+  "https://static.rimadesio.it/media/2026/04/ascot-poltrona-pagina-prodotto18.jpg": {
+   "file": "images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto18.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 42262
+  },
+  "https://static.rimadesio.it/media/2026/04/ascot-poltrona-pagina-prodotto20.jpg": {
+   "file": "images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto20.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 40656
+  },
+  "https://static.rimadesio.it/media/2026/04/ascot-poltrona-pagina-prodotto17.jpg": {
+   "file": "images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto17.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 102249
+  },
+  "https://static.rimadesio.it/media/2026/04/ascot-poltrona-pagina-prodotto19.jpg": {
+   "file": "images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto19.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 125909
+  },
+  "https://static.rimadesio.it/media/2026/04/Scheda-prodotto_ASCOT-poltrona_2026_10-web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ASCOT-poltrona_2026_10-web.pdf",
+   "pages": 19,
+   "bytes": 1545501
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-205.jpg": {
+   "file": "images/shop/rimadesio/aura/Rimadesio-Collection-Book_2020_pag-205.jpg",
+   "width": 1131,
+   "height": 1130,
+   "bytes": 149297
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-202.jpg": {
+   "file": "images/shop/rimadesio/aura/Rimadesio-Collection-Book_2020_pag-202.jpg",
+   "width": 1131,
+   "height": 1130,
+   "bytes": 97599
+  },
+  "https://static.rimadesio.it/media/2018/08/Aura_Lavoro_10465-ok-2.jpg": {
+   "file": "images/shop/rimadesio/aura/Aura_Lavoro_10465-ok-2.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 78273
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10413-okok-RID.jpg": {
+   "file": "images/shop/rimadesio/aura/Lavoro_10413-okok-RID.jpg",
+   "width": 2500,
+   "height": 2499,
+   "bytes": 124572
+  },
+  "https://static.rimadesio.it/media/2018/08/15-ok-2.jpg": {
+   "file": "images/shop/rimadesio/aura/15-ok-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 305609
+  },
+  "https://static.rimadesio.it/media/2018/08/Aura4a_2017.jpg": {
+   "file": "images/shop/rimadesio/aura/Aura4a_2017.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 103355
+  },
+  "https://static.rimadesio.it/media/2018/08/16.jpg": {
+   "file": "images/shop/rimadesio/aura/16.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 222060
+  },
+  "https://static.rimadesio.it/media/2018/08/Maniglia_Aura_08.jpg": {
+   "file": "images/shop/rimadesio/aura/Maniglia_Aura_08.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 68511
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_AURA.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_AURA.pdf",
+   "pages": 14,
+   "bytes": 2975803
+  },
+  "https://static.rimadesio.it/media/2023/04/ms-precious-case7.jpg": {
+   "file": "images/shop/rimadesio/cover-day/ms-precious-case7.jpg",
+   "width": 5672,
+   "height": 3190,
+   "bytes": 1289297
+  },
+  "https://static.rimadesio.it/media/2023/04/ms-precious-case5.jpg": {
+   "file": "images/shop/rimadesio/cover-day/ms-precious-case5.jpg",
+   "width": 5672,
+   "height": 3190,
+   "bytes": 1124391
+  },
+  "https://static.rimadesio.it/media/2023/04/ms-precious-case8.jpg": {
+   "file": "images/shop/rimadesio/cover-day/ms-precious-case8.jpg",
+   "width": 5672,
+   "height": 3190,
+   "bytes": 1084011
+  },
+  "https://static.rimadesio.it/media/2018/10/RIMADESIO-Ottobre-2019_28594-RID.jpg": {
+   "file": "images/shop/rimadesio/cover-day/RIMADESIO-Ottobre-2019_28594-RID.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 436478
+  },
+  "https://static.rimadesio.it/media/2018/10/RIMADESIO-Ottobre-2019_28461-RID.jpg": {
+   "file": "images/shop/rimadesio/cover-day/RIMADESIO-Ottobre-2019_28461-RID.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 435828
+  },
+  "https://static.rimadesio.it/media/2018/10/RIMADESIO-Ottobre-2019_28755-RID.jpg": {
+   "file": "images/shop/rimadesio/cover-day/RIMADESIO-Ottobre-2019_28755-RID.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 391653
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Cover_02.jpg": {
+   "file": "images/shop/rimadesio/cover-day/IMG_Cover_02.jpg",
+   "width": 2500,
+   "height": 2499,
+   "bytes": 121171
+  },
+  "https://static.rimadesio.it/media/2018/08/Render_Cover_05.jpg": {
+   "file": "images/shop/rimadesio/cover-day/Render_Cover_05.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 90287
+  },
+  "https://static.rimadesio.it/media/2025/03/WEB_Scheda-prodotto_COVER_2025.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_COVER_2025.pdf",
+   "pages": 84,
+   "bytes": 34092087
+  },
+  "https://static.rimadesio.it/media/2023/01/cover-freestanding-night-2022-1.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-1.jpg",
+   "width": 2748,
+   "height": 1545,
+   "bytes": 2140156
+  },
+  "https://static.rimadesio.it/media/2023/01/cover-freestanding-night-2022-2.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-2.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 326646
+  },
+  "https://static.rimadesio.it/media/2023/01/cover-freestanding-night-2022-2b.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-2b.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 70768
+  },
+  "https://static.rimadesio.it/media/2023/01/cover-freestanding-night-2022-3.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-3.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 449867
+  },
+  "https://static.rimadesio.it/media/2023/01/cover-freestanding-night-2022-4.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-4.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 384919
+  },
+  "https://static.rimadesio.it/media/2023/01/cover-freestanding-night-2022-5.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-5.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 469308
+  },
+  "https://static.rimadesio.it/media/2026/04/cover-freestanding-pagna-prodotto-2026.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-2/cover-freestanding-pagna-prodotto-2026.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 770675
+  },
+  "https://static.rimadesio.it/media/2026/04/cover-freestanding-pagna-prodotto-2026-2.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-2/cover-freestanding-pagna-prodotto-2026-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 815391
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Cover-Freestanding_01.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-day/IMG_Cover-Freestanding_01.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 357326
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Cover-Freestanding_02.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-day/IMG_Cover-Freestanding_02.jpg",
+   "width": 2500,
+   "height": 2499,
+   "bytes": 566806
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Cover-Freestanding_03.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-day/IMG_Cover-Freestanding_03.jpg",
+   "width": 2500,
+   "height": 2501,
+   "bytes": 422737
+  },
+  "https://static.rimadesio.it/media/2018/08/COVER-FREESTANDING.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-day/COVER-FREESTANDING.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 168474
+  },
+  "https://static.rimadesio.it/media/2018/05/render-1-cover.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-day/render-1-cover.jpg",
+   "width": 750,
+   "height": 750,
+   "bytes": 62176
+  },
+  "https://static.rimadesio.it/media/2018/05/render-2-cover.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-day/render-2-cover.jpg",
+   "width": 750,
+   "height": 750,
+   "bytes": 43212
+  },
+  "https://static.rimadesio.it/media/2018/05/render-4-cover.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-day/render-4-cover.jpg",
+   "width": 750,
+   "height": 750,
+   "bytes": 18530
+  },
+  "https://static.rimadesio.it/media/2018/05/render-3-cover.jpg": {
+   "file": "images/shop/rimadesio/cover-freestanding-day/render-3-cover.jpg",
+   "width": 750,
+   "height": 750,
+   "bytes": 21439
+  },
+  "https://static.rimadesio.it/media/2021/09/interior-six-cover-1.jpg": {
+   "file": "images/shop/rimadesio/cover-open/interior-six-cover-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1054340
+  },
+  "https://static.rimadesio.it/media/2021/06/cover-open-dettaglio2-scaled-1.jpg": {
+   "file": "images/shop/rimadesio/cover-open/cover-open-dettaglio2-scaled-1.jpg",
+   "width": 2560,
+   "height": 2560,
+   "bytes": 1022927
+  },
+  "https://static.rimadesio.it/media/2021/09/interior-six-1-1.jpg": {
+   "file": "images/shop/rimadesio/cover-open/interior-six-1-1.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 948915
+  },
+  "https://static.rimadesio.it/media/2021/09/interior-six-3-1.jpg": {
+   "file": "images/shop/rimadesio/cover-open/interior-six-3-1.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 809534
+  },
+  "https://static.rimadesio.it/media/2021/06/cover-open-tecnica.jpg": {
+   "file": "images/shop/rimadesio/cover-open/cover-open-tecnica.jpg",
+   "width": 2500,
+   "height": 1406,
+   "bytes": 1732264
+  },
+  "https://static.rimadesio.it/media/2022/03/cover-open-concezione-progettuale.jpg": {
+   "file": "images/shop/rimadesio/cover-open/cover-open-concezione-progettuale.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 1001863
+  },
+  "https://static.rimadesio.it/media/2018/08/Render_Cover_03.jpg": {
+   "file": "images/shop/rimadesio/cover-open/Render_Cover_03.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 42471
+  },
+  "https://static.rimadesio.it/media/2018/08/Render_Cover_04.jpg": {
+   "file": "images/shop/rimadesio/cover-open/Render_Cover_04.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 47668
+  },
+  "https://static.rimadesio.it/media/2018/05/cover-pagina-prodotto-sign-2.jpg": {
+   "file": "images/shop/rimadesio/cover/cover-pagina-prodotto-sign-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 736059
+  },
+  "https://static.rimadesio.it/media/2018/05/cover-pagina-prodotto-sign-1.jpg": {
+   "file": "images/shop/rimadesio/cover/cover-pagina-prodotto-sign-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1192678
+  },
+  "https://static.rimadesio.it/media/2026/04/cover-freestanding-pagna-prodotto-2026-3.jpg": {
+   "file": "images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 633140
+  },
+  "https://static.rimadesio.it/media/2026/04/cover-freestanding-pagna-prodotto-2026-4.jpg": {
+   "file": "images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 641115
+  },
+  "https://static.rimadesio.it/media/2026/04/cover-freestanding-pagna-prodotto-2026-5.jpg": {
+   "file": "images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 651036
+  },
+  "https://static.rimadesio.it/media/2026/04/cover-freestanding-pagna-prodotto-2026-6.jpg": {
+   "file": "images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 655473
+  },
+  "https://static.rimadesio.it/media/2026/04/cover-freestanding-pagna-prodotto-2026-7.jpg": {
+   "file": "images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-7.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 677105
+  },
+  "https://static.rimadesio.it/media/2026/04/cover-freestanding-pagna-prodotto-2026-8.jpg": {
+   "file": "images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-8.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 683684
+  },
+  "https://static.rimadesio.it/media/2018/12/Daimon_RIMADESIO_giugnoBINARIO-TINTA.jpg": {
+   "file": "images/shop/rimadesio/daimon/Daimon_RIMADESIO_giugnoBINARIO-TINTA.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 277096
+  },
+  "https://static.rimadesio.it/media/2018/01/Daimon_RIMADESIO_giugno_2017-12144-1_RID.jpg": {
+   "file": "images/shop/rimadesio/daimon/Daimon_RIMADESIO_giugno_2017-12144-1_RID.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 532778
+  },
+  "https://static.rimadesio.it/media/2018/08/11-2017_2017-2.jpg": {
+   "file": "images/shop/rimadesio/daimon/11-2017_2017-2.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 536514
+  },
+  "https://static.rimadesio.it/media/2018/08/Daimon-pannelli.jpg": {
+   "file": "images/shop/rimadesio/daimon/Daimon-pannelli.jpg",
+   "width": 3000,
+   "height": 3000,
+   "bytes": 298483
+  },
+  "https://static.rimadesio.it/media/2018/08/12-2017.jpg": {
+   "file": "images/shop/rimadesio/daimon/12-2017.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 343163
+  },
+  "https://static.rimadesio.it/media/2018/08/13_2017.jpg": {
+   "file": "images/shop/rimadesio/daimon/13_2017.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 389992
+  },
+  "https://static.rimadesio.it/media/2018/08/Daimon_Maniglie_Black.jpg": {
+   "file": "images/shop/rimadesio/daimon/Daimon_Maniglie_Black.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 320345
+  },
+  "https://static.rimadesio.it/media/2018/08/Daimon_Maniglie_Brown.jpg": {
+   "file": "images/shop/rimadesio/daimon/Daimon_Maniglie_Brown.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 369013
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_DAIMON.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_DAIMON.pdf",
+   "pages": 21,
+   "bytes": 24334652
+  },
+  "https://static.rimadesio.it/media/2018/08/dress-bold-pagina-prodotto-1-25.jpg": {
+   "file": "images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-1-25.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1232584
+  },
+  "https://static.rimadesio.it/media/2018/08/dress-bold-pagina-prodotto-3-25-b.jpg": {
+   "file": "images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-3-25-b.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 768563
+  },
+  "https://static.rimadesio.it/media/2018/08/dress-bold-pagina-prodotto-2-25.jpg": {
+   "file": "images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-2-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 738305
+  },
+  "https://static.rimadesio.it/media/2018/08/dress-bold-pagina-prodotto-5-25.jpg": {
+   "file": "images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-5-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 739636
+  },
+  "https://static.rimadesio.it/media/2018/08/dress-bold-pagina-prodotto-4-25.jpg": {
+   "file": "images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-4-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 1109075
+  },
+  "https://static.rimadesio.it/media/2018/08/dress-bold-pagina-prodotto-6-25.jpg": {
+   "file": "images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-6-25.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 2030336
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Dress-bold_15.jpg": {
+   "file": "images/shop/rimadesio/dress-bold/IMG_Dress-bold_15.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 390388
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Dress-bold_16.jpg": {
+   "file": "images/shop/rimadesio/dress-bold/IMG_Dress-bold_16.jpg",
+   "width": 2500,
+   "height": 2499,
+   "bytes": 521226
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_DRESS-BOLD_2025.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_DRESS-BOLD_2025.pdf",
+   "pages": 26,
+   "bytes": 42137800
+  },
+  "https://static.rimadesio.it/media/2018/08/eos-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/eos/eos-pagina-prodotto-1.jpg",
+   "width": 4500,
+   "height": 4500,
+   "bytes": 8984834
+  },
+  "https://static.rimadesio.it/media/2018/08/eos-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/eos/eos-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 806910
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-Ottobre-2019_28903-RID-1.jpg": {
+   "file": "images/shop/rimadesio/eos/RIMADESIO-Ottobre-2019_28903-RID-1.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 263393
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-Ottobre-2019_28912-rid-1.jpg": {
+   "file": "images/shop/rimadesio/eos/RIMADESIO-Ottobre-2019_28912-rid-1.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 280866
+  },
+  "https://static.rimadesio.it/media/2018/08/Eos2_H_2020.jpg": {
+   "file": "images/shop/rimadesio/eos/Eos2_H_2020.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 494310
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Eos_04.jpg": {
+   "file": "images/shop/rimadesio/eos/IMG_Eos_04.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 461241
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Eos_03.jpg": {
+   "file": "images/shop/rimadesio/eos/IMG_Eos_03.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 467088
+  },
+  "https://static.rimadesio.it/media/2022/03/Scheda-prodotto_EOS_-2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_EOS_-2026_web.pdf",
+   "pages": 15,
+   "bytes": 4250471
+  },
+  "https://static.rimadesio.it/media/2018/08/18-2.jpg": {
+   "file": "images/shop/rimadesio/even/18-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 461474
+  },
+  "https://static.rimadesio.it/media/2018/08/Even_19.jpg": {
+   "file": "images/shop/rimadesio/even/Even_19.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 428682
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10061-ok_0000-RID.jpg": {
+   "file": "images/shop/rimadesio/even/Lavoro_10061-ok_0000-RID.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 407547
+  },
+  "https://static.rimadesio.it/media/2018/08/04-03-13_2945_2018-2.jpg": {
+   "file": "images/shop/rimadesio/even/04-03-13_2945_2018-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 278716
+  },
+  "https://static.rimadesio.it/media/2018/08/Maniglie_Even_02.jpg": {
+   "file": "images/shop/rimadesio/even/Maniglie_Even_02.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 160338
+  },
+  "https://static.rimadesio.it/media/2018/08/Maniglie_Even_01.jpg": {
+   "file": "images/shop/rimadesio/even/Maniglie_Even_01.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 169929
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_EVEN.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_EVEN.pdf",
+   "pages": 12,
+   "bytes": 4231034
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat-System_04.jpg": {
+   "file": "images/shop/rimadesio/flat-system/IMG_Flat-System_04.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 264962
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat-System_06.jpg": {
+   "file": "images/shop/rimadesio/flat-system/IMG_Flat-System_06.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 269771
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat-System_03.jpg": {
+   "file": "images/shop/rimadesio/flat-system/IMG_Flat-System_03.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 84519
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat-System_05.jpg": {
+   "file": "images/shop/rimadesio/flat-system/IMG_Flat-System_05.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 454164
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat-System_02.jpg": {
+   "file": "images/shop/rimadesio/flat-system/IMG_Flat-System_02.jpg",
+   "width": 2500,
+   "height": 2499,
+   "bytes": 138482
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat-System_01.jpg": {
+   "file": "images/shop/rimadesio/flat-system/IMG_Flat-System_01.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 141881
+  },
+  "https://static.rimadesio.it/media/2025/02/flat-system-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/flat-system/flat-system-pagina-prodotto-1.jpg",
+   "width": 1080,
+   "height": 852,
+   "bytes": 134466
+  },
+  "https://static.rimadesio.it/media/2025/02/flat-system-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/flat-system/flat-system-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 852,
+   "bytes": 163965
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_FLAT-SYSTEM_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_FLAT-SYSTEM_2026_web.pdf",
+   "pages": 17,
+   "bytes": 5890711
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-Ottobre-2019_28938-RID.jpg": {
+   "file": "images/shop/rimadesio/flat/RIMADESIO-Ottobre-2019_28938-RID.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 248582
+  },
+  "https://static.rimadesio.it/media/2018/08/flat-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/flat/flat-pagina-prodotto-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 683031
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat_04-2.jpg": {
+   "file": "images/shop/rimadesio/flat/IMG_Flat_04-2.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 42411
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat_03.jpg": {
+   "file": "images/shop/rimadesio/flat/IMG_Flat_03.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 72127
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat_02.jpg": {
+   "file": "images/shop/rimadesio/flat/IMG_Flat_02.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 518889
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Flat_01.jpg": {
+   "file": "images/shop/rimadesio/flat/IMG_Flat_01.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 507471
+  },
+  "https://static.rimadesio.it/media/2021/09/long-island-pagina-prodotto-7.jpg": {
+   "file": "images/shop/rimadesio/flat/long-island-pagina-prodotto-7.jpg",
+   "width": 4500,
+   "height": 4500,
+   "bytes": 1310266
+  },
+  "https://static.rimadesio.it/media/2021/09/long-island-pagina-prodotto-8.jpg": {
+   "file": "images/shop/rimadesio/flat/long-island-pagina-prodotto-8.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 820709
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_FLAT_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_FLAT_2026_web.pdf",
+   "pages": 16,
+   "bytes": 4142894
+  },
+  "https://static.rimadesio.it/media/2024/04/francis-agg-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/francis/francis-agg-pagina-prodotto.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 829238
+  },
+  "https://static.rimadesio.it/media/2024/04/francis-agg-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/francis/francis-agg-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 630719
+  },
+  "https://static.rimadesio.it/media/2023/05/francis-2021-01.jpg": {
+   "file": "images/shop/rimadesio/francis/francis-2021-01.jpg",
+   "width": 2560,
+   "height": 1440,
+   "bytes": 255509
+  },
+  "https://static.rimadesio.it/media/2020/10/INTERIORS_ONE_1_cover.jpg": {
+   "file": "images/shop/rimadesio/francis/INTERIORS_ONE_1_cover.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 1446909
+  },
+  "https://static.rimadesio.it/media/2020/10/INTERIORS_ONE_2.jpg": {
+   "file": "images/shop/rimadesio/francis/INTERIORS_ONE_2.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 273059
+  },
+  "https://static.rimadesio.it/media/2020/10/INTERIORS_ONE_3.jpg": {
+   "file": "images/shop/rimadesio/francis/INTERIORS_ONE_3.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 458399
+  },
+  "https://static.rimadesio.it/media/2021/10/francis-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/francis/francis-pagina-prodotto-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1104338
+  },
+  "https://static.rimadesio.it/media/2021/10/francis-agg-pagina-prodotto-agg-giugno-2024-10.jpg": {
+   "file": "images/shop/rimadesio/francis/francis-agg-pagina-prodotto-agg-giugno-2024-10.jpg",
+   "width": 1440,
+   "height": 1440,
+   "bytes": 395305
+  },
+  "https://static.rimadesio.it/media/2021/10/Scheda-prodotto_FRANCIS_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_FRANCIS_2026_web.pdf",
+   "pages": 24,
+   "bytes": 5946933
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_10504-3.jpg": {
+   "file": "images/shop/rimadesio/graphis-light/RIMADESIO-UPDATE-2018_10504-3.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 411410
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_10555.jpg": {
+   "file": "images/shop/rimadesio/graphis-light/RIMADESIO-UPDATE-2018_10555.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 481245
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_10519-7.jpg": {
+   "file": "images/shop/rimadesio/graphis-light/RIMADESIO-UPDATE-2018_10519-7.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 253020
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_0060-generale-ok_0000_2018-2-2.jpg": {
+   "file": "images/shop/rimadesio/graphis-light/Lavoro_0060-generale-ok_0000_2018-2-2.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 110283
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_0096-ok-generale_rid_2018-4.jpg": {
+   "file": "images/shop/rimadesio/graphis-light/Lavoro_0096-ok-generale_rid_2018-4.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 70227
+  },
+  "https://static.rimadesio.it/media/2018/08/Graphis-LightZenit-doppia_180_2017.jpg": {
+   "file": "images/shop/rimadesio/graphis-light/Graphis-LightZenit-doppia_180_2017.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 440019
+  },
+  "https://static.rimadesio.it/media/2018/08/19-ok-RID_2017-4.jpg": {
+   "file": "images/shop/rimadesio/graphis-light/19-ok-RID_2017-4.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 212275
+  },
+  "https://static.rimadesio.it/media/2018/08/2163-maniglia-graphis.jpg": {
+   "file": "images/shop/rimadesio/graphis-light/2163-maniglia-graphis.jpg",
+   "width": 900,
+   "height": 900,
+   "bytes": 86427
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_GRAPHIS-PLUS-LIGHT.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_GRAPHIS-PLUS-LIGHT.pdf",
+   "pages": 27,
+   "bytes": 21895736
+  },
+  "https://static.rimadesio.it/media/2018/08/graphis-plus-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/graphis-plus/graphis-plus-pagina-prodotto.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1178761
+  },
+  "https://static.rimadesio.it/media/2018/08/Graphis-plus-2020-.jpg": {
+   "file": "images/shop/rimadesio/graphis-plus/Graphis-plus-2020-.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 585755
+  },
+  "https://static.rimadesio.it/media/2018/08/Graphis-plus-2020-4-1.jpg": {
+   "file": "images/shop/rimadesio/graphis-plus/Graphis-plus-2020-4-1.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 669970
+  },
+  "https://static.rimadesio.it/media/2018/08/Graphis-plus-2020-3-1.jpg": {
+   "file": "images/shop/rimadesio/graphis-plus/Graphis-plus-2020-3-1.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 968905
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10255-okANNA-3.jpg": {
+   "file": "images/shop/rimadesio/graphis-plus/Lavoro_10255-okANNA-3.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 76598
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_10519.jpg": {
+   "file": "images/shop/rimadesio/graphis-plus/RIMADESIO-UPDATE-2018_10519.jpg",
+   "width": 1500,
+   "height": 1504,
+   "bytes": 59292
+  },
+  "https://static.rimadesio.it/media/2018/08/graphis-plus-pagina-prodotto-4.jpg": {
+   "file": "images/shop/rimadesio/graphis-plus/graphis-plus-pagina-prodotto-4.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1037931
+  },
+  "https://static.rimadesio.it/media/2018/08/Graphis-plus-2020-2a.jpg": {
+   "file": "images/shop/rimadesio/graphis-plus/Graphis-plus-2020-2a.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 700945
+  },
+  "https://static.rimadesio.it/media/2026/03/hedon-pagina-prodotto-1-agg-b.jpg": {
+   "file": "images/shop/rimadesio/hedon/hedon-pagina-prodotto-1-agg-b.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1032666
+  },
+  "https://static.rimadesio.it/media/2026/02/hedon-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/hedon/hedon-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 974798
+  },
+  "https://static.rimadesio.it/media/2026/02/hedon-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/hedon/hedon-pagina-prodotto-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 834001
+  },
+  "https://static.rimadesio.it/media/2026/02/hedon-pagina-prodotto-4.jpg": {
+   "file": "images/shop/rimadesio/hedon/hedon-pagina-prodotto-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 720334
+  },
+  "https://static.rimadesio.it/media/2026/02/hedon-pagina-prodotto-5.jpg": {
+   "file": "images/shop/rimadesio/hedon/hedon-pagina-prodotto-5.jpg",
+   "width": 4500,
+   "height": 4500,
+   "bytes": 1283642
+  },
+  "https://static.rimadesio.it/media/2026/02/hedon-pagina-prodotto-6.jpg": {
+   "file": "images/shop/rimadesio/hedon/hedon-pagina-prodotto-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 786880
+  },
+  "https://static.rimadesio.it/media/2026/02/hedon-pagina-prodotto-7.jpg": {
+   "file": "images/shop/rimadesio/hedon/hedon-pagina-prodotto-7.jpg",
+   "width": 8000,
+   "height": 4500,
+   "bytes": 1813563
+  },
+  "https://static.rimadesio.it/media/2026/02/hedon-pagina-prodotto-8.jpg": {
+   "file": "images/shop/rimadesio/hedon/hedon-pagina-prodotto-8.jpg",
+   "width": 4500,
+   "height": 4500,
+   "bytes": 1535608
+  },
+  "https://static.rimadesio.it/media/2026/03/Catalogo-HEDON_2026-06_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Catalogo-HEDON_2026-06_web.pdf",
+   "pages": 51,
+   "bytes": 57188107
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets11-kanji.jpg": {
+   "file": "images/shop/rimadesio/kanji/tagli-immagine-carpets11-kanji.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 116555
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets12-kanji.jpg": {
+   "file": "images/shop/rimadesio/kanji/tagli-immagine-carpets12-kanji.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 140206
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets13-kanji.jpg": {
+   "file": "images/shop/rimadesio/kanji/tagli-immagine-carpets13-kanji.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 452640
+  },
+  "https://static.rimadesio.it/media/2024/11/Carpets-Collection-24.pdf": {
+   "file": "catalogs/rimadesio/sheets/Carpets-Collection-24.pdf",
+   "pages": 18,
+   "bytes": 3778928
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets15.jpg": {
+   "file": "images/shop/rimadesio/kita/tagli-immagine-carpets15.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 180013
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets18-kita.jpg": {
+   "file": "images/shop/rimadesio/kita/tagli-immagine-carpets18-kita.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 774778
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets17-kita.jpg": {
+   "file": "images/shop/rimadesio/kita/tagli-immagine-carpets17-kita.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 1056496
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets16-kita.jpg": {
+   "file": "images/shop/rimadesio/kita/tagli-immagine-carpets16-kita.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 1175699
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets21-kita.jpg": {
+   "file": "images/shop/rimadesio/kita/tagli-immagine-carpets21-kita.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 279553
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets20-kita.jpg": {
+   "file": "images/shop/rimadesio/kita/tagli-immagine-carpets20-kita.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 451640
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets19-kita.jpg": {
+   "file": "images/shop/rimadesio/kita/tagli-immagine-carpets19-kita.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 312750
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets22-kita.jpg": {
+   "file": "images/shop/rimadesio/kita/tagli-immagine-carpets22-kita.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 297140
+  },
+  "https://static.rimadesio.it/media/2025/04/lambda-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/lambda/lambda-pagina-prodotto.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 2064164
+  },
+  "https://static.rimadesio.it/media/2025/04/lambda-pagina-prodotto2.jpg": {
+   "file": "images/shop/rimadesio/lambda/lambda-pagina-prodotto2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1423414
+  },
+  "https://static.rimadesio.it/media/2025/04/lambda-pagina-prodotto7.jpg": {
+   "file": "images/shop/rimadesio/lambda/lambda-pagina-prodotto7.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 229190
+  },
+  "https://static.rimadesio.it/media/2025/04/lambda-pagina-prodotto8.jpg": {
+   "file": "images/shop/rimadesio/lambda/lambda-pagina-prodotto8.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 241555
+  },
+  "https://static.rimadesio.it/media/2025/04/lambda-pagina-prodotto9.jpg": {
+   "file": "images/shop/rimadesio/lambda/lambda-pagina-prodotto9.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 217054
+  },
+  "https://static.rimadesio.it/media/2025/04/lambda-pagina-prodotto10.jpg": {
+   "file": "images/shop/rimadesio/lambda/lambda-pagina-prodotto10.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 229726
+  },
+  "https://static.rimadesio.it/media/2025/04/lambda-pagina-prodotto3.jpg": {
+   "file": "images/shop/rimadesio/lambda/lambda-pagina-prodotto3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 656005
+  },
+  "https://static.rimadesio.it/media/2025/04/lambda-pagina-prodotto4.jpg": {
+   "file": "images/shop/rimadesio/lambda/lambda-pagina-prodotto4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 714744
+  },
+  "https://static.rimadesio.it/media/2025/04/Scheda-prodotto_LAMBDA_update-giugno-2026.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_LAMBDA_update-giugno-2026.pdf",
+   "pages": 33,
+   "bytes": 7406453
+  },
+  "https://static.rimadesio.it/media/2018/08/07_2016.jpg": {
+   "file": "images/shop/rimadesio/link/07_2016.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 275489
+  },
+  "https://static.rimadesio.it/media/2018/08/06a_2016-2.jpg": {
+   "file": "images/shop/rimadesio/link/06a_2016-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 373908
+  },
+  "https://static.rimadesio.it/media/2018/08/A-25056-part-maniglia_2018.jpg": {
+   "file": "images/shop/rimadesio/link/A-25056-part-maniglia_2018.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 208747
+  },
+  "https://static.rimadesio.it/media/2018/08/Link_A-25041-foto-19-2_2018-5.jpg": {
+   "file": "images/shop/rimadesio/link/Link_A-25041-foto-19-2_2018-5.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 280673
+  },
+  "https://static.rimadesio.it/media/2018/08/Link_Immagini-912_100_2018-2-1.jpg": {
+   "file": "images/shop/rimadesio/link/Link_Immagini-912_100_2018-2-1.jpg",
+   "width": 2900,
+   "height": 1631,
+   "bytes": 158519
+  },
+  "https://static.rimadesio.it/media/2018/08/Link_Lik-f10_2018.jpg": {
+   "file": "images/shop/rimadesio/link/Link_Lik-f10_2018.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 279509
+  },
+  "https://static.rimadesio.it/media/2018/08/01_100-2.jpg": {
+   "file": "images/shop/rimadesio/link/01_100-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 300913
+  },
+  "https://static.rimadesio.it/media/2018/08/Link_maniglia.jpg": {
+   "file": "images/shop/rimadesio/link/Link_maniglia.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 105491
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_LINK.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_LINK.pdf",
+   "pages": 14,
+   "bytes": 4591241
+  },
+  "https://static.rimadesio.it/media/2024/09/rimadesio-long-island-1.jpg": {
+   "file": "images/shop/rimadesio/long-island-consolle/rimadesio-long-island-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 199407
+  },
+  "https://static.rimadesio.it/media/2024/09/rimadesio-long-island-2.jpg": {
+   "file": "images/shop/rimadesio/long-island-consolle/rimadesio-long-island-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 316855
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-long-island-consolle4.jpg": {
+   "file": "images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle4.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 445547
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-long-island-consolle5.jpg": {
+   "file": "images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle5.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 3284340
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-long-island-consolle.jpg": {
+   "file": "images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle.jpg",
+   "width": 2250,
+   "height": 2250,
+   "bytes": 171653
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-long-island-consolle2.jpg": {
+   "file": "images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle2.jpg",
+   "width": 2250,
+   "height": 2250,
+   "bytes": 109939
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-long-island-consolle3.jpg": {
+   "file": "images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle3.jpg",
+   "width": 2250,
+   "height": 2250,
+   "bytes": 470954
+  },
+  "https://static.rimadesio.it/media/2024/09/long-island-consolle-1.jpg": {
+   "file": "images/shop/rimadesio/long-island-consolle/long-island-consolle-1.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 3917854
+  },
+  "https://static.rimadesio.it/media/2024/09/Scheda-prodotto_LONG-ISLAND_2026_web_10.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_LONG-ISLAND_2026_web_10.pdf",
+   "pages": 23,
+   "bytes": 3969116
+  },
+  "https://static.rimadesio.it/media/2023/06/long-island-pagina-prodotto-2023.jpg": {
+   "file": "images/shop/rimadesio/long-island/long-island-pagina-prodotto-2023.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 648293
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Long-Island_09.jpg": {
+   "file": "images/shop/rimadesio/long-island/IMG_Long-Island_09.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 422148
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Long-Island_05.jpg": {
+   "file": "images/shop/rimadesio/long-island/IMG_Long-Island_05.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 88069
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Long-Island_06.jpg": {
+   "file": "images/shop/rimadesio/long-island/IMG_Long-Island_06.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 80917
+  },
+  "https://static.rimadesio.it/media/2018/08/long-island-6.jpg": {
+   "file": "images/shop/rimadesio/long-island/long-island-6.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 68583
+  },
+  "https://static.rimadesio.it/media/2018/08/long-island-5-1-1.jpg": {
+   "file": "images/shop/rimadesio/long-island/long-island-5-1-1.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 308654
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Long-Island_08.jpg": {
+   "file": "images/shop/rimadesio/long-island/IMG_Long-Island_08.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 327621
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Long-Island_07.jpg": {
+   "file": "images/shop/rimadesio/long-island/IMG_Long-Island_07.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 389307
+  },
+  "https://static.rimadesio.it/media/2022/03/luxor-grigio-lava.jpg": {
+   "file": "images/shop/rimadesio/luxor/luxor-grigio-lava.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 621028
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10456-ok_2018.jpg": {
+   "file": "images/shop/rimadesio/luxor/Lavoro_10456-ok_2018.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 181780
+  },
+  "https://static.rimadesio.it/media/2018/08/09_2014-RID-2.jpg": {
+   "file": "images/shop/rimadesio/luxor/09_2014-RID-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 514029
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-189.jpg": {
+   "file": "images/shop/rimadesio/luxor/Rimadesio-Collection-Book_2020_pag-189.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 284340
+  },
+  "https://static.rimadesio.it/media/2018/08/10-RID2-2020.jpg": {
+   "file": "images/shop/rimadesio/luxor/10-RID2-2020.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 220527
+  },
+  "https://static.rimadesio.it/media/2018/08/17a-RID_2017.jpg": {
+   "file": "images/shop/rimadesio/luxor/17a-RID_2017.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 286764
+  },
+  "https://static.rimadesio.it/media/2018/08/16a-RID.jpg": {
+   "file": "images/shop/rimadesio/luxor/16a-RID.jpg",
+   "width": 2500,
+   "height": 2499,
+   "bytes": 443682
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10085-okok-RID.jpg": {
+   "file": "images/shop/rimadesio/luxor/Lavoro_10085-okok-RID.jpg",
+   "width": 1500,
+   "height": 1501,
+   "bytes": 48111
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_LUXOR.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_LUXOR.pdf",
+   "pages": 14,
+   "bytes": 4108978
+  },
+  "https://static.rimadesio.it/media/2018/05/News-2018_pagg-40-41.jpg": {
+   "file": "images/shop/rimadesio/manta-office/News-2018_pagg-40-41.jpg",
+   "width": 2500,
+   "height": 1406,
+   "bytes": 140172
+  },
+  "https://static.rimadesio.it/media/2018/10/Manta-2-Lavoro_10106-ok.jpg": {
+   "file": "images/shop/rimadesio/manta-office/Manta-2-Lavoro_10106-ok.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 64771
+  },
+  "https://static.rimadesio.it/media/2018/05/IMG_Manta_14.jpg": {
+   "file": "images/shop/rimadesio/manta-office/IMG_Manta_14.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 423739
+  },
+  "https://static.rimadesio.it/media/2018/05/IMG_Manta_13.jpg": {
+   "file": "images/shop/rimadesio/manta-office/IMG_Manta_13.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 498229
+  },
+  "https://static.rimadesio.it/media/2022/01/Scheda-prodotto_MANTA_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_MANTA_2026_web.pdf",
+   "pages": 25,
+   "bytes": 4181633
+  },
+  "https://static.rimadesio.it/media/2018/05/manta-pagina-prodotto-agg-giugno-2024-1.jpg": {
+   "file": "images/shop/rimadesio/manta/manta-pagina-prodotto-agg-giugno-2024-1.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 1843365
+  },
+  "https://static.rimadesio.it/media/2018/05/manta-pagina-prodotto-agg-giugno-2024-2.jpg": {
+   "file": "images/shop/rimadesio/manta/manta-pagina-prodotto-agg-giugno-2024-2.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 1331232
+  },
+  "https://static.rimadesio.it/media/2023/01/manta-2022-01.jpg": {
+   "file": "images/shop/rimadesio/manta/manta-2022-01.jpg",
+   "width": 1832,
+   "height": 1030,
+   "bytes": 1164959
+  },
+  "https://static.rimadesio.it/media/2023/01/manta-2022-02.jpg": {
+   "file": "images/shop/rimadesio/manta/manta-2022-02.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 497138
+  },
+  "https://static.rimadesio.it/media/2018/05/RIMADESIO-spazio1145-3-2.jpg": {
+   "file": "images/shop/rimadesio/manta/RIMADESIO-spazio1145-3-2.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 59730
+  },
+  "https://static.rimadesio.it/media/2018/05/RIMADESIO-spazio1145-4-2.jpg": {
+   "file": "images/shop/rimadesio/manta/RIMADESIO-spazio1145-4-2.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 56600
+  },
+  "https://static.rimadesio.it/media/2018/05/manta-pagina-prodotto-agg-giugno-2024-3.jpg": {
+   "file": "images/shop/rimadesio/manta/manta-pagina-prodotto-agg-giugno-2024-3.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 185272
+  },
+  "https://static.rimadesio.it/media/2018/05/manta-pagina-prodotto-agg-giugno-2024-4.jpg": {
+   "file": "images/shop/rimadesio/manta/manta-pagina-prodotto-agg-giugno-2024-4.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 295793
+  },
+  "https://static.rimadesio.it/media/2023/01/maxi-2023-1.jpg": {
+   "file": "images/shop/rimadesio/maxi/maxi-2023-1.jpg",
+   "width": 1832,
+   "height": 1030,
+   "bytes": 1127740
+  },
+  "https://static.rimadesio.it/media/2023/01/maxi-2023-2.jpg": {
+   "file": "images/shop/rimadesio/maxi/maxi-2023-2.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 370690
+  },
+  "https://static.rimadesio.it/media/2023/01/maxi-2023-3.jpg": {
+   "file": "images/shop/rimadesio/maxi/maxi-2023-3.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 513826
+  },
+  "https://static.rimadesio.it/media/2022/03/maxi-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/maxi/maxi-pagina-prodotto-2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1053534
+  },
+  "https://static.rimadesio.it/media/2022/03/maxi-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/maxi/maxi-pagina-prodotto-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1030079
+  },
+  "https://static.rimadesio.it/media/2022/03/maxi-pagina-prodotto-tecnica-2-25.jpg": {
+   "file": "images/shop/rimadesio/maxi/maxi-pagina-prodotto-tecnica-2-25.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 733172
+  },
+  "https://static.rimadesio.it/media/2022/03/maxi-pagina-prodotto-tecnica-1-25.jpg": {
+   "file": "images/shop/rimadesio/maxi/maxi-pagina-prodotto-tecnica-1-25.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 529837
+  },
+  "https://static.rimadesio.it/media/2022/03/maxi-pagina-prodotto-tecnica-3-25.jpg": {
+   "file": "images/shop/rimadesio/maxi/maxi-pagina-prodotto-tecnica-3-25.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 448031
+  },
+  "https://static.rimadesio.it/media/2022/03/Scheda-prodotto_MAXI_2026.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_MAXI_2026.pdf",
+   "pages": 27,
+   "bytes": 36975966
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets2-miglio7.jpg": {
+   "file": "images/shop/rimadesio/miglio/tagli-immagine-carpets2-miglio7.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 259525
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets-miglio4.jpg": {
+   "file": "images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio4.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 735065
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets-miglio5.jpg": {
+   "file": "images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio5.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 991292
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets-miglio6.jpg": {
+   "file": "images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio6.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 762430
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets-miglio.jpg": {
+   "file": "images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 408909
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets-miglio-2.jpg": {
+   "file": "images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio-2.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 486167
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets-miglio3.jpg": {
+   "file": "images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio3.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 321553
+  },
+  "https://static.rimadesio.it/media/2024/09/tagli-immagine-carpets3-miglio8.jpg": {
+   "file": "images/shop/rimadesio/miglio/tagli-immagine-carpets3-miglio8.jpg",
+   "width": 1920,
+   "height": 1920,
+   "bytes": 738280
+  },
+  "https://static.rimadesio.it/media/2023/08/rimadesio-modulor-day-1.jpg": {
+   "file": "images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 403728
+  },
+  "https://static.rimadesio.it/media/2023/08/rimadesio-modulor-day-2.jpg": {
+   "file": "images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 231284
+  },
+  "https://static.rimadesio.it/media/2023/08/rimadesio-modulor-day-3.jpg": {
+   "file": "images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 189008
+  },
+  "https://static.rimadesio.it/media/2023/08/rimadesio-modulor-day-4.jpg": {
+   "file": "images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-4.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 330560
+  },
+  "https://static.rimadesio.it/media/2023/08/rimadesio-modulor-day-7.jpg": {
+   "file": "images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-7.jpg",
+   "width": 1440,
+   "height": 1440,
+   "bytes": 1628523
+  },
+  "https://static.rimadesio.it/media/2023/08/rimadesio-modulor-day-6.jpg": {
+   "file": "images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 901615
+  },
+  "https://static.rimadesio.it/media/2023/08/modulor-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/modulor-boiserie/modulor-pagina-prodotto-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 614324
+  },
+  "https://static.rimadesio.it/media/2023/08/modulor-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/modulor-boiserie/modulor-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 1176434
+  },
+  "https://static.rimadesio.it/media/2019/04/WEB_Scheda-tecnica_Modulor_2025.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-tecnica_Modulor_2025.pdf",
+   "pages": 85,
+   "bytes": 48822144
+  },
+  "https://static.rimadesio.it/media/2019/04/rimadesio-modulor-night-7.jpg": {
+   "file": "images/shop/rimadesio/modulor-night/rimadesio-modulor-night-7.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 509721
+  },
+  "https://static.rimadesio.it/media/2019/04/rimadesio-modulor-night-1.jpg": {
+   "file": "images/shop/rimadesio/modulor-night/rimadesio-modulor-night-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 377664
+  },
+  "https://static.rimadesio.it/media/2019/04/rimadesio-modulor-night-2.jpg": {
+   "file": "images/shop/rimadesio/modulor-night/rimadesio-modulor-night-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 233800
+  },
+  "https://static.rimadesio.it/media/2019/04/rimadesio-modulor-night-3.jpg": {
+   "file": "images/shop/rimadesio/modulor-night/rimadesio-modulor-night-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 445850
+  },
+  "https://static.rimadesio.it/media/2019/04/rimadesio-modulor-night-4.jpg": {
+   "file": "images/shop/rimadesio/modulor-night/rimadesio-modulor-night-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 201313
+  },
+  "https://static.rimadesio.it/media/2019/04/rimadesio-modulor-night-5.jpg": {
+   "file": "images/shop/rimadesio/modulor-night/rimadesio-modulor-night-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 195447
+  },
+  "https://static.rimadesio.it/media/2019/04/modulor-zona-notte-agg-luglio-2024-1.jpg": {
+   "file": "images/shop/rimadesio/modulor-night/modulor-zona-notte-agg-luglio-2024-1.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 3284340
+  },
+  "https://static.rimadesio.it/media/2019/04/modulor-zona-notte-agg-luglio-2024-2.jpg": {
+   "file": "images/shop/rimadesio/modulor-night/modulor-zona-notte-agg-luglio-2024-2.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 1583331
+  },
+  "https://static.rimadesio.it/media/2019/09/modulor-pagina-prodotto-7.jpg": {
+   "file": "images/shop/rimadesio/modulor-office/modulor-pagina-prodotto-7.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1194196
+  },
+  "https://static.rimadesio.it/media/2019/09/modulor-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/modulor-office/modulor-pagina-prodotto-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 640338
+  },
+  "https://static.rimadesio.it/media/2019/09/modulor-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/modulor-office/modulor-pagina-prodotto-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 615277
+  },
+  "https://static.rimadesio.it/media/2019/09/modulor-pagina-prodotto-5.jpg": {
+   "file": "images/shop/rimadesio/modulor-office/modulor-pagina-prodotto-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 629915
+  },
+  "https://static.rimadesio.it/media/2019/09/modulor-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/modulor-office/modulor-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 983240
+  },
+  "https://static.rimadesio.it/media/2019/09/modulor-pagina-prodotto-4.jpg": {
+   "file": "images/shop/rimadesio/modulor-office/modulor-pagina-prodotto-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 720013
+  },
+  "https://static.rimadesio.it/media/2019/09/modulor-pagina-prodotto-6.jpg": {
+   "file": "images/shop/rimadesio/modulor-office/modulor-pagina-prodotto-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 758822
+  },
+  "https://static.rimadesio.it/media/2019/08/Modulor_66-67.jpg": {
+   "file": "images/shop/rimadesio/modulor-office/Modulor_66-67.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 526319
+  },
+  "https://static.rimadesio.it/media/2019/08/modulor-retail-agg-luglio-2024-1.jpg": {
+   "file": "images/shop/rimadesio/modulor-retail/modulor-retail-agg-luglio-2024-1.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 3917854
+  },
+  "https://static.rimadesio.it/media/2019/08/modulor-retail-agg-luglio-2024-2.jpg": {
+   "file": "images/shop/rimadesio/modulor-retail/modulor-retail-agg-luglio-2024-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 3761276
+  },
+  "https://static.rimadesio.it/media/2019/08/modulor-retail-agg-luglio-2024-4.jpg": {
+   "file": "images/shop/rimadesio/modulor-retail/modulor-retail-agg-luglio-2024-4.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 5956178
+  },
+  "https://static.rimadesio.it/media/2019/09/Modulor_2019_Pagg-20-21.jpg": {
+   "file": "images/shop/rimadesio/modulor-retail/Modulor_2019_Pagg-20-21.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 500828
+  },
+  "https://static.rimadesio.it/media/2019/08/modulor-retail-agg-luglio-2024-3.jpg": {
+   "file": "images/shop/rimadesio/modulor-retail/modulor-retail-agg-luglio-2024-3.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 3998922
+  },
+  "https://static.rimadesio.it/media/2019/09/Modulor_2019_Pag-9.jpg": {
+   "file": "images/shop/rimadesio/modulor-retail/Modulor_2019_Pag-9.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 475854
+  },
+  "https://static.rimadesio.it/media/2019/09/Modulor_2019_Pag-17.jpg": {
+   "file": "images/shop/rimadesio/modulor-retail/Modulor_2019_Pag-17.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 581071
+  },
+  "https://static.rimadesio.it/media/2019/09/Modulor_2019_Pag-23.jpg": {
+   "file": "images/shop/rimadesio/modulor-retail/Modulor_2019_Pag-23.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 593626
+  },
+  "https://static.rimadesio.it/media/2019/08/Modulor_28-29.jpg": {
+   "file": "images/shop/rimadesio/modulor/Modulor_28-29.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 517923
+  },
+  "https://static.rimadesio.it/media/2019/08/Modulor_32-33.jpg": {
+   "file": "images/shop/rimadesio/modulor/Modulor_32-33.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 847296
+  },
+  "https://static.rimadesio.it/media/2019/08/Modulor_27.jpg": {
+   "file": "images/shop/rimadesio/modulor/Modulor_27.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 538042
+  },
+  "https://static.rimadesio.it/media/2019/08/Modulor_31.jpg": {
+   "file": "images/shop/rimadesio/modulor/Modulor_31.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 719520
+  },
+  "https://static.rimadesio.it/media/2019/08/Modulor_35.jpg": {
+   "file": "images/shop/rimadesio/modulor/Modulor_35.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 342786
+  },
+  "https://static.rimadesio.it/media/2020/10/INTERIORS_ONE_1_cover-hp.jpg": {
+   "file": "images/shop/rimadesio/modulor/INTERIORS_ONE_1_cover-hp.jpg",
+   "width": 2500,
+   "height": 1667,
+   "bytes": 419508
+  },
+  "https://static.rimadesio.it/media/2020/10/INTERIORS_ONE_1.jpg": {
+   "file": "images/shop/rimadesio/modulor/INTERIORS_ONE_1.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 129754
+  },
+  "https://static.rimadesio.it/media/2020/10/INTERIORS_TWO_2.jpg": {
+   "file": "images/shop/rimadesio/modulor/INTERIORS_TWO_2.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 202741
+  },
+  "https://static.rimadesio.it/media/2019/09/Modulor-2019_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Modulor-2019_web.pdf",
+   "pages": 26,
+   "bytes": 9363395
+  },
+  "https://static.rimadesio.it/media/2019/03/02-Listino-Modulor-2021-Novita_.pdf": {
+   "file": "catalogs/rimadesio/sheets/02-Listino-Modulor-2021-Novita_.pdf",
+   "pages": 96,
+   "bytes": 5144692
+  },
+  "https://static.rimadesio.it/media/2018/05/moon-01.jpg": {
+   "file": "images/shop/rimadesio/moon/moon-01.jpg",
+   "width": 1836,
+   "height": 1036,
+   "bytes": 1115872
+  },
+  "https://static.rimadesio.it/media/2018/05/moon-02.jpg": {
+   "file": "images/shop/rimadesio/moon/moon-02.jpg",
+   "width": 1836,
+   "height": 1036,
+   "bytes": 1092055
+  },
+  "https://static.rimadesio.it/media/2018/05/moon-03.jpg": {
+   "file": "images/shop/rimadesio/moon/moon-03.jpg",
+   "width": 1836,
+   "height": 1036,
+   "bytes": 1071947
+  },
+  "https://static.rimadesio.it/media/2018/05/moon-04.jpg": {
+   "file": "images/shop/rimadesio/moon/moon-04.jpg",
+   "width": 1836,
+   "height": 1036,
+   "bytes": 1072024
+  },
+  "https://static.rimadesio.it/media/2018/05/moon-pagina-prodotto-agg-1.jpg": {
+   "file": "images/shop/rimadesio/moon/moon-pagina-prodotto-agg-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 459015
+  },
+  "https://static.rimadesio.it/media/2018/05/moon-pagina-prodotto-agg-4.jpg": {
+   "file": "images/shop/rimadesio/moon/moon-pagina-prodotto-agg-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 568376
+  },
+  "https://static.rimadesio.it/media/2018/05/moon-pagina-prodotto-agg-2.jpg": {
+   "file": "images/shop/rimadesio/moon/moon-pagina-prodotto-agg-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 587109
+  },
+  "https://static.rimadesio.it/media/2018/05/moon-pagina-prodotto-agg-3.jpg": {
+   "file": "images/shop/rimadesio/moon/moon-pagina-prodotto-agg-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 582490
+  },
+  "https://static.rimadesio.it/media/2018/05/WEB_Scheda-prodotto_MOON.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_MOON.pdf",
+   "pages": 19,
+   "bytes": 5504604
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-nest-poltrona-agg-1.jpg": {
+   "file": "images/shop/rimadesio/nest/rimadesio-nest-poltrona-agg-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 288876
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-nest-poltrona-agg-2.jpg": {
+   "file": "images/shop/rimadesio/nest/rimadesio-nest-poltrona-agg-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 275584
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-nest-poltrona-6.jpg": {
+   "file": "images/shop/rimadesio/nest/rimadesio-nest-poltrona-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 243412
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-nest-poltrona-5.jpg": {
+   "file": "images/shop/rimadesio/nest/rimadesio-nest-poltrona-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 281821
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-nest-poltrona-7.jpg": {
+   "file": "images/shop/rimadesio/nest/rimadesio-nest-poltrona-7.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 197198
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-nest-poltrona-8.jpg": {
+   "file": "images/shop/rimadesio/nest/rimadesio-nest-poltrona-8.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 169674
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-nest-poltrona-9.jpg": {
+   "file": "images/shop/rimadesio/nest/rimadesio-nest-poltrona-9.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 187343
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-nest-poltrona-10.jpg": {
+   "file": "images/shop/rimadesio/nest/rimadesio-nest-poltrona-10.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 159886
+  },
+  "https://static.rimadesio.it/media/2025/04/Scheda-prodotto_NEST-poltrona_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_NEST-poltrona_2026_web.pdf",
+   "pages": 24,
+   "bytes": 5049800
+  },
+  "https://static.rimadesio.it/media/2018/08/opus-2022-01.jpg": {
+   "file": "images/shop/rimadesio/opus/opus-2022-01.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1293383
+  },
+  "https://static.rimadesio.it/media/2018/08/opus-pagina-prodotto-agg-1.jpg": {
+   "file": "images/shop/rimadesio/opus/opus-pagina-prodotto-agg-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 510934
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Opus_03.jpg": {
+   "file": "images/shop/rimadesio/opus/IMG_Opus_03.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 408140
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Opus_01.jpg": {
+   "file": "images/shop/rimadesio/opus/IMG_Opus_01.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 72262
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Opus_02.jpg": {
+   "file": "images/shop/rimadesio/opus/IMG_Opus_02.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 100750
+  },
+  "https://static.rimadesio.it/media/2018/08/Render_Opus_02.jpg": {
+   "file": "images/shop/rimadesio/opus/Render_Opus_02.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 88036
+  },
+  "https://static.rimadesio.it/media/2018/08/Render_Opus_01.jpg": {
+   "file": "images/shop/rimadesio/opus/Render_Opus_01.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 32709
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_OPUS.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_OPUS.pdf",
+   "pages": 16,
+   "bytes": 5160374
+  },
+  "https://static.rimadesio.it/media/2026/04/rimadesio-ori-sedia-pagina-prodotto-15.jpg": {
+   "file": "images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-15.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 148582
+  },
+  "https://static.rimadesio.it/media/2026/04/rimadesio-ori-sedia-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 525568
+  },
+  "https://static.rimadesio.it/media/2026/04/rimadesio-ori-sedia-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-3.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1078161
+  },
+  "https://static.rimadesio.it/media/2026/04/rimadesio-ori-sedia-pagina-prodotto-16.jpg": {
+   "file": "images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-16.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 112359
+  },
+  "https://static.rimadesio.it/media/2026/04/rimadesio-ori-sedia-pagina-prodotto-18.jpg": {
+   "file": "images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-18.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 143613
+  },
+  "https://static.rimadesio.it/media/2026/04/rimadesio-ori-sedia-pagina-prodotto-20.jpg": {
+   "file": "images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-20.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 113327
+  },
+  "https://static.rimadesio.it/media/2026/04/rimadesio-ori-sedia-pagina-prodotto-21.jpg": {
+   "file": "images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-21.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 146361
+  },
+  "https://static.rimadesio.it/media/2026/04/rimadesio-ori-sedia-pagina-prodotto-17.jpg": {
+   "file": "images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-17.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 29919
+  },
+  "https://static.rimadesio.it/media/2026/04/Scheda-prodotto_ORI-sedia_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ORI-sedia_2026_web.pdf",
+   "pages": 20,
+   "bytes": 3048648
+  },
+  "https://static.rimadesio.it/media/2023/05/planet-2022-01.jpg": {
+   "file": "images/shop/rimadesio/planet/planet-2022-01.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 568191
+  },
+  "https://static.rimadesio.it/media/2023/05/planet-2022-02.jpg": {
+   "file": "images/shop/rimadesio/planet/planet-2022-02.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 513389
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Planet_03.jpg": {
+   "file": "images/shop/rimadesio/planet/IMG_Planet_03.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 545354
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Planet_05.jpg": {
+   "file": "images/shop/rimadesio/planet/IMG_Planet_05.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 126060
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Planet_04.jpg": {
+   "file": "images/shop/rimadesio/planet/IMG_Planet_04.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 120970
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Planet_02.jpg": {
+   "file": "images/shop/rimadesio/planet/IMG_Planet_02.jpg",
+   "width": 2500,
+   "height": 2499,
+   "bytes": 477846
+  },
+  "https://static.rimadesio.it/media/2018/08/Render_Planet_01.jpg": {
+   "file": "images/shop/rimadesio/planet/Render_Planet_01.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 64972
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_PLANET_-2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_PLANET_-2026_web.pdf",
+   "pages": 16,
+   "bytes": 4866090
+  },
+  "https://static.rimadesio.it/media/2023/04/ms-natural-core3.jpg": {
+   "file": "images/shop/rimadesio/radius/ms-natural-core3.jpg",
+   "width": 5672,
+   "height": 3190,
+   "bytes": 1798620
+  },
+  "https://static.rimadesio.it/media/2023/07/radius-pagina-prodotto-agg-13.jpg": {
+   "file": "images/shop/rimadesio/radius/radius-pagina-prodotto-agg-13.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 586562
+  },
+  "https://static.rimadesio.it/media/2023/07/radius-pagina-prodotto-agg-10.jpg": {
+   "file": "images/shop/rimadesio/radius/radius-pagina-prodotto-agg-10.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 615746
+  },
+  "https://static.rimadesio.it/media/2023/07/radius-pagina-prodotto-agg-11.jpg": {
+   "file": "images/shop/rimadesio/radius/radius-pagina-prodotto-agg-11.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 582924
+  },
+  "https://static.rimadesio.it/media/2023/07/radius-pagina-prodotto-12.jpg": {
+   "file": "images/shop/rimadesio/radius/radius-pagina-prodotto-12.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 743569
+  },
+  "https://static.rimadesio.it/media/2023/07/radius-pagina-prodotto-14.jpg": {
+   "file": "images/shop/rimadesio/radius/radius-pagina-prodotto-14.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 543521
+  },
+  "https://static.rimadesio.it/media/2023/07/radius-pagina-prodotto-5.jpg": {
+   "file": "images/shop/rimadesio/radius/radius-pagina-prodotto-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 480004
+  },
+  "https://static.rimadesio.it/media/2023/07/radius-pagina-prodotto-1-25.jpg": {
+   "file": "images/shop/rimadesio/radius/radius-pagina-prodotto-1-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 720718
+  },
+  "https://static.rimadesio.it/media/2023/07/HR_Scheda-prodotto_RADIUS_2025.pdf": {
+   "file": "catalogs/rimadesio/sheets/HR_Scheda-prodotto_RADIUS_2025.pdf",
+   "pages": 26,
+   "bytes": 43281209
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web4.jpg": {
+   "file": "images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web4.jpg",
+   "width": 6250,
+   "height": 6250,
+   "bytes": 16707839
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web8.jpg": {
+   "file": "images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web8.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 1935709
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-madia-pagina-prodotto-web23-chiusa.jpg": {
+   "file": "images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web23-chiusa.jpg",
+   "width": 1840,
+   "height": 1035,
+   "bytes": 255991
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-collection-pagina-prodotto-23.jpg": {
+   "file": "images/shop/rimadesio/rialto-3/rialto-collection-pagina-prodotto-23.jpg",
+   "width": 1840,
+   "height": 1035,
+   "bytes": 321441
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-madia-pagina-prodotto-web13-chiusa.jpg": {
+   "file": "images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web13-chiusa.jpg",
+   "width": 1840,
+   "height": 1035,
+   "bytes": 253621
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web13.jpg": {
+   "file": "images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web13.jpg",
+   "width": 1840,
+   "height": 1035,
+   "bytes": 245889
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web15.jpg": {
+   "file": "images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web15.jpg",
+   "width": 1840,
+   "height": 1035,
+   "bytes": 181704
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web17.jpg": {
+   "file": "images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web17.jpg",
+   "width": 1840,
+   "height": 1035,
+   "bytes": 216678
+  },
+  "https://static.rimadesio.it/media/2024/03/Scheda-prodotto_RIALTO-COLLECTION_2025.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_RIALTO-COLLECTION_2025.pdf",
+   "pages": 40,
+   "bytes": 50498524
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-scrittoio-pagina-prodotto-1-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-4/rialto-scrittoio-pagina-prodotto-1-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 653175
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-scrittoio-pagina-prodotto-2-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-4/rialto-scrittoio-pagina-prodotto-2-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 943388
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-scrittoio-pagina-prodotto-3-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-4/rialto-scrittoio-pagina-prodotto-3-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 609751
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-collection-pagina-prodotto-18.jpg": {
+   "file": "images/shop/rimadesio/rialto-4/rialto-collection-pagina-prodotto-18.jpg",
+   "width": 4500,
+   "height": 4500,
+   "bytes": 12166882
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-scrittoio-pagina-prodotto-4-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-4/rialto-scrittoio-pagina-prodotto-4-25.jpg",
+   "width": 4500,
+   "height": 4500,
+   "bytes": 2282615
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-collection-pagina-prodotto-9.jpg": {
+   "file": "images/shop/rimadesio/rialto-4/rialto-collection-pagina-prodotto-9.jpg",
+   "width": 4500,
+   "height": 4500,
+   "bytes": 2661375
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web25.jpg": {
+   "file": "images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web25.jpg",
+   "width": 1080,
+   "height": 861,
+   "bytes": 290852
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web26.jpg": {
+   "file": "images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web26.jpg",
+   "width": 1080,
+   "height": 860,
+   "bytes": 344764
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web.jpg": {
+   "file": "images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web.jpg",
+   "width": 6250,
+   "height": 6250,
+   "bytes": 23502555
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web23.jpg": {
+   "file": "images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web23.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 771216
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web16.jpg": {
+   "file": "images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web16.jpg",
+   "width": 1840,
+   "height": 1035,
+   "bytes": 266083
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web12.jpg": {
+   "file": "images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web12.jpg",
+   "width": 1840,
+   "height": 1035,
+   "bytes": 251368
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web22.jpg": {
+   "file": "images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web22.jpg",
+   "width": 1840,
+   "height": 1035,
+   "bytes": 285447
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web10.jpg": {
+   "file": "images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web10.jpg",
+   "width": 920,
+   "height": 881,
+   "bytes": 80110
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-madia-pagina-prodotto-web9.jpg": {
+   "file": "images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web9.jpg",
+   "width": 920,
+   "height": 881,
+   "bytes": 397847
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-coffee-table-pagina-prodotto-web2.jpg": {
+   "file": "images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web2.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 1891511
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-coffee-table-pagina-prodotto-web.jpg": {
+   "file": "images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 1863800
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-coffee-table-pagina-prodotto-web4.jpg": {
+   "file": "images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web4.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 2350405
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-coffee-table-pagina-prodotto-web3.jpg": {
+   "file": "images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web3.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 2046674
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-coffee-table-pagina-prodotto-web7.jpg": {
+   "file": "images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web7.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 256687
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-coffee-table-pagina-prodotto-web8.jpg": {
+   "file": "images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web8.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 128411
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-coffee-table-pagina-prodotto-web10.jpg": {
+   "file": "images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web10.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 298180
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-coffee-table-pagina-prodotto-web9.jpg": {
+   "file": "images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web9.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 128048
+  },
+  "https://static.rimadesio.it/media/2024/03/Scheda-prodotto_RIALTO-COFFEE-TABLE_2025.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_RIALTO-COFFEE-TABLE_2025.pdf",
+   "pages": 18,
+   "bytes": 22676715
+  },
+  "https://static.rimadesio.it/media/2024/09/rimadesio-rialto-comodino-1.jpg": {
+   "file": "images/shop/rimadesio/rialto-comodini/rimadesio-rialto-comodino-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 230609
+  },
+  "https://static.rimadesio.it/media/2024/09/rimadesio-rialto-comodino-2.jpg": {
+   "file": "images/shop/rimadesio/rialto-comodini/rimadesio-rialto-comodino-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 129972
+  },
+  "https://static.rimadesio.it/media/2024/09/rimadesio-rialto-comodino-3.jpg": {
+   "file": "images/shop/rimadesio/rialto-comodini/rimadesio-rialto-comodino-3.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 377664
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-collection-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/rialto-comodini/rialto-collection-pagina-prodotto-3.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 79876
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-comodino-pagina-prodotto-3-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-comodini/rialto-comodino-pagina-prodotto-3-25.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 84603
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-collection-pagina-prodotto-6.jpg": {
+   "file": "images/shop/rimadesio/rialto-comodini/rialto-collection-pagina-prodotto-6.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 79042
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-comodino-pagina-prodotto-4-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-comodini/rialto-comodino-pagina-prodotto-4-25.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 90314
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-comodino-pagina-prodotto-2-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-comodini/rialto-comodino-pagina-prodotto-2-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 1014046
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-consolle-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/rialto-consolle/rialto-consolle-pagina-prodotto.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 916452
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-consolle-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/rialto-consolle/rialto-consolle-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 702472
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-consolle-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/rialto-consolle/rialto-consolle-pagina-prodotto-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 544411
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-consolle-agg-3.jpg": {
+   "file": "images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-3.jpg",
+   "width": 4000,
+   "height": 2250,
+   "bytes": 364556
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-consolle-agg-2.jpg": {
+   "file": "images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-2.jpg",
+   "width": 4000,
+   "height": 2250,
+   "bytes": 1042786
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-consolle-agg-1.jpg": {
+   "file": "images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-1.jpg",
+   "width": 4000,
+   "height": 2250,
+   "bytes": 403535
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-consolle-agg-4.jpg": {
+   "file": "images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-4.jpg",
+   "width": 4000,
+   "height": 2250,
+   "bytes": 1197957
+  },
+  "https://static.rimadesio.it/media/2024/09/rialto-consolle-agg-5.jpg": {
+   "file": "images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-5.jpg",
+   "width": 4000,
+   "height": 2250,
+   "bytes": 347499
+  },
+  "https://static.rimadesio.it/media/2024/08/rimadesio-rialto-cassettiera-1.jpg": {
+   "file": "images/shop/rimadesio/rialto-contenitori/rimadesio-rialto-cassettiera-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 214906
+  },
+  "https://static.rimadesio.it/media/2024/08/rimadesio-rialto-cassettiera-2.jpg": {
+   "file": "images/shop/rimadesio/rialto-contenitori/rimadesio-rialto-cassettiera-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 133055
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-collection-pagina-prodotto-4.jpg": {
+   "file": "images/shop/rimadesio/rialto-contenitori/rialto-collection-pagina-prodotto-4.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 129343
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-collection-pagina-prodotto-5.jpg": {
+   "file": "images/shop/rimadesio/rialto-contenitori/rialto-collection-pagina-prodotto-5.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 192777
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-collection-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/rialto-contenitori/rialto-collection-pagina-prodotto-2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 196920
+  },
+  "https://static.rimadesio.it/media/2024/08/rialto-collection-pagina-prodotto-tecnica-1-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-contenitori/rialto-collection-pagina-prodotto-tecnica-1-25.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 136307
+  },
+  "https://static.rimadesio.it/media/2024/08/rialto-cassettiera-agg-2.jpg": {
+   "file": "images/shop/rimadesio/rialto-contenitori/rialto-cassettiera-agg-2.jpg",
+   "width": 2250,
+   "height": 2250,
+   "bytes": 133796
+  },
+  "https://static.rimadesio.it/media/2024/08/rialto-cassettiera-agg-4.jpg": {
+   "file": "images/shop/rimadesio/rialto-contenitori/rialto-cassettiera-agg-4.jpg",
+   "width": 2250,
+   "height": 2250,
+   "bytes": 197031
+  },
+  "https://static.rimadesio.it/media/2024/07/rialto-specchi-pagina-prodotto-2-dettaglio.jpg": {
+   "file": "images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-2-dettaglio.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 753177
+  },
+  "https://static.rimadesio.it/media/2024/07/rialto-specchi-pagina-prodotto-1-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-1-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 655779
+  },
+  "https://static.rimadesio.it/media/2024/07/rialto-specchi-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 390082
+  },
+  "https://static.rimadesio.it/media/2024/07/rialto-specchi-pagina-prodotto-2-252.jpg": {
+   "file": "images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-2-252.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 315160
+  },
+  "https://static.rimadesio.it/media/2024/07/rialto-specchi-pagina-prodotto-6.jpg": {
+   "file": "images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 415321
+  },
+  "https://static.rimadesio.it/media/2024/07/rialto-specchi-pagina-prodotto-3-25.jpg": {
+   "file": "images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-3-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 578361
+  },
+  "https://static.rimadesio.it/media/2024/07/rialto-specchi-pagina-prodotto-5.jpg": {
+   "file": "images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 312827
+  },
+  "https://static.rimadesio.it/media/2024/07/rialto-specchi-pagina-prodotto-4.jpg": {
+   "file": "images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 345989
+  },
+  "https://static.rimadesio.it/media/2024/07/Scheda-prodotto_RIALTO-SPECCHIO_marzo-2025_.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_RIALTO-SPECCHIO_marzo-2025_.pdf",
+   "pages": 13,
+   "bytes": 10384703
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-mobile-tv-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/rialto/rialto-mobile-tv-pagina-prodotto-1.jpg",
+   "width": 4500,
+   "height": 4500,
+   "bytes": 11678026
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-mobile-tv-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/rialto/rialto-mobile-tv-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 513579
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-mobile-tv-agg-3.jpg": {
+   "file": "images/shop/rimadesio/rialto/rialto-mobile-tv-agg-3.jpg",
+   "width": 2250,
+   "height": 2250,
+   "bytes": 372614
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-mobile-tv-agg-1.jpg": {
+   "file": "images/shop/rimadesio/rialto/rialto-mobile-tv-agg-1.jpg",
+   "width": 2250,
+   "height": 2250,
+   "bytes": 349406
+  },
+  "https://static.rimadesio.it/media/2024/03/rialto-collection-pagina-prodotto-x.jpg": {
+   "file": "images/shop/rimadesio/rialto/rialto-collection-pagina-prodotto-x.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 292935
+  },
+  "https://static.rimadesio.it/media/2024/04/03-rialto-collection-5.jpg": {
+   "file": "images/shop/rimadesio/rialto/03-rialto-collection-5.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 99820
+  },
+  "https://static.rimadesio.it/media/2024/04/03-rialto-collection-3.jpg": {
+   "file": "images/shop/rimadesio/rialto/03-rialto-collection-3.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 71029
+  },
+  "https://static.rimadesio.it/media/2020/04/RIMADESIO-Ottobre-2019_29875-RID.jpg": {
+   "file": "images/shop/rimadesio/sail-door/RIMADESIO-Ottobre-2019_29875-RID.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 336390
+  },
+  "https://static.rimadesio.it/media/2020/04/RIMADESIO-Ottobre-2019_29812-RID.jpg": {
+   "file": "images/shop/rimadesio/sail-door/RIMADESIO-Ottobre-2019_29812-RID.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 421564
+  },
+  "https://static.rimadesio.it/media/2020/04/SAIL-BATTENTE-2019.jpg": {
+   "file": "images/shop/rimadesio/sail-door/SAIL-BATTENTE-2019.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 652104
+  },
+  "https://static.rimadesio.it/media/2020/04/TR07con-nottolino.jpg": {
+   "file": "images/shop/rimadesio/sail-door/TR07con-nottolino.jpg",
+   "width": 1563,
+   "height": 1563,
+   "bytes": 94390
+  },
+  "https://static.rimadesio.it/media/2020/04/TR07C-con-chiave.jpg": {
+   "file": "images/shop/rimadesio/sail-door/TR07C-con-chiave.jpg",
+   "width": 1563,
+   "height": 1563,
+   "bytes": 99734
+  },
+  "https://static.rimadesio.it/media/2020/04/2015.jpg": {
+   "file": "images/shop/rimadesio/sail-door/2015.jpg",
+   "width": 1563,
+   "height": 1563,
+   "bytes": 164274
+  },
+  "https://static.rimadesio.it/media/2020/04/WEB_Scheda-prodotto_SAIL-BATTENTE.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SAIL-BATTENTE.pdf",
+   "pages": 12,
+   "bytes": 3279692
+  },
+  "https://static.rimadesio.it/media/2023/06/sail-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/sail/sail-pagina-prodotto-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1375989
+  },
+  "https://static.rimadesio.it/media/2023/06/sail-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/sail/sail-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 605263
+  },
+  "https://static.rimadesio.it/media/2023/06/sail-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/sail/sail-pagina-prodotto-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 902889
+  },
+  "https://static.rimadesio.it/media/2023/06/sail-pagina-prodotto-4.jpg": {
+   "file": "images/shop/rimadesio/sail/sail-pagina-prodotto-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 780868
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-082-083.jpg": {
+   "file": "images/shop/rimadesio/sail/Rimadesio-Collection-Book_2020_pag-082-083.jpg",
+   "width": 3000,
+   "height": 1686,
+   "bytes": 660043
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-080.jpg": {
+   "file": "images/shop/rimadesio/sail/Rimadesio-Collection-Book_2020_pag-080.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 672431
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-085.jpg": {
+   "file": "images/shop/rimadesio/sail/Rimadesio-Collection-Book_2020_pag-085.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 542796
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio_Sail_2018_01.jpg": {
+   "file": "images/shop/rimadesio/sail/Rimadesio_Sail_2018_01.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 562717
+  },
+  "https://static.rimadesio.it/media/2020/04/WEB_Scheda-prodotto_SAIL.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SAIL.pdf",
+   "pages": 29,
+   "bytes": 27680324
+  },
+  "https://static.rimadesio.it/media/2026/04/self-blade-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/self-blade/self-blade-pagina-prodotto.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 606950
+  },
+  "https://static.rimadesio.it/media/2026/04/self-blade-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 661829
+  },
+  "https://static.rimadesio.it/media/2026/04/self-blade-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-3.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 373802
+  },
+  "https://static.rimadesio.it/media/2026/04/self-blade-pagina-prodotto-4.jpg": {
+   "file": "images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 1015031
+  },
+  "https://static.rimadesio.it/media/2026/04/self-blade-pagina-prodotto-5.jpg": {
+   "file": "images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 181296
+  },
+  "https://static.rimadesio.it/media/2026/04/self-blade-pagina-prodotto-6.jpg": {
+   "file": "images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 186393
+  },
+  "https://static.rimadesio.it/media/2026/04/self-blade-pagina-prodotto-7.jpg": {
+   "file": "images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-7.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 906972
+  },
+  "https://static.rimadesio.it/media/2026/04/self-blade-pagina-prodotto-8.jpg": {
+   "file": "images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-8.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 198190
+  },
+  "https://static.rimadesio.it/media/2026/04/Self-Blade_scheda-tecnica.pdf": {
+   "file": "catalogs/rimadesio/sheets/Self-Blade_scheda-tecnica.pdf",
+   "pages": 26,
+   "bytes": 23268665
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-19.jpg": {
+   "file": "images/shop/rimadesio/self-bold/self-pagina-prodotto-19.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1518478
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-20.jpg": {
+   "file": "images/shop/rimadesio/self-bold/self-pagina-prodotto-20.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 768332
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-21.jpg": {
+   "file": "images/shop/rimadesio/self-bold/self-pagina-prodotto-21.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 365425
+  },
+  "https://static.rimadesio.it/media/2018/08/self-bold-pagina-prodotto-agg.jpg": {
+   "file": "images/shop/rimadesio/self-bold/self-bold-pagina-prodotto-agg.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 730219
+  },
+  "https://static.rimadesio.it/media/2018/08/self-bold-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/self-bold/self-bold-pagina-prodotto-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 773461
+  },
+  "https://static.rimadesio.it/media/2018/08/self-bold-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/self-bold/self-bold-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 796698
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-33.jpg": {
+   "file": "images/shop/rimadesio/self-bold/self-pagina-prodotto-33.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1706684
+  },
+  "https://static.rimadesio.it/media/2019/04/Living_-2.jpg": {
+   "file": "images/shop/rimadesio/self-bold/Living_-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 319291
+  },
+  "https://static.rimadesio.it/media/2018/08/07-Self_2024-.pdf": {
+   "file": "catalogs/rimadesio/sheets/07-Self_2024-.pdf",
+   "pages": 73,
+   "bytes": 19858555
+  },
+  "https://static.rimadesio.it/media/2022/04/self-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-3.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1192860
+  },
+  "https://static.rimadesio.it/media/2022/04/self-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 431905
+  },
+  "https://static.rimadesio.it/media/2021/09/interior-two-4.jpg": {
+   "file": "images/shop/rimadesio/self-plan-writing-desk/interior-two-4.jpg",
+   "width": 1152,
+   "height": 1153,
+   "bytes": 222824
+  },
+  "https://static.rimadesio.it/media/2023/02/self-plan-2022-5.jpg": {
+   "file": "images/shop/rimadesio/self-plan-writing-desk/self-plan-2022-5.jpg",
+   "width": 920,
+   "height": 921,
+   "bytes": 615929
+  },
+  "https://static.rimadesio.it/media/2023/02/self-plan-2022-6.jpg": {
+   "file": "images/shop/rimadesio/self-plan-writing-desk/self-plan-2022-6.jpg",
+   "width": 920,
+   "height": 921,
+   "bytes": 622727
+  },
+  "https://static.rimadesio.it/media/2022/04/self-pagina-prodotto-5.jpg": {
+   "file": "images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 666420
+  },
+  "https://static.rimadesio.it/media/2022/04/self-pagina-prodotto-4.jpg": {
+   "file": "images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 319255
+  },
+  "https://static.rimadesio.it/media/2022/04/self-pagina-prodotto-6.jpg": {
+   "file": "images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 617123
+  },
+  "https://static.rimadesio.it/media/2023/02/self-plan-2022-1.jpg": {
+   "file": "images/shop/rimadesio/self-plan/self-plan-2022-1.jpg",
+   "width": 1836,
+   "height": 1036,
+   "bytes": 1419626
+  },
+  "https://static.rimadesio.it/media/2023/02/self-plan-2022-2.jpg": {
+   "file": "images/shop/rimadesio/self-plan/self-plan-2022-2.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 450010
+  },
+  "https://static.rimadesio.it/media/2023/02/self-plan-2022-8.jpg": {
+   "file": "images/shop/rimadesio/self-plan/self-plan-2022-8.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 512451
+  },
+  "https://static.rimadesio.it/media/2023/02/self-plan-2022-3.jpg": {
+   "file": "images/shop/rimadesio/self-plan/self-plan-2022-3.jpg",
+   "width": 1836,
+   "height": 1036,
+   "bytes": 1207825
+  },
+  "https://static.rimadesio.it/media/2021/09/interior-four-cover-1.jpg": {
+   "file": "images/shop/rimadesio/self-plan/interior-four-cover-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 943652
+  },
+  "https://static.rimadesio.it/media/2021/09/interior-four-cover2-1.jpg": {
+   "file": "images/shop/rimadesio/self-plan/interior-four-cover2-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 440202
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Self-Bold_09.jpg": {
+   "file": "images/shop/rimadesio/self-secretaire/IMG_Self-Bold_09.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 83756
+  },
+  "https://static.rimadesio.it/media/2021/09/img-self-bold-07.jpg": {
+   "file": "images/shop/rimadesio/self-secretaire/img-self-bold-07.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 349715
+  },
+  "https://static.rimadesio.it/media/2021/09/self-pagina-prodotto-parte-tecnica-7.jpg": {
+   "file": "images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-7.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 357485
+  },
+  "https://static.rimadesio.it/media/2021/09/self-pagina-prodotto-parte-tecnica-8.jpg": {
+   "file": "images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-8.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 342450
+  },
+  "https://static.rimadesio.it/media/2024/04/self-pagina-prodotto-parte-tecnica-24.jpg": {
+   "file": "images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-24.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 275597
+  },
+  "https://static.rimadesio.it/media/2024/04/self-pagina-prodotto-parte-tecnica-25.jpg": {
+   "file": "images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-25.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 255431
+  },
+  "https://static.rimadesio.it/media/2024/04/self-pagina-prodotto-parte-tecnica-26.jpg": {
+   "file": "images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-26.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 222388
+  },
+  "https://static.rimadesio.it/media/2024/04/self-pagina-prodotto-parte-tecnica-22.jpg": {
+   "file": "images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-22.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 160674
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-9.jpg": {
+   "file": "images/shop/rimadesio/self-up/self-pagina-prodotto-9.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 734666
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/self-up/self-pagina-prodotto-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 811047
+  },
+  "https://static.rimadesio.it/media/2018/08/Self-up_new7.jpg": {
+   "file": "images/shop/rimadesio/self-up/Self-up_new7.jpg",
+   "width": 4000,
+   "height": 2249,
+   "bytes": 1913280
+  },
+  "https://static.rimadesio.it/media/2018/08/self-up-2022-01.jpg": {
+   "file": "images/shop/rimadesio/self-up/self-up-2022-01.jpg",
+   "width": 1353,
+   "height": 1353,
+   "bytes": 1100289
+  },
+  "https://static.rimadesio.it/media/2018/08/self-up-2022-02.jpg": {
+   "file": "images/shop/rimadesio/self-up/self-up-2022-02.jpg",
+   "width": 1353,
+   "height": 1353,
+   "bytes": 986866
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Self-up_03_OK.jpg": {
+   "file": "images/shop/rimadesio/self-up/IMG_Self-up_03_OK.jpg",
+   "width": 1131,
+   "height": 1130,
+   "bytes": 974382
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Self-up_04.jpg": {
+   "file": "images/shop/rimadesio/self-up/IMG_Self-up_04.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 312252
+  },
+  "https://static.rimadesio.it/media/2018/08/Self-up_new3.jpg": {
+   "file": "images/shop/rimadesio/self-up/Self-up_new3.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 217075
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-13.jpg": {
+   "file": "images/shop/rimadesio/self/self-pagina-prodotto-13.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1337236
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-32.jpg": {
+   "file": "images/shop/rimadesio/self/self-pagina-prodotto-32.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 318452
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-15.jpg": {
+   "file": "images/shop/rimadesio/self/self-pagina-prodotto-15.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 750407
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-16.jpg": {
+   "file": "images/shop/rimadesio/self/self-pagina-prodotto-16.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 978373
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-17.jpg": {
+   "file": "images/shop/rimadesio/self/self-pagina-prodotto-17.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 940422
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-14-mod.jpg": {
+   "file": "images/shop/rimadesio/self/self-pagina-prodotto-14-mod.jpg",
+   "width": 1264,
+   "height": 1264,
+   "bytes": 149031
+  },
+  "https://static.rimadesio.it/media/2018/08/self-pagina-prodotto-14b.jpg": {
+   "file": "images/shop/rimadesio/self/self-pagina-prodotto-14b.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 178685
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Self_08.jpg": {
+   "file": "images/shop/rimadesio/self/IMG_Self_08.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 351196
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-sinua-poltrona-17.jpg": {
+   "file": "images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-17.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 412882
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-sinua-poltrona-18.jpg": {
+   "file": "images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-18.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 302996
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-sinua-poltrona-19.jpg": {
+   "file": "images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-19.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 340696
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-sinua-poltrona-11.jpg": {
+   "file": "images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-11.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 174498
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-sinua-poltrona-15.jpg": {
+   "file": "images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-15.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 237952
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-sinua-poltrona-14.jpg": {
+   "file": "images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-14.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 207611
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-sinua-poltrona-10.jpg": {
+   "file": "images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-10.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 173079
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-sinua-poltrona-9.jpg": {
+   "file": "images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-9.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 185523
+  },
+  "https://static.rimadesio.it/media/2025/03/Scheda-prodotto_SINUA-poltrona_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_SINUA-poltrona_2026_web.pdf",
+   "pages": 22,
+   "bytes": 5266911
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-sinua-sedia-20.jpg": {
+   "file": "images/shop/rimadesio/sinua/rimadesio-sinua-sedia-20.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 346882
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-sinua-sedia-21.jpg": {
+   "file": "images/shop/rimadesio/sinua/rimadesio-sinua-sedia-21.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 281370
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-sinua-sedia-22.jpg": {
+   "file": "images/shop/rimadesio/sinua/rimadesio-sinua-sedia-22.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 480341
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-sinua-sedia-18.jpg": {
+   "file": "images/shop/rimadesio/sinua/rimadesio-sinua-sedia-18.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 186566
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-sinua-sedia-19.jpg": {
+   "file": "images/shop/rimadesio/sinua/rimadesio-sinua-sedia-19.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 132611
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-sinua-sedia-110.jpg": {
+   "file": "images/shop/rimadesio/sinua/rimadesio-sinua-sedia-110.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 136732
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-sinua-sedia-111.jpg": {
+   "file": "images/shop/rimadesio/sinua/rimadesio-sinua-sedia-111.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 136792
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-sinua-sedia-1.jpg": {
+   "file": "images/shop/rimadesio/sinua/rimadesio-sinua-sedia-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 325151
+  },
+  "https://static.rimadesio.it/media/2025/04/Scheda-prodotto_SINUA-sedia_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_SINUA-sedia_2026_web.pdf",
+   "pages": 20,
+   "bytes": 3921062
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_10204b.jpg": {
+   "file": "images/shop/rimadesio/siparium/RIMADESIO-UPDATE-2018_10204b.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 337461
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_10285-1.jpg": {
+   "file": "images/shop/rimadesio/siparium/RIMADESIO-UPDATE-2018_10285-1.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 470079
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_10299.jpg": {
+   "file": "images/shop/rimadesio/siparium/RIMADESIO-UPDATE-2018_10299.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 449167
+  },
+  "https://static.rimadesio.it/media/2018/08/09-4.jpg": {
+   "file": "images/shop/rimadesio/siparium/09-4.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 458416
+  },
+  "https://static.rimadesio.it/media/2018/08/03_Siparium-3.jpg": {
+   "file": "images/shop/rimadesio/siparium/03_Siparium-3.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 237928
+  },
+  "https://static.rimadesio.it/media/2018/08/Siparium-5-1.jpg": {
+   "file": "images/shop/rimadesio/siparium/Siparium-5-1.jpg",
+   "width": 3000,
+   "height": 3000,
+   "bytes": 89912
+  },
+  "https://static.rimadesio.it/media/2018/09/Siparium_2.jpg": {
+   "file": "images/shop/rimadesio/siparium/Siparium_2.jpg",
+   "width": 1500,
+   "height": 1346,
+   "bytes": 106311
+  },
+  "https://static.rimadesio.it/media/2018/09/Siparium_1.jpg": {
+   "file": "images/shop/rimadesio/siparium/Siparium_1.jpg",
+   "width": 1500,
+   "height": 1346,
+   "bytes": 75298
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_SIPARIUM.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SIPARIUM.pdf",
+   "pages": 25,
+   "bytes": 25277903
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-2.jpg": {
+   "file": "images/shop/rimadesio/sixty-coffee-table/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 818600
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-1.jpg": {
+   "file": "images/shop/rimadesio/sixty-coffee-table/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 838632
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-Ottobre-2019_29910_QUADRO-RID.jpg": {
+   "file": "images/shop/rimadesio/sixty-coffee-table/RIMADESIO-Ottobre-2019_29910_QUADRO-RID.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 293625
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-3.jpg": {
+   "file": "images/shop/rimadesio/sixty-coffee-table/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 932358
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty.jpg": {
+   "file": "images/shop/rimadesio/sixty-coffee-table/sixty.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 44706
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-4.jpg": {
+   "file": "images/shop/rimadesio/sixty-coffee-table/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 130228
+  },
+  "https://static.rimadesio.it/media/2018/08/0011_1.jpg": {
+   "file": "images/shop/rimadesio/sixty-coffee-table/0011_1.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 30466
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_SIXTY-COFFEE-TABLE_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_SIXTY-COFFEE-TABLE_2026_web.pdf",
+   "pages": 15,
+   "bytes": 4314858
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-libreria-agg-pagina-prodotto-giugno-2024-1.jpg": {
+   "file": "images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 949658
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-libreria-agg-pagina-prodotto-giugno-2024-2.jpg": {
+   "file": "images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 723567
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-libreria-agg-pagina-prodotto-giugno-2024-3.jpg": {
+   "file": "images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 65929
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-libreria-agg-pagina-prodotto-giugno-2024-4.jpg": {
+   "file": "images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 69902
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-libreria-agg-pagina-prodotto-giugno-2024-5.jpg": {
+   "file": "images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 69043
+  },
+  "https://static.rimadesio.it/media/2018/08/sixty-libreria-agg-pagina-prodotto-giugno-2024-6.jpg": {
+   "file": "images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 120302
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Sixty_01.jpg": {
+   "file": "images/shop/rimadesio/sixty/IMG_Sixty_01.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 509438
+  },
+  "https://static.rimadesio.it/media/2018/08/17_2016.jpg": {
+   "file": "images/shop/rimadesio/sixty/17_2016.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 200192
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_SIXTY-LIBRERIA.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_SIXTY-LIBRERIA.pdf",
+   "pages": 11,
+   "bytes": 1881642
+  },
+  "https://static.rimadesio.it/media/2018/08/soho-aggiornamento-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/soho/soho-aggiornamento-pagina-prodotto.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1261175
+  },
+  "https://static.rimadesio.it/media/2018/08/soho-aggiornamento-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/soho/soho-aggiornamento-pagina-prodotto-2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1254334
+  },
+  "https://static.rimadesio.it/media/2018/08/soho-aggiornamento-pagina-prodotto-7.jpg": {
+   "file": "images/shop/rimadesio/soho/soho-aggiornamento-pagina-prodotto-7.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 721458
+  },
+  "https://static.rimadesio.it/media/2018/08/soho-aggiornamento-pagina-prodotto-8.jpg": {
+   "file": "images/shop/rimadesio/soho/soho-aggiornamento-pagina-prodotto-8.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 635257
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10166-OK_20172.jpg": {
+   "file": "images/shop/rimadesio/soho/Lavoro_10166-OK_20172.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 146974
+  },
+  "https://static.rimadesio.it/media/2018/08/04_06_2016-RID.jpg": {
+   "file": "images/shop/rimadesio/soho/04_06_2016-RID.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 378319
+  },
+  "https://static.rimadesio.it/media/2018/08/D-Porte-Scorrevoli-Soho-HR_20173.jpg": {
+   "file": "images/shop/rimadesio/soho/D-Porte-Scorrevoli-Soho-HR_20173.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 489961
+  },
+  "https://static.rimadesio.it/media/2018/07/Soho-pannelli.jpg": {
+   "file": "images/shop/rimadesio/soho/Soho-pannelli.jpg",
+   "width": 3000,
+   "height": 3000,
+   "bytes": 113202
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_SOHO.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SOHO.pdf",
+   "pages": 23,
+   "bytes": 24887199
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-shophis-sedia-13.jpg": {
+   "file": "images/shop/rimadesio/sophis/rimadesio-shophis-sedia-13.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 412127
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-shophis-sedia-14.jpg": {
+   "file": "images/shop/rimadesio/sophis/rimadesio-shophis-sedia-14.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 321105
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-shophis-sedia-15.jpg": {
+   "file": "images/shop/rimadesio/sophis/rimadesio-shophis-sedia-15.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 462768
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-shophis-sedia-9.jpg": {
+   "file": "images/shop/rimadesio/sophis/rimadesio-shophis-sedia-9.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 158284
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-shophis-sedia-11.jpg": {
+   "file": "images/shop/rimadesio/sophis/rimadesio-shophis-sedia-11.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 152787
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-shophis-sedia-12.jpg": {
+   "file": "images/shop/rimadesio/sophis/rimadesio-shophis-sedia-12.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 149996
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-shophis-sedia-10.jpg": {
+   "file": "images/shop/rimadesio/sophis/rimadesio-shophis-sedia-10.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 151399
+  },
+  "https://static.rimadesio.it/media/2025/03/rimadesio-shophis-sedia-2.jpg": {
+   "file": "images/shop/rimadesio/sophis/rimadesio-shophis-sedia-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 667197
+  },
+  "https://static.rimadesio.it/media/2025/04/Scheda-prodotto_SOPHIS-sedia_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_SOPHIS-sedia_2026_web.pdf",
+   "pages": 21,
+   "bytes": 4117051
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_9162.jpg": {
+   "file": "images/shop/rimadesio/spazio-news-2019/RIMADESIO-UPDATE-2018_9162.jpg",
+   "width": 2500,
+   "height": 2501,
+   "bytes": 333300
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_9191.jpg": {
+   "file": "images/shop/rimadesio/spazio-news-2019/RIMADESIO-UPDATE-2018_9191.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 345170
+  },
+  "https://static.rimadesio.it/media/2018/08/News-2018_pagg-6-7ALT2.jpg": {
+   "file": "images/shop/rimadesio/spazio-news-2019/News-2018_pagg-6-7ALT2.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 155679
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-spazio0792_DAIMON.jpg": {
+   "file": "images/shop/rimadesio/spazio-news-2019/RIMADESIO-spazio0792_DAIMON.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 243070
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-spazio0792Stripe.jpg": {
+   "file": "images/shop/rimadesio/spazio-news-2019/RIMADESIO-spazio0792Stripe.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 154023
+  },
+  "https://static.rimadesio.it/media/2018/10/SpazioDettaglio_04.jpg": {
+   "file": "images/shop/rimadesio/spazio-news-2019/SpazioDettaglio_04.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 61207
+  },
+  "https://static.rimadesio.it/media/2018/10/SpazioDettaglio_03.jpg": {
+   "file": "images/shop/rimadesio/spazio-news-2019/SpazioDettaglio_03.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 52218
+  },
+  "https://static.rimadesio.it/media/2018/10/SpazioDettaglio_02.jpg": {
+   "file": "images/shop/rimadesio/spazio-news-2019/SpazioDettaglio_02.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 71996
+  },
+  "https://static.rimadesio.it/media/2019/04/WEB_Scheda-prodotto_SPAZIO.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SPAZIO.pdf",
+   "pages": 26,
+   "bytes": 7093514
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_9523.jpg": {
+   "file": "images/shop/rimadesio/spazio/RIMADESIO-UPDATE-2018_9523.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 464314
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_9667.jpg": {
+   "file": "images/shop/rimadesio/spazio/RIMADESIO-UPDATE-2018_9667.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 511433
+  },
+  "https://static.rimadesio.it/media/2018/08/RIMADESIO-UPDATE-2018_9648.jpg": {
+   "file": "images/shop/rimadesio/spazio/RIMADESIO-UPDATE-2018_9648.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 390313
+  },
+  "https://static.rimadesio.it/media/2019/04/Spazio2-1.jpg": {
+   "file": "images/shop/rimadesio/spazio/Spazio2-1.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 178792
+  },
+  "https://static.rimadesio.it/media/2019/04/Spazio3-1.jpg": {
+   "file": "images/shop/rimadesio/spazio/Spazio3-1.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 295230
+  },
+  "https://static.rimadesio.it/media/2018/08/S-Porta-Spin-2016-HR.jpg": {
+   "file": "images/shop/rimadesio/spin/S-Porta-Spin-2016-HR.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 522746
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10470-okok-RID-4.jpg": {
+   "file": "images/shop/rimadesio/spin/Lavoro_10470-okok-RID-4.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 516656
+  },
+  "https://static.rimadesio.it/media/2018/08/Spin_Lavoro_5405-ok_0000MANU-RID_2018-3.jpg": {
+   "file": "images/shop/rimadesio/spin/Spin_Lavoro_5405-ok_0000MANU-RID_2018-3.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 133330
+  },
+  "https://static.rimadesio.it/media/2018/08/Spin_Lavoro_5440-ok-gen-chiara_0000CMYK_2018.jpg": {
+   "file": "images/shop/rimadesio/spin/Spin_Lavoro_5440-ok-gen-chiara_0000CMYK_2018.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 162431
+  },
+  "https://static.rimadesio.it/media/2018/08/Immagini-_0865-RID_2018.jpg": {
+   "file": "images/shop/rimadesio/spin/Immagini-_0865-RID_2018.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 110632
+  },
+  "https://static.rimadesio.it/media/2018/08/Spin-A-26870_2018.jpg": {
+   "file": "images/shop/rimadesio/spin/Spin-A-26870_2018.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 154503
+  },
+  "https://static.rimadesio.it/media/2018/08/Spin-A-26569_2018.jpg": {
+   "file": "images/shop/rimadesio/spin/Spin-A-26569_2018.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 71145
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_SPIN.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SPIN.pdf",
+   "pages": 14,
+   "bytes": 5734458
+  },
+  "https://static.rimadesio.it/media/2018/08/stripe-2022-1.jpg": {
+   "file": "images/shop/rimadesio/stripe/stripe-2022-1.jpg",
+   "width": 1832,
+   "height": 1030,
+   "bytes": 1026121
+  },
+  "https://static.rimadesio.it/media/2018/08/stripe-2022-2.jpg": {
+   "file": "images/shop/rimadesio/stripe/stripe-2022-2.jpg",
+   "width": 1832,
+   "height": 1030,
+   "bytes": 1001460
+  },
+  "https://static.rimadesio.it/media/2018/08/stripe-2022-3.jpg": {
+   "file": "images/shop/rimadesio/stripe/stripe-2022-3.jpg",
+   "width": 1832,
+   "height": 1030,
+   "bytes": 988808
+  },
+  "https://static.rimadesio.it/media/2018/08/stripe-2022-4.jpg": {
+   "file": "images/shop/rimadesio/stripe/stripe-2022-4.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 566271
+  },
+  "https://static.rimadesio.it/media/2018/08/stripe-2022-5.jpg": {
+   "file": "images/shop/rimadesio/stripe/stripe-2022-5.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 474805
+  },
+  "https://static.rimadesio.it/media/2018/08/stripe-2022-6.jpg": {
+   "file": "images/shop/rimadesio/stripe/stripe-2022-6.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 509308
+  },
+  "https://static.rimadesio.it/media/2018/08/stripe-2022-7.jpg": {
+   "file": "images/shop/rimadesio/stripe/stripe-2022-7.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 531940
+  },
+  "https://static.rimadesio.it/media/2018/08/stripe-2022-8.jpg": {
+   "file": "images/shop/rimadesio/stripe/stripe-2022-8.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 570617
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_STRIPE.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_STRIPE.pdf",
+   "pages": 25,
+   "bytes": 26712686
+  },
+  "https://static.rimadesio.it/media/2026/04/sistema-di-scorrimento-syncro-1.jpg": {
+   "file": "images/shop/rimadesio/syncro/sistema-di-scorrimento-syncro-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1279114
+  },
+  "https://static.rimadesio.it/media/2026/04/sistema-di-scorrimento-syncro-2.jpg": {
+   "file": "images/shop/rimadesio/syncro/sistema-di-scorrimento-syncro-2.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 505846
+  },
+  "https://static.rimadesio.it/media/2026/04/sistema-di-scorrimento-syncro-3.jpg": {
+   "file": "images/shop/rimadesio/syncro/sistema-di-scorrimento-syncro-3.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 440013
+  },
+  "https://static.rimadesio.it/media/2026/04/Scheda-prodotto_SYNCRO-sliding-panels_.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_SYNCRO-sliding-panels_.pdf",
+   "pages": 25,
+   "bytes": 2709544
+  },
+  "https://static.rimadesio.it/media/2024/12/tray-pouf-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/tray-pouf/tray-pouf-pagina-prodotto-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 712266
+  },
+  "https://static.rimadesio.it/media/2024/12/tray-pouf-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/tray-pouf/tray-pouf-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 1139854
+  },
+  "https://static.rimadesio.it/media/2024/12/tagli-tray-pouf-pagina-prodotto8.jpg": {
+   "file": "images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto8.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 264059
+  },
+  "https://static.rimadesio.it/media/2024/12/tagli-tray-pouf-pagina-prodotto7.jpg": {
+   "file": "images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto7.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 273272
+  },
+  "https://static.rimadesio.it/media/2024/12/tagli-tray-pouf-pagina-prodotto5.jpg": {
+   "file": "images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 111635
+  },
+  "https://static.rimadesio.it/media/2024/12/tagli-tray-pouf-pagina-prodotto6.jpg": {
+   "file": "images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 70124
+  },
+  "https://static.rimadesio.it/media/2024/12/tagli-tray-pouf-pagina-prodotto4.jpg": {
+   "file": "images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 295699
+  },
+  "https://static.rimadesio.it/media/2024/12/tagli-tray-pouf-pagina-prodotto3.jpg": {
+   "file": "images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 169544
+  },
+  "https://static.rimadesio.it/media/2024/12/Scheda-prodotto_TRAY-POUF_2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_TRAY-POUF_2026_web.pdf",
+   "pages": 15,
+   "bytes": 3549906
+  },
+  "https://static.rimadesio.it/media/2018/08/tray-pagina-prodotto-1.jpg": {
+   "file": "images/shop/rimadesio/tray/tray-pagina-prodotto-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 999516
+  },
+  "https://static.rimadesio.it/media/2018/08/tray-pagina-prodotto-2.jpg": {
+   "file": "images/shop/rimadesio/tray/tray-pagina-prodotto-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 650956
+  },
+  "https://static.rimadesio.it/media/2023/01/tray-2022-01.jpg": {
+   "file": "images/shop/rimadesio/tray/tray-2022-01.jpg",
+   "width": 1353,
+   "height": 1353,
+   "bytes": 269976
+  },
+  "https://static.rimadesio.it/media/2023/01/tray-2022-02.jpg": {
+   "file": "images/shop/rimadesio/tray/tray-2022-02.jpg",
+   "width": 1353,
+   "height": 1353,
+   "bytes": 1405290
+  },
+  "https://static.rimadesio.it/media/2018/08/img-tray-01.jpg": {
+   "file": "images/shop/rimadesio/tray/img-tray-01.jpg",
+   "width": 1131,
+   "height": 1131,
+   "bytes": 642632
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Tray_04.jpg": {
+   "file": "images/shop/rimadesio/tray/IMG_Tray_04.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 137698
+  },
+  "https://static.rimadesio.it/media/2018/08/tray-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/tray/tray-pagina-prodotto-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 490282
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Tray_01.jpg": {
+   "file": "images/shop/rimadesio/tray/IMG_Tray_01.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 554612
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_TRAY_-2026_web.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_TRAY_-2026_web.pdf",
+   "pages": 16,
+   "bytes": 5101705
+  },
+  "https://static.rimadesio.it/media/2022/03/vanity-2022-01.jpg": {
+   "file": "images/shop/rimadesio/vanity/vanity-2022-01.jpg",
+   "width": 2748,
+   "height": 1545,
+   "bytes": 2145307
+  },
+  "https://static.rimadesio.it/media/2022/03/vanity-2022-02.jpg": {
+   "file": "images/shop/rimadesio/vanity/vanity-2022-02.jpg",
+   "width": 2748,
+   "height": 1545,
+   "bytes": 2145180
+  },
+  "https://static.rimadesio.it/media/2022/03/vanity-2022-03.jpg": {
+   "file": "images/shop/rimadesio/vanity/vanity-2022-03.jpg",
+   "width": 2748,
+   "height": 1545,
+   "bytes": 2140156
+  },
+  "https://static.rimadesio.it/media/2022/03/vanity-2022-04.jpg": {
+   "file": "images/shop/rimadesio/vanity/vanity-2022-04.jpg",
+   "width": 4167,
+   "height": 4167,
+   "bytes": 7535759
+  },
+  "https://static.rimadesio.it/media/2022/03/vanity-2022-05.jpg": {
+   "file": "images/shop/rimadesio/vanity/vanity-2022-05.jpg",
+   "width": 4167,
+   "height": 4167,
+   "bytes": 7534754
+  },
+  "https://static.rimadesio.it/media/2022/03/vanity-2022-06.jpg": {
+   "file": "images/shop/rimadesio/vanity/vanity-2022-06.jpg",
+   "width": 4167,
+   "height": 4167,
+   "bytes": 7570640
+  },
+  "https://static.rimadesio.it/media/2022/03/vanity-2022-07.jpg": {
+   "file": "images/shop/rimadesio/vanity/vanity-2022-07.jpg",
+   "width": 1353,
+   "height": 1353,
+   "bytes": 1421512
+  },
+  "https://static.rimadesio.it/media/2020/10/INTERIORS_FOUR_1_cover-hp_mod.jpg": {
+   "file": "images/shop/rimadesio/vanity/INTERIORS_FOUR_1_cover-hp_mod.jpg",
+   "width": 2500,
+   "height": 1667,
+   "bytes": 1142562
+  },
+  "https://static.rimadesio.it/media/2021/09/Scheda-prodotto_VANITY.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_VANITY.pdf",
+   "pages": 17,
+   "bytes": 4637921
+  },
+  "https://static.rimadesio.it/media/2018/08/pr33-2.jpg": {
+   "file": "images/shop/rimadesio/vela/pr33-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 448357
+  },
+  "https://static.rimadesio.it/media/2018/08/pr32-virataCOLORE.jpg": {
+   "file": "images/shop/rimadesio/vela/pr32-virataCOLORE.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 387010
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-195.jpg": {
+   "file": "images/shop/rimadesio/vela/Rimadesio-Collection-Book_2020_pag-195.jpg",
+   "width": 2262,
+   "height": 2260,
+   "bytes": 95258
+  },
+  "https://static.rimadesio.it/media/2020/04/Rimadesio-Collection-Book_2020_pag-197copia.jpg": {
+   "file": "images/shop/rimadesio/vela/Rimadesio-Collection-Book_2020_pag-197copia.jpg",
+   "width": 5208,
+   "height": 5208,
+   "bytes": 889901
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10392-ok-2.jpg": {
+   "file": "images/shop/rimadesio/vela/Lavoro_10392-ok-2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 776035
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10373-ok-3.jpg": {
+   "file": "images/shop/rimadesio/vela/Lavoro_10373-ok-3.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 290100
+  },
+  "https://static.rimadesio.it/media/2018/08/17b-RID-3.jpg": {
+   "file": "images/shop/rimadesio/vela/17b-RID-3.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 391201
+  },
+  "https://static.rimadesio.it/media/2018/08/Maniglia_Vela_03.jpg": {
+   "file": "images/shop/rimadesio/vela/Maniglia_Vela_03.jpg",
+   "width": 1500,
+   "height": 1500,
+   "bytes": 128897
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_VELA.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_VELA.pdf",
+   "pages": 13,
+   "bytes": 3684739
+  },
+  "https://static.rimadesio.it/media/2023/05/velaria-2021-01.jpg": {
+   "file": "images/shop/rimadesio/velaria/velaria-2021-01.jpg",
+   "width": 1832,
+   "height": 1030,
+   "bytes": 1233822
+  },
+  "https://static.rimadesio.it/media/2023/05/velaria-2021-02.jpg": {
+   "file": "images/shop/rimadesio/velaria/velaria-2021-02.jpg",
+   "width": 1832,
+   "height": 1030,
+   "bytes": 1418827
+  },
+  "https://static.rimadesio.it/media/2018/08/01_Velaria4.jpg": {
+   "file": "images/shop/rimadesio/velaria/01_Velaria4.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 193167
+  },
+  "https://static.rimadesio.it/media/2023/05/velaria-2021-03.jpg": {
+   "file": "images/shop/rimadesio/velaria/velaria-2021-03.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 465845
+  },
+  "https://static.rimadesio.it/media/2023/05/velaria-2021-04.jpg": {
+   "file": "images/shop/rimadesio/velaria/velaria-2021-04.jpg",
+   "width": 902,
+   "height": 902,
+   "bytes": 388091
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-098-099-1.jpg": {
+   "file": "images/shop/rimadesio/velaria/Rimadesio-Collection-Book_2020_pag-098-099-1.jpg",
+   "width": 2231,
+   "height": 1255,
+   "bytes": 298238
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-101-copia.jpg": {
+   "file": "images/shop/rimadesio/velaria/Rimadesio-Collection-Book_2020_pag-101-copia.jpg",
+   "width": 1130,
+   "height": 1130,
+   "bytes": 351676
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-096-copia.jpg": {
+   "file": "images/shop/rimadesio/velaria/Rimadesio-Collection-Book_2020_pag-096-copia.jpg",
+   "width": 1129,
+   "height": 1129,
+   "bytes": 122841
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_VELARIA.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_VELARIA.pdf",
+   "pages": 28,
+   "bytes": 26452330
+  },
+  "https://static.rimadesio.it/media/2026/04/wabi-sgabello-pagina-prodotto.jpg": {
+   "file": "images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 822538
+  },
+  "https://static.rimadesio.it/media/2026/04/wabi-sgabello-pagina-prodotto2.jpg": {
+   "file": "images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 114568
+  },
+  "https://static.rimadesio.it/media/2026/04/wabi-sgabello-pagina-prodotto3.jpg": {
+   "file": "images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 213008
+  },
+  "https://static.rimadesio.it/media/2026/04/wabi-sgabello-pagina-prodotto4.jpg": {
+   "file": "images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 197468
+  },
+  "https://static.rimadesio.it/media/2026/04/wabi-sgabello-pagina-prodotto5.jpg": {
+   "file": "images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 148419
+  },
+  "https://static.rimadesio.it/media/2026/04/wabi-sgabello-pagina-prodotto6.jpg": {
+   "file": "images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 161251
+  },
+  "https://static.rimadesio.it/media/2026/04/wabi-sgabello-pagina-prodotto8.jpg": {
+   "file": "images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto8.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 164652
+  },
+  "https://static.rimadesio.it/media/2026/04/wabi-sgabello-pagina-prodotto7.jpg": {
+   "file": "images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto7.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 160406
+  },
+  "https://static.rimadesio.it/media/2025/04/Scheda-prodotto_WABI_sedia-sgabello_2026.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_WABI_sedia-sgabello_2026.pdf",
+   "pages": 26,
+   "bytes": 10227587
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-wabi-sedia-15.jpg": {
+   "file": "images/shop/rimadesio/wabi/rimadesio-wabi-sedia-15.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 239371
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-wabi-sedia-16.jpg": {
+   "file": "images/shop/rimadesio/wabi/rimadesio-wabi-sedia-16.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 447271
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-wabi-sedia-7.jpg": {
+   "file": "images/shop/rimadesio/wabi/rimadesio-wabi-sedia-7.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1536688
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-wabi-sedia-4.jpg": {
+   "file": "images/shop/rimadesio/wabi/rimadesio-wabi-sedia-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 114923
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-wabi-sedia-5.jpg": {
+   "file": "images/shop/rimadesio/wabi/rimadesio-wabi-sedia-5.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 124616
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-wabi-sedia-6.jpg": {
+   "file": "images/shop/rimadesio/wabi/rimadesio-wabi-sedia-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 118260
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-wabi-sedia-3.jpg": {
+   "file": "images/shop/rimadesio/wabi/rimadesio-wabi-sedia-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 608456
+  },
+  "https://static.rimadesio.it/media/2025/04/rimadesio-wabi-sedia-8.jpg": {
+   "file": "images/shop/rimadesio/wabi/rimadesio-wabi-sedia-8.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 157444
+  },
+  "https://static.rimadesio.it/media/2018/08/rimadesio-wind-1.jpg": {
+   "file": "images/shop/rimadesio/wind/rimadesio-wind-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 196941
+  },
+  "https://static.rimadesio.it/media/2018/08/rimadesio-wind-2.jpg": {
+   "file": "images/shop/rimadesio/wind/rimadesio-wind-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 269097
+  },
+  "https://static.rimadesio.it/media/2023/05/wind-2023.jpg": {
+   "file": "images/shop/rimadesio/wind/wind-2023.jpg",
+   "width": 1832,
+   "height": 1030,
+   "bytes": 1216388
+  },
+  "https://static.rimadesio.it/media/2018/08/wind-pagina-prodotto-agg-1.jpg": {
+   "file": "images/shop/rimadesio/wind/wind-pagina-prodotto-agg-1.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 119080
+  },
+  "https://static.rimadesio.it/media/2018/08/wind-pagina-prodotto-agg-10.jpg": {
+   "file": "images/shop/rimadesio/wind/wind-pagina-prodotto-agg-10.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 52063
+  },
+  "https://static.rimadesio.it/media/2018/08/Wind_05-03-13_2950-RID2.jpg": {
+   "file": "images/shop/rimadesio/wind/Wind_05-03-13_2950-RID2.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 77974
+  },
+  "https://static.rimadesio.it/media/2018/08/wind-pagina-prodotto-agg-2.jpg": {
+   "file": "images/shop/rimadesio/wind/wind-pagina-prodotto-agg-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 209154
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Wind_04-1.jpg": {
+   "file": "images/shop/rimadesio/wind/IMG_Wind_04-1.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 402305
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_WIND.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_WIND.pdf",
+   "pages": 17,
+   "bytes": 2506534
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-148.jpg": {
+   "file": "images/shop/rimadesio/zen-frame/Rimadesio-Collection-Book_2020_pag-148.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 226797
+  },
+  "https://static.rimadesio.it/media/2018/08/Rimadesio-Collection-Book_2020_pag-151.jpg": {
+   "file": "images/shop/rimadesio/zen-frame/Rimadesio-Collection-Book_2020_pag-151.jpg",
+   "width": 2000,
+   "height": 2000,
+   "bytes": 642340
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10106-ok-amb_2017-4.jpg": {
+   "file": "images/shop/rimadesio/zen-frame/Lavoro_10106-ok-amb_2017-4.jpg",
+   "width": 3000,
+   "height": 1688,
+   "bytes": 83684
+  },
+  "https://static.rimadesio.it/media/2018/08/Zen-Zenframe_04a_RID-3.jpg": {
+   "file": "images/shop/rimadesio/zen-frame/Zen-Zenframe_04a_RID-3.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 597778
+  },
+  "https://static.rimadesio.it/media/2018/08/05-RID.jpg": {
+   "file": "images/shop/rimadesio/zen-frame/05-RID.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 321383
+  },
+  "https://static.rimadesio.it/media/2018/10/Zen-maniglie-4.png": {
+   "file": "images/shop/rimadesio/zen-frame/Zen-maniglie-4.png",
+   "width": 359,
+   "height": 359,
+   "bytes": 35633
+  },
+  "https://static.rimadesio.it/media/2018/10/Zen-maniglie-3.png": {
+   "file": "images/shop/rimadesio/zen-frame/Zen-maniglie-3.png",
+   "width": 518,
+   "height": 518,
+   "bytes": 30740
+  },
+  "https://static.rimadesio.it/media/2018/10/Zen-maniglie-2.png": {
+   "file": "images/shop/rimadesio/zen-frame/Zen-maniglie-2.png",
+   "width": 517,
+   "height": 517,
+   "bytes": 74687
+  },
+  "https://static.rimadesio.it/media/2021/09/WEB_Scheda-prodotto_ZEN-ZEN-FRAME.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_ZEN-ZEN-FRAME.pdf",
+   "pages": 15,
+   "bytes": 5117759
+  },
+  "https://static.rimadesio.it/media/2018/08/Lavoro_10159-OK-RID-RID.jpg": {
+   "file": "images/shop/rimadesio/zen-zen-frame/Lavoro_10159-OK-RID-RID.jpg",
+   "width": 3000,
+   "height": 1687,
+   "bytes": 102934
+  },
+  "https://static.rimadesio.it/media/2023/02/zenit-night-2022-01.jpg": {
+   "file": "images/shop/rimadesio/zenit-night/zenit-night-2022-01.jpg",
+   "width": 1832,
+   "height": 1030,
+   "bytes": 1313104
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-night-aggiornamento-sett-2024-3.jpg": {
+   "file": "images/shop/rimadesio/zenit-night/zenit-night-aggiornamento-sett-2024-3.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 954642
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-night-aggiornamento-sett-2024-4.jpg": {
+   "file": "images/shop/rimadesio/zenit-night/zenit-night-aggiornamento-sett-2024-4.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 916473
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-night-aggiornamento-sett-2024-1.jpg": {
+   "file": "images/shop/rimadesio/zenit-night/zenit-night-aggiornamento-sett-2024-1.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 691980
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-night-aggiornamento-sett-2024-2.jpg": {
+   "file": "images/shop/rimadesio/zenit-night/zenit-night-aggiornamento-sett-2024-2.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 715124
+  },
+  "https://static.rimadesio.it/media/2023/04/ms-a-matter-of-style5.jpg": {
+   "file": "images/shop/rimadesio/zenit-night/ms-a-matter-of-style5.jpg",
+   "width": 5669,
+   "height": 3188,
+   "bytes": 1322967
+  },
+  "https://static.rimadesio.it/media/2023/04/ms-a-matter-of-style2.jpg": {
+   "file": "images/shop/rimadesio/zenit-night/ms-a-matter-of-style2.jpg",
+   "width": 4000,
+   "height": 2250,
+   "bytes": 561081
+  },
+  "https://static.rimadesio.it/media/2018/08/IMG_Zenit_08.jpg": {
+   "file": "images/shop/rimadesio/zenit-night/IMG_Zenit_08.jpg",
+   "width": 2500,
+   "height": 2500,
+   "bytes": 391275
+  },
+  "https://static.rimadesio.it/media/2018/08/Scheda-prodotto_ZENIT-walk-in-closet_.pdf": {
+   "file": "catalogs/rimadesio/sheets/Scheda-prodotto_ZENIT-walk-in-closet_.pdf",
+   "pages": 27,
+   "bytes": 8623679
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-day-pagina-prodotto-5.jpg": {
+   "file": "images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-5.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1142798
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-day-pagina-prodotto-6b.jpg": {
+   "file": "images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-6b.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 609660
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-day-pagina-prodotto-6.jpg": {
+   "file": "images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-6.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 593238
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-day-pagina-prodotto-8.jpg": {
+   "file": "images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-8.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 862582
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-day-pagina-prodotto-9.jpg": {
+   "file": "images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-9.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 796844
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-day-pagina-prodotto-0.jpg": {
+   "file": "images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-0.jpg",
+   "width": 1920,
+   "height": 1080,
+   "bytes": 1121276
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-day-pagina-prodotto-4.jpg": {
+   "file": "images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-4.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 643591
+  },
+  "https://static.rimadesio.it/media/2018/08/zenit-day-pagina-prodotto-3.jpg": {
+   "file": "images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-3.jpg",
+   "width": 1080,
+   "height": 1080,
+   "bytes": 629842
+  },
+  "https://static.rimadesio.it/media/2018/08/WEB_Scheda-prodotto_ZENIT-DAY_.pdf": {
+   "file": "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_ZENIT-DAY_.pdf",
+   "pages": 27,
+   "bytes": 7907383
+  }
+ },
+ "sheets": {
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ABACUS-LIVING_.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ABACUS_.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_AIR-SYSTEM.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_AIR.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ALA.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ALAMBRA.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ALIANTE_2026.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ALTAIR_2025.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ALTHEA_poltrona_2026.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ASCOT-poltrona_2026_10-web.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_AURA.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_COVER_2025.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_DAIMON.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_DRESS-BOLD_2025.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_EOS_-2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_EVEN.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_FLAT-SYSTEM_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_FLAT_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_FRANCIS_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_GRAPHIS-PLUS-LIGHT.pdf": {},
+  "catalogs/rimadesio/sheets/Catalogo-HEDON_2026-06_web.pdf": {},
+  "catalogs/rimadesio/sheets/Carpets-Collection-24.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_LAMBDA_update-giugno-2026.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_LINK.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_LONG-ISLAND_2026_web_10.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_LUXOR.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_MANTA_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_MAXI_2026.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-tecnica_Modulor_2025.pdf": {},
+  "catalogs/rimadesio/sheets/Modulor-2019_web.pdf": {},
+  "catalogs/rimadesio/sheets/02-Listino-Modulor-2021-Novita_.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_MOON.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_NEST-poltrona_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_OPUS.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ORI-sedia_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_PLANET_-2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/HR_Scheda-prodotto_RADIUS_2025.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_RIALTO-COLLECTION_2025.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_RIALTO-COFFEE-TABLE_2025.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_RIALTO-SPECCHIO_marzo-2025_.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SAIL-BATTENTE.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SAIL.pdf": {},
+  "catalogs/rimadesio/sheets/Self-Blade_scheda-tecnica.pdf": {},
+  "catalogs/rimadesio/sheets/07-Self_2024-.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_SINUA-poltrona_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_SINUA-sedia_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SIPARIUM.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_SIXTY-COFFEE-TABLE_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_SIXTY-LIBRERIA.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SOHO.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_SOPHIS-sedia_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SPAZIO.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_SPIN.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_STRIPE.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_SYNCRO-sliding-panels_.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_TRAY-POUF_2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_TRAY_-2026_web.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_VANITY.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_VELA.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_VELARIA.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_WABI_sedia-sgabello_2026.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_WIND.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_ZEN-ZEN-FRAME.pdf": {},
+  "catalogs/rimadesio/sheets/Scheda-prodotto_ZENIT-walk-in-closet_.pdf": {},
+  "catalogs/rimadesio/sheets/WEB_Scheda-prodotto_ZENIT-DAY_.pdf": {}
+ }
+}
