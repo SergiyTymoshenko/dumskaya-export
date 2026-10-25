@@ -35,7 +35,8 @@ CALLS, MODE, ONLINE, MSGS = [], {"code": 202}, {"ok": True}, []
 
 def fake_post(api, host, key, urls):
     CALLS.append((api, host, key, list(urls)))
-    return MODE["code"], "" if MODE["code"] in (200, 202) else "ключ не принят"
+    code = MODE.get(api.split("/")[2], MODE["code"])        # можно задать ответ одного поисковика: MODE["www.bing.com"]
+    return code, "" if code in (200, 202) else "ключ не принят"
 
 
 class FakeBot:
@@ -186,6 +187,36 @@ while I.load(HOST)["pending"] and n < 5:
     n += 1
 check(I.load(HOST)["pending"] == 0 and n == 2, "остальное доотправлено в следующие часы")
 I.BATCH = 10000
+
+# --- один поисковик не принял (другие приняли) — ему одному повтор через час; принял — повторов больше нет
+BING = "https://www.bing.com/indexnow"
+write_site(paths=[p for p in PATHS if p != "/p11"], change="/p9")
+MODE["www.bing.com"] = 403
+r = run()
+check(r[HOST]["status"] == "ok" and "Bing" in r[HOST]["note"] and "повторим" in r[HOST]["note"], "Bing не принял — видно в сводке")
+check(I.load(HOST)["retry"]["Bing"]["urls"] == [URL["/p9"]], "адрес отложен для Bing")
+r = run()
+check([c[0] for c in CALLS] == [BING] and CALLS[0][3] == [URL["/p9"]], "через час — повтор только для Bing и только отложенное")
+check(I.load(HOST)["retry"].get("Bing"), "Bing снова не принял — адрес остаётся отложенным")
+write_site(paths=[p for p in PATHS if p != "/p11"], change="/p10")
+r = run()
+bing = [c for c in CALLS if c[0] == BING]
+check(len(CALLS) == 3 and sorted(bing[0][3]) == sorted([URL["/p9"], URL["/p10"]]), "Bing получает отложенное вместе с новым, другие — только новое")
+MODE.pop("www.bing.com")
+r = run()
+check([c[0] for c in CALLS] == [BING] and r[HOST]["status"] == "ok", "Bing принял отложенные")
+check(not I.load(HOST)["retry"] and I.status()[0]["results"]["Bing"][0] in (200, 202), "отложенных больше нет, в сводке Bing принял")
+r = run()
+check(not CALLS, "дальше — тишина, пока нет изменений")
+MODE["www.bing.com"] = 403
+write_site(paths=[p for p in PATHS if p != "/p11"], change="/p1")
+run()
+st = I.load(HOST)
+st["retry"]["Bing"]["since"] = int(time.time()) - 4 * 86400
+I.save(HOST, st)
+run()
+check(not I.load(HOST)["retry"] and any("больше не повторяем" in m for m in LOG), "больше 3 дней — повторять перестаём")
+MODE.pop("www.bing.com")
 
 # --- dry-run ничего не отправляет и не меняет
 write_site(paths=[p for p in PATHS if p != "/p11"], change="/p7")

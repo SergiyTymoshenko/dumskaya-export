@@ -16,6 +16,7 @@ https://<домен>/<ключ>.txt отвечает самим ключом. П
 откроется на домене, а пока он в режиме просмотра — ждёт. В первый раз отправляются все страницы сайта.
 Ключ — файл public/<ключ>.txt (сайт студии) и home/public/<ключ>.txt (каталог). Ключ не секрет: он открыт на сайте.
 Не принял ни один поисковик — повтор через час; если не получается больше суток — одно сообщение разработчику в бот.
+Не принял один поисковик (другие приняли) — ему одному повторяем раз в час, до 3 дней.
 Посмотреть — «Графики» → «Сервер и ИИ», карточка «Поисковики».
 
 На сервере (ssh eurox):
@@ -58,6 +59,7 @@ ENGINES = [("Bing", "https://www.bing.com/indexnow"), ("Яндекс", "https://
 EVERY = 3600                 # раз в час
 BATCH = 10000                # больше адресов в одном запросе протокол не принимает
 ALERT_AFTER = 24 * 3600      # не получается сутки — сообщение разработчику (один раз, до первой удачной отправки)
+RETRY_FOR = 3 * 86400        # один поисковик не принимает, а другие приняли — повторяем ему раз в час до 3 дней
 MIN_PAGES = 10               # карта сайта короче или без главной — похоже на выкладку в процессе: пропускаем этот час
 TIMEOUT = 30
 UA = "DUMSKAYA-IndexNow/1.0 (+https://dumskaya-design.com)"
@@ -277,10 +279,12 @@ def run_site(site, log=print, dry=False, resend=False):
     changed = [u for u in urls if u in sigs and u in sent and sent[u] != sigs[u]]
     gone = [u for u in sent if u not in current]
     todo = new + changed + gone
+    # поисковик не принял, а другие приняли (адреса уже отмечены отправленными) — ему повторяем отдельно, раз в час
+    retry = st.get("retry") or {}
     st["pages"], st["pending"], st["missing"] = len(urls), len(todo), len(missing)
     out.update(pages=len(urls), new=new, changed=changed, gone=gone, missing=missing)
     note = f"нет файлов у {len(missing)} адресов карты сайта" if missing else ""
-    if not todo:
+    if not todo and not retry:
         st.pop("fail_since", None)
         st["alerted"] = False
         return finish("ok", note)
@@ -290,9 +294,37 @@ def run_site(site, log=print, dry=False, resend=False):
     ok, why = key_online(host, key)
     # за час — не больше BATCH адресов (один запрос): остальное — в следующий час, чтобы не получить «слишком часто»
     batch = todo[:BATCH]
-    results = submit(host, key, batch) if ok else {}
-    st["results"] = results
-    if any(code in (200, 202) for code, _ in results.values()):
+    results = {}
+    if ok:
+        for name, api in ENGINES:
+            payload = list(dict.fromkeys(((retry.get(name) or {}).get("urls") or []) + batch))[:BATCH]
+            if payload:
+                results[name] = list(post(api, host, key, payload))
+    good = {n for n, (c, _) in results.items() if c in (200, 202)}
+    st["results"] = dict(st.get("results") or {}, **results)
+    for name in list(retry):
+        if name in good:
+            retry.pop(name)
+    if batch and good:
+        for name in results:
+            if name not in good:
+                r = retry.setdefault(name, {"urls": [], "since": now})
+                r["urls"] = list(dict.fromkeys(r["urls"] + batch))[-BATCH:]
+    for name in list(retry):
+        if now - retry[name]["since"] > RETRY_FOR:
+            log(f"IndexNow {host}: {name} не принимает адреса больше {RETRY_FOR // 86400} дней — больше не повторяем "
+                f"(адреса он получит от других поисковиков)")
+            retry.pop(name)
+    st["retry"] = retry
+    refused = [f"{n}: {c or ''} {w}".strip() for n, (c, w) in results.items() if n not in good]
+    refused_note = ("не приняли — " + "; ".join(refused) + (" (повторим через час)" if retry else "")) if refused else ""
+
+    if not batch:                               # в этот час — только повтор для поисковика, который раньше не принял
+        if good:
+            log(f"IndexNow {host}: {', '.join(sorted(good))} принял отложенные адреса")
+        return finish("ok", "; ".join(x for x in (note, refused_note, "" if ok else why) if x))
+
+    if good:
         part = set(batch)
         n_new, n_chg, n_gone = (sum(u in part for u in x) for x in (new, changed, gone))
         for u in new + changed:
@@ -305,12 +337,9 @@ def run_site(site, log=print, dry=False, resend=False):
         st.update(last_sent=now, last_count=len(batch), last_parts=[n_new, n_chg, n_gone],
                   total=st["total"] + len(batch), pending=left, alerted=False)
         st.pop("fail_since", None)
-        refused = [f"{n}: {c or ''} {w}".strip() for n, (c, w) in results.items() if c not in (200, 202)]
         log(f"IndexNow {host}: отправлено {len(batch)} (новых {n_new}, изменённых {n_chg}, удалённых {n_gone})"
-            + (f"; ещё {left} — в следующий час" if left else "")
-            + (f"; не приняли — {'; '.join(refused)}" if refused else ""))
-        return finish("ok", "; ".join(x for x in (note, f"ещё {left} адресов — в следующий час" if left else "",
-                                                  ("не приняли — " + "; ".join(refused)) if refused else "") if x))
+            + (f"; ещё {left} — в следующий час" if left else "") + (f"; {refused_note}" if refused_note else ""))
+        return finish("ok", "; ".join(x for x in (note, f"ещё {left} адресов — в следующий час" if left else "", refused_note) if x))
 
     st.setdefault("fail_since", now)
     err = why or "; ".join(f"{n}: {c or ''} {w}".strip() for n, (c, w) in results.items())
