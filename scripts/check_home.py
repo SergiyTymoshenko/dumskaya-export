@@ -10,8 +10,8 @@
   • хлебные крошки (кроме главных): начинаются с главной своего языка, кончаются текущей страницей без ссылки,
     на языке страницы; разметка BreadcrumbList совпадает с видимыми, у каждого звена, кроме последнего, — ссылка
     на существующую страницу;
-  • на немецких страницах — только австрийский телефон студии (ссылки tel:, видимый текст; мессенджеры — на словацком
-    номере, как у сайта студии); на всех, кроме русских, нет кириллицы;
+  • телефоны студии и мессенджеры — только на русских страницах (решено 25.10.2026: на остальных языках связь через
+    форму), e-mail — только адрес из content/home/site.json (пока пусто — ни одного); на всех, кроме русских, нет кириллицы;
   • в своих текстах (data-own, title, description) нет шаблонных оборотов (content/TEXT_STYLE.md, scripts/text_markers.py);
   • в тексте нет «undefined», «NaN», «[object Object]».
 Предупреждения: заглушки вместо фото (нет оригинала), товары выложенной фабрики без своего текста."""
@@ -36,6 +36,7 @@ HOME_LABEL = {"en": "Home", "ru": "Главная", "de": "Startseite", "fr": "A
 MARKERS = {"en": TM.EN, "ru": TM.RU, "de": TM.DE, "fr": TM.FR, "es": TM.ES}
 SITE_JSON = json.load(open(os.path.join(ROOT, "content/site.json"), encoding="utf-8"))
 PHONES = {p["key"]: p for p in SITE_JSON["contacts"]["phones"]}
+HOME_EMAIL = (json.load(open(os.path.join(ROOT, "content/home/site.json"), encoding="utf-8")).get("email") or "").strip()
 
 
 def lang_of(u):
@@ -224,13 +225,18 @@ def main():
             m = re.search(r"\w*[а-яё]\w*", txt + " " + t + " " + (p.desc or ""), re.I)
             if m:
                 errs.append(f"кириллица на странице {l} («{m.group(0)}»): {u}")
-        if l == "de":                                  # только австрийский номер (мессенджеры — на словацком, как у студии)
-            h = re.sub(r"https://(wa\.me|t\.me)/[^\"'\s<]*", "", raw[u])
-            for k, ph in PHONES.items():
-                if k != "at" and (ph["tel"] in h or ph["text"] in h):
-                    errs.append(f"чужой телефон {ph['text']} на немецкой странице: {u}")
-            if PHONES["at"]["tel"] not in h:
-                errs.append(f"нет австрийского телефона: {u}")
+        h = raw[u]
+        has_tel = [ph["text"] for ph in PHONES.values() if ph["tel"] in h or ph["text"] in h or ph["tel"].lstrip("+") in h]
+        if l != "ru":                                 # телефон и мессенджеры — только на русской версии
+            if has_tel or "tel:" in h:
+                errs.append(f"телефон на странице {l} ({', '.join(has_tel) or 'tel:'}): {u}")
+            if re.search(r"https://(wa\.me|t\.me)/", h):
+                errs.append(f"мессенджер на странице {l}: {u}")
+        elif not has_tel:
+            errs.append(f"нет телефона на русской странице: {u}")
+        for m in set(re.findall(r"mailto:([^\"'?]+)", h)) | set(re.findall(r"[\w.+-]+@dumskaya-(?:design|home)\.com", h)):
+            if m != HOME_EMAIL:
+                errs.append(f"e-mail {m} на странице (на сайте пока без e-mail): {u}")
         own = " ".join([t, p.desc or ""] + p.own)
         hits = TM.scan(own, MARKERS[l])
         if hits:

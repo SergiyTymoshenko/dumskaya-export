@@ -1,6 +1,6 @@
 ---
 import { LANGS, LANG_LABEL, HREFLANG, homePath, ui } from '../lib/i18n';
-import { site, phones, cityName, paths, type HPage } from '../lib/catalog';
+import { site, phones, cityName, paths, homeEmail, type HPage } from '../lib/catalog';
 interface Props { page: HPage }
 const { page } = Astro.props;
 const l = page.lang;
@@ -19,8 +19,8 @@ const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-des
     <h2 class="visually-hidden">{T.contact}</h2>
     <ul>
       {phones(l).map((p: any) => <li><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{cityName(p, l)}</span></li>)}
-      <li><a href={`mailto:${site.contacts.email}`}>{site.contacts.email}</a></li>
-      <li><a href={paths.contact[l]}>{T.contact}</a></li>
+      {homeEmail && <li><a href={`mailto:${homeEmail}`}>{homeEmail}</a></li>}
+      <li><a href={paths.contact[l]}>{phones(l).length ? T.contact : T.writeUs}</a></li>
     </ul>
     <address class="ftr__addr"><span>DUMSKAYA DESIGN</span>{site.contacts.maps ? <a href={site.contacts.maps} rel="noopener" target="_blank">{addr.street}, {addr.postal} {addr.city}, {country}</a> : <span>{addr.street}, {addr.postal} {addr.city}, {country}</span>}</address>
   </div>

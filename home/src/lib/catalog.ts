@@ -133,10 +133,11 @@ export function allPages(): HPage[] {
   return out;
 }
 
-/** Телефоны: на немецком — только австрийский номер (как у сайта студии), на остальных — Братислава и Вена */
+/** Телефоны — только на русской версии (Братислава и Вена); на остальных языках связь через форму (решено 25.10.2026) */
 export function phones(l: Lang) {
-  const all = site.contacts.phones.filter((p: any) => p.key === 'sk' || p.key === 'at');
-  return l === 'de' ? all.filter((p: any) => p.key === 'at') : all;
+  return l === 'ru' ? site.contacts.phones.filter((p: any) => p.key === 'sk' || p.key === 'at') : [];
 }
+/** e-mail каталога — content/home/site.json (пока пусто: адрес добавим позже) */
+export const homeEmail: string = homeSite.email || '';
 export const cityName = (p: any, l: Lang) => ({ sk: { en: 'Bratislava', ru: 'Братислава', de: 'Bratislava', fr: 'Bratislava', es: 'Bratislava' }, at: { en: 'Vienna', ru: 'Вена', de: 'Wien', fr: 'Vienne', es: 'Viena' } } as any)[p.key][l];
 export const DEFAULT_LANG = DEFAULT;

@@ -9,7 +9,7 @@ import fontBodyLat from '@fontsource/commissioner/files/commissioner-latin-400-n
 import fontDisplayCyr from '@fontsource/montserrat/files/montserrat-cyrillic-400-normal.woff2?url';
 import fontBodyCyr from '@fontsource/commissioner/files/commissioner-cyrillic-400-normal.woff2?url';
 import { LANGS, HREFLANG, HTML_LANG, OG_LOCALE, DEFAULT, ui } from '../lib/i18n';
-import { manifest, site, phones, homeSite, type HPage } from '../lib/catalog';
+import { manifest, site, phones, homeSite, homeEmail, paths, type HPage } from '../lib/catalog';
 
 interface Props { page: HPage; noindex?: boolean; schema?: any[] }
 const { page, noindex = false, schema = [] } = Astro.props;
@@ -29,11 +29,14 @@ const graph: any[] = [
     ...(page.crumbs.length ? { breadcrumb: { '@id': url(page.path) + '#crumbs' } } : {}) },
 ];
 if (page.kind === 'home' || page.kind === 'contact') graph.push({
-  '@type': 'Organization', '@id': ORG, name: 'DUMSKAYA HOME', url: SITE + '/', logo: SITE + '/logo.svg', email: site.contacts.email,
+  '@type': 'Organization', '@id': ORG, name: 'DUMSKAYA HOME', url: SITE + '/', logo: SITE + '/logo.svg', ...(homeEmail ? { email: homeEmail } : {}),
   parentOrganization: { '@type': 'Organization', name: 'DUMSKAYA DESIGN', url: 'https://dumskaya-design.com/' },
   address: { '@type': 'PostalAddress', streetAddress: site.contacts.address.street, postalCode: site.contacts.address.postal,
     addressLocality: site.contacts.address.city, addressCountry: site.contacts.address.country },
-  contactPoint: phones(page.lang).map((p: any) => ({ '@type': 'ContactPoint', telephone: p.tel, contactType: 'sales', areaServed: p.key === 'at' ? 'AT' : 'SK' })),
+  // телефоны — только на русской версии; на остальных — форма на странице «Контакты»
+  contactPoint: phones(page.lang).length
+    ? phones(page.lang).map((p: any) => ({ '@type': 'ContactPoint', telephone: p.tel, contactType: 'sales', areaServed: p.key === 'at' ? 'AT' : 'SK' }))
+    : [{ '@type': 'ContactPoint', contactType: 'sales', url: url(paths.contact[page.lang]) }],
 });
 if (page.crumbs.length) graph.push({ '@type': 'BreadcrumbList', '@id': url(page.path) + '#crumbs',
   itemListElement: page.crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, ...(c.href ? { item: url(c.href) } : {}) })) });

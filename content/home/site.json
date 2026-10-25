@@ -1,4 +1,9 @@
 {
-  "_about": "Настройки dumskaya-home.com. verification — коды подтверждения сайта (meta-тег) из Google Search Console, Яндекс.Вебмастера и Bing Webmaster Tools; пусто — тег не ставится (подтвердить можно и записью DNS).",
-  "verification": {"google": "", "yandex": "", "bing": ""}
+  "_about": "Настройки dumskaya-home.com. email — адрес для связи на сайте (пока пусто: на сайте его нет, решено 25.10.2026 — e-mail добавим позже); телефоны — только на русской версии, на остальных языках связь через форму. verification — коды подтверждения сайта (meta-тег) из Google Search Console, Яндекс.Вебмастера и Bing Webmaster Tools; пусто — тег не ставится.",
+  "email": "",
+  "verification": {
+    "google": "",
+    "yandex": "",
+    "bing": ""
+  }
 }

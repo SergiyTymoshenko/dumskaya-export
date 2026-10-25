@@ -1,5 +1,5 @@
 // llms.txt — справка о сайте для нейросетей (как у сайта студии): что это за каталог, фабрики, разделы, как заказать.
-import { brandList, byBrand, departments, paths, catName, byCategory, site, phones } from '../lib/catalog';
+import { brandList, byBrand, departments, paths, catName, byCategory, homeEmail } from '../lib/catalog';
 
 const SITE = 'https://dumskaya-home.com';
 export function GET() {
@@ -10,7 +10,7 @@ export function GET() {
     '> Furniture and lighting by European factories. Prices are not published: a price request goes to the studio, which replies within one working day.',
     '',
     'Languages: English (main), Russian (/ru), German (/de), French (/fr), Spanish (/es).',
-    `Contact: ${phones('en').map((p: any) => p.text).join(', ')}, ${site.contacts.email}; ${SITE}${paths.contact.en}`,
+    `Contact: the form at ${SITE}${paths.contact.en}${homeEmail ? `, e-mail ${homeEmail}` : ''}`,
     'Studio website: https://dumskaya-design.com/en',
     '',
     '## Brands',
