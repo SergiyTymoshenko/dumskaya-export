@@ -1241,7 +1241,7 @@ def _row(a, **extra):
     return dict(extra, visitors=a.get("visitors", 0), views=a.get("views", 0), leads=a.get("leads", 0),
                 google=a.get("google", 0), contacts=sum((a.get("contacts") or {}).values()),
                 google_sk=gl.get("sk", 0), google_de=gl.get("de", 0), glang={k: gl.get(k, 0) for k, _ in GOOGLE_SPLIT},
-                avg_time=avg_time(a))
+                avg_time=avg_time(a), tv=a.get("time_visitors", 0), tt=a.get("time_total", 0))
 
 
 def _top(counter, k=8, other="другие"):
@@ -1534,6 +1534,129 @@ def web(period):
         d = web_data(int(period) if str(period).isdigit() else 7)
     d.update(site=SITE, host=HOST, title=TITLE, live=site_live(), google_split=[list(x) for x in GOOGLE_SPLIT])
     return d
+
+
+# ---------- «Все»: оба сайта вместе (решено 25.10.2026 — цифры складываются) ----------
+ROW_SUMS = ("visitors", "views", "leads", "google", "contacts", "tv", "tt")
+
+
+def _sum_items(lists, k=None):
+    """[[подпись, число, …], …] нескольких сайтов → сумма по подписи, по убыванию (k — сколько оставить)."""
+    c = Counter()
+    for items in lists:
+        for it in items or []:
+            c[it[0]] += it[1]
+    out = [[n, v] for n, v in c.most_common()]
+    return out[:k] if k else out
+
+
+def _avg(parts):
+    """Среднее время по нескольким сайтам: [(среднее, сколько посетителей с временем)] → взвешенное или None."""
+    w = sum(n for a, n in parts if a is not None and n)
+    return round(sum(a * n for a, n in parts if a is not None and n) / w) if w else None
+
+
+def _merge_rows(a_rows, b_rows, key):
+    """Строки графиков двух сайтов → по одной на день (час, неделю, месяц): числа складываются."""
+    by = {}
+    order = []
+    for rows in (a_rows, b_rows):
+        for r in rows:
+            k = r.get(key)
+            if k not in by:
+                by[k] = dict(r, glang={})
+                order.append(k)
+                for f in ROW_SUMS:
+                    by[k][f] = 0
+                by[k]["missing"] = True
+                by[k]["partial"] = False
+            m = by[k]
+            if not r.get("missing"):
+                for f in ROW_SUMS:
+                    m[f] += r.get(f) or 0
+                m["missing"] = False
+                if "days" in r:
+                    m["days"] = max(m.get("days") or 0, r["days"])
+            m["partial"] = m["partial"] or bool(r.get("partial"))
+    out = [by[k] for k in sorted(order, key=lambda x: (x is None, x))]
+    for m in out:
+        m["avg_time"] = round(m["tt"] / m["tv"]) if m.get("tv") else None
+    return out
+
+
+def _merge_total(a, b):
+    tv = a["time_visitors"] + b["time_visitors"]
+    pages = sorted([[p[0], p[1], p[2]] for p in a["pages"]] + [["Каталог: " + p[0], p[1], p[2]] for p in b["pages"]],
+                   key=lambda x: -x[1])[:15]
+    return {
+        **{k: a[k] + b[k] for k in ("visitors", "views", "leads", "google", "own", "contacts")},
+        "time_visitors": tv, "avg_time": _avg([(a["avg_time"], a["time_visitors"]), (b["avg_time"], b["time_visitors"])]),
+        "langs": _sum_items([a["langs"], b["langs"]]), "sources": _sum_items([a["sources"], b["sources"]], 9),
+        "devices": _sum_items([a["devices"], b["devices"]]), "contact_types": _sum_items([a["contact_types"], b["contact_types"]]),
+        "pages": pages,
+        "contact_pages": _sum_items([a["contact_pages"], [["Каталог: " + n, v] for n, v in b["contact_pages"]]], 8),
+        "leads_pages": _sum_items([a["leads_pages"], [["Каталог: " + n, v] for n, v in b["leads_pages"]]], 8),
+        "notfound": _sum_items([a["notfound"], [["dumskaya-home.com" + n, v] for n, v in b["notfound"]]], 10),
+    }
+
+
+def _merge_prev(a, b):
+    if not a or not b:
+        return None
+    out = {k: (a.get(k) or 0) + (b.get(k) or 0) for k in ("visitors", "views", "leads", "google")}
+    out["contacts"] = a["contacts"] + b["contacts"] if a.get("contacts") is not None and b.get("contacts") is not None else None
+    out["avg_time"] = _avg([(a.get("avg_time"), a.get("visitors") or 0), (b.get("avg_time"), b.get("visitors") or 0)])
+    return out
+
+
+def _months(rows):
+    """Строки по неделям → по месяцам (неделя относится к месяцу, в котором началась)."""
+    if not rows or "end" not in rows[0] or rows[0]["date"][8:] == "01" and all(r["date"][8:] == "01" for r in rows):
+        return rows
+    by = {}
+    for r in rows:
+        k = r["date"][:8] + "01"
+        m = by.setdefault(k, dict(r, date=k, glang={}, missing=True, partial=False, days=0, **{f: 0 for f in ROW_SUMS}))
+        if not r.get("missing"):
+            for f in ROW_SUMS:
+                m[f] += r.get(f) or 0
+            m["missing"] = False
+        m["days"] += r.get("days") or 0
+        m["partial"] = m["partial"] or bool(r.get("partial"))
+    return list(by.values())
+
+
+def web_all(period):
+    """«Все» в «Графиках»: сайт студии и каталог вместе — посетители, просмотры, заявки, нажатия, робот Google, языки,
+    источники и страницы складываются (кто зашёл в один день на оба сайта — считается на каждом). «1 час» — заходы
+    обоих сайтов одной лентой, у каждого — какой сайт."""
+    a, b = web(period), home().web(period)
+    base = {k: a[k] for k in ("generated", "generated_ts", "period")}
+    base.update(site="all", host="dumskaya-design.com + dumskaya-home.com", title="Все сайты", live=a["live"],
+                sites={"studio": a["live"], "home": b["live"]}, google_split=[])
+    if period == "1h":
+        for x, name in ((a, "studio"), (b, "home")):
+            for sess in x["sessions"]:
+                sess["site"] = name
+        sessions = sorted(a["sessions"] + b["sessions"], key=lambda x: -x["end"])[:60]
+        sa, sb = a["summary"], b["summary"]
+        summary = {k: sa[k] + sb[k] for k in ("visitors", "active", "views", "contacts", "leads")}
+        summary["avg_time"] = _avg([(sa["avg_time"], sa["visitors"]), (sb["avg_time"], sb["visitors"])])
+        last = max([x["last"] for x in (a, b) if x.get("last")], key=lambda v: v["ts"], default=None)
+        return dict(base, sessions=sessions, summary=summary, own=a["own"] + b["own"], last=None if sessions else last,
+                    geo=a["geo"] or b["geo"], credit=a["credit"] or b["credit"])
+    key = "ts" if a.get("unit") == "hour" else "date"
+    if a.get("unit") != b.get("unit"):                  # «всё время»: у одного сайта недели, у другого уже месяцы
+        a["rows"], b["rows"] = _months(a["rows"]), _months(b["rows"])
+        a["unit"] = "month"
+    rows = _merge_rows(a["rows"], b["rows"], key)
+    out = dict(base, unit=a["unit"], rows=rows, coverage=max(a["coverage"], b["coverage"]),
+               total=_merge_total(a["total"], b["total"]), prev=_merge_prev(a.get("prev"), b.get("prev")))
+    if a.get("unit") in ("week", "month") or "span" in a:
+        out["span"] = max(a.get("span") or 0, b.get("span") or 0) or None
+        firsts = [x["first"] for x in (a, b) if x.get("first") and x.get("coverage")]
+        out["first"] = min(firsts) if firsts else a.get("first")
+    return out
 
 
 def plural(n, one, few, many):

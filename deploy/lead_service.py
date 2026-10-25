@@ -86,6 +86,7 @@ from site_monitor import SiteMonitor  # noqa: E402
 from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
                         is_own, mark_own, me_data, record_hit, record_time, web)
 from site_stats import home as stats_home  # noqa: E402  статистика каталога dumskaya-home.com — тот же код, свой журнал
+from site_stats import web_all as stats_all  # noqa: E402  «Все»: оба сайта вместе
 from translate import chain as translate_chain, lang_from, purpose as translate_purpose, translate_lead  # noqa: E402
 import crm_api  # noqa: E402  учёт проектов студии: /api/crm/*
 import portal_api  # noqa: E402  кабинет заказчика и подрядчика, переписка: /api/portal/*
@@ -229,7 +230,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self.reply(403, {"ok": False})
             q = dict(urllib.parse.parse_qsl(query))
             period = q.get("p") or q.get("days") or "7"
-            fn = stats_home().web if q.get("site") == "home" else web   # «Графики»: сайт студии или каталог
+            # «Графики»: сайт студии, каталог или оба вместе («Все»)
+            fn = stats_home().web if q.get("site") == "home" else stats_all if q.get("site") == "all" else web
             try:
                 return self.reply(200, fn(period if period in PERIODS else "7"))
             except PermissionError:

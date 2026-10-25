@@ -8,8 +8,9 @@
 <!-- Мини-приложение Telegram: «Студия» → вкладка «Сайт» (и кнопка «Графики» в утренней сводке). Данные отдаёт сервис
      заявок (/api/stats/data?p=1h|24h|7|30|90|365|all&site=studio|home) только тем, кому Telegram подписал запуск
      (разработчик и дизайнер); работает ли сайт (/api/stats/site) — только разработчику.
-     Два сайта: «Сайт студии» (dumskaya-design.com) и «Каталог» (dumskaya-home.com) — переключатель над периодами;
-     выбор запоминается на устройстве, ?site=home в адресе открывает каталог (кнопка в утренней строке). -->
+     Два сайта: «Сайт студии» (dumskaya-design.com), «Каталог» (dumskaya-home.com) и «Все» — оба вместе, цифры
+     складываются; переключатель над периодами, выбор запоминается на устройстве, ?site=home в адресе открывает каталог
+     (кнопка в утренней строке). -->
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
   :root {
@@ -70,7 +71,7 @@
   @media (max-width: 359px) { .filters { gap: 4px; } .filters button { font-size: calc(12px * var(--k)); padding: 7px 2px; } }
   .filters button[aria-pressed="true"] { background: var(--text-1); color: var(--page); border-color: var(--text-1); font-weight: 600; }
   /* какой сайт: студия или каталог — две половины одной кнопки */
-  .sites { display: grid; grid-template-columns: 1fr 1fr; margin: 0 0 12px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+  .sites { display: grid; grid-template-columns: 1.15fr 1.15fr 0.7fr; margin: 0 0 12px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
   .sites button { font: inherit; font-size: calc(14px * var(--k)); color: var(--text-1); background: transparent; border: 0; padding: 9px 6px; cursor: pointer; min-width: 0; }
   .sites button + button { border-left: 1px solid var(--border); }
   .sites button[aria-pressed="true"] { background: var(--series); color: #fff; font-weight: 600; }
@@ -178,6 +179,7 @@
   <div class="sites" role="group" aria-label="Сайт">
     <button type="button" data-s="studio" aria-pressed="true">Сайт студии<small>dumskaya-design.com</small></button>
     <button type="button" data-s="home" aria-pressed="false">Каталог<small>dumskaya-home.com</small></button>
+    <button type="button" data-s="all" aria-pressed="false">Все<small>оба сайта</small></button>
   </div>
   <section class="card site" id="site" hidden></section>
   <div class="filters" role="group" aria-label="Период">
@@ -202,7 +204,7 @@
   const MONTHS_NOM = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
   const app = document.getElementById('app');
   let period = '7', data = null, siteKey = 'studio';
-  const SITES = ['studio', 'home'];
+  const SITES = ['studio', 'home', 'all'];
   try { const x = localStorage.getItem('stats-site'); if (SITES.includes(x)) siteKey = x; } catch (e) {}
   try { const x = new URLSearchParams(location.search).get('site'); if (SITES.includes(x)) siteKey = x; } catch (e) {}
   // размер текста — тот же, что в «Студии»: сразу — запомненный на этом устройстве, затем — с сервера
@@ -523,7 +525,7 @@
     c1.append(table(rows));
     app.append(c1);
 
-    const c2 = card('Языки сайта', 'Посетители по версиям сайта');
+    const c2 = card('Языки сайта', d.site === 'all' ? 'Посетители по версиям сайтов — RU, EN и DE обоих сайтов сложены' : 'Посетители по версиям сайта');
     c2.append(barList(tot.langs)); app.append(c2);
     const c3 = card('Откуда пришли', hourly() ? 'Первый переход посетителя за сутки' : 'Первый переход посетителя за день');
     c3.append(barList(tot.sources)); app.append(c3);
@@ -579,6 +581,7 @@
     else place.textContent = data.geo ? 'Место не определилось' : 'Город появится после загрузки базы городов';
     top.append(place, s.active ? el('span', 'live', 'на сайте') : el('span', 'when', (dayword(s.start) === 'сегодня' ? '' : dayword(s.start) + ' ') + hm(s.start) + '–' + hm(s.end)));
     c.append(top);
+    if (s.site) c.append(el('div', 'meta', s.site === 'home' ? '🛋 Каталог · dumskaya-home.com' : 'Сайт студии · dumskaya-design.com'));
     c.append(el('div', 'meta', [s.device, s.os, s.browser].filter(Boolean).join(' · ') + (s.lang ? ' · язык браузера: ' + s.lang : '')));
     const m2 = el('div', 'meta'); m2.append(document.createTextNode('Откуда: '), el('b', null, s.source === 'прямые заходы' ? 'прямой заход' : s.source));
     const n = s.pages.length;

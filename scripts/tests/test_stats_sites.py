@@ -204,5 +204,20 @@ check(bool(msgs) and "Каталог" not in msgs[0]["text"] and "site=home" not
 # журнал каталога не попадает в студию и через сжатую часть
 check(all("dumskaya-home" not in os.path.basename(f) for f in S._logs()) and len(HM._logs()) == 2, "части журнала разделены по сайтам")
 
+# «Все»: оба сайта вместе — числа складываются по каждому периоду
+for per in ("7", "24h", "30", "365", "all"):
+    a_, b_, x = S.web(per), HM.web(per), S.web_all(per)
+    ok_tot = all(x["total"][k] == a_["total"][k] + b_["total"][k] for k in ("visitors", "views", "leads", "google", "contacts"))
+    sa = sum(r["visitors"] for r in a_["rows"]) + sum(r["visitors"] for r in b_["rows"])
+    check(ok_tot and sum(r["visitors"] for r in x["rows"]) == sa and x["site"] == "all", f"«Все», {per}: итоги и строки — сумма двух сайтов")
+x = S.web_all("7")
+check(dict(x["total"]["langs"]).get("RU") == 2 and dict(x["total"]["langs"]).get("DE") == 1, f"«Все»: языки сложены ({x['total']['langs']})")
+check(any(p[0].startswith("Каталог: ") for p in x["total"]["pages"]), "«Все»: страницы каталога подписаны «Каталог:»")
+check(x["total"]["avg_time"] is not None and 40 <= x["total"]["avg_time"] <= 75, f"«Все»: среднее время — между сайтами ({x['total']['avg_time']})")
+lv = S.web_all("1h")
+check(lv["summary"]["visitors"] == 3 and {s_["site"] for s_ in lv["sessions"]} == {"studio", "home"}, "«Все», «1 час»: заходы обоих сайтов, у каждого — сайт")
+c3, d3 = req("/api/stats/data?p=7&site=all", headers={"X-Telegram-Init-Data": init})
+check(c3 == 200 and d3["site"] == "all" and d3["total"]["visitors"] == 4, "«Графики»: ?site=all — оба сайта")
+
 print("\n" + ("Всё в порядке" if not FAILS else f"Ошибок: {len(FAILS)}"))
 sys.exit(1 if FAILS else 0)
