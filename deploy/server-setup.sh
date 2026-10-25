@@ -32,6 +32,18 @@ command -v caddy >/dev/null || { echo "Caddy не найден"; exit 1; }
 [ -f "$CADDYFILE" ] || { echo "Нет $CADDYFILE — Caddy настроен иначе, остановка"; exit 1; }
 echo "Caddy: $(caddy version | cut -d' ' -f1), режим: $MODE, пользователь: $USER_NAME"
 
+# 0. dumskaya-home.com в режиме просмотра слушает 127.0.0.1:8089 — если порт занят другой программой (на сервере
+#    есть и другие сайты), ничего не меняем и останавливаемся
+HOME_MODE="${HOME_ARG#home-}"; [ -n "$HOME_MODE" ] || HOME_MODE="$(cat "$APP/home-mode" 2>/dev/null || echo preview)"
+if [ "$HOME_MODE" = preview ] && command -v ss >/dev/null; then
+  BUSY="$(ss -ltnpH 2>/dev/null | awk '$4 ~ /:8089$/ && $0 !~ /"caddy"/' || true)"
+  if [ -n "$BUSY" ]; then
+    echo "Порт 8089 на сервере занят другой программой — каталог dumskaya-home.com не подключаю, ничего не изменено:"
+    echo "$BUSY" | cut -c1-200
+    exit 1
+  fi
+fi
+
 # 1. Папки
 install -d -o "$USER_NAME" -g "$USER_NAME" -m 755 /var/www/dumskaya /var/www/dumskaya/site
 install -d -o "$USER_NAME" -g "$USER_NAME" -m 750 "$APP"
@@ -64,7 +76,6 @@ gen_site > /etc/caddy/sites/dumskaya.caddy.new
 cp "$HERE/caddy/dumskaya-redirects.snippet" /etc/caddy/sites/dumskaya-redirects.snippet.new
 # DUMSKAYA HOME: свой файл в /etc/caddy/sites/home/, подключается из файла сайта студии (import в его начале) —
 # поэтому основной Caddyfile (он принадлежит EuroExchange) для него не меняется
-HOME_MODE="${HOME_ARG#home-}"; [ -n "$HOME_MODE" ] || HOME_MODE="$(cat "$APP/home-mode" 2>/dev/null || echo preview)"
 if [ "$HOME_MODE" = live ]; then
   HSITE="dumskaya-home.com"; HWWW="www.dumskaya-home.com {\n\tredir https://dumskaya-home.com{uri} 301\n}"; HBIND=""
 else

@@ -42,8 +42,24 @@ if ! python3 scripts/check_home.py >"$CHECK"; then
 fi
 head -2 "$CHECK"; rm -f "$CHECK"
 echo "▸ 5/5 Выкладка на $HOST"
+# На сервере есть и другие сайты: место проверяем заранее — после выкладки должно оставаться не меньше 3 ГБ.
+# Считается только то, чего на сервере ещё нет (то, что уже выложено, заменится).
+NEED_KB="$(du -sk home/dist home/img | awk '{s += $1} END {print s}')"
+read -r FREE_KB HAVE_KB < <(ssh "$HOST" 'echo "$(df -Pk /var/www | awk "NR==2 {print \$4}") $(du -sk /var/www/dumskaya-home/site 2>/dev/null | cut -f1)"')
+HAVE_KB="${HAVE_KB:-0}"
+case "$FREE_KB" in ''|*[!0-9]*) echo "Не получилось узнать свободное место на сервере — выкладка остановлена. Пришлите Claude этот вывод."; exit 1 ;; esac
+LEFT_KB=$(( FREE_KB + HAVE_KB - NEED_KB ))
+echo "  каталог: $(( NEED_KB / 1024 )) МБ, на сервере свободно $(( FREE_KB / 1024 )) МБ"
+if [ "$LEFT_KB" -lt $(( 3 * 1024 * 1024 )) ]; then
+  echo "На сервере мало места: после выкладки осталось бы $(( LEFT_KB / 1024 )) МБ, а другим сайтам нужен запас 3 ГБ."
+  echo "Выкладка остановлена. Пришлите Claude этот вывод — можно выложить только часть фабрик (HOME_FACTORIES=…)."
+  exit 1
+fi
 DELAY=""; case "$(rsync --help 2>&1)" in *--delay-updates*) DELAY="--delay-updates" ;; esac
-rsync -az --delete $DELAY --exclude '.DS_Store' home/dist/ "$HOST:/var/www/dumskaya-home/site/"
+# сначала фото (новые имена — новые файлы), потом страницы; старые файлы удаляются только из папки этого сайта
+rsync -az --exclude '.DS_Store' home/img/ "$HOST:/var/www/dumskaya-home/site/img/"
+rsync -az --delete $DELAY --exclude '.DS_Store' --exclude '/img/' home/dist/ "$HOST:/var/www/dumskaya-home/site/"
+rsync -az --delete --exclude '.DS_Store' home/img/ "$HOST:/var/www/dumskaya-home/site/img/"
 if [ "$MODE" = live ]; then
   CODE=000
   for _ in 1 2 3 4 5; do CODE="$(curl -s -o /dev/null -w '%{http_code}' --max-time 15 https://dumskaya-home.com/ || true)"; [ "$CODE" = 200 ] && break; sleep 3; done

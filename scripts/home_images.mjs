@@ -14,7 +14,8 @@ import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const EXPORT = (process.env.EXPORT_DIR || path.join(os.homedir(), 'Documents/dumskaya-export')).replace(/^~/, os.homedir());
-const OUT = path.join(ROOT, 'home/public/img');
+// не в home/public: Astro копировал бы гигабайты фото в home/dist при каждой сборке — на сервер их кладёт deploy_home.sh отдельно
+const OUT = path.join(ROOT, 'home/img');
 const CAT = path.join(ROOT, 'home/data/catalog.json');
 const MAN = path.join(ROOT, 'home/data/image-manifest.json');
 const PHOTO = [480, 960, 1600], DRAW = [960, 1600];

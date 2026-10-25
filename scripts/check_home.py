@@ -169,6 +169,8 @@ def check_crumbs(u, p, parsed, errs):
 def main():
     errs, warns = [], []
     files = {"/" + os.path.relpath(f, DIST) for f in glob.glob(os.path.join(DIST, "**/*"), recursive=True) if os.path.isfile(f)}
+    IMG = os.path.join(ROOT, "home/img")                    # фото лежат отдельно от сборки (на сервер — в /img/)
+    files |= {"/img/" + n for n in (os.listdir(IMG) if os.path.isdir(IMG) else [])}
     pages, raw = {}, {}
     for f in glob.glob(os.path.join(DIST, "**/*.html"), recursive=True):
         u = url_of(f)
