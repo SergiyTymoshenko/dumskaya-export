@@ -65,6 +65,14 @@ home += [entry(t + 50, "dumskaya-home.com", "/de", "8.8.4.4", ua=UA2, lang="de-A
 home += [entry(t + 60, "localhost:8089", "/", "127.0.0.1", ua=UA2), entry(t + 61, "localhost:8089", "/_astro/home.css", "127.0.0.1", ua=UA2, nav=False)]
 # сканер: ищет вход в админку
 home += [entry(t + 70, "dumskaya-home.com", "/", "9.9.9.9"), entry(t + 71, "dumskaya-home.com", "/wp-login.php", "9.9.9.9", status=404)]
+# сканер нового сертификата (Эшберн, 25.10.2026): настоящий Chrome грузит главную с оформлением, потом ищет служебные файлы
+home += [entry(t + 72, "dumskaya-home.com", "/", "3.3.3.3", lang="en-US,en;q=0.9"),
+         entry(t + 72.2, "dumskaya-home.com", "/_astro/home.css", "3.3.3.3", nav=False, lang="en-US,en;q=0.9"),
+         entry(t + 72.5, "dumskaya-home.com", "/", "3.3.3.3", lang="en-US,en;q=0.9"),
+         entry(t + 72.7, "dumskaya-home.com", "/.well-known/pki-validation", "3.3.3.3", status=404, lang="en-US,en;q=0.9"),
+         entry(t + 72.9, "dumskaya-home.com", "/.well-known/apple-app-site-association", "3.3.3.3", status=404, lang="en-US,en;q=0.9")]
+# у человека (немецкая версия) браузер сам спросил файл DevTools — это не его страница и не признак робота
+home += [entry(t + 55, "dumskaya-home.com", "/.well-known/appspecific/com.chrome.devtools.json", "8.8.4.4", ua=UA2, status=404, nav=False, lang="de-AT,de;q=0.9")]
 # «пулемёт»: 12 страниц за 6 секунд
 home += [entry(t + 80 + i * 0.5, "dumskaya-home.com", f"/ru/divany/model-{i}", "10.0.0.7") for i in range(12)]
 home += [entry(t + 81, "dumskaya-home.com", "/_astro/home.css", "10.0.0.7", nav=False)]
@@ -162,6 +170,13 @@ lv = HM.web("1h")
 check(lv["summary"]["visitors"] == 2 and lv["host"] == "dumskaya-home.com", f"каталог, «1 час»: 2 посетителя ({lv['summary']['visitors']})")
 s1 = next((x for x in lv["sessions"] if x["pages"][0]["path"] == "/ru"), None)
 check(bool(s1) and [p["path"] for p in s1["pages"]] == ["/ru", "/ru/divany"] and s1["source"] == "Google", "каталог, «1 час»: путь посетителя и откуда пришёл")
+s2 = next((x for x in lv["sessions"] if x["pages"][0]["path"] == "/de"), None)
+check(bool(s2) and [p["path"] for p in s2["pages"]] == ["/de"], "каталог, «1 час»: файл DevTools, который браузер спросил сам, — не страница посетителя")
+check(not any(p["path"] == "/" or "well-known" in p["path"] for x in lv["sessions"] for p in x["pages"]),
+      "каталог, «1 час»: сканер сертификата (pki-validation, apple-app-site-association) — не посетитель")
+check(S.parse(json.loads(entry(t, "dumskaya-home.com", "/.well-known/openid-configuration", "3.3.3.3", status=404)))[0] == "probe"
+      and S.parse(json.loads(entry(t, "dumskaya-home.com", "/.well-known/change-password", "3.3.3.3", status=404))) is None,
+      "служебные адреса: openid-configuration от «браузера» — сканер, change-password — запрос самого браузера")
 check(S.web("24h")["total"]["visitors"] == 1 and HM.web("24h")["total"]["visitors"] == 2, "«24 часа» — у каждого сайта своё")
 
 # режим: каталог ещё в preview → live=False

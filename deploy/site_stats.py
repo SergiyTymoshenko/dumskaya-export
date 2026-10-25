@@ -96,7 +96,7 @@ EXCLUDE_FILE = os.path.join(SHARED_DIR, "exclude.json")  # «свои» адре
 OWN_FILE = os.path.join(SHARED_DIR, "own_devices.json")   # откуда студия открывала «Графики» — эти визиты тоже свои
 OWN_WINDOW = 3 * 3600                                     # …за 3 часа до и после открытия
 VERSION_FILE = os.path.join(STATS_DIR, "version")
-STATS_VERSION = "7"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
+STATS_VERSION = "8"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
                               # (2: отсев сканеров; 3: время на сайте и роботы без оформления и времени;
                               #  4: страница — не больше 5 минут; 5: роботы без оформления и заголовков — и в старых днях;
                               #  6: elmah.axd и подобные адреса ASP.NET — тоже сканеры;
@@ -127,6 +127,12 @@ PROBE = re.compile(r"(^|/)(log-?in|log-?on|sign-?in|sign-?up|register|auth|oauth
                    r"swagger(-ui)?|graphql|telescope|_ignition|debug|phpinfo|server-(status|info)|owa|ecp|boaform|"
                    r"hnap1|solr|geoserver|druid|nacos|cgi-bin|shell|cmd|config|backups?|phpmyadmin|pma|mysql|xmlrpc|"
                    r"wp-\w*|wordpress|vendor|\.git|\.svn|\.env|\.aws|\.ssh)(/|\.|$)", re.I)
+# служебные адреса /.well-known/, которые браузер запрашивает сам, без ведома человека: проверка смены пароля (Chrome,
+# менеджеры паролей), файл DevTools, советы предзагрузки Chrome, отказ от слежки (GPC). Такой 404 — не страница
+# посетителя и не признак робота. Все остальные /.well-known/ (pki-validation, acme-challenge, apple-app-site-association,
+# assetlinks.json, security.txt…) от «браузера» — сканеры: так проверяют только что выпущенный сертификат домена.
+BROWSER_WELL_KNOWN = re.compile(r"^/\.well-known/(change-password|resource-that-should-not-exist-whose-status-code-should-not-be-200|"
+                                r"appspecific/|traffic-advice|gpc\.json)", re.I)
 BURST = (10, 15)              # 10 страниц за 15 секунд — так листает только программа
 BOT = re.compile(r"bot\b|bot/|crawl|spider|slurp|scrap|preview|monitor|uptime|lighthouse|pagespeed|headless|"
                  r"phantom|python|curl|wget|httpclient|okhttp|axios|go-http|java/|libwww|perl|ruby|php/|node-fetch|"
@@ -758,8 +764,9 @@ def parse(e):
     if not is_human(ua, h):
         return None
     if status == 404:
-        probe = PROBE.search(path) or (JUNK.search(path) and "/.well-known/" not in path)
-        return ("probe" if probe else "404", ip, ua, path, h, uri)
+        if BROWSER_WELL_KNOWN.match(path):
+            return None
+        return ("probe" if PROBE.search(path) or JUNK.search(path) else "404", ip, ua, path, h, uri)
     if status not in (200, 304):
         return None
     return ("view", ip, ua, path, h, uri)
