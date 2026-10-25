@@ -66,9 +66,12 @@
 @media (min-width: 960px) { .pgrid { grid-template-columns: 7fr 5fr; gap: 48px; align-items: start; } .pinfo { position: sticky; top: calc(var(--header) + 16px); } }
 .pgal { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
 .pgal__i { padding: 0; border: 0; background: #f5f4f1; cursor: zoom-in; line-height: 0; }
-.pgal__i img, .pgal__i .ph { width: 100%; aspect-ratio: 1; object-fit: contain; }
+/* интерьер — кадрируем по ячейке, предметный снимок — целиком на фоне его цвета; главное фото — в своих пропорциях */
+.pgal__i img, .pgal__i .ph { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.pgal__i--cut img { object-fit: contain; padding: 4%; }
 .pgal__i--main { grid-column: 1 / -1; }
-.pgal__i--main img, .pgal__i--main .ph { aspect-ratio: 4 / 3; }
+.pgal__i--main img { aspect-ratio: auto; max-height: 82vh; object-fit: contain; }
+.pgal__i--main .ph { aspect-ratio: 4 / 3; }
 .pinfo { display: grid; gap: 16px; align-content: start; }
 .pinfo__brand { margin: 0; font: 400 13px/1.4 var(--display); text-transform: uppercase; letter-spacing: 0.18em; }
 .pinfo__brand a { text-decoration: none; }
@@ -139,5 +142,6 @@
   .pgal { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: var(--gap); margin-inline: calc(-1 * var(--pad)); padding-inline: var(--pad); scrollbar-width: none; }
   .pgal::-webkit-scrollbar { display: none; }
   .pgal__i { flex: 0 0 88%; scroll-snap-align: center; }
-  .pgal__i img, .pgal__i .ph, .pgal__i--main img, .pgal__i--main .ph { aspect-ratio: 4 / 3; }
+  .pgal__i img, .pgal__i .ph, .pgal__i--main img, .pgal__i--main .ph { aspect-ratio: 4 / 3; max-height: none; object-fit: cover; }
+  .pgal__i--cut img { object-fit: contain; }
 }

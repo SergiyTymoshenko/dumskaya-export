@@ -35,7 +35,7 @@ const meta: [string, string, string?][] = [
 <div class="pgrid wrap">
   <div class="pgal" data-gallery>
     {pics.map((im, i) => (
-      <button type="button" class:list={['pgal__i', i === 0 && 'pgal__i--main']} style={manifest[im.name]?.bg ? `background:${manifest[im.name].bg}` : undefined} data-full={manifest[im.name]?.files.at(-1)?.[1] ? `/img/${manifest[im.name].files.at(-1)![1]}` : ''} aria-label={`${T.photo} ${i + 1}`}>
+      <button type="button" class:list={['pgal__i', i === 0 && 'pgal__i--main', manifest[im.name]?.cut && 'pgal__i--cut']} style={manifest[im.name]?.bg ? `background:${manifest[im.name].bg}` : undefined} data-full={manifest[im.name]?.files.at(-1)?.[1] ? `/img/${manifest[im.name].files.at(-1)![1]}` : ''} aria-label={`${T.photo} ${i + 1}`}>
         <Img name={im.name} alt={`${name} — ${p.brand}, ${T.photo.toLowerCase()} ${i + 1}`} sizes={i === 0 ? '(min-width: 960px) 58vw, 100vw' : '(min-width: 960px) 29vw, 50vw'} eager={i === 0} />
       </button>
     ))}
