@@ -1071,10 +1071,22 @@ class Bot(CrmBotMixin, PortalBotMixin):
         prod = products.get(model.upper()) if model else None
         body = format_lead(lead, model, prod)
         pid = prod.get("partner") if prod else None
+        mine = (prod or {}).get("assignee") == "owner"   # фабрика закреплена за разработчиком (Calligaris, решено 25.10.2026)
         delivered = []
         lead["model_name"] = (prod or {}).get("name") or ""
         rows = self.lead_rows(lead.get("crm_id"))     # студии: что это (заявка, реклама, спам, игнорировать) и «Открыть»
-        if pid:
+        if mine:
+            owners = self.active(("owner",))
+            for u in owners:
+                if self.send(u["tg_id"], f"<b>Заявка с сайта {site_name(lead)} на товар {esc(prod.get('mfr') or '')}</b> — "
+                                         f"фабрика закреплена за вами\n\n" + body):
+                    delivered.append(u["tg_id"])
+            who = ", ".join(self.label(u) for u in owners if u["tg_id"] in delivered)
+            lead["routed"] = f"фабрика закреплена за разработчиком: {who}" if who else "фабрика закреплена за разработчиком — не доставлено"
+            head = (f"<b>Заявка на товар {esc(prod.get('mfr') or '')}</b> — фабрика закреплена за разработчиком, ему передана: {esc(who)}"
+                    if who else f"⚠️ <b>Заявка на товар {esc(prod.get('mfr') or '')}</b> — разработчику не доставлено, передайте сами")
+            delivered += self.notify_leads(head + "\n\n" + body, rows=rows, skip=tuple(delivered))
+        elif pid:
             p = self.find_partner(pid)
             people = self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", p["id"]) if p else []
             for u in people:
@@ -1134,6 +1146,10 @@ def format_lead(lead, model, prod):
     lines = [f"<b>Имя:</b> {esc(lead.get('name'))}", f"<b>Контакт:</b> {esc(lead.get('contact'))}"]
     if model:
         lines.append(f"<b>Интересует:</b> {esc(model)}" + (f" — {esc(prod.get('name'))}" if prod and prod.get("name") else ""))
+    if prod and (prod.get("retail") or {}).get("from"):   # розничная цена у фабрики (на нашем сайте цен нет)
+        r = prod["retail"]
+        lines.append(f"<b>Розница на сайте фабрики:</b> {'от ' if r.get('to') and r['to'] != r['from'] else ''}"
+                     f"{r['from']:,.0f} €".replace(",", " ") + (f" (до {r['to']:,.0f} €)".replace(",", " ") if r.get("to") and r["to"] != r["from"] else ""))
     if prod and prod.get("mfr"):                     # подсказка для студии и партнёра; клиент этого не видит
         hint = f"<b>Изготовитель:</b> {esc(prod['mfr'])}"
         if prod.get("mfr_code"):

@@ -174,5 +174,21 @@
   "catalog": "content/shop/catalog/rimadesio.json",
   "sku_range": "DF-…8700–8999 (свет — DL- с теми же номерами)",
   "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
+ },
+ "calligaris": {
+  "name": "Calligaris",
+  "legal": "Calligaris S.p.A.",
+  "country": "Италия",
+  "site": "https://www.calligaris.com",
+  "address": "Via E.T. Moneta 40, 20161 Milano (MI), Italia (юридический адрес)",
+  "assignee": "owner",
+  "categories": [
+   "furniture",
+   "storage",
+   "decor"
+  ],
+  "catalog": "content/shop/catalog/calligaris.json",
+  "sku_range": "DF-…9000–9499",
+  "note": "Фабрика закреплена за разработчиком (Сергей Тимошенко, решено 25.10.2026), а не за партнёром: заявки на её товары — ему в бот, студия видит их как обычно. На сайте фабрики открыто всё без входа: розничные цены в евро (подсказка в заявке, на наш сайт не идут), файлы OBJ / DWG / SKP — прямые ссылки, в базу не качаем."
  }
 }

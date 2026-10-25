@@ -1,4 +1,4 @@
-# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto, Minotti, Poliform, MisuraEmme, Rimadesio)
+# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto, Minotti, Poliform, MisuraEmme, Rimadesio, Calligaris)
 
 Откуда берутся `content/shop/sources/<фабрика>/` и каталоги `content/shop/catalog/<фабрика>.json`.
 У IDL — свой путь: `scripts/shop/idl_factory/README.md`.
@@ -23,6 +23,8 @@
    python3 poliform.py                            # → poliform.json (EN + RU страницы, ≈ 25 минут)
    python3 misuraemme.py                          # → misuraemme.json (≈ 3 минуты)
    python3 rimadesio.py                           # → rimadesio.json (EN + RU страницы, ≈ 5 минут)
+   python3 calligaris.py crawl && python3 calligaris.py build && python3 calligaris.py sizes && python3 calligaris.py sources
+                                                  # → content/shop/sources/calligaris/ сразу (≈ 25 минут; шаги 2–5 не нужны)
    ```
 
    Страницы кешируются в `cache/` — повторный запуск не ходит на сайт заново. Ничего из этого не хранится в git.
@@ -70,6 +72,7 @@
 | Poliform | EN и RU тексты, дизайнер и год, материалы (пары «Structure: …»), отделки с кодами, чертежи SVG из вкладки DIMENSIONS; техкарт PDF нет | на чертежах SVG (`manifest.py` берёт размер SVG по viewBox) |
 | Rimadesio | EN и RU тексты, дизайнер («Design …»), раздел и тип, технические детали, фото, техническая документация PDF коллекции (одна на несколько изделий) | в PDF коллекции (размеры композиций «W … H … D …» в мм) |
 | MisuraEmme | EN текст и техническое описание, дизайнер, тип, отделки с кодами, чертежи PNG из «Dimensions» (оригинал вместо миниатюры); техкарта — версия страницы для печати (ссылка) | в подписи чертежа в мм («W. 824 x D. 816 mm», «ø1550») → см |
+| Calligaris | EN описание (en-RW — международная версия), раздел, размеры (высота, ширина, глубина, высота сиденья…), розничная цена в евро, фото на белом (cloudfront) и интерьерные (Contentful, до 2400 px), прямые ссылки OBJ / DWG / SKP | в данных страницы, в см |
 
 Чертежи Delta Light — векторные SVG; `width`/`height` в каталоге — размеры из `viewBox` (у многих 128×128),
 это не пиксели. На сайт их отдавать как SVG или растрировать с повышенной плотностью
@@ -96,6 +99,11 @@ MisuraEmme: в карте сайта есть снятые изделия — и
 Rimadesio: в карте сайта есть и готовые интерьеры («New interiors»: interior-…, night-…, living-…, dining, walk-in-closet) —
 это не изделия, сборщик их пропускает. 2D/3D — в Reserved Area после входа: в каталоге ссылка на неё.
 
+Calligaris (с 25.10.2026, закреплена за разработчиком): страница у фабрики — одно исполнение (код CS5156-C);
+наш товар — семейство + тип («Twins coffee table» с исполнениями A, B, C), «MTO» — исполнения под заказ.
+Всё открыто без входа; данные — из JSON страницы (`__NEXT_DATA__`), внутренний API сайта не используем.
+Файлы OBJ / DWG / SKP — прямые ссылки (в каталоге `downloads`, в заявке — подсказка дизайнеру), сами файлы не качаем.
+
 ## Незавершённые фабрики (отложены 25.10.2026, вернуться после запуска dumskaya-home.com)
 
 Все — за Александром Замлинским. Свободные номера артикулов: 4700–4999 и от 9000.
@@ -108,7 +116,7 @@ Rimadesio: в карте сайта есть и готовые интерьер�
   sections-finishings, материалы sections-technical-materials), так проще, чем разбирать страницу. «Scarica modelli 3D»
   и «Scarica catalogo» — через форму (forms-dynamic-forms): не качаем, ссылку — в `links.files_2d3d`. Конфигуратор:
   `https://configurator.lago.it/<раздел>/<изделие>`. robots.txt разрешает обход (закрыты /privacy, /cookies, /posizione/*,
-  /feed/, `?store=`, `?s=`). Артикулы — DF-9000–9299.
+  /feed/, `?store=`, `?s=`). Артикулы — DF-9500–9799 (9000–9499 с 25.10.2026 — у Calligaris).
 - **Rugiano** — подана регистрация для профессионалов (https://www.rugiano.com/en/login), на 25.10.2026 «на рассмотрении».
   Размеры у Rugiano открыты только после входа.
 - **Giorgetti** — сайт не пускает автоматическое чтение страниц (защита от роботов). Варианты: через браузер или каталог

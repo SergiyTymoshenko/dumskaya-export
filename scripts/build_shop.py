@@ -64,6 +64,12 @@ def models_ref(it):
     """2D/3D модели изделия. Сами файлы в базу не качаем — дизайнеру подсказка: что есть, где скачать и нужен ли вход.
     [{"what": "2D/3D", "formats": ["DWG", "SKP"], "url": страница или файл у фабрики, "how": как получить}]"""
     links, out = it.get("links") or {}, []
+    dls = it.get("downloads") or []                     # прямые ссылки на файлы у фабрики (Calligaris: OBJ, DWG, SKP)
+    first = list(dict.fromkeys(d.get("version") for d in dls))[:2]   # в заявке — файлы двух исполнений, остальные — у фабрики
+    for d in [d for d in dls if d.get("version") in first]:
+        f = (d.get("format") or "").upper()
+        out.append({"what": "2D" if f in ("DWG", "DXF") else "3D", "formats": [f] if f else [], "url": d["url"],
+                    "how": "скачивается сразу" + (f", {d['version']}" if d.get("version") else "")})
     gated = list(dict.fromkeys(m.upper() for f in it.get("files_after_login") or [] for m in FMT.findall(f.get("title") or "")))
     for key, what in (("files_2d3d", "2D/3D"), ("bim", "BIM"), ("files_2d", "2D"), ("model_3d", "3D")):
         v = links.get(key)
@@ -104,6 +110,10 @@ for key, mf in mfrs.items():
         home = _frozen.get(it["sku"]) if key in _pub else None
         out[code] = {"name": name, "path": ("https://dumskaya-home.com" + home["path"]["en"]) if home else it.get("path"), "partner": mf.get("partner"),
                      "mfr": f"{mf['name']} ({mf['country']})", "mfr_code": it.get("mfr_code"), "collection": col}
+        if mf.get("assignee"):                          # фабрика закреплена за человеком студии (Calligaris — за разработчиком)
+            out[code]["assignee"] = mf["assignee"]
+        if it.get("retail"):                            # розничная цена на сайте фабрики — подсказка в заявке, не на сайт
+            out[code]["retail"] = it["retail"]
         if (it.get("links") or {}).get("page"):
             out[code]["mfr_url"] = it["links"]["page"]
         ref = catalog_ref(it, sources) or sheet_ref(it, mf)
@@ -114,7 +124,7 @@ for key, mf in mfrs.items():
             out[code]["models"] = models
 dst = os.path.join(ROOT, "deploy", "shop-products.json")
 json.dump(out, open(dst, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-own = sum(1 for v in out.values() if v["partner"])
+own = sum(1 for v in out.values() if v["partner"] or v.get("assignee"))
 print(f"товары для бота: {len(out)} (партнёрских: {own})")
 for e in errs:
     print("  ✗", e)

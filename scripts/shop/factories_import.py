@@ -769,6 +769,87 @@ def rimadesio():
     return out
 
 
+def calligaris():
+    """Calligaris: у фабрики страница — одно исполнение (код CS5156-C); наш товар — модель одного вида (семейство + тип:
+    «Twins coffee table» с исполнениями CS5156-A, -B, -C). Исполнения — коды с размерами (см), «MTO» — под заказ.
+    Розничная цена в евро с сайта фабрики — подсказка студии (retail), на сайт не идёт. Файлы OBJ / DWG / SKP —
+    прямые ссылки у фабрики (downloads), в базу не качаем. Фото: на белом фоне (по исполнениям) и интерьерные."""
+    files, _ = files_of("calligaris")
+    LEAF = {"chairs without arms": "chair", "chairs with arms": "chair", "stacking chairs": "chair", "home office chairs": "chair",
+            "folding chairs": "chair", "benches": "bench", "fix tables": "table", "extendable tables": "table", "desks": "desk",
+            "coffee tables": "coffee_table", "mirrors": "mirror", "fixed consoles": "console",
+            "fixed stools": "stool", "adjustable stools": "stool", "armchairs": "armchair", "ottomans": "pouf", "sofa": "sofa",
+            "beds": "bed", "nightstands": "bedside", "drawer dressers": "drawers", "drawer chests": "drawers",
+            "sideboards buffets": "sideboard", "bookcases": "bookcase", "tv stands": "storage", "rugs": "rug"}
+    TOPT = {"chairs": "chair", "armchairs": "armchair", "sofas": "sofa", "tables": "table", "stools": "stool", "beds": "bed",
+            "rugs": "rug", "cabinets, sideboards, wall uni": "storage", "bedroom furniture": "drawers", "occasional furniture": "decor",
+            "objects": "decor"}
+
+    def type_of(p):
+        cat = [c.strip().replace("\xa0", " ").strip() for c in (p.get("category") or "").split(";;")]
+        short = p.get("short") or ""
+        t = LEAF.get(cat[-1].lower()) if cat else None
+        if cat and cat[0].lower() == "chairs":           # «стулья с подлокотниками» Calligaris зовёт armchair — у нас это стул
+            k = kw(short)
+            return k if k in ("bench", "stool", "pouf") else "chair"
+        if t in (None, "armchair", "sofa", "bed") or len(cat) < 2:
+            k = kw(short)                                # «Sofa bed …», «Armchair …», «Bench …» — по описанию точнее
+            if k and k not in ("lamp", "decor") and (t is None or k in ("sofa_bed", "bench", "pouf", "armchair", "chaise", "headboard")):
+                t = k
+        return t or TOPT.get((cat[0] if cat else "").lower()) or kw(short) or "decor"
+
+    def num(v):
+        m = re.search(r"(\d+(?:[.,]\d+)?)", str(v or ""))
+        return (lambda f: int(f) if f == int(f) else round(f, 1))(float(m.group(1).replace(",", "."))) if m else None
+
+    groups = {}
+    for p in json.load(open(os.path.join(SRC, "calligaris/site.json"), encoding="utf-8")):
+        t = type_of(p)
+        fam = smart_title(p.get("family") or p["code"])
+        groups.setdefault((slug(fam), t), {"fam": fam, "t": t, "pages": []})["pages"].append(p)
+    out = []
+    for (fs, t), g in groups.items():
+        pages = sorted(g["pages"], key=lambda p: ("MTO" in p["code"], p["code"]))
+        main = pages[0]
+        vers, imgs, seen, dls, prices = [], [], set(), [], []
+        for p in pages:
+            m = p.get("measures") or {}
+            dims = {k: v for k, v in {"l": num(m.get("larghezza_singola")), "w": num(m.get("profondita_singola")),
+                                      "h": num(m.get("altezza_totale")), "d": num(m.get("diametro"))}.items() if v}
+            v = {"name": {"en": p["code"]}, "code": p["code"]}    # код у всех языков один (MTO в коде — исполнение под заказ)
+            if dims:
+                v["dims_cm"] = dims
+            extra = {k: num(x) for k, x in m.items() if k not in ("larghezza_singola", "profondita_singola", "altezza_totale", "diametro")}
+            if extra:
+                v["dims_extra_cm"] = {k: x for k, x in extra.items() if x}
+            if p.get("short"):
+                v["note"] = {"en": p["short"]}
+            vers.append(v)
+            for u in p.get("images") or []:
+                if u not in seen:
+                    seen.add(u)
+                    x = img(files, u)
+                    if x:
+                        imgs.append(x)
+            for d in p.get("downloads") or []:
+                if d.get("type") in ("dwg", "obj", "skp") and d.get("url"):
+                    dls.append({"format": d["type"].upper(), "url": d["url"], "version": p["code"]})
+            if str(p.get("price_eur") or "").replace(".", "").isdigit():
+                prices.append(float(p["price_eur"]))
+        text = max((p.get("text") or "" for p in pages), key=len) or None
+        cat = [c.strip().replace("\xa0", " ").strip() for c in (main.get("category") or "").split(";;") if c.strip()]
+        item = {"mfr_key": f"{fs}--{t}", "model": g["fam"], "type": t, "collection": fs,
+                "category": " / ".join(cat) or None, "designer": next((p["designer"] for p in pages if p.get("designer")), None),
+                "place": ["indoor"], "new": any(p.get("new") for p in pages),
+                "mfr_code": ", ".join(p["code"] for p in pages[:6]) + (" …" if len(pages) > 6 else ""),
+                "text": {"en": text}, "versions": vers, "images": imgs[:12], "drawings": [], "sheets": [],
+                "links": {"page": main["url"]}, "downloads": dls}
+        if prices:
+            item["retail"] = {"from": min(prices), "to": max(prices), "currency": "EUR", "source": "calligaris.com (en-RW)"}
+        out.append(item)
+    return out
+
+
 FACT = {
     "olev": {"fn": olev, "kind": "light", "range": (3000, 3399), "name": "OLEV", "site": "https://www.olevlight.com/en/"},
     "delta": {"fn": delta, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
@@ -780,6 +861,7 @@ FACT = {
     "poliform": {"fn": poliform, "kind": "furn", "range": (7900, 8399), "name": "Poliform", "site": "https://www.poliform.it/en/"},
     "misuraemme": {"fn": misuraemme, "kind": "furn", "range": (8400, 8699), "name": "MisuraEmme", "site": "https://www.misuraemme.it/en/"},
     "rimadesio": {"fn": rimadesio, "kind": "furn", "range": (8700, 8999), "name": "Rimadesio", "site": "https://www.rimadesio.it/en/"},
+    "calligaris": {"fn": calligaris, "kind": "furn", "range": (9000, 9499), "name": "Calligaris", "site": "https://www.calligaris.com/en-RW"},
 }
 
 
@@ -835,7 +917,7 @@ def build(f):
         q = {"sku": p["sku"]}
         for k in ("name", "model", "type", "collection", "category", "category_ru", "line", "designer", "year", "place", "new",
                   "mfr_key", "mfr_code", "text", "tech", "finishes", "versions", "images", "drawings", "sheets", "links",
-                  "files_after_login"):
+                  "files_after_login", "downloads", "retail"):
             v = p.get(k)
             if isinstance(v, dict):
                 v = {kk: vv for kk, vv in v.items() if vv not in (None, "", [], {})}
