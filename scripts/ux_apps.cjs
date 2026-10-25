@@ -3,7 +3,7 @@
 // Запуск:  node scripts/ux_apps.cjs   (нужны Python 3, Playwright с Chromium и axe-core; данные — тестовые, scripts/tests/ux_stand.py:
 // сервис на временных базах, Telegram подменён — ничего никуда не уходит).
 // Каждый экран (вкладки, проект, заявка, формы, настройки) — на iPhone Pro Max (440), телефоне (390) и в окне Telegram
-// на компьютере (420, мышь), с обычным, крупным и очень крупным текстом: прокрутка вбок, доступность (axe), зоны нажатия
+// на компьютере (420, мышь), с обычным, крупным и очень крупным текстом: прокрутка вбок, контраст и прочее из axe (без правил для экранного диктора), зоны нажатия
 // ≥ 44 px у кнопок (24 px — у ссылок в тексте), ошибки скриптов. Скриншоты — в --out, их тоже смотреть глазами.
 const path = require('path');
 const { spawn } = require('child_process');
@@ -46,6 +46,10 @@ function startStand() {
   });
 }
 
+// экранный диктор в мини-приложениях не нужен (решено 25.10.2026): правила axe только для него не проверяются;
+// контраст, размер кнопок, прокрутка вбок, ошибки скриптов — проверяются, как раньше
+const SR_ONLY = ['region', 'landmark-one-main', 'landmark-unique', 'aria-dialog-name', 'label', 'select-name', 'button-name',
+  'link-name', 'image-alt', 'heading-order', 'empty-heading', 'page-has-heading-one', 'aria-allowed-role'];
 const SIZES = QUICK ? ['pm'] : ['pm', 'm', 'tg'];
 // роль → приложение, размеры текста (по умолчанию у всех «Обычный» — решено 25.10.2026; крупные проверяются тоже)
 const RUNS = [
@@ -86,7 +90,7 @@ const RUNS = [
           let shot = 0;
           const look = async (screen) => {
             await p.waitForTimeout(450);
-            const bad = await L.checkPage(p, AXE, { oneH1: false, minTarget: 24 });
+            const bad = await L.checkPage(p, AXE, { oneH1: false, minTarget: 24, axeOff: SR_ONLY });
             // кнопки (не ссылки в тексте) — не меньше 44 px по меньшей стороне: так задано для «Студии» и кабинетов
             const tiny = await p.evaluate(() => [...document.querySelectorAll('button, [role=button], select, input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=file])')]
               .filter((x) => { const r = x.getBoundingClientRect(); const cs = getComputedStyle(x); return r.width && r.height && cs.visibility !== 'hidden' && !x.closest('[hidden]') && (r.height < 40 || r.width < 40); })

@@ -711,7 +711,7 @@
   const hm = (d) => String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0');
   const digits = (s) => (s || '').replace(/[^\d+]/g, '');
   function toast(text) {
-    const t = el('div', { class: 'toast', role: 'status', 'aria-live': 'polite' }, text); document.body.append(t);   // экранный диктор зачитает
+    const t = el('div', 'toast', text); document.body.append(t);
     if (tg && tg.HapticFeedback) try { tg.HapticFeedback.notificationOccurred('success'); } catch (e) {}
     setTimeout(() => t.remove(), 2400);
   }

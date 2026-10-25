@@ -436,7 +436,7 @@
   const status = (s) => (S.lists.statuses.find((x) => x[0] === s) || [s, s])[1];
   const plural = (n, a, b, c) => { const x = Math.abs(n) % 100, y = x % 10; return x > 10 && x < 20 ? c : y === 1 ? a : y >= 2 && y <= 4 ? b : c; };
   function toast(text) {
-    const t = el('div', { class: 'toast', role: 'status', 'aria-live': 'polite' }, text); document.body.append(t);   // экранный диктор зачитает
+    const t = el('div', 'toast', text); document.body.append(t);
     if (tg && tg.HapticFeedback) try { tg.HapticFeedback.notificationOccurred('success'); } catch (e) {}
     setTimeout(() => t.remove(), 2200);
   }
@@ -2023,7 +2023,7 @@
     sheets.push(rec); syncSheets();
     return sh;
   }
-  // подпись поля связана с самим полем (for/id): её читает экранный диктор, нажатие на подпись ставит курсор в поле
+  // подпись поля связана с самим полем (for/id): нажатие на подпись ставит курсор в поле
   let fieldIds = 0;
   function labelFor(label, ctl) {
     const lab = el('label', null, label);

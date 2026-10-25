@@ -68,7 +68,8 @@ function staticServer(dirs, port) {
 }
 
 // Проверка одной открытой страницы. skip — селектор областей, которые не проверяем (например, закрытое меню).
-async function checkPage(p, AXE, { skip = '', status, expect = 200, oneH1 = true, minTarget = 24 } = {}) {
+// axeOff — правила axe, которые здесь не проверяются (у мини-приложений бота — только для экранного диктора, он не нужен)
+async function checkPage(p, AXE, { skip = '', status, expect = 200, oneH1 = true, minTarget = 24, axeOff = [] } = {}) {
   await p.waitForTimeout(250);
   const m = await p.evaluate(([skip, minTarget]) => {
     const vw = document.documentElement.clientWidth;
@@ -94,11 +95,12 @@ async function checkPage(p, AXE, { skip = '', status, expect = 200, oneH1 = true
   let axe = [];
   if (AXE) {
     if (!(await p.evaluate(() => !!window.axe))) await p.addScriptTag({ content: AXE });
-    axe = await p.evaluate(async (skip) => {
+    axe = await p.evaluate(async ([skip, off]) => {
       const ctx = skip ? { exclude: skip.split(',').map((s) => [s.trim()]) } : document;
-      const r = await window.axe.run(ctx, { resultTypes: ['violations'], runOnly: ['wcag2a', 'wcag2aa', 'best-practice'] });
+      const rules = Object.fromEntries(off.map((id) => [id, { enabled: false }]));
+      const r = await window.axe.run(ctx, { resultTypes: ['violations'], runOnly: ['wcag2a', 'wcag2aa', 'best-practice'], rules });
       return r.violations.map((v) => `${v.id} ×${v.nodes.length}: ${v.nodes[0].target.join(' ')}`);
-    }, skip);
+    }, [skip, axeOff]);
   }
   const bad = [];
   if (status !== undefined && status !== expect) bad.push(`ответ ${status}`);
