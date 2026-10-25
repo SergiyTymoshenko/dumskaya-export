@@ -142,5 +142,20 @@
   "catalog": "content/shop/catalog/poliform.json",
   "sku_range": "DF-…7900–8399 (свет — DL- с теми же номерами)",
   "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
+ },
+ "misuraemme": {
+  "name": "MisuraEmme",
+  "legal": "MisuraEmme S.p.A.",
+  "country": "Италия",
+  "site": "https://www.misuraemme.it",
+  "address": "Via IV Novembre 72, 22066 Mariano Comense (CO), Italia",
+  "partner": "Александр Замлинский (Италия)",
+  "categories": [
+   "furniture",
+   "storage"
+  ],
+  "catalog": "content/shop/catalog/misuraemme.json",
+  "sku_range": "DF-…8400–8699 (свет — DL- с теми же номерами)",
+  "note": "Фабрика закреплена за партнёром студии Александром Замлинским (Италия): заявки на её товары — ему и его сотрудникам в боте."
  }
 }

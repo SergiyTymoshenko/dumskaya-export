@@ -6,7 +6,8 @@
 
 В папке с данными:
   <фабрика>.json          — что собрали краулеры этой папки (olev.json + olev_ds.json, baxter.json, flexform.json,
-                            molteni2.json, maxalto.json, delta.json, minotti.json, poliform.json);
+                            molteni2.json, maxalto.json, delta.json, minotti.json, poliform.json,
+                            misuraemme.json);
   dl-<фабрика>.tsv        — список скачанного: «путь в выгрузке<TAB>адрес» (его же качает dl.sh на Маке);
   manifest-<фабрика>.json — размеры фото и текст PDF (manifest.py на Маке);
   drawings-<фабрика>.json — чертежи, вырезанные из техкарт (drawings.py на Маке).
@@ -21,7 +22,7 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-FACTORIES = ["olev", "baxter", "flexform", "molteni", "maxalto", "delta", "minotti", "poliform"]
+FACTORIES = ["olev", "baxter", "flexform", "molteni", "maxalto", "delta", "minotti", "poliform", "misuraemme"]
 SITE_FILE = {"molteni": "molteni2.json"}
 
 
@@ -277,6 +278,16 @@ def site_poliform(work):
                                    "category", "new", "short_page", "images", "finishes", "files_2d3d_form")}
         q["text_en"], q["text_ru"] = clean(p.get("text_en")), clean(p.get("text_ru"))
         q["dimensions"] = p.get("dimensions") or []
+        out.append(q)
+    return out
+
+
+def site_misuraemme(work):
+    out = []
+    for p in load(work, "misuraemme.json"):
+        q = {k: p.get(k) for k in ("url", "slug", "title", "designer", "type", "images", "finishes", "dimensions",
+                                   "downloads_open", "downloads_login")}
+        q["text_en"], q["tech_en"] = clean(p.get("text_en")), clean(p.get("tech_en"))
         out.append(q)
     return out
 

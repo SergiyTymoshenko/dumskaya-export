@@ -1,4 +1,4 @@
-# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto, Minotti, Poliform)
+# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto, Minotti, Poliform, MisuraEmme)
 
 Откуда берутся `content/shop/sources/<фабрика>/` и каталоги `content/shop/catalog/<фабрика>.json`.
 У IDL — свой путь: `scripts/shop/idl_factory/README.md`.
@@ -21,11 +21,12 @@
    python3 delta_run.py                           # → delta.json, dl-delta.tsv и файлы в delta_files/ (долго: 20 с на запрос)
    python3 minotti.py                             # → minotti.json (≈ 20 минут: 1 запрос в секунду)
    python3 poliform.py                            # → poliform.json (EN + RU страницы, ≈ 25 минут)
+   python3 misuraemme.py                          # → misuraemme.json (≈ 3 минуты)
    ```
 
    Страницы кешируются в `cache/` — повторный запуск не ходит на сайт заново. Ничего из этого не хранится в git.
 
-2. **Списки файлов**: `python3 gen_dl.py olev baxter flexform molteni maxalto minotti poliform` → `dl-<фабрика>.tsv`
+2. **Списки файлов**: `python3 gen_dl.py olev baxter flexform molteni maxalto minotti poliform misuraemme` → `dl-<фабрика>.tsv`
    («путь в выгрузке<TAB>адрес»): до 8 фото на изделие и техкарты PDF (у Minotti ещё чертежи элементов
    с сайта — `images/shop/minotti/<изделие>/drawings/`). Уже скачанным путь не меняется.
 
@@ -66,6 +67,7 @@
 | Maxalto | EN тексты, техкарты (материалы) | чертёж из техкарты |
 | Minotti | EN тексты, дизайнер, элементы из «Technical Features» с чертежом каждого (см и дюймы), техкарты (материалы), схемы композиций (ссылка) | в названии элемента + его чертёж |
 | Poliform | EN и RU тексты, дизайнер и год, материалы (пары «Structure: …»), отделки с кодами, чертежи SVG из вкладки DIMENSIONS; техкарт PDF нет | на чертежах SVG (`manifest.py` берёт размер SVG по viewBox) |
+| MisuraEmme | EN текст и техническое описание, дизайнер, тип, отделки с кодами, чертежи PNG из «Dimensions» (оригинал вместо миниатюры); техкарта — версия страницы для печати (ссылка) | в подписи чертежа в мм («W. 824 x D. 816 mm», «ø1550») → см |
 
 Чертежи Delta Light — векторные SVG; `width`/`height` в каталоге — размеры из `viewBox` (у многих 128×128),
 это не пиксели. На сайт их отдавать как SVG или растрировать с повышенной плотностью
@@ -84,3 +86,7 @@ Poliform: файлы 2D/3D (DWG, 3DM, FBX, MAX, SKP) отдаются тольк
 **Не терять то, что за регистрацией.** Что фабрика даёт только после входа (2D/3D, BIM, фото высокого разрешения,
 размеры у Rugiano), в каталоге отмечено ссылкой `links.files_2d3d`, а если адреса видны — списком `files_after_login`.
 Сводка по фабрикам — в «Плане работы по фабрикам».
+
+MisuraEmme: в карте сайта есть снятые изделия — их адреса ведут на главную, сборщик их пропускает (как и разделы-списки).
+Фото высокого разрешения и 2D/3D (PDF, DWG, 3DS) — после входа: в каталоге ссылки `links.files_2d3d`, `links.photos_hr`
+и список `files_after_login` (что есть; адрес — страница изделия).

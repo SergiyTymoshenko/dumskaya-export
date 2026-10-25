@@ -57,14 +57,14 @@ def sheet_ref(it, mf):
             "pages": [[n, str(n), "чертёж"] for n in pages] or [[1, "1", None]]}
 
 
-FMT = re.compile(r"\b(DWG|DXF|3DM|FBX|MAX|SKP|OBJ|3DS|RFA|IFC|STEP|STP)\b")
+FMT = re.compile(r"\b(DWG|DXF|3DM|FBX|MAX|SKP|OBJ|3DS|RFA|IFC|STEP|STP|PDF)\b", re.I)
 
 
 def models_ref(it):
     """2D/3D модели изделия. Сами файлы в базу не качаем — дизайнеру подсказка: что есть, где скачать и нужен ли вход.
     [{"what": "2D/3D", "formats": ["DWG", "SKP"], "url": страница или файл у фабрики, "how": как получить}]"""
     links, out = it.get("links") or {}, []
-    gated = list(dict.fromkeys(m for f in it.get("files_after_login") or [] for m in FMT.findall(f.get("title") or "")))
+    gated = list(dict.fromkeys(m.upper() for f in it.get("files_after_login") or [] for m in FMT.findall(f.get("title") or "")))
     for key, what in (("files_2d3d", "2D/3D"), ("bim", "BIM"), ("files_2d", "2D"), ("model_3d", "3D")):
         v = links.get(key)
         if not v:

@@ -660,6 +660,71 @@ def poliform():
     return out
 
 
+def mm_dims(name):
+    """Размеры MisuraEmme (в мм) → см: «W. 824 x D. 816 mm», «W.2300 mm», «mattress size 1600 x 2000 mm», «H.740»."""
+    s = (name or "").replace(",", ".")                 # у MisuraEmme размеры всегда в мм, даже без «mm»
+    n = r"(\d+(?:\.\d+)?)"
+    cm = lambda x: (lambda v: int(v) if v == int(v) else round(v, 1))(float(x) / 10)
+    out = {}
+    for lab, key in (("W|L", "l"), ("D|P", "w"), ("H", "h")):
+        m = re.search(r"\b(?:" + lab + r")\.?\s*" + n, s)
+        if m:
+            out[key] = cm(m.group(1))
+    if not out:
+        m = re.search(n + r"\s*x\s*" + n + r"(?:\s*x\s*" + n + r")?", s)
+        if m:
+            out = {"l": cm(m.group(1)), "w": cm(m.group(2))} | ({"h": cm(m.group(3))} if m.group(3) else {})
+    m = re.search(r"[øØ∅]\s*" + n, s)
+    if m and "l" not in out:
+        out["d"] = cm(m.group(1))
+    return out or None
+
+
+def misuraemme():
+    """MisuraEmme: товар — страница изделия (EN). Исполнения — подписи чертежей «Dimensions» (размеры там в мм, у нас — см);
+    отделки с кодами; текст и техническое описание. Фото высокого разрешения и 2D/3D (PDF, DWG, 3DS) — после входа:
+    не скачаны, в files_after_login — что есть (адрес — страница изделия, где после входа их скачать)."""
+    files, _ = files_of("misuraemme")
+    T = {"systems": "storage", "day systems": "storage", "night systems": "wardrobe", "small tables": "coffee_table",
+         "doors": "doors", "night complements": "bedside", "complements": "decor"}
+    out = []
+    for p in json.load(open(os.path.join(SRC, "misuraemme/site.json"), encoding="utf-8")):
+        kind = p.get("type") or ""
+        t = T.get(kind.lower()) or kw(kind) or kw(p["slug"].replace("-", " ")) or kw(p.get("title")) or "decor"
+        if t == "decor":                                  # «Accessories»: что именно — по чертежам и первой фразе текста
+            first = re.split(r"(?<=[.!?])\s", p.get("text_en") or "", maxsplit=1)[0]
+            t = majority([v.get("title") for v in p.get("dimensions") or []]) or kw(first) or t
+        if t == "lamp":
+            t = "floor" if re.search(r"floor", (p.get("title") or "") + " " + (p.get("text_en") or "")[:300], re.I) else "table_lamp"
+        model = smart_title(p.get("title"), mixed=True)
+        vers, drw = [], []
+        for v in p.get("dimensions") or []:
+            nm = v.get("title") or ""
+            if nm and nm not in [x["name"]["en"] for x in vers]:
+                vers.append({k: x for k, x in {"name": {"en": nm}, "dims_cm": mm_dims(nm)}.items() if x})
+            d = img(files, v.get("drawing"))
+            if d:
+                drw.append({k: d[k] for k in ("file", "width", "height", "bytes")} | {"source": {"site": d["src"], "version": nm or None}})
+        login = p.get("downloads_login") or []
+        models = [x for x in login if re.search(r"2D|3D", x, re.I)]
+        links = {"page": p["url"]}
+        sheet_page = next((x["url"] for x in p.get("downloads_open") or [] if "data sheet" in (x.get("title") or "").lower()), None)
+        if sheet_page:
+            links["datasheet_page"] = sheet_page
+        if models:
+            links["files_2d3d"] = p["url"] + "  (2D/3D — после входа на сайте MisuraEmme)"
+        if any(re.search(r"\bHR\b", x) for x in login):
+            links["photos_hr"] = p["url"] + "  (фото высокого разрешения — после входа на сайте MisuraEmme)"
+        out.append({"mfr_key": p["slug"], "model": model, "type": t, "collection": slug(model_for_name(model, t)),
+                    "category": kind or None, "designer": p.get("designer") or None, "place": ["indoor"], "mfr_code": None,
+                    "text": {"en": p.get("text_en")}, "tech": {"en": p.get("tech_en")} if p.get("tech_en") else None,
+                    "finishes": p.get("finishes") or None, "versions": vers,
+                    "images": [x for x in (img(files, u) for u in p.get("images") or []) if x],
+                    "drawings": drw, "sheets": [], "links": links,
+                    "files_after_login": [{"title": x, "url": p["url"]} for x in models]})
+    return out
+
+
 FACT = {
     "olev": {"fn": olev, "kind": "light", "range": (3000, 3399), "name": "OLEV", "site": "https://www.olevlight.com/en/"},
     "delta": {"fn": delta, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
@@ -669,6 +734,7 @@ FACT = {
     "maxalto": {"fn": maxalto, "kind": "furn", "range": (6800, 7099), "name": "Maxalto", "site": "https://www.maxalto.com/en"},
     "minotti": {"fn": minotti, "kind": "furn", "range": (7100, 7899), "name": "Minotti", "site": "https://www.minotti.com/en"},
     "poliform": {"fn": poliform, "kind": "furn", "range": (7900, 8399), "name": "Poliform", "site": "https://www.poliform.it/en/"},
+    "misuraemme": {"fn": misuraemme, "kind": "furn", "range": (8400, 8699), "name": "MisuraEmme", "site": "https://www.misuraemme.it/en/"},
 }
 
 
