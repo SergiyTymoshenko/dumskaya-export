@@ -97,8 +97,8 @@
   .charges { list-style: none; margin: 10px 0 0; padding: 0; }
   .charges li { display: flex; justify-content: space-between; gap: 8px; padding: 7px 0; border-top: 1px dashed var(--grid); font-size: calc(15px * var(--k)); flex-wrap: wrap; }
   .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-  h3.grp { font-size: calc(15px * var(--k)); font-weight: 650; margin: 14px 0 8px; }
-  h3.grp:first-child { margin-top: 0; }
+  .grp { font-size: calc(15px * var(--k)); font-weight: 650; margin: 14px 0 8px; }        /* группа (помещение) в «Документах»: h2 под h1 страницы */
+  .grp:first-child { margin-top: 0; }
   details.older { margin: 2px 0 8px; }
   details.older summary { cursor: pointer; color: var(--text-2); font-size: calc(14px * var(--k)); padding: 6px 0; min-height: 32px; }
   ol.stages { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 8px; }
@@ -183,6 +183,19 @@
   .viewer .bar2 { display: flex; gap: 8px; padding: 10px 12px calc(12px + var(--sab)); justify-content: center; flex-wrap: wrap; }
   .viewer .bar2 .btn { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.18); }
   .viewer .cap { color: #ddd; font-size: calc(14px * var(--k)); text-align: center; padding: 10px 12px 0; overflow-wrap: anywhere; }
+  /* листание фото раздела: счётчик «3 / 12», стрелки по бокам, свайп пальцем, ← → на компьютере */
+  .viewer .img { position: relative; }
+  .viewer .pos { color: #fff; font-weight: 700; font-size: calc(15px * var(--k)); text-align: center; padding: 10px 12px 0; font-variant-numeric: tabular-nums; }
+  .viewer .pos + .cap { padding-top: 4px; }
+  .viewer .vnav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; width: calc(48px * var(--k)); height: calc(64px * var(--k));
+    border-radius: 14px; border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.5); color: #fff; font-size: calc(34px * var(--k)); line-height: 1;
+    display: flex; align-items: center; justify-content: center; padding: 0 0 4px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .viewer .vnav.prev { left: 6px; } .viewer .vnav.next { right: 6px; }
+  .viewer .vnav:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+  .viewer img.in-next { animation: vin-next .22s ease-out; } .viewer img.in-prev { animation: vin-prev .22s ease-out; }
+  @keyframes vin-next { from { transform: translateX(35%); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes vin-prev { from { transform: translateX(-35%); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .viewer img.in-next, .viewer img.in-prev { animation: none; } }
   .pcard { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 14px; cursor: pointer; text-align: left; width: 100%; display: block; margin: 0 0 10px; }
   .pcard .title { font-size: calc(19px * var(--k)); font-weight: 650; margin: 4px 0 2px; overflow-wrap: anywhere; }
   .loading { opacity: .55; transition: opacity .2s; }
@@ -268,7 +281,7 @@
       rest: 'Осталось доплатить: {x}', fully_paid: 'Оплачено полностью',
       docs_empty: 'Документов пока нет. Студия добавит их по ходу проекта.',
       cat_measure: 'Обмерный план', cat_brief: 'Опросник', cat_before: 'До', cat_visual: 'Визуализации', cat_docs: 'Документация', cat_after: 'После',
-      open: 'Открыть', close: 'Закрыть', chat_empty: 'Здесь ваша переписка с Ириной. Напишите вопрос — она ответит здесь и в Telegram.',
+      open: 'Открыть', close: 'Закрыть', prev_photo: 'Предыдущее фото', next_photo: 'Следующее фото', chat_empty: 'Здесь ваша переписка с Ириной. Напишите вопрос — она ответит здесь и в Telegram.',
       placeholder: 'Сообщение…', attach: 'Прикрепить фото или файл', auto: 'автоперевод', show_orig: 'оригинал', show_tr: 'перевод', you: 'Вы',
       sending: 'Отправляю…', uploading: 'Загружаю файл…', too_big: 'Файл больше 20 МБ', today: 'Сегодня', yesterday: 'Вчера',
       settings: 'Настройки', language: 'Язык', text_size: 'Размер текста', size_m: 'Обычный', size_l: 'Крупный', size_xl: 'Очень крупный', saved: 'Сохранено',
@@ -345,7 +358,7 @@
       rest: 'Залишилося доплатити: {x}', fully_paid: 'Сплачено повністю',
       docs_empty: 'Документів поки немає. Студія додасть їх під час роботи над проєктом.',
       cat_measure: 'Обмірний план', cat_brief: 'Опитувальник', cat_before: 'До', cat_visual: 'Візуалізації', cat_docs: 'Документація', cat_after: 'Після',
-      open: 'Відкрити', close: 'Закрити', chat_empty: 'Тут ваше листування з Іриною. Напишіть запитання — вона відповість тут і в Telegram.',
+      open: 'Відкрити', close: 'Закрити', prev_photo: 'Попереднє фото', next_photo: 'Наступне фото', chat_empty: 'Тут ваше листування з Іриною. Напишіть запитання — вона відповість тут і в Telegram.',
       placeholder: 'Повідомлення…', attach: 'Додати фото або файл', auto: 'автопереклад', show_orig: 'оригінал', show_tr: 'переклад', you: 'Ви',
       sending: 'Надсилаю…', uploading: 'Завантажую файл…', too_big: 'Файл більший за 20 МБ', today: 'Сьогодні', yesterday: 'Учора',
       settings: 'Налаштування', language: 'Мова', text_size: 'Розмір тексту', size_m: 'Звичайний', size_l: 'Великий', size_xl: 'Дуже великий', saved: 'Збережено',
@@ -422,7 +435,7 @@
       rest: 'Left to pay: {x}', fully_paid: 'Paid in full',
       docs_empty: 'No documents yet. The studio will add them as the project goes on.',
       cat_measure: 'Measured plan', cat_brief: 'Questionnaire', cat_before: 'Before', cat_visual: 'Renderings', cat_docs: 'Documentation', cat_after: 'After',
-      open: 'Open', close: 'Close', chat_empty: 'This is your chat with Irina. Ask a question — she will reply here and in Telegram.',
+      open: 'Open', close: 'Close', prev_photo: 'Previous photo', next_photo: 'Next photo', chat_empty: 'This is your chat with Irina. Ask a question — she will reply here and in Telegram.',
       placeholder: 'Message…', attach: 'Attach a photo or file', auto: 'auto-translated', show_orig: 'original', show_tr: 'translation', you: 'You',
       sending: 'Sending…', uploading: 'Uploading file…', too_big: 'The file is larger than 20 MB', today: 'Today', yesterday: 'Yesterday',
       settings: 'Settings', language: 'Language', text_size: 'Text size', size_m: 'Normal', size_l: 'Large', size_xl: 'Extra large', saved: 'Saved',
@@ -499,7 +512,7 @@
       rest: 'Zostáva doplatiť: {x}', fully_paid: 'Zaplatené v plnej výške',
       docs_empty: 'Zatiaľ žiadne dokumenty. Štúdio ich pridá počas projektu.',
       cat_measure: 'Zameranie', cat_brief: 'Dotazník', cat_before: 'Pred', cat_visual: 'Vizualizácie', cat_docs: 'Dokumentácia', cat_after: 'Po',
-      open: 'Otvoriť', close: 'Zavrieť', chat_empty: 'Tu je vaša konverzácia s Irinou. Napíšte otázku — odpovie tu aj v Telegrame.',
+      open: 'Otvoriť', close: 'Zavrieť', prev_photo: 'Predchádzajúca fotka', next_photo: 'Ďalšia fotka', chat_empty: 'Tu je vaša konverzácia s Irinou. Napíšte otázku — odpovie tu aj v Telegrame.',
       placeholder: 'Správa…', attach: 'Priložiť fotku alebo súbor', auto: 'automatický preklad', show_orig: 'originál', show_tr: 'preklad', you: 'Vy',
       sending: 'Odosielam…', uploading: 'Nahrávam súbor…', too_big: 'Súbor má viac ako 20 MB', today: 'Dnes', yesterday: 'Včera',
       settings: 'Nastavenia', language: 'Jazyk', text_size: 'Veľkosť textu', size_m: 'Normálny', size_l: 'Veľký', size_xl: 'Veľmi veľký', saved: 'Uložené',
@@ -576,7 +589,7 @@
       rest: 'Noch zu zahlen: {x}', fully_paid: 'Vollständig bezahlt',
       docs_empty: 'Noch keine Unterlagen. Das Studio fügt sie im Laufe des Projekts hinzu.',
       cat_measure: 'Aufmaß', cat_brief: 'Fragebogen', cat_before: 'Vorher', cat_visual: 'Visualisierungen', cat_docs: 'Dokumentation', cat_after: 'Nachher',
-      open: 'Öffnen', close: 'Schließen', chat_empty: 'Hier ist Ihr Chat mit Irina. Stellen Sie Ihre Frage — sie antwortet hier und in Telegram.',
+      open: 'Öffnen', close: 'Schließen', prev_photo: 'Vorheriges Foto', next_photo: 'Nächstes Foto', chat_empty: 'Hier ist Ihr Chat mit Irina. Stellen Sie Ihre Frage — sie antwortet hier und in Telegram.',
       placeholder: 'Nachricht…', attach: 'Foto oder Datei anhängen', auto: 'automatisch übersetzt', show_orig: 'Original', show_tr: 'Übersetzung', you: 'Sie',
       sending: 'Wird gesendet…', uploading: 'Datei wird hochgeladen…', too_big: 'Die Datei ist größer als 20 MB', today: 'Heute', yesterday: 'Gestern',
       settings: 'Einstellungen', language: 'Sprache', text_size: 'Schriftgröße', size_m: 'Normal', size_l: 'Groß', size_xl: 'Sehr groß', saved: 'Gespeichert',
@@ -793,9 +806,11 @@
     if (V && canList()) { V = null; PID = null; TH = null; stopChat(); render(); }
   }
   if (tg && tg.BackButton) tg.BackButton.onClick(goBack);
-  document.addEventListener('keydown', (e) => {          // компьютер: Esc — закрыть просмотр или окно, ⌘/Ctrl+Enter — сохранить форму
+  document.addEventListener('keydown', (e) => {          // компьютер: Esc — закрыть просмотр или окно, ← → — листать фото, ⌘/Ctrl+Enter — сохранить форму
     const top = sheets[sheets.length - 1], v = document.querySelector('.viewer');
     if (e.key === 'Escape') { if (v) { v.remove(); backBtn(); } else if (top && !top.run) closeSheet(top.el); }
+    if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && v && v.go && !e.altKey && !e.metaKey && !e.ctrlKey
+      && !/^(INPUT|SELECT|TEXTAREA)$/.test((document.activeElement || {}).tagName || '')) { e.preventDefault(); v.go(e.key === 'ArrowRight' ? 1 : -1); }
     if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && top && top.run) { e.preventDefault(); top.run(); }
   });
   const takesFiles = () => { const top = sheets[sheets.length - 1]; return document.querySelector('.viewer') ? null : top ? top.files || null : dropTo; };
@@ -1154,8 +1169,9 @@
     const groups = order.map((r) => [r, list.filter((f) => f.room === r)]).filter(([, l]) => l.length);
     const rest = list.filter((f) => !f.room);
     if (!groups.length) return gallery(rest);
-    const out = el('div');
-    groups.concat(rest.length ? [[T('no_room'), rest]] : []).forEach(([r, l]) => out.append(el('h3', { class: 'grp' }, r + ' · ' + l.length), gallery(l)));
+    const out = el('div'), all = groups.concat(rest.length ? [[T('no_room'), rest]] : []);
+    const seq = all.flatMap(([, l]) => l);               // в просмотре фото листаются подряд через все помещения
+    all.forEach(([r, l]) => out.append(el('h2', { class: 'grp' }, r + ' · ' + l.length), gallery(l, seq)));
     return out;
   }
   // документы: версии одного документа (одна подпись) — последняя сверху, прежние — свёрнуты
@@ -1165,9 +1181,10 @@
     const groups = new Map();
     list.forEach((f) => { const k = keyOf(f); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(f); });
     const out = el('div');
+    groups.forEach((l) => l.sort((a, b) => (b.ver || 1) - (a.ver || 1) || b.id - a.id));
+    const latest = [...groups.values()].map((l) => l[0]);   // в просмотре листаются последние версии
     groups.forEach((l) => {
-      l.sort((a, b) => (b.ver || 1) - (a.ver || 1) || b.id - a.id);
-      out.append(docRows([l[0]], true));
+      out.append(docRows([l[0]], true, latest));
       if (l.length > 1) {
         const det = el('details', { class: 'older' }, el('summary', null, T('prev_versions', { n: l.length - 1 })));
         det.append(docRows(l.slice(1), true)); out.append(det);
@@ -1175,9 +1192,9 @@
     });
     return out;
   }
-  function gallery(list) {
+  function gallery(list, seq) {               // seq — по чему листать в просмотре (весь раздел), по умолчанию — эта же сетка
     const g = el('div', 'gallery');
-    list.forEach((f) => g.append(fileTile(f, list)));
+    list.forEach((f) => g.append(fileTile(f, seq || list)));
     // исполнителям и подрядчикам — что видит заказчик: ⏳ ждёт одобрения Ирины, ✓ видит, — не показан
     const cnt = {};
     list.forEach((f) => { if (f.approval) cnt[f.approval] = (cnt[f.approval] || 0) + 1; });
@@ -1185,9 +1202,9 @@
     if (!keys.length) return g;
     return el('div', null, g, el('div', { class: 'sub', style: 'margin-top:6px' }, keys.map((k) => apprText({ approval: k }) + ' · ' + cnt[k]).join('\n')));
   }
-  function docRows(list, withVer) {
+  function docRows(list, withVer, seq) {
     const ul = el('ul', 'list');
-    list.forEach((f) => ul.append(el('li', null, el('div', 'drow', fileTile(f, list), el('div', 'grow',
+    list.forEach((f) => ul.append(el('li', null, el('div', 'drow', fileTile(f, seq || list), el('div', 'grow',
       el('b', { style: 'display:block;overflow-wrap:anywhere' }, f.title || f.name),
       el('div', 'sub', [withVer || (f.ver || 1) > 1 ? T('ver_n', { n: f.ver || 1 }) : '', f.owner_name, f.owner_role, f.room, dfmt(f.created, true)].filter(Boolean).join(' · ')),
       f.audience ? el('div', 'sub', '👁 ' + f.audience) : f.can_edit && f.vis && !f.approval ? el('div', 'sub', '👁 ' + visName(f)) : null,
@@ -1195,10 +1212,10 @@
     return ul;
   }
   function fileTile(f, list) {
-    const doc = () => el('button', { class: 'doc', type: 'button', onclick: () => viewer(f) },
+    const doc = () => el('button', { class: 'doc', type: 'button', onclick: () => viewer(f, list) },
       el('span', 'ext', ((f.name || '').split('.').pop() || '').slice(0, 5).toUpperCase()), el('span', 'nm', f.title || f.name), el('span', 'muted', ''));
     if (f.image && (f.thumb_url || f.url)) {
-      const b = el('button', { class: 'thumb', type: 'button', 'aria-label': f.name, onclick: () => viewer(f) });
+      const b = el('button', { class: 'thumb', type: 'button', 'aria-label': f.name, onclick: () => viewer(f, list) });
       const img = el('img', { src: f.thumb_url || f.url, alt: f.name, loading: 'lazy' });
       img.addEventListener('error', () => b.replaceWith(doc()));
       b.append(img);
@@ -1207,13 +1224,31 @@
     }
     return doc();
   }
-  function viewer(f) {
-    const v = el('div', 'viewer');
+  // просмотр файла; фото листаются по всему разделу (list — в том порядке, как на экране): свайп, стрелки ‹ ›, ← → на компьютере
+  function viewer(f, list, dir) {
+    const v = el('div', { class: 'viewer', role: 'dialog', 'aria-modal': 'true', 'aria-label': f.title || f.name || '' });
     const box = el('div', 'img');
-    if (f.image && f.url) { const pic = el('img', { src: f.url, alt: f.name }); box.append(pic); }
+    let pic = null;
+    if (f.image && f.url) { pic = el('img', { src: f.url, alt: f.name, class: dir > 0 ? 'in-next' : dir < 0 ? 'in-prev' : '' }); box.append(pic); }
     else box.append(el('div', { style: 'color:#fff;text-align:center' }, el('div', { style: 'font-size:calc(48px * var(--k))' }, '📄'), f.name));
+    const seq = (list || []).filter(isPic), i = seq.indexOf(f), many = i >= 0 && seq.length > 1;
+    if (many) {
+      const go = (d) => {
+        const y = seq[i + d];
+        if (!y) return;
+        const kb = document.activeElement && document.activeElement.classList.contains('vnav');
+        const nv = viewer(y, list, d);
+        v.remove();
+        if (kb) (nv.querySelector(d > 0 ? '.vnav.next' : '.vnav.prev') || nv.querySelector('.vnav') || nv).focus();
+      };
+      v.go = go;
+      if (i > 0) box.append(el('button', { class: 'vnav prev', type: 'button', 'aria-label': T('prev_photo'), title: T('prev_photo') + ' (←)', onclick: () => go(-1) }, '‹'));
+      if (i < seq.length - 1) box.append(el('button', { class: 'vnav next', type: 'button', 'aria-label': T('next_photo'), title: T('next_photo') + ' (→)', onclick: () => go(1) }, '›'));
+      swipe(box, pic, go, i > 0, i < seq.length - 1);
+      [seq[i - 1], seq[i + 1]].forEach((y) => { if (y) new Image().src = y.url; });   // соседние фото — заранее
+    }
     const own = f.can_edit && !readonly();
-    v.append(el('div', 'cap', [f.title, f.name].filter(Boolean).join(' · ') + (f.owner_name ? ' · ' + f.owner_name : '') + (f.vis && own && !f.approval ? ' · 👁 ' + visName(f) : '') + (f.approval ? ' · ' + apprText(f) : '')), box, el('div', 'bar2',
+    v.append(many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null, el('div', 'cap', [f.title, f.name].filter(Boolean).join(' · ') + (f.owner_name ? ' · ' + f.owner_name : '') + (f.vis && own && !f.approval ? ' · 👁 ' + visName(f) : '') + (f.approval ? ' · ' + apprText(f) : '')), box, el('div', 'bar2',
       f.url ? el('button', { class: 'btn small', type: 'button', onclick: () => openLink(f.url) }, '↗ ' + T('open')) : null,
       own ? el('button', { class: 'btn small', type: 'button', onclick: () => { v.remove(); docSheet(f); } }, '👁 ' + T('who_sees')) : null,
       own ? el('button', { class: 'btn small', type: 'button', style: 'color:#ff8a8a', onclick: async () => {
@@ -1222,6 +1257,39 @@
       } }, T('delete')) : null,
       el('button', { class: 'btn small', type: 'button', onclick: () => { v.remove(); backBtn(); } }, T('close'))));
     document.body.append(v); backBtn();
+    return v;
+  }
+  const isPic = (y) => !!(y && y.image && y.url);
+  // листание пальцем: фото едет за пальцем; дальше 60 px или быстрый взмах — следующее / предыдущее, у края — пружинит назад.
+  // Вертикальный жест, два пальца и увеличенный экран не трогаем.
+  function swipe(area, pic, go, hasPrev, hasNext) {
+    let x0 = null, y0 = 0, t0 = 0, dx = 0, axis = null;
+    const zoomed = () => !!(window.visualViewport && window.visualViewport.scale > 1.05);
+    const reset = () => { if (pic) { pic.style.transition = 'transform .2s ease-out'; pic.style.transform = ''; } };
+    area.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1 || zoomed() || e.target.closest('.vnav')) { x0 = null; return; }
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; t0 = Date.now(); dx = 0; axis = null;
+      if (pic) pic.style.transition = 'none';
+    }, { passive: true });
+    area.addEventListener('touchmove', (e) => {
+      if (x0 === null) return;
+      if (e.touches.length !== 1) { x0 = null; reset(); return; }
+      const mx = e.touches[0].clientX - x0, my = e.touches[0].clientY - y0;
+      if (!axis && Math.abs(mx) + Math.abs(my) > 10) axis = Math.abs(mx) > Math.abs(my) ? 'x' : 'y';
+      if (axis !== 'x') return;
+      e.preventDefault();
+      dx = mx;
+      const edge = (dx > 0 && !hasPrev) || (dx < 0 && !hasNext);
+      if (pic) pic.style.transform = 'translateX(' + Math.round(edge ? dx / 4 : dx) + 'px)';
+    }, { passive: false });
+    area.addEventListener('touchend', () => {
+      if (x0 === null) return;
+      x0 = null;
+      const d = dx < 0 ? 1 : -1, far = Math.abs(dx) > 60 || (Math.abs(dx) > 25 && Date.now() - t0 < 250);
+      if (axis === 'x' && far && (d > 0 ? hasNext : hasPrev)) return go(d);
+      reset();
+    });
+    area.addEventListener('touchcancel', () => { x0 = null; reset(); });
   }
   function visPicker(cur, crew) {      // кто видит документ — крупные кнопки по одной в строке (документ работника — свои варианты)
     let val = cur;

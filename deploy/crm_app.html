@@ -173,6 +173,19 @@
   .viewer .bar2 .btn { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.18); }
   .viewer .bar2 select.btn { max-width: 100%; min-width: 0; text-overflow: ellipsis; }
   .viewer .cap { color: #ddd; font-size: calc(13px * var(--k)); text-align: center; padding: 10px 12px 0; overflow-wrap: anywhere; }
+  /* листание фото раздела: счётчик «3 / 12», стрелки по бокам (крупные — для плохого зрения), свайп пальцем, ← → на компьютере */
+  .viewer .img { position: relative; }
+  .viewer .pos { color: #fff; font-weight: 700; font-size: calc(15px * var(--k)); text-align: center; padding: 10px 12px 0; font-variant-numeric: tabular-nums; }
+  .viewer .pos + .cap { padding-top: 4px; }
+  .viewer .vnav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; width: calc(48px * var(--k)); height: calc(64px * var(--k));
+    border-radius: 14px; border: 1px solid rgba(255,255,255,.3); background: rgba(0,0,0,.5); color: #fff; font-size: calc(34px * var(--k)); line-height: 1;
+    display: flex; align-items: center; justify-content: center; padding: 0 0 4px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .viewer .vnav.prev { left: 6px; } .viewer .vnav.next { right: 6px; }
+  .viewer .vnav:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+  .viewer img.in-next { animation: vin-next .22s ease-out; } .viewer img.in-prev { animation: vin-prev .22s ease-out; }
+  @keyframes vin-next { from { transform: translateX(35%); opacity: 0; } to { transform: none; opacity: 1; } }
+  @keyframes vin-prev { from { transform: translateX(-35%); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .viewer img.in-next, .viewer img.in-prev { animation: none; } }
   .chart { position: relative; }
   .chart svg { display: block; width: 100%; height: auto; overflow: visible; }
   .chart text { fill: var(--muted); font-size: calc(11px * var(--k)); font-variant-numeric: tabular-nums; }
@@ -473,9 +486,11 @@
     if (sheets.length) return closeSheet(sheets[sheets.length - 1].el);
     back();
   });
-  document.addEventListener('keydown', (e) => {          // на компьютере: Esc — закрыть просмотр, ⌘/Ctrl+Enter — сохранить форму
+  document.addEventListener('keydown', (e) => {          // на компьютере: Esc — закрыть просмотр, ← → — листать фото, ⌘/Ctrl+Enter — сохранить форму
     const top = sheets[sheets.length - 1], v = document.querySelector('.viewer');
     if (e.key === 'Escape') { if (v) closeViewer(v); else if (top && !top.run) closeSheet(top.el); }
+    if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && v && v.go && !e.altKey && !e.metaKey && !e.ctrlKey
+      && !/^(INPUT|SELECT|TEXTAREA)$/.test((document.activeElement || {}).tagName || '')) { e.preventDefault(); v.go(e.key === 'ArrowRight' ? 1 : -1); }
     if (e.key === 'Enter' && (e.metaKey || e.ctrlKey) && top && top.run) { e.preventDefault(); top.run(); }
   });
   document.querySelectorAll('.nav button').forEach((b) => b.addEventListener('click', () => {
@@ -790,7 +805,8 @@
       const ag = agreed(curVer);
       f.append(el('div', { class: 'row between', style: 'gap:8px;flex-wrap:wrap;margin:0 0 10px' },
         el('span', 'small muted', fileTab === 'visual' && tarif.revisions != null ? 'По пакету «' + p.tariff + '» правок: ' + tarif.revisions + (curVer - 1 > tarif.revisions ? ' — эта сверх пакета' : '') : ''),
-        list.some((x) => (x.ver || 1) === curVer) ? el('button', { class: 'btn small' + (ag ? ' primary' : ''), type: 'button', onclick: async () => {
+        list.some((x) => (x.ver || 1) === curVer) ? el('button', { class: 'btn small' + (ag ? ' primary' : ''), type: 'button',
+          style: 'white-space:normal;flex:0 1 auto;max-width:100%;text-align:center', onclick: async () => {   // очень крупный текст на узком телефоне — в две строки, без прокрутки вбок
           try { await refresh(await save('round', { project_id: p.id, category: fileTab, ver: curVer, agreed: !ag })); toast(ag ? 'Отметка снята' : 'Отмечено: заказчик согласовал'); } catch (e) { toast(e.message); }
         } }, ag ? '✓ Заказчик согласовал · ' + dfmt(ag.agreed) : 'Отметить: заказчик согласовал') : null));
       list = list.filter((x) => (x.ver || 1) === curVer);
@@ -807,19 +823,24 @@
       list.forEach((x) => { if (x.room && !order.includes(x.room)) order.push(x.room); });
       const groups = order.map((r) => [r, list.filter((x) => x.room === r)]).filter(([, l]) => l.length);
       const rest = list.filter((x) => !x.room);
-      groups.concat(rest.length ? [['', rest]] : []).forEach(([r, l]) => {
+      const all = groups.concat(rest.length ? [['', rest]] : []);
+      const seq = all.flatMap(([, l]) => l);           // в просмотре фото листаются подряд через все помещения раздела
+      all.forEach(([r, l]) => {
         if (groups.length) f.append(el('h3', { class: 'grp' }, (r || 'Без помещения') + ' · ' + l.length));
-        f.append(galleryOf(l));
+        f.append(galleryOf(l, seq));
       });
     } else {                                         // документы: версии одного документа — последняя, прежние свёрнуты
       const groups = new Map();
       list.forEach((x) => { const k = (x.title || x.name || '').trim(); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(x); });
       if (![...groups.values()].some((l) => l.length > 1 && l.some((x) => (x.ver || 1) > 1))) f.append(galleryOf(list));
-      else groups.forEach((l, k) => {
-        l.sort((a, b) => (b.ver || 1) - (a.ver || 1) || b.id - a.id);
-        f.append(el('div', 'drow', fileTile(l[0], l), el('div', 'who', el('b', null, k), el('span', null, 'Версия ' + (l[0].ver || 1) + ' · ' + dfmt(l[0].created)))));
-        if (l.length > 1) f.append(el('details', { class: 'older' }, el('summary', null, 'Предыдущие версии · ' + (l.length - 1)), galleryOf(l.slice(1))));
-      });
+      else {
+        groups.forEach((l) => l.sort((a, b) => (b.ver || 1) - (a.ver || 1) || b.id - a.id));
+        const latest = [...groups.values()].map((l) => l[0]);   // в просмотре листаются последние версии документов
+        groups.forEach((l, k) => {
+          f.append(el('div', 'drow', fileTile(l[0], latest), el('div', 'who', el('b', null, k), el('span', null, 'Версия ' + (l[0].ver || 1) + ' · ' + dfmt(l[0].created)))));
+          if (l.length > 1) f.append(el('details', { class: 'older' }, el('summary', null, 'Предыдущие версии · ' + (l.length - 1)), galleryOf(l.slice(1))));
+        });
+      }
     }
     // фото-разделы — выбор из фото и камеры; остальные — любые файлы (PDF, DWG, Word, Excel…)
     const input = el('input', { type: 'file', multiple: true, style: 'display:none', accept: S.lists.photo_cats.includes(fileTab) ? 'image/*,video/*,application/pdf' : null });
@@ -1101,9 +1122,9 @@
   const catName = (c) => (c === 'work' ? 'От подрядчиков' : ((S.lists.file_cats || []).find((x) => x[0] === c) || ['', c])[1]);
   // «Вариант 2» (планировки), «Первый вариант», «Правка 1» (визуализации), «Версия 3» (документы)
   const verName = (c, n) => (c === 'plan' ? 'Вариант ' + n : c === 'visual' ? (n <= 1 ? 'Первый вариант' : 'Правка ' + (n - 1)) : 'Версия ' + n);
-  function galleryOf(list) {
+  function galleryOf(list, seq) {                 // seq — по чему листать в просмотре (весь раздел), по умолчанию — эта же сетка
     const g = el('div', 'gallery');
-    list.forEach((x) => { const t = fileTile(x, list); if (x.see_client != null || x.see_crew != null) t.classList.add('custom'); g.append(t); });
+    list.forEach((x) => { const t = fileTile(x, seq || list); if (x.see_client != null || x.see_crew != null) t.classList.add('custom'); g.append(t); });
     return g;
   }
   async function approve(x, show) {             // документ подрядчика, исполнителя, работника, сотрудника — заказчику или нет
@@ -1123,19 +1144,37 @@
     return docTile(x, list);
   }
 
-  function viewer(x, list) {
-    const v = el('div', 'viewer');
+  // просмотр файла; фото листаются по всему разделу (list — в том порядке, как на экране): свайп, стрелки ‹ ›, ← → на компьютере
+  function viewer(x, list, dir) {
+    const v = el('div', { class: 'viewer', role: 'dialog', 'aria-modal': 'true', 'aria-label': x.title || x.name || '' });
     const img = el('div', 'img');
     const docBox = () => el('div', { style: 'color:#fff;text-align:center;font-size:calc(15px * var(--k))' }, el('div', { style: 'font-size:calc(48px * var(--k))' }, '📄'), x.name,
       el('div', { style: 'color:#aaa;font-size:calc(13px * var(--k));margin-top:6px' }, x.url ? fsize(x.size) : 'Файл больше 20 МБ хранится в Telegram — его можно прислать себе в чат.'));
+    let pic = null;
     if (x.image && x.url) {
-      const pic = el('img', { src: x.url, alt: x.name });
+      pic = el('img', { src: x.url, alt: x.name, class: dir > 0 ? 'in-next' : dir < 0 ? 'in-prev' : '' });
       pic.addEventListener('error', () => pic.replaceWith(docBox()));
       img.append(pic);
     } else img.append(docBox());
+    const seq = (list || []).filter(isPic), i = seq.indexOf(x), many = i >= 0 && seq.length > 1;
+    if (many) {
+      const go = (d) => {
+        const y = seq[i + d];
+        if (!y) return;
+        const kb = document.activeElement && document.activeElement.classList.contains('vnav');
+        const nv = viewer(y, list, d);
+        v.remove();
+        if (kb) (nv.querySelector(d > 0 ? '.vnav.next' : '.vnav.prev') || nv.querySelector('.vnav') || nv).focus();
+      };
+      v.go = go;
+      if (i > 0) img.append(el('button', { class: 'vnav prev', type: 'button', 'aria-label': 'Предыдущее фото', title: 'Предыдущее фото (←)', onclick: () => go(-1) }, '‹'));
+      if (i < seq.length - 1) img.append(el('button', { class: 'vnav next', type: 'button', 'aria-label': 'Следующее фото', title: 'Следующее фото (→)', onclick: () => go(1) }, '›'));
+      swipe(img, pic, go, i > 0, i < seq.length - 1);
+      [seq[i - 1], seq[i + 1]].forEach((y) => { if (y) new Image().src = y.url; });   // соседние фото — заранее, чтобы листалось без ожидания
+    }
     const cats = S.lists.file_cats;
     const dark = 'background:rgba(255,255,255,.12);color:#fff';
-    const sel = x.category === 'work' ? null : el('select', { class: 'btn', style: dark });
+    const sel = x.category === 'work' ? null : el('select', { class: 'btn', style: dark, 'aria-label': 'Раздел' });
     if (sel) {
       cats.forEach(([k, n]) => sel.append(el('option', { value: k, selected: k === x.category }, 'Раздел: ' + n)));
       sel.addEventListener('change', async () => { try { await refresh(await api('/api/crm/move', { json: { id: x.id, category: sel.value } })); closeViewer(v); toast('Перенесено'); } catch (e) { toast(e.message); } });
@@ -1173,7 +1212,7 @@
     const appr = x.review ? [el('button', { class: 'btn small', type: 'button', style: 'background:var(--up);color:#fff', onclick: async () => { closeViewer(v); await approve(x, true); } }, '✓ Показать заказчику'),
       el('button', { class: 'btn small', type: 'button', onclick: async () => { closeViewer(v); await approve(x, false); } }, 'Не показывать')] : [];
     const defK = S.lists.contractor_cats.includes(x.category) ? 'по разделу (да)' : 'по разделу (нет)';
-    v.append(el('div', 'cap', (x.title ? x.title + ' · ' : '') + x.name + ' · ' + dfmt(x.created) + (x.owner_name || x.created_by ? ' · ' + (x.owner_name || x.created_by) : '')
+    v.append(many ? el('div', { class: 'pos', 'aria-live': 'polite' }, (i + 1) + ' / ' + seq.length) : null, el('div', 'cap', (x.title ? x.title + ' · ' : '') + x.name + ' · ' + dfmt(x.created) + (x.owner_name || x.created_by ? ' · ' + (x.owner_name || x.created_by) : '')
       + (x.audience ? '\n👁 Видят: ' + x.audience : '')), img, el('div', 'bar2',
       x.url ? el('button', { class: 'btn small', type: 'button', onclick: () => openLink(x.url) }, '↗ Открыть') : null,
       el('button', { class: 'btn small', type: 'button', onclick: async () => { try { await api('/api/crm/send', { json: { id: x.id } }); toast('Отправлено в чат с ботом'); } catch (e) { toast(e.message); } } }, '✈︎ В чат'),
@@ -1185,6 +1224,39 @@
       el('button', { class: 'btn small', type: 'button', onclick: () => closeViewer(v) }, 'Закрыть')));
     document.body.append(v);
     backBtn();
+    return v;
+  }
+  const isPic = (y) => !!(y && y.image && y.url);
+  // листание пальцем: фото едет за пальцем; дальше 60 px или быстрый взмах — следующее / предыдущее, у края — пружинит назад.
+  // Вертикальный жест, два пальца и увеличенный экран не трогаем.
+  function swipe(area, pic, go, hasPrev, hasNext) {
+    let x0 = null, y0 = 0, t0 = 0, dx = 0, axis = null;
+    const zoomed = () => !!(window.visualViewport && window.visualViewport.scale > 1.05);
+    const reset = () => { if (pic) { pic.style.transition = 'transform .2s ease-out'; pic.style.transform = ''; } };
+    area.addEventListener('touchstart', (e) => {
+      if (e.touches.length !== 1 || zoomed() || e.target.closest('.vnav')) { x0 = null; return; }
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; t0 = Date.now(); dx = 0; axis = null;
+      if (pic) pic.style.transition = 'none';
+    }, { passive: true });
+    area.addEventListener('touchmove', (e) => {
+      if (x0 === null) return;
+      if (e.touches.length !== 1) { x0 = null; reset(); return; }
+      const mx = e.touches[0].clientX - x0, my = e.touches[0].clientY - y0;
+      if (!axis && Math.abs(mx) + Math.abs(my) > 10) axis = Math.abs(mx) > Math.abs(my) ? 'x' : 'y';
+      if (axis !== 'x') return;
+      e.preventDefault();
+      dx = mx;
+      const edge = (dx > 0 && !hasPrev) || (dx < 0 && !hasNext);
+      if (pic) pic.style.transform = 'translateX(' + Math.round(edge ? dx / 4 : dx) + 'px)';
+    }, { passive: false });
+    area.addEventListener('touchend', () => {
+      if (x0 === null) return;
+      x0 = null;
+      const d = dx < 0 ? 1 : -1, far = Math.abs(dx) > 60 || (Math.abs(dx) > 25 && Date.now() - t0 < 250);
+      if (axis === 'x' && far && (d > 0 ? hasNext : hasPrev)) return go(d);
+      reset();
+    });
+    area.addEventListener('touchcancel', () => { x0 = null; reset(); });
   }
 
   async function makeThumb(file) {
@@ -1891,7 +1963,16 @@
     sheets.push(rec); syncSheets();
     return sh;
   }
-  function field(label, input, hint) { return el('div', 'field', el('label', null, label), input, hint ? el('div', 'hint', hint) : null); }
+  // подпись поля связана с самим полем (for/id): её читает экранный диктор, нажатие на подпись ставит курсор в поле
+  let fieldIds = 0;
+  function labelFor(label, ctl) {
+    const lab = el('label', null, label);
+    const c = ctl && ctl.nodeType === 1 ? (/^(INPUT|SELECT|TEXTAREA)$/.test(ctl.tagName) ? ctl
+      : ctl.input || ctl.querySelector('input:not([type=checkbox]):not([type=radio]):not([type=file]), select, textarea')) : null;
+    if (c) { if (!c.id) c.id = 'fld' + (++fieldIds); lab.htmlFor = c.id; }
+    return lab;
+  }
+  function field(label, input, hint) { return el('div', 'field', labelFor(label, input), input, hint ? el('div', 'hint', hint) : null); }
   const inp = (value, a) => el('input', Object.assign({ value: value == null ? '' : value }, a || {}));
   function sel(options, value, a) {
     const s = el('select', a || {});
@@ -1922,7 +2003,7 @@
     const body = el('div',
       field('Название', f.title, 'Как вы называете проект между собой'),
       el('div', 'two', field('Номер', f.number, 'По внутреннему учёту'), field('Статус', f.status)),
-      el('div', 'field', el('label', null, 'Заказчик'), f.client_id, newClient),
+      el('div', 'field', labelFor('Заказчик', f.client_id), f.client_id, newClient),
       el('div', 'two', field('Город', f.city), field('Страна', f.country)),
       field('Адрес', f.address),
       el('div', 'two', field('Площадь, м²', f.area), p.id && p.tariff ? field('Пакет', el('div', null, el('b', null, p.tariff),
@@ -1955,7 +2036,7 @@
     const r = inp(rateVal || '', { inputmode: 'decimal', placeholder: 'Сколько ' + (currency || '') + ' в 1 €' });
     const rateBox = el('div', { style: 'margin-top:8px' }, r);
     const manWrap = el('label', 'check', man, 'Ввести курс вручную (например, курс банка)');
-    const w = el('div', 'field', el('label', null, label), el('div', 'pair', a, c), info, manWrap, rateBox, hint ? el('div', 'hint', hint) : null);
+    const w = el('div', 'field', labelFor(label, a), el('div', 'pair', a, c), info, manWrap, rateBox, hint ? el('div', 'hint', hint) : null);
     let auto = null, seq = 0, inEur = null;
     const done = (v) => { inEur = v; w.dispatchEvent(new Event('eur')); };
     async function upd() {
@@ -2016,7 +2097,7 @@
         } else hint.textContent = P.project.balance > 0.005 ? 'Остаток по договору: ' + eur(P.project.balance) : 'Договор оплачен полностью';
       };
       target.addEventListener('change', () => upd(true)); upd(!o.id && !!(preset && (preset.order_id || preset.service_id)));
-      body.append(el('div', 'field', el('label', null, 'За что'), target, hint), main, field('Как заплатил', extra.method));
+      body.append(el('div', 'field', labelFor('За что', target), target, hint), main, field('Как заплатил', extra.method));
     } else if (kind === 'commission') {
       // бонус от подрядчика проекта (уменьшает его долг) или от любого поставщика, фабрики
       const ks = P.contractors;
@@ -2148,7 +2229,7 @@
     const notify = el('input', { type: 'checkbox' }); notify.checked = true;
     const linked = people().some((q) => q.tg_id);
     const body = el('div',
-      el('div', 'field', el('label', null, 'Карточка с сайта'), el('div', 'pair', link, el('button', { class: 'btn', type: 'button', onclick: fetchCard }, 'Подтянуть')),
+      el('div', 'field', labelFor('Карточка с сайта', link), el('div', 'pair', link, el('button', { class: 'btn', type: 'button', onclick: fetchCard }, 'Подтянуть')),
         el('div', 'hint', 'Ссылка на товар dumskaya-design.com или dumskaya-home.com (или артикул магазина) — название и фото подставятся сами. Ссылку на сайт фабрики тоже можно вставить — она сохранится как есть.'), fac),
       el('div', 'field', el('span', 'lab', 'Фото'), pic, file),
       field('Что за товар', title), el('div', 'two', field('Артикул', code), field('Количество, шт.', qty)),

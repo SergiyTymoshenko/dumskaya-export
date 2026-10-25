@@ -112,10 +112,49 @@ const RUNS = [
             }
           }
           if (!tabs.length && await clickFirst('#app button.pcard')) { await look('карточка'); await back(); }
+          // последняя вкладка «Студии» («Сайт») уводит в графики — настройки и новый проект проверять в самом приложении
+          if (!new URL(p.url()).pathname.startsWith(run.app)) { await p.goto(BASE + run.app, { waitUntil: 'load' }); await p.waitForTimeout(1200); }
           // настройки (⚙︎) — форма поверх страницы
           if (await clickFirst('button.icon-btn[aria-label*="астро"], button.icon-btn:has-text("⚙")')) { await look('настройки'); await back(); }
           // форма нового проекта (у Ирины)
           if (run.role === 'irina' && run.app === '/api/crm/app' && await clickFirst('#nav .in > button[data-tab="projects"]') && await clickFirst('button.btn.primary.small')) { await look('новый проект'); await back(); }
+          // просмотр фото (решено 25.10.2026): «Визуализации» проекта — счётчик «1 / N», стрелка ›, клавиша ←, на телефоне — свайп пальцем
+          if ((run.role === 'irina' && run.app === '/api/crm/app') || run.role === 'client') {
+            let opened = false;
+            await p.goto(BASE + run.app, { waitUntil: 'load' }); await p.waitForTimeout(1200);   // вкладка «Сайт» уводит в графики — начать заново
+            if (run.role === 'irina') opened = await clickFirst('#nav .in > button[data-tab="projects"]') && await clickFirst('#app button.pcard');
+            else { const d = p.locator('#nav button', { hasText: /Документы/ }); if (await d.count()) { await d.first().click(); await p.waitForTimeout(500); opened = true; } }
+            const chip = p.locator('button.chip', { hasText: /^Визуализации/ });
+            if (opened && await chip.count()) { await chip.first().click(); await p.waitForTimeout(500); }
+            const tiles = opened ? await p.$$('.gallery .thumb') : [];
+            if (tiles.length < 2) R.ok(false, `${tag}: листание фото`, `в «Визуализациях» фото: ${tiles.length}, нужно не меньше двух`);
+            else {
+              await tiles[0].scrollIntoViewIfNeeded(); await tiles[0].click(); await p.waitForTimeout(500);
+              const pos = () => p.$eval('.viewer .pos', (x) => x.textContent).catch(() => 'нет счётчика');
+              const n = tiles.length, steps = [];
+              steps.push(['открылось первое', (await pos()) === `1 / ${n}`, await pos()]);
+              await look('просмотр фото');
+              if (await clickFirst('.viewer .vnav.next')) steps.push(['стрелка › → второе', (await pos()) === `2 / ${n}`, await pos()]);
+              else steps.push(['стрелка ›', false, 'нет']);
+              await p.keyboard.press('ArrowLeft'); await p.waitForTimeout(400);
+              steps.push(['клавиша ← → первое', (await pos()) === `1 / ${n}`, await pos()]);
+              if (sz !== 'tg' && L.SIZES[sz].hasTouch) {           // свайп — касаниями через Chrome DevTools Protocol
+                const cdp = await ctx.newCDPSession(p);
+                const c = await p.$eval('.viewer .img', (x) => { const r = x.getBoundingClientRect(); return { x: r.x + r.width / 2, y: r.y + r.height / 2 }; });
+                const sw = async (dx) => {
+                  await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [c] });
+                  for (let k = 1; k <= 8; k++) await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: c.x + dx * k / 8, y: c.y }] });
+                  await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+                  await p.waitForTimeout(450);
+                };
+                await sw(-160); steps.push(['свайп влево → второе', (await pos()) === `2 / ${n}`, await pos()]);
+                await sw(160); steps.push(['свайп вправо → первое', (await pos()) === `1 / ${n}`, await pos()]);
+              }
+              const bad = steps.filter((x) => !x[1]);
+              R.ok(!bad.length, `${tag}: листание фото`, bad.map((x) => `${x[0]}: ${x[2]}`).join('; '));
+              await p.keyboard.press('Escape'); await p.waitForTimeout(300);
+            }
+          }
           } catch (e) { R.ok(false, `${tag}: проверка прервалась`, e.message.split('\n')[0]); }
           await ctx.close();
         }
