@@ -1,0 +1,75 @@
+---
+// Главная: большое фото, заголовок и вводный текст, разделы каталога, новинки, фабрики, как заказать, о студии, форма.
+import Img from '../components/Img.astro';
+import ProductCard from '../components/ProductCard.astro';
+import LeadForm from '../components/LeadForm.astro';
+import { ui } from '../lib/i18n';
+import { products, departments, outdoorProducts, brandList, byBrand, byCategory, paths, tax, manifest, brandNames, sortProducts, type HPage, type Product } from '../lib/catalog';
+interface Props { page: HPage }
+const { page } = Astro.props;
+const l = page.lang;
+const T = ui(l);
+// фото в шапке — широкий снимок (интерьер), новинки в первую очередь
+const wide = (p: Product) => p.images.find((im) => im.w / im.h > 1.45 && im.w >= 1600 && manifest[im.name]);
+const heroP = [...products].sort((a, b) => Number(b.new) - Number(a.new)).find(wide);
+const hero = heroP ? wide(heroP)!.name : products[0]?.images[0]?.name;
+const deptTiles = [
+  ...departments.map((d: any) => {
+    const ps = products.filter((p) => p.department === d.id);
+    const pic = ps.map(wide).find(Boolean) || ps[0]?.images[0];
+    return { href: paths.dept(d)[l], title: d.name[l], sub: T.products(ps.length), image: pic?.name };
+  }),
+  ...(outdoorProducts.length ? [{ href: paths.outdoor()[l], title: tax.outdoor.name[l], sub: T.products(outdoorProducts.length), image: (outdoorProducts.map(wide).find(Boolean) || outdoorProducts[0].images[0])?.name }] : []),
+];
+const fresh = sortProducts(products.filter((p) => p.new), l).slice(0, 8);
+const pick = fresh.length >= 4 ? fresh : sortProducts(products, l).filter((_, i) => i % Math.max(1, Math.floor(products.length / 8)) === 0).slice(0, 8);
+const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-design.com/', de: 'https://dumskaya-design.com/de', fr: 'https://dumskaya-design.com/en', es: 'https://dumskaya-design.com/en' }[l];
+---
+<section class="hero">
+  <Img name={hero} alt={heroP ? `${heroP.name[l]} — ${heroP.brand}` : ''} class="hero__img" eager sizes="100vw" />
+</section>
+<section class="intro wrap">
+  <h1 class="display intro__h1">{page.h1}</h1>
+  <p class="intro__lead">{T.home_lead(brandNames(l, 6))}</p>
+</section>
+
+<section class="home-sec">
+  <h2 class="section-title wrap">{T.sections}</h2>
+  <div class="tiles tiles--3 home-depts">
+    {deptTiles.map((t, i) => (
+      <a class="tile" href={t.href}>
+        <Img name={t.image} alt={t.title} sizes="(min-width: 960px) 33vw, 50vw" eager={i < 3} />
+        <span class="tile__cap"><span class="tile__title">{t.title}</span><span class="tile__sub" style="display:block">{t.sub}</span></span>
+      </a>
+    ))}
+  </div>
+</section>
+
+{pick.length > 0 && (
+  <section class="home-sec">
+    <h2 class="section-title wrap">{fresh.length >= 4 ? T.new : T.sections}</h2>
+    <div class="grid wrap">{pick.map((p) => <ProductCard p={p} lang={l} />)}</div>
+  </section>
+)}
+
+<section class="home-sec wrap">
+  <h2 class="section-title">{T.brands}</h2>
+  <ul class="brands">
+    {brandList.map((b) => <li><a href={paths.brand(b.slug)[l]}>{b.name}</a> <span class="muted">{byBrand[b.slug].length}</span></li>)}
+  </ul>
+</section>
+
+<section class="home-sec wrap how">
+  <div>
+    <h2 class="section-title">{T.how_h}</h2>
+    <ol class="how__list">{T.how.map((s: string) => <li>{s}</li>)}</ol>
+  </div>
+  <div class="how__studio">
+    <p>{T.home_studio}</p>
+    <p><a href={studio} rel="noopener">{T.home_studio_link} — dumskaya-design.com</a></p>
+  </div>
+</section>
+
+<section class="home-sec wrap" id="lead">
+  <LeadForm lang={l} id="lead-home" />
+</section>

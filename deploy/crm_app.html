@@ -418,10 +418,16 @@
     en: ['DUMSKAYA DESIGN — your enquiry', (n) => 'Hello' + (n ? ' ' + n : '') + ',', 'Thank you for your enquiry on dumskaya-design.com.', 'Kind regards,\nIrina Dumskaya', 'Your message'],
     sk: ['DUMSKAYA DESIGN — váš dopyt', (n) => 'Dobrý deň' + (n ? ', ' + n : '') + ',', 'ďakujeme za váš dopyt na dumskaya-design.com.', 'S pozdravom\nIrina Dumskaya', 'Vaša správa'],
     de: ['DUMSKAYA DESIGN — Ihre Anfrage', (n) => 'Guten Tag' + (n ? ' ' + n : '') + ',', 'vielen Dank für Ihre Anfrage auf dumskaya-design.com.', 'Mit freundlichen Grüßen\nIrina Dumskaya', 'Ihre Nachricht'],
+    fr: ['DUMSKAYA DESIGN — votre demande', (n) => 'Bonjour' + (n ? ' ' + n : '') + ',', 'merci pour votre demande sur dumskaya-design.com.', 'Cordialement,\nIrina Dumskaya', 'Votre message'],
+    es: ['DUMSKAYA DESIGN — su consulta', (n) => 'Buenos días' + (n ? ', ' + n : '') + ':', 'gracias por su consulta en dumskaya-design.com.', 'Un saludo,\nIrina Dumskaya', 'Su mensaje'],
   };
   function mailLead(x, to) {             // ответ на заявку: приветствие, место для текста, подпись и её сообщение ниже
-    const lang = x.lang === 'uk' ? 'ua' : x.lang, m = MAIL[lang] || MAIL.ru, msg = (x.message || '').trim();
-    const body = m[1]((x.name || '').trim()) + '\n\n' + m[2] + '\n\n\n\n' + m[3] + '\nDUMSKAYA DESIGN · dumskaya-design.com'
+    const lang = x.lang === 'uk' ? 'ua' : x.lang, msg = (x.message || '').trim();
+    // заявка с каталога фабрик dumskaya-home.com — то же письмо, но с его названием и адресом
+    const home = /^https:\/\/(www\.)?dumskaya-home\.com/.test(x.page || '');
+    const brand = (t) => home ? t.replace('DUMSKAYA DESIGN', 'DUMSKAYA HOME').replace('dumskaya-design.com', 'dumskaya-home.com') : t;
+    const m0 = MAIL[lang] || MAIL.ru, m = [brand(m0[0]), m0[1], brand(m0[2]), m0[3], m0[4]];
+    const body = m[1]((x.name || '').trim()) + '\n\n' + m[2] + '\n\n\n\n' + m[3] + '\n' + (home ? 'DUMSKAYA HOME · dumskaya-home.com' : 'DUMSKAYA DESIGN · dumskaya-design.com')
       + (msg ? '\n\n— — —\n' + m[4] + ' (' + new Date(x.ts).toLocaleDateString('ru-RU') + '):\n' + (msg.length > 1200 ? msg.slice(0, 1200) + '…' : msg) : '');
     openMail(to, m[0], body);
   }
@@ -1363,7 +1369,7 @@
     if (x.routed) m.append(el('p', { class: 'small muted', style: 'margin:0 0 8px' }, 'Заявка ' + x.routed));
     m.append(x.message ? el('div', 'msg', x.message) : el('p', 'muted', 'Без сообщения — только имя и контакт.'));
     if (x.message_ru) m.append(el('h2', { style: 'margin:14px 0 6px' }, 'Перевод на русский' + (fromLang(x.message_lang) ? ' ' + fromLang(x.message_lang) : '')), el('div', 'msg', x.message_ru));
-    if (x.page) m.append(el('button', { class: 'btn small', type: 'button', style: 'margin-top:12px', onclick: () => openLink('https://dumskaya-design.com' + x.page) }, '↗ Страница на сайте'));
+    if (x.page) m.append(el('button', { class: 'btn small', type: 'button', style: 'margin-top:12px', onclick: () => openLink(/^https:\/\//.test(x.page) ? x.page : 'https://dumskaya-design.com' + x.page) }, '↗ Страница на сайте'));
     app.append(m);
     const n = el('section', 'card');
     const note = area(x.note, { placeholder: 'Что обсудили, когда перезвонить…' });

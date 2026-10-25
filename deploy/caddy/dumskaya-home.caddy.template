@@ -1,0 +1,63 @@
+# Сайт dumskaya-home.com (каталог товаров фабрик DUMSKAYA HOME) — подключается из файла сайта студии
+# (import /etc/caddy/sites/home/*.caddy). Ставит deploy/server-setup.sh: в режиме preview — порт 8089 только
+# с самого сервера (просмотр: npm run tunnel:home), в режиме live — домен, HTTPS-сертификат Caddy получает сам.
+# Из /api наружу открыт только приём заявок: остальное (бот, «Студия») — на домене студии.
+
+__WWW_BLOCK__
+
+__SITE__ {
+	__BIND__
+	encode zstd gzip
+
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		-Server
+	}
+
+	handle /api/lead {
+		reverse_proxy 127.0.0.1:8095
+	}
+	handle /api/* {
+		respond 404
+	}
+
+	handle {
+		header X-Frame-Options "SAMEORIGIN"
+		root * /var/www/dumskaya-home/site
+		redir /index.html / 301
+		@html path_regexp html ^(/.+)\.html$
+		redir @html {re.html.1} 301
+		@slash path_regexp slash ^(/.+)/$
+		redir @slash {re.slash.1} 301
+
+		@static path /img/* /_astro/*
+		header @static Cache-Control "public, max-age=31536000, immutable"
+		@pages not path /img/* /_astro/*
+		header @pages Cache-Control "public, max-age=600"
+
+		try_files {path} {path}.html
+		file_server
+	}
+
+	handle_errors {
+		@404 expression {err.status_code} == 404
+		handle @404 {
+			root * /var/www/dumskaya-home/site
+			rewrite * /404.html
+			file_server
+		}
+	}
+
+	# журнал запросов; IP-адреса в нём — старые части удаляются через 90 дней (так написано в политике конфиденциальности)
+	log {
+		output file /var/log/caddy/dumskaya-home.log {
+			__LOGMODE__
+			roll_size 10MiB
+			roll_keep 10
+			roll_keep_for 2160h
+		}
+	}
+}

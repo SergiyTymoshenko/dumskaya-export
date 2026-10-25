@@ -21,3 +21,9 @@ scripts/shop/factories/*.json
 scripts/shop/factories/*.tsv
 scripts/shop/factories/*.log
 scripts/shop/factories/delta_files/
+
+# данные для сборки dumskaya-home.com (scripts/shop/catalog_index.py --write)
+home/data/
+home/public/img/
+home/dist/
+home/.astro/

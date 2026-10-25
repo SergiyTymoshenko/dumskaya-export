@@ -1,0 +1,61 @@
+---
+// Страницы-подборки: раздел (категории раздела), «Для улицы» и фабрика (товары по категориям), список фабрик.
+import Crumbs from '../components/Crumbs.astro';
+import ProductCard from '../components/ProductCard.astro';
+import Img from '../components/Img.astro';
+import { ui } from '../lib/i18n';
+import { tax, departments, byCategory, byBrand, outdoorProducts, brandList, brandsInfo, paths, catName, sortProducts, type HPage, type Product } from '../lib/catalog';
+interface Props { page: HPage }
+const { page } = Astro.props;
+const l = page.lang;
+const T = ui(l);
+const order = departments.flatMap((d: any) => d.categories);
+const groupBy = (ps: Product[]) => order.map((c: string) => ({ c, ps: sortProducts(ps.filter((p) => p.category === c), l) })).filter((g: any) => g.ps.length);
+let lead = '';
+let groups: { c: string; ps: Product[]; more?: string }[] = [];
+let tiles: { href: string; image?: string; title: string; sub: string }[] = [];
+if (page.kind === 'dept') {
+  const d = departments.find((x: any) => x.id === page.key);
+  tiles = d.categories.map((c: string) => ({ href: paths.cat(c)[l], image: byCategory[c].find((p) => p.images[0])?.images[0].name, title: catName(c, l), sub: T.products(byCategory[c].length) }));
+} else if (page.kind === 'brands') {
+  lead = T.brandsLead;
+  tiles = brandList.map((b) => ({ href: paths.brand(b.slug)[l], image: byBrand[b.slug].find((p) => p.images[0])?.images[0].name, title: b.name, sub: T.products(byBrand[b.slug].length) }));
+} else if (page.kind === 'outdoor') {
+  lead = T.outdoorLead;
+  groups = groupBy(outdoorProducts).map((g: any) => ({ ...g, more: g.ps.length > 8 ? `${paths.cat(g.c)[l]}?outdoor=1` : undefined, ps: g.ps.slice(0, 8) }));
+} else if (page.kind === 'brand') {
+  const ps = byBrand[page.key!];
+  const info = brandsInfo[ps[0].factory];
+  lead = `${info?.country ? countryName(info.country) + ' · ' : ''}${T.products(ps.length)}`;
+  groups = groupBy(ps).sort((a: any, b: any) => b.ps.length - a.ps.length)        // у фабрики сначала её главное
+    .map((g: any) => ({ ...g, more: g.ps.length > 8 ? `${paths.cat(g.c)[l]}?brand=${page.key}` : undefined, ps: g.ps.slice(0, 8) }));
+}
+function countryName(c: string) {
+  const m: Record<string, Record<string, string>> = { 'Италия': { en: 'Italy', ru: 'Италия', de: 'Italien', fr: 'Italie', es: 'Italia' }, 'Бельгия': { en: 'Belgium', ru: 'Бельгия', de: 'Belgien', fr: 'Belgique', es: 'Bélgica' } };
+  return m[c]?.[l] || c;
+}
+const showBrand = page.kind !== 'brand';
+---
+<Crumbs items={page.crumbs} />
+<header class="lhead wrap">
+  <h1 class="display">{page.h1}</h1>
+  {lead && <p class="muted">{lead}</p>}
+</header>
+{tiles.length > 0 && (
+  <div class="cats wrap">
+    {tiles.map((t, i) => (
+      <a class="cat" href={t.href}>
+        <span class="cat__img"><Img name={t.image} alt={t.title} sizes="(min-width: 960px) 33vw, 50vw" eager={i < 3} /></span>
+        <span class="cat__title">{t.title}</span>
+        <span class="cat__sub muted">{t.sub}</span>
+      </a>
+    ))}
+  </div>
+)}
+{groups.map((g) => (
+  <section class="group">
+    <h2 class="group__h wrap"><a href={paths.cat(g.c)[l]}>{catName(g.c, l)}</a></h2>
+    <div class="grid wrap">{g.ps.map((p) => <ProductCard p={p} lang={l} showBrand={showBrand} />)}</div>
+    {g.more && <p class="wrap group__more"><a class="btn" href={g.more}>{T.showAll}</a></p>}
+  </section>
+))}

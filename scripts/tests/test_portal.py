@@ -1039,6 +1039,24 @@ code, r = call("/api/crm/card?code=DF-T7902", H.CLIENT, lang="sk")
 check(code in (401, 403, 404), "подсказку о фабрике заказчик получить не может")
 lead_txt = botmod.format_lead({"name": "Тест", "contact": "+421"}, "DF-T7902", fake_goods["DF-T7902"])
 check("📐 2D/3D:</b> DWG, SKP" in lead_txt and "adrien-tables" in lead_txt, "в заявке на товар фабрики — где скачать 2D/3D")
+home_lead = {"name": "Test", "contact": "a@b.c", "lang": "fr", "site": "dumskaya-home.com",
+             "page": "https://dumskaya-home.com/fr/poliform/table-adrien"}
+home_txt = botmod.format_lead(home_lead, "DF-T7902", fake_goods["DF-T7902"])
+check("https://dumskaya-home.com/fr/poliform/table-adrien" in home_txt and "dumskaya-design.com" not in home_txt
+      and botmod.site_name(home_lead) == "DUMSKAYA HOME", "заявка с dumskaya-home.com: ссылка на страницу каталога, пометка сайта")
+check("https://dumskaya-design.com/kontakty" in botmod.format_lead({"name": "Т", "contact": "+421", "page": "/kontakty"}, "", None)
+      and botmod.site_name({"page": "/kontakty"}) == "DUMSKAYA DESIGN", "заявка с сайта студии — как раньше")
+req = urllib.request.Request(BASE + "/api/lead", data=json.dumps({"name": "Home", "contact": "home@example.org", "lang": "fr",
+                             "page": "/fr/poliform/table-adrien", "model": "DF-T7902"}).encode(),
+                             headers={"Content-Type": "application/json", "Host": "dumskaya-home.com", "X-Forwarded-For": "10.9.9.9"})
+try:
+    with urllib.request.urlopen(req, timeout=10) as r:
+        st = r.status
+except urllib.error.HTTPError as e:
+    st = e.code
+last = json.loads(open(os.environ["LEADS_FILE"], encoding="utf-8").read().strip().splitlines()[-1])
+check(st in (200, 502) and last.get("site") == "dumskaya-home.com" and last.get("page") == "https://dumskaya-home.com/fr/poliform/table-adrien"
+      and last.get("lang") == "fr", "заявка с dumskaya-home.com: сервис узнаёт сайт по адресу, язык fr принимается")
 botmod.load_products = real_load
 
 # ---------- документы не попадают в поиск ----------

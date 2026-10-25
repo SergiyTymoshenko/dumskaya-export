@@ -65,7 +65,10 @@ THANKS = {
     "en": ("Request sent", "We will get back to you within one working day.", "Back to the website"),
     "sk": ("Žiadosť bola odoslaná", "Ozveme sa vám do jedného pracovného dňa.", "Späť na web"),
     "de": ("Anfrage gesendet", "Wir melden uns innerhalb eines Werktags.", "Zurück zur Website"),
+    "fr": ("Demande envoyée", "Nous répondons sous un jour ouvré.", "Retour au site"),
+    "es": ("Consulta enviada", "Respondemos en un día laborable.", "Volver a la web"),
 }
+HOME_SITE = "dumskaya-home.com"           # каталог товаров фабрик: заявки оттуда — в тот же бот, с пометкой сайта
 
 
 def log(msg):
@@ -95,6 +98,11 @@ def send_telegram(lead):
     return bool(BOT.route_lead(lead))
 
 
+def page_url(lead):
+    p = lead.get("page", "") or ""
+    return p if p.startswith("https://") else "https://dumskaya-design.com" + p
+
+
 def send_mail(lead):
     if not (SMTP_USER and SMTP_PASSWORD and MAIL_TO):
         return False
@@ -115,7 +123,7 @@ def send_mail(lead):
     if lead.get("message_ru"):
         body += [f"Перевод на русский {lang_from(lead.get('message_lang'))}:".replace("  ", " "), lead["message_ru"], ""]
     body += [
-        f"Страница: https://dumskaya-design.com{lead.get('page', '')}",
+        f"Страница: {page_url(lead)}",
         f"Язык: {lead.get('lang', '')}",
         f"Время: {lead['time']}",
     ]
@@ -341,6 +349,10 @@ class Handler(BaseHTTPRequestHandler):
             return self.reply(200, {"ok": True})
         lead = {k: str(data.get(k) or "").strip()[:n] for k, n in LIMITS.items()}
         lead["lang"] = lang
+        host = (self.headers.get("X-Forwarded-Host") or self.headers.get("Host") or "").split(":")[0].strip().lower()
+        lead["site"] = HOME_SITE if host == HOME_SITE or host.endswith("." + HOME_SITE) else "dumskaya-design.com"
+        if lead["site"] == HOME_SITE and lead["page"].startswith("/"):     # в учёте и «Студии» видно, с какого сайта заявка
+            lead["page"] = ("https://" + HOME_SITE + lead["page"])[:LIMITS["page"]]
         if len(lead["name"]) < 1 or len(lead["contact"]) < 3:
             return self.reply(422, {"ok": False, "error": "fields"})
         ip = self.client_ip()
@@ -364,7 +376,7 @@ class Handler(BaseHTTPRequestHandler):
         if is_json:
             return self.reply(200 if delivered else 502, {"ok": bool(delivered)})
         t, txt, back = THANKS[lang]
-        home = "/" if lang == "ru" else f"/{lang}"
+        home = "/" if lang == ("en" if lead["site"] == HOME_SITE else "ru") else f"/{lang}"
         page = (f"<!doctype html><meta charset=utf-8><meta name=viewport content='width=device-width'>"
                 f"<title>{t}</title><body style='font:17px/1.6 system-ui;max-width:560px;margin:15vh auto;padding:0 20px'>"
                 f"<h1 style='font-weight:400'>{t}</h1><p>{txt}</p><p><a href='{home}'>{back}</a></p>")

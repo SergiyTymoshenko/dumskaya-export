@@ -3,6 +3,9 @@
 # Адрес сайта подставляет установщик (deploy/server-setup.sh): в режиме preview — порт 8088, доступный только
 # с самого сервера (просмотр через SSH-туннель, любое имя: localhost или 127.0.0.1), в режиме live — домен, HTTPS-сертификат Caddy получает сам.
 
+# каталог товаров фабрик dumskaya-home.com — свой файл (ставит тот же server-setup.sh)
+import /etc/caddy/sites/home/*.caddy
+
 __WWW_BLOCK__
 
 __SITE__ {

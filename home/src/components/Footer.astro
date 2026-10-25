@@ -1,0 +1,57 @@
+---
+import { LANGS, LANG_LABEL, HREFLANG, homePath, ui } from '../lib/i18n';
+import { site, phones, cityName, paths, type HPage } from '../lib/catalog';
+interface Props { page: HPage }
+const { page } = Astro.props;
+const l = page.lang;
+const T = ui(l);
+const year = new Date().getFullYear();
+const addr = site.contacts.address;
+const country = { en: 'Slovakia', ru: 'Словакия', de: 'Slowakei', fr: 'Slovaquie', es: 'Eslovaquia' }[l];
+const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-design.com/', de: 'https://dumskaya-design.com/de', fr: 'https://dumskaya-design.com/en', es: 'https://dumskaya-design.com/en' }[l];
+---
+<footer class="ftr wrap">
+  <div class="ftr__brand">
+    <a class="ftr__logo" href={homePath(l)}><img src="/logo.svg" alt="DUMSKAYA HOME" width="150" height="87" loading="lazy" /></a>
+    <p class="muted">{T.studio} — <a href={studio} rel="noopener">dumskaya-design.com</a></p>
+  </div>
+  <div class="ftr__contacts">
+    <h2 class="visually-hidden">{T.contact}</h2>
+    <ul>
+      {phones(l).map((p: any) => <li><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{cityName(p, l)}</span></li>)}
+      <li><a href={`mailto:${site.contacts.email}`}>{site.contacts.email}</a></li>
+      <li><a href={paths.contact[l]}>{T.contact}</a></li>
+    </ul>
+    <address class="ftr__addr"><span>DUMSKAYA DESIGN</span><span>{addr.street}, {addr.postal} {addr.city}, {country}</span></address>
+  </div>
+  <div class="ftr__aside">
+    <p class="ftr__langs">
+      {LANGS.map((x) => x === l ? <span aria-current="true">{LANG_LABEL[x]}</span> : <a href={page.alt[x] || homePath(x)} hreflang={HREFLANG[x]}>{LANG_LABEL[x]}</a>)}
+    </p>
+    <p class="muted ftr__note">{T.photosNote}</p>
+  </div>
+  <p class="ftr__copy muted">© {year} DUMSKAYA DESIGN. {T.rights}. <a href={paths.privacy[l]}>{T.privacy}</a></p>
+</footer>
+
+<style>
+  .ftr { display: grid; gap: 32px; padding-block: 56px 32px; border-top: 1px solid var(--line); font-size: 15px; }
+  @media (min-width: 960px) { .ftr { grid-template-columns: 1fr 1.4fr 1fr; } }
+  .ftr p { margin: 0; }
+  .ftr ul { list-style: none; margin: 0; padding: 0; }
+  .ftr a { text-decoration: none; }
+  .ftr a:hover { text-decoration: underline; }
+  .ftr li > a, .ftr__langs > * { display: inline-block; padding-block: 10px; }
+  .ftr__langs { display: flex; gap: 8px; letter-spacing: 0.06em; }
+  .ftr__langs > * { min-width: 32px; }
+  .ftr__langs a { color: var(--stone); }
+  .ftr__logo { display: inline-block; line-height: 0; margin-bottom: 14px; }
+  .ftr__logo img { width: 150px; height: auto; }
+  .ftr__brand p { max-width: 34ch; font-size: 14px; }
+  .ftr__brand p a { text-decoration: underline; text-decoration-color: var(--line); }
+  .ftr__contacts { display: grid; gap: 16px; align-content: start; }
+  .ftr__addr { font-style: normal; display: grid; gap: 2px; }
+  .ftr__aside { display: grid; gap: 12px; align-content: start; }
+  .ftr__note { font-size: 13px; }
+  .ftr__copy { grid-column: 1 / -1; font-size: 13px; }
+  .ftr__copy a { display: inline-block; padding-block: 10px; }
+</style>

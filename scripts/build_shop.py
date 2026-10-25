@@ -83,6 +83,10 @@ def models_ref(it):
 
 
 mfrs = json.load(open(os.path.join(ROOT, "content/shop/manufacturers.json"), encoding="utf-8"))
+# товары, уже выложенные на dumskaya-home.com: их страница — там (адреса закреплены при выкладке фабрики)
+_home = os.path.join(ROOT, "content/home")
+_pub = json.load(open(os.path.join(_home, "publish.json"), encoding="utf-8")).get("factories", {}) if os.path.exists(os.path.join(_home, "publish.json")) else {}
+_frozen = json.load(open(os.path.join(_home, "frozen.json"), encoding="utf-8")) if os.path.exists(os.path.join(_home, "frozen.json")) else {}
 for key, mf in mfrs.items():
     if not os.path.exists(os.path.join(ROOT, mf["catalog"])):
         print(f"  · {mf['name']}: каталога {mf['catalog']} ещё нет — пропуск")
@@ -97,7 +101,8 @@ for key, mf in mfrs.items():
             continue
         col = cols.get(it["collection"], {}).get("name", it["collection"])
         name = (it.get("name") or {}).get("ru") or f"{TYPE_RU.get(it['type'], 'Светильник')} {col}"
-        out[code] = {"name": name, "path": it.get("path"), "partner": mf.get("partner"),
+        home = _frozen.get(it["sku"]) if key in _pub else None
+        out[code] = {"name": name, "path": ("https://dumskaya-home.com" + home["path"]["en"]) if home else it.get("path"), "partner": mf.get("partner"),
                      "mfr": f"{mf['name']} ({mf['country']})", "mfr_code": it.get("mfr_code"), "collection": col}
         if (it.get("links") or {}).get("page"):
             out[code]["mfr_url"] = it["links"]["page"]

@@ -1,0 +1,145 @@
+---
+// Карточка товара: фото, название, фабрика, коллекция, дизайнер, наш текст, «Узнать цену», исполнения и размеры,
+// технические данные (свет), отделки, чертежи, форма запроса, товары той же коллекции и той же категории у фабрики.
+import Crumbs from '../components/Crumbs.astro';
+import Img from '../components/Img.astro';
+import ProductCard from '../components/ProductCard.astro';
+import LeadForm from '../components/LeadForm.astro';
+import Drawing from '../components/Drawing.astro';
+import { ui } from '../lib/i18n';
+import { byCollection, byBrand, paths, catName, sortProducts, manifest, type HPage } from '../lib/catalog';
+import { versionsTable, techRows, finishGroups } from '../lib/specs';
+interface Props { page: HPage }
+const { page } = Astro.props;
+const p = page.product!;
+const l = page.lang;
+const T = ui(l);
+const name = p.name[l];
+const text = (p.text[l] || '').trim();
+const vt = versionsTable(p, l);
+const tech = techRows(p, l);
+const fin = finishGroups(p);
+const pics = p.images;
+const draws = p.drawings;
+const col = sortProducts((byCollection[`${p.factory}/${p.collection}`] || []).filter((x) => x.sku !== p.sku), l).slice(0, 8);
+const colSkus = new Set(col.map((x) => x.sku));
+const same = sortProducts((byBrand[p.brand_slug] || []).filter((x) => x.category === p.category && x.sku !== p.sku && !colSkus.has(x.sku)), l).slice(0, 8);
+const meta: [string, string, string?][] = [
+  ...(p.collection_name && p.collection_name.toLowerCase() !== p.model.toLowerCase() ? [[T.collection, p.collection_name] as [string, string]] : []),
+  ...(p.designer ? [[T.design, p.designer] as [string, string]] : []),
+  ...(p.place !== 'indoor' ? [[T.forOutdoor, p.place === 'both' ? `${T.indoor} · ${T.outdoor}` : '✓'] as [string, string]] : []),
+  [T.sku, p.sku],
+];
+---
+<Crumbs items={page.crumbs} />
+<div class="pgrid wrap">
+  <div class="pgal" data-gallery>
+    {pics.map((im, i) => (
+      <button type="button" class:list={['pgal__i', i === 0 && 'pgal__i--main']} style={manifest[im.name]?.bg ? `background:${manifest[im.name].bg}` : undefined} data-full={manifest[im.name]?.files.at(-1)?.[1] ? `/img/${manifest[im.name].files.at(-1)![1]}` : ''} aria-label={`${T.photo} ${i + 1}`}>
+        <Img name={im.name} alt={`${name} — ${p.brand}, ${T.photo.toLowerCase()} ${i + 1}`} sizes={i === 0 ? '(min-width: 960px) 58vw, 100vw' : '(min-width: 960px) 29vw, 50vw'} eager={i === 0} />
+      </button>
+    ))}
+  </div>
+  <div class="pinfo">
+    <p class="pinfo__brand"><a href={paths.brand(p.brand_slug)[l]}>{p.brand}</a>{p.new && <span class="pinfo__new"> · {T.new}</span>}</p>
+    <h1 class="display pinfo__h1">{name}</h1>
+    <dl class="pinfo__meta">
+      {meta.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
+    </dl>
+    {text && <div class="prose pinfo__text">{text.split(/\n{2,}/).map((para) => <p>{para}</p>)}</div>}
+    <a class="btn btn--solid" href="#lead">{T.askPrice}</a>
+    <p class="pinfo__note muted">{T.priceNote}</p>
+  </div>
+</div>
+
+{(vt || tech.length > 0 || fin.length > 0) && (
+  <section class="specs wrap">
+    {vt && (
+      <div class="specs__block">
+        <h2 class="section-title">{T.sizes}</h2>
+        <table class="tbl">
+          <thead><tr>{vt.head.map((h) => <th>{h}</th>)}</tr></thead>
+          <tbody>{vt.rows.slice(0, 12).map((r) => <tr>{r.map((c) => <td>{c}</td>)}</tr>)}</tbody>
+        </table>
+        {vt.rows.length > 12 && (
+          <details class="more">
+            <summary class="btn">{T.showAll} ({vt.rows.length})</summary>
+            <table class="tbl"><tbody>{vt.rows.slice(12).map((r) => <tr>{r.map((c) => <td>{c}</td>)}</tr>)}</tbody></table>
+          </details>
+        )}
+      </div>
+    )}
+    {tech.length > 0 && (
+      <div class="specs__block">
+        <h2 class="section-title">{T.specs}</h2>
+        <table class="tbl tbl--kv"><tbody>{tech.map(([k, v]) => <tr><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody></table>
+      </div>
+    )}
+    {fin.length > 0 && (
+      <div class="specs__block">
+        <h2 class="section-title">{T.finishes}</h2>
+        {fin.map(([g, items]) => (
+          <details class="fin">
+            <summary>{g} <span class="muted">{items.length}</span></summary>
+            <p>{items.join(' · ')}</p>
+          </details>
+        ))}
+      </div>
+    )}
+  </section>
+)}
+
+{draws.length > 0 && (
+  <section class="draws wrap" data-gallery>
+    <h2 class="section-title">{T.drawings}</h2>
+    <div class="draws__grid">
+      {draws.slice(0, 9).map((d, i) => <Drawing d={d} i={i} />)}
+    </div>
+    {draws.length > 9 && (
+      <details class="more">
+        <summary class="btn">{T.showAll} ({draws.length})</summary>
+        <div class="draws__grid">{draws.slice(9).map((d, i) => <Drawing d={d} i={i + 9} />)}</div>
+      </details>
+    )}
+  </section>
+)}
+
+<section class="plead wrap" id="lead">
+  <LeadForm lang={l} model={p.sku} product={name} id="lead-form" title={`${T.askPrice}: ${name}`} />
+</section>
+
+{col.length > 0 && (
+  <section class="group">
+    <h2 class="group__h wrap">{T.moreCollection}</h2>
+    <div class="grid wrap">{col.map((x) => <ProductCard p={x} lang={l} showBrand={false} />)}</div>
+  </section>
+)}
+{same.length > 0 && (
+  <section class="group">
+    <h2 class="group__h wrap"><a href={`${paths.cat(p.category)[l]}?brand=${p.brand_slug}`}>{T.moreCategory(catName(p.category, l), p.brand)}</a></h2>
+    <div class="grid wrap">{same.map((x) => <ProductCard p={x} lang={l} showBrand={false} />)}</div>
+  </section>
+)}
+
+<dialog class="lb" data-lb aria-label={T.photo}>
+  <button type="button" class="lb__x" data-lb-close aria-label={T.close}>×</button>
+  <button type="button" class="lb__nav lb__nav--prev" data-lb-prev aria-label={T.photoPrev}>‹</button>
+  <img alt="" data-lb-img />
+  <button type="button" class="lb__nav lb__nav--next" data-lb-next aria-label={T.photoNext}>›</button>
+</dialog>
+
+<script>
+  const lb = document.querySelector<HTMLDialogElement>('[data-lb]')!;
+  const img = lb.querySelector<HTMLImageElement>('[data-lb-img]')!;
+  let list: HTMLElement[] = [], at = 0;
+  const show = (i: number) => { at = (i + list.length) % list.length; const b = list[at]; img.src = b.dataset.full!; img.alt = b.querySelector('img')?.alt || ''; };
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach((g) => {
+    const items = [...g.querySelectorAll<HTMLElement>('[data-full]')].filter((b) => b.dataset.full);
+    items.forEach((b, i) => b.addEventListener('click', () => { list = items; show(i); lb.showModal(); }));
+  });
+  lb.querySelector('[data-lb-close]')!.addEventListener('click', () => lb.close());
+  lb.querySelector('[data-lb-prev]')!.addEventListener('click', () => show(at - 1));
+  lb.querySelector('[data-lb-next]')!.addEventListener('click', () => show(at + 1));
+  lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); });
+  lb.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') show(at - 1); if (e.key === 'ArrowRight') show(at + 1); });
+</script>

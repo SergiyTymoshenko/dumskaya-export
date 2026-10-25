@@ -95,3 +95,22 @@ MisuraEmme: в карте сайта есть снятые изделия — и
 
 Rimadesio: в карте сайта есть и готовые интерьеры («New interiors»: interior-…, night-…, living-…, dining, walk-in-closet) —
 это не изделия, сборщик их пропускает. 2D/3D — в Reserved Area после входа: в каталоге ссылка на неё.
+
+## Незавершённые фабрики (отложены 25.10.2026, вернуться после запуска dumskaya-home.com)
+
+Все — за Александром Замлинским. Свободные номера артикулов: 4700–4999 и от 9000.
+
+- **Lago** — начата. Карта сайта `https://www.lago.it/sitemap_it.xml`: около 200 адресов `/design/<изделие>/`, среди них
+  около 45 разделов и подборок (tutti-i-prodotti, armadi, divani, letti, tavoli, cucine, soggiorno, camera-da-letto,
+  lampade, mensole, idee-salvaspazio…) — их пропускать. Английская версия — на другом домене:
+  `https://www.lagodesign.com/en/design/<изделие по-английски>/` (у страницы есть `hreflang` en/fr/es, русского нет).
+  Сайт на Nuxt: данные страницы — `https://www.lago.it/_nuxt/static/1/design/<изделие>/payload.js` (тексты, отделки
+  sections-finishings, материалы sections-technical-materials), так проще, чем разбирать страницу. «Scarica modelli 3D»
+  и «Scarica catalogo» — через форму (forms-dynamic-forms): не качаем, ссылку — в `links.files_2d3d`. Конфигуратор:
+  `https://configurator.lago.it/<раздел>/<изделие>`. robots.txt разрешает обход (закрыты /privacy, /cookies, /posizione/*,
+  /feed/, `?store=`, `?s=`). Артикулы — DF-9000–9299.
+- **Rugiano** — подана регистрация для профессионалов (https://www.rugiano.com/en/login), на 25.10.2026 «на рассмотрении».
+  Размеры у Rugiano открыты только после входа.
+- **Giorgetti** — сайт не пускает автоматическое чтение страниц (защита от роботов). Варианты: через браузер или каталог
+  от фабрики через Замлинского.
+- **Il Paralume Marina** — свет; данные изделий после входа на сайте, нужна регистрация.

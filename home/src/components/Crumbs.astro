@@ -1,0 +1,14 @@
+---
+// Хлебные крошки (та же цепочка — в разметке BreadcrumbList, layouts/Base.astro).
+import type { Crumb } from '../lib/catalog';
+interface Props { items: Crumb[] }
+const { items } = Astro.props;
+---
+<nav class="crumbs wrap" aria-label="breadcrumbs">
+  {items.map((it, i) => (
+    <>
+      {i > 0 && ' / '}
+      {it.href && i < items.length - 1 ? <a href={it.href}>{it.label}</a> : <span aria-current={i === items.length - 1 ? 'page' : undefined}>{it.label}</span>}
+    </>
+  ))}
+</nav>

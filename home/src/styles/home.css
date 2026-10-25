@@ -1,0 +1,143 @@
+/* DUMSKAYA HOME: то, чего нет в стилях сайта студии (src/styles/global.css) — каталог, карточка товара. */
+.crumbs { padding-block: 20px 0; }
+.lhead { padding-block: 16px 20px; display: grid; gap: 4px; }
+.lhead h1 { font-size: clamp(22px, 2.6vw, 32px); }
+.lhead p { margin: 0; }
+
+/* сетка товаров: фото целиком на светлом фоне, подпись под фото */
+.grid { display: grid; gap: 28px 16px; grid-template-columns: repeat(2, 1fr); padding-bottom: clamp(40px, 6vw, 80px); }
+@media (min-width: 720px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1100px) { .grid { grid-template-columns: repeat(4, 1fr); gap: 36px 20px; } }
+.pc { display: grid; gap: 4px; align-content: start; text-decoration: none; color: var(--ink); }
+.pc__img { display: block; background: #f5f4f1; aspect-ratio: 1; overflow: hidden; margin-bottom: 8px; }
+.pc__img img, .pc__img .ph { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.6,.2,1); }
+/* предметный снимок — целиком, белый фон снимка сливается с фоном плитки */
+.pc__img--cut img { object-fit: contain; padding: 4%; }
+.pc__brand { font: 400 11px/1.4 var(--display); text-transform: uppercase; letter-spacing: 0.16em; color: var(--stone); }
+.pc__new { color: var(--oak); }
+.pc__name { font-size: 15px; line-height: 1.4; }
+@media (hover: hover) { .pc:hover { color: var(--oak); } .pc:hover img { transform: scale(1.03); } }
+
+/* фильтр по фабрике */
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding-bottom: 28px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { min-height: 40px; padding: 8px 14px; border: 1px solid var(--line); background: var(--paper); font-size: 14px; cursor: pointer; }
+.chip[aria-pressed='true'] { border-color: var(--ink); background: var(--ink); color: var(--paper); }
+.chip[aria-pressed='true'] .muted { color: #cfcac2; }
+.chk { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; min-height: 40px; cursor: pointer; }
+.chk input { width: 18px; height: 18px; accent-color: var(--ink); }
+
+/* разделы и фабрики: плитки с фото и подписью под ним */
+.cats { display: grid; gap: 28px 16px; grid-template-columns: repeat(2, 1fr); padding-bottom: clamp(48px, 7vw, 96px); }
+@media (min-width: 960px) { .cats { grid-template-columns: repeat(3, 1fr); } }
+.cat { display: grid; gap: 4px; text-decoration: none; color: var(--ink); }
+.cat__img { display: block; aspect-ratio: 4 / 3; background: #f5f4f1; overflow: hidden; margin-bottom: 8px; }
+.cat__img img, .cat__img .ph { width: 100%; height: 100%; object-fit: cover; }
+.cat__title { font: 400 13px/1.5 var(--display); text-transform: uppercase; letter-spacing: 0.16em; }
+.cat__sub { font-size: 14px; }
+@media (hover: hover) { .cat:hover { color: var(--oak); } }
+
+.group { padding-top: 8px; }
+.group__h { font: 400 clamp(15px, 1.5vw, 18px)/1.4 var(--display); text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 20px; color: var(--ink); }
+.group__h a { text-decoration: none; }
+.group__more { margin: -24px 0 48px; }
+
+/* главная */
+.hero { line-height: 0; }
+.hero__img, .hero .ph { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+@media (min-width: 720px) { .hero__img, .hero .ph { aspect-ratio: 21 / 9; max-height: 78vh; } }
+.intro { padding-block: clamp(32px, 5vw, 64px) clamp(24px, 4vw, 48px); display: grid; gap: 16px; max-width: 980px; }
+.intro__h1 { font-size: clamp(22px, 3vw, 38px); }
+.intro__lead { margin: 0; font-size: clamp(16px, 1.3vw, 19px); max-width: var(--measure); }
+.home-sec { padding-block: clamp(24px, 4vw, 48px); }
+.home-sec .section-title { margin-bottom: 20px; }
+.home-depts .tile img { aspect-ratio: 4 / 3; }
+.brands { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 36px; font: 400 clamp(14px, 1.4vw, 17px)/1.5 var(--display); text-transform: uppercase; letter-spacing: 0.14em; }
+.brands a { text-decoration: none; }
+.brands .muted { font-family: var(--body); letter-spacing: 0; font-size: 13px; }
+.how { display: grid; gap: 32px; }
+@media (min-width: 960px) { .how { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.how__list { margin: 0; padding-left: 1.2em; display: grid; gap: 12px; max-width: var(--measure); }
+.how__studio { align-self: end; color: var(--text); }
+.how__studio p { max-width: var(--measure); }
+
+/* карточка товара */
+.pgrid { display: grid; gap: 32px; padding-block: 20px clamp(40px, 6vw, 72px); }
+@media (min-width: 960px) { .pgrid { grid-template-columns: 7fr 5fr; gap: 48px; align-items: start; } .pinfo { position: sticky; top: calc(var(--header) + 16px); } }
+.pgal { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); }
+.pgal__i { padding: 0; border: 0; background: #f5f4f1; cursor: zoom-in; line-height: 0; }
+.pgal__i img, .pgal__i .ph { width: 100%; aspect-ratio: 1; object-fit: contain; }
+.pgal__i--main { grid-column: 1 / -1; }
+.pgal__i--main img, .pgal__i--main .ph { aspect-ratio: 4 / 3; }
+.pinfo { display: grid; gap: 16px; align-content: start; }
+.pinfo__brand { margin: 0; font: 400 13px/1.4 var(--display); text-transform: uppercase; letter-spacing: 0.18em; }
+.pinfo__brand a { text-decoration: none; }
+.pinfo__new { color: var(--oak); }
+.pinfo__h1 { font-size: clamp(20px, 2.2vw, 28px); }
+.pinfo__meta { margin: 0; display: grid; gap: 6px; font-size: 15px; }
+.pinfo__meta div { display: grid; grid-template-columns: 9.5em 1fr; gap: 12px; }
+.pinfo__meta dt { color: var(--stone); }
+.pinfo__meta dd { margin: 0; }
+.pinfo__text p { margin: 0 0 .9em; }
+.pinfo .btn { justify-self: start; }
+.pinfo__note { margin: 0; font-size: 14px; }
+
+.specs { display: grid; gap: 40px; padding-bottom: clamp(40px, 6vw, 72px); }
+@media (min-width: 960px) { .specs { grid-template-columns: repeat(2, 1fr); gap: 48px 64px; } }
+.specs__block .section-title { margin-bottom: 16px; font-size: clamp(15px, 1.4vw, 18px); }
+.tbl { width: 100%; border-collapse: collapse; font-size: 15px; }
+.tbl th, .tbl td { text-align: left; vertical-align: top; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--line); }
+.tbl thead th { font-weight: 500; color: var(--stone); font-size: 13px; }
+.tbl--kv th { font-weight: 400; color: var(--stone); width: 45%; }
+.fin { border-bottom: 1px solid var(--line); }
+.fin summary { cursor: pointer; padding: 10px 0; list-style-position: inside; }
+.fin p { margin: 0 0 12px; font-size: 14px; color: var(--text); }
+
+.draws { padding-bottom: clamp(40px, 6vw, 72px); }
+.draws .section-title { margin-bottom: 16px; font-size: clamp(15px, 1.4vw, 18px); }
+.draws__grid { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 960px) { .draws__grid { grid-template-columns: repeat(3, 1fr); } }
+.draws__i { display: grid; gap: 6px; padding: 0; border: 1px solid var(--line); background: #fff; cursor: zoom-in; text-align: left; font-size: 13px; color: var(--stone); }
+.draws__i img, .draws__i .ph { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; padding: 8px; }
+.draws__t { padding: 0 10px 10px; }
+
+.plead { padding-block: clamp(40px, 6vw, 72px); border-top: 1px solid var(--line); }
+
+/* просмотр фото */
+.lb { border: 0; padding: 0; max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; background: rgba(255,255,255,.98); }
+.lb::backdrop { background: rgba(255,255,255,.98); }
+.lb[open] { display: grid; place-items: center; }
+.lb img { max-width: calc(100vw - 120px); max-height: calc(100vh - 48px); object-fit: contain; }
+@media (max-width: 719px) { .lb img { max-width: 100vw; } }
+.lb__x, .lb__nav { position: absolute; border: 0; background: none; font-size: 40px; line-height: 1; width: 56px; height: 56px; cursor: pointer; color: var(--ink); }
+.lb__x { top: 8px; right: 8px; }
+.lb__nav--prev { left: 4px; top: 50%; transform: translateY(-50%); }
+.lb__nav--next { right: 4px; top: 50%; transform: translateY(-50%); }
+
+/* контакты, политика */
+.contact { display: grid; gap: 48px; padding-block: 16px clamp(48px, 7vw, 96px); }
+@media (min-width: 960px) { .contact { grid-template-columns: 1fr 1fr; } }
+.contact h1 { font-size: clamp(22px, 2.6vw, 32px); margin-bottom: 12px; }
+.contact .section-title { font-size: 14px; margin: 28px 0 8px; }
+.contact__lead { max-width: var(--measure); }
+.contact__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.contact address { font-style: normal; }
+.policy { padding-block: 16px clamp(48px, 7vw, 96px); }
+.policy h1 { font-size: clamp(22px, 2.6vw, 32px); margin-bottom: 24px; }
+.policy .section-title { font-size: 15px; margin: 28px 0 10px; }
+
+/* «Показать все» под таблицей и чертежами */
+.more { margin-top: 16px; }
+.more > summary { list-style: none; cursor: pointer; }
+.more > summary::-webkit-details-marker { display: none; }
+.more[open] > summary { display: none; }
+.more .draws__grid { margin-top: 0; }
+.draws__grid + .more[open] { margin-top: 16px; }
+
+/* телефон: фото товара — лентой с прокруткой вбок, чтобы название и цена были сразу под ней */
+@media (max-width: 959px) {
+  .pgal { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: var(--gap); margin-inline: calc(-1 * var(--pad)); padding-inline: var(--pad); scrollbar-width: none; }
+  .pgal::-webkit-scrollbar { display: none; }
+  .pgal__i { flex: 0 0 88%; scroll-snap-align: center; }
+  .pgal__i img, .pgal__i .ph, .pgal__i--main img, .pgal__i--main .ph { aspect-ratio: 4 / 3; }
+}

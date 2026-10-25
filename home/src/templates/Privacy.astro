@@ -1,0 +1,59 @@
+---
+// Политика конфиденциальности DUMSKAYA HOME — по образцу страницы студии (content/pages/*/privacy.json):
+// тот же оператор данных; отличия — заявку на товар фабрики видит партнёр-поставщик, cookie и Google Analytics нет.
+import Crumbs from '../components/Crumbs.astro';
+import { type HPage } from '../lib/catalog';
+interface Props { page: HPage }
+const { page } = Astro.props;
+const C = 'Panorama Systems Florida LLC, 200 Kings Point Dr, Apt 1603, Sunny Isles Beach, FL 33160, USA';
+const S = 'Súkennícka 1, 821 09 Bratislava';
+const mail = '<a href="mailto:irina@dumskaya-design.com">irina@dumskaya-design.com</a>';
+const tel = '<a href="tel:+421918177785">+421 918 17 77 85</a>';
+const texts: Record<string, [string, string][]> = {
+  en: [
+    ['Who processes your data', `Data controller: <strong>${C}</strong>. DUMSKAYA HOME is the product catalogue of the DUMSKAYA DESIGN interior design studio, ${S}, Slovakia. E-mail: ${mail}, phone: ${tel}.`],
+    ['What data we collect and why', 'When you send the price request form, we receive your name, phone number or e-mail address, the text of your message and the product you asked about. We use this data only to answer the request and prepare an offer (Art. 6(1)(b) GDPR — steps taken prior to entering into a contract).'],
+    ['Who we share data with', 'Requests from the website reach us via Telegram. A request for a factory product, including your name and contact details, is also passed to our supplier partner in Italy who prepares the price and the order. The website runs on a Hetzner server in the European Union. Your data is not sold or used for advertising.<br><br>The server log contains the IP address and browser details; it is kept for no longer than 90 days. If a message is written in neither Russian nor Ukrainian, its text (without your name and contact details) is sent to a machine translation service so that we receive a Russian translation.'],
+    ['How long we keep data', 'Requests are kept for no longer than 24 months after our last communication, unless a contract has been concluded between us. Contract-related data is retained for as long as Slovak law requires.'],
+    ['Cookies', 'The website does not set cookies and does not use analytics or advertising services.'],
+    ['Your rights', `You can request access to your data, its correction or deletion, restrict or object to its processing, and receive your data in a machine-readable format. Write to ${mail}. You can file a complaint with the Office for Personal Data Protection of the Slovak Republic (dataprotection.gov.sk).`],
+  ],
+  ru: [
+    ['Кто обрабатывает данные', `Оператор данных: <strong>${C}</strong>. DUMSKAYA HOME — каталог товаров студии дизайна интерьера DUMSKAYA DESIGN, ${S}, Словакия. E-mail: ${mail}, телефон: ${tel}.`],
+    ['Какие данные мы получаем и зачем', 'Когда вы отправляете форму запроса цены, мы получаем имя, телефон или e-mail, текст сообщения и товар, о котором вы спрашиваете. Эти данные нужны только для ответа на запрос и подготовки предложения (ст. 6(1)(b) GDPR — действия до заключения договора).'],
+    ['Кому передаются данные', 'Запросы с сайта приходят нам в Telegram. Запрос на товар фабрики вместе с вашим именем и контактами получает и наш партнёр-поставщик в Италии: он готовит цену и заказ. Сайт работает на сервере Hetzner в Европейском союзе. Данные не продаются и не используются для рекламы.<br><br>В журнале сервера есть IP-адрес и сведения о браузере; журнал хранится не дольше 90 дней. Если сообщение написано не по-русски и не по-украински, его текст (без имени и контактов) отправляется в сервис машинного перевода, чтобы мы получили перевод на русский.'],
+    ['Сколько хранятся данные', 'Запросы хранятся не дольше 24 месяцев после последнего общения, если между нами не заключён договор. Данные по договору хранятся столько, сколько требует законодательство Словакии.'],
+    ['Cookie', 'Сайт не ставит файлы cookie и не использует сервисы аналитики и рекламы.'],
+    ['Ваши права', `Вы можете запросить доступ к своим данным, их исправление или удаление, ограничить обработку или возразить против неё, получить данные в машиночитаемом виде. Пишите на ${mail}. Жалобу можно подать в Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk).`],
+  ],
+  de: [
+    ['Verantwortlicher', `Verantwortlich für die Datenverarbeitung: <strong>${C}</strong>. DUMSKAYA HOME ist der Produktkatalog des Studios für Interior Design DUMSKAYA DESIGN, ${S}, Slowakei. E-Mail: ${mail}, Telefon: ${tel}.`],
+    ['Welche Daten wir erheben und wozu', 'Wenn Sie das Formular für eine Preisanfrage senden, erhalten wir Ihren Namen, Ihre Telefonnummer oder E-Mail-Adresse, den Text Ihrer Nachricht und das angefragte Produkt. Wir verwenden diese Daten nur, um die Anfrage zu beantworten und ein Angebot zu erstellen (Art. 6 Abs. 1 lit. b DSGVO — vorvertragliche Maßnahmen).'],
+    ['Weitergabe von Daten', 'Anfragen von der Website erreichen uns über Telegram. Eine Anfrage zu einem Herstellerprodukt erhält mit Ihrem Namen und Ihren Kontaktdaten auch unser Lieferpartner in Italien, der Preis und Bestellung vorbereitet. Die Website läuft auf einem Server von Hetzner in der Europäischen Union. Ihre Daten werden nicht verkauft und nicht für Werbung verwendet.<br><br>Das Serverprotokoll enthält die IP-Adresse und Angaben zum Browser; es wird höchstens 90 Tage aufbewahrt. Ist eine Nachricht weder auf Russisch noch auf Ukrainisch geschrieben, wird ihr Text (ohne Namen und Kontaktdaten) an einen maschinellen Übersetzungsdienst gesendet, damit wir eine russische Übersetzung erhalten.'],
+    ['Speicherdauer', 'Anfragen werden höchstens 24 Monate nach dem letzten Kontakt gespeichert, sofern kein Vertrag zwischen uns geschlossen wurde. Vertragsdaten werden so lange aufbewahrt, wie es das slowakische Recht verlangt.'],
+    ['Cookies', 'Die Website setzt keine Cookies und verwendet keine Analyse- oder Werbedienste.'],
+    ['Ihre Rechte', `Sie können Auskunft über Ihre Daten, deren Berichtigung oder Löschung verlangen, die Verarbeitung einschränken oder ihr widersprechen und Ihre Daten in einem maschinenlesbaren Format erhalten. Schreiben Sie an ${mail}. Beschwerden können Sie beim Úrad na ochranu osobných údajov Slovenskej republiky einreichen (dataprotection.gov.sk).`],
+  ],
+  fr: [
+    ['Responsable du traitement', `Responsable du traitement : <strong>${C}</strong>. DUMSKAYA HOME est le catalogue de produits du studio d’architecture intérieure DUMSKAYA DESIGN, ${S}, Slovaquie. E-mail : ${mail}, téléphone : ${tel}.`],
+    ['Données collectées et finalité', 'Lorsque vous envoyez le formulaire de demande de prix, nous recevons votre nom, votre numéro de téléphone ou votre adresse e-mail, le texte de votre message et le produit concerné. Ces données servent uniquement à répondre à la demande et à préparer une offre (art. 6, paragraphe 1, point b du RGPD — mesures précontractuelles).'],
+    ['Destinataires des données', 'Les demandes envoyées depuis le site nous parviennent par Telegram. Une demande portant sur un produit d’un fabricant est aussi transmise, avec votre nom et vos coordonnées, à notre partenaire fournisseur en Italie, qui prépare le prix et la commande. Le site est hébergé sur un serveur Hetzner dans l’Union européenne. Vos données ne sont ni vendues ni utilisées à des fins publicitaires.<br><br>Le journal du serveur contient l’adresse IP et des informations sur le navigateur ; il est conservé 90 jours au maximum. Si un message n’est rédigé ni en russe ni en ukrainien, son texte (sans votre nom ni vos coordonnées) est envoyé à un service de traduction automatique afin que nous en recevions une traduction en russe.'],
+    ['Durée de conservation', 'Les demandes sont conservées 24 mois au maximum après notre dernier échange, sauf si un contrat a été conclu entre nous. Les données liées à un contrat sont conservées aussi longtemps que l’exige le droit slovaque.'],
+    ['Cookies', 'Le site ne dépose pas de cookies et n’utilise aucun service d’analyse ou de publicité.'],
+    ['Vos droits', `Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, limiter leur traitement ou vous y opposer, et recevoir vos données dans un format lisible par machine. Écrivez à ${mail}. Vous pouvez introduire une réclamation auprès de l’Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk).`],
+  ],
+  es: [
+    ['Responsable del tratamiento', `Responsable del tratamiento: <strong>${C}</strong>. DUMSKAYA HOME es el catálogo de productos del estudio de interiorismo DUMSKAYA DESIGN, ${S}, Eslovaquia. E-mail: ${mail}, teléfono: ${tel}.`],
+    ['Qué datos recogemos y para qué', 'Cuando envía el formulario de consulta de precio, recibimos su nombre, su teléfono o e-mail, el texto del mensaje y el producto por el que pregunta. Usamos estos datos solo para responder a la consulta y preparar una oferta (art. 6.1.b del RGPD — medidas precontractuales).'],
+    ['Con quién compartimos los datos', 'Las consultas enviadas desde la web nos llegan por Telegram. Una consulta sobre un producto de fábrica, con su nombre y sus datos de contacto, se transmite también a nuestro socio proveedor en Italia, que prepara el precio y el pedido. La web funciona en un servidor de Hetzner en la Unión Europea. Sus datos no se venden ni se usan con fines publicitarios.<br><br>El registro del servidor contiene la dirección IP y datos del navegador; se conserva un máximo de 90 días. Si un mensaje no está escrito en ruso ni en ucraniano, su texto (sin su nombre ni sus datos de contacto) se envía a un servicio de traducción automática para que recibamos una traducción al ruso.'],
+    ['Plazo de conservación', 'Las consultas se conservan un máximo de 24 meses desde nuestra última comunicación, salvo que hayamos celebrado un contrato. Los datos relacionados con un contrato se conservan durante el plazo que exige la legislación eslovaca.'],
+    ['Cookies', 'La web no instala cookies ni utiliza servicios de analítica o publicidad.'],
+    ['Sus derechos', `Puede solicitar el acceso a sus datos, su rectificación o supresión, limitar su tratamiento u oponerse a él y recibir sus datos en un formato legible por máquina. Escriba a ${mail}. Puede presentar una reclamación ante el Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk).`],
+  ],
+};
+---
+<Crumbs items={page.crumbs} />
+<article class="wrap prose policy">
+  <h1 class="display">{page.h1}</h1>
+  {texts[page.lang].map(([h, t]) => <><h2 class="section-title">{h}</h2><p set:html={t} /></>)}
+</article>

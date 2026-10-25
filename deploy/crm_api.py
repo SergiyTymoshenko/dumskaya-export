@@ -257,7 +257,7 @@ def product_card(url, code=""):
             raise CrmError(f"Артикула {code} нет в магазине на сайте")
         if not it.get("path"):                       # товар фабрики: своей страницы на сайте пока нет — только из базы
             return {"url": "", "title": it.get("name") or code, "image_url": "", "code": code, "factory": factory_hint(it)}
-        url = SITE + it["path"]
+        url = it["path"] if it["path"].startswith("https://") else SITE + it["path"]   # товар DUMSKAYA HOME — полный адрес
     p = urllib.parse.urlparse(url)
     if p.scheme != "https" or p.hostname not in CARD_HOSTS:
         raise CrmError("Карточку можно подтянуть только с dumskaya-design.com или dumskaya-home.com")

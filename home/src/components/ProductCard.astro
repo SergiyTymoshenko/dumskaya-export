@@ -1,0 +1,16 @@
+---
+// Карточка товара в списке: фото на светлом фоне целиком, под ним — фабрика и название.
+import Img from './Img.astro';
+import { ui, type Lang } from '../lib/i18n';
+import { coverOf, manifest, type Product } from '../lib/catalog';
+interface Props { p: Product; lang: Lang; eager?: boolean; showBrand?: boolean }
+const { p, lang, eager = false, showBrand = true } = Astro.props;
+const cover = coverOf(p);
+const m = cover ? manifest[cover.name] : undefined;
+const cut = !!m?.cut;
+---
+<a class="pc" href={p.path[lang]} data-brand={p.brand_slug} data-out={p.place !== 'indoor' ? '1' : undefined}>
+  <span class:list={['pc__img', cut ? 'pc__img--cut' : 'pc__img--photo']} style={cut && m?.bg ? `background:${m.bg}` : undefined}><Img name={cover?.name} alt={`${p.name[lang]} — ${p.brand}`} sizes="(min-width: 1100px) 25vw, (min-width: 720px) 33vw, 50vw" eager={eager} /></span>
+  {showBrand && <span class="pc__brand">{p.brand}{p.new && <span class="pc__new"> · {ui(lang).new}</span>}</span>}
+  <span class="pc__name">{p.name[lang]}</span>
+</a>

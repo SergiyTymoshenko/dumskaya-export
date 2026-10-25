@@ -1,0 +1,15 @@
+---
+// Фото из home/public/img (scripts/home_images.mjs): WebP нескольких ширин с описательными именами.
+import { manifest } from '../lib/catalog';
+interface Props { name: string | null | undefined; alt?: string; sizes?: string; class?: string; eager?: boolean }
+const { name, alt = '', sizes = '100vw', class: cls, eager = false } = Astro.props;
+const m = name ? manifest[name] : undefined;
+const srcset = m?.files.map(([w, f]) => `/img/${f} ${w}w`).join(', ');
+const fallback = m ? m.files[Math.min(1, m.files.length - 1)][1] : null;
+---
+{m ? (
+  <img src={`/img/${fallback}`} srcset={srcset} sizes={sizes} width={m.width} height={m.height} alt={alt} class={cls}
+    loading={eager ? 'eager' : 'lazy'} decoding={eager ? 'sync' : 'async'} fetchpriority={eager ? 'high' : undefined} />
+) : (
+  <span class:list={['ph', cls]} role="img" aria-label={alt}></span>
+)}

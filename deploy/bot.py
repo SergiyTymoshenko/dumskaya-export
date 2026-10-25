@@ -44,6 +44,7 @@ except ImportError:                    # pragma: no cover
         return ""
 
 SITE = "https://dumskaya-design.com"
+HOME_SITE = "dumskaya-home.com"           # каталог товаров фабрик (тот же бот и те же заявки)
 ROLES = {
     "owner": "Разработчик",
     "designer": "Дизайнер студии",
@@ -1077,7 +1078,7 @@ class Bot(CrmBotMixin, PortalBotMixin):
             p = self.find_partner(pid)
             people = self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", p["id"]) if p else []
             for u in people:
-                if self.send(u["tg_id"], "<b>Заявка с сайта DUMSKAYA DESIGN на ваш товар</b>\n\n" + body):
+                if self.send(u["tg_id"], f"<b>Заявка с сайта {site_name(lead)} на ваш товар</b>\n\n" + body):
                     delivered.append(u["tg_id"])
             who = ", ".join(self.label(u) for u in people if u["tg_id"] in delivered)
             lead["routed"] = (f"передана партнёру «{p['name']}»: {who}" if p and who else
@@ -1099,7 +1100,8 @@ class Bot(CrmBotMixin, PortalBotMixin):
             else:
                 delivered += self.notify_leads("<b>🛒 Заявка на товар магазина</b>\n\n" + body, rows=rows)
         else:
-            delivered += self.notify_leads("<b>Заявка с сайта</b>\n\n" + body, rows=rows)
+            delivered += self.notify_leads("<b>Заявка с сайта" + (" DUMSKAYA HOME" if is_home(lead) else "")
+                                           + "</b>\n\n" + body, rows=rows)
         return delivered
 
 
@@ -1113,6 +1115,19 @@ def models_lines(prod):
         out.append(f"<b>📐 {esc(m.get('what') or '2D/3D')}:</b> " + (f"{esc(fm)} — " if fm else "")
                    + f'<a href="{esc(m["url"])}">скачать у фабрики</a>' + (f" ({esc(m['how'])})" if m.get("how") else ""))
     return out
+
+
+def is_home(lead):
+    """Заявка с каталога фабрик dumskaya-home.com (сервис ставит site и полный адрес страницы)."""
+    return lead.get("site") == HOME_SITE or str(lead.get("page") or "").startswith("https://" + HOME_SITE)
+
+
+def site_url(lead):
+    return "https://" + HOME_SITE if is_home(lead) else SITE
+
+
+def site_name(lead):
+    return "DUMSKAYA HOME" if is_home(lead) else "DUMSKAYA DESIGN"
 
 
 def format_lead(lead, model, prod):
@@ -1151,7 +1166,7 @@ def format_lead(lead, model, prod):
         elif lead.get("translate_error"):
             lines.append("<i>Перевести не получилось — сервис перевода не ответил.</i>")
     page = lead.get("page") or ""
-    lines.append(f"<i>{esc(lead.get('lang', ''))} · {esc(SITE + page)}</i>")
+    lines.append(f"<i>{esc(lead.get('lang', ''))} · {esc(page if page.startswith('https://') else site_url(lead) + page)}</i>")
     return "\n".join(lines)
 
 

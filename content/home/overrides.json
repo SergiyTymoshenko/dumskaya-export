@@ -1,0 +1,12 @@
+{
+  "_about": "Правки товаров для сайта DUMSKAYA HOME поверх каталогов фабрик (сами каталоги не меняем): ключ — наш артикул. variant — уточнение к модели в названии («Outdoor», «Syncro»), type / place — исправленные тип и «для улицы» (indoor / outdoor / both), name — название целиком на всех языках, hide — не показывать на сайте (причина), duplicate_of — тот же товар, что и указанный артикул. Применяет scripts/shop/catalog_index.py.",
+  "DF-D5951": {"type": "valet", "_why": "у Flexform это вешалка Soreto (servomuto), не зеркало"},
+  "DF-K7212": {"type": "coffee_table", "_why": "Calder Bronze: журнальные столики (60–160 см), а DF-K7211 — длинные приставные"},
+  "DF-K8094": {"place": "indoor", "_why": "Strata для дома (ножки olmo nero, мрамор, стекло); уличная — DF-K8095"},
+  "DF-H8742": {"duplicate_of": "DF-H8743", "_why": "Modulor: тот же текст, страница коллекции со снимками каталога"},
+  "DF-H8744": {"hide": "интерьер магазина, не изделие для дома", "_why": "Modulor Retail"},
+  "DF-A5232": {"model": "Pedro", "variant": "Open Air", "_why": "у Baxter это версия Open Air (артикулы …PA…, фото OpenAir)"},
+  "DF-H8756": {"name": {"en": "Rialto TV unit", "ru": "ТВ-тумба Rialto", "de": "Rialto TV-Möbel", "fr": "Meuble TV Rialto", "es": "Mueble de TV Rialto"}},
+  "DF-H8757": {"type": "sideboard", "name": {"en": "Rialto bar cabinet", "ru": "Бар Rialto", "de": "Rialto Barschrank", "fr": "Meuble bar Rialto", "es": "Mueble bar Rialto"}},
+  "DF-H8758": {"type": "drawers", "name": {"en": "Rialto chest of drawers and bedside tables", "ru": "Комод и тумбы Rialto", "de": "Rialto Kommode und Nachttische", "fr": "Commode et chevets Rialto", "es": "Cómoda y mesitas Rialto"}}
+}

@@ -1,0 +1,1927 @@
+{
+  "_about": "Структура каталога DUMSKAYA HOME (dumskaya-home.com): разделы → категории → типы изделий из каталогов фабрик (поле type), комнаты и «для улицы». Названия и адреса — на языках сайта (en — основной, без префикса в адресе). Тип изделия — то же, что «type» в content/shop/catalog/<фабрика>.json; новый тип сначала добавить сюда (scripts/shop/catalog_index.py проверит). Выданные адреса (slug) не менять — только через редирект.",
+  "langs": [
+    "en",
+    "ru",
+    "de",
+    "fr",
+    "es"
+  ],
+  "departments": [
+    {
+      "id": "furniture",
+      "categories": [
+        "sofas",
+        "armchairs",
+        "chaise-longues",
+        "poufs",
+        "chairs",
+        "stools",
+        "benches",
+        "tables",
+        "desks",
+        "coffee-tables",
+        "side-tables",
+        "consoles",
+        "beds",
+        "bedside-tables",
+        "wardrobes",
+        "storage",
+        "bookcases",
+        "sideboards",
+        "chests-of-drawers"
+      ],
+      "name": {
+        "en": "Furniture",
+        "ru": "Мебель",
+        "de": "Möbel",
+        "fr": "Mobilier",
+        "es": "Muebles"
+      },
+      "slug": {
+        "en": "furniture",
+        "ru": "mebel",
+        "de": "moebel",
+        "fr": "mobilier",
+        "es": "muebles"
+      }
+    },
+    {
+      "id": "lighting",
+      "categories": [
+        "pendant-lamps",
+        "ceiling-lights",
+        "recessed-lights",
+        "track-lights",
+        "wall-lamps",
+        "table-lamps",
+        "floor-lamps",
+        "outdoor-lighting"
+      ],
+      "name": {
+        "en": "Lighting",
+        "ru": "Свет",
+        "de": "Leuchten",
+        "fr": "Luminaires",
+        "es": "Iluminación"
+      },
+      "slug": {
+        "en": "lighting",
+        "ru": "svet",
+        "de": "leuchten",
+        "fr": "luminaires",
+        "es": "iluminacion"
+      }
+    },
+    {
+      "id": "kitchens-bathrooms",
+      "categories": [
+        "kitchens",
+        "bathroom-furniture"
+      ],
+      "name": {
+        "en": "Kitchens and bathrooms",
+        "ru": "Кухни и ванные",
+        "de": "Küchen und Bäder",
+        "fr": "Cuisines et salles de bains",
+        "es": "Cocinas y baños"
+      },
+      "slug": {
+        "en": "kitchens-and-bathrooms",
+        "ru": "kuhni-i-vannye",
+        "de": "kuechen-und-baeder",
+        "fr": "cuisines-et-salles-de-bains",
+        "es": "cocinas-y-banos"
+      }
+    },
+    {
+      "id": "doors-walls",
+      "categories": [
+        "doors",
+        "partitions",
+        "wall-panelling"
+      ],
+      "name": {
+        "en": "Doors and wall systems",
+        "ru": "Двери и стеновые системы",
+        "de": "Türen und Wandsysteme",
+        "fr": "Portes et systèmes muraux",
+        "es": "Puertas y sistemas de pared"
+      },
+      "slug": {
+        "en": "doors-and-walls",
+        "ru": "dveri-i-steny",
+        "de": "tueren-und-waende",
+        "fr": "portes-et-murs",
+        "es": "puertas-y-paredes"
+      }
+    },
+    {
+      "id": "rugs-textiles",
+      "categories": [
+        "rugs",
+        "textiles"
+      ],
+      "name": {
+        "en": "Rugs and textiles",
+        "ru": "Ковры и текстиль",
+        "de": "Teppiche und Textilien",
+        "fr": "Tapis et textiles",
+        "es": "Alfombras y textiles"
+      },
+      "slug": {
+        "en": "rugs-and-textiles",
+        "ru": "kovry-i-tekstil",
+        "de": "teppiche-und-textilien",
+        "fr": "tapis-et-textiles",
+        "es": "alfombras-y-textiles"
+      }
+    },
+    {
+      "id": "accessories",
+      "categories": [
+        "mirrors",
+        "screens",
+        "decor"
+      ],
+      "name": {
+        "en": "Accessories",
+        "ru": "Аксессуары",
+        "de": "Accessoires",
+        "fr": "Accessoires",
+        "es": "Accesorios"
+      },
+      "slug": {
+        "en": "accessories",
+        "ru": "aksessuary",
+        "de": "accessoires",
+        "fr": "accessoires",
+        "es": "accesorios"
+      }
+    }
+  ],
+  "outdoor": {
+    "_about": "Не отдельные категории, а все изделия «для улицы» (place: outdoor) по тем же категориям.",
+    "name": {
+      "en": "Outdoor",
+      "ru": "Для улицы",
+      "de": "Outdoor",
+      "fr": "Extérieur",
+      "es": "Exterior"
+    },
+    "slug": {
+      "en": "outdoor",
+      "ru": "dlya-ulicy",
+      "de": "outdoor",
+      "fr": "exterieur",
+      "es": "exterior"
+    }
+  },
+  "categories": {
+    "sofas": {
+      "types": [
+        "sofa",
+        "sofa_bed"
+      ],
+      "rooms": [
+        "living"
+      ],
+      "name": {
+        "en": "Sofas",
+        "ru": "Диваны",
+        "de": "Sofas",
+        "fr": "Canapés",
+        "es": "Sofás"
+      },
+      "slug": {
+        "en": "sofas",
+        "ru": "divany",
+        "de": "sofas",
+        "fr": "canapes",
+        "es": "sofas"
+      }
+    },
+    "armchairs": {
+      "types": [
+        "armchair"
+      ],
+      "rooms": [
+        "living"
+      ],
+      "name": {
+        "en": "Armchairs",
+        "ru": "Кресла",
+        "de": "Sessel",
+        "fr": "Fauteuils",
+        "es": "Sillones"
+      },
+      "slug": {
+        "en": "armchairs",
+        "ru": "kresla",
+        "de": "sessel",
+        "fr": "fauteuils",
+        "es": "sillones"
+      }
+    },
+    "chaise-longues": {
+      "types": [
+        "chaise",
+        "sunbed"
+      ],
+      "rooms": [
+        "living"
+      ],
+      "name": {
+        "en": "Chaise longues and daybeds",
+        "ru": "Кушетки и шезлонги",
+        "de": "Liegen und Daybeds",
+        "fr": "Méridiennes et bains de soleil",
+        "es": "Chaise longues y tumbonas"
+      },
+      "slug": {
+        "en": "chaise-longues",
+        "ru": "kushetki",
+        "de": "liegen",
+        "fr": "meridiennes",
+        "es": "chaise-longues"
+      }
+    },
+    "poufs": {
+      "types": [
+        "pouf"
+      ],
+      "rooms": [
+        "living"
+      ],
+      "name": {
+        "en": "Poufs and ottomans",
+        "ru": "Пуфы и оттоманки",
+        "de": "Poufs und Hocker",
+        "fr": "Poufs",
+        "es": "Pufs y otomanas"
+      },
+      "slug": {
+        "en": "poufs",
+        "ru": "pufy",
+        "de": "poufs",
+        "fr": "poufs",
+        "es": "pufs"
+      }
+    },
+    "chairs": {
+      "types": [
+        "chair"
+      ],
+      "rooms": [
+        "dining"
+      ],
+      "name": {
+        "en": "Chairs",
+        "ru": "Стулья",
+        "de": "Stühle",
+        "fr": "Chaises",
+        "es": "Sillas"
+      },
+      "slug": {
+        "en": "chairs",
+        "ru": "stulya",
+        "de": "stuehle",
+        "fr": "chaises",
+        "es": "sillas"
+      }
+    },
+    "stools": {
+      "types": [
+        "stool"
+      ],
+      "rooms": [
+        "dining",
+        "kitchen"
+      ],
+      "name": {
+        "en": "Stools and bar stools",
+        "ru": "Табуреты и барные стулья",
+        "de": "Hocker und Barhocker",
+        "fr": "Tabourets",
+        "es": "Taburetes"
+      },
+      "slug": {
+        "en": "stools",
+        "ru": "taburety",
+        "de": "hocker",
+        "fr": "tabourets",
+        "es": "taburetes"
+      }
+    },
+    "benches": {
+      "types": [
+        "bench"
+      ],
+      "rooms": [
+        "dining",
+        "bedroom"
+      ],
+      "name": {
+        "en": "Benches",
+        "ru": "Скамьи и банкетки",
+        "de": "Bänke",
+        "fr": "Bancs",
+        "es": "Bancos"
+      },
+      "slug": {
+        "en": "benches",
+        "ru": "skami",
+        "de": "baenke",
+        "fr": "bancs",
+        "es": "bancos"
+      }
+    },
+    "tables": {
+      "types": [
+        "table"
+      ],
+      "rooms": [
+        "dining"
+      ],
+      "name": {
+        "en": "Dining tables",
+        "ru": "Обеденные столы",
+        "de": "Esstische",
+        "fr": "Tables à manger",
+        "es": "Mesas de comedor"
+      },
+      "slug": {
+        "en": "dining-tables",
+        "ru": "obedennye-stoly",
+        "de": "esstische",
+        "fr": "tables-a-manger",
+        "es": "mesas-de-comedor"
+      }
+    },
+    "desks": {
+      "types": [
+        "desk"
+      ],
+      "rooms": [
+        "office"
+      ],
+      "name": {
+        "en": "Desks",
+        "ru": "Письменные столы",
+        "de": "Schreibtische",
+        "fr": "Bureaux",
+        "es": "Escritorios"
+      },
+      "slug": {
+        "en": "desks",
+        "ru": "pismennye-stoly",
+        "de": "schreibtische",
+        "fr": "bureaux",
+        "es": "escritorios"
+      }
+    },
+    "coffee-tables": {
+      "types": [
+        "coffee_table"
+      ],
+      "rooms": [
+        "living"
+      ],
+      "name": {
+        "en": "Coffee tables",
+        "ru": "Журнальные столики",
+        "de": "Couchtische",
+        "fr": "Tables basses",
+        "es": "Mesas de centro"
+      },
+      "slug": {
+        "en": "coffee-tables",
+        "ru": "zhurnalnye-stoliki",
+        "de": "couchtische",
+        "fr": "tables-basses",
+        "es": "mesas-de-centro"
+      }
+    },
+    "side-tables": {
+      "types": [
+        "side_table",
+        "trolley"
+      ],
+      "rooms": [
+        "living"
+      ],
+      "name": {
+        "en": "Side tables",
+        "ru": "Приставные столики",
+        "de": "Beistelltische",
+        "fr": "Tables d'appoint",
+        "es": "Mesas auxiliares"
+      },
+      "slug": {
+        "en": "side-tables",
+        "ru": "pristavnye-stoliki",
+        "de": "beistelltische",
+        "fr": "tables-d-appoint",
+        "es": "mesas-auxiliares"
+      }
+    },
+    "consoles": {
+      "types": [
+        "console"
+      ],
+      "rooms": [
+        "living",
+        "hall"
+      ],
+      "name": {
+        "en": "Console tables",
+        "ru": "Консоли",
+        "de": "Konsolentische",
+        "fr": "Consoles",
+        "es": "Consolas"
+      },
+      "slug": {
+        "en": "console-tables",
+        "ru": "konsoli",
+        "de": "konsolentische",
+        "fr": "consoles",
+        "es": "consolas"
+      }
+    },
+    "beds": {
+      "types": [
+        "bed",
+        "headboard",
+        "mattress"
+      ],
+      "rooms": [
+        "bedroom"
+      ],
+      "name": {
+        "en": "Beds",
+        "ru": "Кровати",
+        "de": "Betten",
+        "fr": "Lits",
+        "es": "Camas"
+      },
+      "slug": {
+        "en": "beds",
+        "ru": "krovati",
+        "de": "betten",
+        "fr": "lits",
+        "es": "camas"
+      }
+    },
+    "bedside-tables": {
+      "types": [
+        "bedside"
+      ],
+      "rooms": [
+        "bedroom"
+      ],
+      "name": {
+        "en": "Bedside tables",
+        "ru": "Прикроватные тумбы",
+        "de": "Nachttische",
+        "fr": "Tables de chevet",
+        "es": "Mesitas de noche"
+      },
+      "slug": {
+        "en": "bedside-tables",
+        "ru": "prikrovatnye-tumby",
+        "de": "nachttische",
+        "fr": "tables-de-chevet",
+        "es": "mesitas-de-noche"
+      }
+    },
+    "wardrobes": {
+      "types": [
+        "wardrobe"
+      ],
+      "rooms": [
+        "bedroom",
+        "closet"
+      ],
+      "name": {
+        "en": "Wardrobes and walk-in closets",
+        "ru": "Шкафы и гардеробные",
+        "de": "Kleiderschränke und Ankleiden",
+        "fr": "Armoires et dressings",
+        "es": "Armarios y vestidores"
+      },
+      "slug": {
+        "en": "wardrobes",
+        "ru": "shkafy-i-garderobnye",
+        "de": "kleiderschraenke",
+        "fr": "armoires-et-dressings",
+        "es": "armarios-y-vestidores"
+      }
+    },
+    "storage": {
+      "types": [
+        "storage"
+      ],
+      "rooms": [
+        "living"
+      ],
+      "name": {
+        "en": "Storage and wall units",
+        "ru": "Системы хранения",
+        "de": "Wohnwände und Stauraum",
+        "fr": "Rangements et compositions murales",
+        "es": "Almacenaje y composiciones"
+      },
+      "slug": {
+        "en": "storage",
+        "ru": "sistemy-hraneniya",
+        "de": "stauraum",
+        "fr": "rangements",
+        "es": "almacenaje"
+      }
+    },
+    "bookcases": {
+      "types": [
+        "bookcase"
+      ],
+      "rooms": [
+        "living",
+        "office"
+      ],
+      "name": {
+        "en": "Bookcases and shelving",
+        "ru": "Стеллажи и книжные шкафы",
+        "de": "Bücherregale",
+        "fr": "Bibliothèques",
+        "es": "Librerías y estanterías"
+      },
+      "slug": {
+        "en": "bookcases",
+        "ru": "stellazhi",
+        "de": "buecherregale",
+        "fr": "bibliotheques",
+        "es": "librerias"
+      }
+    },
+    "sideboards": {
+      "types": [
+        "sideboard"
+      ],
+      "rooms": [
+        "living",
+        "dining"
+      ],
+      "name": {
+        "en": "Sideboards",
+        "ru": "Буфеты и тумбы",
+        "de": "Sideboards",
+        "fr": "Buffets",
+        "es": "Aparadores"
+      },
+      "slug": {
+        "en": "sideboards",
+        "ru": "bufety",
+        "de": "sideboards",
+        "fr": "buffets",
+        "es": "aparadores"
+      }
+    },
+    "chests-of-drawers": {
+      "types": [
+        "drawers"
+      ],
+      "rooms": [
+        "bedroom"
+      ],
+      "name": {
+        "en": "Chests of drawers",
+        "ru": "Комоды",
+        "de": "Kommoden",
+        "fr": "Commodes",
+        "es": "Cómodas"
+      },
+      "slug": {
+        "en": "chests-of-drawers",
+        "ru": "komody",
+        "de": "kommoden",
+        "fr": "commodes",
+        "es": "comodas"
+      }
+    },
+    "pendant-lamps": {
+      "types": [
+        "suspension"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Pendant lamps",
+        "ru": "Подвесные светильники",
+        "de": "Pendelleuchten",
+        "fr": "Suspensions",
+        "es": "Lámparas colgantes"
+      },
+      "slug": {
+        "en": "pendant-lamps",
+        "ru": "podvesnye-svetilniki",
+        "de": "pendelleuchten",
+        "fr": "suspensions",
+        "es": "lamparas-colgantes"
+      }
+    },
+    "ceiling-lights": {
+      "types": [
+        "ceiling"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Ceiling lights",
+        "ru": "Потолочные светильники",
+        "de": "Deckenleuchten",
+        "fr": "Plafonniers",
+        "es": "Plafones"
+      },
+      "slug": {
+        "en": "ceiling-lights",
+        "ru": "potolochnye-svetilniki",
+        "de": "deckenleuchten",
+        "fr": "plafonniers",
+        "es": "plafones"
+      }
+    },
+    "recessed-lights": {
+      "types": [
+        "recessed",
+        "wall_recessed",
+        "profile"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Recessed lights",
+        "ru": "Встраиваемые светильники",
+        "de": "Einbauleuchten",
+        "fr": "Luminaires encastrés",
+        "es": "Luces empotrables"
+      },
+      "slug": {
+        "en": "recessed-lights",
+        "ru": "vstraivaemye-svetilniki",
+        "de": "einbauleuchten",
+        "fr": "encastres",
+        "es": "empotrables"
+      }
+    },
+    "track-lights": {
+      "types": [
+        "track",
+        "spot",
+        "light_part"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Track lights and spots",
+        "ru": "Трековые светильники и споты",
+        "de": "Strahler und Schienensysteme",
+        "fr": "Spots et rails",
+        "es": "Focos y carriles"
+      },
+      "slug": {
+        "en": "track-lights",
+        "ru": "trekovye-svetilniki",
+        "de": "strahler",
+        "fr": "spots",
+        "es": "focos"
+      }
+    },
+    "wall-lamps": {
+      "types": [
+        "wall"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Wall lamps",
+        "ru": "Бра и настенные светильники",
+        "de": "Wandleuchten",
+        "fr": "Appliques",
+        "es": "Apliques"
+      },
+      "slug": {
+        "en": "wall-lamps",
+        "ru": "bra",
+        "de": "wandleuchten",
+        "fr": "appliques",
+        "es": "apliques"
+      }
+    },
+    "table-lamps": {
+      "types": [
+        "table_lamp"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Table lamps",
+        "ru": "Настольные лампы",
+        "de": "Tischleuchten",
+        "fr": "Lampes de table",
+        "es": "Lámparas de mesa"
+      },
+      "slug": {
+        "en": "table-lamps",
+        "ru": "nastolnye-lampy",
+        "de": "tischleuchten",
+        "fr": "lampes-de-table",
+        "es": "lamparas-de-mesa"
+      }
+    },
+    "floor-lamps": {
+      "types": [
+        "floor"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Floor lamps",
+        "ru": "Торшеры",
+        "de": "Stehleuchten",
+        "fr": "Lampadaires",
+        "es": "Lámparas de pie"
+      },
+      "slug": {
+        "en": "floor-lamps",
+        "ru": "torshery",
+        "de": "stehleuchten",
+        "fr": "lampadaires",
+        "es": "lamparas-de-pie"
+      }
+    },
+    "outdoor-lighting": {
+      "types": [
+        "inground",
+        "bollard",
+        "pole"
+      ],
+      "rooms": [
+        "outdoor"
+      ],
+      "name": {
+        "en": "Garden and path lights",
+        "ru": "Ландшафтные светильники",
+        "de": "Garten- und Wegeleuchten",
+        "fr": "Bornes et éclairage de jardin",
+        "es": "Balizas y luces de jardín"
+      },
+      "slug": {
+        "en": "garden-lights",
+        "ru": "landshaftnye-svetilniki",
+        "de": "gartenleuchten",
+        "fr": "eclairage-de-jardin",
+        "es": "luces-de-jardin"
+      }
+    },
+    "kitchens": {
+      "types": [
+        "kitchen",
+        "kitchen_unit"
+      ],
+      "rooms": [
+        "kitchen"
+      ],
+      "name": {
+        "en": "Kitchens",
+        "ru": "Кухни",
+        "de": "Küchen",
+        "fr": "Cuisines",
+        "es": "Cocinas"
+      },
+      "slug": {
+        "en": "kitchens",
+        "ru": "kuhni",
+        "de": "kuechen",
+        "fr": "cuisines",
+        "es": "cocinas"
+      }
+    },
+    "bathroom-furniture": {
+      "types": [
+        "bathroom"
+      ],
+      "rooms": [
+        "bathroom"
+      ],
+      "name": {
+        "en": "Bathroom furniture",
+        "ru": "Мебель для ванной",
+        "de": "Badmöbel",
+        "fr": "Meubles de salle de bains",
+        "es": "Muebles de baño"
+      },
+      "slug": {
+        "en": "bathroom-furniture",
+        "ru": "mebel-dlya-vannoy",
+        "de": "badmoebel",
+        "fr": "meubles-salle-de-bains",
+        "es": "muebles-de-bano"
+      }
+    },
+    "doors": {
+      "types": [
+        "doors"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Interior doors",
+        "ru": "Межкомнатные двери",
+        "de": "Innentüren",
+        "fr": "Portes intérieures",
+        "es": "Puertas de interior"
+      },
+      "slug": {
+        "en": "interior-doors",
+        "ru": "mezhkomnatnye-dveri",
+        "de": "innentueren",
+        "fr": "portes-interieures",
+        "es": "puertas-de-interior"
+      }
+    },
+    "partitions": {
+      "types": [
+        "partition"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Glass partitions",
+        "ru": "Перегородки",
+        "de": "Trennwände",
+        "fr": "Cloisons",
+        "es": "Tabiques y mamparas"
+      },
+      "slug": {
+        "en": "partitions",
+        "ru": "peregorodki",
+        "de": "trennwaende",
+        "fr": "cloisons",
+        "es": "tabiques"
+      }
+    },
+    "wall-panelling": {
+      "types": [
+        "boiserie"
+      ],
+      "rooms": [],
+      "name": {
+        "en": "Wall panelling",
+        "ru": "Стеновые панели",
+        "de": "Wandverkleidungen",
+        "fr": "Boiseries et panneaux muraux",
+        "es": "Revestimientos de pared"
+      },
+      "slug": {
+        "en": "wall-panelling",
+        "ru": "stenovye-paneli",
+        "de": "wandverkleidungen",
+        "fr": "boiseries",
+        "es": "revestimientos-de-pared"
+      }
+    },
+    "rugs": {
+      "types": [
+        "rug"
+      ],
+      "rooms": [
+        "living",
+        "bedroom"
+      ],
+      "name": {
+        "en": "Rugs",
+        "ru": "Ковры",
+        "de": "Teppiche",
+        "fr": "Tapis",
+        "es": "Alfombras"
+      },
+      "slug": {
+        "en": "rugs",
+        "ru": "kovry",
+        "de": "teppiche",
+        "fr": "tapis",
+        "es": "alfombras"
+      }
+    },
+    "textiles": {
+      "types": [
+        "throw",
+        "cushion",
+        "bedding"
+      ],
+      "rooms": [
+        "living",
+        "bedroom"
+      ],
+      "name": {
+        "en": "Throws, cushions and bed linen",
+        "ru": "Пледы, подушки и постельное",
+        "de": "Plaids, Kissen und Bettwäsche",
+        "fr": "Plaids, coussins et linge de lit",
+        "es": "Mantas, cojines y ropa de cama"
+      },
+      "slug": {
+        "en": "textiles",
+        "ru": "tekstil",
+        "de": "textilien",
+        "fr": "textiles",
+        "es": "textiles"
+      }
+    },
+    "mirrors": {
+      "types": [
+        "mirror"
+      ],
+      "rooms": [
+        "hall",
+        "bathroom",
+        "bedroom"
+      ],
+      "name": {
+        "en": "Mirrors",
+        "ru": "Зеркала",
+        "de": "Spiegel",
+        "fr": "Miroirs",
+        "es": "Espejos"
+      },
+      "slug": {
+        "en": "mirrors",
+        "ru": "zerkala",
+        "de": "spiegel",
+        "fr": "miroirs",
+        "es": "espejos"
+      }
+    },
+    "screens": {
+      "types": [
+        "screen"
+      ],
+      "rooms": [
+        "living"
+      ],
+      "name": {
+        "en": "Screens and room dividers",
+        "ru": "Ширмы",
+        "de": "Paravents",
+        "fr": "Paravents",
+        "es": "Biombos"
+      },
+      "slug": {
+        "en": "screens",
+        "ru": "shirmy",
+        "de": "paravents",
+        "fr": "paravents",
+        "es": "biombos"
+      }
+    },
+    "decor": {
+      "types": [
+        "decor",
+        "vase",
+        "tray",
+        "bowl",
+        "candle",
+        "clock",
+        "basket",
+        "valet",
+        "umbrella"
+      ],
+      "rooms": [
+        "living"
+      ],
+      "name": {
+        "en": "Decor and objects",
+        "ru": "Декор и предметы интерьера",
+        "de": "Wohnaccessoires",
+        "fr": "Objets de décoration",
+        "es": "Objetos decorativos"
+      },
+      "slug": {
+        "en": "decor",
+        "ru": "dekor",
+        "de": "wohnaccessoires",
+        "fr": "objets-deco",
+        "es": "objetos-decorativos"
+      }
+    }
+  },
+  "types": {
+    "sofa": {
+      "en": "sofa",
+      "ru": "Диван",
+      "de": "Sofa",
+      "fr": "Canapé",
+      "es": "Sofá",
+      "slug": {
+        "en": "sofa",
+        "ru": "divan",
+        "de": "sofa",
+        "fr": "canape",
+        "es": "sofa"
+      }
+    },
+    "sofa_bed": {
+      "en": "sofa bed",
+      "ru": "Диван-кровать",
+      "de": "Schlafsofa",
+      "fr": "Canapé-lit",
+      "es": "Sofá cama",
+      "slug": {
+        "en": "sofa-bed",
+        "ru": "divan-krovat",
+        "de": "schlafsofa",
+        "fr": "canape-lit",
+        "es": "sofa-cama"
+      }
+    },
+    "armchair": {
+      "en": "armchair",
+      "ru": "Кресло",
+      "de": "Sessel",
+      "fr": "Fauteuil",
+      "es": "Sillón",
+      "slug": {
+        "en": "armchair",
+        "ru": "kreslo",
+        "de": "sessel",
+        "fr": "fauteuil",
+        "es": "sillon"
+      }
+    },
+    "chaise": {
+      "en": "chaise longue",
+      "ru": "Кушетка",
+      "de": "Liege",
+      "fr": "Méridienne",
+      "es": "Chaise longue",
+      "slug": {
+        "en": "chaise-longue",
+        "ru": "kushetka",
+        "de": "liege",
+        "fr": "meridienne",
+        "es": "chaise-longue"
+      }
+    },
+    "sunbed": {
+      "en": "sun lounger",
+      "ru": "Шезлонг",
+      "de": "Sonnenliege",
+      "fr": "Bain de soleil",
+      "es": "Tumbona",
+      "slug": {
+        "en": "sun-lounger",
+        "ru": "shezlong",
+        "de": "sonnenliege",
+        "fr": "bain-de-soleil",
+        "es": "tumbona"
+      }
+    },
+    "pouf": {
+      "en": "pouf",
+      "ru": "Пуф",
+      "de": "Pouf",
+      "fr": "Pouf",
+      "es": "Puf",
+      "slug": {
+        "en": "pouf",
+        "ru": "puf",
+        "de": "pouf",
+        "fr": "pouf",
+        "es": "puf"
+      }
+    },
+    "chair": {
+      "en": "chair",
+      "ru": "Стул",
+      "de": "Stuhl",
+      "fr": "Chaise",
+      "es": "Silla",
+      "slug": {
+        "en": "chair",
+        "ru": "stul",
+        "de": "stuhl",
+        "fr": "chaise",
+        "es": "silla"
+      }
+    },
+    "stool": {
+      "en": "stool",
+      "ru": "Табурет",
+      "de": "Hocker",
+      "fr": "Tabouret",
+      "es": "Taburete",
+      "slug": {
+        "en": "stool",
+        "ru": "taburet",
+        "de": "hocker",
+        "fr": "tabouret",
+        "es": "taburete"
+      }
+    },
+    "bench": {
+      "en": "bench",
+      "ru": "Скамья",
+      "de": "Bank",
+      "fr": "Banc",
+      "es": "Banco",
+      "slug": {
+        "en": "bench",
+        "ru": "skamya",
+        "de": "bank",
+        "fr": "banc",
+        "es": "banco"
+      }
+    },
+    "table": {
+      "en": "table",
+      "ru": "Стол",
+      "de": "Tisch",
+      "fr": "Table",
+      "es": "Mesa",
+      "slug": {
+        "en": "table",
+        "ru": "stol",
+        "de": "tisch",
+        "fr": "table",
+        "es": "mesa"
+      }
+    },
+    "desk": {
+      "en": "desk",
+      "ru": "Письменный стол",
+      "de": "Schreibtisch",
+      "fr": "Bureau",
+      "es": "Escritorio",
+      "slug": {
+        "en": "desk",
+        "ru": "pismennyy-stol",
+        "de": "schreibtisch",
+        "fr": "bureau",
+        "es": "escritorio"
+      }
+    },
+    "console": {
+      "en": "console table",
+      "ru": "Консоль",
+      "de": "Konsolentisch",
+      "fr": "Console",
+      "es": "Consola",
+      "slug": {
+        "en": "console",
+        "ru": "konsol",
+        "de": "konsole",
+        "fr": "console",
+        "es": "consola"
+      }
+    },
+    "coffee_table": {
+      "en": "coffee table",
+      "ru": "Журнальный столик",
+      "de": "Couchtisch",
+      "fr": "Table basse",
+      "es": "Mesa de centro",
+      "slug": {
+        "en": "coffee-table",
+        "ru": "zhurnalnyy-stolik",
+        "de": "couchtisch",
+        "fr": "table-basse",
+        "es": "mesa-de-centro"
+      }
+    },
+    "side_table": {
+      "en": "side table",
+      "ru": "Приставной столик",
+      "de": "Beistelltisch",
+      "fr": "Table d'appoint",
+      "es": "Mesa auxiliar",
+      "slug": {
+        "en": "side-table",
+        "ru": "pristavnoy-stolik",
+        "de": "beistelltisch",
+        "fr": "table-d-appoint",
+        "es": "mesa-auxiliar"
+      }
+    },
+    "trolley": {
+      "en": "serving trolley",
+      "ru": "Сервировочный столик",
+      "de": "Servierwagen",
+      "fr": "Desserte",
+      "es": "Carrito auxiliar",
+      "slug": {
+        "en": "trolley",
+        "ru": "servirovochnyy-stolik",
+        "de": "servierwagen",
+        "fr": "desserte",
+        "es": "carrito"
+      }
+    },
+    "bedside": {
+      "en": "bedside table",
+      "ru": "Прикроватная тумба",
+      "de": "Nachttisch",
+      "fr": "Table de chevet",
+      "es": "Mesita de noche",
+      "slug": {
+        "en": "bedside-table",
+        "ru": "prikrovatnaya-tumba",
+        "de": "nachttisch",
+        "fr": "table-de-chevet",
+        "es": "mesita-de-noche"
+      }
+    },
+    "bed": {
+      "en": "bed",
+      "ru": "Кровать",
+      "de": "Bett",
+      "fr": "Lit",
+      "es": "Cama",
+      "slug": {
+        "en": "bed",
+        "ru": "krovat",
+        "de": "bett",
+        "fr": "lit",
+        "es": "cama"
+      }
+    },
+    "headboard": {
+      "en": "headboard",
+      "ru": "Изголовье",
+      "de": "Kopfteil",
+      "fr": "Tête de lit",
+      "es": "Cabecero",
+      "slug": {
+        "en": "headboard",
+        "ru": "izgolove",
+        "de": "kopfteil",
+        "fr": "tete-de-lit",
+        "es": "cabecero"
+      }
+    },
+    "mattress": {
+      "en": "mattress",
+      "ru": "Матрас",
+      "de": "Matratze",
+      "fr": "Matelas",
+      "es": "Colchón",
+      "slug": {
+        "en": "mattress",
+        "ru": "matras",
+        "de": "matratze",
+        "fr": "matelas",
+        "es": "colchon"
+      }
+    },
+    "storage": {
+      "en": "storage system",
+      "ru": "Система хранения",
+      "de": "Stauraumsystem",
+      "fr": "Système de rangement",
+      "es": "Sistema de almacenaje",
+      "slug": {
+        "en": "storage",
+        "ru": "sistema-hraneniya",
+        "de": "stauraumsystem",
+        "fr": "rangement",
+        "es": "almacenaje"
+      }
+    },
+    "bookcase": {
+      "en": "bookcase",
+      "ru": "Стеллаж",
+      "de": "Bücherregal",
+      "fr": "Bibliothèque",
+      "es": "Librería",
+      "slug": {
+        "en": "bookcase",
+        "ru": "stellazh",
+        "de": "buecherregal",
+        "fr": "bibliotheque",
+        "es": "libreria"
+      }
+    },
+    "sideboard": {
+      "en": "sideboard",
+      "ru": "Буфет",
+      "de": "Sideboard",
+      "fr": "Buffet",
+      "es": "Aparador",
+      "slug": {
+        "en": "sideboard",
+        "ru": "bufet",
+        "de": "sideboard",
+        "fr": "buffet",
+        "es": "aparador"
+      }
+    },
+    "drawers": {
+      "en": "chest of drawers",
+      "ru": "Комод",
+      "de": "Kommode",
+      "fr": "Commode",
+      "es": "Cómoda",
+      "slug": {
+        "en": "chest-of-drawers",
+        "ru": "komod",
+        "de": "kommode",
+        "fr": "commode",
+        "es": "comoda"
+      }
+    },
+    "wardrobe": {
+      "en": "wardrobe",
+      "ru": "Шкаф",
+      "de": "Kleiderschrank",
+      "fr": "Armoire",
+      "es": "Armario",
+      "slug": {
+        "en": "wardrobe",
+        "ru": "shkaf",
+        "de": "kleiderschrank",
+        "fr": "armoire",
+        "es": "armario"
+      }
+    },
+    "boiserie": {
+      "en": "wall panelling",
+      "ru": "Стеновые панели",
+      "de": "Wandverkleidung",
+      "fr": "Boiserie",
+      "es": "Revestimiento de pared",
+      "slug": {
+        "en": "wall-panelling",
+        "ru": "stenovye-paneli",
+        "de": "wandverkleidung",
+        "fr": "boiserie",
+        "es": "revestimiento"
+      }
+    },
+    "doors": {
+      "en": "doors",
+      "ru": "Двери",
+      "de": "Türen",
+      "fr": "Portes",
+      "es": "Puertas",
+      "slug": {
+        "en": "doors",
+        "ru": "dveri",
+        "de": "tueren",
+        "fr": "portes",
+        "es": "puertas"
+      }
+    },
+    "partition": {
+      "en": "partition system",
+      "ru": "Перегородка",
+      "de": "Trennwandsystem",
+      "fr": "Cloison",
+      "es": "Tabique",
+      "slug": {
+        "en": "partition",
+        "ru": "peregorodka",
+        "de": "trennwand",
+        "fr": "cloison",
+        "es": "tabique"
+      }
+    },
+    "bathroom": {
+      "en": "bathroom furniture",
+      "ru": "Мебель для ванной",
+      "de": "Badmöbel",
+      "fr": "Meuble de salle de bains",
+      "es": "Mueble de baño",
+      "slug": {
+        "en": "bathroom",
+        "ru": "mebel-dlya-vannoy",
+        "de": "badmoebel",
+        "fr": "salle-de-bains",
+        "es": "mueble-de-bano"
+      }
+    },
+    "kitchen": {
+      "en": "kitchen",
+      "ru": "Кухня",
+      "de": "Küche",
+      "fr": "Cuisine",
+      "es": "Cocina",
+      "slug": {
+        "en": "kitchen",
+        "ru": "kuhnya",
+        "de": "kueche",
+        "fr": "cuisine",
+        "es": "cocina"
+      }
+    },
+    "kitchen_unit": {
+      "en": "kitchen unit",
+      "ru": "Кухонный модуль",
+      "de": "Küchenelement",
+      "fr": "Élément de cuisine",
+      "es": "Módulo de cocina",
+      "slug": {
+        "en": "kitchen-unit",
+        "ru": "kuhonnyy-modul",
+        "de": "kuechenelement",
+        "fr": "element-de-cuisine",
+        "es": "modulo-de-cocina"
+      }
+    },
+    "mirror": {
+      "en": "mirror",
+      "ru": "Зеркало",
+      "de": "Spiegel",
+      "fr": "Miroir",
+      "es": "Espejo",
+      "slug": {
+        "en": "mirror",
+        "ru": "zerkalo",
+        "de": "spiegel",
+        "fr": "miroir",
+        "es": "espejo"
+      }
+    },
+    "rug": {
+      "en": "rug",
+      "ru": "Ковёр",
+      "de": "Teppich",
+      "fr": "Tapis",
+      "es": "Alfombra",
+      "slug": {
+        "en": "rug",
+        "ru": "kovyor",
+        "de": "teppich",
+        "fr": "tapis",
+        "es": "alfombra"
+      }
+    },
+    "screen": {
+      "en": "screen",
+      "ru": "Ширма",
+      "de": "Paravent",
+      "fr": "Paravent",
+      "es": "Biombo",
+      "slug": {
+        "en": "screen",
+        "ru": "shirma",
+        "de": "paravent",
+        "fr": "paravent",
+        "es": "biombo"
+      }
+    },
+    "cushion": {
+      "en": "cushion",
+      "ru": "Декоративная подушка",
+      "de": "Kissen",
+      "fr": "Coussin",
+      "es": "Cojín",
+      "slug": {
+        "en": "cushion",
+        "ru": "podushka",
+        "de": "kissen",
+        "fr": "coussin",
+        "es": "cojin"
+      }
+    },
+    "throw": {
+      "en": "throw",
+      "ru": "Плед",
+      "de": "Plaid",
+      "fr": "Plaid",
+      "es": "Manta",
+      "slug": {
+        "en": "throw",
+        "ru": "pled",
+        "de": "plaid",
+        "fr": "plaid",
+        "es": "manta"
+      }
+    },
+    "bedding": {
+      "en": "bed linen",
+      "ru": "Постельный текстиль",
+      "de": "Bettwäsche",
+      "fr": "Linge de lit",
+      "es": "Ropa de cama",
+      "slug": {
+        "en": "bed-linen",
+        "ru": "postelnoe",
+        "de": "bettwaesche",
+        "fr": "linge-de-lit",
+        "es": "ropa-de-cama"
+      }
+    },
+    "vase": {
+      "en": "vase",
+      "ru": "Ваза",
+      "de": "Vase",
+      "fr": "Vase",
+      "es": "Jarrón",
+      "slug": {
+        "en": "vase",
+        "ru": "vaza",
+        "de": "vase",
+        "fr": "vase",
+        "es": "jarron"
+      }
+    },
+    "tray": {
+      "en": "tray",
+      "ru": "Поднос",
+      "de": "Tablett",
+      "fr": "Plateau",
+      "es": "Bandeja",
+      "slug": {
+        "en": "tray",
+        "ru": "podnos",
+        "de": "tablett",
+        "fr": "plateau",
+        "es": "bandeja"
+      }
+    },
+    "bowl": {
+      "en": "bowl",
+      "ru": "Чаша",
+      "de": "Schale",
+      "fr": "Coupe",
+      "es": "Cuenco",
+      "slug": {
+        "en": "bowl",
+        "ru": "chasha",
+        "de": "schale",
+        "fr": "coupe",
+        "es": "cuenco"
+      }
+    },
+    "candle": {
+      "en": "candle holder",
+      "ru": "Подсвечник",
+      "de": "Kerzenhalter",
+      "fr": "Bougeoir",
+      "es": "Candelabro",
+      "slug": {
+        "en": "candle-holder",
+        "ru": "podsvechnik",
+        "de": "kerzenhalter",
+        "fr": "bougeoir",
+        "es": "candelabro"
+      }
+    },
+    "clock": {
+      "en": "clock",
+      "ru": "Часы",
+      "de": "Uhr",
+      "fr": "Horloge",
+      "es": "Reloj",
+      "slug": {
+        "en": "clock",
+        "ru": "chasy",
+        "de": "uhr",
+        "fr": "horloge",
+        "es": "reloj"
+      }
+    },
+    "basket": {
+      "en": "basket",
+      "ru": "Корзина",
+      "de": "Korb",
+      "fr": "Panier",
+      "es": "Cesta",
+      "slug": {
+        "en": "basket",
+        "ru": "korzina",
+        "de": "korb",
+        "fr": "panier",
+        "es": "cesta"
+      }
+    },
+    "valet": {
+      "en": "valet stand",
+      "ru": "Вешалка",
+      "de": "Herrendiener",
+      "fr": "Valet",
+      "es": "Galán de noche",
+      "slug": {
+        "en": "valet-stand",
+        "ru": "veshalka",
+        "de": "herrendiener",
+        "fr": "valet",
+        "es": "galan"
+      }
+    },
+    "umbrella": {
+      "en": "parasol",
+      "ru": "Зонт от солнца",
+      "de": "Sonnenschirm",
+      "fr": "Parasol",
+      "es": "Sombrilla",
+      "slug": {
+        "en": "parasol",
+        "ru": "zont",
+        "de": "sonnenschirm",
+        "fr": "parasol",
+        "es": "sombrilla"
+      }
+    },
+    "decor": {
+      "en": "accessory",
+      "ru": "Аксессуар",
+      "de": "Accessoire",
+      "fr": "Accessoire",
+      "es": "Accesorio",
+      "slug": {
+        "en": "accessory",
+        "ru": "aksessuar",
+        "de": "accessoire",
+        "fr": "accessoire",
+        "es": "accesorio"
+      }
+    },
+    "suspension": {
+      "en": "pendant lamp",
+      "ru": "Подвесной светильник",
+      "de": "Pendelleuchte",
+      "fr": "Suspension",
+      "es": "Lámpara colgante",
+      "slug": {
+        "en": "pendant-lamp",
+        "ru": "podvesnoy-svetilnik",
+        "de": "pendelleuchte",
+        "fr": "suspension",
+        "es": "lampara-colgante"
+      }
+    },
+    "ceiling": {
+      "en": "ceiling light",
+      "ru": "Потолочный светильник",
+      "de": "Deckenleuchte",
+      "fr": "Plafonnier",
+      "es": "Plafón",
+      "slug": {
+        "en": "ceiling-light",
+        "ru": "potolochnyy-svetilnik",
+        "de": "deckenleuchte",
+        "fr": "plafonnier",
+        "es": "plafon"
+      }
+    },
+    "recessed": {
+      "en": "recessed light",
+      "ru": "Встраиваемый светильник",
+      "de": "Einbauleuchte",
+      "fr": "Encastré",
+      "es": "Empotrable",
+      "slug": {
+        "en": "recessed-light",
+        "ru": "vstraivaemyy-svetilnik",
+        "de": "einbauleuchte",
+        "fr": "encastre",
+        "es": "empotrable"
+      }
+    },
+    "wall_recessed": {
+      "en": "recessed wall light",
+      "ru": "Встраиваемый настенный светильник",
+      "de": "Wandeinbauleuchte",
+      "fr": "Encastré mural",
+      "es": "Empotrable de pared",
+      "slug": {
+        "en": "recessed-wall-light",
+        "ru": "vstraivaemyy-nastennyy-svetilnik",
+        "de": "wandeinbauleuchte",
+        "fr": "encastre-mural",
+        "es": "empotrable-de-pared"
+      }
+    },
+    "profile": {
+      "en": "LED profile",
+      "ru": "Встраиваемый профиль",
+      "de": "LED-Profil",
+      "fr": "Profilé LED",
+      "es": "Perfil LED",
+      "slug": {
+        "en": "led-profile",
+        "ru": "vstraivaemyy-profil",
+        "de": "led-profil",
+        "fr": "profile-led",
+        "es": "perfil-led"
+      }
+    },
+    "track": {
+      "en": "track light",
+      "ru": "Трековый светильник",
+      "de": "Schienenstrahler",
+      "fr": "Spot sur rail",
+      "es": "Foco de carril",
+      "slug": {
+        "en": "track-light",
+        "ru": "trekovyy-svetilnik",
+        "de": "schienenstrahler",
+        "fr": "spot-sur-rail",
+        "es": "foco-de-carril"
+      }
+    },
+    "spot": {
+      "en": "spotlight",
+      "ru": "Спот",
+      "de": "Strahler",
+      "fr": "Spot",
+      "es": "Foco",
+      "slug": {
+        "en": "spotlight",
+        "ru": "spot",
+        "de": "strahler",
+        "fr": "spot",
+        "es": "foco"
+      }
+    },
+    "light_part": {
+      "en": "lighting component",
+      "ru": "Комплектующие для света",
+      "de": "Leuchtenzubehör",
+      "fr": "Accessoire d'éclairage",
+      "es": "Accesorio de iluminación",
+      "slug": {
+        "en": "lighting-component",
+        "ru": "komplektuyushchie",
+        "de": "leuchtenzubehoer",
+        "fr": "accessoire-eclairage",
+        "es": "accesorio-iluminacion"
+      }
+    },
+    "wall": {
+      "en": "wall lamp",
+      "ru": "Бра",
+      "de": "Wandleuchte",
+      "fr": "Applique",
+      "es": "Aplique",
+      "slug": {
+        "en": "wall-lamp",
+        "ru": "bra",
+        "de": "wandleuchte",
+        "fr": "applique",
+        "es": "aplique"
+      }
+    },
+    "table_lamp": {
+      "en": "table lamp",
+      "ru": "Настольная лампа",
+      "de": "Tischleuchte",
+      "fr": "Lampe de table",
+      "es": "Lámpara de mesa",
+      "slug": {
+        "en": "table-lamp",
+        "ru": "nastolnaya-lampa",
+        "de": "tischleuchte",
+        "fr": "lampe-de-table",
+        "es": "lampara-de-mesa"
+      }
+    },
+    "floor": {
+      "en": "floor lamp",
+      "ru": "Торшер",
+      "de": "Stehleuchte",
+      "fr": "Lampadaire",
+      "es": "Lámpara de pie",
+      "slug": {
+        "en": "floor-lamp",
+        "ru": "torsher",
+        "de": "stehleuchte",
+        "fr": "lampadaire",
+        "es": "lampara-de-pie"
+      }
+    },
+    "inground": {
+      "en": "in-ground light",
+      "ru": "Встраиваемый в пол светильник",
+      "de": "Bodeneinbauleuchte",
+      "fr": "Encastré de sol",
+      "es": "Empotrable de suelo",
+      "slug": {
+        "en": "in-ground-light",
+        "ru": "svetilnik-v-pol",
+        "de": "bodeneinbauleuchte",
+        "fr": "encastre-de-sol",
+        "es": "empotrable-de-suelo"
+      }
+    },
+    "bollard": {
+      "en": "bollard light",
+      "ru": "Ландшафтный светильник",
+      "de": "Pollerleuchte",
+      "fr": "Borne lumineuse",
+      "es": "Baliza",
+      "slug": {
+        "en": "bollard",
+        "ru": "landshaftnyy-svetilnik",
+        "de": "pollerleuchte",
+        "fr": "borne",
+        "es": "baliza"
+      }
+    },
+    "pole": {
+      "en": "pole-top light",
+      "ru": "Светильник на опору",
+      "de": "Mastleuchte",
+      "fr": "Lampadaire d'extérieur",
+      "es": "Farola",
+      "slug": {
+        "en": "pole-light",
+        "ru": "svetilnik-na-oporu",
+        "de": "mastleuchte",
+        "fr": "lampadaire-exterieur",
+        "es": "farola"
+      }
+    }
+  },
+  "rooms": {
+    "living": {
+      "en": "Living room",
+      "ru": "Гостиная",
+      "de": "Wohnzimmer",
+      "fr": "Salon",
+      "es": "Salón"
+    },
+    "dining": {
+      "en": "Dining room",
+      "ru": "Столовая",
+      "de": "Esszimmer",
+      "fr": "Salle à manger",
+      "es": "Comedor"
+    },
+    "kitchen": {
+      "en": "Kitchen",
+      "ru": "Кухня",
+      "de": "Küche",
+      "fr": "Cuisine",
+      "es": "Cocina"
+    },
+    "bedroom": {
+      "en": "Bedroom",
+      "ru": "Спальня",
+      "de": "Schlafzimmer",
+      "fr": "Chambre",
+      "es": "Dormitorio"
+    },
+    "closet": {
+      "en": "Walk-in closet",
+      "ru": "Гардеробная",
+      "de": "Ankleide",
+      "fr": "Dressing",
+      "es": "Vestidor"
+    },
+    "bathroom": {
+      "en": "Bathroom",
+      "ru": "Ванная",
+      "de": "Bad",
+      "fr": "Salle de bains",
+      "es": "Baño"
+    },
+    "office": {
+      "en": "Home office",
+      "ru": "Кабинет",
+      "de": "Arbeitszimmer",
+      "fr": "Bureau",
+      "es": "Despacho"
+    },
+    "hall": {
+      "en": "Hallway",
+      "ru": "Прихожая",
+      "de": "Flur",
+      "fr": "Entrée",
+      "es": "Recibidor"
+    },
+    "outdoor": {
+      "en": "Outdoor",
+      "ru": "Для улицы",
+      "de": "Outdoor",
+      "fr": "Extérieur",
+      "es": "Exterior"
+    }
+  },
+  "fix_type": {
+    "_about": "Тип в каталоге фабрики → тип структуры (каталог фабрики не меняем).",
+    "idl": {
+      "table": "table_lamp"
+    }
+  },
+  "designers": {
+    "_about": "Имена дизайнеров для сайта: aliases — как писать одинаково, in_house — это не имя дизайнера (бюро фабрики или ошибка разбора), на сайте не показываем.",
+    "aliases": {
+      "Juma": "Studio Juma",
+      "Antonio Citterio Paolo Nava": "Antonio Citterio, Paolo Nava",
+      "Carlo Marelli / Massimo Molteni": "Carlo Marelli, Massimo Molteni",
+      "Mario Asnago | Claudio Vender": "Mario Asnago, Claudio Vender",
+      "Allievi+Viganò": "Allievi + Viganò"
+    },
+    "in_house": [
+      "Design center",
+      "Baxter P.",
+      "B&B Italia",
+      "IDL Staff",
+      "IDL Studio",
+      "R&D Poliform",
+      "CR&S MisuraEmme",
+      "Technical characteristics"
+    ]
+  }
+}

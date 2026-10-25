@@ -1,0 +1,30 @@
+---
+// Все страницы сайта: главная, разделы, категории, «Для улицы», фабрики, товары, контакты, политика — на пяти языках.
+import Base from '../layouts/Base.astro';
+import Home from '../templates/Home.astro';
+import Listing from '../templates/Listing.astro';
+import Groups from '../templates/Groups.astro';
+import ProductPage from '../templates/Product.astro';
+import Contact from '../templates/Contact.astro';
+import Privacy from '../templates/Privacy.astro';
+import { allPages, type HPage } from '../lib/catalog';
+
+export function getStaticPaths() {
+  return allPages().map((page) => ({ params: { slug: page.path === '/' ? undefined : page.path.slice(1) }, props: { page } }));
+}
+const { page } = Astro.props as { page: HPage };
+const p = page.product;
+const schema = p ? [{
+  '@context': 'https://schema.org', '@type': 'Product', name: page.h1, sku: p.sku, brand: { '@type': 'Brand', name: p.brand },
+  ...(p.collection_name ? { model: p.full_model } : {}), url: 'https://dumskaya-home.com' + page.path,
+  ...(page.description ? { description: page.description } : {}),
+}] : [];
+---
+<Base page={page} schema={schema}>
+  {page.kind === 'home' && <Home page={page} />}
+  {(page.kind === 'cat') && <Listing page={page} />}
+  {(page.kind === 'dept' || page.kind === 'outdoor' || page.kind === 'brand' || page.kind === 'brands') && <Groups page={page} />}
+  {page.kind === 'product' && <ProductPage page={page} />}
+  {page.kind === 'contact' && <Contact page={page} />}
+  {page.kind === 'privacy' && <Privacy page={page} />}
+</Base>

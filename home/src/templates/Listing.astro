@@ -1,0 +1,62 @@
+---
+// Категория: все товары категории, фильтр по фабрике и «для улицы» (на месте, без перезагрузки; ?brand=minotti — сразу с фильтром).
+import Crumbs from '../components/Crumbs.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { ui } from '../lib/i18n';
+import { byCategory, sortProducts, type HPage } from '../lib/catalog';
+interface Props { page: HPage }
+const { page } = Astro.props;
+const l = page.lang;
+const T = ui(l);
+const ps = sortProducts(byCategory[page.key!] || [], l);
+const brands = [...new Map(ps.map((p) => [p.brand_slug, p.brand])).entries()]
+  .map(([slug, name]) => ({ slug, name, n: ps.filter((p) => p.brand_slug === slug).length })).sort((a, b) => b.n - a.n);
+const outdoor = ps.filter((p) => p.place !== 'indoor').length;
+---
+<Crumbs items={page.crumbs} />
+<header class="lhead wrap">
+  <h1 class="display">{page.h1}</h1>
+  <p class="muted">{T.products(ps.length)}</p>
+</header>
+{(brands.length > 1 || (outdoor > 0 && outdoor < ps.length)) && (
+  <div class="filters wrap" data-filters>
+    {brands.length > 1 && (
+      <div class="chips" role="group" aria-label={T.filterBrand}>
+        <button type="button" class="chip" aria-pressed="true" data-brand="">{T.all}</button>
+        {brands.map((b) => <button type="button" class="chip" aria-pressed="false" data-brand={b.slug}>{b.name} <span class="muted">{b.n}</span></button>)}
+      </div>
+    )}
+    {outdoor > 0 && outdoor < ps.length && (
+      <label class="chk"><input type="checkbox" data-out /> {T.forOutdoor} <span class="muted">{outdoor}</span></label>
+    )}
+  </div>
+)}
+<div class="grid wrap" data-grid>
+  {ps.map((p, i) => <ProductCard p={p} lang={l} eager={i < 4} />)}
+</div>
+
+<script>
+  const box = document.querySelector('[data-filters]');
+  const cards = [...document.querySelectorAll<HTMLElement>('[data-grid] .pc')];
+  if (box) {
+    const q = new URLSearchParams(location.search);
+    let brand = q.get('brand') || '', out = q.get('outdoor') === '1';
+    const ob = box.querySelector<HTMLInputElement>('[data-out]');
+    if (ob) ob.checked = out; else out = false;
+    const chips = [...box.querySelectorAll<HTMLButtonElement>('[data-brand]')];
+    const apply = () => {
+      chips.forEach((c) => c.setAttribute('aria-pressed', String((c.dataset.brand || '') === brand)));
+      cards.forEach((c) => { c.hidden = (!!brand && c.dataset.brand !== brand) || (out && !c.dataset.out); });
+    };
+    if (brand && !chips.some((c) => c.dataset.brand === brand)) brand = '';
+    chips.forEach((c) => c.addEventListener('click', () => {
+      brand = c.dataset.brand || '';
+      const u = new URL(location.href);
+      brand ? u.searchParams.set('brand', brand) : u.searchParams.delete('brand');
+      history.replaceState(null, '', u);
+      apply();
+    }));
+    ob?.addEventListener('change', (e) => { out = (e.target as HTMLInputElement).checked; apply(); });
+    apply();
+  }
+</script>
