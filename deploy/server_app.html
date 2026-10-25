@@ -199,8 +199,16 @@
     if (d.error) { c.append(el('p', 'err', 'Не удалось посчитать: ' + d.error)); return c; }
     const b = d.backups, today = new Date(), iso = today.getFullYear() + '-' + two(today.getMonth() + 1) + '-' + two(today.getDate());
     const fresh = b.last === iso;
-    c.append(kv([['Учёт студии (crm.db)', bytes(d.crm_db)], ['Бот (bot.db)', bytes(d.bot_db)],
-      ['Файлы проектов', num(d.files.count) + ' · ' + bytes(d.files.size)], ['Статистика сайта', bytes(d.stats)],
+    const f = d.files, st = d.site;
+    c.append(el('div', 'tiles', tile('Всего наших данных', bytes(d.total), 'сайт, файлы проектов, базы, статистика и копии')));
+    c.append(kv([
+      ['Сайт', st ? num(st.pages) + ' ' + plural(st.pages, 'страница', 'страницы', 'страниц') + ' · ' + bytes(st.size) : 'папки сайта нет'],
+      st ? ['— из них фото', num(st.img_count) + ' ' + plural(st.img_count, 'файл', 'файла', 'файлов') + ' · ' + bytes(st.img_size)] : null,
+      ['Файлы проектов (фото, документы, вложения переписки)', num(f.count) + ' ' + plural(f.count, 'файл', 'файла', 'файлов') + ' · ' + bytes(f.size)],
+      f.trash ? ['— ещё в корзине (удалённые, 30 дней)', bytes(f.trash)] : null,
+      f.tg_only ? ['— ещё только в Telegram (больше 20 МБ)', num(f.tg_only) + ' · ' + bytes(f.tg_only_size)] : null,
+      ['Учёт студии (crm.db)', bytes(d.crm_db)], ['Бот (bot.db)', bytes(d.bot_db)],
+      d.other_db ? ['Курсы валют и заявки', bytes(d.other_db)] : null, ['Статистика сайта', bytes(d.stats)],
       'Резервные копии', ['Последняя', b.last ? dshort(b.last) + ' · ' + bytes(b.last_size) : 'ещё нет'],
       ['На сервере', b.count + ' ' + plural(b.count, 'копия', 'копии', 'копий') + ' (храним ' + b.keep_days + ' дней) · ' + bytes(b.size)]]));
     const good = !!b.last && (fresh || b.last >= isoShift(-1));

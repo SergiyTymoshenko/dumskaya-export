@@ -15,6 +15,7 @@ import os
 import platform
 import re
 import shutil
+import sqlite3
 import threading
 import time
 from datetime import datetime, timedelta, timezone
@@ -26,6 +27,7 @@ except Exception:  # noqa: BLE001  pragma: no cover
     TZ = timezone(timedelta(hours=1))
 
 APP = os.path.expanduser("~/dumskaya")
+SITE_DIR = os.environ.get("SITE_DIR", "/var/www/dumskaya/site")    # сайт на сервере (выкладка с Мака)
 STARTED = time.time()                     # когда запущен сервис (этот процесс)
 PURPOSES = [("chat", "Переписка"), ("names", "Названия в кабинетах"), ("lead", "Заявки с сайта"), ("other", "Другое")]
 SERVICES = {"sub": "ChatGPT · подписка", "openai": "ChatGPT · платный API", "deepl": "DeepL", "claude": "Claude (Anthropic)"}
@@ -248,28 +250,71 @@ def _dir_size(path):
     return total, n
 
 
+def _site_size(path):
+    """Сайт на сервере: всего (размер, файлов), страниц, фото (папка img)."""
+    out = {"size": 0, "count": 0, "pages": 0, "img_size": 0, "img_count": 0}
+    for root, _dirs, files in os.walk(path):
+        top = os.path.relpath(root, path).split(os.sep)[0]
+        for f in files:
+            try:
+                n = os.path.getsize(os.path.join(root, f))
+            except OSError:
+                continue
+            out["size"] += n
+            out["count"] += 1
+            out["pages"] += f.endswith(".html") and f != "404.html"
+            if top == "img":
+                out["img_size"] += n
+                out["img_count"] += 1
+    return out
+
+
+def _tg_only(db_path):
+    """Файлы проектов, которые лежат только в Telegram (больше 20 МБ — бот их не скачивает): (сколько, размер)."""
+    try:
+        con = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True, timeout=2)
+        try:
+            r = con.execute("SELECT COUNT(*), COALESCE(SUM(size), 0) FROM files WHERE (path IS NULL OR path = '') "
+                            "AND tg_file_id LIKE '%:%'").fetchone()
+        finally:
+            con.close()
+        return int(r[0] or 0), int(r[1] or 0)
+    except sqlite3.Error:
+        return 0, 0
+
+
 def data(store=None):
-    """Наши данные на диске: базы, файлы проектов (с корзиной), резервные копии, статистика сайта."""
+    """Наши данные на диске: сайт, файлы проектов (и корзина), базы, статистика сайта, резервные копии — и всего."""
     global _sizes, _sizes_at
     import backups
     import crm
     with _sizes_lock:
         if time.time() - _sizes_at > SIZE_CACHE or not _sizes:
             files = _dir_size(crm.FILES_DIR) if os.path.isdir(crm.FILES_DIR) else (0, 0)
+            trash_dir = os.path.join(os.path.dirname(os.path.abspath(crm.FILES_DIR)), "trash")
             stats_dir = os.path.join(APP, "stats")
-            _sizes = {"files": files, "stats": _dir_size(stats_dir)[0] if os.path.isdir(stats_dir) else 0}
+            stats = (_dir_size(stats_dir)[0] if os.path.isdir(stats_dir) else 0) + sum(
+                _file_size(os.environ.get(k, os.path.join(APP, n))) for k, n in (("HITS_FILE", "hits.jsonl"), ("TIMES_FILE", "times.jsonl")))
+            _sizes = {"files": files, "trash": _dir_size(trash_dir)[0] if os.path.isdir(trash_dir) else 0, "stats": stats,
+                      "site": _site_size(SITE_DIR) if os.path.isdir(SITE_DIR) else None, "tg_only": _tg_only(crm.CRM_DB)}
             _sizes_at = time.time()
         sizes = dict(_sizes)
     bdir = backups.BACKUP_DIR
     zips = sorted(f for f in os.listdir(bdir) if backups.NAME_RE.match(f)) if os.path.isdir(bdir) else []
     data_zips = [f for f in zips if f.startswith("dumskaya-data-")]
     last = data_zips[-1] if data_zips else None
-    return {"crm_db": _file_size(crm.CRM_DB), "bot_db": _file_size(crm.BOT_DB),
-            "files": {"size": sizes["files"][0], "count": sizes["files"][1]}, "stats": sizes["stats"],
-            "backups": {"count": len(data_zips), "size": sum(os.path.getsize(os.path.join(bdir, f)) for f in zips),
-                        "last": backups.NAME_RE.match(last).group(1) if last else None,
-                        "last_size": os.path.getsize(os.path.join(bdir, last)) if last else 0, "keep_days": backups.KEEP_DAYS},
-            "counted": int(_sizes_at)}
+    bsize = sum(os.path.getsize(os.path.join(bdir, f)) for f in zips)
+    dbs = {"crm_db": _file_size(crm.CRM_DB), "bot_db": _file_size(crm.BOT_DB),
+           "other_db": _file_size(os.environ.get("FX_DB", os.path.join(APP, "fx.db"))) + _file_size(os.environ.get("LEADS_FILE", os.path.join(APP, "leads.jsonl")))}
+    site = sizes["site"]
+    total = sum(dbs.values()) + sizes["files"][0] + sizes["trash"] + sizes["stats"] + bsize + (site["size"] if site else 0)
+    return dict(dbs, **{"files": {"size": sizes["files"][0], "count": sizes["files"][1], "trash": sizes["trash"],
+                                  "tg_only": sizes["tg_only"][0], "tg_only_size": sizes["tg_only"][1]},
+                        "site": site, "stats": sizes["stats"], "total": total,
+                        "backups": {"count": len(data_zips), "size": bsize,
+                                    "last": backups.NAME_RE.match(last).group(1) if last else None,
+                                    "last_size": os.path.getsize(os.path.join(bdir, last)) if last else 0, "keep_days": backups.KEEP_DAYS},
+                        "counted": int(_sizes_at)})
 
 
 def bot_stats(bot):

@@ -896,8 +896,18 @@ except RuntimeError:
 S2 = usage.summary()
 check(S2["periods"]["day"]["errors"] == 1 and S2["last_error"] and "sk-proj" not in S2["last_error"]["error"] and "ответ 401" in S2["last_error"]["error"],
       "ошибка посчитана, ключ в её тексте не показывается")
+site_dir = os.path.join(H.TMP, "site")                       # сайт на сервере: две страницы, страница 404, фото
+os.makedirs(os.path.join(site_dir, "img"), exist_ok=True)
+for name, size in (("index.html", 3000), ("about.html", 2000), ("404.html", 500), ("img/kitchen-480.webp", 40000)):
+    with open(os.path.join(site_dir, name), "wb") as fh:
+        fh.write(b"x" * size)
+server_info.SITE_DIR, server_info._sizes_at = site_dir, 0
 code, x = call("/api/stats/server", H.OWNER, lang="ru")
 dump = json.dumps(x, ensure_ascii=False)
+D = x["data"]
+check(D["site"] == {"size": 45500, "count": 4, "pages": 2, "img_size": 40000, "img_count": 1}, f"сайт: размер, страницы, фото {D['site']}")
+check(D["files"]["size"] > 0 and D["total"] >= D["site"]["size"] + D["files"]["size"] + D["crm_db"] + D["bot_db"] + D["stats"],
+      "файлы проектов — всего и итог по всем нашим данным")
 check(code == 200 and x["server"]["disk"]["total"] > 0 and x["llm"]["periods"]["day"]["calls"] >= 3 and x["llm_config"]["provider"] == "openai",
       "разработчику — «Сервер и ИИ»: сервер, расход")
 check(x["data"]["crm_db"] > 0 and x["data"]["files"]["count"] >= 7 and x["bot"]["messages"]["day"] >= 1 and x["bot"]["users"]["designer"] == 1,
