@@ -16,11 +16,13 @@ export type Product = {
   place: 'indoor' | 'outdoor' | 'both'; model: string; full_model: string; collection: string; collection_name: string;
   designer: string; year: string; new: boolean; rooms: string[]; name: L; path: L; images: Pic[]; drawings: Pic[];
   text: Partial<L>; facts: { tech?: any; versions?: any[]; finishes?: Record<string, string[]> };
+  /** фабрика выложена (content/home/publish.json) и товар не скрыт — только такие идут в карту сайта и llms.txt */
+  published?: boolean;
 };
 export type ImageFile = { width: number; height: number; files: [number, string][]; cut?: boolean; bg?: string };
 
 export const tax = raw.taxonomy;
-export const brandsInfo: Record<string, { name: string; slug: string; country: string; site: string; ru?: string }> = raw.brands;
+export const brandsInfo: Record<string, { name: string; slug: string; country: string; site: string; ru?: string; published?: { since: string } | null }> = raw.brands;
 export const products: Product[] = raw.products;
 export const manifest: Record<string, ImageFile> = read('image-manifest.json', {});
 export const site = JSON.parse(fs.readFileSync(path.join(DATA, '../../content/site.json'), 'utf8'));

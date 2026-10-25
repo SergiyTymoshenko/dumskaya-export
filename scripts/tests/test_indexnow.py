@@ -244,4 +244,73 @@ check(not CALLS, "второй tick в течение часа ничего не
 check(I.page_file(ROOT, f"https://{HOST}/") and I.page_file(ROOT, URL["/ua/p1"]).endswith("ua/p1.html"), "адрес → файл .html")
 check(I.page_file(ROOT, f"https://{HOST}/../../etc/passwd") is None, "адрес не выходит за папку сайта")
 
+# --- даты <lastmod> в карте сайта (решено 25.10.2026): изменённая — та, у которой сменилась дата
+LM = {p: "2026-10-23" for p in PATHS if p != "/p11"}
+
+
+def write_lastmod(change_text=None, index=False):
+    """Карта сайта с датами; index — как у каталога: sitemap.xml — индекс из двух файлов."""
+    if change_text:
+        CHANGED.add(change_text)
+    for p in [x for x in PATHS if x != "/p11"]:
+        f = os.path.join(ROOT, "index.html" if p == "/" else p.strip("/") + ".html")
+        with open(f, "w", encoding="utf-8") as fh:
+            fh.write(page(p, "текст " + p + (" (новое)" if p in CHANGED else "")))
+        t = time.time() + len(CALLS) + 7
+        os.utime(f, (t, t))
+    rows = [f"<url><loc>{URL[p]}</loc><lastmod>{d}</lastmod></url>" for p, d in LM.items()]
+    for n in os.listdir(ROOT):
+        if n.startswith("sitemap"):
+            os.remove(os.path.join(ROOT, n))
+    if not index:
+        with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as fh:
+            fh.write('<?xml version="1.0"?><urlset>' + "".join(rows) + "</urlset>")
+        return
+    half = len(rows) // 2
+    for name, part in (("sitemap-pages.xml", rows[:half]), ("sitemap-products-x.xml", rows[half:])):
+        with open(os.path.join(ROOT, name), "w", encoding="utf-8") as fh:
+            fh.write('<?xml version="1.0"?><urlset>' + "".join(part) + "</urlset>")
+    with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as fh:
+        fh.write('<?xml version="1.0"?><sitemapindex>' + "".join(
+            f"<sitemap><loc>https://{HOST}/{n}</loc><lastmod>2026-10-25</lastmod></sitemap>" for n in ("sitemap-pages.xml", "sitemap-products-x.xml"))
+            + "</sitemapindex>")
+
+
+LM["/p8"] = time.strftime("%Y-%m-%d")                  # /p8 изменилась после последней отправки — дата сегодняшняя
+write_lastmod()
+r = run()
+check(sent_urls() == [URL["/p8"]], "появились даты: страницы, изменённые до последней отправки, заново не отправляем — "
+      "только /p8 с датой не раньше дня отправки (переход со старых отпечатков)")
+check(all(str(v).startswith("lastmod:") for v in I.load(HOST)["sent"].values()), "запомнены даты страниц")
+LM["/p4"] = "2026-10-25"
+write_lastmod()
+r = run()
+check(sent_urls() == [URL["/p4"]], "сменилась дата одной страницы — отправлена только она")
+write_lastmod(change_text="/p5")
+r = run()
+check(not CALLS, "текст страницы изменился, а дата нет (например, правка шаблона) — не отправляем: решает дата")
+LM["/p6"] = "2026-10-26"
+write_lastmod(index=True)
+check(len(I.sitemap_entries(ROOT, HOST)) == len(LM) and ("https://dumskaya-design.com/p6", "2026-10-26") in I.sitemap_entries(ROOT, HOST),
+      "индекс карт сайта: адреса и даты из всех его файлов")
+r = run()
+check(sent_urls() == [URL["/p6"]], "индекс карт сайта: отправлена только страница с новой датой")
+os.remove(os.path.join(ROOT, "sitemap-products-x.xml"))
+r = run()
+check(r[HOST]["status"] == "wait" and not CALLS, "файл из индекса не выложен — ждём, ничего не удаляем")
+
+# --- robots.txt закрывает сайт (каталог до запуска) — не отправляем
+write_lastmod()
+with open(os.path.join(ROOT, "robots.txt"), "w") as f:
+    f.write("# not open yet\nUser-agent: *\nDisallow: /\n")
+LM["/p2"] = "2026-10-27"
+write_lastmod()
+r = run()
+check(r[HOST]["status"] == "closed" and not CALLS, "robots.txt: Disallow: / — поисковикам не отправляем")
+with open(os.path.join(ROOT, "robots.txt"), "w") as f:
+    f.write("User-agent: *\nAllow: /\nDisallow: /api/\n")
+r = run()
+check(sent_urls() == [URL["/p2"]], "сайт открыли — отправлено то, что изменилось")
+check(not I.robots_closed(ROOT), "Disallow: /api/ — не закрыт")
+
 print(f"OK: {ok} проверок")

@@ -4,14 +4,17 @@
 
 Раз в час (и через минуту после каждого перезапуска сервиса заявок — он и запускает эту проверку) для каждого сайта:
   1) берёт список страниц из sitemap.xml в папке сайта на сервере — то, что выложено с Мака;
-  2) у каждой страницы считает отпечаток содержимого: заголовок, описание, канонический адрес, языковые версии,
-     разметка JSON-LD и основная часть страницы (<main>). Шапка, меню, подвал, оформление и скрипты не считаются —
-     правка дизайна или меню не отправляет заново все страницы;
+  2) изменённой считается страница, у которой в карте сайта изменилась дата <lastmod> (решено 25.10.2026: даты
+     честные — их считает scripts/lastmod.py на Маке по содержимому страниц и истории git; правка дизайна, меню или
+     подвала дат не двигает). У каталога sitemap.xml — индекс: адреса берутся из всех его файлов. Если у адреса нет
+     <lastmod> (старая выкладка), — как раньше, отпечаток содержимого: заголовок, описание, канонический адрес, языковые
+     версии, JSON-LD и основная часть (<main>);
   3) сравнивает с тем, что уже отправлено (~/dumskaya/indexnow/<домен>.json), и отправляет новые, изменённые и пропавшие
      из карты сайта адреса в Bing, Яндекс и Seznam. Они передают адреса остальным участникам IndexNow (Naver, Yep,
      Internet Archive, Amazon). Google IndexNow не поддерживает — для него карта сайта и Search Console, как раньше.
 
-Отправляем, только если сайт открыт на домене (режим live в ~/dumskaya/mode или home-mode) и ключ
+Отправляем, только если сайт открыт на домене (режим live в ~/dumskaya/mode или home-mode), не закрыт для поисковиков
+(robots.txt без «Disallow: /» для всех роботов — каталог закрыт, пока владелец его не откроет) и ключ
 https://<домен>/<ключ>.txt отвечает самим ключом. Поэтому dumskaya-home.com начнёт отправлять сам, когда каталог
 откроется на домене, а пока он в режиме просмотра — ждёт. В первый раз отправляются все страницы сайта.
 Ключ — файл public/<ключ>.txt (сайт студии) и home/public/<ключ>.txt (каталог). Ключ не секрет: он открыт на сайте.
@@ -116,21 +119,74 @@ def find_key(root):
     return None
 
 
-def sitemap_urls(root, host):
-    """Адреса страниц из sitemap.xml в папке сайта (только этого домена, без повторов)."""
+def _read(path):
     try:
-        with open(os.path.join(root, "sitemap.xml"), encoding="utf-8") as f:
-            xml = f.read()
+        with open(path, encoding="utf-8") as f:
+            return f.read()
     except OSError:
         return None
+
+
+def sitemap_entries(root, host):
+    """[(адрес, lastmod или None)] из sitemap.xml в папке сайта — только этого домена, без повторов. Если sitemap.xml —
+    индекс (<sitemapindex>, у каталога), адреса — из всех его файлов (они лежат в той же папке)."""
+    xml = _read(os.path.join(root, "sitemap.xml"))
+    if xml is None:
+        return None
     base = f"https://{host}/"
+    parts = [xml]
+    if "<sitemapindex" in xml:
+        parts = []
+        for m in re.finditer(r"<sitemap>(.*?)</sitemap>", xml, re.S):
+            loc = re.search(r"<loc>\s*(.*?)\s*</loc>", m.group(1), re.S)
+            rel = urllib.parse.urlsplit(html.unescape(loc.group(1))).path.lstrip("/") if loc else ""
+            child = _read(os.path.join(root, rel)) if rel and "/" not in rel and rel.endswith(".xml") else None
+            if child is None:
+                return None                              # файл индекса не выложен — похоже, идёт выкладка
+            parts.append(child)
     out, seen = [], set()
-    for m in re.finditer(r"<loc>\s*(.*?)\s*</loc>", xml, re.S):
-        u = html.unescape(m.group(1))
-        if (u == base or u.startswith(base)) and u not in seen:
-            seen.add(u)
-            out.append(u)
+    for x in parts:
+        for m in re.finditer(r"<url>(.*?)</url>", x, re.S):
+            loc = re.search(r"<loc>\s*(.*?)\s*</loc>", m.group(1), re.S)
+            if not loc:
+                continue
+            u = html.unescape(loc.group(1))
+            lm = re.search(r"<lastmod>\s*(.*?)\s*</lastmod>", m.group(1), re.S)
+            if (u == base or u.startswith(base)) and u not in seen:
+                seen.add(u)
+                out.append((u, lm.group(1) if lm else None))
     return out
+
+
+def sitemap_urls(root, host):
+    """Адреса страниц из карты сайта (sitemap_entries без дат)."""
+    e = sitemap_entries(root, host)
+    return None if e is None else [u for u, _ in e]
+
+
+def robots_closed(root):
+    """robots.txt сайта закрывает его для всех роботов (User-agent: * и Disallow: /) — тогда поисковикам не отправляем."""
+    txt = _read(os.path.join(root, "robots.txt"))
+    if not txt:
+        return False
+    agents, rules = [], []
+    groups = []
+    for line in txt.splitlines():
+        line = line.split("#", 1)[0].strip()
+        if not line or ":" not in line:
+            continue
+        k, v = (x.strip() for x in line.split(":", 1))
+        k = k.lower()
+        if k == "user-agent":
+            if rules:
+                groups.append((agents, rules))
+                agents, rules = [], []
+            agents.append(v)
+        elif k in ("allow", "disallow"):
+            rules.append((k, v))
+    if agents:
+        groups.append((agents, rules))
+    return any("*" in a and ("disallow", "/") in r for a, r in groups)
 
 
 def page_file(root, url):
@@ -263,18 +319,31 @@ def run_site(site, log=print, dry=False, resend=False):
 
     if read_mode(site["mode"]) != "live":
         return finish("preview", "сайт ещё не открыт на домене (режим просмотра) — начнём, когда откроется")
+    if robots_closed(root):
+        return finish("closed", "сайт закрыт для поисковиков (robots.txt: Disallow: /) — начнём, когда его откроют")
     key = find_key(root)
     if not key:
         return finish("nokey", "в папке сайта нет файла ключа — выложите сайт заново с Мака")
-    urls = sitemap_urls(root, host)
-    if urls is None:
-        return finish("wait", "в папке сайта нет sitemap.xml — проверим через час")
+    entries = sitemap_entries(root, host)
+    if entries is None:
+        return finish("wait", "в папке сайта нет sitemap.xml (или файла из его индекса) — проверим через час")
+    urls = [u for u, _ in entries]
+    lastmod = {u: lm for u, lm in entries if lm}
     if len(urls) < MIN_PAGES or f"https://{host}/" not in urls:
         return finish("wait", f"в карте сайта {len(urls)} адресов и нет главной — похоже, идёт выкладка; проверим через час")
 
     sigs, missing, fresh = fingerprints(root, urls, st["cache"])
     st["cache"] = fresh
     sent, current = st["sent"], set(urls)
+    # есть дата в карте сайта — изменение = другая дата. Переход со старых отпечатков: страница, изменённая раньше дня
+    # последней отправки (или с тем же отпечатком), уже у поисковиков — запоминаем её дату и заново не отправляем
+    last_day = datetime.fromtimestamp(st["last_sent"], TZ).date().isoformat() if st.get("last_sent") else ""
+    for u in list(sigs):
+        if lastmod.get(u):
+            mark = "lastmod:" + lastmod[u]
+            if u in sent and not str(sent[u]).startswith("lastmod:") and (sent[u] == sigs[u] or lastmod[u][:10] < last_day):
+                sent[u] = mark
+            sigs[u] = mark
     new = [u for u in urls if u in sigs and u not in sent]
     changed = [u for u in urls if u in sigs and u in sent and sent[u] != sigs[u]]
     gone = [u for u in sent if u not in current]

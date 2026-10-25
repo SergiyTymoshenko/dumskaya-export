@@ -13,7 +13,11 @@
   • телефоны студии и мессенджеры — только на русских страницах (решено 25.10.2026: на остальных языках связь через
     форму), e-mail — только адрес из content/home/site.json (пока пусто — ни одного); на всех, кроме русских, нет кириллицы;
   • в своих текстах (data-own, title, description) нет шаблонных оборотов (content/TEXT_STYLE.md, scripts/text_markers.py);
-  • в тексте нет «undefined», «NaN», «[object Object]».
+  • в тексте нет «undefined», «NaN», «[object Object]»;
+  • карта сайта — индекс и его файлы (scripts/sitemap_check.py): XML читается, у каждого адреса <lastmod>, не больше
+    50 000 адресов в файле, только опубликованное (товары и страницы выложенных фабрик); llms.txt ссылается только на
+    страницы из карты сайта, в нём все выложенные фабрики и категории с их товарами;
+  • robots.txt закрыт (Disallow: /), пока в content/home/site.json нет "indexing": true; открытый — с Sitemap и llms.txt.
 Предупреждения: заглушки вместо фото (нет оригинала), товары выложенной фабрики без своего текста."""
 import glob
 import json
@@ -27,6 +31,7 @@ from urllib.parse import urlparse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 import text_markers as TM  # noqa: E402
+import sitemap_check as SC  # noqa: E402
 
 DIST = os.path.join(ROOT, "home/dist")
 SITE = "https://dumskaya-home.com"
@@ -268,7 +273,42 @@ def main():
         errs.append(f"ключ IndexNow: в корне сайта должен быть ровно один файл <ключ>.txt (папка home/public/), сейчас {len(keys)}")
     elif open(os.path.join(DIST, keys[0]), encoding="utf-8").read().strip() != keys[0][:-4]:
         errs.append(f"ключ IndexNow: внутри {keys[0]} должен быть сам ключ")
-    print(f"страниц: {len(pages)}, файлов: {len(files)}")
+    # карта сайта: только опубликованное; llms.txt — только на страницы из неё; robots.txt — закрыт до запуска
+    sm = SC.check_sitemaps(DIST, SITE, set(pages), errs)
+    pub_paths = set()
+    for pr in cat["products"]:
+        for u in (pr.get("path") or {}).values():
+            if u in sm and not pr.get("published"):
+                errs.append(f"в карте сайта неопубликованный товар: {u}")
+            if pr.get("published"):
+                pub_paths.add(u)
+    for f, b in (cat.get("brands") or {}).items():
+        for l in LANGS:
+            u = ("" if l == "en" else "/" + l) + "/" + b["slug"]
+            if u in sm and not b.get("published"):
+                errs.append(f"в карте сайта страница невыложенной фабрики: {u}")
+    for u in pub_paths:
+        if u in pages and u not in sm:
+            errs.append(f"опубликованный товар не в карте сайта: {u}")
+    links = SC.check_llms(DIST, SITE, sm, set(), errs)
+    seen = links.get("llms.txt", set())
+    tax = cat.get("taxonomy") or {}
+    pubs = [pr for pr in cat["products"] if pr.get("published")]
+    for f, b in (cat.get("brands") or {}).items():
+        if b.get("published") and "/" + b["slug"] not in seen:
+            errs.append(f"llms.txt: нет выложенной фабрики {b['name']}")
+    for c in sorted({pr["category"] for pr in pubs}):
+        u = "/" + tax["categories"][c]["slug"]["en"]
+        if u not in seen:
+            errs.append(f"llms.txt: нет категории {u}")
+    robots = open(os.path.join(DIST, "robots.txt"), encoding="utf-8").read() if os.path.exists(os.path.join(DIST, "robots.txt")) else ""
+    opened = json.load(open(os.path.join(ROOT, "content/home/site.json"), encoding="utf-8")).get("indexing") is True
+    closed = re.search(r"(?im)^\s*user-agent:\s*\*\s*$(?:\n(?!\s*user-agent).*)*?^\s*disallow:\s*/\s*$", robots) is not None
+    if not opened and not closed:
+        errs.append("robots.txt должен быть закрыт (User-agent: * / Disallow: /), пока каталог не открыт (content/home/site.json → indexing)")
+    if opened and (closed or f"Sitemap: {SITE}/sitemap.xml" not in robots or "Disallow: /api/" not in robots):
+        errs.append("robots.txt открытого каталога: Allow, Disallow: /api/, Sitemap и ссылка на llms.txt")
+    print(f"страниц: {len(pages)}, файлов: {len(files)}, в карте сайта: {len(sm)}, robots.txt: {'открыт' if opened else 'закрыт'}")
     print(f"ошибок: {len(errs)}, предупреждений: {len(warns)}")
     for e in sorted(set(errs))[:80]:
         print("  ✗", e)

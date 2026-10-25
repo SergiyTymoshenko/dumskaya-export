@@ -91,21 +91,38 @@ export function llmsTxt(): string {
     const list = projects.filter((p: any) => p.group === g && p.alternates.en);
     if (!list.length) continue;
     L.push('', `### ${labels[g]}`, '');
-    for (const p of list as any[]) L.push(`- [${p.title.en}](${abs(p.alternates.en)})`);
+    for (const p of list as any[]) { const d = en(p.alternates.en)?.description; L.push(`- [${p.title.en}](${abs(p.alternates.en)})${d ? `: ${d}` : ''}`); }
   }
   L.push('');
+  // магазин студии: коллекция мебели собственного дизайна (страницы магазина — те же данные, что и на сайте)
+  const shop = pages.filter((p) => p.lang === 'en' && p.type === 'shop').sort((a, b) => a.path.length - b.path.length || a.path.localeCompare(b.path));
+  if (shop.length) {
+    L.push('## Furniture shop', '');
+    for (const p of shop) L.push(`- [${plain(p.h1 || p.title)}](${abs(p.path)})${p.description ? `: ${p.description}` : ''}`);
+    L.push('');
+  }
+  // остальные страницы услуг: по городам (кухни и мебель в Вене, ремонт в Варшаве…) и отдельные — чтобы были все
+  const linked = new Set(L.join('\n').match(/\]\(https:\/\/dumskaya-design\.com[^)]*\)/g)?.map((x) => x.slice(2, -1).replace(SITE, '') || '/') || []);
+  const more = pages.filter((p) => p.lang === 'en' && p.type === 'service' && !linked.has(p.path)).sort((a, b) => a.path.localeCompare(b.path));
+  if (more.length) {
+    L.push('## More service pages', '');
+    for (const p of more) L.push(`- [${plain(p.h1 || p.title)}](${abs(p.path)})${p.description ? `: ${p.description}` : ''}`);
+    L.push('');
+  }
   section('Tips', group('Tips'));
   L.push('## Contact', '', `- [Contact page](${abs('/en/contact-studio-interior-design-bratislava-vienna')}): phones, messengers, address and a request form.`, '');
-  L.push('## Other languages', '');
-  L.push(`- Russian: [${abs('/')}](${abs('/')})`);
-  L.push(`- Ukrainian: [${abs('/ua')}](${abs('/ua')})`);
-  L.push(`- Slovak: [${abs('/sk')}](${abs('/sk')})`);
-  L.push(`- German: [${abs('/de')}](${abs('/de')})`);
+  L.push('## Language versions', '');
+  L.push(`- [English](${abs('/en')}): the links in this file lead to the English pages`);
+  L.push(`- [Russian](${abs('/')}): the default language of the site (addresses without a language prefix)`);
+  L.push(`- [Ukrainian](${abs('/ua')}): Ukrainian version`);
+  L.push(`- [Slovak](${abs('/sk')}): Slovak version, with the Slovak phone number of the studio`);
+  L.push(`- [German](${abs('/de')}): German version for Austria, with the Vienna phone number of the studio`);
   L.push('');
   L.push('## Optional', '');
-  L.push(`- [Full text of the English website](${abs('/llms-full.txt')})`);
-  L.push(`- [Sitemap](${abs('/sitemap.xml')})`);
-  L.push(`- [Privacy policy](${abs('/en/privacy')})`);
+  L.push(`- [Full text of the English website](${abs('/llms-full.txt')}): all English pages as Markdown`);
+  L.push(`- [Sitemap](${abs('/sitemap.xml')}): all pages in all languages`);
+  L.push(`- [Privacy policy](${abs('/en/privacy')}): how request data is processed`);
+  L.push(`- [Use of photos and renderings](${abs('/en/image-license')}): rights to the photos and renderings on the site`);
   return L.join('\n') + '\n';
 }
 

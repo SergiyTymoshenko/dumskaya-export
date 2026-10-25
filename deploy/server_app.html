@@ -223,7 +223,7 @@
 
   // ---------- поисковики (IndexNow) ----------
   const INOW = { ok: ['ok', '✓ Работает'], error: ['bad', '⚠️ Не отправляется'], nokey: ['bad', '⚠️ Нет файла ключа'],
-    preview: ['', 'Ждёт открытия сайта на домене'], wait: ['warn', 'Ждёт выкладки'], never: ['', 'Ещё не проверялся'] };
+    preview: ['', 'Ждёт открытия сайта на домене'], closed: ['', 'Закрыт для поисковиков (robots.txt)'], wait: ['warn', 'Ждёт выкладки'], never: ['', 'Ещё не проверялся'] };
   function searchCard(list) {
     const c = card('🔎 Поисковики', 'IndexNow: раз в час сервер сам отправляет новые, изменённые и удалённые страницы в Bing, Яндекс и Seznam, '
       + 'они передают их Naver, Yep и другим. Google так не умеет — для него карта сайта и Search Console.');
@@ -232,12 +232,12 @@
     list.forEach((s) => {
       const [lvl, label] = INOW[s.status] || ['', s.status];
       const rows = [s.name + ' · ' + s.host, ['Состояние', el('span', 'state ' + lvl, label)]];
-      if (s.pages != null && s.status !== 'preview') rows.push(['Страниц на сайте', num(s.pages)]);
+      if (s.pages != null && s.status !== 'preview' && s.status !== 'closed') rows.push(['Страниц на сайте', num(s.pages)]);
       if (s.last_sent) {
         const p = s.last_parts || [0, 0, 0];
         rows.push(['Последняя отправка', when(s.last_sent) + ' · ' + num(s.last_count)],
           ['— новые · изменённые · удалённые', num(p[0]) + ' · ' + num(p[1]) + ' · ' + num(p[2])]);
-      } else if (s.status !== 'preview') rows.push(['Последняя отправка', 'ещё не было']);
+      } else if (s.status !== 'preview' && s.status !== 'closed') rows.push(['Последняя отправка', 'ещё не было']);
       if (s.pending) rows.push(['Ждут отправки', num(s.pending)]);
       if (s.total) rows.push(['Всего отправлено', num(s.total)]);
       const res = Object.entries(s.results || {});

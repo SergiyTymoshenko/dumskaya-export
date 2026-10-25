@@ -1,5 +1,7 @@
 {
   "_about": "Настройки dumskaya-home.com. email — адрес для связи на сайте (sales@dumskaya-design.com — почта отдела продаж на домене студии, решено 25.10.2026): показывается на всех языках — в «Контактах», внизу страниц, в политике конфиденциальности и в разметке организации; телефоны — только на русской версии. verification — коды подтверждения сайта (meta-тег) из Google Search Console, Яндекс.Вебмастера и Bing Webmaster Tools; пусто — тег не ставится.",
+  "indexing": false,
+  "_indexing": "false — robots.txt закрывает сайт для всех роботов, IndexNow его не отправляет. Открыть — только по решению владельца: true и npm run deploy:home (тогда robots.txt — боевой: Allow, Disallow: /api/, Sitemap, llms.txt).",
   "email": "sales@dumskaya-design.com",
   "verification": {
     "google": "",

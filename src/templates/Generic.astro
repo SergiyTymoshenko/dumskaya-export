@@ -59,8 +59,9 @@ const catalog = catalogNoteOn(page) ? homeCatalog(lang) : null;
     <Blocks sections={main} lang={lang} phone={regPhone} />
   </>
 )}
+{/* ссылка на каталог — блок шаблона: дату изменения страницы не двигает (data-nohash, scripts/lastmod.py) */}
 {catalog && (
-  <p class="wrap gcat">{typo(T.catalogNote[0])}<a href={catalog} hreflang={lang === 'ua' ? 'ru' : undefined}>{T.catalogNote[1]}</a>{typo(T.catalogNote[2])}</p>
+  <p class="wrap gcat" data-nohash>{typo(T.catalogNote[0])}<a href={catalog} hreflang={lang === 'ua' ? 'ru' : undefined}>{T.catalogNote[1]}</a>{typo(T.catalogNote[2])}</p>
 )}
 <Blocks sections={services} lang={lang} />
 <style>

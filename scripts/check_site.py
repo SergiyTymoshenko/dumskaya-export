@@ -12,10 +12,16 @@
     текущей страницей (без ссылки), на языке страницы; разметка BreadcrumbList для Google с ними совпадает,
     у каждого звена, кроме последнего, есть ссылка на существующую страницу;
   • на словацких страницах — только словацкий телефон студии, на немецких — только австрийский
-    (ссылки tel:, видимый текст, разметка); на них нет кириллицы, а ссылки из текста ведут на страницы того же языка.
+    (ссылки tel:, видимый текст, разметка); на них нет кириллицы, а ссылки из текста ведут на страницы того же языка;
+  • карта сайта (scripts/sitemap_check.py): XML читается, в ней все страницы, у каждой — <lastmod> (вписывает
+    scripts/lastmod.py после сборки); llms.txt и llms-full.txt ссылаются только на страницы из карты сайта (не на старые
+    адреса), в llms.txt есть все услуги, цены и пакеты, проекты, советы, магазин, «О студии», контакты; нет старых
+    номеров (+48 — Польша, +1 — США). Если отпечатки страниц не сохранены (lastmod.py save), — предупреждение.
   python3 scripts/check_site.py
 """
 import glob, json, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import sitemap_check as SC  # noqa: E402
 from html.parser import HTMLParser
 from urllib.parse import urlparse, unquote
 
@@ -269,7 +275,32 @@ def main():
         errs.append(f"ключ IndexNow: в корне сайта должен быть ровно один файл <ключ>.txt (папка public/), сейчас {len(keys)}")
     elif open(os.path.join(DIST, keys[0]), encoding="utf-8").read().strip() != keys[0][:-4]:
         errs.append(f"ключ IndexNow: внутри {keys[0]} должен быть сам ключ")
-    print(f"страниц: {len(pages)}, редиректов: {len(redirects)}")
+    # карта сайта и справки для нейросетей
+    sm = SC.check_sitemaps(DIST, SITE, set(pages), errs)
+    if sm:
+        for u in pages:
+            if u not in sm and 'name="robots" content="noindex' not in raw_html[u]:
+                errs.append(f"страница не в карте сайта: {u}")
+    links = SC.check_llms(DIST, SITE, sm, set(redirects), errs)
+    for name in links:
+        text = open(os.path.join(DIST, name), encoding="utf-8").read()
+        m = re.search(r"\+48[\s\d]|\+1[\s(-]\d", text)
+        if m:
+            errs.append(f"{name}: старый номер телефона ({m.group(0).strip()}…) — номеров Польши и США на сайте нет")
+    must = {"service", "price", "project", "article", "about", "contact", "portfolio", "shop"}
+    for f in glob.glob(os.path.join(ROOT, "content/pages/en/**/*.json"), recursive=True):
+        pg = json.load(open(f, encoding="utf-8"))
+        if pg.get("type") in must and pg["path"] in pages and pg["path"] not in links.get("llms.txt", set()):
+            errs.append(f"llms.txt: нет страницы {pg['path']} ({pg['type']})")
+    try:
+        import lastmod as LM
+        stale = [p for p, (_, _, how) in LM.compute("studio")[4].items() if how != "same"]
+        if stale:
+            warn.append(f"lastmod: у {len(stale)} страниц содержимое изменилось после сохранения дат — даты по истории git "
+                        f"(сохранить: python3 scripts/lastmod.py save studio), например {stale[0]}")
+    except Exception as e:  # noqa: BLE001
+        warn.append(f"lastmod: не проверено ({type(e).__name__}: {e})")
+    print(f"страниц: {len(pages)}, редиректов: {len(redirects)}, в карте сайта: {len(sm)}")
     print(f"ошибок: {len(errs)}, предупреждений: {len(warn)}")
     for e in sorted(set(errs))[:80]:
         print("  ✗", e)

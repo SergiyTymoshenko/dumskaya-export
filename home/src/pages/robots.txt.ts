@@ -1,3 +1,7 @@
+// robots.txt: закрыт, пока в content/home/site.json нет "indexing": true (home/src/lib/robots.ts).
+import { homeSite } from '../lib/catalog';
+import { LIVE, CLOSED } from '../lib/robots';
+
 export function GET() {
-  return new Response('User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: https://dumskaya-home.com/sitemap.xml\n\n# LLM summary: https://dumskaya-home.com/llms.txt\n', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+  return new Response(homeSite.indexing === true ? LIVE : CLOSED, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
 }

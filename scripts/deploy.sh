@@ -32,6 +32,8 @@ echo "▸ 2/5 Сборка"
 HOME_STATE="$(ssh -o ConnectTimeout=15 "$HOST" 'cat ~/dumskaya/home-mode 2>/dev/null || echo none' 2>/dev/null || echo none)"
 if [ "$HOME_STATE" != live ]; then export HOME_CATALOG_LINKS=off; echo "  каталог dumskaya-home.com ещё не открыт на домене — ссылок на него пока нет"; fi
 PUBLIC_ANALYTICS=1 npx astro build >/dev/null
+# даты изменения страниц в sitemap.xml — по содержимому и истории git (scripts/lastmod.py; файл дат не меняется)
+python3 scripts/lastmod.py apply studio
 echo "▸ 3/5 Проверка"
 CHECK="$(mktemp)"
 if ! python3 scripts/check_site.py >"$CHECK"; then
