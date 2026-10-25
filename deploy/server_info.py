@@ -6,6 +6,7 @@
   • бот и кабинеты: кто подключён, проекты, заявки, сообщения;
   • языковые модели: сколько вызовов перевода (переписка, названия в кабинетах, заявки), токены, ошибки — за день,
     неделю и месяц, по моделям.
+  • поисковики: что и когда IndexNow отправил в Bing, Яндекс и Seznam (indexnow.py), по каждому сайту.
 Учёт вызовов — таблица llm_usage в bot.db (по дням; translate.py сообщает о каждом вызове через translate.USAGE_HOOK).
 Ключи сервисов сюда не попадают никогда: только «ключ есть» и какая модель. В тексте ошибки всё похожее на ключ
 заменяется на «…». Сервер общий с EuroExchange: здесь только чтение — ничего не меняется.
@@ -348,6 +349,11 @@ def snapshot(bot):
         out["data"] = data(getattr(bot, "s", None))
     except Exception as e:  # noqa: BLE001
         out["data"] = {"error": clean_error(f"{type(e).__name__}: {e}")}
+    try:
+        import indexnow
+        out["indexnow"] = indexnow.status()
+    except Exception as e:  # noqa: BLE001
+        out["indexnow"] = {"error": clean_error(f"{type(e).__name__}: {e}")}
     try:
         out["bot"] = bot_stats(bot) if bot else None
     except Exception as e:  # noqa: BLE001

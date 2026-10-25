@@ -14,6 +14,7 @@
 И учёт проектов студии (crm.py, crm_api.py, страница crm_app.html — кнопка «Студия» в боте).
 И кабинеты заказчика, подрядчика и его работников с разговорами (crm_portal.py, portal_api.py, portal_bot.py, страница portal_app.html —
 кнопка «Мой проект» в боте); напоминания об оплате доп. услуг — раз в минуту вместе с остальными фоновыми делами.
+И IndexNow (indexnow.py): раз в час сообщает Bing, Яндексу и Seznam о новых и изменённых страницах обоих сайтов.
 Только стандартная библиотека Python 3, без установки пакетов.
 
 Настройки — переменные окружения (файл lead.env, его читает systemd):
@@ -95,6 +96,7 @@ from crm_portal import Portal  # noqa: E402
 from fx import Rates  # noqa: E402
 import backups  # noqa: E402  резервные копии: архив на сервере (7 дней) и копия в Telegram
 import server_info  # noqa: E402  страница разработчика «Сервер и ИИ»: сервер, данные, расход языковых моделей
+import indexnow  # noqa: E402  IndexNow: раз в час новые и изменённые страницы сайтов — в Bing, Яндекс, Seznam
 
 BOT = None
 
@@ -436,6 +438,10 @@ def main():
         # на Мак — тоже (24.10.2026); весь сервер копирует Hetzner
         backups.on_start(BOT)                       # убрать отметки прежней копии в Telegram
         BOT.stats.hooks.append(lambda log=log: backups.daily_tick(BOT, getattr(BOT, "crm", None), log=log))
+        # IndexNow (решено 25.10.2026): раз в час и через минуту после запуска — новые, изменённые и удалённые страницы
+        # обоих сайтов в Bing, Яндекс и Seznam; dumskaya-home.com — когда откроется на домене. Свой поток, статистику не держит
+        indexnow.BOT = BOT
+        BOT.stats.hooks.append(indexnow.tick)
         BOT.start()
         BOT.monitor.start()
         BOT.stats.start()

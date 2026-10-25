@@ -263,6 +263,12 @@ def main():
     for k, v in redirects.items():
         if v not in pages:
             errs.append(f"редирект ведёт в никуда: {k} → {v}")
+    # ключ IndexNow (deploy/indexnow.py): ровно один файл <ключ>.txt в корне сайта, внутри — сам ключ
+    keys = [n for n in os.listdir(DIST) if re.fullmatch(r"[0-9a-f]{32}\.txt", n)]
+    if len(keys) != 1:
+        errs.append(f"ключ IndexNow: в корне сайта должен быть ровно один файл <ключ>.txt (папка public/), сейчас {len(keys)}")
+    elif open(os.path.join(DIST, keys[0]), encoding="utf-8").read().strip() != keys[0][:-4]:
+        errs.append(f"ключ IndexNow: внутри {keys[0]} должен быть сам ключ")
     print(f"страниц: {len(pages)}, редиректов: {len(redirects)}")
     print(f"ошибок: {len(errs)}, предупреждений: {len(warn)}")
     for e in sorted(set(errs))[:80]:

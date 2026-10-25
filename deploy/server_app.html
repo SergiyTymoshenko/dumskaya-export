@@ -219,6 +219,34 @@
   }
   const isoShift = (days) => { const t = new Date(); t.setDate(t.getDate() + days); return t.getFullYear() + '-' + two(t.getMonth() + 1) + '-' + two(t.getDate()); };
 
+  // ---------- поисковики (IndexNow) ----------
+  const INOW = { ok: ['ok', '✓ Работает'], error: ['bad', '⚠️ Не отправляется'], nokey: ['bad', '⚠️ Нет файла ключа'],
+    preview: ['', 'Ждёт открытия сайта на домене'], wait: ['warn', 'Ждёт выкладки'], never: ['', 'Ещё не проверялся'] };
+  function searchCard(list) {
+    const c = card('🔎 Поисковики', 'IndexNow: раз в час сервер сам отправляет новые, изменённые и удалённые страницы в Bing, Яндекс и Seznam, '
+      + 'они передают их Naver, Yep и другим. Google так не умеет — для него карта сайта и Search Console.');
+    if (!list) { c.append(el('p', 'note', 'Нет данных.')); return c; }
+    if (list.error) { c.append(el('p', 'err', 'Не удалось прочитать: ' + list.error)); return c; }
+    list.forEach((s) => {
+      const [lvl, label] = INOW[s.status] || ['', s.status];
+      const rows = [s.name + ' · ' + s.host, ['Состояние', el('span', 'state ' + lvl, label)]];
+      if (s.pages != null && s.status !== 'preview') rows.push(['Страниц на сайте', num(s.pages)]);
+      if (s.last_sent) {
+        const p = s.last_parts || [0, 0, 0];
+        rows.push(['Последняя отправка', when(s.last_sent) + ' · ' + num(s.last_count)],
+          ['— новые · изменённые · удалённые', num(p[0]) + ' · ' + num(p[1]) + ' · ' + num(p[2])]);
+      } else if (s.status !== 'preview') rows.push(['Последняя отправка', 'ещё не было']);
+      if (s.pending) rows.push(['Ждут отправки', num(s.pending)]);
+      if (s.total) rows.push(['Всего отправлено', num(s.total)]);
+      const res = Object.entries(s.results || {});
+      if (res.length) rows.push(['Ответы', res.map(([k, v]) => k + ' ' + (v[0] === 200 || v[0] === 202 ? '✓' : (v[0] || 'нет связи'))).join(' · ')]);
+      if (s.checked) rows.push(['Проверено', when(s.checked)]);
+      c.append(kv(rows));
+      if (s.note && s.status !== 'preview') { c.append(el('p', 'note', s.note)); c.lastChild.style.margin = '6px 0 0'; }
+    });
+    return c;
+  }
+
   // ---------- бот и кабинеты ----------
   const ROLE = { owner: 'разработчик', designer: 'дизайнер', client: 'заказчики', crew: 'подрядчики', worker: 'работники', assistant: 'сотрудники студии',
     supplier: 'поставщики (магазин)', staff: 'их сотрудники', maker: 'фабрики', foreman: 'прорабы', contractor: 'подрядчики (магазин)' };
@@ -345,7 +373,7 @@
 
   function render() {
     if (!D) return;
-    app.replaceChildren(serverCard(D.server), llmCard(D.llm_config || {}, D.llm), dataCard(D.data || {}), botCard(D.bot));
+    app.replaceChildren(serverCard(D.server), llmCard(D.llm_config || {}, D.llm), dataCard(D.data || {}), searchCard(D.indexnow), botCard(D.bot));
     sub.textContent = 'Обновлено в ' + hm(D.ts) + ' · само обновляется раз в минуту, пока открыто';
   }
   async function load() {
