@@ -11,6 +11,8 @@
 # Сервер под сайт настраивает обычная выкладка студии (npm run deploy) — она же обновляет бот, принимающий заявки.
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# весь вывод — и на экран, и в .deploy-home.log: если выкладка оборвётся, видно где (bash scripts/doctor_home.sh)
+exec > >(tee .deploy-home.log) 2>&1
 HOST="${DEPLOY_HOST:-eurox}"
 export EXPORT_DIR="${EXPORT_DIR:-$HOME/Documents/dumskaya-export}"
 

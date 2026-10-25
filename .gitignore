@@ -28,3 +28,4 @@ home/img/
 home/public/img/
 home/dist/
 home/.astro/
+.deploy-home.log
