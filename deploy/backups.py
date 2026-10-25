@@ -43,7 +43,7 @@ crm.db       — учёт «Студии»: проекты, оплаты, зак
 bot.db       — бот: люди и роли, настройки, состояние
 fx.db        — курсы валют центробанков
 leads.jsonl  — заявки с сайта
-stats/, hits.jsonl, times.jsonl — статистика сайта
+stats/, hits.jsonl, times.jsonl — статистика сайта; stats-home/, hits-home.jsonl, times-home.jsonl — каталога dumskaya-home.com
 {secret}
 Сами файлы проектов в архив не входят: они на сервере в ~/dumskaya/crm/files, весь сервер копирует Hetzner.
 
@@ -70,6 +70,9 @@ def sources(app=APP):
         (e("HITS_FILE", j("hits.jsonl")), "hits.jsonl", "file"),
         (e("TIMES_FILE", j("times.jsonl")), "times.jsonl", "file"),
         (e("STATS_DIR", j("stats")), "stats", "dir"),
+        (e("HOME_HITS_FILE", j("hits-home.jsonl")), "hits-home.jsonl", "file"),     # статистика каталога dumskaya-home.com
+        (e("HOME_TIMES_FILE", j("times-home.jsonl")), "times-home.jsonl", "file"),
+        (e("HOME_STATS_DIR", j("stats-home")), "stats-home", "dir"),
         (j("lead.env"), "lead.env", "file"),
     ]
 

@@ -227,7 +227,8 @@ def main():
             m = re.search(r"\w*[а-яё]\w*", txt + " " + t + " " + (p.desc or ""), re.I)
             if m:
                 errs.append(f"кириллица на странице {l} («{m.group(0)}»): {u}")
-        h = raw[u]
+        # контакты — по видимой странице и разметке Schema: в скрипте статистики есть «tel:» и «mailto:» как образцы ссылок
+        h = re.sub(r"<script(?![^>]*application/ld\+json)[^>]*>.*?</script>", "", raw[u], flags=re.S)
         has_tel = [ph["text"] for ph in PHONES.values() if ph["tel"] in h or ph["text"] in h or ph["tel"].lstrip("+") in h]
         if l != "ru":                                 # телефон и мессенджеры — только на русской версии
             if has_tel or "tel:" in h:
@@ -238,7 +239,7 @@ def main():
             errs.append(f"нет телефона на русской странице: {u}")
         for m in set(re.findall(r"mailto:([^\"'?]+)", h)) | set(re.findall(r"[\w.+-]+@dumskaya-(?:design|home)\.com", h)):
             if m != HOME_EMAIL:
-                errs.append(f"e-mail {m} на странице (на сайте пока без e-mail): {u}")
+                errs.append(f"e-mail {m} на странице (на сайте — только {HOME_EMAIL or 'форма, e-mail пока нет'}): {u}")
         own = " ".join([t, p.desc or ""] + p.own)
         hits = TM.scan(own, MARKERS[l])
         if hits:

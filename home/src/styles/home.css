@@ -55,6 +55,17 @@
 .brands { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px 36px; font: 400 clamp(14px, 1.4vw, 17px)/1.5 var(--display); text-transform: uppercase; letter-spacing: 0.14em; }
 .brands a { text-decoration: none; }
 .brands .muted { font-family: var(--body); letter-spacing: 0; font-size: 13px; }
+/* доставка по всему миру: полоса над шапкой на всех страницах и блок на главной */
+.topbar { margin: 0; background: var(--ink); color: var(--paper); text-align: center; font: 400 12px/1.4 var(--display);
+  letter-spacing: 0.16em; text-transform: uppercase; }
+.topbar a { display: block; padding: 9px var(--pad); color: inherit; text-decoration: none; }
+.topbar a:hover { text-decoration: underline; }
+.ship { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ship__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px 48px; }
+@media (min-width: 720px) { .ship__list { grid-template-columns: 1fr 1fr; } }
+.ship__list li { max-width: var(--measure); padding-left: 20px; position: relative; }
+.ship__list li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 8px; height: 1px; background: var(--oak); }
+.ship__cta { margin: 28px 0 0; }
 .how { display: grid; gap: 32px; }
 @media (min-width: 960px) { .how { grid-template-columns: 1fr 1fr; gap: 64px; } }
 .how__list { margin: 0; padding-left: 1.2em; display: grid; gap: 12px; max-width: var(--measure); }

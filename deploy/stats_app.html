@@ -6,8 +6,10 @@
 <meta name="robots" content="noindex, nofollow">
 <title>Посетители сайта</title>
 <!-- Мини-приложение Telegram: «Студия» → вкладка «Сайт» (и кнопка «Графики» в утренней сводке). Данные отдаёт сервис
-     заявок (/api/stats/data?p=1h|24h|7|30|90|365|all) только тем, кому Telegram подписал запуск (разработчик и дизайнер);
-     работает ли сайт (/api/stats/site) — только разработчику. -->
+     заявок (/api/stats/data?p=1h|24h|7|30|90|365|all&site=studio|home) только тем, кому Telegram подписал запуск
+     (разработчик и дизайнер); работает ли сайт (/api/stats/site) — только разработчику.
+     Два сайта: «Сайт студии» (dumskaya-design.com) и «Каталог» (dumskaya-home.com) — переключатель над периодами;
+     выбор запоминается на устройстве, ?site=home в адресе открывает каталог (кнопка в утренней строке). -->
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
   :root {
@@ -67,6 +69,12 @@
   .filters button:nth-child(n+5) { grid-column: span 4; }
   @media (max-width: 359px) { .filters { gap: 4px; } .filters button { font-size: calc(12px * var(--k)); padding: 7px 2px; } }
   .filters button[aria-pressed="true"] { background: var(--text-1); color: var(--page); border-color: var(--text-1); font-weight: 600; }
+  /* какой сайт: студия или каталог — две половины одной кнопки */
+  .sites { display: grid; grid-template-columns: 1fr 1fr; margin: 0 0 12px; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface); }
+  .sites button { font: inherit; font-size: calc(14px * var(--k)); color: var(--text-1); background: transparent; border: 0; padding: 9px 6px; cursor: pointer; min-width: 0; }
+  .sites button + button { border-left: 1px solid var(--border); }
+  .sites button[aria-pressed="true"] { background: var(--series); color: #fff; font-weight: 600; }
+  .sites small { display: block; font-size: calc(11px * var(--k)); opacity: .8; font-weight: 400; overflow-wrap: anywhere; }
   .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 14px; margin: 0 0 12px; }
   .card h2 { font-size: calc(15px * var(--k)); font-weight: 600; margin: 0 0 2px; }
   .card .note { color: var(--text-2); font-size: calc(13px * var(--k)); margin: 0 0 10px; }
@@ -154,6 +162,7 @@
   /* крупный текст: раскладка, чтобы ничего не обрезалось */
   :root[data-size="l"] body, :root[data-size="xl"] body { font-weight: 500; }
   :root[data-size="l"] .filters button, :root[data-size="xl"] .filters button { border-width: 2px; padding: 9px 2px; }
+  :root[data-size="l"] .sites, :root[data-size="xl"] .sites { border-width: 2px; }
   :root[data-size="xl"] .filters button { grid-column: span 6; }
   :root[data-size="xl"] .filters button:nth-child(7) { grid-column: 1 / -1; }
   :root[data-size="l"] .tiles, :root[data-size="xl"] .tiles { grid-template-columns: 1fr; }
@@ -166,6 +175,10 @@
   <a class="back" id="back" href="/api/crm/app">← Студия</a>
   <h1>Посетители сайта</h1>
   <p class="sub" id="sub">dumskaya-design.com</p>
+  <div class="sites" role="group" aria-label="Сайт">
+    <button type="button" data-s="studio" aria-pressed="true">Сайт студии<small>dumskaya-design.com</small></button>
+    <button type="button" data-s="home" aria-pressed="false">Каталог<small>dumskaya-home.com</small></button>
+  </div>
   <section class="card site" id="site" hidden></section>
   <div class="filters" role="group" aria-label="Период">
     <button type="button" data-p="1h" aria-pressed="false">1 час</button>
@@ -188,7 +201,10 @@
   const MON_AXIS = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
   const MONTHS_NOM = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь'];
   const app = document.getElementById('app');
-  let period = '7', data = null;
+  let period = '7', data = null, siteKey = 'studio';
+  const SITES = ['studio', 'home'];
+  try { const x = localStorage.getItem('stats-site'); if (SITES.includes(x)) siteKey = x; } catch (e) {}
+  try { const x = new URLSearchParams(location.search).get('site'); if (SITES.includes(x)) siteKey = x; } catch (e) {}
   // размер текста — тот же, что в «Студии»: сразу — запомненный на этом устройстве, затем — с сервера
   const SIZES = ['m', 'l', 'xl'];
   const applySize = (z) => { if (!SIZES.includes(z)) return false; const was = document.documentElement.dataset.size; document.documentElement.dataset.size = z;
@@ -482,10 +498,11 @@
     const d = data, tot = d.total, prev = d.prev, rows = d.rows, n = rows.length;
     app.replaceChildren();
     const span = d.span || n;                       // у года и всего времени строки — недели или месяцы, а покрытие — в днях
-    document.getElementById('sub').textContent = 'dumskaya-design.com · обновлено в ' + hm(d.generated_ts)
+    document.getElementById('sub').textContent = (d.host || 'dumskaya-design.com') + ' · обновлено в ' + hm(d.generated_ts)
       + (period === 'all' && d.first ? ' · с ' + dshort(d.first) + ' ' + pd(d.first).getFullYear() : '')
       + (period !== 'all' && d.coverage < span ? ' · есть данные за ' + d.coverage + ' из ' + span + (hourly() ? ' ч' : ' дн.') : '');
-    if (!d.coverage) { app.append(el('p', 'empty', 'За этот период в журнале сайта ещё нет записей.')); return; }
+    if (notLive()) app.append(notLiveCard());
+    if (!d.coverage) { if (!notLive()) app.append(el('p', 'empty', 'За этот период в журнале сайта ещё нет записей.')); if (me) app.append(ownCard()); return; }
     const tiles = el('div', 'tiles');
     const tv = tot.time_visitors;
     const cmp = comparable();                       // «всё время» сравнивать не с чем
@@ -529,7 +546,8 @@
 
     const c6 = card('Робот Google по ' + u().by, 'Сколько страниц прочитал Googlebot — так идёт индексация. За период: '
       + fmt(tot.google) + (prev ? ' (' + (tot.google >= prev.google ? '▲ +' : '▼ −') + fmt(Math.abs(tot.google - prev.google)) + ')' : ''));
-    c6.append(columnChart(rows, 'google', (r) => [['Всего страниц', r.google], ['Словацкие', r.google_sk], ['Немецкие', r.google_de]]));
+    c6.append(columnChart(rows, 'google', (r) => [['Всего страниц', r.google]]
+      .concat((d.google_split || [['sk', 'Словацкие'], ['de', 'Немецкие']]).map(([k, lab]) => [lab, (r.glang || {})[k] != null ? r.glang[k] : (r['google_' + k] || 0)]))));
     app.append(c6);
 
     if (tot.contacts) {
@@ -593,7 +611,8 @@
   function renderLive() {
     const d = data, sm = d.summary;
     app.replaceChildren();
-    document.getElementById('sub').textContent = 'dumskaya-design.com · обновлено в ' + hm(d.generated_ts) + ' · обновляется само раз в минуту';
+    document.getElementById('sub').textContent = (d.host || 'dumskaya-design.com') + ' · обновлено в ' + hm(d.generated_ts) + ' · обновляется само раз в минуту';
+    if (notLive()) app.append(notLiveCard());
     const tiles = el('div', 'tiles');
     const split = ['сейчас на сайте — ' + sm.active, 'просмотров — ' + sm.views];
     if (sm.avg_time != null) split.push('в среднем на сайте — ' + dur(sm.avg_time));
@@ -613,6 +632,13 @@
       + 'Красным — адрес, которого на сайте нет (ошибка 404). Роботы, которые назвались браузером, и визиты студии не показываются. '
       + 'Город — по IP-адресу, примерно: мобильный интернет часто показывает город оператора. '
       + (d.geo ? 'База городов: ' + d.credit + '.' : 'База городов загружается — города появятся через несколько минут.')));
+  }
+
+  // каталог ещё в режиме просмотра (не на домене): посетителей нет — объяснить, а не показывать пустые нули без причины
+  const notLive = () => data && data.site === 'home' && data.live === false;
+  function notLiveCard() {
+    return card('Каталог ещё не открыт на домене', 'Сейчас dumskaya-home.com видите только вы — через туннель с Мака, такие просмотры не считаются. '
+      + 'Посетители, роботы Google и заявки появятся здесь, когда каталог включат на домене.');
   }
 
   // «Не считать нас»: свой домашний интернет — визиты с него в статистику не попадают
@@ -674,12 +700,12 @@
     const my = ++seq;
     if (!quiet) app.classList.add('loading');
     try {
-      const r = await fetch('/api/stats/data?p=' + period, { headers: { 'X-Telegram-Init-Data': init }, cache: 'no-store' });
+      const r = await fetch('/api/stats/data?p=' + period + '&site=' + siteKey, { headers: { 'X-Telegram-Init-Data': init }, cache: 'no-store' });
       if (r.status === 403) throw new Error('Нет доступа: статистика открыта разработчику и дизайнеру студии.');
       if (r.status === 503) throw new Error('Сервис не может прочитать журнал сайта. Выложите сайт ещё раз — выкладка откроет журнал для чтения.');
       if (!r.ok) throw new Error('Сервер не ответил (' + r.status + '). Попробуйте ещё раз через минуту.');
       const got = await r.json();
-      if (my !== seq) return;             // пока ждали, выбрали другой период
+      if (my !== seq) return;             // пока ждали, выбрали другой период или сайт
       data = got;
       if (me === null) await loadMe();
       render();
@@ -699,6 +725,17 @@
     load();
   }));
   press();
+  const siteButtons = document.querySelectorAll('.sites button');
+  const pressSite = () => siteButtons.forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.s === siteKey)));
+  siteButtons.forEach((b) => b.addEventListener('click', () => {
+    if (siteKey === b.dataset.s) return;
+    siteKey = b.dataset.s;
+    try { localStorage.setItem('stats-site', siteKey); } catch (e) {}
+    pressSite();
+    siteBox.hidden = siteKey !== 'studio' || !siteBox.childElementCount;   // сторож проверяет сайт студии
+    load();
+  }));
+  pressSite();
   // работает ли сайт: сторож на сервере проверяет раз в минуту — карточка только у разработчика
   const siteBox = document.getElementById('site');
   const hhmm = (ts) => { const d = new Date(ts * 1000); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); };
@@ -721,10 +758,10 @@
       if (x.cert_days != null) rows.push(el('div', x.cert_days < 14 ? 'line warn' : 'line', 'Сертификат HTTPS: ещё ' + x.cert_days + ' дн.'
         + (x.cert_days < 14 ? ' — Caddy обновляет его сам; если не обновится, бот предупредит' : '')));
     }
-    siteBox.replaceChildren(...rows); siteBox.hidden = false;
+    siteBox.replaceChildren(...rows); siteBox.hidden = siteKey !== 'studio';
   }
   loadSite();
-  setInterval(() => { if (document.visibilityState === 'visible' && !siteBox.hidden) loadSite(); }, 60000);
+  setInterval(() => { if (document.visibilityState === 'visible' && siteKey === 'studio' && siteBox.childElementCount) loadSite(); }, 60000);
   if (tg && tg.initData) fetch('/api/crm/ui', { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' })
     .then((r) => (r.ok ? r.json() : null)).then((x) => {
       if (x && x.role === 'owner') {           // у разработчика в «Студии» только сайт и доступ к боту (решено 24.10.2026)

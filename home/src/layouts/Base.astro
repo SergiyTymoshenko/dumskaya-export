@@ -8,7 +8,7 @@ import fontDisplayLat from '@fontsource/montserrat/files/montserrat-latin-400-no
 import fontBodyLat from '@fontsource/commissioner/files/commissioner-latin-400-normal.woff2?url';
 import fontDisplayCyr from '@fontsource/montserrat/files/montserrat-cyrillic-400-normal.woff2?url';
 import fontBodyCyr from '@fontsource/commissioner/files/commissioner-cyrillic-400-normal.woff2?url';
-import { LANGS, HREFLANG, HTML_LANG, OG_LOCALE, DEFAULT, ui } from '../lib/i18n';
+import { LANGS, HREFLANG, HTML_LANG, OG_LOCALE, DEFAULT, homePath, ui } from '../lib/i18n';
 import { manifest, site, phones, homeSite, homeEmail, paths, type HPage } from '../lib/catalog';
 
 interface Props { page: HPage; noindex?: boolean; schema?: any[] }
@@ -30,6 +30,7 @@ const graph: any[] = [
 ];
 if (page.kind === 'home' || page.kind === 'contact') graph.push({
   '@type': 'Organization', '@id': ORG, name: 'DUMSKAYA HOME', url: SITE + '/', logo: SITE + '/logo.svg', ...(homeEmail ? { email: homeEmail } : {}),
+  areaServed: 'Worldwide',                          // доставка по всему миру
   parentOrganization: { '@type': 'Organization', name: 'DUMSKAYA DESIGN', url: 'https://dumskaya-design.com/' },
   address: { '@type': 'PostalAddress', streetAddress: site.contacts.address.street, postalCode: site.contacts.address.postal,
     addressLocality: site.contacts.address.city, addressCountry: site.contacts.address.country },
@@ -73,10 +74,37 @@ const verify = homeSite.verification || {};
 </head>
 <body>
   <a class="skip" href="#main">{ui(page.lang).skip}</a>
+  {/* полоса над шапкой на всех страницах: доставка по всему миру — главное, что надо знать покупателю из другой страны */}
+  <p class="topbar"><a href={`${homePath(page.lang)}#delivery`}>{ui(page.lang).ship_bar}</a></p>
   <Header page={page} />
   <main id="main">
     <slot />
   </main>
   <Footer page={page} />
+  <script is:inline>
+    // Как на сайте студии: нажатия на телефон, e-mail и мессенджеры и время на странице — в статистику студии
+    // (бот, «Графики» → DUMSKAYA HOME). Без cookie; по времени на странице статистика отличает людей от программ.
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+      var h = a.getAttribute('href') || '';
+      var t = /^tel:/i.test(h) ? 'tel' : /^mailto:/i.test(h) ? 'mail' : /\/\/wa\.me\//i.test(h) ? 'whatsapp' : /\/\/t\.me\//i.test(h) ? 'telegram' : '';
+      if (!t) return;
+      try { navigator.sendBeacon('/api/hit', new Blob([JSON.stringify({ t: t, p: location.pathname })], { type: 'text/plain' })); } catch (err) {}
+    }, true);
+    (function () {
+      var shown = 0, since = document.visibilityState === 'visible' ? Date.now() : 0, sent = 0;
+      function send() {
+        if (since) { shown += Date.now() - since; since = 0; }
+        var s = Math.round(shown / 1000);
+        if (s < 1 || s === sent) return;
+        sent = s;
+        try { navigator.sendBeacon('/api/hit', new Blob([JSON.stringify({ t: 'time', p: location.pathname, s: s })], { type: 'text/plain' })); } catch (err) {}
+      }
+      document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'hidden') send(); else if (!since) since = Date.now();
+      });
+      addEventListener('pagehide', send);
+    })();
+  </script>
 </body>
 </html>

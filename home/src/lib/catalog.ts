@@ -126,7 +126,7 @@ export function allPages(): HPage[] {
         image: p.images[0]?.name });
     }
     out.push({ kind: 'contact', lang: l, path: paths.contact[l], alt: paths.contact, h1: T.contact_h1, title: fitTitle([T.contactTitle]),
-      description: T.contact_lead, crumbs: [home, { label: T.contact_h1 }] });
+      description: T.contactDesc, crumbs: [home, { label: T.contact_h1 }] });
     out.push({ kind: 'privacy', lang: l, path: paths.privacy[l], alt: paths.privacy, h1: T.privacy, title: fitTitle([T.privacy]),
       description: T.privacyDesc, crumbs: [home, { label: T.privacy }] });
   }

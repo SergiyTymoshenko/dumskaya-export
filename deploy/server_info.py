@@ -292,9 +292,9 @@ def data(store=None):
         if time.time() - _sizes_at > SIZE_CACHE or not _sizes:
             files = _dir_size(crm.FILES_DIR) if os.path.isdir(crm.FILES_DIR) else (0, 0)
             trash_dir = os.path.join(os.path.dirname(os.path.abspath(crm.FILES_DIR)), "trash")
-            stats_dir = os.path.join(APP, "stats")
-            stats = (_dir_size(stats_dir)[0] if os.path.isdir(stats_dir) else 0) + sum(
-                _file_size(os.environ.get(k, os.path.join(APP, n))) for k, n in (("HITS_FILE", "hits.jsonl"), ("TIMES_FILE", "times.jsonl")))
+            stats = sum(_dir_size(d)[0] for d in (os.path.join(APP, "stats"), os.path.join(APP, "stats-home")) if os.path.isdir(d)) + sum(
+                _file_size(os.environ.get(k, os.path.join(APP, n))) for k, n in (("HITS_FILE", "hits.jsonl"), ("TIMES_FILE", "times.jsonl"),
+                                                                                 ("HOME_HITS_FILE", "hits-home.jsonl"), ("HOME_TIMES_FILE", "times-home.jsonl")))
             _sizes = {"files": files, "trash": _dir_size(trash_dir)[0] if os.path.isdir(trash_dir) else 0, "stats": stats,
                       "site": _site_size(SITE_DIR) if os.path.isdir(SITE_DIR) else None, "tg_only": _tg_only(crm.CRM_DB)}
             _sizes_at = time.time()

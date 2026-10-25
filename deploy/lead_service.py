@@ -25,6 +25,7 @@
 """
 import json
 import os
+import re
 import smtplib
 import ssl
 import sys
@@ -49,6 +50,10 @@ SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD", "")
 MAIL_TO = os.environ.get("MAIL_TO", SMTP_USER)
 
 LIMITS = {"name": 120, "contact": 160, "message": 3000, "page": 300, "model": 40, "lang": 5}
+# страна и город доставки (форма dumskaya-home.com): дописывается первой строкой сообщения — так её видят бот, «Студия»,
+# перевод и ответ клиенту, без отдельной колонки в учёте
+DELIVERY = {"ru": "Доставка", "ua": "Доставка", "en": "Delivery to", "sk": "Doručenie", "de": "Lieferung nach",
+            "fr": "Livraison", "es": "Entrega en"}
 RATE = defaultdict(deque)          # ip → время последних заявок
 RATE_MAX, RATE_WINDOW = 5, 600     # не больше 5 заявок за 10 минут с одного адреса
 HIT_RATE = defaultdict(deque)      # ip → время последних нажатий на контакты
@@ -80,6 +85,7 @@ from bot import Bot  # noqa: E402
 from site_monitor import SiteMonitor  # noqa: E402
 from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
                         is_own, mark_own, me_data, record_hit, record_time, web)
+from site_stats import home as stats_home  # noqa: E402  статистика каталога dumskaya-home.com — тот же код, свой журнал
 from translate import chain as translate_chain, lang_from, purpose as translate_purpose, translate_lead  # noqa: E402
 import crm_api  # noqa: E402  учёт проектов студии: /api/crm/*
 import portal_api  # noqa: E402  кабинет заказчика и подрядчика, переписка: /api/portal/*
@@ -223,8 +229,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self.reply(403, {"ok": False})
             q = dict(urllib.parse.parse_qsl(query))
             period = q.get("p") or q.get("days") or "7"
+            fn = stats_home().web if q.get("site") == "home" else web   # «Графики»: сайт студии или каталог
             try:
-                return self.reply(200, web(period if period in PERIODS else "7"))
+                return self.reply(200, fn(period if period in PERIODS else "7"))
             except PermissionError:
                 return self.reply(503, {"ok": False, "error": "log"})
             except Exception as e:  # noqa: BLE001
@@ -267,6 +274,8 @@ class Handler(BaseHTTPRequestHandler):
             data = {}
         kind, page = str(data.get("t") or ""), str(data.get("p") or "")[:200]
         ua, ip = self.headers.get("User-Agent", ""), self.client_ip()
+        st = stats_home() if self.site() == HOME_SITE else None      # каталог пишет в свои файлы (times-home, hits-home)
+        rec_time, rec_hit = (st.record_time, st.record_hit) if st else (record_time, record_hit)
         valid = page.startswith("/") and ua.startswith("Mozilla/") and not BOT_UA.search(ua) and not is_own(ip)
         if valid and kind == "time":
             try:
@@ -275,18 +284,23 @@ class Handler(BaseHTTPRequestHandler):
                 secs = 0
             if 0 < secs <= 6 * 3600 and self.allow(TIME_RATE, ip, TIME_MAX):
                 try:
-                    record_time(page, secs, ip, ua)
+                    rec_time(page, secs, ip, ua)
                 except OSError as e:
                     log(f"время на странице: не записано: {e}")
         elif valid and kind in CONTACTS and self.allow(HIT_RATE, ip, HIT_MAX):
             try:
-                record_hit(kind, page, ip, ua)
+                rec_hit(kind, page, ip, ua)
             except OSError as e:
                 log(f"нажатия: не записано: {e}")
         self.send_response(204)
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Robots-Tag", ROBOTS)
         self.end_headers()
+
+    def site(self):
+        """С какого сайта запрос: dumskaya-home.com (каталог) или сайт студии — по адресу, который передаёт Caddy."""
+        host = (self.headers.get("X-Forwarded-Host") or self.headers.get("Host") or "").split(":")[0].strip().lower()
+        return HOME_SITE if host == HOME_SITE or host.endswith("." + HOME_SITE) else "dumskaya-design.com"
 
     @staticmethod
     def allow(rate, ip, limit):
@@ -349,8 +363,11 @@ class Handler(BaseHTTPRequestHandler):
             return self.reply(200, {"ok": True})
         lead = {k: str(data.get(k) or "").strip()[:n] for k, n in LIMITS.items()}
         lead["lang"] = lang
-        host = (self.headers.get("X-Forwarded-Host") or self.headers.get("Host") or "").split(":")[0].strip().lower()
-        lead["site"] = HOME_SITE if host == HOME_SITE or host.endswith("." + HOME_SITE) else "dumskaya-design.com"
+        country = re.sub(r"\s+", " ", str(data.get("country") or "")).strip()[:100]
+        if country:
+            sep = " : " if lang == "fr" else ": "
+            lead["message"] = (f"{DELIVERY.get(lang, 'Доставка')}{sep}{country}\n\n{lead['message']}".strip())[:LIMITS["message"] + 120]
+        lead["site"] = self.site()
         if lead["site"] == HOME_SITE and lead["page"].startswith("/"):     # в учёте и «Студии» видно, с какого сайта заявка
             lead["page"] = ("https://" + HOME_SITE + lead["page"])[:LIMITS["page"]]
         if len(lead["name"]) < 1 or len(lead["contact"]) < 3:

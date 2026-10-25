@@ -3,7 +3,7 @@
 // model — наш артикул (DF-…, DL-…): по нему бот понимает фабрику и партнёра и пишет подсказку дизайнеру.
 // Какой сайт прислал заявку, сервис понимает по адресу (Host: dumskaya-home.com).
 import { ui, type Lang } from '../lib/i18n';
-import { paths } from '../lib/catalog';
+import { paths, homeEmail } from '../lib/catalog';
 interface Props { lang: Lang; model?: string; product?: string; id?: string; title?: string }
 const { lang, model = '', product = '', id = 'lead', title } = Astro.props;
 const T = ui(lang);
@@ -17,13 +17,15 @@ const prefill = product ? `${T.form.about}: ${product}${model ? ` (${model})` : 
   <div class="lead__hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off" /></label></div>
   <label class="lead__f"><span>{T.form.name}</span><input type="text" name="name" required autocomplete="name" maxlength="120" /></label>
   <label class="lead__f"><span>{T.form.contact}</span><input type="text" name="contact" required autocomplete="email" maxlength="160" /></label>
+  {/* страна доставки — каталог отправляет заказы по всему миру; без неё не посчитать доставку */}
+  <label class="lead__f"><span>{T.form.country}</span><input type="text" name="country" autocomplete="country-name" maxlength="100" /></label>
   <label class="lead__f"><span>{T.form.message}</span><textarea name="message" rows="4" maxlength="3000">{prefill}</textarea></label>
   <p class="lead__consent">{T.form.consent} <a href={paths.privacy[lang]}>{T.privacy}</a>.</p>
   <button class="btn btn--solid" type="submit" data-send>{T.form.send}</button>
   <p class="lead__status" role="status" aria-live="polite" data-status></p>
 </form>
 
-<script is:inline define:vars={{ msg: { sending: T.form.sending, ok: T.form.ok, fail: T.form.fail, send: T.form.send } }}>
+<script is:inline define:vars={{ msg: { sending: T.form.sending, ok: T.form.ok, fail: homeEmail ? `${T.form.failMail} ${homeEmail}` : T.form.fail, send: T.form.send } }}>
   document.querySelectorAll('form[data-lead]').forEach((form) => {
     if (form.dataset.ready) return;
     form.dataset.ready = '1';

@@ -1,5 +1,6 @@
 ---
-// Главная: большое фото, заголовок и вводный текст, разделы каталога, новинки, фабрики, как заказать, о студии, форма.
+// Главная: большое фото, заголовок и вводный текст, доставка по всему миру, разделы каталога, новинки, фабрики,
+// как заказать, о студии, форма. Доставку подчёркиваем сразу под заголовком (решено 25.10.2026): заявки ждём из разных стран.
 import Img from '../components/Img.astro';
 import ProductCard from '../components/ProductCard.astro';
 import LeadForm from '../components/LeadForm.astro';
@@ -32,6 +33,12 @@ const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-des
 <section class="intro wrap">
   <h1 class="display intro__h1">{page.h1}</h1>
   <p class="intro__lead" data-own>{typo(T.home_lead(brandNames(l, 6)), l)}</p>
+</section>
+
+<section class="home-sec wrap ship" id="delivery" aria-labelledby="ship-h">
+  <h2 class="section-title" id="ship-h">{T.ship_h}</h2>
+  <ul class="ship__list" data-own>{T.ship.map((s: string) => <li>{typo(s, l)}</li>)}</ul>
+  <p class="ship__cta"><a class="btn btn--solid" href="#lead">{T.askPrice}</a></p>
 </section>
 
 <section class="home-sec">

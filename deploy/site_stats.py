@@ -25,8 +25,16 @@ Caddy записывает каждый запрос в /var/log/caddy/dumskaya.
 Утром в 9:00 (Братислава) разработчику — одна строка за вчера и кнопка «Графики».
 
 Работает в процессе сервиса заявок вместе с ботом (lead_service.py), только в режиме live.
+
+Два сайта — один код. Этот модуль считает dumskaya-design.com; каталог фабрик dumskaya-home.com считает его второй
+экземпляр — home(): тот же файл, загруженный ещё раз с STATS_SITE = "home". У каталога свои журнал
+(/var/log/caddy/dumskaya-home.log — в статистику студии он не попадает), итоги дней (~/dumskaya/stats-home/),
+время на странице и нажатия (times-home.jsonl, hits-home.jsonl), заявки — только с dumskaya-home.com; считаются
+только запросы к самому домену (просмотр каталога через туннель до выхода на домен — не посетители).
+Роботы отсеиваются по тем же правилам, что у студии. «Свои» адреса («Не считать нас», телефоны, с которых открывали
+«Графики») и соль ключа посетителя — общие у обоих сайтов (~/dumskaya/stats/).
 Только стандартная библиотека Python 3.
-   python3 site_stats.py [ГГГГ-ММ-ДД]      — отчёт за день (по умолчанию за сегодня) в консоль
+   python3 site_stats.py [ГГГГ-ММ-ДД] [--home]   — отчёт за день (по умолчанию за сегодня) в консоль; --home — каталог
 """
 import glob
 import gzip
@@ -56,28 +64,55 @@ except Exception:  # noqa: BLE001
     TZ = timezone(timedelta(hours=1))
 
 APP = os.path.expanduser("~/dumskaya")
-LOG_GLOB = os.environ.get("SITE_LOG_GLOB", "/var/log/caddy/dumskaya*.log*")
-SITE_DIR = os.environ.get("SITE_DIR", "/var/www/dumskaya/site")
+SITE = globals().get("STATS_SITE") or "studio"   # studio — dumskaya-design.com; home — каталог (экземпляр из home())
+SHARED_DIR = os.environ.get("STATS_DIR", os.path.join(APP, "stats"))   # «свои» адреса и соль — общие у обоих сайтов
 LEADS_FILE = os.environ.get("LEADS_FILE", os.path.join(APP, "leads.jsonl"))
-HITS_FILE = os.environ.get("HITS_FILE", os.path.join(APP, "hits.jsonl"))   # нажатия на телефон, e-mail, мессенджеры
-TIMES_FILE = os.environ.get("TIMES_FILE", os.path.join(APP, "times.jsonl"))   # сколько секунд страница была на экране
+if SITE == "home":
+    HOST = "dumskaya-home.com"
+    TITLE = "Каталог DUMSKAYA HOME"
+    LOG_GLOB = os.environ.get("HOME_LOG_GLOB", "/var/log/caddy/dumskaya-home*.log*")
+    LOG_SKIP = None
+    HOSTS = (HOST, "www." + HOST)          # только запросы к домену: просмотр через туннель (localhost:8089) — не посетители
+    SITE_DIR = os.environ.get("HOME_SITE_DIR", "/var/www/dumskaya-home/site")
+    HITS_FILE = os.environ.get("HOME_HITS_FILE", os.path.join(APP, "hits-home.jsonl"))
+    TIMES_FILE = os.environ.get("HOME_TIMES_FILE", os.path.join(APP, "times-home.jsonl"))
+    STATS_DIR = os.environ.get("HOME_STATS_DIR", os.path.join(APP, "stats-home"))
+    MODE_FILE = "home-mode"
+else:
+    HOST = "dumskaya-design.com"
+    TITLE = "Сайт студии"
+    LOG_GLOB = os.environ.get("SITE_LOG_GLOB", "/var/log/caddy/dumskaya*.log*")
+    LOG_SKIP = re.compile(r"dumskaya-home")   # журнал каталога лежит в той же папке — у каталога своя статистика
+    HOSTS = None
+    SITE_DIR = os.environ.get("SITE_DIR", "/var/www/dumskaya/site")
+    HITS_FILE = os.environ.get("HITS_FILE", os.path.join(APP, "hits.jsonl"))   # нажатия на телефон, e-mail, мессенджеры
+    TIMES_FILE = os.environ.get("TIMES_FILE", os.path.join(APP, "times.jsonl"))   # сколько секунд страница была на экране
+    STATS_DIR = SHARED_DIR
+    MODE_FILE = "mode"
 TIMES_KEEP_DAYS = 90          # столько же, сколько журнал: при пересчёте дней время на сайте не теряется
 PAGE_CAP = 5 * 60             # страница дольше 5 минут считается за 5: дальше это уже забытая на экране вкладка
 CONTACTS = {"tel": "телефон", "mail": "e-mail", "whatsapp": "WhatsApp", "telegram": "Telegram"}
-STATS_DIR = os.environ.get("STATS_DIR", os.path.join(APP, "stats"))
-EXCLUDE_FILE = os.path.join(STATS_DIR, "exclude.json")   # «свои» адреса (дома у студии) — их визиты не считаются
-OWN_FILE = os.path.join(STATS_DIR, "own_devices.json")    # откуда студия открывала «Графики» — эти визиты тоже свои
+EXCLUDE_FILE = os.path.join(SHARED_DIR, "exclude.json")  # «свои» адреса (дома у студии) — их визиты не считаются
+OWN_FILE = os.path.join(SHARED_DIR, "own_devices.json")   # откуда студия открывала «Графики» — эти визиты тоже свои
 OWN_WINDOW = 3 * 3600                                     # …за 3 часа до и после открытия
 VERSION_FILE = os.path.join(STATS_DIR, "version")
-STATS_VERSION = "6"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
+STATS_VERSION = "7"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
                               # (2: отсев сканеров; 3: время на сайте и роботы без оформления и времени;
                               #  4: страница — не больше 5 минут; 5: роботы без оформления и заголовков — и в старых днях;
-                              #  6: elmah.axd и подобные адреса ASP.NET — тоже сканеры)
-SECRET_FILE = os.path.join(STATS_DIR, "secret")           # соль для обезличенного ключа посетителя, с сервера не уходит
+                              #  6: elmah.axd и подобные адреса ASP.NET — тоже сканеры;
+                              #  7: журнал каталога dumskaya-home.com не входит в статистику студии)
+SECRET_FILE = os.path.join(SHARED_DIR, "secret")          # соль для обезличенного ключа посетителя, с сервера не уходит
 REPORT_HOUR = 9
 APP_URL = os.environ.get("STATS_APP_URL", "https://dumskaya-design.com/api/stats/app")   # мини-приложение с графиками
 
-LANG_NAMES = {"ru": "RU", "ua": "UA", "en": "EN", "sk": "SK", "de": "DE"}
+if SITE == "home":                  # английский — основной (адреса без префикса)
+    LANG_NAMES = {"en": "EN", "ru": "RU", "de": "DE", "fr": "FR", "es": "ES"}
+    DEFAULT_LANG = "en"
+    GOOGLE_SPLIT = [("ru", "Русские"), ("de", "Немецкие"), ("fr", "Французские"), ("es", "Испанские")]
+else:
+    LANG_NAMES = {"ru": "RU", "ua": "UA", "en": "EN", "sk": "SK", "de": "DE"}
+    DEFAULT_LANG = "ru"
+    GOOGLE_SPLIT = [("sk", "Словацкие"), ("de", "Немецкие")]    # новые версии сайта — как их индексирует Google
 WEEKDAYS = ["понедельник", "вторник", "среду", "четверг", "пятницу", "субботу", "воскресенье"]
 MONTHS = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября",
           "ноября", "декабря"]
@@ -104,7 +139,8 @@ SOURCES = [(r"(^|\.)google\.", "Google"), (r"(^|\.)bing\.com$", "Bing"), (r"(^|\
            (r"(^|\.)instagram\.com$", "Instagram"), (r"(^|\.)(facebook\.com|fb\.com|fb\.me)$", "Facebook"),
            (r"(^|\.)(t\.me|telegram\.org)$", "Telegram"), (r"(^|\.)(chatgpt\.com|openai\.com)$", "ChatGPT"),
            (r"(^|\.)perplexity\.ai$", "Perplexity"), (r"(^|\.)youtube\.com$", "YouTube"),
-           (r"(^|\.)pinterest\.", "Pinterest"), (r"(^|\.)houzz\.", "Houzz"), (r"(^|\.)linkedin\.com$", "LinkedIn")]
+           (r"(^|\.)pinterest\.", "Pinterest"), (r"(^|\.)houzz\.", "Houzz"), (r"(^|\.)linkedin\.com$", "LinkedIn"),
+           (r"(^|\.)dumskaya-design\.com$", "сайт студии"), (r"(^|\.)dumskaya-home\.com$", "каталог DUMSKAYA HOME")]
 # метки в адресе первой страницы: реклама и ссылки без Referer (из приложений, ChatGPT)
 AD_MARKS = (("gclid", "Google (реклама)"), ("gbraid", "Google (реклама)"), ("wbraid", "Google (реклама)"),
             ("msclkid", "Bing (реклама)"))
@@ -127,10 +163,10 @@ LIVE_WINDOW = 3600             # «1 час»
 
 # ---------- разбор журнала ----------
 def lang_of(path):
-    for l in ("ua", "en", "sk", "de"):
-        if path == f"/{l}" or path.startswith(f"/{l}/"):
+    for l in LANG_NAMES:
+        if l != DEFAULT_LANG and (path == f"/{l}" or path.startswith(f"/{l}/")):
             return l
-    return "ru"
+    return DEFAULT_LANG
 
 
 def header(h, name):
@@ -162,7 +198,7 @@ def source(ref, uri=""):
     host = (urlsplit(ref).hostname or "").lower() if ref else ""
     if host.startswith("www."):
         host = host[4:]
-    if host and not host.endswith("dumskaya-design.com"):  # свой адрес — переход внутри сайта (вкладка со вчера)
+    if host and not host.endswith(HOST):            # свой адрес — переход внутри сайта (вкладка со вчера)
         for rx, name in SOURCES:
             if re.search(rx, host):
                 return name
@@ -196,10 +232,20 @@ def norm_path(p):
     return p.rstrip("/") or "/"
 
 
+def _logs():
+    """Все части журнала этого сайта (у студии — без журнала каталога, он рядом и попадает под тот же шаблон)."""
+    return [f for f in glob.glob(LOG_GLOB) if not (LOG_SKIP and LOG_SKIP.search(os.path.basename(f)))]
+
+
+def _host_ok(e):
+    h = str((e.get("request") or {}).get("host") or "").split(":")[0].lower()
+    return h in HOSTS
+
+
 def log_files(since_ts):
     """Части журнала, в которых могут быть записи начиная с since_ts (старые сжатые — тоже)."""
     out = []
-    for f in glob.glob(LOG_GLOB):
+    for f in _logs():
         try:
             if os.path.getmtime(f) >= since_ts:
                 out.append(f)
@@ -245,7 +291,7 @@ def _seek(fh, since_ts):
 def entries(since_ts, until_ts):
     """Записи журнала за период; PermissionError — если журнал недоступен для чтения."""
     files = log_files(since_ts)
-    if not files and glob.glob(LOG_GLOB) == [] and not os.access(os.path.dirname(LOG_GLOB) or "/", os.R_OK):
+    if not files and _logs() == [] and not os.access(os.path.dirname(LOG_GLOB) or "/", os.R_OK):
         raise PermissionError(os.path.dirname(LOG_GLOB))
     for f in files:
         gz = f.endswith(".gz")
@@ -266,9 +312,13 @@ def entries(since_ts, until_ts):
                     if not gz and ts >= until_ts + 120:
                         break                       # дальше в этой части только записи новее периода
                     continue
+                if HOSTS and not any(h.encode() in raw for h in HOSTS):
+                    continue                        # каталог: запрос не к домену (просмотр через туннель)
                 try:
                     e = json.loads(raw)
                 except ValueError:
+                    continue
+                if HOSTS and not _host_ok(e):
                     continue
                 ts = e.get("ts")
                 if isinstance(ts, str):
@@ -341,6 +391,7 @@ def _save_excluded(items, recount=True):
     os.replace(tmp, EXCLUDE_FILE)
     if recount:
         forget_recent()
+        _twin(lambda m: m.forget_recent())          # «свои» адреса общие — каталог тоже пересчитать
 
 
 def exclude_add(ip, who):
@@ -446,10 +497,11 @@ def mark_own(ip, who=""):
         items.append({"net": net, "from": int(now), "to": int(now), "who": who})
         y = datetime.fromtimestamp(now - OWN_WINDOW, TZ).date()      # окно задело вчера — вчерашний итог пересчитать
         if y < today():
-            try:
-                os.remove(day_file(y))
-            except OSError:
-                pass
+            for f in [day_file(y)] + ([_home["m"].day_file(y)] if _home.get("m") else []):   # и у каталога
+                try:
+                    os.remove(f)
+                except OSError:
+                    pass
     os.makedirs(STATS_DIR, exist_ok=True)
     with open(OWN_FILE + ".tmp", "w", encoding="utf-8") as fh:
         json.dump(items, fh, ensure_ascii=False, indent=1)
@@ -468,7 +520,7 @@ def is_robot(hits):
 
 def logs_start():
     """Время первой записи в самой старой части журнала (до него журнала уже нет)."""
-    for f in sorted(glob.glob(LOG_GLOB), key=os.path.getmtime):
+    for f in sorted(_logs(), key=os.path.getmtime):
         opener = gzip.open if f.endswith(".gz") else open
         try:
             with opener(f, "rt", encoding="utf-8", errors="replace") as fh:
@@ -518,7 +570,13 @@ def leads_between(since_ts, until_ts):
                     continue                                  # пробные заявки мастера настройки и сторожа
                 if is_own(d.get("ip"), ts):
                     continue                                  # заявка со своего адреса (проверка формы)
-                out.append({"page": d.get("page", ""), "lang": d.get("lang", "ru"), "model": d.get("model", ""),
+                page = str(d.get("page") or "")
+                site = d.get("site") or ("dumskaya-home.com" if page.startswith("https://dumskaya-home.com") else "dumskaya-design.com")
+                if site != HOST:
+                    continue                                  # заявка с другого сайта — в его статистике
+                if page.startswith("https://"):
+                    page = urlsplit(page).path or "/"         # у заявок каталога — полный адрес страницы
+                out.append({"page": page, "lang": d.get("lang", DEFAULT_LANG), "model": d.get("model", ""),
                             "ts": ts, "ip": d.get("ip", "")})
     except OSError:
         pass
@@ -995,7 +1053,7 @@ def title_of(path):
     except OSError:
         pass
     lang = lang_of(path)
-    if lang != "ru" and t != path:
+    if lang != DEFAULT_LANG and t != path:
         t = f"{LANG_NAMES[lang]} · {t}"
     _titles[path] = t
     return t
@@ -1078,7 +1136,7 @@ def body(a, prev=None, top=7, trend=None, trend_label=""):
     if nf:
         out.append("\n⚠️ Не найдено (404): " + "; ".join(f"{esc(p)} — {n}" for p, n in nf))
     gl = Counter(a.get("google_lang") or {})
-    new = " · ".join(f"{LANG_NAMES[k]} {gl[k]}" for k in ("sk", "de") if gl.get(k))
+    new = " · ".join(f"{LANG_NAMES[k]} {gl[k]}" for k, _ in GOOGLE_SPLIT if gl.get(k))
     out.append(f"\n🤖 Робот Google: {a.get('google', 0)} стр." + (f" (из них {new})" if new else "")
                + f" · Bing: {a.get('bing', 0)}")
     if a.get("own"):
@@ -1182,7 +1240,8 @@ def _row(a, **extra):
     gl = a.get("google_lang") or {}
     return dict(extra, visitors=a.get("visitors", 0), views=a.get("views", 0), leads=a.get("leads", 0),
                 google=a.get("google", 0), contacts=sum((a.get("contacts") or {}).values()),
-                google_sk=gl.get("sk", 0), google_de=gl.get("de", 0), avg_time=avg_time(a))
+                google_sk=gl.get("sk", 0), google_de=gl.get("de", 0), glang={k: gl.get(k, 0) for k, _ in GOOGLE_SPLIT},
+                avg_time=avg_time(a))
 
 
 def _top(counter, k=8, other="другие"):
@@ -1454,15 +1513,27 @@ def web_long(period):
                 prev=_prev(pv, all("contacts" in x for x in prev) if pv else False))
 
 
+def site_live():
+    """Сайт открыт на домене: у студии — ~/dumskaya/mode, у каталога — ~/dumskaya/home-mode (пишет server-setup.sh)."""
+    try:
+        with open(os.path.join(APP, MODE_FILE), encoding="utf-8") as fh:
+            return fh.read().strip() == "live"
+    except OSError:
+        return False
+
+
 def web(period):
-    """Данные мини-приложения за период: 1h, 24h, 7, 30, 90 (дней), 365 (год) или all (всё время)."""
+    """Данные мини-приложения за период: 1h, 24h, 7, 30, 90 (дней), 365 (год) или all (всё время) — и какой это сайт."""
     if period == "1h":
-        return web_live()
-    if period == "24h":
-        return web_hours()
-    if period in ("365", "all"):
-        return web_long(period)
-    return web_data(int(period) if str(period).isdigit() else 7)
+        d = web_live()
+    elif period == "24h":
+        d = web_hours()
+    elif period in ("365", "all"):
+        d = web_long(period)
+    else:
+        d = web_data(int(period) if str(period).isdigit() else 7)
+    d.update(site=SITE, host=HOST, title=TITLE, live=site_live(), google_split=[list(x) for x in GOOGLE_SPLIT])
+    return d
 
 
 def plural(n, one, few, many):
@@ -1489,20 +1560,25 @@ def summary(a, prev=None):
             f"{c} {plural(c, 'нажатие', 'нажатия', 'нажатий')} на контакты{arrow(c, pc)}")
 
 
-def morning_note(d):
-    """Утреннее сообщение: одна строка за вчера (по понедельникам — и за неделю), подробности — в «Графиках»."""
+def morning_lines(d):
+    """Строка за вчера (по понедельникам — и за неделю): у студии «📈 Сайт за …», у каталога «🛋 Каталог dumskaya-home.com»."""
     y = d - timedelta(days=1)
     got = days_stats([y - timedelta(days=k) for k in range(14)])
     a, prev = got[y], got[y - timedelta(days=1)]
-    lines = [f"📈 Сайт за {day_name(y)}: " + (summary(a, prev) if a else "в журнале нет записей")]
+    head = f"🛋 Каталог {HOST}: " if SITE == "home" else f"📈 Сайт за {day_name(y)}: "
+    lines = [head + (summary(a, prev) if a else "в журнале нет записей")]
     if d.weekday() == 0:
         week = [got[y - timedelta(days=k)] for k in range(7)]
         before = [got[y - timedelta(days=k)] for k in range(7, 14)]
         cur = merge(x for x in week if x) if any(week) else None
         if cur:
             lines.append("За неделю: " + summary(cur, merge(before) if all(before) else None))
-    lines.append("Графики — кнопкой ниже.")
-    return "\n".join(lines)
+    return lines
+
+
+def morning_note(d):
+    """Утреннее сообщение: одна строка за вчера (по понедельникам — и за неделю), подробности — в «Графиках»."""
+    return "\n".join(morning_lines(d) + ["Графики — кнопкой ниже."])
 
 
 NO_ACCESS = ("Не могу прочитать журнал сайта ({}) — у сервиса нет доступа. Выложите сайт ещё раз "
@@ -1510,13 +1586,48 @@ NO_ACCESS = ("Не могу прочитать журнал сайта ({}) — 
 
 
 BUTTON = [[("📈 Графики", {"web_app": {"url": APP_URL}})]]
+BUTTONS_BOTH = [[("📈 Сайт студии", {"web_app": {"url": APP_URL}}),
+                 ("🛋 Каталог", {"web_app": {"url": APP_URL + "?site=home"}})]]
+
+
+# ---------- второй сайт: каталог dumskaya-home.com ----------
+_home = {}
+_home_lock = threading.Lock()
+
+
+def home():
+    """Статистика каталога dumskaya-home.com: этот же файл, загруженный вторым модулем с STATS_SITE = "home" —
+    со своими журналом, итогами дней, файлами событий и кэшами (см. начало файла)."""
+    if SITE == "home":
+        return sys.modules[__name__]
+    with _home_lock:
+        m = _home.get("m")
+        if m is None:
+            import importlib.util
+            spec = importlib.util.spec_from_file_location("site_stats_home", os.path.abspath(__file__))
+            m = importlib.util.module_from_spec(spec)
+            m.STATS_SITE = "home"
+            spec.loader.exec_module(m)
+            _home["m"] = m
+        return m
+
+
+def _twin(fn):
+    """Сделать то же у каталога, если его статистика уже загружена (вызывает студия при смене своих адресов)."""
+    m = _home.get("m") if SITE == "studio" else None
+    if m is not None:
+        try:
+            fn(m)
+        except OSError:
+            pass
 
 
 # ---------- расписание ----------
 class SiteStats:
-    def __init__(self, bot, log=print, live_fn=None, clock=None):
+    def __init__(self, bot, log=print, live_fn=None, clock=None, home_live_fn=None):
         self.bot, self.log = bot, log
         self.live_fn = live_fn or self.is_live
+        self.home_live_fn = home_live_fn or (lambda: home().site_live())
         self.clock = clock or (lambda: datetime.now(TZ))
         self.stop = threading.Event()
         self.hooks = []                             # ещё дела раз в минуту (копии баз студии): функция(log=…)
@@ -1539,12 +1650,22 @@ class SiteStats:
         try:
             # дни, пропущенные, пока сервис не работал, — сохранить итоги, пока журнал их ещё помнит
             days_stats([d - timedelta(days=k) for k in range(7, 1, -1)])
-            text = morning_note(d)
+            lines = morning_lines(d)
         except PermissionError:
-            text = NO_ACCESS.format(esc(LOG_GLOB))
+            lines = [NO_ACCESS.format(esc(LOG_GLOB))]
+        h = home() if self.home_live_fn() else None   # каталог — строкой ниже, когда он открыт на домене
+        if h is not None:
+            try:
+                h.days_stats([d - timedelta(days=k) for k in range(7, 1, -1)])
+                lines += h.morning_lines(d)
+            except PermissionError:
+                lines.append("🛋 Каталог: " + NO_ACCESS.format(esc(h.LOG_GLOB)))
+        lines.append("Графики — кнопкой ниже.")
         self.bot.s.put("stats:daily", d.isoformat())
-        self.bot.notify(text, roles=("owner",), rows=BUTTON)
+        self.bot.notify("\n".join(lines), roles=("owner",), rows=BUTTONS_BOTH if h is not None else BUTTON)
         prune_times()                               # раз в день: время на страницах старше 90 дней — удалить
+        if h is not None:
+            h.prune_times()
 
     def start(self):
         t = threading.Thread(target=self.loop, name="site-stats", daemon=True)
@@ -1572,6 +1693,8 @@ class SiteStats:
 
 
 if __name__ == "__main__":
-    d = date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else today()
-    text = today_report() if d == today() else daily_report(d)
-    print(re.sub(r"</?[bi]>", "", text))
+    args = [a for a in sys.argv[1:] if a != "--home"]
+    m = home() if "--home" in sys.argv else sys.modules[__name__]
+    d = date.fromisoformat(args[0]) if args else m.today()
+    text = m.today_report() if d == m.today() else m.daily_report(d)
+    print(f"{m.TITLE} · {m.HOST}\n" + re.sub(r"</?[bi]>", "", text))

@@ -8,6 +8,7 @@ export function GET() {
     '',
     '> Product catalog of DUMSKAYA DESIGN, an interior design studio in Bratislava (Slovakia) that also works in Vienna (Austria).',
     '> Furniture and lighting by European factories. Prices are not published: a price request goes to the studio, which replies within one working day.',
+    '> Worldwide delivery: the studio ships across Europe and to other countries; delivery cost and time are quoted together with the price, export documents are prepared for destinations outside the EU.',
     '',
     'Languages: English (main), Russian (/ru), German (/de), French (/fr), Spanish (/es).',
     `Contact: the form at ${SITE}${paths.contact.en}${homeEmail ? `, e-mail ${homeEmail}` : ''}`,

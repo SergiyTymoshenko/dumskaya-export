@@ -5,7 +5,8 @@
 //          «Sofá Westside de Poliform – precio a consultar» (фабрика + модель — так ищут конкретное изделие);
 //   категория: «Sofas by Minotti, Flexform and Baxter», «Диваны Minotti, Flexform и Baxter»…;
 //   фабрика: «Minotti furniture: sofas, armchairs…», по-русски — и русское написание («Мебель Minotti (Минотти)»).
-// В описании — что на странице, «цена по запросу» и заказ через студию в Братиславе и Вене (факты студии).
+// В описании — что на странице, «цена по запросу», доставка по всему миру (решено 25.10.2026: заявки ждём из разных стран)
+// и, если помещается, заказ через студию в Братиславе и Вене (факты студии).
 import type { Lang } from './i18n';
 
 export const T_MAX = 60, D_MAX = 155;
@@ -26,6 +27,10 @@ const VIA: Record<Lang, string> = {
   de: 'Bestellung über unser Studio in Wien und Bratislava', fr: 'commande via notre studio à Bratislava et Vienne',
   es: 'pedido a través de nuestro estudio en Bratislava y Viena',
 };
+const SHIP: Record<Lang, string> = {
+  en: 'worldwide delivery', ru: 'доставка по всему миру', de: 'Lieferung weltweit', fr: 'livraison dans le monde entier',
+  es: 'envío a todo el mundo',
+};
 const ORIGIN: Record<Lang, [string, string]> = {          // фабрики: все итальянские / не только
   en: ['Italian makers', 'European makers'], ru: ['итальянских фабрик', 'европейских фабрик'],
   de: ['italienischer Hersteller', 'europäischer Hersteller'], fr: ['de fabricants italiens', 'de fabricants européens'],
@@ -42,7 +47,9 @@ export function productDesc(name: string, brand: string, designer: string, l: La
   const des = designer ? { en: `, design by ${designer}`, ru: `, дизайн ${designer}`, de: `, Design: ${designer}`, fr: `, design ${designer}`, es: `, diseño de ${designer}` }[l] : '';
   const what = { en: 'Sizes, finishes and photos', ru: 'Размеры, отделки и фото', de: 'Maße, Ausführungen und Fotos', fr: 'Dimensions, finitions et photos', es: 'Medidas, acabados y fotos' }[l];
   const p = PRICE[l][0].toUpperCase() + PRICE[l].slice(1);
-  return fit([`${who}${des}. ${what}. ${p}, ${VIA[l]}.`, `${who}. ${what}. ${p}, ${VIA[l]}.`, `${who}${des}. ${what}. ${p}.`, `${who}. ${what}. ${p}.`], D_MAX);
+  const sh = `${p}, ${SHIP[l]}`;
+  return fit([`${who}${des}. ${what}. ${sh}, ${VIA[l]}.`, `${who}. ${what}. ${sh}, ${VIA[l]}.`, `${who}${des}. ${what}. ${sh}.`,
+    `${who}. ${what}. ${sh}.`, `${who}. ${sh}.`], D_MAX);
 }
 
 /** Категория, раздел, «Для улицы»: название + главные фабрики */
@@ -60,7 +67,8 @@ export function listDesc(cat: string, n: number, brands: string[], italian: bool
     fr: `${n} modèles — ${c} ${o} : ${join(brands, l, k)}.`,
     es: `${n} modelos de ${c} ${o}: ${join(brands, l, k)}.`,
   }[l]);
-  return fit([`${head(4)} ${tail}, ${VIA[l]}.`, `${head(3)} ${tail}, ${VIA[l]}.`, `${head(2)} ${tail}.`, `${head(1)} ${tail}.`], D_MAX);
+  return fit([`${head(4)} ${tail}, ${SHIP[l]}, ${VIA[l]}.`, `${head(3)} ${tail}, ${SHIP[l]}.`, `${head(2)} ${tail}, ${SHIP[l]}.`,
+    `${head(1)} ${tail}, ${SHIP[l]}.`, `${head(1)} ${tail}.`], D_MAX);
 }
 
 /** Фабрика: «Minotti furniture: sofas, armchairs…»; по-русски — с русским написанием */
@@ -79,12 +87,16 @@ export function brandDesc(brand: string, ru: string, country: string, n: number,
     de: `${who}, ${country}: ${n} Modelle – ${list(k)}.`, fr: `${who}, ${country} : ${n} modèles – ${list(k)}.`, es: `${who}, ${country}: ${n} modelos – ${list(k)}.`,
   }[l]);
   const tail = { en: 'Price on request', ru: 'Цена по запросу', de: 'Preis auf Anfrage', fr: 'Prix sur demande', es: 'Precio a consultar' }[l];
-  return fit([`${head(5)} ${tail}, ${VIA[l]}.`, `${head(4)} ${tail}, ${VIA[l]}.`, `${head(3)} ${tail}.`, `${head(2)} ${tail}.`], D_MAX);
+  return fit([`${head(5)} ${tail}, ${SHIP[l]}, ${VIA[l]}.`, `${head(4)} ${tail}, ${SHIP[l]}.`, `${head(3)} ${tail}, ${SHIP[l]}.`,
+    `${head(2)} ${tail}, ${SHIP[l]}.`, `${head(2)} ${tail}.`], D_MAX);
 }
 export const homeDesc = (brands: string, l: Lang) => fit([
-  { en: `Furniture and lighting by ${brands}. Price on request, ${VIA.en}.`, ru: `Мебель и свет ${brands}. Цена по запросу, ${VIA.ru}.`,
-    de: `Möbel und Leuchten von ${brands}. Preis auf Anfrage, ${VIA.de}.`, fr: `Mobilier et luminaires ${brands}. Prix sur demande, ${VIA.fr}.`,
-    es: `Muebles e iluminación de ${brands}. Precio a consultar, ${VIA.es}.` }[l],
+  { en: `Furniture and lighting by ${brands}. Price on request, ${SHIP.en}, ${VIA.en}.`, ru: `Мебель и свет ${brands}. Цена по запросу, ${SHIP.ru}, ${VIA.ru}.`,
+    de: `Möbel und Leuchten von ${brands}. Preis auf Anfrage, ${SHIP.de}, ${VIA.de}.`, fr: `Mobilier et luminaires ${brands}. Prix sur demande, ${SHIP.fr}, ${VIA.fr}.`,
+    es: `Muebles e iluminación de ${brands}. Precio a consultar, ${SHIP.es}, ${VIA.es}.` }[l],
+  { en: `Furniture and lighting by ${brands}. Price on request, ${SHIP.en}.`, ru: `Мебель и свет ${brands}. Цена по запросу, ${SHIP.ru}.`,
+    de: `Möbel und Leuchten von ${brands}. Preis auf Anfrage, ${SHIP.de}.`, fr: `Mobilier et luminaires ${brands}. Prix sur demande, ${SHIP.fr}.`,
+    es: `Muebles e iluminación de ${brands}. Precio a consultar, ${SHIP.es}.` }[l],
   { en: `Furniture and lighting by ${brands}. Price on request.`, ru: `Мебель и свет ${brands}. Цена по запросу.`, de: `Möbel und Leuchten von ${brands}. Preis auf Anfrage.`,
     fr: `Mobilier et luminaires ${brands}. Prix sur demande.`, es: `Muebles e iluminación de ${brands}. Precio a consultar.` }[l],
 ], D_MAX);
