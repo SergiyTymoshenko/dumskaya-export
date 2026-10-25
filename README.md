@@ -675,9 +675,14 @@ BreadcrumbList совпадает с видимыми); **телефоны ст�
 а также посредничать в таких сделках; ковры там есть точно, мебель и свет — проверять по коду товара. Поэтому Россию
 в текстах не называем, а заявку с доставкой в Россию сначала проверяем (таможенный брокер или юрист), потом отвечаем.
 
-**Выложить фабрику** (когда у её товаров есть тексты): `python3 scripts/shop/catalog_index.py --publish <фабрика>` —
+**Выложить фабрику** (когда у её товаров есть тексты): сначала `python3 scripts/shop/texts_check.py <фабрика>` — тексты
+на всех пяти языках, без шаблонных оборотов, без цифр, которых нет в данных фабрики, без близких повторов текста фабрики,
+без цен, «дилеров» и «лучших» («ошибок: 0»). Затем — данные: неверный тип изделия, чужие фото и чертежи, названия
+(`content/home/overrides.json`: `type`, `name`, `images_keep`, `no_drawings`, `collection`, `_rename` для итальянских подписей) —
+до выкладки, потому что тип и название задают адрес. Потом `python3 scripts/shop/catalog_index.py --publish <фабрика>` —
 адреса и имена фото её товаров закрепляются в `content/home/frozen.json` (дальше не меняются: их знает Google,
 менять — только с редиректом), дата — в `content/home/publish.json`. Затем коммит и выкладка.
+Выложено: **Poliform** — 25.10.2026, 214 товаров (2 скрыты до проверки фото: консоль Mondrian, лампа Lies).
 
 **Сайт** — папка `home/` (Astro, свой `astro.config.mjs`; стили и шрифты — общие с сайтом студии: `src/styles/global.css`).
 Страницы: главная, разделы, категории (фильтр по фабрике и «для улицы», `?brand=minotti`, `?outdoor=1`), «Для улицы»,
@@ -706,12 +711,14 @@ cd ~/dumskaya-site && git pull && npm run deploy && caffeinate -i npm run deploy
 `www` — CNAME на `dumskaya-home.com`) и выложена первая фабрика:
 
 ```bash
-ssh -t eurox 'sudo bash ~/dumskaya/deploy/server-setup.sh live home-live'
+cd ~/dumskaya-site && git pull && HOME_MODE=live caffeinate -i npm run deploy:home && ssh -t eurox 'sudo bash ~/dumskaya/deploy/server-setup.sh "$(cat ~/dumskaya/mode)" home-live' && npm run deploy
 ```
 
-Caddy сам получит сертификат. Затем `npm run deploy:home` (на домене — только выложенные фабрики) и в Search Console —
-`https://dumskaya-home.com/sitemap.xml`. В тот же день — ссылки с сайта студии: `content/site.json` → `home_catalog.enabled: true`
-и `npm run deploy` (пункт меню «Мебель и свет» сразу за «Магазином», строка «Каталог мебели и света — dumskaya-home.com»
+Порядок важен: сначала каталог собирается и копируется «для домена» (`HOME_MODE=live` — только выложенные фабрики),
+пока домен ещё закрыт; потом домен включается (Caddy сам получит сертификат) — в папке сайта уже нет страниц просмотра,
+и IndexNow отправит поисковикам только выложенное. Последним — сайт студии со ссылками на каталог
+(`content/site.json` → `home_catalog.enabled: true`, включено 25.10.2026 вместе с Poliform; пока каталог не открыт на домене, `npm run deploy` сам собирает студию без этих ссылок — `HOME_CATALOG_LINKS=off`, так что порядок команд не важен). Дальше — обычный
+`npm run deploy:home`. В Search Console — `https://dumskaya-home.com/sitemap.xml`. Ссылки с сайта студии: `npm run deploy` (пункт меню «Мебель и свет» сразу за «Магазином», строка «Каталог мебели и света — dumskaya-home.com»
 внизу всех страниц, фраза со ссылкой на страницах дизайна квартир и дизайн-пакетов; русская и украинская версии студии ведут
 на русский каталог — решено 25.10.2026, английская и словацкая — на английский, немецкая — на немецкий). До этого ссылок нет:
 они вели бы на адрес, который ещё не открывается. Журнал посещений — `/var/log/caddy/dumskaya-home.log` (90 дней). Cookie и

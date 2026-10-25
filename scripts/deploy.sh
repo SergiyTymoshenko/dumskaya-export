@@ -27,6 +27,10 @@ fi
 echo "▸ 1/5 Фото"
 node scripts/images.mjs
 echo "▸ 2/5 Сборка"
+# ссылки на каталог dumskaya-home.com (content/site.json → home_catalog) — только когда он открыт на домене:
+# раньше они вели бы на закрытый адрес. Так порядок выкладки каталога и студии не важен.
+HOME_STATE="$(ssh -o ConnectTimeout=15 "$HOST" 'cat ~/dumskaya/home-mode 2>/dev/null || echo none' 2>/dev/null || echo none)"
+if [ "$HOME_STATE" != live ]; then export HOME_CATALOG_LINKS=off; echo "  каталог dumskaya-home.com ещё не открыт на домене — ссылок на него пока нет"; fi
 PUBLIC_ANALYTICS=1 npx astro build >/dev/null
 echo "▸ 3/5 Проверка"
 CHECK="$(mktemp)"

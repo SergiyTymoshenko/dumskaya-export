@@ -47,7 +47,7 @@ let server;
     const catInfo = await p.evaluate(() => {
       const cards = [...document.querySelectorAll('[data-grid] .pc')];
       const withPhoto = cards.find((c) => c.querySelector('img'));
-      return { brand: document.querySelectorAll('[data-brand]')[1]?.getAttribute('data-brand') || '', product: (withPhoto || cards[0])?.getAttribute('href') || '' };
+      return { brand: document.querySelectorAll('.chip[data-brand]')[1]?.getAttribute('data-brand') || ''   /* фильтр по фабрике есть, только если фабрик в разделе больше одной; data-brand есть и у карточек */, product: (withPhoto || cards[0])?.getAttribute('href') || '' };
     });
     await p.goto(BASE + catInfo.product, { waitUntil: 'domcontentloaded' });
     const ruProduct = await p.evaluate(() => document.querySelector('.hdr__langs a[hreflang="ru"]')?.getAttribute('href') || '');
@@ -93,7 +93,7 @@ let server;
       ok(num(s.count) === s.vis || (s.more && num(s.count) > s.vis), 'фильтр: число = видимым товарам', `${s.count}, видно ${s.vis}`);
       ok(s.url.includes(`brand=${catInfo.brand}`), 'фильтр по фабрике — в адресе', s.url);
     }
-    const out = await p.$('[data-out]');
+    const out = await p.$('input[data-out]');   // у карточек товаров тоже есть data-out — берём сам флажок
     if (out && !(await out.isDisabled())) { await out.check(); s = await st(); ok(s.url.includes('outdoor=1'), '«Для улицы» — в адресе', s.url); await out.uncheck(); }
     await p.click('[data-brand=""]').catch(() => {});
     // «назад» с карточки товара
@@ -132,12 +132,13 @@ let server;
         const r = (e) => e.getBoundingClientRect();
         const pics = ts.map((x) => (x.querySelector('img')?.getAttribute('src') || '').replace(/-\d+\.webp$/, '')).filter(Boolean);
         const fresh = [...document.querySelectorAll('.home-sec .grid .pc')].map((c) => c.dataset.brand);
-        return { n: ts.length, cols, lastW: r(ts.at(-1)).width, gridW: r(document.querySelector('.home-depts')).width, pics: pics.length, uniq: new Set(pics).size, fresh };
+        const brandsOnSite = document.querySelectorAll('#m-brands a').length;   // выложена одна фабрика — новинки, понятно, одной
+        return { n: ts.length, cols, lastW: r(ts.at(-1)).width, gridW: r(document.querySelector('.home-depts')).width, pics: pics.length, uniq: new Set(pics).size, fresh, brandsOnSite };
       });
       const lone = t.n % t.cols === 1;
       ok(!lone || t.lastW > t.gridW * 0.95, `главная (${sz}): одиночная последняя плитка — на всю ширину`, `${t.n} плиток, колонок ${t.cols}`);
       ok(t.uniq === t.pics, `главная (${sz}): у плиток разные фото`, `${t.uniq} из ${t.pics}`);
-      ok(new Set(t.fresh).size >= Math.min(3, t.fresh.length), `главная (${sz}): новинки разных фабрик`, t.fresh.join(', '));
+      ok(new Set(t.fresh).size >= Math.min(3, t.fresh.length, t.brandsOnSite || 3), `главная (${sz}): новинки разных фабрик`, t.fresh.join(', '));
       await ctx.close();
     }
 

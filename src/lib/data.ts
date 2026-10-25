@@ -150,15 +150,17 @@ export function servicesCards(page: Page) {
   return ((s?.blocks.find((b) => b.type === 'cards') as any)?.items || []) as { title: string; href: string | null; image: Img | null }[];
 }
 
+// выкладка (scripts/deploy.sh) ставит HOME_CATALOG_LINKS=off, пока каталог не открыт на домене — ссылок тогда нет
+const homeLinksOn = () => !!site.home_catalog?.enabled && process.env.HOME_CATALOG_LINKS !== 'off';
 /** Каталог фабрик DUMSKAYA HOME на языке страницы или null — ссылки выключены (content/site.json → home_catalog). */
 export function homeCatalog(lang: Lang): string | null {
   const c = site.home_catalog;
-  return c && c.enabled && c.url?.[lang] ? c.url[lang] : null;
+  return homeLinksOn() && c.url?.[lang] ? c.url[lang] : null;
 }
 /** Страница студии, на которой стоит фраза со ссылкой на каталог (страницы дизайна квартир и дизайн-пакетов). */
 export function catalogNoteOn(page: Page): boolean {
   const c = site.home_catalog;
-  return !!(c && c.enabled && (c.pages || []).includes(page.alternates?.ru || page.path));
+  return homeLinksOn() && (c.pages || []).includes(page.alternates?.ru || page.path);
 }
 
 export function homePath(lang: Lang) {

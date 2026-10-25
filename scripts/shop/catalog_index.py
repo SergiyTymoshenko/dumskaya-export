@@ -40,6 +40,16 @@ def jload(path, default):
 PUBLISH = jload(os.path.join(HOME, "publish.json"), {"factories": {}})
 FROZEN = jload(os.path.join(HOME, "frozen.json"), {})
 OVR = jload(os.path.join(HOME, "overrides.json"), {})
+# подписи исполнений, чертежей и групп отделок, оставшиеся у фабрики по-итальянски или с опечатками: {«как у фабрики»: «как на сайте»}
+RENAME = {k: v for k, v in (OVR.get("_rename") or {}).items() if not k.startswith("_")}
+
+
+def rename(s):
+    if not s or not RENAME:
+        return s
+    for a, b in RENAME.items():
+        s = s.replace(a, b)
+    return s
 
 TRANSLIT = dict(zip("абвгдеёжзийклмнопрстуфхцчшщъыьэюя",
                     "a b v g d e e zh z i y k l m n o p r s t u f h c ch sh shch _ y _ e yu ya".split()))
@@ -232,12 +242,24 @@ def build():
             p["hidden"] = o["hide"]
         if o.get("duplicate_of"):
             p["duplicate_of"] = o["duplicate_of"]
-        for k in ("model", "type", "designer", "place", "qual", "name"):
+        for k in ("model", "type", "designer", "place", "qual", "name", "collection", "collection_name"):
             if k in o:
                 p[k] = o[k]
         if "type" in o:
             p["category"] = CAT_OF[p["type"]]
             p["department"] = DEPT_OF[p["category"]]
+            rooms = list(TAX["categories"][p["category"]]["rooms"])
+            if p["place"] in ("outdoor", "both") and "outdoor" not in rooms:
+                rooms.append("outdoor")
+            if p["place"] == "outdoor":
+                rooms = [r for r in rooms if r == "outdoor"] or ["outdoor"]
+            p["rooms"] = rooms
+        if o.get("images_keep"):                        # у фабрики в галерее чужие снимки — оставляем только свои
+            p["images"] = [i for i in p["images"] if o["images_keep"].lower() in i["src"].lower()]
+        if o.get("no_drawings"):                        # чертежи от другого изделия
+            p["drawings"] = []
+        for d in p["drawings"]:
+            d["title"] = rename(d["title"])
         if not p["images"] and not p.get("hidden"):
             p["hidden"] = "нет фото"
     # названия, адреса, имена фото (одно фото у двух товаров фабрики — один файл на сайте, имя по первому товару)
@@ -367,7 +389,10 @@ def export(products, out_path, only_published):
         q = {k: v for k, v in p.items() if not k.startswith("_") and k not in ("variant_unresolved",)}
         q["facts"] = {k: it[k] for k in ("tech", "versions", "finishes") if it.get(k)}
         if q["facts"].get("finishes"):                 # у Poliform в английских группах отделок бывает «Ткани»
-            q["facts"]["finishes"] = {FIX_WORDS.sub(lambda m: WORDS[m.group(0)], k): v for k, v in q["facts"]["finishes"].items()}
+            q["facts"]["finishes"] = {rename(FIX_WORDS.sub(lambda m: WORDS[m.group(0)], k)): v for k, v in q["facts"]["finishes"].items()}
+        if q["facts"].get("versions") and RENAME:
+            q["facts"]["versions"] = [{**v, "name": {l: rename(n) for l, n in v["name"].items()}} if isinstance(v.get("name"), dict) else v
+                                      for v in q["facts"]["versions"]]
         q["source_text"] = it.get("text") or {}
         slim.append(q)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
