@@ -186,8 +186,20 @@ def build():
         out.append({"url": u, "slug": s, "code": (info["version"] or c.get("sku") or "").upper(), "family": info["family"] or c.get("family"),
                     "short": c.get("description"), "category": c.get("category"), "line": c.get("brand"), "new": bool(c.get("isNew")),
                     "packshot": c.get("image"), **{k: v for k, v in info.items() if k not in ("version", "family")}})
+    # страницы только из карты сайта (размеры столов, исполнения под заказ «MTO») в списках разделов не показаны:
+    # раздел и короткое описание — от исполнения с тем же номером (CS4115-…) и семейством, у которого карточка есть
+    base = lambda c: (re.match(r"CS\d+", c or "") or [c])[0]   # noqa: E731
+    main = {}
+    for x in out:
+        if x.get("category"):
+            main.setdefault((base(x["code"]), (x["family"] or "").upper()), x)
+    for x in out:
+        if not x.get("category"):
+            m = main.get((base(x["code"]), (x["family"] or "").upper()))
+            if m:
+                x.update(category=m["category"], short=x.get("short") or m.get("short"), line=m.get("line"), from_card=m["code"])
     json.dump(out, open(os.path.join(HERE, "calligaris.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(f"изделий (страниц) {len(out)}, с фото на белом {sum(1 for x in out if x['packshot'])}, "
+    print(f"изделий (страниц) {len(out)}, без раздела {sum(1 for x in out if not x.get('category'))}, с фото на белом {sum(1 for x in out if x['packshot'])}, "
           f"с интерьерными фото {sum(1 for x in out if x['images'])}, с 2D/3D {sum(1 for x in out if any(d['type'] in ('dwg', 'obj', 'skp') for d in x['downloads']))}")
 
 
