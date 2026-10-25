@@ -2,6 +2,7 @@
 import Crumbs from '../components/Crumbs.astro';
 import LeadForm from '../components/LeadForm.astro';
 import { ui } from '../lib/i18n';
+import { typo } from '../lib/typo';
 import { site, phones, cityName, type HPage } from '../lib/catalog';
 interface Props { page: HPage }
 const { page } = Astro.props;
@@ -14,7 +15,7 @@ const country = { en: 'Slovakia', ru: 'Словакия', de: 'Slowakei', fr: 'S
 <div class="contact wrap">
   <div>
     <h1 class="display">{page.h1}</h1>
-    <p class="contact__lead">{T.contact_lead}</p>
+    <p class="contact__lead" data-own>{typo(T.contact_lead, l)}</p>
     <h2 class="section-title">{T.phones}</h2>
     <ul class="contact__list">
       {phones(l).map((p: any) => <li><a href={`tel:${p.tel}`}>{p.text}</a> <span class="muted">{cityName(p, l)}</span></li>)}

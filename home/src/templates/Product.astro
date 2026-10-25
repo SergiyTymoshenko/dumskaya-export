@@ -7,6 +7,7 @@ import ProductCard from '../components/ProductCard.astro';
 import LeadForm from '../components/LeadForm.astro';
 import Drawing from '../components/Drawing.astro';
 import { ui } from '../lib/i18n';
+import { typo } from '../lib/typo';
 import { byCollection, byBrand, paths, catName, sortProducts, manifest, type HPage } from '../lib/catalog';
 import { versionsTable, techRows, finishGroups } from '../lib/specs';
 interface Props { page: HPage }
@@ -46,9 +47,9 @@ const meta: [string, string, string?][] = [
     <dl class="pinfo__meta">
       {meta.map(([k, v]) => <div><dt>{k}</dt><dd>{v}</dd></div>)}
     </dl>
-    {text && <div class="prose pinfo__text">{text.split(/\n{2,}/).map((para) => <p>{para}</p>)}</div>}
+    {text && <div class="prose pinfo__text" data-own>{text.split(/\n{2,}/).map((para) => <p>{typo(para, l)}</p>)}</div>}
     <a class="btn btn--solid" href="#lead">{T.askPrice}</a>
-    <p class="pinfo__note muted">{T.priceNote}</p>
+    <p class="pinfo__note muted" data-own>{typo(T.priceNote, l)}</p>
   </div>
 </div>
 

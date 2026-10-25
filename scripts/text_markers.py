@@ -48,6 +48,20 @@ DE = [
     r'maßgeschneiderte Lösung', r'wir sind stolz',
     r'\bPremium-?(segment|qualität|klasse)', r'\bstilvoll', r'\belitär', r'\bLuxus',
 ]
+# французский и испанский — для каталога DUMSKAYA HOME (dumskaya-home.com), проверяет scripts/check_home.py
+FR = [
+    r'\bnon seulement\b[^.]{0,60}?\bmais (aussi|également)\b', r'\bunique\b', r'\bparfait', r'\bidéal', r'\bharmoni',
+    r'\bsublim', r'\braffiné', r'élégance intemporelle', r'\bluxueu', r'\bhaut de gamme\b', r'\bun véritable\b', r'\bune véritable\b',
+    r'\bécrin\b', r'havre de paix', r'\bcocon\b', r'\bdécouvrez\b', r'laissez-vous', r'\bplongez\b', r'sans compromis',
+    r'\bincontournable', r"savoir-faire d['’]exception", r'art de vivre', r"dans le monde d['’]aujourd['’]hui", r'il est important de noter',
+    r'(joue|jouent) un rôle (clé|essentiel|crucial)', r'\btransformez\b', r'intérieur de rêve', r'allie à la perfection',
+]
+ES = [
+    r'\bno solo\b[^.]{0,60}?\bsino (también|que)\b', r'\búnic[oa]s?\b', r'\bperfect', r'\bideal(es)?\b', r'\barmon(ía|ios)',
+    r'\bexquisit', r'\blujos', r'elegancia atemporal', r'\bsin igual\b', r'\binigualable', r'\bdescubr(a|e)\b', r'déjese', r'\bsumérj',
+    r'\bun auténtico\b', r'\buna auténtica\b', r'(hogar|casa) de (sus|tus) sueños', r'en el mundo actual', r'es importante (destacar|señalar)',
+    r'(juega|desempeña) un papel (clave|fundamental|crucial)', r'\btransforme\b', r'a la perfección', r'\boasis\b', r'\brefugio\b',
+]
 TAG = re.compile(r'<[^>]+>')
 ALTS = False
 

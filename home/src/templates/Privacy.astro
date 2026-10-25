@@ -3,12 +3,14 @@
 // тот же оператор данных; отличия — заявку на товар фабрики видит партнёр-поставщик, cookie и Google Analytics нет.
 import Crumbs from '../components/Crumbs.astro';
 import { type HPage } from '../lib/catalog';
+import { typoHtml } from '../lib/typo';
 interface Props { page: HPage }
 const { page } = Astro.props;
 const C = 'Panorama Systems Florida LLC, 200 Kings Point Dr, Apt 1603, Sunny Isles Beach, FL 33160, USA';
 const S = 'Súkennícka 1, 821 09 Bratislava';
 const mail = '<a href="mailto:irina@dumskaya-design.com">irina@dumskaya-design.com</a>';
 const tel = '<a href="tel:+421918177785">+421 918 17 77 85</a>';
+const telAt = '<a href="tel:+4367761430187">+43 677 614 30 187</a>';
 const texts: Record<string, [string, string][]> = {
   en: [
     ['Who processes your data', `Data controller: <strong>${C}</strong>. DUMSKAYA HOME is the product catalogue of the DUMSKAYA DESIGN interior design studio, ${S}, Slovakia. E-mail: ${mail}, phone: ${tel}.`],
@@ -27,7 +29,7 @@ const texts: Record<string, [string, string][]> = {
     ['Ваши права', `Вы можете запросить доступ к своим данным, их исправление или удаление, ограничить обработку или возразить против неё, получить данные в машиночитаемом виде. Пишите на ${mail}. Жалобу можно подать в Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk).`],
   ],
   de: [
-    ['Verantwortlicher', `Verantwortlich für die Datenverarbeitung: <strong>${C}</strong>. DUMSKAYA HOME ist der Produktkatalog des Studios für Interior Design DUMSKAYA DESIGN, ${S}, Slowakei. E-Mail: ${mail}, Telefon: ${tel}.`],
+    ['Verantwortlicher', `Verantwortlich für die Datenverarbeitung: <strong>${C}</strong>. DUMSKAYA HOME ist der Produktkatalog des Studios für Interior Design DUMSKAYA DESIGN, ${S}, Slowakei. E-Mail: ${mail}, Telefon: ${telAt}.`],
     ['Welche Daten wir erheben und wozu', 'Wenn Sie das Formular für eine Preisanfrage senden, erhalten wir Ihren Namen, Ihre Telefonnummer oder E-Mail-Adresse, den Text Ihrer Nachricht und das angefragte Produkt. Wir verwenden diese Daten nur, um die Anfrage zu beantworten und ein Angebot zu erstellen (Art. 6 Abs. 1 lit. b DSGVO — vorvertragliche Maßnahmen).'],
     ['Weitergabe von Daten', 'Anfragen von der Website erreichen uns über Telegram. Eine Anfrage zu einem Herstellerprodukt erhält mit Ihrem Namen und Ihren Kontaktdaten auch unser Lieferpartner in Italien, der Preis und Bestellung vorbereitet. Die Website läuft auf einem Server von Hetzner in der Europäischen Union. Ihre Daten werden nicht verkauft und nicht für Werbung verwendet.<br><br>Das Serverprotokoll enthält die IP-Adresse und Angaben zum Browser; es wird höchstens 90 Tage aufbewahrt. Ist eine Nachricht weder auf Russisch noch auf Ukrainisch geschrieben, wird ihr Text (ohne Namen und Kontaktdaten) an einen maschinellen Übersetzungsdienst gesendet, damit wir eine russische Übersetzung erhalten.'],
     ['Speicherdauer', 'Anfragen werden höchstens 24 Monate nach dem letzten Kontakt gespeichert, sofern kein Vertrag zwischen uns geschlossen wurde. Vertragsdaten werden so lange aufbewahrt, wie es das slowakische Recht verlangt.'],
@@ -53,7 +55,7 @@ const texts: Record<string, [string, string][]> = {
 };
 ---
 <Crumbs items={page.crumbs} />
-<article class="wrap prose policy">
+<article class="wrap prose policy" data-own>
   <h1 class="display">{page.h1}</h1>
-  {texts[page.lang].map(([h, t]) => <><h2 class="section-title">{h}</h2><p set:html={t} /></>)}
+  {texts[page.lang].map(([h, t]) => <><h2 class="section-title">{h}</h2><p set:html={typoHtml(t, page.lang)} /></>)}
 </article>

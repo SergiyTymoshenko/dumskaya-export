@@ -8,8 +8,8 @@ import fontDisplayLat from '@fontsource/montserrat/files/montserrat-latin-400-no
 import fontBodyLat from '@fontsource/commissioner/files/commissioner-latin-400-normal.woff2?url';
 import fontDisplayCyr from '@fontsource/montserrat/files/montserrat-cyrillic-400-normal.woff2?url';
 import fontBodyCyr from '@fontsource/commissioner/files/commissioner-cyrillic-400-normal.woff2?url';
-import { LANGS, HREFLANG, OG_LOCALE, DEFAULT, ui } from '../lib/i18n';
-import { manifest, type HPage } from '../lib/catalog';
+import { LANGS, HREFLANG, HTML_LANG, OG_LOCALE, DEFAULT, ui } from '../lib/i18n';
+import { manifest, site, phones, homeSite, type HPage } from '../lib/catalog';
 
 interface Props { page: HPage; noindex?: boolean; schema?: any[] }
 const { page, noindex = false, schema = [] } = Astro.props;
@@ -17,12 +17,31 @@ const SITE = 'https://dumskaya-home.com';
 const url = (p: string) => SITE + p;
 const og = page.image && manifest[page.image];
 const ogUrl = og ? `${SITE}/img/${(og.files.find(([w]) => w >= 960) || og.files[og.files.length - 1])[1]}` : undefined;
-const crumbsLd = page.crumbs.length ? [{ '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-  itemListElement: page.crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, ...(c.href ? { item: url(c.href) } : {}) })) }] : [];
-const ld = [...crumbsLd, ...schema];
+// Разметка Schema.org — как у сайта студии: на каждой странице WebSite, WebPage (у списков — CollectionPage)
+// и BreadcrumbList, на главной и в «Контактах» — ещё организация. Product не ставим: без цены (offers) Google считает
+// такую разметку ошибкой, а цены на сайте не публикуются.
+const ORG = `${SITE}/#org`, WEB = `${SITE}/#website`;
+const graph: any[] = [
+  { '@type': 'WebSite', '@id': WEB, url: SITE + '/', name: 'DUMSKAYA HOME', inLanguage: HTML_LANG[page.lang], publisher: { '@id': ORG } },
+  { '@type': ['dept', 'cat', 'outdoor', 'brand', 'brands'].includes(page.kind) ? 'CollectionPage' : 'WebPage', '@id': url(page.path) + '#page',
+    url: url(page.path), name: page.h1, inLanguage: HTML_LANG[page.lang], isPartOf: { '@id': WEB },
+    ...(page.description ? { description: page.description } : {}), ...(ogUrl ? { primaryImageOfPage: ogUrl } : {}),
+    ...(page.crumbs.length ? { breadcrumb: { '@id': url(page.path) + '#crumbs' } } : {}) },
+];
+if (page.kind === 'home' || page.kind === 'contact') graph.push({
+  '@type': 'Organization', '@id': ORG, name: 'DUMSKAYA HOME', url: SITE + '/', logo: SITE + '/logo.svg', email: site.contacts.email,
+  parentOrganization: { '@type': 'Organization', name: 'DUMSKAYA DESIGN', url: 'https://dumskaya-design.com/' },
+  address: { '@type': 'PostalAddress', streetAddress: site.contacts.address.street, postalCode: site.contacts.address.postal,
+    addressLocality: site.contacts.address.city, addressCountry: site.contacts.address.country },
+  contactPoint: phones(page.lang).map((p: any) => ({ '@type': 'ContactPoint', telephone: p.tel, contactType: 'sales', areaServed: p.key === 'at' ? 'AT' : 'SK' })),
+});
+if (page.crumbs.length) graph.push({ '@type': 'BreadcrumbList', '@id': url(page.path) + '#crumbs',
+  itemListElement: page.crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, ...(c.href ? { item: url(c.href) } : {}) })) });
+const ld = [{ '@context': 'https://schema.org', '@graph': graph }, ...schema];
+const verify = homeSite.verification || {};
 ---
 <!doctype html>
-<html lang={HREFLANG[page.lang]}>
+<html lang={HTML_LANG[page.lang]}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,6 +59,9 @@ const ld = [...crumbsLd, ...schema];
   <meta property="og:url" content={url(page.path)} />
   {ogUrl && <meta property="og:image" content={ogUrl} />}
   <meta name="twitter:card" content="summary_large_image" />
+  {verify.google && <meta name="google-site-verification" content={verify.google} />}
+  {verify.yandex && <meta name="yandex-verification" content={verify.yandex} />}
+  {verify.bing && <meta name="msvalidate.01" content={verify.bing} />}
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="/favicon.png" sizes="96x96" type="image/png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />

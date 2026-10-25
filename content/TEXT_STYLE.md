@@ -98,3 +98,28 @@ poznamenať», «stojí za zmienku», «neoddeliteľná súčasť», «kľúčov
 «Innenarchitektur» как название услуги и поисковые фразы для Вены («Innenarchitekt Wien») — можно.
 Для украинского — те же штампы, что в русском: «не просто, а», «варто зазначити», «гармонійно»,
 «ідеальний», «унікальний», «бездоганний», «затишок і функціональність», «втілити мрію», «є», «являє собою».
+
+Для французского (каталог DUMSKAYA HOME): «non seulement …, mais aussi» (если без него можно), «unique», «parfait»,
+«idéal», «harmonieux / harmonie», «sublime / sublimer», «raffiné», «élégance intemporelle», «luxueux», «haut de gamme»,
+«un véritable …», «écrin», «havre de paix», «cocon», «découvrez», «laissez-vous séduire», «plongez», «sans compromis»,
+«incontournable», «savoir-faire d’exception», «art de vivre», «dans le monde d’aujourd’hui», «il est important de noter»,
+«joue un rôle clé», «transformez votre intérieur», «intérieur de rêve», «allie à la perfection».
+Для испанского (каталог DUMSKAYA HOME): «no solo …, sino también» (если без него можно), «único», «perfecto», «ideal»,
+«armonía / armonioso», «exquisito», «lujoso», «elegancia atemporal», «sin igual», «inigualable», «descubra», «déjese seducir»,
+«sumérjase», «un auténtico …», «el hogar de sus sueños», «en el mundo actual», «es importante destacar», «juega un papel clave»,
+«transforme su hogar», «a la perfección», «oasis», «refugio».
+
+## Тексты товаров DUMSKAYA HOME (dumskaya-home.com)
+
+Каталог товаров фабрик: свои тексты на пяти языках (en — основной, ru, de, fr, es), по правилам выше. Читатель —
+человек, который выбирает конкретную модель: ему нужно, из чего она, какие есть размеры и исполнения, чем отличается
+от соседних моделей той же коллекции. Факты берём только из каталога фабрики в базе (тип, коллекция, дизайнер, год,
+материалы, исполнения с размерами, отделки, свет); текст фабрики — исходник, дословно и близко к тексту не повторяем.
+Нельзя: «официальный дилер», «в наличии», сроки и условия доставки, цены, скидки, гарантии, «лучший / самый
+популярный», оценки качества от себя. Цена — только «по запросу», заказ — через студию в Братиславе и Вене.
+Немецкий — австрийский вариант, как у сайта студии (Fauteuil, Nachtkästchen, Kasten, Vorraum; «Sessel» в Австрии —
+стул, поэтому для кресла — «Fauteuil», в названиях категорий — и общенемецкое слово). Английский — американская
+орфография (color, catalog). Французский — для Франции (неразрывный пробел перед «: ; ? !» и внутри « … » ставит сайт),
+испанский — для Испании (sillón y butaca, mesita de noche, precio a consultar). Названия моделей и фабрик не переводим;
+по-русски у фабрики можно дать русское написание в скобках один раз («Minotti (Минотти)»).
+Проверка: `python3 scripts/check_home.py` — шаблонные обороты на всех пяти языках.

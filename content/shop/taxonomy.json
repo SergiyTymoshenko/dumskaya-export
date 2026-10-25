@@ -211,14 +211,14 @@
       "name": {
         "en": "Armchairs",
         "ru": "Кресла",
-        "de": "Sessel",
+        "de": "Fauteuils und Sessel",
         "fr": "Fauteuils",
-        "es": "Sillones"
+        "es": "Sillones y butacas"
       },
       "slug": {
         "en": "armchairs",
         "ru": "kresla",
-        "de": "sessel",
+        "de": "fauteuils",
         "fr": "fauteuils",
         "es": "sillones"
       }
@@ -482,14 +482,14 @@
       "name": {
         "en": "Bedside tables",
         "ru": "Прикроватные тумбы",
-        "de": "Nachttische",
+        "de": "Nachtkästchen und Nachttische",
         "fr": "Tables de chevet",
         "es": "Mesitas de noche"
       },
       "slug": {
         "en": "bedside-tables",
         "ru": "prikrovatnye-tumby",
-        "de": "nachttische",
+        "de": "nachtkaestchen",
         "fr": "tables-de-chevet",
         "es": "mesitas-de-noche"
       }
@@ -505,14 +505,14 @@
       "name": {
         "en": "Wardrobes and walk-in closets",
         "ru": "Шкафы и гардеробные",
-        "de": "Kleiderschränke und Ankleiden",
+        "de": "Kleiderkästen und begehbare Schrankräume",
         "fr": "Armoires et dressings",
         "es": "Armarios y vestidores"
       },
       "slug": {
         "en": "wardrobes",
         "ru": "shkafy-i-garderobnye",
-        "de": "kleiderschraenke",
+        "de": "kleiderkaesten",
         "fr": "armoires-et-dressings",
         "es": "armarios-y-vestidores"
       }
@@ -720,14 +720,14 @@
         "en": "Table lamps",
         "ru": "Настольные лампы",
         "de": "Tischleuchten",
-        "fr": "Lampes de table",
+        "fr": "Lampes à poser",
         "es": "Lámparas de mesa"
       },
       "slug": {
         "en": "table-lamps",
         "ru": "nastolnye-lampy",
         "de": "tischleuchten",
-        "fr": "lampes-de-table",
+        "fr": "lampes-a-poser",
         "es": "lamparas-de-mesa"
       }
     },
@@ -1037,13 +1037,13 @@
     "armchair": {
       "en": "armchair",
       "ru": "Кресло",
-      "de": "Sessel",
+      "de": "Fauteuil",
       "fr": "Fauteuil",
       "es": "Sillón",
       "slug": {
         "en": "armchair",
         "ru": "kreslo",
-        "de": "sessel",
+        "de": "fauteuil",
         "fr": "fauteuil",
         "es": "sillon"
       }
@@ -1219,13 +1219,13 @@
     "bedside": {
       "en": "bedside table",
       "ru": "Прикроватная тумба",
-      "de": "Nachttisch",
+      "de": "Nachtkästchen",
       "fr": "Table de chevet",
       "es": "Mesita de noche",
       "slug": {
         "en": "bedside-table",
         "ru": "prikrovatnaya-tumba",
-        "de": "nachttisch",
+        "de": "nachtkaestchen",
         "fr": "table-de-chevet",
         "es": "mesita-de-noche"
       }
@@ -1331,13 +1331,13 @@
     "wardrobe": {
       "en": "wardrobe",
       "ru": "Шкаф",
-      "de": "Kleiderschrank",
+      "de": "Kleiderkasten",
       "fr": "Armoire",
       "es": "Armario",
       "slug": {
         "en": "wardrobe",
         "ru": "shkaf",
-        "de": "kleiderschrank",
+        "de": "kleiderkasten",
         "fr": "armoire",
         "es": "armario"
       }
@@ -1766,13 +1766,13 @@
       "en": "table lamp",
       "ru": "Настольная лампа",
       "de": "Tischleuchte",
-      "fr": "Lampe de table",
+      "fr": "Lampe à poser",
       "es": "Lámpara de mesa",
       "slug": {
         "en": "table-lamp",
         "ru": "nastolnaya-lampa",
         "de": "tischleuchte",
-        "fr": "lampe-de-table",
+        "fr": "lampe-a-poser",
         "es": "lampara-de-mesa"
       }
     },
@@ -1886,7 +1886,7 @@
     "hall": {
       "en": "Hallway",
       "ru": "Прихожая",
-      "de": "Flur",
+      "de": "Vorraum",
       "fr": "Entrée",
       "es": "Recibidor"
     },
@@ -1923,5 +1923,19 @@
       "CR&S MisuraEmme",
       "Technical characteristics"
     ]
+  },
+  "_about_langs": "Языки и поиск: en — американская орфография (как на сайте студии); de — австрийский вариант (Fauteuil, Nachtkästchen, Kasten, Vorraum; в Австрии «Sessel» — стул), в названиях категорий — и общенемецкое слово; fr — Франция; es — Испания (sillones y butacas); ru — латинские названия моделей, у фабрик — и русское написание (brands_ru).",
+  "brands_ru": {
+    "minotti": "Минотти",
+    "poliform": "Полиформ",
+    "flexform": "Флексформ",
+    "baxter": "Бакстер",
+    "molteni": "Молтени",
+    "maxalto": "Максальто",
+    "rimadesio": "Римадезио",
+    "misuraemme": "Мизураэмме",
+    "delta": "Дельта Лайт",
+    "olev": "Олев",
+    "idl": "ИДЛ 1987"
   }
 }

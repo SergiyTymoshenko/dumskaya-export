@@ -13,14 +13,8 @@ export function getStaticPaths() {
   return allPages().map((page) => ({ params: { slug: page.path === '/' ? undefined : page.path.slice(1) }, props: { page } }));
 }
 const { page } = Astro.props as { page: HPage };
-const p = page.product;
-const schema = p ? [{
-  '@context': 'https://schema.org', '@type': 'Product', name: page.h1, sku: p.sku, brand: { '@type': 'Brand', name: p.brand },
-  ...(p.collection_name ? { model: p.full_model } : {}), url: 'https://dumskaya-home.com' + page.path,
-  ...(page.description ? { description: page.description } : {}),
-}] : [];
 ---
-<Base page={page} schema={schema}>
+<Base page={page}>
   {page.kind === 'home' && <Home page={page} />}
   {(page.kind === 'cat') && <Listing page={page} />}
   {(page.kind === 'dept' || page.kind === 'outdoor' || page.kind === 'brand' || page.kind === 'brands') && <Groups page={page} />}

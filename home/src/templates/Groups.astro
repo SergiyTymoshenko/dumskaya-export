@@ -4,7 +4,8 @@ import Crumbs from '../components/Crumbs.astro';
 import ProductCard from '../components/ProductCard.astro';
 import Img from '../components/Img.astro';
 import { ui } from '../lib/i18n';
-import { tax, departments, byCategory, byBrand, outdoorProducts, brandList, brandsInfo, paths, catName, sortProducts, type HPage, type Product } from '../lib/catalog';
+import { typo } from '../lib/typo';
+import { departments, byCategory, byBrand, outdoorProducts, brandList, brandsInfo, paths, catName, sortProducts, countryName, type HPage, type Product } from '../lib/catalog';
 interface Props { page: HPage }
 const { page } = Astro.props;
 const l = page.lang;
@@ -25,21 +26,17 @@ if (page.kind === 'dept') {
   groups = groupBy(outdoorProducts).map((g: any) => ({ ...g, more: g.ps.length > 8 ? `${paths.cat(g.c)[l]}?outdoor=1` : undefined, ps: g.ps.slice(0, 8) }));
 } else if (page.kind === 'brand') {
   const ps = byBrand[page.key!];
-  const info = brandsInfo[ps[0].factory];
-  lead = `${info?.country ? countryName(info.country) + ' · ' : ''}${T.products(ps.length)}`;
+  const ru = l === 'ru' ? brandsInfo[ps[0].factory]?.ru : '';             // по-русски ищут и «Минотти», «Полиформ»
+  lead = `${ru ? ru + ' · ' : ''}${countryName(ps[0].factory, l)} · ${T.products(ps.length)}`;
   groups = groupBy(ps).sort((a: any, b: any) => b.ps.length - a.ps.length)        // у фабрики сначала её главное
     .map((g: any) => ({ ...g, more: g.ps.length > 8 ? `${paths.cat(g.c)[l]}?brand=${page.key}` : undefined, ps: g.ps.slice(0, 8) }));
-}
-function countryName(c: string) {
-  const m: Record<string, Record<string, string>> = { 'Италия': { en: 'Italy', ru: 'Италия', de: 'Italien', fr: 'Italie', es: 'Italia' }, 'Бельгия': { en: 'Belgium', ru: 'Бельгия', de: 'Belgien', fr: 'Belgique', es: 'Bélgica' } };
-  return m[c]?.[l] || c;
 }
 const showBrand = page.kind !== 'brand';
 ---
 <Crumbs items={page.crumbs} />
 <header class="lhead wrap">
   <h1 class="display">{page.h1}</h1>
-  {lead && <p class="muted">{lead}</p>}
+  {lead && <p class="muted" data-own>{typo(lead, l)}</p>}
 </header>
 {tiles.length > 0 && (
   <div class="cats wrap">

@@ -353,6 +353,10 @@ def summary(products, problems, dups, errs):
         print("  ✗", e)
 
 
+WORDS = {"Ткани": "Fabrics", "Кожа": "Leather"}
+FIX_WORDS = re.compile("|".join(WORDS))
+
+
 def export(products, out_path, only_published):
     only = {f for f in os.environ.get("HOME_FACTORIES", "").split(",") if f}       # просмотр: только эти фабрики
     keep = [p for p in products if not p.get("duplicate_of") and not p.get("hidden") and (p["published"] or not only_published)
@@ -362,12 +366,14 @@ def export(products, out_path, only_published):
         it = p["_src"]
         q = {k: v for k, v in p.items() if not k.startswith("_") and k not in ("variant_unresolved",)}
         q["facts"] = {k: it[k] for k in ("tech", "versions", "finishes") if it.get(k)}
+        if q["facts"].get("finishes"):                 # у Poliform в английских группах отделок бывает «Ткани»
+            q["facts"]["finishes"] = {FIX_WORDS.sub(lambda m: WORDS[m.group(0)], k): v for k, v in q["facts"]["finishes"].items()}
         q["source_text"] = it.get("text") or {}
         slim.append(q)
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     json.dump({"generated": datetime.datetime.now().isoformat(timespec="seconds"), "taxonomy": TAX,
                "brands": {f: {"name": MFR[f]["name"], "slug": BRAND_SLUG.get(f) or slug(MFR[f]["name"]), "country": MFR[f]["country"],
-                              "site": MFR[f]["site"], "published": PUBLISH["factories"].get(f)}
+                              "site": MFR[f]["site"], "published": PUBLISH["factories"].get(f), "ru": TAX.get("brands_ru", {}).get(f, "")}
                           for f in {p["factory"] for p in products}},
                "products": slim}, open(out_path, "w", encoding="utf-8"), ensure_ascii=False)
     print(f"→ {os.path.relpath(out_path, ROOT)}: товаров {len(slim)}")

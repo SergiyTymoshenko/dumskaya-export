@@ -22,7 +22,7 @@ const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-des
       <li><a href={`mailto:${site.contacts.email}`}>{site.contacts.email}</a></li>
       <li><a href={paths.contact[l]}>{T.contact}</a></li>
     </ul>
-    <address class="ftr__addr"><span>DUMSKAYA DESIGN</span><span>{addr.street}, {addr.postal} {addr.city}, {country}</span></address>
+    <address class="ftr__addr"><span>DUMSKAYA DESIGN</span>{site.contacts.maps ? <a href={site.contacts.maps} rel="noopener" target="_blank">{addr.street}, {addr.postal} {addr.city}, {country}</a> : <span>{addr.street}, {addr.postal} {addr.city}, {country}</span>}</address>
   </div>
   <div class="ftr__aside">
     <p class="ftr__langs">

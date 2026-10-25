@@ -1,0 +1,4 @@
+{
+  "_about": "Настройки dumskaya-home.com. verification — коды подтверждения сайта (meta-тег) из Google Search Console, Яндекс.Вебмастера и Bing Webmaster Tools; пусто — тег не ставится (подтвердить можно и записью DNS).",
+  "verification": {"google": "", "yandex": "", "bing": ""}
+}

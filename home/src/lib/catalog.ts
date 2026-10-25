@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { LANGS, DEFAULT, prefix, homePath, ui, type Lang } from './i18n';
+import { SUFFIX, fitTitle, productTitle, productDesc, listTitle, listDesc, brandTitle, brandDesc, homeDesc } from './seo';
 
 const DATA = import.meta.env.HOME_DATA as string;
 const read = (f: string, d: any) => { try { return JSON.parse(fs.readFileSync(path.join(DATA, f), 'utf8')); } catch { return d; } };
@@ -19,10 +20,12 @@ export type Product = {
 export type ImageFile = { width: number; height: number; files: [number, string][]; cut?: boolean; bg?: string };
 
 export const tax = raw.taxonomy;
-export const brandsInfo: Record<string, { name: string; slug: string; country: string; site: string }> = raw.brands;
+export const brandsInfo: Record<string, { name: string; slug: string; country: string; site: string; ru?: string }> = raw.brands;
 export const products: Product[] = raw.products;
 export const manifest: Record<string, ImageFile> = read('image-manifest.json', {});
 export const site = JSON.parse(fs.readFileSync(path.join(DATA, '../../content/site.json'), 'utf8'));
+/** настройки DUMSKAYA HOME: коды подтверждения Search Console, Яндекс.Вебмастера, Bing (content/home/site.json) */
+export const homeSite = (() => { try { return JSON.parse(fs.readFileSync(path.join(DATA, '../../content/home/site.json'), 'utf8')); } catch { return {}; } })();
 
 export const typeName = (t: string, l: Lang) => tax.types[t][l] as string;
 export const catName = (c: string, l: Lang) => tax.categories[c].name[l] as string;
@@ -61,7 +64,6 @@ const STATIC: Record<string, L> = {
   contact: { en: 'contact', ru: 'kontakty', de: 'kontakt', fr: 'contact', es: 'contacto' },
   privacy: { en: 'privacy', ru: 'privacy', de: 'datenschutz', fr: 'confidentialite', es: 'privacidad' },
 };
-const SUFFIX = ' | DUMSKAYA HOME';
 const mk = (f: (l: Lang) => string) => Object.fromEntries(LANGS.map((l) => [l, f(l)])) as L;
 export const paths = {
   home: mk((l) => homePath(l)),
@@ -81,11 +83,13 @@ function catBrands(ps: Product[]) {
   const n = by(ps, (p) => p.brand);
   return Object.keys(n).sort((a, b) => n[b].length - n[a].length);
 }
-const listJoin = (xs: string[], l: Lang, max = 3) => {
-  const s = xs.slice(0, max);
-  const and = { en: 'and', ru: 'и', de: 'und', fr: 'et', es: 'y' }[l];
-  return s.length < 2 ? s.join('') : `${s.slice(0, -1).join(', ')} ${and} ${s.at(-1)}`;
+
+const COUNTRY: Record<string, Record<Lang, string>> = {
+  'Италия': { en: 'Italy', ru: 'Италия', de: 'Italien', fr: 'Italie', es: 'Italia' },
+  'Бельгия': { en: 'Belgium', ru: 'Бельгия', de: 'Belgien', fr: 'Belgique', es: 'Bélgica' },
 };
+export const countryName = (factory: string, l: Lang) => { const c = brandsInfo[factory]?.country || ''; return COUNTRY[c]?.[l] || c; };
+const allItalian = (ps: Product[]) => ps.every((p) => brandsInfo[p.factory]?.country === 'Италия');
 
 export function allPages(): HPage[] {
   const out: HPage[] = [];
@@ -93,44 +97,38 @@ export function allPages(): HPage[] {
     const T = ui(l);
     const home = { label: T.home, href: homePath(l) };
     out.push({ kind: 'home', lang: l, path: paths.home[l], alt: paths.home, title: T.homeTitle, h1: T.home_h1,
-      description: T.home_lead(brandNames(l, 4)).split('. ')[0] + '.', crumbs: [], image: firstImage(products) });
+      description: homeDesc(brandNames(l, 4), l), crumbs: [], image: firstImage(products) });
+    const list = (kind: HPage['kind'], key: string | undefined, name: string, ps: Product[], path: L, crumbs: Crumb[]) => out.push({
+      kind, lang: l, key, path: path[l], alt: path, h1: name, title: listTitle(name, catBrands(ps), l),
+      description: listDesc(name, ps.length, catBrands(ps), allItalian(ps), l), crumbs, image: firstImage(ps) });
     for (const d of departments) {
       const ps = products.filter((p) => p.department === d.id);
-      out.push({ kind: 'dept', lang: l, key: d.id, path: paths.dept(d)[l], alt: paths.dept(d), h1: d.name[l],
-        title: T.catTitle(d.name[l], listJoin(catBrands(ps), l)) + SUFFIX,
-        description: T.catDesc(d.name[l], ps.length, listJoin(catBrands(ps), l)), crumbs: [home, { label: d.name[l] }], image: firstImage(ps) });
-      for (const c of d.categories) {
-        const cps = byCategory[c];
-        const nm = catName(c, l);
-        out.push({ kind: 'cat', lang: l, key: c, path: paths.cat(c)[l], alt: paths.cat(c), h1: nm,
-          title: T.catTitle(nm, listJoin(catBrands(cps), l)) + SUFFIX, description: T.catDesc(nm, cps.length, listJoin(catBrands(cps), l)),
-          crumbs: [home, { label: d.name[l], href: paths.dept(d)[l] }, { label: nm }], image: firstImage(cps) });
-      }
+      list('dept', d.id, d.name[l], ps, paths.dept(d), [home, { label: d.name[l] }]);
+      for (const c of d.categories)
+        list('cat', c, catName(c, l), byCategory[c], paths.cat(c), [home, { label: d.name[l], href: paths.dept(d)[l] }, { label: catName(c, l) }]);
     }
-    if (outdoorProducts.length) out.push({ kind: 'outdoor', lang: l, path: paths.outdoor()[l], alt: paths.outdoor(), h1: tax.outdoor.name[l],
-      title: T.catTitle(tax.outdoor.name[l], listJoin(catBrands(outdoorProducts), l)) + SUFFIX,
-      description: T.catDesc(tax.outdoor.name[l], outdoorProducts.length, listJoin(catBrands(outdoorProducts), l)),
-      crumbs: [home, { label: tax.outdoor.name[l] }], image: firstImage(outdoorProducts) });
-    out.push({ kind: 'brands', lang: l, path: paths.brands[l], alt: paths.brands, h1: T.brandsTitle, title: T.brandsTitle + SUFFIX,
+    if (outdoorProducts.length) list('outdoor', undefined, tax.outdoor.name[l], outdoorProducts, paths.outdoor(), [home, { label: tax.outdoor.name[l] }]);
+    out.push({ kind: 'brands', lang: l, path: paths.brands[l], alt: paths.brands, h1: T.brandsTitle, title: fitTitle([T.brandsTitle]),
       description: T.brandsLead + ' ' + brandNames(l, 12) + '.', crumbs: [home, { label: T.brandsTitle }] });
     for (const b of brandList) {
       const ps = byBrand[b.slug];
-      const cats = [...new Set(ps.map((p) => p.category))].sort((x, y) => byCategory[y].length - byCategory[x].length).map((c) => catName(c, l).toLowerCase());
+      const cats = [...new Set(ps.map((p) => p.category))].sort((x, y) => ps.filter((p) => p.category === y).length - ps.filter((p) => p.category === x).length).map((c) => catName(c, l));
+      const lighting = ps.filter((p) => p.department === 'lighting').length > ps.length / 2;
+      const ru = brandsInfo[b.factory]?.ru || '';
       out.push({ kind: 'brand', lang: l, key: b.slug, path: paths.brand(b.slug)[l], alt: paths.brand(b.slug), h1: b.name,
-        title: T.brandTitle(b.name) + SUFFIX, description: T.brandDesc(b.name, ps.length, cats.slice(0, 4).join(', ')),
+        title: brandTitle(b.name, ru, lighting, cats, l), description: brandDesc(b.name, ru, countryName(b.factory, l), ps.length, cats, l),
         crumbs: [home, { label: T.brands, href: paths.brands[l] }, { label: b.name }], image: firstImage(ps) });
     }
     for (const p of products) {
-      const d = departments.find((x: any) => x.id === p.department);
       out.push({ kind: 'product', lang: l, key: p.sku, product: p, path: p.path[l], alt: p.path, h1: p.name[l],
-        title: `${p.name[l]} — ${p.brand}${SUFFIX}`, description: T.prodDesc(p.name[l], p.brand, p.designer),
+        title: productTitle(p.name[l], p.brand, l), description: productDesc(p.name[l], p.brand, p.designer, l),
         crumbs: [home, { label: catName(p.category, l), href: paths.cat(p.category)[l] }, { label: p.brand, href: paths.brand(p.brand_slug)[l] }, { label: p.name[l] }],
         image: p.images[0]?.name });
     }
-    out.push({ kind: 'contact', lang: l, path: paths.contact[l], alt: paths.contact, h1: T.contact_h1, title: T.contactTitle + SUFFIX,
+    out.push({ kind: 'contact', lang: l, path: paths.contact[l], alt: paths.contact, h1: T.contact_h1, title: fitTitle([T.contactTitle]),
       description: T.contact_lead, crumbs: [home, { label: T.contact_h1 }] });
-    out.push({ kind: 'privacy', lang: l, path: paths.privacy[l], alt: paths.privacy, h1: T.privacy, title: T.privacy + SUFFIX,
-      description: '', crumbs: [home, { label: T.privacy }] });
+    out.push({ kind: 'privacy', lang: l, path: paths.privacy[l], alt: paths.privacy, h1: T.privacy, title: fitTitle([T.privacy]),
+      description: T.privacyDesc, crumbs: [home, { label: T.privacy }] });
   }
   return out;
 }

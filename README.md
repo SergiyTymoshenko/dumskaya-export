@@ -632,6 +632,26 @@ PDF у фабрики.
 скрыть), свои тексты — `content/home/texts/<фабрика>.json` (`{артикул: {en, ru, de, fr, es}}`).
 Сводка на 25.10.2026 — документ «Каталог DUMSKAYA HOME: структура» (claude.ai).
 
+**Правила сайта студии, перенесённые на каталог** (проверяет `scripts/check_home.py`, выкладка без «ошибок: 0» не идёт):
+title ≤ 60 и description ≤ 155 знаков, без повторов; один H1; canonical на себя; hreflang на все пять языков и x-default;
+хлебные крошки на каждой странице, кроме главных (с главной своего языка, последняя — без ссылки, разметка
+BreadcrumbList совпадает с видимыми); на немецких страницах — только австрийский телефон, мессенджеры — на словацком
+номере; кириллица — только на русских страницах; в своих текстах нет шаблонных оборотов (`content/TEXT_STYLE.md`,
+списки для fr и es добавлены 25.10.2026); типографика — как у студии (`src/lib/typo.ts`), для французского ещё неразрывный
+пробел перед «: ; ? !» и внутри « … »; разметка Schema.org — WebSite, WebPage/CollectionPage, BreadcrumbList, на главной
+и в «Контактах» — организация (Product без цены Google считает ошибкой — не ставим); `llms.txt`, `robots.txt`,
+`sitemap.xml` с фото; имена фото описательные. Коды подтверждения Search Console, Яндекс.Вебмастера и Bing —
+`content/home/site.json`.
+
+**Поиск по языкам** (`content/shop/taxonomy.json`, `home/src/lib/seo.ts`): в title товара — фабрика и модель в том
+порядке, как ищут («Poliform Westside sofa — price on request», «Диван Westside Poliform — цена по запросу»,
+«Poliform Westside Sofa – Preis auf Anfrage», «Canapé Westside Poliform – prix sur demande», «Sofá Westside de Poliform»);
+в описании — «цена по запросу, заказ через студию в Братиславе и Вене». Английский — американская орфография;
+немецкий — австрийский вариант, как у студии (`de-AT`): кресло — «Fauteuil» (в Австрии «Sessel» — это стул; категория
+«Fauteuils und Sessel»), «Nachtkästchen», «Kleiderkasten», «Vorraum»; французский — Франция («lampes à poser»);
+испанский — Испания («sillones y butacas», «precio a consultar»); по-русски у фабрики — и русское написание
+(«Мебель Poliform (Полиформ)»), адреса — транслитом, как у сайта студии.
+
 **Выложить фабрику** (когда у её товаров есть тексты): `python3 scripts/shop/catalog_index.py --publish <фабрика>` —
 адреса и имена фото её товаров закрепляются в `content/home/frozen.json` (дальше не меняются: их знает Google,
 менять — только с редиректом), дата — в `content/home/publish.json`. Затем коммит и выкладка.

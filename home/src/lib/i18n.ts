@@ -4,12 +4,15 @@ export const LANGS: Lang[] = ['en', 'ru', 'de', 'fr', 'es'];
 export const DEFAULT: Lang = 'en';
 export const HREFLANG: Record<Lang, string> = { en: 'en', ru: 'ru', de: 'de', fr: 'fr', es: 'es' };
 export const LANG_LABEL: Record<Lang, string> = { en: 'EN', ru: 'RU', de: 'DE', fr: 'FR', es: 'ES' };
-export const OG_LOCALE: Record<Lang, string> = { en: 'en_GB', ru: 'ru_RU', de: 'de_DE', fr: 'fr_FR', es: 'es_ES' };
+// как у сайта студии: английский — американская орфография, немецкий — австрийский вариант (de-AT)
+export const HTML_LANG: Record<Lang, string> = { en: 'en', ru: 'ru', de: 'de-AT', fr: 'fr', es: 'es' };
+export const OG_LOCALE: Record<Lang, string> = { en: 'en_US', ru: 'ru_RU', de: 'de_AT', fr: 'fr_FR', es: 'es_ES' };
 export const prefix = (l: Lang) => (l === DEFAULT ? '' : `/${l}`);
 export const homePath = (l: Lang) => (l === DEFAULT ? '/' : `/${l}`);
 
 const t = {
   en: {
+    privacyDesc: 'How DUMSKAYA HOME processes the data from price requests: who receives it, how long it is kept and your rights.',
     menu: 'Menu', close: 'Close', call: 'Call', home: 'Home', skip: 'Skip to content',
     brands: 'Brands', allBrands: 'All brands', outdoor: 'Outdoor', contact: 'Contact', privacy: 'Privacy policy',
     products: (n: number) => `${n} ${n === 1 ? 'product' : 'products'}`,
@@ -18,19 +21,19 @@ const t = {
     sizes: 'Sizes and versions', finishes: 'Finishes and materials', drawings: 'Dimensions', specs: 'Specifications',
     moreCollection: 'More from the collection', moreCategory: (c: string, b: string) => `More ${c.toLowerCase()} by ${b}`,
     all: 'All', filterBrand: 'Brand', showAll: 'Show all', photo: 'Photo', photoPrev: 'Previous photo', photoNext: 'Next photo',
-    new: 'New', rights: 'All rights reserved', studio: 'Product catalogue of the DUMSKAYA DESIGN interior studio',
+    new: 'New', rights: 'All rights reserved', studio: 'Product catalog of the DUMSKAYA DESIGN interior design studio',
     city: 'Bratislava and Vienna', email: 'E-mail', phones: 'Phones', address: 'Studio address',
     photosNote: 'Product photos © their manufacturers.',
     home_h1: 'Furniture and lighting from Italian factories',
     home_lead: (b: string) => `Sofas, tables, beds, storage systems and lamps by ${b}. Choose a model and send a request: we will tell you the price, production time and delivery terms within one working day.`,
-    home_studio: 'DUMSKAYA HOME is the product catalogue of DUMSKAYA DESIGN, an interior design studio in Bratislava and Vienna. If you are furnishing a whole flat or house, the studio designs the interior and picks furniture for it.',
+    home_studio: 'DUMSKAYA HOME is the product catalog of DUMSKAYA DESIGN, an interior design studio in Bratislava and Vienna. If you are furnishing a whole flat or house, the studio designs the interior and picks furniture for it.',
     home_studio_link: 'About the studio',
     how_h: 'How to order',
-    how: ['Open the product and press “Request a price”. Mention the size and finish if you already know them.', 'We send the price, production time and delivery terms, usually within one working day.', 'If the choice is not obvious, the studio designer helps compare versions and finishes.'],
-    sections: 'Catalogue',
+    how: ['Open the product and press “Request a price”. Mention the size and finish if you already know them.', 'We send the price, production time and delivery terms, usually within one working day.'],
+    sections: 'Catalog',
     form: { title: 'Request a price', name: 'Name', contact: 'Phone or e-mail', message: 'Message', send: 'Send request', sending: 'Sending…', ok: 'Request sent. We will reply within one working day.', fail: 'The request was not sent. Please call us or write an e-mail.', consent: 'By sending the form you agree that we process your data to answer the request.', about: 'Price request' },
-    contactTitle: 'Contact us', contact_h1: 'Contact', contact_lead: 'Write or call: we will answer questions about any product in the catalogue and send a price.',
-    notFound: 'Page not found', notFoundText: 'The address may have changed. Start from the home page or the catalogue.',
+    contactTitle: 'Contact us', contact_h1: 'Contact', contact_lead: 'Write or call: we will answer questions about any product in the catalog and send a price.',
+    notFound: 'Page not found', notFoundText: 'The address may have changed. Start from the home page or the catalog.',
     catTitle: (c: string, b: string) => `${c} by ${b}`,
     catDesc: (c: string, n: number, b: string) => `${n} models: ${c.toLowerCase()} by ${b}. Photos, sizes and finishes. Price on request.`,
     brandTitle: (b: string) => `${b} furniture and lighting`,
@@ -41,6 +44,7 @@ const t = {
     outdoorLead: 'Furniture and lighting for terraces, gardens and pool areas.',
   },
   ru: {
+    privacyDesc: 'Как DUMSKAYA HOME обрабатывает данные из запросов цены: кто их получает, сколько они хранятся и ваши права.',
     menu: 'Меню', close: 'Закрыть', call: 'Позвонить', home: 'Главная', skip: 'Перейти к содержимому',
     brands: 'Фабрики', allBrands: 'Все фабрики', outdoor: 'Для улицы', contact: 'Контакты', privacy: 'Политика конфиденциальности',
     products: (n: number) => `${n} ${plural(n, 'товар', 'товара', 'товаров')}`,
@@ -57,7 +61,7 @@ const t = {
     home_studio: 'DUMSKAYA HOME — каталог товаров студии интерьера DUMSKAYA DESIGN в Братиславе и Вене. Если вы обставляете квартиру или дом целиком, студия сделает дизайн-проект и подберёт под него мебель.',
     home_studio_link: 'О студии',
     how_h: 'Как заказать',
-    how: ['Откройте товар и нажмите «Узнать цену». Если уже знаете размер и отделку — напишите их.', 'Пришлём цену, срок изготовления и условия доставки — обычно в течение рабочего дня.', 'Если выбор непростой, дизайнер студии поможет сравнить исполнения и отделки.'],
+    how: ['Откройте товар и нажмите «Узнать цену». Если уже знаете размер и отделку — напишите их.', 'Пришлём цену, срок изготовления и условия доставки — обычно в течение рабочего дня.'],
     sections: 'Каталог',
     form: { title: 'Узнать цену', name: 'Имя', contact: 'Телефон или e-mail', message: 'Сообщение', send: 'Отправить запрос', sending: 'Отправляем…', ok: 'Запрос отправлен. Ответим в течение рабочего дня.', fail: 'Не получилось отправить запрос. Позвоните нам или напишите на почту.', consent: 'Отправляя форму, вы соглашаетесь на обработку данных для ответа на запрос.', about: 'Запрос цены' },
     contactTitle: 'Контакты', contact_h1: 'Контакты', contact_lead: 'Напишите или позвоните: ответим на вопросы о любом товаре каталога и пришлём цену.',
@@ -72,6 +76,7 @@ const t = {
     outdoorLead: 'Мебель и свет для террас, садов и зон у бассейна.',
   },
   de: {
+    privacyDesc: 'Wie DUMSKAYA HOME die Daten aus Preisanfragen verarbeitet: Empfänger, Speicherdauer und Ihre Rechte.',
     menu: 'Menü', close: 'Schließen', call: 'Anrufen', home: 'Startseite', skip: 'Zum Inhalt springen',
     brands: 'Marken', allBrands: 'Alle Marken', outdoor: 'Outdoor', contact: 'Kontakt', privacy: 'Datenschutz',
     products: (n: number) => `${n} ${n === 1 ? 'Produkt' : 'Produkte'}`,
@@ -88,7 +93,7 @@ const t = {
     home_studio: 'DUMSKAYA HOME ist der Produktkatalog von DUMSKAYA DESIGN, einem Studio für Interior Design in Bratislava und Wien. Wenn Sie eine ganze Wohnung oder ein Haus einrichten, plant das Studio das Interieur und wählt die Möbel dafür aus.',
     home_studio_link: 'Über das Studio',
     how_h: 'So bestellen Sie',
-    how: ['Öffnen Sie das Produkt und klicken Sie auf „Preis anfragen“. Nennen Sie Größe und Ausführung, wenn Sie diese schon kennen.', 'Wir senden Preis, Fertigungszeit und Lieferbedingungen, meist innerhalb eines Werktags.', 'Wenn die Wahl nicht einfach ist, hilft die Designerin des Studios, Ausführungen und Oberflächen zu vergleichen.'],
+    how: ['Öffnen Sie das Produkt und klicken Sie auf „Preis anfragen“. Nennen Sie Größe und Ausführung, wenn Sie diese schon kennen.', 'Wir senden Preis, Fertigungszeit und Lieferbedingungen, meist innerhalb eines Werktags.'],
     sections: 'Katalog',
     form: { title: 'Preis anfragen', name: 'Name', contact: 'Telefon oder E-Mail', message: 'Nachricht', send: 'Anfrage senden', sending: 'Wird gesendet…', ok: 'Anfrage gesendet. Wir antworten innerhalb eines Werktags.', fail: 'Die Anfrage wurde nicht gesendet. Bitte rufen Sie uns an oder schreiben Sie eine E-Mail.', consent: 'Mit dem Absenden stimmen Sie zu, dass wir Ihre Daten zur Beantwortung der Anfrage verarbeiten.', about: 'Preisanfrage' },
     contactTitle: 'Kontakt', contact_h1: 'Kontakt', contact_lead: 'Schreiben Sie uns oder rufen Sie an: Wir beantworten Fragen zu jedem Produkt im Katalog und senden einen Preis.',
@@ -103,6 +108,7 @@ const t = {
     outdoorLead: 'Möbel und Leuchten für Terrasse, Garten und Pool.',
   },
   fr: {
+    privacyDesc: 'Comment DUMSKAYA HOME traite les données des demandes de prix : destinataires, durée de conservation et vos droits.',
     menu: 'Menu', close: 'Fermer', call: 'Appeler', home: 'Accueil', skip: 'Aller au contenu',
     brands: 'Marques', allBrands: 'Toutes les marques', outdoor: 'Extérieur', contact: 'Contact', privacy: 'Politique de confidentialité',
     products: (n: number) => `${n} ${n === 1 ? 'produit' : 'produits'}`,
@@ -119,7 +125,7 @@ const t = {
     home_studio: 'DUMSKAYA HOME est le catalogue de produits de DUMSKAYA DESIGN, studio d’architecture intérieure à Bratislava et à Vienne. Pour meubler tout un appartement ou une maison, le studio conçoit l’intérieur et choisit le mobilier.',
     home_studio_link: 'Le studio',
     how_h: 'Comment commander',
-    how: ['Ouvrez la fiche du produit et cliquez sur « Demander un prix ». Indiquez la taille et la finition si vous les connaissez déjà.', 'Nous envoyons le prix, le délai de fabrication et les conditions de livraison, en général sous un jour ouvré.', 'Si le choix n’est pas évident, la designer du studio aide à comparer les versions et les finitions.'],
+    how: ['Ouvrez la fiche du produit et cliquez sur « Demander un prix ». Indiquez la taille et la finition si vous les connaissez déjà.', 'Nous envoyons le prix, le délai de fabrication et les conditions de livraison, en général sous un jour ouvré.'],
     sections: 'Catalogue',
     form: { title: 'Demander un prix', name: 'Nom', contact: 'Téléphone ou e-mail', message: 'Message', send: 'Envoyer la demande', sending: 'Envoi…', ok: 'Demande envoyée. Nous répondons sous un jour ouvré.', fail: 'La demande n’a pas été envoyée. Appelez-nous ou écrivez-nous par e-mail.', consent: 'En envoyant le formulaire, vous acceptez que nous traitions vos données pour répondre à la demande.', about: 'Demande de prix' },
     contactTitle: 'Nous contacter', contact_h1: 'Contact', contact_lead: 'Écrivez-nous ou appelez-nous : nous répondons aux questions sur chaque produit du catalogue et envoyons un prix.',
@@ -134,6 +140,7 @@ const t = {
     outdoorLead: 'Mobilier et luminaires pour terrasse, jardin et bord de piscine.',
   },
   es: {
+    privacyDesc: 'Cómo trata DUMSKAYA HOME los datos de las consultas de precio: destinatarios, plazo de conservación y sus derechos.',
     menu: 'Menú', close: 'Cerrar', call: 'Llamar', home: 'Inicio', skip: 'Ir al contenido',
     brands: 'Marcas', allBrands: 'Todas las marcas', outdoor: 'Exterior', contact: 'Contacto', privacy: 'Política de privacidad',
     products: (n: number) => `${n} ${n === 1 ? 'producto' : 'productos'}`,
@@ -150,7 +157,7 @@ const t = {
     home_studio: 'DUMSKAYA HOME es el catálogo de productos de DUMSKAYA DESIGN, estudio de interiorismo en Bratislava y Viena. Si amuebla un piso o una casa entera, el estudio diseña el interior y elige los muebles.',
     home_studio_link: 'Sobre el estudio',
     how_h: 'Cómo pedir',
-    how: ['Abra el producto y pulse «Consultar precio». Indique la medida y el acabado si ya los conoce.', 'Enviamos el precio, el plazo de fabricación y las condiciones de entrega, normalmente en un día laborable.', 'Si la elección no es sencilla, la diseñadora del estudio ayuda a comparar versiones y acabados.'],
+    how: ['Abra el producto y pulse «Consultar precio». Indique la medida y el acabado si ya los conoce.', 'Enviamos el precio, el plazo de fabricación y las condiciones de entrega, normalmente en un día laborable.'],
     sections: 'Catálogo',
     form: { title: 'Consultar precio', name: 'Nombre', contact: 'Teléfono o e-mail', message: 'Mensaje', send: 'Enviar consulta', sending: 'Enviando…', ok: 'Consulta enviada. Respondemos en un día laborable.', fail: 'La consulta no se ha enviado. Llámenos o escríbanos un e-mail.', consent: 'Al enviar el formulario acepta que tratemos sus datos para responder a la consulta.', about: 'Consulta de precio' },
     contactTitle: 'Contacto', contact_h1: 'Contacto', contact_lead: 'Escríbanos o llámenos: respondemos a preguntas sobre cualquier producto del catálogo y enviamos un precio.',

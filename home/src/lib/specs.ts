@@ -9,14 +9,14 @@ const LBL: Record<string, Record<Lang, string>> = {
   light: { en: 'Light source', ru: 'Источник света', de: 'Leuchtmittel', fr: 'Source lumineuse', es: 'Fuente de luz' },
   power: { en: 'Power', ru: 'Мощность', de: 'Leistung', fr: 'Puissance', es: 'Potencia' },
   lumen: { en: 'Luminous flux', ru: 'Световой поток', de: 'Lichtstrom', fr: 'Flux lumineux', es: 'Flujo luminoso' },
-  cct: { en: 'Colour temperature', ru: 'Цветовая температура', de: 'Farbtemperatur', fr: 'Température de couleur', es: 'Temperatura de color' },
-  cri: { en: 'Colour rendering (CRI)', ru: 'Цветопередача (CRI)', de: 'Farbwiedergabe (CRI)', fr: 'Rendu des couleurs (IRC)', es: 'Reproducción cromática (IRC)' },
+  cct: { en: 'Color temperature', ru: 'Цветовая температура', de: 'Farbtemperatur', fr: 'Température de couleur', es: 'Temperatura de color' },
+  cri: { en: 'Color rendering (CRI)', ru: 'Цветопередача (CRI)', de: 'Farbwiedergabe (CRI)', fr: 'Rendu des couleurs (IRC)', es: 'Reproducción cromática (IRC)' },
   ip: { en: 'Protection rating', ru: 'Степень защиты', de: 'Schutzart', fr: 'Indice de protection', es: 'Grado de protección' },
   ik: { en: 'Impact rating', ru: 'Ударопрочность', de: 'Stoßfestigkeit', fr: 'Résistance aux chocs', es: 'Resistencia a impactos' },
   dimming: { en: 'Dimming', ru: 'Диммирование', de: 'Dimmung', fr: 'Gradation', es: 'Regulación' },
   voltage: { en: 'Voltage', ru: 'Напряжение', de: 'Spannung', fr: 'Tension', es: 'Tensión' },
   beam: { en: 'Beam angle', ru: 'Угол луча', de: 'Abstrahlwinkel', fr: 'Angle du faisceau', es: 'Ángulo de haz' },
-  colours: { en: 'Colours', ru: 'Цвета', de: 'Farben', fr: 'Couleurs', es: 'Colores' },
+  colours: { en: 'Colors', ru: 'Цвета', de: 'Farben', fr: 'Couleurs', es: 'Colores' },
   distribution: { en: 'Light distribution', ru: 'Распределение света', de: 'Lichtverteilung', fr: 'Distribution de la lumière', es: 'Distribución de la luz' },
   length: { en: 'Length', ru: 'Длина', de: 'Länge', fr: 'Longueur', es: 'Longitud' },
   diameter: { en: 'Diameter', ru: 'Диаметр', de: 'Durchmesser', fr: 'Diamètre', es: 'Diámetro' },
@@ -40,7 +40,7 @@ const DIM: Record<Lang, Record<string, string>> = {
   en: { l: 'W', w: 'D', h: 'H', d: 'Ø' }, ru: { l: 'Ш', w: 'Г', h: 'В', d: 'Ø' }, de: { l: 'B', w: 'T', h: 'H', d: 'Ø' },
   fr: { l: 'L', w: 'P', h: 'H', d: 'Ø' }, es: { l: 'An', w: 'F', h: 'Al', d: 'Ø' },
 };
-const num = (x: number) => String(Math.round(x * 10) / 10).replace('.', ',');
+const num = (x: number, l: Lang) => { const s = String(Math.round(x * 10) / 10); return l === 'en' ? s : s.replace('.', ','); };
 const unitize = (k: string, v: string) => {
   v = String(v).replace(/\.0\b/g, '');
   if (k === 'power' && /^[\d.,]+$/.test(v)) return `${v} W`;
@@ -53,7 +53,7 @@ const unitize = (k: string, v: string) => {
 };
 function dims(d: any, l: Lang) {
   if (!d) return '';
-  return ['l', 'w', 'h', 'd'].filter((k) => d[k]).map((k) => `${DIM[l][k]} ${num(d[k])}`).join(' × ');
+  return ['l', 'w', 'h', 'd'].filter((k) => d[k]).map((k) => `${DIM[l][k]} ${num(d[k], l)}`).join(' × ');
 }
 const vname = (v: any, l: Lang) => (v.name && (v.name[l] || v.name.en)) || '';
 

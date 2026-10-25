@@ -4,6 +4,7 @@ import Img from '../components/Img.astro';
 import ProductCard from '../components/ProductCard.astro';
 import LeadForm from '../components/LeadForm.astro';
 import { ui } from '../lib/i18n';
+import { typo } from '../lib/typo';
 import { products, departments, outdoorProducts, brandList, byBrand, byCategory, paths, tax, manifest, brandNames, sortProducts, type HPage, type Product } from '../lib/catalog';
 interface Props { page: HPage }
 const { page } = Astro.props;
@@ -30,7 +31,7 @@ const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-des
 </section>
 <section class="intro wrap">
   <h1 class="display intro__h1">{page.h1}</h1>
-  <p class="intro__lead">{T.home_lead(brandNames(l, 6))}</p>
+  <p class="intro__lead" data-own>{typo(T.home_lead(brandNames(l, 6)), l)}</p>
 </section>
 
 <section class="home-sec">
@@ -62,10 +63,10 @@ const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-des
 <section class="home-sec wrap how">
   <div>
     <h2 class="section-title">{T.how_h}</h2>
-    <ol class="how__list">{T.how.map((s: string) => <li>{s}</li>)}</ol>
+    <ol class="how__list" data-own>{T.how.map((s: string) => <li>{typo(s, l)}</li>)}</ol>
   </div>
-  <div class="how__studio">
-    <p>{T.home_studio}</p>
+  <div class="how__studio" data-own>
+    <p>{typo(T.home_studio, l)}</p>
     <p><a href={studio} rel="noopener">{T.home_studio_link} — dumskaya-design.com</a></p>
   </div>
 </section>
