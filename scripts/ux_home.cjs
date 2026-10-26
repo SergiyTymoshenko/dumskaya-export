@@ -132,7 +132,7 @@ let server;
         const r = (e) => e.getBoundingClientRect();
         const pics = ts.map((x) => (x.querySelector('img')?.getAttribute('src') || '').replace(/-\d+\.webp$/, '')).filter(Boolean);
         const fresh = [...document.querySelectorAll('.home-sec .grid .pc')].map((c) => c.dataset.brand);
-        const brandsOnSite = document.querySelectorAll('#m-brands a').length;   // выложена одна фабрика — новинки, понятно, одной
+        const brandsOnSite = Number(document.querySelector('[data-new-brands]')?.dataset.newBrands) || document.querySelectorAll('#m-brands a').length;   // новинки есть не у всех фабрик (у Rugiano пометок нет)
         return { n: ts.length, cols, lastW: r(ts.at(-1)).width, gridW: r(document.querySelector('.home-depts')).width, pics: pics.length, uniq: new Set(pics).size, fresh, brandsOnSite };
       });
       const lone = t.n % t.cols === 1;

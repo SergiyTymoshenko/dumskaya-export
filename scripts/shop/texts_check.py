@@ -49,9 +49,10 @@ def shingles(ws, n):
     return {" ".join(ws[i:i + n]) for i in range(len(ws) - n + 1)}
 
 
-def allowed_numbers(p):
-    """Все числа из данных фабрики по товару и посчитанные из базы количества."""
-    src = json.dumps(p["_src"], ensure_ascii=False) + " " + json.dumps(p["name"], ensure_ascii=False)
+def allowed_numbers(p, sisters=()):
+    """Все числа из данных фабрики по товару (и по товарам той же коллекции — с ними текст сравнивает) и посчитанные из базы количества."""
+    src = " ".join(json.dumps(q["_src"].get("versions") or [], ensure_ascii=False) for q in sisters)
+    src += " " + json.dumps(p["_src"], ensure_ascii=False) + " " + json.dumps(p["name"], ensure_ascii=False)
     nums = {n.replace(",", ".") for n in NUM.findall(src)}
     fin = p["_src"].get("finishes") or {}
     counts = {len(v) for v in fin.values()} | {sum(len(v) for v in fin.values()), len(fin),
@@ -93,7 +94,7 @@ def main():
                 errs.append(f"{sku}: нет текста")
             continue
         p, t = mine[sku], texts[sku]
-        nums = allowed_numbers(p)
+        nums = allowed_numbers(p, [q for q in mine.values() if q["collection"] == p["collection"] and q is not p])
         src_en, src_ru = words(p["_src"].get("text", {}).get("en", "")), words(p["_src"].get("text", {}).get("ru", ""))
         model = p["model"].lower()
         for l in LANGS:

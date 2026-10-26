@@ -82,6 +82,18 @@ BRAND_SLUG = {"molteni": "molteni"}                   # Molteni&C → /molteni (
 QUAL = {
     "sectional": {"en": "{m} sectional sofa", "ru": "Модульный диван {m}", "de": "{m} Modulsofa",
                   "fr": "Canapé modulable {m}", "es": "Sofá modular {m}"},
+    "office": {"en": "{m} office chair", "ru": "Офисное кресло {m}", "de": "{m} Bürostuhl",
+               "fr": "Chaise de bureau {m}", "es": "Silla de oficina {m}"},
+    "vanity": {"en": "{m} vanity table", "ru": "Туалетный столик {m}", "de": "{m} Schminktisch",
+               "fr": "Coiffeuse {m}", "es": "Tocador {m}"},
+    "display": {"en": "{m} display cabinet", "ru": "Витрина {m}", "de": "{m} Vitrine",
+                "fr": "Vitrine {m}", "es": "Vitrina {m}"},
+    "fire_pit": {"en": "{m} fire pit", "ru": "Уличный очаг {m}", "de": "{m} Feuerstelle",
+                 "fr": "Brasero {m}", "es": "Brasero {m}"},
+    "dessert": {"en": "{m} dessert stand", "ru": "Подставка для десертов {m}", "de": "{m} Etagere",
+                "fr": "Présentoir à desserts {m}", "es": "Soporte para postres {m}"},
+    "lantern": {"en": "{m} outdoor lantern", "ru": "Уличный фонарь {m}", "de": "{m} Outdoor-Laterne",
+                "fr": "Lanterne d’extérieur {m}", "es": "Farol de exterior {m}"},
 }
 
 
@@ -256,6 +268,10 @@ def build():
             p["rooms"] = rooms
         if o.get("images_keep"):                        # у фабрики в галерее чужие снимки — оставляем только свои
             p["images"] = [i for i in p["images"] if o["images_keep"].lower() in i["src"].lower()]
+        if "versions_keep" in o:                        # у фабрики на странице изделия исполнения всей коллекции
+            rx = re.compile(o["versions_keep"])
+            p["_src"] = {**p["_src"], "versions": [v for v in p["_src"].get("versions") or []
+                                                   if rx.search(v["name"]["en"] if isinstance(v.get("name"), dict) else str(v.get("name")))]}
         if o.get("no_drawings"):                        # чертежи от другого изделия
             p["drawings"] = []
         for d in p["drawings"]:

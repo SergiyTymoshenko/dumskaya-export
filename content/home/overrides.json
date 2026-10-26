@@ -1,290 +1,597 @@
 {
-  "_about": "Правки товаров для сайта DUMSKAYA HOME поверх каталогов фабрик (сами каталоги не меняем): ключ — наш артикул. variant — уточнение к модели в названии («Outdoor», «Syncro»), type / place — исправленные тип и «для улицы» (indoor / outdoor / both), name — название целиком на всех языках, model / designer — исправленные модель и дизайнер, collection + collection_name — общая коллекция для моделей одной серии (чтобы карточки ссылались друг на друга), images_keep — оставить только фото, в имени файла которых есть эта строка (у фабрики в галерее чужие снимки), no_drawings — убрать чертежи (от другого изделия), hide — не показывать на сайте (причина), duplicate_of — тот же товар, что и указанный артикул. _rename — подписи исполнений, чертежей и групп отделок, оставшиеся у фабрики по-итальянски или с опечатками. Применяет scripts/shop/catalog_index.py. У выложенной фабрики type, model и name меняют адрес только до выкладки: потом адреса закреплены (content/home/frozen.json).",
-  "DF-D5951": {
-    "type": "valet",
-    "_why": "у Flexform это вешалка Soreto (servomuto), не зеркало"
-  },
-  "DF-K7212": {
-    "type": "coffee_table",
-    "_why": "Calder Bronze: журнальные столики (60–160 см), а DF-K7211 — длинные приставные"
-  },
-  "DF-K8094": {
-    "place": "indoor",
-    "_why": "Strata для дома (ножки olmo nero, мрамор, стекло); уличная — DF-K8095"
-  },
-  "DF-H8742": {
-    "duplicate_of": "DF-H8743",
-    "_why": "Modulor: тот же текст, страница коллекции со снимками каталога"
-  },
-  "DF-H8744": {
-    "hide": "интерьер магазина, не изделие для дома",
-    "_why": "Modulor Retail"
-  },
-  "DF-A5232": {
-    "model": "Pedro",
-    "variant": "Open Air",
-    "_why": "у Baxter это версия Open Air (артикулы …PA…, фото OpenAir)"
-  },
-  "DF-H8756": {
-    "name": {
-      "en": "Rialto TV unit",
-      "ru": "ТВ-тумба Rialto",
-      "de": "Rialto TV-Möbel",
-      "fr": "Meuble TV Rialto",
-      "es": "Mueble de TV Rialto"
-    }
-  },
-  "DF-H8757": {
-    "type": "sideboard",
-    "name": {
-      "en": "Rialto bar cabinet",
-      "ru": "Бар Rialto",
-      "de": "Rialto Barschrank",
-      "fr": "Meuble bar Rialto",
-      "es": "Mueble bar Rialto"
-    }
-  },
-  "DF-H8758": {
-    "type": "drawers",
-    "name": {
-      "en": "Rialto chest of drawers and bedside tables",
-      "ru": "Комод и тумбы Rialto",
-      "de": "Rialto Kommode und Nachttische",
-      "fr": "Commode et chevets Rialto",
-      "es": "Cómoda y mesitas Rialto"
-    }
-  },
-  "DF-T8064": {
-    "type": "coffee_table",
-    "_why": "Reef — уличные журнальные столики (так у фабрики), не обеденный стол"
-  },
-  "DL-T7912": {
-    "type": "floor",
-    "_why": "Arthur — лампа для чтения у дивана, в tech «Installation: Floor»"
-  },
-  "DF-K8082": {
-    "type": "side_table",
-    "_why": "Shore — у фабрики «outdoor side tables» к дивану"
-  },
-  "DF-K7918": {
-    "type": "side_table",
-    "_why": "Baba — у фабрики «side table», основание задвигается под диван"
-  },
-  "DF-B7919": {
-    "type": "bedding",
-    "_why": "Bedroom coordinates — постельное бельё и шерстяные пледы, не кровать"
-  },
-  "DF-D8058": {
-    "type": "partition",
-    "_why": "Pivot — система перегородок из поворотных дверей, не аксессуар"
-  },
-  "DF-H7900": {
-    "type": "drawers",
-    "_why": "Abbinabili — тумба и комоды для спальни"
-  },
-  "DF-H8007": {
-    "type": "drawers",
-    "_why": "Lanai — комод и тумбы для спальни (lanai-storage-unit)",
-    "designer": "Yabu Pushelberg"
-  },
-  "DF-H7931": {
-    "type": "drawers",
-    "_why": "Chloe — тумба и комод для спальни (Night complements)"
-  },
-  "DF-H7995": {
-    "type": "drawers",
-    "_why": "Kelly — тумба и комод к кровати Kelly"
-  },
-  "DF-H7952": {
-    "type": "drawers",
-    "_why": "Dream — тумба и комод к кровати Dream"
-  },
-  "DF-H8047": {
-    "type": "drawers",
-    "_why": "Onda — две тумбы и комод к кровати Onda"
-  },
-  "DF-H8076": {
-    "name": {
-      "en": "Senzafine walk-in closet",
-      "ru": "Гардеробная Senzafine",
-      "de": "Senzafine begehbarer Schrankraum",
-      "fr": "Dressing Senzafine",
-      "es": "Vestidor Senzafine"
-    },
-    "_why": "гардеробная комната, а не шкаф"
-  },
-  "DF-H8107": {
-    "name": {
-      "en": "Ubik walk-in closet",
-      "ru": "Гардеробная Ubik",
-      "de": "Ubik begehbarer Schrankraum",
-      "fr": "Dressing Ubik",
-      "es": "Vestidor Ubik"
-    },
-    "_why": "гардеробная комната на стеновых панелях, а не шкаф"
-  },
-  "DF-H8075": {
-    "name": {
-      "en": "Senzafine island chest of drawers",
-      "ru": "Комод-остров Senzafine",
-      "de": "Senzafine Inselkommode",
-      "fr": "Commode îlot Senzafine",
-      "es": "Cómoda isla Senzafine"
-    },
-    "_why": "у фабрики «Drawer Unit» — комод-остров гардеробной"
-  },
-  "DF-A8050": {
-    "model": "Orbis Lounge",
-    "collection": "orbis",
-    "collection_name": "Orbis",
-    "_why": "та же серия Orbis; Lounge с прописной, как Kaori Lounge"
-  },
-  "DF-T8033": {
-    "hide": "все фото от консоли Nara — ждём снимки Mondrian",
-    "_why": "проверка текстов 25.10.2026"
-  },
-  "DL-T8015": {
-    "hide": "6 из 8 фото от других ламп, тип (настольная или напольная) не подтверждён",
-    "_why": "проверка текстов 25.10.2026"
-  },
-  "DF-K7928": {
-    "no_drawings": true,
-    "_why": "оба чертежа от буфета Symphony"
-  },
-  "DF-B8005": {
-    "designer": "Yabu Pushelberg",
-    "_why": "автор назван в тексте фабрики"
-  },
-  "DF-K8004": {
-    "designer": "Yabu Pushelberg",
-    "_why": "серия Lanai, автор назван в тексте фабрики"
-  },
-  "DF-H8006": {
-    "designer": "Yabu Pushelberg",
-    "_why": "серия Lanai, автор назван в тексте фабрики"
-  },
-  "DF-D7941": {
-    "designer": "Jean-Marie Massaud",
-    "_why": "автор назван в тексте фабрики"
-  },
-  "DF-C7916": {
-    "designer": "Jean-Marie Massaud",
-    "_why": "автор назван в тексте фабрики"
-  },
-  "DF-A8017": {
-    "collection": "mad",
-    "collection_name": "Mad",
-    "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A8018": {
-    "collection": "mad",
-    "collection_name": "Mad",
-    "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A8019": {
-    "collection": "mad",
-    "collection_name": "Mad",
-    "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A8020": {
-    "collection": "mad",
-    "collection_name": "Mad",
-    "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A8024": {
-    "collection": "mad",
-    "collection_name": "Mad",
-    "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A7986": {
-    "collection": "jane",
-    "collection_name": "Jane",
-    "_why": "та же серия Jane у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A7987": {
-    "collection": "jane",
-    "collection_name": "Jane",
-    "_why": "та же серия Jane у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-C8092": {
-    "collection": "stanford",
-    "collection_name": "Stanford",
-    "_why": "та же серия Stanford у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A8093": {
-    "collection": "stanford",
-    "collection_name": "Stanford",
-    "_why": "та же серия Stanford у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A7992": {
-    "collection": "kaori",
-    "collection_name": "Kaori",
-    "_why": "та же серия Kaori у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A7963": {
-    "collection": "gentleman",
-    "collection_name": "Gentleman",
-    "_why": "та же серия Gentleman у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A7964": {
-    "collection": "gentleman",
-    "collection_name": "Gentleman",
-    "_why": "та же серия Gentleman у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-A7965": {
-    "collection": "gentleman",
-    "collection_name": "Gentleman",
-    "_why": "та же серия Gentleman у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-S7966": {
-    "collection": "gentleman",
-    "collection_name": "Gentleman",
-    "_why": "та же серия Gentleman у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-B8056": {
-    "collection": "park",
-    "collection_name": "Park",
-    "_why": "та же серия Park у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-S8116": {
-    "collection": "westside",
-    "collection_name": "Westside",
-    "_why": "та же серия Westside у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-C8089": {
-    "collection": "sophie",
-    "collection_name": "Sophie",
-    "_why": "та же серия Sophie у фабрики — карточки ссылаются друг на друга"
-  },
-  "DF-C8090": {
-    "collection": "sophie",
-    "collection_name": "Sophie",
-    "_why": "та же серия Sophie у фабрики — карточки ссылаются друг на друга"
-  },
-  "_rename": {
-    "_about": "подписи исполнений, чертежей и групп отделок у фабрики → как на сайте (Poliform, 25.10.2026)",
-    "Hight arm": "High arm",
-    "Rectangular, customizable sizes — Misure personalizzabili": "Rectangular, customizable sizes",
-    "Elementi freestanding": "Freestanding elements",
-    "h 559 - 669 con piedini, h 444 con zoccolino": "h 559 - 669 with feet, h 444 with plinth",
-    "Gres smaltato lucido": "Glossy glazed gres",
-    "an intern sliding tray": "an internal sliding tray",
-    "Cuscino salvareni opzionali": "Optional lumbar cushions",
-    "Cuscino salvareni opzionale": "Optional lumbar cushion",
-    "Cuscino opzionale e comfort": "Optional cushion and comfort cushion",
-    "75 cm wide armrest": "75 mm wide armrest",
-    "400 cm wide armrest": "400 mm wide armrest",
-    "400 cm wide coffee table": "400 mm wide coffee table",
-    "Streched cover": "Stretched cover",
-    "Sgabello basso": "Low stool",
-    "Sgabello alto": "High stool",
-    "Senza bracciolo, con ruote": "Without armrests, on casters",
-    "Con ruote e meccanismo up&down": "On casters with up&down mechanism",
-    "Con bracciolo e ruote": "With armrests, on casters",
-    "Senza bracciolo": "Without armrests",
-    "Con bracciolo": "With armrests",
-    "Divano sx": "Left-hand sofa",
-    "Divano dx": "Right-hand sofa",
-    "width 200 cm, height 430 cm": "width 200 mm, height 430 mm"
+ "_about": "Правки товаров для сайта DUMSKAYA HOME поверх каталогов фабрик (сами каталоги не меняем): ключ — наш артикул. variant — уточнение к модели в названии («Outdoor», «Syncro»), type / place — исправленные тип и «для улицы» (indoor / outdoor / both), name — название целиком на всех языках, model / designer — исправленные модель и дизайнер, collection + collection_name — общая коллекция для моделей одной серии (чтобы карточки ссылались друг на друга), images_keep — оставить только фото, в имени файла которых есть эта строка (у фабрики в галерее чужие снимки), no_drawings — убрать чертежи (от другого изделия), hide — не показывать на сайте (причина), duplicate_of — тот же товар, что и указанный артикул. _rename — подписи исполнений, чертежей и групп отделок, оставшиеся у фабрики по-итальянски или с опечатками. Применяет scripts/shop/catalog_index.py. У выложенной фабрики type, model и name меняют адрес только до выкладки: потом адреса закреплены (content/home/frozen.json).",
+ "DF-D5951": {
+  "type": "valet",
+  "_why": "у Flexform это вешалка Soreto (servomuto), не зеркало"
+ },
+ "DF-K7212": {
+  "type": "coffee_table",
+  "_why": "Calder Bronze: журнальные столики (60–160 см), а DF-K7211 — длинные приставные"
+ },
+ "DF-K8094": {
+  "place": "indoor",
+  "_why": "Strata для дома (ножки olmo nero, мрамор, стекло); уличная — DF-K8095"
+ },
+ "DF-H8742": {
+  "duplicate_of": "DF-H8743",
+  "_why": "Modulor: тот же текст, страница коллекции со снимками каталога"
+ },
+ "DF-H8744": {
+  "hide": "интерьер магазина, не изделие для дома",
+  "_why": "Modulor Retail"
+ },
+ "DF-A5232": {
+  "model": "Pedro",
+  "variant": "Open Air",
+  "_why": "у Baxter это версия Open Air (артикулы …PA…, фото OpenAir)"
+ },
+ "DF-H8756": {
+  "name": {
+   "en": "Rialto TV unit",
+   "ru": "ТВ-тумба Rialto",
+   "de": "Rialto TV-Möbel",
+   "fr": "Meuble TV Rialto",
+   "es": "Mueble de TV Rialto"
   }
+ },
+ "DF-H8757": {
+  "type": "sideboard",
+  "name": {
+   "en": "Rialto bar cabinet",
+   "ru": "Бар Rialto",
+   "de": "Rialto Barschrank",
+   "fr": "Meuble bar Rialto",
+   "es": "Mueble bar Rialto"
+  }
+ },
+ "DF-H8758": {
+  "type": "drawers",
+  "name": {
+   "en": "Rialto chest of drawers and bedside tables",
+   "ru": "Комод и тумбы Rialto",
+   "de": "Rialto Kommode und Nachttische",
+   "fr": "Commode et chevets Rialto",
+   "es": "Cómoda y mesitas Rialto"
+  }
+ },
+ "DF-T8064": {
+  "type": "coffee_table",
+  "_why": "Reef — уличные журнальные столики (так у фабрики), не обеденный стол"
+ },
+ "DL-T7912": {
+  "type": "floor",
+  "_why": "Arthur — лампа для чтения у дивана, в tech «Installation: Floor»"
+ },
+ "DF-K8082": {
+  "type": "side_table",
+  "_why": "Shore — у фабрики «outdoor side tables» к дивану"
+ },
+ "DF-K7918": {
+  "type": "side_table",
+  "_why": "Baba — у фабрики «side table», основание задвигается под диван"
+ },
+ "DF-B7919": {
+  "type": "bedding",
+  "_why": "Bedroom coordinates — постельное бельё и шерстяные пледы, не кровать"
+ },
+ "DF-D8058": {
+  "type": "partition",
+  "_why": "Pivot — система перегородок из поворотных дверей, не аксессуар"
+ },
+ "DF-H7900": {
+  "type": "drawers",
+  "_why": "Abbinabili — тумба и комоды для спальни"
+ },
+ "DF-H8007": {
+  "type": "drawers",
+  "_why": "Lanai — комод и тумбы для спальни (lanai-storage-unit)",
+  "designer": "Yabu Pushelberg"
+ },
+ "DF-H7931": {
+  "type": "drawers",
+  "_why": "Chloe — тумба и комод для спальни (Night complements)"
+ },
+ "DF-H7995": {
+  "type": "drawers",
+  "_why": "Kelly — тумба и комод к кровати Kelly"
+ },
+ "DF-H7952": {
+  "type": "drawers",
+  "_why": "Dream — тумба и комод к кровати Dream"
+ },
+ "DF-H8047": {
+  "type": "drawers",
+  "_why": "Onda — две тумбы и комод к кровати Onda"
+ },
+ "DF-H8076": {
+  "name": {
+   "en": "Senzafine walk-in closet",
+   "ru": "Гардеробная Senzafine",
+   "de": "Senzafine begehbarer Schrankraum",
+   "fr": "Dressing Senzafine",
+   "es": "Vestidor Senzafine"
+  },
+  "_why": "гардеробная комната, а не шкаф"
+ },
+ "DF-H8107": {
+  "name": {
+   "en": "Ubik walk-in closet",
+   "ru": "Гардеробная Ubik",
+   "de": "Ubik begehbarer Schrankraum",
+   "fr": "Dressing Ubik",
+   "es": "Vestidor Ubik"
+  },
+  "_why": "гардеробная комната на стеновых панелях, а не шкаф"
+ },
+ "DF-H8075": {
+  "name": {
+   "en": "Senzafine island chest of drawers",
+   "ru": "Комод-остров Senzafine",
+   "de": "Senzafine Inselkommode",
+   "fr": "Commode îlot Senzafine",
+   "es": "Cómoda isla Senzafine"
+  },
+  "_why": "у фабрики «Drawer Unit» — комод-остров гардеробной"
+ },
+ "DF-A8050": {
+  "model": "Orbis Lounge",
+  "collection": "orbis",
+  "collection_name": "Orbis",
+  "_why": "та же серия Orbis; Lounge с прописной, как Kaori Lounge"
+ },
+ "DF-T8033": {
+  "hide": "все фото от консоли Nara — ждём снимки Mondrian",
+  "_why": "проверка текстов 25.10.2026"
+ },
+ "DL-T8015": {
+  "hide": "6 из 8 фото от других ламп, тип (настольная или напольная) не подтверждён",
+  "_why": "проверка текстов 25.10.2026"
+ },
+ "DF-K7928": {
+  "no_drawings": true,
+  "_why": "оба чертежа от буфета Symphony"
+ },
+ "DF-B8005": {
+  "designer": "Yabu Pushelberg",
+  "_why": "автор назван в тексте фабрики"
+ },
+ "DF-K8004": {
+  "designer": "Yabu Pushelberg",
+  "_why": "серия Lanai, автор назван в тексте фабрики"
+ },
+ "DF-H8006": {
+  "designer": "Yabu Pushelberg",
+  "_why": "серия Lanai, автор назван в тексте фабрики"
+ },
+ "DF-D7941": {
+  "designer": "Jean-Marie Massaud",
+  "_why": "автор назван в тексте фабрики"
+ },
+ "DF-C7916": {
+  "designer": "Jean-Marie Massaud",
+  "_why": "автор назван в тексте фабрики"
+ },
+ "DF-A8017": {
+  "collection": "mad",
+  "collection_name": "Mad",
+  "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A8018": {
+  "collection": "mad",
+  "collection_name": "Mad",
+  "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A8019": {
+  "collection": "mad",
+  "collection_name": "Mad",
+  "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A8020": {
+  "collection": "mad",
+  "collection_name": "Mad",
+  "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A8024": {
+  "collection": "mad",
+  "collection_name": "Mad",
+  "_why": "та же серия Mad у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A7986": {
+  "collection": "jane",
+  "collection_name": "Jane",
+  "_why": "та же серия Jane у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A7987": {
+  "collection": "jane",
+  "collection_name": "Jane",
+  "_why": "та же серия Jane у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-C8092": {
+  "collection": "stanford",
+  "collection_name": "Stanford",
+  "_why": "та же серия Stanford у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A8093": {
+  "collection": "stanford",
+  "collection_name": "Stanford",
+  "_why": "та же серия Stanford у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A7992": {
+  "collection": "kaori",
+  "collection_name": "Kaori",
+  "_why": "та же серия Kaori у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A7963": {
+  "collection": "gentleman",
+  "collection_name": "Gentleman",
+  "_why": "та же серия Gentleman у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A7964": {
+  "collection": "gentleman",
+  "collection_name": "Gentleman",
+  "_why": "та же серия Gentleman у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-A7965": {
+  "collection": "gentleman",
+  "collection_name": "Gentleman",
+  "_why": "та же серия Gentleman у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-S7966": {
+  "collection": "gentleman",
+  "collection_name": "Gentleman",
+  "_why": "та же серия Gentleman у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-B8056": {
+  "collection": "park",
+  "collection_name": "Park",
+  "_why": "та же серия Park у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-S8116": {
+  "collection": "westside",
+  "collection_name": "Westside",
+  "_why": "та же серия Westside у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-C8089": {
+  "collection": "sophie",
+  "collection_name": "Sophie",
+  "_why": "та же серия Sophie у фабрики — карточки ссылаются друг на друга"
+ },
+ "DF-C8090": {
+  "collection": "sophie",
+  "collection_name": "Sophie",
+  "_why": "та же серия Sophie у фабрики — карточки ссылаются друг на друга"
+ },
+ "_rename": {
+  "_about": "подписи исполнений, чертежей и групп отделок у фабрики → как на сайте (Poliform, 25.10.2026)",
+  "Hight arm": "High arm",
+  "Rectangular, customizable sizes — Misure personalizzabili": "Rectangular, customizable sizes",
+  "Elementi freestanding": "Freestanding elements",
+  "h 559 - 669 con piedini, h 444 con zoccolino": "h 559 - 669 with feet, h 444 with plinth",
+  "Gres smaltato lucido": "Glossy glazed gres",
+  "an intern sliding tray": "an internal sliding tray",
+  "Cuscino salvareni opzionali": "Optional lumbar cushions",
+  "Cuscino salvareni opzionale": "Optional lumbar cushion",
+  "Cuscino opzionale e comfort": "Optional cushion and comfort cushion",
+  "75 cm wide armrest": "75 mm wide armrest",
+  "400 cm wide armrest": "400 mm wide armrest",
+  "400 cm wide coffee table": "400 mm wide coffee table",
+  "Streched cover": "Stretched cover",
+  "Sgabello basso": "Low stool",
+  "Sgabello alto": "High stool",
+  "Senza bracciolo, con ruote": "Without armrests, on casters",
+  "Con ruote e meccanismo up&down": "On casters with up&down mechanism",
+  "Con bracciolo e ruote": "With armrests, on casters",
+  "Senza bracciolo": "Without armrests",
+  "Con bracciolo": "With armrests",
+  "Divano sx": "Left-hand sofa",
+  "Divano dx": "Right-hand sofa",
+  "width 200 cm, height 430 cm": "width 200 mm, height 430 mm"
+ },
+ "DL-S9659": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9710": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9711": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9677": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9678": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9772": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9705": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9856": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9857": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9621": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9636": {
+  "type": "table_lamp",
+  "_why": "Rugiano, 26.10.2026: по техкарте настольная лампа (у фабрики в разделе подвесных)"
+ },
+ "DL-S9624": {
+  "type": "table_lamp",
+  "qual": "lantern",
+  "_why": "Rugiano, 26.10.2026: Eos — переносной аккумуляторный уличный светильник"
+ },
+ "DL-S9701": {
+  "type": "table_lamp",
+  "qual": "lantern",
+  "_why": "Rugiano, 26.10.2026: Kimi — переносной аккумуляторный уличный фонарь"
+ },
+ "DL-S9616": {
+  "type": "wall",
+  "_why": "Rugiano, 26.10.2026: Eclipse по техкарте — настенный светильник"
+ },
+ "DF-K9666": {
+  "type": "side_table",
+  "_why": "Rugiano, 26.10.2026: приставной столик (у фабрики side/service table, 30–68 см)"
+ },
+ "DF-K9782": {
+  "type": "side_table",
+  "_why": "Rugiano, 26.10.2026: приставной столик (у фабрики side/service table, 30–68 см)"
+ },
+ "DF-K9783": {
+  "type": "side_table",
+  "_why": "Rugiano, 26.10.2026: приставной столик (у фабрики side/service table, 30–68 см)"
+ },
+ "DF-K9844": {
+  "type": "side_table",
+  "_why": "Rugiano, 26.10.2026: приставной столик (у фабрики side/service table, 30–68 см)"
+ },
+ "DF-K9838": {
+  "type": "side_table",
+  "_why": "Rugiano, 26.10.2026: приставной столик (у фабрики side/service table, 30–68 см)"
+ },
+ "DF-D9674": {
+  "type": "tray",
+  "qual": "dessert",
+  "_why": "Rugiano, 26.10.2026: Halley — подставка для десертов из стали"
+ },
+ "DF-D9675": {
+  "type": "tray",
+  "qual": "dessert",
+  "_why": "Rugiano, 26.10.2026: Halley Low — подставка для десертов"
+ },
+ "DF-D9625": {
+  "type": "mirror",
+  "_why": "Rugiano, 26.10.2026: Esprit — настенное зеркало"
+ },
+ "DF-D9708": {
+  "type": "vase",
+  "_why": "Rugiano, 26.10.2026: Liberty — металлическая ваза, три высоты"
+ },
+ "DF-D9584": {
+  "type": "vase",
+  "no_drawings": true,
+  "_why": "Rugiano, 26.10.2026: Cometa Low — ваза; схемы от Armonia"
+ },
+ "DF-D9781": {
+  "type": "partition",
+  "_why": "Rugiano, 26.10.2026: поворотные панели от пола до потолка"
+ },
+ "DF-D9637": {
+  "qual": "fire_pit",
+  "_why": "Rugiano, 26.10.2026: Fireplace — уличный очаг, не аксессуар"
+ },
+ "DF-H9553": {
+  "type": "sideboard",
+  "_why": "Rugiano, 26.10.2026: Blade Low — ТВ-тумба 210/250 × 50 × 60"
+ },
+ "DF-H9690": {
+  "type": "sideboard",
+  "_why": "Rugiano, 26.10.2026: Iolanda Low — ТВ-тумба 220 × 50 × 59"
+ },
+ "DF-H9691": {
+  "type": "storage",
+  "qual": "display",
+  "_why": "Rugiano, 26.10.2026: Iole — витрина со стеклянными дверцами"
+ },
+ "DF-H9692": {
+  "type": "storage",
+  "qual": "display",
+  "_why": "Rugiano, 26.10.2026: Iole High — высокая витрина"
+ },
+ "DF-S9687": {
+  "type": "armchair",
+  "_why": "Rugiano, 26.10.2026: Infinity Outdoor — кресло 77 × 90 × 72"
+ },
+ "DF-S9752": {
+  "type": "pouf",
+  "_why": "Rugiano, 26.10.2026: Melody Spring — уличный пуф-платформа H 32"
+ },
+ "DF-C9696": {
+  "qual": "office",
+  "_why": "Rugiano, 26.10.2026: Itaca на поворотной крестовине с колёсами (раздел office)"
+ },
+ "DF-C9529": {
+  "qual": "office",
+  "_why": "Rugiano, 26.10.2026: Arianna Office — поворотная база на колёсах"
+ },
+ "DF-T9848": {
+  "qual": "vanity",
+  "_why": "Rugiano, 26.10.2026: Vogue — туалетный столик с зеркалом (Toilette)"
+ },
+ "DF-A9755": {
+  "variant": "Outdoor",
+  "_why": "Rugiano, 26.10.2026: уличная версия, как диваны Memphis Outdoor"
+ },
+ "DF-K9756": {
+  "variant": "Outdoor",
+  "_why": "Rugiano, 26.10.2026: уличная версия Memphis"
+ },
+ "DF-A9596": {
+  "model": "Dafne Round Big",
+  "_why": "Rugiano, 26.10.2026: Ø 164, у фабрики Dafne Round Big; Ø 80 — DF-A9597"
+ },
+ "DF-T9645": {
+  "model": "Forest Light",
+  "_why": "Rugiano, 26.10.2026: коллекция и схемы Forest Light"
+ },
+ "DF-C9834": {
+  "model": "Snake Liscia",
+  "_why": "Rugiano, 26.10.2026: L. — Liscia (схема «bench SNAKE LISCIA»)"
+ },
+ "DF-B9599": {
+  "model": "Damassé",
+  "_why": "Rugiano, 26.10.2026: написание фабрики"
+ },
+ "DF-D9797": {
+  "model": "Plissé",
+  "_why": "Rugiano, 26.10.2026: написание фабрики"
+ },
+ "DF-K9828": {
+  "model": "Sixty Trays",
+  "_why": "Rugiano, 26.10.2026: модель Sixty Trays (Sixty Vassoio), не стол Sixty"
+ },
+ "DF-H9824": {
+  "duplicate_of": "DF-H9823",
+  "_why": "Rugiano, 26.10.2026: Sidney: те же исполнения, тексты и техкарта"
+ },
+ "DF-H9654": {
+  "duplicate_of": "DF-H9653",
+  "_why": "Rugiano, 26.10.2026: Frame Box: тот же товар в разделе office"
+ },
+ "DF-A9565": {
+  "versions_keep": "/100",
+  "_why": "Rugiano, 26.10.2026: Braid: исполнение T80 — у Braid Round"
+ },
+ "DF-A9566": {
+  "versions_keep": "T80",
+  "_why": "Rugiano, 26.10.2026: Braid Round: исполнение /100 — у Braid"
+ },
+ "DF-C9672": {
+  "versions_keep": "SE5023",
+  "_why": "Rugiano, 26.10.2026: Guenda: размеры скамьи — у DF-C9671"
+ },
+ "DF-A9648": {
+  "versions_keep": "/(Q|GQ|T) ",
+  "_why": "Rugiano, 26.10.2026: Form Zip: GR, 14GR, 18GR — скамья DF-C9649"
+ },
+ "DF-C9649": {
+  "versions_keep": "GR ",
+  "_why": "Rugiano, 26.10.2026: Form Zip bench: кубы и квадратные — пуф DF-A9648"
+ },
+ "DF-A9665": {
+  "versions_keep": "PU5043 -",
+  "_why": "Rugiano, 26.10.2026: Giotto: /100 — кресло DF-A9664"
+ },
+ "DF-A9664": {
+  "versions_keep": "/100",
+  "_why": "Rugiano, 26.10.2026: Giotto pouf — DF-A9665"
+ },
+ "DF-S9807": {
+  "versions_keep": "RA/F",
+  "_why": "Rugiano, 26.10.2026: Rafael: модули — у Rafael Componibile"
+ },
+ "DF-S9808": {
+  "versions_keep": "^(?!DI RA/F)",
+  "_why": "Rugiano, 26.10.2026: Rafael Componibile без неподвижного дивана"
+ },
+ "DF-H9650": {
+  "versions_keep": "L 240",
+  "_why": "Rugiano, 26.10.2026: Frak: 99 × 135 — Frak Bar"
+ },
+ "DF-H9651": {
+  "versions_keep": "H 135",
+  "_why": "Rugiano, 26.10.2026: Frak Bar: 240 × 70 — Frak"
+ },
+ "DF-T9646": {
+  "versions_keep": "^$",
+  "_why": "Rugiano, 26.10.2026: Forest Round: у фабрики размеры прямоугольного Forest"
+ },
+ "DF-D9698": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9699": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9811": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9812": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-K9567": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-S9735": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-S9736": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-H9541": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-H9579": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9715": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9638": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9805": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9530": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9620": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9658": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-D9780": {
+  "hide": "нет размеров и материалов (техкарта фабрики пустая) — до данных от фабрики",
+  "_why": "Rugiano, 26.10.2026: без данных"
+ },
+ "DF-S9758": {
+  "duplicate_of": "DF-S9754",
+  "_why": "Rugiano, 26.10.2026: Memphis Outdoor — те же исполнения, материалы и техкарта"
+ },
+ "DF-T9802": {
+  "variant": "Office",
+  "_why": "Rugiano, 26.10.2026: President из раздела office — другое основание и глубина 125 (DF-T9801 — овальный стол)"
+ }
 }

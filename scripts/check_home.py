@@ -298,7 +298,7 @@ def main():
         h = re.sub(r"<script(?![^>]*application/ld\+json)[^>]*>.*?</script>", "", raw[u], flags=re.S)
         has_tel = [ph["text"] for ph in PHONES.values() if ph["tel"] in h or ph["text"] in h or ph["tel"].lstrip("+") in h]
         if l != "ru":                                 # телефон и мессенджеры — только на русской версии
-            if has_tel or "tel:" in h:
+            if has_tel or re.search(r"""["'\s(]tel:""", h):     # не «Leuchtmittel: …» в тексте
                 errs.append(f"телефон на странице {l} ({', '.join(has_tel) or 'tel:'}): {u}")
             if re.search(r"https://(wa\.me|t\.me)/", h):
                 errs.append(f"мессенджер на странице {l}: {u}")

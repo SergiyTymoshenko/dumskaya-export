@@ -66,7 +66,7 @@ const studio = { en: 'https://dumskaya-design.com/en', ru: 'https://dumskaya-des
 </section>
 
 {pick.length > 0 && (
-  <section class="home-sec">
+  <section class="home-sec" data-new-brands={new Set(products.filter((p) => p.new).map((p) => p.brand_slug)).size}>
     <h2 class="section-title wrap">{fresh.length >= 4 ? T.new : T.sections}</h2>
     <div class="grid wrap">{pick.map((p) => <ProductCard p={p} lang={l} />)}</div>
   </section>

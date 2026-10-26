@@ -2,6 +2,9 @@
   "factories": {
     "poliform": {
       "since": "2026-10-25"
+    },
+    "rugiano": {
+      "since": "2026-10-26"
     }
   }
 }
