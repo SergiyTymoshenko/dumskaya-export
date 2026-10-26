@@ -30,7 +30,7 @@ def fetch(job):
     tmp = f"{dst}.part{threading.get_ident()}"
     try:
         os.makedirs(os.path.dirname(dst), exist_ok=True)
-        safe = quote(unquote(url), safe=":/?=&;,+@~#%!$'()*[]")       # пробелы и буквы с акцентами в именах файлов фабрик
+        safe = quote(unquote(url), safe=":/?=&;,+@~#%")       # пробелы и буквы с акцентами в именах файлов фабрик
         r = subprocess.run(["curl", "-sfL", "--retry", "2", "--max-time", "120", "-A", UA, "-o", tmp, safe])
         if r.returncode == 0 and os.path.exists(tmp) and os.path.getsize(tmp) > 0:
             os.replace(tmp, dst)
