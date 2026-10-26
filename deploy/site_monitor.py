@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """Сторож сайта: раз в минуту открывает https://dumskaya-design.com/ с сервера, как посетитель
+(и второй такой же — магазин https://dumskaya-home.com/, решено 26.10.2026: свой режим ~/dumskaya/home-mode,
+своё состояние «monh:» в базе бота, в сообщениях — «Магазин»)
 (DNS → Caddy → HTTPS → файлы сайта). Если сайт не отвечает 3 проверки подряд, разработчику в бот приходит
 «🔴 Сайт не отвечает» — с причиной и тем, что сделать; пока не починится — напоминание раз в час;
 когда снова отвечает — «🟢 Сайт снова работает». Сертификат HTTPS: если до конца меньше 14 дней
@@ -42,6 +44,8 @@ APP = os.path.expanduser("~/dumskaya")
 CADDYFILE = "/etc/caddy/Caddyfile"
 SITE_DIR = "/var/www/dumskaya/site"
 HOST_ALIAS = "eurox"                     # как сервер называется в ssh на Mac
+HOME_URL = os.environ.get("HOME_MONITOR_URL", "https://dumskaya-home.com/")
+HOME_SITE_DIR = "/var/www/dumskaya-home/site"
 
 
 def esc(s):
@@ -106,7 +110,7 @@ def cert_days(url=URL, timeout=15):
         return None
 
 
-def diagnose():
+def diagnose(site_dir=SITE_DIR):
     """Что видно на сервере: подсказки, почему сайт мог упасть и что делать."""
     tips = []
     try:
@@ -125,8 +129,9 @@ def diagnose():
                         "<code>cd ~/dumskaya-site &amp;&amp; npm run deploy</code>")
     except OSError:
         pass
-    if os.path.isdir(os.path.dirname(SITE_DIR)) and not os.path.isfile(os.path.join(SITE_DIR, "index.html")):
-        tips.append("• На сервере нет файлов сайта — выложите заново: <code>cd ~/dumskaya-site &amp;&amp; npm run deploy</code>")
+    if os.path.isdir(os.path.dirname(site_dir)) and not os.path.isfile(os.path.join(site_dir, "index.html")):
+        cmd = "npm run deploy:home" if site_dir == HOME_SITE_DIR else "npm run deploy"
+        tips.append(f"• На сервере нет файлов сайта — выложите заново: <code>cd ~/dumskaya-site &amp;&amp; {cmd}</code>")
     try:
         du = shutil.disk_usage("/")
         if du.free < 1_000_000_000 or du.free / du.total < 0.03:
@@ -141,10 +146,12 @@ def diagnose():
 
 
 class SiteMonitor:
-    def __init__(self, bot, url=URL, log=print, check_fn=check, cert_fn=cert_days, diag_fn=diagnose,
-                 clock=time.time, live_fn=None, retry_wait=10):
+    def __init__(self, bot, url=URL, log=print, check_fn=check, cert_fn=cert_days, diag_fn=None,
+                 clock=time.time, live_fn=None, retry_wait=10, name="Сайт", key="mon", mode_file="mode", site_dir=SITE_DIR):
         self.bot, self.url, self.log, self.retry_wait = bot, url, log, retry_wait
-        self.check_fn, self.cert_fn, self.diag_fn, self.clock = check_fn, cert_fn, diag_fn, clock
+        self.name, self.key, self.mode_file = name, key, mode_file      # «Сайт» / «Магазин», префикс в базе, файл режима
+        self.check_fn, self.cert_fn, self.clock = check_fn, cert_fn, clock
+        self.diag_fn = diag_fn or (lambda: diagnose(site_dir))
         self.live_fn = live_fn or self.is_live
         self.stop = threading.Event()
         self.fails = 0
@@ -153,19 +160,18 @@ class SiteMonitor:
 
     # ---------- состояние в базе бота ----------
     def get(self, k, default=None):
-        v = self.bot.s.get(f"mon:{k}")
+        v = self.bot.s.get(f"{self.key}:{k}")
         return default if v in (None, "") else v
 
     def put(self, k, v):
         if v is None:
-            self.bot.s.drop(f"mon:{k}")
+            self.bot.s.drop(f"{self.key}:{k}")
         else:
-            self.bot.s.put(f"mon:{k}", str(v))
+            self.bot.s.put(f"{self.key}:{k}", str(v))
 
-    @staticmethod
-    def is_live():
+    def is_live(self):
         try:
-            return open(os.path.join(APP, "mode")).read().strip() == "live"
+            return open(os.path.join(APP, self.mode_file)).read().strip() == "live"
         except OSError:
             return False
 
@@ -188,7 +194,7 @@ class SiteMonitor:
             self.fails = 0
             if down_since:
                 if self.get("alerted"):
-                    self.say(f"🟢 <b>Сайт снова работает</b>\n{esc(self.url)} — не отвечал {minutes(now - float(down_since))} "
+                    self.say(f"🟢 <b>{self.name} снова работает</b>\n{esc(self.url)} — не отвечал {minutes(now - float(down_since))} "
                              f"(с {hhmm(float(down_since))}). Ответ за {ms} мс.")
                 self.put("down_since", None); self.put("alerted", None); self.put("reminded", None)
             self.check_cert(now)
@@ -200,14 +206,14 @@ class SiteMonitor:
         down_since = float(down_since)
         if not self.get("alerted") and self.fails >= FAILS:
             self.put("alerted", now); self.put("reminded", now)
-            self.log(f"сайт не отвечает: {why}")
-            self.say(f"🔴 <b>Сайт не отвечает</b>\n{esc(self.url)} — {why}\n"
+            self.log(f"{self.name.lower()} не отвечает: {why}")
+            self.say(f"🔴 <b>{self.name} не отвечает</b>\n{esc(self.url)} — {why}\n"
                      f"Проверка с сервера, {self.fails} раза подряд с {hhmm(down_since)}.\n\n"
                      f"<b>Что видно на сервере:</b>\n{self.diag_fn()}\n\n"
                      "Когда сайт снова ответит, придёт сообщение.")
         elif self.get("alerted") and now - float(self.get("reminded", now)) >= REMIND:
             self.put("reminded", now)
-            self.say(f"🔴 Сайт всё ещё не отвечает — {minutes(now - down_since)}: {why}\n\n{self.diag_fn()}")
+            self.say(f"🔴 {self.name} всё ещё не отвечает — {minutes(now - down_since)}: {why}\n\n{self.diag_fn()}")
 
     def check_cert(self, now):
         if now - float(self.get("cert_checked", 0)) < 6 * 3600:
@@ -218,7 +224,7 @@ class SiteMonitor:
             return
         if now - float(self.get("cert_warned", 0)) >= 86400:
             self.put("cert_warned", now)
-            self.say(f"⚠️ <b>Сертификат HTTPS</b> сайта истекает через {days} дн. Caddy продлевает его сам за 30 дней — "
+            self.say(f"⚠️ <b>Сертификат HTTPS</b> — {self.name.lower()} ({esc(self.url)}) — истекает через {days} дн. Caddy продлевает его сам за 30 дней — "
                      f"раз не продлил, что-то мешает. Журнал: <code>ssh {HOST_ALIAS} 'sudo journalctl -u caddy -n 50 --no-pager | grep -i -E \"tls|acme|certif\"'</code>")
 
     def status(self):
@@ -251,7 +257,7 @@ class SiteMonitor:
 
     # ---------- поток ----------
     def start(self):
-        t = threading.Thread(target=self.loop, name="site-monitor", daemon=True)
+        t = threading.Thread(target=self.loop, name=f"site-monitor-{self.key}", daemon=True)
         t.start()
         return t
 

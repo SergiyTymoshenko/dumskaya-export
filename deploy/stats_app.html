@@ -737,36 +737,55 @@
     siteKey = b.dataset.s;
     try { localStorage.setItem('stats-site', siteKey); } catch (e) {}
     pressSite();
-    siteBox.hidden = siteKey !== 'studio' || !siteBox.childElementCount;   // сторож проверяет сайт студии
+    drawSite();                                  // сторож проверяет и студию, и магазин (решено 26.10.2026)
     load();
   }));
   pressSite();
   // работает ли сайт: сторож на сервере проверяет раз в минуту — карточка только у разработчика
   const siteBox = document.getElementById('site');
   const hhmm = (ts) => { const d = new Date(ts * 1000); return String(d.getHours()).padStart(2, '0') + ':' + String(d.getMinutes()).padStart(2, '0'); };
-  async function loadSite() {
-    if (!tg || !tg.initData) return;
-    let x;
-    try {
-      const r = await fetch('/api/stats/site', { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' });
-      if (!r.ok) { siteBox.hidden = true; return; }
-      x = await r.json();
-    } catch (e) { return; }
+  // два сторожа: сайт студии и магазин (решено 26.10.2026); «Оба» — обе карточки строкой
+  const SITE_STATE = {};
+  function siteRows(x, name, compact) {
     const rows = [];
-    if (!x.running) rows.push(el('div', 'head', 'Сторож сайта не запущен'));
-    else if (!x.live) rows.push(el('div', 'head', 'Сайт ещё в режиме просмотра — сторож не проверяет'));
-    else if (x.ok == null) rows.push(el('div', 'head', 'Сторож запущен — первая проверка в течение минуты'));
+    const label = name ? name + ': ' : '';
+    if (!x || !x.running) rows.push(el('div', 'head', label + 'сторож не запущен'));
+    else if (!x.live) rows.push(el('div', 'head', label + 'ещё в режиме просмотра — сторож не проверяет'));
+    else if (x.ok == null) rows.push(el('div', 'head', label + 'первая проверка в течение минуты'));
     else {
-      rows.push(el('div', 'head ' + (x.ok ? 'ok' : 'bad'), x.ok ? '🟢 Сайт работает' : '🔴 Сайт не отвечает' + (x.down_since ? ' с ' + hhmm(x.down_since) : '')));
-      rows.push(el('div', 'line', x.ok ? 'Ответил за ' + x.ms + ' мс · проверено в ' + hhmm(x.checked) + ', проверка раз в минуту'
+      rows.push(el('div', 'head ' + (x.ok ? 'ok' : 'bad'), (x.ok ? '🟢 ' : '🔴 ') + (name || 'Сайт') + (x.ok ? ' работает' : ' не отвечает' + (x.down_since ? ' с ' + hhmm(x.down_since) : ''))));
+      rows.push(el('div', 'line', x.ok ? 'Ответил за ' + x.ms + ' мс · проверено в ' + hhmm(x.checked) + (compact ? '' : ', проверка раз в минуту')
         : 'Причина: ' + x.why + ' · проверено в ' + hhmm(x.checked)));
       if (x.cert_days != null) rows.push(el('div', x.cert_days < 14 ? 'line warn' : 'line', 'Сертификат HTTPS: ещё ' + x.cert_days + ' дн.'
         + (x.cert_days < 14 ? ' — Caddy обновляет его сам; если не обновится, бот предупредит' : '')));
     }
-    siteBox.replaceChildren(...rows); siteBox.hidden = siteKey !== 'studio';
+    return rows;
+  }
+  function drawSite() {
+    const st = SITE_STATE.studio, hm = SITE_STATE.home;
+    if (siteKey === 'all') {
+      if (!st && !hm) { siteBox.hidden = true; return; }
+      siteBox.replaceChildren(...siteRows(st, 'Студия', true), el('div', { style: 'height:10px' }), ...siteRows(hm, 'Магазин', true));
+    } else {
+      const x = siteKey === 'home' ? hm : st;
+      if (!x) { siteBox.hidden = true; return; }
+      siteBox.replaceChildren(...siteRows(x, siteKey === 'home' ? 'Магазин' : 'Сайт', false));
+    }
+    siteBox.hidden = false;
+  }
+  async function loadSite() {
+    if (!tg || !tg.initData) return;
+    for (const k of ['studio', 'home']) {
+      try {
+        const r = await fetch('/api/stats/site' + (k === 'home' ? '?site=home' : ''), { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' });
+        if (!r.ok) return;                         // не разработчик — карточки нет
+        SITE_STATE[k] = await r.json();
+      } catch (e) { return; }
+    }
+    drawSite();
   }
   loadSite();
-  setInterval(() => { if (document.visibilityState === 'visible' && siteKey === 'studio' && siteBox.childElementCount) loadSite(); }, 60000);
+  setInterval(() => { if (document.visibilityState === 'visible' && !siteBox.hidden) loadSite(); }, 60000);
   if (tg && tg.initData) fetch('/api/crm/ui', { headers: { 'X-Telegram-Init-Data': tg.initData }, cache: 'no-store' })
     .then((r) => (r.ok ? r.json() : null)).then((x) => {
       if (x && x.role === 'owner') {           // у разработчика в «Студии» только сайт и доступ к боту (решено 24.10.2026)

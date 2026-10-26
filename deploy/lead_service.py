@@ -83,7 +83,7 @@ def log(msg):
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from bot import Bot  # noqa: E402
-from site_monitor import SiteMonitor  # noqa: E402
+from site_monitor import HOME_SITE_DIR, HOME_URL, SiteMonitor  # noqa: E402
 from site_stats import (BOT as BOT_UA, CONTACTS, SiteStats, check_init_data, exclude_add, exclude_remove,  # noqa: E402
                         is_own, mark_own, me_data, record_hit, record_time, web)
 from site_stats import home as stats_home  # noqa: E402  статистика каталога dumskaya-home.com — тот же код, свой журнал
@@ -211,7 +211,8 @@ class Handler(BaseHTTPRequestHandler):
         if path.rstrip("/") == "/api/stats/site":          # работает ли сайт (что показывала /site): только разработчику
             if not self.stats_owner():
                 return self.reply(403, {"ok": False})
-            mon = getattr(BOT, "monitor", None)
+            q = urllib.parse.parse_qs(urllib.parse.urlsplit(self.path).query)
+            mon = getattr(BOT, "monitor_home" if (q.get("site") or [""])[0] == "home" else "monitor", None)
             return self.reply(200, mon.status_data() if mon else {"running": False})
         if path.rstrip("/") == "/api/stats/server/app":    # «Сервер и ИИ» — страница (данные — только разработчику)
             try:
@@ -420,6 +421,8 @@ def main():
     srv = ThreadingHTTPServer(("127.0.0.1", PORT), Handler)
     if BOT:
         BOT.monitor = SiteMonitor(BOT, log=log)     # сторож сайта: «сайт не отвечает» разработчику в бот
+        BOT.monitor_home = SiteMonitor(BOT, url=HOME_URL, log=log, name="Магазин", key="monh",   # и магазина dumskaya-home.com
+                                       mode_file="home-mode", site_dir=HOME_SITE_DIR)
         BOT.stats = SiteStats(BOT, log=log)         # посетители по журналу Caddy: «Графики» и строка в 9:00
         crm_api.BOT = BOT                           # размер текста в «Студии» и графиках, файлы проекта → в чат
         try:                                        # учёт проектов студии (кнопка «Студия»)
@@ -444,6 +447,7 @@ def main():
         BOT.stats.hooks.append(indexnow.tick)
         BOT.start()
         BOT.monitor.start()
+        BOT.monitor_home.start()
         BOT.stats.start()
     log(f"слушаю 127.0.0.1:{PORT}; бот={'да' if BOT else 'нет'}, почта={'да' if SMTP_USER and SMTP_PASSWORD else 'нет'}, "
         f"перевод={' → '.join({'sub': 'ChatGPT-подписка', 'openai': 'ChatGPT', 'deepl': 'DeepL', 'claude': 'Claude'}[p] for p in translate_chain()) or 'нет'}")
