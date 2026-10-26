@@ -18,6 +18,8 @@
     50 000 адресов в файле, только опубликованное (товары и страницы выложенных фабрик); llms.txt ссылается только на
     страницы из карты сайта, в нём все выложенные фабрики и категории с их товарами;
   • robots.txt закрыт (Disallow: /), пока в content/home/site.json нет "indexing": true; открытый — с Sitemap и llms.txt.
+  • страница товара — полный набор SEO (правило владельца 26.10.2026, README «SEO страницы товара»): ItemPage о фабрике
+    и дизайнере, фото — ImageObject, без Product, og:image и product:brand, факты под названием, главное фото сразу и с местом.
 Предупреждения: заглушки вместо фото (нет оригинала), товары выложенной фабрики без своего текста."""
 import glob
 import json
@@ -176,6 +178,61 @@ def check_crumbs(u, p, parsed, errs):
         errs.append(f"крошки: разметка {got} не совпадает с видимыми {want}: {u}")
 
 
+PRODUCT_SEO = "README, «SEO страницы товара» (правило 26.10.2026)"
+
+
+def check_product_seo(u, h, errs):
+    """Страница товара — полный набор SEO (правило владельца 26.10.2026, README «SEO страницы товара»):
+    Schema.org ItemPage о фабрике (Organization с сайтом в sameAs) и дизайнере (Person), фото — ImageObject с правообладателем,
+    организация магазина, без Product (нет цены); og:image + alt, product:brand; список фактов под названием и свой текст;
+    главное фото — сразу (eager, fetchpriority=high) и с заранее занятым местом (--ar); у фото — width/height (CLS)."""
+    bad = []
+    nodes = []
+    for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', h, re.S):
+        try:
+            o = json.loads(block)
+            nodes += o.get("@graph") or [o]
+        except Exception:
+            pass
+    types = [n.get("@type") for n in nodes]
+    page = next((n for n in nodes if n.get("@type") == "ItemPage"), None)
+    if not page:
+        bad.append("нет ItemPage")
+    else:
+        ids = {n.get("@id"): n for n in nodes}
+        brand = ids.get((page.get("about") or {}).get("@id"))
+        if not brand or brand.get("@type") != "Organization" or not brand.get("sameAs"):
+            bad.append("ItemPage.about — не фабрика (Organization с sameAs)")
+        if re.search(r"<dt>(Design|Дизайн|Diseño)</dt>", h) and not page.get("mentions"):
+            bad.append("дизайнер есть на странице, но не в разметке (mentions → Person)")
+        if re.search(r'class="pgal__i[^"]*"[^>]*>\s*<img', h):
+            img = page.get("primaryImageOfPage")
+            if not isinstance(img, dict) or img.get("@type") != "ImageObject" or not img.get("creditText") or not img.get("copyrightNotice"):
+                bad.append("главное фото — не ImageObject с creditText и copyrightNotice")
+        if page.get("publisher", {}).get("@id") not in ids:
+            bad.append("нет организации магазина (publisher)")
+    if "Product" in types:
+        bad.append("разметка Product без цены — ошибка для Google")
+    for m in ('property="og:image"', 'property="og:image:alt"', 'property="product:brand"'):
+        if m not in h and not (m.startswith('property="og:image') and 'class="ph' in h.split('pgal', 1)[-1][:2000]):
+            bad.append(f"нет {m}")
+    if not re.search(r'<dl class="pinfo__meta">', h):
+        bad.append("нет списка фактов под названием")
+    main = re.search(r'<button[^>]*pgal__i--main[^>]*>\s*(<img[^>]*>)', h)
+    if main:
+        tag = main.group(1)
+        if 'loading="eager"' not in tag or 'fetchpriority="high"' not in tag:
+            bad.append("главное фото грузится не сразу (LCP)")
+        if "--ar:" not in tag:
+            bad.append("у главного фото не занято место до загрузки (CLS)")
+    for tag in re.findall(r"<img\b[^>]*>", h):
+        if "data-lb-img" not in tag and ("width=" not in tag or "height=" not in tag):
+            bad.append("фото без width/height (CLS)")
+            break
+    for b in bad:
+        errs.append(f"SEO товара: {b} ({PRODUCT_SEO}): {u}")
+
+
 def main():
     errs, warns = [], []
     files = {"/" + os.path.relpath(f, DIST) for f in glob.glob(os.path.join(DIST, "**/*"), recursive=True) if os.path.isfile(f)}
@@ -256,6 +313,8 @@ def main():
             errs.append(f"шаблонные обороты ({l}): {', '.join(hits)}: {u}")
         if re.search(r'class="ph[\s"]', raw[u]):
             warns.append(f"заглушка вместо фото (нет оригинала): {u}")
+        if 'property="og:type" content="product"' in raw[u]:
+            check_product_seo(u, raw[u], errs)
     cat = json.load(open(os.path.join(ROOT, "home/data/catalog.json"), encoding="utf-8"))
     no_text = defaultdict(int)
     for pr in cat["products"]:

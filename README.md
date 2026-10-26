@@ -701,7 +701,7 @@ BreadcrumbList совпадает с видимыми); **телефоны ст�
 испанский — Испания («sillones y butacas», «precio a consultar»); по-русски у фабрики — и русское написание
 («Мебель Poliform (Полиформ)»), адреса — транслитом, как у сайта студии.
 
-**SEO страницы товара** (26.10.2026; дизайн не меняется, всё в коде страницы): title — фабрика + модель + тип в порядке поиска
+**SEO страницы товара** — правило владельца (26.10.2026): каждая страница товара делается с полным набором SEO (SEO, GEO, AIO, AEO, LLM SEO, SERP, E-E-A-T, Core Web Vitals — INP, LCP, CLS, Schema.org, ссылки, Search Intent, LSI, Crawl Budget, RAG, Entity SEO, Knowledge Graph, семантический поиск, Zero-Click, Programmatic SEO); дизайн сайтов при этом не меняется. Машинная часть — `scripts/check_home.py` (`check_product_seo`: без неё выкладка не идёт). Состав: title — фабрика + модель + тип в порядке поиска
 на языке, description — что на странице, цена по запросу, доставка; один H1 = название; canonical на себя, hreflang 5 языков
 и x-default; крошки + BreadcrumbList; Schema.org — ItemPage (`about` — фабрика как Organization с официальным сайтом
 в `sameAs`, `mentions` — дизайнер как Person, `primaryImageOfPage` и `image` — ImageObject с `creditText` и
