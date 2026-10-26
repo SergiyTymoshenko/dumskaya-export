@@ -5018,10 +5018,18 @@
    "text": {
     "en": "Asia stands out for its rigorous and contemporary design language, where solids and voids alternate in a carefully balanced rhythm. The three horizontal shelves define a clean and functional structure, interrupted by vertical elements that articulate the space and create a dynamic, ever-changing composition. The result is a bookcase that becomes an architectural feature, capable of organizing while enhancing the objects it displays.\n\nArchitectural balance and material lightness in an essential composition.\n\nThe combination of textured surfaces and reflective inserts introduces a refined play of contrasts, enhancing depth and visual lightness. The vertical supports, finished in polished or mirrored materials, interact with the shelves in an elegant synthesis of solidity and transparency. This material research gives Asia a sophisticated presence, naturally adapting to a variety of interior settings. A synthesis of design, functionality, and aesthetic research, Asia is a bookcase conceived for contemporary spaces, where every detail contributes to a harmonious balance between order and decoration. A versatile system that interprets space with discretion and character."
    },
+   "tech": {
+    "en": "Materials: Structure: bronzed brass and chrome; Box and shelves: leather\nWeight (kg): 150"
+   },
    "versions": [
     {
      "name": {
-      "en": "Asia"
+      "en": "L 240 x D 43 x H 185"
+     },
+     "dims_cm": {
+      "l": 240,
+      "w": 43,
+      "h": 185
      }
     }
    ],
@@ -5109,16 +5117,18 @@
      }
     }
    ],
+   "sheets": [
+    {
+     "file": "catalogs/rugiano/indoor-bookcases-asia.pdf",
+     "url": "https://www.rugianocdn.com/backoffice/media/21cb8f70-84ae-4b19-99f4-dfd58d4cc0e8/01_Bookcase_ASIA.pdf",
+     "pages": 4,
+     "bytes": 204702
+    }
+   ],
    "links": {
     "page": "https://www.rugiano.com/en/products/indoor/Bookcases/asia",
-    "spec_after_login": "https://www.rugiano.com/en/products/indoor/Bookcases/asia  (технические характеристики — после входа на сайте Rugiano, Area riservata)"
-   },
-   "files_after_login": [
-    {
-     "title": "Technical specification",
-     "url": "https://www.rugiano.com/en/products/indoor/Bookcases/asia"
-    }
-   ]
+    "datasheet": "https://www.rugianocdn.com/backoffice/media/21cb8f70-84ae-4b19-99f4-dfd58d4cc0e8/01_Bookcase_ASIA.pdf"
+   }
   },
   {
    "sku": "DF-H9535",
@@ -7831,15 +7841,38 @@
    "text": {
     "en": "The Boheme bed stands out for its padded headboard, framed by a metal profile upholstered in smooth or embossed leather, emphasizing the clean lines and refined materiality. Polished brass or bronze details add a precious accent that enhances the soft tones and generous volumes of the upholstery.\n\nSophisticated geometries and refined materials for timeless elegance.\n\nThe structure is completed by a fully upholstered bed frame, designed for elegant and refined night spaces, where comfort blends with a bold and contemporary style. The collection is enriched with matching pieces, including dressers, nightstands, a bench at the foot of the bed, a floor mirror, and a selection of sofas, creating a complete and harmonious interior design project. A synthesis of craftsmanship, texture, and design, Boheme envisions the bedroom as an exclusive space to be experienced with style and intimacy."
    },
+   "tech": {
+    "en": "Materials: Headboard and bedframe: fabric A/B, leather C/D; Details: bronzed brass, gold finished brass; Frame: leather B/C/D\nWeight (kg): 170-180-190\n* Available with storage base"
+   },
    "versions": [
     {
      "name": {
-      "en": "Boheme 180"
+      "en": "L 215 x D 217 x H 32/165 - Slat 160"
+     },
+     "dims_cm": {
+      "l": 215,
+      "w": 217,
+      "h": 165
      }
     },
     {
      "name": {
-      "en": "Boheme 200"
+      "en": "L 215 x D 217 x H 32/165 - Slat 180"
+     },
+     "dims_cm": {
+      "l": 215,
+      "w": 217,
+      "h": 165
+     }
+    },
+    {
+     "name": {
+      "en": "L 215 x D 217 x H 32/165 - Slat 200"
+     },
+     "dims_cm": {
+      "l": 215,
+      "w": 217,
+      "h": 165
      }
     }
    ],
@@ -7923,13 +7956,22 @@
      }
     }
    ],
+   "sheets": [
+    {
+     "file": "catalogs/rugiano/indoor-beds-boheme.pdf",
+     "url": "https://www.rugianocdn.com/backoffice/media/9f7dfdb8-2d56-4a9a-b2b9-9219824a3fd8/BOHEME_SCHEDA_TECNICA.pdf",
+     "pages": 6,
+     "bytes": 245123
+    }
+   ],
    "links": {
     "page": "https://www.rugiano.com/en/products/indoor/beds/boheme",
-    "spec_after_login": "https://www.rugiano.com/en/products/indoor/beds/boheme  (технические характеристики — после входа на сайте Rugiano, Area riservata)"
+    "datasheet": "https://www.rugianocdn.com/backoffice/media/9f7dfdb8-2d56-4a9a-b2b9-9219824a3fd8/BOHEME_SCHEDA_TECNICA.pdf",
+    "files_2d3d": "https://www.rugiano.com/en/products/indoor/beds/boheme  (2D/3D и галерея — после входа на сайте Rugiano, Area riservata)"
    },
    "files_after_login": [
     {
-     "title": "Technical specification",
+     "title": "2D (DWG)",
      "url": "https://www.rugiano.com/en/products/indoor/beds/boheme"
     }
    ]

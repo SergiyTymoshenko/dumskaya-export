@@ -17657,6 +17657,16 @@
    "width": 1600,
    "height": 1280,
    "bytes": 0
+  },
+  "https://www.rugianocdn.com/backoffice/media/9f7dfdb8-2d56-4a9a-b2b9-9219824a3fd8/BOHEME_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-boheme.pdf",
+   "pages": 6,
+   "bytes": 245123
+  },
+  "https://www.rugianocdn.com/backoffice/media/21cb8f70-84ae-4b19-99f4-dfd58d4cc0e8/01_Bookcase_ASIA.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-asia.pdf",
+   "pages": 4,
+   "bytes": 204702
   }
  },
  "sheets": {}

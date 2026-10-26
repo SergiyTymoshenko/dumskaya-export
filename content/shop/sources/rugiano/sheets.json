@@ -1,0 +1,43 @@
+{
+ "indoor/beds/boheme": {
+  "gated_links": {
+   "2D FILE": "https://x/a.dwg.zip"
+  },
+  "pages": 6,
+  "description_en": "Upholstered bed featuring a wooden headboard and bed frame with polyurethane foam padding. Headboard frame made of metal tubing in a bronzed brass or gold-plated brass finish, upholstered in leather. Upholstery available in various leather and fabric categories from the collection. Feet and metal details in a bronzed brass finish.",
+  "materials": [
+   "Headboard and bedframe: fabric A/B, leather C/D",
+   "Details: bronzed brass, gold finished brass",
+   "Frame: leather B/C/D"
+  ],
+  "dimensions": [
+   "L 215 x D 217 x H 32/165 - Slat 160",
+   "L 215 x D 217 x H 32/165 - Slat 180",
+   "L 215 x D 217 x H 32/165 - Slat 200"
+  ],
+  "dimensions_unit": "cm",
+  "notes": [
+   "* Available with storage base"
+  ],
+  "weight_kg": "170-180-190",
+  "sheet_url": "https://www.rugianocdn.com/backoffice/media/9f7dfdb8-2d56-4a9a-b2b9-9219824a3fd8/BOHEME_SCHEDA_TECNICA.pdf",
+  "sheet_bytes": 245123
+ },
+ "indoor/bookcases/asia": {
+  "gated_links": {},
+  "pages": 4,
+  "description_en": "Double-sided modular bookcase, suitable for wall mounting or as a freestanding room divider, with vertical metal uprights in bronzed brass and polished steel finishes or upholstered in leather. Shelves upholstered in leather with a perimeter edge in bronzed brass",
+  "materials": [
+   "Structure: bronzed brass and chrome",
+   "Box and shelves: leather"
+  ],
+  "dimensions": [
+   "L 240 x D 43 x H 185"
+  ],
+  "dimensions_unit": "cm",
+  "notes": [],
+  "weight_kg": "150",
+  "sheet_url": "https://www.rugianocdn.com/backoffice/media/21cb8f70-84ae-4b19-99f4-dfd58d4cc0e8/01_Bookcase_ASIA.pdf",
+  "sheet_bytes": 204702
+ }
+}

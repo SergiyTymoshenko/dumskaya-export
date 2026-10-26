@@ -870,7 +870,22 @@ def rugiano():
     (Boheme — кровать, скамья, зеркало, тумба, диван), поэтому ключ — раздел + изделие. Исполнения — схемы «Measures»
     (картинки с размерами; подпись — имя файла). Дизайнер на сайте не указан. Технические характеристики (материалы,
     отделки) — после входа в Area riservata: не скачаны, в files_after_login — ссылка на страницу изделия."""
-    files, _ = files_of("rugiano")
+    files, sheet_info = files_of("rugiano")
+    sf = os.path.join(SRC, "rugiano/sheets.json")
+    SHEETS = json.load(open(sf, encoding="utf-8")) if os.path.exists(sf) else {}
+
+    def cm_line(s):
+        """«L 215 x D 217 x H 32/165 - Slat 160» → {l: 215, w: 217, h: 165} (см; у «32/165» — большее)."""
+        out = {}
+        for lab, key in (("L|W", "l"), ("D|P", "w"), ("H|A", "h")):
+            m = re.search(r"\b(?:" + lab + r")\s*(\d+(?:[.,]\d+)?(?:\s*/\s*\d+(?:[.,]\d+)?)*)", s)
+            if m:
+                out[key] = max(float(x.replace(",", ".")) for x in re.split(r"\s*/\s*", m.group(1)))
+                out[key] = int(out[key]) if out[key] == int(out[key]) else out[key]
+        m = re.search(r"(?:Ø|ø|diam\.?)\s*(\d+)", s, re.I)
+        if m and "l" not in out:
+            out["d"] = int(m.group(1))
+        return out or None
     SEC = {"beds": "bed", "vanity-tables": "console", "sofas": "sofa", "night-storage-units": None, "living-storage-units": None,
            "armchairs": "armchair", "chaise-longues": "chaise", "coffee-tables": None, "tables": "table", "chairs": "chair",
            "barstools": "stool", "bookcases": "bookcase", "desks": "desk", "consoles": "console", "benches": "bench",
@@ -913,14 +928,34 @@ def rugiano():
                 drw.append({k: d[k] for k in ("file", "width", "height", "bytes")} | {"source": {"site": d["src"], "version": nm or None}})
         links = {"page": p["url"]}
         gated = []
-        if p.get("spec_after_login"):
+        sh = SHEETS.get(p["key"]) or {}
+        sheets = []
+        tech = None
+        if sh.get("sheet_url"):                           # техкарта из Area riservata (вход владельца, 26.10.2026)
+            links["datasheet"] = sh["sheet_url"]
+            shp, _ = sheet(files, sheet_info, sh["sheet_url"])
+            sheets = [shp] if shp else []
+            rows = [f"Materials: {'; '.join(sh.get('materials') or [])}"] if sh.get("materials") else []
+            if sh.get("weight_kg"):
+                rows.append(f"Weight (kg): {sh['weight_kg']}")
+            rows += sh.get("notes") or []
+            tech = {"en": "\n".join(rows)} if rows else None
+            dv = [{"name": {"en": x}, "dims_cm": cm_line(x)} for x in sh.get("dimensions") or []]
+            if dv:
+                vers = [{k: v for k, v in x.items() if v} for x in dv]
+        for k, title in (("2D FILE", "2D (DWG)"), ("3D FILE", "3D"), ("GALLERY", "Photo gallery (ZIP)")):
+            if k in (sh.get("gated_links") or {}):
+                gated.append({"title": title, "url": p["url"]})
+        if gated:
+            links["files_2d3d"] = p["url"] + "  (2D/3D и галерея — после входа на сайте Rugiano, Area riservata)"
+        elif p.get("spec_after_login") and not sh.get("sheet_url"):
             links["spec_after_login"] = p["url"] + "  (технические характеристики — после входа на сайте Rugiano, Area riservata)"
             gated = [{"title": "Technical specification", "url": p["url"]}]
         out.append({"mfr_key": p["key"], "model": model, "type": t, "collection": slug(model_for_name(smart_title(p.get("title"), mixed=True), t)),
                     "category": " / ".join(c for c in (p.get("crumbs") or [])[1:-1]) or None, "designer": None,
-                    "place": [p["place"]], "mfr_code": None, "text": {"en": text},
+                    "place": [p["place"]], "mfr_code": None, "text": {"en": text}, "tech": tech,
                     "versions": vers, "images": [x for x in (img(files, u) for u in p.get("images") or []) if x],
-                    "drawings": drw, "sheets": [], "links": links, "files_after_login": gated})
+                    "drawings": drw, "sheets": sheets, "links": links, "files_after_login": gated})
     return out
 
 
