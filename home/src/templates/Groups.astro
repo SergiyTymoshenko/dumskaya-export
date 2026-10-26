@@ -49,10 +49,10 @@ const showBrand = page.kind !== 'brand';
     ))}
   </div>
 )}
-{groups.map((g) => (
+{groups.map((g, gi) => (
   <section class="group">
     <h2 class="group__h wrap"><a href={paths.cat(g.c)[l]}>{catName(g.c, l)}</a></h2>
-    <div class="grid wrap">{g.ps.map((p) => <ProductCard p={p} lang={l} showBrand={showBrand} />)}</div>
+    <div class="grid wrap">{g.ps.map((p, j) => <ProductCard p={p} lang={l} showBrand={showBrand} eager={tiles.length === 0 && gi === 0 && j < 4} />)}</div>
     {g.more && <p class="wrap group__more"><a class="btn" href={g.more}>{T.showAll}</a></p>}
   </section>
 ))}

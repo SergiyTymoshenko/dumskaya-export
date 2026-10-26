@@ -93,7 +93,7 @@
 .pgal__i img, .pgal__i .ph { width: 100%; aspect-ratio: 1; object-fit: cover; }
 .pgal__i--cut img { object-fit: contain; padding: 4%; }
 .pgal__i--main { grid-column: 1 / -1; }
-.pgal__i--main img { aspect-ratio: auto; max-height: 82vh; object-fit: contain; }
+.pgal__i--main img { aspect-ratio: var(--ar, auto); max-height: 82vh; object-fit: contain; }   /* --ar — пропорции фото (Img ratio): место занято до загрузки, без сдвига вёрстки */
 .pgal__i--main .ph { aspect-ratio: 4 / 3; }
 .pinfo { display: grid; gap: 16px; align-content: start; }
 .pinfo__brand { margin: 0; font: 400 13px/1.4 var(--display); text-transform: uppercase; letter-spacing: 0.18em; }
