@@ -310,6 +310,11 @@
   .bub .vis.on { border-color: var(--up); color: var(--up); font-weight: 600; }
   .drow { display: grid; grid-template-columns: calc(72px * min(var(--k), 1.25)) 1fr; gap: 12px; align-items: start; width: 100%; }
   .gallery .custom { outline: 2px dashed var(--warn); outline-offset: -2px; }
+  .morebtn { display: block; margin: 0 auto 14px; color: var(--text-2); background: transparent; }
+  .opsbox { margin-top: 14px; border-top: 1px solid var(--grid); padding-top: 10px; }
+  .opsbox > summary { cursor: pointer; font-weight: 650; min-height: 40px; display: flex; align-items: center; list-style: none; color: var(--text-1); }
+  .opsbox > summary::-webkit-details-marker { display: none; }
+  .opsbox > summary::before { content: '▸'; margin-right: 8px; color: var(--muted); } .opsbox[open] > summary::before { content: '▾'; }
   /* согласованное заказчиком фото (решено 25.10.2026): аккуратная зелёная галочка в углу; у Ирины под фото — галочка «согласовано» */
   .thumb, .doc { position: relative; }
   .okmark { position: absolute; right: 6px; bottom: 6px; width: 22px; height: 22px; border-radius: 50%; pointer-events: none;
@@ -368,6 +373,7 @@
   const MONTHS = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
   const MON = ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
   let S = null, P = null, tab = 'projects', view = 'list', filter = 'work', query = '', fileTab = 'measure', peopleTab = 'clients', period = 'month', M = null, lastPid = null;
+  let moreOpen = false;      // в проекте: пустые блоки (товары, услуги, подрядчики) развернули кнопкой
   let fileVer = {}, fileVerNew = {}, fileRoom = {};   // в файлах проекта: выбранный вариант (правка), новая правка, помещение для загрузки
   let L = null, LS = null, A = null, leadFilter = 'new', leadQuery = '';   // заявка, список заявок, доступ к боту
   let OWNER = false;          // разработчик: в «Студии» сайт, доступ к боту и проекты — только просмотр (решено 25.10.2026)
@@ -655,11 +661,10 @@
     const jump = el('div', 'jump');                       // длинная страница на телефоне: сразу к нужному блоку
     [['sec-files', 'Файлы' + (files.length ? ' · ' + files.length : '')],
       OWNER ? null : ['sec-chat', 'Разговоры' + (chat.unread ? ' · ' + chat.unread + ' нов.' : chat.count ? ' · ' + chat.count : '')], ['sec-money', 'Деньги'],
-      ['sec-orders', 'Товары' + (orders.length ? ' · ' + orders.length : '')], ['sec-services', 'Услуги' + (services.length ? ' · ' + services.length : '')],
-      ['sec-contractors', (contractors.some(isSup) ? 'Подрядчики и поставщики' : 'Подрядчики') + (contractors.length ? ' · ' + contractors.length : '')],
+      orders.length ? ['sec-orders', 'Товары · ' + orders.length] : null, services.length ? ['sec-services', 'Услуги · ' + services.length] : null,
+      contractors.length ? ['sec-contractors', (contractors.some(isSup) ? 'Подрядчики и поставщики' : 'Подрядчики') + ' · ' + contractors.length] : null,
       ['sec-client', 'Заказчики' + (ppl.length ? ' · ' + ppl.length : '')],
-      (P.assistants || []).length ? ['sec-team', 'Сотрудники' + (P.assistants.filter((a) => a.assigned).length ? ' · ' + P.assistants.filter((a) => a.assigned).length : '')] : null,
-      ['sec-ops', 'Операции' + (ops.length ? ' · ' + ops.length : '')]].filter(Boolean).forEach(([id, t]) =>
+      (P.assistants || []).length ? ['sec-team', 'Сотрудники' + (P.assistants.filter((a) => a.assigned).length ? ' · ' + P.assistants.filter((a) => a.assigned).length : '')] : null].filter(Boolean).forEach(([id, t]) =>
       jump.append(el('button', { class: 'chip', type: 'button', onclick: () => document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' }) }, t)));
     app.append(jump);
 
@@ -699,7 +704,17 @@
       el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission') }, el('span', null, '🎁'), 'Бонус'),
       el('button', { class: 'btn', type: 'button', onclick: () => ensureWorking(() => orderSheet(null)) }, el('span', null, '🛋'), 'Товар'),
       el('button', { class: 'btn', type: 'button', onclick: () => ensureWorking(() => serviceSheet(null)) }, el('span', null, '🧾'), 'Услуга')));
+    // операции — здесь же, в «Деньгах» (решено 26.10.2026), свёрнутым списком
+    if (ops.length) {
+      const ul = el('ul', 'ops');
+      ops.forEach((x) => ul.append(opRow(x)));
+      m.append(el('details', { class: 'opsbox', id: 'sec-ops' }, el('summary', null, 'Операции · ' + ops.length), ul));
+    } else m.append(el('p', { class: 'small muted', style: 'margin:12px 0 0' }, 'Операций пока нет.'));
     app.append(m);
+    // пустые блоки (товары, доп. услуги, подрядчики) не загромождают проект: спрятаны, открываются маленькой кнопкой
+    const empties = [];
+    const more = el('div', { hidden: moreOpen ? null : true });
+    const place = (sec, empty, name) => { if (empty) { empties.push(name); more.append(sec); } else app.append(sec); };
 
     // товары заказчика
     const og = el('section', { class: 'card', id: 'sec-orders' });
@@ -719,7 +734,7 @@
       });
       og.append(ul);
     }
-    app.append(og);
+    place(og, !orders.length, 'товары');
 
     // доп. услуги
     const sv = el('section', { class: 'card', id: 'sec-services' });
@@ -737,7 +752,7 @@
       });
       sv.append(ul);
     }
-    app.append(sv);
+    place(sv, !services.length, 'доп. услуги');
 
     // подрядчики: этапы, бонус студии, долг, кабинет
     const k = el('section', { class: 'card', id: 'sec-contractors' });
@@ -754,7 +769,15 @@
         el('p', { class: 'small muted', style: 'margin:2px 0 0' }, '🔒 Им платите вы, пишете им только вы. Заказчик, подрядчики и ваши сотрудники их не видят.'));
       hired.forEach((x) => k.append(hiredBlock(x)));
     }
-    app.append(k);
+    place(k, !contractors.length, 'подрядчики');
+
+    if (empties.length) {
+      const btn = el('button', { class: 'btn small morebtn', type: 'button', 'aria-expanded': String(moreOpen), onclick: () => {
+        moreOpen = !moreOpen; more.hidden = !moreOpen; btn.setAttribute('aria-expanded', String(moreOpen));
+        btn.firstChild.textContent = (moreOpen ? '▴ Скрыть: ' : '▾ Ещё: ') + empties.join(', ');
+      } }, el('span', null, (moreOpen ? '▴ Скрыть: ' : '▾ Ещё: ') + empties.join(', ')));
+      app.append(btn, more);
+    }
 
     // заказчики проекта и их кабинет
     const c = el('section', { class: 'card', id: 'sec-client' });
@@ -893,16 +916,6 @@
     if (!OWNER) f.addEventListener('drop', (e) => { e.preventDefault(); f.classList.remove('drop'); const fs = [...((e.dataTransfer && e.dataTransfer.files) || [])]; if (fs.length && fileTab !== 'work') upload(fs, fileTab, target()); });
     jump.after(f);                                       // файлы с визуализациями — сразу под шапкой проекта (решено 26.10.2026)
 
-    // операции
-    const o = el('section', { class: 'card', id: 'sec-ops' });
-    o.append(el('h2', null, 'Операции'));
-    if (!ops.length) o.append(el('p', 'muted small', OWNER ? 'Пока нет.' : 'Пока нет. Оплаты заказчика, бонусы и оплаты за товары появятся здесь — кнопки в блоке «Деньги».'));
-    else {
-      const ul = el('ul', 'ops');
-      ops.forEach((x) => ul.append(opRow(x)));
-      o.append(ul);
-    }
-    app.append(o);
 
     // подробности
     const d = el('section', 'card');
