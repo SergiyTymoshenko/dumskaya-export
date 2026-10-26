@@ -9,7 +9,7 @@ import fontBodyLat from '@fontsource/commissioner/files/commissioner-latin-400-n
 import fontDisplayCyr from '@fontsource/montserrat/files/montserrat-cyrillic-400-normal.woff2?url';
 import fontBodyCyr from '@fontsource/commissioner/files/commissioner-cyrillic-400-normal.woff2?url';
 import { LANGS, HREFLANG, HTML_LANG, OG_LOCALE, DEFAULT, homePath, ui } from '../lib/i18n';
-import { manifest, site, phones, homeSite, homeEmail, paths, type HPage } from '../lib/catalog';
+import { manifest, site, phones, homeSite, homeEmail, paths, brandsInfo, type HPage } from '../lib/catalog';
 
 interface Props { page: HPage; noindex?: boolean; schema?: any[] }
 const { page, noindex = false, schema = [] } = Astro.props;
@@ -21,13 +21,38 @@ const ogUrl = og ? `${SITE}/img/${(og.files.find(([w]) => w >= 960) || og.files[
 // и BreadcrumbList, на главной и в «Контактах» — ещё организация. Product не ставим: без цены (offers) Google считает
 // такую разметку ошибкой, а цены на сайте не публикуются.
 const ORG = `${SITE}/#org`, WEB = `${SITE}/#website`;
+// Товар: страница — ItemPage о конкретном изделии; фабрика — организация со своим сайтом (Entity SEO, граф знаний),
+// дизайнер — человек, фото — ImageObject с указанием правообладателя (снимки фабрики). Product не ставим (см. выше).
+const pr = page.kind === 'product' ? page.product : undefined;
+const bi = pr ? brandsInfo[pr.factory] : undefined;
+const BRAND = pr ? `${SITE}/${pr.brand_slug}#brand` : '';
+const imgObj = (name: string, alt: string) => {
+  const m = manifest[name];
+  if (!m) return null;
+  const f = m.files.find(([w]) => w >= 960) || m.files[m.files.length - 1];
+  return { '@type': 'ImageObject', contentUrl: `${SITE}/img/${f[1]}`, width: f[0], height: Math.round(f[0] * m.height / m.width),
+    caption: alt, creditText: pr!.brand, copyrightNotice: `© ${bi?.legal || pr!.brand}`, creator: { '@id': BRAND } };
+};
+const prImgs = pr ? pr.images.map((im, i) => imgObj(im.name, `${pr.name[page.lang]} — ${pr.brand}, ${ui(page.lang).photo.toLowerCase()} ${i + 1}`)).filter(Boolean) : [];
+const productNodes: any[] = pr ? [
+  { '@type': 'Organization', '@id': BRAND, name: pr.brand, ...(bi?.legal ? { legalName: bi.legal } : {}), ...(bi?.site ? { url: bi.site, sameAs: [bi.site] } : {}) },
+  ...(pr.designer ? [{ '@type': 'Person', '@id': `${SITE}/#designer-${pr.designer.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`, name: pr.designer }] : []),
+] : [];
 const graph: any[] = [
   { '@type': 'WebSite', '@id': WEB, url: SITE + '/', name: 'DUMSKAYA HOME', inLanguage: HTML_LANG[page.lang], publisher: { '@id': ORG } },
-  { '@type': ['dept', 'cat', 'outdoor', 'brand', 'brands'].includes(page.kind) ? 'CollectionPage' : 'WebPage', '@id': url(page.path) + '#page',
+  { '@type': ['dept', 'cat', 'outdoor', 'brand', 'brands'].includes(page.kind) ? 'CollectionPage' : page.kind === 'product' ? 'ItemPage' : 'WebPage', '@id': url(page.path) + '#page',
     url: url(page.path), name: page.h1, inLanguage: HTML_LANG[page.lang], isPartOf: { '@id': WEB },
-    ...(page.description ? { description: page.description } : {}), ...(ogUrl ? { primaryImageOfPage: ogUrl } : {}),
+    ...(page.description ? { description: page.description } : {}),
+    ...(pr && prImgs.length ? { primaryImageOfPage: prImgs[0], image: prImgs } : ogUrl ? { primaryImageOfPage: ogUrl } : {}),
+    ...(pr ? { about: { '@id': BRAND }, ...(productNodes[1] ? { mentions: { '@id': productNodes[1]['@id'] } } : {}),
+      keywords: [pr.brand, pr.model, pr.collection_name, pr.name[page.lang], pr.designer].filter((x, i, a) => x && a.indexOf(x) === i).join(', '),
+      publisher: { '@id': ORG } } : {}),
     ...(page.crumbs.length ? { breadcrumb: { '@id': url(page.path) + '#crumbs' } } : {}) },
 ];
+graph.push(...productNodes);
+// на остальных страницах — короткая запись о магазине, чтобы publisher и @id организации были на каждой странице
+if (page.kind !== 'home' && page.kind !== 'contact') graph.push({ '@type': 'Organization', '@id': ORG, name: 'DUMSKAYA HOME', url: SITE + '/',
+  logo: SITE + '/logo.svg', parentOrganization: { '@type': 'Organization', name: 'DUMSKAYA DESIGN', url: 'https://dumskaya-design.com/' } });
 if (page.kind === 'home' || page.kind === 'contact') graph.push({
   '@type': 'Organization', '@id': ORG, name: 'DUMSKAYA HOME', url: SITE + '/', logo: SITE + '/logo.svg', ...(homeEmail ? { email: homeEmail } : {}),
   areaServed: 'Worldwide',                          // доставка по всему миру
@@ -62,6 +87,8 @@ const verify = homeSite.verification || {};
   {page.description && <meta property="og:description" content={page.description} />}
   <meta property="og:url" content={url(page.path)} />
   {ogUrl && <meta property="og:image" content={ogUrl} />}
+  {ogUrl && pr && <meta property="og:image:alt" content={`${pr.name[page.lang]} — ${pr.brand}`} />}
+  {pr && <meta property="product:brand" content={pr.brand} />}
   <meta name="twitter:card" content="summary_large_image" />
   {verify.google && <meta name="google-site-verification" content={verify.google} />}
   {verify.yandex && <meta name="yandex-verification" content={verify.yandex} />}

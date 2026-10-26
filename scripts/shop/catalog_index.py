@@ -398,7 +398,7 @@ def export(products, out_path, only_published):
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     json.dump({"generated": datetime.datetime.now().isoformat(timespec="seconds"), "taxonomy": TAX,
                "brands": {f: {"name": MFR[f]["name"], "slug": BRAND_SLUG.get(f) or slug(MFR[f]["name"]), "country": MFR[f]["country"],
-                              "site": MFR[f]["site"], "published": PUBLISH["factories"].get(f), "ru": TAX.get("brands_ru", {}).get(f, "")}
+                              "site": MFR[f]["site"], "legal": MFR[f].get("legal", ""), "published": PUBLISH["factories"].get(f), "ru": TAX.get("brands_ru", {}).get(f, "")}
                           for f in {p["factory"] for p in products}},
                "products": slim}, open(out_path, "w", encoding="utf-8"), ensure_ascii=False)
     print(f"→ {os.path.relpath(out_path, ROOT)}: товаров {len(slim)}")

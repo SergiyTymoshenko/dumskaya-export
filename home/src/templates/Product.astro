@@ -28,6 +28,7 @@ const same = sortProducts((byBrand[p.brand_slug] || []).filter((x) => x.category
 const meta: [string, string, string?][] = [
   ...(p.collection_name && p.collection_name.toLowerCase() !== p.model.toLowerCase() ? [[T.collection, p.collection_name] as [string, string]] : []),
   ...(p.designer ? [[T.design, p.designer] as [string, string]] : []),
+  ...(p.year ? [[T.year, String(p.year).replace(/\s*[-–]\s*/, '–')] as [string, string]] : []),
   ...(p.place !== 'indoor' ? [[T.forOutdoor, p.place === 'both' ? `${T.indoor} · ${T.outdoor}` : '✓'] as [string, string]] : []),
   [T.sku, p.sku],
 ];

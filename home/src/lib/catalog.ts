@@ -22,7 +22,7 @@ export type Product = {
 export type ImageFile = { width: number; height: number; files: [number, string][]; cut?: boolean; bg?: string };
 
 export const tax = raw.taxonomy;
-export const brandsInfo: Record<string, { name: string; slug: string; country: string; site: string; ru?: string; published?: { since: string } | null }> = raw.brands;
+export const brandsInfo: Record<string, { name: string; slug: string; country: string; site: string; legal?: string; ru?: string; published?: { since: string } | null }> = raw.brands;
 export const products: Product[] = raw.products;
 export const manifest: Record<string, ImageFile> = read('image-manifest.json', {});
 export const site = JSON.parse(fs.readFileSync(path.join(DATA, '../../content/site.json'), 'utf8'));
