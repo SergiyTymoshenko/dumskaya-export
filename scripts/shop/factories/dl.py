@@ -17,6 +17,7 @@ import sys
 import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
+from urllib.parse import quote, unquote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 EXPORT = os.path.expanduser(os.environ.get("EXPORT_DIR") or "~/Documents/dumskaya-export")
@@ -29,7 +30,8 @@ def fetch(job):
     tmp = f"{dst}.part{threading.get_ident()}"
     try:
         os.makedirs(os.path.dirname(dst), exist_ok=True)
-        r = subprocess.run(["curl", "-sfL", "--retry", "2", "--max-time", "120", "-A", UA, "-o", tmp, url])
+        safe = quote(unquote(url), safe=":/?=&;,+@~#%!$'()*[]")       # пробелы и буквы с акцентами в именах файлов фабрик
+        r = subprocess.run(["curl", "-sfL", "--retry", "2", "--max-time", "120", "-A", UA, "-o", tmp, safe])
         if r.returncode == 0 and os.path.exists(tmp) and os.path.getsize(tmp) > 0:
             os.replace(tmp, dst)
             return True
