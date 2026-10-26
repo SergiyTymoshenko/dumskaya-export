@@ -1048,6 +1048,61 @@ def giorgetti():
     return out
 
 
+def lago():
+    """Lago: товар — страница изделия lagodesign.com/en/design/<изделие>/ (scripts/shop/factories/lago.py). Название
+    у фабрики — «модель + тип» («Air Sofa», «36e8 Glass Sideboard», иногда «Coffee Table Layers»): тип — по названию,
+    модель — название без слов типа. Размеров и исполнений на сайте нет (конфигуратор, каталог фабрики), отделки — списком."""
+    files, _ = files_of("lago")
+    TYPEWORDS = r"\b(sofa bed|sofa|armchair|chaise longue|pouf|chair|stool|bench|coffee table|side table|table|desk|console|" \
+                r"bedside tables?|bed|single bed|bookshelf|bookcase|wall unit|tv unit|sideboard|dresser|storage furniture|" \
+                r"walk-in closet|wardrobe|pantry|kitchen|basin|mirror|lamp|centerpiece|rug|cabinet)\b"
+    out = []
+    for p in json.load(open(os.path.join(SRC, "lago/site.json"), encoding="utf-8")):
+        title = p.get("title") or p["slug"]
+        cat = " ".join(p.get("category") or [])
+        t = kw(title) or kw(cat) or "decor"
+        if t == "lamp":
+            t = "suspension" if re.search(r"suspen|pendant", title + " " + (p.get("description") or ""), re.I) else \
+                "floor" if re.search(r"floor", title + " " + (p.get("description") or ""), re.I) else "table_lamp"
+        if re.search(r"basin", title, re.I):
+            t = "bathroom"
+        if re.search(r"pantry", title, re.I):
+            t = "kitchen_unit" if "kitchen_unit" in FURN else "kitchen"
+        kids = re.search(r"child|kids", title, re.I)
+        m = re.sub(r"\bfor (the )?children['’]?s ?rooms?\b|\bchildren['’]?s ?room\b|\bchildren['’]?s\b|\bchildrenroom\b", " ", title, flags=re.I)
+        m = re.sub(r"\btv[ -]unit\b", "TV", m, flags=re.I)                   # ТВ-тумба и стенка одной серии — разные названия
+        m = re.sub(TYPEWORDS + r"|\b(shelf|shelving|storage|walk-in-closet|lavabo|sedia|letto)\b", " ", m, flags=re.I)
+        m = re.sub(r"\bTv\b", "TV", re.sub(r"N\.O\.W\.\s+Now\b", "N.O.W.", m))
+        model = re.sub(r"\s+", " ", m).strip(" -") or title
+        if kids:
+            model += " Kids"
+        model = re.sub(r"\bTv\b", "TV", smart_title(model, mixed=True))
+        fins = {}
+        for f in p.get("finishings") or []:
+            g = (f.get("what") or "Finishes").strip()
+            fins.setdefault(g, []).append(f.get("title"))
+        text = "\n\n".join(x for x in [p.get("subtitle"), p.get("description")] + [
+            ((b.get("title") + ". ") if b.get("title") else "") + (b.get("text") or "") for b in p.get("blocks") or []] if x)
+        links = {"page": p["url"]}
+        if p.get("configurator"):
+            links["configurator"] = p["configurator"]
+        if p.get("catalog"):
+            links["catalog"] = p["catalog"]
+        tl = p.get("tech_links") or {}
+        if tl.get("link_models"):
+            links["files_2d3d"] = tl["link_models"] + "  (модели 2D/3D — Dropbox фабрики)"
+        if tl.get("link_technical_sheet"):
+            links["datasheet"] = tl["link_technical_sheet"]
+        place = ["outdoor"] if re.search(r"outdoor", cat + " " + " ".join(p.get("rooms") or []) + " " + title, re.I) else ["indoor"]
+        out.append({"mfr_key": p["slug"], "model": model, "type": t, "collection": slug(model),
+                    "category": cat or None, "designer": p.get("designer"), "year": p.get("year"), "place": place,
+                    "mfr_code": None, "text": {"en": text},
+                    "finishes": {g: {"count": len(v), "examples": v[:8]} for g, v in fins.items()} or None, "versions": [],
+                    "images": [x for x in (img(files, u) for u in p.get("images") or []) if x],
+                    "drawings": [], "sheets": [], "links": links})
+    return out
+
+
 FACT = {
     "olev": {"fn": olev, "kind": "light", "range": (3000, 3399), "name": "OLEV", "site": "https://www.olevlight.com/en/"},
     "delta": {"fn": delta, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
@@ -1061,6 +1116,7 @@ FACT = {
     "rimadesio": {"fn": rimadesio, "kind": "furn", "range": (8700, 8999), "name": "Rimadesio", "site": "https://www.rimadesio.it/en/"},
     "calligaris": {"fn": calligaris, "kind": "furn", "range": (9000, 9499), "name": "Calligaris", "site": "https://www.calligaris.com/en-RW"},
     "rugiano": {"fn": rugiano, "kind": "furn", "range": (9500, 9999), "name": "Rugiano", "site": "https://www.rugiano.com/en/products"},
+    "lago": {"fn": lago, "kind": "furn", "range": (10000, 10299), "name": "Lago", "site": "https://www.lagodesign.com/en/design/"},
     "giorgetti": {"fn": giorgetti, "kind": "furn", "range": (10300, 10799), "name": "Giorgetti", "site": "https://www.giorgettimeda.com/ww/en/products"},
 }
 

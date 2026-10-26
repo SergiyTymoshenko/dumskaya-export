@@ -593,5 +593,32 @@
  "DF-T9802": {
   "variant": "Office",
   "_why": "Rugiano, 26.10.2026: President из раздела office — другое основание и глубина 125 (DF-T9801 — овальный стол)"
+ },
+ "DF-H10050": {
+  "qual": "walkin",
+  "_why": "Lago, 26.10.2026: гардеробная комната (walk-in closet)"
+ },
+ "DF-H10162": {
+  "qual": "walkin",
+  "_why": "Lago, 26.10.2026: гардеробная комната (walk-in closet)"
+ },
+ "DF-H10197": {
+  "qual": "walkin",
+  "_why": "Lago, 26.10.2026: гардеробная комната (walk-in closet)"
+ },
+ "DF-B10110": {
+  "name": {
+   "en": "Bed in Bed",
+   "ru": "Кровать Bed in Bed",
+   "de": "Bett Bed in Bed",
+   "fr": "Lit Bed in Bed",
+   "es": "Cama Bed in Bed"
+  },
+  "model": "Bed in Bed",
+  "_why": "Lago, 26.10.2026: модель называется Bed in Bed"
+ },
+ "DF-D10184": {
+  "hide": "подборка на сайте фабрики, не изделие",
+  "_why": "Lago, 26.10.2026: Space Saving Ideas"
  }
 }

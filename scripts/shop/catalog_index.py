@@ -92,6 +92,8 @@ QUAL = {
                  "fr": "Brasero {m}", "es": "Brasero {m}"},
     "dessert": {"en": "{m} dessert stand", "ru": "Подставка для десертов {m}", "de": "{m} Etagere",
                 "fr": "Présentoir à desserts {m}", "es": "Soporte para postres {m}"},
+    "walkin": {"en": "{m} walk-in closet", "ru": "Гардеробная {m}", "de": "{m} begehbarer Kleiderkasten",
+               "fr": "Dressing {m}", "es": "Vestidor {m}"},
     "lantern": {"en": "{m} outdoor lantern", "ru": "Уличный фонарь {m}", "de": "{m} Outdoor-Laterne",
                 "fr": "Lanterne d’extérieur {m}", "es": "Farol de exterior {m}"},
 }

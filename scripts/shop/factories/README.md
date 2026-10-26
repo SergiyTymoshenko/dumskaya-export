@@ -111,15 +111,12 @@ Calligaris (с 25.10.2026, закреплена за разработчиком)
 
 Все — за Александром Замлинским. Свободные номера артикулов: 4700–4999 и от 9000.
 
-- **Lago** — начата. Карта сайта `https://www.lago.it/sitemap_it.xml`: около 200 адресов `/design/<изделие>/`, среди них
-  около 45 разделов и подборок (tutti-i-prodotti, armadi, divani, letti, tavoli, cucine, soggiorno, camera-da-letto,
-  lampade, mensole, idee-salvaspazio…) — их пропускать. Английская версия — на другом домене:
-  `https://www.lagodesign.com/en/design/<изделие по-английски>/` (у страницы есть `hreflang` en/fr/es, русского нет).
-  Сайт на Nuxt: данные страницы — `https://www.lago.it/_nuxt/static/1/design/<изделие>/payload.js` (тексты, отделки
-  sections-finishings, материалы sections-technical-materials), так проще, чем разбирать страницу. «Scarica modelli 3D»
-  и «Scarica catalogo» — через форму (forms-dynamic-forms): не качаем, ссылку — в `links.files_2d3d`. Конфигуратор:
-  `https://configurator.lago.it/<раздел>/<изделие>`. robots.txt разрешает обход (закрыты /privacy, /cookies, /posizione/*,
-  /feed/, `?store=`, `?s=`). Артикулы — DF-9500–9799 (9000–9499 с 25.10.2026 — у Calligaris).
+- **Lago** — собрана 26.10.2026 (203 изделия, на сайт пойдёт 202; артикулы DF/DL-…10000–10299): `lago.py crawl`, `sources`,
+  `sizes`. Карта сайта lago.it теперь пустая — список изделий берётся из payload страницы /en/design/all-products/
+  английского сайта lagodesign.com (`productsCategories`), данные изделия — из его payload.js (выполняется в node:
+  `nuxt.cjs`): название, подзаголовок, описание и блоки, дизайнер, год, категория, комнаты, отделки, фото Thron (до 12;
+  размеры — по началу файла: обрезка в данных страницы с файлом не совпадает), ссылки на конфигуратор, каталог и, где есть,
+  модели 2D/3D (Dropbox). Размеров и исполнений на сайте нет — они в конфигураторе и каталоге фабрики.
 - **Rugiano** — собрана 26.10.2026 (366 изделий, артикулы DF/DL-…9500–9999). Регистрация владельца в Area riservata одобрена
   26.10.2026; в тот же день после его входа во встроенном браузере собраны ссылки на техкарты (`rugiano_sheets.py <links.json>`):
   363 техкарты PDF — материалы у 348, размеры в см у 348, вес у 341 (`content/shop/sources/rugiano/sheets.json`), PDF — в
