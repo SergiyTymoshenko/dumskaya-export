@@ -959,6 +959,95 @@ def rugiano():
     return out
 
 
+def giorgetti():
+    """Giorgetti: товар — страница изделия (EN) в разделе сайта (данные прочитаны в браузере 26.10.2026,
+    scripts/shop/factories/giorgetti.py). Исполнения — коды фабрики с описанием и размерами в см (Ш × Г × В или Ø × В),
+    отделки — группы и число вариантов, техкарта PDF — открыта; технические чертежи — после входа на сайте (ссылка)."""
+    files, _ = files_of("giorgetti")
+    SEC = {"armchairs": "armchair", "office-armchairs": "chair", "sofas": "sofa", "tables": "table", "writing-desk": "desk",
+           "beds": "bed", "wardrobes-and-cabins": "wardrobe", "giorgetti-atmosphere/Rugs": "rug",
+           "kitchens-and-accessories": "kitchen"}
+    ALLOW = {"chairs-and-stools": ("chair", "stool", "bench"), "poufs-and-benches": ("pouf", "bench", "stool"),
+             "tables-and-trolleys": ("coffee_table", "side_table", "trolley", "console", "table", "desk"),
+             "containers-and-bookcases": ("bookcase", "sideboard", "storage", "drawers", "bedside", "console"),
+             "chests-of-drawers-night-tables-and-vanity": ("drawers", "bedside", "console", "desk", "storage", "mirror"),
+             }
+
+    def dims(cm):
+        """«58 x 60 x h 84» → {l, w, h}; «Ø cm 30 x h 100 ÷ 325» → {d, h} (см; у диапазона — большее)."""
+        s = cm.replace(",", ".")
+        num = r"(\d+(?:\.\d+)?)"
+        out = {}
+        m = re.search(r"Ø\s*(?:cm\s*)?" + num, s)
+        if m:
+            out["d"] = float(m.group(1))
+        else:
+            m = re.match(r"\s*" + num + r"\s*x\s*" + num, s)
+            if m:
+                out["l"], out["w"] = float(m.group(1)), float(m.group(2))
+        m = re.search(r"\bh\s*" + num + r"(?:\s*÷\s*" + num + r")?", s)
+        if m:
+            out["h"] = max(float(x) for x in m.groups() if x)
+        return {k: int(v) if v == int(v) else v for k, v in out.items()} or None
+
+    def lamp(text):
+        return ("suspension" if re.search(r"suspen|pendant|chandelier", text, re.I)
+                else "ceiling" if re.search(r"ceiling", text, re.I)
+                else "wall" if re.search(r"\bwall\b|applique", text, re.I)
+                else "floor" if re.search(r"\bfloor\b", text, re.I)
+                else "table_lamp")
+    out = []
+    for p in json.load(open(os.path.join(SRC, "giorgetti/site.json"), encoding="utf-8")):
+        sec = p["section"]
+        abstracts = [v.get("abstract") or "" for v in p.get("versions") or []]
+        first = (p.get("details") or "").split(".")[0]
+        t = SEC.get(sec)
+        if not t:
+            allowed = ALLOW.get(sec)
+            t = majority(abstracts, allowed) or (kw(first) if not allowed or kw(first) in allowed else None) \
+                or majority(abstracts) or kw(first) or kw(p.get("subtitle")) or (allowed[0] if allowed else None)
+        if sec == "giorgetti-atmosphere/Lighting" or t == "lamp":
+            t = lamp(" ".join(abstracts[:3]) + " " + first)
+        if sec == "chairs-and-stools" and t == "armchair":       # «Small armchair» у стульев — стул с подлокотниками
+            t = "chair"
+        if sec == "tables-and-trolleys" and t == "table":
+            t = "coffee_table" if re.search(r"low|coffee|occasional|side", " ".join(abstracts) + first, re.I) else "table"
+        t = t or "decor"
+        place = ["outdoor"] if sec == "open-air" or re.search(r"open air|outdoor", p["slug"] + " " + p["title"], re.I) else ["indoor"]
+        model = smart_title(p["title"], mixed=True)
+        vers = []
+        for v in p.get("versions") or []:
+            name = " — ".join(x for x in (v["code"], v.get("abstract")) if x)
+            if v.get("cm"):
+                name += f" ({v['cm'].replace('Ø cm', 'Ø').rstrip(' Ø')} cm)"
+            vers.append({k: x for k, x in {"name": {"en": name}, "code": v["code"], "dims_cm": dims(v.get("cm") or "")}.items() if x})
+        fin = {}
+        for cat, cols in (p.get("materials") or {}).items():
+            for col, info in cols.items():
+                fin[cat if col == cat else f"{cat} / {col}"] = {"count": info["count"], "examples": info["examples"]}
+        text = "\n\n".join(x for x in (p.get("subtitle"), p.get("details")) if x)
+        sheets = []
+        for u in p.get("sheets") or []:
+            v = files.get(u)
+            if v:
+                sheets.append({"file": v["file"], "url": u, "pages": v.get("pages"), "bytes": v.get("bytes")})
+        links = {"page": p["url"]}
+        if sheets:
+            links["datasheet"] = sheets[0]["url"]
+        gated = []
+        if p.get("drawings_after_login"):
+            links["files_2d3d"] = p["url"] + "  (технические чертежи — после входа на сайте Giorgetti)"
+            gated = [{"title": "Technical drawings", "url": p["url"]}]
+        out.append({"mfr_key": p["key"], "model": model, "type": t,
+                    "collection": slug(model_for_name(model, t)), "category": sec.replace("giorgetti-atmosphere/", "Atmosphere / ").replace("-", " ").title(),
+                    "designer": p.get("designer"), "year": p.get("year"), "place": place, "mfr_code": None,
+                    "text": {"en": text}, "tech": {"en": f"Covers: {p['covers']}"} if p.get("covers") else None,
+                    "finishes": fin or None, "versions": vers,
+                    "images": [x for x in (img(files, u) for u in p.get("images") or []) if x],
+                    "drawings": [], "sheets": sheets, "links": links, "files_after_login": gated})
+    return out
+
+
 FACT = {
     "olev": {"fn": olev, "kind": "light", "range": (3000, 3399), "name": "OLEV", "site": "https://www.olevlight.com/en/"},
     "delta": {"fn": delta, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
@@ -972,6 +1061,7 @@ FACT = {
     "rimadesio": {"fn": rimadesio, "kind": "furn", "range": (8700, 8999), "name": "Rimadesio", "site": "https://www.rimadesio.it/en/"},
     "calligaris": {"fn": calligaris, "kind": "furn", "range": (9000, 9499), "name": "Calligaris", "site": "https://www.calligaris.com/en-RW"},
     "rugiano": {"fn": rugiano, "kind": "furn", "range": (9500, 9999), "name": "Rugiano", "site": "https://www.rugiano.com/en/products"},
+    "giorgetti": {"fn": giorgetti, "kind": "furn", "range": (10300, 10799), "name": "Giorgetti", "site": "https://www.giorgettimeda.com/ww/en/products"},
 }
 
 
