@@ -45,6 +45,9 @@ def fetch(job):
 def main():
     f = sys.argv[1]
     src = os.path.join(ROOT, "content/shop/sources", f, "files.json")
+    if not os.path.exists(src):                      # IDL собрана своим путём (scripts/shop/idl_factory), файлы уже на Маке
+        print(f"{f}: списка файлов нет ({os.path.relpath(src, ROOT)}) — скачивать нечего")
+        return
     files = json.load(open(src, encoding="utf-8"))["files"]
     def have(v):                                     # уже скачан (размер не сверяем: CDN фабрики пережимает фото со временем)
         p = os.path.join(EXPORT, v["file"])
