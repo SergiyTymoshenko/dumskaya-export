@@ -912,6 +912,15 @@ install chromium`). Итог каждой проверки — «UI/UX: всё �
 
 ## Тексты и SEO
 
+- **Правило владельца (26.10.2026): каждая страница обоих сайтов — с полным набором SEO** (SEO, GEO, AIO, AEO, LLM SEO, SERP,
+  E-E-A-T, Core Web Vitals — INP, LCP, CLS, Schema.org, ссылки, Search Intent, LSI, Crawl Budget, RAG, Entity SEO,
+  Knowledge Graph, семантический поиск, Zero-Click, Programmatic SEO), **дизайн при этом не меняется**. Машинная часть
+  у студии — `scripts/check_site.py` (`check_page_seo`): Organization, WebSite, BreadcrumbList, страница с описанием,
+  og:image:alt; товар магазина — ItemPage, фото — ImageObject с правообладателем и лицензией, og:type product,
+  product:brand, без Product (цен нет); у всех фото width/height. У каталога — `scripts/check_home.py`
+  (`check_product_seo`, раздел DUMSKAYA HOME). Замер скорости живого сайта 26.10.2026: LCP главной 1,5 с (компьютер) /
+  2,3 с (телефон), остальные < 1 с, CLS ≤ 0,06, ответ меню 80–130 мс.
+  У товаров магазина студии (Executive Desk 2026) пока нет своих текстов — нет фактов (материалы, размеры): их даёт владелец.
 - **Как писать тексты** — `content/TEXT_STYLE.md`: факты студии, на которые можно опираться, и список шаблонных
   оборотов («нейромаркеров»), которых не должно быть ни в русском тексте, ни в переводах.
   Проверка всех страниц на пяти языках: `python3 scripts/text_markers.py` (должно быть «найдено: 0»).

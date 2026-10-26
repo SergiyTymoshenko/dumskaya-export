@@ -114,7 +114,16 @@ const crumbItems = crumbs
 const BREADCRUMB = `${abs(page.path)}#breadcrumb`;
 graph.push({ '@type': 'BreadcrumbList', '@id': BREADCRUMB, itemListElement: crumbItems });
 
-const pageType = page.type === 'contact' ? 'ContactPage' : page.type === 'about' ? 'AboutPage'
+// товар магазина студии (мебель DUMSKAYA DESIGN) — ItemPage: изделие, его фото с правообладателем; Product не ставим — цен нет
+const isShopItem = page.type === 'shop' && /^\/shop\/(?!cat\/)[^/]+$/.test(ru);
+const photoObj = (i: { id: string; alt?: string }) => ({
+  '@type': 'ImageObject', contentUrl: img(i.id), caption: i.alt,
+  creator: { '@type': 'Organization', name: 'DUMSKAYA DESIGN' }, creditText: 'DUMSKAYA DESIGN',
+  copyrightNotice: '© DUMSKAYA DESIGN', copyrightHolder: { '@id': ORG },
+  license: abs(localize('/image-license', lang) || '/image-license'),
+  acquireLicensePage: abs(localize('/contact-studio-interior-design-bratislava-vienna', lang) || '/contact-studio-interior-design-bratislava-vienna'),
+});
+const pageType = isShopItem ? 'ItemPage' : page.type === 'contact' ? 'ContactPage' : page.type === 'about' ? 'AboutPage'
   : page.type === 'portfolio' || ru === '/kupkuhni-na-zakaz-vienna-bratislava' || (page.type === 'shop' && ru === '/shop') ? 'CollectionPage' : 'WebPage';
 const images = allGalleryImages(page).filter((i) => manifest[i.id]);
 const primary = img(page.type === 'home' ? home.hero : (page.og_image && manifest[page.og_image] ? page.og_image : images[0]?.id));
@@ -122,7 +131,9 @@ graph.push({
   '@type': pageType, '@id': PAGE, url: abs(page.path), name: page.title, description: page.description || undefined,
   inLanguage: HREFLANG[lang], isPartOf: { '@id': WEBSITE }, breadcrumb: { '@id': BREADCRUMB },
   about: { '@id': page.type === 'home' || page.type === 'about' || page.type === 'contact' ? ORG : STUDIO },
-  primaryImageOfPage: primary ? { '@type': 'ImageObject', url: primary } : undefined,
+  primaryImageOfPage: isShopItem && images[0] ? photoObj(images[0]) : primary ? { '@type': 'ImageObject', url: primary } : undefined,
+  ...(isShopItem ? { image: images.slice(0, 12).map(photoObj), publisher: { '@id': ORG },
+    keywords: [page.h1, page.title.match(/\((TDD-\d+)\)/)?.[1], 'Executive Desk 2026', 'DUMSKAYA DESIGN'].filter(Boolean).join(', ') } : {}),
 });
 
 // Услуга: страницы услуг, посадочные регионов и страницы пакетов
@@ -182,13 +193,7 @@ if (page.type === 'project' || page.type === 'kitchen') {
   graph.push({
     '@type': 'CreativeWork', name: page.h1, description: page.description, inLanguage: HREFLANG[lang], url: abs(page.path),
     mainEntityOfPage: { '@id': PAGE }, creator: { '@id': ORG },
-    image: images.slice(0, 12).map((i) => ({
-      '@type': 'ImageObject', contentUrl: img(i.id), caption: i.alt,
-      creator: { '@type': 'Organization', name: 'DUMSKAYA DESIGN' }, creditText: 'DUMSKAYA DESIGN',
-      copyrightNotice: '© DUMSKAYA DESIGN', copyrightHolder: { '@id': ORG },
-      license: abs(localize('/image-license', lang) || '/image-license'),
-      acquireLicensePage: abs(localize('/contact-studio-interior-design-bratislava-vienna', lang) || '/contact-studio-interior-design-bratislava-vienna'),
-    })),
+    image: images.slice(0, 12).map(photoObj),
   });
 }
 const faq = page.sections.flatMap((s) => s.blocks).filter((b: any) => b.type === 'faq').flatMap((b: any) => b.items);

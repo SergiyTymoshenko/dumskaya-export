@@ -39,7 +39,9 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
     <link rel="alternate" hreflang={HREFLANG[l]} href={url(page.alternates[l]!)} />
   ))}
   {!noindex && <link rel="alternate" hreflang="x-default" href={url(xDefault)} />}
-  <meta property="og:type" content="website" />
+  {/* товар магазина студии — og:type product и бренд (мебель DUMSKAYA DESIGN) */}
+  <meta property="og:type" content={page.type === 'shop' && /^\/shop\/(?!cat\/)[^/]+$/.test(page.alternates.ru || page.path) ? 'product' : 'website'} />
+  {page.type === 'shop' && /^\/shop\/(?!cat\/)[^/]+$/.test(page.alternates.ru || page.path) && <meta property="product:brand" content="DUMSKAYA DESIGN" />}
   <meta property="og:site_name" content="DUMSKAYA DESIGN" />
   <meta property="og:locale" content={OG_LOCALE[lang]} />
   {!noindex && LANGS.filter((l) => l !== lang && page.alternates[l]).map((l) => <meta property="og:locale:alternate" content={OG_LOCALE[l]} />)}
@@ -47,6 +49,7 @@ const analytics = import.meta.env.PUBLIC_ANALYTICS === '1';
   {page.description && <meta property="og:description" content={page.description} />}
   <meta property="og:url" content={url(page.path)} />
   {ogUrl && <meta property="og:image" content={ogUrl} />}
+  {ogUrl && <meta property="og:image:alt" content={page.h1 || page.title} />}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="google-site-verification" content={site.verification.google} />
   <meta name="yandex-verification" content={site.verification.yandex} />

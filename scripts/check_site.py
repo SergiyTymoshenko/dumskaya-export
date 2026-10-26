@@ -192,6 +192,48 @@ def url_of(f):
     return "/" + unquote(rel[:-5])
 
 
+def check_page_seo(u, p, h, errs):
+    """Полный набор SEO на каждой странице студии (правило владельца 26.10.2026, README «SEO страниц»): разметка Schema.org —
+    организация, сайт, крошки и страница с описанием и главным фото; og:image с подписью; товар магазина — ItemPage, фото —
+    ImageObject с правообладателем, og:type product и product:brand, без Product (цен нет); главное фото — сразу, у фото —
+    width/height (CLS)."""
+    bad, nodes = [], []
+    for block in p.ld:
+        try:
+            o = json.loads(block)
+            nodes += o.get("@graph") or [o]
+        except Exception:
+            pass
+    types = {str(n.get("@type")) for n in nodes}
+    for t in ("Organization", "WebSite", "BreadcrumbList"):
+        if t not in types and not (t == "Organization" and "['ProfessionalService', 'HomeAndConstructionBusiness']" in types):
+            bad.append(f"нет {t}")
+    page = next((n for n in nodes if str(n.get("@type", "")).endswith("Page")), None)
+    if not page or not page.get("description"):
+        bad.append("нет страницы (WebPage …) с описанием в разметке")
+    if 'property="og:image"' in h and 'property="og:image:alt"' not in h:
+        bad.append("нет og:image:alt")
+    ru = urlparse(p.alts.get("ru", "")).path or u           # товар — по русскому адресу (/shop/<товар>, не /shop/cat/…)
+    shop_item = bool(re.match(r"^/shop/(?!cat/)[^/]+$", ru))
+    if shop_item:
+        if not page or page.get("@type") != "ItemPage":
+            bad.append("товар магазина — не ItemPage")
+        elif 'class="sgal' in h and "<img" in h.split('class="sgal', 1)[1][:400]:
+            im = page.get("primaryImageOfPage") or {}
+            if im.get("@type") != "ImageObject" or not im.get("copyrightNotice"):
+                bad.append("главное фото товара — не ImageObject с правообладателем")
+        if 'content="product"' not in h or 'property="product:brand"' not in h:
+            bad.append("нет og:type product / product:brand")
+    if "Product" in types:
+        bad.append("разметка Product без цены — ошибка для Google")
+    for tag in re.findall(r"<img\b[^>]*>", h):
+        if "data-lb" not in tag and ("width=" not in tag or "height=" not in tag):
+            bad.append("фото без width/height (CLS)")
+            break
+    for b in bad:
+        errs.append(f"SEO страницы: {b} (README, правило 26.10.2026): {u}")
+
+
 def main():
     files = [f for f in glob.glob(os.path.join(DIST, "**", "*.html"), recursive=True) if not f.endswith("404.html")]
     pages = {url_of(f): f for f in files}
@@ -240,6 +282,7 @@ def main():
             except Exception as e:
                 errs.append(f"JSON-LD не читается: {u}: {e}")
         check_crumbs(u, p, parsed, errs)
+        check_page_seo(u, p, raw_html[u], errs)
         lang = lang_of(u)
         if lang in OWN_PHONE:
             check_phones(u, raw_html[u], errs)
