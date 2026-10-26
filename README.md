@@ -644,7 +644,7 @@ PDF у фабрики.
 `scripts/shop/factories_import.py` из `content/shop/sources/<фабрика>/`; как собраны данные с сайтов фабрик
 и скачаны файлы — `scripts/shop/factories/README.md`. Файлы — в папке выгрузки на Mac:
 фото и чертежи `~/Documents/dumskaya-export/images/shop/<фабрика>/`, техкарты `~/Documents/dumskaya-export/catalogs/<фабрика>/`.
-Остальные фабрики из списка (Lago — начата, Rugiano — ждём регистрацию, Giorgetti, Il Paralume Marina) отложены до запуска dumskaya-home.com; что о них уже известно — `scripts/shop/factories/README.md`, «Незавершённые фабрики». При загрузке их тоже закрепить за Александром Замлинским.
+Остальные фабрики из списка (Lago — начата, Giorgetti, Il Paralume Marina; Rugiano собрана 26.10.2026) отложены до запуска dumskaya-home.com; что о них уже известно — `scripts/shop/factories/README.md`, «Незавершённые фабрики». При загрузке их тоже закрепить за Александром Замлинским.
 **Страницы товаров на сайт студии не выкладываем** — они будут на dumskaya-home.com (раздел ниже): партиями
 по фабрикам, со своими текстами на пяти языках (решено 25.10.2026). Что и когда выложено по каждой фабрике —
 в документе «План работы по фабрикам» (claude.ai).

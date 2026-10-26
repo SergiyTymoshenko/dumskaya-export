@@ -850,6 +850,80 @@ def calligaris():
     return out
 
 
+IT_WORDS = [(r"\bCOMPOSIZIONE\b", "composition"), (r"\bCON\b", "with"), (r"\bTAVOLINO\b", "side table"), (r"\bTAVOLO\b", "table"),
+            (r"\bANGOLO\b", "corner"), (r"\bPANCA\b", "bench"), (r"\bLETTO\b", "bed"), (r"\bCOMODINO\b", "bedside table"),
+            (r"\bSPECCHIO\b", "mirror"), (r"\bTONDO\b", "round"), (r"\bRETTANGOLARE\b", "rectangular"), (r"\bOVALE\b", "oval"),
+            (r"\bDIVANO\b", "sofa"), (r"\bPOLTRONA\b", "armchair"), (r"\bSEDIA\b", "chair"), (r"\bSGABELLO\b", "stool"),
+            (r"\bBRACCIOLI\b", "armrests"), (r"\bSENZA\b", "without"), (r"\bDX\b", "right"), (r"\bSX\b", "left")]
+
+
+def rugiano_version(title):
+    """Подпись схемы «Measures» (имя файла: «BOHEME CON POUF», «RAFAEL 175») → по-английски, с заглавной."""
+    t = title
+    for a, b in IT_WORDS:
+        t = re.sub(a, b, t, flags=re.I)
+    return smart_title(t, mixed=False)
+
+
+def rugiano():
+    """Rugiano: товар — страница изделия (EN) в разделе indoor или outdoor; одна модель бывает в нескольких разделах
+    (Boheme — кровать, скамья, зеркало, тумба, диван), поэтому ключ — раздел + изделие. Исполнения — схемы «Measures»
+    (картинки с размерами; подпись — имя файла). Дизайнер на сайте не указан. Технические характеристики (материалы,
+    отделки) — после входа в Area riservata: не скачаны, в files_after_login — ссылка на страницу изделия."""
+    files, _ = files_of("rugiano")
+    SEC = {"beds": "bed", "vanity-tables": "console", "sofas": "sofa", "night-storage-units": None, "living-storage-units": None,
+           "armchairs": "armchair", "chaise-longues": "chaise", "coffee-tables": None, "tables": "table", "chairs": "chair",
+           "barstools": "stool", "bookcases": "bookcase", "desks": "desk", "consoles": "console", "benches": "bench",
+           "poufs": "pouf", "mirrors": "mirror", "home-accessories": None, "carpets": "rug", "lighting": None,
+           "office": None, "fireplaces": "decor", "sunbeds": "sunbed", "metal-curtains": "screen", "bar-cabinets": "sideboard"}
+    out = []
+    for p in json.load(open(os.path.join(SRC, "rugiano/site.json"), encoding="utf-8")):
+        label, sec = p.get("label") or "", p["section"]
+        first = " ".join((b.get("paras") or [""])[0] for b in (p.get("blocks") or [])[:1])
+        t = SEC.get(sec) or kw(label) or kw(p.get("title")) or kw(first) or "decor"
+        if sec == "coffee-tables":
+            t = "side_table" if re.search(r"side", label + " " + p["title"], re.I) else "coffee_table"
+        LABEL = {"library": "bookcase", "tv cabinet": "storage", "bar cabinets": "sideboard", "painting": "decor",
+                 "office chair": "chair", "chests of drawers": "drawers", "vanity table": "console", "fireplace": "decor",
+                 "home accessory": "decor", "tray": "tray", "wardrobe": "wardrobe", "bedside table": "bedside"}
+        if sec in ("night-storage-units", "living-storage-units", "office", "home-accessories"):
+            t = LABEL.get(label.lower()) or kw(label) or kw(p["title"]) or ("storage" if "storage" in sec else "decor")
+            if sec == "night-storage-units" and t == "side_table":      # «Side Table» в ночных — тумба у кровати
+                t = "bedside"
+            if sec == "home-accessories" and t == "decor":            # аксессуар: что именно — по названию и первой фразе
+                t = kw(p["title"]) or kw(first) or "decor"
+                if t in ("table", "chair", "sofa", "bed", "lamp"):
+                    t = "decor"
+        if t == "lamp" or sec == "lighting":
+            s = f"{p['title']} {label} {first}"
+            t = ("ceiling" if re.search(r"\bceiling\b", p["title"], re.I)
+                 else "suspension" if re.search(r"suspension|pendant|chandelier|ceiling", s, re.I) and not re.search(r"\bfloor\b", p["title"], re.I)
+                 else "wall" if re.search(r"\bwall\b|sconce|appliqu", s, re.I)
+                 else "floor" if re.search(r"\bfloor\b", s, re.I)
+                 else "table_lamp" if re.search(r"\btable\b|desk", s, re.I) else "suspension")
+        model = smart_title(p.get("name_full") or p.get("title"), mixed=True)
+        text = "\n\n".join(x for b in p.get("blocks") or [] for x in (b.get("heads") or []) + (b.get("paras") or []) if x)
+        vers, drw = [], []
+        for m in p.get("measures") or []:
+            nm = rugiano_version(m.get("title") or "")
+            if nm and nm not in [x["name"]["en"] for x in vers]:
+                vers.append({"name": {"en": nm}})
+            d = img(files, m.get("drawing"))
+            if d:
+                drw.append({k: d[k] for k in ("file", "width", "height", "bytes")} | {"source": {"site": d["src"], "version": nm or None}})
+        links = {"page": p["url"]}
+        gated = []
+        if p.get("spec_after_login"):
+            links["spec_after_login"] = p["url"] + "  (технические характеристики — после входа на сайте Rugiano, Area riservata)"
+            gated = [{"title": "Technical specification", "url": p["url"]}]
+        out.append({"mfr_key": p["key"], "model": model, "type": t, "collection": slug(model_for_name(smart_title(p.get("title"), mixed=True), t)),
+                    "category": " / ".join(c for c in (p.get("crumbs") or [])[1:-1]) or None, "designer": None,
+                    "place": [p["place"]], "mfr_code": None, "text": {"en": text},
+                    "versions": vers, "images": [x for x in (img(files, u) for u in p.get("images") or []) if x],
+                    "drawings": drw, "sheets": [], "links": links, "files_after_login": gated})
+    return out
+
+
 FACT = {
     "olev": {"fn": olev, "kind": "light", "range": (3000, 3399), "name": "OLEV", "site": "https://www.olevlight.com/en/"},
     "delta": {"fn": delta, "kind": "light", "range": (3400, 4699), "name": "Delta Light", "site": "https://deltalight.com/en"},
@@ -862,6 +936,7 @@ FACT = {
     "misuraemme": {"fn": misuraemme, "kind": "furn", "range": (8400, 8699), "name": "MisuraEmme", "site": "https://www.misuraemme.it/en/"},
     "rimadesio": {"fn": rimadesio, "kind": "furn", "range": (8700, 8999), "name": "Rimadesio", "site": "https://www.rimadesio.it/en/"},
     "calligaris": {"fn": calligaris, "kind": "furn", "range": (9000, 9499), "name": "Calligaris", "site": "https://www.calligaris.com/en-RW"},
+    "rugiano": {"fn": rugiano, "kind": "furn", "range": (9500, 9999), "name": "Rugiano", "site": "https://www.rugiano.com/en/products"},
 }
 
 

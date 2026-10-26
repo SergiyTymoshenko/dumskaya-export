@@ -1,4 +1,4 @@
-# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto, Minotti, Poliform, MisuraEmme, Rimadesio, Calligaris)
+# Данные фабрик с их сайтов (OLEV, Delta Light, Baxter, Flexform, Molteni&C, Maxalto, Minotti, Poliform, MisuraEmme, Rimadesio, Calligaris, Rugiano)
 
 Откуда берутся `content/shop/sources/<фабрика>/` и каталоги `content/shop/catalog/<фабрика>.json`.
 У IDL — свой путь: `scripts/shop/idl_factory/README.md`.
@@ -25,6 +25,8 @@
    python3 rimadesio.py                           # → rimadesio.json (EN + RU страницы, ≈ 5 минут)
    python3 calligaris.py crawl && python3 calligaris.py build && python3 calligaris.py sizes && python3 calligaris.py sources
                                                   # → content/shop/sources/calligaris/ сразу (≈ 25 минут; шаги 2–5 не нужны)
+   python3 rugiano.py crawl && python3 rugiano.py sizes && python3 rugiano.py sources
+                                                  # → content/shop/sources/rugiano/ сразу (≈ 10 минут; шаги 2–5 не нужны)
    ```
 
    Страницы кешируются в `cache/` — повторный запуск не ходит на сайт заново. Ничего из этого не хранится в git.
@@ -73,6 +75,7 @@
 | Rimadesio | EN и RU тексты, дизайнер («Design …»), раздел и тип, технические детали, фото, техническая документация PDF коллекции (одна на несколько изделий) | в PDF коллекции (размеры композиций «W … H … D …» в мм) |
 | MisuraEmme | EN текст и техническое описание, дизайнер, тип, отделки с кодами, чертежи PNG из «Dimensions» (оригинал вместо миниатюры); техкарта — версия страницы для печати (ссылка) | в подписи чертежа в мм («W. 824 x D. 816 mm», «ø1550») → см |
 | Calligaris | EN описание (en-RW — международная версия), раздел, размеры (высота, ширина, глубина, высота сиденья…), розничная цена в евро, фото на белом (cloudfront) и интерьерные (Contentful, до 2400 px), прямые ссылки OBJ / DWG / SKP | в данных страницы, в см |
+| Rugiano | EN: тип изделия (подпись над названием), название, тексты блоков описания, фото, схемы «Measures» (PNG, имя файла — модель и размер); раздел indoor / outdoor; одна модель — в нескольких разделах (ключ — раздел + изделие); дизайнеров на сайте нет. «Technical specification» (материалы, отделки) — после входа в Area riservata (https://www.rugiano.com/en/reserved-area), не качаем: ссылка `links.spec_after_login`. Открытые каталоги PDF — https://www.rugiano.com/en/catalogues | на схемах «Measures» (картинка) |
 
 Чертежи Delta Light — векторные SVG; `width`/`height` в каталоге — размеры из `viewBox` (у многих 128×128),
 это не пиксели. На сайт их отдавать как SVG или растрировать с повышенной плотностью
@@ -117,8 +120,8 @@ Calligaris (с 25.10.2026, закреплена за разработчиком)
   и «Scarica catalogo» — через форму (forms-dynamic-forms): не качаем, ссылку — в `links.files_2d3d`. Конфигуратор:
   `https://configurator.lago.it/<раздел>/<изделие>`. robots.txt разрешает обход (закрыты /privacy, /cookies, /posizione/*,
   /feed/, `?store=`, `?s=`). Артикулы — DF-9500–9799 (9000–9499 с 25.10.2026 — у Calligaris).
-- **Rugiano** — подана регистрация для профессионалов (https://www.rugiano.com/en/login), на 25.10.2026 «на рассмотрении».
-  Размеры у Rugiano открыты только после входа.
+- **Rugiano** — собрана 26.10.2026 (366 изделий, артикулы DF/DL-…9500–9999). Регистрация владельца в Area riservata одобрена
+  26.10.2026: технические характеристики (материалы, отделки) там; схемы с размерами открыты и без входа.
 - **Giorgetti** — сайт не пускает автоматическое чтение страниц (защита от роботов). Варианты: через браузер или каталог
   от фабрики через Замлинского.
 - **Il Paralume Marina** — свет; данные изделий после входа на сайте, нужна регистрация.
