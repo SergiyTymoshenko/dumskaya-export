@@ -17667,6 +17667,1811 @@
    "file": "catalogs/rugiano/indoor-bookcases-asia.pdf",
    "pages": 4,
    "bytes": 204702
+  },
+  "https://www.rugianocdn.com/backoffice/media/d04217e8-cf0c-4182-85a4-0aebf819f8cb/02_Bookcase_ASIA_HIGH.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-asia-high.pdf",
+   "pages": 4,
+   "bytes": 212364
+  },
+  "https://www.rugianocdn.com/backoffice/media/ac4efa5e-9f2e-482f-ae27-66528b0f63e8/03_Bookcase_ASIA_HIGH_BOX.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-asia-high-box.pdf",
+   "pages": 4,
+   "bytes": 218777
+  },
+  "https://www.rugianocdn.com/backoffice/media/585f65db-d395-49a2-8fc8-954cf2ae70d7/ASIA_LOW_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-asia-low.pdf",
+   "pages": 4,
+   "bytes": 168552
+  },
+  "https://www.rugianocdn.com/backoffice/media/ae5e001a-43c7-4eb5-9be0-8fdcd5f4dab2/04_Bookcase_COQUETTE.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-coquette.pdf",
+   "pages": 4,
+   "bytes": 193318
+  },
+  "https://www.rugianocdn.com/backoffice/media/3e61ad4d-ff0d-4e67-bb26-96a9fd0e6869/COQUETTE-HIGH_TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-coquette-high.pdf",
+   "pages": 4,
+   "bytes": 207821
+  },
+  "https://www.rugianocdn.com/backoffice/media/6ea80482-d05b-402a-9618-33f8ef0ba01c/05_Bookcase_FLOYD.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-floyd.pdf",
+   "pages": 5,
+   "bytes": 221400
+  },
+  "https://www.rugianocdn.com/backoffice/media/e9185714-5278-47cb-9afd-82a43364eb30/06_Bookcase_FRAME.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-frame.pdf",
+   "pages": 6,
+   "bytes": 269361
+  },
+  "https://www.rugianocdn.com/backoffice/media/b56a5c17-a075-4a7b-a5b9-99017b0d5e6f/08_Bookcase_FRAME_BOX.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-frame-box.pdf",
+   "pages": 9,
+   "bytes": 367420
+  },
+  "https://www.rugianocdn.com/backoffice/media/3f4b367a-b7ad-4cb2-876b-6af66d7b01d2/07_Bookcase_FRAME_GLASS.pdf": {
+   "file": "catalogs/rugiano/indoor-bookcases-frame-glass.pdf",
+   "pages": 6,
+   "bytes": 280618
+  },
+  "https://www.rugianocdn.com/backoffice/media/7d3a34a1-1048-4f9c-be41-6193685b32a2/ABBRACCIO-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-abbraccio-poltroncina.pdf",
+   "pages": 4,
+   "bytes": 186650
+  },
+  "https://www.rugianocdn.com/backoffice/media/d4c6e756-ff5b-4ab3-a1e7-14994bc7a08f/Agata_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-agata.pdf",
+   "pages": 4,
+   "bytes": 165530
+  },
+  "https://www.rugianocdn.com/backoffice/media/45f002f0-b983-4602-8d56-525c891ac55f/Ambra_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-ambra.pdf",
+   "pages": 4,
+   "bytes": 173796
+  },
+  "https://www.rugianocdn.com/backoffice/media/15ea999d-e936-4e6a-8669-efadbe861580/Braid_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-braid.pdf",
+   "pages": 4,
+   "bytes": 183349
+  },
+  "https://www.rugianocdn.com/backoffice/media/0996b7bb-fa2e-47ac-a0e4-88f29e5caf70/Braid-Armchair_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-braid-round.pdf",
+   "pages": 4,
+   "bytes": 183349
+  },
+  "https://www.rugianocdn.com/backoffice/media/811237a7-6083-460b-8a51-b8baa0b69db7/Club_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-club.pdf",
+   "pages": 4,
+   "bytes": 169581
+  },
+  "https://www.rugianocdn.com/backoffice/media/ca1fbcfe-87ea-482c-9d37-570a4cd6063d/Coco_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-coco.pdf",
+   "pages": 4,
+   "bytes": 162429
+  },
+  "https://www.rugianocdn.com/backoffice/media/be34c430-b006-4e8e-a48e-33600744ace7/ELOISE-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-eloise.pdf",
+   "pages": 5,
+   "bytes": 205901
+  },
+  "https://www.rugianocdn.com/backoffice/media/667cdd94-09eb-4fae-8ede-694b7f8587b7/Fandango_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-fandango.pdf",
+   "pages": 4,
+   "bytes": 192271
+  },
+  "https://www.rugianocdn.com/backoffice/media/bd17c713-7810-4a6a-a4dd-d71db90469ad/Fandango-Armchair_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-fandango-2.pdf",
+   "pages": 4,
+   "bytes": 192271
+  },
+  "https://www.rugianocdn.com/backoffice/media/de6fd325-8cd0-4f4a-bb69-7cbf97087169/Giotto_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-giotto.pdf",
+   "pages": 4,
+   "bytes": 185090
+  },
+  "https://www.rugianocdn.com/backoffice/media/2d8da84d-7c00-4871-8feb-079e2bc5d77b/Infinity_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-infinity.pdf",
+   "pages": 4,
+   "bytes": 169816
+  },
+  "https://www.rugianocdn.com/backoffice/media/0819fec9-b052-4aab-98c0-75a50dc1d453/Iside_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-iside.pdf",
+   "pages": 4,
+   "bytes": 164586
+  },
+  "https://www.rugianocdn.com/backoffice/media/7ca9a832-4272-4129-b890-33cc0650de54/Manta_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-manta.pdf",
+   "pages": 5,
+   "bytes": 185392
+  },
+  "https://www.rugianocdn.com/backoffice/media/73f605b2-7f81-4a1f-9c19-15a91809b8f4/Marina-In-Armchair_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-marina-in.pdf",
+   "pages": 4,
+   "bytes": 200488
+  },
+  "https://www.rugianocdn.com/backoffice/media/b6c38cef-77d1-4747-9f1c-b7f2dd132b28/Opera-Armchair_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-opera.pdf",
+   "pages": 4,
+   "bytes": 212556
+  },
+  "https://www.rugianocdn.com/backoffice/media/2536478a-44fc-4699-a682-f3fda13cf3d7/Paris-Armchair_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-paris.pdf",
+   "pages": 4,
+   "bytes": 224112
+  },
+  "https://www.rugianocdn.com/backoffice/media/9929e554-7a45-48de-9efe-3a577f9fc56a/Perla_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-perla.pdf",
+   "pages": 4,
+   "bytes": 168697
+  },
+  "https://www.rugianocdn.com/backoffice/media/fe933af6-36d0-4a1c-8087-fd5f9fa1772a/ABBRACCIO-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-poltrona-abbraccio.pdf",
+   "pages": 4,
+   "bytes": 186650
+  },
+  "https://www.rugianocdn.com/backoffice/media/67b1de19-9974-4e7e-ad47-f48595c895ad/Rafael_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-rafael.pdf",
+   "pages": 4,
+   "bytes": 166668
+  },
+  "https://www.rugianocdn.com/backoffice/media/1218b9d8-94d6-4cdd-9447-45db220c9671/Snake-Armchair_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-snake.pdf",
+   "pages": 4,
+   "bytes": 162866
+  },
+  "https://www.rugianocdn.com/backoffice/media/4a45ef7e-e37e-4a25-a8f2-67d088dc5481/Vogue-Armchair_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-vogue.pdf",
+   "pages": 4,
+   "bytes": 199532
+  },
+  "https://www.rugianocdn.com/backoffice/media/a3648781-ec99-46c1-bd70-4065db943385/Wasabi_Armchair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-armchairs-wasabi.pdf",
+   "pages": 4,
+   "bytes": 201796
+  },
+  "https://www.rugianocdn.com/backoffice/media/9e81fbd6-f2c7-4a83-8d00-1a6dd27b3321/260309_CIRCE-STOOL-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-barstools-circe.pdf",
+   "pages": 4,
+   "bytes": 196408
+  },
+  "https://www.rugianocdn.com/backoffice/media/8b4a5910-930e-4371-bc5c-42fe53b8cd85/Demetra-In-Stool-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-barstools-demetra-in.pdf",
+   "pages": 4,
+   "bytes": 189218
+  },
+  "https://www.rugianocdn.com/backoffice/media/78017ead-3215-45d9-ac76-2b9e251c0467/Fandango-Stool-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-barstools-fandango.pdf",
+   "pages": 4,
+   "bytes": 164214
+  },
+  "https://www.rugianocdn.com/backoffice/media/8505fedd-84f1-4f94-bbab-2fac4b2c0902/Guenda_Stool_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-barstools-guenda.pdf",
+   "pages": 4,
+   "bytes": 161870
+  },
+  "https://www.rugianocdn.com/backoffice/media/2a1d6630-912e-4df1-a004-29993e40449a/Itaca_Stool_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-barstools-itaca.pdf",
+   "pages": 4,
+   "bytes": 162788
+  },
+  "https://www.rugianocdn.com/backoffice/media/828d2a64-66d5-419f-be9f-bb0f8ab8d5aa/Manta_Stool_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-barstools-manta.pdf",
+   "pages": 4,
+   "bytes": 166963
+  },
+  "https://www.rugianocdn.com/backoffice/media/4509836e-2a07-4dff-bfda-5aa481bf0fe3/ANAIS_SCHEDA-TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-anais.pdf",
+   "pages": 5,
+   "bytes": 203663
+  },
+  "https://www.rugianocdn.com/backoffice/media/fbd399ab-369a-4904-a297-73f526516ed8/AURA_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-aura.pdf",
+   "pages": 6,
+   "bytes": 248964
+  },
+  "https://www.rugianocdn.com/backoffice/media/b5f03f51-ebda-4ab9-a252-a835145155ab/AURA_LOW_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-aura-low.pdf",
+   "pages": 6,
+   "bytes": 194814
+  },
+  "https://www.rugianocdn.com/backoffice/media/aee7f822-8fdf-493d-8cc0-273ccb91501e/CLUB_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-club.pdf",
+   "pages": 6,
+   "bytes": 241820
+  },
+  "https://www.rugianocdn.com/backoffice/media/0a1e4ad6-65cf-4951-a9a6-fcf29306c341/CONCEPT-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-concept.pdf",
+   "pages": 5,
+   "bytes": 260019
+  },
+  "https://www.rugianocdn.com/backoffice/media/e836bcbc-ba8d-410a-a681-2aaa11b4e026/DAMASSE_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-damasse.pdf",
+   "pages": 5,
+   "bytes": 230015
+  },
+  "https://www.rugianocdn.com/backoffice/media/fd0ce326-9747-4269-a296-32f6e0220221/FALCON_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-falcon.pdf",
+   "pages": 5,
+   "bytes": 195786
+  },
+  "https://www.rugianocdn.com/backoffice/media/de3b0ce5-57b9-4009-9e89-b1a7872187e9/FALCON_SLIM_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-falcon-slim.pdf",
+   "pages": 5,
+   "bytes": 185927
+  },
+  "https://www.rugianocdn.com/backoffice/media/0a4f2c5d-c391-4afa-a0dc-bd35bbc4d183/FANDANGO_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-fandango.pdf",
+   "pages": 5,
+   "bytes": 196835
+  },
+  "https://www.rugianocdn.com/backoffice/media/0113acbd-ec4f-4938-860b-7574c04be7d2/GRACE_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-grace.pdf",
+   "pages": 6,
+   "bytes": 259749
+  },
+  "https://www.rugianocdn.com/backoffice/media/52005198-1c9d-4a43-8d73-b5bf3ce6170d/GRACE_BIG_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-grace-big.pdf",
+   "pages": 5,
+   "bytes": 242574
+  },
+  "https://www.rugianocdn.com/backoffice/media/bc196741-3d03-40da-bac4-4bc03cdb6e11/LOOM_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-loom.pdf",
+   "pages": 5,
+   "bytes": 193247
+  },
+  "https://www.rugianocdn.com/backoffice/media/b9ac784d-cf89-4fe2-80c6-d76db621e541/PRINCE_-SCHEDA-TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-prince.pdf",
+   "pages": 6,
+   "bytes": 230644
+  },
+  "https://www.rugianocdn.com/backoffice/media/37b2eb8a-0f3f-43b0-810f-6d598bbdf3a8/RUBIK_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-rubik.pdf",
+   "pages": 5,
+   "bytes": 191146
+  },
+  "https://www.rugianocdn.com/backoffice/media/0aad6768-bce8-41f8-9f60-f4cc31a1a397/RUBIK_big_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-rubik-big.pdf",
+   "pages": 5,
+   "bytes": 199918
+  },
+  "https://www.rugianocdn.com/backoffice/media/1992e6da-8ed2-4474-a35e-ffb930592cd7/SNAKE_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-snake.pdf",
+   "pages": 5,
+   "bytes": 190953
+  },
+  "https://www.rugianocdn.com/backoffice/media/f5f6ac85-ce82-4566-9c26-2b0a5a8794c2/TAYLOR_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-taylor.pdf",
+   "pages": 7,
+   "bytes": 274039
+  },
+  "https://www.rugianocdn.com/backoffice/media/fdd558e8-4f00-4969-918f-aff02e528db2/VICTORIA_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-victoria.pdf",
+   "pages": 5,
+   "bytes": 192189
+  },
+  "https://www.rugianocdn.com/backoffice/media/b2affe5d-73e6-4874-973b-3d9c00f35c89/VOGUE_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-beds-vogue.pdf",
+   "pages": 6,
+   "bytes": 265114
+  },
+  "https://www.rugianocdn.com/backoffice/media/233b7d11-8942-4ff2-9bf7-f8e3bdc87dda/ARTHUR_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-benches-arthur.pdf",
+   "pages": 4,
+   "bytes": 169174
+  },
+  "https://www.rugianocdn.com/backoffice/media/edbd5599-ad7a-45da-9438-b5ac619c7bef/BOHEME_panca_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-benches-boheme.pdf",
+   "pages": 4,
+   "bytes": 170434
+  },
+  "https://www.rugianocdn.com/backoffice/media/ffca738b-e7f6-4210-906e-65895b34f4e5/FORM-ZIP-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-benches-form-zip.pdf",
+   "pages": 6,
+   "bytes": 258946
+  },
+  "https://www.rugianocdn.com/backoffice/media/aed1793d-7eb7-4d9e-8492-27b332ea5416/GUENDA-BENCH-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-benches-guenda.pdf",
+   "pages": 4,
+   "bytes": 179476
+  },
+  "https://www.rugianocdn.com/backoffice/media/cd7d352e-1f3b-471d-8885-31398492a2dc/SNAKE_panca_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-benches-snake.pdf",
+   "pages": 5,
+   "bytes": 171672
+  },
+  "https://www.rugianocdn.com/backoffice/media/cd959bb9-7b5b-4693-9f59-d82d06a95ffd/SNAKE_panca_SCHEDA-TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-benches-snake-liscia.pdf",
+   "pages": 5,
+   "bytes": 171672
+  },
+  "https://www.rugianocdn.com/backoffice/media/73e68812-4084-4c80-8eca-c96d1b23480e/01_carpet_abstraction.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-abstraction.pdf",
+   "pages": 3,
+   "bytes": 264351
+  },
+  "https://www.rugianocdn.com/backoffice/media/7964bd39-a4c5-41c9-8220-9f617e303466/02_carpet_atic_grey.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-atic-grey.pdf",
+   "pages": 3,
+   "bytes": 234855
+  },
+  "https://www.rugianocdn.com/backoffice/media/44dd1fbc-2d2e-4b55-8917-dd45bc1c50e4/04_carpet_decoplein.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-decoplein.pdf",
+   "pages": 3,
+   "bytes": 445833
+  },
+  "https://www.rugianocdn.com/backoffice/media/41feba42-951e-4954-a3ac-d4651fe856b9/03_carpet_diadema.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-diadema.pdf",
+   "pages": 3,
+   "bytes": 182959
+  },
+  "https://www.rugianocdn.com/backoffice/media/8412f586-1c21-4336-87d3-94acfcf060a2/05_carpet_line.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-line.pdf",
+   "pages": 3,
+   "bytes": 173126
+  },
+  "https://www.rugianocdn.com/backoffice/media/23cb0d09-7197-4016-a168-e4237447ac14/06_carpet_line_bronze.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-line-bronze.pdf",
+   "pages": 3,
+   "bytes": 169083
+  },
+  "https://www.rugianocdn.com/backoffice/media/22576598-d18f-48cb-83c4-58e0c45fae20/carpets_line_bronze_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-line-bronze-round.pdf",
+   "pages": 2,
+   "bytes": 2004867
+  },
+  "https://www.rugianocdn.com/backoffice/media/dea0080f-fd04-47a1-942e-6c22fc17ccab/08_carpet_line_grey.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-line-grey.pdf",
+   "pages": 3,
+   "bytes": 580096
+  },
+  "https://www.rugianocdn.com/backoffice/media/47b2ece9-3207-4ed6-aeda-2dadec286167/07_carpet_line_light_blue.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-line-light-blue.pdf",
+   "pages": 3,
+   "bytes": 193876
+  },
+  "https://www.rugianocdn.com/backoffice/media/52000f66-557b-4ae1-90aa-6267afe83c95/10_carpet_passepartout_beige.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-passepartout-beige.pdf",
+   "pages": 3,
+   "bytes": 184557
+  },
+  "https://www.rugianocdn.com/backoffice/media/990016f0-0261-467b-9bbb-64515feb5b12/11_carpet_passepartout_oliva.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-passepartout-oliva.pdf",
+   "pages": 3,
+   "bytes": 184062
+  },
+  "https://www.rugianocdn.com/backoffice/media/e4a241e6-6d82-442c-8082-dcd3fb43c1c8/09_carpet_passepartout_white.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-passepartout-white.pdf",
+   "pages": 3,
+   "bytes": 180773
+  },
+  "https://www.rugianocdn.com/backoffice/media/3a335f6d-112b-49e5-a79b-02dda78806f6/12_carpet_signum.pdf": {
+   "file": "catalogs/rugiano/indoor-carpets-signum.pdf",
+   "pages": 3,
+   "bytes": 455489
+  },
+  "https://www.rugianocdn.com/backoffice/media/f684c35e-512c-4f3f-aae0-124fe4256662/CHARLOTTE-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-charlotte.pdf",
+   "pages": 4,
+   "bytes": 196589
+  },
+  "https://www.rugianocdn.com/backoffice/media/f94ec6da-6afa-4c8f-ad82-b7dce3bae1a7/Abbraccio_Chair_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-abbraccio.pdf",
+   "pages": 4,
+   "bytes": 185382
+  },
+  "https://www.rugianocdn.com/backoffice/media/662e77b5-0463-4646-9c69-6d48bd4d32a7/Aida_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-aida.pdf",
+   "pages": 4,
+   "bytes": 169327
+  },
+  "https://www.rugianocdn.com/backoffice/media/51a8fa9b-63d5-4fd8-b31b-ca8f00940c10/Aria_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-aria.pdf",
+   "pages": 4,
+   "bytes": 167010
+  },
+  "https://www.rugianocdn.com/backoffice/media/78e0b9ee-269c-40b0-bea7-47937411f211/Arianna_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-arianna.pdf",
+   "pages": 4,
+   "bytes": 169324
+  },
+  "https://www.rugianocdn.com/backoffice/media/de3bb912-a350-44dd-b833-01691e205a39/Camilla_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-camilla.pdf",
+   "pages": 4,
+   "bytes": 254045
+  },
+  "https://www.rugianocdn.com/backoffice/media/8354940c-caa5-4152-ba5a-88c1bf7b0466/Demetra_In_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-demetra-in.pdf",
+   "pages": 4,
+   "bytes": 218344
+  },
+  "https://www.rugianocdn.com/backoffice/media/d007a9bc-db8f-4d54-9f87-5807eeaca5aa/EGG-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-egg.pdf",
+   "pages": 4,
+   "bytes": 190442
+  },
+  "https://www.rugianocdn.com/backoffice/media/d5c23ba5-f177-4a3f-9320-6a67b95b774c/Fandango_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-fandango.pdf",
+   "pages": 4,
+   "bytes": 204306
+  },
+  "https://www.rugianocdn.com/backoffice/media/affaaac5-1617-4412-9d32-8a9c065812d4/Fandango_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-fandango-swivel.pdf",
+   "pages": 4,
+   "bytes": 204306
+  },
+  "https://www.rugianocdn.com/backoffice/media/a262a115-37c4-4a13-8fcf-eaf2af7c0de7/Giorgia_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-giorgia.pdf",
+   "pages": 4,
+   "bytes": 164082
+  },
+  "https://www.rugianocdn.com/backoffice/media/f8b5c8db-cd9b-4c3d-b5b5-335b1a7ca6b1/260306_GUENDA-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-guenda.pdf",
+   "pages": 5,
+   "bytes": 256746
+  },
+  "https://www.rugianocdn.com/backoffice/media/7996a799-06b3-48b1-aede-1edb9e6d86ec/Itaca_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-itaca.pdf",
+   "pages": 4,
+   "bytes": 168625
+  },
+  "https://www.rugianocdn.com/backoffice/media/db15a1fe-088b-43c1-aa4e-5838eca62cff/Manta_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-manta-new.pdf",
+   "pages": 4,
+   "bytes": 188943
+  },
+  "https://www.rugianocdn.com/backoffice/media/29d88a47-e191-4d3e-a8df-0903c005c6f8/MARIE_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-marie.pdf",
+   "pages": 4,
+   "bytes": 162563
+  },
+  "https://www.rugianocdn.com/backoffice/media/914c7698-4e1e-4b0d-89de-db6849c87fe8/Michelle_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-michelle.pdf",
+   "pages": 4,
+   "bytes": 162227
+  },
+  "https://www.rugianocdn.com/backoffice/media/f80bbd1e-1235-4245-9443-3494645eb977/Pocket_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-pocket.pdf",
+   "pages": 4,
+   "bytes": 166285
+  },
+  "https://www.rugianocdn.com/backoffice/media/c47dbf22-96b6-490e-a4ce-4e0cc83f5628/Pocket_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-chairs-pocket-p.pdf",
+   "pages": 4,
+   "bytes": 166285
+  },
+  "https://www.rugianocdn.com/backoffice/media/20d17475-1adb-429f-8a5f-290f1042f779/PIERRE-small-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chaise-longues-pierre-small.pdf",
+   "pages": 4,
+   "bytes": 244477
+  },
+  "https://www.rugianocdn.com/backoffice/media/633c156a-53ee-4edd-b9f2-9e224358a5ce/ABBRACCIO-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chaise-longues-abbraccio.pdf",
+   "pages": 4,
+   "bytes": 229050
+  },
+  "https://www.rugianocdn.com/backoffice/media/e546ca62-8dfd-4290-b2f8-a15f37f6c178/MANTA-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chaise-longues-manta.pdf",
+   "pages": 4,
+   "bytes": 229002
+  },
+  "https://www.rugianocdn.com/backoffice/media/84a6c36e-c80f-4297-8387-ea5bf0c08ecf/MANTA-2-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chaise-longues-manta-2.pdf",
+   "pages": 4,
+   "bytes": 212186
+  },
+  "https://www.rugianocdn.com/backoffice/media/4f4a676a-576d-4efb-bf3d-68bd5195473a/NAUTILUS--TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chaise-longues-nautilus.pdf",
+   "pages": 4,
+   "bytes": 218984
+  },
+  "https://www.rugianocdn.com/backoffice/media/b6d10c61-7a2d-40cf-9661-67e83d0b5319/PIERRE-2-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chaise-longues-pierre.pdf",
+   "pages": 4,
+   "bytes": 185325
+  },
+  "https://www.rugianocdn.com/backoffice/media/14147c51-1046-435e-bf38-f56db9eff475/RAFAEL-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-chaise-longues-rafael.pdf",
+   "pages": 4,
+   "bytes": 201101
+  },
+  "https://www.rugianocdn.com/backoffice/media/934db838-958f-436e-82a4-994214ca14a4/01_Coffee_Table_Bonsai.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-bonsai.pdf",
+   "pages": 9,
+   "bytes": 265416
+  },
+  "https://www.rugianocdn.com/backoffice/media/790b56ec-b49b-4a15-92c1-54029db1be50/02_Coffee_Table_Decoro.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-decoro.pdf",
+   "pages": 10,
+   "bytes": 334242
+  },
+  "https://www.rugianocdn.com/backoffice/media/25311052-af8d-43c5-99fd-7351f9d96673/03_Coffee_Table_Field.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-field.pdf",
+   "pages": 6,
+   "bytes": 256134
+  },
+  "https://www.rugianocdn.com/backoffice/media/5c36412c-5a03-4012-8317-98e8228c731d/04_Coffee_Table_Forest.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-forest.pdf",
+   "pages": 9,
+   "bytes": 348266
+  },
+  "https://www.rugianocdn.com/backoffice/media/2190f1d3-c270-472e-81c6-373bec82edb6/05_Coffee_Table_Gatsby.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-gatsby.pdf",
+   "pages": 8,
+   "bytes": 308605
+  },
+  "https://www.rugianocdn.com/backoffice/media/e0d63a07-bff3-486e-8343-d27c7d6adf93/06_Coffee_Table_Genesi.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-genesi.pdf",
+   "pages": 6,
+   "bytes": 262166
+  },
+  "https://www.rugianocdn.com/backoffice/media/be8fd147-daf3-4fa6-8fbc-52f48686be3d/07_Coffee_Table_Globo.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-globo.pdf",
+   "pages": 4,
+   "bytes": 252399
+  },
+  "https://www.rugianocdn.com/backoffice/media/50a26b61-5dff-4d6e-ae4f-7a682be6ad90/08_Coffee_Table_Hugo.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-hugo.pdf",
+   "pages": 5,
+   "bytes": 238056
+  },
+  "https://www.rugianocdn.com/backoffice/media/cc2100e2-8631-4f24-a8d6-c93e6fc938ef/09_Coffee_Table_Incanto.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-incanto.pdf",
+   "pages": 6,
+   "bytes": 300583
+  },
+  "https://www.rugianocdn.com/backoffice/media/a0e5fc50-d867-4980-b52f-9ddbea6f3155/INCANTO-WAVE-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-incanto-wave.pdf",
+   "pages": 4,
+   "bytes": 174051
+  },
+  "https://www.rugianocdn.com/backoffice/media/17e31c06-7943-4c7c-a695-dfcad8e6677a/11_Coffee_Table_Landmark.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-landmark.pdf",
+   "pages": 6,
+   "bytes": 269101
+  },
+  "https://www.rugianocdn.com/backoffice/media/4552d6b3-fc03-4ab7-95a8-d448005e23c4/10_Coffee_Table_Liberty.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-liberty.pdf",
+   "pages": 7,
+   "bytes": 307686
+  },
+  "https://www.rugianocdn.com/backoffice/media/fd0d9bf1-efd7-494e-b85a-24ced0002088/12_Coffee-Table_Lord.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-lord.pdf",
+   "pages": 8,
+   "bytes": 345288
+  },
+  "https://www.rugianocdn.com/backoffice/media/1090d961-5588-428f-ab96-64e4631e82e7/14_Coffee_Table_Monaco.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-monaco.pdf",
+   "pages": 7,
+   "bytes": 305279
+  },
+  "https://www.rugianocdn.com/backoffice/media/28a97c62-07a3-44cb-99a3-2abcc63bc1bc/13_Coffee_Table_Moon.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-moon.pdf",
+   "pages": 5,
+   "bytes": 243129
+  },
+  "https://www.rugianocdn.com/backoffice/media/d9133317-302f-4f0b-bff1-e21435eaea72/COFFEE-TABLES_NOAH.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-noah.pdf",
+   "pages": 5,
+   "bytes": 225033
+  },
+  "https://www.rugianocdn.com/backoffice/media/2cd40304-54b2-41f9-b117-41282b505a73/15_Coffee_Table_Oblo.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-oblo.pdf",
+   "pages": 4,
+   "bytes": 215254
+  },
+  "https://www.rugianocdn.com/backoffice/media/c1456252-82f0-4e15-9993-f606f084292d/16_Coffee_Table_Opale.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-opale.pdf",
+   "pages": 6,
+   "bytes": 280390
+  },
+  "https://www.rugianocdn.com/backoffice/media/048f4a73-f642-4c74-9486-5da24ad4706a/17_Coffee_Table_Paride.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-paride.pdf",
+   "pages": 5,
+   "bytes": 242391
+  },
+  "https://www.rugianocdn.com/backoffice/media/1f852bb5-d38d-40f5-a828-dde289d4b14d/18_Coffee_Table_Rock.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-rock.pdf",
+   "pages": 7,
+   "bytes": 311380
+  },
+  "https://www.rugianocdn.com/backoffice/media/1e9285c7-1d0f-4e3d-b355-2b06572c478f/19_Coffee_Table_Sixty.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-sixty.pdf",
+   "pages": 15,
+   "bytes": 591818
+  },
+  "https://www.rugianocdn.com/backoffice/media/8f25399b-7cd3-4d44-a32b-1ee0a3414f4f/20_Coffee_Table_Sixty_vassoio.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-sixty-trays.pdf",
+   "pages": 7,
+   "bytes": 323827
+  },
+  "https://www.rugianocdn.com/backoffice/media/bd0b7ad4-b198-4369-9104-95d4e4c21f92/21_Coffee_Table_Space.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-space.pdf",
+   "pages": 5,
+   "bytes": 309012
+  },
+  "https://www.rugianocdn.com/backoffice/media/a80bb3a6-94dd-42c5-b692-52948f3aa0fe/22_Coffee_Table_Twist.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-twist.pdf",
+   "pages": 4,
+   "bytes": 223391
+  },
+  "https://www.rugianocdn.com/backoffice/media/10a5a863-8c44-45b3-a030-30cc2802e931/COFFEE-TABLES_VORTEX.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-vortex.pdf",
+   "pages": 4,
+   "bytes": 191153
+  },
+  "https://www.rugianocdn.com/backoffice/media/4c7025ad-9e04-4fcb-b9c5-490afc432f03/23_Coffee_Table_Zoe.pdf": {
+   "file": "catalogs/rugiano/indoor-coffee-tables-zoe.pdf",
+   "pages": 5,
+   "bytes": 275464
+  },
+  "https://www.rugianocdn.com/backoffice/media/577b7ba7-338c-4085-aeb6-0550fd9ef687/01_Console_ABSOLUTE.pdf": {
+   "file": "catalogs/rugiano/indoor-consoles-absolute.pdf",
+   "pages": 4,
+   "bytes": 197101
+  },
+  "https://www.rugianocdn.com/backoffice/media/224aedef-2dd6-4bd1-9bfc-705aca2abb85/02_Console_DOROTEA.pdf": {
+   "file": "catalogs/rugiano/indoor-consoles-dorotea.pdf",
+   "pages": 5,
+   "bytes": 207897
+  },
+  "https://www.rugianocdn.com/backoffice/media/79f874c0-a1bc-477a-86c6-405be65dea13/03_Console_FOREST.pdf": {
+   "file": "catalogs/rugiano/indoor-consoles-forest.pdf",
+   "pages": 6,
+   "bytes": 234811
+  },
+  "https://www.rugianocdn.com/backoffice/media/b4fe544a-27cd-4704-b61a-0f9dd93fcfb8/04_Console_LAUREN.pdf": {
+   "file": "catalogs/rugiano/indoor-consoles-lauren.pdf",
+   "pages": 5,
+   "bytes": 259275
+  },
+  "https://www.rugianocdn.com/backoffice/media/04bc5443-94ca-4cbb-9ad2-bf12620e13d3/05_Console_PURE.pdf": {
+   "file": "catalogs/rugiano/indoor-consoles-pure.pdf",
+   "pages": 7,
+   "bytes": 255830
+  },
+  "https://www.rugianocdn.com/backoffice/media/274284d1-57f8-4ddf-8e03-ba7c5d1b6b50/06_Console_REA.pdf": {
+   "file": "catalogs/rugiano/indoor-consoles-rea.pdf",
+   "pages": 5,
+   "bytes": 222534
+  },
+  "https://www.rugianocdn.com/backoffice/media/52567440-9d09-4466-bb5a-c2b6d0a4766a/CONSOLE_ROCK-Tecnical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-consoles-rock.pdf",
+   "pages": 4,
+   "bytes": 181268
+  },
+  "https://www.rugianocdn.com/backoffice/media/743d622b-8d94-4cf6-9445-19a934850e6a/07_Console_WALLY.pdf": {
+   "file": "catalogs/rugiano/indoor-consoles-wally.pdf",
+   "pages": 4,
+   "bytes": 192425
+  },
+  "https://www.rugianocdn.com/backoffice/media/a6a80306-9a3f-43c7-b3a3-32ec9d6178df/08_Console_ZOE.pdf": {
+   "file": "catalogs/rugiano/indoor-consoles-zoe.pdf",
+   "pages": 4,
+   "bytes": 203076
+  },
+  "https://www.rugianocdn.com/backoffice/media/74f31fcd-e720-4e5a-8109-d90875e178c5/CHIBA_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-desks-chiba.pdf",
+   "pages": 4,
+   "bytes": 169431
+  },
+  "https://www.rugianocdn.com/backoffice/media/cdeb99b8-b0f7-450c-9802-cda1f890e3da/COLINE_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-desks-coline.pdf",
+   "pages": 6,
+   "bytes": 184149
+  },
+  "https://www.rugianocdn.com/backoffice/media/1b621dfd-0993-484a-8273-6be171cb223d/EMILY_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-desks-emily.pdf",
+   "pages": 5,
+   "bytes": 191720
+  },
+  "https://www.rugianocdn.com/backoffice/media/038c3f51-e6ba-4927-bb14-61b5a74d6c67/PRESIDENT_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-desks-president.pdf",
+   "pages": 5,
+   "bytes": 178888
+  },
+  "https://www.rugianocdn.com/backoffice/media/9a3fe06a-d0bd-4a28-9afd-2e42dec8e01c/ROMA_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-desks-roma.pdf",
+   "pages": 4,
+   "bytes": 174802
+  },
+  "https://www.rugianocdn.com/backoffice/media/61603e71-2d0d-4e86-aa29-7f0fe596329e/home_accessories_armonia_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-armonia.pdf",
+   "pages": 8,
+   "bytes": 144374
+  },
+  "https://www.rugianocdn.com/backoffice/media/aa4559c9-105c-4c0b-a015-6e22f430e11a/home_accessories_butler_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-butler.pdf",
+   "pages": 2,
+   "bytes": 143786
+  },
+  "https://www.rugianocdn.com/backoffice/media/90238b75-f53e-400b-8023-fc47d04e36bb/02.-home-accessories-_cometa.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-cometa.pdf",
+   "pages": 5,
+   "bytes": 254949
+  },
+  "https://www.rugianocdn.com/backoffice/media/a73f6508-2428-4c0c-85eb-412845367271/02.-home-accessories-_cometa.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-cometa-low.pdf",
+   "pages": 5,
+   "bytes": 254949
+  },
+  "https://www.rugianocdn.com/backoffice/media/8d8a67e5-49f6-4c59-b616-84c5a21553c1/home_accessories_elegance_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-elegance.pdf",
+   "pages": 2,
+   "bytes": 87106
+  },
+  "https://www.rugianocdn.com/backoffice/media/2c198617-175a-4621-8b9a-0a4f7f9b1606/home_accessories_esprit_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-esprit.pdf",
+   "pages": 2,
+   "bytes": 79907
+  },
+  "https://www.rugianocdn.com/backoffice/media/4c9bf19a-e483-4268-82cf-390c3860f195/home_accessories_floris_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-floris.pdf",
+   "pages": 2,
+   "bytes": 81666
+  },
+  "https://www.rugianocdn.com/backoffice/media/2ad6b729-6caa-41ec-8921-4dfef67321c4/home_accessories_gallery_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-gallery.pdf",
+   "pages": 2,
+   "bytes": 90776
+  },
+  "https://www.rugianocdn.com/backoffice/media/5f8e0dac-9291-44bd-8d06-30fa48c696d8/06.-home-accessories-_halley.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-halley.pdf",
+   "pages": 5,
+   "bytes": 249409
+  },
+  "https://www.rugianocdn.com/backoffice/media/4e4bf1d2-530d-46cc-9688-bfb4a0cb5519/06.-home-accessories-_halley.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-halley-low.pdf",
+   "pages": 5,
+   "bytes": 249409
+  },
+  "https://www.rugianocdn.com/backoffice/media/6af62242-64b5-4bfa-a862-6841707e2ecf/03.-home-accessories-_liberty.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-liberty.pdf",
+   "pages": 6,
+   "bytes": 227919
+  },
+  "https://www.rugianocdn.com/backoffice/media/6a64a13a-f339-42a5-a9f3-ed5058cb26d4/home_accessories_ottavio_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-ottavio.pdf",
+   "pages": 2,
+   "bytes": 304760
+  },
+  "https://www.rugianocdn.com/backoffice/media/cd6bf9a6-80c2-4d71-a279-cb798b2e237b/00_revolving_panel_Doubleface.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-pannelli-girevoli.pdf",
+   "pages": 16,
+   "bytes": 981505
+  },
+  "https://www.rugianocdn.com/backoffice/media/3bbe2ca2-72f8-4521-8ede-faee4da03b80/02.print_plisse.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-plisse.pdf",
+   "pages": 4,
+   "bytes": 167497
+  },
+  "https://www.rugianocdn.com/backoffice/media/bd2f4bac-85fc-4f91-bdd2-438af4624ce9/home_accessories_prisma_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-prisma.pdf",
+   "pages": 2,
+   "bytes": 82385
+  },
+  "https://www.rugianocdn.com/backoffice/media/dd60894f-e354-4038-b6ec-0513fc6b4786/ZAC-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-home-accessories-zac.pdf",
+   "pages": 4,
+   "bytes": 184430
+  },
+  "https://www.rugianocdn.com/backoffice/media/2f4a223f-6595-4a09-8557-acdba8d905c5/02_lighting_bagutta.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-bagutta.pdf",
+   "pages": 6,
+   "bytes": 250333
+  },
+  "https://www.rugianocdn.com/backoffice/media/facf6622-e3ea-4cc5-b00b-c102bc277471/03_lighting_bijoux.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-bijoux-applique.pdf",
+   "pages": 7,
+   "bytes": 300188
+  },
+  "https://www.rugianocdn.com/backoffice/media/f3f1be51-ff01-4e31-8875-a21b9cd0d1d1/03_lighting_bijoux.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-bijoux-ceiling.pdf",
+   "pages": 7,
+   "bytes": 300188
+  },
+  "https://www.rugianocdn.com/backoffice/media/83904d93-1491-4d18-ae8d-61aeaaa6d4ba/03_lighting_bijoux.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-bijoux-table.pdf",
+   "pages": 7,
+   "bytes": 300188
+  },
+  "https://www.rugianocdn.com/backoffice/media/8321c099-0290-49de-b803-5e5e737067eb/04_lighting_collier.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-collier.pdf",
+   "pages": 7,
+   "bytes": 297463
+  },
+  "https://www.rugianocdn.com/backoffice/media/c7f4c355-46e7-4c99-8a72-60e677f59709/05_lighting_duo.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-duo.pdf",
+   "pages": 5,
+   "bytes": 240191
+  },
+  "https://www.rugianocdn.com/backoffice/media/1b4d6f8d-30ec-49a3-9ec0-d6e68840ac48/06_lighting_eclipse.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-eclipse.pdf",
+   "pages": 6,
+   "bytes": 259172
+  },
+  "https://www.rugianocdn.com/backoffice/media/8254fdeb-0e2f-4192-add4-76ac4c196753/07_lighting_elios.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-elios.pdf",
+   "pages": 4,
+   "bytes": 200593
+  },
+  "https://www.rugianocdn.com/backoffice/media/c3fc29f3-84ea-4c65-8251-03a39cbc756d/TABLE-LAMP_FIONA.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-fiona.pdf",
+   "pages": 4,
+   "bytes": 174860
+  },
+  "https://www.rugianocdn.com/backoffice/media/a4e67eec-1aac-4cee-b02b-353d912a704a/08_lighting_gatsby.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-gatsby.pdf",
+   "pages": 5,
+   "bytes": 234083
+  },
+  "https://www.rugianocdn.com/backoffice/media/97496d66-f35e-44c0-a001-38beb708fac0/11_lighting_halo_table.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-halo-1.pdf",
+   "pages": 5,
+   "bytes": 254031
+  },
+  "https://www.rugianocdn.com/backoffice/media/28301705-3d01-4672-aa1a-86e9ebe79003/11_lighting_halo_table.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-halo-2.pdf",
+   "pages": 5,
+   "bytes": 254031
+  },
+  "https://www.rugianocdn.com/backoffice/media/c9ae8dc7-698f-4895-a5fc-54a4fc810329/10_lighting_halo_wall.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-halo-applique.pdf",
+   "pages": 6,
+   "bytes": 272612
+  },
+  "https://www.rugianocdn.com/backoffice/media/371d5525-c595-4184-8afe-5d3de7c06004/09_lighting_halo_suspension.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-halo-ceiling.pdf",
+   "pages": 14,
+   "bytes": 487814
+  },
+  "https://www.rugianocdn.com/backoffice/media/9f283423-2e1c-4f68-a928-11923a7a0613/12_lighting_leaf.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-leaf.pdf",
+   "pages": 8,
+   "bytes": 518689
+  },
+  "https://www.rugianocdn.com/backoffice/media/e3772a2b-f517-4ff3-8808-98986414cb99/16_lighting_liberty.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-liberty.pdf",
+   "pages": 4,
+   "bytes": 223959
+  },
+  "https://www.rugianocdn.com/backoffice/media/fbf159b1-9b6a-44aa-9c81-0b9222ca3a4a/14_lighting_liberty_soft.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-liberty-soft.pdf",
+   "pages": 5,
+   "bytes": 239449
+  },
+  "https://www.rugianocdn.com/backoffice/media/635c5c2e-54e3-4fbb-a66d-9cd99bd8589a/LibertyP-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-libertyp.pdf",
+   "pages": 5,
+   "bytes": 190863
+  },
+  "https://www.rugianocdn.com/backoffice/media/6007a77b-243e-4fa7-a9ae-2d75a7f2bc8e/TABLE-LAMP_NINA.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-nina.pdf",
+   "pages": 4,
+   "bytes": 171994
+  },
+  "https://www.rugianocdn.com/backoffice/media/a99d1424-d8b0-4e30-9c8a-5ca8e86282f2/17_lighting_solitario.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-solitario.pdf",
+   "pages": 9,
+   "bytes": 333671
+  },
+  "https://www.rugianocdn.com/backoffice/media/3a1f5a25-fef3-4584-9354-fd790d169830/18_lighting_trilogy.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-trilogy.pdf",
+   "pages": 8,
+   "bytes": 290545
+  },
+  "https://www.rugianocdn.com/backoffice/media/01cf7039-e5d4-407e-893a-664ba62dca40/19_lighting_wanda.pdf": {
+   "file": "catalogs/rugiano/indoor-lighting-wanda.pdf",
+   "pages": 7,
+   "bytes": 266156
+  },
+  "https://www.rugianocdn.com/backoffice/media/0b40377d-dfd5-4060-8a62-1c47d2b234ac/01_sideboard_and_cabinet_Atlanta.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-atlanta.pdf",
+   "pages": 6,
+   "bytes": 241004
+  },
+  "https://www.rugianocdn.com/backoffice/media/08d0cd5a-0b7c-4945-8e83-3b4440e60e3c/02_sideboard_and_cabinet_Blade.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-blade.pdf",
+   "pages": 5,
+   "bytes": 237621
+  },
+  "https://www.rugianocdn.com/backoffice/media/76f71cfa-97ed-4259-8ae1-da6d2767d83b/03_sideboard_and_cabinet_Blade_low.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-blade-low.pdf",
+   "pages": 5,
+   "bytes": 237681
+  },
+  "https://www.rugianocdn.com/backoffice/media/2ef95ab1-cb28-4675-86e9-ec1e13d8bbfe/04_sideboard_and_cabinet_Coquette.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-coquette2.pdf",
+   "pages": 4,
+   "bytes": 214745
+  },
+  "https://www.rugianocdn.com/backoffice/media/7236430a-bc7a-4691-9df8-1c2b7ff9cf7a/05_sideboard_and_cabinet_frak.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-frak.pdf",
+   "pages": 5,
+   "bytes": 253615
+  },
+  "https://www.rugianocdn.com/backoffice/media/ab720003-168c-411c-b439-dbff7ba33fa0/FRAK_TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-frak-bar.pdf",
+   "pages": 5,
+   "bytes": 253615
+  },
+  "https://www.rugianocdn.com/backoffice/media/fd3ac927-6404-44c2-8510-706bfb5727fc/17_sideboard_and_cabinet_Ghost_TV.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-ghost-tv.pdf",
+   "pages": 5,
+   "bytes": 256623
+  },
+  "https://www.rugianocdn.com/backoffice/media/6332e2e9-4941-4dcb-9423-1f90251a0e96/06_sideboard_and_cabinet_Iolanda.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-iolanda.pdf",
+   "pages": 4,
+   "bytes": 220771
+  },
+  "https://www.rugianocdn.com/backoffice/media/2731a997-6c38-4793-95ca-b030154a8c6b/10_sideboard_and_cabinet_Iolanda_low.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-iolanda-low.pdf",
+   "pages": 4,
+   "bytes": 213714
+  },
+  "https://www.rugianocdn.com/backoffice/media/3f870720-a1a5-4395-bec8-8f5567614422/07_sideboard_and_cabinet_Iole.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-iole.pdf",
+   "pages": 4,
+   "bytes": 214580
+  },
+  "https://www.rugianocdn.com/backoffice/media/958acd35-1048-4ccc-bf53-0a100cf0b2b0/IOLE-HIGH-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-iole-high.pdf",
+   "pages": 4,
+   "bytes": 206884
+  },
+  "https://www.rugianocdn.com/backoffice/media/93ca0a92-8405-4a29-9d18-ac405d7c5dc7/11_sideboard_and_cabinet_Mondrian.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-mondrian.pdf",
+   "pages": 4,
+   "bytes": 211785
+  },
+  "https://www.rugianocdn.com/backoffice/media/54e505ce-d3ab-4ce0-aae3-94869f69b34c/12_sideboard_and_cabinet_Penelope.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-penelope.pdf",
+   "pages": 6,
+   "bytes": 249769
+  },
+  "https://www.rugianocdn.com/backoffice/media/09335e1a-7e4a-486c-b01c-9cf74390b70c/13_sideboard_and_cabinet_Penelope_Low.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-penelope-low.pdf",
+   "pages": 6,
+   "bytes": 250381
+  },
+  "https://www.rugianocdn.com/backoffice/media/76a91024-15ef-41d5-bbd7-d4f717e4c819/14_sideboard_and_cabinet_Sidney.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-sidney.pdf",
+   "pages": 8,
+   "bytes": 287007
+  },
+  "https://www.rugianocdn.com/backoffice/media/453be043-fd17-43cd-9bbb-e14906a36090/Trace_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-trace.pdf",
+   "pages": 4,
+   "bytes": 345246
+  },
+  "https://www.rugianocdn.com/backoffice/media/c75e7ffa-e6b9-4a63-b85b-3e7f07270740/TRACE-LOW_TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-living-storage-units-trace-low.pdf",
+   "pages": 4,
+   "bytes": 209013
+  },
+  "https://www.rugianocdn.com/backoffice/media/bfc3f482-0035-4ad1-b1ac-31873b210e38/BEVEL_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-mirrors-bevel.pdf",
+   "pages": 4,
+   "bytes": 174667
+  },
+  "https://www.rugianocdn.com/backoffice/media/b6c83872-5ef1-4600-854f-8c9e2713f9a4/01_mirror_boheme.pdf": {
+   "file": "catalogs/rugiano/indoor-mirrors-boheme.pdf",
+   "pages": 6,
+   "bytes": 242220
+  },
+  "https://www.rugianocdn.com/backoffice/media/3a772e55-39b7-471d-9442-f4ac931ed29e/DOUBLE-RING-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-mirrors-double-ring.pdf",
+   "pages": 5,
+   "bytes": 172678
+  },
+  "https://www.rugianocdn.com/backoffice/media/76600ce5-e980-437b-bc33-d96227a2d162/04_mirror_montecarlo.pdf": {
+   "file": "catalogs/rugiano/indoor-mirrors-montecarlo.pdf",
+   "pages": 7,
+   "bytes": 226945
+  },
+  "https://www.rugianocdn.com/backoffice/media/cd4b2c4a-0089-41ff-b778-aa5a5ae707e3/05_mirror_ofelia.pdf": {
+   "file": "catalogs/rugiano/indoor-mirrors-ofelia.pdf",
+   "pages": 4,
+   "bytes": 179860
+  },
+  "https://www.rugianocdn.com/backoffice/media/b3b16d67-b742-47f8-81f1-26d16aa0b30b/06_mirror_turandot.pdf": {
+   "file": "catalogs/rugiano/indoor-mirrors-turandot.pdf",
+   "pages": 4,
+   "bytes": 172153
+  },
+  "https://www.rugianocdn.com/backoffice/media/4753acc5-66a1-4913-a4ab-d00125add1bd/BEVERLY_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-beverly.pdf",
+   "pages": 4,
+   "bytes": 170863
+  },
+  "https://www.rugianocdn.com/backoffice/media/f444bfae-c713-4440-98eb-7df0e01bb47d/BOHEME_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-boheme.pdf",
+   "pages": 4,
+   "bytes": 169950
+  },
+  "https://www.rugianocdn.com/backoffice/media/f198cc02-8d0c-433f-bd3b-fc51c0ad7548/BOHEME_como_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-boheme-como.pdf",
+   "pages": 4,
+   "bytes": 174340
+  },
+  "https://www.rugianocdn.com/backoffice/media/847c2741-644e-43af-9cb5-28f0e0991a8e/CLUB_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-club.pdf",
+   "pages": 4,
+   "bytes": 172672
+  },
+  "https://www.rugianocdn.com/backoffice/media/bc2a6905-10df-4b4a-8d0b-f3dcced6210d/FLOYD_SCHEDA-TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-floyd-comodino.pdf",
+   "pages": 4,
+   "bytes": 166163
+  },
+  "https://www.rugianocdn.com/backoffice/media/e27f970b-2643-4a83-9e49-ac351cfb9d01/GRACE_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-grace.pdf",
+   "pages": 4,
+   "bytes": 171040
+  },
+  "https://www.rugianocdn.com/backoffice/media/bdc66238-edd3-4649-b72f-40e649a20c59/GRACE_como_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-grace-como.pdf",
+   "pages": 4,
+   "bytes": 174197
+  },
+  "https://www.rugianocdn.com/backoffice/media/8efe7b24-4311-4272-8e6f-842dfe2c8a8e/INCA_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-inca.pdf",
+   "pages": 4,
+   "bytes": 166556
+  },
+  "https://www.rugianocdn.com/backoffice/media/afa21dcc-7509-4a3c-b274-d01a46cb7def/JUST_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-just.pdf",
+   "pages": 4,
+   "bytes": 164816
+  },
+  "https://www.rugianocdn.com/backoffice/media/6a231f3d-b354-4e86-bb33-7be071c7a8e0/MATISSE_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-matisse.pdf",
+   "pages": 6,
+   "bytes": 188399
+  },
+  "https://www.rugianocdn.com/backoffice/media/ee1ce0fe-22bb-4ffb-aa9a-61b70cbe86ae/MONDRIAN_SIDE-TABLE-SCHEDA-TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-mondrian.pdf",
+   "pages": 4,
+   "bytes": 149880
+  },
+  "https://www.rugianocdn.com/backoffice/media/1ba95e6f-d7b5-4922-a7cf-5799d5470175/MONDRIAN_COD-SCHEDA-TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-mondrian-como.pdf",
+   "pages": 4,
+   "bytes": 160976
+  },
+  "https://www.rugianocdn.com/backoffice/media/5b78339c-3478-4b78-9921-7ed479ce9cbd/RUBIK_SCHEDA-TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-rubik.pdf",
+   "pages": 5,
+   "bytes": 180030
+  },
+  "https://www.rugianocdn.com/backoffice/media/1e3bfa8c-9d38-4e4d-bcac-529aba0f9bbe/RUBIK-como_SCHEDA-TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-rubik-como.pdf",
+   "pages": 5,
+   "bytes": 185738
+  },
+  "https://www.rugianocdn.com/backoffice/media/34f71cb6-d8a5-4394-aba8-b5803f764e92/VOGUE_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-vogue.pdf",
+   "pages": 4,
+   "bytes": 173086
+  },
+  "https://www.rugianocdn.com/backoffice/media/977b606c-f5d1-42f6-92d7-bf4e1dd4876d/VOGUE_como_SCHEDA_TECNICA.pdf": {
+   "file": "catalogs/rugiano/indoor-night-storage-units-vogue-como.pdf",
+   "pages": 5,
+   "bytes": 189952
+  },
+  "https://www.rugianocdn.com/backoffice/media/3e9158c6-b792-44bd-9230-78d55d34a45f/ARIANNA-OFFICE-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-office-arianna.pdf",
+   "pages": 4,
+   "bytes": 204753
+  },
+  "https://www.rugianocdn.com/backoffice/media/95b3ed77-06b2-4866-9298-3063285d07b9/08_Bookcase_FRAME_BOX.pdf": {
+   "file": "catalogs/rugiano/indoor-office-frame-box.pdf",
+   "pages": 9,
+   "bytes": 367420
+  },
+  "https://www.rugianocdn.com/backoffice/media/678a2d24-02b3-48c6-a5f0-7dd7f432c022/ITACA-OFFICE-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-office-itaca.pdf",
+   "pages": 4,
+   "bytes": 206727
+  },
+  "https://www.rugianocdn.com/backoffice/media/2a6472a9-624b-4b2b-93f8-2b13c91f8bc8/President-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-office-president.pdf",
+   "pages": 6,
+   "bytes": 214306
+  },
+  "https://www.rugianocdn.com/backoffice/media/92a705c3-ad43-4c31-bbe2-850976679b70/PRESIDENT-OFFICE-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-office-president-chair.pdf",
+   "pages": 4,
+   "bytes": 244852
+  },
+  "https://www.rugianocdn.com/backoffice/media/6a9390ba-d9b6-4e82-8cc0-96c373e12ab5/Sydney-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-office-sidney.pdf",
+   "pages": 8,
+   "bytes": 287007
+  },
+  "https://www.rugianocdn.com/backoffice/media/e464f88f-ebd2-4ca2-8696-9b4931a86e31/Form_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-poufs-form.pdf",
+   "pages": 5,
+   "bytes": 197534
+  },
+  "https://www.rugianocdn.com/backoffice/media/33800573-2d50-4d7d-8a29-1587f45f4ae9/FORM-ZIP-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-poufs-form-zip.pdf",
+   "pages": 6,
+   "bytes": 258946
+  },
+  "https://www.rugianocdn.com/backoffice/media/96b22f44-b094-42dd-8e39-1b692156b8ab/Giotto_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-poufs-giotto.pdf",
+   "pages": 4,
+   "bytes": 185090
+  },
+  "https://www.rugianocdn.com/backoffice/media/724dae1e-831f-4cb7-8fac-00ad35d6054e/Harry_Technical_Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-poufs-harry.pdf",
+   "pages": 4,
+   "bytes": 183225
+  },
+  "https://www.rugianocdn.com/backoffice/media/3778ff3b-26ea-4d4d-a2d1-4f2e5646677c/MANTA-TECHNICAL-SHEEt.pdf": {
+   "file": "catalogs/rugiano/indoor-poufs-manta.pdf",
+   "pages": 5,
+   "bytes": 192406
+  },
+  "https://www.rugianocdn.com/backoffice/media/56d3e09a-0232-4235-94a0-7667f2d7ee3c/260310_SIXTY-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-poufs-sixty.pdf",
+   "pages": 4,
+   "bytes": 200118
+  },
+  "https://www.rugianocdn.com/backoffice/media/0a016394-9648-4e8e-9e86-7b295484d4c5/ABBRACCIO_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-abbraccio.pdf",
+   "pages": 4,
+   "bytes": 181047
+  },
+  "https://www.rugianocdn.com/backoffice/media/5eb0d7c7-7f18-4795-92b3-96c2a3da3bb4/ABBRACCIO-2-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-abbraccio-2t.pdf",
+   "pages": 4,
+   "bytes": 238155
+  },
+  "https://www.rugianocdn.com/backoffice/media/cf20958c-7512-4eba-a135-eef937e0505a/AMBRA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-ambra.pdf",
+   "pages": 5,
+   "bytes": 184973
+  },
+  "https://www.rugianocdn.com/backoffice/media/10293015-cd5f-4447-b30e-04182fc10448/ARTHUR_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-arthur.pdf",
+   "pages": 7,
+   "bytes": 257239
+  },
+  "https://www.rugianocdn.com/backoffice/media/c9615aeb-2520-48c5-aa1c-e736adb83abd/BALI_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-bali.pdf",
+   "pages": 9,
+   "bytes": 283328
+  },
+  "https://www.rugianocdn.com/backoffice/media/33515bae-6aa2-474e-9bf5-d1a56c01a993/BOHEME_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-boheme.pdf",
+   "pages": 9,
+   "bytes": 248160
+  },
+  "https://www.rugianocdn.com/backoffice/media/817b85cc-13b8-45d3-afed-c7b033b0fea0/BRAID_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-braid.pdf",
+   "pages": 4,
+   "bytes": 232523
+  },
+  "https://www.rugianocdn.com/backoffice/media/fb047ea7-9314-46f0-b034-03b3568d2663/CLUB_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-club.pdf",
+   "pages": 5,
+   "bytes": 252818
+  },
+  "https://www.rugianocdn.com/backoffice/media/9897b846-3a58-4d77-af49-7d2398a208dd/FANDANGO_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-fandango.pdf",
+   "pages": 8,
+   "bytes": 244420
+  },
+  "https://www.rugianocdn.com/backoffice/media/39a36e0b-8397-4b48-add7-4b1758bd4cc5/FREUD_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-freud.pdf",
+   "pages": 10,
+   "bytes": 295344
+  },
+  "https://www.rugianocdn.com/backoffice/media/ab767690-9c91-4e61-bacd-da9028d417ca/HATTON-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-hatton.pdf",
+   "pages": 10,
+   "bytes": 393975
+  },
+  "https://www.rugianocdn.com/backoffice/media/1c45c623-711f-4c4e-97c3-a2c8eedc4ef4/INFINITY_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-infinity.pdf",
+   "pages": 4,
+   "bytes": 189491
+  },
+  "https://www.rugianocdn.com/backoffice/media/0b7f2932-8634-4b98-a7f8-572203c97c70/ISIDE-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-iside.pdf",
+   "pages": 8,
+   "bytes": 405926
+  },
+  "https://www.rugianocdn.com/backoffice/media/339b43d9-6d67-4d21-913b-e79d8c70f7bf/LUZ_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-luz.pdf",
+   "pages": 7,
+   "bytes": 238420
+  },
+  "https://www.rugianocdn.com/backoffice/media/44b81144-f855-488f-81d4-d80f5bd2ad6e/MANTA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-manta.pdf",
+   "pages": 4,
+   "bytes": 224941
+  },
+  "https://www.rugianocdn.com/backoffice/media/568d476f-e93b-4897-b1d9-0154e5f24995/MEMPHIS_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-memphis.pdf",
+   "pages": 5,
+   "bytes": 199201
+  },
+  "https://www.rugianocdn.com/backoffice/media/1ae89995-dd6e-4b8a-b470-1c159fd36acb/MEMPHIS_INTRECCIO_IN_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-memphis-intreccio.pdf",
+   "pages": 5,
+   "bytes": 198700
+  },
+  "https://www.rugianocdn.com/backoffice/media/6f4b57e6-52a5-489c-bd68-a9c04af74096/NAUTILUS_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-nautilus.pdf",
+   "pages": 19,
+   "bytes": 1075246
+  },
+  "https://www.rugianocdn.com/backoffice/media/82d06ea8-46e0-4d32-8b18-9017fc8ee116/OPERA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-opera.pdf",
+   "pages": 5,
+   "bytes": 208555
+  },
+  "https://www.rugianocdn.com/backoffice/media/a80125b5-58eb-4cf8-87a4-b6300ca9dae3/PARIS_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-paris.pdf",
+   "pages": 5,
+   "bytes": 200678
+  },
+  "https://www.rugianocdn.com/backoffice/media/e3e08ab1-3d96-439b-9065-175a697895e9/PIERRE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-pierre.pdf",
+   "pages": 10,
+   "bytes": 284835
+  },
+  "https://www.rugianocdn.com/backoffice/media/5d58a79b-e307-425b-887e-fb7bd8172784/RAFAEL-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-rafael1.pdf",
+   "pages": 7,
+   "bytes": 220699
+  },
+  "https://www.rugianocdn.com/backoffice/media/cd74b1ab-9da9-4846-92aa-f3cb387b82ce/RAFAEL_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-rafael2.pdf",
+   "pages": 7,
+   "bytes": 220699
+  },
+  "https://www.rugianocdn.com/backoffice/media/f4e4e1b6-798d-4a1a-9833-4c5de191a791/SNAKE--TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-snake.pdf",
+   "pages": 14,
+   "bytes": 330960
+  },
+  "https://www.rugianocdn.com/backoffice/media/03797ba7-ac0f-4a16-a593-b5f5047767aa/VOGUE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-vogue.pdf",
+   "pages": 5,
+   "bytes": 204356
+  },
+  "https://www.rugianocdn.com/backoffice/media/b06d7185-3975-4ca3-81a3-7cab25902a94/YACHT_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/indoor-sofas-yacht.pdf",
+   "pages": 14,
+   "bytes": 666901
+  },
+  "https://www.rugianocdn.com/backoffice/media/edfa5ba9-c434-4251-aa47-287cf4381843/01_Table_ABSOLUTE.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-absolute.pdf",
+   "pages": 6,
+   "bytes": 268039
+  },
+  "https://www.rugianocdn.com/backoffice/media/9eae6890-b933-4768-bdbb-a87dca18e1cb/01_Table_ABSOLUTE.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-absolute-round.pdf",
+   "pages": 6,
+   "bytes": 268039
+  },
+  "https://www.rugianocdn.com/backoffice/media/ea994c11-dcad-4669-a3b1-5a325fbf8405/02_Table_ALYSON.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-alyson.pdf",
+   "pages": 7,
+   "bytes": 300426
+  },
+  "https://www.rugianocdn.com/backoffice/media/39e657ca-8af0-4543-9111-ca27fe4e3af3/03_Table_ALYSON_ROUND.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-alyson-round.pdf",
+   "pages": 4,
+   "bytes": 238946
+  },
+  "https://www.rugianocdn.com/backoffice/media/6fd31e19-7ed0-47aa-a51f-d033744255fa/Table_Artemis.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-artemis.pdf",
+   "pages": 7,
+   "bytes": 198046
+  },
+  "https://www.rugianocdn.com/backoffice/media/b8733c50-bc40-4179-8635-b3dd3e193046/TABLE-BLANCO_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-blanco.pdf",
+   "pages": 7,
+   "bytes": 257834
+  },
+  "https://www.rugianocdn.com/backoffice/media/908b07e5-a13c-4ddc-b059-5ecc11c7cd88/TABLE-BLANCO_Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-blanco-round.pdf",
+   "pages": 7,
+   "bytes": 257834
+  },
+  "https://www.rugianocdn.com/backoffice/media/96c0210e-405a-49d3-aeb6-93a8b261058a/05_Table_DECORO.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-decoro.pdf",
+   "pages": 10,
+   "bytes": 297650
+  },
+  "https://www.rugianocdn.com/backoffice/media/0a92f6a6-d9e2-4d86-bd4e-70f1e7727f52/05_Table_DECORO.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-decoro-round.pdf",
+   "pages": 12,
+   "bytes": 399472
+  },
+  "https://www.rugianocdn.com/backoffice/media/db781992-7ae8-4f0c-8abb-c8ba29107867/Table_FOREST.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-forest.pdf",
+   "pages": 9,
+   "bytes": 319429
+  },
+  "https://www.rugianocdn.com/backoffice/media/ab65345b-8ded-4522-90b1-b5485331e7f8/Table_Forest-Hospitality-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-forest-hospitality.pdf",
+   "pages": 5,
+   "bytes": 274383
+  },
+  "https://www.rugianocdn.com/backoffice/media/61795877-eada-4fc1-948a-7cf0d9dd89e6/08_Table_FOREST_LIGHT_manca_foto.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-forest-light.pdf",
+   "pages": 7,
+   "bytes": 282490
+  },
+  "https://www.rugianocdn.com/backoffice/media/d19f3516-27c9-41ba-ba47-d2d962ceb15c/Table_FOREST.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-forest-round.pdf",
+   "pages": 10,
+   "bytes": 402442
+  },
+  "https://www.rugianocdn.com/backoffice/media/00d534c8-cc55-4e81-bbfe-96e8e2dc19e4/Table_LIBERTY.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-liberty.pdf",
+   "pages": 6,
+   "bytes": 279767
+  },
+  "https://www.rugianocdn.com/backoffice/media/791b8974-a4f2-4ecf-8623-108f0dd0c9a2/LIBERTY-LOUNGE.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-liberty-lounge-bistrot.pdf",
+   "pages": 6,
+   "bytes": 243225
+  },
+  "https://www.rugianocdn.com/backoffice/media/d8a78b3b-2c84-480e-a6be-09ec43ab9bd4/11_Table_LIBERTY_TRE.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-liberty-tre.pdf",
+   "pages": 4,
+   "bytes": 218796
+  },
+  "https://www.rugianocdn.com/backoffice/media/d6aeb524-1de0-4a99-a265-ddca53a08b9d/Table_PEDRO.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-pedro.pdf",
+   "pages": 5,
+   "bytes": 246817
+  },
+  "https://www.rugianocdn.com/backoffice/media/c1e5e1ac-1e99-4b5e-80b1-da561932cc87/15_Table_PRESIDENT.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-president.pdf",
+   "pages": 4,
+   "bytes": 212653
+  },
+  "https://www.rugianocdn.com/backoffice/media/e9d2fcb6-839c-4b93-b7f7-8f2e3b7a645f/21_Table_REA.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-rea.pdf",
+   "pages": 4,
+   "bytes": 227957
+  },
+  "https://www.rugianocdn.com/backoffice/media/2998121e-e016-4379-b4a3-c9864c82d825/Table_RING.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-ring.pdf",
+   "pages": 6,
+   "bytes": 289726
+  },
+  "https://www.rugianocdn.com/backoffice/media/dad2e9b5-8434-4166-bad6-a198c6712c87/Table_SPECTRO.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-spectro.pdf",
+   "pages": 5,
+   "bytes": 252664
+  },
+  "https://www.rugianocdn.com/backoffice/media/610537c6-7f40-4316-8c6a-633e38e6b2e1/Table_WALLY.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-wally.pdf",
+   "pages": 6,
+   "bytes": 300878
+  },
+  "https://www.rugianocdn.com/backoffice/media/5007183c-eb25-40ad-a063-bc0b7894fef3/wally-pdf.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-wally-round.pdf",
+   "pages": 131,
+   "bytes": 616029
+  },
+  "https://www.rugianocdn.com/backoffice/media/96c9c910-6115-4623-8c68-18ec96a9b2d4/19_Table_WINGS.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-wings.pdf",
+   "pages": 5,
+   "bytes": 251268
+  },
+  "https://www.rugianocdn.com/backoffice/media/ae3908dc-b924-4793-af9e-01ce957906fa/Table_ZOE.pdf": {
+   "file": "catalogs/rugiano/indoor-tables-zoe.pdf",
+   "pages": 5,
+   "bytes": 288777
+  },
+  "https://www.rugianocdn.com/backoffice/media/c46702a3-d95d-4180-a9fd-0be14ac6d469/vanity_tables_vogue_dimension.pdf": {
+   "file": "catalogs/rugiano/indoor-vanity-tables-vogue.pdf",
+   "pages": 2,
+   "bytes": 718574
+  },
+  "https://www.rugianocdn.com/backoffice/media/e6d2829c-402a-4aa3-a13a-66eac1f5947d/FRAME_GARDEN_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-bookcases-frame-garden.pdf",
+   "pages": 4,
+   "bytes": 176494
+  },
+  "https://www.rugianocdn.com/backoffice/media/20cab6f7-5507-40f5-b1cf-46b09bcd8a8f/AMALFI_TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-amalfi.pdf",
+   "pages": 4,
+   "bytes": 203472
+  },
+  "https://www.rugianocdn.com/backoffice/media/d5531b3f-0be5-4249-abf9-123099c0cb83/CAPRI_poltrona_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-capri.pdf",
+   "pages": 4,
+   "bytes": 178609
+  },
+  "https://www.rugianocdn.com/backoffice/media/107789a3-2187-4c98-baa3-35bfc9eca13f/DAFNE_POLTRONA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-dafne.pdf",
+   "pages": 4,
+   "bytes": 179315
+  },
+  "https://www.rugianocdn.com/backoffice/media/cb294f21-29af-4500-bde0-abd4681a454d/DAFNE_ROUND_POLTRONA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-dafne-round.pdf",
+   "pages": 4,
+   "bytes": 190674
+  },
+  "https://www.rugianocdn.com/backoffice/media/1e7dd373-d62d-44d1-8b2b-515fc2a692a4/DEMETRA_POLTRONA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-demetra.pdf",
+   "pages": 4,
+   "bytes": 194817
+  },
+  "https://www.rugianocdn.com/backoffice/media/e39c0918-700f-4a13-b57c-2781b3b74c93/DEMETRA_BERGERE_POLTRONA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-demetra-bergere.pdf",
+   "pages": 4,
+   "bytes": 191176
+  },
+  "https://www.rugianocdn.com/backoffice/media/6fc16c20-cdf3-4aac-9bbc-302441f869e1/MARINA_POLTRONA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-marina.pdf",
+   "pages": 4,
+   "bytes": 178692
+  },
+  "https://www.rugianocdn.com/backoffice/media/889f0ebe-1569-4a65-afb9-79e8284871e9/MARINA_SOFT_POLTRONA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-marina-soft.pdf",
+   "pages": 4,
+   "bytes": 180681
+  },
+  "https://www.rugianocdn.com/backoffice/media/56f6668c-acda-42d4-952b-38c96219bed0/MELODY_poltrona_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-melody.pdf",
+   "pages": 4,
+   "bytes": 192406
+  },
+  "https://www.rugianocdn.com/backoffice/media/9eb3ea3a-ee12-4e6c-9bce-804ef26f63cb/MEMPHIS_POLTRONA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-memphis.pdf",
+   "pages": 4,
+   "bytes": 178608
+  },
+  "https://www.rugianocdn.com/backoffice/media/cf0a4ad9-a61c-4cf5-8d51-9efd6ddd0e4b/NIDO_POLTRONA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-armchairs-nido.pdf",
+   "pages": 4,
+   "bytes": 296012
+  },
+  "https://www.rugianocdn.com/backoffice/media/3207bc6d-a270-4744-b055-b8cba69d46f7/Demetra-In-Stool-Technical-Sheet.pdf": {
+   "file": "catalogs/rugiano/outdoor-barstools-demetra.pdf",
+   "pages": 4,
+   "bytes": 189218
+  },
+  "https://www.rugianocdn.com/backoffice/media/61af0f6e-9a28-4265-8b6f-e077e5f61491/carpet_juno-grey_dimension.pdf": {
+   "file": "catalogs/rugiano/outdoor-carpets-juno-grey.pdf",
+   "pages": 2,
+   "bytes": 1085763
+  },
+  "https://www.rugianocdn.com/backoffice/media/61bdc64a-b3d0-41f4-b256-e85dc4cea10b/carpet_juno-sand_dimension.pdf": {
+   "file": "catalogs/rugiano/outdoor-carpets-juno-sand.pdf",
+   "pages": 2,
+   "bytes": 1029360
+  },
+  "https://www.rugianocdn.com/backoffice/media/5f42505c-7037-4bfb-bfb2-4da59bfdd8f5/carpet_raw-cioco_dimension.pdf": {
+   "file": "catalogs/rugiano/outdoor-carpets-raw-cioco.pdf",
+   "pages": 2,
+   "bytes": 2132119
+  },
+  "https://www.rugianocdn.com/backoffice/media/7e963c8a-5770-4b09-b772-aec241de0a25/carpet_raw-sand_dimension.pdf": {
+   "file": "catalogs/rugiano/outdoor-carpets-raw-sand.pdf",
+   "pages": 2,
+   "bytes": 1955287
+  },
+  "https://www.rugianocdn.com/backoffice/media/55b8eb91-d839-4567-a968-e18e5752c6ce/AFRODITE_SEDIA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chairs-afrodite.pdf",
+   "pages": 4,
+   "bytes": 177952
+  },
+  "https://www.rugianocdn.com/backoffice/media/9b91df08-0aa3-42d7-bbec-ab56483b996b/AFRODITE_soft_SEDIA_TECHNICAL_SHEET_Copia.pdf": {
+   "file": "catalogs/rugiano/outdoor-chairs-afrodite-soft.pdf",
+   "pages": 4,
+   "bytes": 179242
+  },
+  "https://www.rugianocdn.com/backoffice/media/e08bc82c-9a59-4e75-a35e-751c75490818/ARENA_SEDIA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chairs-arena.pdf",
+   "pages": 4,
+   "bytes": 180326
+  },
+  "https://www.rugianocdn.com/backoffice/media/af8611d4-3bf7-4aa3-9a57-a12c1f65b619/ATENA_SEDIA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chairs-atena.pdf",
+   "pages": 4,
+   "bytes": 203211
+  },
+  "https://www.rugianocdn.com/backoffice/media/15673de6-f708-4a9c-b777-af149b2102a7/DEMETRA_SEDIA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chairs-demetra.pdf",
+   "pages": 4,
+   "bytes": 177212
+  },
+  "https://www.rugianocdn.com/backoffice/media/d992cad1-c99f-4367-93e9-0de8808962c9/MARINA_SEDIA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chairs-marina.pdf",
+   "pages": 4,
+   "bytes": 180829
+  },
+  "https://www.rugianocdn.com/backoffice/media/6ef1f9c0-0870-4a9b-9932-7eca94c49874/MARINA_SOFT_SEDIA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chairs-marina-soft.pdf",
+   "pages": 4,
+   "bytes": 174678
+  },
+  "https://www.rugianocdn.com/backoffice/media/2cabd590-b17c-40ba-bafc-0565c68726ba/MINERVA_SEDIA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chairs-minerva.pdf",
+   "pages": 4,
+   "bytes": 177372
+  },
+  "https://www.rugianocdn.com/backoffice/media/79bc376d-9bd4-444d-a09f-f029cb6ce7dc/DAFNE_CHAISE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chaise-longues-dafne.pdf",
+   "pages": 4,
+   "bytes": 177228
+  },
+  "https://www.rugianocdn.com/backoffice/media/111af9bd-9453-4973-b800-44ea3eccf52b/MARINA_CHAISE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chaise-longues-marina.pdf",
+   "pages": 4,
+   "bytes": 222278
+  },
+  "https://www.rugianocdn.com/backoffice/media/0db7677e-5d3b-4463-b742-4ca332c0bec3/MELODY_CHAISE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chaise-longues-melody.pdf",
+   "pages": 4,
+   "bytes": 181394
+  },
+  "https://www.rugianocdn.com/backoffice/media/65420e55-7b84-4d7c-a5ae-cb31708c485d/PLAYA-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-chaise-longues-playa.pdf",
+   "pages": 4,
+   "bytes": 212895
+  },
+  "https://www.rugianocdn.com/backoffice/media/71e94f35-c9fd-49c7-9b72-522dae2389af/AMALFI_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-amalfi.pdf",
+   "pages": 4,
+   "bytes": 172396
+  },
+  "https://www.rugianocdn.com/backoffice/media/846731ba-d475-4fad-a072-84718838ed29/APOLLO_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-apollo.pdf",
+   "pages": 5,
+   "bytes": 176889
+  },
+  "https://www.rugianocdn.com/backoffice/media/1c39148c-3ae9-4293-888a-d43dc67ae73d/CIGLIA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-ciglia.pdf",
+   "pages": 5,
+   "bytes": 200410
+  },
+  "https://www.rugianocdn.com/backoffice/media/49128e36-b84a-4f79-aa0d-5a5c28c59240/DAFNE_ROUND_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-dafne-round.pdf",
+   "pages": 4,
+   "bytes": 169750
+  },
+  "https://www.rugianocdn.com/backoffice/media/ebbf6d87-8aee-426f-8331-17daa3065cff/DAFNE_SQUARE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-dafne-square.pdf",
+   "pages": 4,
+   "bytes": 180227
+  },
+  "https://www.rugianocdn.com/backoffice/media/934a66c1-761b-4183-8d3e-a9e2a306db3c/ELBA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-elba.pdf",
+   "pages": 6,
+   "bytes": 193387
+  },
+  "https://www.rugianocdn.com/backoffice/media/0be13256-6cb8-4dcf-bacd-0a5cec2ce149/MARINA_CORDA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-marina-corda.pdf",
+   "pages": 4,
+   "bytes": 175751
+  },
+  "https://www.rugianocdn.com/backoffice/media/4c11fd9c-21bb-4928-9731-82062746062e/MARINA_SOFT_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-marina-corda-soft.pdf",
+   "pages": 4,
+   "bytes": 176285
+  },
+  "https://www.rugianocdn.com/backoffice/media/31f0325b-ef25-4884-a1ff-5ffe371074c0/MEMPHIS_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-memphis.pdf",
+   "pages": 4,
+   "bytes": 171192
+  },
+  "https://www.rugianocdn.com/backoffice/media/a4b4b191-9563-4575-a35f-60187fd7cb3f/PARIDE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-paride.pdf",
+   "pages": 4,
+   "bytes": 162106
+  },
+  "https://www.rugianocdn.com/backoffice/media/4fd9820a-744a-43d0-97a0-c929a14ddc7a/SUN_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-coffee-tables-sun.pdf",
+   "pages": 4,
+   "bytes": 173774
+  },
+  "https://www.rugianocdn.com/backoffice/media/05f8b80b-23ea-4c80-bd20-7f24e32ad34b/MARINA--CONSOLE-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-consoles-marina.pdf",
+   "pages": 4,
+   "bytes": 237106
+  },
+  "https://www.rugianocdn.com/backoffice/media/250830e3-5634-465f-9432-379dd1b236bf/FIREPLACE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-fireplaces-fireplace.pdf",
+   "pages": 4,
+   "bytes": 184291
+  },
+  "https://www.rugianocdn.com/backoffice/media/32b1012f-9dfd-438f-9328-e42f0dd086d3/EOS_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-lighting-eos.pdf",
+   "pages": 5,
+   "bytes": 186124
+  },
+  "https://www.rugianocdn.com/backoffice/media/694d9a1f-fd3d-45f1-b7d6-a3feee250f8b/KIMI_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-lighting-kimi.pdf",
+   "pages": 4,
+   "bytes": 205423
+  },
+  "https://www.rugianocdn.com/backoffice/media/50a4fdfb-ed43-4236-92bc-37f1a0e519a3/19_lighting_wanda.pdf": {
+   "file": "catalogs/rugiano/outdoor-lighting-wanda.pdf",
+   "pages": 7,
+   "bytes": 266156
+  },
+  "https://www.rugianocdn.com/backoffice/media/043ca4fd-4ee3-45c1-9d4f-fc9c7671c081/BOHEME_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-mirrors-boheme.pdf",
+   "pages": 4,
+   "bytes": 168272
+  },
+  "https://www.rugianocdn.com/backoffice/media/fb220285-97bb-49c7-8b65-cd2ddc87d1a6/APOLLO_POUF_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-poufs-apollo.pdf",
+   "pages": 5,
+   "bytes": 178111
+  },
+  "https://www.rugianocdn.com/backoffice/media/258d9ba0-3046-4e6e-b375-2ebc8137e1a6/DAFNE_ROUND_BIG_POUF_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-poufs-dafne-round.pdf",
+   "pages": 4,
+   "bytes": 179547
+  },
+  "https://www.rugianocdn.com/backoffice/media/0a6f9c3d-a3d6-4061-925e-10319202c212/DAFNE_ROUND_POUF_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-poufs-dafne-round-small.pdf",
+   "pages": 4,
+   "bytes": 200268
+  },
+  "https://www.rugianocdn.com/backoffice/media/fb04bd4d-8744-43f2-9d10-5b5bee34d66b/DAFNE_SQUARE_POUF_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-poufs-dafne-square-3.pdf",
+   "pages": 4,
+   "bytes": 186740
+  },
+  "https://www.rugianocdn.com/backoffice/media/6f31e0b5-c1a3-4bce-9a3f-92eaf1862599/MARINA_POUF_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-poufs-marina.pdf",
+   "pages": 4,
+   "bytes": 173186
+  },
+  "https://www.rugianocdn.com/backoffice/media/5f10ae7e-f896-440a-90bd-1efbf6032326/MARINA_ROUND_POUF_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-poufs-marina-round.pdf",
+   "pages": 4,
+   "bytes": 181976
+  },
+  "https://www.rugianocdn.com/backoffice/media/eb1439a6-9027-451d-8038-7549b8a3bec5/MARINA_soft_POUF_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-poufs-marina-soft.pdf",
+   "pages": 4,
+   "bytes": 170037
+  },
+  "https://www.rugianocdn.com/backoffice/media/14e825fe-2f7d-4406-87cb-c110251ae486/AMALFI_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-amalfi.pdf",
+   "pages": 5,
+   "bytes": 206192
+  },
+  "https://www.rugianocdn.com/backoffice/media/76182921-8d11-4faf-8b8d-6c14d54bf89c/AMALFI_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-amalfi3p.pdf",
+   "pages": 5,
+   "bytes": 206192
+  },
+  "https://www.rugianocdn.com/backoffice/media/2837b6a1-f9d6-4ba9-aea1-17b496ac8982/CAPRI_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-capri.pdf",
+   "pages": 4,
+   "bytes": 181264
+  },
+  "https://www.rugianocdn.com/backoffice/media/7bf75442-b939-4a1d-aae6-1acd03ca7554/DAFNE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-dafne-2p.pdf",
+   "pages": 5,
+   "bytes": 218886
+  },
+  "https://www.rugianocdn.com/backoffice/media/7c57c2c6-2c87-4897-8900-3a26c2fcd2db/DAFNE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-dafne-3p.pdf",
+   "pages": 5,
+   "bytes": 218886
+  },
+  "https://www.rugianocdn.com/backoffice/media/5e2bb74e-e34a-45fb-b9b5-e5b0a57662b5/DEMETRA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-demetra.pdf",
+   "pages": 4,
+   "bytes": 194092
+  },
+  "https://www.rugianocdn.com/backoffice/media/49f0ca46-1031-4c34-9efe-c1c7f57e6577/INFINITY-OUT-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-infinity.pdf",
+   "pages": 4,
+   "bytes": 213858
+  },
+  "https://www.rugianocdn.com/backoffice/media/02a64415-0cb0-4682-92a9-28b6884a3f94/sofas_marina_180_dimension.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-marina-180-soft.pdf",
+   "pages": 2,
+   "bytes": 1242030
+  },
+  "https://www.rugianocdn.com/backoffice/media/81620baf-3e2e-4393-92d7-3246244cabf2/MARINA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-marina-componibile.pdf",
+   "pages": 5,
+   "bytes": 211523
+  },
+  "https://www.rugianocdn.com/backoffice/media/75da5537-e2f4-4138-8ece-fca53645d56d/MARINA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-marina-soft-componibile.pdf",
+   "pages": 5,
+   "bytes": 211523
+  },
+  "https://www.rugianocdn.com/backoffice/media/5a3de7be-4071-421f-9fb3-35c167bd4b10/MELODY_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-melody.pdf",
+   "pages": 4,
+   "bytes": 207409
+  },
+  "https://www.rugianocdn.com/backoffice/media/ae70e06f-4715-482d-9353-2cea054a525a/MELODY-SPRING-TECHNICAL-SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-melody-spring.pdf",
+   "pages": 5,
+   "bytes": 304367
+  },
+  "https://www.rugianocdn.com/backoffice/media/03242a75-c31a-4513-bc71-c6c7ce7b2865/MEMPHIS_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-memphis.pdf",
+   "pages": 6,
+   "bytes": 214689
+  },
+  "https://www.rugianocdn.com/backoffice/media/ed764894-3dd3-40c6-ac22-0364e998f256/MEMPHIS_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sofas-memphis-table.pdf",
+   "pages": 6,
+   "bytes": 214689
+  },
+  "https://www.rugianocdn.com/backoffice/media/eb90142f-a7ea-40d9-bc04-8e43a5691fca/AMALFI_LETTINO_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sunbeds-amalfi-lettino.pdf",
+   "pages": 4,
+   "bytes": 177336
+  },
+  "https://www.rugianocdn.com/backoffice/media/6ef743e6-6150-412e-b155-7a577a8cddee/DEMETRA_LETTINO_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-sunbeds-demetra.pdf",
+   "pages": 4,
+   "bytes": 189902
+  },
+  "https://www.rugianocdn.com/backoffice/media/48d00be8-4558-411b-8a4e-8016cad91a4a/ATLANTE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-atlante.pdf",
+   "pages": 5,
+   "bytes": 191937
+  },
+  "https://www.rugianocdn.com/backoffice/media/6a568303-5160-4cb0-b15a-7ee406d240cc/ELBA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-elba.pdf",
+   "pages": 5,
+   "bytes": 186693
+  },
+  "https://www.rugianocdn.com/backoffice/media/cdce5f4f-4bda-49d3-acf8-98022b41a1c1/MARINA_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-marina.pdf",
+   "pages": 5,
+   "bytes": 185289
+  },
+  "https://www.rugianocdn.com/backoffice/media/bcbe330a-d2a9-433f-99d7-7164d2fe199d/MARINA_RECTANGULAR_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-marina-rectangular.pdf",
+   "pages": 4,
+   "bytes": 179240
+  },
+  "https://www.rugianocdn.com/backoffice/media/0293b93d-b136-4f33-bd00-2bca799aed22/MARINA_ROYAL_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-marina-royal.pdf",
+   "pages": 4,
+   "bytes": 199748
+  },
+  "https://www.rugianocdn.com/backoffice/media/e5dc98f9-1673-46a2-8de4-ade85be9ea74/MIKADO_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-mikado.pdf",
+   "pages": 6,
+   "bytes": 213636
+  },
+  "https://www.rugianocdn.com/backoffice/media/2032d129-6c82-4365-b3b1-25ea1f5055bd/MIRAGE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-mirage.pdf",
+   "pages": 4,
+   "bytes": 194087
+  },
+  "https://www.rugianocdn.com/backoffice/media/d894d14b-587d-4be9-88a8-1d01b8510f90/OTELLO_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-otello.pdf",
+   "pages": 4,
+   "bytes": 170715
+  },
+  "https://www.rugianocdn.com/backoffice/media/7496ec92-05cf-4e79-b2f3-325601103864/SLICE_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-slice.pdf",
+   "pages": 4,
+   "bytes": 210048
+  },
+  "https://www.rugianocdn.com/backoffice/media/aab538c3-5caf-4aaf-806e-1667af101f2b/WOOD_TECHNICAL_SHEET.pdf": {
+   "file": "catalogs/rugiano/outdoor-tables-wood.pdf",
+   "pages": 7,
+   "bytes": 197530
   }
  },
  "sheets": {}

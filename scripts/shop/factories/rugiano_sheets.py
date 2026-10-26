@@ -15,7 +15,9 @@ DST = os.path.join(ROOT, 'content/shop/sources/rugiano')
 
 
 def https(u):
-    return 'https:' + u if u.startswith('//') else u
+    from urllib.parse import quote, unquote
+    u = 'https:' + u if u.startswith('//') else u
+    return quote(unquote(u), safe=':/?=&;,+@~#%')           # «CLUB_comò_…pdf» без кодирования не отдаётся
 
 
 def right(page):
