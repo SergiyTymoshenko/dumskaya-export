@@ -31,7 +31,9 @@ const imgObj = (name: string, alt: string) => {
   if (!m) return null;
   const f = m.files.find(([w]) => w >= 960) || m.files[m.files.length - 1];
   return { '@type': 'ImageObject', contentUrl: `${SITE}/img/${f[1]}`, width: f[0], height: Math.round(f[0] * m.height / m.width),
-    caption: alt, creditText: pr!.brand, copyrightNotice: `© ${bi?.legal || pr!.brand}`, creator: { '@id': BRAND } };
+    caption: alt, creditText: pr!.brand, copyrightNotice: `© ${bi?.legal || pr!.brand}`, creator: { '@id': BRAND },
+    // условия использования — раздел «Фото товаров» политики сайта; разрешение даёт фабрика (её официальный сайт)
+    license: `${url(paths.privacy[page.lang])}#photos`, acquireLicensePage: bi?.site || url(paths.contact[page.lang]) };
 };
 const prImgs = pr ? pr.images.map((im, i) => imgObj(im.name, `${pr.name[page.lang]} — ${pr.brand}, ${ui(page.lang).photo.toLowerCase()} ${i + 1}`)).filter(Boolean) : [];
 const productNodes: any[] = pr ? [

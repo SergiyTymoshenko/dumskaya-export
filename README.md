@@ -715,7 +715,7 @@ BreadcrumbList совпадает с видимыми); **телефоны ст�
 на языке, description — что на странице, цена по запросу, доставка; один H1 = название; canonical на себя, hreflang 5 языков
 и x-default; крошки + BreadcrumbList; Schema.org — ItemPage (`about` — фабрика как Organization с официальным сайтом
 в `sameAs`, `mentions` — дизайнер как Person, `primaryImageOfPage` и `image` — ImageObject с `creditText` и
-`copyrightNotice` фабрики), WebSite и организация магазина на каждой странице. Product не ставим: без цены Google считает
+`copyrightNotice` фабрики, `license` — раздел «Фото товаров» политики сайта `…/privacy#photos`, `acquireLicensePage` — официальный сайт фабрики: так требует отчёт Search Console «Метаданные изображений», 27.10.2026), WebSite и организация магазина на каждой странице. Product не ставим: без цены Google считает
 разметку ошибкой. og:image + og:image:alt, product:brand. Видимые факты для поиска и нейросетей (AEO/GEO) — список под
 названием: коллекция, дизайн, год, «для улицы», артикул; свой текст — только факты из данных фабрики (`texts_check.py`).
 Скорость: главное фото — сразу (`fetchpriority=high`) и с заранее занятым местом (`--ar`), первые карточки списков — сразу,

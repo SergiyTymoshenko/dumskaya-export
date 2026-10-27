@@ -209,6 +209,8 @@ def check_product_seo(u, h, errs):
             img = page.get("primaryImageOfPage")
             if not isinstance(img, dict) or img.get("@type") != "ImageObject" or not img.get("creditText") or not img.get("copyrightNotice"):
                 bad.append("главное фото — не ImageObject с creditText и copyrightNotice")
+            elif not img.get("license") or not img.get("acquireLicensePage"):    # «Метаданные изображений» Search Console
+                bad.append("у фото нет license и acquireLicensePage")
         if page.get("publisher", {}).get("@id") not in ids:
             bad.append("нет организации магазина (publisher)")
     if "Product" in types:

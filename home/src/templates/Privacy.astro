@@ -1,6 +1,7 @@
 ---
 // Политика конфиденциальности DUMSKAYA HOME — по образцу страницы студии (content/pages/*/privacy.json):
 // тот же оператор данных; отличия — заявку на товар фабрики видит партнёр-поставщик, cookie и Google Analytics нет.
+// Раздел «Фото товаров» (#photos) — условия использования снимков: на него ссылается разметка фото (license).
 import Crumbs from '../components/Crumbs.astro';
 import { paths, homeEmail, type HPage } from '../lib/catalog';
 import { typoHtml } from '../lib/typo';
@@ -13,7 +14,7 @@ const S = 'Súkennícka 1, 821 09 Bratislava';
 const tel = '<a href="tel:+421918177785">+421 918 17 77 85</a>';
 const form = (l: string, label: string) => `<a href="${(paths.contact as any)[l]}">${label}</a>`;
 const mail = homeEmail ? `<a href="mailto:${homeEmail}">${homeEmail}</a>` : '';
-const texts: Record<string, [string, string][]> = {
+const texts: Record<string, ([string, string] | [string, string, string])[]> = {
   en: [
     ['Who processes your data', `Data controller: <strong>${C}</strong>. DUMSKAYA HOME is the product catalog of the DUMSKAYA DESIGN interior design studio, ${S}, Slovakia. Contact: the form on the ${form('en', 'Contact')} page${mail ? `, e-mail ${mail}` : ''}.`],
     ['What data we collect and why', 'When you send the price request form, we receive your name, phone number or e-mail address, the country and city of delivery if you give them, the text of your message and the product you asked about. We use this data only to answer the request and prepare an offer (Art. 6(1)(b) GDPR — steps taken prior to entering into a contract).'],
@@ -21,6 +22,7 @@ const texts: Record<string, [string, string][]> = {
     ['How long we keep data', 'Requests are kept for no longer than 24 months after our last communication, unless a contract has been concluded between us. Contract-related data is retained for as long as Slovak law requires.'],
     ['Cookies', 'The website does not set cookies and does not use analytics or advertising services.'],
     ['Your rights', `You can request access to your data, its correction or deletion, restrict or object to its processing, and receive your data in a machine-readable format. Write to us using the form on the ${form('en', 'Contact')} page${mail ? ` or to ${mail}` : ''}, or by post to the studio address. You can file a complaint with the Office for Personal Data Protection of the Slovak Republic (dataprotection.gov.sk).`],
+    ['Product photos', 'Photos and drawings of products belong to their manufacturers — the factory named on each product page — and are shown on DUMSKAYA HOME to present their products. They may not be copied or used elsewhere without the manufacturer’s permission. For permission to use a photo, contact the manufacturer through its official website: the link is on the product page and on the manufacturer’s page in the catalog.', 'photos'],
   ],
   ru: [
     ['Кто обрабатывает данные', `Оператор данных: <strong>${C}</strong>. DUMSKAYA HOME — каталог товаров студии дизайна интерьера DUMSKAYA DESIGN, ${S}, Словакия. Телефон: ${tel}, форма на странице ${form('ru', '«Контакты»')}${mail ? `, e-mail ${mail}` : ''}.`],
@@ -29,6 +31,7 @@ const texts: Record<string, [string, string][]> = {
     ['Сколько хранятся данные', 'Запросы хранятся не дольше 24 месяцев после последнего общения, если между нами не заключён договор. Данные по договору хранятся столько, сколько требует законодательство Словакии.'],
     ['Cookie', 'Сайт не ставит файлы cookie и не использует сервисы аналитики и рекламы.'],
     ['Ваши права', `Вы можете запросить доступ к своим данным, их исправление или удаление, ограничить обработку или возразить против неё, получить данные в машиночитаемом виде. Напишите нам через форму на странице ${form('ru', '«Контакты»')}${mail ? ` или на ${mail}` : ''}, позвоните или отправьте письмо на адрес студии. Жалобу можно подать в Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk).`],
+    ['Фото товаров', 'Фото и чертежи товаров принадлежат фабрикам-производителям — той, что указана на странице товара, — и показаны на DUMSKAYA HOME, чтобы представить их изделия. Копировать их и использовать в других местах без разрешения производителя нельзя. Разрешение на использование фото даёт сама фабрика: ссылка на её официальный сайт — на странице товара и на странице фабрики в каталоге.', 'photos'],
   ],
   de: [
     ['Verantwortlicher', `Verantwortlich für die Datenverarbeitung: <strong>${C}</strong>. DUMSKAYA HOME ist der Produktkatalog des Studios für Interior Design DUMSKAYA DESIGN, ${S}, Slowakei. Kontakt: Formular auf der Seite ${form('de', '„Kontakt“')}${mail ? `, E-Mail ${mail}` : ''}.`],
@@ -37,6 +40,7 @@ const texts: Record<string, [string, string][]> = {
     ['Speicherdauer', 'Anfragen werden höchstens 24 Monate nach dem letzten Kontakt gespeichert, sofern kein Vertrag zwischen uns geschlossen wurde. Vertragsdaten werden so lange aufbewahrt, wie es das slowakische Recht verlangt.'],
     ['Cookies', 'Die Website setzt keine Cookies und verwendet keine Analyse- oder Werbedienste.'],
     ['Ihre Rechte', `Sie können Auskunft über Ihre Daten, deren Berichtigung oder Löschung verlangen, die Verarbeitung einschränken oder ihr widersprechen und Ihre Daten in einem maschinenlesbaren Format erhalten. Schreiben Sie uns über das Formular auf der Seite ${form('de', '„Kontakt“')}${mail ? ` oder an ${mail}` : ''} oder per Post an die Adresse des Studios. Beschwerden können Sie beim Úrad na ochranu osobných údajov Slovenskej republiky einreichen (dataprotection.gov.sk).`],
+    ['Produktfotos', 'Fotos und Zeichnungen der Produkte gehören den Herstellern — dem auf der jeweiligen Produktseite genannten Hersteller — und werden auf DUMSKAYA HOME gezeigt, um deren Produkte vorzustellen. Ohne Erlaubnis des Herstellers dürfen sie nicht kopiert oder anderweitig verwendet werden. Die Erlaubnis zur Nutzung eines Fotos erteilt der Hersteller selbst: Der Link zu seiner offiziellen Website steht auf der Produktseite und auf der Herstellerseite im Katalog.', 'photos'],
   ],
   fr: [
     ['Responsable du traitement', `Responsable du traitement : <strong>${C}</strong>. DUMSKAYA HOME est le catalogue de produits du studio d’architecture intérieure DUMSKAYA DESIGN, ${S}, Slovaquie. Contact : formulaire de la page ${form('fr', '« Contact »')}${mail ? `, e-mail ${mail}` : ''}.`],
@@ -45,6 +49,7 @@ const texts: Record<string, [string, string][]> = {
     ['Durée de conservation', 'Les demandes sont conservées 24 mois au maximum après notre dernier échange, sauf si un contrat a été conclu entre nous. Les données liées à un contrat sont conservées aussi longtemps que l’exige le droit slovaque.'],
     ['Cookies', 'Le site ne dépose pas de cookies et n’utilise aucun service d’analyse ou de publicité.'],
     ['Vos droits', `Vous pouvez demander l’accès à vos données, leur rectification ou leur effacement, limiter leur traitement ou vous y opposer, et recevoir vos données dans un format lisible par machine. Écrivez-nous via le formulaire de la page ${form('fr', '« Contact »')}${mail ? ` ou à ${mail}` : ''}, ou par courrier à l’adresse du studio. Vous pouvez introduire une réclamation auprès de l’Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk).`],
+    ['Photos des produits', 'Les photos et dessins des produits appartiennent à leurs fabricants — celui indiqué sur chaque page produit — et sont présentés sur DUMSKAYA HOME pour faire connaître leurs produits. Ils ne peuvent être copiés ni utilisés ailleurs sans l’autorisation du fabricant. Pour obtenir l’autorisation d’utiliser une photo, adressez-vous au fabricant via son site officiel : le lien figure sur la page du produit et sur la page du fabricant dans le catalogue.', 'photos'],
   ],
   es: [
     ['Responsable del tratamiento', `Responsable del tratamiento: <strong>${C}</strong>. DUMSKAYA HOME es el catálogo de productos del estudio de interiorismo DUMSKAYA DESIGN, ${S}, Eslovaquia. Contacto: formulario de la página ${form('es', '«Contacto»')}${mail ? `, e-mail ${mail}` : ''}.`],
@@ -53,11 +58,12 @@ const texts: Record<string, [string, string][]> = {
     ['Plazo de conservación', 'Las consultas se conservan un máximo de 24 meses desde nuestra última comunicación, salvo que hayamos celebrado un contrato. Los datos relacionados con un contrato se conservan durante el plazo que exige la legislación eslovaca.'],
     ['Cookies', 'La web no instala cookies ni utiliza servicios de analítica o publicidad.'],
     ['Sus derechos', `Puede solicitar el acceso a sus datos, su rectificación o supresión, limitar su tratamiento u oponerse a él y recibir sus datos en un formato legible por máquina. Escríbanos a través del formulario de la página ${form('es', '«Contacto»')}${mail ? ` o a ${mail}` : ''}, o por correo postal a la dirección del estudio. Puede presentar una reclamación ante el Úrad na ochranu osobných údajov Slovenskej republiky (dataprotection.gov.sk).`],
+    ['Fotos de los productos', 'Las fotos y los dibujos de los productos pertenecen a sus fabricantes —el indicado en cada página de producto— y se muestran en DUMSKAYA HOME para presentar sus productos. No pueden copiarse ni utilizarse en otros lugares sin permiso del fabricante. Para obtener permiso para usar una foto, diríjase al fabricante a través de su web oficial: el enlace está en la página del producto y en la página del fabricante en el catálogo.', 'photos'],
   ],
 };
 ---
 <Crumbs items={page.crumbs} />
 <article class="wrap prose policy" data-own>
   <h1 class="display">{page.h1}</h1>
-  {texts[page.lang].map(([h, t]) => <><h2 class="section-title">{h}</h2><p set:html={typoHtml(t, page.lang)} /></>)}
+  {texts[page.lang].map(([h, t, id]) => <><h2 class="section-title" id={id}>{h}</h2><p set:html={typoHtml(t, page.lang)} /></>)}
 </article>

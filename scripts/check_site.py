@@ -222,6 +222,8 @@ def check_page_seo(u, p, h, errs):
             im = page.get("primaryImageOfPage") or {}
             if im.get("@type") != "ImageObject" or not im.get("copyrightNotice"):
                 bad.append("главное фото товара — не ImageObject с правообладателем")
+            elif not im.get("license") or not im.get("acquireLicensePage"):     # «Метаданные изображений» Search Console
+                bad.append("у фото товара нет license и acquireLicensePage")
         if 'content="product"' not in h or 'property="product:brand"' not in h:
             bad.append("нет og:type product / product:brand")
     if "Product" in types:
