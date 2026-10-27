@@ -21,6 +21,7 @@
    python3 ~/dumskaya/deploy/gsc_index.py --sitemaps      — отправить карты сайта в Google сейчас (нужен «Полный доступ»)
 """
 import base64
+import io
 import json
 import os
 import re
@@ -100,17 +101,33 @@ def token(scope=SCOPE):
         os.remove(pem)
     body = urllib.parse.urlencode({"grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
                                    "assertion": f"{head}.{claim}.{_b64(sig)}"}).encode()
-    with urllib.request.urlopen(urllib.request.Request(TOKEN_URL, data=body), timeout=30) as r:
-        d = json.load(r)
+    d = json.loads(_fetch(urllib.request.Request(TOKEN_URL, data=body), 30))
     _tok[scope] = {"v": d["access_token"], "exp": now + int(d.get("expires_in", 3600))}
     return d["access_token"]
+
+
+def _fetch(req, timeout):
+    """Тело ответа. Ответ-ошибка (HTTPError) держит соединение открытым, пока жива сама ошибка, — 27.10.2026 так за
+    2 минуты набралось 1000 открытых соединений (дневной предел проверок исчерпан, Google отказывал сразу), и сервис
+    упёрся в предел открытых файлов: мини-приложения не открывались. Поэтому ошибку читаем, закрываем и передаём
+    дальше её копию без соединения (код, заголовки и текст ответа — те же)."""
+    try:
+        with urllib.request.urlopen(req, timeout=timeout) as r:
+            return r.read()
+    except urllib.error.HTTPError as e:
+        try:
+            raw = e.read()
+        except (OSError, ValueError):
+            raw = b""
+        finally:
+            e.close()
+        raise urllib.error.HTTPError(e.url, e.code, e.reason, e.headers, io.BytesIO(raw)) from None
 
 
 def api(url, body=None, method=None, scope=SCOPE):
     req = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None, method=method,
                                  headers={"Authorization": "Bearer " + token(scope), "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=60) as r:
-        raw = r.read()
+    raw = _fetch(req, 60)
     return json.loads(raw) if raw.strip() else {}       # отправка карты сайта отвечает пустым телом — это успех
 
 
@@ -198,42 +215,58 @@ def run_site(site, prop, log=print, limit=DAILY):
     pages, now, done = st["pages"], time.time(), 0
     for u in [u for u in list(pages) if u not in set(urls)]:
         del pages[u]                                  # страницы больше нет в карте сайта
-    queue = todo(urls, pages, now)[:limit]
+    # сколько проверок сегодня уже потрачено (предел Google — 2000 в день на сайт) — помнится и после перезапуска
+    # сервиса: каждая выкладка перезапускает его, и раньше проверка начиналась заново, хотя предел уже исчерпан
+    day = datetime.now(TZ).date().isoformat()
+    quota = st.get("quota") if (st.get("quota") or {}).get("day") == day else {"day": day, "used": 0, "limit": False}
+    st["quota"] = quota
+    if quota["limit"]:
+        return {"host": host, "status": "limit", "note": "дневной предел проверок Google исчерпан — продолжу завтра"}
+    queue = todo(urls, pages, now)[:max(0, limit - quota["used"])]
     errors, stop, i = 0, None, 0
+    halt = threading.Event()
+
+    def job(u):
+        return None if halt.is_set() else inspect(prop, u)   # предел исчерпан или нет доступа — больше не спрашивать
+
     # Google отвечает по одной странице 5–15 секунд — проверяем по WORKERS сразу (предел Google — 600 в минуту)
     with ThreadPoolExecutor(WORKERS) as ex:
-        futs = {ex.submit(inspect, prop, u): u for u in queue}
+        futs = {ex.submit(job, u): u for u in queue}
         for fut in as_completed(futs):
             u, i = futs[fut], i + 1
-            if stop:
-                fut.cancel()
+            if fut.cancelled():
                 continue
             try:
-                pages[u] = fut.result()
-                done += 1
+                res = fut.result()
+                if res is not None:
+                    pages[u] = res
+                    done += 1
+                    quota["used"] += 1
             except urllib.error.HTTPError as e:
                 if e.code == 429:
-                    stop = "limit"
-                    log(f"индекс Google {host}: дневной предел проверок исчерпан, продолжу завтра")
+                    if not stop:
+                        log(f"индекс Google {host}: дневной предел проверок исчерпан, продолжу завтра")
+                    stop, quota["limit"] = "limit", True
                 elif e.code in (401, 403):
                     stop = "denied"
                 else:
                     log(f"индекс Google {host}: {u} — ответ {e.code}")
                     errors += 1
+                    quota["used"] += 1
             except (OSError, ValueError) as e:
                 log(f"индекс Google {host}: {u} — {type(e).__name__}: {e}")
                 errors += 1
+            if stop and not halt.is_set():
+                halt.set()
+                for f in futs:
+                    f.cancel()
             if i % 25 == 0:                           # ход проверки — виден в «Графиках» и --status, не только в конце
                 save(host, st)
                 _run_note(progress={"host": host, "done": i, "todo": len(queue), "errors": errors})
-        if stop:
-            for f in futs:
-                f.cancel()
     if stop == "denied":
         save(host, st)
         return {"host": host, "status": "error", "note": f"Search Console не пускает служебный аккаунт к {host}"}
-    day = datetime.now(TZ).date().isoformat()
-    st["runs"][day] = done
+    st["runs"][day] = int(st["runs"].get(day) or 0) + done   # за день, все запуски вместе
     st["runs"] = dict(sorted(st["runs"].items())[-30:])
     st["checked"] = int(now)
     # снимок дня: в индексе / проверено / всего — по сайту и фабрикам (прогресс индексации по дням), хранится бессрочно
@@ -310,7 +343,7 @@ def groups(host, st=None):
     """Итог по сайту: [(подпись, в индексе, проверено, всего в карте сайта)] — у каталога по фабрикам."""
     st = st or load(host)
     site = next(s for s in indexnow.SITES if s["host"] == host)
-    urls = indexnow.sitemap_urls(site["root"], host)
+    urls = indexnow.sitemap_urls(site["root"], host) or []     # карта не прочиталась — пусто, а не ошибка
     pages = st["pages"]
     path = lambda u: urllib.parse.urlsplit(u).path.rstrip("/") or "/"  # noqa: E731
     if host != "dumskaya-home.com":
@@ -657,6 +690,10 @@ def tick(log=print):
                 log(f"индекс Google: карты сайта — ошибка {type(e).__name__}: {e}")
         threading.Thread(target=sm, name="gsc-sitemaps", daemon=True).start()
     now = datetime.now(TZ)
+    if _day["v"] is None:                     # сразу после перезапуска: сегодняшняя проверка уже прошла до конца?
+        r = last_run()
+        _day["v"] = now.date() if r.get("finished") and r.get("started") and not r.get("error") and \
+            datetime.fromtimestamp(r["started"], TZ).date() == now.date() else False
     if now.hour < RUN_HOUR or _day["v"] == now.date() or _lock.locked():
         return
     _day["v"] = now.date()

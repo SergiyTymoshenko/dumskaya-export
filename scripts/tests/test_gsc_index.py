@@ -153,5 +153,64 @@ G.submit_sitemaps(log=lambda *a: None)
 check(len(puts) == 3 and "dumskaya-home.com" in puts[-1][0], "карта каталога изменилась после выкладки — отправлена снова")
 q = G.todo(["a", "b", "c"], {"b": {"indexed": False, "checked": 0}, "c": {"indexed": True, "checked": int(time.time())}}, time.time())
 check(q == ["a", "b"], f"очередь: новые, потом давно проверенные не в индексе ({q})")
-print("\n" + ("Всё в порядке" if not FAILS else f"Ошибок: {len(FAILS)}"))
+
+# 27.10.2026: ответ-ошибка Google держал соединение открытым — после исчерпания предела за 2 минуты 1000 соединений,
+# сервис упёрся в предел открытых файлов. Ошибку закрываем сразу; после отказа «предел» больше не спрашиваем; предел дня
+# помнится и после перезапуска сервиса
+import io  # noqa: E402
+import urllib.error  # noqa: E402
+
+
+class Sock(io.BytesIO):
+    opened = []
+
+    def __init__(self, b):
+        super().__init__(b)
+        Sock.opened.append(self)
+
+
+def refuse(req, timeout=0):
+    raise urllib.error.HTTPError(req.full_url, 429, "Too Many Requests", {}, Sock(b'{"error": {"code": 429}}'))
+
+
+G.urllib.request.urlopen = refuse
+try:
+    G._fetch(urllib.request.Request("https://searchconsole.googleapis.com/x"), 5)
+    err = None
+except urllib.error.HTTPError as e:
+    err = e
+check(err is not None and err.code == 429 and b"429" in err.read() and all(s.closed for s in Sock.opened),
+      "ответ-ошибка Google: соединение закрыто сразу, код и текст ответа сохранены")
+asked = []
+
+
+def api_limit(url, body=None, method=None, scope=None):
+    asked.append(body["inspectionUrl"])
+    time.sleep(0.02)
+    raise urllib.error.HTTPError(url, 429, "Too Many Requests", {}, io.BytesIO(b""))
+
+
+G.api = api_limit
+site = next(s for s in G.indexnow.SITES if s["host"] == "dumskaya-home.com")
+st = G.load("dumskaya-home.com")
+st["pages"] = {}
+st.pop("quota", None)
+G.save("dumskaya-home.com", st)
+r = G.run_site(site, "sc-domain:dumskaya-home.com", log=lambda *a: None)
+check(len(asked) <= 2 * G.WORKERS and len(home) > 2 * G.WORKERS,
+      f"предел исчерпан — остальные страницы не спрашиваем ({len(asked)} запросов из {len(home)})")
+check(G.load("dumskaya-home.com")["quota"]["limit"] is True, "предел дня записан в состояние")
+asked.clear()
+r = G.run_site(site, "sc-domain:dumskaya-home.com", log=lambda *a: None)
+check(not asked and r["status"] == "limit", "после перезапуска в тот же день — ни одного запроса к Google")
+G._day["v"] = None
+G._run_note(started=int(time.time()), finished=int(time.time()), error=None)
+started = []
+_orig_thread = G.threading.Thread
+G.threading.Thread = lambda *a, **k: type("T", (), {"start": lambda self: started.append(k.get("name"))})()
+G._sm["last"] = time.time()
+G.tick(log=lambda *a: None)
+G.threading.Thread = _orig_thread
+check("gsc-index" not in started, "сегодняшняя проверка прошла до перезапуска — снова не начинается")
+print("\n" +("Всё в порядке" if not FAILS else f"Ошибок: {len(FAILS)}"))
 sys.exit(1 if FAILS else 0)
