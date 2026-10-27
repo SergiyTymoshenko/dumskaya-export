@@ -26,6 +26,13 @@ fi
 trap 'rm -rf "$LOCK"' EXIT
 cd "$DIR" || exit 0
 git fetch -q origin main 2>/dev/null || exit 0
+# свежая версия помощника: если изменился он сам — перезапуститься ею, чтобы заявку выполнили уже новые правила
+SELF="$(git hash-object "$0" 2>/dev/null)"
+if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ] && git pull -q --ff-only origin main >/dev/null 2>&1 \
+   && [ "$(git hash-object "$0" 2>/dev/null)" != "$SELF" ] && [ -z "${AGENT_RESTARTED:-}" ]; then
+  rm -rf "$LOCK"; trap - EXIT
+  AGENT_RESTARTED=1 exec /bin/bash "$0"
+fi
 REQ="$(git show origin/main:ops/request.json 2>/dev/null)" || exit 0
 ID="$(printf '%s' "$REQ" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("id",""))' 2>/dev/null)"
 case "$ID" in ''|*[!A-Za-z0-9._:-]*) exit 0 ;; esac
