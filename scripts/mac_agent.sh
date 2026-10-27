@@ -9,6 +9,8 @@
 #   dl:<фабрика>  — scripts/shop/factories/dl.py <фабрика> (фото и техкарты в папку выгрузки)
 #   status        — только версия и место на диске (проверка, что помощник жив)
 #   gsc-now, gsc-status, gsc-sitemaps — индекс Google на сервере: проверить сейчас / что известно / отправить карты сайта
+#   server-check  — состояние сервиса бота на сервере (scripts/server_check.sh: только читает)
+#   restart       — перезапустить сервис бота с проверкой (autodeploy restart, как при выкладке)
 # Ничего другого не запускает. Вывод — в ветку agent-log репозитория (файл last.log; Claude читает его оттуда),
 # рабочую папку и ветку main не трогает. Пароль sudo помощник не вводит: если выкладке он нужен (меняются настройки
 # сервера), шаг остановится с сообщением — тогда эту команду владелец запускает в Терминале сам.
@@ -72,6 +74,8 @@ else
       gsc-now)     ssh -o BatchMode=yes eurox 'python3 ~/dumskaya/deploy/gsc_index.py --now' </dev/null >>"$LOG" 2>&1 ;;
       gsc-status)  ssh -o BatchMode=yes eurox 'python3 ~/dumskaya/deploy/gsc_index.py --status' </dev/null >>"$LOG" 2>&1 ;;
       gsc-sitemaps) ssh -o BatchMode=yes eurox 'python3 ~/dumskaya/deploy/gsc_index.py --sitemaps' </dev/null >>"$LOG" 2>&1 ;;
+      server-check) ssh -o BatchMode=yes eurox 'bash -s' <scripts/server_check.sh >>"$LOG" 2>&1 ;;
+      restart)     ssh -o BatchMode=yes eurox /usr/local/lib/dumskaya/autodeploy restart </dev/null >>"$LOG" 2>&1 ;;
       *)           echo "неизвестное действие — не выполняю" >>"$LOG"; false ;;
     esac
     r=$?
