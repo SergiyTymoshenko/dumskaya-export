@@ -119,13 +119,20 @@ const verify = homeSite.verification || {};
       try { navigator.sendBeacon('/api/hit', new Blob([JSON.stringify({ t: t, p: location.pathname })], { type: 'text/plain' })); } catch (err) {}
     }, true);
     (function () {
-      var shown = 0, since = document.visibilityState === 'visible' ? Date.now() : 0, sent = 0;
+      var shown = 0, since = document.visibilityState === 'visible' ? Date.now() : 0, sent = 0, acted = 0;
+      // было ли хоть одно действие человека (прокрутка, касание, мышь, клавиша) и не управляет ли браузером программа —
+      // два флажка к времени на странице, чтобы статистика отличала человека (в том числе через VPN) от программы
+      ['scroll', 'pointerdown', 'pointermove', 'touchstart', 'keydown', 'wheel'].forEach(function (n) {
+        addEventListener(n, function () { acted = 1; }, { once: true, passive: true, capture: true });
+      });
       function send() {
         if (since) { shown += Date.now() - since; since = 0; }
         var s = Math.round(shown / 1000);
         if (s < 1 || s === sent) return;
         sent = s;
-        try { navigator.sendBeacon('/api/hit', new Blob([JSON.stringify({ t: 'time', p: location.pathname, s: s })], { type: 'text/plain' })); } catch (err) {}
+        var m = { t: 'time', p: location.pathname, s: s, i: acted };
+        if (navigator.webdriver) m.w = 1;
+        try { navigator.sendBeacon('/api/hit', new Blob([JSON.stringify(m)], { type: 'text/plain' })); } catch (err) {}
       }
       document.addEventListener('visibilitychange', function () {
         if (document.visibilityState === 'hidden') send(); else if (!since) since = Date.now();

@@ -287,9 +287,11 @@ class Handler(BaseHTTPRequestHandler):
                 secs = int(data.get("s") or 0)
             except (TypeError, ValueError):
                 secs = 0
+            act = data.get("i")                       # было ли на странице действие человека; старые страницы не присылают
+            act = None if act is None else bool(act)
             if 0 < secs <= 6 * 3600 and self.allow(TIME_RATE, ip, TIME_MAX):
                 try:
-                    rec_time(page, secs, ip, ua)
+                    rec_time(page, secs, ip, ua, act, bool(data.get("w")))
                 except OSError as e:
                     log(f"время на странице: не записано: {e}")
         elif valid and kind in CONTACTS and self.allow(HIT_RATE, ip, HIT_MAX):

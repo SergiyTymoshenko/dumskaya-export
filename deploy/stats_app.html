@@ -482,12 +482,12 @@
   function table(rows) {
     const det = el('details'); det.append(el('summary', null, 'Таблица по ' + u().by));
     const t = el('table'); const head = el('tr');
-    [u().head, 'Посетители', 'Просмотры', 'Заявки', 'Контакты', 'Google'].forEach((h) => head.append(el('th', null, h)));
+    [u().head, 'Посетители', 'Все заходы', 'Просмотры', 'Заявки', 'Контакты', 'Google'].forEach((h) => head.append(el('th', null, h)));
     t.append(head);
     rows.slice().reverse().forEach((r) => {
       const tr = el('tr');
       tr.append(el('td', null, (hourly() ? dayword(r.ts).replace('сегодня', '').trim() + ' ' + two(at(r.ts).getHours()) + ':00' : rowTitle(r, true)).trim() + (r.partial ? ' *' : '')));
-      [r.visitors, r.views, r.leads, r.contacts, r.google].forEach((v) => tr.append(el('td', null, r.missing ? '—' : fmt(v))));
+      [shown(r), r.visitors, r.views, r.leads, r.contacts, r.google].forEach((v) => tr.append(el('td', null, r.missing ? '—' : fmt(v))));
       t.append(tr);
     });
     det.append(t, el('p', 'note', hourly()
@@ -496,6 +496,12 @@
         + '. Посетители — сумма по дням: кто заходил в разные дни, учтён в каждом.'));
     return det;
   }
+
+  // Посетители — как в Google Analytics: вовлечённые (больше 10 с на сайте, 2+ страницы, нажатие на контакт или заявка);
+  // дни, посчитанные до этого правила (их журнала уже нет), — все заходы
+  const shown = (r) => (r.engaged != null ? r.engaged : r.visitors);
+  const ENGAGED_NOTE = 'Посетители — как в Google Analytics: больше 10 секунд на сайте, две и больше страниц, нажатие на контакт или заявка. '
+    + 'Все заходы — вместе с теми, кто открыл одну страницу на пару секунд.';
 
   function render() {
     if (data.period === '1h') return renderLive();
@@ -510,7 +516,11 @@
     const tiles = el('div', 'tiles');
     const tv = tot.time_visitors;
     const cmp = comparable();                       // «всё время» сравнивать не с чем
-    tiles.append(tile('Посетители', tot.visitors, { prev: prev && prev.visitors, kind: 'hero', compare: cmp }),
+    const eng = tot.engaged != null;
+    tiles.append(tile('Посетители', eng ? tot.engaged : tot.visitors, { prev: prev && (eng ? prev.engaged : prev.visitors), kind: 'hero',
+      compare: cmp && (!eng || (prev && prev.engaged != null)),
+      split: eng ? 'всего заходов — ' + fmt(tot.visitors) + (tot.visitors ? ' · вовлечённых ' + Math.round((tot.engaged / tot.visitors) * 100) + '%' : '')
+ : 'все заходы: часть дней посчитана до правила Google о вовлечённости' }),
       tile('Среднее время на сайте', tot.avg_time, { prev: prev && prev.avg_time, compare: cmp && tot.avg_time != null, show: dur,
         split: tot.avg_time != null ? 'по ' + fmt(tv) + ' ' + plural(tv, 'посетителю', 'посетителям', 'посетителям') + ' из\u00a0' + fmt(tot.visitors)
           : 'Время присылают страницы сайта, когда их закрывают, — пока его нет' }),
@@ -521,9 +531,11 @@
     app.append(tiles);
 
     const c1 = card('Посетители по ' + u().by, 'Нажмите на график — покажет ' + u().one + ' целиком');
-    c1.append(lineChart(rows, 'visitors', (r) => [['Посетители', r.visitors, true], ['Просмотры', r.views], ['Заявки', r.leads], ['Нажатия на контакты', r.contacts]]
+    rows.forEach((r) => { r.shown = shown(r); });
+    c1.append(lineChart(rows, 'shown', (r) => [['Посетители', r.shown, true], ['Все заходы', r.visitors], ['Просмотры', r.views], ['Заявки', r.leads], ['Нажатия на контакты', r.contacts]]
       .concat(r.avg_time != null ? [['Среднее время на сайте', dur(r.avg_time)]] : [])));
     if (rows[n - 1].partial) c1.append(el('p', 'note', u().open));
+    c1.append(el('p', 'note', ENGAGED_NOTE));
     c1.append(table(rows));
     app.append(c1);
 
@@ -593,6 +605,9 @@
     if (s.before) bits.push('ранее за сутки: ' + s.before + ' ' + plural(s.before, 'заход', 'захода', 'заходов'));
     m2.append(document.createTextNode(' · ' + bits.join(' · ')));
     c.append(m2);
+    if (s.engaged === false && !s.active) c.append(el('div', 'meta', 'Не вовлечён — как у Google: одна страница, меньше 10\u00a0секунд, без контактов. В «Посетители» не входит, только во «все заходы».'));
+    if (s.suspect) c.append(el('div', 'meta', s.suspect.charAt(0).toUpperCase() + s.suspect.slice(1)
+      + (s.acted === true ? ' — на странице были действия человека, считаем посетителем' : '')));
     const ol = el('ol', 'trail');
     s.pages.forEach((p, i) => {
       const li = el('li', p.nf ? 'nf' : null);
@@ -619,11 +634,11 @@
     document.getElementById('sub').textContent = (d.host || 'dumskaya-design.com') + ' · обновлено в ' + hm(d.generated_ts) + ' · обновляется само раз в минуту';
     if (notLive()) app.append(notLiveCard());
     const tiles = el('div', 'tiles');
-    const split = ['сейчас на сайте — ' + sm.active, 'просмотров — ' + sm.views];
+    const split = ['всего заходов — ' + sm.visitors, 'сейчас на сайте — ' + sm.active, 'просмотров — ' + sm.views];
     if (sm.avg_time != null) split.push('в среднем на сайте — ' + dur(sm.avg_time));
     if (sm.contacts) split.push('нажатий на контакты — ' + sm.contacts);
     if (sm.leads) split.push('заявок — ' + sm.leads);
-    tiles.append(tile('Посетители за последний час', sm.visitors, { kind: 'hero', split: split.join(' · ') }));
+    tiles.append(tile('Посетители за последний час', sm.engaged != null ? sm.engaged : sm.visitors, { kind: 'hero', split: split.join(' · ') }));
     app.append(tiles);
     if (!d.sessions.length) {
       const c = card('За последний час на сайте никого не было');
@@ -635,6 +650,7 @@
     app.append(el('p', 'foot', 'Справа — сколько человек провёл на странице (пока она была на экране); «≈» — примерно, до перехода на следующую; '
       + 'дольше 5 минут считается за 5 — дальше это уже забытая вкладка. '
       + 'Красным — адрес, которого на сайте нет (ошибка 404). Роботы, которые назвались браузером, и визиты студии не показываются. '
+      + 'Через VPN и дата-центры заходят и люди, и программы: человек считается, если на странице было хоть одно действие (прокрутка, касание, мышь, клавиша). '
       + 'Город — по IP-адресу, примерно: мобильный интернет часто показывает город оператора. '
       + (d.geo ? 'База городов: ' + d.credit + '.' : 'База городов загружается — города появятся через несколько минут.')));
   }

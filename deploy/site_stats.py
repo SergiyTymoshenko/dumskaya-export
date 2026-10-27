@@ -96,7 +96,7 @@ EXCLUDE_FILE = os.path.join(SHARED_DIR, "exclude.json")  # «свои» адре
 OWN_FILE = os.path.join(SHARED_DIR, "own_devices.json")   # откуда студия открывала «Графики» — эти визиты тоже свои
 OWN_WINDOW = 3 * 3600                                     # …за 3 часа до и после открытия
 VERSION_FILE = os.path.join(STATS_DIR, "version")
-STATS_VERSION = "8"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
+STATS_VERSION = "9"           # сменить — итоги дней, которые журнал ещё помнит, пересчитаются
                               # (2: отсев сканеров; 3: время на сайте и роботы без оформления и времени;
                               #  4: страница — не больше 5 минут; 5: роботы без оформления и заголовков — и в старых днях;
                               #  6: elmah.axd и подобные адреса ASP.NET — тоже сканеры;
@@ -646,9 +646,16 @@ def _append(path, obj):
         fh.write(json.dumps(obj, ensure_ascii=False) + "\n")
 
 
-def record_time(path, secs, ip, ua):
-    """Страница сообщила, сколько секунд была на экране (её закрыли или свернули)."""
-    _append(TIMES_FILE, {"ts": int(time.time()), "p": norm_path(path), "s": int(secs), "v": vkey(ip, ua)})
+def record_time(path, secs, ip, ua, act=None, wd=None):
+    """Страница сообщила, сколько секунд была на экране (её закрыли или свернули). act — было ли на ней хоть одно
+    действие человека (прокрутка, касание, мышь, клавиша), wd — браузер под управлением программы (navigator.webdriver);
+    старые страницы этих флажков не присылали — тогда их нет в записи."""
+    d = {"ts": int(time.time()), "p": norm_path(path), "s": int(secs), "v": vkey(ip, ua)}
+    if act is not None:
+        d["i"] = 1 if act else 0
+    if wd:
+        d["w"] = 1
+    _append(TIMES_FILE, d)
 
 
 def prune_times(now=None):
@@ -701,6 +708,87 @@ def events_between(since_ts, until_ts):
         except OSError:
             pass
     return sorted(out)
+
+
+def flags_between(since_ts, until_ts):
+    """Признаки поведения по обезличенному ключу посетителя: {ключ: {i: было действие, w: браузер-программа,
+    known: страница присылала флажок действий, c: нажимал на контакт}}."""
+    out = {}
+    for path in (TIMES_FILE, HITS_FILE):
+        try:
+            with open(path, "rb") as fh:
+                for line in fh:
+                    t = _line_ts(line)
+                    if t is not None and not since_ts <= t < until_ts:
+                        continue
+                    try:
+                        d = json.loads(line)
+                    except ValueError:
+                        continue
+                    v = d.get("v")
+                    if not v:
+                        continue
+                    f = out.setdefault(v, {"i": False, "w": False, "known": False, "c": False})
+                    if path == HITS_FILE:
+                        f["c"] = f["c"] or d.get("t") in CONTACTS
+                        continue
+                    if "i" in d:
+                        f["known"] = True
+                        f["i"] = f["i"] or bool(d["i"])
+                    f["w"] = f["w"] or bool(d.get("w"))
+        except OSError:
+            pass
+    return out
+
+
+# Браузеры выходят каждые 4 недели: Chrome 130 — 15.10.2024, Firefox 131 — 01.10.2024. Отстал больше чем на год —
+# так подписываются программы (у людей браузер обновляется сам); старые iPhone и Safari не считаем — они стоят годами.
+_REL = {"Chrome": (130, datetime(2024, 10, 15, tzinfo=timezone.utc).timestamp()),
+        "Firefox": (131, datetime(2024, 10, 1, tzinfo=timezone.utc).timestamp())}
+OLD_BROWSER = 14                                   # версий ≈ 13 месяцев
+UA_PER_IP = 5                                      # столько разных «браузеров» с одного адреса за период — уже подозрительно
+
+
+def old_browser(ua, ts=None):
+    m = re.search(r"\b(Chrome|Firefox)/(\d+)\.", ua or "")
+    if not m or re.search(r"Edg|OPR|YaBrowser|SamsungBrowser|Android [4-9]\.", ua):
+        return None
+    base, at = _REL[m.group(1)]
+    now_v = base + int(((ts or time.time()) - at) // (28 * 86400))
+    v = int(m.group(2))
+    return f"{m.group(1)} {v}" if v < now_v - OLD_BROWSER else None
+
+
+def suspect(ip, ua, ts=None, uas_on_ip=1):
+    """Почему посетитель подозрителен: адрес дата-центра (или VPN), браузер старше года, много браузеров с адреса —
+    или None. Само по себе это не робот: робот — если к тому же на странице не было ни одного действия человека."""
+    host = geo.hosting(ip) if geo else None
+    if host:
+        return "дата-центр или VPN: " + host
+    old = old_browser(ua, ts)
+    if old:
+        return "устаревший браузер: " + old
+    if uas_on_ip >= UA_PER_IP:
+        return f"{uas_on_ip} разных браузеров с одного адреса"
+    return None
+
+
+def program_robot(ip, ua, f, ts=None, uas_on_ip=1):
+    """Робот по поведению: браузер под управлением программы — сразу; подозрительный адрес или браузер (suspect) —
+    если страница прислала флажок действий и действий не было ни одного, и на контакты не нажимал. VPN с человеком
+    за ним — посетитель: он листает, касается, двигает мышь."""
+    if not f:
+        return False
+    if f["w"]:
+        return True
+    return f["known"] and not f["i"] and not f["c"] and suspect(ip, ua, ts, uas_on_ip) is not None
+
+
+ENGAGED_SECS = 10                                  # как в Google Analytics: вовлечённый — больше 10 с, 2+ страницы или действие
+
+
+def engaged(n_views, secs, f=None, lead=False):
+    return n_views >= 2 or secs > ENGAGED_SECS or lead or bool(f and f["c"])
 
 
 def beacons_by_key(events):
@@ -832,22 +920,31 @@ class Agg:
             v["nav"] = True
         v["hits"].append((ts or 0, kind, path))
 
-    def robots(self, times=None, now=None):
-        """Ключи роботов: сканеры (is_robot) и «молчащие» программы (quiet_robot); правило «30 минут без времени» —
-        только для тех, кто заходил, когда страницы уже присылали время (раньше его не было ни у кого)."""
-        now, times, since = now or time.time(), times or {}, beacon_start()
+    def robots(self, times=None, now=None, flags=None):
+        """Ключи роботов: сканеры (is_robot), «молчащие» программы (quiet_robot) и программы по поведению
+        (program_robot: браузер под управлением программы; дата-центр, старый браузер или много браузеров с адреса —
+        и ни одного действия на странице). Правило «30 минут без времени» — только для тех, кто заходил, когда
+        страницы уже присылали время (раньше его не было ни у кого)."""
+        now, times, flags, since = now or time.time(), times or {}, flags or {}, beacon_start()
+        per_ip = Counter(split_key(k)[0] for k, v in self.keys.items() if v["hits"])
         out = set()
         for k, v in self.keys.items():
             if not v["hits"]:
                 continue
-            timed = since is not None and min(t for t, _, _ in v["hits"]) >= since
-            if is_robot(v["hits"]) or quiet_robot(v, times.get(vkey(*split_key(k))), now, timed):
+            ip, ua = split_key(k)
+            first = min(t for t, _, _ in v["hits"])
+            timed = since is not None and first >= since
+            vk = vkey(ip, ua)
+            if (is_robot(v["hits"]) or quiet_robot(v, times.get(vk), now, timed)
+                    or program_robot(ip, ua, flags.get(vk), first, per_ip[ip])):
                 out.add(k)
         return out
 
-    def result(self, leads, hits=(), robots=None, times=None, now=None):
-        times = times or {}
-        robots = self.robots(times, now) if robots is None else robots
+    def result(self, leads, hits=(), robots=None, times=None, now=None, flags=None):
+        times, flags = times or {}, flags or {}
+        robots = self.robots(times, now, flags) if robots is None else robots
+        lead_ips = {x.get("ip") for x in leads if x.get("ip")}
+        engaged_n = 0
         views, lang_views, notfound = Counter(), Counter(), Counter()
         lang_visitors, sources, devices = Counter(), Counter(), Counter()
         page_time = {}
@@ -863,6 +960,7 @@ class Agg:
             if not seen:
                 continue
             visitors += 1
+            ip, ua = split_key(k)
             views.update(p for _, p in seen)
             lang_views.update(lang_of(p) for _, p in seen)
             lang_visitors.update({lang_of(p) for _, p in seen})
@@ -870,6 +968,7 @@ class Agg:
             devices[v["dev"]] += 1
             secs = page_times(seen, times.get(vkey(*split_key(k)), [])) if times else []
             known = [(p, min(x, PAGE_CAP)) for (_, p), x in zip(seen, secs) if x]
+            engaged_n += engaged(len(seen), sum(x for _, x in known), flags.get(vkey(ip, ua)), ip in lead_ips)
             if known:                               # время — только по тем, чья страница его прислала
                 time_visitors += 1
                 time_total += sum(x for _, x in known)
@@ -881,6 +980,7 @@ class Agg:
         return {
             "requests": self.requests,              # 0 — за этот период журнала нет (ещё не вёлся или удалён)
             "visitors": visitors,
+            "engaged": engaged_n,                   # как в Google Analytics: больше 10 с, 2+ страницы, контакт или заявка
             "views": sum(views.values()),
             "lang_visitors": dict(lang_visitors),
             "lang_views": dict(lang_views),
@@ -904,7 +1004,8 @@ def aggregate(since_ts, until_ts):
     for ts, e in entries(since_ts, until_ts):
         a.add(e, ts)
     times = beacons_by_key(events_between(since_ts, until_ts + 3600))
-    return a.result(leads_between(since_ts, until_ts), hits_between(since_ts, until_ts), times=times, now=time.time())
+    return a.result(leads_between(since_ts, until_ts), hits_between(since_ts, until_ts), times=times, now=time.time(),
+                    flags=flags_between(since_ts, until_ts + 3600))
 
 
 def aggregate_days(days):
@@ -918,8 +1019,9 @@ def aggregate_days(days):
         d = datetime.fromtimestamp(ts, TZ).date()
         if d in aggs:
             aggs[d].add(e, ts)
-    times, now = beacons_by_key(events_between(lo, hi + 3600)), time.time()
-    return {d: aggs[d].result(leads_between(*bounds[d]), hits_between(*bounds[d]), times=times, now=now) for d in days}
+    times, now, flags = beacons_by_key(events_between(lo, hi + 3600)), time.time(), flags_between(lo, hi + 3600)
+    return {d: aggs[d].result(leads_between(*bounds[d]), hits_between(*bounds[d]), times=times, now=now, flags=flags)
+            for d in days}
 
 
 # ---------- дни и хранение ----------
@@ -1019,8 +1121,9 @@ def merge(aggs):
     aggs = list(aggs)
     if not aggs or any(a is None for a in aggs):
         return None
-    sums = ("visitors", "views", "google", "bing", "leads", "own", "time_total", "time_visitors")
+    sums = ("visitors", "engaged", "views", "google", "bing", "leads", "own", "time_total", "time_visitors")
     out = dict.fromkeys(sums, 0)
+    out["engaged_known"] = all("engaged" in a for a in aggs)   # дни, посчитанные до правила вовлечённости, его не знают
     for k in MERGE_DICTS:
         out[k] = Counter()
     out["page_time"] = {}
@@ -1245,7 +1348,7 @@ def _row(a, **extra):
     """Строка графика (день или час) из итогов периода; a=None — данных нет."""
     a = a or {}
     gl = a.get("google_lang") or {}
-    return dict(extra, visitors=a.get("visitors", 0), views=a.get("views", 0), leads=a.get("leads", 0),
+    return dict(extra, visitors=a.get("visitors", 0), engaged=a.get("engaged"), views=a.get("views", 0), leads=a.get("leads", 0),
                 google=a.get("google", 0), contacts=sum((a.get("contacts") or {}).values()),
                 google_sk=gl.get("sk", 0), google_de=gl.get("de", 0), glang={k: gl.get(k, 0) for k, _ in GOOGLE_SPLIT},
                 avg_time=avg_time(a), tv=a.get("time_visitors", 0), tt=a.get("time_total", 0))
@@ -1259,7 +1362,7 @@ def _top(counter, k=8, other="другие"):
 
 def _total(tot):
     """Итоги периода для плиток и карточек (tot — результат merge или None)."""
-    total = {"visitors": 0, "views": 0, "leads": 0, "google": 0, "own": 0, "contacts": 0, "contact_types": [],
+    total = {"visitors": 0, "engaged": None, "views": 0, "leads": 0, "google": 0, "own": 0, "contacts": 0, "contact_types": [],
              "contact_pages": [], "langs": [], "sources": [], "devices": [], "pages": [], "notfound": [], "leads_pages": [],
              "avg_time": None, "time_visitors": 0}
 
@@ -1269,7 +1372,8 @@ def _total(tot):
 
     if tot:
         total.update(
-            visitors=tot["visitors"], views=tot["views"], leads=tot["leads"], google=tot["google"], own=tot["own"],
+            visitors=tot["visitors"], engaged=tot["engaged"] if tot.get("engaged_known", True) else None,
+            views=tot["views"], leads=tot["leads"], google=tot["google"], own=tot["own"],
             avg_time=avg_time(tot), time_visitors=tot["time_visitors"],
             langs=[[LANG_NAMES[k], tot["lang_visitors"][k]] for k in LANG_NAMES if tot["lang_visitors"].get(k)],
             sources=_top(tot["sources"]), devices=_top(tot["devices"]),
@@ -1285,7 +1389,7 @@ def _total(tot):
 def _prev(pv, contacts_known=True):
     if not pv:
         return None
-    return dict({k: pv[k] for k in ("visitors", "views", "leads", "google")},
+    return dict({k: pv[k] for k in ("visitors", "views", "leads", "google")}, engaged=pv["engaged"] if pv.get("engaged_known", True) else None,
                 contacts=sum(pv["contacts"].values()) if contacts_known else None, avg_time=avg_time(pv))
 
 
@@ -1328,22 +1432,22 @@ def web_hours(now=None):
             buckets[min(23, int((ts - start) // 3600))].add(e, ts)
         else:
             prev.add(e, ts)
-    times = beacons_by_key(events_between(pstart, now + 1))
-    robots = whole.robots(times, now)                          # кто робот — по всем двум суткам, а не по одному часу
+    times, flags = beacons_by_key(events_between(pstart, now + 1)), flags_between(pstart, now + 1)
+    robots = whole.robots(times, now, flags)                   # кто робот — по всем двум суткам, а не по одному часу
     leads, hits = leads_between(pstart, now + 1), hits_between(pstart, now + 1, with_ts=True)
     rows = []
     ls = logs_start()
     for i, b in enumerate(buckets):
         bs = start + i * 3600
         r = b.result([x for x in leads if bs <= x["ts"] < bs + 3600], [(t, p) for ts, t, p in hits if bs <= ts < bs + 3600],
-                     robots, times)
+                     robots, times, flags=flags)
         rows.append(_row(r, ts=bs, missing=ls is None or bs + 3600 <= ls, partial=i == 23))
     tot = merge([cur.result([x for x in leads if x["ts"] >= start], [(t, p) for ts, t, p in hits if ts >= start],
-                            robots, times)])
+                            robots, times, flags=flags)])
     pv = None
     if ls is not None and ls <= pstart + 300:                  # журнал помнит и предыдущие сутки целиком
         pv = merge([prev.result([x for x in leads if x["ts"] < start], [(t, p) for ts, t, p in hits if ts < start],
-                                robots, times)])
+                                robots, times, flags=flags)])
     return dict(_stamp(now), period="24h", unit="hour", rows=rows, coverage=sum(not r["missing"] for r in rows),
                 total=_total(tot), prev=_prev(pv))
 
@@ -1425,12 +1529,17 @@ def web_live(now=None):
     events = {}                                               # обезличенный ключ → [(время, вид, страница, секунды)]
     for t, v, kind, path, secs in events_between(since, now + 1):
         events.setdefault(v, []).append((t, kind, path, secs))
+    flags = flags_between(since, now + 1)
     started = beacon_start()
+    per_ip = Counter(split_key(k)[0] for k in views)
     for key in list(views):                                   # роботы, назвавшиеся браузером, — не посетители
         m = meta[key]
-        beacons = [x for x in events.get(vkey(*split_key(key)), []) if x[1] == "time"]
-        timed = started is not None and min(t for t, _, _ in m["hits"]) >= started
-        if is_robot(m["hits"]) or quiet_robot(m, beacons, now, timed):
+        ip, ua = split_key(key)
+        beacons = [x for x in events.get(vkey(ip, ua), []) if x[1] == "time"]
+        first = min(t for t, _, _ in m["hits"])
+        timed = started is not None and first >= started
+        if (is_robot(m["hits"]) or quiet_robot(m, beacons, now, timed)
+                or program_robot(ip, ua, flags.get(vkey(ip, ua)), first, per_ip[ip])):
             del views[key]
     leads = leads_between(since, now + 1)
     sessions, last = [], None
@@ -1453,10 +1562,16 @@ def web_live(now=None):
             gld = [x for x in lds if lo <= x["ts"] < hi and (not x["page"] or norm_path(x["page"]) in paths)]
             end = max([g[-1][0]] + [x[0] for x in gev] + [x["ts"] for x in gld])
             if end >= now - LIVE_WINDOW:
-                sessions.append(_session(info[key], g, gev, gld, gi, now))
+                ses = _session(info[key], g, gev, gld, gi, now)
+                f = flags.get(vkey(*split_key(key)))
+                contact = any(x[1] in CONTACTS for x in gev)
+                ses["engaged"] = engaged(len(ses["pages"]), ses["timed"] or 0, {"c": contact}, bool(gld))
+                ses["suspect"] = suspect(info[key][0], info[key][1], g[0][0], per_ip[info[key][0]])
+                ses["acted"] = bool(f and f["i"]) if f and f["known"] else None
+                sessions.append(ses)
     sessions.sort(key=lambda s: -s["end"])
     hour = now - LIVE_WINDOW
-    summary = {"visitors": len(sessions), "active": sum(s["active"] for s in sessions),
+    summary = {"visitors": len(sessions), "engaged": sum(s["engaged"] for s in sessions), "active": sum(s["active"] for s in sessions),
                "views": sum(1 for s in sessions for p in s["pages"] if p["ts"] >= hour),
                "contacts": sum(1 for s in sessions for p in s["pages"] for x in p["events"] if x["t"] in CONTACTS and x["ts"] >= hour),
                "leads": sum(1 for s in sessions for p in s["pages"] for x in p["events"] if x["t"] == "lead" and x["ts"] >= hour)}
@@ -1544,7 +1659,7 @@ def web(period):
 
 
 # ---------- «Все»: оба сайта вместе (решено 25.10.2026 — цифры складываются) ----------
-ROW_SUMS = ("visitors", "views", "leads", "google", "contacts", "tv", "tt")
+ROW_SUMS = ("visitors", "engaged", "views", "leads", "google", "contacts", "tv", "tt")
 
 
 def _sum_items(lists, k=None):
@@ -1580,6 +1695,9 @@ def _merge_rows(a_rows, b_rows, key):
             m = by[k]
             if not r.get("missing"):
                 for f in ROW_SUMS:
+                    if f == "engaged" and (r.get(f) is None or m[f] is None):
+                        m[f] = None                  # у одного из сайтов день посчитан до правила вовлечённости
+                        continue
                     m[f] += r.get(f) or 0
                 m["missing"] = False
                 if "days" in r:
@@ -1597,6 +1715,7 @@ def _merge_total(a, b):
                    key=lambda x: -x[1])[:15]
     return {
         **{k: a[k] + b[k] for k in ("visitors", "views", "leads", "google", "own", "contacts")},
+        "engaged": a["engaged"] + b["engaged"] if a.get("engaged") is not None and b.get("engaged") is not None else None,
         "time_visitors": tv, "avg_time": _avg([(a["avg_time"], a["time_visitors"]), (b["avg_time"], b["time_visitors"])]),
         "langs": _sum_items([a["langs"], b["langs"]]), "sources": _sum_items([a["sources"], b["sources"]], 9),
         "devices": _sum_items([a["devices"], b["devices"]]), "contact_types": _sum_items([a["contact_types"], b["contact_types"]]),
@@ -1612,6 +1731,7 @@ def _merge_prev(a, b):
         return None
     out = {k: (a.get(k) or 0) + (b.get(k) or 0) for k in ("visitors", "views", "leads", "google")}
     out["contacts"] = a["contacts"] + b["contacts"] if a.get("contacts") is not None and b.get("contacts") is not None else None
+    out["engaged"] = a["engaged"] + b["engaged"] if a.get("engaged") is not None and b.get("engaged") is not None else None
     out["avg_time"] = _avg([(a.get("avg_time"), a.get("visitors") or 0), (b.get("avg_time"), b.get("visitors") or 0)])
     return out
 
@@ -1647,7 +1767,7 @@ def web_all(period):
                 sess["site"] = name
         sessions = sorted(a["sessions"] + b["sessions"], key=lambda x: -x["end"])[:60]
         sa, sb = a["summary"], b["summary"]
-        summary = {k: sa[k] + sb[k] for k in ("visitors", "active", "views", "contacts", "leads")}
+        summary = {k: sa[k] + sb[k] for k in ("visitors", "engaged", "active", "views", "contacts", "leads")}
         summary["avg_time"] = _avg([(sa["avg_time"], sa["visitors"]), (sb["avg_time"], sb["visitors"])])
         last = max([x["last"] for x in (a, b) if x.get("last")], key=lambda v: v["ts"], default=None)
         return dict(base, sessions=sessions, summary=summary, own=a["own"] + b["own"], last=None if sessions else last,
