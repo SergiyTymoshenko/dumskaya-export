@@ -162,6 +162,7 @@ const RUNS = [
               else {
                 const firstSrc = () => p.$eval('#sec-files .gallery .thumb img', (x) => x.getAttribute('src')).catch(() => '');
                 const dragTo = async (a, b) => {
+                  await p.$eval(a, (x) => x.scrollIntoView({ block: 'center' })); await p.waitForTimeout(300);   // look() прокручивает страницу
                   const ra = await (await p.$(a)).boundingBox(), rb = await (await p.$(b)).boundingBox();
                   const x0 = ra.x + ra.width / 2, y0 = ra.y + ra.height / 2, x1 = rb.x + rb.width / 2, y1 = rb.y + rb.height / 2;
                   await p.mouse.move(x0, y0); await p.mouse.down();

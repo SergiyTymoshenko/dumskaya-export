@@ -1278,8 +1278,9 @@
       try { if (tg && tg.HapticFeedback) tg.HapticFeedback.selectionChanged(); } catch (e) {}
     }
     const nav = document.getElementById('nav'), nr = nav && nav.offsetHeight ? nav.getBoundingClientRect() : null;
-    const bottom = nr && nr.top < innerHeight ? nr.top : innerHeight, edge = 72;
-    const v = st.y < edge ? -Math.max(3, (edge - st.y) / 3) : st.y > bottom - edge ? Math.max(3, (st.y - bottom + edge) / 3) : 0;
+    const bottom = nr && nr.top < innerHeight ? nr.top : innerHeight, edge = 64;
+    if (!st.moved && Math.hypot(st.x - st.lx, st.y - st.ly) > 12) st.moved = true;    // у края, где файл подняли, — не прокручивать сразу
+    const v = !st.moved ? 0 : st.y < edge ? -Math.max(3, (edge - st.y) / 3) : st.y > bottom - edge ? Math.max(3, (st.y - bottom + edge) / 3) : 0;
     if (!v) { cancelAnimationFrame(st.raf); st.raf = 0; return; }
     if (st.raf) return;
     st.raf = requestAnimationFrame(() => {       // у края — прокрутка, пока палец там

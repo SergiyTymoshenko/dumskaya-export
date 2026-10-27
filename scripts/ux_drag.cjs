@@ -123,6 +123,18 @@ function startStand() {
     await touch('touchStart', tx, ty); await p.waitForTimeout(60); await touch('touchEnd'); await p.waitForTimeout(800);
     R.ok(!!(await p.$('.viewer')), 'короткое касание открывает файл');
     await shot('4-prosmotr');
+
+    // 6) поднятый файл у нижнего края — страница прокручивается сама
+    await openDocs(); await ordOn();
+    const [ax, ay] = await centre(G + ' > .gcell:nth-child(1)');
+    const navTop = await p.evaluate(() => { const n = document.getElementById('nav'); return n && n.offsetHeight ? n.getBoundingClientRect().top : innerHeight; });
+    const ys = await p.evaluate(() => scrollY);
+    await touch('touchStart', ax, ay); await p.waitForTimeout(400);
+    for (let k = 1; k <= 10; k++) { await touch('touchMove', ax, ay + (navTop - 20 - ay) * k / 10); await p.waitForTimeout(25); }
+    await p.waitForTimeout(700);
+    const ye = await p.evaluate(() => scrollY);
+    await touch('touchEnd'); await p.waitForTimeout(900);
+    R.ok(ye > ys + 40 && !(await p.$('.ord-ghost')), 'файл у нижнего края — страница прокручивается сама', `прокрутка ${Math.round(ye - ys)} px`);
     R.ok(!errs.length, 'без ошибок скрипта', errs.join(' | '));
   } finally {
     await b.close(); ch.kill();
