@@ -155,22 +155,31 @@ const RUNS = [
                 R.ok(after === before + 1 && back === before, `${tag}: галочка «согласовано» под фото`, `зелёных галочек: ${before} → ${after} → ${back}`);
               }
               tiles = await p.$$('.gallery .thumb');
-              // порядок файлов (решено 27.10.2026): «⇅ Порядок» → под фото ‹ ›; › у первого — оно становится вторым; ‹ — обратно
+              // порядок файлов (решено 27.10.2026, вечер — перетаскиванием): «⇅ Порядок» → первое фото тащим на место второго, потом обратно
+              // (здесь — мышью; пальцем — нажать и подержать, проверяется отдельно: scripts/ux_drag.cjs)
               const ord = p.locator('#sec-files button.chip', { hasText: /Порядок/ });
               if (!(await ord.count())) R.ok(false, `${tag}: порядок файлов`, 'нет кнопки «⇅ Порядок»');
               else {
                 const firstSrc = () => p.$eval('#sec-files .gallery .thumb img', (x) => x.getAttribute('src')).catch(() => '');
+                const dragTo = async (a, b) => {
+                  const ra = await (await p.$(a)).boundingBox(), rb = await (await p.$(b)).boundingBox();
+                  const x0 = ra.x + ra.width / 2, y0 = ra.y + ra.height / 2, x1 = rb.x + rb.width / 2, y1 = rb.y + rb.height / 2;
+                  await p.mouse.move(x0, y0); await p.mouse.down();
+                  for (let k = 1; k <= 10; k++) await p.mouse.move(x0 + (x1 - x0) * k / 10, y0 + (y1 - y0) * k / 10);
+                  await p.mouse.up(); await p.waitForTimeout(900);
+                };
                 await ord.first().click(); await p.waitForTimeout(400);
-                const s0 = await firstSrc(), bars = (await p.$$('#sec-files .gallery .ordbar')).length;
+                const s0 = await firstSrc(), items = (await p.$$('#sec-files .gallery .ord-item')).length;
                 await look('визуализации — порядок');
-                await clickFirst('#sec-files .gallery .ordbar .ordbtn[title="Позже"]:not([disabled])'); await p.waitForTimeout(900);
+                await dragTo('#sec-files .gallery .gcell:nth-child(1)', '#sec-files .gallery .gcell:nth-child(2)');
                 const s1 = await firstSrc();
                 const sec = await p.$eval('#sec-files .gallery .gcell:nth-child(2) .thumb img', (x) => x.getAttribute('src')).catch(() => '');
-                await clickFirst('#sec-files .gallery .gcell:nth-child(2) .ordbar .ordbtn[title="Раньше"]'); await p.waitForTimeout(900);
-                const s2 = await firstSrc();
+                await dragTo('#sec-files .gallery .gcell:nth-child(2)', '#sec-files .gallery .gcell:nth-child(1)');
+                const s2 = await firstSrc(), left = await p.$('.ord-ghost, .ord-hole'), opened = await p.$('.viewer');
                 await p.locator('#sec-files button.chip', { hasText: /Готово/ }).first().click(); await p.waitForTimeout(400);
-                R.ok(bars >= 2 && s1 !== s0 && sec === s0 && s2 === s0 && !(await p.$('#sec-files .ordbar')), `${tag}: порядок файлов (‹ › под фото)`,
-                  `кнопок у фото: ${bars}; первое фото после ›: ${s1 === s0 ? 'не сдвинулось' : 'сдвинулось'}, после ‹: ${s2 === s0 ? 'вернулось' : 'нет'}`);
+                R.ok(items >= 2 && s1 !== s0 && sec === s0 && s2 === s0 && !left && !opened && !(await p.$('#sec-files .ordbar')), `${tag}: порядок файлов (перетаскивание)`,
+                  `можно тащить: ${items}; первое фото, утащенное вправо: ${s1 === s0 ? 'не сдвинулось' : 'сдвинулось'}, обратно: ${s2 === s0 ? 'вернулось' : 'нет'}`
+                  + (left ? '; осталась копия под пальцем' : '') + (opened ? '; после перетаскивания открылся просмотр' : ''));
               }
               tiles = await p.$$('.gallery .thumb');     // после «Порядка» плитки нарисованы заново
             }

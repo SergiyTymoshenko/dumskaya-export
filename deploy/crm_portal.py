@@ -41,7 +41,7 @@ import json
 import secrets
 from datetime import date, datetime, timedelta, timezone
 
-from crm import CLIENT_CATS, CONTRACTOR_CATS, DESIGN_STAGES, FILE_CATS, FILE_ORDER, ROOM_CATS, ROUND_CATS, STAGES, CrmError, _text, now, today
+from crm import CLIENT_CATS, CONTRACTOR_CATS, DESIGN_STAGES, FILE_CATS, ROOM_CATS, ROUND_CATS, STAGES, CrmError, _text, now, sort_files, today
 from langs import CODES, pack
 from langs import ui_lang as _ui_lang
 
@@ -1040,7 +1040,7 @@ class Portal:
         return x
 
     def files_for(self, v, pid):
-        rows = self.crm.q("SELECT * FROM files WHERE project_id=? AND category != 'goods' ORDER BY " + FILE_ORDER, int(pid))
+        rows = sort_files(self.crm.q("SELECT * FROM files WHERE project_id=? AND category != 'goods' ORDER BY id", int(pid)))
         out = []
         for f in rows:
             if self.can_see_file(v, f):

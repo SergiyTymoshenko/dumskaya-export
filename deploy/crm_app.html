@@ -323,13 +323,17 @@
   /* порядок файлов (решено 27.10.2026): ‹ › под плиткой, ↑ ↓ у строки документа; перетаскивание мышью на компьютере */
   .ordhead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 10px; }
   .ordhead .small { flex: 1 1 12em; }
-  .ordbar { display: flex; gap: 4px; margin-top: 4px; }
-  .ordbar .ordbtn { flex: 1 1 0; min-width: 0; min-height: 44px; padding: 0 4px; font-size: calc(20px * min(var(--k), 1.2)); font-weight: 700; line-height: 1; }
-  .ordbar.rows { margin-top: 6px; max-width: 12em; }
-  .ordbar .ordbtn:disabled { opacity: 1; color: var(--muted); background: transparent; }
-  .gcell[draggable="true"] { cursor: grab; }
-  .gcell.dragging { opacity: .45; }
-  .gcell.dropat { outline: 2px solid var(--series); outline-offset: 2px; border-radius: 10px; }
+  .ord-item { -webkit-user-select: none; user-select: none; }
+  .ord-item img { -webkit-user-drag: none; }
+  @media (hover: hover) and (pointer: fine) { .ord-item { cursor: grab; } }
+  .ordon .ord-item { cursor: grab; -webkit-touch-callout: none; position: relative; }
+  .ordon .ord-item img, .ordon .ord-item button { -webkit-touch-callout: none; }
+  .ordon .gcell.ord-item::after, .ordon .ordrow.ord-item::after, .ordon li.ord-item::after { content: '⠿'; position: absolute; top: 4px; right: 6px; font-size: 18px; line-height: 1;
+    color: var(--muted); pointer-events: none; }
+  .ord-hole { opacity: .25; }
+  .ord-ghost { position: fixed; z-index: 1000; margin: 0; pointer-events: none; box-shadow: 0 14px 34px rgba(0,0,0,.28); border-radius: 12px;
+    background: var(--surface); will-change: transform; list-style: none; }
+  body.ord-dragging, body.ord-dragging * { -webkit-user-select: none; user-select: none; cursor: grabbing; }
   .agree { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 34px; padding-top: 2px; cursor: pointer;
     font-size: calc(13px * var(--k)); color: var(--text-2); -webkit-user-select: none; user-select: none; }
   .agree input { -webkit-appearance: none; appearance: none; flex: 0 0 auto; width: 24px; height: 24px; margin: 0; border-radius: 7px;
@@ -878,18 +882,24 @@
         'По пакету «' + p.tariff + '» правок: ' + tarif.revisions + (curVer - 1 > tarif.revisions ? ' — эта сверх пакета' : '')));
       list = list.filter((x) => (x.ver || 1) === curVer);
     }
-    if (!OWNER && list.length > 1) {                   // порядок файлов: ‹ › под каждым (телефон), на компьютере — ещё перетащить
+    if (!OWNER && list.length > 1) {                   // порядок файлов: «Порядок» → нажать, подержать и перетащить пальцем (мышью — сразу)
+      const manual = files.some((x) => x.category === fileTab && x.pos != null);
       f.append(el('div', 'ordhead', el('button', { class: 'chip', type: 'button', 'aria-pressed': String(fileOrd), onclick: () => { fileOrd = !fileOrd; render(); } },
-        fileOrd ? '✓ Готово' : '⇅ Порядок'), fileOrd ? el('span', 'small muted', 'Нажимайте ‹ › под файлом — он встанет раньше или позже' + (DESKTOP ? '; можно и перетащить мышью' : '')
+        fileOrd ? '✓ Готово' : '⇅ Порядок'),
+        fileOrd && manual ? el('button', { class: 'chip', type: 'button', onclick: async () => {
+          try { await refresh(await save('file_order', { project_id: p.id, category: fileTab, reset: true })); toast('Раздел — по номерам в названиях файлов'); } catch (e) { toast(e.message); }
+        } }, '1→9 По номерам') : null,
+        fileOrd ? el('span', 'small muted', 'Нажмите на файл и подержите, пока он не приподнимется, — и ведите пальцем на новое место' + (DESKTOP ? ' (мышью — просто перетащите)' : '')
         + '. Так же увидят заказчик и подрядчики.') : null));
+      if (fileOrd) f.classList.add('ordon');
     }
     let curRoom = roomCat ? (fileRoom[fileTab] || '') : '';
     if (!list.length) f.append(el('p', 'muted small', OWNER ? 'Пока пусто.' : 'Пока пусто. Добавьте файлы кнопкой ниже — или пришлите их боту в чат: он спросит, в какой проект и раздел.'));
     else if (fileTab === 'work') {
       const ul = el('ul', 'people'), blocks = list.map((x) => [x]);
-      list.forEach((x, i) => ul.append(el('li', null, el('div', 'drow', fileTile(x, list), el('div', { class: 'who', style: 'cursor:default' },
-        el('b', null, x.title || x.name), el('span', null, [x.owner_name, dfmt(x.created)].filter(Boolean).join(' · ')), el('span', null, '👁 ' + (x.audience || '')),
-        ordBar(blocks, i, true))))));
+      const lis = list.map((x) => el('li', null, el('div', 'drow', fileTile(x, list), el('div', { class: 'who', style: 'cursor:default' },
+        el('b', null, x.title || x.name), el('span', null, [x.owner_name, dfmt(x.created)].filter(Boolean).join(' · ')), el('span', null, '👁 ' + (x.audience || ''))))));
+      ul.append(...lis); ordSortable(lis, blocks);
       f.append(ul);
     } else if (roomCat) {                            // по помещениям, в порядке списка; без помещения — в конце
       const order = (S.lists.rooms || []).slice();
@@ -910,11 +920,10 @@
         groups.forEach((l) => l.sort((a, b) => (b.ver || 1) - (a.ver || 1) || b.id - a.id));
         const latest = [...groups.values()].map((l) => l[0]);   // в просмотре листаются последние версии документов
         const blocks = [...groups.values()];                     // документ передвигается вместе с прежними версиями
-        [...groups.entries()].forEach(([k, l], i) => {
-          f.append(el('div', 'drow', fileTile(l[0], latest), el('div', 'who', el('b', null, k), el('span', null, 'Версия ' + (l[0].ver || 1) + ' · ' + dfmt(l[0].created)),
-            ordBar(blocks, i, true))));
-          if (l.length > 1) f.append(el('details', { class: 'older' }, el('summary', null, 'Предыдущие версии · ' + (l.length - 1)), galleryOf(l.slice(1))));
-        });
+        const rows = [...groups.entries()].map(([k, l]) => el('div', 'ordrow',
+          el('div', 'drow', fileTile(l[0], latest), el('div', 'who', el('b', null, k), el('span', null, 'Версия ' + (l[0].ver || 1) + ' · ' + dfmt(l[0].created)))),
+          l.length > 1 ? el('details', { class: 'older' }, el('summary', null, 'Предыдущие версии · ' + (l.length - 1)), galleryOf(l.slice(1))) : null));
+        f.append(el('div', 'ordlist', ...rows)); ordSortable(rows, blocks);
       }
     }
     // фото-разделы — выбор из фото и камеры; остальные — любые файлы (PDF, DWG, Word, Excel…)
@@ -1189,44 +1198,105 @@
   const verName = (c, n) => (c === 'plan' ? 'Вариант ' + n : c === 'visual' ? (n <= 1 ? 'Первый вариант' : 'Правка ' + (n - 1)) : 'Версия ' + n);
   function galleryOf(list, seq, ord) {            // seq — по чему листать в просмотре (весь раздел), по умолчанию — эта же сетка;
     const g = el('div', 'gallery');                // ord — эти файлы можно передвигать (в режиме «Порядок» и мышью на компьютере)
-    const blocks = list.map((x) => [x]), canOrd = ord && !OWNER && list.length > 1;
-    list.forEach((x, i) => {
+    const blocks = list.map((x) => [x]), canOrd = ord && !OWNER && list.length > 1, cells = [];
+    list.forEach((x) => {
       const t = fileTile(x, seq || list);
       if (x.see_client != null || x.see_crew != null) t.classList.add('custom');
       const agree = canAgree(x) && !OWNER;         // под фото — «согласовано» (только у Ирины)
-      const bar = canOrd ? ordBar(blocks, i) : null;
-      const cell = agree || bar || (canOrd && DESKTOP) ? el('div', 'gcell', t, agree ? agreeBox(x) : null, bar) : t;
-      if (canOrd && DESKTOP) ordDrag(cell, blocks, i);
-      g.append(cell);
+      const cell = agree || canOrd ? el('div', 'gcell', t, agree ? agreeBox(x) : null) : t;
+      cells.push(cell); g.append(cell);
     });
+    if (canOrd) ordSortable(cells, blocks);
     return g;
   }
   // ---------- порядок файлов в разделе (решено 27.10.2026): Ирина передвигает документы и фото ----------
-  // На телефоне — режим «Порядок»: под каждым файлом ‹ › (раньше / позже); на компьютере — ещё перетащить мышью.
+  // Пальцем (решено 27.10.2026, вечер — вместо кнопок ‹ ›): в режиме «Порядок» нажать на файл и подержать 0,25 с — он
+  // приподнимается (лёгкая вибрация), дальше вести пальцем; у верхнего и нижнего края страница прокручивается сама. Повёл
+  // пальцем сразу — обычная прокрутка; коснулся — файл открывается. Мышью — просто перетащить, и без режима «Порядок».
+  // Прокрутку во время перетаскивания останавливает touchmove с preventDefault: поднимаем файл, только пока палец стоит —
+  // тогда браузер ещё не начал прокрутку. Меню долгого нажатия (сохранить фото…) в режиме «Порядок» выключено.
   // blocks — то, что передвигается вместе (документ с прежними версиями); порядок сразу на экране, на сервер — через 0,6 с
   // весь раздел по порядку (files.pos) — так же у заказчика, подрядчиков и в листании фото
-  let ordFocus = null, dragOrdFrom = null;
+  const HOLD_MS = 250;
+  let ordDrag = null;
   const ordTimers = {};
-  function ordBar(blocks, i, rows) {
-    if (!fileOrd || OWNER || blocks.length < 2) return null;
-    const x = blocks[i][0], name = x.title || (x.image ? 'фото' : x.name);
-    const b = (d, sym, label) => el('button', { class: 'btn ordbtn', type: 'button', 'data-ord': x.id + ':' + d, 'aria-label': label + ': ' + name, title: label,
-      disabled: (d < 0 ? i === 0 : i === blocks.length - 1) ? true : null, onclick: () => { ordFocus = x.id + ':' + d; moveBlock(blocks, i, i + d); } }, sym);
-    return el('div', 'ordbar' + (rows ? ' rows' : ''), b(-1, rows ? '↑' : '‹', 'Раньше'), b(1, rows ? '↓' : '›', 'Позже'));
-  }
-  function ordDrag(cell, blocks, i) {
-    cell.draggable = true;
-    cell.querySelectorAll('img').forEach((im) => { im.draggable = false; });
-    cell.addEventListener('dragstart', (e) => { dragOrdFrom = { blocks, i }; e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', 'file-order'); cell.classList.add('dragging'); });
-    cell.addEventListener('dragend', () => { dragOrdFrom = null; cell.classList.remove('dragging'); document.querySelectorAll('.dropat').forEach((n) => n.classList.remove('dropat')); });
-    cell.addEventListener('dragover', (e) => { if (!dragOrdFrom || dragOrdFrom.blocks !== blocks) return; e.preventDefault(); e.dataTransfer.dropEffect = 'move'; cell.classList.add('dropat'); });
-    cell.addEventListener('dragleave', (e) => { if (!cell.contains(e.relatedTarget)) cell.classList.remove('dropat'); });
-    cell.addEventListener('drop', (e) => {
-      if (!dragOrdFrom || dragOrdFrom.blocks !== blocks) return;
-      e.preventDefault(); e.stopPropagation();
-      const from = dragOrdFrom.i; dragOrdFrom = null;
-      moveBlock(blocks, from, i);
+  document.addEventListener('touchmove', (e) => { if (ordDrag && ordDrag.lifted && e.cancelable) e.preventDefault(); }, { passive: false });
+  function ordSortable(items, blocks) {            // items[i] — то, что на экране, для blocks[i]; все — соседи в одном контейнере
+    if (OWNER || items.length < 2) return;
+    items.forEach((node, i) => {
+      node.classList.add('ord-item');
+      node.querySelectorAll('img').forEach((im) => { im.draggable = false; });
+      node.addEventListener('dragstart', (e) => { if (!e.target.closest || !e.target.closest('details')) e.preventDefault(); });
+      node.addEventListener('contextmenu', (e) => { if (fileOrd || ordDrag) e.preventDefault(); });
+      node.addEventListener('pointerdown', (e) => ordStart(e, node, items, blocks, i));
     });
+  }
+  function ordStart(e, node, items, blocks, i) {
+    const mouse = e.pointerType === 'mouse';
+    if (ordDrag || (mouse && e.button !== 0) || (!mouse && !fileOrd)) return;
+    if (e.target.closest('input, label, select, textarea, a, details, .agree')) return;
+    const st = ordDrag = { node, items, blocks, from: i, x: e.clientX, y: e.clientY, x0: e.clientX, y0: e.clientY, lifted: false, id: e.pointerId, raf: 0 };
+    const move = (ev) => {
+      if (ev.pointerId !== st.id) return;
+      st.x = ev.clientX; st.y = ev.clientY;
+      if (st.lifted) { if (ev.cancelable) ev.preventDefault(); ordMove(st); return; }
+      if (Math.hypot(st.x - st.x0, st.y - st.y0) > (mouse ? 6 : 10)) { if (mouse) ordLift(st); else end(null); }   // палец поехал — это прокрутка
+    };
+    const end = (ev) => {
+      if (ev && ev.pointerId !== st.id) return;
+      clearTimeout(st.timer);
+      window.removeEventListener('pointermove', move); window.removeEventListener('pointerup', end); window.removeEventListener('pointercancel', end);
+      if (ordDrag === st) ordDrag = null;
+      if (st.lifted) ordDrop(st, !ev || ev.type === 'pointercancel');
+    };
+    window.addEventListener('pointermove', move, { passive: false });
+    window.addEventListener('pointerup', end); window.addEventListener('pointercancel', end);
+    if (!mouse) st.timer = setTimeout(() => ordLift(st), HOLD_MS);
+  }
+  function ordLift(st) {
+    if (ordDrag !== st || st.lifted) return;
+    st.lifted = true;
+    const r = st.node.getBoundingClientRect();
+    const g = st.ghost = st.node.cloneNode(true);      // копия под пальцем; место файла в списке — полупрозрачное
+    g.classList.remove('ord-item'); g.classList.add('ord-ghost'); g.removeAttribute('id');
+    Object.assign(g.style, { left: r.left + 'px', top: r.top + 'px', width: r.width + 'px', height: r.height + 'px' });
+    st.lx = st.x; st.ly = st.y;
+    st.node.parentNode.append(g);
+    st.node.classList.add('ord-hole');
+    document.body.classList.add('ord-dragging');
+    try { if (tg && tg.HapticFeedback) tg.HapticFeedback.impactOccurred('medium'); } catch (e) {}
+    st.cur = st.items.slice();
+    ordMove(st);
+  }
+  function ordMove(st) {
+    st.ghost.style.transform = 'translate(' + (st.x - st.lx) + 'px,' + (st.y - st.ly) + 'px) scale(1.03)';
+    const hit = document.elementFromPoint(st.x, st.y), t = hit && hit.closest('.ord-item');
+    const k = t ? st.cur.indexOf(t) : -1, at = st.cur.indexOf(st.node);   // только внутри своей группы (помещение, правка)
+    if (k >= 0 && k !== at) {
+      if (k > at) t.after(st.node); else t.before(st.node);
+      st.cur.splice(at, 1); st.cur.splice(k, 0, st.node);
+      try { if (tg && tg.HapticFeedback) tg.HapticFeedback.selectionChanged(); } catch (e) {}
+    }
+    const nav = document.getElementById('nav'), nr = nav && nav.offsetHeight ? nav.getBoundingClientRect() : null;
+    const bottom = nr && nr.top < innerHeight ? nr.top : innerHeight, edge = 72;
+    const v = st.y < edge ? -Math.max(3, (edge - st.y) / 3) : st.y > bottom - edge ? Math.max(3, (st.y - bottom + edge) / 3) : 0;
+    if (!v) { cancelAnimationFrame(st.raf); st.raf = 0; return; }
+    if (st.raf) return;
+    st.raf = requestAnimationFrame(() => {       // у края — прокрутка, пока палец там
+      st.raf = 0;
+      if (ordDrag !== st || !st.lifted) return;
+      const y0 = scrollY; scrollBy(0, v);
+      if (scrollY !== y0) ordMove(st); else { st.raf = 0; }
+    });
+  }
+  function ordDrop(st, cancelled) {
+    cancelAnimationFrame(st.raf);
+    st.ghost.remove(); st.node.classList.remove('ord-hole'); document.body.classList.remove('ord-dragging');
+    const block = (e) => { e.stopPropagation(); e.preventDefault(); };       // отпустили — файл не открывать
+    window.addEventListener('click', block, true); setTimeout(() => window.removeEventListener('click', block, true), 400);
+    const to = st.cur.indexOf(st.node);
+    if (cancelled) { render(); return; }               // браузер забрал жест — вернуть как было
+    if (to !== st.from) moveBlock(st.blocks, st.from, to);
   }
   function moveBlock(blocks, from, to) {
     if (from === to || from < 0 || to < 0 || to >= blocks.length) return;
@@ -1237,9 +1307,6 @@
     let k = 0;
     P.files = P.files.map((z) => (z.category === cat ? all[k++] : z));
     render();
-    const fb = ordFocus && document.querySelector('[data-ord="' + ordFocus + '"]');
-    if (fb) (fb.disabled ? (document.querySelector('[data-ord="' + ordFocus.replace(/:-?1$/, (m) => (m === ':1' ? ':-1' : ':1')) + '"]') || fb) : fb).focus();
-    ordFocus = null;
     const pid = P.project.id, ids = all.map((y) => y.id);
     clearTimeout(ordTimers[cat]);
     ordTimers[cat] = setTimeout(async () => {

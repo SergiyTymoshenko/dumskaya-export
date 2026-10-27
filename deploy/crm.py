@@ -81,9 +81,22 @@ CONTRACTOR_CATS = ("measure", "before", "plan", "visual", "docs", "after")
 # Правка 2…» (раунд — весь раздел; сколько правок входит в пакет — «Пакеты» в ⚙︎); в остальных разделах версии у документа
 # с одним названием (чертежи технолога: версия 1, 2…). Фото и визуализации — по помещениям.
 ROUND_CATS = ("plan", "visual")
-# порядок файлов в разделе (решено 27.10.2026): Ирина передвигает файлы и фото — files.pos (1, 2, 3…); новые, ещё без места,
-# — первыми, как раньше (самые новые сверху); так — в «Студии», в кабинетах и в листании фото
-FILE_ORDER = "CASE WHEN pos IS NULL THEN 0 ELSE 1 END, pos, id DESC"
+# порядок файлов в разделе (решено 27.10.2026): Ирина передвигает файлы и фото — files.pos (1, 2, 3…); так — в «Студии», в кабинетах
+# и в листании фото. Файлы, которые не передвигали, — по порядковому номеру в имени файла (решено 27.10.2026, вечер):
+# «08. План демонтажа» раньше «10. План монтажа…», «13-14. …» — после «12. …»; без номера — по имени (IMG_0012 раньше IMG_0103).
+# В разделе, который Ирина расставила, новые файлы — в конце (по номеру между собой); «По номерам» — снова по номерам.
+def _nat(s):
+    return [(0, int(t), "") if t.isdigit() else (1, 0, t) for t in re.split(r"(\d+)", (s or "").strip().lower()) if t]
+
+
+def file_key(f):
+    return (f.get("pos") is None, f.get("pos") or 0, _nat(f.get("name") or f.get("title")), f.get("id") or 0)
+
+
+def sort_files(rows):
+    return sorted(rows, key=file_key)
+
+
 # о новых файлах студии — сообщение заказчику (решено 27.10.2026): обмерный план, планировки, визуализации, документация,
 # «После»; о фото «До» (старые фото объекта), «Другое» (заказчик не видит) и опроснике (его заполняет сам заказчик) — нет.
 # Несколько файлов подряд — одно сообщение: ждём, пока FILE_NOTE_QUIET секунд не будет новых (но не дольше FILE_NOTE_MAX)
@@ -651,8 +664,8 @@ class Crm:
         money = self.link_money(p["id"])
         for link in links:
             link["money"] = money.get(link["link_id"]) or _debt([], [])
-        files = [self.file_view(f) for f in self.q("SELECT * FROM files WHERE project_id=? AND category NOT IN ('goods', 'chat') "
-                                                   "ORDER BY " + FILE_ORDER, p["id"])]
+        files = [self.file_view(f) for f in sort_files(self.q("SELECT * FROM files WHERE project_id=? AND category NOT IN ('goods', 'chat') "
+                                                              "ORDER BY id", p["id"]))]
         names = {c["id"]: c["name"] for c in self.q("SELECT id, name FROM contractors")}
         crew_names = {c["id"]: c["name"] for c in self.q("SELECT id, name FROM crew")}
         for f in files:                     # кто загрузил (подрядчик или его работник) — для раздела «От подрядчиков»
@@ -1629,7 +1642,7 @@ class Crm:
         f = self.one("SELECT * FROM files WHERE id=?", int(fid))
         if not f:
             raise CrmError("Файл не найден")
-        self.run("UPDATE files SET category=?, pos=NULL WHERE id=?", category, f["id"])     # в новом разделе — первым
+        self.run("UPDATE files SET category=?, pos=NULL WHERE id=?", category, f["id"])     # в новом разделе — по номеру
         if f["category"] not in NOTIFY_CATS:     # перенесла из «До» или «Другое» в документацию — заказчику сообщение
             self.note_new_file(dict(f, category=category), by_tg)
         self.audit(who, "edit", "file", f["id"], {"project_id": f["project_id"], "category": category})
@@ -1637,25 +1650,32 @@ class Crm:
 
     def set_file_order(self, d, who):
         """Новый порядок файлов раздела (решено 27.10.2026): ids — файлы раздела в том порядке, как их расставила Ирина.
-        Файлы раздела, которых нет в списке (добавили, пока она передвигала), остаются первыми, как новые."""
+        Файлы раздела, которых нет в списке (добавили, пока она передвигала), — после них, по номеру.
+        reset — раздел снова по порядковым номерам в именах файлов (как до того, как его расставляли)."""
         pid, cat = int(d.get("project_id") or 0), d.get("category")
         if not self.one("SELECT id FROM projects WHERE id=?", pid):
             raise CrmError("Проект не найден")
         if cat not in dict(FILE_CATS + [("work", "")]):
             raise CrmError("Неизвестный раздел файлов")
+        if d.get("reset"):
+            self.run("UPDATE files SET pos=NULL WHERE project_id=? AND category=?", pid, cat)
+            self.audit(who, "edit", "file", 0, {"project_id": pid, "category": cat, "order": "по номерам"})
+            return self.project(pid)
         try:
             ids = [int(x) for x in (d.get("ids") or [])]
         except (TypeError, ValueError):
             raise CrmError("Неверный порядок файлов") from None
-        have = [r["id"] for r in self.q("SELECT id FROM files WHERE project_id=? AND category=? ORDER BY " + FILE_ORDER, pid, cat)]
+        have = [r["id"] for r in sort_files(self.q("SELECT id, pos, name, title FROM files WHERE project_id=? AND category=?", pid, cat))]
         known = set(have)
         order = list(dict.fromkeys(i for i in ids if i in known))
         if not order:
             raise CrmError("В этом разделе нет таких файлов")
         rest = [i for i in have if i not in set(order)]
         with self.lock:
-            for n, i in enumerate(rest + order, 1):
-                self.db.execute("UPDATE files SET pos=? WHERE id=?", (None if i in rest else n, i))
+            for n, i in enumerate(order, 1):
+                self.db.execute("UPDATE files SET pos=? WHERE id=?", (n, i))
+            for i in rest:
+                self.db.execute("UPDATE files SET pos=NULL WHERE id=?", (i,))
         self.audit(who, "edit", "file", order[0], {"project_id": pid, "category": cat, "order": order[:200]})
         return self.project(pid)
 
@@ -1680,9 +1700,8 @@ class Crm:
                 continue
             pid = r["project_id"]
             with self.lock:
-                rows = [dict(x) for x in self.db.execute(
-                    "SELECT f.*, n.by_tg AS note_by FROM file_notes n JOIN files f ON f.id=n.file_id WHERE n.project_id=? ORDER BY "
-                    + FILE_ORDER, (pid,)).fetchall()]
+                rows = sort_files([dict(x) for x in self.db.execute(
+                    "SELECT f.*, n.by_tg AS note_by FROM file_notes n JOIN files f ON f.id=n.file_id WHERE n.project_id=?", (pid,)).fetchall()])
                 self.db.execute("DELETE FROM file_notes WHERE project_id=? AND created<=?", (pid, r["b"]))
             if rows:
                 out[pid] = rows

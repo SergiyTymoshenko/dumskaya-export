@@ -16,7 +16,7 @@ from datetime import date, datetime, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import harness as H  # noqa: E402
 import portal_bot  # noqa: E402
-from crm import CrmError  # noqa: E402
+from crm import CrmError, sort_files  # noqa: E402
 
 ok = 0
 OBS = "Разработчик ПО"
@@ -1097,10 +1097,10 @@ check(st in (200, 502) and last.get("site") == "dumskaya-home.com" and last.get(
 botmod.load_products = real_load
 
 # ---------- порядок файлов: Ирина передвигает документы и фото (решено 27.10.2026) ----------
-af = [up_studio("after", f"posle-{i}.png") for i in (1, 2, 3)]
+af = [up_studio("after", n) for n in ("10. posle.png", "2. posle.png", "1. posle.png")]
 ids_after = lambda r: [f["id"] for f in r["files"] if f["category"] == "after"]  # noqa: E731
 code, r = call(f"/api/crm/project?id={pid}", H.IRINA, lang="ru")
-check(ids_after(r)[:3] == [af[2]["id"], af[1]["id"], af[0]["id"]], "пока порядок не меняли — новые первыми, как раньше")
+check(ids_after(r)[:3] == [af[2]["id"], af[1]["id"], af[0]["id"]], "пока порядок не меняли — по номерам в именах файлов (1, 2, 10)")
 new_order = [af[0]["id"], af[2]["id"], af[1]["id"]] + ids_after(r)[3:]
 code, r = call("/api/crm/save", H.IRINA, {"entity": "file_order", "data": {"project_id": pid, "category": "after", "ids": new_order}}, lang="ru")
 check(code == 200 and ids_after(r) == new_order, "Ирина расставила файлы «После» — «Студия» показывает в её порядке")
@@ -1108,9 +1108,9 @@ code, x = call(f"/api/portal/project?id={pid}", H.CLIENT, lang="sk")
 check([f["id"] for f in x["files"] if f["section"] == "after"] == new_order, "у заказчика — тот же порядок (и в листании фото)")
 code, x = call(f"/api/portal/project?id={pid}", H.CREW, lang="sk")
 check([f["id"] for f in x["files"] if f["section"] == "after"] == [i for i in new_order if i in {f["id"] for f in x["files"]}], "у подрядчика — тоже")
-a4 = up_studio("after", "posle-4.png")
+a4 = up_studio("after", "0. posle.png")
 code, r = call(f"/api/crm/project?id={pid}", H.IRINA, lang="ru")
-check(ids_after(r) == [a4["id"]] + new_order, "новый файл — первым, остальные — как расставила Ирина")
+check(ids_after(r) == new_order + [a4["id"]], "в расставленном разделе новый файл — в конце, остальные — как расставила Ирина")
 code, r = call("/api/crm/save", H.OWNER, {"entity": "file_order", "data": {"project_id": pid, "category": "after", "ids": new_order[::-1]}}, lang="ru")
 check(code == 403, "разработчик порядок не меняет (проекты у него — только просмотр)")
 code, r = call("/api/crm/save", H.CLIENT, {"entity": "file_order", "data": {"project_id": pid, "category": "after", "ids": new_order[::-1]}})
@@ -1118,7 +1118,15 @@ check(code == 403, "заказчик — тоже")
 code, r = call("/api/crm/save", H.IRINA, {"entity": "file_order", "data": {"project_id": pid, "category": "docs", "ids": new_order}}, lang="ru")
 check(code == 400, "чужие файлы (из другого раздела) в порядок раздела не попадают")
 code, r = call("/api/crm/move", H.IRINA, {"id": af[1]["id"], "category": "docs"}, lang="ru")
-check(code == 200 and [f["id"] for f in r["files"] if f["category"] == "docs"][0] == af[1]["id"], "перенесённый в другой раздел — там первым")
+docs_ = [f for f in r["files"] if f["category"] == "docs"]
+check(code == 200 and af[1]["id"] in [f["id"] for f in docs_] and [f["id"] for f in docs_] == [f["id"] for f in sort_files(docs_)],
+      "перенесённый в другой раздел — там по номеру")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "file_order", "data": {"project_id": pid, "category": "after", "reset": True}}, lang="ru")
+check(code == 200 and ids_after(r)[:3] == [a4["id"], af[2]["id"], af[0]["id"]] and not H.crm.one("SELECT COUNT(*) AS n FROM files WHERE category='after' AND pos IS NOT NULL")["n"],
+      "«По номерам» — раздел снова по номерам (0, 1, 10)")
+check([f["name"] for f in sort_files([{"id": 1, "name": "13-14. План дверей.pdf"}, {"id": 2, "name": "08. План демонтажа.pdf"},
+                                           {"id": 3, "name": "IMG_0103.jpg"}, {"id": 4, "name": "9. План.pdf"}, {"id": 5, "name": "IMG_0012.jpg"}])]
+      == ["08. План демонтажа.pdf", "9. План.pdf", "13-14. План дверей.pdf", "IMG_0012.jpg", "IMG_0103.jpg"], "порядковые номера: 08 < 9 < 13-14, без номера — по имени")
 
 # ---------- новые документы и визуализации — заказчику одним сообщением; о фото «До» — нет (решено 27.10.2026) ----------
 from datetime import timedelta  # noqa: E402

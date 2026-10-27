@@ -15,6 +15,7 @@
     "check:ux-home": "node scripts/ux_home.cjs",
     "check:ux-site": "node scripts/ux_site.cjs",
     "check:ux-apps": "node scripts/ux_apps.cjs",
+    "check:ux-drag": "node scripts/ux_drag.cjs",
     "leads": "bash scripts/leads.sh",
     "translate": "bash scripts/leads.sh --translate"
   },
