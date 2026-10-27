@@ -74,6 +74,8 @@ DELAY=""; case "$(rsync --help 2>&1)" in *--delay-updates*) DELAY="--delay-updat
 rsync -az --exclude '.DS_Store' home/img/ "$HOST:/var/www/dumskaya-home/site/img/"
 rsync -az --delete $DELAY --exclude '.DS_Store' --exclude '/img/' home/dist/ "$HOST:/var/www/dumskaya-home/site/"
 rsync -az --delete --exclude '.DS_Store' home/img/ "$HOST:/var/www/dumskaya-home/site/img/"
+# адреса страниц товаров по фабрикам — для проверки индекса Google (deploy/gsc_index.py) на сервере
+ssh "$HOST" 'mkdir -p ~/dumskaya/home-catalog' && scp -q content/home/frozen.json content/home/publish.json "$HOST:dumskaya/home-catalog/"
 if [ "$MODE" = live ] && [ "$SERVER_MODE" != live ]; then
   echo "Готово: собрано для домена (только выложенные фабрики). Сам домен ещё закрыт — откроется командой server-setup.sh … home-live."
 elif [ "$MODE" = live ]; then

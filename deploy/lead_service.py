@@ -97,6 +97,7 @@ from fx import Rates  # noqa: E402
 import backups  # noqa: E402  резервные копии: архив на сервере (7 дней) и копия в Telegram
 import server_info  # noqa: E402  страница разработчика «Сервер и ИИ»: сервер, данные, расход языковых моделей
 import indexnow  # noqa: E402  IndexNow: раз в час новые и изменённые страницы сайтов — в Bing, Яндекс, Seznam
+import gsc_index  # noqa: E402  индекс Google: раз в день по Search Console — какие страницы взяты (ключ ~/dumskaya/gsc-key.json)
 
 BOT = None
 
@@ -447,6 +448,10 @@ def main():
         # обоих сайтов в Bing, Яндекс и Seznam; dumskaya-home.com — когда откроется на домене. Свой поток, статистику не держит
         indexnow.BOT = BOT
         BOT.stats.hooks.append(indexnow.tick)
+        # индекс Google (решено 27.10.2026): раз в день после 6:00 — что из страниц взято, по фабрикам; предложение
+        # выкладывать следующую фабрику, когда у последней в индексе 60 %. Без ключа служебного аккаунта — не работает
+        gsc_index.BOT = BOT
+        BOT.stats.hooks.append(gsc_index.tick)
         BOT.start()
         BOT.monitor.start()
         BOT.monitor_home.start()

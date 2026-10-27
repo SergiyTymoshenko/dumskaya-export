@@ -1804,8 +1804,12 @@ def summary(a, prev=None):
     c, pc = sum((a.get("contacts") or {}).values()), None
     if prev and "contacts" in prev:
         pc = sum((prev.get("contacts") or {}).values())
-    v, l = a["visitors"], a.get("leads", 0)
-    return (f"<b>{v}</b> {plural(v, 'посетитель', 'посетителя', 'посетителей')}{arrow(v, prev and prev['visitors'])} · "
+    l = a.get("leads", 0)
+    eng = a.get("engaged") is not None and (not prev or prev.get("engaged") is not None)
+    key = "engaged" if eng and a.get("engaged_known", True) and (not prev or prev.get("engaged_known", True)) else "visitors"
+    v = a[key] if a.get(key) is not None else a["visitors"]
+    allv = f" (всего заходов {a['visitors']})" if key == "engaged" and a["visitors"] != v else ""
+    return (f"<b>{v}</b> {plural(v, 'посетитель', 'посетителя', 'посетителей')}{arrow(v, prev and prev.get(key))}{allv} · "
             f"{l} {plural(l, 'заявка', 'заявки', 'заявок')}{arrow(l, prev and prev.get('leads'))} · "
             f"{c} {plural(c, 'нажатие', 'нажатия', 'нажатий')} на контакты{arrow(c, pc)}")
 
@@ -1910,6 +1914,11 @@ class SiteStats:
                 lines += h.morning_lines(d)
             except PermissionError:
                 lines.append("🛋 Магазин: " + NO_ACCESS.format(esc(h.LOG_GLOB)))
+        try:                                        # индекс Google по фабрикам (gsc_index.py), когда есть ключ
+            import gsc_index
+            lines += gsc_index.morning_lines()
+        except Exception as e:  # noqa: BLE001
+            self.log(f"индекс Google: строка не собрана — {type(e).__name__}: {e}")
         lines.append("Графики — кнопкой ниже.")
         self.bot.s.put("stats:daily", d.isoformat())
         self.bot.notify("\n".join(lines), roles=("owner",), rows=BUTTONS_BOTH if h is not None else BUTTON)
