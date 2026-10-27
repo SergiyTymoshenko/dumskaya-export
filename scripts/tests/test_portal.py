@@ -1096,6 +1096,75 @@ check(st in (200, 502) and last.get("site") == "dumskaya-home.com" and last.get(
       and last.get("lang") == "fr", "заявка с dumskaya-home.com: сервис узнаёт сайт по адресу, язык fr принимается")
 botmod.load_products = real_load
 
+# ---------- порядок файлов: Ирина передвигает документы и фото (решено 27.10.2026) ----------
+af = [up_studio("after", f"posle-{i}.png") for i in (1, 2, 3)]
+ids_after = lambda r: [f["id"] for f in r["files"] if f["category"] == "after"]  # noqa: E731
+code, r = call(f"/api/crm/project?id={pid}", H.IRINA, lang="ru")
+check(ids_after(r)[:3] == [af[2]["id"], af[1]["id"], af[0]["id"]], "пока порядок не меняли — новые первыми, как раньше")
+new_order = [af[0]["id"], af[2]["id"], af[1]["id"]] + ids_after(r)[3:]
+code, r = call("/api/crm/save", H.IRINA, {"entity": "file_order", "data": {"project_id": pid, "category": "after", "ids": new_order}}, lang="ru")
+check(code == 200 and ids_after(r) == new_order, "Ирина расставила файлы «После» — «Студия» показывает в её порядке")
+code, x = call(f"/api/portal/project?id={pid}", H.CLIENT, lang="sk")
+check([f["id"] for f in x["files"] if f["section"] == "after"] == new_order, "у заказчика — тот же порядок (и в листании фото)")
+code, x = call(f"/api/portal/project?id={pid}", H.CREW, lang="sk")
+check([f["id"] for f in x["files"] if f["section"] == "after"] == [i for i in new_order if i in {f["id"] for f in x["files"]}], "у подрядчика — тоже")
+a4 = up_studio("after", "posle-4.png")
+code, r = call(f"/api/crm/project?id={pid}", H.IRINA, lang="ru")
+check(ids_after(r) == [a4["id"]] + new_order, "новый файл — первым, остальные — как расставила Ирина")
+code, r = call("/api/crm/save", H.OWNER, {"entity": "file_order", "data": {"project_id": pid, "category": "after", "ids": new_order[::-1]}}, lang="ru")
+check(code == 403, "разработчик порядок не меняет (проекты у него — только просмотр)")
+code, r = call("/api/crm/save", H.CLIENT, {"entity": "file_order", "data": {"project_id": pid, "category": "after", "ids": new_order[::-1]}})
+check(code == 403, "заказчик — тоже")
+code, r = call("/api/crm/save", H.IRINA, {"entity": "file_order", "data": {"project_id": pid, "category": "docs", "ids": new_order}}, lang="ru")
+check(code == 400, "чужие файлы (из другого раздела) в порядок раздела не попадают")
+code, r = call("/api/crm/move", H.IRINA, {"id": af[1]["id"], "category": "docs"}, lang="ru")
+check(code == 200 and [f["id"] for f in r["files"] if f["category"] == "docs"][0] == af[1]["id"], "перенесённый в другой раздел — там первым")
+
+# ---------- новые документы и визуализации — заказчику одним сообщением; о фото «До» — нет (решено 27.10.2026) ----------
+from datetime import timedelta  # noqa: E402
+later = lambda s=200: datetime.now(timezone.utc) + timedelta(seconds=s)  # noqa: E731
+H.bot.portal_file_notes(now=later())                 # что накопилось выше — отправить, дальше считаем с нуля
+n = len(H.CALLS)
+docs10 = [up_studio("docs", f"smeta-{i}.pdf") for i in range(10)]
+up_studio("before", "staroe-foto.png")
+check(H.bot.portal_file_notes(now=later(30)) == 0 and not texts(H.CLIENT, n), "пока Ирина добавляет файлы (меньше 1,5 минуты) — ждём")
+check(H.bot.portal_file_notes(now=later()) >= 1, "пачка ушла")
+tx = texts(H.CLIENT, n)
+check(len(tx) == 1 and "Neue Dateien" in tx[0] and "Dokumentation — 10" in tx[0] and "Vorher" not in tx[0],
+      "заказчику — одно сообщение на его языке: в «Документации» 10 новых; о фото «До» — ничего")
+btn = sent(to=H.CLIENT, since=n)[0]["reply_markup"]
+check("tab=docs&cat=docs" in json.dumps(btn), "кнопка открывает кабинет сразу в этом разделе")
+check(not texts(H.IRINA, n), "Ирине (кто добавил) — ничего")
+check(H.bot.portal_file_notes(now=later(400)) == 0, "второй раз о тех же файлах не пишем")
+n = len(H.CALLS)
+up_studio("before", "staroe-foto-2.png")
+up_studio("other", "schet-zakupka.pdf")
+H.bot.portal_file_notes(now=later())
+check(not texts(H.CLIENT, n), "только «До» и «Другое» — заказчику ничего")
+n = len(H.CALLS)
+hid = up_studio("visual", "skrytaya.png")
+call("/api/crm/save", H.IRINA, {"entity": "file_vis", "data": {"id": hid["id"], "see_client": "0"}}, lang="ru")
+H.bot.portal_file_notes(now=later())
+check(not texts(H.CLIENT, n), "файл, который Ирина скрыла от заказчика, — без сообщения")
+n = len(H.CALLS)
+up_studio("plan", "plan.pdf", "&title=" + urllib.parse.quote("План кухни"))
+H.bot.portal_file_notes(now=later())
+tx = texts(H.CLIENT, n)
+check(len(tx) == 1 and "Neue Datei" in tx[0] and "Grundrisse: План кухни" in tx[0], "один документ — «Новый файл», раздел и название")
+n = len(H.CALLS)
+mv = up_studio("before", "eto-vizualizaciya.png")
+call("/api/crm/move", H.IRINA, {"id": mv["id"], "category": "visual"}, lang="ru")
+H.bot.portal_file_notes(now=later())
+check(any("Visualisierungen — 1" in t_ for t_ in texts(H.CLIENT, n)), "перенесла из «До» в визуализации — заказчику сообщение")
+n = len(H.CALLS)
+up_studio("docs", "noch.pdf")
+H.bot.portal_file_notes(now=later().replace(hour=23, minute=30, tzinfo=timezone.utc) + timedelta(days=1))
+m_ = sent(to=H.CLIENT, since=n)
+check(len(m_) == 1 and m_[0].get("disable_notification") is True, "ночью — без звука")
+page_ = open(os.path.join(H.REPO, "deploy", "portal_app.html"), encoding="utf-8").read()
+check("Q.get('cat')" in page_, "кабинет открывает раздел из ссылки (cat=…)")
+check(set(portal_bot.T["files_new"]) >= {"ru", "uk", "en", "sk", "de"}, "тексты — на пяти языках (остальные — deploy/i18n)")
+
 # ---------- документы не попадают в поиск ----------
 req = urllib.request.Request(BASE + f"/api/portal/project?id={pid}", headers={"X-Telegram-Init-Data": H.init_data(H.CLIENT, lang="sk")})
 with urllib.request.urlopen(req, timeout=10) as resp:

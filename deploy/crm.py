@@ -78,6 +78,15 @@ CONTRACTOR_CATS = ("measure", "before", "plan", "visual", "docs", "after")
 # Правка 2…» (раунд — весь раздел; сколько правок входит в пакет — «Пакеты» в ⚙︎); в остальных разделах версии у документа
 # с одним названием (чертежи технолога: версия 1, 2…). Фото и визуализации — по помещениям.
 ROUND_CATS = ("plan", "visual")
+# порядок файлов в разделе (решено 27.10.2026): Ирина передвигает файлы и фото — files.pos (1, 2, 3…); новые, ещё без места,
+# — первыми, как раньше (самые новые сверху); так — в «Студии», в кабинетах и в листании фото
+FILE_ORDER = "CASE WHEN pos IS NULL THEN 0 ELSE 1 END, pos, id DESC"
+# о новых файлах студии — сообщение заказчику (решено 27.10.2026): обмерный план, планировки, визуализации, документация,
+# «После»; о фото «До» (старые фото объекта), «Другое» (заказчик не видит) и опроснике (его заполняет сам заказчик) — нет.
+# Несколько файлов подряд — одно сообщение: ждём, пока FILE_NOTE_QUIET секунд не будет новых (но не дольше FILE_NOTE_MAX)
+NOTIFY_CATS = ("measure", "plan", "visual", "docs", "after")
+FILE_NOTE_QUIET = 90
+FILE_NOTE_MAX = 600
 ROOM_CATS = ("before", "visual", "after")
 # стадия проекта (решено 25.10.2026): первые семь — проект дизайна; дальше — если заказчик продолжил со студией
 STAGES = [("measure", "Замер"), ("plan", "Разработка планировочных решений"), ("plan_ok", "Согласование планировочных решений"),
@@ -165,6 +174,8 @@ CREATE TABLE IF NOT EXISTS doc_rounds (        -- вариант планиро�
   project_id INTEGER NOT NULL, category TEXT NOT NULL, ver INTEGER NOT NULL, agreed TEXT, agreed_by TEXT,
   PRIMARY KEY(project_id, category, ver));
 CREATE INDEX IF NOT EXISTS files_project ON files(project_id);
+CREATE TABLE IF NOT EXISTS file_notes (        -- новые файлы студии, о которых ещё не сообщили заказчику (решено 27.10.2026)
+  file_id INTEGER PRIMARY KEY, project_id INTEGER NOT NULL, by_tg INTEGER, created REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS leads (            -- заявки с сайта (в файле leads.jsonl — они же, без статусов)
   id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, name TEXT, contact TEXT, message TEXT, message_ru TEXT,
   message_lang TEXT, page TEXT, model TEXT, model_name TEXT, lang TEXT, routed TEXT,
@@ -398,7 +409,9 @@ class Crm:
                                     ("projects", "stage", "TEXT"), ("files", "room", "TEXT"), ("files", "ver", "INTEGER"),
                                     ("files", "review", "INTEGER"),
                                     # заказчик согласовал конкретное фото (решено 25.10.2026, вечер): дата и кто отметил
-                                    ("files", "agreed", "TEXT"), ("files", "agreed_by", "TEXT")):
+                                    ("files", "agreed", "TEXT"), ("files", "agreed_by", "TEXT"),
+                                    # порядок файлов в разделе (решено 27.10.2026)
+                                    ("files", "pos", "INTEGER")):
                 if col not in {r[1] for r in self.db.execute(f"PRAGMA table_info({table})")}:
                     self.db.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
             self.db.execute("CREATE INDEX IF NOT EXISTS messages_thread ON messages(thread_id, id)")
@@ -633,7 +646,7 @@ class Crm:
         for link in links:
             link["money"] = money.get(link["link_id"]) or _debt([], [])
         files = [self.file_view(f) for f in self.q("SELECT * FROM files WHERE project_id=? AND category NOT IN ('goods', 'chat') "
-                                                   "ORDER BY id DESC", p["id"])]
+                                                   "ORDER BY " + FILE_ORDER, p["id"])]
         names = {c["id"]: c["name"] for c in self.q("SELECT id, name FROM contractors")}
         crew_names = {c["id"]: c["name"] for c in self.q("SELECT id, name FROM crew")}
         for f in files:                     # кто загрузил (подрядчик или его работник) — для раздела «От подрядчиков»
@@ -1578,15 +1591,70 @@ class Crm:
         self.audit(who, "edit", "file", f["id"], {"project_id": f["project_id"], "see_client": vals[0], "see_crew": vals[1]})
         return self.file_view(self.one("SELECT * FROM files WHERE id=?", f["id"]))
 
-    def move_file(self, fid, category, who):
+    def move_file(self, fid, category, who, by_tg=None):
         if category not in dict(FILE_CATS):
             raise CrmError("Неизвестный раздел файлов")
         f = self.one("SELECT * FROM files WHERE id=?", int(fid))
         if not f:
             raise CrmError("Файл не найден")
-        self.run("UPDATE files SET category=? WHERE id=?", category, f["id"])
+        self.run("UPDATE files SET category=?, pos=NULL WHERE id=?", category, f["id"])     # в новом разделе — первым
+        if f["category"] not in NOTIFY_CATS:     # перенесла из «До» или «Другое» в документацию — заказчику сообщение
+            self.note_new_file(dict(f, category=category), by_tg)
         self.audit(who, "edit", "file", f["id"], {"project_id": f["project_id"], "category": category})
         return self.project(f["project_id"])
+
+    def set_file_order(self, d, who):
+        """Новый порядок файлов раздела (решено 27.10.2026): ids — файлы раздела в том порядке, как их расставила Ирина.
+        Файлы раздела, которых нет в списке (добавили, пока она передвигала), остаются первыми, как новые."""
+        pid, cat = int(d.get("project_id") or 0), d.get("category")
+        if not self.one("SELECT id FROM projects WHERE id=?", pid):
+            raise CrmError("Проект не найден")
+        if cat not in dict(FILE_CATS + [("work", "")]):
+            raise CrmError("Неизвестный раздел файлов")
+        try:
+            ids = [int(x) for x in (d.get("ids") or [])]
+        except (TypeError, ValueError):
+            raise CrmError("Неверный порядок файлов") from None
+        have = [r["id"] for r in self.q("SELECT id FROM files WHERE project_id=? AND category=? ORDER BY " + FILE_ORDER, pid, cat)]
+        known = set(have)
+        order = list(dict.fromkeys(i for i in ids if i in known))
+        if not order:
+            raise CrmError("В этом разделе нет таких файлов")
+        rest = [i for i in have if i not in set(order)]
+        with self.lock:
+            for n, i in enumerate(rest + order, 1):
+                self.db.execute("UPDATE files SET pos=? WHERE id=?", (None if i in rest else n, i))
+        self.audit(who, "edit", "file", order[0], {"project_id": pid, "category": cat, "order": order[:200]})
+        return self.project(pid)
+
+    # ---------- новые файлы — сообщение заказчику (решено 27.10.2026) ----------
+    def note_new_file(self, f, by_tg=None):
+        """Файл студии в разделе, о котором сообщаем заказчику, — в очередь; отправляет бот (portal_file_notes),
+        когда новых файлов в проекте нет FILE_NOTE_QUIET секунд. Файлы подрядчиков, исполнителей и сотрудников
+        сюда не попадают: о них заказчику сообщение, когда Ирина покажет."""
+        if not f or f.get("category") not in NOTIFY_CATS or f.get("owner_kind") or f.get("thread_id"):
+            return False
+        self.run("INSERT OR IGNORE INTO file_notes(file_id, project_id, by_tg, created) VALUES(?, ?, ?, ?)",
+                 int(f["id"]), int(f["project_id"]), int(by_tg) if by_tg else None, time.time())
+        return True
+
+    def due_file_notes(self, at=None, quiet=FILE_NOTE_QUIET, most=FILE_NOTE_MAX):
+        """Проекты, где пора сообщить о новых файлах: {project_id: [файлы по порядку раздела]}; из очереди они
+        убираются (удалённые за это время файлы — просто пропадают). by_tg — кто добавил (ему не сообщаем)."""
+        at = time.time() if at is None else at
+        out = {}
+        for r in self.q("SELECT project_id, MIN(created) AS a, MAX(created) AS b FROM file_notes GROUP BY project_id"):
+            if r["b"] > at - quiet and r["a"] > at - most:
+                continue
+            pid = r["project_id"]
+            with self.lock:
+                rows = [dict(x) for x in self.db.execute(
+                    "SELECT f.*, n.by_tg AS note_by FROM file_notes n JOIN files f ON f.id=n.file_id WHERE n.project_id=? ORDER BY "
+                    + FILE_ORDER, (pid,)).fetchall()]
+                self.db.execute("DELETE FROM file_notes WHERE project_id=? AND created<=?", (pid, r["b"]))
+            if rows:
+                out[pid] = rows
+        return out
 
     def sign(self, fid, variant, exp=None):
         exp = exp or int(time.time()) + LINK_HOURS * 3600

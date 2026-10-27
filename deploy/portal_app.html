@@ -841,7 +841,7 @@
   });
 
   // ---------- загрузка ----------
-  async function openProject(id, as, startTab, thread) {
+  async function openProject(id, as, startTab, thread, startCat) {
     app.classList.add('loading');
     try {
       const q = pq({ id });
@@ -849,6 +849,7 @@
       if (as) q.set('as', as);
       V = await api('/api/portal/project?' + q.toString());
       if (PID !== Number(id)) { TH = null; cat = null; catPicked = false; }
+      if (startTab === 'docs' && startCat && SECTIONS.includes(startCat)) { cat = startCat; catPicked = true; }   // из сообщения «Новые файлы» — сразу в раздел
       PID = Number(id); TEAMC = null;
       const tabs = tabsOf();
       tab = startTab && tabs.includes(startTab) ? startTab : tabs.includes(tab) ? tab : 'home';
@@ -1910,10 +1911,10 @@
     if (ME.size) applySize(ME.size);
     document.documentElement.lang = LANG;
     const want = Number(Q.get('project') || 0);
-    if (PREVIEW && want) return openProject(want, null, Q.get('tab'), Q.get('thread'));
+    if (PREVIEW && want) return openProject(want, null, Q.get('tab'), Q.get('thread'), Q.get('cat'));
     if (Q.get('team') && (ME.heads || []).length) return openTeam(ME.heads[0].id);
     const p = ME.projects.find((x) => x.id === want) || (ME.projects.length === 1 ? ME.projects[0] : null);
-    if (p) return openProject(p.id, p.roles[0], Q.get('tab'), Q.get('thread'));
+    if (p) return openProject(p.id, p.roles[0], Q.get('tab'), Q.get('thread'), Q.get('cat'));
     render();
   }
   start();

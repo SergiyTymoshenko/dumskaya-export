@@ -340,7 +340,14 @@
   "invite_hired": "Dia duit, {name}! Seo an nasc chuig aip DUMSKAYA DESIGN do speisialtóirí an stiúideo ar Telegram: na tionscadail a bhfuil tú ag obair orthu don stiúideo, seoladh an láithreáin, doiciméid agus amharcléirithe, do chomhrá le hIrina. Oscail é san aip Telegram agus tapáil an cnaipe ag bun an scáileáin (“Tosaigh”):\n{link}\n\nIs nasc pearsanta é, do dhuine amháin, agus tá sé bailí ar feadh 14 lá. Ní gá duit ceangal ach uair amháin — beidh tionscadail nua le feiceáil san aip go huathoibríoch.",
   "link_new_hired": "📁 Chuir an stiúideo thú leis an tionscadal “{project}”{trade}. Tá an seoladh, na doiciméid agus do chomhrá le hIrina san aip.",
   "stage_new": "📍 <b>Céim nua sa tionscadal</b> · “{project}”\n{stage}",
-  "doc_approved": "✓ Thaispeáin {who} do dhoiciméad don chliant · “{project}”\n{title}"
+  "doc_approved": "✓ Thaispeáin {who} do dhoiciméad don chliant · “{project}”\n{title}",
+  "files_new_one": "📎 <b>Comhad nua</b> · “{project}”\n{cat}: {title}",
+  "files_new": "📎 <b>Comhaid nua</b> · “{project}”\n{lines}",
+  "fcat_measure": "Plean tomhaiste",
+  "fcat_plan": "Pleananna leagain amach",
+  "fcat_visual": "Amharcléirithe",
+  "fcat_docs": "Doiciméadú",
+  "fcat_after": "Tar éis na hoibre"
  },
  "fixed": {
   "Прораб": "Bainisteoir láithreáin",

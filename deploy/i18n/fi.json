@@ -340,7 +340,14 @@
   "invite_hired": "Hei {name}! Tässä on linkki DUMSKAYA DESIGN -studion asiantuntijoiden sovellukseen Telegramissa: projektit, joissa teet töitä studiolle, kohteen osoite, asiakirjat ja visualisoinnit sekä keskustelusi Irinan kanssa. Avaa linkki Telegramissa ja napauta näytön alareunan painiketta (”Aloita”):\n{link}\n\nLinkki on henkilökohtainen, yhdelle henkilölle, ja voimassa 14 päivää. Yhdistäminen tehdään vain kerran — uudet projektit näkyvät sovelluksessa automaattisesti.",
   "link_new_hired": "📁 Studio on lisännyt sinut projektiin ”{project}”{trade}. Osoite, asiakirjat ja keskustelusi Irinan kanssa ovat sovelluksessa.",
   "stage_new": "📍 <b>Uusi projektin vaihe</b> · ”{project}”\n{stage}",
-  "doc_approved": "✓ {who} on näyttänyt asiakirjasi asiakkaalle · ”{project}”\n{title}"
+  "doc_approved": "✓ {who} on näyttänyt asiakirjasi asiakkaalle · ”{project}”\n{title}",
+  "files_new_one": "📎 <b>Uusi tiedosto</b> · ”{project}”\n{cat}: {title}",
+  "files_new": "📎 <b>Uusia tiedostoja</b> · ”{project}”\n{lines}",
+  "fcat_measure": "Mittauspiirustus",
+  "fcat_plan": "Pohjaratkaisut",
+  "fcat_visual": "Visualisoinnit",
+  "fcat_docs": "Dokumentaatio",
+  "fcat_after": "Jälkeen"
  },
  "fixed": {
   "Прораб": "Työnjohtaja",

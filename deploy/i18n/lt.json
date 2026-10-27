@@ -340,7 +340,14 @@
   "invite_hired": "Sveiki, {name}! Štai nuoroda į studijos DUMSKAYA DESIGN specialistų programėlę Telegram programoje: projektai, kuriuose dirbate studijai, objekto adresas, dokumentai ir vizualizacijos, pokalbis su Irina. Atidarykite nuorodą Telegram programoje ir spustelėkite mygtuką ekrano apačioje („Pradėti“):\n{link}\n\nNuoroda asmeninė, skirta vienam žmogui, ir galioja 14 dienų. Prisijungti reikia tik kartą — nauji projektai programėlėje atsiras automatiškai.",
   "link_new_hired": "📁 Studija Jus pridėjo prie projekto „{project}“{trade}. Adresas, dokumentai ir pokalbis su Irina — programėlėje.",
   "stage_new": "📍 <b>Naujas projekto etapas</b> · „{project}“\n{stage}",
-  "doc_approved": "✓ {who} pateikė Jūsų dokumentą klientui · „{project}“\n{title}"
+  "doc_approved": "✓ {who} pateikė Jūsų dokumentą klientui · „{project}“\n{title}",
+  "files_new_one": "📎 <b>Naujas failas</b> · „{project}“\n{cat}: {title}",
+  "files_new": "📎 <b>Nauji failai</b> · „{project}“\n{lines}",
+  "fcat_measure": "Matavimų planas",
+  "fcat_plan": "Išplanavimo sprendimai",
+  "fcat_visual": "Vizualizacijos",
+  "fcat_docs": "Dokumentacija",
+  "fcat_after": "Po"
  },
  "fixed": {
   "Прораб": "Darbų vadovas",

@@ -340,7 +340,14 @@
   "invite_hired": "Bună ziua, {name}! Iată linkul către aplicația DUMSKAYA DESIGN pentru specialiștii studioului în Telegram: proiectele la care lucrați pentru studio, adresa șantierului, documentație și randări, conversația cu Irina. Deschideți-l în Telegram și apăsați butonul din partea de jos („Start”):\n{link}\n\nLinkul este personal, pentru o singură persoană, și este valabil 14 zile. Trebuie să vă conectați o singură dată — proiectele noi vor apărea automat în aplicație.",
   "link_new_hired": "📁 Studioul v-a adăugat la proiectul „{project}”{trade}. Adresa, documentația și conversația cu Irina sunt în aplicație.",
   "stage_new": "📍 <b>Etapă nouă a proiectului</b> · „{project}”\n{stage}",
-  "doc_approved": "✓ {who} i-a arătat clientului documentul dumneavoastră · „{project}”\n{title}"
+  "doc_approved": "✓ {who} i-a arătat clientului documentul dumneavoastră · „{project}”\n{title}",
+  "files_new_one": "📎 <b>Fișier nou</b> · „{project}”\n{cat}: {title}",
+  "files_new": "📎 <b>Fișiere noi</b> · „{project}”\n{lines}",
+  "fcat_measure": "Releveu",
+  "fcat_plan": "Planuri de amenajare",
+  "fcat_visual": "Randări",
+  "fcat_docs": "Documentație",
+  "fcat_after": "După"
  },
  "fixed": {
   "Прораб": "Șef de șantier",

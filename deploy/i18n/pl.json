@@ -340,7 +340,14 @@
   "invite_hired": "Dzień dobry, {name}! Oto link do aplikacji dla specjalistów studia DUMSKAYA DESIGN w Telegramie: projekty, nad którymi pracują Państwo dla studia, adres obiektu, dokumentacja i wizualizacje, czat z Iriną. Proszę otworzyć go w Telegramie i nacisnąć przycisk na dole ekranu („Rozpocznij”):\n{link}\n\nLink jest osobisty, dla jednej osoby, i ważny 14 dni. Połączyć się wystarczy raz — nowe projekty pojawią się w aplikacji automatycznie.",
   "link_new_hired": "📁 Studio dodało Państwa do projektu „{project}”{trade}. Adres, dokumentacja i czat z Iriną są w aplikacji.",
   "stage_new": "📍 <b>Nowy etap projektu</b> · „{project}”\n{stage}",
-  "doc_approved": "✓ {who} udostępniła Państwa dokument klientowi · „{project}”\n{title}"
+  "doc_approved": "✓ {who} udostępniła Państwa dokument klientowi · „{project}”\n{title}",
+  "files_new_one": "📎 <b>Nowy plik</b> · „{project}”\n{cat}: {title}",
+  "files_new": "📎 <b>Nowe pliki</b> · „{project}”\n{lines}",
+  "fcat_measure": "Inwentaryzacja",
+  "fcat_plan": "Układ funkcjonalny",
+  "fcat_visual": "Wizualizacje",
+  "fcat_docs": "Dokumentacja",
+  "fcat_after": "Po"
  },
  "fixed": {
   "Прораб": "Kierownik budowy",

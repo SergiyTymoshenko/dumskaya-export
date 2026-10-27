@@ -222,11 +222,12 @@ class CrmBotMixin:
             ref = f"{f['kind']}:{f['id']}"
             try:
                 if f["size"] and f["size"] > TG_DOWNLOAD_MAX:     # большой файл остаётся в Telegram
-                    self.crm.add_tg_only(pid, cat, f["name"], f["size"], f["mime"], who, ref)
+                    self.crm.note_new_file(self.crm.add_tg_only(pid, cat, f["name"], f["size"], f["mime"], who, ref), uid)
                 else:
                     with self._download(f["id"]) as r:
                         size = int(r.headers.get("Content-Length") or f["size"] or 0)
                         rec = self.crm.add_file(pid, cat, f["name"], r, size, f["mime"], who, tg_file_id=ref)
+                    self.crm.note_new_file(rec, uid)          # заказчику — сообщение (документы, визуализации; не «До»)
                     if f.get("thumb"):
                         try:
                             with self._download(f["thumb"]) as t:

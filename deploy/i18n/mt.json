@@ -340,7 +340,14 @@
   "invite_hired": "Merħba, {name}! Hawn hu l-link għall-app tal-ispeċjalisti tal-istudjo DUMSKAYA DESIGN fuq Telegram: il-proġetti li qed taħdem fuqhom għall-istudjo, l-indirizz tas-sit, dokumenti u viżwalizzazzjonijiet, u ċ-chat tiegħek ma' Irina. Iftħu fuq Telegram u agħfas il-buttuna fil-qiegħ tal-iskrin (“Start”):\n{link}\n\nIl-link huwa personali, għal persuna waħda, u jibqa' validu għal 14-il jum. Trid tikkonnettja darba biss — il-proġetti l-ġodda jidhru fl-app awtomatikament.",
   "link_new_hired": "📁 L-istudjo żiedek mal-proġett “{project}”{trade}. L-indirizz, id-dokumenti u ċ-chat tiegħek ma' Irina jinsabu fl-app.",
   "stage_new": "📍 <b>Stadju ġdid tal-proġett</b> · “{project}”\n{stage}",
-  "doc_approved": "✓ {who} uriet id-dokument tiegħek lill-klijent · “{project}”\n{title}"
+  "doc_approved": "✓ {who} uriet id-dokument tiegħek lill-klijent · “{project}”\n{title}",
+  "files_new_one": "📎 <b>Fajl ġdid</b> · “{project}”\n{cat}: {title}",
+  "files_new": "📎 <b>Fajls ġodda</b> · “{project}”\n{lines}",
+  "fcat_measure": "Pjanta tal-kejl",
+  "fcat_plan": "Pjanti tat-tqassim",
+  "fcat_visual": "Viżwalizzazzjonijiet",
+  "fcat_docs": "Dokumentazzjoni",
+  "fcat_after": "Wara"
  },
  "fixed": {
   "Прораб": "Maniġer tas-sit",

@@ -340,7 +340,14 @@
   "invite_hired": "Hej {name}! Här är länken till appen för studions specialister från DUMSKAYA DESIGN i Telegram: projekten som du arbetar med åt studion, adress till objektet, dokument och visualiseringar, din chatt med Irina. Öppna den i Telegram och tryck på knappen längst ned (”Starta”):\n{link}\n\nLänken är personlig, för en person, och gäller i 14 dagar. Du behöver bara ansluta en gång — nya projekt visas automatiskt i appen.",
   "link_new_hired": "📁 Studion har lagt till dig i projektet ”{project}”{trade}. Adress, dokument och din chatt med Irina finns i appen.",
   "stage_new": "📍 <b>Ny projektfas</b> · ”{project}”\n{stage}",
-  "doc_approved": "✓ {who} har visat ditt dokument för kunden · ”{project}”\n{title}"
+  "doc_approved": "✓ {who} har visat ditt dokument för kunden · ”{project}”\n{title}",
+  "files_new_one": "📎 <b>Ny fil</b> · ”{project}”\n{cat}: {title}",
+  "files_new": "📎 <b>Nya filer</b> · ”{project}”\n{lines}",
+  "fcat_measure": "Uppmätning",
+  "fcat_plan": "Planlösningar",
+  "fcat_visual": "Visualiseringar",
+  "fcat_docs": "Dokumentation",
+  "fcat_after": "Efter"
  },
  "fixed": {
   "Прораб": "Platschef",

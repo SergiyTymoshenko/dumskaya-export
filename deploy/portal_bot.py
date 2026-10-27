@@ -23,7 +23,7 @@ import threading
 import time
 from datetime import date, datetime, timezone
 
-from crm import FILE_CATS, STAGES, TZ, CrmError
+from crm import FILE_CATS, NOTIFY_CATS, STAGES, TZ, CrmError
 from crm_portal import STUDIO, ui_lang
 from langs import pack
 
@@ -162,6 +162,18 @@ T = {
     "doc_new": {"ru": "📎 <b>Новый документ</b> · «{project}»\n{who}: {title}", "uk": "📎 <b>Новий документ</b> · «{project}»\n{who}: {title}",
                 "en": "📎 <b>New document</b> · “{project}”\n{who}: {title}", "sk": "📎 <b>Nový dokument</b> · „{project}“\n{who}: {title}",
                 "de": "📎 <b>Neues Dokument</b> · „{project}“\n{who}: {title}"},
+    # новые файлы студии — заказчику (решено 27.10.2026): один файл с подписью — его название; несколько — сколько в каком разделе
+    "files_new_one": {"ru": "📎 <b>Новый файл</b> · «{project}»\n{cat}: {title}", "uk": "📎 <b>Новий файл</b> · «{project}»\n{cat}: {title}",
+                      "en": "📎 <b>New file</b> · “{project}”\n{cat}: {title}", "sk": "📎 <b>Nový súbor</b> · „{project}“\n{cat}: {title}",
+                      "de": "📎 <b>Neue Datei</b> · „{project}“\n{cat}: {title}"},
+    "files_new": {"ru": "📎 <b>Новые файлы</b> · «{project}»\n{lines}", "uk": "📎 <b>Нові файли</b> · «{project}»\n{lines}",
+                  "en": "📎 <b>New files</b> · “{project}”\n{lines}", "sk": "📎 <b>Nové súbory</b> · „{project}“\n{lines}",
+                  "de": "📎 <b>Neue Dateien</b> · „{project}“\n{lines}"},
+    "fcat_measure": {"ru": "Обмерный план", "uk": "Обмірний план", "en": "Measured plan", "sk": "Zameranie", "de": "Aufmaß"},
+    "fcat_plan": {"ru": "Планировочные решения", "uk": "Планувальні рішення", "en": "Layout plans", "sk": "Dispozičné riešenia", "de": "Grundrisse"},
+    "fcat_visual": {"ru": "Визуализации", "uk": "Візуалізації", "en": "Renderings", "sk": "Vizualizácie", "de": "Visualisierungen"},
+    "fcat_docs": {"ru": "Документация", "uk": "Документація", "en": "Documentation", "sk": "Dokumentácia", "de": "Dokumentation"},
+    "fcat_after": {"ru": "После", "uk": "Після", "en": "After", "sk": "Po", "de": "Nachher"},
     "no_projects": {"ru": "В кабинете пока нет проектов. Когда студия добавит вас в проект, он появится здесь сам.",
                     "uk": "У кабінеті поки немає проєктів. Коли студія додасть вас до проєкту, він з’явиться тут сам.",
                     "en": "There are no projects in your app yet. When the studio adds you to a project, it will appear here.",
@@ -1221,6 +1233,45 @@ class PortalBotMixin:
                           [row] if row else None)
             return
 
+    def portal_file_notes(self, now=None, log=print):
+        """Ирина добавила документы или визуализации (решено 27.10.2026) — заказчикам проекта, подключённым к боту, одно
+        сообщение на пачку: «Новые файлы · проект» и сколько в каком разделе (один файл с подписью — его название), кнопка
+        открывает кабинет в этом разделе. Только файлы, которые этот заказчик видит (кто видит — у каждого файла свой);
+        тому, кто добавил, не пишем; ночью (22:00–8:00) — без звука. Фото «До» и «Другое» сюда не попадают (crm.NOTIFY_CATS)."""
+        if not getattr(self, "portal", None) or not hasattr(self.crm, "due_file_notes"):
+            return 0
+        now = now or datetime.now(timezone.utc)
+        quiet = not 8 <= now.astimezone(TZ).hour < 22
+        sent = 0
+        for pid, files in self.crm.due_file_notes(now.timestamp()).items():
+            p = self.crm.one("SELECT id, title, status FROM projects WHERE id=?", pid)
+            if not p or p["status"] == "cancelled":
+                continue
+            files = [f for f in files if f["category"] in NOTIFY_CATS]
+            by = {f["note_by"] for f in files if f.get("note_by")}
+            for tg in dict.fromkeys(self._client_tgs(pid)):
+                if tg in by or not self._active(tg):
+                    continue
+                v = self.portal.viewer(tg, pid)
+                mine = [f for f in files if self.portal.can_see_file(v, f)]
+                if not mine:
+                    continue
+                lang = self.lang_of(tg)
+                cats = [c for c in ("visual", "plan", "measure", "docs", "after") if any(f["category"] == c for f in mine)]
+                project = esc(self.loc(p["title"] or "", lang))
+                one = mine[0] if len(mine) == 1 else None
+                title = (self.loc(one["title"], lang) if one["title"] else "" if (one.get("mime") or "").startswith("image/") else one["name"] or "") if one else ""
+                if title:
+                    text = t(lang, "files_new_one", project=project, cat=esc(t(lang, "fcat_" + one["category"])), title=esc(title))
+                else:
+                    text = t(lang, "files_new", project=project, lines="\n".join(
+                        f"{esc(t(lang, 'fcat_' + c))} — {sum(1 for f in mine if f['category'] == c)}" for c in cats))
+                row = self.portal_row(lang, f"project={pid}&tab=docs&cat={cats[0]}")
+                if self.send(tg, text, [row] if row else None, disable_notification=quiet):
+                    sent += 1
+            log(f"кабинет: новые файлы проекта {pid} ({len(files)}) — сообщение заказчикам")
+        return sent
+
     def ver_name(self, cat, ver):
         """«Вариант 2», «Правка 1», «версия 3» — по-русски, для Ирины."""
         if cat == "plan":
@@ -1251,6 +1302,7 @@ class PortalBotMixin:
                         self.s.drop(r["key"])
                 except (ValueError, AttributeError):
                     self.s.drop(r["key"])
+        self.portal_file_notes(now=now, log=log)        # новые документы и визуализации — заказчикам, пачкой
         if not 10 <= local.hour < 20:
             return 0
         sent = 0

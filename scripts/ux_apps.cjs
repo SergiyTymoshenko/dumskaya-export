@@ -155,6 +155,24 @@ const RUNS = [
                 R.ok(after === before + 1 && back === before, `${tag}: галочка «согласовано» под фото`, `зелёных галочек: ${before} → ${after} → ${back}`);
               }
               tiles = await p.$$('.gallery .thumb');
+              // порядок файлов (решено 27.10.2026): «⇅ Порядок» → под фото ‹ ›; › у первого — оно становится вторым; ‹ — обратно
+              const ord = p.locator('#sec-files button.chip', { hasText: /Порядок/ });
+              if (!(await ord.count())) R.ok(false, `${tag}: порядок файлов`, 'нет кнопки «⇅ Порядок»');
+              else {
+                const firstSrc = () => p.$eval('#sec-files .gallery .thumb img', (x) => x.getAttribute('src')).catch(() => '');
+                await ord.first().click(); await p.waitForTimeout(400);
+                const s0 = await firstSrc(), bars = (await p.$$('#sec-files .gallery .ordbar')).length;
+                await look('визуализации — порядок');
+                await clickFirst('#sec-files .gallery .ordbar .ordbtn[title="Позже"]:not([disabled])'); await p.waitForTimeout(900);
+                const s1 = await firstSrc();
+                const sec = await p.$eval('#sec-files .gallery .gcell:nth-child(2) .thumb img', (x) => x.getAttribute('src')).catch(() => '');
+                await clickFirst('#sec-files .gallery .gcell:nth-child(2) .ordbar .ordbtn[title="Раньше"]'); await p.waitForTimeout(900);
+                const s2 = await firstSrc();
+                await p.locator('#sec-files button.chip', { hasText: /Готово/ }).first().click(); await p.waitForTimeout(400);
+                R.ok(bars >= 2 && s1 !== s0 && sec === s0 && s2 === s0 && !(await p.$('#sec-files .ordbar')), `${tag}: порядок файлов (‹ › под фото)`,
+                  `кнопок у фото: ${bars}; первое фото после ›: ${s1 === s0 ? 'не сдвинулось' : 'сдвинулось'}, после ‹: ${s2 === s0 ? 'вернулось' : 'нет'}`);
+              }
+              tiles = await p.$$('.gallery .thumb');     // после «Порядка» плитки нарисованы заново
             }
             if (tiles.length < 2) R.ok(false, `${tag}: листание фото`, `в «Визуализациях» фото: ${tiles.length}, нужно не меньше двух`);
             else {
@@ -193,7 +211,7 @@ const RUNS = [
               R.ok(!bad.length, `${tag}: листание фото`, bad.map((x) => `${x[0]}: ${x[2]}`).join('; '));
               await p.keyboard.press('Escape'); await p.waitForTimeout(300);
               if (run.role === 'owner') {                    // проект у разработчика: только просмотр — кнопок изменений нет
-                const rw = await p.$$eval('#app button', (xs) => xs.map((x) => x.innerText.trim()).filter((t) => /＋|Изменить|Удалить|Ссылка в бот|Написать|Оплата|Бонус|Завершить|Убрать|Закрыть кабинет|Отметить/.test(t)));
+                const rw = await p.$$eval('#app button', (xs) => xs.map((x) => x.innerText.trim()).filter((t) => /＋|Изменить|Удалить|Ссылка в бот|Написать|Оплата|Бонус|Завершить|Убрать|Закрыть кабинет|Отметить|Порядок/.test(t)));
                 R.ok(!rw.length, `${tag}: проект — только просмотр`, rw.slice(0, 6).join('; '));
               }
             }

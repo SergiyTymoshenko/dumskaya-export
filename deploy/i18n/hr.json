@@ -340,7 +340,14 @@
   "invite_hired": "Dobar dan, {name}! Ovo je poveznica na aplikaciju za suradnike studija DUMSKAYA DESIGN u Telegramu: projekti na kojima radite za studio, adresa objekta, dokumentacija i vizualizacije, razgovor s Irinom. Otvorite je u Telegramu i dodirnite gumb na dnu zaslona („Pokreni“):\n{link}\n\nPoveznica je osobna, za jednu osobu, i vrijedi 14 dana. Povezati se trebate samo jednom — novi projekti pojavit će se u aplikaciji automatski.",
   "link_new_hired": "📁 Studio Vas je dodao u projekt „{project}“{trade}. Adresa, dokumentacija i razgovor s Irinom su u aplikaciji.",
   "stage_new": "📍 <b>Nova faza projekta</b> · „{project}“\n{stage}",
-  "doc_approved": "✓ {who} je podijelila Vaš dokument s klijentom · „{project}“\n{title}"
+  "doc_approved": "✓ {who} je podijelila Vaš dokument s klijentom · „{project}“\n{title}",
+  "files_new_one": "📎 <b>Nova datoteka</b> · „{project}“\n{cat}: {title}",
+  "files_new": "📎 <b>Nove datoteke</b> · „{project}“\n{lines}",
+  "fcat_measure": "Snimka postojećeg stanja",
+  "fcat_plan": "Tlocrtna rješenja",
+  "fcat_visual": "Vizualizacije",
+  "fcat_docs": "Dokumentacija",
+  "fcat_after": "Poslije"
  },
  "fixed": {
   "Прораб": "Voditelj gradilišta",

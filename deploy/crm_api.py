@@ -457,6 +457,8 @@ def handle_post(h, path, query):
                              h.headers.get("Content-Type", "application/octet-stream"), who)
             # вариант (правка) и помещение — куда Ирина добавляет; «новая версия» документа — с тем же названием
             CRM.file_meta(f, q.get("ver"), q.get("room"), q.get("title"), q.get("new") == "1")
+            # заказчику — сообщение о новых документах и визуализациях (не о фото «До»); десять файлов подряд — одно
+            CRM.note_new_file(CRM.one("SELECT * FROM files WHERE id=?", f["id"]), u["tg_id"])
             return h.reply(200, CRM.file_view(CRM.one("SELECT * FROM files WHERE id=?", f["id"]))) or True
         if path == "/api/crm/thumb":
             n = int(h.headers.get("Content-Length") or 0)
@@ -473,6 +475,7 @@ def handle_post(h, path, query):
                   "pclient": CRM.add_project_client, "pclient_remove": CRM.remove_project_client,
                   "project_status": CRM.set_project_status, "project_stage": CRM.set_project_stage,
                   "tariff": CRM.change_tariff, "file_meta": CRM.set_file_meta, "round": CRM.set_round, "file_agreed": CRM.set_file_agreed,
+                  "file_order": CRM.set_file_order,
                   "file_approve": file_approve}.get(entity)
             if not fn:
                 fn = portal_save(entity)
@@ -525,7 +528,7 @@ def handle_post(h, path, query):
                     portal_bg(BOT.portal_unlinked, tg)
             return h.reply(200, enrich(r)) or True
         if path == "/api/crm/move":
-            return h.reply(200, enrich(CRM.move_file(data.get("id"), data.get("category"), who))) or True
+            return h.reply(200, enrich(CRM.move_file(data.get("id"), data.get("category"), who, u["tg_id"]))) or True
         if path == "/api/crm/send":                      # прислать файл проекта в чат с ботом
             fpath, f = CRM.file_path(data.get("id"), "o")
             if not f:

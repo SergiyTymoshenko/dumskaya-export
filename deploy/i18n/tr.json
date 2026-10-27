@@ -340,7 +340,14 @@
   "invite_hired": "Merhaba {name}! DUMSKAYA DESIGN’ın Telegram’daki stüdyo uzmanları uygulamasına bağlantı aşağıdadır. Uygulamada stüdyo için çalıştığınız projeleri, proje adresini, belgeleri, görselleştirmeleri ve Irina ile yazışmanızı bulursunuz. Bağlantıyı Telegram’da açın ve alttaki düğmeye (“Başlat”) dokunun:\n{link}\n\nBağlantı kişiye özeldir, tek bir kişi içindir ve 14 gün geçerlidir. Yalnızca bir kez bağlanmanız yeterli — yeni projeler uygulamada otomatik olarak görünecek.",
   "link_new_hired": "📁 Stüdyo sizi “{project}” projesine ekledi{trade}. Proje adresi, belgeler ve Irina ile yazışmanız uygulamada.",
   "stage_new": "📍 <b>Yeni proje aşaması</b> · “{project}”\n{stage}",
-  "doc_approved": "✓ {who} belgenizi müşteriyle paylaştı · “{project}”\n{title}"
+  "doc_approved": "✓ {who} belgenizi müşteriyle paylaştı · “{project}”\n{title}",
+  "files_new_one": "📎 <b>Yeni dosya</b> · “{project}”\n{cat}: {title}",
+  "files_new": "📎 <b>Yeni dosyalar</b> · “{project}”\n{lines}",
+  "fcat_measure": "Rölöve planı",
+  "fcat_plan": "Yerleşim planları",
+  "fcat_visual": "Görselleştirmeler",
+  "fcat_docs": "Dokümantasyon",
+  "fcat_after": "Sonrası"
  },
  "fixed": {
   "Прораб": "Şantiye şefi",

@@ -340,7 +340,14 @@
   "invite_hired": "Përshëndetje, {name}! Ja lidhja për aplikacionin e bashkëpunëtorëve të studios DUMSKAYA DESIGN në Telegram: projektet në të cilat punoni për studion, adresa e objektit, dokumentet dhe vizualizimet, biseda me Irinën. Hapeni në Telegram dhe prekni butonin poshtë („Fillo“):\n{link}\n\nLidhja është personale, për një person, dhe është e vlefshme 14 ditë. Duhet të lidheni vetëm një herë — projektet e reja do të shfaqen automatikisht në aplikacion.",
   "link_new_hired": "📁 Studioja ju ka shtuar në projektin „{project}“{trade}. Adresa, dokumentet dhe biseda me Irinën janë në aplikacion.",
   "stage_new": "📍 <b>Fazë e re e projektit</b> · „{project}“\n{stage}",
-  "doc_approved": "✓ {who} e ndau dokumentin tuaj me klientin · „{project}“\n{title}"
+  "doc_approved": "✓ {who} e ndau dokumentin tuaj me klientin · „{project}“\n{title}",
+  "files_new_one": "📎 <b>Skedar i ri</b> · „{project}“\n{cat}: {title}",
+  "files_new": "📎 <b>Skedarë të rinj</b> · „{project}“\n{lines}",
+  "fcat_measure": "Plani i matjeve",
+  "fcat_plan": "Planimetritë",
+  "fcat_visual": "Vizualizime",
+  "fcat_docs": "Dokumentacioni",
+  "fcat_after": "Pas"
  },
  "fixed": {
   "Прораб": "Drejtues punimesh",

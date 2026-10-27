@@ -340,7 +340,14 @@
   "invite_hired": "Üdvözöljük, {name}! Itt a link a DUMSKAYA DESIGN stúdió szakembereinek szóló alkalmazáshoz a Telegramban: a projektek, amelyeken a stúdiónak dolgozik, a helyszín címe, dokumentáció és látványtervek, beszélgetés Irinával. Nyissa meg a Telegramban, és koppintson a képernyő alján lévő gombra („Indítás”):\n{link}\n\nA link személyes, egy személynek szól, és 14 napig érvényes. Csak egyszer kell csatlakoznia — az új projektek automatikusan megjelennek az alkalmazásban.",
   "link_new_hired": "📁 A stúdió hozzáadta Önt egy projekthez: „{project}”{trade}. A cím, a dokumentáció és az Irinával folytatott beszélgetés az alkalmazásban található.",
   "stage_new": "📍 <b>Új projektszakasz</b> · „{project}”\n{stage}",
-  "doc_approved": "✓ {who} megosztotta az Ön dokumentumát a megrendelővel · „{project}”\n{title}"
+  "doc_approved": "✓ {who} megosztotta az Ön dokumentumát a megrendelővel · „{project}”\n{title}",
+  "files_new_one": "📎 <b>Új fájl</b> · „{project}”\n{cat}: {title}",
+  "files_new": "📎 <b>Új fájlok</b> · „{project}”\n{lines}",
+  "fcat_measure": "Felmérési rajz",
+  "fcat_plan": "Alaprajzi elrendezés",
+  "fcat_visual": "Látványtervek",
+  "fcat_docs": "Dokumentáció",
+  "fcat_after": "Utána"
  },
  "fixed": {
   "Прораб": "Építésvezető",

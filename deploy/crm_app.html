@@ -320,6 +320,16 @@
   .okmark { position: absolute; right: 6px; bottom: 6px; width: 22px; height: 22px; border-radius: 50%; pointer-events: none;
     background: #1e8e3e url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 15px no-repeat; box-shadow: 0 0 0 2px #fff, 0 1px 4px rgba(0,0,0,.35); }
   .gcell { display: flex; flex-direction: column; min-width: 0; }
+  /* порядок файлов (решено 27.10.2026): ‹ › под плиткой, ↑ ↓ у строки документа; перетаскивание мышью на компьютере */
+  .ordhead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin: 0 0 10px; }
+  .ordhead .small { flex: 1 1 12em; }
+  .ordbar { display: flex; gap: 4px; margin-top: 4px; }
+  .ordbar .ordbtn { flex: 1 1 0; min-width: 0; min-height: 44px; padding: 0 4px; font-size: calc(20px * min(var(--k), 1.2)); font-weight: 700; line-height: 1; }
+  .ordbar.rows { margin-top: 6px; max-width: 12em; }
+  .ordbar .ordbtn:disabled { opacity: 1; color: var(--muted); background: transparent; }
+  .gcell[draggable="true"] { cursor: grab; }
+  .gcell.dragging { opacity: .45; }
+  .gcell.dropat { outline: 2px solid var(--series); outline-offset: 2px; border-radius: 10px; }
   .agree { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 34px; padding-top: 2px; cursor: pointer;
     font-size: calc(13px * var(--k)); color: var(--text-2); -webkit-user-select: none; user-select: none; }
   .agree input { -webkit-appearance: none; appearance: none; flex: 0 0 auto; width: 24px; height: 24px; margin: 0; border-radius: 7px;
@@ -375,6 +385,7 @@
   let S = null, P = null, tab = 'projects', view = 'list', filter = 'work', query = '', fileTab = 'measure', peopleTab = 'clients', period = 'month', M = null, lastPid = null;
   let moreOpen = false;      // в проекте: пустые блоки (товары, услуги, подрядчики) развернули кнопкой
   let fileVer = {}, fileVerNew = {}, fileRoom = {};   // в файлах проекта: выбранный вариант (правка), новая правка, помещение для загрузки
+  let fileOrd = false;        // режим «Порядок»: у файлов кнопки ‹ › — передвинуть раньше или позже (решено 27.10.2026)
   let L = null, LS = null, A = null, leadFilter = 'new', leadQuery = '';   // заявка, список заявок, доступ к боту
   let OWNER = false;          // разработчик: в «Студии» сайт, доступ к боту и проекты — только просмотр (решено 25.10.2026)
   const rw = (n) => (OWNER ? null : n);   // кнопка или поле, которые что-то меняют: у разработчика их нет
@@ -551,7 +562,8 @@
     try {
       P = await api('/api/crm/project?id=' + id);
       if (P.project.id !== lastPid) {             // визуализации, если есть (их смотрят чаще всего), иначе — раздел последнего файла
-        fileTab = P.files.some((x) => x.category === 'visual') ? 'visual' : P.files.length ? P.files[0].category : 'measure'; lastPid = P.project.id;
+        const last = P.files.reduce((a, x) => (!a || x.id > a.id ? x : a), null);
+        fileTab = P.files.some((x) => x.category === 'visual') ? 'visual' : last ? last.category : 'measure'; lastPid = P.project.id; fileOrd = false;
       }
       tab = 'projects'; go('project', push);
     }
@@ -866,12 +878,18 @@
         'По пакету «' + p.tariff + '» правок: ' + tarif.revisions + (curVer - 1 > tarif.revisions ? ' — эта сверх пакета' : '')));
       list = list.filter((x) => (x.ver || 1) === curVer);
     }
+    if (!OWNER && list.length > 1) {                   // порядок файлов: ‹ › под каждым (телефон), на компьютере — ещё перетащить
+      f.append(el('div', 'ordhead', el('button', { class: 'chip', type: 'button', 'aria-pressed': String(fileOrd), onclick: () => { fileOrd = !fileOrd; render(); } },
+        fileOrd ? '✓ Готово' : '⇅ Порядок'), fileOrd ? el('span', 'small muted', 'Нажимайте ‹ › под файлом — он встанет раньше или позже' + (DESKTOP ? '; можно и перетащить мышью' : '')
+        + '. Так же увидят заказчик и подрядчики.') : null));
+    }
     let curRoom = roomCat ? (fileRoom[fileTab] || '') : '';
     if (!list.length) f.append(el('p', 'muted small', OWNER ? 'Пока пусто.' : 'Пока пусто. Добавьте файлы кнопкой ниже — или пришлите их боту в чат: он спросит, в какой проект и раздел.'));
     else if (fileTab === 'work') {
-      const ul = el('ul', 'people');
-      list.forEach((x) => ul.append(el('li', null, el('div', 'drow', fileTile(x, list), el('div', { class: 'who', style: 'cursor:default' },
-        el('b', null, x.title || x.name), el('span', null, [x.owner_name, dfmt(x.created)].filter(Boolean).join(' · ')), el('span', null, '👁 ' + (x.audience || '')))))));
+      const ul = el('ul', 'people'), blocks = list.map((x) => [x]);
+      list.forEach((x, i) => ul.append(el('li', null, el('div', 'drow', fileTile(x, list), el('div', { class: 'who', style: 'cursor:default' },
+        el('b', null, x.title || x.name), el('span', null, [x.owner_name, dfmt(x.created)].filter(Boolean).join(' · ')), el('span', null, '👁 ' + (x.audience || '')),
+        ordBar(blocks, i, true))))));
       f.append(ul);
     } else if (roomCat) {                            // по помещениям, в порядке списка; без помещения — в конце
       const order = (S.lists.rooms || []).slice();
@@ -882,17 +900,19 @@
       const seq = all.flatMap(([, l]) => l);           // в просмотре фото листаются подряд через все помещения раздела
       all.forEach(([r, l]) => {
         if (groups.length) f.append(el('h3', { class: 'grp' }, (r || 'Без помещения') + ' · ' + l.length));
-        f.append(galleryOf(l, seq));
+        f.append(galleryOf(l, seq, true));
       });
     } else {                                         // документы: версии одного документа — последняя, прежние свёрнуты
       const groups = new Map();
       list.forEach((x) => { const k = (x.title || x.name || '').trim(); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(x); });
-      if (![...groups.values()].some((l) => l.length > 1 && l.some((x) => (x.ver || 1) > 1))) f.append(galleryOf(list));
+      if (![...groups.values()].some((l) => l.length > 1 && l.some((x) => (x.ver || 1) > 1))) f.append(galleryOf(list, null, true));
       else {
         groups.forEach((l) => l.sort((a, b) => (b.ver || 1) - (a.ver || 1) || b.id - a.id));
         const latest = [...groups.values()].map((l) => l[0]);   // в просмотре листаются последние версии документов
-        groups.forEach((l, k) => {
-          f.append(el('div', 'drow', fileTile(l[0], latest), el('div', 'who', el('b', null, k), el('span', null, 'Версия ' + (l[0].ver || 1) + ' · ' + dfmt(l[0].created)))));
+        const blocks = [...groups.values()];                     // документ передвигается вместе с прежними версиями
+        [...groups.entries()].forEach(([k, l], i) => {
+          f.append(el('div', 'drow', fileTile(l[0], latest), el('div', 'who', el('b', null, k), el('span', null, 'Версия ' + (l[0].ver || 1) + ' · ' + dfmt(l[0].created)),
+            ordBar(blocks, i, true))));
           if (l.length > 1) f.append(el('details', { class: 'older' }, el('summary', null, 'Предыдущие версии · ' + (l.length - 1)), galleryOf(l.slice(1))));
         });
       }
@@ -1167,14 +1187,66 @@
   const catName = (c) => (c === 'work' ? 'От подрядчиков' : ((S.lists.file_cats || []).find((x) => x[0] === c) || ['', c])[1]);
   // «Вариант 2» (планировки), «Первый вариант», «Правка 1» (визуализации), «Версия 3» (документы)
   const verName = (c, n) => (c === 'plan' ? 'Вариант ' + n : c === 'visual' ? (n <= 1 ? 'Первый вариант' : 'Правка ' + (n - 1)) : 'Версия ' + n);
-  function galleryOf(list, seq) {                 // seq — по чему листать в просмотре (весь раздел), по умолчанию — эта же сетка
-    const g = el('div', 'gallery');
-    list.forEach((x) => {
+  function galleryOf(list, seq, ord) {            // seq — по чему листать в просмотре (весь раздел), по умолчанию — эта же сетка;
+    const g = el('div', 'gallery');                // ord — эти файлы можно передвигать (в режиме «Порядок» и мышью на компьютере)
+    const blocks = list.map((x) => [x]), canOrd = ord && !OWNER && list.length > 1;
+    list.forEach((x, i) => {
       const t = fileTile(x, seq || list);
       if (x.see_client != null || x.see_crew != null) t.classList.add('custom');
-      g.append(canAgree(x) && !OWNER ? el('div', 'gcell', t, agreeBox(x)) : t);   // под фото — «согласовано» (только у Ирины)
+      const agree = canAgree(x) && !OWNER;         // под фото — «согласовано» (только у Ирины)
+      const bar = canOrd ? ordBar(blocks, i) : null;
+      const cell = agree || bar || (canOrd && DESKTOP) ? el('div', 'gcell', t, agree ? agreeBox(x) : null, bar) : t;
+      if (canOrd && DESKTOP) ordDrag(cell, blocks, i);
+      g.append(cell);
     });
     return g;
+  }
+  // ---------- порядок файлов в разделе (решено 27.10.2026): Ирина передвигает документы и фото ----------
+  // На телефоне — режим «Порядок»: под каждым файлом ‹ › (раньше / позже); на компьютере — ещё перетащить мышью.
+  // blocks — то, что передвигается вместе (документ с прежними версиями); порядок сразу на экране, на сервер — через 0,6 с
+  // весь раздел по порядку (files.pos) — так же у заказчика, подрядчиков и в листании фото
+  let ordFocus = null, dragOrdFrom = null;
+  const ordTimers = {};
+  function ordBar(blocks, i, rows) {
+    if (!fileOrd || OWNER || blocks.length < 2) return null;
+    const x = blocks[i][0], name = x.title || (x.image ? 'фото' : x.name);
+    const b = (d, sym, label) => el('button', { class: 'btn ordbtn', type: 'button', 'data-ord': x.id + ':' + d, 'aria-label': label + ': ' + name, title: label,
+      disabled: (d < 0 ? i === 0 : i === blocks.length - 1) ? true : null, onclick: () => { ordFocus = x.id + ':' + d; moveBlock(blocks, i, i + d); } }, sym);
+    return el('div', 'ordbar' + (rows ? ' rows' : ''), b(-1, rows ? '↑' : '‹', 'Раньше'), b(1, rows ? '↓' : '›', 'Позже'));
+  }
+  function ordDrag(cell, blocks, i) {
+    cell.draggable = true;
+    cell.querySelectorAll('img').forEach((im) => { im.draggable = false; });
+    cell.addEventListener('dragstart', (e) => { dragOrdFrom = { blocks, i }; e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', 'file-order'); cell.classList.add('dragging'); });
+    cell.addEventListener('dragend', () => { dragOrdFrom = null; cell.classList.remove('dragging'); document.querySelectorAll('.dropat').forEach((n) => n.classList.remove('dropat')); });
+    cell.addEventListener('dragover', (e) => { if (!dragOrdFrom || dragOrdFrom.blocks !== blocks) return; e.preventDefault(); e.dataTransfer.dropEffect = 'move'; cell.classList.add('dropat'); });
+    cell.addEventListener('dragleave', (e) => { if (!cell.contains(e.relatedTarget)) cell.classList.remove('dropat'); });
+    cell.addEventListener('drop', (e) => {
+      if (!dragOrdFrom || dragOrdFrom.blocks !== blocks) return;
+      e.preventDefault(); e.stopPropagation();
+      const from = dragOrdFrom.i; dragOrdFrom = null;
+      moveBlock(blocks, from, i);
+    });
+  }
+  function moveBlock(blocks, from, to) {
+    if (from === to || from < 0 || to < 0 || to >= blocks.length) return;
+    const b = blocks[from], cat = b[0].category;
+    const all = P.files.filter((y) => y.category === cat && !b.includes(y));
+    const at = blocks[to].map((y) => all.indexOf(y)).filter((n) => n >= 0);
+    all.splice(to > from ? Math.max(...at) + 1 : Math.min(...at), 0, ...b);
+    let k = 0;
+    P.files = P.files.map((z) => (z.category === cat ? all[k++] : z));
+    render();
+    const fb = ordFocus && document.querySelector('[data-ord="' + ordFocus + '"]');
+    if (fb) (fb.disabled ? (document.querySelector('[data-ord="' + ordFocus.replace(/:-?1$/, (m) => (m === ':1' ? ':-1' : ':1')) + '"]') || fb) : fb).focus();
+    ordFocus = null;
+    const pid = P.project.id, ids = all.map((y) => y.id);
+    clearTimeout(ordTimers[cat]);
+    ordTimers[cat] = setTimeout(async () => {
+      delete ordTimers[cat];
+      try { await save('file_order', { project_id: pid, category: cat, ids }); }
+      catch (e) { toast(e.message); try { if (P && P.project.id === pid) await refresh(await api('/api/crm/project?id=' + pid)); } catch (e2) {} }
+    }, 600);
   }
   // согласование заказчиком — у каждого фото (вариант планировки, визуализация), решено 25.10.2026
   const canAgree = (x) => (S.lists.round_cats || []).includes(x.category);

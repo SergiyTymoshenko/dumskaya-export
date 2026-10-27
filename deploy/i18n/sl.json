@@ -340,7 +340,14 @@
   "invite_hired": "Pozdravljeni, {name}! To je povezava do aplikacije za zunanje sodelavce studia DUMSKAYA DESIGN v Telegramu: projekti, pri katerih delate za studio, naslov objekta, dokumentacija in vizualizacije ter pogovor z Irino. Odprite jo v Telegramu in tapnite gumb na dnu zaslona (»Start«):\n{link}\n\nPovezava je osebna, za eno osebo, in velja 14 dni. Povezati se morate le enkrat — novi projekti se bodo v aplikaciji prikazali samodejno.",
   "link_new_hired": "📁 Studio vas je dodal v projekt »{project}«{trade}. Naslov, dokumentacija in pogovor z Irino so v aplikaciji.",
   "stage_new": "📍 <b>Nova faza projekta</b> · »{project}«\n{stage}",
-  "doc_approved": "✓ {who} je vaš dokument posredovala naročniku · »{project}«\n{title}"
+  "doc_approved": "✓ {who} je vaš dokument posredovala naročniku · »{project}«\n{title}",
+  "files_new_one": "📎 <b>Nova datoteka</b> · »{project}«\n{cat}: {title}",
+  "files_new": "📎 <b>Nove datoteke</b> · »{project}«\n{lines}",
+  "fcat_measure": "Izmera",
+  "fcat_plan": "Tlorisne rešitve",
+  "fcat_visual": "Vizualizacije",
+  "fcat_docs": "Dokumentacija",
+  "fcat_after": "Potem"
  },
  "fixed": {
   "Прораб": "Vodja gradbišča",

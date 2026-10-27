@@ -340,7 +340,14 @@
   "invite_hired": "Tere, {name}! Siin on link stuudio DUMSKAYA DESIGN spetsialistide rakendusele Telegramis: projektid, mille kallal töötate stuudio heaks, objekti aadress, dokumendid ja visualiseeringud ning vestlus Irinaga. Avage see Telegramis ja puudutage ekraani allservas olevat nuppu („Alusta“):\n{link}\n\nLink on isiklik, ühele inimesele, ja kehtib 14 päeva. Liituda tuleb ainult üks kord — uued projektid ilmuvad rakendusse automaatselt.",
   "link_new_hired": "📁 Stuudio lisas Teid projekti „{project}“{trade}. Aadress, dokumendid ja vestlus Irinaga on rakenduses.",
   "stage_new": "📍 <b>Uus projekti etapp</b> · „{project}“\n{stage}",
-  "doc_approved": "✓ {who} näitas Teie dokumenti kliendile · „{project}“\n{title}"
+  "doc_approved": "✓ {who} näitas Teie dokumenti kliendile · „{project}“\n{title}",
+  "files_new_one": "📎 <b>Uus fail</b> · „{project}“\n{cat}: {title}",
+  "files_new": "📎 <b>Uued failid</b> · „{project}“\n{lines}",
+  "fcat_measure": "Mõõdistusplaan",
+  "fcat_plan": "Planeeringulahendused",
+  "fcat_visual": "Visualiseeringud",
+  "fcat_docs": "Dokumentatsioon",
+  "fcat_after": "Pärast"
  },
  "fixed": {
   "Прораб": "Objektijuht",

@@ -340,7 +340,14 @@
   "invite_hired": "Halló, {name}! Hér er hlekkurinn á app DUMSKAYA DESIGN fyrir sérfræðinga stofunnar í Telegram: verkefnin sem þú vinnur að fyrir stofuna, heimilisfang verkstaðarins, skjöl og þrívíddarmyndir, spjall þitt við Irinu. Opnaðu hann í Telegram og ýttu á hnappinn neðst („Byrja“):\n{link}\n\nHlekkurinn er persónulegur, fyrir einn einstakling, og gildir í 14 daga. Þú þarft aðeins að tengjast einu sinni — ný verkefni birtast sjálfkrafa í appinu.",
   "link_new_hired": "📁 Stofan hefur bætt þér við verkefnið „{project}“{trade}. Heimilisfang, skjöl og spjall þitt við Irinu eru í appinu.",
   "stage_new": "📍 <b>Nýr áfangi verkefnis</b> · „{project}“\n{stage}",
-  "doc_approved": "✓ {who} hefur sýnt viðskiptavininum skjalið þitt · „{project}“\n{title}"
+  "doc_approved": "✓ {who} hefur sýnt viðskiptavininum skjalið þitt · „{project}“\n{title}",
+  "files_new_one": "📎 <b>Ný skrá</b> · „{project}“\n{cat}: {title}",
+  "files_new": "📎 <b>Nýjar skrár</b> · „{project}“\n{lines}",
+  "fcat_measure": "Uppmæling",
+  "fcat_plan": "Grunnmyndir",
+  "fcat_visual": "Þrívíddarmyndir",
+  "fcat_docs": "Hönnunargögn",
+  "fcat_after": "Eftir"
  },
  "fixed": {
   "Прораб": "Verkstjóri",

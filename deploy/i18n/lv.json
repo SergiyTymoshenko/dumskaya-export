@@ -340,7 +340,14 @@
   "invite_hired": "Labdien, {name}! Šeit ir saite uz studijas DUMSKAYA DESIGN speciālistu lietotni Telegram vidē: projekti, pie kuriem strādājat studijas uzdevumā, objekta adrese, dokumenti un vizualizācijas, sarakste ar Irinu. Atveriet to Telegram lietotnē un pieskarieties pogai ekrāna apakšā (“Sākt”):\n{link}\n\nSaite ir personiska, paredzēta vienam cilvēkam, un derīga 14 dienas. Pievienoties vajag tikai vienreiz — jauni projekti lietotnē parādīsies automātiski.",
   "link_new_hired": "📁 Studija Jūs pievienoja projektam “{project}”{trade}. Adrese, dokumenti un sarakste ar Irinu ir lietotnē.",
   "stage_new": "📍 <b>Jauns projekta posms</b> · “{project}”\n{stage}",
-  "doc_approved": "✓ {who} parādīja klientam Jūsu dokumentu · “{project}”\n{title}"
+  "doc_approved": "✓ {who} parādīja klientam Jūsu dokumentu · “{project}”\n{title}",
+  "files_new_one": "📎 <b>Jauns fails</b> · “{project}”\n{cat}: {title}",
+  "files_new": "📎 <b>Jauni faili</b> · “{project}”\n{lines}",
+  "fcat_measure": "Uzmērījumu plāns",
+  "fcat_plan": "Plānojuma risinājumi",
+  "fcat_visual": "Vizualizācijas",
+  "fcat_docs": "Dokumentācija",
+  "fcat_after": "Pēc"
  },
  "fixed": {
   "Прораб": "Būvdarbu vadītājs",
