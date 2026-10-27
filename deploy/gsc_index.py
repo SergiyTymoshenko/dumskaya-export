@@ -27,6 +27,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import time
 import urllib.error
 import urllib.parse
@@ -56,7 +57,7 @@ RUN_HOUR = 6
 RECHECK_NO = 2 * 86400        # не в индексе — проверить снова через 2 дня
 RECHECK_YES = 14 * 86400      # в индексе — раз в 2 недели
 SUGGEST_AT = 0.6              # доля страниц последней фабрики в индексе — пора выкладывать следующую
-PAUSE = 0.15                  # не чаще ~400 запросов в минуту (предел Google — 600)
+WORKERS = 4                   # проверок одновременно: Google отвечает медленно, предел — 600 в минуту
 LANGS = ("ru", "de", "fr", "es")
 
 BOT = None                    # бот студии (ставит lead_service.py) — для предложения выкладывать дальше
@@ -186,27 +187,39 @@ def run_site(site, prop, log=print, limit=DAILY):
     for u in [u for u in list(pages) if u not in set(urls)]:
         del pages[u]                                  # страницы больше нет в карте сайта
     queue = todo(urls, pages, now)[:limit]
-    errors = 0
-    for i, u in enumerate(queue, 1):
-        if i % 25 == 0:                               # ход проверки — виден в «Графиках» и --status, не только в конце
-            save(host, st)
-            _run_note(progress={"host": host, "done": i, "todo": len(queue), "errors": errors})
-        try:
-            pages[u] = inspect(prop, u)
-            done += 1
-        except urllib.error.HTTPError as e:
-            if e.code == 429:
-                log(f"индекс Google {host}: дневной предел проверок исчерпан, продолжу завтра")
-                break
-            if e.code in (401, 403):
+    errors, stop, i = 0, None, 0
+    # Google отвечает по одной странице 5–15 секунд — проверяем по WORKERS сразу (предел Google — 600 в минуту)
+    with ThreadPoolExecutor(WORKERS) as ex:
+        futs = {ex.submit(inspect, prop, u): u for u in queue}
+        for fut in as_completed(futs):
+            u, i = futs[fut], i + 1
+            if stop:
+                fut.cancel()
+                continue
+            try:
+                pages[u] = fut.result()
+                done += 1
+            except urllib.error.HTTPError as e:
+                if e.code == 429:
+                    stop = "limit"
+                    log(f"индекс Google {host}: дневной предел проверок исчерпан, продолжу завтра")
+                elif e.code in (401, 403):
+                    stop = "denied"
+                else:
+                    log(f"индекс Google {host}: {u} — ответ {e.code}")
+                    errors += 1
+            except (OSError, ValueError) as e:
+                log(f"индекс Google {host}: {u} — {type(e).__name__}: {e}")
+                errors += 1
+            if i % 25 == 0:                           # ход проверки — виден в «Графиках» и --status, не только в конце
                 save(host, st)
-                return {"host": host, "status": "error", "note": f"Search Console не пускает служебный аккаунт к {host} ({e.code})"}
-            log(f"индекс Google {host}: {u} — ответ {e.code}")
-            errors += 1
-        except (OSError, ValueError) as e:
-            log(f"индекс Google {host}: {u} — {type(e).__name__}: {e}")
-            errors += 1
-        time.sleep(PAUSE)
+                _run_note(progress={"host": host, "done": i, "todo": len(queue), "errors": errors})
+        if stop:
+            for f in futs:
+                f.cancel()
+    if stop == "denied":
+        save(host, st)
+        return {"host": host, "status": "error", "note": f"Search Console не пускает служебный аккаунт к {host}"}
     day = datetime.now(TZ).date().isoformat()
     st["runs"][day] = done
     st["runs"] = dict(sorted(st["runs"].items())[-30:])
@@ -537,7 +550,7 @@ def main(argv):
     for site in indexnow.SITES:
         if os.path.exists(state_path(site["host"])):
             st = load(site["host"])
-            print(site["host"], "— проверено", datetime.fromtimestamp(st.get("checked", 0), TZ).strftime("%d.%m %H:%M"))
+            print(site["host"], "— проверено", datetime.fromtimestamp(st["checked"], TZ).strftime("%d.%m %H:%M") if st.get("checked") else "— (идёт первая проверка)")
             for name, yes, checked, total in groups(site["host"], st):
                 print(f"  {name}: в индексе {yes} из {total}, проверено {checked}")
     print("\n".join(morning_lines()) or "ещё ничего не проверено")

@@ -110,7 +110,7 @@ def fake_api(url, body=None):
                                                        "coverageState": "Submitted and indexed" if yes else "Discovered - currently not indexed"}}}
 
 
-G.api, G.PAUSE = fake_api, 0
+G.api = fake_api
 notes = []
 G.BOT = type("B", (), {"notify": lambda self, t, roles=None: notes.append(t)})()
 G.run_all(log=lambda *a: None)
