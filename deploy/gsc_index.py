@@ -185,7 +185,12 @@ def run_site(site, prop, log=print, limit=DAILY):
     pages, now, done = st["pages"], time.time(), 0
     for u in [u for u in list(pages) if u not in set(urls)]:
         del pages[u]                                  # страницы больше нет в карте сайта
-    for u in todo(urls, pages, now)[:limit]:
+    queue = todo(urls, pages, now)[:limit]
+    errors = 0
+    for i, u in enumerate(queue, 1):
+        if i % 25 == 0:                               # ход проверки — виден в «Графиках» и --status, не только в конце
+            save(host, st)
+            _run_note(progress={"host": host, "done": i, "todo": len(queue), "errors": errors})
         try:
             pages[u] = inspect(prop, u)
             done += 1
@@ -197,14 +202,71 @@ def run_site(site, prop, log=print, limit=DAILY):
                 save(host, st)
                 return {"host": host, "status": "error", "note": f"Search Console не пускает служебный аккаунт к {host} ({e.code})"}
             log(f"индекс Google {host}: {u} — ответ {e.code}")
+            errors += 1
         except (OSError, ValueError) as e:
             log(f"индекс Google {host}: {u} — {type(e).__name__}: {e}")
+            errors += 1
         time.sleep(PAUSE)
-    st["runs"][datetime.now(TZ).date().isoformat()] = done
+    day = datetime.now(TZ).date().isoformat()
+    st["runs"][day] = done
     st["runs"] = dict(sorted(st["runs"].items())[-30:])
     st["checked"] = int(now)
+    # снимок дня: в индексе / проверено / всего — по сайту и фабрикам (прогресс индексации по дням), хранится бессрочно
+    st.setdefault("history", {})[day] = {n: [y, c, t] for n, y, c, t in groups(host, st)}
     save(host, st)
-    return {"host": host, "status": "ok", "checked": done}
+    return {"host": host, "status": "ok", "checked": done, "errors": errors}
+
+
+# ---------- поиск Google: показы, клики, запросы, страницы, страны, устройства; карты сайта ----------
+SEARCH_DAYS = 90              # Google хранит 16 месяцев; данные за последние 2–3 дня ещё неполные
+
+
+def search_path(host):
+    return os.path.join(STATE_DIR, f"{host}-search.json")
+
+
+def _sq(prop, body):
+    url = f"https://www.googleapis.com/webmasters/v3/sites/{urllib.parse.quote(prop, safe='')}/searchAnalytics/query"
+    return api(url, body).get("rows") or []
+
+
+def fetch_search(prop, host, log=print):
+    """Статистика поиска Google за 90 дней (по дням) и за 28 дней (запросы, страницы, страны, устройства) + карты сайта."""
+    today = datetime.now(TZ).date()
+    end = (today - timedelta(days=1)).isoformat()
+    d90, d28 = (today - timedelta(days=SEARCH_DAYS)).isoformat(), (today - timedelta(days=28)).isoformat()
+    row = lambda r: {"keys": r.get("keys") or [], "clicks": r.get("clicks", 0), "impressions": r.get("impressions", 0),  # noqa: E731
+                     "ctr": r.get("ctr", 0), "position": r.get("position", 0)}
+    out = {"fetched": int(time.time()), "start": d90, "end": end}
+    for name, dims, start, limit in (("dates", ["date"], d90, 1000), ("queries", ["query"], d28, 200),
+                                     ("pages", ["page"], d28, 1000), ("countries", ["country"], d28, 60),
+                                     ("devices", ["device"], d28, 10), ("totals", [], d28, 1)):
+        try:
+            out[name] = [row(r) for r in _sq(prop, {"startDate": start, "endDate": end, "dimensions": dims, "rowLimit": limit,
+                                                    "dataState": "all"})]
+        except urllib.error.HTTPError as e:
+            log(f"индекс Google {host}: статистика поиска ({name}) — ответ {e.code}")
+            out[name] = []
+    try:
+        sm = api(f"https://www.googleapis.com/webmasters/v3/sites/{urllib.parse.quote(prop, safe='')}/sitemaps").get("sitemap") or []
+        out["sitemaps"] = [{"path": x.get("path"), "submitted": x.get("lastSubmitted"), "downloaded": x.get("lastDownloaded"),
+                            "pending": bool(x.get("isPending")), "warnings": int(x.get("warnings") or 0), "errors": int(x.get("errors") or 0),
+                            "urls": sum(int(c.get("submitted") or 0) for c in x.get("contents") or [])} for x in sm]
+    except urllib.error.HTTPError as e:
+        log(f"индекс Google {host}: карты сайта — ответ {e.code}")
+        out["sitemaps"] = []
+    os.makedirs(STATE_DIR, exist_ok=True)
+    with open(search_path(host) + ".tmp", "w", encoding="utf-8") as fh:
+        json.dump(out, fh, ensure_ascii=False)
+    os.replace(search_path(host) + ".tmp", search_path(host))
+    return out
+
+
+def load_search(host):
+    try:
+        return json.load(open(search_path(host), encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
 
 
 def groups(host, st=None):
@@ -290,8 +352,52 @@ def web_data(site="all"):
         out["sites"].append({"host": host, "checked": st.get("checked"),
                              "groups": [{"name": n, "yes": y, "checked": c, "total": t} for n, y, c, t in groups(host, st)],
                              "reasons": reasons.most_common(), "missing": miss[:80], "missing_total": len(miss),
-                             "today": (st.get("runs") or {}).get(datetime.now(TZ).date().isoformat(), 0)})
+                             "today": (st.get("runs") or {}).get(datetime.now(TZ).date().isoformat(), 0),
+                             "history": dict(sorted((st.get("history") or {}).items())[-120:]),
+                             "search": search_view(host, fmap)})
+    for host in hosts:                                # статистика поиска есть, а проверка страниц ещё не дошла до сайта
+        if not any(x["host"] == host for x in out["sites"]) and load_search(host):
+            out["sites"].append({"host": host, "checked": None, "groups": [], "reasons": [], "missing": [], "missing_total": 0,
+                                 "today": 0, "history": {}, "search": search_view(host, fmap)})
     return out
+
+
+COUNTRY_RU = {"svk": "Словакия", "aut": "Австрия", "deu": "Германия", "cze": "Чехия", "ukr": "Украина", "pol": "Польша",
+              "hun": "Венгрия", "ita": "Италия", "usa": "США", "gbr": "Великобритания", "fra": "Франция", "esp": "Испания",
+              "che": "Швейцария", "nld": "Нидерланды", "bel": "Бельгия", "isr": "Израиль", "are": "ОАЭ", "kaz": "Казахстан",
+              "rus": "Россия", "blr": "Беларусь", "mda": "Молдова", "rou": "Румыния", "bgr": "Болгария", "srb": "Сербия",
+              "hrv": "Хорватия", "svn": "Словения", "ltu": "Литва", "lva": "Латвия", "est": "Эстония", "geo": "Грузия",
+              "arm": "Армения", "aze": "Азербайджан", "tur": "Турция", "cyp": "Кипр", "grc": "Греция", "prt": "Португалия",
+              "swe": "Швеция", "nor": "Норвегия", "dnk": "Дания", "fin": "Финляндия", "irl": "Ирландия", "can": "Канада",
+              "mco": "Монако", "lux": "Люксембург", "sau": "Саудовская Аравия", "qat": "Катар", "ind": "Индия", "chn": "Китай"}
+DEVICE_RU = {"MOBILE": "телефон", "DESKTOP": "компьютер", "TABLET": "планшет"}
+
+
+def search_view(host, fmap=None):
+    """Статистика поиска для «Графиков»: итоги 28 дней, по дням (90), запросы, страницы, страны, устройства, по фабрикам."""
+    d = load_search(host)
+    if not d:
+        return None
+    path = lambda u: urllib.parse.urlsplit(u).path.rstrip("/") or "/"  # noqa: E731
+    tot = (d.get("totals") or [{}])[0] if d.get("totals") else {"clicks": 0, "impressions": 0, "ctr": 0, "position": 0}
+    by_f = {}
+    for r in d.get("pages") or []:
+        f = ((fmap or {}).get(path(r["keys"][0])) or ("" if host != "dumskaya-home.com" else "_other"))
+        if f:
+            b = by_f.setdefault(f, [0, 0])
+            b[0] += r["clicks"]
+            b[1] += r["impressions"]
+    fn = lambda f: "разделы магазина" if f == "_other" else f.capitalize()  # noqa: E731
+    return {"fetched": d.get("fetched"), "start": d.get("start"), "end": d.get("end"),
+            "totals": {k: tot.get(k, 0) for k in ("clicks", "impressions", "ctr", "position")},
+            "dates": [{"date": r["keys"][0], "clicks": r["clicks"], "impressions": r["impressions"], "position": round(r["position"], 1)}
+                      for r in d.get("dates") or []],
+            "queries": [[r["keys"][0], r["clicks"], r["impressions"], round(r["position"], 1)] for r in (d.get("queries") or [])[:40]],
+            "pages": [[path(r["keys"][0]), r["clicks"], r["impressions"], round(r["position"], 1)] for r in (d.get("pages") or [])[:30]],
+            "countries": [[COUNTRY_RU.get(r["keys"][0], r["keys"][0].upper()), r["clicks"], r["impressions"]] for r in (d.get("countries") or [])[:15]],
+            "devices": [[DEVICE_RU.get(r["keys"][0], r["keys"][0].lower()), r["clicks"], r["impressions"]] for r in d.get("devices") or []],
+            "factories": sorted([[fn(f), c, i] for f, (c, i) in by_f.items()], key=lambda x: -x[2]),
+            "sitemaps": d.get("sitemaps") or []}
 
 
 def suggest(log=print):
@@ -371,10 +477,14 @@ def run_all(log=print, limit=DAILY):
             if not prop:
                 outs.append({"host": site["host"], "status": "error", "note": "служебный аккаунт не добавлен в Search Console этого сайта"})
                 continue
-            _run_note(current=site["host"])
+            _run_note(current=site["host"], progress=None)
+            try:                                      # статистика поиска — отдельный лимит Google, быстро
+                fetch_search(prop, site["host"], log=log)
+            except Exception as e:  # noqa: BLE001
+                log(f"индекс Google {site['host']}: статистика поиска не получена — {type(e).__name__}: {e}")
             outs.append(run_site(site, prop, log=log, limit=limit))
         suggest(log=log)
-        _run_note(finished=int(time.time()), current=None, sites=outs)
+        _run_note(finished=int(time.time()), current=None, progress=None, sites=outs)
         return outs
     except Exception as e:  # noqa: BLE001
         _run_note(finished=int(time.time()), current=None, error=f"{type(e).__name__}: {e}")
@@ -415,6 +525,15 @@ def main(argv):
         fmt = lambda t: datetime.fromtimestamp(t, TZ).strftime("%d.%m %H:%M") if t else "—"  # noqa: E731
         print(f"последняя проверка: начата {fmt(r.get('started'))}, " + (f"закончена {fmt(r['finished'])}" if r.get("finished")
               else f"идёт ({r.get('current') or 'начало'})") + (f" · ошибка: {r['error']}" if r.get("error") else ""))
+        pg = r.get("progress")
+        if pg and not r.get("finished"):
+            print(f"  сейчас: {pg['host']} — проверено {pg['done']} из {pg['todo']}, ошибок {pg['errors']}")
+    for site in indexnow.SITES:
+        sv = search_view(site["host"])
+        if sv:
+            t = sv["totals"]
+            print(f"{site['host']} — поиск Google за 28 дней: показов {t['impressions']}, кликов {t['clicks']}, "
+                  f"средняя позиция {round(t['position'], 1) if t['position'] else '—'}; карт сайта {len(sv['sitemaps'])}")
     for site in indexnow.SITES:
         if os.path.exists(state_path(site["host"])):
             st = load(site["host"])

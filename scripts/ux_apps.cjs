@@ -15,6 +15,7 @@ const OUT = L.outDir('dumskaya-ux-apps');
 const PORT = Number(L.arg('--port', 18771));
 const R = L.report();
 const QUICK = L.has('--quick');          // только iPhone Pro Max и размер текста по умолчанию
+const GSC_FIXTURE = require('fs').readFileSync(require('path').join(__dirname, 'tests', 'gsc_fixture.json'), 'utf8');
 
 // Telegram внутри мини-приложения: подпись (initData) и кнопки «Назад» / «Сохранить» — как у настоящего, без сети
 const tgMock = (init) => `window.Telegram = { WebApp: (function () {
@@ -86,6 +87,8 @@ const RUNS = [
           p.on('pageerror', (e) => errs.push(e.message.slice(0, 120)));
           await ctx.addInitScript(([z, plat, dark]) => { try { localStorage.setItem('ui-size', z); } catch { /* нет */ } window.__tgPlatform = plat; if (dark) window.__tgScheme = 'dark'; }, [z, sz === 'tg' ? 'macos' : 'ios', !!run.dark]);
           await p.route('https://telegram.org/**', (r) => r.fulfill({ contentType: 'text/javascript', body: tgMock(st.init[run.role]) }));
+          // карточка «Google: поиск и индекс» — на образце данных (на стенде нет ключа Search Console)
+          await p.route('**/api/stats/gsc**', (r) => r.fulfill({ contentType: 'application/json', body: GSC_FIXTURE }));
           const tag = `${run.name} ${z} (${sz})`;
           let shot = 0;
           const look = async (screen) => {

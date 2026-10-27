@@ -504,11 +504,48 @@
   const ENGAGED_NOTE = 'Посетители — как в Google Analytics: больше 10 секунд на сайте, две и больше страниц, нажатие на контакт или заявка. '
     + 'Все заходы — вместе с теми, кто открыл одну страницу на пару секунд.';
 
-  // «Индекс Google»: сколько страниц Google взял в индекс — по сайту и фабрикам (проверка раз в день на сервере,
-  // deploy/gsc_index.py, /api/stats/gsc); данные не зависят от периода — загружаются один раз для сайта
+  // «Google»: поиск (показы, клики, запросы, страницы, страны — Search Analytics), индекс по сайту и фабрикам и как он
+  // растёт по дням, карты сайта. Проверка и загрузка — раз в день на сервере (deploy/gsc_index.py, /api/stats/gsc);
+  // данные не зависят от выбранного периода — загружаются один раз для сайта
   const gscCache = {};
+  const pct = (x) => (Math.round(x * 1000) / 10).toString().replace('.', ',') + '%';
+  // линия по дням: несколько серий, ось — от нуля; подписи — первая и последняя дата
+  function miniLines(rows, series) {
+    const wrap = el('div', 'chart');
+    const W = Math.max(300, app.clientWidth - 30), H = 150, L = 34, R = 10, T = 10, B = 22;
+    const max = niceMax(Math.max(1, ...rows.flatMap((r) => series.map(([k]) => r[k] || 0))));
+    const x = (i) => L + (rows.length === 1 ? (W - L - R) / 2 : (i * (W - L - R)) / (rows.length - 1));
+    const y = (v) => T + (H - T - B) - (v / max) * (H - T - B);
+    const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'График по дням: ' + series.map(([, n]) => n).join(', ') });
+    for (const g of [0, max / 2, max]) {
+      svg.append(sv('line', { x1: L, x2: W - R, y1: y(g), y2: y(g), stroke: g === 0 ? 'var(--axis)' : 'var(--grid)', 'stroke-width': 1 }));
+      const t = sv('text', { x: L - 6, y: y(g) + 4, 'text-anchor': 'end' }); t.textContent = fmt(Math.round(g)); svg.append(t);
+    }
+    series.forEach(([k, , color, dash]) => {
+      svg.append(sv('polyline', { points: rows.map((r, i) => `${x(i)},${y(r[k] || 0)}`).join(' '), fill: 'none', stroke: color,
+        'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round', ...(dash ? { 'stroke-dasharray': '4 3' } : {}) }));
+    });
+    if (rows.length) {
+      const a = sv('text', { x: L, y: H - 6 }); a.textContent = dshort(rows[0].date); svg.append(a);
+      const z = sv('text', { x: W - R, y: H - 6, 'text-anchor': 'end' }); z.textContent = dshort(rows[rows.length - 1].date); svg.append(z);
+    }
+    wrap.append(svg);
+    const legend = el('div', 'note'); legend.textContent = series.map(([, n, , dash]) => (dash ? '┄ ' : '— ') + n).join('   ');
+    wrap.append(legend);
+    return wrap;
+  }
+  function listRows(items, cols) {        // [[название, число, число, позиция]] — строка: название и цифры мелко
+    const ol = el('ol', 'pages');
+    items.forEach((it) => {
+      const li = el('li'); const top = el('div', 'top');
+      top.append(el('span', 't', it[0]), el('span', 'n', fmt(it[1])));
+      li.append(top, el('div', 'avg', cols(it)));
+      ol.append(li);
+    });
+    return ol;
+  }
   function gscCard() {
-    const c = card('Индекс Google', 'Сколько страниц Google взял в индекс — по Search Console, проверка раз в день');
+    const c = card('Google: поиск и индекс', 'По Search Console: показы и клики в поиске, запросы, страницы в индексе. Обновляется раз в день');
     const box = el('div'); c.append(box);
     const fill = (g) => {
       box.replaceChildren();
@@ -516,40 +553,78 @@
       if (!g.key) { box.append(el('p', 'note', 'Проверка выключена: на сервере нет ключа доступа к Search Console.')); return; }
       const run = g.run || {};
       if (run.error) box.append(el('p', 'note', 'Последняя проверка остановилась: ' + run.error));
-      if (!g.sites.length) {
-        box.append(el('p', 'note', run.started && !run.finished ? 'Первая проверка идёт — цифры появятся, когда Google ответит по всем страницам сайта (10–20 минут).'
-          : 'Пока ничего не проверено — проверка идёт раз в день после 6:00.'));
-        return;
+      if (run.started && !run.finished) {
+        const pg = run.progress;
+        box.append(el('p', 'note', 'Проверка страниц идёт' + (pg ? ': ' + pg.host + ' — ' + fmt(pg.done) + ' из ' + fmt(pg.todo) : '') + '. Цифры ниже обновятся, когда она закончится.'));
       }
+      if (!g.sites.length) { if (!run.started) box.append(el('p', 'note', 'Пока ничего не проверено — проверка идёт раз в день после 6:00.')); return; }
       g.sites.forEach((site) => {
         if (g.sites.length > 1) box.append(el('h3', 'sub', site.host));
-        const rows = el('div', 'bars');
-        site.groups.forEach((r) => {
-          const row = el('div', 'bar'); const tr = el('div', 'track'); const f = el('div', 'fill');
-          f.style.width = Math.max(1, r.total ? (r.yes / r.total) * 82 : 0) + '%';
-          tr.append(f, el('span', 'num', fmt(r.yes) + ' из ' + fmt(r.total)));
-          row.append(el('div', 'name', r.name), tr); rows.append(row);
-        });
-        box.append(rows);
-        const checked = site.groups.reduce((a, r) => a + r.checked, 0), total = site.groups.reduce((a, r) => a + r.total, 0);
-        box.append(el('p', 'note', (checked < total ? 'Проверено ' + fmt(checked) + ' из ' + fmt(total) + ' страниц — Google разрешает до 2000 проверок в день, остальные — в следующие дни. ' : '')
-          + (site.checked ? 'Проверка: ' + dayword(site.checked) + ' в ' + hm(site.checked) + '.' : '')));
-        if (site.reasons.length) {
-          box.append(el('p', 'note', 'Почему не в индексе:'));
-          box.append(barList(site.reasons));
+        const sr = site.search;
+        if (sr) {
+          const t = sr.totals;
+          const tiles = el('div', 'tiles');
+          tiles.append(tile('Показы в Google', t.impressions, { split: 'за 28 дней — сколько раз страницы были в результатах поиска' }),
+            tile('Клики из Google', t.clicks, { split: t.impressions ? 'CTR ' + pct(t.ctr) : 'переходы на сайт из поиска' }),
+            tile('Средняя позиция', t.position ? Math.round(t.position * 10) / 10 : null, { show: (v) => String(v).replace('.', ','), split: '1 — первая строка выдачи' }));
+          box.append(tiles);
+          if (sr.dates.length > 1) {
+            box.append(el('p', 'note', 'Показы и клики по дням за ' + sr.dates.length + ' дн. (последние 2–3 дня Google ещё дополняет)'));
+            box.append(miniLines(sr.dates, [['impressions', 'показы', 'var(--series)'], ['clicks', 'клики', 'var(--series-2, #c2410c)', true]]));
+          } else box.append(el('p', 'note', 'Показов в поиске пока нет или Google ещё не собрал их — новые страницы попадают в статистику через несколько дней после индекса.'));
         }
+        // индекс: сейчас и как растёт по дням
+        if (site.groups.length) {
+          box.append(el('p', 'note', 'Страницы в индексе Google сейчас'));
+          const days = Object.keys(site.history || {}).sort();
+          const weekAgo = days.length > 1 ? site.history[days[Math.max(0, days.length - 8)]] : null;   // неделю назад (или первый снимок)
+          const rows = el('div', 'bars');
+          site.groups.forEach((r) => {
+            const row = el('div', 'bar'); const tr = el('div', 'track'); const f = el('div', 'fill');
+            f.style.width = Math.max(1, r.total ? (r.yes / r.total) * 82 : 0) + '%';
+            const was = weekAgo && weekAgo[r.name] ? weekAgo[r.name][0] : null;
+            tr.append(f, el('span', 'num', fmt(r.yes) + ' из ' + fmt(r.total) + (was != null && r.yes !== was ? ' (' + (r.yes > was ? '+' : '−') + fmt(Math.abs(r.yes - was)) + ')' : '')));
+            row.append(el('div', 'name', r.name), tr); rows.append(row);
+          });
+          box.append(rows);
+          if (days.length > 1) {
+            box.append(el('p', 'note', 'Сколько страниц в индексе — по дням проверки (в скобках выше — изменение с ' + dshort(days[Math.max(0, days.length - 8)]) + ')'));
+            const names = site.groups.map((r) => r.name).slice(0, 5);
+            const COLORS = ['var(--series)', 'var(--series-2, #c2410c)', '#0f766e', '#7c3aed', '#64748b'];
+            box.append(miniLines(days.map((d) => Object.assign({ date: d }, ...names.map((n, i) => ({ ['g' + i]: (site.history[d][n] || [0])[0] })))),
+              names.map((n, i) => ['g' + i, n, COLORS[i], i % 2 === 1])));
+          }
+          const checked = site.groups.reduce((a, r) => a + r.checked, 0), total = site.groups.reduce((a, r) => a + r.total, 0);
+          box.append(el('p', 'note', (checked < total ? 'Проверено ' + fmt(checked) + ' из ' + fmt(total) + ' страниц — Google разрешает до 2000 проверок в день, остальные — в следующие дни. ' : '')
+            + (site.checked ? 'Проверка: ' + dayword(site.checked) + ' в ' + hm(site.checked) + '.' : '')));
+        }
+        if (site.reasons.length) { box.append(el('p', 'note', 'Почему страницы не в индексе')); box.append(barList(site.reasons)); }
         if (site.missing.length) {
           const det = el('details'); det.append(el('summary', null, 'Страницы не в индексе — ' + fmt(site.missing_total)));
-          const ol = el('ol', 'pages');
-          site.missing.forEach((m) => {
-            const li = el('li'); const top = el('div', 'top');
-            top.append(el('span', 't', (m.group ? m.group + ' · ' : '') + m.path));
-            li.append(top, el('div', 'avg', m.state + (m.crawled ? ' · Google заходил ' + dshort(m.crawled) : '')));
-            ol.append(li);
-          });
-          det.append(ol);
+          det.append(listRows(site.missing.map((m) => [(m.group ? m.group + ' · ' : '') + m.path, 0, m.state, m.crawled]),
+            (it) => it[2] + (it[3] ? ' · Google заходил ' + dshort(it[3]) : '')));
+          det.querySelectorAll('.n').forEach((n) => n.remove());
           if (site.missing_total > site.missing.length) det.append(el('p', 'note', 'Показаны первые ' + site.missing.length + '.'));
           box.append(det);
+        }
+        if (sr) {
+          const more = (title, items, cols) => {
+            if (!items.length) return;
+            const det = el('details'); det.append(el('summary', null, title));
+            det.append(listRows(items, cols)); box.append(det);
+          };
+          const pos = (p) => (p ? ' · позиция ' + String(p).replace('.', ',') : '');
+          if (sr.factories.length > 1) box.append(el('p', 'note', 'Показы в поиске по фабрикам, 28 дней')), box.append(barList(sr.factories.map(([n, , i]) => [n, i])));
+          more('Запросы, по которым находят сайт — ' + sr.queries.length, sr.queries, (q) => 'клики · показов ' + fmt(q[2]) + pos(q[3]));
+          more('Страницы в поиске — ' + sr.pages.length, sr.pages, (q) => 'клики · показов ' + fmt(q[2]) + pos(q[3]));
+          more('Страны', sr.countries, (q) => 'клики · показов ' + fmt(q[2]));
+          more('Устройства', sr.devices, (q) => 'клики · показов ' + fmt(q[2]));
+          if (sr.sitemaps.length) {
+            const det = el('details'); det.append(el('summary', null, 'Карты сайта в Google'));
+            det.append(listRows(sr.sitemaps.map((m) => [m.path.replace(/^https:\/\/[^/]+/, ''), m.urls, m.downloaded, m.errors, m.warnings, m.pending]),
+              (it) => 'адресов · Google читал ' + (it[2] ? dshort(it[2].slice(0, 10)) : 'ещё нет') + (it[3] ? ' · ошибок ' + it[3] : '') + (it[4] ? ' · предупреждений ' + it[4] : '') + (it[5] ? ' · в очереди' : '')));
+            box.append(det);
+          }
         }
       });
     };

@@ -85,6 +85,22 @@ calls = []
 
 
 def fake_api(url, body=None):
+    if "searchAnalytics" in url:
+        dims = body["dimensions"]
+        if dims == ["date"]:
+            return {"rows": [{"keys": ["2026-10-25"], "clicks": 1, "impressions": 30, "ctr": 0.03, "position": 12.5},
+                             {"keys": ["2026-10-26"], "clicks": 2, "impressions": 50, "ctr": 0.04, "position": 9.1}]}
+        if dims == ["page"]:
+            return {"rows": [{"keys": ["https://dumskaya-home.com/poliform/sofa-1"], "clicks": 2, "impressions": 40, "ctr": 0.05, "position": 8},
+                             {"keys": ["https://dumskaya-home.com/sofas"], "clicks": 0, "impressions": 5, "ctr": 0, "position": 30}]}
+        if dims == ["country"]:
+            return {"rows": [{"keys": ["svk"], "clicks": 2, "impressions": 60, "ctr": 0.03, "position": 10}]}
+        if dims == []:
+            return {"rows": [{"clicks": 3, "impressions": 80, "ctr": 0.0375, "position": 10.4}]}
+        return {"rows": []}
+    if url.endswith("/sitemaps"):
+        return {"sitemap": [{"path": "https://dumskaya-home.com/sitemap.xml", "lastDownloaded": "2026-10-26T10:00:00Z", "warnings": "0",
+                             "errors": "0", "contents": [{"type": "web", "submitted": "3030"}]}]}
     if url == G.SITES_URL:
         return {"siteEntry": [{"siteUrl": "sc-domain:dumskaya-home.com"}, {"siteUrl": "https://dumskaya-design.com/"}]}
     calls.append(body["inspectionUrl"])
@@ -116,6 +132,14 @@ G.suggest(log=lambda *a: None)
 check(len(notes) == 1 and "Rugiano" in notes[0] and "100%" in notes[0], f"Rugiano в индексе — предложение выкладывать дальше ({notes})")
 G.suggest(log=lambda *a: None)
 check(len(notes) == 1, "предложение — один раз на фабрику")
+w = G.web_data("home")["sites"][0]
+sv = w["search"]
+check(sv and sv["totals"]["impressions"] == 80 and len(sv["dates"]) == 2 and sv["countries"][0][0] == "Словакия",
+      "статистика поиска: итоги, по дням, страны по-русски")
+check(dict((n, i) for n, _, i in sv["factories"]) == {"Poliform": 40, "разделы магазина": 5}, f"показы по фабрикам: {sv['factories']}")
+check(sv["sitemaps"][0]["urls"] == 3030, "карта сайта: сколько адресов Google принял")
+h = w["history"]
+check(h and list(h.values())[-1].get("Poliform") == [10, 10, 10], f"снимок дня для прогресса индексации: {h}")
 q = G.todo(["a", "b", "c"], {"b": {"indexed": False, "checked": 0}, "c": {"indexed": True, "checked": int(time.time())}}, time.time())
 check(q == ["a", "b"], f"очередь: новые, потом давно проверенные не в индексе ({q})")
 print("\n" + ("Всё в порядке" if not FAILS else f"Ошибок: {len(FAILS)}"))
