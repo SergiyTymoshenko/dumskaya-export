@@ -110,7 +110,8 @@ def api(url, body=None, method=None, scope=SCOPE):
     req = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None, method=method,
                                  headers={"Authorization": "Bearer " + token(scope), "Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=60) as r:
-        return json.load(r)
+        raw = r.read()
+    return json.loads(raw) if raw.strip() else {}       # отправка карты сайта отвечает пустым телом — это успех
 
 
 def property_for(host, props):
