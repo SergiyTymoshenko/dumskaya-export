@@ -82,9 +82,13 @@ check(not [f for f in os.listdir(G.STATE_DIR) if f.endswith(".pem")], "закр�
 
 # Search Console: в индексе — все страницы Poliform и главная студии, Rugiano — 3 из 10
 calls = []
+puts = []
 
 
-def fake_api(url, body=None):
+def fake_api(url, body=None, method=None, scope=None):
+    if method == "PUT":
+        puts.append((url, scope))
+        return {}
     if "searchAnalytics" in url:
         dims = body["dimensions"]
         if dims == ["date"]:
@@ -140,6 +144,13 @@ check(dict((n, i) for n, _, i in sv["factories"]) == {"Poliform": 40, "разд�
 check(sv["sitemaps"][0]["urls"] == 3030, "карта сайта: сколько адресов Google принял")
 h = w["history"]
 check(h and list(h.values())[-1].get("Poliform") == [10, 10, 10], f"снимок дня для прогресса индексации: {h}")
+G.submit_sitemaps(log=lambda *a: None)
+check(len(puts) == 2 and all(sc == G.SCOPE_WRITE and "sitemap.xml" in u for u, sc in puts), f"карты обоих сайтов отправлены ({puts})")
+G.submit_sitemaps(log=lambda *a: None)
+check(len(puts) == 2, "карты не изменились — повторно не отправляются")
+open(os.path.join(TMP, "home", "sitemap.xml"), "a").write("<!-- новая выкладка -->")
+G.submit_sitemaps(log=lambda *a: None)
+check(len(puts) == 3 and "dumskaya-home.com" in puts[-1][0], "карта каталога изменилась после выкладки — отправлена снова")
 q = G.todo(["a", "b", "c"], {"b": {"indexed": False, "checked": 0}, "c": {"indexed": True, "checked": int(time.time())}}, time.time())
 check(q == ["a", "b"], f"очередь: новые, потом давно проверенные не в индексе ({q})")
 print("\n" + ("Всё в порядке" if not FAILS else f"Ошибок: {len(FAILS)}"))

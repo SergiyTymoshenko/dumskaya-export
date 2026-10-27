@@ -18,6 +18,7 @@
    python3 ~/dumskaya/deploy/gsc_index.py --status        — что в индексе по сайтам и фабрикам
    python3 ~/dumskaya/deploy/gsc_index.py --now           — проверить сейчас (не дожидаясь утра)
    python3 ~/dumskaya/deploy/gsc_index.py --url <адрес>   — одна страница: что о ней знает Google
+   python3 ~/dumskaya/deploy/gsc_index.py --sitemaps      — отправить карты сайта в Google сейчас (нужен «Полный доступ»)
 """
 import base64
 import json
@@ -49,6 +50,9 @@ KEY_FILE = os.environ.get("GSC_KEY", os.path.join(APP, "gsc-key.json"))
 STATE_DIR = os.environ.get("GSC_DIR", os.path.join(APP, "gsc"))
 CATALOG_DIR = os.environ.get("HOME_CATALOG_DIR", os.path.join(APP, "home-catalog"))
 SCOPE = "https://www.googleapis.com/auth/webmasters.readonly"
+SCOPE_WRITE = "https://www.googleapis.com/auth/webmasters"   # только для отправки карт сайта (нужен «Полный доступ»)
+SITEMAP_EVERY = 3600          # раз в час: изменились ли карты сайта после выкладки
+SITEMAP_RESUBMIT = 7 * 86400  # и раз в неделю — повторно на всякий случай
 TOKEN_URL = "https://oauth2.googleapis.com/token"
 SITES_URL = "https://www.googleapis.com/webmasters/v3/sites"
 INSPECT_URL = "https://searchconsole.googleapis.com/v1/urlInspection/index:inspect"
@@ -62,7 +66,7 @@ LANGS = ("ru", "de", "fr", "es")
 
 BOT = None                    # бот студии (ставит lead_service.py) — для предложения выкладывать дальше
 _lock = threading.Lock()
-_tok = {"v": None, "exp": 0}
+_tok = {}
 
 
 # ---------- доступ ----------
@@ -74,15 +78,16 @@ def have_key():
     return os.path.exists(KEY_FILE)
 
 
-def token():
+def token(scope=SCOPE):
     """Токен доступа (на час) по ключу служебного аккаунта: JWT, подписанный RS256 через openssl."""
-    if _tok["v"] and time.time() < _tok["exp"] - 120:
-        return _tok["v"]
+    t = _tok.get(scope)
+    if t and time.time() < t["exp"] - 120:
+        return t["v"]
     with open(KEY_FILE, encoding="utf-8") as fh:
         key = json.load(fh)
     now = int(time.time())
     head = _b64(json.dumps({"alg": "RS256", "typ": "JWT"}).encode())
-    claim = _b64(json.dumps({"iss": key["client_email"], "scope": SCOPE, "aud": TOKEN_URL, "iat": now, "exp": now + 3600}).encode())
+    claim = _b64(json.dumps({"iss": key["client_email"], "scope": scope, "aud": TOKEN_URL, "iat": now, "exp": now + 3600}).encode())
     msg = f"{head}.{claim}".encode()
     os.makedirs(STATE_DIR, exist_ok=True)
     fd, pem = tempfile.mkstemp(dir=STATE_DIR, suffix=".pem")
@@ -97,13 +102,13 @@ def token():
                                    "assertion": f"{head}.{claim}.{_b64(sig)}"}).encode()
     with urllib.request.urlopen(urllib.request.Request(TOKEN_URL, data=body), timeout=30) as r:
         d = json.load(r)
-    _tok.update(v=d["access_token"], exp=now + int(d.get("expires_in", 3600)))
-    return _tok["v"]
+    _tok[scope] = {"v": d["access_token"], "exp": now + int(d.get("expires_in", 3600))}
+    return d["access_token"]
 
 
-def api(url, body=None):
-    req = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None,
-                                 headers={"Authorization": "Bearer " + token(), "Content-Type": "application/json"})
+def api(url, body=None, method=None, scope=SCOPE):
+    req = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None, method=method,
+                                 headers={"Authorization": "Bearer " + token(scope), "Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.load(r)
 
@@ -119,9 +124,15 @@ def property_for(host, props):
 def inspect(prop, url):
     """{indexed, state, verdict, crawled, canonical} по одной странице."""
     d = api(INSPECT_URL, {"inspectionUrl": url, "siteUrl": prop, "languageCode": "ru"})
-    r = (d.get("inspectionResult") or {}).get("indexStatusResult") or {}
+    ir = d.get("inspectionResult") or {}
+    r = ir.get("indexStatusResult") or {}
+    rich = []                                          # расширенные результаты: что Google нашёл в разметке и с какими проблемами
+    for item in (ir.get("richResultsResult") or {}).get("detectedItems") or []:
+        issues = [i.get("issueMessage") for x in item.get("items") or [] for i in x.get("issues") or []]
+        rich.append({"type": item.get("richResultType") or "", "issues": sorted(set(filter(None, issues)))[:5]})
     return {"indexed": r.get("verdict") == "PASS", "state": r.get("coverageState") or "", "verdict": r.get("verdict") or "",
-            "crawled": r.get("lastCrawlTime"), "canonical": r.get("googleCanonical") or "", "checked": int(time.time())}
+            "crawled": r.get("lastCrawlTime"), "canonical": r.get("googleCanonical") or "", "checked": int(time.time()),
+            "fetch": r.get("pageFetchState") or "", "robots": r.get("robotsTxtState") or "", "rich": rich}
 
 
 # ---------- какие страницы и чьи ----------
@@ -250,15 +261,27 @@ def fetch_search(prop, host, log=print):
     d90, d28 = (today - timedelta(days=SEARCH_DAYS)).isoformat(), (today - timedelta(days=28)).isoformat()
     row = lambda r: {"keys": r.get("keys") or [], "clicks": r.get("clicks", 0), "impressions": r.get("impressions", 0),  # noqa: E731
                      "ctr": r.get("ctr", 0), "position": r.get("position", 0)}
+    p56 = (today - timedelta(days=56)).isoformat()
+    p29 = (today - timedelta(days=29)).isoformat()
     out = {"fetched": int(time.time()), "start": d90, "end": end}
-    for name, dims, start, limit in (("dates", ["date"], d90, 1000), ("queries", ["query"], d28, 200),
-                                     ("pages", ["page"], d28, 1000), ("countries", ["country"], d28, 60),
-                                     ("devices", ["device"], d28, 10), ("totals", [], d28, 1)):
+    jobs = [("dates", ["date"], d90, end, 1000, None), ("queries", ["query"], d28, end, 1000, None),
+            ("pages", ["page"], d28, end, 1000, None), ("countries", ["country"], d28, end, 100, None),
+            ("devices", ["device"], d28, end, 10, None), ("totals", [], d28, end, 1, None),
+            ("prev_totals", [], p56, p29, 1, None),                           # прошлые 28 дней — для сравнения
+            ("query_pages", ["query", "page"], d28, end, 500, None),         # какая страница по какому запросу
+            ("appearance", ["searchAppearance"], d28, end, 50, None)]
+    for t in ("image", "video", "discover", "news"):                      # Картинки, Видео, Discover, Новости
+        jobs.append((f"type_{t}", [], d28, end, 1, t))
+    jobs.append(("image_pages", ["page"], d28, end, 200, "image"))
+    for name, dims, start, stop, limit, typ in jobs:
+        body = {"startDate": start, "endDate": stop, "dimensions": dims, "rowLimit": limit, "dataState": "all"}
+        if typ:
+            body["type"] = typ
         try:
-            out[name] = [row(r) for r in _sq(prop, {"startDate": start, "endDate": end, "dimensions": dims, "rowLimit": limit,
-                                                    "dataState": "all"})]
+            out[name] = [row(r) for r in _sq(prop, body)]
         except urllib.error.HTTPError as e:
-            log(f"индекс Google {host}: статистика поиска ({name}) — ответ {e.code}")
+            if e.code != 400:                          # 400 — такого типа поиска у сайта нет (например, news)
+                log(f"индекс Google {host}: статистика поиска ({name}) — ответ {e.code}")
             out[name] = []
     try:
         sm = api(f"https://www.googleapis.com/webmasters/v3/sites/{urllib.parse.quote(prop, safe='')}/sitemaps").get("sitemap") or []
@@ -345,7 +368,7 @@ def state_ru(s):
 def web_data(site="all"):
     """Данные карточки «Индекс Google» в «Графиках»: по сайту и фабрикам, причины, страницы не в индексе."""
     hosts = {"studio": ["dumskaya-design.com"], "home": ["dumskaya-home.com"]}.get(site, [s["host"] for s in indexnow.SITES])
-    out = {"key": have_key(), "run": last_run(), "daily": DAILY, "sites": []}
+    out = {"key": have_key(), "run": last_run(), "daily": DAILY, "sites": [], "submitted": _sm_state()}
     if not out["key"]:
         return out
     fmap, _ = factories()
@@ -367,6 +390,7 @@ def web_data(site="all"):
                              "reasons": reasons.most_common(), "missing": miss[:80], "missing_total": len(miss),
                              "today": (st.get("runs") or {}).get(datetime.now(TZ).date().isoformat(), 0),
                              "history": dict(sorted((st.get("history") or {}).items())[-120:]),
+                             "rich": rich_view(pages),
                              "search": search_view(host, fmap)})
     for host in hosts:                                # статистика поиска есть, а проверка страниц ещё не дошла до сайта
         if not any(x["host"] == host for x in out["sites"]) and load_search(host):
@@ -410,7 +434,57 @@ def search_view(host, fmap=None):
             "countries": [[COUNTRY_RU.get(r["keys"][0], r["keys"][0].upper()), r["clicks"], r["impressions"]] for r in (d.get("countries") or [])[:15]],
             "devices": [[DEVICE_RU.get(r["keys"][0], r["keys"][0].lower()), r["clicks"], r["impressions"]] for r in d.get("devices") or []],
             "factories": sorted([[fn(f), c, i] for f, (c, i) in by_f.items()], key=lambda x: -x[2]),
-            "sitemaps": d.get("sitemaps") or []}
+            "sitemaps": d.get("sitemaps") or [],
+            "prev": {k: ((d.get("prev_totals") or [{}])[0] or {}).get(k, 0) for k in ("clicks", "impressions", "ctr", "position")}
+            if d.get("prev_totals") else None,
+            "types": [[n, (d.get(f"type_{k}") or [{}])[0].get("clicks", 0) if d.get(f"type_{k}") else 0,
+                       (d.get(f"type_{k}") or [{}])[0].get("impressions", 0) if d.get(f"type_{k}") else 0]
+                      for k, n in (("image", "Картинки"), ("video", "Видео"), ("discover", "Discover"), ("news", "Новости"))]
+            + [["Обычный поиск", tot.get("clicks", 0), tot.get("impressions", 0)]],
+            "langs": langs_of(d.get("pages") or [], path),
+            "all_pages": [[path(r["keys"][0]), r["clicks"], r["impressions"], round(r["ctr"] * 100, 1), round(r["position"], 1)]
+                          for r in (d.get("pages") or [])[:300]],
+            "image_pages": [[path(r["keys"][0]), r["clicks"], r["impressions"]] for r in (d.get("image_pages") or [])[:30]],
+            "query_pages": [[r["keys"][0], path(r["keys"][1]), r["clicks"], r["impressions"], round(r["position"], 1)]
+                            for r in (d.get("query_pages") or [])[:150]],
+            "appearance": [[APPEAR_RU.get(r["keys"][0], r["keys"][0]), r["clicks"], r["impressions"]] for r in d.get("appearance") or []],
+            "queries_all": len(d.get("queries") or [])}
+
+
+APPEAR_RU = {"BREADCRUMB": "хлебные крошки", "IMAGE_PACK": "блок картинок", "TRANSLATED_RESULT": "переведённый результат",
+             "VIDEO": "видео", "FAQ_RICH_RESULT": "FAQ", "REVIEW_SNIPPET": "отзывы", "SITELINKS": "быстрые ссылки",
+             "MERCHANT_LISTINGS": "товары (Merchant)", "PRODUCT_SNIPPETS": "сведения о товаре", "AMP_ARTICLE": "AMP"}
+
+
+def langs_of(rows, path):
+    """Показы и клики по языку страницы (первая часть адреса: /ru/…, /de/…; без неё — основной язык сайта)."""
+    out = {}
+    for r in rows:
+        seg = path(r["keys"][0]).strip("/").split("/")[0]
+        lang = seg.upper() if seg in ("ru", "ua", "uk", "en", "sk", "de", "fr", "es") else "основной"
+        b = out.setdefault(lang, [0, 0])
+        b[0] += r["clicks"]
+        b[1] += r["impressions"]
+    return sorted([[k, c, i] for k, (c, i) in out.items()], key=lambda x: -x[2])
+
+
+def rich_view(pages):
+    """Расширенные результаты по проверенным страницам: тип разметки → страниц, с проблемами, частые проблемы."""
+    agg = {}
+    for p in pages.values():
+        for r in p.get("rich") or []:
+            a = agg.setdefault(r["type"], [0, 0, Counter()])
+            a[0] += 1
+            if r["issues"]:
+                a[1] += 1
+                a[2].update(r["issues"])
+    return [{"type": RICH_RU.get(t, t), "pages": n, "with_issues": bad, "issues": c.most_common(3)}
+            for t, (n, bad, c) in sorted(agg.items(), key=lambda kv: -kv[1][0])]
+
+
+RICH_RU = {"Breadcrumbs": "Хлебные крошки", "Image metadata": "Метаданные изображений", "Product snippets": "Сведения о товаре",
+           "Merchant listings": "Товары (Merchant)", "FAQ": "FAQ", "Organization": "Организация", "Videos": "Видео",
+           "Review snippets": "Отзывы", "Local business": "Местная организация", "Article": "Статья"}
 
 
 def suggest(log=print):
@@ -506,13 +580,81 @@ def run_all(log=print, limit=DAILY):
         _lock.release()
 
 
+# ---------- карты сайта: изменились после выкладки — отправить в Google ----------
+SM_FILE = os.path.join(STATE_DIR, "sitemaps.json")
+
+
+def _sm_state():
+    try:
+        return json.load(open(SM_FILE, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
+def sitemap_hash(root):
+    """Отпечаток всех карт сайта в папке (sitemap.xml и файлы его индекса): меняется, когда выкладка их изменила."""
+    import hashlib
+    h = hashlib.sha256()
+    for f in sorted(x for x in os.listdir(root) if re.fullmatch(r"sitemap[\w-]*\.xml", x)) if os.path.isdir(root) else []:
+        with open(os.path.join(root, f), "rb") as fh:
+            h.update(f.encode() + b"\0" + fh.read())
+    return h.hexdigest()
+
+
+def submit_sitemaps(log=print, force=False):
+    """Отправить карты сайта, если они изменились (или прошла неделя). Нужен «Полный доступ» служебного аккаунта."""
+    st, now = _sm_state(), time.time()
+    props = None
+    for site in indexnow.SITES:
+        host, root = site["host"], site["root"]
+        if indexnow.read_mode(site["mode"]) != "live" or not os.path.exists(os.path.join(root, "sitemap.xml")):
+            continue
+        h = sitemap_hash(root)
+        rec = st.get(host) or {}
+        if not force and rec.get("hash") == h and now - rec.get("sent", 0) < SITEMAP_RESUBMIT:
+            continue
+        if props is None:
+            props = {x["siteUrl"] for x in (api(SITES_URL).get("siteEntry") or [])}
+        prop = property_for(host, props)
+        if not prop:
+            st[host] = dict(rec, note="служебный аккаунт не добавлен в Search Console этого сайта", tried=int(now))
+            continue
+        feed = f"https://{host}/sitemap.xml"
+        try:
+            api(f"https://www.googleapis.com/webmasters/v3/sites/{urllib.parse.quote(prop, safe='')}/sitemaps/"
+                f"{urllib.parse.quote(feed, safe='')}", method="PUT", scope=SCOPE_WRITE)
+            st[host] = {"hash": h, "sent": int(now), "feed": feed, "note": ""}
+            log(f"индекс Google {host}: карта сайта отправлена в Google")
+        except urllib.error.HTTPError as e:
+            note = ("нужен «Полный доступ» служебного аккаунта в Search Console (сейчас «Ограниченный»)" if e.code == 403
+                    else f"Google ответил {e.code}")
+            st[host] = dict(rec, note=note, tried=int(now))
+            log(f"индекс Google {host}: карта сайта не отправлена — {note}")
+    os.makedirs(STATE_DIR, exist_ok=True)
+    with open(SM_FILE + ".tmp", "w", encoding="utf-8") as fh:
+        json.dump(st, fh, ensure_ascii=False)
+    os.replace(SM_FILE + ".tmp", SM_FILE)
+    return st
+
+
 _day = {"v": None}
+_sm = {"last": 0.0}
 
 
 def tick(log=print):
-    """Из сервиса заявок раз в минуту: раз в день после 6:00 — проверка в своём потоке."""
+    """Из сервиса заявок раз в минуту: раз в час — карты сайта (изменились — отправить), раз в день после 6:00 —
+    проверка страниц и статистика поиска; всё в своих потоках."""
     if not have_key():
         return
+    if time.time() - _sm["last"] >= SITEMAP_EVERY:
+        _sm["last"] = time.time()
+
+        def sm():
+            try:
+                submit_sitemaps(log=log)
+            except Exception as e:  # noqa: BLE001
+                log(f"индекс Google: карты сайта — ошибка {type(e).__name__}: {e}")
+        threading.Thread(target=sm, name="gsc-sitemaps", daemon=True).start()
     now = datetime.now(TZ)
     if now.hour < RUN_HOUR or _day["v"] == now.date() or _lock.locked():
         return
@@ -530,6 +672,9 @@ def main(argv):
         prop = property_for(host.removeprefix("www."), props)
         print(json.dumps(inspect(prop, argv[1]) if prop else {"error": f"нет доступа к {host}", "sites": sorted(props)},
                          ensure_ascii=False, indent=1))
+        return 0
+    if argv[:1] == ["--sitemaps"]:
+        print(json.dumps(submit_sitemaps(force=True), ensure_ascii=False, indent=1))
         return 0
     if argv[:1] == ["--now"]:
         print(json.dumps(run_all(), ensure_ascii=False, indent=1))

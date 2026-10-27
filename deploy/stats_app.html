@@ -564,9 +564,13 @@
         if (sr) {
           const t = sr.totals;
           const tiles = el('div', 'tiles');
-          tiles.append(tile('Показы в Google', t.impressions, { split: 'за 28 дней — сколько раз страницы были в результатах поиска' }),
-            tile('Клики из Google', t.clicks, { split: t.impressions ? 'CTR ' + pct(t.ctr) : 'переходы на сайт из поиска' }),
-            tile('Средняя позиция', t.position ? Math.round(t.position * 10) / 10 : null, { show: (v) => String(v).replace('.', ','), split: '1 — первая строка выдачи' }));
+          const pv = sr.prev;
+          const vs = (cur, was) => (!pv || was == null || cur === was ? '' : ' · ' + (cur > was ? '▲ +' : '▼ −') + fmt(Math.abs(cur - was))
+            + (was ? ' (' + (cur > was ? '+' : '−') + Math.round(Math.abs(cur - was) / was * 100) + '%)' : '') + ' к прошлым 28 дням');
+          tiles.append(tile('Показы в Google', t.impressions, { split: 'за 28 дней — сколько раз страницы были в результатах поиска' + vs(t.impressions, pv && pv.impressions) }),
+            tile('Клики из Google', t.clicks, { split: (t.impressions ? 'CTR ' + pct(t.ctr) : 'переходы на сайт из поиска') + vs(t.clicks, pv && pv.clicks) }),
+            tile('Средняя позиция', t.position ? Math.round(t.position * 10) / 10 : null, { show: (v) => String(v).replace('.', ','),
+              split: '1 — первая строка выдачи' + (pv && pv.position ? ' · было ' + String(Math.round(pv.position * 10) / 10).replace('.', ',') : '') }));
           box.append(tiles);
           if (sr.dates.length > 1) {
             box.append(el('p', 'note', 'Показы и клики по дням за ' + sr.dates.length + ' дн. (последние 2–3 дня Google ещё дополняет)'));
@@ -599,6 +603,12 @@
             + (site.checked ? 'Проверка: ' + dayword(site.checked) + ' в ' + hm(site.checked) + '.' : '')));
         }
         if (site.reasons.length) { box.append(el('p', 'note', 'Почему страницы не в индексе')); box.append(barList(site.reasons)); }
+        if (site.rich && site.rich.length) {
+          const det = el('details'); det.append(el('summary', null, 'Улучшения: разметка, которую нашёл Google' + (site.rich.some((r) => r.with_issues) ? ' — есть замечания' : ' — без ошибок')));
+          det.append(listRows(site.rich.map((r) => [r.type, r.pages, r.with_issues, r.issues]),
+            (it) => 'страниц' + (it[2] ? ' · с замечаниями ' + fmt(it[2]) + ': ' + it[3].map(([m, n]) => m + ' (' + n + ')').join('; ') : ' · без замечаний')));
+          box.append(det);
+        }
         if (site.missing.length) {
           const det = el('details'); det.append(el('summary', null, 'Страницы не в индексе — ' + fmt(site.missing_total)));
           det.append(listRows(site.missing.map((m) => [(m.group ? m.group + ' · ' : '') + m.path, 0, m.state, m.crawled]),
@@ -615,10 +625,18 @@
           };
           const pos = (p) => (p ? ' · позиция ' + String(p).replace('.', ',') : '');
           if (sr.factories.length > 1) box.append(el('p', 'note', 'Показы в поиске по фабрикам, 28 дней')), box.append(barList(sr.factories.map(([n, , i]) => [n, i])));
-          more('Запросы, по которым находят сайт — ' + sr.queries.length, sr.queries, (q) => 'клики · показов ' + fmt(q[2]) + pos(q[3]));
-          more('Страницы в поиске — ' + sr.pages.length, sr.pages, (q) => 'клики · показов ' + fmt(q[2]) + pos(q[3]));
+          if (sr.types && sr.types.some((x) => x[2])) { box.append(el('p', 'note', 'Где показывают: тип поиска Google, 28 дней (показы)')); box.append(barList(sr.types.filter((x) => x[2]).map(([n, , i]) => [n, i]))); }
+          if (sr.langs && sr.langs.length > 1) { box.append(el('p', 'note', 'Показы по языкам сайта, 28 дней')); box.append(barList(sr.langs.map(([n, , i]) => [n, i]))); }
+          more('Запросы, по которым находят сайт — ' + fmt(sr.queries_all || sr.queries.length) + (sr.queries_all > sr.queries.length ? ' (первые ' + sr.queries.length + ')' : ''), sr.queries, (q) => 'клики · показов ' + fmt(q[2]) + pos(q[3]));
+          more('Популярные страницы в поиске — ' + (sr.all_pages || sr.pages).length, sr.all_pages || sr.pages, (q) => 'клики · показов ' + fmt(q[2]) + (q.length > 4 ? ' · CTR ' + String(q[3]).replace('.', ',') + '% · позиция ' + String(q[4]).replace('.', ',') : pos(q[3])));
+          more('Какая страница по какому запросу — ' + (sr.query_pages || []).length, (sr.query_pages || []).map((q) => [q[0] + ' → ' + q[1], q[2], q[3], q[4]]), (q) => 'клики · показов ' + fmt(q[2]) + pos(q[3]));
+          more('Картинки: страницы с показами в поиске картинок', sr.image_pages || [], (q) => 'клики · показов ' + fmt(q[2]));
           more('Страны', sr.countries, (q) => 'клики · показов ' + fmt(q[2]));
           more('Устройства', sr.devices, (q) => 'клики · показов ' + fmt(q[2]));
+          more('Вид в выдаче (расширенные результаты в поиске)', sr.appearance || [], (q) => 'клики · показов ' + fmt(q[2]));
+          const sub = (g.submitted || {})[site.host];
+          if (sub) box.append(el('p', 'note', sub.note ? 'Карту сайта не получилось отправить в Google: ' + sub.note + '.'
+            : 'Карта сайта отправлена в Google ' + dayword(sub.sent) + ' в ' + hm(sub.sent) + ' — сервер отправляет её сам после каждой выкладки, которая её изменила.'));
           if (sr.sitemaps.length) {
             const det = el('details'); det.append(el('summary', null, 'Карты сайта в Google'));
             det.append(listRows(sr.sitemaps.map((m) => [m.path.replace(/^https:\/\/[^/]+/, ''), m.urls, m.downloaded, m.errors, m.warnings, m.pending]),
