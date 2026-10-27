@@ -664,7 +664,7 @@ PDF у фабрики.
 Выкладку и докачку файлов запускает Claude, а не владелец: `scripts/mac_agent.sh` (задача launchd `com.dumskaya.agent`,
 ставит `bash scripts/mac_agent_install.sh`, убирает `… --remove`) раз в 2 минуты берёт из GitHub `ops/request.json`
 и, если заявка новая, выполняет только разрешённое: `deploy` (npm run deploy), `deploy-home` (npm run deploy:home),
-`dl:<фабрика>` (dl.py), `status`. Вывод — в ветку `agent-log` (`last.log`, последние 400 строк), рабочую папку и
+`dl:<фабрика>` (dl.py), `status`, `gsc-now` / `gsc-status` (индекс Google на сервере). Вывод — в ветку `agent-log` (`last.log`, последние 400 строк), рабочую папку и
 `main` не трогает. Пароль sudo помощник не вводит: если выкладке нужен sudo (меняются настройки сервера), шаг
 останавливается — тогда команду владелец запускает в Терминале сам. Мак спит — заявка выполнится, когда проснётся.
 
