@@ -34,7 +34,7 @@ cat > "$PLIST" <<EOF
 EOF
 echo "▸ Проверка доступа"
 cd "$DIR"
-if git push -q --dry-run origin HEAD:refs/heads/agent-log 2>/dev/null; then echo "  GitHub: отправлять вывод можно ✓"
+if GIT_TERMINAL_PROMPT=0 git push -q --dry-run origin HEAD:refs/heads/agent-log 2>/dev/null; then echo "  GitHub: отправлять вывод можно ✓"
 else echo "  GitHub: ✗ Мак не может отправлять в репозиторий — пришлите Claude этот вывод"; fi
 if ssh -o BatchMode=yes -o ConnectTimeout=10 eurox true 2>/dev/null; then echo "  сервер eurox: вход без пароля ✓"
 else echo "  сервер eurox: ✗ без пароля не пускает — выкладка из помощника не пройдёт, пришлите Claude этот вывод"; fi
