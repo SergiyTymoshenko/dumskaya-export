@@ -31,6 +31,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections import Counter
 from datetime import datetime, timedelta, timezone
 
 try:
@@ -244,6 +245,55 @@ def morning_lines():
     return ["🔎 В индексе Google: " + " · ".join(parts)] if parts else []
 
 
+STATE_RU = {
+    "Submitted and indexed": "в индексе",
+    "Indexed, not submitted in sitemap": "в индексе, но не из карты сайта",
+    "Crawled - currently not indexed": "просканирована, но не взята в индекс",
+    "Discovered - currently not indexed": "известна, Google ещё не сканировал",
+    "URL is unknown to Google": "Google ещё не знает страницу",
+    "Duplicate, Google chose different canonical than user": "дубль: Google выбрал другой основной адрес",
+    "Duplicate without user-selected canonical": "дубль без основного адреса",
+    "Alternate page with proper canonical tag": "другая версия, основной адрес указан",
+    "Excluded by ‘noindex’ tag": "закрыта от индекса (noindex)",
+    "Page with redirect": "переадресация",
+    "Not found (404)": "не найдена (404)",
+    "Soft 404": "похожа на пустую страницу (soft 404)",
+    "Blocked by robots.txt": "закрыта в robots.txt",
+    "Server error (5xx)": "ошибка сервера",
+}
+
+
+def state_ru(s):
+    return STATE_RU.get(s) or STATE_RU.get((s or "").replace("'", "‘")) or s or "нет сведений"
+
+
+def web_data(site="all"):
+    """Данные карточки «Индекс Google» в «Графиках»: по сайту и фабрикам, причины, страницы не в индексе."""
+    hosts = {"studio": ["dumskaya-design.com"], "home": ["dumskaya-home.com"]}.get(site, [s["host"] for s in indexnow.SITES])
+    out = {"key": have_key(), "run": last_run(), "daily": DAILY, "sites": []}
+    if not out["key"]:
+        return out
+    fmap, _ = factories()
+    for host in hosts:
+        if not os.path.exists(state_path(host)):
+            continue
+        st = load(host)
+        pages = st["pages"]
+        reasons = Counter(state_ru(p.get("state")) for p in pages.values() if not p.get("indexed"))
+        miss = []
+        for u, p in sorted(pages.items()):
+            if p.get("indexed"):
+                continue
+            path = urllib.parse.urlsplit(u).path.rstrip("/") or "/"
+            miss.append({"url": u, "path": path, "group": (fmap.get(path) or "").capitalize(), "state": state_ru(p.get("state")),
+                         "crawled": (p.get("crawled") or "")[:10] or None, "checked": p.get("checked")})
+        out["sites"].append({"host": host, "checked": st.get("checked"),
+                             "groups": [{"name": n, "yes": y, "checked": c, "total": t} for n, y, c, t in groups(host, st)],
+                             "reasons": reasons.most_common(), "missing": miss[:80], "missing_total": len(miss),
+                             "today": (st.get("runs") or {}).get(datetime.now(TZ).date().isoformat(), 0)})
+    return out
+
+
 def suggest(log=print):
     """Последняя выложенная фабрика в индексе на 60 % и больше — один раз предложить выкладывать следующую."""
     _, order = factories()
@@ -267,14 +317,51 @@ def suggest(log=print):
     return text
 
 
+RUN_FILE = os.path.join(STATE_DIR, "run.json")
+
+
+def _run_note(**kw):
+    """Как прошла последняя проверка (для --status и «Графиков»): начало, конец, итоги по сайтам или ошибка."""
+    try:
+        old = json.load(open(RUN_FILE, encoding="utf-8"))
+    except (OSError, ValueError):
+        old = {}
+    old.update(kw)
+    os.makedirs(STATE_DIR, exist_ok=True)
+    with open(RUN_FILE + ".tmp", "w", encoding="utf-8") as fh:
+        json.dump(old, fh, ensure_ascii=False)
+    os.replace(RUN_FILE + ".tmp", RUN_FILE)
+
+
+def last_run():
+    try:
+        return json.load(open(RUN_FILE, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+
+
 def run_all(log=print, limit=DAILY):
     if not have_key() or not _lock.acquire(blocking=False):
         return None
     try:
+        _run_note(started=int(time.time()), finished=None, error=None, sites=None)
         try:
             props = {x["siteUrl"] for x in (api(SITES_URL).get("siteEntry") or [])}
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", "replace")[:300]
+            note = ("Search Console API не включён в проекте Google Cloud" if "has not been used" in body or "disabled" in body
+                    else f"Search Console ответил {e.code}: {body}")
+            log(f"индекс Google: {note}")
+            _run_note(finished=int(time.time()), error=note)
+            return None
         except (urllib.error.URLError, OSError, ValueError, KeyError, subprocess.CalledProcessError) as e:
             log(f"индекс Google: Search Console не ответил — {type(e).__name__}: {e}")
+            _run_note(finished=int(time.time()), error=f"Search Console не ответил — {type(e).__name__}: {e}")
+            return None
+        if not props:
+            note = "служебный аккаунт пока не добавлен ни к одному сайту в Search Console"
+            _run_note(finished=int(time.time()), error=note)
+            log(f"индекс Google: {note}")
             return None
         outs = []
         for site in indexnow.SITES:
@@ -284,9 +371,14 @@ def run_all(log=print, limit=DAILY):
             if not prop:
                 outs.append({"host": site["host"], "status": "error", "note": "служебный аккаунт не добавлен в Search Console этого сайта"})
                 continue
+            _run_note(current=site["host"])
             outs.append(run_site(site, prop, log=log, limit=limit))
         suggest(log=log)
+        _run_note(finished=int(time.time()), current=None, sites=outs)
         return outs
+    except Exception as e:  # noqa: BLE001
+        _run_note(finished=int(time.time()), current=None, error=f"{type(e).__name__}: {e}")
+        raise
     finally:
         _lock.release()
 
@@ -318,6 +410,11 @@ def main(argv):
         return 0
     if argv[:1] == ["--now"]:
         print(json.dumps(run_all(), ensure_ascii=False, indent=1))
+    r = last_run()
+    if r:
+        fmt = lambda t: datetime.fromtimestamp(t, TZ).strftime("%d.%m %H:%M") if t else "—"  # noqa: E731
+        print(f"последняя проверка: начата {fmt(r.get('started'))}, " + (f"закончена {fmt(r['finished'])}" if r.get("finished")
+              else f"идёт ({r.get('current') or 'начало'})") + (f" · ошибка: {r['error']}" if r.get("error") else ""))
     for site in indexnow.SITES:
         if os.path.exists(state_path(site["host"])):
             st = load(site["host"])

@@ -229,6 +229,15 @@ class Handler(BaseHTTPRequestHandler):
             if not self.stats_owner():
                 return self.reply(403, {"ok": False})
             return self.reply(200, me_data(self.client_ip()))
+        if path.rstrip("/") == "/api/stats/gsc":            # «Индекс Google» в «Графиках»: разработчику и дизайнеру
+            if not self.stats_admin():
+                return self.reply(403, {"ok": False})
+            q = dict(urllib.parse.parse_qsl(query))
+            try:
+                return self.reply(200, gsc_index.web_data(q.get("site") or "studio"))
+            except Exception as e:  # noqa: BLE001
+                log(f"индекс Google: данные не собраны — {type(e).__name__}: {e}")
+                return self.reply(500, {"ok": False})
         if path.rstrip("/") == "/api/stats/data":
             if not self.stats_admin():
                 return self.reply(403, {"ok": False})
