@@ -125,6 +125,7 @@
   "amount": "Összeg",
   "comment": "Megjegyzés",
   "stage_hint": "A stúdió díja: az összeg {p}%-a. A megrendelő értesítést kap, és megerősíti az összeget.",
+  "stage_hint_nf": "A megrendelő értesítést kap, és megerősíti az összeget.",
   "save": "Mentés",
   "delete": "Törlés",
   "delete_q": "Törli ezt az összeget?",

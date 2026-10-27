@@ -1218,15 +1218,19 @@ class Portal:
             if k["id"] not in ids:
                 continue
             m = k["money"]
+            # прораб (подрядчик) заказчика, с которым о бонусе не договаривались, — в кабинете о бонусах студии ни слова
+            # (решено 27.10.2026); если Ирина всё же указала ему бонус или он его отдал — как у всех
+            no_fee = k.get("link_side") == "client" and m["expected"] <= 0 and m["received"] <= 0
             stages = []
             for s in m["stages"]:
-                x = _pick(s, self.STAGE_KEYS + ("pct", "commission", "received"))
+                x = _pick(s, self.STAGE_KEYS + (("received",) if no_fee else ("pct", "commission", "received")))
                 x["note"] = s["note"] if s.get("src") == "contractor" else ""      # заметки студии подрядчику не показываем
                 x["mine"] = s.get("src") == "contractor"
                 stages.append(x)
             mine.append({"id": k["id"], "link_id": k["link_id"], "name": k["name"], "trade": k["link_trade"] or k["trade"] or "",
-                         "kind": k.get("kind") or "", "stages": stages, "money": _pick(m, ("currency", "order", "expected", "received", "debt", "unknown")),
-                         "bonuses": bonuses.get(k["link_id"], [])})
+                         "kind": k.get("kind") or "", "stages": stages, "no_fee": no_fee,
+                         "money": _pick(m, ("currency", "order") if no_fee else ("currency", "order", "expected", "received", "debt", "unknown")),
+                         "bonuses": [] if no_fee else bonuses.get(k["link_id"], [])})
         if not mine:
             raise CrmError("Проект недоступен")
         hired = {k["id"] for k in mine if k["kind"] == "hired"}
@@ -1313,7 +1317,9 @@ class Portal:
         if not _text(d.get("title"), 120):
             raise CrmError("Напишите, что за работа")
         cur = str(d.get("currency") or "EUR").upper()
-        if old and old["commission"] is None:
+        if (old and old["commission"] == 0) or (not old and link["side"] == "client"):
+            mode, pct, commission = "none", None, None     # прораб заказчика: бонус студии не платит (решено 27.10.2026)
+        elif old and old["commission"] is None:
             mode, pct, commission = "unknown", None, None
         elif old and old["pct"] is None:
             mode, pct, commission = "sum", None, old["commission"]

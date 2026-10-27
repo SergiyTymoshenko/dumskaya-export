@@ -125,6 +125,7 @@
   "amount": "Iznos",
   "comment": "Komentar",
   "stage_hint": "Provizija studija: {p} % od iznosa. Klijent će dobiti poruku i potvrditi iznos.",
+  "stage_hint_nf": "Klijent će dobiti poruku i potvrditi iznos.",
   "save": "Sačuvajte",
   "delete": "Obrišite",
   "delete_q": "Obrisati ovaj iznos?",

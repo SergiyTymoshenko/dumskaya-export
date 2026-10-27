@@ -125,6 +125,7 @@
   "amount": "Montant",
   "comment": "Commentaire",
   "stage_hint": "Commission du studio : {p} % du montant. Le client recevra un message et confirmera le montant.",
+  "stage_hint_nf": "Le client recevra un message et confirmera le montant.",
   "save": "Enregistrer",
   "delete": "Supprimer",
   "delete_q": "Supprimer ce montant ?",

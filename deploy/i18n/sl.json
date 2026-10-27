@@ -125,6 +125,7 @@
   "amount": "Znesek",
   "comment": "Komentar",
   "stage_hint": "Provizija studia: {p} % zneska. Naročnik bo prejel sporočilo in potrdil znesek.",
+  "stage_hint_nf": "Naročnik bo prejel sporočilo in potrdil znesek.",
   "save": "Shrani",
   "delete": "Izbriši",
   "delete_q": "Želite izbrisati ta znesek?",

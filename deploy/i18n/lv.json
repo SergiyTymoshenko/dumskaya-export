@@ -125,6 +125,7 @@
   "amount": "Summa",
   "comment": "Komentārs",
   "stage_hint": "Studijas atlīdzība: {p} % no summas. Klients saņems ziņu un apstiprinās summu.",
+  "stage_hint_nf": "Klients saņems ziņu un apstiprinās summu.",
   "save": "Saglabāt",
   "delete": "Dzēst",
   "delete_q": "Dzēst šo summu?",

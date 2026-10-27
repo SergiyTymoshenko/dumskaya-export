@@ -125,6 +125,7 @@
   "amount": "Summa",
   "comment": "Kommentti",
   "stage_hint": "Studion palkkio: {p} % summasta. Asiakas saa viestin ja vahvistaa summan.",
+  "stage_hint_nf": "Asiakas saa viestin ja vahvistaa summan.",
   "save": "Tallenna",
   "delete": "Poista",
   "delete_q": "Poistetaanko tämä summa?",

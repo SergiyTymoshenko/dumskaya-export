@@ -7,8 +7,11 @@
   • оплата заказчика — сумма, валюта, дата, способ;
   • бонус («откат») — от подрядчика (с привязкой к нему и этапу) или от поставщика, фабрики;
   • перепродажа — студия посредник: закупка и продажа, доход — разница.
-Подрядчики в проекте — с этапами работ: сумма заказа и бонус студии с неё (процент, по умолчанию 10 %, сумма или
-«пока неизвестно»). Долг подрядчика = ожидаемые бонусы − полученные бонусы от него в этом проекте.
+Подрядчики в проекте — с этапами работ: сумма заказа и бонус студии с неё (процент, по умолчанию 10 %, сумма,
+«не платит» или «пока неизвестно»). Долг подрядчика = ожидаемые бонусы − полученные бонусы от него в этом проекте.
+Подрядчик в проекте — студии (Ирины) или заказчика (side='client', решено 27.10.2026): прораб заказчика обычно бонусов
+не платит — у его этапов бонус «не платит», в его кабинете о бонусах студии ничего нет (если Ирина всё же укажет бонус —
+как у всех).
 Суммы в евро, гривне, долларе, злотом; в евро — по курсу центробанка на дату (fx.py) или по курсу, введённому вручную.
 Баланс проекта: договор − оплаты заказчика по договору. Доход студии: оплаты (договор и доп. услуги) + полученные бонусы
 + наценка на товарах и перепродаже.
@@ -411,7 +414,9 @@ class Crm:
                                     # заказчик согласовал конкретное фото (решено 25.10.2026, вечер): дата и кто отметил
                                     ("files", "agreed", "TEXT"), ("files", "agreed_by", "TEXT"),
                                     # порядок файлов в разделе (решено 27.10.2026)
-                                    ("files", "pos", "INTEGER")):
+                                    ("files", "pos", "INTEGER"),
+                                    # чей подрядчик в проекте (решено 27.10.2026): прораб заказчика бонусы обычно не платит
+                                    ("project_contractors", "side", "TEXT")):
                 if col not in {r[1] for r in self.db.execute(f"PRAGMA table_info({table})")}:
                     self.db.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
             self.db.execute("CREATE INDEX IF NOT EXISTS messages_thread ON messages(thread_id, id)")
@@ -628,7 +633,8 @@ class Crm:
         out = {}
         for link in links:
             m = _debt([x for x in stages if x["link_id"] == link["id"]], [o for o in ops if o["link_id"] == link["id"]])
-            m.update(link_id=link["id"], project_id=link["project_id"], contractor_id=link["contractor_id"], trade=link["trade"])
+            m.update(link_id=link["id"], project_id=link["project_id"], contractor_id=link["contractor_id"], trade=link["trade"],
+                     side=link["side"] or "studio")
             out[link["id"]] = m
         return out
 
@@ -639,7 +645,7 @@ class Crm:
         ops = self.q("SELECT * FROM ops WHERE project_id=? ORDER BY day DESC, id DESC", p["id"])
         for o in ops:                              # оплата за товар — не доход студии (доход — наценка товара)
             o["income"] = round(0 if o["order_id"] else o["amount_eur"] - (o["buy_eur"] or 0) if o["kind"] == "resale" else o["amount_eur"], 2)
-        links = self.q("""SELECT l.id AS link_id, l.trade AS link_trade, l.note AS link_note, c.*
+        links = self.q("""SELECT l.id AS link_id, l.trade AS link_trade, l.note AS link_note, l.side AS link_side, c.*
                           FROM project_contractors l JOIN contractors c ON c.id=l.contractor_id
                           WHERE l.project_id=? ORDER BY l.id""", p["id"])
         money = self.link_money(p["id"])
@@ -1294,9 +1300,11 @@ class Crm:
             commission = round(amount * pct / 100, 2)
         elif mode == "sum":
             commission = _money(d.get("commission"), "Бонус студии")
+        elif mode == "none":                         # бонуса не будет (прораб заказчика — обычно так)
+            commission = 0.0
         elif mode != "unknown":
             raise CrmError("Выберите, как считать бонус студии")
-        if amount <= 0 and commission is None:
+        if amount <= 0 and not commission:
             raise CrmError("Укажите сумму заказа или бонус студии")
         rate, src, amount_eur = self._convert(amount, cur, day, d.get("rate") if d.get("manual_rate") else None)
         f = dict(project_id=pid, link_id=lid, title=_text(d.get("title"), 120), day=day, amount=amount, currency=cur,
@@ -1367,15 +1375,39 @@ class Crm:
         if c["observer"]:
             raise CrmError("«Разработчик ПО» — наблюдатель: он и так видит все проекты, добавлять его не нужно")
         trade, note = _text(d.get("trade"), 60), _text(d.get("note"), 500)
+        side = "client" if d.get("side") == "client" else None
         lid = int(d.get("id") or 0)
         if lid:
             self.run("UPDATE project_contractors SET trade=?, note=? WHERE id=? AND project_id=?", trade, note, lid, pid)
         else:
-            lid = self.run("INSERT INTO project_contractors(project_id, contractor_id, trade, note, created) VALUES(?, ?, ?, ?, ?)",
-                           pid, cid, trade, note, now())
-        self.audit(who, "edit" if d.get("id") else "add", "link", lid, {"project_id": pid, "contractor_id": cid, "trade": trade})
+            lid = self.run("INSERT INTO project_contractors(project_id, contractor_id, trade, note, side, created) VALUES(?, ?, ?, ?, ?, ?)",
+                           pid, cid, trade, note, side, now())
+        self.audit(who, "edit" if d.get("id") else "add", "link", lid, {"project_id": pid, "contractor_id": cid, "trade": trade, "side": side})
         self.touch(pid)
         return dict(self.project(pid), saved_id=lid, new=not d.get("id"))
+
+    def set_link_side(self, d, who):
+        """Чей подрядчик в проекте (решено 27.10.2026): студии (Ирины) или заказчика. Стал подрядчиком заказчика — у его
+        этапов, за которые бонус ещё не получен, бонус «не платит» (прораб заказчика обычно не платит; если всё-таки
+        платит — Ирина укажет бонус в этапе). Полученные бонусы остаются. Обратно к студии — этапы не меняются."""
+        lid = int(d.get("id") or d.get("link_id") or 0)
+        link = self.one("SELECT l.*, c.kind FROM project_contractors l JOIN contractors c ON c.id=l.contractor_id WHERE l.id=?", lid)
+        if not link:
+            raise CrmError("Подрядчик в этом проекте не найден")
+        if link["kind"] == "hired":
+            raise CrmError("Исполнителю студии платит студия — он всегда от студии")
+        side = "client" if d.get("side") == "client" else None
+        cleared = 0
+        with self.lock:
+            self.db.execute("UPDATE project_contractors SET side=? WHERE id=?", (side, lid))
+            if side == "client" and link["side"] != "client":
+                cleared = self.db.execute(
+                    "UPDATE stages SET commission=0, commission_eur=0, pct=NULL, updated=? WHERE link_id=? AND (commission IS NULL OR commission != 0) "
+                    "AND id NOT IN (SELECT stage_id FROM ops WHERE kind='commission' AND link_id=? AND stage_id IS NOT NULL)",
+                    (now(), lid, lid)).rowcount
+        self.audit(who, "edit", "link", lid, {"project_id": link["project_id"], "side": side, "stages_no_bonus": cleared})
+        self.touch(link["project_id"])
+        return dict(self.project(link["project_id"]), saved_id=lid)
 
     # ---------- удаление ----------
     def delete(self, entity, rid, who):

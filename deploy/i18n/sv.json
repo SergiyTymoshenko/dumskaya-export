@@ -125,6 +125,7 @@
   "amount": "Belopp",
   "comment": "Kommentar",
   "stage_hint": "Studions arvode: {p} % av beloppet. Kunden får ett meddelande och bekräftar beloppet.",
+  "stage_hint_nf": "Kunden får ett meddelande och bekräftar beloppet.",
   "save": "Spara",
   "delete": "Ta bort",
   "delete_q": "Ta bort det här beloppet?",

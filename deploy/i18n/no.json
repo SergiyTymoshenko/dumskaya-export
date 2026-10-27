@@ -125,6 +125,7 @@
   "amount": "Beløp",
   "comment": "Kommentar",
   "stage_hint": "Studioets honorar: {p} % av beløpet. Kunden får en melding og bekrefter beløpet.",
+  "stage_hint_nf": "Kunden får en melding og bekrefter beløpet.",
   "save": "Lagre",
   "delete": "Slett",
   "delete_q": "Slette dette beløpet?",

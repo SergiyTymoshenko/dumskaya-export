@@ -125,6 +125,7 @@
   "amount": "Valor",
   "comment": "Comentário",
   "stage_hint": "Comissão do estúdio: {p}% do valor. O cliente receberá uma mensagem e confirmará o valor.",
+  "stage_hint_nf": "O cliente receberá uma mensagem e confirmará o valor.",
   "save": "Guardar",
   "delete": "Eliminar",
   "delete_q": "Eliminar este valor?",

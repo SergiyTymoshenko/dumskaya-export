@@ -125,6 +125,7 @@
   "amount": "Tutar",
   "comment": "Yorum",
   "stage_hint": "Stüdyo ücreti: tutar üzerinden %{p}. Müşteri bir mesaj alacak ve tutarı onaylayacak.",
+  "stage_hint_nf": "Müşteri bir mesaj alacak ve tutarı onaylayacak.",
   "save": "Kaydet",
   "delete": "Sil",
   "delete_q": "Bu tutar silinsin mi?",

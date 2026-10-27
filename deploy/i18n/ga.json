@@ -125,6 +125,7 @@
   "amount": "Suim",
   "comment": "Trácht",
   "stage_hint": "Táille an stiúideo: {p} % den tsuim. Gheobhaidh an cliant teachtaireacht chun an tsuim a dheimhniú.",
+  "stage_hint_nf": "Gheobhaidh an cliant teachtaireacht chun an tsuim a dheimhniú.",
   "save": "Sábháil",
   "delete": "Scrios",
   "delete_q": "An tsuim seo a scriosadh?",

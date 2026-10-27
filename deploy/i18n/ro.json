@@ -125,6 +125,7 @@
   "amount": "Suma",
   "comment": "Comentariu",
   "stage_hint": "Comisionul studioului: {p} % din sumă. Clientul va primi un mesaj și va confirma suma.",
+  "stage_hint_nf": "Clientul va primi un mesaj și va confirma suma.",
   "save": "Salvați",
   "delete": "Ștergeți",
   "delete_q": "Ștergeți această sumă?",

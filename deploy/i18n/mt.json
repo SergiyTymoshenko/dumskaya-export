@@ -125,6 +125,7 @@
   "amount": "Ammont",
   "comment": "Kumment",
   "stage_hint": "Miżata tal-istudjo: {p} % tal-ammont. Il-klijent se jirċievi messaġġ u jikkonferma l-ammont.",
+  "stage_hint_nf": "Il-klijent se jirċievi messaġġ u jikkonferma l-ammont.",
   "save": "Issejvja",
   "delete": "Ħassar",
   "delete_q": "Tħassar dan l-ammont?",

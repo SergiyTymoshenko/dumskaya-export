@@ -1165,6 +1165,41 @@ page_ = open(os.path.join(H.REPO, "deploy", "portal_app.html"), encoding="utf-8"
 check("Q.get('cat')" in page_, "кабинет открывает раздел из ссылки (cat=…)")
 check(set(portal_bot.T["files_new"]) >= {"ru", "uk", "en", "sk", "de"}, "тексты — на пяти языках (остальные — deploy/i18n)")
 
+# ---------- прораб заказчика: бонусы обычно не платит (решено 27.10.2026) ----------
+p2 = H.crm.save_project({"title": "Квартира на Дунае", "city": "Братислава", "total_eur": 7000, "status": "active"}, "Ирина")["project"]
+l3 = H.crm.link_contractor({"project_id": p2["id"], "contractor_id": env["k1"]["id"], "trade": "Прораб"}, "Ирина")["saved_id"]
+s1 = H.crm.save_stage({"project_id": p2["id"], "link_id": l3, "title": "Черновые работы", "amount": 8000, "currency": "EUR",
+                       "mode": "pct", "pct": 10}, "Ирина")["saved_id"]
+lk = lambda: next(k for k in H.crm.project(p2["id"])["contractors"] if k["link_id"] == l3)  # noqa: E731
+check(lk()["money"]["expected"] == 800 and lk()["link_side"] is None, "прораб студии: 10 % с этапа ожидается")
+code, x = call("/api/crm/save", H.IRINA, {"entity": "link_side", "data": {"id": l3, "side": "client"}}, lang="ru")
+k_ = lk()
+check(code == 200 and k_["link_side"] == "client" and k_["money"]["expected"] == 0 and k_["money"]["debt"] == 0,
+      "прораб заказчика: бонус его этапов — «не платит», долга нет")
+check(H.crm.one("SELECT commission, pct FROM stages WHERE id=?", s1) == {"commission": 0, "pct": None}, "этап: бонус 0, без процента")
+xv2 = next(k for k in P.contractor_view(p2["id"], P.contractor_ids(H.CREW, p2["id"]), H.CREW)["mine"] if k["link_id"] == l3)
+check(xv2["no_fee"] and "expected" not in xv2["money"] and all("commission" not in s and "pct" not in s for s in xv2["stages"]),
+      "в кабинете прораба заказчика о бонусах студии ничего")
+r = P.contractor_stage(H.CREW, {"project_id": p2["id"], "link_id": l3, "title": "Плитка", "amount": "3000", "currency": "EUR"}, "Михайло")
+check(H.crm.one("SELECT commission FROM stages WHERE id=?", r["stage_id"])["commission"] == 0, "его новый этап — тоже без бонуса")
+raises(lambda: H.crm.save_stage({"project_id": p2["id"], "link_id": l3, "title": "x", "amount": 0, "currency": "EUR", "mode": "none"}, "Ирина"),
+       "«не платит» без суммы заказа — не сохранить")
+H.crm.save_stage({"id": s1, "project_id": p2["id"], "link_id": l3, "title": "Черновые работы", "amount": 8000, "currency": "EUR",
+                  "mode": "sum", "commission": 300}, "Ирина")
+xv2 = next(k for k in P.contractor_view(p2["id"], P.contractor_ids(H.CREW, p2["id"]), H.CREW)["mine"] if k["link_id"] == l3)
+check(lk()["money"]["debt"] == 300 and not xv2["no_fee"], "всё-таки платит — Ирина указала бонус: как у всех")
+H.crm.set_link_side({"id": l3, "side": "studio"}, "Ирина")
+check(lk()["link_side"] is None and lk()["money"]["expected"] == 300, "снова прораб студии — этапы не меняются")
+k3 = H.crm.save_contractor({"name": "Пётр (прораб заказчика)", "trade": "Прораб"}, "Ирина")
+l4 = H.crm.link_contractor({"project_id": p2["id"], "contractor_id": k3["id"], "trade": "Прораб", "side": "client"}, "Ирина")["saved_id"]
+check(H.crm.one("SELECT side FROM project_contractors WHERE id=?", l4)["side"] == "client", "добавить в проект сразу как прораба заказчика")
+hid = H.crm.save_contractor({"name": "Замерщик Ян", "kind": "hired", "trade": "Замерщик"}, "Ирина")
+l5 = H.crm.link_contractor({"project_id": p2["id"], "contractor_id": hid["id"]}, "Ирина")["saved_id"]
+raises(lambda: H.crm.set_link_side({"id": l5, "side": "client"}, "Ирина"), "исполнитель студии — всегда от студии")
+app_ = open(os.path.join(H.REPO, "deploy", "crm_app.html"), encoding="utf-8").read()
+check("'link_side'" in app_ and "['none', 'Не платит']" in app_, "«Студия»: выбор «Чей прораб» и бонус «Не платит»")
+check(page_.count("stage_hint_nf:") == page_.count("stage_hint:") == 5, "подсказка без бонуса — на всех языках кабинета")
+
 # ---------- документы не попадают в поиск ----------
 req = urllib.request.Request(BASE + f"/api/portal/project?id={pid}", headers={"X-Telegram-Init-Data": H.init_data(H.CLIENT, lang="sk")})
 with urllib.request.urlopen(req, timeout=10) as resp:

@@ -2569,18 +2569,39 @@
     chatTimer = setInterval(() => { if (!document.hidden && view === 'chat') pull(false); }, 8000);
   }
 
+  // чей подрядчик в проекте (решено 27.10.2026): студии (Ирины) или заказчика — прораб заказчика бонусы обычно не платит
+  const sideWho = (x) => ((x.link_trade || x.trade) === 'Прораб' ? 'прораб' : 'подрядчик');
+  const noFee = (x) => x.link_side === 'client' && !(x.money.expected > 0) && !(x.money.received > 0);
+  function sideSeg(x) {
+    const seg = el('div', { class: 'seg', style: 'grid-template-columns:1fr 1fr' });
+    seg.append(...[['studio', 'Студии'], ['client', 'Заказчика']].map(([k, n]) => el('button', { type: 'button', 'aria-pressed': String((x.link_side || 'studio') === k),
+      onclick: async () => {
+        if ((x.link_side || 'studio') === k) return;
+        const left = x.money.stages.filter((st) => st.commission !== 0 && !(st.received > 0)).length;
+        if (k === 'client' && left && !(await confirmBox('«' + x.name + '» — ' + sideWho(x) + ' заказчика? Обычно он бонусы студии не платит: у '
+          + (left === 1 ? 'его этапа' : 'его ' + left + ' ' + plural(left, 'этапа', 'этапов', 'этапов')) + ' бонус станет «не платит». Полученные бонусы останутся. '
+          + 'Если всё-таки платит — укажите бонус в этапе.'))) return;
+        try { await refresh(await save('link_side', { id: x.link_id, side: k })); toast(k === 'client' ? 'Отмечено: ' + sideWho(x) + ' заказчика' : 'Отмечено: ' + sideWho(x) + ' студии'); }
+        catch (e) { toast(e.message); }
+      } }, n)));
+    return el('div', { class: 'field', style: 'margin:10px 0 0' }, el('span', 'lab', 'Чей ' + sideWho(x)), seg);
+  }
+
   function contractorBlock(x) {
-    const m = x.money, c = m.currency, sup = isSup(x);
+    const m = x.money, c = m.currency, sup = isSup(x), nf = !sup && noFee(x);
     const box = el('div', 'kcard');
     box.append(el('div', 'row',
       el('div', { class: 'grow', style: OWNER ? null : 'cursor:pointer', onclick: OWNER ? null : () => contractorCard(x) },
-        el('b', { style: 'font-size:calc(18px * var(--k));display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' '))));
+        el('b', { style: 'font-size:calc(18px * var(--k));display:block;overflow-wrap:anywhere' }, x.name), el('span', 'small muted', [!sup && x.link_side === 'client' ? (sideWho(x) === 'прораб' ? 'Прораб заказчика' : [x.link_trade || x.trade, 'подрядчик заказчика'].filter(Boolean).join(' · '))
+          : x.link_trade || x.trade, x.company].filter(Boolean).join(' · ') || ' '))));
     const cb = contactButtons(x).slice(0, 3);
     if (cb.length) box.append(el('div', 'cbar', ...cb));
+    if (!sup && !OWNER) box.append(sideSeg(x));
     if (m.stages.length) {
       const ul = el('ul', 'stages');
       m.stages.forEach((st, i) => {
-        const bonus = st.commission == null ? 'бонус пока неизвестен' : 'бонус ' + (st.pct != null ? pctText(st.pct) + ' — ' : '') + curMoney(st.commission, st.currency);
+        const bonus = st.commission == null ? 'бонус пока неизвестен' : st.commission === 0 ? (nf ? '' : 'бонус не платит')
+          : 'бонус ' + (st.pct != null ? pctText(st.pct) + ' — ' : '') + curMoney(st.commission, st.currency);
         ul.append(el('li', { onclick: OWNER ? null : () => stageSheet(x, st) },
           el('span', 't', st.title || (sup ? 'Поставка ' : 'Этап ') + (i + 1)),
           el('span', 'a num', st.amount ? curMoney(st.amount, st.currency) : ''),
@@ -2591,7 +2612,8 @@
       });
       box.append(ul);
     }
-    if (m.stages.length || m.ops) {
+    if (nf) box.append(el('div', 'debt', el('span', 'muted', 'Бонусы студии не платит — ' + sideWho(x) + ' заказчика'), el('span')));
+    else if (m.stages.length || m.ops) {
       let line;
       if (m.debt > 0) line = el('div', 'debt', el('span', null, 'Должен студии'), el('b', 'num owe', curMoney(m.debt, c) + (c !== 'EUR' ? ' ≈ ' + eur(m.debt_eur) : '')));
       else if (m.expected > 0) line = el('div', 'debt', el('span', { style: 'color:var(--up)' }, '✓ Бонусы отдал полностью'), el('span'));
@@ -2602,7 +2624,7 @@
     }
     if (!OWNER) box.append(el('div', 'kactions',
       el('button', { class: 'btn', type: 'button', onclick: () => ensureWorking(() => stageSheet(x, null)) }, sup ? '＋ Поставка' : '＋ Этап'),
-      el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission', null, { link_id: x.link_id, currency: c, amount: m.debt > 0 ? m.debt : '' }) }, '🎁 Отдал бонус')));
+      nf ? null : el('button', { class: 'btn', type: 'button', onclick: () => opSheet('commission', null, { link_id: x.link_id, currency: c, amount: m.debt > 0 ? m.debt : '' }) }, '🎁 Отдал бонус')));
     box.append(tgLine('contractor', x));
     if (!OWNER) box.append(el('div', 'kactions',
       x.tg_id ? el('button', { class: 'btn', type: 'button', onclick: () => startThread({ kind: 'org', contractor_id: x.id }) }, '💬 Написать')
@@ -2797,7 +2819,7 @@
     const isNew = !st, sup = isSup(x);
     const last = x.money.stages[x.money.stages.length - 1];
     st = st || { day: todayISO(), currency: last ? last.currency : 'EUR' };
-    let mode = isNew ? 'pct' : st.commission == null ? 'unknown' : st.pct != null ? 'pct' : 'sum';
+    let mode = isNew ? (!sup && x.link_side === 'client' ? 'none' : 'pct') : st.commission == null ? 'unknown' : st.commission === 0 ? 'none' : st.pct != null ? 'pct' : 'sum';
     const day = inp(st.day, { type: 'date' });
     const title = inp(st.title, { placeholder: sup ? 'Плитка для ванной, 1-я партия…' : 'Кухня, черновые, 1-й этап…' });
     const amt = moneyField(sup ? 'Сумма поставки' : 'Сумма заказа', st.amount || '', st.currency, st.rate_src === 'вручную' ? st.rate : '', st.rate_src === 'вручную', day,
@@ -2808,12 +2830,14 @@
     const pctBox = el('div', { class: 'pair', style: 'margin-top:8px;grid-template-columns:1fr auto;align-items:center' }, pct, el('span', 'muted', sup ? '% от суммы поставки' : '% от суммы заказа'));
     const sumBox = el('div', { class: 'pair', style: 'margin-top:8px;grid-template-columns:1fr auto;align-items:center' }, sum, curLab);
     const unk = el('div', 'hint', 'Когда ' + (sup ? 'поставщик' : 'подрядчик') + ' отдаст бонус — нажмите «Отдал бонус» у него в проекте: сумма засчитается в доход проекта.');
+    const none = el('div', 'hint', x.link_side === 'client' ? 'Прораб и подрядчики заказчика обычно бонусы студии не платят. В его кабинете о бонусах ничего не будет.'
+      : 'Бонус студии с этой работы не ожидается — долга не будет.');
     const out = el('div', 'rate');
-    const seg = el('div', 'seg');
-    const modes = [['pct', 'Процент'], ['sum', 'Сумма'], ['unknown', 'Неизвестно']];
+    const seg = el('div', { class: 'seg', style: 'grid-template-columns:1fr 1fr' });
+    const modes = [['pct', 'Процент'], ['sum', 'Сумма'], ['none', 'Не платит'], ['unknown', 'Неизвестно']];
     function draw() {
       seg.replaceChildren(...modes.map(([k, t]) => el('button', { type: 'button', 'aria-pressed': String(mode === k), onclick: () => { mode = k; draw(); } }, t)));
-      pctBox.hidden = mode !== 'pct'; sumBox.hidden = mode !== 'sum'; unk.hidden = mode !== 'unknown';
+      pctBox.hidden = mode !== 'pct'; sumBox.hidden = mode !== 'sum'; unk.hidden = mode !== 'unknown'; none.hidden = mode !== 'none';
       const v = amt.value(), a = parseNum(v.amount), cur = v.currency, e = amt.eur();
       curLab.textContent = cur;
       let b = null;
@@ -2829,7 +2853,7 @@
     const linked = people().some((q) => q.tg_id);
     const body = el('div', el('p', 'muted small', x.name + ((x.link_trade || x.trade) ? ' · ' + (x.link_trade || x.trade) : '')),
       field(sup ? 'Что поставляет' : 'Что делают', title), field('Дата', day), amt,
-      el('div', 'field', el('span', 'lab', 'Бонус студии'), seg, pctBox, sumBox, unk, out), field('Комментарий', note),
+      el('div', 'field', el('span', 'lab', 'Бонус студии'), seg, pctBox, sumBox, none, unk, out), field('Комментарий', note),
       linked ? el('div', 'field', el('label', 'check', ask, 'Попросить заказчика подтвердить сумму (сообщение в Telegram, если сумма новая или изменилась)')) : null,
       st.confirmed ? el('p', 'small muted', '✓ Заказчик подтвердил эту сумму. Если её изменить — подтверждение снимется и заказчика спросят снова.') : null);
     const del = st.id ? [el('button', { class: 'btn danger', type: 'button', onclick: async () => {
@@ -2897,14 +2921,21 @@
   }
 
   function linkSheet() {
-    let kind = '';
-    const kindSeg = el('div', 'seg'), tradeBox = el('div');
+    let kind = '', side = 'studio';
+    const kindSeg = el('div', 'seg'), tradeBox = el('div'), sideBox = el('div');
+    const drawSide = () => {                      // чей подрядчик (решено 27.10.2026) — только у подрядчиков работ
+      const w = trade && trade.value === 'Прораб' ? 'прораб' : 'подрядчик';
+      sideBox.replaceChildren(kind !== '' ? '' : el('div', 'field', el('span', 'lab', 'Чей ' + w),
+        el('div', { class: 'seg', style: 'grid-template-columns:1fr 1fr' }, ...[['studio', 'Студии'], ['client', 'Заказчика']].map(([k, n]) =>
+          el('button', { type: 'button', 'aria-pressed': String(side === k), onclick: () => { side = k; drawSide(); } }, n))),
+        side === 'client' ? el('p', 'small muted', 'Прораб заказчика обычно бонусы студии не платит: у его этапов бонус — «не платит», в его кабинете о бонусах ничего не будет.') : ''));
+    };
     let trade = null;
     const list = el('div', 'pick');
     const drawKind = () => {
       kindSeg.replaceChildren(...[['', 'Подрядчики'], ['supplier', 'Поставщики'], ['hired', 'Исполнители']].map(([k, n]) => el('button', { type: 'button', 'aria-pressed': String(kind === k), onclick: () => { kind = k; drawKind(); } }, n)));
       trade = sel([['', kind === 'supplier' ? 'Все поставщики' : kind === 'hired' ? 'Все исполнители' : 'Все виды работ']].concat(kind === 'supplier' ? S.lists.supply_cats : kind === 'hired' ? (S.lists.hired_cats || []) : S.lists.trades), '');
-      trade.addEventListener('change', draw);
+      trade.addEventListener('change', draw); trade.addEventListener('change', drawSide); drawSide();
       tradeBox.replaceChildren(field(kind === 'supplier' ? 'Что поставляет' : kind === 'hired' ? 'Что делает' : 'Вид работ', trade),
         kind === 'hired' ? el('p', 'small muted', '🔒 Замерщик, чертёжник, 3D-визуализатор — им платите вы и пишете им только вы.') : '');
       draw();
@@ -2917,11 +2948,11 @@
         el('span', 'grow', el('b', null, c.name), el('span', 'small muted', ' · ' + [c.trade, c.phone].filter(Boolean).join(' · '))))));
     };
     async function attach(c) {
-      try { await refresh(await save('link', { project_id: P.project.id, contractor_id: c.id, trade: trade.value || c.trade })); closeSheets(); toast('Добавлено в проект'); }
+      try { await refresh(await save('link', { project_id: P.project.id, contractor_id: c.id, trade: trade.value || c.trade, side: kind === '' ? side : null })); closeSheets(); toast('Добавлено в проект'); }
       catch (e) { toast(e.message); }
     }
     drawKind();
-    sheet('В проект', el('div', kindSeg, tradeBox, list), null, null,
+    sheet('В проект', el('div', kindSeg, tradeBox, sideBox, list), null, null,
       [el('button', { class: 'btn primary', type: 'button', style: 'flex:1', onclick: () => contractorSheet({ trade: trade.value, kind }, attach) }, kind === 'supplier' ? '＋ Новый поставщик' : kind === 'hired' ? '＋ Новый исполнитель' : '＋ Новый подрядчик')]);
   }
 

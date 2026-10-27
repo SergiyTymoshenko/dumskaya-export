@@ -125,6 +125,7 @@
   "amount": "Importe",
   "comment": "Comentario",
   "stage_hint": "Comisión del estudio: {p} % del importe. El cliente recibirá un mensaje y confirmará el importe.",
+  "stage_hint_nf": "El cliente recibirá un mensaje y confirmará el importe.",
   "save": "Guardar",
   "delete": "Eliminar",
   "delete_q": "¿Eliminar este importe?",

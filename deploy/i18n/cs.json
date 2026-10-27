@@ -125,6 +125,7 @@
   "amount": "Částka",
   "comment": "Komentář",
   "stage_hint": "Odměna studia: {p} % z částky. Klient dostane zprávu a částku potvrdí.",
+  "stage_hint_nf": "Klient dostane zprávu a částku potvrdí.",
   "save": "Uložit",
   "delete": "Smazat",
   "delete_q": "Smazat tuto částku?",

@@ -125,6 +125,7 @@
   "amount": "Summa",
   "comment": "Kommentaar",
   "stage_hint": "Stuudio tasu: {p} % summast. Klient saab sõnumi ja kinnitab summa.",
+  "stage_hint_nf": "Klient saab sõnumi ja kinnitab summa.",
   "save": "Salvesta",
   "delete": "Kustuta",
   "delete_q": "Kas kustutada see summa?",

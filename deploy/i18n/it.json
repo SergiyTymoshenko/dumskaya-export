@@ -125,6 +125,7 @@
   "amount": "Importo",
   "comment": "Commento",
   "stage_hint": "Compenso dello studio: {p}% dell’importo. Il cliente riceverà un messaggio e confermerà l’importo.",
+  "stage_hint_nf": "Il cliente riceverà un messaggio e confermerà l’importo.",
   "save": "Salva",
   "delete": "Elimina",
   "delete_q": "Eliminare questo importo?",

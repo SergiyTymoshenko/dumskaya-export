@@ -125,6 +125,7 @@
   "amount": "Suma",
   "comment": "Komentaras",
   "stage_hint": "Studijos atlygis: {p} % sumos. Klientas gaus žinutę ir patvirtins sumą.",
+  "stage_hint_nf": "Klientas gaus žinutę ir patvirtins sumą.",
   "save": "Išsaugoti",
   "delete": "Ištrinti",
   "delete_q": "Ištrinti šią sumą?",

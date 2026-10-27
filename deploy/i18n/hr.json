@@ -125,6 +125,7 @@
   "amount": "Iznos",
   "comment": "Komentar",
   "stage_hint": "Naknada studija: {p} % od iznosa. Klijent će dobiti poruku i potvrditi iznos.",
+  "stage_hint_nf": "Klijent će dobiti poruku i potvrditi iznos.",
   "save": "Spremi",
   "delete": "Izbriši",
   "delete_q": "Izbrisati ovaj iznos?",

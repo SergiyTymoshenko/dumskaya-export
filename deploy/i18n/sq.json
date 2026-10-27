@@ -125,6 +125,7 @@
   "amount": "Shuma",
   "comment": "Koment",
   "stage_hint": "Tarifa e studios: {p} % e shumës. Klienti do të marrë një mesazh dhe do ta konfirmojë shumën.",
+  "stage_hint_nf": "Klienti do të marrë një mesazh dhe do ta konfirmojë shumën.",
   "save": "Ruani",
   "delete": "Fshini",
   "delete_q": "Ta fshini këtë shumë?",

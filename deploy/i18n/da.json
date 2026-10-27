@@ -125,6 +125,7 @@
   "amount": "Beløb",
   "comment": "Kommentar",
   "stage_hint": "Studiets honorar: {p} % af beløbet. Kunden får en besked og bekræfter beløbet.",
+  "stage_hint_nf": "Kunden får en besked og bekræfter beløbet.",
   "save": "Gem",
   "delete": "Slet",
   "delete_q": "Slet dette beløb?",

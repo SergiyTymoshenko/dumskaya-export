@@ -125,6 +125,7 @@
   "amount": "Upphæð",
   "comment": "Athugasemd",
   "stage_hint": "Þóknun stofunnar: {p} % af upphæðinni. Viðskiptavinurinn fær skilaboð og staðfestir upphæðina.",
+  "stage_hint_nf": "Viðskiptavinurinn fær skilaboð og staðfestir upphæðina.",
   "save": "Vista",
   "delete": "Eyða",
   "delete_q": "Eyða þessari upphæð?",

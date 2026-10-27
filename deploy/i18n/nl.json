@@ -125,6 +125,7 @@
   "amount": "Bedrag",
   "comment": "Opmerking",
   "stage_hint": "Vergoeding voor de studio: {p}% van het bedrag. De klant krijgt een bericht en bevestigt het bedrag.",
+  "stage_hint_nf": "De klant krijgt een bericht en bevestigt het bedrag.",
   "save": "Opslaan",
   "delete": "Verwijderen",
   "delete_q": "Dit bedrag verwijderen?",

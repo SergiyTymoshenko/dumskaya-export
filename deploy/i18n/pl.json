@@ -125,6 +125,7 @@
   "amount": "Kwota",
   "comment": "Komentarz",
   "stage_hint": "Wynagrodzenie studia: {p}% kwoty. Klient otrzyma wiadomość i potwierdzi kwotę.",
+  "stage_hint_nf": "Klient otrzyma wiadomość i potwierdzi kwotę.",
   "save": "Zapisz",
   "delete": "Usuń",
   "delete_q": "Usunąć tę kwotę?",
