@@ -75,6 +75,14 @@ class CrmBotMixin:
         if getattr(self, "crm", None):
             cur = "lead" if current in ("lead", "work", "project", "closed") else current
             b = [(("✓ " if k == cur else e + " ") + t, f"ld:{lid}:{k}") for k, e, t in self.TRIAGE_BUTTONS]
+            try:
+                r = self.crm.lead(lid)
+            except CrmError:
+                r = {}
+            if r.get("partner_id"):                    # товар партнёра: отдаём ему или оставляем себе (решено 28.10.2026)
+                h, name = r.get("handoff"), r.get("partner") or "партнёру"
+                rows.append([(("✓ Отдали «" if h == "partner" else "➡️ Отдаём «") + name + "»", f"ho:{lid}:p"),
+                             (("✓ " if h == "self" else "🏠 ") + "Оставляем себе", f"ho:{lid}:s")])
             rows += [b[:2], b[2:]]
         btn = self.studio_button("📋 Открыть заявку в «Студии»", query=f"lead={lid}")
         if btn:

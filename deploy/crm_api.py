@@ -529,6 +529,13 @@ def handle_post(h, path, query):
             return h.reply(200, enrich(r)) or True
         if path == "/api/crm/move":
             return h.reply(200, enrich(CRM.move_file(data.get("id"), data.get("category"), who, u["tg_id"]))) or True
+        if path == "/api/crm/handoff":                   # заявка на товар партнёра: отдаём ему (p) или оставляем себе (s)
+            if not BOT:
+                raise CrmError("Бот не запущен")
+            ok, text = BOT.lead_handoff(int(data.get("id") or 0), data.get("mode"), u)
+            if not ok:
+                raise CrmError(text)
+            return h.reply(200, dict(CRM.lead(int(data.get("id") or 0)), handoff_text=text)) or True
         if path == "/api/crm/send":                      # прислать файл проекта в чат с ботом
             fpath, f = CRM.file_path(data.get("id"), "o")
             if not f:

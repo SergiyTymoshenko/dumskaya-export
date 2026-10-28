@@ -429,7 +429,10 @@ class Crm:
                                     # порядок файлов в разделе (решено 27.10.2026)
                                     ("files", "pos", "INTEGER"),
                                     # чей подрядчик в проекте (решено 27.10.2026): прораб заказчика бонусы обычно не платит
-                                    ("project_contractors", "side", "TEXT")):
+                                    ("project_contractors", "side", "TEXT"),
+                                    # заявка на товар партнёра (Замлинский и др.): отдать ему или оставить себе — решает студия (28.10.2026)
+                                    ("leads", "partner", "TEXT"), ("leads", "partner_id", "INTEGER"), ("leads", "handoff", "TEXT"),
+                                    ("leads", "handoff_at", "TEXT"), ("leads", "handoff_by", "TEXT")):
                 if col not in {r[1] for r in self.db.execute(f"PRAGMA table_info({table})")}:
                     self.db.execute(f"ALTER TABLE {table} ADD COLUMN {col} {typ}")
             self.db.execute("CREATE INDEX IF NOT EXISTS messages_thread ON messages(thread_id, id)")
@@ -1152,6 +1155,18 @@ class Crm:
                  _text(lead.get("lang"), 5), _text(lead.get("routed"), 300), status or "new", _text(note, 500), src, now())
         return self.one("SELECT id FROM leads WHERE src=?", src)["id"]
 
+    def lead_partner(self, lid, partner_id, name):
+        """Заявка на товар партнёра: кому её можно отдать (решение — за студией, кнопками)."""
+        self.run("UPDATE leads SET partner_id=?, partner=? WHERE id=?", int(partner_id), _text(name, 120), int(lid))
+
+    def set_lead_handoff(self, lid, mode, who, routed):
+        """Студия решила: заявку отдаём партнёру (partner) или оставляем себе (self)."""
+        if mode not in ("partner", "self"):
+            raise CrmError("Неизвестное решение")
+        self.run("UPDATE leads SET handoff=?, handoff_at=?, handoff_by=?, routed=?, updated=?, updated_by=? WHERE id=?",
+                 mode, now(), _text(who, 120), _text(routed, 300), now(), _text(who, 120), int(lid))
+        self.audit(who, "edit", "lead", int(lid), {"handoff": mode})
+
     def lead_routed(self, lid, routed, model_name=""):
         self.run("UPDATE leads SET routed=?, model_name=COALESCE(NULLIF(?, ''), model_name) WHERE id=?",
                  _text(routed, 300), _text(model_name, 200), int(lid))
@@ -1184,7 +1199,8 @@ class Crm:
 
     def leads_list(self):
         rows = self.q("""SELECT l.id, l.ts, l.name, l.contact, substr(COALESCE(NULLIF(l.message_ru, ''), l.message), 1, 160) AS snippet,
-                                l.model, l.model_name, l.lang, l.status, l.project_id, l.routed, p.title AS project_title, l.deleted
+                                l.model, l.model_name, l.lang, l.status, l.project_id, l.routed, p.title AS project_title, l.deleted,
+                                l.partner, l.partner_id, l.handoff
                          FROM leads l LEFT JOIN projects p ON p.id=l.project_id
                          WHERE l.status != 'test' AND (l.deleted IS NULL OR l.deleted >= ?) ORDER BY l.ts DESC, l.id DESC""",
                       self._trash_cutoff())

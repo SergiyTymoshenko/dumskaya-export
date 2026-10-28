@@ -595,6 +595,8 @@ class Bot(CrmBotMixin, PortalBotMixin):
             return self.crm_button(admin, msg, parts)
         if act == "ld":                            # заявка с сайта: ld:номер:что это (lead, ad, spam, ignore)
             return self.lead_button(admin, msg, parts)
+        if act == "ho":                            # заявка на товар партнёра: ho:номер:p (отдаём) / s (оставляем себе)
+            return self.handoff_button(admin, msg, parts)
         if act == "fa":                            # документ подрядчика или сотрудника: fa:файл:1 — показать заказчику, 0 — нет
             return self.approve_button(admin, msg, int(parts[1]), parts[2] == "1")
         if act == "ro":                            # ro:режим:uid:роль — выбрана роль
@@ -1063,6 +1065,43 @@ class Bot(CrmBotMixin, PortalBotMixin):
         self.send(chat_id, "\n".join(lines))
 
     # ---------- заявки с сайта ----------
+    def lead_handoff(self, lid, mode, admin, products=None):
+        """Заявка на товар партнёра: «p» — отдать (переслать людям партнёра в боте), «s» — оставить себе.
+        Возвращает (ok, текст для студии). Отданная заявка второй раз не пересылается."""
+        who = admin["name"] or str(admin["tg_id"])
+        r = self.crm.lead(lid)
+        if not r.get("partner_id"):
+            return False, "Это не заявка на товар партнёра"
+        name = r.get("partner") or "партнёр"
+        if mode == "s":
+            self.crm.set_lead_handoff(lid, "self", who, f"на товар партнёра «{name}» — оставили себе ({who})")
+            return True, f"🏠 Заявку оставили себе — «{name}» она не отправлена."
+        if r.get("handoff") == "partner":
+            return True, f"Заявка уже отдана «{name}»."
+        products = products if products is not None else load_products()
+        model = (r.get("model") or "").strip()
+        prod = products.get(model.upper()) if model else None
+        body = format_lead(lead_from_row(r), model, prod)
+        people = self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", r["partner_id"])
+        sent = [u for u in people if self.send(u["tg_id"], f"<b>Заявка с сайта {site_name(r)} на ваш товар</b>\n\n" + body)]
+        names = ", ".join(self.label(u) for u in sent)
+        if sent:
+            self.crm.set_lead_handoff(lid, "partner", who, f"отдана партнёру «{name}»: {names} ({who})")
+            return True, f"➡️ Заявка отдана «{name}»: {names}."
+        self.crm.set_lead_handoff(lid, "partner", who, f"отдаём партнёру «{name}» — он не в боте, переслать вручную ({who})")
+        return True, f"⚠️ «{name}» ещё не подключён к боту — перешлите заявку ему сами (отмечено: отдаём)."
+
+    def handoff_button(self, admin, msg, parts):
+        if len(parts) < 3 or parts[2] not in ("p", "s") or not getattr(self, "crm", None):
+            return
+        try:
+            ok, text = self.lead_handoff(int(parts[1]), parts[2], admin)
+        except CrmError as e:
+            ok, text = False, str(e)
+        self.api("editMessageReplyMarkup", chat_id=msg["chat"]["id"], message_id=msg["message_id"],
+                 reply_markup=self.kb(self.lead_rows(int(parts[1]))))
+        self.send(msg["chat"]["id"], text)
+
     def route_lead(self, lead, products=None):
         """Заявку — дизайнерам (разработчику — только если им не доставлено); если это товар партнёра — ещё и людям
         этого партнёра (поставщику и его сотрудникам). Возвращает список Telegram ID, кому доставлено."""
@@ -1086,7 +1125,15 @@ class Bot(CrmBotMixin, PortalBotMixin):
             head = (f"<b>Заявка на товар {esc(prod.get('mfr') or '')}</b> — фабрика закреплена за разработчиком, ему передана: {esc(who)}"
                     if who else f"⚠️ <b>Заявка на товар {esc(prod.get('mfr') or '')}</b> — разработчику не доставлено, передайте сами")
             delivered += self.notify_leads(head + "\n\n" + body, rows=rows, skip=tuple(delivered))
-        elif pid:
+        elif pid and lead.get("crm_id") and getattr(self, "crm", None) and self.find_partner(pid):
+            # товар партнёра (решено 28.10.2026): сама партнёру не уходит — студия решает кнопками «Отдаём «…»» / «Оставляем себе»
+            p = self.find_partner(pid)
+            self.crm.lead_partner(lead["crm_id"], p["id"], p["name"])
+            lead["routed"] = f"на товар партнёра «{p['name']}» — ждёт решения: отдать ему или оставить себе"
+            head = (f"<b>Заявка на товар партнёра «{esc(p['name'])}»</b> — ему пока не отправлена. "
+                    f"Отдаём «{esc(p['name'])}» или оставляем себе — кнопки ниже (или в «Студии»).")
+            delivered += self.notify_leads(head + "\n\n" + body, rows=self.lead_rows(lead["crm_id"]))
+        elif pid:                                    # учёта нет (или партнёра нет в боте) — как раньше
             p = self.find_partner(pid)
             people = self.s.all("SELECT * FROM users WHERE partner_id=? AND status='active'", p["id"]) if p else []
             for u in people:
@@ -1115,6 +1162,11 @@ class Bot(CrmBotMixin, PortalBotMixin):
             delivered += self.notify_leads("<b>Заявка с сайта" + (" DUMSKAYA HOME" if is_home(lead) else "")
                                            + "</b>\n\n" + body, rows=rows)
         return delivered
+
+
+def lead_from_row(r):
+    """Заявка из «Студии» — в том виде, в каком её форматирует format_lead."""
+    return {k: r.get(k) for k in ("name", "contact", "message", "message_ru", "message_lang", "page", "lang", "model")}
 
 
 def models_lines(prod):

@@ -1609,7 +1609,9 @@
       el('div', 'title', x.name || 'Без имени'),
       el('div', 'sub', [x.contact, x.model ? x.model + (x.model_name ? ' — ' + x.model_name : '') : ''].filter(Boolean).join(' · ') || ' '),
       x.snippet ? el('div', 'snip', x.snippet) : null,
-      x.project_id ? el('div', { class: 'small', style: 'margin-top:4px;color:var(--up)' }, '→ проект «' + (x.project_title || '') + '»') : null);
+      x.project_id ? el('div', { class: 'small', style: 'margin-top:4px;color:var(--up)' }, '→ проект «' + (x.project_title || '') + '»') : null,
+      x.partner_id && !x.deleted ? el('div', { class: 'small', style: 'margin-top:4px;font-weight:650;color:' + (x.handoff ? 'var(--text-2)' : 'var(--warn)') },
+        x.handoff === 'partner' ? '➡️ Отдали «' + x.partner + '»' : x.handoff === 'self' ? '🏠 Оставили себе' : '🤝 Товар «' + x.partner + '»: отдаём или оставляем себе?') : null);
   }
   function leadView() {
     const x = L;
@@ -1662,6 +1664,21 @@
     else st.append(el('button', { class: 'btn primary wide', type: 'button', style: 'margin-top:12px', onclick: () => leadProjectSheet(x) }, '＋ Сделать проектом'),
       el('p', { class: 'small muted', style: 'margin:6px 0 0' }, 'Создаст заказчика и проект, заявка станет «Стала проектом».'));
     app.append(st);
+    // товар партнёра (Замлинский и др.): заявка сама ему не уходит — решаем здесь или кнопками в сообщении бота (решено 28.10.2026)
+    if (x.partner_id) {
+      const hb = el('section', 'card');
+      const act = (mode) => async () => {
+        try { const r = await api('/api/crm/handoff', { json: { id: x.id, mode } }); L = r; LS = null; toast(r.handoff_text || 'Сохранено'); render(); }
+        catch (e) { toast(e.message); }
+      };
+      hb.append(el('h2', null, 'Товар партнёра «' + x.partner + '»'),
+        el('p', { class: 'small muted', style: 'margin:-4px 0 10px' }, x.handoff === 'partner' ? 'Заявка отдана партнёру' + (x.handoff_at ? ' · ' + dtime(x.handoff_at) : '') + '.'
+          : x.handoff === 'self' ? 'Оставили себе — партнёру не отправлена.' : 'Партнёру заявка не отправлена. Отдаём ему или обрабатываем сами?'),
+        el('div', 'seg seg2 choice',
+          el('button', { type: 'button', 'aria-pressed': String(x.handoff === 'partner'), onclick: x.handoff === 'partner' ? null : act('p') }, '➡️ Отдаём «' + x.partner + '»'),
+          el('button', { type: 'button', 'aria-pressed': String(x.handoff === 'self'), onclick: x.handoff === 'self' ? null : act('s') }, '🏠 Оставляем себе')));
+      app.append(hb);
+    }
     const m = el('section', 'card');
     m.append(el('h2', null, 'Сообщение'));
     if (x.model) m.append(el('p', { style: 'margin:0 0 8px' }, el('b', null, 'Интересует: '), x.model + (x.model_name ? ' — ' + x.model_name : '')));
