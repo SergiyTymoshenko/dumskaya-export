@@ -256,7 +256,7 @@ def build():
             p["hidden"] = o["hide"]
         if o.get("duplicate_of"):
             p["duplicate_of"] = o["duplicate_of"]
-        for k in ("model", "type", "designer", "place", "qual", "name", "collection", "collection_name"):
+        for k in ("model", "type", "designer", "year", "place", "qual", "name", "collection", "collection_name"):
             if k in o:
                 p[k] = o[k]
         if "type" in o:

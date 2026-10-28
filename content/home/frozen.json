@@ -1,4 +1,213 @@
 {
+"DF-A10024": {
+"path": {
+"en": "/lago/air-armchair",
+"ru": "/ru/lago/kreslo-air",
+"de": "/de/lago/air-fauteuil",
+"fr": "/fr/lago/fauteuil-air",
+"es": "/es/lago/sillon-air"
+},
+"images": {
+"images/shop/lago/air-armchair/beige-fabric-armchair.jpg": "lago-air-armchair-01",
+"images/shop/lago/air-armchair/air-armchair-0858.jpg": "lago-air-armchair-02",
+"images/shop/lago/air-armchair/green-and-grey-suspended-armchair.jpg": "lago-air-armchair-03",
+"images/shop/lago/air-sofa/sofa-with-practical-coupling-system.jpg": "lago-air-01",
+"images/shop/lago/air-sofa/glass-leg-detail.jpg": "lago-air-02"
+},
+"drawings": {}
+},
+"DF-A10044": {
+"path": {
+"en": "/lago/air-soft-armchair",
+"ru": "/ru/lago/kreslo-air-soft",
+"de": "/de/lago/air-soft-fauteuil",
+"fr": "/fr/lago/fauteuil-air-soft",
+"es": "/es/lago/sillon-air-soft"
+},
+"images": {
+"images/shop/lago/air-soft-armchair/comfortable-white.jpg": "lago-air-soft-armchair-01",
+"images/shop/lago/air-soft-armchair/soft-designer-living-room-armchair.jpg": "lago-air-soft-armchair-02",
+"images/shop/lago/air-soft-armchair/air-soft-armchair-2720.jpg": "lago-air-soft-armchair-03"
+},
+"drawings": {}
+},
+"DF-A10048": {
+"path": {
+"en": "/lago/air-soft-free-armchair",
+"ru": "/ru/lago/kreslo-air-soft-free",
+"de": "/de/lago/air-soft-free-fauteuil",
+"fr": "/fr/lago/fauteuil-air-soft-free",
+"es": "/es/lago/sillon-air-soft-free"
+},
+"images": {
+"images/shop/lago/air-soft-free-armchair/freestanding-backrest.jpg": "lago-air-soft-free-armchair-01",
+"images/shop/lago/air-soft-free-armchair/air-soft-free-armchair-2722.jpg": "lago-air-soft-free-armchair-02",
+"images/shop/lago/air-soft-free-armchair/glass-leg-detail.jpg": "lago-air-soft-free-armchair-03"
+},
+"drawings": {}
+},
+"DF-A10055": {
+"path": {
+"en": "/lago/altana-armchair",
+"ru": "/ru/lago/kreslo-altana",
+"de": "/de/lago/altana-fauteuil",
+"fr": "/fr/lago/fauteuil-altana",
+"es": "/es/lago/sillon-altana"
+},
+"images": {
+"images/shop/lago/altana-armchair/wooden-armchair-with-armrests.jpg": "lago-altana-armchair-01",
+"images/shop/lago/altana-armchair/altana-armchair.jpg": "lago-altana-armchair-02",
+"images/shop/lago/altana-armchair/red-fabric-armchair.jpg": "lago-altana-armchair-03",
+"images/shop/lago/altana-armchair/wooden-armrest-detail-for-armchair.jpg": "lago-altana-armchair-04"
+},
+"drawings": {}
+},
+"DF-A10061": {
+"path": {
+"en": "/lago/biza-armchair",
+"ru": "/ru/lago/kreslo-biza",
+"de": "/de/lago/biza-fauteuil",
+"fr": "/fr/lago/fauteuil-biza",
+"es": "/es/lago/sillon-biza"
+},
+"images": {
+"images/shop/lago/biza-armchair/armchair-and-coffee-tables-for-living-room.jpg": "lago-biza-armchair-01",
+"images/shop/lago/biza-armchair/biza-armchair.jpg": "lago-biza-armchair-02",
+"images/shop/lago/biza-armchair/fabric-armchair-back-detail.jpg": "lago-biza-armchair-03",
+"images/shop/lago/biza-armchair/comfortable-beige-fabric-armchair.jpg": "lago-biza-armchair-04"
+},
+"drawings": {}
+},
+"DF-A10068": {
+"path": {
+"en": "/lago/chama-armchair",
+"ru": "/ru/lago/kreslo-chama",
+"de": "/de/lago/chama-fauteuil",
+"fr": "/fr/lago/fauteuil-chama",
+"es": "/es/lago/sillon-chama"
+},
+"images": {
+"images/shop/lago/chama-armchair/fabric-armchair-bed.jpg": "lago-chama-armchair-01",
+"images/shop/lago/chama-armchair/convertible-fabric-armchair.jpg": "lago-chama-armchair-02",
+"images/shop/lago/chama-armchair/chama-armchair.jpg": "lago-chama-armchair-03",
+"images/shop/lago/chama-armchair/bed-armchair.jpg": "lago-chama-armchair-04",
+"images/shop/lago/chama-armchair/fabric-armchair.jpg": "lago-chama-armchair-05"
+},
+"drawings": {}
+},
+"DF-A10074": {
+"path": {
+"en": "/lago/colombina-armchair",
+"ru": "/ru/lago/kreslo-colombina",
+"de": "/de/lago/colombina-fauteuil",
+"fr": "/fr/lago/fauteuil-colombina",
+"es": "/es/lago/sillon-colombina"
+},
+"images": {
+"images/shop/lago/colombina-armchair/fabric-armchair-for-living-area.jpg": "lago-colombina-armchair-01",
+"images/shop/lago/colombina-armchair/colombina-armchair.jpg": "lago-colombina-armchair-02",
+"images/shop/lago/colombina-armchair/ochre-fabric-armchair.jpg": "lago-colombina-armchair-03",
+"images/shop/lago/colombina-armchair/fabric-lounge-chair.jpg": "lago-colombina-armchair-04"
+},
+"drawings": {}
+},
+"DF-A10105": {
+"path": {
+"en": "/lago/happening-armchair",
+"ru": "/ru/lago/kreslo-happening",
+"de": "/de/lago/happening-fauteuil",
+"fr": "/fr/lago/fauteuil-happening",
+"es": "/es/lago/sillon-happening"
+},
+"images": {
+"images/shop/lago/happening-armchair/comfortable-living-room-armchair.jpg": "lago-happening-armchair-01",
+"images/shop/lago/happening-armchair/comfy-yellow-armchair-with-armrests.jpg": "lago-happening-armchair-02",
+"images/shop/lago/happening-armchair/sill-n-de-tela-suave.jpg": "lago-happening-armchair-03"
+},
+"drawings": {}
+},
+"DF-A10109": {
+"path": {
+"en": "/lago/huggy-armchair",
+"ru": "/ru/lago/kreslo-huggy",
+"de": "/de/lago/huggy-fauteuil",
+"fr": "/fr/lago/fauteuil-huggy",
+"es": "/es/lago/sillon-huggy"
+},
+"images": {
+"images/shop/lago/huggy-armchair/beige-armchair-bed.jpg": "lago-huggy-armchair-01",
+"images/shop/lago/huggy-armchair/huggy-armchair-3.jpg": "lago-huggy-armchair-02",
+"images/shop/lago/huggy-armchair/coloured-chair-bed.jpg": "lago-huggy-armchair-03",
+"images/shop/lago/huggy-armchair/lagolofts-lago-maggiore-0004.jpg": "lago-huggy-armchair-04",
+"images/shop/lago/huggy-armchair/contenitore-punto-generale.jpg": "lago-huggy-armchair-05",
+"images/shop/lago/softswing/studio-commerciale-bologna-san-marino-0003.jpg": "lago-huggy-01",
+"images/shop/lago/huggy-armchair/designer-convertible-armchair-cum-single-bed.jpg": "lago-huggy-armchair-06"
+},
+"drawings": {}
+},
+"DF-A10141": {
+"path": {
+"en": "/lago/mezz-aria-armchair",
+"ru": "/ru/lago/kreslo-mezz-aria",
+"de": "/de/lago/mezz-aria-fauteuil",
+"fr": "/fr/lago/fauteuil-mezz-aria",
+"es": "/es/lago/sillon-mezz-aria"
+},
+"images": {
+"images/shop/lago/mezzaria-armchair/living-room-lounge-chairs.jpg": "lago-mezz-aria-armchair-01",
+"images/shop/lago/mezzaria-armchair/brown-upholstered-armchair.jpg": "lago-mezz-aria-armchair-02",
+"images/shop/lago/mezzaria-armchair/armchair-padding-detail.jpg": "lago-mezz-aria-armchair-03",
+"images/shop/lago/mezzaria-armchair/brown-upholstered-armchair-with-black-legs.jpg": "lago-mezz-aria-armchair-04",
+"images/shop/lago/mezzaria-armchair/upholstered-armchair-backrest-detail.jpg": "lago-mezz-aria-armchair-05",
+"images/shop/lago/mezzaria-armchair/black-leather-armchair-with-footrest.jpg": "lago-mezz-aria-armchair-06",
+"images/shop/lago/mezzaria-armchair/wooden-armchair-leg-detail.jpg": "lago-mezz-aria-armchair-07"
+},
+"drawings": {}
+},
+"DF-A10158": {
+"path": {
+"en": "/lago/nacho-armchair",
+"ru": "/ru/lago/kreslo-nacho",
+"de": "/de/lago/nacho-fauteuil",
+"fr": "/fr/lago/fauteuil-nacho",
+"es": "/es/lago/sillon-nacho"
+},
+"images": {
+"images/shop/lago/nacho-armchair/living-room-armchairs.jpg": "lago-nacho-armchair-01",
+"images/shop/lago/nacho-armchair/poltrona-nacho-iconcina-sito.jpg": "lago-nacho-armchair-02",
+"images/shop/lago/nacho-armchair/modern-living-area-armchairs.jpg": "lago-nacho-armchair-03"
+},
+"drawings": {}
+},
+"DF-A10176": {
+"path": {
+"en": "/lago/sand-armchair",
+"ru": "/ru/lago/kreslo-sand",
+"de": "/de/lago/sand-fauteuil",
+"fr": "/fr/lago/fauteuil-sand",
+"es": "/es/lago/sillon-sand"
+},
+"images": {
+"images/shop/lago/sand-armchair/armchair-with-convertible-backrest.jpg": "lago-sand-armchair-01",
+"images/shop/lago/sand-armchair/sand-armchair.jpg": "lago-sand-armchair-02"
+},
+"drawings": {}
+},
+"DF-A10201": {
+"path": {
+"en": "/lago/zeppelin-armchair",
+"ru": "/ru/lago/kreslo-zeppelin",
+"de": "/de/lago/zeppelin-fauteuil",
+"fr": "/fr/lago/fauteuil-zeppelin",
+"es": "/es/lago/sillon-zeppelin"
+},
+"images": {
+"images/shop/lago/zeppelin-armchair/living-room-swivel-armchair.jpg": "lago-zeppelin-armchair-01",
+"images/shop/lago/zeppelin-armchair/zeppelin-armchair.jpg": "lago-zeppelin-armchair-02",
+"images/shop/lago/zeppelin-armchair/brown-designer-armchair.jpg": "lago-zeppelin-armchair-03"
+},
+"drawings": {}
+},
 "DF-A7907": {
 "path": {
 "en": "/poliform/alfred-armchair",
@@ -2216,6 +2425,270 @@
 "images/shop/rugiano/armchairs-wasabi/measures/wasabi.png": "rugiano-wasabi-armchair-dimensions-01"
 }
 },
+"DF-B10030": {
+"path": {
+"en": "/lago/air-bed",
+"ru": "/ru/lago/krovat-air",
+"de": "/de/lago/air-bett",
+"fr": "/fr/lago/lit-air",
+"es": "/es/lago/cama-air"
+},
+"images": {
+"images/shop/lago/air-bed/complete-bedroom.jpg": "lago-air-bed-01",
+"images/shop/lago/air-bed/modern-bed-with-fabric-headboard-for-bedroom.jpg": "lago-air-bed-02",
+"images/shop/lago/air-bed/vertical-fabric-air-bed.jpg": "lago-air-bed-03",
+"images/shop/lago/livre-bedside-tables/modern-bed-with-beige-fabric-headboard.jpg": "lago-air-03",
+"images/shop/lago/air-bed/modern-bed-with-elegant-glass-supports.jpg": "lago-air-bed-04",
+"images/shop/lago/air-bed/suspended-bed-with-wooden-headboard-and-integrated-bedside-tables.jpg": "lago-air-bed-05",
+"images/shop/lago/air-bed/modern-bed-with-wooden-headboard-and-bedside-table.jpg": "lago-air-bed-06",
+"images/shop/lago/air-bed/modern-bed-with-soft-beige-headboard.jpg": "lago-air-bed-07",
+"images/shop/lago/air-bed/modern-bed-with-soft-fabric-headboard.jpg": "lago-air-bed-08",
+"images/shop/lago/air-bed/modern-lightweight-double-bed.jpg": "lago-air-bed-09",
+"images/shop/lago/air-bed/1537-letto-air-replis-dettaglio.jpg": "lago-air-bed-10",
+"images/shop/lago/air-bed/modern-bed-with-glass-supports.jpg": "lago-air-bed-11"
+},
+"drawings": {}
+},
+"DF-B10031": {
+"path": {
+"en": "/lago/air-single-bed",
+"ru": "/ru/lago/krovat-air-single",
+"de": "/de/lago/air-single-bett",
+"fr": "/fr/lago/lit-air-single",
+"es": "/es/lago/cama-air-single"
+},
+"images": {
+"images/shop/lago/air-single-bed/desk-with-bookcase-for-children-s-bedroom.jpg": "lago-air-04",
+"images/shop/lago/air-single-bed/air-single-bed.jpg": "lago-air-single-bed-01",
+"images/shop/lago/now-quick-wardrobe-for-childrens-room/grigio-hinged-wardrobe-for-children-s-bedroom.jpg": "lago-air-05",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/designer-children-s-bedroom-with-bridge-layout.jpg": "lago-air-06"
+},
+"drawings": {}
+},
+"DF-B10064": {
+"path": {
+"en": "/lago/bounty-bed",
+"ru": "/ru/lago/krovat-bounty",
+"de": "/de/lago/bounty-bett",
+"fr": "/fr/lago/lit-bounty",
+"es": "/es/lago/cama-bounty"
+},
+"images": {
+"images/shop/lago/bounty-bed/modern-design-bed-with-fabric-headboard.jpg": "lago-bounty-bed-01",
+"images/shop/lago/bounty-bed/modern-design-bed-for-bedroom.jpg": "lago-bounty-bed-02",
+"images/shop/lago/bounty-bed/bounty-bed.jpg": "lago-bounty-bed-03",
+"images/shop/lago/bounty-bed/headboard-upholstery-detail.jpg": "lago-bounty-bed-04",
+"images/shop/lago/bounty-bed/grigio-designer-double-bed-with-ruched-headboard.jpg": "lago-bounty-bed-05"
+},
+"drawings": {}
+},
+"DF-B10072": {
+"path": {
+"en": "/lago/colletto-bed",
+"ru": "/ru/lago/krovat-colletto",
+"de": "/de/lago/colletto-bett",
+"fr": "/fr/lago/lit-colletto",
+"es": "/es/lago/cama-colletto"
+},
+"images": {
+"images/shop/lago/colletto-bed/green-fabric-bed.jpg": "lago-colletto-bed-01",
+"images/shop/lago/colletto-bed/open-colletto-bed.jpg": "lago-colletto-bed-02",
+"images/shop/lago/colletto-bed/modern-green-bed.jpg": "lago-colletto-bed-03",
+"images/shop/lago/colletto-bed/blu-fabric-bed.jpg": "lago-colletto-bed-04",
+"images/shop/lago/colletto-bed/designer-bed-in-stretch-fabric.jpg": "lago-colletto-bed-05",
+"images/shop/lago/colletto-bed/letto-colletto-kids-young.jpg": "lago-colletto-bed-06"
+},
+"drawings": {}
+},
+"DF-B10095": {
+"path": {
+"en": "/lago/fluttua-bed",
+"ru": "/ru/lago/krovat-fluttua",
+"de": "/de/lago/fluttua-bett",
+"fr": "/fr/lago/lit-fluttua",
+"es": "/es/lago/cama-fluttua"
+},
+"images": {
+"images/shop/lago/fluttua-bed/modern-bedroom.jpg": "lago-fluttua-bed-01",
+"images/shop/lago/fluttua-bed/suspended-bed-with-soft-fabric-headboard.jpg": "lago-fluttua-bed-02",
+"images/shop/lago/fluttua-bed/fluttua-bed-1601.jpg": "lago-fluttua-bed-03",
+"images/shop/lago/fluttua-bed/detail-of-suspended-bed-headboard.jpg": "lago-fluttua-bed-04",
+"images/shop/lago/fluttua-bed/suspended-bed-with-wooden-headboard-and-bedside-tables.jpg": "lago-fluttua-bed-05",
+"images/shop/lago/fluttua-bed/suspended-bed-with-natural-wood-headboard.jpg": "lago-fluttua-bed-06",
+"images/shop/lago/fluttua-bed/suspended-bed-with-wall-mounted-grey-bedside-tables.jpg": "lago-fluttua-bed-07",
+"images/shop/lago/fluttua-bed/suspended-bed-with-wall-mounted-bedside-tables.jpg": "lago-fluttua-bed-08",
+"images/shop/lago/fluttua-bed/suspended-bed-with-oak-headboard.jpg": "lago-fluttua-bed-09",
+"images/shop/lago/fluttua-bed/wooden-headboard-bed-with-bedside-table.jpg": "lago-fluttua-bed-10",
+"images/shop/lago/fluttua-bed/designer-hanging-bed.jpg": "lago-fluttua-bed-11",
+"images/shop/lago/fluttua-bed/floating-bed-with-ruched-leather-headboard.jpg": "lago-fluttua-bed-12"
+},
+"drawings": {}
+},
+"DF-B10096": {
+"path": {
+"en": "/lago/fluttua-single-bed",
+"ru": "/ru/lago/krovat-fluttua-single",
+"de": "/de/lago/fluttua-single-bett",
+"fr": "/fr/lago/lit-fluttua-single",
+"es": "/es/lago/cama-fluttua-single"
+},
+"images": {
+"images/shop/lago/fluttua-single-bed/teenage-bedroom.jpg": "lago-fluttua-single-bed-01",
+"images/shop/lago/fluttua-single-bed/fluttua-single-bed.jpg": "lago-fluttua-single-bed-02",
+"images/shop/lago/fluttua-single-bed/blue-wall-mounted-bedside-table.jpg": "lago-fluttua-single-bed-03",
+"images/shop/lago/fluttua-single-bed/desk-for-children-s-bedroom.jpg": "lago-fluttua-01",
+"images/shop/lago/fluttua-single-bed/children-s-bedroom-with-tree-bookcase.jpg": "lago-fluttua-02",
+"images/shop/lago/fluttua-single-bed/0283-kids-young-generale-02.jpg": "lago-fluttua-single-bed-04"
+},
+"drawings": {}
+},
+"DF-B10097": {
+"path": {
+"en": "/lago/gizmo-bed",
+"ru": "/ru/lago/krovat-gizmo",
+"de": "/de/lago/gizmo-bett",
+"fr": "/fr/lago/lit-gizmo",
+"es": "/es/lago/cama-gizmo"
+},
+"images": {
+"images/shop/lago/gizmo-bed/floating-single-bed-for-children-s-room.jpg": "lago-gizmo-bed-01",
+"images/shop/lago/gizmo-bed/gizmo-chambre.jpg": "lago-gizmo-bed-02",
+"images/shop/lago/gizmo-bed/0303-kids-young-dettaglio-2.jpg": "lago-gizmo-bed-03",
+"images/shop/lago/gizmo-bed/0303-kids-young-dettaglio-1.jpg": "lago-gizmo-bed-04"
+},
+"drawings": {}
+},
+"DF-B10110": {
+"path": {
+"en": "/lago/bed-in-bed",
+"ru": "/ru/lago/krovat-bed-in-bed",
+"de": "/de/lago/bett-bed-in-bed",
+"fr": "/fr/lago/lit-bed-in-bed",
+"es": "/es/lago/cama-bed-in-bed"
+},
+"images": {
+"images/shop/lago/bed-in-bed/container-bed-with-soft-headboard.jpg": "lago-bed-in-bed-01",
+"images/shop/lago/bed-in-bed/brown-fabric-storage-bed.jpg": "lago-bed-in-bed-02",
+"images/shop/lago/bed-in-bed/bed-in-bed.jpg": "lago-bed-in-bed-03",
+"images/shop/lago/bed-in-bed/detail-bed-head-upholstery.jpg": "lago-bed-in-bed-04",
+"images/shop/lago/bed-in-bed/double-bed-with-light-fabric-cover.jpg": "lago-bed-in-bed-05",
+"images/shop/lago/bed-in-bed/container-bed-with-fabric-headboard.jpg": "lago-bed-in-bed-06"
+},
+"drawings": {}
+},
+"DF-B10119": {
+"path": {
+"en": "/lago/lagolinea-bed",
+"ru": "/ru/lago/krovat-lagolinea",
+"de": "/de/lago/lagolinea-bett",
+"fr": "/fr/lago/lit-lagolinea",
+"es": "/es/lago/cama-lagolinea"
+},
+"images": {
+"images/shop/lago/lagolinea-bed/bridge-design-children-s-bedroom-with-designer-desk.jpg": "lago-lagolinea-bed-01",
+"images/shop/lago/lagolinea-bed/letto-singolo-lagolinea.jpg": "lago-lagolinea-bed-02",
+"images/shop/lago/lagolinea-bed/made-to-measure-children-s-bedroom.jpg": "lago-lagolinea-01",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/colorful-children-s-bedroom.jpg": "lago-lagolinea-02",
+"images/shop/lago/lagolinea-desk/children-s-bed-with-overhead-units.jpg": "lago-lagolinea-03"
+},
+"drawings": {}
+},
+"DF-B10172": {
+"path": {
+"en": "/lago/roundy-air-bed",
+"ru": "/ru/lago/krovat-roundy-air",
+"de": "/de/lago/roundy-air-bett",
+"fr": "/fr/lago/lit-roundy-air",
+"es": "/es/lago/cama-roundy-air"
+},
+"images": {
+"images/shop/lago/letto-roundy-air/round-suspended-bed.jpg": "lago-roundy-air-bed-01",
+"images/shop/lago/letto-roundy-air/suspended-mid-room-bed.jpg": "lago-roundy-air-bed-02",
+"images/shop/lago/letto-roundy-air/shaped-bed.jpg": "lago-roundy-air-bed-03",
+"images/shop/lago/letto-roundy-air/round-suspended-bed-with-glass-legs.jpg": "lago-roundy-air-bed-04",
+"images/shop/lago/letto-roundy-air/round-bed-with-glass-legs.jpg": "lago-roundy-air-bed-05",
+"images/shop/lago/letto-roundy-air/bedside-table-for-bed.jpg": "lago-roundy-air-bed-06",
+"images/shop/lago/letto-roundy-air/bed-with-floor-standing-headboard.jpg": "lago-roundy-air-bed-07",
+"images/shop/lago/letto-roundy-air/elegant-round-bed.jpg": "lago-roundy-air-bed-08"
+},
+"drawings": {}
+},
+"DF-B10173": {
+"path": {
+"en": "/lago/roundy-fluttua-bed",
+"ru": "/ru/lago/krovat-roundy-fluttua",
+"de": "/de/lago/roundy-fluttua-bett",
+"fr": "/fr/lago/lit-roundy-fluttua",
+"es": "/es/lago/cama-roundy-fluttua"
+},
+"images": {
+"images/shop/lago/roundy-fluttua-bed/suspended-round-bed.jpg": "lago-roundy-fluttua-bed-01",
+"images/shop/lago/roundy-fluttua-bed/round-bed-with-fabric-headboard.jpg": "lago-roundy-fluttua-bed-02",
+"images/shop/lago/roundy-fluttua-bed/wooden-bedside-table.jpg": "lago-roundy-fluttua-bed-03",
+"images/shop/lago/roundy-fluttua-bed/suspended-bed-for-modern-rooms.jpg": "lago-roundy-fluttua-bed-04",
+"images/shop/lago/roundy-fluttua-bed/suspended-bed-with-wall-mounted-headboard.jpg": "lago-roundy-fluttua-bed-05",
+"images/shop/lago/roundy-fluttua-bed/2907-letto-roundy-fluttua-dettaglio-01.jpg": "lago-roundy-fluttua-bed-06"
+},
+"drawings": {}
+},
+"DF-B10185": {
+"path": {
+"en": "/lago/steel-bed",
+"ru": "/ru/lago/krovat-steel",
+"de": "/de/lago/steel-bett",
+"fr": "/fr/lago/lit-steel",
+"es": "/es/lago/cama-steel"
+},
+"images": {
+"images/shop/lago/steel-bed/grigio-designer-double-bed-with-ruched-headboard.jpg": "lago-steel-bed-01",
+"images/shop/lago/steel-bed/designer-double-bed-with-steel-legs.jpg": "lago-steel-bed-02",
+"images/shop/lago/steel-bed/bed-with-steel-legs-and-vertical-grey-fabric-headboard.jpg": "lago-steel-bed-03",
+"images/shop/lago/steel-bed/grigio-ruched-headboard-with-lighting.jpg": "lago-steel-bed-04",
+"images/shop/lago/steel-bed/elegant-freestanding-bed.jpg": "lago-steel-bed-05",
+"images/shop/lago/steel-bed/design-double-bed-with-natural-wood-headboard.jpg": "lago-steel-bed-06",
+"images/shop/lago/steel-bed/detail-natural-wood-headboard.jpg": "lago-steel-bed-07",
+"images/shop/lago/steel-bed/double-bed-with-fabric-and-wood-headboard.jpg": "lago-steel-bed-08",
+"images/shop/lago/steel-bed/bed-with-soft-fabric-headboard.jpg": "lago-steel-bed-09",
+"images/shop/lago/steel-bed/soft-grey-headboard-comfy-bed.jpg": "lago-steel-bed-10",
+"images/shop/lago/steel-bed/design-double-bed-with-fabric-headboard.jpg": "lago-steel-bed-11",
+"images/shop/lago/steel-bed/floating-bed-with-fabric-and-glass-headboard.jpg": "lago-steel-bed-12"
+},
+"drawings": {}
+},
+"DF-B10186": {
+"path": {
+"en": "/lago/steel-single-bed",
+"ru": "/ru/lago/krovat-steel-single",
+"de": "/de/lago/steel-single-bett",
+"fr": "/fr/lago/lit-steel-single",
+"es": "/es/lago/cama-steel-single"
+},
+"images": {
+"images/shop/lago/steel-single-bed/fun-children-s-bedroom-bookcase.jpg": "lago-steel-single-bed-01",
+"images/shop/lago/steel-single-bed/steel-single-bed.jpg": "lago-steel-single-bed-02",
+"images/shop/lago/steel-single-bed/designer-children-s-room-units.jpg": "lago-steel-01",
+"images/shop/lago/steel-single-bed/elegant-freestanding-bed.jpg": "lago-steel-single-bed-03",
+"images/shop/lago/steel-single-bed/design-double-bed-with-natural-wood-headboard.jpg": "lago-steel-single-bed-04"
+},
+"drawings": {}
+},
+"DF-B10196": {
+"path": {
+"en": "/lago/vele-bed",
+"ru": "/ru/lago/krovat-vele",
+"de": "/de/lago/vele-bett",
+"fr": "/fr/lago/lit-vele",
+"es": "/es/lago/cama-vele"
+},
+"images": {
+"images/shop/lago/vele-bed/custom-white-wardrobe.jpg": "lago-vele-bed-01",
+"images/shop/lago/vele-bed/accessorisable-double-bed-headboard.jpg": "lago-vele-bed-02",
+"images/shop/lago/vele-bed/bed-with-grey-and-blue-accessorisable-headboard.jpg": "lago-vele-bed-03",
+"images/shop/lago/vele-bed/accessorisable-fabric-headboard.jpg": "lago-vele-bed-04",
+"images/shop/lago/vele-bed/bed-with-storage-headboard.jpg": "lago-vele-bed-05"
+},
+"drawings": {}
+},
 "DF-B7909": {
 "path": {
 "en": "/poliform/arca-bed",
@@ -2932,6 +3405,401 @@
 "images/shop/rugiano/beds-vogue/measures/vogue-180.png": "rugiano-vogue-bed-dimensions-02",
 "images/shop/rugiano/beds-vogue/measures/vogue-200.png": "rugiano-vogue-bed-dimensions-03"
 }
+},
+"DF-C10051": {
+"path": {
+"en": "/lago/air-wildwood-bench",
+"ru": "/ru/lago/skamya-air-wildwood",
+"de": "/de/lago/air-wildwood-bank",
+"fr": "/fr/lago/banc-air-wildwood",
+"es": "/es/lago/banco-air-wildwood"
+},
+"images": {
+"images/shop/lago/air-wildwood-bench/air-wildwood-bench.jpg": "lago-air-wildwood-bench-01",
+"images/shop/lago/air-wildwood-bench/air-wildwood-bench-2.jpg": "lago-air-wildwood-bench-02",
+"images/shop/lago/air-wildwood-bench/air-bench.jpg": "lago-air-wildwood-bench-03",
+"images/shop/lago/air-wildwood-bench/dining-room-tables.jpg": "lago-air-wildwood-bench-04",
+"images/shop/lago/air-wildwood-bench/air-wildwood-bench-3.jpg": "lago-air-wildwood-bench-05",
+"images/shop/lago/air-wildwood-bench/air-wildwood-bench-4.jpg": "lago-air-wildwood-bench-06",
+"images/shop/lago/air-wildwood-bench/blackfin-belluno-0010.jpg": "lago-air-wildwood-bench-07",
+"images/shop/lago/air-wildwood-bench/blackfin-belluno-0012.jpg": "lago-air-wildwood-bench-08",
+"images/shop/lago/air-wildwood-bench/air-wildwood-bench-5.jpg": "lago-air-wildwood-bench-09",
+"images/shop/lago/air-wildwood-bench/air-wildwood-bench-6.jpg": "lago-air-wildwood-bench-10",
+"images/shop/lago/air-wildwood-bench/custom-made-furnishings-for-hotels.jpg": "lago-air-wildwood-bench-11"
+},
+"drawings": {}
+},
+"DF-C10056": {
+"path": {
+"en": "/lago/amida-chair",
+"ru": "/ru/lago/stul-amida",
+"de": "/de/lago/amida-stuhl",
+"fr": "/fr/lago/chaise-amida",
+"es": "/es/lago/silla-amida"
+},
+"images": {
+"images/shop/lago/sedia-amida/modern-dining-room-table-with-chairs.jpg": "lago-amida-chair-01",
+"images/shop/lago/sedia-amida/dining-room-chair.jpg": "lago-amida-chair-02",
+"images/shop/lago/sedia-amida/sedia-amida-iconcina-sito.jpg": "lago-amida-chair-03",
+"images/shop/lago/sedia-amida/fabric-chair-with-wooden-legs.jpg": "lago-amida-chair-04",
+"images/shop/lago/sedia-amida/designer-chair-for-dining-table.jpg": "lago-amida-chair-05",
+"images/shop/lago/sedia-amida/chair-with-metal-legs.jpg": "lago-amida-chair-06",
+"images/shop/lago/sedia-amida/white-fabric-chair-for-living-area.jpg": "lago-amida-chair-07",
+"images/shop/lago/sedia-amida/designer-fabric-chair.jpg": "lago-amida-chair-08",
+"images/shop/lago/sedia-amida/red-glass-table-with-shaped-top.jpg": "lago-amida-chair-09",
+"images/shop/lago/sedia-amida/design-chair-in-wood-and-fabric.jpg": "lago-amida-chair-10",
+"images/shop/lago/sedia-amida/dark-fabric-chair-with-wooden-legs.jpg": "lago-amida-chair-11"
+},
+"drawings": {}
+},
+"DF-C10057": {
+"path": {
+"en": "/lago/aqualta-chair",
+"ru": "/ru/lago/stul-aqualta",
+"de": "/de/lago/aqualta-stuhl",
+"fr": "/fr/lago/chaise-aqualta",
+"es": "/es/lago/silla-aqualta"
+},
+"images": {
+"images/shop/lago/sedia-aqualta/wood-and-glass-table-with-upholstered-chairs.jpg": "lago-aqualta-chair-01",
+"images/shop/lago/sedia-aqualta/chair-light-fabric-upholstered.jpg": "lago-aqualta-chair-02",
+"images/shop/lago/sedia-aqualta/sedia-aqualta-iconcina-sito.jpg": "lago-aqualta-chair-03",
+"images/shop/lago/sedia-aqualta/fabric-chair-for-living-area.jpg": "lago-aqualta-chair-04",
+"images/shop/lago/sedia-aqualta/comfortable-fabric-chair.jpg": "lago-aqualta-chair-05"
+},
+"drawings": {}
+},
+"DF-C10059": {
+"path": {
+"en": "/lago/beat-stool",
+"ru": "/ru/lago/taburet-beat",
+"de": "/de/lago/beat-hocker",
+"fr": "/fr/lago/tabouret-beat",
+"es": "/es/lago/taburete-beat"
+},
+"images": {
+"images/shop/lago/beat-stool/sgabello-beat-header-orizzontale.jpg": "lago-beat-stool-01",
+"images/shop/lago/beat-stool/kitchen-island-stools.jpg": "lago-beat-stool-02",
+"images/shop/lago/beat-stool/leather-stool.jpg": "lago-beat-stool-03",
+"images/shop/lago/beat-stool/kitchen-stool.jpg": "lago-beat-stool-04",
+"images/shop/lago/beat-stool/high-stools.jpg": "lago-beat-stool-05"
+},
+"drawings": {}
+},
+"DF-C10063": {
+"path": {
+"en": "/lago/bounce-stool",
+"ru": "/ru/lago/taburet-bounce",
+"de": "/de/lago/bounce-hocker",
+"fr": "/fr/lago/tabouret-bounce",
+"es": "/es/lago/taburete-bounce"
+},
+"images": {
+"images/shop/lago/bounce-stool/bounce-stool-generale-1.jpg": "lago-bounce-stool-01",
+"images/shop/lago/bounce-stool/bounce-stool-generale-2.jpg": "lago-bounce-stool-02"
+},
+"drawings": {}
+},
+"DF-C10075": {
+"path": {
+"en": "/lago/colombina-chair",
+"ru": "/ru/lago/stul-colombina",
+"de": "/de/lago/colombina-stuhl",
+"fr": "/fr/lago/chaise-colombina",
+"es": "/es/lago/silla-colombina"
+},
+"images": {
+"images/shop/lago/colombina-chair/round-design-marble-table.jpg": "lago-colombina-chair-01",
+"images/shop/lago/colombina-chair/chair-with-wooden-legs.jpg": "lago-colombina-chair-02",
+"images/shop/lago/colombina-chair/colombina-chair.jpg": "lago-colombina-chair-03",
+"images/shop/lago/colombina-chair/chair-with-light-wood-legs.jpg": "lago-colombina-chair-04",
+"images/shop/lago/colombina-chair/composition-of-fabric-chairs.jpg": "lago-colombina-chair-05",
+"images/shop/lago/colombina-chair/elegant-blue-fabric-chair.jpg": "lago-colombina-chair-06",
+"images/shop/lago/colombina-chair/customisable-chairs-in-fabrics.jpg": "lago-colombina-chair-07",
+"images/shop/lago/colombina-stool/high-stool-for-kitchen-island.jpg": "lago-colombina-01",
+"images/shop/lago/colombina-stool/kitchen-island-stool.jpg": "lago-colombina-02",
+"images/shop/lago/colombina-stool/kitchen-stool.jpg": "lago-colombina-03"
+},
+"drawings": {}
+},
+"DF-C10076": {
+"path": {
+"en": "/lago/colombina-stool",
+"ru": "/ru/lago/taburet-colombina",
+"de": "/de/lago/colombina-hocker",
+"fr": "/fr/lago/tabouret-colombina",
+"es": "/es/lago/taburete-colombina"
+},
+"images": {
+"images/shop/lago/colombina-stool/kitchen-island-stool.jpg": "lago-colombina-02",
+"images/shop/lago/colombina-stool/high-stool-for-kitchen-island.jpg": "lago-colombina-01",
+"images/shop/lago/colombina-stool/kitchen-stool.jpg": "lago-colombina-03"
+},
+"drawings": {}
+},
+"DF-C10082": {
+"path": {
+"en": "/lago/dangla-chair",
+"ru": "/ru/lago/stul-dangla",
+"de": "/de/lago/dangla-stuhl",
+"fr": "/fr/lago/chaise-dangla",
+"es": "/es/lago/silla-dangla"
+},
+"images": {
+"images/shop/lago/dangla-chair/design-dining-table-with-wooden-top.jpg": "lago-dangla-chair-01",
+"images/shop/lago/dangla-chair/leather-upholstered-chair.jpg": "lago-dangla-chair-02",
+"images/shop/lago/dangla-chair/dangla-chair-3.jpg": "lago-dangla-chair-03",
+"images/shop/lago/dangla-chair/upholstered-dining-room-chair.jpg": "lago-dangla-chair-04",
+"images/shop/lago/dangla-chair/chair-with-dark-fabric-upholstery.jpg": "lago-dangla-chair-05",
+"images/shop/lago/dangla-chair/round-glass-table.jpg": "lago-dangla-chair-06",
+"images/shop/lago/dangla-chair/upholstered-green-chair.jpg": "lago-dangla-chair-07",
+"images/shop/lago/dangla-chair/dangla-chair.jpg": "lago-dangla-chair-08",
+"images/shop/lago/dangla-chair/dangla-generale.jpg": "lago-dangla-chair-09",
+"images/shop/lago/dangla-chair/dangla-chair-2.jpg": "lago-dangla-chair-10",
+"images/shop/lago/dangla-chair/21barra5-guesthouse-aosta-0018.jpg": "lago-dangla-chair-11",
+"images/shop/lago/dangla-chair/dangla-chair-4.jpg": "lago-dangla-chair-12"
+},
+"drawings": {}
+},
+"DF-C10089": {
+"path": {
+"en": "/lago/ermes-chair",
+"ru": "/ru/lago/stul-ermes",
+"de": "/de/lago/ermes-stuhl",
+"fr": "/fr/lago/chaise-ermes",
+"es": "/es/lago/silla-ermes"
+},
+"images": {
+"images/shop/lago/ermes-chair/designer-living-room-table.jpg": "lago-ermes-chair-01",
+"images/shop/lago/ermes-chair/elegant-leather-and-fabric-chair.jpg": "lago-ermes-chair-02",
+"images/shop/lago/ermes-chair/elegant-grey-chair.jpg": "lago-ermes-chair-03",
+"images/shop/lago/ermes-chair/modern-glass-table.jpg": "lago-ermes-chair-04",
+"images/shop/lago/ermes-chair/round-table-with-wooden-top.jpg": "lago-ermes-01",
+"images/shop/lago/ermes-chair/elegant-living-room-table.jpg": "lago-ermes-chair-05",
+"images/shop/lago/ermes-chair/elegant-table-with-rectangular-top.jpg": "lago-ermes-chair-06",
+"images/shop/lago/ermes-chair/modern-glass-table-2.jpg": "lago-ermes-chair-07",
+"images/shop/lago/ermes-chair/wooden-smoked-glass-floating-table.jpg": "lago-ermes-02",
+"images/shop/lago/ermes-chair/modern-designer-wooden-table.jpg": "lago-ermes-chair-08",
+"images/shop/lago/ermes-chair/elegant-black-leather-chair.jpg": "lago-ermes-chair-09",
+"images/shop/lago/ermes-chair/elegant-black-and-beige-leather-chair.jpg": "lago-ermes-chair-10"
+},
+"drawings": {}
+},
+"DF-C10142": {
+"path": {
+"en": "/lago/mezz-aria-chair",
+"ru": "/ru/lago/stul-mezz-aria",
+"de": "/de/lago/mezz-aria-stuhl",
+"fr": "/fr/lago/chaise-mezz-aria",
+"es": "/es/lago/silla-mezz-aria"
+},
+"images": {
+"images/shop/lago/mezzaria-chair/white-upholstered-chair.jpg": "lago-mezz-aria-chair-01",
+"images/shop/lago/mezzaria-chair/design-chair-with-wooden-legs.jpg": "lago-mezz-aria-chair-02",
+"images/shop/lago/mezzaria-chair/dark-wood-chair.jpg": "lago-mezz-aria-chair-03",
+"images/shop/lago/mezzaria-chair/quilted-fabric-chairs.jpg": "lago-mezz-aria-chair-04",
+"images/shop/lago/mezzaria-chair/leather-chair-upholstery-detail.jpg": "lago-mezz-aria-chair-05",
+"images/shop/lago/mezzaria-chair/orange-leather-chair.jpg": "lago-mezz-aria-chair-06",
+"images/shop/lago/mezzaria-chair/suspended-wooden-chair.jpg": "lago-mezz-aria-chair-07",
+"images/shop/lago/mezzaria-chair/smooth-gray-fabric-chair.jpg": "lago-mezz-aria-chair-08",
+"images/shop/lago/mezzaria-chair/smooth-gray-fabric-chair-with-black-legs.jpg": "lago-mezz-aria-chair-09",
+"images/shop/lago/mezzaria-chair/smooth-fabric-seat-detail.jpg": "lago-mezz-aria-chair-10"
+},
+"drawings": {}
+},
+"DF-C10159": {
+"path": {
+"en": "/lago/nacho-chair",
+"ru": "/ru/lago/stul-nacho",
+"de": "/de/lago/nacho-stuhl",
+"fr": "/fr/lago/chaise-nacho",
+"es": "/es/lago/silla-nacho"
+},
+"images": {
+"images/shop/lago/nacho-chair/dining-room-furniture.jpg": "lago-nacho-chair-01",
+"images/shop/lago/nacho-chair/design-upholstered-chair.jpg": "lago-nacho-chair-02",
+"images/shop/lago/nacho-chair/elegant-design-chair.jpg": "lago-nacho-chair-03",
+"images/shop/lago/nacho-chair/design-chair-with-leather-upholstery.jpg": "lago-nacho-chair-04",
+"images/shop/lago/nacho-chair/dining-table-shaped-top.jpg": "lago-nacho-chair-05",
+"images/shop/lago/nacho-chair/design-table-with-glass-top-and-legs.jpg": "lago-nacho-01",
+"images/shop/lago/nacho-chair/design-table-marble-xglass-brown.jpg": "lago-nacho-02",
+"images/shop/lago/nacho-chair/upholstered-leather-and-fabric-chair.jpg": "lago-nacho-chair-06"
+},
+"drawings": {}
+},
+"DF-C10161": {
+"path": {
+"en": "/lago/novice-chair",
+"ru": "/ru/lago/stul-novice",
+"de": "/de/lago/novice-stuhl",
+"fr": "/fr/lago/chaise-novice",
+"es": "/es/lago/silla-novice"
+},
+"images": {
+"images/shop/lago/novice-chair/round-table-with-designer-wooden-chairs.jpg": "lago-novice-01",
+"images/shop/lago/novice-chair/wooden-chair.jpg": "lago-novice-chair-01",
+"images/shop/lago/novice-chair/sculptural-wooden-chair.jpg": "lago-novice-chair-02",
+"images/shop/lago/novice-chair/red-fabric-chair.jpg": "lago-novice-chair-03",
+"images/shop/lago/novice-chair/design-chair-for-living-area.jpg": "lago-novice-chair-04",
+"images/shop/lago/novice-chair/grey-fabric-chair.jpg": "lago-novice-chair-05",
+"images/shop/lago/novice-chair/white-fabric-chair.jpg": "lago-novice-chair-06"
+},
+"drawings": {}
+},
+"DF-C10169": {
+"path": {
+"en": "/lago/pletra-chair",
+"ru": "/ru/lago/stul-pletra",
+"de": "/de/lago/pletra-stuhl",
+"fr": "/fr/lago/chaise-pletra",
+"es": "/es/lago/silla-pletra"
+},
+"images": {
+"images/shop/lago/u-table/living-room-table-wooden-top.jpg": "lago-pletra-01",
+"images/shop/lago/pletra-chair/modern-beige-fabric-chair.jpg": "lago-pletra-chair-01",
+"images/shop/lago/pletra-chair/modern-grey-and-light-blue-chair.jpg": "lago-pletra-chair-02",
+"images/shop/lago/pletra-chair/modern-grey-fabric-chair.jpg": "lago-pletra-chair-03",
+"images/shop/lago/pletra-chair/round-slim-glass-table.jpg": "lago-pletra-chair-04",
+"images/shop/lago/pletra-chair/modern-round-table.jpg": "lago-pletra-chair-05",
+"images/shop/lago/pletra-chair/modern-fabric-chair.jpg": "lago-pletra-chair-06",
+"images/shop/lago/pletra-chair/modern-coloured-chair.jpg": "lago-pletra-chair-07",
+"images/shop/lago/pletra-chair/metal-profile-coloured-modern-chair.jpg": "lago-pletra-chair-08",
+"images/shop/lago/pletra-chair/coloured-fabric-chair.jpg": "lago-pletra-chair-09",
+"images/shop/lago/pletra-chair/modern-coloured-chairs.jpg": "lago-pletra-chair-10"
+},
+"drawings": {}
+},
+"DF-C10174": {
+"path": {
+"en": "/lago/ruffle-chair",
+"ru": "/ru/lago/stul-ruffle",
+"de": "/de/lago/ruffle-stuhl",
+"fr": "/fr/lago/chaise-ruffle",
+"es": "/es/lago/silla-ruffle"
+},
+"images": {
+"images/shop/lago/ruffle-chair/1wood-and-glass-round-dining-table.jpg": "lago-ruffle-01",
+"images/shop/lago/ruffle-chair/modern-designer-fabric-chair.jpg": "lago-ruffle-chair-01",
+"images/shop/lago/ruffle-chair/modern-designer-leather-chair.jpg": "lago-ruffle-chair-02",
+"images/shop/lago/ruffle-chair/round-table-with-slim-wooden-top.jpg": "lago-ruffle-02",
+"images/shop/lago/ruffle-chair/modern-design-chair-in-light-fabric.jpg": "lago-ruffle-chair-03",
+"images/shop/lago/ruffle-chair/ergonomic-backrest-modern-chair.jpg": "lago-ruffle-chair-04",
+"images/shop/lago/ruffle-chair/designer-leather-chair.jpg": "lago-ruffle-chair-05"
+},
+"drawings": {}
+},
+"DF-C10182": {
+"path": {
+"en": "/lago/soft-bench",
+"ru": "/ru/lago/skamya-soft",
+"de": "/de/lago/soft-bank",
+"fr": "/fr/lago/banc-soft",
+"es": "/es/lago/banco-soft"
+},
+"images": {
+"images/shop/lago/softbench/beb-cap-d-agde-0008-en.jpg": "lago-soft-01",
+"images/shop/lago/softbench/designer-bench.jpg": "lago-soft-bench-01",
+"images/shop/lago/softbench/soft-bench-1.jpg": "lago-soft-bench-02",
+"images/shop/lago/softbench/softwood.jpg": "lago-soft-bench-03"
+},
+"drawings": {}
+},
+"DF-C10183": {
+"path": {
+"en": "/lago/soft-swing-chair",
+"ru": "/ru/lago/stul-soft-swing",
+"de": "/de/lago/soft-swing-stuhl",
+"fr": "/fr/lago/chaise-soft-swing",
+"es": "/es/lago/silla-soft-swing"
+},
+"images": {
+"images/shop/lago/softswing/white-indoor-swing.jpg": "lago-soft-swing-chair-01",
+"images/shop/lago/softswing/softswing.jpg": "lago-soft-swing-chair-02",
+"images/shop/lago/softswing/altalena-softswing-gialla.jpg": "lago-soft-swing-chair-03",
+"images/shop/lago/softswing/altalena-softswing-gialla-dettaglio.jpg": "lago-soft-swing-chair-04",
+"images/shop/lago/softswing/studio-commerciale-bologna-san-marino-0003.jpg": "lago-huggy-01"
+},
+"drawings": {}
+},
+"DF-C10187": {
+"path": {
+"en": "/lago/steps-chair",
+"ru": "/ru/lago/stul-steps",
+"de": "/de/lago/steps-stuhl",
+"fr": "/fr/lago/chaise-steps",
+"es": "/es/lago/silla-steps"
+},
+"images": {
+"images/shop/lago/steps-chair-and-stool/original-grey-felt-seat.jpg": "lago-steps-chair-01",
+"images/shop/lago/steps-chair-and-stool/original-grey-chair.jpg": "lago-steps-chair-02",
+"images/shop/lago/steps-chair-and-stool/grigio-glass-floating-modular-kitchen.jpg": "lago-steps-chair-03",
+"images/shop/lago/steps-chair-and-stool/0465-cucina-air-generale.jpg": "lago-steps-chair-04",
+"images/shop/lago/steps-chair-and-stool/polished-glass-kitchen-peninsula.jpg": "lago-steps-chair-05",
+"images/shop/lago/steps-chair-and-stool/marble-kitchen-with-wooden-peninsula.jpg": "lago-steps-chair-06",
+"images/shop/lago/steps-chair-and-stool/finished-kitchen-with-wooden-peninsula.jpg": "lago-steps-chair-07",
+"images/shop/lago/steps-chair-and-stool/original-grey-chair-2.jpg": "lago-steps-chair-08",
+"images/shop/lago/steps-stool/original-grey-stool.jpg": "lago-steps-01",
+"images/shop/lago/steps-chair-and-stool/beb-milano-isola-0004.jpg": "lago-steps-chair-09",
+"images/shop/lago/steps-chair-and-stool/finished-kitchen-with-black-peninsula.jpg": "lago-steps-chair-10",
+"images/shop/lago/steps-stool/felt-stool.jpg": "lago-steps-02"
+},
+"drawings": {}
+},
+"DF-C10188": {
+"path": {
+"en": "/lago/steps-stool",
+"ru": "/ru/lago/taburet-steps",
+"de": "/de/lago/steps-hocker",
+"fr": "/fr/lago/tabouret-steps",
+"es": "/es/lago/taburete-steps"
+},
+"images": {
+"images/shop/lago/steps-stool/marble-kitchen-with-wooden-peninsula.jpg": "lago-steps-stool-01",
+"images/shop/lago/steps-stool/felt-stool.jpg": "lago-steps-02",
+"images/shop/lago/steps-stool/original-grey-stool.jpg": "lago-steps-01"
+},
+"drawings": {}
+},
+"DF-C10199": {
+"path": {
+"en": "/lago/woop-chair",
+"ru": "/ru/lago/stul-woop",
+"de": "/de/lago/woop-stuhl",
+"fr": "/fr/lago/chaise-woop",
+"es": "/es/lago/silla-woop"
+},
+"images": {
+"images/shop/lago/woop-chair/elegant-modern-dining-room.jpg": "lago-woop-chair-01",
+"images/shop/lago/woop-chair/45white-upholstered-leather-chair.jpg": "lago-woop-chair-02",
+"images/shop/lago/woop-chair/padded-beige-leather-chair.jpg": "lago-woop-chair-03",
+"images/shop/lago/woop-chair/modern-glass-dining-table.jpg": "lago-woop-01",
+"images/shop/lago/woop-chair/design-table-in-clear-xglass-marble.jpg": "lago-woop-02",
+"images/shop/lago/woop-chair/design-table-with-xglass-metal-top.jpg": "lago-woop-chair-04",
+"images/shop/lago/woop-chair/living-room-table-with-wooden-top.jpg": "lago-woop-chair-05",
+"images/shop/lago/woop-chair/beige-chair-upholstery.jpg": "lago-woop-chair-06",
+"images/shop/lago/woop-chair/padded-grigio-fabric-chair.jpg": "lago-woop-chair-07",
+"images/shop/lago/woop-chair/padded-grigio-chair.jpg": "lago-woop-chair-08",
+"images/shop/lago/woop-chair/elliptical-glass-top-elegant-table.jpg": "lago-woop-chair-09",
+"images/shop/lago/woop-chair/wall-mounted-wooden-desk.jpg": "lago-woop-03"
+},
+"drawings": {}
+},
+"DF-C10202": {
+"path": {
+"en": "/lago/zeppelin-chair",
+"ru": "/ru/lago/stul-zeppelin",
+"de": "/de/lago/zeppelin-stuhl",
+"fr": "/fr/lago/chaise-zeppelin",
+"es": "/es/lago/silla-zeppelin"
+},
+"images": {
+"images/shop/lago/zeppelin-chair/comfortable-fabric-dining-chair.jpg": "lago-zeppelin-chair-01",
+"images/shop/lago/zeppelin-chair/ergonomic-upholstered-fabric-chair.jpg": "lago-zeppelin-chair-02",
+"images/shop/lago/zeppelin-chair/ergonomic-wooden-and-fabric-chair.jpg": "lago-zeppelin-chair-03",
+"images/shop/lago/zeppelin-chair/ergonomic-grey-fabric-chair.jpg": "lago-zeppelin-chair-04",
+"images/shop/lago/zeppelin-chair/ergonomic-upholstered-chair.jpg": "lago-zeppelin-chair-05"
+},
+"drawings": {}
 },
 "DF-C7916": {
 "path": {
@@ -4295,6 +5163,212 @@
 "images/shop/rugiano/benches-snake-liscia/measures/panca-snake-liscia.png": "rugiano-snake-liscia-bench-dimensions-01"
 }
 },
+"DF-D10012": {
+"path": {
+"en": "/lago/36e8-mirror",
+"ru": "/ru/lago/zerkalo-36e8",
+"de": "/de/lago/36e8-spiegel",
+"fr": "/fr/lago/miroir-36e8",
+"es": "/es/lago/espejo-36e8"
+},
+"images": {
+"images/shop/lago/36e8-mirror/modular-mirror-with-lighting.jpg": "lago-36e8-mirror-01",
+"images/shop/lago/36e8-mirror/36e8-mirror.jpg": "lago-36e8-mirror-02",
+"images/shop/lago/36e8-mirror/large-modular-mirror.jpg": "lago-36e8-mirror-03",
+"images/shop/lago/36e8-mirror/wood-and-green-glass-designer-console-unit.jpg": "lago-36e8-mirror-04",
+"images/shop/lago/36e8-mirror/wooden-black-marble-wall-mounted-console-unit.jpg": "lago-36e8-01",
+"images/shop/lago/36e8-mirror/modern-bathroom.jpg": "lago-36e8-mirror-05",
+"images/shop/lago/36e8-mirror/wooden-glass-washbasin.jpg": "lago-36e8-mirror-06",
+"images/shop/lago/skin-basin/modern-sink.jpg": "lago-36e8-02",
+"images/shop/lago/36e8-mirror/designer-floating-wall-mounted-console-unit.jpg": "lago-36e8-mirror-07",
+"images/shop/lago/36e8-mirror/wooden-light-marble-console-unit-with-mirror.jpg": "lago-36e8-03",
+"images/shop/lago/36e8-mirror/wall-mounted-washbasin-in-light-wood.jpg": "lago-36e8-mirror-08"
+},
+"drawings": {}
+},
+"DF-D10088": {
+"path": {
+"en": "/lago/era-mirror",
+"ru": "/ru/lago/zerkalo-era",
+"de": "/de/lago/era-spiegel",
+"fr": "/fr/lago/miroir-era",
+"es": "/es/lago/espejo-era"
+},
+"images": {
+"images/shop/lago/era-mirror/modern-glass-console-table-framed-mirror.jpg": "lago-era-mirror-01",
+"images/shop/lago/era-mirror/era-mirror-2592.jpg": "lago-era-mirror-02",
+"images/shop/lago/era-mirror/wall-mirror-with-glass-frame.jpg": "lago-era-mirror-03"
+},
+"drawings": {}
+},
+"DF-D10098": {
+"path": {
+"en": "/lago/glass-mirror",
+"ru": "/ru/lago/zerkalo-glass",
+"de": "/de/lago/glass-spiegel",
+"fr": "/fr/lago/miroir-glass",
+"es": "/es/lago/espejo-glass"
+},
+"images": {
+"images/shop/lago/glass-mirror/smoked-bronze-glass-mirror.jpg": "lago-glass-mirror-01",
+"images/shop/lago/glass-mirror/glass-mirror-1447.jpg": "lago-glass-mirror-02",
+"images/shop/lago/glass-mirror/smoked-glass-45-degree-angle-detail.jpg": "lago-glass-mirror-03"
+},
+"drawings": {}
+},
+"DF-D10101": {
+"path": {
+"en": "/lago/glenn-rug",
+"ru": "/ru/lago/kover-glenn",
+"de": "/de/lago/glenn-teppich",
+"fr": "/fr/lago/tapis-glenn",
+"es": "/es/lago/alfombra-glenn"
+},
+"images": {
+"images/shop/lago/glenn-rug/modern-living-room-rug.jpg": "lago-glenn-rug-01",
+"images/shop/lago/glenn-rug/modern-living-room-rugs.jpg": "lago-glenn-rug-02",
+"images/shop/lago/glenn-rug/carpet-glenn691.jpg": "lago-glenn-rug-03"
+},
+"drawings": {}
+},
+"DF-D10115": {
+"path": {
+"en": "/lago/kibi-mirror",
+"ru": "/ru/lago/zerkalo-kibi",
+"de": "/de/lago/kibi-spiegel",
+"fr": "/fr/lago/miroir-kibi",
+"es": "/es/lago/espejo-kibi"
+},
+"images": {
+"images/shop/lago/kibi-mirror/glass-and-mirror-console-table-with-frame.jpg": "lago-kibi-mirror-01",
+"images/shop/lago/kibi-mirror/animalier-xglass-console-table-with-round-mirror.jpg": "lago-kibi-mirror-02",
+"images/shop/lago/kibi-mirror/kibi-mirror2593.jpg": "lago-kibi-mirror-03",
+"images/shop/lago/kibi-mirror/wall-hung-entrance-console-table-with-mirror.jpg": "lago-kibi-mirror-04"
+},
+"drawings": {}
+},
+"DF-D10116": {
+"path": {
+"en": "/lago/kipo-rug",
+"ru": "/ru/lago/kover-kipo",
+"de": "/de/lago/kipo-teppich",
+"fr": "/fr/lago/tapis-kipo",
+"es": "/es/lago/alfombra-kipo"
+},
+"images": {
+"images/shop/lago/kipo-rug/grey-living-room-rug.jpg": "lago-kipo-rug-01",
+"images/shop/lago/kipo-rug/living-room-rug.jpg": "lago-kipo-rug-02",
+"images/shop/lago/kipo-rug/tappeto-kipo-792-scontornata.jpg": "lago-kipo-rug-03",
+"images/shop/lago/kipo-rug/comfortable-sofa-with-chaise-longue.jpg": "lago-kipo-01",
+"images/shop/lago/kipo-rug/wooden-coffee-table-with-glass-supports.jpg": "lago-kipo-02",
+"images/shop/lago/livre-coffee-table/smoked-glass-coffee-table.jpg": "lago-kipo-03"
+},
+"drawings": {}
+},
+"DF-D10140": {
+"path": {
+"en": "/lago/melty-mirror",
+"ru": "/ru/lago/zerkalo-melty",
+"de": "/de/lago/melty-spiegel",
+"fr": "/fr/lago/miroir-melty",
+"es": "/es/lago/espejo-melty"
+},
+"images": {
+"images/shop/lago/melty-mirror/modern-glass-console-table-with-mirror.jpg": "lago-melty-mirror-01",
+"images/shop/lago/melty-mirror/melty-mirror-2596.jpg": "lago-melty-mirror-02",
+"images/shop/lago/melty-mirror/suspended-wood-and-glass-console-table-with-decorative-mirror.jpg": "lago-melty-01",
+"images/shop/lago/melty-mirror/decorative-mirror-with-console.jpg": "lago-melty-mirror-03",
+"images/shop/lago/melty-mirror/decorative-mirror-detail.jpg": "lago-melty-mirror-04"
+},
+"drawings": {}
+},
+"DF-D10167": {
+"path": {
+"en": "/lago/pleasure-mirror",
+"ru": "/ru/lago/zerkalo-pleasure",
+"de": "/de/lago/pleasure-spiegel",
+"fr": "/fr/lago/miroir-pleasure",
+"es": "/es/lago/espejo-pleasure"
+},
+"images": {
+"images/shop/lago/pleasure-mirror/modern-living-room-with-designer-mirrors.jpg": "lago-pleasure-01",
+"images/shop/lago/pleasure-mirror/black-polished-glass-dresser.jpg": "lago-pleasure-mirror-01",
+"images/shop/lago/pleasure-mirror/mirror-36e8-glass-dresser.jpg": "lago-pleasure-mirror-02",
+"images/shop/lago/pleasure-mirror/brown-glass-floor-standing-sideboard.jpg": "lago-pleasure-mirror-03",
+"images/shop/lago/pleasure-mirror/modern-mirror-with-console-unit.jpg": "lago-pleasure-mirror-04"
+},
+"drawings": {}
+},
+"DF-D10170": {
+"path": {
+"en": "/lago/pulse-rug",
+"ru": "/ru/lago/kover-pulse",
+"de": "/de/lago/pulse-teppich",
+"fr": "/fr/lago/tapis-pulse",
+"es": "/es/lago/alfombra-pulse"
+},
+"images": {
+"images/shop/lago/pulse-rug/living-room-with-modern-rugs.jpg": "lago-pulse-rug-01",
+"images/shop/lago/pulse-rug/carpet-pulse-795.jpg": "lago-pulse-rug-02",
+"images/shop/lago/pulse-rug/long-pile-rug.jpg": "lago-pulse-rug-03"
+},
+"drawings": {}
+},
+"DF-D10171": {
+"path": {
+"en": "/lago/punto-mirror",
+"ru": "/ru/lago/zerkalo-punto",
+"de": "/de/lago/punto-spiegel",
+"fr": "/fr/lago/miroir-punto",
+"es": "/es/lago/espejo-punto"
+},
+"images": {
+"images/shop/lago/punto-mirror/white-dresser.jpg": "lago-punto-01",
+"images/shop/lago/punto-mirror/grey-glass-sideboard-with-doors.jpg": "lago-punto-mirror-01",
+"images/shop/lago/punto-mirror/punto-mirror.jpg": "lago-punto-mirror-02",
+"images/shop/lago/punto-mirror/punto-mirror-2.jpg": "lago-punto-mirror-03",
+"images/shop/lago/punto-mirror/punto-mirror-3.jpg": "lago-punto-mirror-04",
+"images/shop/lago/punto-mirror/punto-mirror-4.jpg": "lago-punto-mirror-05",
+"images/shop/lago/punto-mirror/wall-mounted-dresser.jpg": "lago-punto-mirror-06"
+},
+"drawings": {}
+},
+"DF-D10195": {
+"path": {
+"en": "/lago/v-bowl",
+"ru": "/ru/lago/chasha-v",
+"de": "/de/lago/v-schale",
+"fr": "/fr/lago/coupe-v",
+"es": "/es/lago/cuenco-v"
+},
+"images": {
+"images/shop/lago/centerpiece-v/lago-v-09.jpg": "lago-v-bowl-01",
+"images/shop/lago/centerpiece-v/lago-v-02.jpg": "lago-v-bowl-02",
+"images/shop/lago/centerpiece-v/lago-v-14.jpg": "lago-v-bowl-03",
+"images/shop/lago/centerpiece-v/lago-v-17.jpg": "lago-v-bowl-04",
+"images/shop/lago/centerpiece-v/lago-v-06.jpg": "lago-v-bowl-05",
+"images/shop/lago/centerpiece-v/lago-v-16.jpg": "lago-v-bowl-06"
+},
+"drawings": {}
+},
+"DF-D10200": {
+"path": {
+"en": "/lago/y-bowl",
+"ru": "/ru/lago/chasha-y",
+"de": "/de/lago/y-schale",
+"fr": "/fr/lago/coupe-y",
+"es": "/es/lago/cuenco-y"
+},
+"images": {
+"images/shop/lago/y-centerpiece/lago-y-def-16.jpg": "lago-y-bowl-01",
+"images/shop/lago/y-centerpiece/lago-y-def-14.jpg": "lago-y-bowl-02",
+"images/shop/lago/y-centerpiece/lago-y-def-15.jpg": "lago-y-bowl-03",
+"images/shop/lago/y-centerpiece/lago-y-def-17.jpg": "lago-y-bowl-04",
+"images/shop/lago/y-centerpiece/lago-y-def-12.jpg": "lago-y-bowl-05",
+"images/shop/lago/y-centerpiece/lago-y-def-13.jpg": "lago-y-bowl-06"
+},
+"drawings": {}
+},
 "DF-D7915": {
 "path": {
 "en": "/poliform/audrey-mirror",
@@ -5214,6 +6288,130 @@
 },
 "drawings": {}
 },
+"DF-E10013": {
+"path": {
+"en": "/lago/36e8-kitchen",
+"ru": "/ru/lago/kuhnya-36e8",
+"de": "/de/lago/36e8-kuche",
+"fr": "/fr/lago/cuisine-36e8",
+"es": "/es/lago/cocina-36e8"
+},
+"images": {
+"images/shop/lago/36e8-kitchen/island-kitchen-in-light-wood-and-glass-for-large-spaces.jpg": "lago-36e8-kitchen-01",
+"images/shop/lago/36e8-kitchen/wooden-kitchen-island-wildwood.jpg": "lago-36e8-kitchen-02",
+"images/shop/lago/36e8-kitchen/36e8-kitchen.jpg": "lago-36e8-kitchen-03",
+"images/shop/lago/36e8-kitchen/modern-marble-island-kitchen.jpg": "lago-36e8-kitchen-04",
+"images/shop/lago/36e8-kitchen/island-kitchen-for-large-spaces.jpg": "lago-36e8-kitchen-05"
+},
+"drawings": {}
+},
+"DF-E10014": {
+"path": {
+"en": "/lago/36e8-kitchen-unit",
+"ru": "/ru/lago/kuhonnyy-modul-36e8",
+"de": "/de/lago/36e8-kuchenelement",
+"fr": "/fr/lago/element-de-cuisine-36e8",
+"es": "/es/lago/modulo-de-cocina-36e8"
+},
+"images": {
+"images/shop/lago/36e8-pantry/wall-mounted-pantry-for-kitchen.jpg": "lago-36e8-kitchen-unit-01",
+"images/shop/lago/36e8-pantry/large-kitchen-cupboard.jpg": "lago-36e8-kitchen-unit-02",
+"images/shop/lago/36e8-pantry/beige-glass-kitchen-pantry-unit.jpg": "lago-36e8-kitchen-unit-03",
+"images/shop/lago/36e8-pantry/kitchen-with-island-and-wall-pantry.jpg": "lago-36e8-kitchen-unit-04",
+"images/shop/lago/36e8-pantry/kitchen-with-central-suspended-island.jpg": "lago-36e8-kitchen-unit-05",
+"images/shop/lago/36e8-pantry/designer-kitchen-suspended-in-wood-and-glass.jpg": "lago-36e8-kitchen-unit-06",
+"images/shop/lago/36e8-pantry/large-kitchen-with-suspended-island-in-wood-and-glass.jpg": "lago-36e8-kitchen-unit-07",
+"images/shop/lago/36e8-pantry/modern-kitchen-island-brown.jpg": "lago-36e8-kitchen-unit-08",
+"images/shop/lago/36e8-pantry/kitchen-island-with-glass-details.jpg": "lago-36e8-kitchen-unit-09",
+"images/shop/lago/36e8-pantry/kitchen-door-opening-invisible-handle.jpg": "lago-36e8-kitchen-unit-10",
+"images/shop/lago/36e8-pantry/beige-kitchen-pantry-unit-internal-accessories.jpg": "lago-36e8-kitchen-unit-11"
+},
+"drawings": {}
+},
+"DF-E10016": {
+"path": {
+"en": "/lago/36e8-cut-kitchen",
+"ru": "/ru/lago/kuhnya-36e8-cut",
+"de": "/de/lago/36e8-cut-kuche",
+"fr": "/fr/lago/cuisine-36e8-cut",
+"es": "/es/lago/cocina-36e8-cut"
+},
+"images": {
+"images/shop/lago/36e8-cut-kitchen/wall-mounted-kitchen-with-groove-handle-and-pantry.jpg": "lago-36e8-cut-kitchen-01",
+"images/shop/lago/36e8-cut-kitchen/suspended-corner-kitchen-with-pantry.jpg": "lago-36e8-cut-kitchen-02",
+"images/shop/lago/36e8-cut-kitchen/36e8-cut-kitchen.jpg": "lago-36e8-cut-kitchen-03",
+"images/shop/lago/36e8-cut-kitchen/green-wall-hung-corner-kitchen-with-groove-handle.jpg": "lago-36e8-cut-kitchen-04",
+"images/shop/lago/36e8-cut-kitchen/glass-island-kitchen-with-pantry.jpg": "lago-36e8-cut-kitchen-05",
+"images/shop/lago/36e8-cut-kitchen/kitchen-island-with-tv-cabinet.jpg": "lago-36e8-cut-kitchen-06"
+},
+"drawings": {}
+},
+"DF-E10017": {
+"path": {
+"en": "/lago/36e8-cut-kitchen-unit",
+"ru": "/ru/lago/kuhonnyy-modul-36e8-cut",
+"de": "/de/lago/36e8-cut-kuchenelement",
+"fr": "/fr/lago/element-de-cuisine-36e8-cut",
+"es": "/es/lago/modulo-de-cocina-36e8-cut"
+},
+"images": {
+"images/shop/lago/36e8-cut-pantry/kitchen-pantry-with-appliances.jpg": "lago-36e8-cut-kitchen-unit-01",
+"images/shop/lago/36e8-cut-pantry/white-kitchen-pantry.jpg": "lago-36e8-cut-kitchen-unit-02",
+"images/shop/lago/36e8-cut-pantry/corner-kitchen-with-pantry-and-wooden-island.jpg": "lago-36e8-cut-kitchen-unit-03",
+"images/shop/lago/36e8-cut-pantry/kitchen-pantry-opening.jpg": "lago-36e8-cut-kitchen-unit-04",
+"images/shop/lago/36e8-cut-pantry/kitchen-cupboard-with-groove-handle.jpg": "lago-36e8-cut-kitchen-unit-05",
+"images/shop/lago/36e8-cut-pantry/pantry-door-opening.jpg": "lago-36e8-cut-kitchen-unit-06",
+"images/shop/lago/36e8-cut-pantry/wall-pantry-for-corner-kitchen.jpg": "lago-36e8-cut-kitchen-unit-07",
+"images/shop/lago/36e8-cut-pantry/green-wall-hung-corner-kitchen-with-groove-handle.jpg": "lago-36e8-cut-kitchen-unit-08",
+"images/shop/lago/36e8-cut-pantry/wall-hung-kitchen-with-shaped-wooden-peninsula.jpg": "lago-36e8-cut-kitchen-unit-09",
+"images/shop/lago/36e8-cut-pantry/beige-and-white-linear-kitchen.jpg": "lago-36e8-cut-kitchen-unit-10",
+"images/shop/lago/36e8-cut-pantry/brown-kitchen-with-wooden-snack-top.jpg": "lago-36e8-cut-kitchen-unit-11",
+"images/shop/lago/36e8-cut-pantry/door-opening-with-groove-handle.jpg": "lago-36e8-cut-kitchen-unit-12"
+},
+"drawings": {}
+},
+"DF-E10149": {
+"path": {
+"en": "/lago/n-o-w-kitchen",
+"ru": "/ru/lago/kuhnya-n-o-w",
+"de": "/de/lago/n-o-w-kuche",
+"fr": "/fr/lago/cuisine-n-o-w",
+"es": "/es/lago/cocina-n-o-w"
+},
+"images": {
+"images/shop/lago/now-kitchen/kitchen-with-grey-island-with-striped-wall-unit.jpg": "lago-n-o-w-kitchen-01",
+"images/shop/lago/now-kitchen/wall-cabinet-with-beige-glass-strips.jpg": "lago-n-o-w-kitchen-02",
+"images/shop/lago/now-kitchen/now-kitchen.jpg": "lago-n-o-w-kitchen-03",
+"images/shop/lago/now-pantry/kitchen-with-peninsula-and-glass-wall-unit.jpg": "lago-n-o-w-01",
+"images/shop/lago/now-kitchen/linear-kitchen-with-coloured-glass-strips.jpg": "lago-n-o-w-kitchen-04",
+"images/shop/lago/now-kitchen/complete-suspended-kitchen-with-wall-unit.jpg": "lago-n-o-w-kitchen-05"
+},
+"drawings": {}
+},
+"DF-E10150": {
+"path": {
+"en": "/lago/n-o-w-kitchen-unit",
+"ru": "/ru/lago/kuhonnyy-modul-n-o-w",
+"de": "/de/lago/n-o-w-kuchenelement",
+"fr": "/fr/lago/element-de-cuisine-n-o-w",
+"es": "/es/lago/modulo-de-cocina-n-o-w"
+},
+"images": {
+"images/shop/lago/now-pantry/glass-pantry-for-kitchen.jpg": "lago-n-o-w-kitchen-unit-01",
+"images/shop/lago/now-pantry/kitchen-pantry-unit-with-coloured-panels.jpg": "lago-n-o-w-kitchen-unit-02",
+"images/shop/lago/now-pantry/kitchen-pantry.jpg": "lago-n-o-w-kitchen-unit-03",
+"images/shop/lago/now-pantry/kitchen-with-island-and-wooden-snack-top.jpg": "lago-n-o-w-kitchen-unit-04",
+"images/shop/lago/now-pantry/kitchen-with-island-and-pantry.jpg": "lago-n-o-w-kitchen-unit-05",
+"images/shop/lago/now-pantry/modern-kitchen-with-coloured-glass-panels.jpg": "lago-n-o-w-kitchen-unit-06",
+"images/shop/lago/now-pantry/finished-designer-kitchen.jpg": "lago-n-o-w-kitchen-unit-07",
+"images/shop/lago/now-pantry/stained-glass-kitchen-pantry.jpg": "lago-n-o-w-kitchen-unit-08",
+"images/shop/lago/now-pantry/green-coloured-glass-kitchen-pantry.jpg": "lago-n-o-w-kitchen-unit-09",
+"images/shop/lago/now-pantry/white-glass-kitchen-for-living-area.jpg": "lago-n-o-w-kitchen-unit-10",
+"images/shop/lago/now-pantry/island-kitchen-with-wall-pantry.jpg": "lago-n-o-w-kitchen-unit-11",
+"images/shop/lago/now-pantry/kitchen-with-peninsula-and-glass-wall-unit.jpg": "lago-n-o-w-01"
+},
+"drawings": {}
+},
 "DF-E7905": {
 "path": {
 "en": "/poliform/alea-kitchen",
@@ -5420,6 +6618,1391 @@
 "images/shop/poliform/twelve/poliform-cucine-twelve-01G-lifestyle.jpg": "poliform-twelve-kitchen-06",
 "images/shop/poliform/twelve/poliform-cucine-twelve-01F-lifestyle.jpg": "poliform-twelve-kitchen-07",
 "images/shop/poliform/twelve/poliform-cucine-twelve-01I-lifestyle.jpg": "poliform-twelve-kitchen-08"
+},
+"drawings": {}
+},
+"DF-H10000": {
+"path": {
+"en": "/lago/30mm-bookcase",
+"ru": "/ru/lago/stellazh-30mm",
+"de": "/de/lago/30mm-bucherregal",
+"fr": "/fr/lago/bibliotheque-30mm",
+"es": "/es/lago/libreria-30mm"
+},
+"images": {
+"images/shop/lago/30-mm-bookshelf/wall-mounted-bookcase-with-compartments.jpg": "lago-30mm-bookcase-01",
+"images/shop/lago/30-mm-bookshelf/custom-living-room-bookcase.jpg": "lago-30mm-bookcase-02",
+"images/shop/lago/30mm-bookshelf-for-childrens-room/30mm-bookcase-1209.jpg": "lago-30mm-01",
+"images/shop/lago/30mm-bookshelf-for-childrens-room/wall-mounted-bookcase-with-lighting.jpg": "lago-30mm-02",
+"images/shop/lago/30-mm-bookshelf/custom-bookcase-with-wooden-storage-units.jpg": "lago-30mm-bookcase-03",
+"images/shop/lago/30-mm-bookshelf/white-and-blue-modular-bookshelf.jpg": "lago-30mm-bookcase-04",
+"images/shop/lago/30-mm-bookshelf/bookshelf-detail.jpg": "lago-30mm-bookcase-05",
+"images/shop/lago/30-mm-bookshelf/custom-bookcase-with-glass-storage-units.jpg": "lago-30mm-bookcase-06",
+"images/shop/lago/30-mm-bookshelf/custom-bookcase-with-glass-shelves.jpg": "lago-30mm-bookcase-07",
+"images/shop/lago/30-mm-bookshelf/tree-shaped-wall-mounted-bookcase.jpg": "lago-30mm-bookcase-08",
+"images/shop/lago/30-mm-bookshelf/custom-grey-bookcase.jpg": "lago-30mm-bookcase-09",
+"images/shop/lago/36e8-childrenroom-storage-furniture/bookcase-shelves-with-glass-storage-unit-detail.jpg": "lago-30mm-03"
+},
+"drawings": {}
+},
+"DF-H10001": {
+"path": {
+"en": "/lago/30mm-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-30mm",
+"de": "/de/lago/30mm-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-30mm",
+"es": "/es/lago/sistema-de-almacenaje-30mm"
+},
+"images": {
+"images/shop/lago/30-mm-wall-unit/suspended-tv-wall-unit.jpg": "lago-30mm-storage-system-01",
+"images/shop/lago/30-mm-wall-unit/wall-unit-suspended-living-room.jpg": "lago-30mm-storage-system-02",
+"images/shop/lago/30-mm-wall-unit/equipped-wall-30mm-1202.jpg": "lago-30mm-storage-system-03",
+"images/shop/lago/30-mm-wall-unit/modern-equipped-wall.jpg": "lago-30mm-storage-system-04",
+"images/shop/lago/30-mm-wall-unit/colored-modern-wall-unit.jpg": "lago-30mm-storage-system-05",
+"images/shop/lago/30-mm-wall-unit/yellow-living-room-wall-unit.jpg": "lago-30mm-storage-system-06",
+"images/shop/lago/30-mm-wall-unit/yellow-design-wall-unit.jpg": "lago-30mm-storage-system-07",
+"images/shop/lago/30-mm-wall-unit/modern-suspended-wall-system.jpg": "lago-30mm-storage-system-08",
+"images/shop/lago/30-mm-wall-unit/custom-fitted-wall.jpg": "lago-30mm-storage-system-09"
+},
+"drawings": {}
+},
+"DF-H10002": {
+"path": {
+"en": "/lago/30mm-kids-bookcase",
+"ru": "/ru/lago/stellazh-30mm-kids",
+"de": "/de/lago/30mm-kids-bucherregal",
+"fr": "/fr/lago/bibliotheque-30mm-kids",
+"es": "/es/lago/libreria-30mm-kids"
+},
+"images": {
+"images/shop/lago/lagolinea-bed/made-to-measure-children-s-bedroom.jpg": "lago-lagolinea-01",
+"images/shop/lago/30mm-bookshelf-for-childrens-room/30mm-bookcase-1209.jpg": "lago-30mm-01",
+"images/shop/lago/air-desk-childrens-room/bridge-design-children-s-bedroom-with-designer-desk.jpg": "lago-30mm-kids-01",
+"images/shop/lago/30mm-bookshelf-for-childrens-room/wall-mounted-bookcase-with-lighting.jpg": "lago-30mm-02",
+"images/shop/lago/30mm-bookshelf-for-childrens-room/tree-shaped-wall-mounted-bookcase.jpg": "lago-30mm-kids-bookcase-01",
+"images/shop/lago/36e8-childrenroom-storage-furniture/bookcase-shelves-with-glass-storage-unit-detail.jpg": "lago-30mm-03",
+"images/shop/lago/30mm-bookshelf-for-childrens-room/custom-bookcase-with-wooden-storage-units.jpg": "lago-30mm-kids-bookcase-02"
+},
+"drawings": {}
+},
+"DF-H10003": {
+"path": {
+"en": "/lago/30mm-weightless-bookcase",
+"ru": "/ru/lago/stellazh-30mm-weightless",
+"de": "/de/lago/30mm-weightless-bucherregal",
+"fr": "/fr/lago/bibliotheque-30mm-weightless",
+"es": "/es/lago/libreria-30mm-weightless"
+},
+"images": {
+"images/shop/lago/30-mm-weightless-bookshelf/suspended-living-room-bookcase.jpg": "lago-30mm-weightless-bookcase-01",
+"images/shop/lago/30-mm-weightless-bookshelf/white-hanging-bookcase-for-living-room.jpg": "lago-30mm-weightless-bookcase-02",
+"images/shop/lago/30-mm-weightless-bookshelf/30mm-weightless-bookcase-1249.jpg": "lago-30mm-weightless-bookcase-03",
+"images/shop/lago/30-mm-weightless-bookshelf/suspended-grigio-bookcase.jpg": "lago-30mm-weightless-bookcase-04",
+"images/shop/lago/30-mm-weightless-bookshelf/suspended-black-bookcase.jpg": "lago-30mm-weightless-bookcase-05",
+"images/shop/lago/30-mm-weightless-bookshelf/white-suspended-ceiling-bookshelf.jpg": "lago-30mm-weightless-bookcase-06",
+"images/shop/lago/30-mm-weightless-bookshelf/white-hanging-bookcase.jpg": "lago-30mm-weightless-bookcase-07",
+"images/shop/lago/30-mm-weightless-bookshelf/suspended-bookcase.jpg": "lago-30mm-weightless-bookcase-08",
+"images/shop/lago/30-mm-weightless-bookshelf/floating-study-bookcase.jpg": "lago-30mm-weightless-bookcase-09",
+"images/shop/lago/30-mm-weightless-bookshelf/0346-libreria-30mm-weightless-dettaglio.jpg": "lago-30mm-weightless-bookcase-10"
+},
+"drawings": {}
+},
+"DF-H10007": {
+"path": {
+"en": "/lago/36e8-bathroom-furniture",
+"ru": "/ru/lago/mebel-dlya-vannoy-36e8",
+"de": "/de/lago/36e8-badmobel",
+"fr": "/fr/lago/meuble-de-salle-de-bains-36e8",
+"es": "/es/lago/mueble-de-bano-36e8"
+},
+"images": {
+"images/shop/lago/36e8-basin/suspended-glass-and-wood-bathroom-furniture.jpg": "lago-36e8-bathroom-furniture-01",
+"images/shop/lago/36e8-basin/suspended-glass-bathroom-cabinet-with-mirror.jpg": "lago-36e8-bathroom-furniture-02",
+"images/shop/lago/36e8-basin/36e8-basin.jpg": "lago-36e8-bathroom-furniture-03",
+"images/shop/lago/36e8-basin/bathroom-cabinet-with-integrated-basin.jpg": "lago-36e8-bathroom-furniture-04",
+"images/shop/lago/36e8-basin/wood-and-glass-basin.jpg": "lago-36e8-bathroom-furniture-05",
+"images/shop/lago/36e8-basin/greyglass-washbasin.jpg": "lago-36e8-bathroom-furniture-06",
+"images/shop/lago/36e8-basin/bathroom-with-double-basin.jpg": "lago-36e8-bathroom-furniture-07",
+"images/shop/lago/36e8-basin/white-glass-bathroom-cabinet-with-basin.jpg": "lago-36e8-bathroom-furniture-08",
+"images/shop/lago/36e8-basin/groove-opening-for-bathroom-cabinet.jpg": "lago-36e8-bathroom-furniture-09",
+"images/shop/lago/36e8-basin/glass-bathroom-cabinet.jpg": "lago-36e8-bathroom-furniture-10",
+"images/shop/lago/36e8-basin/suspended-glass-bathroom-cabinet.jpg": "lago-36e8-bathroom-furniture-11",
+"images/shop/lago/36e8-basin/gold-glass-washbasin-unit.jpg": "lago-36e8-bathroom-furniture-12"
+},
+"drawings": {}
+},
+"DF-H10008": {
+"path": {
+"en": "/lago/36e8-chest-of-drawers",
+"ru": "/ru/lago/komod-36e8",
+"de": "/de/lago/36e8-kommode",
+"fr": "/fr/lago/commode-36e8",
+"es": "/es/lago/comoda-36e8"
+},
+"images": {
+"images/shop/lago/36e8-dresser/modern-bedroom-design.jpg": "lago-36e8-chest-of-drawers-01",
+"images/shop/lago/36e8-dresser/36e8-dresser-0666.jpg": "lago-36e8-chest-of-drawers-02",
+"images/shop/lago/36e8-dresser/brown-and-white-glass-bedroom-dresser.jpg": "lago-36e8-chest-of-drawers-03",
+"images/shop/lago/36e8-dresser/glass-bedroom-dresser.jpg": "lago-36e8-chest-of-drawers-04",
+"images/shop/lago/36e8-dresser/wall-hung-bedroom-dresser.jpg": "lago-36e8-chest-of-drawers-05",
+"images/shop/lago/36e8-dresser/grey-glass-bedroom-dresser.jpg": "lago-36e8-chest-of-drawers-06",
+"images/shop/lago/36e8-dresser/designer-bedroom-dresser.jpg": "lago-36e8-chest-of-drawers-07",
+"images/shop/lago/36e8-dresser/bedroom-dresser-on-glass-supports.jpg": "lago-36e8-chest-of-drawers-08",
+"images/shop/lago/36e8-dresser/white-blue-and-wood-glass-bedroom-dresser.jpg": "lago-36e8-chest-of-drawers-09",
+"images/shop/lago/36e8-dresser/designer-dresser.jpg": "lago-36e8-chest-of-drawers-10",
+"images/shop/lago/36e8-dresser/glass-and-wood-bedroom-dresser.jpg": "lago-36e8-chest-of-drawers-11",
+"images/shop/lago/36e8-dresser/blue-glass-and-wood-bedroom-dresser.jpg": "lago-36e8-chest-of-drawers-12"
+},
+"drawings": {}
+},
+"DF-H10009": {
+"path": {
+"en": "/lago/36e8-sideboard",
+"ru": "/ru/lago/bufet-36e8",
+"de": "/de/lago/36e8-sideboard",
+"fr": "/fr/lago/buffet-36e8",
+"es": "/es/lago/aparador-36e8"
+},
+"images": {
+"images/shop/lago/36e8-sideboard/modern-dining-room-furniture.jpg": "lago-36e8-sideboard-01",
+"images/shop/lago/36e8-sideboard/36e8-sideboard-10813-wood.jpg": "lago-36e8-sideboard-02",
+"images/shop/lago/36e8-sideboard/grey-wood-and-glass-modern-sideboard.jpg": "lago-36e8-sideboard-03",
+"images/shop/lago/36e8-sideboard/36e8-sideboard-2109.jpg": "lago-36e8-sideboard-04",
+"images/shop/lago/36e8-sideboard/xglass-modern-marble-sideboard.jpg": "lago-36e8-sideboard-05",
+"images/shop/lago/36e8-sideboard/modern-sideboard-for-dining-room.jpg": "lago-36e8-sideboard-06",
+"images/shop/lago/36e8-sideboard/modern-wall-mounted-sideboard-with-shelves.jpg": "lago-36e8-sideboard-07",
+"images/shop/lago/36e8-sideboard/detail-door-profile-modern-sideboard.jpg": "lago-36e8-sideboard-08",
+"images/shop/lago/36e8-sideboard/design-dining-room-sideboard.jpg": "lago-36e8-sideboard-09",
+"images/shop/lago/36e8-sideboard/modern-wood-and-glass-sideboard.jpg": "lago-36e8-sideboard-10",
+"images/shop/lago/36e8-sideboard/modern-white-glass-sideboard.jpg": "lago-36e8-sideboard-11",
+"images/shop/lago/36e8-sideboard/wood-and-grey-glass-modern-sideboard.jpg": "lago-36e8-sideboard-12"
+},
+"drawings": {}
+},
+"DF-H10010": {
+"path": {
+"en": "/lago/36e8-tv-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-36e8-tv",
+"de": "/de/lago/36e8-tv-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-36e8-tv",
+"es": "/es/lago/sistema-de-almacenaje-36e8-tv"
+},
+"images": {
+"images/shop/lago/36e8-tv-unit/living-room-with-tv-stand.jpg": "lago-36e8-tv-storage-system-01",
+"images/shop/lago/36e8-tv-unit/36e8-tv-unit-0528.jpg": "lago-36e8-tv-storage-system-02",
+"images/shop/lago/36e8-tv-unit/living-room-tv-unit-with-shelf.jpg": "lago-36e8-tv-storage-system-03",
+"images/shop/lago/36e8-tv-unit/hanging-tv-stand.jpg": "lago-36e8-tv-storage-system-04",
+"images/shop/lago/36e8-tv-unit/glass-doors-tv-cabinet.jpg": "lago-36e8-tv-storage-system-05",
+"images/shop/lago/36e8-tv-unit/suspended-wood-and-marble-tv-unit-xglass.jpg": "lago-36e8-tv-storage-system-06",
+"images/shop/lago/36e8-tv-unit/wood-and-marble-xglass-tv-unit.jpg": "lago-36e8-tv-storage-system-07",
+"images/shop/lago/36e8-tv-unit/glass-wall-mounted-tv-stand.jpg": "lago-36e8-tv-storage-system-08",
+"images/shop/lago/36e8-tv-unit/tv-cabinet-with-display-cabinet.jpg": "lago-36e8-tv-storage-system-09",
+"images/shop/lago/36e8-tv-unit/glass-tv-cabinet-for-living-room.jpg": "lago-36e8-tv-storage-system-10",
+"images/shop/lago/36e8-tv-unit/living-room-wooden-tv-unit.jpg": "lago-36e8-tv-storage-system-11",
+"images/shop/lago/36e8-tv-unit/wall-mounted-tv-cabinet.jpg": "lago-36e8-tv-storage-system-12"
+},
+"drawings": {}
+},
+"DF-H10011": {
+"path": {
+"en": "/lago/36e8-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-36e8",
+"de": "/de/lago/36e8-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-36e8",
+"es": "/es/lago/sistema-de-almacenaje-36e8"
+},
+"images": {
+"images/shop/lago/36e8-wall-unit/modern-wood-and-glass-wall-unit.jpg": "lago-36e8-storage-system-01",
+"images/shop/lago/36e8-wall-unit/modern-equipped-wall-illuminated-display-cases.jpg": "lago-36e8-storage-system-02",
+"images/shop/lago/36e8-wall-unit/equipped-wall-36e8-0881.jpg": "lago-36e8-storage-system-03",
+"images/shop/lago/36e8-wall-unit/wall-unit-with-glass-showcases.jpg": "lago-36e8-storage-system-04",
+"images/shop/lago/36e8-wall-unit/natural-wood-wall-unit.jpg": "lago-36e8-storage-system-05",
+"images/shop/lago/36e8-wall-unit/wall-mounted-hanging-wall-system-with-display-cabinet.jpg": "lago-36e8-storage-system-06",
+"images/shop/lago/36e8-wall-unit/glass-wall-unit-door.jpg": "lago-36e8-storage-system-07",
+"images/shop/lago/36e8-wall-unit/wall-system-for-modern-living-room.jpg": "lago-36e8-storage-system-08",
+"images/shop/lago/36e8-wall-unit/modern-equipped-wall-with-lighting.jpg": "lago-36e8-storage-system-09",
+"images/shop/lago/36e8-wall-unit/modern-glass-wall-system.jpg": "lago-36e8-storage-system-10",
+"images/shop/lago/36e8-wall-unit/wooden-wall-system-with-glass-wall-units.jpg": "lago-36e8-storage-system-11",
+"images/shop/lago/36e8-wall-unit/hutch-opening-detail.jpg": "lago-36e8-storage-system-12"
+},
+"drawings": {}
+},
+"DF-H10015": {
+"path": {
+"en": "/lago/36e8-cinema-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-36e8-cinema",
+"de": "/de/lago/36e8-cinema-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-36e8-cinema",
+"es": "/es/lago/sistema-de-almacenaje-36e8-cinema"
+},
+"images": {
+"images/shop/lago/36e8-cinema-wall-unit/wall-unit-with-integrated-sound-lago-36e8-cinema.jpg": "lago-36e8-cinema-storage-system-01",
+"images/shop/lago/36e8-cinema-wall-unit/wall-unit-with-integrated-lighting-and-tv-lago-36e8-cinema.jpg": "lago-36e8-cinema-storage-system-02",
+"images/shop/lago/36e8-cinema-wall-unit/elegant-living-room-with-a-glass-wall-unit-lago-36e8-cinema.jpg": "lago-36e8-cinema-storage-system-03",
+"images/shop/lago/36e8-cinema-wall-unit/glass-wall-detail-36e8-cinema-lago.jpg": "lago-36e8-cinema-storage-system-04",
+"images/shop/lago/36e8-cinema-wall-unit/living-room-unit-with-tv-lago-36e8-cinema.jpg": "lago-36e8-cinema-storage-system-05",
+"images/shop/lago/36e8-cinema-wall-unit/wall-unit-with-shelves-lago-36e8-cinema.jpg": "lago-36e8-cinema-storage-system-06",
+"images/shop/lago/36e8-cinema-wall-unit/designer-living-room-with-a-wall-unit-and-sofa-36e8-cinema.jpg": "lago-36e8-cinema-storage-system-07",
+"images/shop/lago/36e8-cinema-wall-unit/detail-of-a-wall-unit-with-open-shelving-36e8-cinema-lago.jpg": "lago-36e8-cinema-storage-system-08",
+"images/shop/lago/36e8-cinema-wall-unit/elegant-living-room-with-a-white-wall-unit-and-integrated-tv-lago-36e8.jpg": "lago-36e8-cinema-storage-system-09",
+"images/shop/lago/36e8-cinema-wall-unit/detail-of-a-white-living-room-wall-unit-with-a-glass-fronted-cabinet-l.jpg": "lago-36e8-cinema-storage-system-10",
+"images/shop/lago/36e8-cinema-wall-unit/designer-living-room-featuring-a-tv-wall-unit-with-integrated-open-she.jpg": "lago-36e8-cinema-storage-system-11",
+"images/shop/lago/36e8-cinema-wall-unit/designer-living-room-featuring-a-glass-wall-unit-with-an-integrated-tv.jpg": "lago-36e8-cinema-storage-system-12"
+},
+"drawings": {}
+},
+"DF-H10019": {
+"path": {
+"en": "/lago/36e8-glass-chest-of-drawers",
+"ru": "/ru/lago/komod-36e8-glass",
+"de": "/de/lago/36e8-glass-kommode",
+"fr": "/fr/lago/commode-36e8-glass",
+"es": "/es/lago/comoda-36e8-glass"
+},
+"images": {
+"images/shop/lago/36e8-glass-dresser/blue-glass-dresser.jpg": "lago-36e8-glass-chest-of-drawers-01",
+"images/shop/lago/36e8-glass-dresser/smoked-glass-dresser.jpg": "lago-36e8-glass-chest-of-drawers-02",
+"images/shop/lago/36e8-glass-dresser/36e8-glass-dresser-1904.jpg": "lago-36e8-glass-chest-of-drawers-03",
+"images/shop/lago/36e8-glass-dresser/glass-dresser-detail.jpg": "lago-36e8-glass-chest-of-drawers-04",
+"images/shop/lago/36e8-glass-dresser/black-polished-glass-dresser.jpg": "lago-36e8-glass-chest-of-drawers-05",
+"images/shop/lago/36e8-glass-dresser/dresser-with-elegant-see-through-effects.jpg": "lago-36e8-glass-chest-of-drawers-06",
+"images/shop/lago/36e8-glass-dresser/dresser-with-lighting.jpg": "lago-36e8-glass-chest-of-drawers-07",
+"images/shop/lago/36e8-glass-dresser/glass-drawer.jpg": "lago-36e8-glass-chest-of-drawers-08",
+"images/shop/lago/36e8-glass-dresser/glass-dresser-with-drawers.jpg": "lago-36e8-glass-chest-of-drawers-09",
+"images/shop/lago/36e8-glass-dresser/smoked-glass-dresser-2.jpg": "lago-36e8-glass-chest-of-drawers-10",
+"images/shop/lago/36e8-glass-dresser/mirrored-glass-dresser.jpg": "lago-36e8-glass-chest-of-drawers-11",
+"images/shop/lago/36e8-glass-dresser/glass-dresser-with-display-case-and-drawers.jpg": "lago-36e8-glass-chest-of-drawers-12"
+},
+"drawings": {}
+},
+"DF-H10020": {
+"path": {
+"en": "/lago/36e8-glass-sideboard",
+"ru": "/ru/lago/bufet-36e8-glass",
+"de": "/de/lago/36e8-glass-sideboard",
+"fr": "/fr/lago/buffet-36e8-glass",
+"es": "/es/lago/aparador-36e8-glass"
+},
+"images": {
+"images/shop/lago/36e8-glass-sideboard/smoked-glass-sideboard.jpg": "lago-36e8-glass-sideboard-01",
+"images/shop/lago/36e8-glass-sideboard/suspended-glass-sideboard.jpg": "lago-36e8-glass-sideboard-02",
+"images/shop/lago/36e8-glass-sideboard/36e8-glass-sideboard-1325.jpg": "lago-36e8-glass-sideboard-03",
+"images/shop/lago/36e8-glass-sideboard/sideboard-in-glass-and-black-xglass-marble.jpg": "lago-36e8-glass-sideboard-04",
+"images/shop/lago/36e8-glass-sideboard/smoked-glass-sideboard-detail.jpg": "lago-36e8-glass-sideboard-05",
+"images/shop/lago/36e8-glass-sideboard/suspended-glass-sideboard-2.jpg": "lago-36e8-glass-sideboard-06",
+"images/shop/lago/36e8-glass-sideboard/smoked-bronze-glass-and-marble-sideboard.jpg": "lago-36e8-glass-sideboard-07",
+"images/shop/lago/36e8-glass-sideboard/marble-glass-sideboard.jpg": "lago-36e8-glass-sideboard-08",
+"images/shop/lago/36e8-glass-sideboard/modern-bronze-glass-sideboard.jpg": "lago-36e8-glass-sideboard-09",
+"images/shop/lago/36e8-glass-sideboard/smoked-bronze-glass-storage-unit-detail.jpg": "lago-36e8-glass-sideboard-10",
+"images/shop/lago/36e8-glass-sideboard/light-blue-polished-glass-sideboard-with-doors.jpg": "lago-36e8-glass-sideboard-11",
+"images/shop/lago/pleasure-mirror/modern-living-room-with-designer-mirrors.jpg": "lago-pleasure-01"
+},
+"drawings": {}
+},
+"DF-H10021": {
+"path": {
+"en": "/lago/36e8-glass-tv-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-36e8-glass-tv",
+"de": "/de/lago/36e8-glass-tv-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-36e8-glass-tv",
+"es": "/es/lago/sistema-de-almacenaje-36e8-glass-tv"
+},
+"images": {
+"images/shop/lago/36e8-glass-tv-unit/modern-designer-glass-tv-unit.jpg": "lago-36e8-glass-tv-storage-system-01",
+"images/shop/lago/36e8-glass-tv-unit/modern-black-glass-tv-unit.jpg": "lago-36e8-glass-tv-storage-system-02",
+"images/shop/lago/36e8-glass-tv-unit/36e8-glass-tv-unit-1403.jpg": "lago-36e8-glass-tv-storage-system-03",
+"images/shop/lago/36e8-glass-tv-unit/modern-glass-tv-unit-brown.jpg": "lago-36e8-glass-tv-storage-system-04",
+"images/shop/lago/36e8-glass-tv-unit/modern-living-room-tv-unit-made-of-wood-and-glass.jpg": "lago-36e8-glass-tv-storage-system-05",
+"images/shop/lago/36e8-glass-tv-unit/modern-tv-unit-with-glass-cabinet.jpg": "lago-36e8-glass-tv-storage-system-06",
+"images/shop/lago/36e8-glass-tv-unit/elegant-modern-tv-cabinet-in-transparent-glass.jpg": "lago-36e8-glass-tv-storage-system-07",
+"images/shop/lago/36e8-glass-tv-unit/marble-xglass-tv-unit.jpg": "lago-36e8-glass-tv-storage-system-08",
+"images/shop/lago/36e8-glass-tv-unit/wood-and-glass-tv-unit.jpg": "lago-36e8-glass-tv-storage-system-09",
+"images/shop/lago/36e8-glass-tv-unit/modern-glass-and-wood-tv-unit-with-lighting.jpg": "lago-36e8-glass-tv-storage-system-10",
+"images/shop/lago/36e8-glass-tv-unit/modern-glass-tv-unit-with-showcases.jpg": "lago-36e8-glass-tv-storage-system-11",
+"images/shop/lago/36e8-glass-tv-unit/modern-grey-tv-unit-with-glass-case.jpg": "lago-36e8-glass-tv-storage-system-12"
+},
+"drawings": {}
+},
+"DF-H10022": {
+"path": {
+"en": "/lago/36e8-kids-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-36e8-kids",
+"de": "/de/lago/36e8-kids-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-36e8-kids",
+"es": "/es/lago/sistema-de-almacenaje-36e8-kids"
+},
+"images": {
+"images/shop/lago/air-desk-childrens-room/unit-and-desk-for-children-s-bedroom.jpg": "lago-36e8-kids-01",
+"images/shop/lago/36e8-childrenroom-storage-furniture/36e8-storage-kids.jpg": "lago-36e8-kids-storage-system-01",
+"images/shop/lago/36e8-childrenroom-storage-furniture/children-s-bedroom-desk.jpg": "lago-36e8-kids-storage-system-02",
+"images/shop/lago/36e8-childrenroom-storage-furniture/36e8-childrenroom-storage-furniture.jpg": "lago-36e8-kids-storage-system-03",
+"images/shop/lago/36e8-childrenroom-storage-furniture/aluminum-filigree-detail.jpg": "lago-36e8-kids-storage-system-04",
+"images/shop/lago/36e8-childrenroom-storage-furniture/bookcase-shelves-with-glass-storage-unit-detail.jpg": "lago-30mm-03"
+},
+"drawings": {}
+},
+"DF-H10032": {
+"path": {
+"en": "/lago/air-bookcase",
+"ru": "/ru/lago/stellazh-air",
+"de": "/de/lago/air-bucherregal",
+"fr": "/fr/lago/bibliotheque-air",
+"es": "/es/lago/libreria-air"
+},
+"images": {
+"images/shop/lago/air-bookshelf/bookcase-with-wooden-shelves-for-modern-living-room.jpg": "lago-air-bookcase-01",
+"images/shop/lago/air-bookshelf/blu-double-sided-bookcase.jpg": "lago-air-bookcase-02",
+"images/shop/lago/air-bookshelf/air-bookshelf-0641.jpg": "lago-air-bookcase-03",
+"images/shop/lago/air-bookshelf/design-bookcase-with-natural-wood-shelf.jpg": "lago-air-bookcase-04",
+"images/shop/lago/air-bookshelf/wooden-glass-floating-bookcase.jpg": "lago-air-bookcase-05",
+"images/shop/lago/air-bookshelf/light-blue-glass-floating-bookcase.jpg": "lago-air-bookcase-06",
+"images/shop/lago/air-bookshelf/floating-bookcase-with-wooden-storage-unit.jpg": "lago-air-bookcase-07",
+"images/shop/lago/air-bookshelf/bookcase-glass-supports.jpg": "lago-air-bookcase-08",
+"images/shop/lago/air-bookshelf/floating-bookcase-with-lacquered-wooden-shelves.jpg": "lago-air-bookcase-09",
+"images/shop/lago/air-bookshelf/living-room-with-modern-bookshelf.jpg": "lago-air-bookcase-10",
+"images/shop/lago/air-bookshelf/vertical-glass-floating-bookcase.jpg": "lago-air-bookcase-11",
+"images/shop/lago/air-bookshelf/beige-bookcase-shelf-detail.jpg": "lago-air-bookcase-12"
+},
+"drawings": {}
+},
+"DF-H10033": {
+"path": {
+"en": "/lago/air-chest-of-drawers",
+"ru": "/ru/lago/komod-air",
+"de": "/de/lago/air-kommode",
+"fr": "/fr/lago/commode-air",
+"es": "/es/lago/comoda-air"
+},
+"images": {
+"images/shop/lago/air-dresser/black-glass-and-wood-bedroom-dresser.jpg": "lago-air-chest-of-drawers-01",
+"images/shop/lago/air-dresser/air-dresser-0677.jpg": "lago-air-chest-of-drawers-02",
+"images/shop/lago/air-dresser/bedroom-chest-of-drawers-detail.jpg": "lago-air-chest-of-drawers-03",
+"images/shop/lago/air-dresser/bedroom-dresser.jpg": "lago-air-chest-of-drawers-04",
+"images/shop/lago/air-dresser/blue-glass-dresser-with-drawers.jpg": "lago-air-chest-of-drawers-05",
+"images/shop/lago/air-dresser/light-blue-glass-dresser-for-bedroom.jpg": "lago-air-chest-of-drawers-06",
+"images/shop/lago/air-dresser/glass-dresser-for-bedroom.jpg": "lago-air-chest-of-drawers-07",
+"images/shop/lago/air-dresser/bedroom-dresser-with-glass-shelf.jpg": "lago-air-chest-of-drawers-08",
+"images/shop/lago/air-dresser/glass-and-wood-room-dresser.jpg": "lago-air-chest-of-drawers-09",
+"images/shop/lago/air-dresser/white-glass-and-wood-chest-of-drawers.jpg": "lago-air-chest-of-drawers-10",
+"images/shop/lago/air-dresser/white-chest-of-drawers-for-bedroom.jpg": "lago-air-chest-of-drawers-11",
+"images/shop/lago/air-dresser/vertical-glass-bedroom-chest-of-drawers.jpg": "lago-air-chest-of-drawers-12"
+},
+"drawings": {}
+},
+"DF-H10034": {
+"path": {
+"en": "/lago/air-sideboard",
+"ru": "/ru/lago/bufet-air",
+"de": "/de/lago/air-sideboard",
+"fr": "/fr/lago/buffet-air",
+"es": "/es/lago/aparador-air"
+},
+"images": {
+"images/shop/lago/air-sideboard/suspended-sideboard-with-marble-shelf-xglass.jpg": "lago-air-sideboard-01",
+"images/shop/lago/air-sideboard/air-sideboard-0347.jpg": "lago-air-sideboard-02",
+"images/shop/lago/air-sideboard/beige-sideboard-with-hanging-shelf.jpg": "lago-air-sideboard-03",
+"images/shop/lago/air-sideboard/suspended-sideboard-with-wooden-shelf.jpg": "lago-air-sideboard-04",
+"images/shop/lago/air-sideboard/suspended-sideboard-brown.jpg": "lago-air-sideboard-05",
+"images/shop/lago/air-sideboard/sideboard-with-suspended-shelf.jpg": "lago-air-sideboard-06",
+"images/shop/lago/air-sideboard/grey-and-brown-suspended-sideboard.jpg": "lago-air-sideboard-07",
+"images/shop/lago/air-sideboard/xglass-and-marble-suspended-sideboard.jpg": "lago-air-sideboard-08",
+"images/shop/lago/air-sideboard/bookcase-glass-support-detail.jpg": "lago-air-sideboard-09"
+},
+"drawings": {}
+},
+"DF-H10035": {
+"path": {
+"en": "/lago/air-tv-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-air-tv",
+"de": "/de/lago/air-tv-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-air-tv",
+"es": "/es/lago/sistema-de-almacenaje-air-tv"
+},
+"images": {
+"images/shop/lago/air-tv-unit/design-tv-unit-black.jpg": "lago-air-tv-storage-system-01",
+"images/shop/lago/air-tv-unit/design-tv-unit-with-hanging-shelf.jpg": "lago-air-tv-storage-system-02",
+"images/shop/lago/air-tv-unit/air-tv-unit-2607.jpg": "lago-air-tv-storage-system-03",
+"images/shop/lago/air-tv-unit/design-tv-unit-with-wooden-shelf.jpg": "lago-air-tv-storage-system-04",
+"images/shop/lago/air-tv-unit/designer-tv-unit-marble-xglass.jpg": "lago-air-tv-storage-system-05",
+"images/shop/lago/air-tv-unit/suspended-designer-tv-unit.jpg": "lago-air-tv-storage-system-06",
+"images/shop/lago/air-tv-unit/design-glass-tv-unit.jpg": "lago-air-tv-storage-system-07"
+},
+"drawings": {}
+},
+"DF-H10036": {
+"path": {
+"en": "/lago/air-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-air",
+"de": "/de/lago/air-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-air",
+"es": "/es/lago/sistema-de-almacenaje-air"
+},
+"images": {
+"images/shop/lago/air-wall-unit/freestanding-wall-unit-with-hanging-shelves.jpg": "lago-air-storage-system-01",
+"images/shop/lago/air-wall-unit/dark-marble-wall-unit.jpg": "lago-air-storage-system-02",
+"images/shop/lago/air-wall-unit/air-wall-unit-0697.jpg": "lago-air-storage-system-03",
+"images/shop/lago/air-wall-unit/freestanding-glass-living-room-wall-unit.jpg": "lago-air-storage-system-04",
+"images/shop/lago/air-wall-unit/freestanding-wall-unit-with-wooden-storage-unit.jpg": "lago-air-storage-system-05",
+"images/shop/lago/air-wall-unit/freestanding-glass-wall-unit-with-wooden-storage-unit.jpg": "lago-air-storage-system-06",
+"images/shop/lago/air-wall-unit/freestanding-wall-unit-in-wood-and-glass.jpg": "lago-air-storage-system-07",
+"images/shop/lago/air-wall-unit/freestanding-wall-unit-with-white-shelves.jpg": "lago-air-storage-system-08",
+"images/shop/lago/air-wall-unit/white-glass-designer-wall-unit.jpg": "lago-air-storage-system-09",
+"images/shop/lago/air-wall-unit/freestanding-wall-unit-with-wooden-shelf.jpg": "lago-air-storage-system-10",
+"images/shop/lago/air-wall-unit/designer-equipped-wall.jpg": "lago-air-storage-system-11",
+"images/shop/lago/air-wall-unit/black-and-white-wall-system.jpg": "lago-air-storage-system-12"
+},
+"drawings": {}
+},
+"DF-H10040": {
+"path": {
+"en": "/lago/air-roundy-bookcase",
+"ru": "/ru/lago/stellazh-air-roundy",
+"de": "/de/lago/air-roundy-bucherregal",
+"fr": "/fr/lago/bibliotheque-air-roundy",
+"es": "/es/lago/libreria-air-roundy"
+},
+"images": {
+"images/shop/lago/air-roundy-bookshelf/libreria-air-roundy-generale-header.jpg": "lago-air-roundy-bookcase-01",
+"images/shop/lago/air-roundy-bookshelf/curved-wood-and-glass-bookcase.jpg": "lago-air-roundy-bookcase-02",
+"images/shop/lago/air-roundy-bookshelf/white-curved-designer-bookcase.jpg": "lago-air-roundy-bookcase-03",
+"images/shop/lago/air-roundy-bookshelf/designer-bookshelf-for-the-living-room.jpg": "lago-air-roundy-bookcase-04",
+"images/shop/lago/air-roundy-bookshelf/curved-designer-bookcase.jpg": "lago-air-roundy-bookcase-05",
+"images/shop/lago/air-roundy-bookshelf/air-roundy-bookshelf.jpg": "lago-air-roundy-bookcase-06",
+"images/shop/lago/air-roundy-bookshelf/curved-white-bookcase.jpg": "lago-air-roundy-bookcase-07",
+"images/shop/lago/air-roundy-bookshelf/white-and-glass-bookcase.jpg": "lago-air-roundy-bookcase-08",
+"images/shop/lago/air-roundy-bookshelf/curved-bookshelf-for-the-living-room.jpg": "lago-air-roundy-bookcase-09",
+"images/shop/lago/air-roundy-bookshelf/small-brown-bookcase.jpg": "lago-air-roundy-bookcase-10",
+"images/shop/lago/air-roundy-bookshelf/white-curved-bookcase-with-glass.jpg": "lago-air-roundy-bookcase-11",
+"images/shop/lago/air-roundy-bookshelf/curved-bookcases-with-storage-units.jpg": "lago-air-roundy-bookcase-12"
+},
+"drawings": {}
+},
+"DF-H10049": {
+"path": {
+"en": "/lago/air-study-bookcase",
+"ru": "/ru/lago/stellazh-air-study",
+"de": "/de/lago/air-study-bucherregal",
+"fr": "/fr/lago/bibliotheque-air-study",
+"es": "/es/lago/libreria-air-study"
+},
+"images": {
+"images/shop/lago/air-study-bookshelf/design-home-office.jpg": "lago-air-study-bookcase-01",
+"images/shop/lago/air-study-bookshelf/floating-bookcase-with-corner-desk.jpg": "lago-air-study-bookcase-02",
+"images/shop/lago/air-study-bookshelf/air-study-bookcase.jpg": "lago-air-study-bookcase-03",
+"images/shop/lago/space-saving-ideas/floating-bookcase-with-storage-unit.jpg": "lago-space-saving-ideas-01",
+"images/shop/lago/air-study-bookshelf/office-design-furniture.jpg": "lago-air-study-bookcase-04",
+"images/shop/lago/air-study-bookshelf/wall-mounted-study-desk-and-bookcase.jpg": "lago-air-study-bookcase-05",
+"images/shop/lago/air-study-bookshelf/floating-bookcase-with-wooden-corner-desk.jpg": "lago-air-study-bookcase-06",
+"images/shop/lago/air-study-bookshelf/home-studio-furniture.jpg": "lago-air-study-bookcase-07",
+"images/shop/lago/air-study-bookshelf/bookcase-with-drawers.jpg": "lago-air-study-bookcase-08",
+"images/shop/lago/air-study-bookshelf/floating-bookcase-with-hidden-desk.jpg": "lago-air-study-bookcase-09"
+},
+"drawings": {}
+},
+"DF-H10050": {
+"path": {
+"en": "/lago/air-walk-in-closet",
+"ru": "/ru/lago/garderobnaya-air",
+"de": "/de/lago/air-begehbarer-kleiderkasten",
+"fr": "/fr/lago/dressing-air",
+"es": "/es/lago/vestidor-air"
+},
+"images": {
+"images/shop/lago/air-walk-in-closet/open-walk-in-wardrobe-with-glass-supports.jpg": "lago-air-walk-in-closet-01",
+"images/shop/lago/air-walk-in-closet/open-walk-in-wardrobe-in-the-middle-of-the-room.jpg": "lago-air-walk-in-closet-02",
+"images/shop/lago/air-walk-in-closet/air-walk-in-wardrobe.jpg": "lago-air-walk-in-closet-03",
+"images/shop/lago/air-walk-in-closet/open-walk-in-closet-for-bedroom.jpg": "lago-air-walk-in-closet-04",
+"images/shop/lago/air-walk-in-closet/open-glass-walk-in-wardrobe.jpg": "lago-air-walk-in-closet-05",
+"images/shop/lago/air-walk-in-closet/open-walk-in-wardrobe-for-bedroom.jpg": "lago-air-walk-in-closet-06",
+"images/shop/lago/air-walk-in-closet/open-walk-in-closet-with-drawers.jpg": "lago-air-walk-in-closet-07",
+"images/shop/lago/air-walk-in-closet/open-glass-walk-in-closet.jpg": "lago-air-walk-in-closet-08"
+},
+"drawings": {}
+},
+"DF-H10058": {
+"path": {
+"en": "/lago/aura-wardrobe",
+"ru": "/ru/lago/shkaf-aura",
+"de": "/de/lago/aura-kleiderkasten",
+"fr": "/fr/lago/armoire-aura",
+"es": "/es/lago/armario-aura"
+},
+"images": {
+"images/shop/lago/aura-wardrobe/white-wardrobe-with-light.jpg": "lago-aura-wardrobe-01",
+"images/shop/lago/aura-wardrobe/designer-wardrobe.jpg": "lago-aura-wardrobe-02",
+"images/shop/lago/aura-wardrobe/design-door-detail.jpg": "lago-aura-wardrobe-03",
+"images/shop/lago/aura-wardrobe/close-up-of-door-lighting.jpg": "lago-aura-wardrobe-04",
+"images/shop/lago/aura-wardrobe/chest-of-drawers-and-wardrobe.jpg": "lago-aura-wardrobe-05",
+"images/shop/lago/aura-wardrobe/glass-drawers-for-wardrobes.jpg": "lago-aura-wardrobe-06",
+"images/shop/lago/aura-wardrobe/close-up-of-the-wardrobe-interior.jpg": "lago-aura-wardrobe-07",
+"images/shop/lago/aura-wardrobe/wardrobe-shoe-rack.jpg": "lago-aura-wardrobe-08",
+"images/shop/lago/aura-wardrobe/hallway-wardrobe.jpg": "lago-aura-wardrobe-09",
+"images/shop/lago/aura-wardrobe/stylish-wardrobe-interior.jpg": "lago-aura-wardrobe-10",
+"images/shop/lago/aura-wardrobe/wardrobe-door-with-light.jpg": "lago-aura-wardrobe-11",
+"images/shop/lago/aura-wardrobe/blue-wardrobe.jpg": "lago-aura-wardrobe-12"
+},
+"drawings": {}
+},
+"DF-H10065": {
+"path": {
+"en": "/lago/cartesio-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-cartesio",
+"de": "/de/lago/cartesio-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-cartesio",
+"es": "/es/lago/sistema-de-almacenaje-cartesio"
+},
+"images": {
+"images/shop/lago/cartesio-wall-unit/equipped-wall-with-glass-shelves.jpg": "lago-cartesio-storage-system-01",
+"images/shop/lago/cartesio-wall-unit/equipped-wall-with-suspended-glass-shelves.jpg": "lago-cartesio-storage-system-02",
+"images/shop/lago/cartesio-wall-unit/cartesio-wall-unit-1397.jpg": "lago-cartesio-storage-system-03"
+},
+"drawings": {}
+},
+"DF-H10066": {
+"path": {
+"en": "/lago/cellule-bathroom-furniture",
+"ru": "/ru/lago/mebel-dlya-vannoy-cellule",
+"de": "/de/lago/cellule-badmobel",
+"fr": "/fr/lago/meuble-de-salle-de-bains-cellule",
+"es": "/es/lago/mueble-de-bano-cellule"
+},
+"images": {
+"images/shop/lago/cellule-basin/grey-circular-washbasin.jpg": "lago-cellule-bathroom-furniture-01",
+"images/shop/lago/cellule-basin/floating-wall-mounted-bathroom-washbasin.jpg": "lago-cellule-bathroom-furniture-02",
+"images/shop/lago/cellule-basin/cellule-basin.jpg": "lago-cellule-bathroom-furniture-03",
+"images/shop/lago/cellule-basin/grey-and-white-circular-washbasin.jpg": "lago-cellule-bathroom-furniture-04",
+"images/shop/lago/cellule-basin/circular-washbasin-with-shelves.jpg": "lago-cellule-bathroom-furniture-05"
+},
+"drawings": {}
+},
+"DF-H10080": {
+"path": {
+"en": "/lago/cut-wardrobe",
+"ru": "/ru/lago/shkaf-cut",
+"de": "/de/lago/cut-kleiderkasten",
+"fr": "/fr/lago/armoire-cut",
+"es": "/es/lago/armario-cut"
+},
+"images": {
+"images/shop/lago/cut-wardrobe/wardrobe-with-hinged-panelled-door.jpg": "lago-cut-wardrobe-01",
+"images/shop/lago/cut-wardrobe/modern-modular-wardrobe.jpg": "lago-cut-wardrobe-02",
+"images/shop/lago/cut-wardrobe-for-childrens-room/cut-wardrobe.jpg": "lago-cut-01",
+"images/shop/lago/cut-wardrobe/wardrobe-with-hinged-door-and-inserts.jpg": "lago-cut-wardrobe-03",
+"images/shop/lago/cut-wardrobe/elegant-wardrobe-opening.jpg": "lago-cut-wardrobe-04",
+"images/shop/lago/cut-wardrobe/wardrobe-with-glass-shelves.jpg": "lago-cut-wardrobe-05"
+},
+"drawings": {}
+},
+"DF-H10084": {
+"path": {
+"en": "/lago/depth-bathroom-furniture",
+"ru": "/ru/lago/mebel-dlya-vannoy-depth",
+"de": "/de/lago/depth-badmobel",
+"fr": "/fr/lago/meuble-de-salle-de-bains-depth",
+"es": "/es/lago/mueble-de-bano-depth"
+},
+"images": {
+"images/shop/lago/depth-basin/complete-bathroom-furniture.jpg": "lago-depth-bathroom-furniture-01",
+"images/shop/lago/depth-basin/angular-wooden-basin.jpg": "lago-depth-bathroom-furniture-02",
+"images/shop/lago/depth-basin/depth-basin.jpg": "lago-depth-bathroom-furniture-03",
+"images/shop/lago/depth-basin/oak-basin.jpg": "lago-depth-bathroom-furniture-04",
+"images/shop/lago/depth-basin/double-basin-in-wood-and-glass.jpg": "lago-depth-bathroom-furniture-05",
+"images/shop/lago/depth-basin/transparent-glass-basin.jpg": "lago-depth-bathroom-furniture-06",
+"images/shop/lago/depth-basin/depth-basin-2.jpg": "lago-depth-bathroom-furniture-07",
+"images/shop/lago/depth-basin/wood-and-glass-basin.jpg": "lago-depth-bathroom-furniture-08",
+"images/shop/lago/depth-basin/glass-shelves-for-bathroom.jpg": "lago-depth-bathroom-furniture-09",
+"images/shop/lago/depth-basin/wooden-washbasin-with-bathroom-storage-units.jpg": "lago-depth-bathroom-furniture-10",
+"images/shop/lago/depth-basin/scuro-wooden-washbasin.jpg": "lago-depth-bathroom-furniture-11"
+},
+"drawings": {}
+},
+"DF-H10085": {
+"path": {
+"en": "/lago/diagolinea-kids-bookcase",
+"ru": "/ru/lago/stellazh-diagolinea-kids",
+"de": "/de/lago/diagolinea-kids-bucherregal",
+"fr": "/fr/lago/bibliotheque-diagolinea-kids",
+"es": "/es/lago/libreria-diagolinea-kids"
+},
+"images": {
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/colorful-children-s-bedroom.jpg": "lago-lagolinea-02",
+"images/shop/lago/diagolinea-bookshelf-for-the-children-room/diagolinea-kids-shelving.jpg": "lago-diagolinea-kids-bookcase-01",
+"images/shop/lago/diagolinea-bookshelf-for-the-children-room/children-s-bed-with-overhead-units.jpg": "lago-diagolinea-kids-bookcase-02",
+"images/shop/lago/fluttua-single-bed/children-s-bedroom-with-tree-bookcase.jpg": "lago-fluttua-02",
+"images/shop/lago/diagolinea-bookshelf-for-the-children-room/children-s-bedroom-tree-bookcase.jpg": "lago-diagolinea-kids-bookcase-03",
+"images/shop/lago/diagolinea-bookshelf-for-the-children-room/0283-kids-young-generale-02.jpg": "lago-diagolinea-kids-bookcase-04"
+},
+"drawings": {}
+},
+"DF-H10086": {
+"path": {
+"en": "/lago/dub-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-dub",
+"de": "/de/lago/dub-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-dub",
+"es": "/es/lago/sistema-de-almacenaje-dub"
+},
+"images": {
+"images/shop/lago/dub-wall-unit/modern-living-room-wall-unit.jpg": "lago-dub-storage-system-01",
+"images/shop/lago/dub-wall-unit/detail-of-marble-xglass-shelves-living-room-wall-unit.jpg": "lago-dub-storage-system-02",
+"images/shop/lago/dub-wall-unit/dub-wall-unit-1400.jpg": "lago-dub-storage-system-03",
+"images/shop/lago/dub-wall-unit/working-detail-of-living-room-wall-shelves.jpg": "lago-dub-storage-system-04"
+},
+"drawings": {}
+},
+"DF-H10087": {
+"path": {
+"en": "/lago/elyssa-bathroom-furniture",
+"ru": "/ru/lago/mebel-dlya-vannoy-elyssa",
+"de": "/de/lago/elyssa-badmobel",
+"fr": "/fr/lago/meuble-de-salle-de-bains-elyssa",
+"es": "/es/lago/mueble-de-bano-elyssa"
+},
+"images": {
+"images/shop/lago/lavabo-elyssa/bathroom-with-storage-unit.jpg": "lago-elyssa-bathroom-furniture-01",
+"images/shop/lago/lavabo-elyssa/bathroom-cabinet-with-two-basins.jpg": "lago-elyssa-bathroom-furniture-02",
+"images/shop/lago/lavabo-elyssa/lavabo-elyssa.jpg": "lago-elyssa-bathroom-furniture-03",
+"images/shop/lago/lavabo-elyssa/white-ceramic-countertop-basin.jpg": "lago-elyssa-bathroom-furniture-04",
+"images/shop/lago/lavabo-elyssa/ceramic-countertop-basin.jpg": "lago-elyssa-bathroom-furniture-05",
+"images/shop/lago/lavabo-elyssa/ceramic-basin-detail.jpg": "lago-elyssa-bathroom-furniture-06"
+},
+"drawings": {}
+},
+"DF-H10090": {
+"path": {
+"en": "/lago/et-voila-wardrobe",
+"ru": "/ru/lago/shkaf-et-voila",
+"de": "/de/lago/et-voila-kleiderkasten",
+"fr": "/fr/lago/armoire-et-voila",
+"es": "/es/lago/armario-et-voila"
+},
+"images": {
+"images/shop/lago/et-voila-wardrobe/hidden-fabric-wardrobe.jpg": "lago-et-voila-wardrobe-01",
+"images/shop/lago/et-voila-wardrobe/modular-wall-mounted-wardrobe.jpg": "lago-et-voila-wardrobe-02",
+"images/shop/lago/et-voila-wardrobe/et-voila-wardrobe.jpg": "lago-et-voila-wardrobe-03",
+"images/shop/lago/et-voila-wardrobe/prestige-wardrobe-fabric.jpg": "lago-et-voila-wardrobe-04",
+"images/shop/lago/et-voila-wardrobe/modular-fabric-wardrobe.jpg": "lago-et-voila-wardrobe-05",
+"images/shop/lago/et-voila-wardrobe/hidden-wardrobe.jpg": "lago-et-voila-wardrobe-06",
+"images/shop/lago/et-voila-wardrobe/fabric-wall-mounted-wardrobe.jpg": "lago-et-voila-wardrobe-07",
+"images/shop/lago/morgana-storage/white-fabric-wardrobe.jpg": "lago-et-voila-01",
+"images/shop/lago/et-voila-wardrobe/modern-bianco-fabric-wardrobe.jpg": "lago-et-voila-wardrobe-08",
+"images/shop/lago/et-voila-wardrobe/black-wall-mounted-fabric-wardrobe.jpg": "lago-et-voila-wardrobe-09",
+"images/shop/lago/et-voila-wardrobe/black-prestige-fabric-wardrobe.jpg": "lago-et-voila-wardrobe-10"
+},
+"drawings": {}
+},
+"DF-H10091": {
+"path": {
+"en": "/lago/et-voila-weightless-kids-wardrobe",
+"ru": "/ru/lago/shkaf-et-voila-weightless-kids",
+"de": "/de/lago/et-voila-weightless-kids-kleiderkasten",
+"fr": "/fr/lago/armoire-et-voila-weightless-kids",
+"es": "/es/lago/armario-et-voila-weightless-kids"
+},
+"images": {
+"images/shop/lago/fluttua-single-bed/desk-for-children-s-bedroom.jpg": "lago-fluttua-01",
+"images/shop/lago/et-voila-weightless-wardrobe-for-childrens-room/et-voila-weightless-bedroom-wardrobe.jpg": "lago-et-voila-weightless-kids-wardrobe-01",
+"images/shop/lago/et-voila-weightless-wardrobe-for-childrens-room/et-voila-weightless-wardrobe-for-childrens-room.jpg": "lago-et-voila-weightless-kids-wardrobe-02"
+},
+"drawings": {}
+},
+"DF-H10094": {
+"path": {
+"en": "/lago/flapp-wardrobe",
+"ru": "/ru/lago/shkaf-flapp",
+"de": "/de/lago/flapp-kleiderkasten",
+"fr": "/fr/lago/armoire-flapp",
+"es": "/es/lago/armario-flapp"
+},
+"images": {
+"images/shop/lago/flapp-wardrobe/corner-wardrobe.jpg": "lago-flapp-wardrobe-01",
+"images/shop/lago/flapp-wardrobe/flapp-wardrobe.jpg": "lago-flapp-wardrobe-02",
+"images/shop/lago/flapp-wardrobe/modular-wardrobe-detail.jpg": "lago-flapp-wardrobe-03",
+"images/shop/lago/flapp-wardrobe/wardrobe-handle.jpg": "lago-flapp-wardrobe-04",
+"images/shop/lago/flapp-wardrobe/white-modular-wardrobe.jpg": "lago-flapp-wardrobe-05"
+},
+"drawings": {}
+},
+"DF-H10099": {
+"path": {
+"en": "/lago/glasserie-bookcase",
+"ru": "/ru/lago/stellazh-glasserie",
+"de": "/de/lago/glasserie-bucherregal",
+"fr": "/fr/lago/bibliotheque-glasserie",
+"es": "/es/lago/libreria-glasserie"
+},
+"images": {
+"images/shop/lago/glasserie-wall-unit/equipped-wall-with-a-modern-design.jpg": "lago-glasserie-bookcase-01",
+"images/shop/lago/glasserie-wall-unit/design-wall-lighting-system.jpg": "lago-glasserie-bookcase-02",
+"images/shop/lago/glasserie-wall-unit/glasserie-wall-unit-1398.jpg": "lago-glasserie-bookcase-03",
+"images/shop/lago/glasserie-wall-unit/design-wall-unit-with-glass-shelves.jpg": "lago-glasserie-bookcase-04"
+},
+"drawings": {}
+},
+"DF-H10102": {
+"path": {
+"en": "/lago/groove-wardrobe",
+"ru": "/ru/lago/shkaf-groove",
+"de": "/de/lago/groove-kleiderkasten",
+"fr": "/fr/lago/armoire-groove",
+"es": "/es/lago/armario-groove"
+},
+"images": {
+"images/shop/lago/groove-wardrobe/elegant-bedroom-wardrobe.jpg": "lago-groove-wardrobe-01",
+"images/shop/lago/groove-wardrobe-for-childrens-room/groove-wardrobe.jpg": "lago-groove-01",
+"images/shop/lago/groove-wardrobe/wardrobe-in-different-finishes.jpg": "lago-groove-wardrobe-02",
+"images/shop/lago/groove-wardrobe/bedroom-hinged-wardrobe-opening.jpg": "lago-groove-wardrobe-03",
+"images/shop/lago/groove-wardrobe/modern-custom-made-wardrobe.jpg": "lago-groove-wardrobe-04",
+"images/shop/lago/groove-wardrobe/modern-bedroom-wardrobe.jpg": "lago-groove-wardrobe-05",
+"images/shop/lago/groove-wardrobe/modern-wardrobe-with-hinged-doors.jpg": "lago-groove-wardrobe-06",
+"images/shop/lago/groove-wardrobe/detail-of-internal-wardrobe-drawers.jpg": "lago-groove-wardrobe-07",
+"images/shop/lago/groove-wardrobe/wardrobe-with-customisable-interiors.jpg": "lago-groove-wardrobe-08"
+},
+"drawings": {}
+},
+"DF-H10103": {
+"path": {
+"en": "/lago/groove-kids-wardrobe",
+"ru": "/ru/lago/shkaf-groove-kids",
+"de": "/de/lago/groove-kids-kleiderkasten",
+"fr": "/fr/lago/armoire-groove-kids",
+"es": "/es/lago/armario-groove-kids"
+},
+"images": {
+"images/shop/lago/groove-wardrobe-for-childrens-room/blue-children-s-bedroom-wardrobe.jpg": "lago-groove-kids-wardrobe-01",
+"images/shop/lago/groove-wardrobe-for-childrens-room/groove-wardrobe.jpg": "lago-groove-01",
+"images/shop/lago/groove-wardrobe-for-childrens-room/bedroom-hinged-wardrobe-opening.jpg": "lago-groove-kids-wardrobe-02",
+"images/shop/lago/groove-wardrobe-for-childrens-room/wardrobe-in-different-finishes.jpg": "lago-groove-kids-wardrobe-03"
+},
+"drawings": {}
+},
+"DF-H10112": {
+"path": {
+"en": "/lago/kera-bathroom-furniture",
+"ru": "/ru/lago/mebel-dlya-vannoy-kera",
+"de": "/de/lago/kera-badmobel",
+"fr": "/fr/lago/meuble-de-salle-de-bains-kera",
+"es": "/es/lago/mueble-de-bano-kera"
+},
+"images": {
+"images/shop/lago/kera-basin/kera-basin.jpg": "lago-kera-bathroom-furniture-01",
+"images/shop/lago/kera-basin/kera-basin-2.jpg": "lago-kera-bathroom-furniture-02",
+"images/shop/lago/kera-basin/white-ceramic-washbasin.jpg": "lago-kera-bathroom-furniture-03",
+"images/shop/lago/kera-basin/oval-ceramic-washbasin.jpg": "lago-kera-bathroom-furniture-04",
+"images/shop/lago/kera-basin/wooden-countertop-with-countertop-basin.jpg": "lago-kera-bathroom-furniture-05",
+"images/shop/lago/kera-basin/elegant-ceramic-bathroom-washbasin.jpg": "lago-kera-bathroom-furniture-06",
+"images/shop/lago/kera-basin/ceramic-washbasin-with-marble-drawer-unit.jpg": "lago-kera-bathroom-furniture-07",
+"images/shop/lago/kera-basin/black-ceramic-basin.jpg": "lago-kera-bathroom-furniture-08"
+},
+"drawings": {}
+},
+"DF-H10113": {
+"path": {
+"en": "/lago/key-wardrobe",
+"ru": "/ru/lago/shkaf-key",
+"de": "/de/lago/key-kleiderkasten",
+"fr": "/fr/lago/armoire-key",
+"es": "/es/lago/armario-key"
+},
+"images": {
+"images/shop/lago/key-wardrobe/elegant-grey-wardrobe.jpg": "lago-key-wardrobe-01",
+"images/shop/lago/key-wardrobe/large-white-bedroom-wardrobe.jpg": "lago-key-wardrobe-02",
+"images/shop/lago/key-wardrobe-for-childrens-room/key-wardrobe.jpg": "lago-key-01",
+"images/shop/lago/key-wardrobe/wardrobe-door-handles.jpg": "lago-key-wardrobe-03",
+"images/shop/lago/key-wardrobe/designer-wardrobe-handle.jpg": "lago-key-wardrobe-04",
+"images/shop/lago/key-wardrobe/glass-wardrobe-with-drawers.jpg": "lago-key-wardrobe-05"
+},
+"drawings": {}
+},
+"DF-H10114": {
+"path": {
+"en": "/lago/key-kids-wardrobe",
+"ru": "/ru/lago/shkaf-key-kids",
+"de": "/de/lago/key-kids-kleiderkasten",
+"fr": "/fr/lago/armoire-key-kids",
+"es": "/es/lago/armario-key-kids"
+},
+"images": {
+"images/shop/lago/key-wardrobe-for-childrens-room/children-s-bedroom-desk.jpg": "lago-key-kids-wardrobe-01",
+"images/shop/lago/key-wardrobe-for-childrens-room/key-wardrobe.jpg": "lago-key-01",
+"images/shop/lago/key-wardrobe-for-childrens-room/wardrobe-door-handles.jpg": "lago-key-kids-wardrobe-02",
+"images/shop/lago/key-wardrobe-for-childrens-room/large-white-bedroom-wardrobe.jpg": "lago-key-kids-wardrobe-03"
+},
+"drawings": {}
+},
+"DF-H10117": {
+"path": {
+"en": "/lago/klif-bathroom-furniture",
+"ru": "/ru/lago/mebel-dlya-vannoy-klif",
+"de": "/de/lago/klif-badmobel",
+"fr": "/fr/lago/meuble-de-salle-de-bains-klif",
+"es": "/es/lago/mueble-de-bano-klif"
+},
+"images": {
+"images/shop/lago/lavabo-klif/wall-mounted-bathroom-cabinet-with-mirror.jpg": "lago-klif-bathroom-furniture-01",
+"images/shop/lago/lavabo-klif/suspended-washbasin-for-bathroom.jpg": "lago-klif-bathroom-furniture-02",
+"images/shop/lago/lavabo-klif/lavabo-klif.jpg": "lago-klif-bathroom-furniture-03",
+"images/shop/lago/lavabo-klif/designer-bathroom-basins.jpg": "lago-klif-bathroom-furniture-04",
+"images/shop/lago/lavabo-klif/modern-bathroom-basins.jpg": "lago-klif-bathroom-furniture-05",
+"images/shop/lago/lavabo-klif/wall-mounted-cabinet-with-washbasin.jpg": "lago-klif-bathroom-furniture-06",
+"images/shop/lago/lavabo-klif/integrated-washbasin-for-bathroom-cabinet.jpg": "lago-klif-bathroom-furniture-07",
+"images/shop/lago/lavabo-klif/bathroom-cabinet-opening.jpg": "lago-klif-bathroom-furniture-08"
+},
+"drawings": {}
+},
+"DF-H10120": {
+"path": {
+"en": "/lago/lagolinea-bookcase",
+"ru": "/ru/lago/stellazh-lagolinea",
+"de": "/de/lago/lagolinea-bucherregal",
+"fr": "/fr/lago/bibliotheque-lagolinea",
+"es": "/es/lago/libreria-lagolinea"
+},
+"images": {
+"images/shop/lago/lagolinea-bookshelf/custom-made-wall-bookshelf-brown.jpg": "lago-lagolinea-bookcase-01",
+"images/shop/lago/lagolinea-bookshelf/design-wall-bookshelf.jpg": "lago-lagolinea-bookcase-02",
+"images/shop/lago/lagolinea-bookshelf/lagolinea-bookcase-1222.jpg": "lago-lagolinea-bookcase-03",
+"images/shop/lago/lagolinea-bookshelf/customisable-wall-bookcase.jpg": "lago-lagolinea-bookcase-04",
+"images/shop/lago/lagolinea-bookshelf/grey-custom-made-wall-mounted-bookcase.jpg": "lago-lagolinea-bookcase-05",
+"images/shop/lago/lagolinea-bookshelf/grey-wall-bookcase.jpg": "lago-lagolinea-bookcase-06",
+"images/shop/lago/lagolinea-bookshelf/vertical-wall-mounted-bookcase.jpg": "lago-lagolinea-bookcase-07",
+"images/shop/lago/lagolinea-bookshelf/custom-made-wooden-wall-bookcase.jpg": "lago-lagolinea-bookcase-08",
+"images/shop/lago/lagolinea-bookshelf/small-light-blue-wall-mounted-bookcase.jpg": "lago-lagolinea-bookcase-09",
+"images/shop/lago/lagolinea-bookshelf/white-and-brown-wall-mounted-bookcase.jpg": "lago-lagolinea-bookcase-10",
+"images/shop/lago/lagolinea-bookshelf/grey-vertical-wall-mounted-bookcase.jpg": "lago-lagolinea-bookcase-11",
+"images/shop/lago/lagolinea-bookshelf/large-designer-bookcase.jpg": "lago-lagolinea-bookcase-12"
+},
+"drawings": {}
+},
+"DF-H10121": {
+"path": {
+"en": "/lago/lagolinea-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-lagolinea",
+"de": "/de/lago/lagolinea-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-lagolinea",
+"es": "/es/lago/sistema-de-almacenaje-lagolinea"
+},
+"images": {
+"images/shop/lago/lagolinea-wall-unit/black-fitted-wall.jpg": "lago-lagolinea-storage-system-01",
+"images/shop/lago/lagolinea-wall-unit/equipped-wall-lagolinea-1234.jpg": "lago-lagolinea-storage-system-02",
+"images/shop/lago/lagolinea-wall-unit/elegant-equipped-wall.jpg": "lago-lagolinea-storage-system-03",
+"images/shop/lago/lagolinea-wall-unit/custom-made-wall-unit-with-xglass-marble.jpg": "lago-lagolinea-storage-system-04",
+"images/shop/lago/lagolinea-wall-unit/customised-grey-glass-wall-unit.jpg": "lago-lagolinea-storage-system-05",
+"images/shop/lago/lagolinea-wall-unit/wall-system-with-lacquered-shelves.jpg": "lago-lagolinea-storage-system-06",
+"images/shop/lago/lagolinea-wall-unit/white-and-wood-equipped-wall.jpg": "lago-lagolinea-storage-system-07",
+"images/shop/lago/lagolinea-wall-unit/white-and-wooden-wall-system-with-lights.jpg": "lago-lagolinea-storage-system-08",
+"images/shop/lago/lagolinea-wall-unit/customised-wall-unit-with-tv-unit.jpg": "lago-lagolinea-storage-system-09",
+"images/shop/lago/lagolinea-wall-unit/white-fitted-wall.jpg": "lago-lagolinea-storage-system-10"
+},
+"drawings": {}
+},
+"DF-H10122": {
+"path": {
+"en": "/lago/lagolinea-kids-bookcase",
+"ru": "/ru/lago/stellazh-lagolinea-kids",
+"de": "/de/lago/lagolinea-kids-bucherregal",
+"fr": "/fr/lago/bibliotheque-lagolinea-kids",
+"es": "/es/lago/libreria-lagolinea-kids"
+},
+"images": {
+"images/shop/lago/lagolinea-childrens-bookshelf/designer-children-s-room-units.jpg": "lago-lagolinea-kids-bookcase-01",
+"images/shop/lago/lagolinea-childrens-bookshelf/lagolinea-shelving-kids.jpg": "lago-lagolinea-kids-bookcase-02",
+"images/shop/lago/lagolinea-childrens-bookshelf/desk-for-children-s-bedroom.jpg": "lago-lagolinea-kids-01",
+"images/shop/lago/lagolinea-childrens-bookshelf/customisable-children-s-bedroom-bookcase.jpg": "lago-lagolinea-kids-bookcase-03",
+"images/shop/lago/lagolinea-childrens-bookshelf/wall-mounted-bookcase-for-children-s-bedroom.jpg": "lago-lagolinea-kids-bookcase-04",
+"images/shop/lago/lagolinea-childrens-bookshelf/lagolinea-childrens-bookshelf.jpg": "lago-lagolinea-kids-bookcase-05",
+"images/shop/lago/lagolinea-childrens-bookshelf/lagolinea-childrens-bookshelf-2.jpg": "lago-lagolinea-kids-bookcase-06",
+"images/shop/lago/lagolinea-childrens-bookshelf/lagolinea-childrens-bookshelf-3.jpg": "lago-lagolinea-kids-bookcase-07",
+"images/shop/lago/lagolinea-childrens-bookshelf/lagolinea-childrens-bookshelf-4.jpg": "lago-lagolinea-kids-bookcase-08",
+"images/shop/lago/lagolinea-childrens-bookshelf/001.jpg": "lago-lagolinea-kids-bookcase-09"
+},
+"drawings": {}
+},
+"DF-H10123": {
+"path": {
+"en": "/lago/lagolinea-study-bookcase",
+"ru": "/ru/lago/stellazh-lagolinea-study",
+"de": "/de/lago/lagolinea-study-bucherregal",
+"fr": "/fr/lago/bibliotheque-lagolinea-study",
+"es": "/es/lago/libreria-lagolinea-study"
+},
+"images": {
+"images/shop/lago/lagolinea-study-bookshelf/study-furniture.jpg": "lago-lagolinea-study-01",
+"images/shop/lago/lagolinea-study-bookshelf/bookcase-with-hidden-desk.jpg": "lago-lagolinea-study-bookcase-01",
+"images/shop/lago/lagolinea-study-bookshelf/study-lagolinea-bookcase.jpg": "lago-lagolinea-study-bookcase-02",
+"images/shop/lago/space-saving-ideas/wall-mounted-study-bookcase.jpg": "lago-space-saving-ideas-02",
+"images/shop/lago/lagolinea-study-bookshelf/wall-mounted-bookcase-with-desk.jpg": "lago-lagolinea-study-bookcase-03",
+"images/shop/lago/lagolinea-study-bookshelf/bookcase-with-desk.jpg": "lago-lagolinea-study-bookcase-04"
+},
+"drawings": {}
+},
+"DF-H10135": {
+"path": {
+"en": "/lago/materia-chest-of-drawers",
+"ru": "/ru/lago/komod-materia",
+"de": "/de/lago/materia-kommode",
+"fr": "/fr/lago/commode-materia",
+"es": "/es/lago/comoda-materia"
+},
+"images": {
+"images/shop/lago/punto-mirror/white-dresser.jpg": "lago-punto-01",
+"images/shop/lago/materia-dresser/materia-dresser-1063.jpg": "lago-materia-chest-of-drawers-01",
+"images/shop/lago/materia-dresser/modern-dresser-in-gray-glass-and-dark-marble.jpg": "lago-materia-chest-of-drawers-02",
+"images/shop/lago/materia-dresser/detail-finishes-modern-dresser.jpg": "lago-materia-chest-of-drawers-03",
+"images/shop/lago/materia-dresser/modern-dresser-with-drawers.jpg": "lago-materia-chest-of-drawers-04",
+"images/shop/lago/materia-dresser/detail-profile-modern-dresser.jpg": "lago-materia-chest-of-drawers-05",
+"images/shop/lago/materia-dresser/black-and-white-xglass-modern-dresser.jpg": "lago-materia-chest-of-drawers-06",
+"images/shop/lago/materia-dresser/xglass-marble-modern-dresser.jpg": "lago-materia-chest-of-drawers-07",
+"images/shop/lago/materia-dresser/modern-centrepiece-dresser.jpg": "lago-materia-chest-of-drawers-08",
+"images/shop/lago/materia-dresser/wooden-dresser.jpg": "lago-materia-chest-of-drawers-09",
+"images/shop/lago/materia-dresser/elegant-brown-storage-unit-with-drawers.jpg": "lago-materia-chest-of-drawers-10"
+},
+"drawings": {}
+},
+"DF-H10136": {
+"path": {
+"en": "/lago/materia-sideboard",
+"ru": "/ru/lago/bufet-materia",
+"de": "/de/lago/materia-sideboard",
+"fr": "/fr/lago/buffet-materia",
+"es": "/es/lago/aparador-materia"
+},
+"images": {
+"images/shop/lago/materia-sideboard/xglass-marble-dining-room-sideboard.jpg": "lago-materia-sideboard-01",
+"images/shop/lago/materia-sideboard/xglass-grey-marble-sideboard.jpg": "lago-materia-sideboard-02",
+"images/shop/lago/materia-sideboard/materia-sideboard-1003.jpg": "lago-materia-sideboard-03",
+"images/shop/lago/materia-sideboard/xglass-grey-marble-living-room-sideboard.jpg": "lago-materia-sideboard-04",
+"images/shop/lago/materia-sideboard/rame-glass-wall-mounted-sideboard.jpg": "lago-materia-sideboard-05",
+"images/shop/lago/materia-sideboard/glass-wall-mounted-sideboard.jpg": "lago-materia-sideboard-06",
+"images/shop/lago/materia-sideboard/grey-dining-room-sideboard.jpg": "lago-materia-sideboard-07",
+"images/shop/lago/materia-sideboard/elegant-xglass-marble-glass-sideboard.jpg": "lago-materia-sideboard-08",
+"images/shop/lago/materia-sideboard/marble-sideboard-xglass-dark.jpg": "lago-materia-sideboard-09",
+"images/shop/lago/materia-sideboard/detail-glass-sideboard.jpg": "lago-materia-sideboard-10",
+"images/shop/lago/materia-sideboard/wall-hung-glass-sideboard.jpg": "lago-materia-sideboard-11",
+"images/shop/lago/materia-sideboard/brown-sideboard.jpg": "lago-materia-sideboard-12"
+},
+"drawings": {}
+},
+"DF-H10137": {
+"path": {
+"en": "/lago/materia-tv-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-materia-tv",
+"de": "/de/lago/materia-tv-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-materia-tv",
+"es": "/es/lago/sistema-de-almacenaje-materia-tv"
+},
+"images": {
+"images/shop/lago/materia-tv-unit/living-room-with-designer-tv-units.jpg": "lago-materia-tv-storage-system-01",
+"images/shop/lago/materia-tv-unit/materia-tv-unit-1052.jpg": "lago-materia-tv-storage-system-02",
+"images/shop/lago/materia-tv-unit/black-marble-tv-unit.jpg": "lago-materia-tv-storage-system-03",
+"images/shop/lago/materia-tv-unit/marble-effect-glass-tv-unit.jpg": "lago-materia-tv-storage-system-04",
+"images/shop/lago/materia-tv-unit/glass-veined-tv-unit-marble.jpg": "lago-materia-tv-storage-system-05",
+"images/shop/lago/materia-tv-unit/glass-wall-mounted-tv-unit.jpg": "lago-materia-tv-storage-system-06",
+"images/shop/lago/materia-tv-unit/glass-tv-unit-door-opening.jpg": "lago-materia-tv-storage-system-07",
+"images/shop/lago/materia-tv-unit/glass-tv-unit-for-living-room.jpg": "lago-materia-tv-storage-system-08",
+"images/shop/lago/materia-tv-unit/invisible-cableway-in-xglass-marble.jpg": "lago-materia-tv-storage-system-09",
+"images/shop/lago/materia-tv-unit/xglass-marble-tv-unit-drawer.jpg": "lago-materia-tv-storage-system-10"
+},
+"drawings": {}
+},
+"DF-H10138": {
+"path": {
+"en": "/lago/materia-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-materia",
+"de": "/de/lago/materia-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-materia",
+"es": "/es/lago/sistema-de-almacenaje-materia"
+},
+"images": {
+"images/shop/lago/materia-wall-unit/equipped-tv-wall-with-illuminated-shelves.jpg": "lago-materia-storage-system-01",
+"images/shop/lago/materia-wall-unit/equipped-wall-matter-1920.jpg": "lago-materia-storage-system-02",
+"images/shop/lago/materia-wall-unit/glass-tv-wall-unit.jpg": "lago-materia-storage-system-03",
+"images/shop/lago/materia-wall-unit/wall-unit-with-tv-unit.jpg": "lago-materia-storage-system-04",
+"images/shop/lago/materia-wall-unit/wall-unit-with-glass-storage.jpg": "lago-materia-storage-system-05",
+"images/shop/lago/materia-wall-unit/glass-living-room-tv-cabinet.jpg": "lago-materia-storage-system-06",
+"images/shop/lago/materia-wall-unit/green-glass-living-room-furniture.jpg": "lago-materia-storage-system-07",
+"images/shop/lago/materia-wall-unit/wall-mounted-green-glass-cabinet.jpg": "lago-materia-storage-system-08",
+"images/shop/lago/materia-wall-unit/wall-unit-with-boiseries-and-tv-unit.jpg": "lago-materia-storage-system-09",
+"images/shop/lago/materia-wall-unit/storage-unit-for-wall-unit.jpg": "lago-materia-storage-system-10",
+"images/shop/lago/materia-wall-unit/materia-wall-unit-2157-2.jpg": "lago-materia-storage-system-11",
+"images/shop/lago/materia-wall-unit/modern-glass-tv-wall-unit.jpg": "lago-materia-storage-system-12"
+},
+"drawings": {}
+},
+"DF-H10144": {
+"path": {
+"en": "/lago/morgana-chest-of-drawers",
+"ru": "/ru/lago/komod-morgana",
+"de": "/de/lago/morgana-kommode",
+"fr": "/fr/lago/commode-morgana",
+"es": "/es/lago/comoda-morgana"
+},
+"images": {
+"images/shop/lago/morgana-storage/chest-of-drawers-beige.jpg": "lago-morgana-chest-of-drawers-01",
+"images/shop/lago/morgana-storage/morgana-dresser.jpg": "lago-morgana-chest-of-drawers-02",
+"images/shop/lago/morgana-storage/white-fabric-wardrobe.jpg": "lago-et-voila-01",
+"images/shop/lago/morgana-storage/white-chest-of-drawers-with-wheels-for-bedroom.jpg": "lago-morgana-chest-of-drawers-03",
+"images/shop/lago/morgana-storage/white-drawer-unit-profiled-door.jpg": "lago-morgana-chest-of-drawers-04",
+"images/shop/lago/morgana-storage/mobile-drawer-unit-on-wheels.jpg": "lago-morgana-chest-of-drawers-05",
+"images/shop/lago/morgana-storage/cassettiera-morgana-generale-4.jpg": "lago-morgana-chest-of-drawers-06"
+},
+"drawings": {}
+},
+"DF-H10145": {
+"path": {
+"en": "/lago/n-o-w-sideboard",
+"ru": "/ru/lago/bufet-n-o-w",
+"de": "/de/lago/n-o-w-sideboard",
+"fr": "/fr/lago/buffet-n-o-w",
+"es": "/es/lago/aparador-n-o-w"
+},
+"images": {
+"images/shop/lago/now-sideboard/glass-panel-units.jpg": "lago-n-o-w-sideboard-01",
+"images/shop/lago/now-sideboard/now-sideboard-1390.jpg": "lago-n-o-w-sideboard-02",
+"images/shop/lago/now-sideboard/glass-unit-coloured-panels.jpg": "lago-n-o-w-sideboard-03",
+"images/shop/lago/now-sideboard/bespoke-sideboard-with-display-case.jpg": "lago-n-o-w-sideboard-04",
+"images/shop/lago/now-sideboard/light-grey-xglass-sideboard.jpg": "lago-n-o-w-sideboard-05",
+"images/shop/lago/now-sideboard/display-cabinet-shelves-detail.jpg": "lago-n-o-w-sideboard-06",
+"images/shop/lago/now-sideboard/white-glass-designer-unit.jpg": "lago-n-o-w-sideboard-07",
+"images/shop/lago/now-sideboard/large-white-glass-unit.jpg": "lago-n-o-w-sideboard-08",
+"images/shop/lago/now-sideboard/white-glass-unit-with-doors.jpg": "lago-n-o-w-sideboard-09",
+"images/shop/lago/now-sideboard/glass-sideboard-with-display-cabinet.jpg": "lago-n-o-w-sideboard-10",
+"images/shop/lago/now-sideboard/xglass-black-marble-glass-unit.jpg": "lago-n-o-w-sideboard-11",
+"images/shop/lago/now-sideboard/glass-unit-smoked-glass-detail.jpg": "lago-n-o-w-sideboard-12"
+},
+"drawings": {}
+},
+"DF-H10146": {
+"path": {
+"en": "/lago/n-o-w-tv-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-n-o-w-tv",
+"de": "/de/lago/n-o-w-tv-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-n-o-w-tv",
+"es": "/es/lago/sistema-de-almacenaje-n-o-w-tv"
+},
+"images": {
+"images/shop/lago/now-tv-unit/living-room-tv-unit-with-display-cabinets.jpg": "lago-n-o-w-tv-storage-system-01",
+"images/shop/lago/now-tv-unit/n-o-w-tv-unit-2117-1.jpg": "lago-n-o-w-tv-storage-system-02",
+"images/shop/lago/now-tv-unit/glass-living-room-tv-unit-with-lighting.jpg": "lago-n-o-w-tv-storage-system-03",
+"images/shop/lago/now-tv-unit/living-room-glass-tv-unit.jpg": "lago-n-o-w-tv-storage-system-04"
+},
+"drawings": {}
+},
+"DF-H10147": {
+"path": {
+"en": "/lago/n-o-w-storage-system",
+"ru": "/ru/lago/sistema-hraneniya-n-o-w",
+"de": "/de/lago/n-o-w-stauraumsystem",
+"fr": "/fr/lago/systeme-de-rangement-n-o-w",
+"es": "/es/lago/sistema-de-almacenaje-n-o-w"
+},
+"images": {
+"images/shop/lago/now-wall-unit/suspended-glass-living-room-wall-unit-with-lighting.jpg": "lago-n-o-w-storage-system-01",
+"images/shop/lago/now-wall-unit/glass-suspended-living-room-wall-unit.jpg": "lago-n-o-w-storage-system-02",
+"images/shop/lago/now-wall-unit/supersalone-now-wall-unit-1404.jpg": "lago-n-o-w-storage-system-03",
+"images/shop/lago/now-wall-unit/wall-unit-suspended-with-glass-doors.jpg": "lago-n-o-w-storage-system-04",
+"images/shop/lago/now-wall-unit/glass-wall-system.jpg": "lago-n-o-w-storage-system-05",
+"images/shop/lago/now-wall-unit/now-wall-unit.jpg": "lago-n-o-w-storage-system-06",
+"images/shop/lago/now-wall-unit/striped-wall-unit-with-display-cabinet.jpg": "lago-n-o-w-storage-system-07",
+"images/shop/lago/now-wall-unit/italian-modern-living-room-with-wall-unit.jpg": "lago-n-o-w-storage-system-08",
+"images/shop/lago/now-wall-unit/wall-unit-suspended-with-display-case.jpg": "lago-n-o-w-storage-system-09",
+"images/shop/lago/now-wall-unit/living-room-glass-wall-system.jpg": "lago-n-o-w-storage-system-10",
+"images/shop/lago/now-wall-unit/smoked-glass-display-cabinet.jpg": "lago-n-o-w-storage-system-11",
+"images/shop/lago/now-wall-unit/grey-living-room-wall-unit-with-display-cabinets.jpg": "lago-n-o-w-storage-system-12"
+},
+"drawings": {}
+},
+"DF-H10148": {
+"path": {
+"en": "/lago/n-o-w-wardrobe",
+"ru": "/ru/lago/shkaf-n-o-w",
+"de": "/de/lago/n-o-w-kleiderkasten",
+"fr": "/fr/lago/armoire-n-o-w",
+"es": "/es/lago/armario-n-o-w"
+},
+"images": {
+"images/shop/lago/now-wardrobe/white-bedroom-wardrobe.jpg": "lago-n-o-w-wardrobe-01",
+"images/shop/lago/now-wardrobe-for-childrens-room/now-wardrobe.jpg": "lago-n-o-w-02",
+"images/shop/lago/now-wardrobe-for-childrens-room/custom-white-glass-wardrobe.jpg": "lago-n-o-w-03",
+"images/shop/lago/now-wardrobe/wardrobe-glass-panel-detail.jpg": "lago-n-o-w-wardrobe-02",
+"images/shop/lago/now-wardrobe/double-bedroom-with-wardrobe.jpg": "lago-n-o-w-wardrobe-03",
+"images/shop/lago/now-wardrobe/glass-wardrobe-drawers.jpg": "lago-n-o-w-wardrobe-04",
+"images/shop/lago/now-wardrobe/custom-white-wardrobe.jpg": "lago-n-o-w-wardrobe-05",
+"images/shop/lago/now-wardrobe/wardrobe-with-hinged-doors.jpg": "lago-n-o-w-04",
+"images/shop/lago/now-wardrobe/designer-wardrobe-with-glass-panels.jpg": "lago-n-o-w-wardrobe-06",
+"images/shop/lago/now-wardrobe-for-childrens-room/custom-modular-wardrobe.jpg": "lago-n-o-w-05",
+"images/shop/lago/now-wardrobe/large-glass-wardrobe-with-compartments.jpg": "lago-n-o-w-wardrobe-07",
+"images/shop/lago/now-wardrobe/wardrobe-with-drawers.jpg": "lago-n-o-w-wardrobe-08"
+},
+"drawings": {}
+},
+"DF-H10151": {
+"path": {
+"en": "/lago/n-o-w-kids-wardrobe",
+"ru": "/ru/lago/shkaf-n-o-w-kids",
+"de": "/de/lago/n-o-w-kids-kleiderkasten",
+"fr": "/fr/lago/armoire-n-o-w-kids",
+"es": "/es/lago/armario-n-o-w-kids"
+},
+"images": {
+"images/shop/lago/now-wardrobe-for-childrens-room/children-s-bedroom-wardrobe.jpg": "lago-n-o-w-kids-wardrobe-01",
+"images/shop/lago/now-wardrobe-for-childrens-room/now-wardrobe.jpg": "lago-n-o-w-02",
+"images/shop/lago/now-wardrobe-for-childrens-room/children-s-bedroom-hinged-wardrobe.jpg": "lago-n-o-w-kids-wardrobe-02",
+"images/shop/lago/now-wardrobe-for-childrens-room/custom-white-glass-wardrobe.jpg": "lago-n-o-w-03",
+"images/shop/lago/now-wardrobe-for-childrens-room/custom-modular-wardrobe.jpg": "lago-n-o-w-05"
+},
+"drawings": {}
+},
+"DF-H10152": {
+"path": {
+"en": "/lago/n-o-w-quick-wardrobe",
+"ru": "/ru/lago/shkaf-n-o-w-quick",
+"de": "/de/lago/n-o-w-quick-kleiderkasten",
+"fr": "/fr/lago/armoire-n-o-w-quick",
+"es": "/es/lago/armario-n-o-w-quick"
+},
+"images": {
+"images/shop/lago/now-quick-wardrobe/custom-grey-wardrobe.jpg": "lago-n-o-w-quick-wardrobe-01",
+"images/shop/lago/now-quick-wardrobe/grey-bedroom-wardrobe.jpg": "lago-n-o-w-quick-wardrobe-02",
+"images/shop/lago/now-quick-wardrobe-for-childrens-room/now-quick-wardrobe.jpg": "lago-n-o-w-quick-01",
+"images/shop/lago/now-quick-wardrobe-for-childrens-room/modular-hinged-wardrobe.jpg": "lago-n-o-w-quick-02",
+"images/shop/lago/now-quick-wardrobe/modular-grey-wardrobe.jpg": "lago-n-o-w-quick-wardrobe-03",
+"images/shop/lago/now-quick-wardrobe/modular-bedroom-wardrobe.jpg": "lago-n-o-w-quick-wardrobe-04",
+"images/shop/lago/now-quick-wardrobe/spacious-bedroom-wardrobe.jpg": "lago-n-o-w-quick-wardrobe-05",
+"images/shop/lago/now-quick-wardrobe/bedroom-wardrobe-with-hinged-doors.jpg": "lago-n-o-w-quick-wardrobe-06",
+"images/shop/lago/now-quick-wardrobe/coloured-bedroom-wardrobe.jpg": "lago-n-o-w-quick-wardrobe-07",
+"images/shop/lago/now-quick-wardrobe/modular-wardrobe-with-coloured-panels.jpg": "lago-n-o-w-quick-wardrobe-08",
+"images/shop/lago/now-quick-wardrobe/hinged-door-wardrobe-drawers.jpg": "lago-n-o-w-quick-wardrobe-09",
+"images/shop/lago/now-wardrobe/wardrobe-with-hinged-doors.jpg": "lago-n-o-w-04"
+},
+"drawings": {}
+},
+"DF-H10153": {
+"path": {
+"en": "/lago/n-o-w-quick-kids-wardrobe",
+"ru": "/ru/lago/shkaf-n-o-w-quick-kids",
+"de": "/de/lago/n-o-w-quick-kids-kleiderkasten",
+"fr": "/fr/lago/armoire-n-o-w-quick-kids",
+"es": "/es/lago/armario-n-o-w-quick-kids"
+},
+"images": {
+"images/shop/lago/now-quick-wardrobe-for-childrens-room/teenage-bedroom.jpg": "lago-n-o-w-quick-kids-wardrobe-01",
+"images/shop/lago/now-quick-wardrobe-for-childrens-room/now-quick-wardrobe.jpg": "lago-n-o-w-quick-01",
+"images/shop/lago/now-quick-wardrobe-for-childrens-room/grigio-hinged-wardrobe-for-children-s-bedroom.jpg": "lago-air-05",
+"images/shop/lago/now-quick-wardrobe-for-childrens-room/grey-bedroom-wardrobe.jpg": "lago-n-o-w-quick-kids-wardrobe-02",
+"images/shop/lago/now-quick-wardrobe-for-childrens-room/modular-hinged-wardrobe.jpg": "lago-n-o-w-quick-02"
+},
+"drawings": {}
+},
+"DF-H10154": {
+"path": {
+"en": "/lago/n-o-w-quick-sliding-wardrobe",
+"ru": "/ru/lago/shkaf-n-o-w-quick-sliding",
+"de": "/de/lago/n-o-w-quick-sliding-kleiderkasten",
+"fr": "/fr/lago/armoire-n-o-w-quick-sliding",
+"es": "/es/lago/armario-n-o-w-quick-sliding"
+},
+"images": {
+"images/shop/lago/now-quick-sliding-wardrobe/modern-sliding-door-wardrobe.jpg": "lago-n-o-w-quick-sliding-wardrobe-01",
+"images/shop/lago/now-quick-sliding-wardrobe/double-sided-sliding-door-wardrobe.jpg": "lago-n-o-w-quick-sliding-wardrobe-02",
+"images/shop/lago/now-quick-sliding-wardrobe-for-childrens-room/now-quick-sliding-wardrobe.jpg": "lago-n-o-w-quick-sliding-01",
+"images/shop/lago/now-quick-sliding-wardrobe/modular-sliding-door-wardrobe.jpg": "lago-n-o-w-quick-sliding-wardrobe-03",
+"images/shop/lago/now-quick-sliding-wardrobe/wardrobe-sliding-door.jpg": "lago-n-o-w-quick-sliding-wardrobe-04",
+"images/shop/lago/now-quick-sliding-wardrobe/custom-sliding-door-wardrobe.jpg": "lago-n-o-w-quick-sliding-wardrobe-05",
+"images/shop/lago/now-quick-sliding-wardrobe/bedroom-sliding-door-wardrobe.jpg": "lago-n-o-w-quick-sliding-wardrobe-06",
+"images/shop/lago/now-quick-sliding-wardrobe/sliding-door-wardrobe-with-drawers.jpg": "lago-n-o-w-quick-sliding-wardrobe-07",
+"images/shop/lago/now-quick-sliding-wardrobe/sliding-door-wardrobe-drawers.jpg": "lago-n-o-w-quick-sliding-wardrobe-08"
+},
+"drawings": {}
+},
+"DF-H10155": {
+"path": {
+"en": "/lago/n-o-w-quick-sliding-kids-wardrobe",
+"ru": "/ru/lago/shkaf-n-o-w-quick-sliding-kids",
+"de": "/de/lago/n-o-w-quick-sliding-kids-kleiderkasten",
+"fr": "/fr/lago/armoire-n-o-w-quick-sliding-kids",
+"es": "/es/lago/armario-n-o-w-quick-sliding-kids"
+},
+"images": {
+"images/shop/lago/now-quick-sliding-wardrobe-for-childrens-room/children-s-bedroom-wardrobe-with-sliding-doors.jpg": "lago-n-o-w-quick-sliding-kids-wardrobe-01",
+"images/shop/lago/now-quick-sliding-wardrobe-for-childrens-room/now-quick-sliding-wardrobe.jpg": "lago-n-o-w-quick-sliding-01",
+"images/shop/lago/now-quick-sliding-wardrobe-for-childrens-room/modern-sliding-door-wardrobe.jpg": "lago-n-o-w-quick-sliding-kids-wardrobe-02",
+"images/shop/lago/now-quick-sliding-wardrobe-for-childrens-room/sliding-door-wardrobe-drawers.jpg": "lago-n-o-w-quick-sliding-kids-wardrobe-03"
+},
+"drawings": {}
+},
+"DF-H10156": {
+"path": {
+"en": "/lago/n-o-w-sliding-wardrobe",
+"ru": "/ru/lago/shkaf-n-o-w-sliding",
+"de": "/de/lago/n-o-w-sliding-kleiderkasten",
+"fr": "/fr/lago/armoire-n-o-w-sliding",
+"es": "/es/lago/armario-n-o-w-sliding"
+},
+"images": {
+"images/shop/lago/now-sliding-wardrobe/white-and-brown-sliding-door-wardrobe.jpg": "lago-n-o-w-sliding-wardrobe-01",
+"images/shop/lago/now-sliding-wardrobe/white-sliding-wardrobe.jpg": "lago-n-o-w-sliding-wardrobe-02",
+"images/shop/lago/now-sliding-wardrobe/now-sliding-wardrobe.jpg": "lago-n-o-w-sliding-wardrobe-03",
+"images/shop/lago/now-sliding-wardrobe/white-wardrobe-with-sliding-doors.jpg": "lago-n-o-w-sliding-wardrobe-04",
+"images/shop/lago/now-sliding-wardrobe/wardrobe-with-sliding-doors-and-drawers.jpg": "lago-n-o-w-sliding-wardrobe-05",
+"images/shop/lago/now-sliding-wardrobe/wardrobe-with-modular-sliding-doors.jpg": "lago-n-o-w-sliding-wardrobe-06"
+},
+"drawings": {}
+},
+"DF-H10157": {
+"path": {
+"en": "/lago/n-o-w-weightless-kids-wardrobe",
+"ru": "/ru/lago/shkaf-n-o-w-weightless-kids",
+"de": "/de/lago/n-o-w-weightless-kids-kleiderkasten",
+"fr": "/fr/lago/armoire-n-o-w-weightless-kids",
+"es": "/es/lago/armario-n-o-w-weightless-kids"
+},
+"images": {
+"images/shop/lago/now-weightless-wardrobe-for-childrens-room/001.jpg": "lago-n-o-w-weightless-kids-wardrobe-01",
+"images/shop/lago/now-weightless-wardrobe-for-childrens-room/armadio-cameretta-n-o-w-weightless.jpg": "lago-n-o-w-weightless-kids-wardrobe-02",
+"images/shop/lago/now-weightless-wardrobe-for-childrens-room/00001.jpg": "lago-n-o-w-weightless-kids-wardrobe-03",
+"images/shop/lago/now-weightless-wardrobe-for-childrens-room/01.jpg": "lago-n-o-w-weightless-kids-wardrobe-04",
+"images/shop/lago/now-weightless-wardrobe-for-childrens-room/now-weightless-wardrobe-for-childrens-room.jpg": "lago-n-o-w-weightless-kids-wardrobe-05"
+},
+"drawings": {}
+},
+"DF-H10162": {
+"path": {
+"en": "/lago/outfit-walk-in-closet",
+"ru": "/ru/lago/garderobnaya-outfit",
+"de": "/de/lago/outfit-begehbarer-kleiderkasten",
+"fr": "/fr/lago/dressing-outfit",
+"es": "/es/lago/vestidor-outfit"
+},
+"images": {
+"images/shop/lago/outfit-walk-in-closet/modern-walk-in-wardrobe.jpg": "lago-outfit-walk-in-closet-01",
+"images/shop/lago/outfit-walk-in-closet/full-wall-walk-in-wardrobe.jpg": "lago-outfit-walk-in-closet-02",
+"images/shop/lago/outfit-walk-in-closet/outfit-walk-in-wardrobe.jpg": "lago-outfit-walk-in-closet-03",
+"images/shop/lago/outfit-walk-in-closet/walk-in-wardrobe-with-drawers.jpg": "lago-outfit-walk-in-closet-04",
+"images/shop/lago/outfit-walk-in-closet/double-sided-walk-in-wardrobe.jpg": "lago-outfit-walk-in-closet-05",
+"images/shop/lago/outfit-walk-in-closet/walk-in-wardrobe-room.jpg": "lago-outfit-walk-in-closet-06",
+"images/shop/lago/outfit-walk-in-closet/elegant-custom-walk-in-wardrobe.jpg": "lago-outfit-walk-in-closet-07",
+"images/shop/lago/outfit-walk-in-closet/walk-in-wardrobe-with-glass-shelves.jpg": "lago-outfit-walk-in-closet-08",
+"images/shop/lago/outfit-walk-in-closet/corner-walk-in-wardrobe.jpg": "lago-outfit-walk-in-closet-09",
+"images/shop/lago/outfit-walk-in-closet/walk-in-wardrobe-with-glass-drawers.jpg": "lago-outfit-walk-in-closet-10",
+"images/shop/lago/outfit-walk-in-closet/walk-in-wardrobe-accessorisable-leather-drawers.jpg": "lago-outfit-walk-in-closet-11",
+"images/shop/lago/outfit-walk-in-closet/custom-walk-in-wardrobe.jpg": "lago-outfit-walk-in-closet-12"
+},
+"drawings": {}
+},
+"DF-H10164": {
+"path": {
+"en": "/lago/pentagram-bookcase",
+"ru": "/ru/lago/stellazh-pentagram",
+"de": "/de/lago/pentagram-bucherregal",
+"fr": "/fr/lago/bibliotheque-pentagram",
+"es": "/es/lago/libreria-pentagram"
+},
+"images": {
+"images/shop/lago/pentagram-bookshelf/white-wall-mounted-modular-bookcase.jpg": "lago-pentagram-bookcase-01",
+"images/shop/lago/pentagram-bookshelf/pentagram-bookshelf-1455.jpg": "lago-pentagram-bookcase-02",
+"images/shop/lago/pentagram-bookshelf/modular-bookcase-with-lit-marble-back-panels.jpg": "lago-pentagram-bookcase-03",
+"images/shop/lago/pentagram-bookshelf/white-modular-bookcase.jpg": "lago-pentagram-bookcase-04",
+"images/shop/lago/pentagram-bookshelf/black-modular-bookcase-with-lighting.jpg": "lago-pentagram-bookcase-05",
+"images/shop/lago/pentagram-bookshelf/modular-wall-mounted-bookcase.jpg": "lago-pentagram-bookcase-06"
+},
+"drawings": {}
+},
+"DF-H10168": {
+"path": {
+"en": "/lago/plenum-sideboard",
+"ru": "/ru/lago/bufet-plenum",
+"de": "/de/lago/plenum-sideboard",
+"fr": "/fr/lago/buffet-plenum",
+"es": "/es/lago/aparador-plenum"
+},
+"images": {
+"images/shop/lago/plenum-sideboard/sideboard-with-xglass-marble-finish.jpg": "lago-plenum-sideboard-01",
+"images/shop/lago/plenum-sideboard/xglass-marble-dark-design-sideboard.jpg": "lago-plenum-sideboard-02",
+"images/shop/lago/plenum-sideboard/plenum-sideboard-0833-marble.jpg": "lago-plenum-sideboard-03",
+"images/shop/lago/plenum-sideboard/0834-madia-plenum-still-life-frontale.jpg": "lago-plenum-sideboard-04",
+"images/shop/lago/plenum-sideboard/0834-madia-plenum-still-life-laterale.jpg": "lago-plenum-sideboard-05",
+"images/shop/lago/plenum-sideboard/modern-light-blue-glass-sideboard.jpg": "lago-plenum-sideboard-06",
+"images/shop/lago/plenum-sideboard/glass-storage-unit.jpg": "lago-plenum-sideboard-07",
+"images/shop/lago/plenum-sideboard/brown-glass-storage-unit.jpg": "lago-plenum-sideboard-08",
+"images/shop/lago/plenum-sideboard/modern-sideboard-with-shelves.jpg": "lago-plenum-sideboard-09"
+},
+"drawings": {}
+},
+"DF-H10177": {
+"path": {
+"en": "/lago/skin-bathroom-furniture",
+"ru": "/ru/lago/mebel-dlya-vannoy-skin",
+"de": "/de/lago/skin-badmobel",
+"fr": "/fr/lago/meuble-de-salle-de-bains-skin",
+"es": "/es/lago/mueble-de-bano-skin"
+},
+"images": {
+"images/shop/lago/skin-basin/designer-mosaic-washbasin.jpg": "lago-skin-bathroom-furniture-01",
+"images/shop/lago/skin-basin/modern-sink.jpg": "lago-36e8-02",
+"images/shop/lago/skin-basin/skin-basin.jpg": "lago-skin-bathroom-furniture-02",
+"images/shop/lago/skin-basin/modern-blu-mosaic-washbasin.jpg": "lago-skin-bathroom-furniture-03",
+"images/shop/lago/skin-basin/resin-washbasin.jpg": "lago-skin-bathroom-furniture-04",
+"images/shop/lago/skin-basin/modern-washbasin.jpg": "lago-skin-bathroom-furniture-05",
+"images/shop/lago/skin-basin/mosaic-washbasin-detail.jpg": "lago-skin-bathroom-furniture-06"
+},
+"drawings": {}
+},
+"DF-H10178": {
+"path": {
+"en": "/lago/smart-wardrobe",
+"ru": "/ru/lago/shkaf-smart",
+"de": "/de/lago/smart-kleiderkasten",
+"fr": "/fr/lago/armoire-smart",
+"es": "/es/lago/armario-smart"
+},
+"images": {
+"images/shop/lago/smart-wardrobe/modular-designer-wardrobe.jpg": "lago-smart-wardrobe-01",
+"images/shop/lago/smart-wardrobe/designer-bedroom-wardrobe.jpg": "lago-smart-wardrobe-02",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/smart-wardrobe.jpg": "lago-smart-01",
+"images/shop/lago/smart-wardrobe/hinged-wardrobe-with-drawers.jpg": "lago-smart-wardrobe-03",
+"images/shop/lago/smart-wardrobe/internal-wardrobe-drawers.jpg": "lago-smart-wardrobe-04",
+"images/shop/lago/smart-wardrobe/large-wall-mounted-wardrobe.jpg": "lago-smart-wardrobe-05",
+"images/shop/lago/smart-wardrobe/wardrobe-with-bookcase.jpg": "lago-smart-wardrobe-06"
+},
+"drawings": {}
+},
+"DF-H10179": {
+"path": {
+"en": "/lago/smart-kids-wardrobe",
+"ru": "/ru/lago/shkaf-smart-kids",
+"de": "/de/lago/smart-kids-kleiderkasten",
+"fr": "/fr/lago/armoire-smart-kids",
+"es": "/es/lago/armario-smart-kids"
+},
+"images": {
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/designer-children-s-bedroom-with-bridge-layout.jpg": "lago-air-06",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/children-s-bedroom-coloured-corner-wardrobe.jpg": "lago-smart-kids-wardrobe-01",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/smart-wardrobe.jpg": "lago-smart-01",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/colorful-children-s-bedroom.jpg": "lago-lagolinea-02",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/designer-bedroom-wardrobe.jpg": "lago-smart-kids-wardrobe-02",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/modular-designer-wardrobe.jpg": "lago-smart-kids-wardrobe-03",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/large-wall-mounted-wardrobe.jpg": "lago-smart-kids-wardrobe-04",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/wardrobe-with-bookcase.jpg": "lago-smart-kids-wardrobe-05"
+},
+"drawings": {}
+},
+"DF-H10197": {
+"path": {
+"en": "/lago/vista-walk-in-closet",
+"ru": "/ru/lago/garderobnaya-vista",
+"de": "/de/lago/vista-begehbarer-kleiderkasten",
+"fr": "/fr/lago/dressing-vista",
+"es": "/es/lago/vestidor-vista"
+},
+"images": {
+"images/shop/lago/vista-walk-in-closet/open-wardrobe-with-drawer.jpg": "lago-vista-walk-in-closet-01",
+"images/shop/lago/vista-walk-in-closet/gold-walk-in-wardrobe-with-drawers.jpg": "lago-vista-walk-in-closet-02",
+"images/shop/lago/vista-walk-in-closet/vista-walk-in-wardrobe.jpg": "lago-vista-walk-in-closet-03",
+"images/shop/lago/vista-walk-in-closet/open-walk-in-wardrobe.jpg": "lago-vista-walk-in-closet-04",
+"images/shop/lago/vista-walk-in-closet/walk-in-wardrobe-drawers.jpg": "lago-vista-walk-in-closet-05",
+"images/shop/lago/vista-walk-in-closet/elegant-exposed-walk-in-wardrobe.jpg": "lago-vista-walk-in-closet-06",
+"images/shop/lago/vista-walk-in-closet/grey-exposed-walk-in-wardrobe.jpg": "lago-vista-walk-in-closet-07"
 },
 "drawings": {}
 },
@@ -6651,6 +9234,486 @@
 "images/shop/rugiano/night-storage-units-vogue-como/vogue-letto-como-comodini.jpg": "rugiano-vogue-chest-of-drawers-01",
 "images/shop/rugiano/night-storage-units-vogue-como/37998-2.jpg": "rugiano-vogue-chest-of-drawers-02",
 "images/shop/rugiano/night-storage-units-vogue-como/37992.jpg": "rugiano-vogue-chest-of-drawers-03"
+},
+"drawings": {}
+},
+"DF-K10005": {
+"path": {
+"en": "/lago/36e8-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-36e8",
+"de": "/de/lago/36e8-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-36e8",
+"es": "/es/lago/mesita-de-noche-36e8"
+},
+"images": {
+"images/shop/lago/36e8-bedside-tables/grey-suspended-modern-bedside-table.jpg": "lago-36e8-bedside-table-01",
+"images/shop/lago/36e8-bedside-tables/modern-glass-bedside-table-grey.jpg": "lago-36e8-bedside-table-02",
+"images/shop/lago/36e8-bedside-tables/36e8-bedside-table-0762.jpg": "lago-36e8-bedside-table-03",
+"images/shop/lago/36e8-bedside-tables/modern-bedside-table-with-glass-legs.jpg": "lago-36e8-bedside-table-04",
+"images/shop/lago/36e8-bedside-tables/modern-suspended-wooden-bedside-table.jpg": "lago-36e8-bedside-table-05",
+"images/shop/lago/36e8-bedside-tables/modern-and-suspended-wooden-bedside-table.jpg": "lago-36e8-bedside-table-06",
+"images/shop/lago/36e8-bedside-tables/light-and-practical-bedside-table.jpg": "lago-36e8-bedside-table-07",
+"images/shop/lago/36e8-bedside-tables/wooden-glass-bedside-table.jpg": "lago-36e8-bedside-table-08",
+"images/shop/lago/36e8-bedside-tables/blue-wall-mounted-bedside-table.jpg": "lago-36e8-bedside-table-09",
+"images/shop/lago/36e8-bedside-tables/wall-mounted-wooden-bedside-table.jpg": "lago-36e8-bedside-table-10",
+"images/shop/lago/36e8-bedside-tables/white-wall-mounted-bedside-table.jpg": "lago-36e8-bedside-table-11",
+"images/shop/lago/36e8-bedside-tables/bedside-table-with-wooden-drawers.jpg": "lago-36e8-bedside-table-12"
+},
+"drawings": {}
+},
+"DF-K10006": {
+"path": {
+"en": "/lago/36e8-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-36e8",
+"de": "/de/lago/36e8-couchtisch",
+"fr": "/fr/lago/table-basse-36e8",
+"es": "/es/lago/mesa-de-centro-36e8"
+},
+"images": {
+"images/shop/lago/36e8-coffee-table/wooden-coffee-table-for-living-room.jpg": "lago-36e8-coffee-table-01",
+"images/shop/lago/36e8-coffee-table/designer-coffee-table-for-living-room.jpg": "lago-36e8-coffee-table-02",
+"images/shop/lago/36e8-coffee-table/36e8-coffee-table-1925.jpg": "lago-36e8-coffee-table-03",
+"images/shop/lago/36e8-coffee-table/wooden-coffee-table.jpg": "lago-36e8-coffee-table-04"
+},
+"drawings": {}
+},
+"DF-K10028": {
+"path": {
+"en": "/lago/air-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-air",
+"de": "/de/lago/air-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-air",
+"es": "/es/lago/mesita-de-noche-air"
+},
+"images": {
+"images/shop/lago/air-bedside-tables/contemporary-bedroom-with-bedside-table.jpg": "lago-air-bedside-table-01",
+"images/shop/lago/air-bedside-tables/white-bedside-tables-with-drawers.jpg": "lago-air-bedside-table-02",
+"images/shop/lago/air-bedside-tables/air-bedside-table-0770.jpg": "lago-air-bedside-table-03",
+"images/shop/lago/air-bedside-tables/bedside-table-detail-with-drawers.jpg": "lago-air-bedside-table-04",
+"images/shop/lago/air-bedside-tables/bedside-table-with-drawers.jpg": "lago-air-bedside-table-05",
+"images/shop/lago/air-bedside-tables/brown-bedside-table.jpg": "lago-air-bedside-table-06",
+"images/shop/lago/air-bedside-tables/white-bedside-table-profiled-door.jpg": "lago-air-bedside-table-07"
+},
+"drawings": {}
+},
+"DF-K10029": {
+"path": {
+"en": "/lago/air-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-air",
+"de": "/de/lago/air-couchtisch",
+"fr": "/fr/lago/table-basse-air",
+"es": "/es/lago/mesa-de-centro-air"
+},
+"images": {
+"images/shop/lago/air-coffee-table/wood-and-glass-coffee-tables-for-the-living-room.jpg": "lago-air-coffee-table-01",
+"images/shop/lago/air-coffee-table/light-wood-coffee-table-for-living-room.jpg": "lago-air-coffee-table-02",
+"images/shop/lago/air-coffee-table/air-wildwood-coffee-table-1945.jpg": "lago-air-coffee-table-03",
+"images/shop/lago/air-coffee-table/orange-coffee-table-for-living-room.jpg": "lago-air-coffee-table-04",
+"images/shop/lago/air-coffee-table/coffee-table-detail.jpg": "lago-air-coffee-table-05",
+"images/shop/lago/air-coffee-table/light-blue-glass-coffee-table.jpg": "lago-air-coffee-table-06"
+},
+"drawings": {}
+},
+"DF-K10038": {
+"path": {
+"en": "/lago/air-round-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-air-round",
+"de": "/de/lago/air-round-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-air-round",
+"es": "/es/lago/mesita-de-noche-air-round"
+},
+"images": {
+"images/shop/lago/air-round-bedside-tables/modern-bed-with-fabric-headboard.jpg": "lago-air-round-bedside-table-01",
+"images/shop/lago/air-round-bedside-tables/container-bed-with-soft-headboard.jpg": "lago-air-round-bedside-table-02",
+"images/shop/lago/air-round-bedside-tables/air-bedside-table.jpg": "lago-air-round-bedside-table-03",
+"images/shop/lago/air-round-bedside-tables/brown-fabric-storage-bed.jpg": "lago-air-round-bedside-table-04"
+},
+"drawings": {}
+},
+"DF-K10039": {
+"path": {
+"en": "/lago/air-round-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-air-round",
+"de": "/de/lago/air-round-couchtisch",
+"fr": "/fr/lago/table-basse-air-round",
+"es": "/es/lago/mesa-de-centro-air-round"
+},
+"images": {
+"images/shop/lago/air-round-coffee-table/round-coffee-tables-for-modern-living-rooms.jpg": "lago-air-round-coffee-table-01",
+"images/shop/lago/air-round-coffee-table/round-wood-and-glass-coffee-table-for-living-room.jpg": "lago-air-round-coffee-table-02",
+"images/shop/lago/air-round-coffee-table/air-xglass-round-coffee-table-1975x.jpg": "lago-air-round-coffee-table-03",
+"images/shop/lago/air-round-coffee-table/round-wooden-coffee-table.jpg": "lago-air-round-coffee-table-04",
+"images/shop/lago/air-round-coffee-table/wood-and-glass-coffee-tables-for-the-living-room.jpg": "lago-air-round-coffee-table-05",
+"images/shop/lago/air-round-coffee-table/detail-round-coffee-table.jpg": "lago-air-round-coffee-table-06"
+},
+"drawings": {}
+},
+"DF-K10046": {
+"path": {
+"en": "/lago/air-soft-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-air-soft",
+"de": "/de/lago/air-soft-couchtisch",
+"fr": "/fr/lago/table-basse-air-soft",
+"es": "/es/lago/mesa-de-centro-air-soft"
+},
+"images": {
+"images/shop/lago/air-soft-coffee-table/glass-coffee-table-with-marble-grain.jpg": "lago-air-soft-coffee-table-01",
+"images/shop/lago/air-soft-coffee-table/glass-coffee-table-for-living-room.jpg": "lago-air-soft-coffee-table-02",
+"images/shop/lago/air-soft-coffee-table/air-soft-coffee-table-1955x.jpg": "lago-air-soft-coffee-table-03",
+"images/shop/lago/air-soft-coffee-table/glass-coffee-table-top-detail.jpg": "lago-air-soft-coffee-table-04",
+"images/shop/lago/air-soft-coffee-table/coffee-table-with-marble-top-xglass.jpg": "lago-air-soft-coffee-table-05"
+},
+"drawings": {}
+},
+"DF-K10053": {
+"path": {
+"en": "/lago/alberoni-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-alberoni",
+"de": "/de/lago/alberoni-couchtisch",
+"fr": "/fr/lago/table-basse-alberoni",
+"es": "/es/lago/mesa-de-centro-alberoni"
+},
+"images": {
+"images/shop/lago/alberoni-coffee-table/coloured-coffee-tables-for-living-rooms.jpg": "lago-alberoni-coffee-table-01",
+"images/shop/lago/alberoni-coffee-table/tavolini-alberoni-iconcina-sito.jpg": "lago-alberoni-coffee-table-02",
+"images/shop/lago/alberoni-coffee-table/coloured-designer-coffee-tables-for-the-living-room.jpg": "lago-alberoni-coffee-table-03"
+},
+"drawings": {}
+},
+"DF-K10062": {
+"path": {
+"en": "/lago/blendie-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-blendie",
+"de": "/de/lago/blendie-couchtisch",
+"fr": "/fr/lago/table-basse-blendie",
+"es": "/es/lago/mesa-de-centro-blendie"
+},
+"images": {
+"images/shop/lago/blendie-coffee-table/beige-marble-and-glass-living-room-occasional-table.jpg": "lago-blendie-coffee-table-01",
+"images/shop/lago/blendie-coffee-table/glass-coffee-table-with-elegant-finish.jpg": "lago-blendie-coffee-table-02",
+"images/shop/lago/blendie-coffee-table/xglass-marble-blendie-occasional-table.jpg": "lago-blendie-coffee-table-03",
+"images/shop/lago/blendie-coffee-table/designer-coffee-table-for-the-living-room.jpg": "lago-blendie-coffee-table-04",
+"images/shop/lago/blendie-coffee-table/coloured-living-room-occasional-table.jpg": "lago-blendie-coffee-table-05",
+"images/shop/lago/blendie-coffee-table/marble-and-coloured-glass-top-living-room-occasional-table.jpg": "lago-blendie-coffee-table-06",
+"images/shop/lago/blendie-coffee-table/light-and-dark-marble-living-room-occasional-table.jpg": "lago-blendie-coffee-table-07"
+},
+"drawings": {}
+},
+"DF-K10071": {
+"path": {
+"en": "/lago/class-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-class",
+"de": "/de/lago/class-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-class",
+"es": "/es/lago/mesita-de-noche-class"
+},
+"images": {
+"images/shop/lago/class-bedside-tables/design-double-bed-with-fabric-headboard.jpg": "lago-class-bedside-table-01",
+"images/shop/lago/class-bedside-tables/design-bedside-table-in-wood-and-glass.jpg": "lago-class-bedside-table-02",
+"images/shop/lago/class-bedside-tables/class-bedside-table.jpg": "lago-class-bedside-table-03",
+"images/shop/lago/class-bedside-tables/modern-bedside-table-for-bedroom.jpg": "lago-class-bedside-table-04",
+"images/shop/lago/class-bedside-tables/modern-bedside-table-in-wood-and-glass.jpg": "lago-class-bedside-table-05"
+},
+"drawings": {}
+},
+"DF-K10079": {
+"path": {
+"en": "/lago/correr-slim-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-correr-slim",
+"de": "/de/lago/correr-slim-couchtisch",
+"fr": "/fr/lago/table-basse-correr-slim",
+"es": "/es/lago/mesa-de-centro-correr-slim"
+},
+"images": {
+"images/shop/lago/correr-slim-coffee-table/living-room-table-in-wood-and-glass.jpg": "lago-correr-slim-coffee-table-01",
+"images/shop/lago/correr-slim-coffee-table/designer-coffee-table-for-living-room.jpg": "lago-correr-slim-coffee-table-02",
+"images/shop/lago/correr-slim-coffee-table/tavolino-correr-slim-iconcina-sito.jpg": "lago-correr-slim-coffee-table-03",
+"images/shop/lago/correr-slim-coffee-table/coffee-table-for-living-room.jpg": "lago-correr-slim-coffee-table-04"
+},
+"drawings": {}
+},
+"DF-K10108": {
+"path": {
+"en": "/lago/hom-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-hom",
+"de": "/de/lago/hom-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-hom",
+"es": "/es/lago/mesita-de-noche-hom"
+},
+"images": {
+"images/shop/lago/hom-bedside-tables/suspended-bed-with-dark-wood-headboard.jpg": "lago-hom-bedside-table-01",
+"images/shop/lago/hom-bedside-tables/suspended-glass-nightstand.jpg": "lago-hom-bedside-table-02",
+"images/shop/lago/hom-bedside-tables/bedside-table-hom.jpg": "lago-hom-bedside-table-03",
+"images/shop/lago/hom-bedside-tables/wall-mounted-wood-and-glass-night-table.jpg": "lago-hom-bedside-table-04",
+"images/shop/lago/hom-bedside-tables/beige-wall-mounted-night-table.jpg": "lago-hom-bedside-table-05"
+},
+"drawings": {}
+},
+"DF-K10124": {
+"path": {
+"en": "/lago/layers-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-layers",
+"de": "/de/lago/layers-couchtisch",
+"fr": "/fr/lago/table-basse-layers",
+"es": "/es/lago/mesa-de-centro-layers"
+},
+"images": {
+"images/shop/lago/coffee-table-layers/smoked-bronze-glass-and-marble-occasional-table.jpg": "lago-layers-coffee-table-01",
+"images/shop/lago/coffee-table-layers/glass-occasional-table.jpg": "lago-layers-coffee-table-02",
+"images/shop/lago/coffee-table-layers/modern-smoked-glass-occasional-table.jpg": "lago-layers-coffee-table-03",
+"images/shop/lago/coffee-table-layers/smoked-glass-coffee-table.jpg": "lago-layers-coffee-table-04",
+"images/shop/lago/coffee-table-layers/glass-coffee-table-detail.jpg": "lago-layers-coffee-table-05"
+},
+"drawings": {}
+},
+"DF-K10125": {
+"path": {
+"en": "/lago/lean-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-lean",
+"de": "/de/lago/lean-couchtisch",
+"fr": "/fr/lago/table-basse-lean",
+"es": "/es/lago/mesa-de-centro-lean"
+},
+"images": {
+"images/shop/lago/lean-coffee-table/curved-wooden-occasional-table-with-glass-supports.jpg": "lago-lean-coffee-table-01",
+"images/shop/lago/lean-coffee-table/lean-coffee-table.jpg": "lago-lean-coffee-table-02",
+"images/shop/lago/lean-coffee-table/wooden-glass-occasional-table.jpg": "lago-lean-coffee-table-03"
+},
+"drawings": {}
+},
+"DF-K10127": {
+"path": {
+"en": "/lago/livre-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-livre",
+"de": "/de/lago/livre-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-livre",
+"es": "/es/lago/mesita-de-noche-livre"
+},
+"images": {
+"images/shop/lago/livre-bedside-tables/modern-bed-with-beige-fabric-headboard.jpg": "lago-air-03",
+"images/shop/lago/livre-bedside-tables/modern-design-glass-bedside-table.jpg": "lago-livre-bedside-table-01",
+"images/shop/lago/livre-bedside-tables/livre-bedside-table.jpg": "lago-livre-bedside-table-02",
+"images/shop/lago/livre-bedside-tables/original-night-table-with-glass-supports.jpg": "lago-livre-bedside-table-03",
+"images/shop/lago/livre-bedside-tables/design-nightstand-in-wood-and-glass.jpg": "lago-livre-bedside-table-04"
+},
+"drawings": {}
+},
+"DF-K10128": {
+"path": {
+"en": "/lago/livre-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-livre",
+"de": "/de/lago/livre-couchtisch",
+"fr": "/fr/lago/table-basse-livre",
+"es": "/es/lago/mesa-de-centro-livre"
+},
+"images": {
+"images/shop/lago/livre-coffee-table/glass-sofa-table.jpg": "lago-livre-coffee-table-01",
+"images/shop/lago/livre-coffee-table/smoked-glass-coffee-table.jpg": "lago-kipo-03",
+"images/shop/lago/livre-coffee-table/livre-coffee-table-2126.jpg": "lago-livre-coffee-table-02"
+},
+"drawings": {}
+},
+"DF-K10130": {
+"path": {
+"en": "/lago/londy-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-londy",
+"de": "/de/lago/londy-couchtisch",
+"fr": "/fr/lago/table-basse-londy",
+"es": "/es/lago/mesa-de-centro-londy"
+},
+"images": {
+"images/shop/lago/londy-coffee-table/shaped-coffee-table-for-living-room.jpg": "lago-londy-coffee-table-01",
+"images/shop/lago/londy-coffee-table/fabric-and-glass-sofa-table.jpg": "lago-londy-coffee-table-02",
+"images/shop/lago/londy-coffee-table/londy-coffee-table.jpg": "lago-londy-coffee-table-03",
+"images/shop/lago/londy-coffee-table/detail-side-table-with-glass-top.jpg": "lago-londy-coffee-table-04"
+},
+"drawings": {}
+},
+"DF-K10133": {
+"path": {
+"en": "/lago/materia-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-materia",
+"de": "/de/lago/materia-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-materia",
+"es": "/es/lago/mesita-de-noche-materia"
+},
+"images": {
+"images/shop/lago/materia-bedside-tables/wall-hung-bedroom-bedside-table.jpg": "lago-materia-bedside-table-01",
+"images/shop/lago/materia-bedside-tables/materia-bedside-table-1070.jpg": "lago-materia-bedside-table-02",
+"images/shop/lago/materia-bedside-tables/bedside-table-detail-in-light-marble.jpg": "lago-materia-bedside-table-03",
+"images/shop/lago/materia-bedside-tables/suspended-bed-with-glass-bedside-tables.jpg": "lago-materia-bedside-table-04",
+"images/shop/lago/materia-bedside-tables/gold-bedside-table-with-drawer.jpg": "lago-materia-bedside-table-05",
+"images/shop/lago/materia-bedside-tables/freestanding-bedroom-nightstand.jpg": "lago-materia-bedside-table-06"
+},
+"drawings": {}
+},
+"DF-K10134": {
+"path": {
+"en": "/lago/materia-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-materia",
+"de": "/de/lago/materia-couchtisch",
+"fr": "/fr/lago/table-basse-materia",
+"es": "/es/lago/mesa-de-centro-materia"
+},
+"images": {
+"images/shop/lago/materia-coffee-table/coffee-table-with-glass-container.jpg": "lago-materia-coffee-table-01",
+"images/shop/lago/materia-coffee-table/glass-coffee-table.jpg": "lago-materia-coffee-table-02",
+"images/shop/lago/materia-coffee-table/materia-coffee-table-1930.jpg": "lago-materia-coffee-table-03",
+"images/shop/lago/materia-coffee-table/glass-coffee-table-profile-detail.jpg": "lago-materia-coffee-table-04",
+"images/shop/lago/materia-coffee-table/floor-standing-glass-coffee-table-for-living-room.jpg": "lago-materia-coffee-table-05"
+},
+"drawings": {}
+},
+"DF-K10143": {
+"path": {
+"en": "/lago/morgana-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-morgana",
+"de": "/de/lago/morgana-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-morgana",
+"es": "/es/lago/mesita-de-noche-morgana"
+},
+"images": {
+"images/shop/lago/morgana-bedside-tables/modern-bedside-tables.jpg": "lago-morgana-bedside-table-01",
+"images/shop/lago/morgana-bedside-tables/space-saving-night-table-with-three-drawers.jpg": "lago-morgana-bedside-table-02",
+"images/shop/lago/morgana-bedside-tables/morgana-bedside-table.jpg": "lago-morgana-bedside-table-03",
+"images/shop/lago/morgana-bedside-tables/mobile-white-and-beige-drawer-unit.jpg": "lago-morgana-bedside-table-04",
+"images/shop/lago/morgana-bedside-tables/cassettiera-morgana-dettaglio-1.jpg": "lago-morgana-bedside-table-05"
+},
+"drawings": {}
+},
+"DF-K10165": {
+"path": {
+"en": "/lago/pleasure-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-pleasure",
+"de": "/de/lago/pleasure-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-pleasure",
+"es": "/es/lago/mesita-de-noche-pleasure"
+},
+"images": {
+"images/shop/lago/pleasure-bedside-tables/hanging-night-table-with-shaped-top.jpg": "lago-pleasure-bedside-table-01",
+"images/shop/lago/pleasure-bedside-tables/suspended-glass-nightstand.jpg": "lago-pleasure-bedside-table-02",
+"images/shop/lago/pleasure-bedside-tables/pleasure-bedside-table.jpg": "lago-pleasure-bedside-table-03"
+},
+"drawings": {}
+},
+"DF-K10166": {
+"path": {
+"en": "/lago/pleasure-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-pleasure",
+"de": "/de/lago/pleasure-couchtisch",
+"fr": "/fr/lago/table-basse-pleasure",
+"es": "/es/lago/mesa-de-centro-pleasure"
+},
+"images": {
+"images/shop/lago/coffee-table-pleasure/glass-coffee-table-for-modern-living-room.jpg": "lago-pleasure-coffee-table-01",
+"images/shop/lago/coffee-table-pleasure/glass-coffee-table.jpg": "lago-pleasure-coffee-table-02",
+"images/shop/lago/coffee-table-pleasure/pleasure-living-room-occasional-table.jpg": "lago-pleasure-coffee-table-03",
+"images/shop/lago/coffee-table-pleasure/wood-and-glass-coffee-tables-for-living-rooms.jpg": "lago-pleasure-coffee-table-04",
+"images/shop/lago/coffee-table-pleasure/glass-coffee-tables-for-modern-living-rooms.jpg": "lago-pleasure-coffee-table-05",
+"images/shop/lago/coffee-table-pleasure/softly-shaped-glass-coffee-tables.jpg": "lago-pleasure-coffee-table-06",
+"images/shop/lago/kipo-rug/wooden-coffee-table-with-glass-supports.jpg": "lago-kipo-02",
+"images/shop/lago/coffee-table-pleasure/detail-interlocking-wood-and-glass-coffee-table.jpg": "lago-pleasure-coffee-table-07"
+},
+"drawings": {}
+},
+"DF-K10180": {
+"path": {
+"en": "/lago/snip-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-snip",
+"de": "/de/lago/snip-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-snip",
+"es": "/es/lago/mesita-de-noche-snip"
+},
+"images": {
+"images/shop/lago/snip-bedside-tables/glass-bedside-table-for-modern-bedroom.jpg": "lago-snip-bedside-table-01",
+"images/shop/lago/snip-bedside-tables/nightstand-bedroom-design.jpg": "lago-snip-bedside-table-02",
+"images/shop/lago/snip-bedside-tables/snip-bedside-table.jpg": "lago-snip-bedside-table-03"
+},
+"drawings": {}
+},
+"DF-K10181": {
+"path": {
+"en": "/lago/snip-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-snip",
+"de": "/de/lago/snip-couchtisch",
+"fr": "/fr/lago/table-basse-snip",
+"es": "/es/lago/mesa-de-centro-snip"
+},
+"images": {
+"images/shop/lago/snip-coffee-table/corner-glass-sofa-table.jpg": "lago-snip-coffee-table-01",
+"images/shop/lago/snip-coffee-table/wood-and-glass-sofa-table.jpg": "lago-snip-coffee-table-02",
+"images/shop/lago/snip-coffee-table/snip-coffee-table-2130.jpg": "lago-snip-coffee-table-03",
+"images/shop/lago/snip-coffee-table/corner-glass-coffee-table.jpg": "lago-snip-coffee-table-04"
+},
+"drawings": {}
+},
+"DF-K10190": {
+"path": {
+"en": "/lago/tell-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-tell",
+"de": "/de/lago/tell-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-tell",
+"es": "/es/lago/mesita-de-noche-tell"
+},
+"images": {
+"images/shop/lago/tell-bedside-tables/elegant-glass-bedside-table-for-bedroom.jpg": "lago-tell-bedside-table-01",
+"images/shop/lago/tell-bedside-tables/glass-bedside-table-for-bedroom.jpg": "lago-tell-bedside-table-02",
+"images/shop/lago/tell-bedside-tables/tell-bedside-table.jpg": "lago-tell-bedside-table-03"
+},
+"drawings": {}
+},
+"DF-K10191": {
+"path": {
+"en": "/lago/tell-side-table",
+"ru": "/ru/lago/pristavnoy-stolik-tell",
+"de": "/de/lago/tell-beistelltisch",
+"fr": "/fr/lago/table-d-appoint-tell",
+"es": "/es/lago/mesa-auxiliar-tell"
+},
+"images": {
+"images/shop/lago/tell-coffee-table/glass-sofa-table.jpg": "lago-tell-side-table-01",
+"images/shop/lago/tell-coffee-table/glass-smoked-grey-sofa-table.jpg": "lago-tell-side-table-02",
+"images/shop/lago/tell-coffee-table/tell-sofa-table.jpg": "lago-tell-side-table-03",
+"images/shop/lago/tell-coffee-table/smoked-glass-coffee-table.jpg": "lago-tell-side-table-04",
+"images/shop/lago/tell-coffee-table/glass-coffee-table-profile-detail.jpg": "lago-tell-side-table-05"
+},
+"drawings": {}
+},
+"DF-K10193": {
+"path": {
+"en": "/lago/upglass-bedside-table",
+"ru": "/ru/lago/prikrovatnaya-tumba-upglass",
+"de": "/de/lago/upglass-nachtkastchen",
+"fr": "/fr/lago/table-de-chevet-upglass",
+"es": "/es/lago/mesita-de-noche-upglass"
+},
+"images": {
+"images/shop/lago/upglass-bedside-tables/glass-nightstand-with-drawer.jpg": "lago-upglass-bedside-table-01",
+"images/shop/lago/upglass-bedside-tables/designer-glass-bedside-tables.jpg": "lago-upglass-bedside-table-02",
+"images/shop/lago/upglass-bedside-tables/upglass-bedside-table.jpg": "lago-upglass-bedside-table-03",
+"images/shop/lago/upglass-bedside-tables/marble-vein-bedside-table.jpg": "lago-upglass-bedside-table-04",
+"images/shop/lago/upglass-bedside-tables/scuro-marble-designer-bedside-table.jpg": "lago-upglass-bedside-table-05",
+"images/shop/lago/upglass-bedside-tables/bedside-table-detail.jpg": "lago-upglass-bedside-table-06",
+"images/shop/lago/upglass-bedside-tables/designer-night-table-in-grey-glass.jpg": "lago-upglass-bedside-table-07",
+"images/shop/lago/upglass-bedside-tables/glass-sideboard-profile.jpg": "lago-upglass-bedside-table-08"
+},
+"drawings": {}
+},
+"DF-K10194": {
+"path": {
+"en": "/lago/upglass-coffee-table",
+"ru": "/ru/lago/zhurnalnyy-stolik-upglass",
+"de": "/de/lago/upglass-couchtisch",
+"fr": "/fr/lago/table-basse-upglass",
+"es": "/es/lago/mesa-de-centro-upglass"
+},
+"images": {
+"images/shop/lago/coffee-table-upglass/italian-modern-sofa-for-living-room.jpg": "lago-upglass-coffee-table-01",
+"images/shop/lago/coffee-table-upglass/marble-glass-occasional-table.jpg": "lago-upglass-coffee-table-02",
+"images/shop/lago/coffee-table-upglass/upglass-occasional-table.jpg": "lago-upglass-coffee-table-03",
+"images/shop/lago/coffee-table-upglass/smoked-glass-occasional-table.jpg": "lago-upglass-coffee-table-04",
+"images/shop/lago/coffee-table-upglass/transparent-glass-coffee-table.jpg": "lago-upglass-coffee-table-05",
+"images/shop/lago/coffee-table-upglass/coffee-table-profile-detail.jpg": "lago-upglass-coffee-table-06"
 },
 "drawings": {}
 },
@@ -8414,6 +11477,278 @@
 "images/shop/rugiano/coffee-tables-zoe/measures/zoe-88.png": "rugiano-zoe-coffee-table-dimensions-02"
 }
 },
+"DF-S10023": {
+"path": {
+"en": "/lago/air-sofa",
+"ru": "/ru/lago/divan-air",
+"de": "/de/lago/air-sofa",
+"fr": "/fr/lago/canape-air",
+"es": "/es/lago/sofa-air"
+},
+"images": {
+"images/shop/lago/air-sofa/light-fabric-sofa-with-chaise-longue.jpg": "lago-air-sofa-01",
+"images/shop/lago/air-sofa/beige-sofa-for-modern-living-room.jpg": "lago-air-sofa-02",
+"images/shop/lago/air-sofa/air-sofa-0819.jpg": "lago-air-sofa-03",
+"images/shop/lago/air-sofa/sofa-with-practical-coupling-system.jpg": "lago-air-01",
+"images/shop/lago/air-sofa/sofa-with-chaise-longue-and-wooden-coffee-table.jpg": "lago-air-sofa-04",
+"images/shop/lago/air-sofa/glass-leg-detail.jpg": "lago-air-02",
+"images/shop/lago/air-sofa/suspended-fabric-sofa-for-living-room.jpg": "lago-air-sofa-05",
+"images/shop/lago/air-sofa/blue-modular-sofa-with-glass-supports.jpg": "lago-air-sofa-06",
+"images/shop/lago/air-sofa/blue-fabric-modular-sofa.jpg": "lago-air-sofa-07",
+"images/shop/lago/air-sofa/living-room-furniture.jpg": "lago-air-sofa-08",
+"images/shop/lago/air-sofa/modular-corner-sofa-for-modern-living-room.jpg": "lago-air-sofa-09",
+"images/shop/lago/air-sofa/modular-sofa-glass-supports.jpg": "lago-air-sofa-10"
+},
+"drawings": {}
+},
+"DF-S10041": {
+"path": {
+"en": "/lago/air-slim-sofa",
+"ru": "/ru/lago/divan-air-slim",
+"de": "/de/lago/air-slim-sofa",
+"fr": "/fr/lago/canape-air-slim",
+"es": "/es/lago/sofa-air-slim"
+},
+"images": {
+"images/shop/lago/air-slim-sofa/modern-fabric-sofa.jpg": "lago-air-slim-sofa-01",
+"images/shop/lago/air-slim-sofa/modern-sectional-sofa-grey.jpg": "lago-air-slim-sofa-02",
+"images/shop/lago/air-slim-sofa/air-slim-sofa-2614.jpg": "lago-air-slim-sofa-03",
+"images/shop/lago/air-slim-sofa/slim-backrests-for-sofa.jpg": "lago-air-slim-sofa-04",
+"images/shop/lago/air-slim-sofa/sofa-back-detail.jpg": "lago-air-slim-sofa-05",
+"images/shop/lago/air-slim-sofa/white-sofa-with-peninsula.jpg": "lago-air-slim-sofa-06",
+"images/shop/lago/air-slim-sofa/white-sofa-with-chaise-longue.jpg": "lago-air-slim-sofa-07",
+"images/shop/lago/air-slim-sofa/beige-corner-sofa.jpg": "lago-air-slim-sofa-08",
+"images/shop/lago/air-slim-sofa/elegant-sectional-sofa-with-slim-backrests.jpg": "lago-air-slim-sofa-09",
+"images/shop/lago/air-slim-sofa/glass-leg-detail.jpg": "lago-air-slim-sofa-10"
+},
+"drawings": {}
+},
+"DF-S10043": {
+"path": {
+"en": "/lago/air-soft-sofa",
+"ru": "/ru/lago/divan-air-soft",
+"de": "/de/lago/air-soft-sofa",
+"fr": "/fr/lago/canape-air-soft",
+"es": "/es/lago/sofa-air-soft"
+},
+"images": {
+"images/shop/lago/air-soft-sofa/italian-modern-sofa-for-living-room.jpg": "lago-air-soft-sofa-01",
+"images/shop/lago/air-soft-sofa/sofa-with-glass-supports.jpg": "lago-air-soft-sofa-02",
+"images/shop/lago/air-soft-sofa/air-soft-sofa-1902.jpg": "lago-air-soft-sofa-03",
+"images/shop/lago/air-soft-sofa/coffee-table-integrated-in-the-sofa-frame.jpg": "lago-air-soft-sofa-04",
+"images/shop/lago/air-soft-sofa/soft-upholstery-for-sofa.jpg": "lago-air-soft-sofa-05",
+"images/shop/lago/air-soft-sofa/suspended-sofa-for-modern-living-room.jpg": "lago-air-soft-sofa-06",
+"images/shop/lago/air-soft-sofa/comfy-grey-living-room-sofa.jpg": "lago-air-soft-sofa-07",
+"images/shop/lago/air-soft-sofa/comfy-grey-sofa-with-chaise-longue.jpg": "lago-air-soft-sofa-08",
+"images/shop/lago/air-soft-sofa/grey-modern-sofa-padding.jpg": "lago-air-soft-sofa-09",
+"images/shop/lago/air-soft-sofa/comfy-brown-corner-sofa.jpg": "lago-air-soft-sofa-10",
+"images/shop/lago/air-soft-sofa/modern-brown-corner-sofa.jpg": "lago-air-soft-sofa-11",
+"images/shop/lago/air-soft-sofa/corner-sofa-with-peninsula-for-modern-living-room.jpg": "lago-air-soft-sofa-12"
+},
+"drawings": {}
+},
+"DF-S10047": {
+"path": {
+"en": "/lago/air-soft-free-sofa",
+"ru": "/ru/lago/divan-air-soft-free",
+"de": "/de/lago/air-soft-free-sofa",
+"fr": "/fr/lago/canape-air-soft-free",
+"es": "/es/lago/sofa-air-soft-free"
+},
+"images": {
+"images/shop/lago/air-soft-free-sofa/custom-made-sofa-with-freestanding-backrest.jpg": "lago-air-soft-free-sofa-01",
+"images/shop/lago/air-soft-free-sofa/modern-grey-floating-sofa.jpg": "lago-air-soft-free-sofa-02",
+"images/shop/lago/air-soft-free-sofa/sectional-sofa-with-movable-backrests.jpg": "lago-air-soft-free-sofa-03",
+"images/shop/lago/air-soft-free-sofa/white-sofa-with-chaise-longue.jpg": "lago-air-soft-free-sofa-04",
+"images/shop/lago/air-soft-free-sofa/sofa-backrest-upholstery.jpg": "lago-air-soft-free-sofa-05",
+"images/shop/lago/air-soft-free-sofa/designer-hanging-sofa.jpg": "lago-air-soft-free-sofa-06",
+"images/shop/lago/air-soft-free-sofa/freestanding-sofa-with-freestanding-backrest.jpg": "lago-air-soft-free-sofa-07",
+"images/shop/lago/air-soft-free-sofa/beige-sofa-with-freestanding-backrest.jpg": "lago-air-soft-free-sofa-08",
+"images/shop/lago/air-soft-free-sofa/modular-sofa-with-freestanding-backrests.jpg": "lago-air-soft-free-sofa-09",
+"images/shop/lago/air-soft-free-sofa/light-sofa-with-chaise-longue.jpg": "lago-air-soft-free-sofa-10"
+},
+"drawings": {}
+},
+"DF-S10054": {
+"path": {
+"en": "/lago/altana-sofa",
+"ru": "/ru/lago/divan-altana",
+"de": "/de/lago/altana-sofa",
+"fr": "/fr/lago/canape-altana",
+"es": "/es/lago/sofa-altana"
+},
+"images": {
+"images/shop/lago/altana-sofa/designer-living-room-sofas-and-armchairs.jpg": "lago-altana-sofa-01",
+"images/shop/lago/altana-sofa/blue-fabric-sofa-with-peninsula.jpg": "lago-altana-sofa-02",
+"images/shop/lago/altana-sofa/divano-altana-iconcina-sito.jpg": "lago-altana-sofa-03",
+"images/shop/lago/altana-sofa/sofa-with-wooden-legs.jpg": "lago-altana-sofa-04",
+"images/shop/lago/altana-sofa/corner-sofa-for-living-room.jpg": "lago-altana-sofa-05",
+"images/shop/lago/altana-sofa/brown-fabric-sofa-and-wooden-legs.jpg": "lago-altana-sofa-06",
+"images/shop/lago/altana-sofa/sofa-with-peninsula-and-wooden-supports.jpg": "lago-altana-sofa-07",
+"images/shop/lago/altana-sofa/upholstered-sofa-with-wooden-legs.jpg": "lago-altana-sofa-08",
+"images/shop/lago/altana-sofa/fabric-sofa-with-coffee-table.jpg": "lago-altana-sofa-09",
+"images/shop/lago/altana-sofa/sofa-and-coffee-tables.jpg": "lago-altana-sofa-10",
+"images/shop/lago/altana-sofa/fabric-sofa.jpg": "lago-altana-sofa-11",
+"images/shop/lago/altana-sofa/day-bed-for-living-room.jpg": "lago-altana-sofa-12"
+},
+"drawings": {}
+},
+"DF-S10060": {
+"path": {
+"en": "/lago/biza-sofa",
+"ru": "/ru/lago/divan-biza",
+"de": "/de/lago/biza-sofa",
+"fr": "/fr/lago/canape-biza",
+"es": "/es/lago/sofa-biza"
+},
+"images": {
+"images/shop/lago/biza-sofa/sofa-armchair-and-coffee-tables-for-modern-living-room.jpg": "lago-biza-sofa-01",
+"images/shop/lago/biza-sofa/elegant-white-fabric-sofa.jpg": "lago-biza-sofa-02",
+"images/shop/lago/biza-sofa/divano-biza-iconcina-sito.jpg": "lago-biza-sofa-03",
+"images/shop/lago/biza-sofa/large-corner-sofa.jpg": "lago-biza-sofa-04",
+"images/shop/lago/biza-sofa/soft-fabric-sofa.jpg": "lago-biza-sofa-05",
+"images/shop/lago/biza-sofa/corner-sofa.jpg": "lago-biza-sofa-06",
+"images/shop/lago/biza-sofa/brown-fabric-corner-sofa.jpg": "lago-biza-sofa-07",
+"images/shop/lago/biza-sofa/modern-living-room-sofa-and-armchair.jpg": "lago-biza-sofa-08",
+"images/shop/lago/biza-sofa/beige-fabric-sofa-with-cushions.jpg": "lago-biza-sofa-09",
+"images/shop/lago/biza-sofa/comfortable-fabric-sofa.jpg": "lago-biza-sofa-10",
+"images/shop/lago/biza-sofa/white-sofa-with-peninsula-for-modern-living-room.jpg": "lago-biza-sofa-11",
+"images/shop/lago/biza-sofa/sofa-with-peninsula.jpg": "lago-biza-sofa-12"
+},
+"drawings": {}
+},
+"DF-S10067": {
+"path": {
+"en": "/lago/chama-sofa-bed",
+"ru": "/ru/lago/divan-krovat-chama",
+"de": "/de/lago/chama-schlafsofa",
+"fr": "/fr/lago/canape-lit-chama",
+"es": "/es/lago/sofa-cama-chama"
+},
+"images": {
+"images/shop/lago/softbench/beb-cap-d-agde-0008-en.jpg": "lago-soft-01",
+"images/shop/lago/chama-sofa-bed/closed-double-chama-chair-bed.jpg": "lago-chama-sofa-bed-01",
+"images/shop/lago/chama-sofa-bed/chama-double-chair-bed.jpg": "lago-chama-sofa-bed-02"
+},
+"drawings": {}
+},
+"DF-S10104": {
+"path": {
+"en": "/lago/happening-sofa",
+"ru": "/ru/lago/divan-happening",
+"de": "/de/lago/happening-sofa",
+"fr": "/fr/lago/canape-happening",
+"es": "/es/lago/sofa-happening"
+},
+"images": {
+"images/shop/lago/happening-sofa/brown-sofa-for-modern-living-room.jpg": "lago-happening-sofa-01",
+"images/shop/lago/happening-sofa/comfortable-brown-fabric-sofa.jpg": "lago-happening-sofa-02",
+"images/shop/lago/happening-sofa/comfy-brown-modular-sofa.jpg": "lago-happening-sofa-03",
+"images/shop/lago/happening-sofa/brown-sofa-with-soft-upholstery.jpg": "lago-happening-sofa-04",
+"images/shop/lago/kipo-rug/comfortable-sofa-with-chaise-longue.jpg": "lago-kipo-01",
+"images/shop/lago/happening-sofa/brown-fabric-corner-sofa-for-living-room.jpg": "lago-happening-sofa-05",
+"images/shop/lago/happening-sofa/green-fabric-corner-sofa.jpg": "lago-happening-sofa-06",
+"images/shop/lago/happening-sofa/sofa-with-soft-upholstery.jpg": "lago-happening-sofa-07",
+"images/shop/lago/happening-sofa/large-white-corner-sofa.jpg": "lago-happening-sofa-08",
+"images/shop/lago/happening-sofa/comfortable-white-corner-sofa.jpg": "lago-happening-sofa-09",
+"images/shop/lago/happening-sofa/white-sofa-with-soft-upholstery.jpg": "lago-happening-sofa-10"
+},
+"drawings": {}
+},
+"DF-S10106": {
+"path": {
+"en": "/lago/hero-sofa",
+"ru": "/ru/lago/divan-hero",
+"de": "/de/lago/hero-sofa",
+"fr": "/fr/lago/canape-hero",
+"es": "/es/lago/sofa-hero"
+},
+"images": {
+"images/shop/lago/hero-sofa/design-sofa-with-chaise-longue.jpg": "lago-hero-sofa-01",
+"images/shop/lago/hero-sofa/hero-sofa-2612.jpg": "lago-hero-sofa-02",
+"images/shop/lago/hero-sofa/modular-sofa-with-peninsula.jpg": "lago-hero-sofa-03",
+"images/shop/lago/hero-sofa/soft-upholstery-fabric-sofa.jpg": "lago-hero-sofa-04",
+"images/shop/lago/hero-sofa/comfortable-sofa-upholstery.jpg": "lago-hero-sofa-05",
+"images/shop/lago/hero-sofa/design-corner-sofa.jpg": "lago-hero-sofa-06",
+"images/shop/lago/hero-sofa/sof-esquinero-con-tapicer-a-suave.jpg": "lago-hero-sofa-07",
+"images/shop/lago/hero-sofa/grey-fabric-sofa-nightstand.jpg": "lago-hero-sofa-08",
+"images/shop/lago/hero-sofa/modern-sofa-upholstery.jpg": "lago-hero-sofa-09",
+"images/shop/lago/hero-sofa/large-living-room-fabric-sofa.jpg": "lago-hero-sofa-10"
+},
+"drawings": {}
+},
+"DF-S10129": {
+"path": {
+"en": "/lago/londy-sofa",
+"ru": "/ru/lago/divan-londy",
+"de": "/de/lago/londy-sofa",
+"fr": "/fr/lago/canape-londy",
+"es": "/es/lago/sofa-londy"
+},
+"images": {
+"images/shop/lago/londy-sofa/sofa-with-peninsula-in-light-fabric.jpg": "lago-londy-sofa-01",
+"images/shop/lago/londy-sofa/modern-designer-living-room-sofa.jpg": "lago-londy-sofa-02",
+"images/shop/lago/londy-sofa/londy-sofa.jpg": "lago-londy-sofa-03",
+"images/shop/lago/londy-sofa/modular-sofa-with-chaise-longue.jpg": "lago-londy-sofa-04",
+"images/shop/lago/londy-sofa/modern-sofa-peninsula.jpg": "lago-londy-sofa-05",
+"images/shop/lago/londy-sofa/brown-fabric-sofa.jpg": "lago-londy-sofa-06",
+"images/shop/lago/londy-sofa/modern-living-room-sofa.jpg": "lago-londy-sofa-07",
+"images/shop/lago/londy-sofa/modular-sofa-with-coffee-table.jpg": "lago-londy-sofa-08",
+"images/shop/lago/londy-sofa/sectional-designer-sofa.jpg": "lago-londy-sofa-09",
+"images/shop/lago/londy-sofa/sectional-sofa-in-light-fabric.jpg": "lago-londy-sofa-10",
+"images/shop/lago/londy-sofa/modular-high-back-sofa.jpg": "lago-londy-sofa-11",
+"images/shop/lago/londy-sofa/large-living-room-corner-sofa.jpg": "lago-londy-sofa-12"
+},
+"drawings": {}
+},
+"DF-S10160": {
+"path": {
+"en": "/lago/not-only-white-sofa",
+"ru": "/ru/lago/divan-not-only-white",
+"de": "/de/lago/not-only-white-sofa",
+"fr": "/fr/lago/canape-not-only-white",
+"es": "/es/lago/sofa-not-only-white"
+},
+"images": {
+"images/shop/lago/not-only-white-sofa/green-sofa-for-modern-living-room.jpg": "lago-not-only-white-sofa-01",
+"images/shop/lago/not-only-white-sofa/linear-orange-sofa-with-pouf.jpg": "lago-not-only-white-sofa-02",
+"images/shop/lago/not-only-white-sofa/not-only-white-sofa.jpg": "lago-not-only-white-sofa-03",
+"images/shop/lago/not-only-white-sofa/green-fabric-sofa.jpg": "lago-not-only-white-sofa-04",
+"images/shop/lago/not-only-white-sofa/green-upholstered-sofa.jpg": "lago-not-only-white-sofa-05",
+"images/shop/lago/not-only-white-sofa/green-modular-sofa.jpg": "lago-not-only-white-sofa-06",
+"images/shop/lago/not-only-white-sofa/linear-green-sofa-with-pouf.jpg": "lago-not-only-white-sofa-07",
+"images/shop/lago/not-only-white-sofa/linear-white-sofa.jpg": "lago-not-only-white-sofa-08",
+"images/shop/lago/not-only-white-sofa/white-upholstered-sofa.jpg": "lago-not-only-white-sofa-09",
+"images/shop/lago/not-only-white-sofa/linear-white-upholstered-sofa.jpg": "lago-not-only-white-sofa-10",
+"images/shop/lago/not-only-white-sofa/white-sofas-for-modern-living-rooms.jpg": "lago-not-only-white-sofa-11",
+"images/shop/lago/not-only-white-sofa/white-living-room-sofa.jpg": "lago-not-only-white-sofa-12"
+},
+"drawings": {}
+},
+"DF-S10175": {
+"path": {
+"en": "/lago/sand-sofa",
+"ru": "/ru/lago/divan-sand",
+"de": "/de/lago/sand-sofa",
+"fr": "/fr/lago/canape-sand",
+"es": "/es/lago/sofa-sand"
+},
+"images": {
+"images/shop/lago/sand-sofa/sofa-composition-for-modern-living-room.jpg": "lago-sand-sofa-01",
+"images/shop/lago/sand-sofa/grigio-sofa-with-freestanding-backrests.jpg": "lago-sand-sofa-02",
+"images/shop/lago/sand-sofa/sand-sofa-1137-green.jpg": "lago-sand-sofa-03",
+"images/shop/lago/sand-sofa/corner-table-for-sofas.jpg": "lago-sand-sofa-04",
+"images/shop/lago/sand-sofa/grey-sectional-sofa.jpg": "lago-sand-sofa-05",
+"images/shop/lago/sand-sofa/large-sofa-for-living-room.jpg": "lago-sand-sofa-06",
+"images/shop/lago/sand-sofa/rounded-grey-sofa.jpg": "lago-sand-sofa-07",
+"images/shop/lago/sand-sofa/modern-living-room-fabric-sofa.jpg": "lago-sand-sofa-08",
+"images/shop/lago/sand-sofa/detail-on-freestanding-backrests.jpg": "lago-sand-sofa-09",
+"images/shop/lago/sand-sofa/modern-living-room-corner-sofa.jpg": "lago-sand-sofa-10",
+"images/shop/lago/sand-sofa/beige-sofa-with-freestanding-backrests-and-wall-mounted-bookcase.jpg": "lago-sand-sofa-11",
+"images/shop/lago/sand-sofa/elegant-beige-sofa.jpg": "lago-sand-sofa-12"
+},
+"drawings": {}
+},
 "DF-S7921": {
 "path": {
 "en": "/poliform/bellport-sofa",
@@ -10026,6 +13361,519 @@
 "images/shop/rugiano/sofas-yacht/measures/yacht-comp-5.png": "rugiano-yacht-sofa-dimensions-21",
 "images/shop/rugiano/sofas-yacht/measures/yacht-comp-6.png": "rugiano-yacht-sofa-dimensions-22"
 }
+},
+"DF-T10004": {
+"path": {
+"en": "/lago/36e8-console-table",
+"ru": "/ru/lago/konsol-36e8",
+"de": "/de/lago/36e8-konsolentisch",
+"fr": "/fr/lago/console-36e8",
+"es": "/es/lago/consola-36e8"
+},
+"images": {
+"images/shop/lago/36e8-console/console-table-with-mirror-in-wood-and-glass.jpg": "lago-36e8-console-table-01",
+"images/shop/lago/36e8-console/36e8-console-0837.jpg": "lago-36e8-console-table-02",
+"images/shop/lago/36e8-console/brown-entrance-console-unit.jpg": "lago-36e8-console-table-03",
+"images/shop/lago/36e8-console/wall-mounted-entrance-console-unit-on-glass-legs.jpg": "lago-36e8-console-table-04",
+"images/shop/lago/36e8-console/entrance-console-unit-with-glass-legs.jpg": "lago-36e8-console-table-05",
+"images/shop/lago/36e8-console/nero-marble-wall-mounted-console-unit.jpg": "lago-36e8-console-table-06",
+"images/shop/lago/36e8-console/wood-and-green-glass-designer-console-unit.jpg": "lago-36e8-console-table-07",
+"images/shop/lago/36e8-mirror/wooden-black-marble-wall-mounted-console-unit.jpg": "lago-36e8-01",
+"images/shop/lago/36e8-console/designer-floating-wall-mounted-console-unit.jpg": "lago-36e8-console-table-08",
+"images/shop/lago/36e8-console/wood-and-brown-polished-glass-console-unit.jpg": "lago-36e8-console-table-09",
+"images/shop/lago/36e8-mirror/wooden-light-marble-console-unit-with-mirror.jpg": "lago-36e8-03",
+"images/shop/lago/36e8-console/aluminum-filigree-detail.jpg": "lago-36e8-console-table-10"
+},
+"drawings": {}
+},
+"DF-T10018": {
+"path": {
+"en": "/lago/36e8-glass-console-table",
+"ru": "/ru/lago/konsol-36e8-glass",
+"de": "/de/lago/36e8-glass-konsolentisch",
+"fr": "/fr/lago/console-36e8-glass",
+"es": "/es/lago/consola-36e8-glass"
+},
+"images": {
+"images/shop/lago/36e8-glass-console/modern-mirror-with-console-unit.jpg": "lago-36e8-glass-console-table-01",
+"images/shop/lago/36e8-glass-console/36e8-console-unit-1364.jpg": "lago-36e8-glass-console-table-02",
+"images/shop/lago/36e8-glass-console/modern-wooden-glass-console-unit-detail.jpg": "lago-36e8-glass-console-table-03"
+},
+"drawings": {}
+},
+"DF-T10025": {
+"path": {
+"en": "/lago/air-console-table",
+"ru": "/ru/lago/konsol-air",
+"de": "/de/lago/air-konsolentisch",
+"fr": "/fr/lago/console-air",
+"es": "/es/lago/consola-air"
+},
+"images": {
+"images/shop/lago/air-console/wood-and-glass-console-table-with-drawer.jpg": "lago-air-console-table-01",
+"images/shop/lago/melty-mirror/suspended-wood-and-glass-console-table-with-decorative-mirror.jpg": "lago-melty-01",
+"images/shop/lago/air-console/2165-consolle-air-scontornata.jpg": "lago-air-console-table-02",
+"images/shop/lago/air-console/entrance-console-with-drawer.jpg": "lago-air-console-table-03",
+"images/shop/lago/air-console/wall-hung-entrance-console-table-with-mirror.jpg": "lago-air-console-table-04",
+"images/shop/lago/air-console/air-console.jpg": "lago-air-console-table-05"
+},
+"drawings": {}
+},
+"DF-T10026": {
+"path": {
+"en": "/lago/air-desk",
+"ru": "/ru/lago/pismennyy-stol-air",
+"de": "/de/lago/air-schreibtisch",
+"fr": "/fr/lago/bureau-air",
+"es": "/es/lago/escritorio-air"
+},
+"images": {
+"images/shop/lago/lagolinea-study-bookshelf/study-furniture.jpg": "lago-lagolinea-study-01",
+"images/shop/lago/air-desk/home-studio-furniture.jpg": "lago-air-desk-01",
+"images/shop/lago/air-desk-childrens-room/air-desk.jpg": "lago-air-07",
+"images/shop/lago/air-desk/study-desk-with-hidden-drawer.jpg": "lago-air-desk-02",
+"images/shop/lago/air-desk/home-office-design.jpg": "lago-air-desk-03",
+"images/shop/lago/air-desk/modern-wall-mounted-desk-in-xglass-for-home-office.jpg": "lago-air-desk-04",
+"images/shop/lago/air-desk/office-design-furniture.jpg": "lago-air-desk-05",
+"images/shop/lago/air-desk/desk-with-inserts.jpg": "lago-air-desk-06",
+"images/shop/lago/air-desk/wooden-study-desk.jpg": "lago-air-desk-07",
+"images/shop/lago/air-desk/glass-study-desk.jpg": "lago-air-desk-08",
+"images/shop/lago/woop-chair/wall-mounted-wooden-desk.jpg": "lago-woop-03",
+"images/shop/lago/air-desk/floating-bookcase-with-wooden-desk.jpg": "lago-air-desk-09"
+},
+"drawings": {}
+},
+"DF-T10027": {
+"path": {
+"en": "/lago/air-table",
+"ru": "/ru/lago/stol-air",
+"de": "/de/lago/air-tisch",
+"fr": "/fr/lago/table-air",
+"es": "/es/lago/mesa-air"
+},
+"images": {
+"images/shop/lago/air-table/wooden-glass-floating-table.jpg": "lago-air-table-01",
+"images/shop/lago/air-table/wooden-glass-floating-table-2.jpg": "lago-air-table-02",
+"images/shop/lago/air-table/rectangular-air-wildwood-table.jpg": "lago-air-table-03",
+"images/shop/lago/air-table/dining-room-furniture.jpg": "lago-air-table-04",
+"images/shop/lago/air-table/wooden-design-table-with-chairs.jpg": "lago-air-table-05",
+"images/shop/lago/air-table/14design-table-with-wooden-top.jpg": "lago-air-table-06",
+"images/shop/lago/air-table/floating-table-wooden-top-detail.jpg": "lago-air-table-07",
+"images/shop/lago/ermes-chair/wooden-smoked-glass-floating-table.jpg": "lago-ermes-02",
+"images/shop/lago/air-table/designer-wooden-smoked-glass-table.jpg": "lago-air-table-08",
+"images/shop/lago/air-table/wood-and-glass-table-with-rectangular-top.jpg": "lago-air-table-09",
+"images/shop/lago/ermes-chair/round-table-with-wooden-top.jpg": "lago-ermes-01",
+"images/shop/lago/air-table/light-wood-round-table.jpg": "lago-air-table-10"
+},
+"drawings": {}
+},
+"DF-T10037": {
+"path": {
+"en": "/lago/air-kids-desk",
+"ru": "/ru/lago/pismennyy-stol-air-kids",
+"de": "/de/lago/air-kids-schreibtisch",
+"fr": "/fr/lago/bureau-air-kids",
+"es": "/es/lago/escritorio-air-kids"
+},
+"images": {
+"images/shop/lago/air-desk-childrens-room/unit-and-desk-for-children-s-bedroom.jpg": "lago-36e8-kids-01",
+"images/shop/lago/air-desk-childrens-room/children-s-bedroom-desk.jpg": "lago-air-kids-desk-01",
+"images/shop/lago/air-desk-childrens-room/air-desk.jpg": "lago-air-07",
+"images/shop/lago/air-single-bed/desk-with-bookcase-for-children-s-bedroom.jpg": "lago-air-04",
+"images/shop/lago/air-desk-childrens-room/floating-single-bed-for-children-s-room.jpg": "lago-air-kids-desk-02",
+"images/shop/lago/lagolinea-childrens-bookshelf/desk-for-children-s-bedroom.jpg": "lago-lagolinea-kids-01",
+"images/shop/lago/air-desk-childrens-room/bridge-design-children-s-bedroom-with-designer-desk.jpg": "lago-30mm-kids-01",
+"images/shop/lago/steel-single-bed/designer-children-s-room-units.jpg": "lago-steel-01",
+"images/shop/lago/smart-wardrobe-for-the-childrens-room/designer-children-s-bedroom-with-bridge-layout.jpg": "lago-air-06",
+"images/shop/lago/air-desk-childrens-room/children-s-bedroom-with-tree-bookcase.jpg": "lago-air-kids-desk-03",
+"images/shop/lago/air-desk-childrens-room/home-office-furniture.jpg": "lago-air-kids-desk-04",
+"images/shop/lago/air-desk-childrens-room/bookcase-with-drawers.jpg": "lago-air-kids-desk-05"
+},
+"drawings": {}
+},
+"DF-T10042": {
+"path": {
+"en": "/lago/air-slim-table",
+"ru": "/ru/lago/stol-air-slim",
+"de": "/de/lago/air-slim-tisch",
+"fr": "/fr/lago/table-air-slim",
+"es": "/es/lago/mesa-air-slim"
+},
+"images": {
+"images/shop/lago/air-slim-table/round-table-with-slim-top-and-glass-supports.jpg": "lago-air-slim-table-01",
+"images/shop/lago/ruffle-chair/1wood-and-glass-round-dining-table.jpg": "lago-ruffle-01",
+"images/shop/lago/air-slim-table/arancione-air-table.jpg": "lago-air-slim-table-02",
+"images/shop/lago/ruffle-chair/round-table-with-slim-wooden-top.jpg": "lago-ruffle-02",
+"images/shop/lago/air-slim-table/round-slim-glass-table.jpg": "lago-air-slim-table-03",
+"images/shop/lago/air-slim-table/round-xglass-table.jpg": "lago-air-slim-table-04",
+"images/shop/lago/air-slim-table/round-table-with-slim-wooden-top-2.jpg": "lago-air-slim-table-05",
+"images/shop/lago/air-slim-table/natural-wood-round-table.jpg": "lago-air-slim-table-06",
+"images/shop/lago/air-slim-table/design-table-with-grey-top.jpg": "lago-air-slim-table-07",
+"images/shop/lago/air-slim-table/modern-design-dining-room-table.jpg": "lago-air-slim-table-08",
+"images/shop/lago/air-slim-table/design-table-with-rectangular-top.jpg": "lago-air-slim-table-09",
+"images/shop/lago/air-slim-table/design-table-with-slim-marble-top-xglass.jpg": "lago-air-slim-table-10"
+},
+"drawings": {}
+},
+"DF-T10045": {
+"path": {
+"en": "/lago/air-soft-table",
+"ru": "/ru/lago/stol-air-soft",
+"de": "/de/lago/air-soft-tisch",
+"fr": "/fr/lago/table-air-soft",
+"es": "/es/lago/mesa-air-soft"
+},
+"images": {
+"images/shop/lago/air-soft-table/marble-effect-xglass-table-with-glass-legs.jpg": "lago-air-soft-table-01",
+"images/shop/lago/air-soft-table/modern-design-shaped-glass-table.jpg": "lago-air-soft-table-02",
+"images/shop/lago/air-soft-table/2205x-tavolo-air-soft-scontornata.jpg": "lago-air-soft-table-03",
+"images/shop/lago/woop-chair/design-table-in-clear-xglass-marble.jpg": "lago-woop-02",
+"images/shop/lago/air-soft-table/dining-table-with-shaped-glass-top.jpg": "lago-air-soft-table-04",
+"images/shop/lago/air-soft-table/design-wood-and-glass-table.jpg": "lago-air-soft-table-05",
+"images/shop/lago/air-soft-table/design-dining-table-with-wooden-top.jpg": "lago-air-soft-table-06",
+"images/shop/lago/nacho-chair/design-table-with-glass-top-and-legs.jpg": "lago-nacho-01",
+"images/shop/lago/nacho-chair/design-table-marble-xglass-brown.jpg": "lago-nacho-02"
+},
+"drawings": {}
+},
+"DF-T10052": {
+"path": {
+"en": "/lago/alberoni-table",
+"ru": "/ru/lago/stol-alberoni",
+"de": "/de/lago/alberoni-tisch",
+"fr": "/fr/lago/table-alberoni",
+"es": "/es/lago/mesa-alberoni"
+},
+"images": {
+"images/shop/lago/alberoni-table/round-table-with-design-chairs.jpg": "lago-alberoni-table-01",
+"images/shop/lago/alberoni-table/green-table-for-living-area.jpg": "lago-alberoni-table-02",
+"images/shop/lago/alberoni-table/tavolo-alberoni-iconcina-sito.jpg": "lago-alberoni-table-03",
+"images/shop/lago/alberoni-table/round-table-with-glass-top.jpg": "lago-alberoni-table-04",
+"images/shop/lago/alberoni-table/round-table-for-living-areas.jpg": "lago-alberoni-table-05",
+"images/shop/lago/alberoni-table/round-table-with-chairs.jpg": "lago-alberoni-table-06",
+"images/shop/lago/alberoni-table/round-dining-room-table.jpg": "lago-alberoni-table-07",
+"images/shop/lago/alberoni-table/marble-top-round-table.jpg": "lago-alberoni-table-08"
+},
+"drawings": {}
+},
+"DF-T10069": {
+"path": {
+"en": "/lago/chapeau-table",
+"ru": "/ru/lago/stol-chapeau",
+"de": "/de/lago/chapeau-tisch",
+"fr": "/fr/lago/table-chapeau",
+"es": "/es/lago/mesa-chapeau"
+},
+"images": {
+"images/shop/lago/novice-chair/round-table-with-designer-wooden-chairs.jpg": "lago-novice-01",
+"images/shop/lago/chapeau-table/red-round-resin-table.jpg": "lago-chapeau-table-01",
+"images/shop/lago/chapeau-table/designer-red-round-table.jpg": "lago-chapeau-table-02",
+"images/shop/lago/chapeau-table/wooden-design-table.jpg": "lago-chapeau-table-03",
+"images/shop/lago/chapeau-table/wooden-dining-table.jpg": "lago-chapeau-table-04",
+"images/shop/lago/chapeau-table/table-with-wooden-base.jpg": "lago-chapeau-table-05",
+"images/shop/lago/chapeau-table/round-glass-table.jpg": "lago-chapeau-table-06",
+"images/shop/lago/chapeau-table/table-with-glass-top.jpg": "lago-chapeau-table-07",
+"images/shop/lago/chapeau-table/white-marble-table.jpg": "lago-chapeau-table-08",
+"images/shop/lago/chapeau-table/oval-marble.jpg": "lago-chapeau-table-09",
+"images/shop/lago/chapeau-table/light-marble-top.jpg": "lago-chapeau-table-10",
+"images/shop/lago/chapeau-table/oval-table-with-chairs.jpg": "lago-chapeau-table-11"
+},
+"drawings": {}
+},
+"DF-T10077": {
+"path": {
+"en": "/lago/correr-table",
+"ru": "/ru/lago/stol-correr",
+"de": "/de/lago/correr-tisch",
+"fr": "/fr/lago/table-correr",
+"es": "/es/lago/mesa-correr"
+},
+"images": {
+"images/shop/lago/correr-table/rectangular-wooden-table.jpg": "lago-correr-table-01",
+"images/shop/lago/correr-table/design-light-wood-table-with-chair.jpg": "lago-correr-table-02",
+"images/shop/lago/correr-table/tavolo-correr-iconcina-sito.jpg": "lago-correr-table-03",
+"images/shop/lago/correr-table/wooden-dining-room-table.jpg": "lago-correr-table-04",
+"images/shop/lago/correr-table/wooden-table.jpg": "lago-correr-table-05",
+"images/shop/lago/correr-table/design-light-wood-rectangular-table.jpg": "lago-correr-table-06",
+"images/shop/lago/correr-table/dark-wood-table.jpg": "lago-correr-table-07"
+},
+"drawings": {}
+},
+"DF-T10078": {
+"path": {
+"en": "/lago/correr-slim-table",
+"ru": "/ru/lago/stol-correr-slim",
+"de": "/de/lago/correr-slim-tisch",
+"fr": "/fr/lago/table-correr-slim",
+"es": "/es/lago/mesa-correr-slim"
+},
+"images": {
+"images/shop/lago/correr-slim-table/modern-dining-room-table-with-chairs.jpg": "lago-correr-slim-table-01",
+"images/shop/lago/correr-slim-table/glass-table-and-chairs-for-dining-room.jpg": "lago-correr-slim-table-02",
+"images/shop/lago/correr-slim-table/correr-slim-table.jpg": "lago-correr-slim-table-03",
+"images/shop/lago/correr-slim-table/table-detail-wooden-leg-and-glass-top.jpg": "lago-correr-slim-table-04",
+"images/shop/lago/correr-slim-table/wood-and-glass-table-with-slim-top.jpg": "lago-correr-slim-table-05",
+"images/shop/lago/correr-slim-table/glass-table-with-wooden-legs.jpg": "lago-correr-slim-table-06",
+"images/shop/lago/correr-slim-table/wood-and-glass-table.jpg": "lago-correr-slim-table-07",
+"images/shop/lago/correr-slim-table/dining-table-with-slim-glass-top.jpg": "lago-correr-slim-table-08",
+"images/shop/lago/correr-slim-table/square-wood-and-glass-table.jpg": "lago-correr-slim-table-09",
+"images/shop/lago/correr-slim-table/square-table-wooden-legs.jpg": "lago-correr-slim-table-10",
+"images/shop/lago/correr-slim-table/rectangular-table-with-chairs.jpg": "lago-correr-slim-table-11",
+"images/shop/lago/correr-slim-table/design-table-with-chair.jpg": "lago-correr-slim-table-12"
+},
+"drawings": {}
+},
+"DF-T10083": {
+"path": {
+"en": "/lago/deba-console-table",
+"ru": "/ru/lago/konsol-deba",
+"de": "/de/lago/deba-konsolentisch",
+"fr": "/fr/lago/console-deba",
+"es": "/es/lago/consola-deba"
+},
+"images": {
+"images/shop/lago/deba-console/glass-console-table-with-round-mirror-for-entrance.jpg": "lago-deba-console-table-01",
+"images/shop/lago/deba-console/animalier-xglass-console-table-with-round-mirror.jpg": "lago-deba-console-table-02",
+"images/shop/lago/deba-console/deba-console-2162.jpg": "lago-deba-console-table-03",
+"images/shop/lago/deba-console/glass-and-mirror-console-table-with-frame.jpg": "lago-deba-console-table-04",
+"images/shop/lago/deba-console/animalier-glass-console-table.jpg": "lago-deba-console-table-05"
+},
+"drawings": {}
+},
+"DF-T10092": {
+"path": {
+"en": "/lago/extendable-air-table",
+"ru": "/ru/lago/stol-extendable-air",
+"de": "/de/lago/extendable-air-tisch",
+"fr": "/fr/lago/table-extendable-air",
+"es": "/es/lago/mesa-extendable-air"
+},
+"images": {
+"images/shop/lago/extendable-air-table/wooden-extendable-table.jpg": "lago-extendable-air-table-01",
+"images/shop/lago/extendable-air-table/wildwood-air-extendable-table.jpg": "lago-extendable-air-table-02",
+"images/shop/lago/extendable-air-table/extendable-dining-room-table.jpg": "lago-extendable-air-table-03",
+"images/shop/lago/extendable-air-table/extending-dining-room-table.jpg": "lago-extendable-air-table-04",
+"images/shop/lago/extendable-air-table/extending-wooden-table.jpg": "lago-extendable-air-table-05",
+"images/shop/lago/extendable-air-table/extendable-wooden-table.jpg": "lago-extendable-air-table-06"
+},
+"drawings": {}
+},
+"DF-T10093": {
+"path": {
+"en": "/lago/fine-console-table",
+"ru": "/ru/lago/konsol-fine",
+"de": "/de/lago/fine-konsolentisch",
+"fr": "/fr/lago/console-fine",
+"es": "/es/lago/consola-fine"
+},
+"images": {
+"images/shop/lago/fine-console/modern-glass-console-table-with-mirror.jpg": "lago-fine-console-table-01",
+"images/shop/lago/fine-console/fine-console-2161.jpg": "lago-fine-console-table-02",
+"images/shop/lago/fine-console/modern-glass-console-table-detail.jpg": "lago-fine-console-table-03",
+"images/shop/lago/fine-console/modern-glass-console-table-framed-mirror.jpg": "lago-fine-console-table-04",
+"images/shop/lago/fine-console/modular-mirror-with-lighting.jpg": "lago-fine-console-table-05"
+},
+"drawings": {}
+},
+"DF-T10107": {
+"path": {
+"en": "/lago/hoa-table",
+"ru": "/ru/lago/stol-hoa",
+"de": "/de/lago/hoa-tisch",
+"fr": "/fr/lago/table-hoa",
+"es": "/es/lago/mesa-hoa"
+},
+"images": {
+"images/shop/lago/woop-chair/modern-glass-dining-table.jpg": "lago-woop-01",
+"images/shop/lago/hoa-table/dining-table-shaped-top.jpg": "lago-hoa-table-01",
+"images/shop/lago/hoa-table/xglass-black-and-gold-marble-dining-table.jpg": "lago-hoa-table-02",
+"images/shop/lago/hoa-table/dining-table-marble-top-xglass.jpg": "lago-hoa-table-03",
+"images/shop/lago/hoa-table/modern-round-dining-table.jpg": "lago-hoa-table-04",
+"images/shop/lago/hoa-table/dining-table-with-xglass-marble-top.jpg": "lago-hoa-table-05",
+"images/shop/lago/hoa-table/modern-dining-room-table.jpg": "lago-hoa-table-06"
+},
+"drawings": {}
+},
+"DF-T10111": {
+"path": {
+"en": "/lago/janeiro-table",
+"ru": "/ru/lago/stol-janeiro",
+"de": "/de/lago/janeiro-tisch",
+"fr": "/fr/lago/table-janeiro",
+"es": "/es/lago/mesa-janeiro"
+},
+"images": {
+"images/shop/lago/janeiro-table/clear-glass-sculptural-table.jpg": "lago-janeiro-table-01",
+"images/shop/lago/janeiro-table/sculptural-table-with-round-top.jpg": "lago-janeiro-table-02",
+"images/shop/lago/janeiro-table/round-smoked-glass-janeiro-table.jpg": "lago-janeiro-table-03",
+"images/shop/lago/janeiro-table/sculptural-table-with-cement-base.jpg": "lago-janeiro-table-04",
+"images/shop/lago/janeiro-table/designer-sculptural-table-with-xglass-marble-top.jpg": "lago-janeiro-table-05",
+"images/shop/lago/janeiro-table/modern-table-with-glass-top.jpg": "lago-janeiro-table-06",
+"images/shop/lago/janeiro-table/design-table-with-glass-top.jpg": "lago-janeiro-table-07",
+"images/shop/lago/janeiro-table/sculptural-table-with-xglass-marble-top.jpg": "lago-janeiro-table-08"
+},
+"drawings": {}
+},
+"DF-T10118": {
+"path": {
+"en": "/lago/lagolinea-desk",
+"ru": "/ru/lago/pismennyy-stol-lagolinea",
+"de": "/de/lago/lagolinea-schreibtisch",
+"fr": "/fr/lago/bureau-lagolinea",
+"es": "/es/lago/escritorio-lagolinea"
+},
+"images": {
+"images/shop/lago/lagolinea-desk/children-s-bed-with-overhead-units.jpg": "lago-lagolinea-03",
+"images/shop/lago/lagolinea-desk/lagolinea-desk-kids.jpg": "lago-lagolinea-desk-01",
+"images/shop/lago/lagolinea-desk/lagolinea-desk.jpg": "lago-lagolinea-desk-02",
+"images/shop/lago/lagolinea-desk/lagolinea-desk-2.jpg": "lago-lagolinea-desk-03"
+},
+"drawings": {}
+},
+"DF-T10126": {
+"path": {
+"en": "/lago/livre-desk",
+"ru": "/ru/lago/pismennyy-stol-livre",
+"de": "/de/lago/livre-schreibtisch",
+"fr": "/fr/lago/bureau-livre",
+"es": "/es/lago/escritorio-livre"
+},
+"images": {
+"images/shop/lago/livre-desk/modern-glass-desk.jpg": "lago-livre-desk-01",
+"images/shop/lago/livre-desk/modern-smoked-glass-desk.jpg": "lago-livre-desk-02"
+},
+"drawings": {}
+},
+"DF-T10131": {
+"path": {
+"en": "/lago/loto-table",
+"ru": "/ru/lago/stol-loto",
+"de": "/de/lago/loto-tisch",
+"fr": "/fr/lago/table-loto",
+"es": "/es/lago/mesa-loto"
+},
+"images": {
+"images/shop/lago/loto-table/loto-table.jpg": "lago-loto-table-01",
+"images/shop/lago/loto-table/extendable-square-table.jpg": "lago-loto-table-02",
+"images/shop/lago/loto-table/loto-table-2.jpg": "lago-loto-table-03",
+"images/shop/lago/loto-table/extendable-dining-room-table.jpg": "lago-loto-table-04"
+},
+"drawings": {}
+},
+"DF-T10132": {
+"path": {
+"en": "/lago/materia-console-table",
+"ru": "/ru/lago/konsol-materia",
+"de": "/de/lago/materia-konsolentisch",
+"fr": "/fr/lago/console-materia",
+"es": "/es/lago/consola-materia"
+},
+"images": {
+"images/shop/lago/materia-console/designer-entrance-console-table.jpg": "lago-materia-console-table-01",
+"images/shop/lago/materia-console/36e8-glass-console-1475b.jpg": "lago-materia-console-table-02",
+"images/shop/lago/materia-console/design-dining-room-with-modern-console.jpg": "lago-materia-console-table-03",
+"images/shop/lago/materia-console/designer-glass-entryway-console-table.jpg": "lago-materia-console-table-04",
+"images/shop/lago/materia-console/crocodile-glass-console-table.jpg": "lago-materia-console-table-05",
+"images/shop/lago/materia-console/xglass-marble-design-console-table.jpg": "lago-materia-console-table-06"
+},
+"drawings": {}
+},
+"DF-T10139": {
+"path": {
+"en": "/lago/meet-table",
+"ru": "/ru/lago/stol-meet",
+"de": "/de/lago/meet-tisch",
+"fr": "/fr/lago/table-meet",
+"es": "/es/lago/mesa-meet"
+},
+"images": {
+"images/shop/lago/meet-table/modern-glass-table.jpg": "lago-meet-table-01",
+"images/shop/lago/meet-table/shaped-meet-table.jpg": "lago-meet-table-02",
+"images/shop/lago/meet-table/custom-top-modern-table.jpg": "lago-meet-table-03",
+"images/shop/lago/meet-table/modern-wooden-table.jpg": "lago-meet-table-04",
+"images/shop/lago/meet-table/wooden-top-modern-table.jpg": "lago-meet-table-05",
+"images/shop/lago/meet-table/modern-table-with-slim-light-wood-top.jpg": "lago-meet-table-06",
+"images/shop/lago/meet-table/refined-modern-table.jpg": "lago-meet-table-07"
+},
+"drawings": {}
+},
+"DF-T10163": {
+"path": {
+"en": "/lago/p-and-j-table",
+"ru": "/ru/lago/stol-p-and-j",
+"de": "/de/lago/p-and-j-tisch",
+"fr": "/fr/lago/table-p-and-j",
+"es": "/es/lago/mesa-p-and-j"
+},
+"images": {
+"images/shop/lago/pj-table/wooden-glass-symmetrical-table.jpg": "lago-p-and-j-table-01",
+"images/shop/lago/pj-table/clear-wooden-symmetrical-table.jpg": "lago-p-and-j-table-02",
+"images/shop/lago/pj-table/p-j-table.jpg": "lago-p-and-j-table-03",
+"images/shop/lago/pj-table/wooden-table-detail.jpg": "lago-p-and-j-table-04",
+"images/shop/lago/pj-table/drk-wooden-table-with-glass-supports.jpg": "lago-p-and-j-table-05",
+"images/shop/lago/pj-table/dark-wooden-table.jpg": "lago-p-and-j-table-06",
+"images/shop/lago/pj-table/tabledark-wood-detail.jpg": "lago-p-and-j-table-07",
+"images/shop/lago/pj-table/wooden-table.jpg": "lago-p-and-j-table-08"
+},
+"drawings": {}
+},
+"DF-T10189": {
+"path": {
+"en": "/lago/stratum-table",
+"ru": "/ru/lago/stol-stratum",
+"de": "/de/lago/stratum-tisch",
+"fr": "/fr/lago/table-stratum",
+"es": "/es/lago/mesa-stratum"
+},
+"images": {
+"images/shop/lago/stratum-table/white-round-dining-room-table.jpg": "lago-stratum-table-01",
+"images/shop/lago/stratum-table/stratum-rectangular-table.jpg": "lago-stratum-table-02",
+"images/shop/lago/stratum-table/rectangular-dining-room-table.jpg": "lago-stratum-table-03"
+},
+"drawings": {}
+},
+"DF-T10192": {
+"path": {
+"en": "/lago/u-table",
+"ru": "/ru/lago/stol-u",
+"de": "/de/lago/u-tisch",
+"fr": "/fr/lago/table-u",
+"es": "/es/lago/mesa-u"
+},
+"images": {
+"images/shop/lago/u-table/living-room-table-with-rectangular-top.jpg": "lago-u-table-01",
+"images/shop/lago/u-table/living-room-table-with-glass-top.jpg": "lago-u-table-02",
+"images/shop/lago/u-table/rectangular-u-table.jpg": "lago-u-table-03",
+"images/shop/lago/u-table/living-room-table-with-wooden-top.jpg": "lago-u-table-04",
+"images/shop/lago/u-table/living-room-table-wooden-top.jpg": "lago-pletra-01",
+"images/shop/lago/u-table/designer-living-room-table.jpg": "lago-u-table-05",
+"images/shop/lago/u-table/xglass-marble-living-room-table.jpg": "lago-u-table-06",
+"images/shop/lago/u-table/living-room-table-with-oval-top.jpg": "lago-u-table-07",
+"images/shop/lago/u-table/nero-marble-living-room-table-and-marrone-wall-mounted-bookcase.jpg": "lago-u-table-08",
+"images/shop/lago/u-table/nero-living-room-table.jpg": "lago-u-table-09",
+"images/shop/lago/u-table/living-room-table-with-wooden-top-2.jpg": "lago-u-table-10",
+"images/shop/lago/u-table/wooden-living-room-table.jpg": "lago-u-table-11"
+},
+"drawings": {}
+},
+"DF-T10198": {
+"path": {
+"en": "/lago/wadi-table",
+"ru": "/ru/lago/stol-wadi",
+"de": "/de/lago/wadi-tisch",
+"fr": "/fr/lago/table-wadi",
+"es": "/es/lago/mesa-wadi"
+},
+"images": {
+"images/shop/lago/wadi-table/elegant-modern-dining-room.jpg": "lago-wadi-table-01",
+"images/shop/lago/wadi-table/elliptical-glass-top-elegant-table.jpg": "lago-wadi-table-02",
+"images/shop/lago/wadi-table/rectangular-wadi-table.jpg": "lago-wadi-table-03",
+"images/shop/lago/wadi-table/elegant-table-with-glass-top.jpg": "lago-wadi-table-04",
+"images/shop/lago/wadi-table/elegant-living-room-table.jpg": "lago-wadi-table-05",
+"images/shop/lago/wadi-table/elegant-table-with-rectangular-top.jpg": "lago-wadi-table-06",
+"images/shop/lago/wadi-table/elegant-table-sculptural-base.jpg": "lago-wadi-table-07"
+},
+"drawings": {}
 },
 "DF-T7901": {
 "path": {
@@ -11672,6 +15520,22 @@
 "images/shop/poliform/helga/drawings/poliform-lampade-helga_414px-_-2.svg": "poliform-helga-floor-lamp-dimensions-03"
 }
 },
+"DL-S10070": {
+"path": {
+"en": "/lago/chic-pendant-lamp",
+"ru": "/ru/lago/podvesnoy-svetilnik-chic",
+"de": "/de/lago/chic-pendelleuchte",
+"fr": "/fr/lago/suspension-chic",
+"es": "/es/lago/lampara-colgante-chic"
+},
+"images": {
+"images/shop/lago/chic-lamp/modern-dining-room-lamps.jpg": "lago-chic-pendant-lamp-01",
+"images/shop/lago/nacho-chair/design-table-marble-xglass-brown.jpg": "lago-nacho-02",
+"images/shop/lago/nacho-chair/design-table-with-glass-top-and-legs.jpg": "lago-nacho-01",
+"images/shop/lago/chic-lamp/dining-room-furniture.jpg": "lago-chic-pendant-lamp-02"
+},
+"drawings": {}
+},
 "DL-S7978": {
 "path": {
 "en": "/poliform/hugo-pendant-lamp",
@@ -12103,6 +15967,20 @@
 "drawings": {
 "images/shop/rugiano/outdoor-lighting-wanda/measures/wanda.png": "rugiano-wanda-outdoor-table-lamp-dimensions-01"
 }
+},
+"DL-T10100": {
+"path": {
+"en": "/lago/glee-pendant-lamp",
+"ru": "/ru/lago/podvesnoy-svetilnik-glee",
+"de": "/de/lago/glee-pendelleuchte",
+"fr": "/fr/lago/suspension-glee",
+"es": "/es/lago/lampara-colgante-glee"
+},
+"images": {
+"images/shop/lago/glee-lamp/design-lamp-marble-xglass-clear.jpg": "lago-glee-pendant-lamp-01",
+"images/shop/lago/glee-lamp/xglass-marble-design-lamp.jpg": "lago-glee-pendant-lamp-02"
+},
+"drawings": {}
 },
 "DL-T7912": {
 "path": {
