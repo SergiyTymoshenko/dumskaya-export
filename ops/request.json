@@ -1,1 +1,1 @@
-{"id": "2026-10-28-deploy-handoff", "do": ["deploy", "server-check"], "why": "Заявки на товар партнёра: «Отдаём Замлинскому» / «Оставляем себе»"}
+{"id": "2026-10-28-deploy-11", "do": ["deploy", "deploy-home"], "why": "robots.txt для ИИ-ботов, llms.txt и llms-full.txt на обоих сайтах"}
