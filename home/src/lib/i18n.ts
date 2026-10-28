@@ -14,6 +14,7 @@ const t = {
   en: {
     privacyDesc: 'How DUMSKAYA HOME processes the data from price requests: who receives it, how long it is kept and your rights.',
     menu: 'Menu', close: 'Close', call: 'Call', home: 'Home', skip: 'Skip to content',
+    cookie: { text: 'We use Google Analytics cookies to understand how visitors use the site. They are not loaded without your consent.', accept: 'Accept', decline: 'Decline' }, cookieSettings: 'Cookie settings',
     brands: 'Brands', allBrands: 'All brands', outdoor: 'Outdoor', contact: 'Contact', privacy: 'Privacy policy',
     products: (n: number) => `${n} ${n === 1 ? 'product' : 'products'}`,
     year: 'Year', by: 'by', design: 'Design', collection: 'Collection', sku: 'Item no.', indoor: 'Indoor', forOutdoor: 'For outdoor use',
@@ -49,6 +50,7 @@ const t = {
   ru: {
     privacyDesc: 'Как DUMSKAYA HOME обрабатывает данные из запросов цены: кто их получает, сколько они хранятся и ваши права.',
     menu: 'Меню', close: 'Закрыть', call: 'Позвонить', home: 'Главная', skip: 'Перейти к содержимому',
+    cookie: { text: 'Мы используем файлы cookie Google Analytics, чтобы понимать, как посетители пользуются сайтом. Без вашего согласия они не загружаются.', accept: 'Принять', decline: 'Отклонить' }, cookieSettings: 'Настройки cookie',
     brands: 'Фабрики', allBrands: 'Все фабрики', outdoor: 'Для улицы', contact: 'Контакты', privacy: 'Политика конфиденциальности',
     products: (n: number) => `${n} ${plural(n, 'товар', 'товара', 'товаров')}`,
     year: 'Год', by: '', design: 'Дизайн', collection: 'Коллекция', sku: 'Артикул', indoor: 'Для дома', forOutdoor: 'Для улицы',
@@ -84,6 +86,7 @@ const t = {
   de: {
     privacyDesc: 'Wie DUMSKAYA HOME die Daten aus Preisanfragen verarbeitet: Empfänger, Speicherdauer und Ihre Rechte.',
     menu: 'Menü', close: 'Schließen', call: 'Anrufen', home: 'Startseite', skip: 'Zum Inhalt springen',
+    cookie: { text: 'Wir verwenden Cookies von Google Analytics, um zu verstehen, wie Besucherinnen und Besucher die Website nutzen. Ohne Ihre Zustimmung werden sie nicht geladen.', accept: 'Akzeptieren', decline: 'Ablehnen' }, cookieSettings: 'Cookie-Einstellungen',
     brands: 'Marken', allBrands: 'Alle Marken', outdoor: 'Outdoor', contact: 'Kontakt', privacy: 'Datenschutz',
     products: (n: number) => `${n} ${n === 1 ? 'Produkt' : 'Produkte'}`,
     year: 'Jahr', by: 'von', design: 'Design', collection: 'Kollektion', sku: 'Artikelnr.', indoor: 'Innenbereich', forOutdoor: 'Für den Außenbereich',
@@ -119,6 +122,7 @@ const t = {
   fr: {
     privacyDesc: 'Comment DUMSKAYA HOME traite les données des demandes de prix : destinataires, durée de conservation et vos droits.',
     menu: 'Menu', close: 'Fermer', call: 'Appeler', home: 'Accueil', skip: 'Aller au contenu',
+    cookie: { text: 'Nous utilisons les cookies de Google Analytics pour comprendre comment les visiteurs utilisent le site. Ils ne sont pas chargés sans votre consentement.', accept: 'Accepter', decline: 'Refuser' }, cookieSettings: 'Paramètres des cookies',
     brands: 'Marques', allBrands: 'Toutes les marques', outdoor: 'Extérieur', contact: 'Contact', privacy: 'Politique de confidentialité',
     products: (n: number) => `${n} ${n === 1 ? 'produit' : 'produits'}`,
     year: 'Année', by: '', design: 'Design', collection: 'Collection', sku: 'Référence', indoor: 'Intérieur', forOutdoor: 'Pour l’extérieur',
@@ -154,6 +158,7 @@ const t = {
   es: {
     privacyDesc: 'Cómo trata DUMSKAYA HOME los datos de las consultas de precio: destinatarios, plazo de conservación y sus derechos.',
     menu: 'Menú', close: 'Cerrar', call: 'Llamar', home: 'Inicio', skip: 'Ir al contenido',
+    cookie: { text: 'Usamos cookies de Google Analytics para entender cómo los visitantes utilizan la web. No se cargan sin su consentimiento.', accept: 'Aceptar', decline: 'Rechazar' }, cookieSettings: 'Configuración de cookies',
     brands: 'Marcas', allBrands: 'Todas las marcas', outdoor: 'Exterior', contact: 'Contacto', privacy: 'Política de privacidad',
     products: (n: number) => `${n} ${n === 1 ? 'producto' : 'productos'}`,
     year: 'Año', by: '', design: 'Diseño', collection: 'Colección', sku: 'Referencia', indoor: 'Interior', forOutdoor: 'Para exterior',

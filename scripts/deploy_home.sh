@@ -46,6 +46,7 @@ python3 scripts/shop/catalog_index.py --write --quiet
 echo "▸ 2/5 Фото (первый раз долго: тысячи снимков)"
 node scripts/home_images.mjs
 echo "▸ 3/5 Сборка"
+if [ "$MODE" = live ]; then export PUBLIC_ANALYTICS=1; else unset PUBLIC_ANALYTICS; fi   # Google Analytics — только на домене
 npx astro build --root home >/dev/null
 # даты изменения страниц в картах сайта — по содержимому и истории git (scripts/lastmod.py; файл дат не меняется)
 python3 scripts/lastmod.py apply home

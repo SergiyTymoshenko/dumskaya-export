@@ -1,0 +1,71 @@
+---
+// Согласие на cookie каталога (решено 28.10.2026): Google Analytics 4 (ресурс dumskaya-home.com, ключ —
+// content/home/site.json → ga4) загружается только после «Принять»; «Настройки cookie» в подвале снова открывают выбор.
+// Как на сайте студии (src/components/CookieBanner.astro), но без Google Tag Manager.
+import { ui, type Lang } from '../lib/i18n';
+import { paths } from '../lib/catalog';
+interface Props { lang: Lang; ga4: string }
+const { lang, ga4 } = Astro.props;
+const gtm = '';
+const T = ui(lang);
+const privacy = (paths.privacy as any)[lang] || '/privacy';
+---
+<div class="cookie" data-cookie hidden role="region" aria-label="Cookies">
+  <p>{T.cookie.text} <a href={privacy}>{T.privacy}</a></p>
+  <div class="cookie__btns">
+    <button type="button" class="btn" data-choice="denied">{T.cookie.decline}</button>
+    <button type="button" class="btn btn--solid" data-choice="granted">{T.cookie.accept}</button>
+  </div>
+</div>
+<script is:inline define:vars={{ gtm, ga4 }}>
+  (function () {
+    var KEY = 'dd-consent';
+    function load() {
+      if (window.__gtmLoaded) return; window.__gtmLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      if (ga4) {
+        var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4;
+        document.head.appendChild(g);
+        window.gtag('js', new Date());
+        window.gtag('config', ga4);
+      }
+      if (gtm) (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s);j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',gtm);
+    }
+    var box = document.querySelector('[data-cookie]');
+    // «Настройки cookie» в подвале: снова показать выбор (согласие можно отозвать в любой момент)
+    document.querySelectorAll('[data-cookie-settings]').forEach(function (b) {
+      b.hidden = false;
+      b.addEventListener('click', function () {
+        try { localStorage.removeItem(KEY); } catch (e) {}
+        if (box) { box.hidden = false; box.querySelector('button').focus(); }
+      });
+    });
+    var v = null; try { v = localStorage.getItem(KEY); } catch (e) {}
+    if (v === 'granted') { load(); }
+    if (!box) return;
+    if (!v) box.hidden = false;
+    box.addEventListener('click', function (e) {
+      var c = e.target.closest('[data-choice]'); if (!c) return;
+      try { localStorage.setItem(KEY, c.dataset.choice); } catch (err) {}
+      box.hidden = true;
+      if (c.dataset.choice === 'granted') load();
+      // согласие отозвано после загрузки аналитики — перезагрузить страницу без неё
+      else if (window.__gtmLoaded) location.reload();
+    });
+  })();
+</script>
+<style>
+  .cookie { position: fixed; z-index: 40; left: 12px; right: 12px; bottom: 12px; max-width: 720px; margin-inline: auto;
+    background: #fff; border: 1px solid var(--ink); padding: 16px 18px; display: grid; gap: 12px; font-size: 14px; box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+  @media (max-width: 719px) {
+    .cookie { left: 8px; right: 8px; bottom: 8px; padding: 12px 14px; gap: 10px; font-size: 13px; line-height: 1.45; }
+    .cookie .cookie__btns { display: grid; grid-template-columns: 1fr 1fr; }
+  }
+  .cookie p { margin: 0; }
+  .cookie__btns { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
+  .cookie .btn { min-height: 44px; padding: 8px 18px; font-size: 14px; }
+  @media (min-width: 720px) { .cookie { grid-template-columns: 1fr auto; align-items: center; } }
+  /* на компьютере — в углу: главная кнопка первого экрана (по центру) остаётся открытой */
+  @media (min-width: 1100px) { .cookie { right: auto; left: 24px; bottom: 24px; max-width: 440px; grid-template-columns: 1fr; } .cookie__btns { justify-content: flex-start; } }
+</style>

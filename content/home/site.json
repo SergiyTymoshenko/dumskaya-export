@@ -7,5 +7,7 @@
     "google": "",
     "yandex": "",
     "bing": ""
-  }
+  },
+  "ga4": "G-WK9L25MVGN",
+  "_ga4": "Google Analytics 4 каталога (ресурс dumskaya-home.com, 560736295; решено 28.10.2026): загружается только после согласия в баннере cookie и только в сборке для домена (PUBLIC_ANALYTICS=1 в scripts/deploy_home.sh). Пусто — аналитики и баннера нет."
 }
