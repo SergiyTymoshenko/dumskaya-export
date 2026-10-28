@@ -160,5 +160,9 @@ export function phones(l: Lang) {
 }
 /** e-mail каталога — content/home/site.json (пока пусто: адрес добавим позже) */
 export const homeEmail: string = homeSite.email || '';
+/** оператор сайта и ответственный за данные — как в политике конфиденциальности (templates/Privacy.astro) и в llms.txt */
+export const CONTROLLER = { name: 'Panorama Systems Florida LLC', country: 'USA',
+  full: 'Panorama Systems Florida LLC, 200 Kings Point Dr, Apt 1603, Sunny Isles Beach, FL 33160, USA' };
+export const STUDIO_ADDRESS = 'Súkennícka 1, 821 09 Bratislava';
 export const cityName = (p: any, l: Lang) => ({ sk: { en: 'Bratislava', ru: 'Братислава', de: 'Bratislava', fr: 'Bratislava', es: 'Bratislava' }, at: { en: 'Vienna', ru: 'Вена', de: 'Wien', fr: 'Vienne', es: 'Viena' } } as any)[p.key][l];
 export const DEFAULT_LANG = DEFAULT;

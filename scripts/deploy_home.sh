@@ -49,6 +49,8 @@ echo "▸ 3/5 Сборка"
 npx astro build --root home >/dev/null
 # даты изменения страниц в картах сайта — по содержимому и истории git (scripts/lastmod.py; файл дат не меняется)
 python3 scripts/lastmod.py apply home
+# полный текст каталога для ИИ-ассистентов — из готовых страниц сборки (scripts/llms_full.py; решено 28.10.2026)
+python3 scripts/llms_full.py home
 echo "▸ 4/5 Проверка"
 CHECK="$(mktemp)"
 if ! python3 scripts/check_home.py >"$CHECK"; then

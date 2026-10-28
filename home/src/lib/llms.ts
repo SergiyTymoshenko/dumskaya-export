@@ -2,7 +2,7 @@
 // данных, что сайт и карта сайта, — в нём только опубликованное: выложенные фабрики (content/home/publish.json)
 // и категории, где есть их товары. Новая фабрика появляется в файле сама, когда её выложат.
 // Тексты — с самого сайта (home/src/lib/i18n.ts, английская версия): описание, доставка, как заказать.
-import { brandList, byBrand, departments, outdoorProducts, products, paths, catName, tax, homeEmail, countryName, phones } from './catalog';
+import { brandList, byBrand, departments, outdoorProducts, products, paths, catName, tax, homeEmail, countryName, phones, CONTROLLER, STUDIO_ADDRESS } from './catalog';
 import { publishedFactory } from './sitemap';
 import { ui, LANGS } from './i18n';
 
@@ -17,6 +17,17 @@ export function llmsTxt(): string {
   L.push('# DUMSKAYA HOME', '');
   L.push(`> ${T.home_studio} ${T.priceNote}`, '');
   L.push(`${T.home_h1}. Each product page shows photos, sizes and versions, finishes and dimension drawings; the price is sent on request.`, '');
+  L.push(`- Full text of the catalog for LLMs: ${SITE}/llms-full.txt — every published page by section (English text, addresses of all language versions)`, '');
+  // контакты и реквизиты (решено 28.10.2026) — только то, что написано на сайте: e-mail и форма на всех языках,
+  // телефоны — на русской версии; оператор — из политики конфиденциальности
+  const ruPh = phones('ru');
+  L.push('## Contacts and company details', '');
+  L.push(`- Catalog of DUMSKAYA DESIGN, interior design studio: ${STUDIO_ADDRESS}, Slovakia (also works in Vienna) — ${STUDIO}`);
+  if (homeEmail) L.push(`- E-mail: ${homeEmail}`);
+  L.push(`- Price requests: the form on every product page and on the [contact page](${SITE}${paths.contact.en})`);
+  if (ruPh.length) L.push(`- Phone (listed on the Russian version of the site): ${ruPh.map((p: any) => p.text).join(', ')}`);
+  L.push(`- Website operator and data controller: ${CONTROLLER.name} (${CONTROLLER.country}) — [privacy policy](${SITE}${paths.privacy.en})`);
+  L.push('');
   L.push('## Worldwide delivery', '');
   for (const s of T.ship) L.push(`- ${s}`);
   L.push('');
@@ -52,6 +63,7 @@ export function llmsTxt(): string {
   }
   L.push('## Optional', '');
   L.push(`- [DUMSKAYA DESIGN](${STUDIO}): the interior design studio behind the catalog, Bratislava and Vienna`);
+  L.push(`- [Full text of the catalog](${SITE}/llms-full.txt): every published page as Markdown — products with sizes and versions, categories, brands`);
   L.push(`- [Sitemap](${SITE}/sitemap.xml): all published pages in all languages`);
   L.push(`- [Privacy policy](${SITE}${paths.privacy.en}): how data from price requests is processed`);
   return L.join('\n') + '\n';

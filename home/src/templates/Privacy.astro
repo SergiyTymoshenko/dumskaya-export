@@ -3,12 +3,12 @@
 // тот же оператор данных; отличия — заявку на товар фабрики видит партнёр-поставщик, cookie и Google Analytics нет.
 // Раздел «Фото товаров» (#photos) — условия использования снимков: на него ссылается разметка фото (license).
 import Crumbs from '../components/Crumbs.astro';
-import { paths, homeEmail, type HPage } from '../lib/catalog';
+import { paths, homeEmail, CONTROLLER, STUDIO_ADDRESS, type HPage } from '../lib/catalog';
 import { typoHtml } from '../lib/typo';
 interface Props { page: HPage }
 const { page } = Astro.props;
-const C = 'Panorama Systems Florida LLC, 200 Kings Point Dr, Apt 1603, Sunny Isles Beach, FL 33160, USA';
-const S = 'Súkennícka 1, 821 09 Bratislava';
+const C = CONTROLLER.full;
+const S = STUDIO_ADDRESS;
 // связь: телефон — только на русской версии, на остальных — форма на странице «Контакты»; e-mail — на всех языках
 // (content/home/site.json → email: sales@dumskaya-design.com)
 const tel = '<a href="tel:+421918177785">+421 918 17 77 85</a>';
