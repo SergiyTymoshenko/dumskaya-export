@@ -98,6 +98,7 @@ import backups  # noqa: E402  резервные копии: архив на с�
 import server_info  # noqa: E402  страница разработчика «Сервер и ИИ»: сервер, данные, расход языковых моделей
 import indexnow  # noqa: E402  IndexNow: раз в час новые и изменённые страницы сайтов — в Bing, Яндекс, Seznam
 import gsc_index  # noqa: E402  индекс Google: раз в день по Search Console — какие страницы взяты (ключ ~/dumskaya/gsc-key.json)
+import ga_stats  # noqa: E402  Google Analytics 4 обоих сайтов: «Графики» и утро (тот же ключ служебного аккаунта)
 
 BOT = None
 
@@ -237,6 +238,16 @@ class Handler(BaseHTTPRequestHandler):
                 return self.reply(200, gsc_index.web_data(q.get("site") or "studio"))
             except Exception as e:  # noqa: BLE001
                 log(f"индекс Google: данные не собраны — {type(e).__name__}: {e}")
+                return self.reply(500, {"ok": False})
+        if path.rstrip("/") == "/api/stats/ga":             # «Google Analytics» в «Графиках»: разработчику и дизайнеру
+            if not self.stats_admin():
+                return self.reply(403, {"ok": False})
+            q = dict(urllib.parse.parse_qsl(query))
+            period = q.get("p") if q.get("p") in PERIODS else "7"
+            try:
+                return self.reply(200, ga_stats.web_data(q.get("site") or "studio", period))
+            except Exception as e:  # noqa: BLE001
+                log(f"Google Analytics: данные не собраны — {type(e).__name__}: {e}")
                 return self.reply(500, {"ok": False})
         if path.rstrip("/") == "/api/stats/data":
             if not self.stats_admin():

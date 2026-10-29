@@ -22,7 +22,8 @@ Caddy записывает каждый запрос в /var/log/caddy/dumskaya.
   • 7, 30, 90 дней — по дням. Итоги дней сохраняются в ~/dumskaya/stats/<дата>.json (только цифры, без IP),
     поэтому длинные периоды не зависят от того, сколько хранится журнал; хранятся бессрочно;
   • «Год» (52 недели) и «Всё время» — по неделям, когда данных больше двух лет — по месяцам.
-Утром в 9:00 (Братислава) разработчику — одна строка за вчера и кнопка «Графики».
+Утром в 9:00 (Братислава) разработчику — одна строка за вчера и кнопка «Графики»; ниже — индекс Google
+и Google Analytics за вчера (gsc_index.py, ga_stats.py).
 
 Работает в процессе сервиса заявок вместе с ботом (lead_service.py), только в режиме live.
 
@@ -1919,6 +1920,11 @@ class SiteStats:
             lines += gsc_index.morning_lines()
         except Exception as e:  # noqa: BLE001
             self.log(f"индекс Google: строка не собрана — {type(e).__name__}: {e}")
+        try:                                        # Google Analytics 4 за вчера по каждому сайту (ga_stats.py), когда есть ключ
+            import ga_stats
+            lines += ga_stats.morning_lines(d)
+        except Exception as e:  # noqa: BLE001
+            self.log(f"Google Analytics: строка не собрана — {type(e).__name__}: {e}")
         lines.append("Графики — кнопкой ниже.")
         self.bot.s.put("stats:daily", d.isoformat())
         self.bot.notify("\n".join(lines), roles=("owner",), rows=BUTTONS_BOTH if h is not None else BUTTON)

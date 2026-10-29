@@ -103,6 +103,7 @@
   .tip .key { display: inline-block; width: 12px; height: 2px; background: var(--series); border-radius: 1px; margin-right: 6px; vertical-align: middle; }
   .bars { display: grid; gap: 8px; }
   .card h3.sub { font-size: inherit; font-weight: 600; margin: 14px 0 8px; }
+  .card details + p.note { margin-top: 14px; }
   .bar { display: grid; grid-template-columns: minmax(84px, 34%) 1fr; gap: 10px; align-items: center; }
   .bar .name { color: var(--text-1); font-size: calc(14px * var(--k)); overflow-wrap: anywhere; }
   .bar .track { display: flex; align-items: center; gap: 8px; min-width: 0; }
@@ -154,7 +155,7 @@
   .trail .du.now { color: var(--up); font-weight: 600; }
   .trail .evs { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
   .trail .ev { font-size: calc(12px * var(--k)); background: var(--ghost); border-radius: 999px; padding: 2px 9px; }
-  .foot { color: var(--muted); font-size: calc(12px * var(--k)); margin: 4px 2px 0; }
+  .foot { color: var(--text-2); font-size: calc(12px * var(--k)); margin: 4px 2px 0; }
   /* работает ли сайт — только у разработчика (то, что показывала команда /site) */
   .site .head { font-size: calc(17px * var(--k)); font-weight: 650; }
   .site .head.ok { color: var(--up); }
@@ -510,7 +511,8 @@
   const gscCache = {};
   const pct = (x) => (Math.round(x * 1000) / 10).toString().replace('.', ',') + '%';
   // линия по дням: несколько серий, ось — от нуля; подписи — первая и последняя дата
-  function miniLines(rows, series) {
+  function miniLines(rows, series, label) {
+    const lab = label || ((r) => dshort(r.date));
     const wrap = el('div', 'chart');
     const W = Math.max(300, app.clientWidth - 30), H = 150, L = 34, R = 10, T = 10, B = 22;
     const max = niceMax(Math.max(1, ...rows.flatMap((r) => series.map(([k]) => r[k] || 0))));
@@ -526,8 +528,8 @@
         'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round', ...(dash ? { 'stroke-dasharray': '4 3' } : {}) }));
     });
     if (rows.length) {
-      const a = sv('text', { x: L, y: H - 6 }); a.textContent = dshort(rows[0].date); svg.append(a);
-      const z = sv('text', { x: W - R, y: H - 6, 'text-anchor': 'end' }); z.textContent = dshort(rows[rows.length - 1].date); svg.append(z);
+      const a = sv('text', { x: L, y: H - 6 }); a.textContent = lab(rows[0]); svg.append(a);
+      const z = sv('text', { x: W - R, y: H - 6, 'text-anchor': 'end' }); z.textContent = lab(rows[rows.length - 1]); svg.append(z);
     }
     wrap.append(svg);
     const legend = el('div', 'note'); legend.textContent = series.map(([, n, , dash]) => (dash ? '┄ ' : '— ') + n).join('   ');
@@ -657,6 +659,79 @@
     return c;
   }
 
+  // «Google Analytics» (решено 29.10.2026): только посетители, принявшие cookie (аналитика грузится после «Принять»);
+  // по выбранному периоду, «1 час» — сейчас на сайте за 30 минут. Отчёты — через сервер (deploy/ga_stats.py, /api/stats/ga)
+  const gaCache = {};
+  function gaCard() {
+    const c = card('Google Analytics', 'Только посетители, которые приняли cookie на сайте: аналитика загружается после «Принять». '
+      + 'Поэтому цифры меньше, чем выше, — там все заходы по журналу сервера.' + (period === '1h' ? '' : ' Данные Google за вчера и сегодня ещё уточняются.'));
+    const box = el('div'); c.append(box);
+    const key = siteKey + ':' + period;
+    const fill = (g) => {
+      box.replaceChildren();
+      if (!g) { box.append(el('p', 'note', 'Не получилось загрузить — откройте «Графики» ещё раз.')); return; }
+      if (!g.key) { box.append(el('p', 'note', 'Выключено: на сервере нет ключа доступа Google.')); return; }
+      g.sites.forEach((x) => {
+        if (g.sites.length > 1) box.append(el('h3', 'sub', x.host));
+        if (x.error) { box.append(el('p', 'note', 'Нет данных: ' + x.error)); return; }
+        const foot = 'Ресурс Google Analytics ' + x.property + (x.fetched ? ' · данные Google на ' + hm(x.fetched) : '');
+        if (x.unit === 'realtime') {
+          const tiles = el('div', 'tiles');
+          tiles.append(tile('Сейчас на сайте', x.users, { kind: 'hero', split: 'за последние 30 минут, по Google Analytics' }));
+          box.append(tiles);
+          if (x.pages.length) { box.append(el('p', 'note', 'Какие страницы смотрят')); box.append(barList(x.pages)); }
+          if (x.countries.length) { box.append(el('p', 'note', 'Страны')); box.append(barList(x.countries)); }
+          if (x.devices.length) { box.append(el('p', 'note', 'Устройства')); box.append(barList(x.devices)); }
+          box.append(el('p', 'note', foot));
+          return;
+        }
+        const t = x.totals, pv = x.prev, y = x.compare === 'yesterday', cmp = x.compare === 'prev';
+        const yest = (v) => (y && pv ? ' · вчера — ' + fmt(v) : '');
+        const tiles = el('div', 'tiles');
+        tiles.append(tile(y ? 'Пользователи сегодня' : 'Пользователи', t.users, { kind: 'hero', prev: pv && pv.users, compare: cmp,
+          split: (t.new_users ? 'новых — ' + fmt(t.new_users) : 'новых нет') + yest(pv && pv.users) }),
+        tile(y ? 'Сеансы сегодня' : 'Сеансы', t.sessions, { prev: pv && pv.sessions, compare: cmp,
+          split: (t.sessions ? 'вовлечённых — ' + Math.round((t.engaged / t.sessions) * 100) + '%' : 'сеанс — одно посещение сайта') + yest(pv && pv.sessions) }),
+        tile(y ? 'Просмотры сегодня' : 'Просмотры страниц', t.views, { prev: pv && pv.views, compare: cmp, split: y && pv ? 'вчера — ' + fmt(pv.views) : null }),
+        tile('Время вовлечения', t.avg_time, { show: dur, prev: pv && pv.avg_time, compare: cmp && t.avg_time != null && pv && pv.avg_time != null,
+          split: 'в среднем на пользователя: сколько страница была на экране' }));
+        if (x.leads || x.contacts) tiles.append(tile('Заявки', x.leads, { split: 'нажатий на контакты — ' + fmt(x.contacts) + (y ? ' · за вчера и сегодня' : '') }));
+        box.append(tiles);
+        if (x.series.length > 1 && x.series.some((r) => r.users)) {
+          const per = { hour: 'по часам — вчера и сегодня', day: 'по дням', month: 'по месяцам' }[x.unit];
+          box.append(el('p', 'note', 'Пользователи и сеансы ' + per));
+          box.append(miniLines(x.series, [['users', 'пользователи', 'var(--series)'], ['sessions', 'сеансы', 'var(--series-2, #c2410c)', true]],
+            x.unit === 'hour' ? (r) => dshort(r.date) + ', ' + two(r.hour) + ':00' : x.unit === 'month' ? (r) => MON_AXIS[pd(r.date).getMonth()] + ' ' + pd(r.date).getFullYear() : null));
+        }
+        const when = y ? ' — за вчера и сегодня' : '';
+        if (x.channels.length) { box.append(el('p', 'note', 'Откуда пришли: каналы, сеансы' + when)); box.append(barList(x.channels.map(([n, v]) => [n, v]))); }
+        const more = (title, items, cols) => {
+          if (!items.length) return;
+          const det = el('details'); det.append(el('summary', null, title));
+          det.append(listRows(items, cols)); box.append(det);
+        };
+        more('Источники — ' + x.sources.length, x.sources, (it) => 'сеансов · пользователей ' + fmt(it[2]));
+        more('Страницы входа — ' + x.landing.length, x.landing, (it) => 'сеансов · вовлечённых ' + fmt(it[2]));
+        more('Популярные страницы — ' + x.pages.length, x.pages.map(([path, v, avg, title]) => [title ? title + ' · ' + path : path, v, avg]),
+          (it) => 'просмотров' + (it[2] ? ' · в среднем ' + dur(it[2]) + ' на пользователя' : ''));
+        if (x.countries.length) { box.append(el('p', 'note', 'Страны, пользователи' + when)); box.append(barList(x.countries.slice(0, 8))); }
+        more('Города — ' + x.cities.length, x.cities, () => 'пользователей');
+        if (x.devices.length) { box.append(el('p', 'note', 'Устройства, пользователи' + when)); box.append(barList(x.devices)); }
+        if (x.events.length) { box.append(el('p', 'note', 'Действия на сайте' + when)); box.append(barList(x.events)); }
+        box.append(el('p', 'note', foot));
+      });
+    };
+    const hit = gaCache[key];
+    if (hit && Date.now() - hit.t < (period === '1h' ? 55000 : 300000)) fill(hit.g);
+    else {
+      box.append(el('p', 'note', 'Загружаю…'));
+      fetch('/api/stats/ga?site=' + siteKey + '&p=' + period, { headers: { 'X-Telegram-Init-Data': tg ? tg.initData : '' }, cache: 'no-store' })
+        .then((r) => (r.ok ? r.json() : null)).catch(() => null)
+        .then((g) => { if (g) gaCache[key] = { t: Date.now(), g }; if (key === siteKey + ':' + period) fill(g); });
+    }
+    return c;
+  }
+
   function render() {
     if (data.period === '1h') return renderLive();
     const d = data, tot = d.total, prev = d.prev, rows = d.rows, n = rows.length;
@@ -720,6 +795,7 @@
       .concat((d.google_split || [['sk', 'Словацкие'], ['de', 'Немецкие']]).map(([k, lab]) => [lab, (r.glang || {})[k] != null ? r.glang[k] : (r['google_' + k] || 0)]))));
     app.append(c6);
     app.append(gscCard());
+    app.append(gaCard());
 
     if (tot.contacts) {
       const cc = card('Как с вами связывались', 'Нажатия на телефон, e-mail, WhatsApp и Telegram на сайте');
@@ -802,6 +878,7 @@
       app.append(c);
     }
     d.sessions.forEach((s) => app.append(visitCard(s)));
+    app.append(gaCard());
     app.append(el('p', 'foot', 'Справа — сколько человек провёл на странице (пока она была на экране); «≈» — примерно, до перехода на следующую; '
       + 'дольше 5 минут считается за 5 — дальше это уже забытая вкладка. '
       + 'Красным — адрес, которого на сайте нет (ошибка 404). Роботы, которые назвались браузером, и визиты студии не показываются. '

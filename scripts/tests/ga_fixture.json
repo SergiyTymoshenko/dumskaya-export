@@ -1,0 +1,3588 @@
+{
+"1h": {
+"key": true,
+"period": "1h",
+"sites": [
+{
+"key": "studio",
+"host": "dumskaya-design.com",
+"name": "студия",
+"property": "111",
+"unit": "realtime",
+"users": 3,
+"pages": [
+[
+"Главная",
+2
+],
+[
+"Контакты",
+1
+]
+],
+"countries": [
+[
+"Словакия",
+2
+],
+[
+"Австрия",
+1
+]
+],
+"devices": [
+[
+"Телефон",
+2
+],
+[
+"Компьютер",
+1
+]
+],
+"fetched": 1761750000
+},
+{
+"key": "home",
+"host": "dumskaya-home.com",
+"name": "магазин",
+"property": "222",
+"unit": "realtime",
+"users": 3,
+"pages": [
+[
+"Главная",
+2
+],
+[
+"Контакты",
+1
+]
+],
+"countries": [
+[
+"Словакия",
+2
+],
+[
+"Австрия",
+1
+]
+],
+"devices": [
+[
+"Телефон",
+2
+],
+[
+"Компьютер",
+1
+]
+],
+"fetched": 1761750000
+}
+]
+},
+"24h": {
+"key": true,
+"period": "24h",
+"sites": [
+{
+"key": "studio",
+"host": "dumskaya-design.com",
+"name": "студия",
+"property": "111",
+"unit": "hour",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "yesterday",
+"series": [
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 19
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 20
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 21
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 22
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 23
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 0
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 1
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 2
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 3
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 4
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 5
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 6
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 7
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 8
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 9
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 10
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 11
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 12
+},
+{
+"date": "2026-10-29",
+"users": 2,
+"sessions": 3,
+"views": 7,
+"hour": 13
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 14
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 15
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 16
+},
+{
+"date": "2026-10-29",
+"users": 2,
+"sessions": 3,
+"views": 7,
+"hour": 17
+},
+{
+"date": "2026-10-29",
+"users": 2,
+"sessions": 3,
+"views": 7,
+"hour": 18,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+},
+{
+"key": "home",
+"host": "dumskaya-home.com",
+"name": "магазин",
+"property": "222",
+"unit": "hour",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "yesterday",
+"series": [
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 19
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 20
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 21
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 22
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 23
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 0
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 1
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 2
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 3
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 4
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 5
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 6
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 7
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 8
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 9
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 10
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 11
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 12
+},
+{
+"date": "2026-10-29",
+"users": 2,
+"sessions": 3,
+"views": 7,
+"hour": 13
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 14
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 15
+},
+{
+"date": "2026-10-29",
+"users": 0,
+"sessions": 0,
+"views": 0,
+"hour": 16
+},
+{
+"date": "2026-10-29",
+"users": 2,
+"sessions": 3,
+"views": 7,
+"hour": 17
+},
+{
+"date": "2026-10-29",
+"users": 2,
+"sessions": 3,
+"views": 7,
+"hour": 18,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+}
+]
+},
+"7": {
+"key": true,
+"period": "7",
+"sites": [
+{
+"key": "studio",
+"host": "dumskaya-design.com",
+"name": "студия",
+"property": "111",
+"unit": "day",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "prev",
+"series": [
+{
+"date": "2026-10-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-26",
+"users": 8,
+"sessions": 9,
+"views": 20
+},
+{
+"date": "2026-10-27",
+"users": 7,
+"sessions": 8,
+"views": 20
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-29",
+"users": 5,
+"sessions": 6,
+"views": 20,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+},
+{
+"key": "home",
+"host": "dumskaya-home.com",
+"name": "магазин",
+"property": "222",
+"unit": "day",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "prev",
+"series": [
+{
+"date": "2026-10-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-26",
+"users": 8,
+"sessions": 9,
+"views": 20
+},
+{
+"date": "2026-10-27",
+"users": 7,
+"sessions": 8,
+"views": 20
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-29",
+"users": 5,
+"sessions": 6,
+"views": 20,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+}
+]
+},
+"30": {
+"key": true,
+"period": "30",
+"sites": [
+{
+"key": "studio",
+"host": "dumskaya-design.com",
+"name": "студия",
+"property": "111",
+"unit": "day",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "prev",
+"series": [
+{
+"date": "2026-09-30",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-01",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-02",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-03",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-04",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-05",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-06",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-07",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-08",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-09",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-10",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-11",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-12",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-13",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-14",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-15",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-16",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-17",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-18",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-19",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-20",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-21",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-22",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-26",
+"users": 8,
+"sessions": 9,
+"views": 20
+},
+{
+"date": "2026-10-27",
+"users": 7,
+"sessions": 8,
+"views": 20
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-29",
+"users": 5,
+"sessions": 6,
+"views": 20,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+},
+{
+"key": "home",
+"host": "dumskaya-home.com",
+"name": "магазин",
+"property": "222",
+"unit": "day",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "prev",
+"series": [
+{
+"date": "2026-09-30",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-01",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-02",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-03",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-04",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-05",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-06",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-07",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-08",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-09",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-10",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-11",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-12",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-13",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-14",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-15",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-16",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-17",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-18",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-19",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-20",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-21",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-22",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-26",
+"users": 8,
+"sessions": 9,
+"views": 20
+},
+{
+"date": "2026-10-27",
+"users": 7,
+"sessions": 8,
+"views": 20
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-29",
+"users": 5,
+"sessions": 6,
+"views": 20,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+}
+]
+},
+"90": {
+"key": true,
+"period": "90",
+"sites": [
+{
+"key": "studio",
+"host": "dumskaya-design.com",
+"name": "студия",
+"property": "111",
+"unit": "day",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "prev",
+"series": [
+{
+"date": "2026-08-01",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-02",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-03",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-04",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-05",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-06",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-07",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-08",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-09",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-10",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-11",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-12",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-13",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-14",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-15",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-16",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-17",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-18",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-19",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-20",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-21",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-22",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-26",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-27",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-29",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-30",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-31",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-01",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-02",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-03",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-04",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-05",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-06",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-07",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-08",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-09",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-10",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-11",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-12",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-13",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-14",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-15",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-16",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-17",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-18",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-19",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-20",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-21",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-22",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-26",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-27",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-29",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-30",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-01",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-02",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-03",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-04",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-05",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-06",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-07",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-08",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-09",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-10",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-11",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-12",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-13",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-14",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-15",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-16",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-17",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-18",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-19",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-20",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-21",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-22",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-26",
+"users": 8,
+"sessions": 9,
+"views": 20
+},
+{
+"date": "2026-10-27",
+"users": 7,
+"sessions": 8,
+"views": 20
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-29",
+"users": 5,
+"sessions": 6,
+"views": 20,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+},
+{
+"key": "home",
+"host": "dumskaya-home.com",
+"name": "магазин",
+"property": "222",
+"unit": "day",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "prev",
+"series": [
+{
+"date": "2026-08-01",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-02",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-03",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-04",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-05",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-06",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-07",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-08",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-09",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-10",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-11",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-12",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-13",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-14",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-15",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-16",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-17",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-18",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-19",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-20",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-21",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-22",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-26",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-27",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-29",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-30",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-08-31",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-01",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-02",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-03",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-04",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-05",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-06",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-07",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-08",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-09",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-10",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-11",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-12",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-13",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-14",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-15",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-16",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-17",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-18",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-19",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-20",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-21",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-22",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-26",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-27",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-29",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-09-30",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-01",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-02",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-03",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-04",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-05",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-06",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-07",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-08",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-09",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-10",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-11",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-12",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-13",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-14",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-15",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-16",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-17",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-18",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-19",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-20",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-21",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-22",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-23",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-24",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-25",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-26",
+"users": 8,
+"sessions": 9,
+"views": 20
+},
+{
+"date": "2026-10-27",
+"users": 7,
+"sessions": 8,
+"views": 20
+},
+{
+"date": "2026-10-28",
+"users": 0,
+"sessions": 0,
+"views": 0
+},
+{
+"date": "2026-10-29",
+"users": 5,
+"sessions": 6,
+"views": 20,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+}
+]
+},
+"365": {
+"key": true,
+"period": "365",
+"sites": [
+{
+"key": "studio",
+"host": "dumskaya-design.com",
+"name": "студия",
+"property": "111",
+"unit": "month",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "prev",
+"series": [
+{
+"date": "2026-10-01",
+"users": 33,
+"sessions": 40,
+"views": 120,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+},
+{
+"key": "home",
+"host": "dumskaya-home.com",
+"name": "магазин",
+"property": "222",
+"unit": "month",
+"totals": {
+"users": 40,
+"new_users": 31,
+"sessions": 52,
+"engaged": 39,
+"views": 140,
+"avg_time": 120
+},
+"prev": {
+"users": 30,
+"new_users": 23,
+"sessions": 39,
+"engaged": 29,
+"views": 105,
+"avg_time": 120
+},
+"compare": "prev",
+"series": [
+{
+"date": "2026-10-01",
+"users": 33,
+"sessions": 40,
+"views": 120,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+}
+]
+},
+"all": {
+"key": true,
+"period": "all",
+"sites": [
+{
+"key": "studio",
+"host": "dumskaya-design.com",
+"name": "студия",
+"property": "111",
+"unit": "month",
+"totals": {
+"users": 40,
+"new_users": 10,
+"sessions": 10,
+"engaged": 10,
+"views": 10,
+"avg_time": 0
+},
+"prev": null,
+"compare": null,
+"series": [
+{
+"date": "2026-10-01",
+"users": 33,
+"sessions": 40,
+"views": 120,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+},
+{
+"key": "home",
+"host": "dumskaya-home.com",
+"name": "магазин",
+"property": "222",
+"unit": "month",
+"totals": {
+"users": 40,
+"new_users": 10,
+"sessions": 10,
+"engaged": 10,
+"views": 10,
+"avg_time": 0
+},
+"prev": null,
+"compare": null,
+"series": [
+{
+"date": "2026-10-01",
+"users": 33,
+"sessions": 40,
+"views": 120,
+"partial": true
+}
+],
+"channels": [
+[
+"Поиск (Google и др.)",
+20,
+18
+],
+[
+"Прямые заходы",
+10,
+9
+],
+[
+"Не определено",
+1,
+1
+]
+],
+"sources": [
+[
+"google · поиск",
+20,
+18
+],
+[
+"прямые заходы",
+10,
+9
+]
+],
+"landing": [
+[
+"/",
+12,
+9
+],
+[
+"Не определено",
+1,
+0
+]
+],
+"pages": [
+[
+"/",
+30,
+60,
+"Студия дизайна интерьера в Братиславе"
+],
+[
+"/kontakty",
+8,
+0,
+""
+]
+],
+"countries": [
+[
+"Словакия",
+25
+],
+[
+"Австрия",
+10
+],
+[
+"Не определено",
+1
+]
+],
+"cities": [
+[
+"Bratislava",
+20
+],
+[
+"Не определено",
+3
+]
+],
+"devices": [
+[
+"Телефон",
+25
+],
+[
+"Компьютер",
+15
+]
+],
+"events": [
+[
+"Заявки с сайта",
+2
+],
+[
+"Нажатия на контакты",
+5
+],
+[
+"Дочитали страницу до конца",
+30
+]
+],
+"leads": 2,
+"contacts": 5,
+"fetched": 1761750000
+}
+]
+}
+}

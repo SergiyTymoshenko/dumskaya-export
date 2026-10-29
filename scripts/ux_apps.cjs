@@ -15,7 +15,9 @@ const OUT = L.outDir('dumskaya-ux-apps');
 const PORT = Number(L.arg('--port', 18771));
 const R = L.report();
 const QUICK = L.has('--quick');          // только iPhone Pro Max и размер текста по умолчанию
+const ONLY = L.arg('--only', '');        // только экраны, чьё имя начинается так (например --only stats — «Графики»)
 const GSC_FIXTURE = require('fs').readFileSync(require('path').join(__dirname, 'tests', 'gsc_fixture.json'), 'utf8');
+const GA_FIXTURE = JSON.parse(require('fs').readFileSync(require('path').join(__dirname, 'tests', 'ga_fixture.json'), 'utf8'));
 
 // Telegram внутри мини-приложения: подпись (initData) и кнопки «Назад» / «Сохранить» — как у настоящего, без сети
 const tgMock = (init) => `window.Telegram = { WebApp: (function () {
@@ -77,7 +79,7 @@ const RUNS = [
   if (!AXE) R.warn('axe-core не найден — доступность не проверялась (npm i --no-save axe-core)');
   const setSize = (run, z) => fetch(BASE + run.save, { method: 'POST', headers: { 'X-Telegram-Init-Data': st.init[run.role], 'Content-Type': 'application/json' }, body: JSON.stringify({ size: z }) });
   try {
-    for (const run of RUNS) {
+    for (const run of RUNS.filter((r) => !ONLY || r.name.startsWith(ONLY))) {
       for (const z of run.text) {
         await setSize(run, z);
         for (const sz of run.sizes || SIZES) {
@@ -89,6 +91,12 @@ const RUNS = [
           await p.route('https://telegram.org/**', (r) => r.fulfill({ contentType: 'text/javascript', body: tgMock(st.init[run.role]) }));
           // карточка «Google: поиск и индекс» — на образце данных (на стенде нет ключа Search Console)
           await p.route('**/api/stats/gsc**', (r) => r.fulfill({ contentType: 'application/json', body: GSC_FIXTURE }));
+          // карточка «Google Analytics» — на образце (scripts/tests/ga_fixture.json: оба сайта, все периоды)
+          await p.route('**/api/stats/ga**', (r) => {
+            const q = new URL(r.request().url()).searchParams, d = GA_FIXTURE[q.get('p')] || GA_FIXTURE['7'], site = q.get('site');
+            const body = site === 'all' ? d : { ...d, sites: d.sites.filter((x) => x.key === site) };
+            return r.fulfill({ contentType: 'application/json', body: JSON.stringify(body) });
+          });
           const tag = `${run.name} ${z} (${sz})`;
           let shot = 0;
           const look = async (screen) => {
@@ -112,6 +120,16 @@ const RUNS = [
           await p.goto(BASE + run.app, { waitUntil: 'load' });     // «Графики» обновляются сами — сеть не затихает
           await p.waitForTimeout(1500);
           await look('открытие');
+          // «Графики»: периоды и «Оба» — карточка «Google Analytics» (решено 29.10.2026) в каждом виде
+          if (run.app === '/api/stats/app') {
+            for (const per of ['1h', '24h', '365']) {
+              if (await clickFirst(`.filters button[data-p="${per}"]`)) { await p.waitForTimeout(900); await look(`период ${per}`); }
+            }
+            if (await clickFirst('.sites button[data-s="all"]')) { await p.waitForTimeout(900); await look('оба сайта'); }
+            const ga = await p.evaluate(() => [...document.querySelectorAll('section.card h2')].some((h) => h.textContent === 'Google Analytics'));
+            R.ok(ga, `${tag}: карточка «Google Analytics»`, 'нет карточки');
+            await clickFirst('.sites button[data-s="studio"]'); await clickFirst('.filters button[data-p="7"]'); await p.waitForTimeout(600);
+          }
           const tabs = await p.$$eval('#nav button[data-tab], #nav .in > button', (xs) => xs.filter((x) => x.offsetHeight).map((x, i) => ({ i, t: x.innerText.trim().replace(/\s+/g, ' ') })));
           for (const t of tabs) {
             await p.click(`#nav .in > button:nth-of-type(${t.i + 1})`); await p.waitForTimeout(500);
