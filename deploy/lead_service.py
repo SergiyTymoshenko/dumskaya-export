@@ -98,6 +98,7 @@ import backups  # noqa: E402  резервные копии: архив на с�
 import server_info  # noqa: E402  страница разработчика «Сервер и ИИ»: сервер, данные, расход языковых моделей
 import indexnow  # noqa: E402  IndexNow: раз в час новые и изменённые страницы сайтов — в Bing, Яндекс, Seznam
 import gsc_index  # noqa: E402  индекс Google: раз в день по Search Console — какие страницы взяты (ключ ~/dumskaya/gsc-key.json)
+import lead_filter  # noqa: E402  спам в форме заявки: блокировки и предложения IT-услуг (решено 29.10.2026)
 import ga_stats  # noqa: E402  Google Analytics 4 обоих сайтов: «Графики» и утро (тот же ключ служебного аккаунта)
 
 BOT = None
@@ -147,8 +148,9 @@ def send_mail(lead):
 
 
 def deliver(lead):
-    with translate_purpose("lead"):    # перевод сообщения на русский (если оно не по-русски и задан ключ сервиса)
-        translate_lead(lead, log=log)
+    if "message_lang" not in lead and "translate_error" not in lead:   # перевод мог уже сделать фильтр спама
+        with translate_purpose("lead"):    # перевод сообщения на русский (если оно не по-русски и задан ключ сервиса)
+            translate_lead(lead, log=log)
     crm = getattr(BOT, "crm", None)
     if crm:                            # в «Студию» → «Заявки»; номер нужен для кнопки «Открыть заявку» в сообщении
         try:
@@ -169,6 +171,21 @@ def deliver(lead):
             log(f"учёт: кому передана заявка — не записано: {e}")
     log(f"заявка от {lead['name']!r}: доставлено {ok or 'никуда (сохранено в файл)'}")
     return ok
+
+
+def mark_spam(crm):
+    """Новые (ещё не разобранные) заявки, которые фильтр считает спамом, — в «Спам»; так и для пришедших до фильтра."""
+    n = 0
+    for r in crm.q("SELECT id, name, contact, message, message_ru, message_lang FROM leads WHERE status='new'"):
+        if lead_filter.reason(r):
+            try:
+                crm.set_lead_status(r["id"], "spam", "фильтр спама")
+                n += 1
+            except Exception:  # noqa: BLE001 — удалённая или уже разобранная
+                pass
+    if n:
+        log(f"фильтр спама: в «Спам» — {n}")
+    return n
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -411,6 +428,20 @@ class Handler(BaseHTTPRequestHandler):
             q.append(now)
         lead["time"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
         lead["ip"] = ip
+        # спам (решено 29.10.2026): заблокированные отправители и предложения IT-услуг — не в бот, не в «Студию»,
+        # не в статистику; отправителю — обычный ответ «спасибо». Сначала по тексту, потом — по переводу
+        why = lead_filter.reason(lead)
+        if not why:
+            with translate_purpose("lead"):
+                translate_lead(lead, log=log)
+            why = lead_filter.reason(lead)
+        if why:
+            lead_filter.log_blocked(lead, why)
+            log(f"заявка от {lead['name']!r} отсеяна: {why}")
+            if is_json:
+                return self.reply(200, {"ok": True})
+            t, txt, back = THANKS[lang]
+            return self.reply(200, None, html_page=f"<!doctype html><meta charset=utf-8><title>{t}</title><h1>{t}</h1><p>{txt}</p>")
         try:
             os.makedirs(os.path.dirname(LEADS_FILE), exist_ok=True)
             with lock, open(LEADS_FILE, "a", encoding="utf-8") as f:
@@ -452,6 +483,7 @@ def main():
             crm_api.CRM = BOT.crm = Crm(rates=Rates())
             BOT.stats.hooks.append(BOT.crm.backup_if_due)   # раз в день — уборка корзины и старых удалённых заявок
             BOT.crm.import_leads(LEADS_FILE, log=log)         # заявки из файла, которых ещё нет в «Студии»
+            mark_spam(BOT.crm)                                # новые заявки, похожие на спам, — в «Спам» (отправитель блокируется)
             # кабинет заказчика и подрядчика («Мой проект»), переписка с заказчиками, напоминания об оплате услуг
             crm_api.PORTAL = portal_api.PORTAL = BOT.portal = Portal(BOT.crm)
             portal_api.CRM, portal_api.BOT, portal_api.CHECK, portal_api.TOKEN = BOT.crm, BOT, check_init_data, TG_TOKEN

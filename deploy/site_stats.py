@@ -53,6 +53,10 @@ from collections import Counter
 from datetime import date, datetime, timedelta, timezone
 from urllib.parse import parse_qsl, unquote, urlsplit
 
+try:                                                # спам в заявках не считаем (lead_filter.py рядом)
+    import lead_filter
+except ImportError:  # pragma: no cover
+    lead_filter = None
 try:                                                # город по IP — для режима «1 час» (geo.py рядом)
     import geo
 except ImportError:                                 # pragma: no cover
@@ -563,6 +567,7 @@ def forget_recent():
 
 def leads_between(since_ts, until_ts):
     out = []
+    blocked = lead_filter.load() if lead_filter else None
     try:
         with open(LEADS_FILE, encoding="utf-8") as fh:
             for line in fh:
@@ -577,6 +582,8 @@ def leads_between(since_ts, until_ts):
                     continue                                  # пробные заявки мастера настройки и сторожа
                 if is_own(d.get("ip"), ts):
                     continue                                  # заявка со своего адреса (проверка формы)
+                if lead_filter and lead_filter.reason(d, blocked):
+                    continue                                  # спам: заблокированный отправитель или IT-услуги (29.10.2026)
                 page = str(d.get("page") or "")
                 site = d.get("site") or ("dumskaya-home.com" if page.startswith("https://dumskaya-home.com") else "dumskaya-design.com")
                 if site != HOST:

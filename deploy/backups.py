@@ -74,6 +74,7 @@ def sources(app=APP):
         (e("HOME_TIMES_FILE", j("times-home.jsonl")), "times-home.jsonl", "file"),
         (e("HOME_STATS_DIR", j("stats-home")), "stats-home", "dir"),
         (j("lead.env"), "lead.env", "file"),
+        (j("blocked.json"), "blocked.json", "file"),             # заблокированные отправители заявок
     ]
 
 

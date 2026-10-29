@@ -1212,7 +1212,7 @@ class Crm:
 
     def _live_lead(self, lid):
         """Заявка, которую можно менять: есть и не удалена."""
-        r = self.one("SELECT id, name, status, note, project_id, deleted FROM leads WHERE id=? AND status != 'test'", int(lid or 0))
+        r = self.one("SELECT id, name, contact, status, note, project_id, deleted FROM leads WHERE id=? AND status != 'test'", int(lid or 0))
         if not r:
             raise CrmError("Заявка не найдена")
         if r["deleted"]:
@@ -1278,6 +1278,12 @@ class Crm:
         f = dict(status=status, note=_text(d.get("note"), 2000))
         self.run("UPDATE leads SET status=?, note=?, updated=?, updated_by=? WHERE id=?", f["status"], f["note"], now(), who, lid)
         self.audit(who, "edit", "lead", lid, f)
+        if (status == "spam") != (row["status"] == "spam"):     # «Спам» — отправитель блокируется, вернули — разблокируется
+            try:
+                import lead_filter
+                (lead_filter.block_sender if status == "spam" else lead_filter.unblock_sender)(row["contact"])
+            except Exception:  # noqa: BLE001 — блокировка не мешает сменить статус
+                pass
         return self.lead(lid)
 
     def set_lead_status(self, lid, status, who):
