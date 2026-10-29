@@ -6387,6 +6387,27 @@
 "images/shop/misuraemme/bliss-1/drawings/bliss-carpet-tapb5c-me.png": "misuraemme-bliss-rug-dimensions-10"
 }
 },
+"DF-D8415": {
+"path": {
+"en": "/misuraemme/clovis-cushion",
+"ru": "/ru/misuraemme/dekorativnaya-podushka-clovis",
+"de": "/de/misuraemme/clovis-kissen",
+"fr": "/fr/misuraemme/coussin-clovis",
+"es": "/es/misuraemme/cojin-clovis"
+},
+"images": {
+"images/shop/misuraemme/clovis/salone-me23-06-lr.jpg": "misuraemme-clovis-cushion-01",
+"images/shop/misuraemme/clovis/salone-me23-06-c-lr.jpg": "misuraemme-clovis-cushion-02",
+"images/shop/misuraemme/clovis/clovis-me-lr.jpg": "misuraemme-clovis-cushion-03",
+"images/shop/misuraemme/clovis/dsc-7055-lr.jpg": "misuraemme-clovis-cushion-04",
+"images/shop/misuraemme/clovis/dsc-7059-lr.jpg": "misuraemme-clovis-cushion-05"
+},
+"drawings": {
+"images/shop/misuraemme/clovis/drawings/clovis-400-mm.jpg": "misuraemme-clovis-cushion-dimensions-01",
+"images/shop/misuraemme/clovis/drawings/clovis-500-mm.jpg": "misuraemme-clovis-cushion-dimensions-02",
+"images/shop/misuraemme/clovis/drawings/clovis-600-mm.jpg": "misuraemme-clovis-cushion-dimensions-03"
+}
+},
 "DF-D8419": {
 "path": {
 "en": "/misuraemme/denver-accessory",
@@ -9356,6 +9377,23 @@
 "images/shop/misuraemme/eros-sideboard/drawings/madia-eros-h.500-page-0001.jpg": "misuraemme-eros-sideboard-dimensions-01",
 "images/shop/misuraemme/eros-sideboard/drawings/madia-eros-h.680-page-0001.jpg": "misuraemme-eros-sideboard-dimensions-02"
 }
+},
+"DF-H8434": {
+"path": {
+"en": "/misuraemme/layer-partition-system",
+"ru": "/ru/misuraemme/peregorodka-layer",
+"de": "/de/misuraemme/layer-trennwandsystem",
+"fr": "/fr/misuraemme/cloison-layer",
+"es": "/es/misuraemme/tabique-layer"
+},
+"images": {
+"images/shop/misuraemme/layer/layer-scorrevole-con-rete.jpg": "misuraemme-layer-partition-system-01",
+"images/shop/misuraemme/layer/layer-scorrevole-con-rete-dettaglio.jpg": "misuraemme-layer-partition-system-02",
+"images/shop/misuraemme/layer/porte-layer-sat-01-03-me26-lr.jpg": "misuraemme-layer-partition-system-03",
+"images/shop/misuraemme/layer/porte-layer-sat-01-01-me26-lr.jpg": "misuraemme-layer-partition-system-04",
+"images/shop/misuraemme/layer/porte-layer-sat-01-02-me26-lr.jpg": "misuraemme-layer-partition-system-05"
+},
+"drawings": {}
 },
 "DF-H8437": {
 "path": {
