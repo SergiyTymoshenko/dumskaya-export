@@ -1414,6 +1414,106 @@
 "images/shop/misuraemme/wm/drawings/wm2-1.png": "misuraemme-wm-armchair-dimensions-02"
 }
 },
+"DF-A8711": {
+"path": {
+"en": "/rimadesio/althea-armchair",
+"ru": "/ru/rimadesio/kreslo-althea",
+"de": "/de/rimadesio/althea-fauteuil",
+"fr": "/fr/rimadesio/fauteuil-althea",
+"es": "/es/rimadesio/sillon-althea"
+},
+"images": {
+"images/shop/rimadesio/althea/rimadesio-althea-poltrona-pagina-prodotto.jpg": "rimadesio-althea-armchair-01",
+"images/shop/rimadesio/althea/tagli-althea-poltrona1.jpg": "rimadesio-althea-armchair-02",
+"images/shop/rimadesio/althea/tagli-althea-poltrona2.jpg": "rimadesio-althea-armchair-03",
+"images/shop/rimadesio/althea/tagli-althea-poltrona3.jpg": "rimadesio-althea-armchair-04",
+"images/shop/rimadesio/althea/tagli-althea-poltrona4.jpg": "rimadesio-althea-armchair-05",
+"images/shop/rimadesio/althea/tagli-althea-poltrona5.jpg": "rimadesio-althea-armchair-06",
+"images/shop/rimadesio/althea/tagli-althea-poltrona6.jpg": "rimadesio-althea-armchair-07",
+"images/shop/rimadesio/althea/tagli-althea-poltrona7.jpg": "rimadesio-althea-armchair-08"
+},
+"drawings": {}
+},
+"DF-A8712": {
+"path": {
+"en": "/rimadesio/ascot-armchair",
+"ru": "/ru/rimadesio/kreslo-ascot",
+"de": "/de/rimadesio/ascot-fauteuil",
+"fr": "/fr/rimadesio/fauteuil-ascot",
+"es": "/es/rimadesio/sillon-ascot"
+},
+"images": {
+"images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto.jpg": "rimadesio-ascot-armchair-01",
+"images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto2.jpg": "rimadesio-ascot-armchair-02",
+"images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto3.jpg": "rimadesio-ascot-armchair-03",
+"images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto16.jpg": "rimadesio-ascot-armchair-04",
+"images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto18.jpg": "rimadesio-ascot-armchair-05",
+"images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto20.jpg": "rimadesio-ascot-armchair-06",
+"images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto17.jpg": "rimadesio-ascot-armchair-07",
+"images/shop/rimadesio/ascot/ascot-poltrona-pagina-prodotto19.jpg": "rimadesio-ascot-armchair-08"
+},
+"drawings": {}
+},
+"DF-A8746": {
+"path": {
+"en": "/rimadesio/nest-armchair",
+"ru": "/ru/rimadesio/kreslo-nest",
+"de": "/de/rimadesio/nest-fauteuil",
+"fr": "/fr/rimadesio/fauteuil-nest",
+"es": "/es/rimadesio/sillon-nest"
+},
+"images": {
+"images/shop/rimadesio/nest/rimadesio-nest-poltrona-agg-1.jpg": "rimadesio-nest-armchair-01",
+"images/shop/rimadesio/nest/rimadesio-nest-poltrona-agg-2.jpg": "rimadesio-nest-armchair-02",
+"images/shop/rimadesio/nest/rimadesio-nest-poltrona-6.jpg": "rimadesio-nest-armchair-03",
+"images/shop/rimadesio/nest/rimadesio-nest-poltrona-5.jpg": "rimadesio-nest-armchair-04",
+"images/shop/rimadesio/nest/rimadesio-nest-poltrona-7.jpg": "rimadesio-nest-armchair-05",
+"images/shop/rimadesio/nest/rimadesio-nest-poltrona-8.jpg": "rimadesio-nest-armchair-06",
+"images/shop/rimadesio/nest/rimadesio-nest-poltrona-9.jpg": "rimadesio-nest-armchair-07",
+"images/shop/rimadesio/nest/rimadesio-nest-poltrona-10.jpg": "rimadesio-nest-armchair-08"
+},
+"drawings": {}
+},
+"DF-A8769": {
+"path": {
+"en": "/rimadesio/sinua-armchair",
+"ru": "/ru/rimadesio/kreslo-sinua",
+"de": "/de/rimadesio/sinua-fauteuil",
+"fr": "/fr/rimadesio/fauteuil-sinua",
+"es": "/es/rimadesio/sillon-sinua"
+},
+"images": {
+"images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-17.jpg": "rimadesio-sinua-armchair-01",
+"images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-18.jpg": "rimadesio-sinua-armchair-02",
+"images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-19.jpg": "rimadesio-sinua-armchair-03",
+"images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-11.jpg": "rimadesio-sinua-armchair-04",
+"images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-15.jpg": "rimadesio-sinua-armchair-05",
+"images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-14.jpg": "rimadesio-sinua-armchair-06",
+"images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-10.jpg": "rimadesio-sinua-armchair-07",
+"images/shop/rimadesio/sinua-poltrona/rimadesio-sinua-poltrona-9.jpg": "rimadesio-sinua-armchair-08"
+},
+"drawings": {}
+},
+"DF-A8781": {
+"path": {
+"en": "/rimadesio/tray-pouf",
+"ru": "/ru/rimadesio/puf-tray",
+"de": "/de/rimadesio/tray-pouf",
+"fr": "/fr/rimadesio/pouf-tray",
+"es": "/es/rimadesio/puf-tray"
+},
+"images": {
+"images/shop/rimadesio/tray-pouf/tray-pouf-pagina-prodotto-1.jpg": "rimadesio-tray-pouf-01",
+"images/shop/rimadesio/tray-pouf/tray-pouf-pagina-prodotto-2.jpg": "rimadesio-tray-pouf-02",
+"images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto8.jpg": "rimadesio-tray-pouf-03",
+"images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto7.jpg": "rimadesio-tray-pouf-04",
+"images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto5.jpg": "rimadesio-tray-pouf-05",
+"images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto6.jpg": "rimadesio-tray-pouf-06",
+"images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto4.jpg": "rimadesio-tray-pouf-07",
+"images/shop/rimadesio/tray-pouf/tagli-tray-pouf-pagina-prodotto3.jpg": "rimadesio-tray-pouf-08"
+},
+"drawings": {}
+},
 "DF-A9501": {
 "path": {
 "en": "/rugiano/abbraccio-armchair",
@@ -4909,6 +5009,106 @@
 "images/shop/misuraemme/virgin-armchair/drawings/virgin-round-sofa-dis-2d.png": "misuraemme-virgin-armchair-dimensions-06"
 }
 },
+"DF-C8748": {
+"path": {
+"en": "/rimadesio/ori-chair",
+"ru": "/ru/rimadesio/stul-ori",
+"de": "/de/rimadesio/ori-stuhl",
+"fr": "/fr/rimadesio/chaise-ori",
+"es": "/es/rimadesio/silla-ori"
+},
+"images": {
+"images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-15.jpg": "rimadesio-ori-chair-01",
+"images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-2.jpg": "rimadesio-ori-chair-02",
+"images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-3.jpg": "rimadesio-ori-chair-03",
+"images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-16.jpg": "rimadesio-ori-chair-04",
+"images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-18.jpg": "rimadesio-ori-chair-05",
+"images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-20.jpg": "rimadesio-ori-chair-06",
+"images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-21.jpg": "rimadesio-ori-chair-07",
+"images/shop/rimadesio/ori/rimadesio-ori-sedia-pagina-prodotto-17.jpg": "rimadesio-ori-chair-08"
+},
+"drawings": {}
+},
+"DF-C8770": {
+"path": {
+"en": "/rimadesio/sinua-chair",
+"ru": "/ru/rimadesio/stul-sinua",
+"de": "/de/rimadesio/sinua-stuhl",
+"fr": "/fr/rimadesio/chaise-sinua",
+"es": "/es/rimadesio/silla-sinua"
+},
+"images": {
+"images/shop/rimadesio/sinua/rimadesio-sinua-sedia-20.jpg": "rimadesio-sinua-chair-01",
+"images/shop/rimadesio/sinua/rimadesio-sinua-sedia-21.jpg": "rimadesio-sinua-chair-02",
+"images/shop/rimadesio/sinua/rimadesio-sinua-sedia-22.jpg": "rimadesio-sinua-chair-03",
+"images/shop/rimadesio/sinua/rimadesio-sinua-sedia-18.jpg": "rimadesio-sinua-chair-04",
+"images/shop/rimadesio/sinua/rimadesio-sinua-sedia-19.jpg": "rimadesio-sinua-chair-05",
+"images/shop/rimadesio/sinua/rimadesio-sinua-sedia-110.jpg": "rimadesio-sinua-chair-06",
+"images/shop/rimadesio/sinua/rimadesio-sinua-sedia-111.jpg": "rimadesio-sinua-chair-07",
+"images/shop/rimadesio/sinua/rimadesio-sinua-sedia-1.jpg": "rimadesio-sinua-chair-08"
+},
+"drawings": {}
+},
+"DF-C8775": {
+"path": {
+"en": "/rimadesio/sophis-chair",
+"ru": "/ru/rimadesio/stul-sophis",
+"de": "/de/rimadesio/sophis-stuhl",
+"fr": "/fr/rimadesio/chaise-sophis",
+"es": "/es/rimadesio/silla-sophis"
+},
+"images": {
+"images/shop/rimadesio/sophis/rimadesio-shophis-sedia-13.jpg": "rimadesio-sophis-chair-01",
+"images/shop/rimadesio/sophis/rimadesio-shophis-sedia-14.jpg": "rimadesio-sophis-chair-02",
+"images/shop/rimadesio/sophis/rimadesio-shophis-sedia-15.jpg": "rimadesio-sophis-chair-03",
+"images/shop/rimadesio/sophis/rimadesio-shophis-sedia-9.jpg": "rimadesio-sophis-chair-04",
+"images/shop/rimadesio/sophis/rimadesio-shophis-sedia-11.jpg": "rimadesio-sophis-chair-05",
+"images/shop/rimadesio/sophis/rimadesio-shophis-sedia-12.jpg": "rimadesio-sophis-chair-06",
+"images/shop/rimadesio/sophis/rimadesio-shophis-sedia-10.jpg": "rimadesio-sophis-chair-07",
+"images/shop/rimadesio/sophis/rimadesio-shophis-sedia-2.jpg": "rimadesio-sophis-chair-08"
+},
+"drawings": {}
+},
+"DF-C8786": {
+"path": {
+"en": "/rimadesio/wabi-chair",
+"ru": "/ru/rimadesio/stul-wabi",
+"de": "/de/rimadesio/wabi-stuhl",
+"fr": "/fr/rimadesio/chaise-wabi",
+"es": "/es/rimadesio/silla-wabi"
+},
+"images": {
+"images/shop/rimadesio/wabi/rimadesio-wabi-sedia-15.jpg": "rimadesio-wabi-chair-01",
+"images/shop/rimadesio/wabi/rimadesio-wabi-sedia-16.jpg": "rimadesio-wabi-chair-02",
+"images/shop/rimadesio/wabi/rimadesio-wabi-sedia-7.jpg": "rimadesio-wabi-chair-03",
+"images/shop/rimadesio/wabi/rimadesio-wabi-sedia-4.jpg": "rimadesio-wabi-chair-04",
+"images/shop/rimadesio/wabi/rimadesio-wabi-sedia-5.jpg": "rimadesio-wabi-chair-05",
+"images/shop/rimadesio/wabi/rimadesio-wabi-sedia-6.jpg": "rimadesio-wabi-chair-06",
+"images/shop/rimadesio/wabi/rimadesio-wabi-sedia-3.jpg": "rimadesio-wabi-chair-07",
+"images/shop/rimadesio/wabi/rimadesio-wabi-sedia-8.jpg": "rimadesio-wabi-chair-08"
+},
+"drawings": {}
+},
+"DF-C8787": {
+"path": {
+"en": "/rimadesio/wabi-stool",
+"ru": "/ru/rimadesio/taburet-wabi",
+"de": "/de/rimadesio/wabi-hocker",
+"fr": "/fr/rimadesio/tabouret-wabi",
+"es": "/es/rimadesio/taburete-wabi"
+},
+"images": {
+"images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto.jpg": "rimadesio-wabi-stool-01",
+"images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto2.jpg": "rimadesio-wabi-stool-02",
+"images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto3.jpg": "rimadesio-wabi-stool-03",
+"images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto4.jpg": "rimadesio-wabi-stool-04",
+"images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto5.jpg": "rimadesio-wabi-stool-05",
+"images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto6.jpg": "rimadesio-wabi-stool-06",
+"images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto8.jpg": "rimadesio-wabi-stool-07",
+"images/shop/rimadesio/wabi-stool/wabi-sgabello-pagina-prodotto7.jpg": "rimadesio-wabi-stool-08"
+},
+"drawings": {}
+},
 "DF-C9504": {
 "path": {
 "en": "/rugiano/abbraccio-chair",
@@ -6493,6 +6693,81 @@
 "images/shop/misuraemme/penelope/drawings/penelope-3700x3000-1.png": "misuraemme-penelope-rug-dimensions-02",
 "images/shop/misuraemme/penelope/drawings/penelope-3700x5200-1.png": "misuraemme-penelope-rug-dimensions-03"
 }
+},
+"DF-D8729": {
+"path": {
+"en": "/rimadesio/kanji-rug",
+"ru": "/ru/rimadesio/kover-kanji",
+"de": "/de/rimadesio/kanji-teppich",
+"fr": "/fr/rimadesio/tapis-kanji",
+"es": "/es/rimadesio/alfombra-kanji"
+},
+"images": {
+"images/shop/rimadesio/kanji/tagli-immagine-carpets11-kanji.jpg": "rimadesio-kanji-rug-01",
+"images/shop/rimadesio/kanji/tagli-immagine-carpets12-kanji.jpg": "rimadesio-kanji-rug-02",
+"images/shop/rimadesio/kanji/tagli-immagine-carpets13-kanji.jpg": "rimadesio-kanji-rug-03"
+},
+"drawings": {}
+},
+"DF-D8730": {
+"path": {
+"en": "/rimadesio/kita-rug",
+"ru": "/ru/rimadesio/kover-kita",
+"de": "/de/rimadesio/kita-teppich",
+"fr": "/fr/rimadesio/tapis-kita",
+"es": "/es/rimadesio/alfombra-kita"
+},
+"images": {
+"images/shop/rimadesio/kita/tagli-immagine-carpets15.jpg": "rimadesio-kita-rug-01",
+"images/shop/rimadesio/kita/tagli-immagine-carpets18-kita.jpg": "rimadesio-kita-rug-02",
+"images/shop/rimadesio/kita/tagli-immagine-carpets17-kita.jpg": "rimadesio-kita-rug-03",
+"images/shop/rimadesio/kita/tagli-immagine-carpets16-kita.jpg": "rimadesio-kita-rug-04",
+"images/shop/rimadesio/kita/tagli-immagine-carpets21-kita.jpg": "rimadesio-kita-rug-05",
+"images/shop/rimadesio/kita/tagli-immagine-carpets20-kita.jpg": "rimadesio-kita-rug-06",
+"images/shop/rimadesio/kita/tagli-immagine-carpets19-kita.jpg": "rimadesio-kita-rug-07",
+"images/shop/rimadesio/kita/tagli-immagine-carpets22-kita.jpg": "rimadesio-kita-rug-08"
+},
+"drawings": {}
+},
+"DF-D8739": {
+"path": {
+"en": "/rimadesio/miglio-rug",
+"ru": "/ru/rimadesio/kover-miglio",
+"de": "/de/rimadesio/miglio-teppich",
+"fr": "/fr/rimadesio/tapis-miglio",
+"es": "/es/rimadesio/alfombra-miglio"
+},
+"images": {
+"images/shop/rimadesio/miglio/tagli-immagine-carpets2-miglio7.jpg": "rimadesio-miglio-rug-01",
+"images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio4.jpg": "rimadesio-miglio-rug-02",
+"images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio5.jpg": "rimadesio-miglio-rug-03",
+"images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio6.jpg": "rimadesio-miglio-rug-04",
+"images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio.jpg": "rimadesio-miglio-rug-05",
+"images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio-2.jpg": "rimadesio-miglio-rug-06",
+"images/shop/rimadesio/miglio/tagli-immagine-carpets-miglio3.jpg": "rimadesio-miglio-rug-07",
+"images/shop/rimadesio/miglio/tagli-immagine-carpets3-miglio8.jpg": "rimadesio-miglio-rug-08"
+},
+"drawings": {}
+},
+"DF-D8759": {
+"path": {
+"en": "/rimadesio/rialto-mirror",
+"ru": "/ru/rimadesio/zerkalo-rialto",
+"de": "/de/rimadesio/rialto-spiegel",
+"fr": "/fr/rimadesio/miroir-rialto",
+"es": "/es/rimadesio/espejo-rialto"
+},
+"images": {
+"images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-2-dettaglio.jpg": "rimadesio-rialto-mirror-01",
+"images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-1-25.jpg": "rimadesio-rialto-mirror-02",
+"images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-3.jpg": "rimadesio-rialto-mirror-03",
+"images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-2-252.jpg": "rimadesio-rialto-mirror-04",
+"images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-6.jpg": "rimadesio-rialto-mirror-05",
+"images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-3-25.jpg": "rimadesio-rialto-mirror-06",
+"images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-5.jpg": "rimadesio-rialto-mirror-07",
+"images/shop/rimadesio/rialto-specchi/rialto-specchi-pagina-prodotto-4.jpg": "rimadesio-rialto-mirror-08"
+},
+"drawings": {}
 },
 "DF-D9509": {
 "path": {
@@ -9623,6 +9898,1133 @@
 "images/shop/misuraemme/wl/drawings/wl2-tensobookcase-disegni.png": "misuraemme-wl2-bookcase-dimensions-01"
 }
 },
+"DF-H8700": {
+"path": {
+"en": "/rimadesio/abacus-wardrobe",
+"ru": "/ru/rimadesio/shkaf-abacus",
+"de": "/de/rimadesio/abacus-kleiderkasten",
+"fr": "/fr/rimadesio/armoire-abacus",
+"es": "/es/rimadesio/armario-abacus"
+},
+"images": {
+"images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-482-483.jpg": "rimadesio-abacus-wardrobe-01",
+"images/shop/rimadesio/abacus/RIMADESIO-Ottobre-2019_29755-RID_mod-sito.jpg": "rimadesio-abacus-wardrobe-02",
+"images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-481.jpg": "rimadesio-abacus-wardrobe-03",
+"images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-485.jpg": "rimadesio-abacus-wardrobe-04",
+"images/shop/rimadesio/abacus/Lavoro_10245-okok_corr74-RIDrgb.jpg": "rimadesio-abacus-wardrobe-05",
+"images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-488.jpg": "rimadesio-abacus-wardrobe-06",
+"images/shop/rimadesio/abacus/Rimadesio-Collection-Book_2020_pag-489.jpg": "rimadesio-abacus-wardrobe-07",
+"images/shop/rimadesio/abacus/IMG_Abacus_08.jpg": "rimadesio-abacus-wardrobe-08"
+},
+"drawings": {}
+},
+"DF-H8701": {
+"path": {
+"en": "/rimadesio/abacus-living-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-abacus-living",
+"de": "/de/rimadesio/abacus-living-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-abacus-living",
+"es": "/es/rimadesio/sistema-de-almacenaje-abacus-living"
+},
+"images": {
+"images/shop/rimadesio/abacus-living/IMG_Abacus-Living_06.jpg": "rimadesio-abacus-living-storage-system-01",
+"images/shop/rimadesio/abacus-living/IMG_Abacus-Living_05.jpg": "rimadesio-abacus-living-storage-system-02",
+"images/shop/rimadesio/abacus-living/IMG_Abacus-Living_07.jpg": "rimadesio-abacus-living-storage-system-03",
+"images/shop/rimadesio/abacus-living/IMG_Abacus-Living_08.jpg": "rimadesio-abacus-living-storage-system-04",
+"images/shop/rimadesio/abacus-living/IMG_Abacus-Living_04.jpg": "rimadesio-abacus-living-storage-system-05",
+"images/shop/rimadesio/abacus-living/abacus-living-pagina-prodotto-agg-maggio-2024-1b.jpg": "rimadesio-abacus-living-storage-system-06",
+"images/shop/rimadesio/abacus-living/IMG_Abacus-Living_02.jpg": "rimadesio-abacus-living-storage-system-07",
+"images/shop/rimadesio/abacus-living/IMG_Abacus-Living_03.jpg": "rimadesio-abacus-living-storage-system-08"
+},
+"drawings": {}
+},
+"DF-H8702": {
+"path": {
+"en": "/rimadesio/air-doors",
+"ru": "/ru/rimadesio/dveri-air",
+"de": "/de/rimadesio/air-turen",
+"fr": "/fr/rimadesio/portes-air",
+"es": "/es/rimadesio/puertas-air"
+},
+"images": {
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-2.jpg": "rimadesio-air-01",
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-3.jpg": "rimadesio-air-02",
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg.jpg": "rimadesio-air-03",
+"images/shop/rimadesio/air/air-pagina-prodotto-1.jpg": "rimadesio-air-doors-01",
+"images/shop/rimadesio/air/air-pagina-prodotto-2.jpg": "rimadesio-air-doors-02",
+"images/shop/rimadesio/air/air-pagina-prodotto-1_2.jpg": "rimadesio-air-doors-03",
+"images/shop/rimadesio/air/air-pagina-prodotto-2_2.jpg": "rimadesio-air-doors-04",
+"images/shop/rimadesio/air/air-pagina-prodotto-3.jpg": "rimadesio-air-doors-05"
+},
+"drawings": {}
+},
+"DF-H8703": {
+"path": {
+"en": "/rimadesio/air-syncro-doors",
+"ru": "/ru/rimadesio/dveri-air-syncro",
+"de": "/de/rimadesio/air-syncro-turen",
+"fr": "/fr/rimadesio/portes-air-syncro",
+"es": "/es/rimadesio/puertas-air-syncro"
+},
+"images": {
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-4.jpg": "rimadesio-air-04",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-5.jpg": "rimadesio-air-05",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-6.jpg": "rimadesio-air-06",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-7.jpg": "rimadesio-air-07",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-8.jpg": "rimadesio-air-08",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-9.jpg": "rimadesio-air-09",
+"images/shop/rimadesio/air-syncro/air-pagina-prodotto.jpg": "rimadesio-air-syncro-doors-01",
+"images/shop/rimadesio/air-syncro/air-pagina-prodotto2.jpg": "rimadesio-air-syncro-doors-02"
+},
+"drawings": {}
+},
+"DF-H8704": {
+"path": {
+"en": "/rimadesio/air-system-partition-system",
+"ru": "/ru/rimadesio/peregorodka-air-system",
+"de": "/de/rimadesio/air-system-trennwandsystem",
+"fr": "/fr/rimadesio/cloison-air-system",
+"es": "/es/rimadesio/tabique-air-system"
+},
+"images": {
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg.jpg": "rimadesio-air-03",
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-2.jpg": "rimadesio-air-01",
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-3.jpg": "rimadesio-air-02",
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-6.jpg": "rimadesio-air-system-partition-system-01",
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-7.jpg": "rimadesio-air-system-partition-system-02",
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-8.jpg": "rimadesio-air-system-partition-system-03",
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-9.jpg": "rimadesio-air-system-partition-system-04",
+"images/shop/rimadesio/air-system/air-system-pagina-prodotto-agg-15.jpg": "rimadesio-air-system-partition-system-05"
+},
+"drawings": {}
+},
+"DF-H8705": {
+"path": {
+"en": "/rimadesio/ala-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-ala",
+"de": "/de/rimadesio/ala-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-ala",
+"es": "/es/rimadesio/sistema-de-almacenaje-ala"
+},
+"images": {
+"images/shop/rimadesio/ala/IMG_Ala_01.jpg": "rimadesio-ala-storage-system-01",
+"images/shop/rimadesio/ala/IMG_Ala_03.jpg": "rimadesio-ala-storage-system-02",
+"images/shop/rimadesio/ala/IMG_Ala_02.jpg": "rimadesio-ala-storage-system-03"
+},
+"drawings": {}
+},
+"DF-H8706": {
+"path": {
+"en": "/rimadesio/alambra-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-alambra",
+"de": "/de/rimadesio/alambra-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-alambra",
+"es": "/es/rimadesio/sistema-de-almacenaje-alambra"
+},
+"images": {
+"images/shop/rimadesio/alambra/alambra-2022-01.jpg": "rimadesio-alambra-storage-system-01",
+"images/shop/rimadesio/alambra/alambra-2022-03.jpg": "rimadesio-alambra-storage-system-02",
+"images/shop/rimadesio/alambra/IMG_Alambra_02.jpg": "rimadesio-alambra-storage-system-03",
+"images/shop/rimadesio/alambra/IMG_Alambra_NEW-2.jpg": "rimadesio-alambra-storage-system-04",
+"images/shop/rimadesio/alambra/IMG_Alambra_09.jpg": "rimadesio-alambra-storage-system-05",
+"images/shop/rimadesio/alambra/IMG_Alambra_10-1.jpg": "rimadesio-alambra-storage-system-06",
+"images/shop/rimadesio/alambra/Alambra-Lavoro_10146-OK-NO_FONDO_RID.jpg": "rimadesio-alambra-storage-system-07",
+"images/shop/rimadesio/alambra/alambra-pag-prodotto-agg-1.jpg": "rimadesio-alambra-storage-system-08",
+"images/shop/rimadesio/alambra-bar-cabinet/Alambra-Lavoro_10379-ok-var-rifALAMBRA-SERR-2-correz70_no-serrat-RID.jpg": "rimadesio-alambra-01",
+"images/shop/rimadesio/alambra-bar-cabinet/Alambra-Lavoro_10379-ok-var-rifALAMBRA-SERR-2-correz70-RID.jpg": "rimadesio-alambra-02",
+"images/shop/rimadesio/alambra-bar-cabinet/Render_Alambra_01.jpg": "rimadesio-alambra-03"
+},
+"drawings": {}
+},
+"DF-H8707": {
+"path": {
+"en": "/rimadesio/alambra-bar-cabinet-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-alambra-bar-cabinet",
+"de": "/de/rimadesio/alambra-bar-cabinet-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-alambra-bar-cabinet",
+"es": "/es/rimadesio/sistema-de-almacenaje-alambra-bar-cabinet"
+},
+"images": {
+"images/shop/rimadesio/alambra-bar-cabinet/IMG_Alambra_05.jpg": "rimadesio-alambra-bar-cabinet-storage-system-01",
+"images/shop/rimadesio/alambra-bar-cabinet/Alambra-18-RID.jpg": "rimadesio-alambra-bar-cabinet-storage-system-02",
+"images/shop/rimadesio/alambra-bar-cabinet/alambra-pag-prodotto-agg5-h.jpg": "rimadesio-alambra-bar-cabinet-storage-system-03",
+"images/shop/rimadesio/alambra-bar-cabinet/Alambra-Lavoro_10379-ok-var-rifALAMBRA-SERR-2-correz70_no-serrat-RID.jpg": "rimadesio-alambra-01",
+"images/shop/rimadesio/alambra-bar-cabinet/Alambra-Lavoro_10379-ok-var-rifALAMBRA-SERR-2-correz70-RID.jpg": "rimadesio-alambra-02",
+"images/shop/rimadesio/alambra-bar-cabinet/Render_Alambra_01.jpg": "rimadesio-alambra-03"
+},
+"drawings": {}
+},
+"DF-H8708": {
+"path": {
+"en": "/rimadesio/alambra-isola-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-alambra-isola",
+"de": "/de/rimadesio/alambra-isola-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-alambra-isola",
+"es": "/es/rimadesio/sistema-de-almacenaje-alambra-isola"
+},
+"images": {
+"images/shop/rimadesio/alambra-isola/IMG_Alambra-Isola_01.jpg": "rimadesio-alambra-isola-storage-system-01",
+"images/shop/rimadesio/alambra-isola/IMG_Alambra-Isola_04.jpg": "rimadesio-alambra-isola-storage-system-02",
+"images/shop/rimadesio/alambra-isola/IMG_Alambra-Isola_02.jpg": "rimadesio-alambra-isola-storage-system-03",
+"images/shop/rimadesio/alambra-isola/IMG_Alambra-Isola_03.jpg": "rimadesio-alambra-isola-storage-system-04"
+},
+"drawings": {}
+},
+"DF-H8709": {
+"path": {
+"en": "/rimadesio/aliante-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-aliante",
+"de": "/de/rimadesio/aliante-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-aliante",
+"es": "/es/rimadesio/sistema-de-almacenaje-aliante"
+},
+"images": {
+"images/shop/rimadesio/aliante/aliante-pagina-prodotto-32.jpg": "rimadesio-aliante-storage-system-01",
+"images/shop/rimadesio/aliante/aliante-pagina-prodotto-3.jpg": "rimadesio-aliante-storage-system-02",
+"images/shop/rimadesio/aliante/aliante-paginaprodotto-4.jpg": "rimadesio-aliante-storage-system-03",
+"images/shop/rimadesio/aliante/aliante-paginaprodotto-2.jpg": "rimadesio-aliante-storage-system-04",
+"images/shop/rimadesio/aliante/aliante-paginaprodotto.jpg": "rimadesio-aliante-storage-system-05",
+"images/shop/rimadesio/aliante/aliante-paginaprodotto-3-agg.jpg": "rimadesio-aliante-storage-system-06",
+"images/shop/rimadesio/aliante/aliante-paginaprodotto-5-agg.jpg": "rimadesio-aliante-storage-system-07",
+"images/shop/rimadesio/aliante/aliante-paginaprodotto-7.jpg": "rimadesio-aliante-storage-system-08"
+},
+"drawings": {}
+},
+"DF-H8710": {
+"path": {
+"en": "/rimadesio/altair-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-altair",
+"de": "/de/rimadesio/altair-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-altair",
+"es": "/es/rimadesio/sistema-de-almacenaje-altair"
+},
+"images": {
+"images/shop/rimadesio/altair/altair-pagina-prodotto2.jpg": "rimadesio-altair-storage-system-01",
+"images/shop/rimadesio/altair/altair-pagina-prodotto3.jpg": "rimadesio-altair-storage-system-02",
+"images/shop/rimadesio/altair/altair-pagina-prodotto4.jpg": "rimadesio-altair-storage-system-03",
+"images/shop/rimadesio/altair/altair-pagina-prodotto5-agg.jpg": "rimadesio-altair-storage-system-04",
+"images/shop/rimadesio/altair/altair-pagina-prodotto6.jpg": "rimadesio-altair-storage-system-05",
+"images/shop/rimadesio/altair/rimadesio-altair-1.jpg": "rimadesio-altair-storage-system-06",
+"images/shop/rimadesio/altair/rimadesio-altair-2.jpg": "rimadesio-altair-storage-system-07",
+"images/shop/rimadesio/altair/rimadesio-altair-3.jpg": "rimadesio-altair-storage-system-08"
+},
+"drawings": {}
+},
+"DF-H8713": {
+"path": {
+"en": "/rimadesio/aura-doors",
+"ru": "/ru/rimadesio/dveri-aura",
+"de": "/de/rimadesio/aura-turen",
+"fr": "/fr/rimadesio/portes-aura",
+"es": "/es/rimadesio/puertas-aura"
+},
+"images": {
+"images/shop/rimadesio/aura/Rimadesio-Collection-Book_2020_pag-205.jpg": "rimadesio-aura-doors-01",
+"images/shop/rimadesio/aura/Rimadesio-Collection-Book_2020_pag-202.jpg": "rimadesio-aura-doors-02",
+"images/shop/rimadesio/aura/Aura_Lavoro_10465-ok-2.jpg": "rimadesio-aura-doors-03",
+"images/shop/rimadesio/aura/Lavoro_10413-okok-RID.jpg": "rimadesio-aura-doors-04",
+"images/shop/rimadesio/aura/15-ok-2.jpg": "rimadesio-aura-doors-05",
+"images/shop/rimadesio/aura/Aura4a_2017.jpg": "rimadesio-aura-doors-06",
+"images/shop/rimadesio/aura/16.jpg": "rimadesio-aura-doors-07",
+"images/shop/rimadesio/aura/Maniglia_Aura_08.jpg": "rimadesio-aura-doors-08"
+},
+"drawings": {}
+},
+"DF-H8714": {
+"path": {
+"en": "/rimadesio/cover-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-cover",
+"de": "/de/rimadesio/cover-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-cover",
+"es": "/es/rimadesio/sistema-de-almacenaje-cover"
+},
+"images": {
+"images/shop/rimadesio/cover-day/ms-precious-case7.jpg": "rimadesio-cover-storage-system-01",
+"images/shop/rimadesio/cover-day/ms-precious-case5.jpg": "rimadesio-cover-storage-system-02",
+"images/shop/rimadesio/cover-day/ms-precious-case8.jpg": "rimadesio-cover-storage-system-03",
+"images/shop/rimadesio/cover-day/RIMADESIO-Ottobre-2019_28594-RID.jpg": "rimadesio-cover-storage-system-04",
+"images/shop/rimadesio/cover-day/RIMADESIO-Ottobre-2019_28461-RID.jpg": "rimadesio-cover-storage-system-05",
+"images/shop/rimadesio/cover-day/RIMADESIO-Ottobre-2019_28755-RID.jpg": "rimadesio-cover-storage-system-06",
+"images/shop/rimadesio/cover-day/IMG_Cover_02.jpg": "rimadesio-cover-storage-system-07",
+"images/shop/rimadesio/cover-day/Render_Cover_05.jpg": "rimadesio-cover-storage-system-08",
+"images/shop/rimadesio/cover-freestanding-day/render-1-cover.jpg": "rimadesio-cover-01",
+"images/shop/rimadesio/cover-freestanding-day/render-2-cover.jpg": "rimadesio-cover-02",
+"images/shop/rimadesio/cover-freestanding-day/render-4-cover.jpg": "rimadesio-cover-03",
+"images/shop/rimadesio/cover-freestanding-day/render-3-cover.jpg": "rimadesio-cover-04"
+},
+"drawings": {}
+},
+"DF-H8715": {
+"path": {
+"en": "/rimadesio/cover-wardrobe",
+"ru": "/ru/rimadesio/shkaf-cover",
+"de": "/de/rimadesio/cover-kleiderkasten",
+"fr": "/fr/rimadesio/armoire-cover",
+"es": "/es/rimadesio/armario-cover"
+},
+"images": {
+"images/shop/rimadesio/cover/cover-pagina-prodotto-sign-2.jpg": "rimadesio-cover-wardrobe-01",
+"images/shop/rimadesio/cover/cover-pagina-prodotto-sign-1.jpg": "rimadesio-cover-wardrobe-02",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-3.jpg": "rimadesio-cover-05",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-4.jpg": "rimadesio-cover-06",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-5.jpg": "rimadesio-cover-07",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-6.jpg": "rimadesio-cover-08",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-7.jpg": "rimadesio-cover-09",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-8.jpg": "rimadesio-cover-10",
+"images/shop/rimadesio/cover-freestanding-day/render-1-cover.jpg": "rimadesio-cover-01",
+"images/shop/rimadesio/cover-freestanding-day/render-2-cover.jpg": "rimadesio-cover-02",
+"images/shop/rimadesio/cover-freestanding-day/render-4-cover.jpg": "rimadesio-cover-03",
+"images/shop/rimadesio/cover-freestanding-day/render-3-cover.jpg": "rimadesio-cover-04"
+},
+"drawings": {}
+},
+"DF-H8716": {
+"path": {
+"en": "/rimadesio/cover-freestanding-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-cover-freestanding",
+"de": "/de/rimadesio/cover-freestanding-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-cover-freestanding",
+"es": "/es/rimadesio/sistema-de-almacenaje-cover-freestanding"
+},
+"images": {
+"images/shop/rimadesio/cover-freestanding-day/IMG_Cover-Freestanding_01.jpg": "rimadesio-cover-freestanding-storage-system-01",
+"images/shop/rimadesio/cover-freestanding-day/IMG_Cover-Freestanding_02.jpg": "rimadesio-cover-freestanding-storage-system-02",
+"images/shop/rimadesio/cover-freestanding-day/IMG_Cover-Freestanding_03.jpg": "rimadesio-cover-freestanding-storage-system-03",
+"images/shop/rimadesio/cover-freestanding-day/COVER-FREESTANDING.jpg": "rimadesio-cover-freestanding-storage-system-04",
+"images/shop/rimadesio/cover-freestanding-day/render-1-cover.jpg": "rimadesio-cover-01",
+"images/shop/rimadesio/cover-freestanding-day/render-2-cover.jpg": "rimadesio-cover-02",
+"images/shop/rimadesio/cover-freestanding-day/render-4-cover.jpg": "rimadesio-cover-03",
+"images/shop/rimadesio/cover-freestanding-day/render-3-cover.jpg": "rimadesio-cover-04"
+},
+"drawings": {}
+},
+"DF-H8717": {
+"path": {
+"en": "/rimadesio/cover-freestanding-wardrobe",
+"ru": "/ru/rimadesio/shkaf-cover-freestanding",
+"de": "/de/rimadesio/cover-freestanding-kleiderkasten",
+"fr": "/fr/rimadesio/armoire-cover-freestanding",
+"es": "/es/rimadesio/armario-cover-freestanding"
+},
+"images": {
+"images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-1.jpg": "rimadesio-cover-freestanding-wardrobe-01",
+"images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-2.jpg": "rimadesio-cover-freestanding-wardrobe-02",
+"images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-2b.jpg": "rimadesio-cover-freestanding-wardrobe-03",
+"images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-3.jpg": "rimadesio-cover-freestanding-wardrobe-04",
+"images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-4.jpg": "rimadesio-cover-freestanding-wardrobe-05",
+"images/shop/rimadesio/cover-freestanding-2/cover-freestanding-night-2022-5.jpg": "rimadesio-cover-freestanding-wardrobe-06",
+"images/shop/rimadesio/cover-freestanding-2/cover-freestanding-pagna-prodotto-2026.jpg": "rimadesio-cover-freestanding-wardrobe-07",
+"images/shop/rimadesio/cover-freestanding-2/cover-freestanding-pagna-prodotto-2026-2.jpg": "rimadesio-cover-freestanding-wardrobe-08",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-3.jpg": "rimadesio-cover-05",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-4.jpg": "rimadesio-cover-06",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-5.jpg": "rimadesio-cover-07",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-6.jpg": "rimadesio-cover-08",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-7.jpg": "rimadesio-cover-09",
+"images/shop/rimadesio/cover/cover-freestanding-pagna-prodotto-2026-8.jpg": "rimadesio-cover-10",
+"images/shop/rimadesio/cover-freestanding-day/render-1-cover.jpg": "rimadesio-cover-01",
+"images/shop/rimadesio/cover-freestanding-day/render-2-cover.jpg": "rimadesio-cover-02",
+"images/shop/rimadesio/cover-freestanding-day/render-4-cover.jpg": "rimadesio-cover-03",
+"images/shop/rimadesio/cover-freestanding-day/render-3-cover.jpg": "rimadesio-cover-04"
+},
+"drawings": {}
+},
+"DF-H8718": {
+"path": {
+"en": "/rimadesio/cover-open-wardrobe",
+"ru": "/ru/rimadesio/shkaf-cover-open",
+"de": "/de/rimadesio/cover-open-kleiderkasten",
+"fr": "/fr/rimadesio/armoire-cover-open",
+"es": "/es/rimadesio/armario-cover-open"
+},
+"images": {
+"images/shop/rimadesio/cover-open/interior-six-cover-1.jpg": "rimadesio-cover-open-wardrobe-01",
+"images/shop/rimadesio/cover-open/cover-open-dettaglio2-scaled-1.jpg": "rimadesio-cover-open-wardrobe-02",
+"images/shop/rimadesio/cover-open/interior-six-1-1.jpg": "rimadesio-cover-open-wardrobe-03",
+"images/shop/rimadesio/cover-open/interior-six-3-1.jpg": "rimadesio-cover-open-wardrobe-04",
+"images/shop/rimadesio/cover-open/cover-open-tecnica.jpg": "rimadesio-cover-open-wardrobe-05",
+"images/shop/rimadesio/cover-open/cover-open-concezione-progettuale.jpg": "rimadesio-cover-open-wardrobe-06",
+"images/shop/rimadesio/cover-open/Render_Cover_03.jpg": "rimadesio-cover-open-wardrobe-07",
+"images/shop/rimadesio/cover-open/Render_Cover_04.jpg": "rimadesio-cover-open-wardrobe-08"
+},
+"drawings": {}
+},
+"DF-H8719": {
+"path": {
+"en": "/rimadesio/daimon-doors",
+"ru": "/ru/rimadesio/dveri-daimon",
+"de": "/de/rimadesio/daimon-turen",
+"fr": "/fr/rimadesio/portes-daimon",
+"es": "/es/rimadesio/puertas-daimon"
+},
+"images": {
+"images/shop/rimadesio/daimon/Daimon_RIMADESIO_giugnoBINARIO-TINTA.jpg": "rimadesio-daimon-doors-01",
+"images/shop/rimadesio/daimon/Daimon_RIMADESIO_giugno_2017-12144-1_RID.jpg": "rimadesio-daimon-doors-02",
+"images/shop/rimadesio/daimon/11-2017_2017-2.jpg": "rimadesio-daimon-doors-03",
+"images/shop/rimadesio/daimon/Daimon-pannelli.jpg": "rimadesio-daimon-doors-04",
+"images/shop/rimadesio/daimon/12-2017.jpg": "rimadesio-daimon-doors-05",
+"images/shop/rimadesio/daimon/13_2017.jpg": "rimadesio-daimon-doors-06",
+"images/shop/rimadesio/daimon/Daimon_Maniglie_Black.jpg": "rimadesio-daimon-doors-07",
+"images/shop/rimadesio/daimon/Daimon_Maniglie_Brown.jpg": "rimadesio-daimon-doors-08"
+},
+"drawings": {}
+},
+"DF-H8720": {
+"path": {
+"en": "/rimadesio/dress-bold-wardrobe",
+"ru": "/ru/rimadesio/shkaf-dress-bold",
+"de": "/de/rimadesio/dress-bold-kleiderkasten",
+"fr": "/fr/rimadesio/armoire-dress-bold",
+"es": "/es/rimadesio/armario-dress-bold"
+},
+"images": {
+"images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-1-25.jpg": "rimadesio-dress-bold-wardrobe-01",
+"images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-3-25-b.jpg": "rimadesio-dress-bold-wardrobe-02",
+"images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-2-25.jpg": "rimadesio-dress-bold-wardrobe-03",
+"images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-5-25.jpg": "rimadesio-dress-bold-wardrobe-04",
+"images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-4-25.jpg": "rimadesio-dress-bold-wardrobe-05",
+"images/shop/rimadesio/dress-bold/dress-bold-pagina-prodotto-6-25.jpg": "rimadesio-dress-bold-wardrobe-06",
+"images/shop/rimadesio/dress-bold/IMG_Dress-bold_15.jpg": "rimadesio-dress-bold-wardrobe-07",
+"images/shop/rimadesio/dress-bold/IMG_Dress-bold_16.jpg": "rimadesio-dress-bold-wardrobe-08"
+},
+"drawings": {}
+},
+"DF-H8721": {
+"path": {
+"en": "/rimadesio/eos-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-eos",
+"de": "/de/rimadesio/eos-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-eos",
+"es": "/es/rimadesio/sistema-de-almacenaje-eos"
+},
+"images": {
+"images/shop/rimadesio/eos/eos-pagina-prodotto-1.jpg": "rimadesio-eos-storage-system-01",
+"images/shop/rimadesio/eos/eos-pagina-prodotto-2.jpg": "rimadesio-eos-storage-system-02",
+"images/shop/rimadesio/eos/RIMADESIO-Ottobre-2019_28903-RID-1.jpg": "rimadesio-eos-storage-system-03",
+"images/shop/rimadesio/eos/RIMADESIO-Ottobre-2019_28912-rid-1.jpg": "rimadesio-eos-storage-system-04",
+"images/shop/rimadesio/eos/Eos2_H_2020.jpg": "rimadesio-eos-storage-system-05",
+"images/shop/rimadesio/eos/IMG_Eos_04.jpg": "rimadesio-eos-storage-system-06",
+"images/shop/rimadesio/eos/IMG_Eos_03.jpg": "rimadesio-eos-storage-system-07"
+},
+"drawings": {}
+},
+"DF-H8722": {
+"path": {
+"en": "/rimadesio/even-doors",
+"ru": "/ru/rimadesio/dveri-even",
+"de": "/de/rimadesio/even-turen",
+"fr": "/fr/rimadesio/portes-even",
+"es": "/es/rimadesio/puertas-even"
+},
+"images": {
+"images/shop/rimadesio/even/18-2.jpg": "rimadesio-even-doors-01",
+"images/shop/rimadesio/even/Even_19.jpg": "rimadesio-even-doors-02",
+"images/shop/rimadesio/even/Lavoro_10061-ok_0000-RID.jpg": "rimadesio-even-doors-03",
+"images/shop/rimadesio/even/04-03-13_2945_2018-2.jpg": "rimadesio-even-doors-04",
+"images/shop/rimadesio/even/Maniglie_Even_02.jpg": "rimadesio-even-doors-05",
+"images/shop/rimadesio/even/Maniglie_Even_01.jpg": "rimadesio-even-doors-06"
+},
+"drawings": {}
+},
+"DF-H8726": {
+"path": {
+"en": "/rimadesio/graphis-light-doors",
+"ru": "/ru/rimadesio/dveri-graphis-light",
+"de": "/de/rimadesio/graphis-light-turen",
+"fr": "/fr/rimadesio/portes-graphis-light",
+"es": "/es/rimadesio/puertas-graphis-light"
+},
+"images": {
+"images/shop/rimadesio/graphis-light/RIMADESIO-UPDATE-2018_10504-3.jpg": "rimadesio-graphis-light-doors-01",
+"images/shop/rimadesio/graphis-light/RIMADESIO-UPDATE-2018_10555.jpg": "rimadesio-graphis-light-doors-02",
+"images/shop/rimadesio/graphis-light/RIMADESIO-UPDATE-2018_10519-7.jpg": "rimadesio-graphis-light-doors-03",
+"images/shop/rimadesio/graphis-light/Lavoro_0060-generale-ok_0000_2018-2-2.jpg": "rimadesio-graphis-light-doors-04",
+"images/shop/rimadesio/graphis-light/Lavoro_0096-ok-generale_rid_2018-4.jpg": "rimadesio-graphis-light-doors-05",
+"images/shop/rimadesio/graphis-light/Graphis-LightZenit-doppia_180_2017.jpg": "rimadesio-graphis-light-doors-06",
+"images/shop/rimadesio/graphis-light/19-ok-RID_2017-4.jpg": "rimadesio-graphis-light-doors-07",
+"images/shop/rimadesio/graphis-light/2163-maniglia-graphis.jpg": "rimadesio-graphis-light-01"
+},
+"drawings": {}
+},
+"DF-H8727": {
+"path": {
+"en": "/rimadesio/graphis-plus-doors",
+"ru": "/ru/rimadesio/dveri-graphis-plus",
+"de": "/de/rimadesio/graphis-plus-turen",
+"fr": "/fr/rimadesio/portes-graphis-plus",
+"es": "/es/rimadesio/puertas-graphis-plus"
+},
+"images": {
+"images/shop/rimadesio/graphis-plus/graphis-plus-pagina-prodotto.jpg": "rimadesio-graphis-plus-doors-01",
+"images/shop/rimadesio/graphis-plus/Graphis-plus-2020-.jpg": "rimadesio-graphis-plus-doors-02",
+"images/shop/rimadesio/graphis-plus/Graphis-plus-2020-4-1.jpg": "rimadesio-graphis-plus-doors-03",
+"images/shop/rimadesio/graphis-plus/Graphis-plus-2020-3-1.jpg": "rimadesio-graphis-plus-doors-04",
+"images/shop/rimadesio/graphis-plus/Lavoro_10255-okANNA-3.jpg": "rimadesio-graphis-plus-doors-05",
+"images/shop/rimadesio/graphis-plus/RIMADESIO-UPDATE-2018_10519.jpg": "rimadesio-graphis-plus-doors-06",
+"images/shop/rimadesio/graphis-plus/graphis-plus-pagina-prodotto-4.jpg": "rimadesio-graphis-plus-doors-07",
+"images/shop/rimadesio/graphis-plus/Graphis-plus-2020-2a.jpg": "rimadesio-graphis-plus-doors-08",
+"images/shop/rimadesio/graphis-light/2163-maniglia-graphis.jpg": "rimadesio-graphis-light-01"
+},
+"drawings": {}
+},
+"DF-H8728": {
+"path": {
+"en": "/rimadesio/hedon-wardrobe",
+"ru": "/ru/rimadesio/shkaf-hedon",
+"de": "/de/rimadesio/hedon-kleiderkasten",
+"fr": "/fr/rimadesio/armoire-hedon",
+"es": "/es/rimadesio/armario-hedon"
+},
+"images": {
+"images/shop/rimadesio/hedon/hedon-pagina-prodotto-1-agg-b.jpg": "rimadesio-hedon-wardrobe-01",
+"images/shop/rimadesio/hedon/hedon-pagina-prodotto-2.jpg": "rimadesio-hedon-wardrobe-02",
+"images/shop/rimadesio/hedon/hedon-pagina-prodotto-3.jpg": "rimadesio-hedon-wardrobe-03",
+"images/shop/rimadesio/hedon/hedon-pagina-prodotto-4.jpg": "rimadesio-hedon-wardrobe-04",
+"images/shop/rimadesio/hedon/hedon-pagina-prodotto-5.jpg": "rimadesio-hedon-wardrobe-05",
+"images/shop/rimadesio/hedon/hedon-pagina-prodotto-6.jpg": "rimadesio-hedon-wardrobe-06",
+"images/shop/rimadesio/hedon/hedon-pagina-prodotto-7.jpg": "rimadesio-hedon-wardrobe-07",
+"images/shop/rimadesio/hedon/hedon-pagina-prodotto-8.jpg": "rimadesio-hedon-wardrobe-08"
+},
+"drawings": {}
+},
+"DF-H8732": {
+"path": {
+"en": "/rimadesio/link-plus-doors",
+"ru": "/ru/rimadesio/dveri-link-plus",
+"de": "/de/rimadesio/link-plus-turen",
+"fr": "/fr/rimadesio/portes-link-plus",
+"es": "/es/rimadesio/puertas-link-plus"
+},
+"images": {
+"images/shop/rimadesio/link/07_2016.jpg": "rimadesio-link-plus-doors-01",
+"images/shop/rimadesio/link/06a_2016-2.jpg": "rimadesio-link-plus-doors-02",
+"images/shop/rimadesio/link/A-25056-part-maniglia_2018.jpg": "rimadesio-link-plus-doors-03",
+"images/shop/rimadesio/link/Link_A-25041-foto-19-2_2018-5.jpg": "rimadesio-link-plus-doors-04",
+"images/shop/rimadesio/link/Link_Immagini-912_100_2018-2-1.jpg": "rimadesio-link-plus-doors-05",
+"images/shop/rimadesio/link/Link_Lik-f10_2018.jpg": "rimadesio-link-plus-doors-06",
+"images/shop/rimadesio/link/01_100-2.jpg": "rimadesio-link-plus-doors-07",
+"images/shop/rimadesio/link/Link_maniglia.jpg": "rimadesio-link-plus-doors-08"
+},
+"drawings": {}
+},
+"DF-H8735": {
+"path": {
+"en": "/rimadesio/luxor-doors",
+"ru": "/ru/rimadesio/dveri-luxor",
+"de": "/de/rimadesio/luxor-turen",
+"fr": "/fr/rimadesio/portes-luxor",
+"es": "/es/rimadesio/puertas-luxor"
+},
+"images": {
+"images/shop/rimadesio/luxor/luxor-grigio-lava.jpg": "rimadesio-luxor-doors-01",
+"images/shop/rimadesio/luxor/Lavoro_10456-ok_2018.jpg": "rimadesio-luxor-doors-02",
+"images/shop/rimadesio/luxor/09_2014-RID-2.jpg": "rimadesio-luxor-doors-03",
+"images/shop/rimadesio/luxor/Rimadesio-Collection-Book_2020_pag-189.jpg": "rimadesio-luxor-doors-04",
+"images/shop/rimadesio/luxor/10-RID2-2020.jpg": "rimadesio-luxor-doors-05",
+"images/shop/rimadesio/luxor/17a-RID_2017.jpg": "rimadesio-luxor-doors-06",
+"images/shop/rimadesio/luxor/16a-RID.jpg": "rimadesio-luxor-doors-07",
+"images/shop/rimadesio/luxor/Lavoro_10085-okok-RID.jpg": "rimadesio-luxor-doors-08"
+},
+"drawings": {}
+},
+"DF-H8738": {
+"path": {
+"en": "/rimadesio/maxi-doors",
+"ru": "/ru/rimadesio/dveri-maxi",
+"de": "/de/rimadesio/maxi-turen",
+"fr": "/fr/rimadesio/portes-maxi",
+"es": "/es/rimadesio/puertas-maxi"
+},
+"images": {
+"images/shop/rimadesio/maxi/maxi-2023-1.jpg": "rimadesio-maxi-doors-01",
+"images/shop/rimadesio/maxi/maxi-2023-2.jpg": "rimadesio-maxi-doors-02",
+"images/shop/rimadesio/maxi/maxi-2023-3.jpg": "rimadesio-maxi-doors-03",
+"images/shop/rimadesio/maxi/maxi-pagina-prodotto-2.jpg": "rimadesio-maxi-doors-04",
+"images/shop/rimadesio/maxi/maxi-pagina-prodotto-1.jpg": "rimadesio-maxi-doors-05",
+"images/shop/rimadesio/maxi/maxi-pagina-prodotto-tecnica-2-25.jpg": "rimadesio-maxi-doors-06",
+"images/shop/rimadesio/maxi/maxi-pagina-prodotto-tecnica-1-25.jpg": "rimadesio-maxi-doors-07",
+"images/shop/rimadesio/maxi/maxi-pagina-prodotto-tecnica-3-25.jpg": "rimadesio-maxi-doors-08"
+},
+"drawings": {}
+},
+"DF-H8743": {
+"path": {
+"en": "/rimadesio/modulor-boiserie-wall-panelling",
+"ru": "/ru/rimadesio/stenovye-paneli-modulor-boiserie",
+"de": "/de/rimadesio/modulor-boiserie-wandverkleidung",
+"fr": "/fr/rimadesio/boiserie-modulor-boiserie",
+"es": "/es/rimadesio/revestimiento-de-pared-modulor-boiserie"
+},
+"images": {
+"images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-1.jpg": "rimadesio-modulor-boiserie-wall-panelling-01",
+"images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-2.jpg": "rimadesio-modulor-boiserie-wall-panelling-02",
+"images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-3.jpg": "rimadesio-modulor-boiserie-wall-panelling-03",
+"images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-4.jpg": "rimadesio-modulor-boiserie-wall-panelling-04",
+"images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-7.jpg": "rimadesio-modulor-boiserie-wall-panelling-05",
+"images/shop/rimadesio/modulor-boiserie/rimadesio-modulor-day-6.jpg": "rimadesio-modulor-boiserie-wall-panelling-06",
+"images/shop/rimadesio/modulor-boiserie/modulor-pagina-prodotto-1.jpg": "rimadesio-modulor-boiserie-wall-panelling-07",
+"images/shop/rimadesio/modulor-boiserie/modulor-pagina-prodotto-2.jpg": "rimadesio-modulor-boiserie-wall-panelling-08"
+},
+"drawings": {}
+},
+"DF-H8745": {
+"path": {
+"en": "/rimadesio/moon-doors",
+"ru": "/ru/rimadesio/dveri-moon",
+"de": "/de/rimadesio/moon-turen",
+"fr": "/fr/rimadesio/portes-moon",
+"es": "/es/rimadesio/puertas-moon"
+},
+"images": {
+"images/shop/rimadesio/moon/moon-01.jpg": "rimadesio-moon-doors-01",
+"images/shop/rimadesio/moon/moon-02.jpg": "rimadesio-moon-doors-02",
+"images/shop/rimadesio/moon/moon-03.jpg": "rimadesio-moon-doors-03",
+"images/shop/rimadesio/moon/moon-04.jpg": "rimadesio-moon-doors-04",
+"images/shop/rimadesio/moon/moon-pagina-prodotto-agg-1.jpg": "rimadesio-moon-doors-05",
+"images/shop/rimadesio/moon/moon-pagina-prodotto-agg-4.jpg": "rimadesio-moon-doors-06",
+"images/shop/rimadesio/moon/moon-pagina-prodotto-agg-2.jpg": "rimadesio-moon-doors-07",
+"images/shop/rimadesio/moon/moon-pagina-prodotto-agg-3.jpg": "rimadesio-moon-doors-08"
+},
+"drawings": {}
+},
+"DF-H8747": {
+"path": {
+"en": "/rimadesio/opus-bookcase",
+"ru": "/ru/rimadesio/stellazh-opus",
+"de": "/de/rimadesio/opus-bucherregal",
+"fr": "/fr/rimadesio/bibliotheque-opus",
+"es": "/es/rimadesio/libreria-opus"
+},
+"images": {
+"images/shop/rimadesio/opus/opus-2022-01.jpg": "rimadesio-opus-bookcase-01",
+"images/shop/rimadesio/opus/opus-pagina-prodotto-agg-1.jpg": "rimadesio-opus-bookcase-02",
+"images/shop/rimadesio/opus/IMG_Opus_03.jpg": "rimadesio-opus-bookcase-03",
+"images/shop/rimadesio/opus/IMG_Opus_01.jpg": "rimadesio-opus-bookcase-04",
+"images/shop/rimadesio/opus/IMG_Opus_02.jpg": "rimadesio-opus-bookcase-05",
+"images/shop/rimadesio/opus/Render_Opus_02.jpg": "rimadesio-opus-bookcase-06",
+"images/shop/rimadesio/opus/Render_Opus_01.jpg": "rimadesio-opus-bookcase-07"
+},
+"drawings": {}
+},
+"DF-H8750": {
+"path": {
+"en": "/rimadesio/radius-doors",
+"ru": "/ru/rimadesio/dveri-radius",
+"de": "/de/rimadesio/radius-turen",
+"fr": "/fr/rimadesio/portes-radius",
+"es": "/es/rimadesio/puertas-radius"
+},
+"images": {
+"images/shop/rimadesio/radius/ms-natural-core3.jpg": "rimadesio-radius-doors-01",
+"images/shop/rimadesio/radius/radius-pagina-prodotto-agg-13.jpg": "rimadesio-radius-doors-02",
+"images/shop/rimadesio/radius/radius-pagina-prodotto-agg-10.jpg": "rimadesio-radius-doors-03",
+"images/shop/rimadesio/radius/radius-pagina-prodotto-agg-11.jpg": "rimadesio-radius-doors-04",
+"images/shop/rimadesio/radius/radius-pagina-prodotto-12.jpg": "rimadesio-radius-doors-05",
+"images/shop/rimadesio/radius/radius-pagina-prodotto-14.jpg": "rimadesio-radius-doors-06",
+"images/shop/rimadesio/radius/radius-pagina-prodotto-5.jpg": "rimadesio-radius-doors-07",
+"images/shop/rimadesio/radius/radius-pagina-prodotto-1-25.jpg": "rimadesio-radius-doors-08"
+},
+"drawings": {}
+},
+"DF-H8755": {
+"path": {
+"en": "/rimadesio/rialto-sideboard",
+"ru": "/ru/rimadesio/bufet-rialto",
+"de": "/de/rimadesio/rialto-sideboard",
+"fr": "/fr/rimadesio/buffet-rialto",
+"es": "/es/rimadesio/aparador-rialto"
+},
+"images": {
+"images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web.jpg": "rimadesio-rialto-sideboard-01",
+"images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web23.jpg": "rimadesio-rialto-sideboard-02",
+"images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web16.jpg": "rimadesio-rialto-sideboard-03",
+"images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web12.jpg": "rimadesio-rialto-sideboard-04",
+"images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web22.jpg": "rimadesio-rialto-sideboard-05",
+"images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web10.jpg": "rimadesio-rialto-sideboard-06",
+"images/shop/rimadesio/rialto-5/rialto-madia-pagina-prodotto-web9.jpg": "rimadesio-rialto-sideboard-07",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web25.jpg": "rimadesio-rialto-01",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web26.jpg": "rimadesio-rialto-02"
+},
+"drawings": {}
+},
+"DF-H8756": {
+"path": {
+"en": "/rimadesio/rialto-tv-unit",
+"ru": "/ru/rimadesio/tv-tumba-rialto",
+"de": "/de/rimadesio/rialto-tv-mobel",
+"fr": "/fr/rimadesio/meuble-tv-rialto",
+"es": "/es/rimadesio/mueble-de-tv-rialto"
+},
+"images": {
+"images/shop/rimadesio/rialto/rialto-mobile-tv-pagina-prodotto-1.jpg": "rimadesio-rialto-tv-unit-01",
+"images/shop/rimadesio/rialto/rialto-mobile-tv-pagina-prodotto-2.jpg": "rimadesio-rialto-tv-unit-02",
+"images/shop/rimadesio/rialto/rialto-mobile-tv-agg-3.jpg": "rimadesio-rialto-tv-unit-03",
+"images/shop/rimadesio/rialto/rialto-mobile-tv-agg-1.jpg": "rimadesio-rialto-tv-unit-04",
+"images/shop/rimadesio/rialto/rialto-collection-pagina-prodotto-x.jpg": "rimadesio-rialto-tv-unit-05",
+"images/shop/rimadesio/rialto/03-rialto-collection-5.jpg": "rimadesio-rialto-tv-unit-06",
+"images/shop/rimadesio/rialto/03-rialto-collection-3.jpg": "rimadesio-rialto-tv-unit-07",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web25.jpg": "rimadesio-rialto-01",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web26.jpg": "rimadesio-rialto-02"
+},
+"drawings": {}
+},
+"DF-H8757": {
+"path": {
+"en": "/rimadesio/rialto-bar-cabinet",
+"ru": "/ru/rimadesio/bar-rialto",
+"de": "/de/rimadesio/rialto-barschrank",
+"fr": "/fr/rimadesio/meuble-bar-rialto",
+"es": "/es/rimadesio/mueble-bar-rialto"
+},
+"images": {
+"images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web4.jpg": "rimadesio-rialto-bar-cabinet-01",
+"images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web8.jpg": "rimadesio-rialto-bar-cabinet-02",
+"images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web23-chiusa.jpg": "rimadesio-rialto-bar-cabinet-03",
+"images/shop/rimadesio/rialto-3/rialto-collection-pagina-prodotto-23.jpg": "rimadesio-rialto-bar-cabinet-04",
+"images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web13-chiusa.jpg": "rimadesio-rialto-bar-cabinet-05",
+"images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web13.jpg": "rimadesio-rialto-bar-cabinet-06",
+"images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web15.jpg": "rimadesio-rialto-bar-cabinet-07",
+"images/shop/rimadesio/rialto-3/rialto-madia-pagina-prodotto-web17.jpg": "rimadesio-rialto-bar-cabinet-08",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web25.jpg": "rimadesio-rialto-01",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web26.jpg": "rimadesio-rialto-02"
+},
+"drawings": {}
+},
+"DF-H8758": {
+"path": {
+"en": "/rimadesio/rialto-chest-of-drawers-and-bedside-tables",
+"ru": "/ru/rimadesio/komod-i-tumby-rialto",
+"de": "/de/rimadesio/rialto-kommode-und-nachttische",
+"fr": "/fr/rimadesio/commode-et-chevets-rialto",
+"es": "/es/rimadesio/comoda-y-mesitas-rialto"
+},
+"images": {
+"images/shop/rimadesio/rialto-contenitori/rimadesio-rialto-cassettiera-1.jpg": "rimadesio-rialto-chest-of-drawers-and-bedside-tables-01",
+"images/shop/rimadesio/rialto-contenitori/rimadesio-rialto-cassettiera-2.jpg": "rimadesio-rialto-chest-of-drawers-and-bedside-tables-02",
+"images/shop/rimadesio/rialto-contenitori/rialto-collection-pagina-prodotto-4.jpg": "rimadesio-rialto-chest-of-drawers-and-bedside-tables-03",
+"images/shop/rimadesio/rialto-contenitori/rialto-collection-pagina-prodotto-5.jpg": "rimadesio-rialto-chest-of-drawers-and-bedside-tables-04",
+"images/shop/rimadesio/rialto-contenitori/rialto-collection-pagina-prodotto-2.jpg": "rimadesio-rialto-chest-of-drawers-and-bedside-tables-05",
+"images/shop/rimadesio/rialto-contenitori/rialto-collection-pagina-prodotto-tecnica-1-25.jpg": "rimadesio-rialto-chest-of-drawers-and-bedside-tables-06",
+"images/shop/rimadesio/rialto-contenitori/rialto-cassettiera-agg-2.jpg": "rimadesio-rialto-chest-of-drawers-and-bedside-tables-07",
+"images/shop/rimadesio/rialto-contenitori/rialto-cassettiera-agg-4.jpg": "rimadesio-rialto-chest-of-drawers-and-bedside-tables-08",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web25.jpg": "rimadesio-rialto-01",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web26.jpg": "rimadesio-rialto-02"
+},
+"drawings": {}
+},
+"DF-H8760": {
+"path": {
+"en": "/rimadesio/sail-doors",
+"ru": "/ru/rimadesio/dveri-sail",
+"de": "/de/rimadesio/sail-turen",
+"fr": "/fr/rimadesio/portes-sail",
+"es": "/es/rimadesio/puertas-sail"
+},
+"images": {
+"images/shop/rimadesio/sail/sail-pagina-prodotto-1.jpg": "rimadesio-sail-doors-01",
+"images/shop/rimadesio/sail/sail-pagina-prodotto-2.jpg": "rimadesio-sail-doors-02",
+"images/shop/rimadesio/sail/sail-pagina-prodotto-3.jpg": "rimadesio-sail-doors-03",
+"images/shop/rimadesio/sail/sail-pagina-prodotto-4.jpg": "rimadesio-sail-doors-04",
+"images/shop/rimadesio/sail/Rimadesio-Collection-Book_2020_pag-082-083.jpg": "rimadesio-sail-doors-05",
+"images/shop/rimadesio/sail/Rimadesio-Collection-Book_2020_pag-080.jpg": "rimadesio-sail-doors-06",
+"images/shop/rimadesio/sail/Rimadesio-Collection-Book_2020_pag-085.jpg": "rimadesio-sail-doors-07",
+"images/shop/rimadesio/sail/Rimadesio_Sail_2018_01.jpg": "rimadesio-sail-doors-08"
+},
+"drawings": {}
+},
+"DF-H8763": {
+"path": {
+"en": "/rimadesio/self-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-self",
+"de": "/de/rimadesio/self-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-self",
+"es": "/es/rimadesio/sistema-de-almacenaje-self"
+},
+"images": {
+"images/shop/rimadesio/self/self-pagina-prodotto-13.jpg": "rimadesio-self-storage-system-01",
+"images/shop/rimadesio/self/self-pagina-prodotto-32.jpg": "rimadesio-self-storage-system-02",
+"images/shop/rimadesio/self/self-pagina-prodotto-15.jpg": "rimadesio-self-storage-system-03",
+"images/shop/rimadesio/self/self-pagina-prodotto-16.jpg": "rimadesio-self-storage-system-04",
+"images/shop/rimadesio/self/self-pagina-prodotto-17.jpg": "rimadesio-self-storage-system-05",
+"images/shop/rimadesio/self/self-pagina-prodotto-14-mod.jpg": "rimadesio-self-storage-system-06",
+"images/shop/rimadesio/self/self-pagina-prodotto-14b.jpg": "rimadesio-self-storage-system-07",
+"images/shop/rimadesio/self/IMG_Self_08.jpg": "rimadesio-self-storage-system-08",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-22.jpg": "rimadesio-self-01",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-24.jpg": "rimadesio-self-02",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-25.jpg": "rimadesio-self-03",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-26.jpg": "rimadesio-self-04"
+},
+"drawings": {}
+},
+"DF-H8764": {
+"path": {
+"en": "/rimadesio/self-blade-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-self-blade",
+"de": "/de/rimadesio/self-blade-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-self-blade",
+"es": "/es/rimadesio/sistema-de-almacenaje-self-blade"
+},
+"images": {
+"images/shop/rimadesio/self-blade/self-blade-pagina-prodotto.jpg": "rimadesio-self-blade-storage-system-01",
+"images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-2.jpg": "rimadesio-self-blade-storage-system-02",
+"images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-3.jpg": "rimadesio-self-blade-storage-system-03",
+"images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-4.jpg": "rimadesio-self-blade-storage-system-04",
+"images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-5.jpg": "rimadesio-self-blade-storage-system-05",
+"images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-6.jpg": "rimadesio-self-blade-storage-system-06",
+"images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-7.jpg": "rimadesio-self-blade-storage-system-07",
+"images/shop/rimadesio/self-blade/self-blade-pagina-prodotto-8.jpg": "rimadesio-self-blade-storage-system-08"
+},
+"drawings": {}
+},
+"DF-H8767": {
+"path": {
+"en": "/rimadesio/self-plan-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-self-plan",
+"de": "/de/rimadesio/self-plan-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-self-plan",
+"es": "/es/rimadesio/sistema-de-almacenaje-self-plan"
+},
+"images": {
+"images/shop/rimadesio/self-plan/self-plan-2022-1.jpg": "rimadesio-self-plan-storage-system-01",
+"images/shop/rimadesio/self-plan/self-plan-2022-2.jpg": "rimadesio-self-plan-storage-system-02",
+"images/shop/rimadesio/self-plan/self-plan-2022-8.jpg": "rimadesio-self-plan-storage-system-03",
+"images/shop/rimadesio/self-plan/self-plan-2022-3.jpg": "rimadesio-self-plan-storage-system-04",
+"images/shop/rimadesio/self-plan/interior-four-cover-1.jpg": "rimadesio-self-plan-storage-system-05",
+"images/shop/rimadesio/self-plan/interior-four-cover2-1.jpg": "rimadesio-self-plan-storage-system-06",
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-5.jpg": "rimadesio-self-plan-01",
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-4.jpg": "rimadesio-self-plan-02",
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-6.jpg": "rimadesio-self-plan-03",
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-3.jpg": "rimadesio-self-plan-04",
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-2.jpg": "rimadesio-self-plan-05",
+"images/shop/rimadesio/self-plan-writing-desk/interior-two-4.jpg": "rimadesio-self-plan-06",
+"images/shop/rimadesio/self-plan-writing-desk/self-plan-2022-5.jpg": "rimadesio-self-plan-07",
+"images/shop/rimadesio/self-plan-writing-desk/self-plan-2022-6.jpg": "rimadesio-self-plan-08"
+},
+"drawings": {}
+},
+"DF-H8768": {
+"path": {
+"en": "/rimadesio/self-up-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-self-up",
+"de": "/de/rimadesio/self-up-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-self-up",
+"es": "/es/rimadesio/sistema-de-almacenaje-self-up"
+},
+"images": {
+"images/shop/rimadesio/self-up/self-pagina-prodotto-9.jpg": "rimadesio-self-up-storage-system-01",
+"images/shop/rimadesio/self-up/self-pagina-prodotto-1.jpg": "rimadesio-self-up-storage-system-02",
+"images/shop/rimadesio/self-up/Self-up_new7.jpg": "rimadesio-self-up-storage-system-03",
+"images/shop/rimadesio/self-up/self-up-2022-01.jpg": "rimadesio-self-up-storage-system-04",
+"images/shop/rimadesio/self-up/self-up-2022-02.jpg": "rimadesio-self-up-storage-system-05",
+"images/shop/rimadesio/self-up/IMG_Self-up_03_OK.jpg": "rimadesio-self-up-storage-system-06",
+"images/shop/rimadesio/self-up/IMG_Self-up_04.jpg": "rimadesio-self-up-storage-system-07",
+"images/shop/rimadesio/self-up/Self-up_new3.jpg": "rimadesio-self-up-storage-system-08",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-22.jpg": "rimadesio-self-01",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-24.jpg": "rimadesio-self-02",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-25.jpg": "rimadesio-self-03",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-26.jpg": "rimadesio-self-04"
+},
+"drawings": {}
+},
+"DF-H8771": {
+"path": {
+"en": "/rimadesio/siparium-doors",
+"ru": "/ru/rimadesio/dveri-siparium",
+"de": "/de/rimadesio/siparium-turen",
+"fr": "/fr/rimadesio/portes-siparium",
+"es": "/es/rimadesio/puertas-siparium"
+},
+"images": {
+"images/shop/rimadesio/siparium/RIMADESIO-UPDATE-2018_10204b.jpg": "rimadesio-siparium-doors-01",
+"images/shop/rimadesio/siparium/RIMADESIO-UPDATE-2018_10285-1.jpg": "rimadesio-siparium-doors-02",
+"images/shop/rimadesio/siparium/RIMADESIO-UPDATE-2018_10299.jpg": "rimadesio-siparium-doors-03",
+"images/shop/rimadesio/siparium/09-4.jpg": "rimadesio-siparium-doors-04",
+"images/shop/rimadesio/siparium/03_Siparium-3.jpg": "rimadesio-siparium-doors-05",
+"images/shop/rimadesio/siparium/Siparium-5-1.jpg": "rimadesio-siparium-doors-06",
+"images/shop/rimadesio/siparium/Siparium_2.jpg": "rimadesio-siparium-doors-07",
+"images/shop/rimadesio/siparium/Siparium_1.jpg": "rimadesio-siparium-doors-08"
+},
+"drawings": {}
+},
+"DF-H8773": {
+"path": {
+"en": "/rimadesio/sixty-bookcase",
+"ru": "/ru/rimadesio/stellazh-sixty",
+"de": "/de/rimadesio/sixty-bucherregal",
+"fr": "/fr/rimadesio/bibliotheque-sixty",
+"es": "/es/rimadesio/libreria-sixty"
+},
+"images": {
+"images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-1.jpg": "rimadesio-sixty-bookcase-01",
+"images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-2.jpg": "rimadesio-sixty-bookcase-02",
+"images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-3.jpg": "rimadesio-sixty-bookcase-03",
+"images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-4.jpg": "rimadesio-sixty-bookcase-04",
+"images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-5.jpg": "rimadesio-sixty-bookcase-05",
+"images/shop/rimadesio/sixty/sixty-libreria-agg-pagina-prodotto-giugno-2024-6.jpg": "rimadesio-sixty-bookcase-06",
+"images/shop/rimadesio/sixty/IMG_Sixty_01.jpg": "rimadesio-sixty-bookcase-07",
+"images/shop/rimadesio/sixty/17_2016.jpg": "rimadesio-sixty-bookcase-08"
+},
+"drawings": {}
+},
+"DF-H8774": {
+"path": {
+"en": "/rimadesio/soho-doors",
+"ru": "/ru/rimadesio/dveri-soho",
+"de": "/de/rimadesio/soho-turen",
+"fr": "/fr/rimadesio/portes-soho",
+"es": "/es/rimadesio/puertas-soho"
+},
+"images": {
+"images/shop/rimadesio/soho/soho-aggiornamento-pagina-prodotto.jpg": "rimadesio-soho-doors-01",
+"images/shop/rimadesio/soho/soho-aggiornamento-pagina-prodotto-2.jpg": "rimadesio-soho-doors-02",
+"images/shop/rimadesio/soho/soho-aggiornamento-pagina-prodotto-7.jpg": "rimadesio-soho-doors-03",
+"images/shop/rimadesio/soho/soho-aggiornamento-pagina-prodotto-8.jpg": "rimadesio-soho-doors-04",
+"images/shop/rimadesio/soho/Lavoro_10166-OK_20172.jpg": "rimadesio-soho-doors-05",
+"images/shop/rimadesio/soho/04_06_2016-RID.jpg": "rimadesio-soho-doors-06",
+"images/shop/rimadesio/soho/D-Porte-Scorrevoli-Soho-HR_20173.jpg": "rimadesio-soho-doors-07",
+"images/shop/rimadesio/soho/Soho-pannelli.jpg": "rimadesio-soho-doors-08"
+},
+"drawings": {}
+},
+"DF-H8777": {
+"path": {
+"en": "/rimadesio/spazio-partition-system",
+"ru": "/ru/rimadesio/peregorodka-spazio",
+"de": "/de/rimadesio/spazio-trennwandsystem",
+"fr": "/fr/rimadesio/cloison-spazio",
+"es": "/es/rimadesio/tabique-spazio"
+},
+"images": {
+"images/shop/rimadesio/spazio/RIMADESIO-UPDATE-2018_9523.jpg": "rimadesio-spazio-partition-system-01",
+"images/shop/rimadesio/spazio/RIMADESIO-UPDATE-2018_9667.jpg": "rimadesio-spazio-partition-system-02",
+"images/shop/rimadesio/spazio/RIMADESIO-UPDATE-2018_9648.jpg": "rimadesio-spazio-partition-system-03",
+"images/shop/rimadesio/spazio-news-2019/News-2018_pagg-6-7ALT2.jpg": "rimadesio-spazio-01",
+"images/shop/rimadesio/spazio-news-2019/RIMADESIO-spazio0792_DAIMON.jpg": "rimadesio-spazio-02",
+"images/shop/rimadesio/spazio-news-2019/RIMADESIO-spazio0792Stripe.jpg": "rimadesio-spazio-03",
+"images/shop/rimadesio/spazio/Spazio2-1.jpg": "rimadesio-spazio-04",
+"images/shop/rimadesio/spazio/Spazio3-1.jpg": "rimadesio-spazio-05",
+"images/shop/rimadesio/spazio-news-2019/SpazioDettaglio_04.jpg": "rimadesio-spazio-06",
+"images/shop/rimadesio/spazio-news-2019/SpazioDettaglio_02.jpg": "rimadesio-spazio-07",
+"images/shop/rimadesio/spazio-news-2019/SpazioDettaglio_03.jpg": "rimadesio-spazio-08"
+},
+"drawings": {}
+},
+"DF-H8778": {
+"path": {
+"en": "/rimadesio/spin-doors",
+"ru": "/ru/rimadesio/dveri-spin",
+"de": "/de/rimadesio/spin-turen",
+"fr": "/fr/rimadesio/portes-spin",
+"es": "/es/rimadesio/puertas-spin"
+},
+"images": {
+"images/shop/rimadesio/spin/S-Porta-Spin-2016-HR.jpg": "rimadesio-spin-doors-01",
+"images/shop/rimadesio/spin/Lavoro_10470-okok-RID-4.jpg": "rimadesio-spin-doors-02",
+"images/shop/rimadesio/spin/Spin_Lavoro_5405-ok_0000MANU-RID_2018-3.jpg": "rimadesio-spin-doors-03",
+"images/shop/rimadesio/spin/Spin_Lavoro_5440-ok-gen-chiara_0000CMYK_2018.jpg": "rimadesio-spin-doors-04",
+"images/shop/rimadesio/spin/Immagini-_0865-RID_2018.jpg": "rimadesio-spin-doors-05",
+"images/shop/rimadesio/spin/Spin-A-26870_2018.jpg": "rimadesio-spin-doors-06",
+"images/shop/rimadesio/spin/Spin-A-26569_2018.jpg": "rimadesio-spin-doors-07"
+},
+"drawings": {}
+},
+"DF-H8779": {
+"path": {
+"en": "/rimadesio/stripe-doors",
+"ru": "/ru/rimadesio/dveri-stripe",
+"de": "/de/rimadesio/stripe-turen",
+"fr": "/fr/rimadesio/portes-stripe",
+"es": "/es/rimadesio/puertas-stripe"
+},
+"images": {
+"images/shop/rimadesio/stripe/stripe-2022-1.jpg": "rimadesio-stripe-doors-01",
+"images/shop/rimadesio/stripe/stripe-2022-2.jpg": "rimadesio-stripe-doors-02",
+"images/shop/rimadesio/stripe/stripe-2022-3.jpg": "rimadesio-stripe-doors-03",
+"images/shop/rimadesio/stripe/stripe-2022-4.jpg": "rimadesio-stripe-doors-04",
+"images/shop/rimadesio/stripe/stripe-2022-5.jpg": "rimadesio-stripe-doors-05",
+"images/shop/rimadesio/stripe/stripe-2022-6.jpg": "rimadesio-stripe-doors-06",
+"images/shop/rimadesio/stripe/stripe-2022-7.jpg": "rimadesio-stripe-doors-07",
+"images/shop/rimadesio/stripe/stripe-2022-8.jpg": "rimadesio-stripe-doors-08"
+},
+"drawings": {}
+},
+"DF-H8780": {
+"path": {
+"en": "/rimadesio/syncro-doors",
+"ru": "/ru/rimadesio/dveri-syncro",
+"de": "/de/rimadesio/syncro-turen",
+"fr": "/fr/rimadesio/portes-syncro",
+"es": "/es/rimadesio/puertas-syncro"
+},
+"images": {
+"images/shop/rimadesio/syncro/sistema-di-scorrimento-syncro-1.jpg": "rimadesio-syncro-doors-01",
+"images/shop/rimadesio/syncro/sistema-di-scorrimento-syncro-2.jpg": "rimadesio-syncro-doors-02",
+"images/shop/rimadesio/syncro/sistema-di-scorrimento-syncro-3.jpg": "rimadesio-syncro-doors-03",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-4.jpg": "rimadesio-air-04",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-5.jpg": "rimadesio-air-05",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-6.jpg": "rimadesio-air-06",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-7.jpg": "rimadesio-air-07",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-8.jpg": "rimadesio-air-08",
+"images/shop/rimadesio/air-syncro/sistema-di-scorrimento-syncro-9.jpg": "rimadesio-air-09"
+},
+"drawings": {}
+},
+"DF-H8783": {
+"path": {
+"en": "/rimadesio/vanity-storage-system",
+"ru": "/ru/rimadesio/sistema-hraneniya-vanity",
+"de": "/de/rimadesio/vanity-stauraumsystem",
+"fr": "/fr/rimadesio/systeme-de-rangement-vanity",
+"es": "/es/rimadesio/sistema-de-almacenaje-vanity"
+},
+"images": {
+"images/shop/rimadesio/vanity/vanity-2022-01.jpg": "rimadesio-vanity-storage-system-01",
+"images/shop/rimadesio/vanity/vanity-2022-02.jpg": "rimadesio-vanity-storage-system-02",
+"images/shop/rimadesio/vanity/vanity-2022-03.jpg": "rimadesio-vanity-storage-system-03",
+"images/shop/rimadesio/vanity/vanity-2022-04.jpg": "rimadesio-vanity-storage-system-04",
+"images/shop/rimadesio/vanity/vanity-2022-05.jpg": "rimadesio-vanity-storage-system-05",
+"images/shop/rimadesio/vanity/vanity-2022-06.jpg": "rimadesio-vanity-storage-system-06",
+"images/shop/rimadesio/vanity/vanity-2022-07.jpg": "rimadesio-vanity-storage-system-07",
+"images/shop/rimadesio/vanity/INTERIORS_FOUR_1_cover-hp_mod.jpg": "rimadesio-vanity-storage-system-08"
+},
+"drawings": {}
+},
+"DF-H8784": {
+"path": {
+"en": "/rimadesio/vela-doors",
+"ru": "/ru/rimadesio/dveri-vela",
+"de": "/de/rimadesio/vela-turen",
+"fr": "/fr/rimadesio/portes-vela",
+"es": "/es/rimadesio/puertas-vela"
+},
+"images": {
+"images/shop/rimadesio/vela/pr33-2.jpg": "rimadesio-vela-doors-01",
+"images/shop/rimadesio/vela/pr32-virataCOLORE.jpg": "rimadesio-vela-doors-02",
+"images/shop/rimadesio/vela/Rimadesio-Collection-Book_2020_pag-195.jpg": "rimadesio-vela-doors-03",
+"images/shop/rimadesio/vela/Rimadesio-Collection-Book_2020_pag-197copia.jpg": "rimadesio-vela-doors-04",
+"images/shop/rimadesio/vela/Lavoro_10392-ok-2.jpg": "rimadesio-vela-doors-05",
+"images/shop/rimadesio/vela/Lavoro_10373-ok-3.jpg": "rimadesio-vela-doors-06",
+"images/shop/rimadesio/vela/17b-RID-3.jpg": "rimadesio-vela-doors-07",
+"images/shop/rimadesio/vela/Maniglia_Vela_03.jpg": "rimadesio-vela-doors-08"
+},
+"drawings": {}
+},
+"DF-H8785": {
+"path": {
+"en": "/rimadesio/velaria-doors",
+"ru": "/ru/rimadesio/dveri-velaria",
+"de": "/de/rimadesio/velaria-turen",
+"fr": "/fr/rimadesio/portes-velaria",
+"es": "/es/rimadesio/puertas-velaria"
+},
+"images": {
+"images/shop/rimadesio/velaria/velaria-2021-01.jpg": "rimadesio-velaria-doors-01",
+"images/shop/rimadesio/velaria/velaria-2021-02.jpg": "rimadesio-velaria-doors-02",
+"images/shop/rimadesio/velaria/01_Velaria4.jpg": "rimadesio-velaria-doors-03",
+"images/shop/rimadesio/velaria/velaria-2021-03.jpg": "rimadesio-velaria-doors-04",
+"images/shop/rimadesio/velaria/velaria-2021-04.jpg": "rimadesio-velaria-doors-05",
+"images/shop/rimadesio/velaria/Rimadesio-Collection-Book_2020_pag-098-099-1.jpg": "rimadesio-velaria-doors-06",
+"images/shop/rimadesio/velaria/Rimadesio-Collection-Book_2020_pag-101-copia.jpg": "rimadesio-velaria-doors-07",
+"images/shop/rimadesio/velaria/Rimadesio-Collection-Book_2020_pag-096-copia.jpg": "rimadesio-velaria-doors-08"
+},
+"drawings": {}
+},
+"DF-H8788": {
+"path": {
+"en": "/rimadesio/wind-bookcase",
+"ru": "/ru/rimadesio/stellazh-wind",
+"de": "/de/rimadesio/wind-bucherregal",
+"fr": "/fr/rimadesio/bibliotheque-wind",
+"es": "/es/rimadesio/libreria-wind"
+},
+"images": {
+"images/shop/rimadesio/wind/rimadesio-wind-1.jpg": "rimadesio-wind-bookcase-01",
+"images/shop/rimadesio/wind/rimadesio-wind-2.jpg": "rimadesio-wind-bookcase-02",
+"images/shop/rimadesio/wind/wind-2023.jpg": "rimadesio-wind-bookcase-03",
+"images/shop/rimadesio/wind/wind-pagina-prodotto-agg-1.jpg": "rimadesio-wind-bookcase-04",
+"images/shop/rimadesio/wind/wind-pagina-prodotto-agg-10.jpg": "rimadesio-wind-bookcase-05",
+"images/shop/rimadesio/wind/Wind_05-03-13_2950-RID2.jpg": "rimadesio-wind-bookcase-06",
+"images/shop/rimadesio/wind/wind-pagina-prodotto-agg-2.jpg": "rimadesio-wind-bookcase-07",
+"images/shop/rimadesio/wind/IMG_Wind_04-1.jpg": "rimadesio-wind-bookcase-08"
+},
+"drawings": {}
+},
+"DF-H8789": {
+"path": {
+"en": "/rimadesio/zen-doors",
+"ru": "/ru/rimadesio/dveri-zen",
+"de": "/de/rimadesio/zen-turen",
+"fr": "/fr/rimadesio/portes-zen",
+"es": "/es/rimadesio/puertas-zen"
+},
+"images": {
+"images/shop/rimadesio/zen-frame/Rimadesio-Collection-Book_2020_pag-148.jpg": "rimadesio-zen-01",
+"images/shop/rimadesio/zen-frame/Rimadesio-Collection-Book_2020_pag-151.jpg": "rimadesio-zen-02",
+"images/shop/rimadesio/zen-zen-frame/Lavoro_10159-OK-RID-RID.jpg": "rimadesio-zen-doors-01",
+"images/shop/rimadesio/zen-frame/Zen-Zenframe_04a_RID-3.jpg": "rimadesio-zen-03",
+"images/shop/rimadesio/zen-frame/05-RID.jpg": "rimadesio-zen-04"
+},
+"drawings": {}
+},
+"DF-H8790": {
+"path": {
+"en": "/rimadesio/zen-frame-doors",
+"ru": "/ru/rimadesio/dveri-zen-frame",
+"de": "/de/rimadesio/zen-frame-turen",
+"fr": "/fr/rimadesio/portes-zen-frame",
+"es": "/es/rimadesio/puertas-zen-frame"
+},
+"images": {
+"images/shop/rimadesio/zen-frame/Rimadesio-Collection-Book_2020_pag-148.jpg": "rimadesio-zen-01",
+"images/shop/rimadesio/zen-frame/Rimadesio-Collection-Book_2020_pag-151.jpg": "rimadesio-zen-02",
+"images/shop/rimadesio/zen-frame/Lavoro_10106-ok-amb_2017-4.jpg": "rimadesio-zen-frame-doors-01",
+"images/shop/rimadesio/zen-frame/Zen-Zenframe_04a_RID-3.jpg": "rimadesio-zen-03",
+"images/shop/rimadesio/zen-frame/05-RID.jpg": "rimadesio-zen-04",
+"images/shop/rimadesio/zen-frame/Zen-maniglie-4.png": "rimadesio-zen-frame-doors-02",
+"images/shop/rimadesio/zen-frame/Zen-maniglie-3.png": "rimadesio-zen-frame-doors-03",
+"images/shop/rimadesio/zen-frame/Zen-maniglie-2.png": "rimadesio-zen-frame-doors-04"
+},
+"drawings": {}
+},
+"DF-H8791": {
+"path": {
+"en": "/rimadesio/zenit-bookcase",
+"ru": "/ru/rimadesio/stellazh-zenit",
+"de": "/de/rimadesio/zenit-bucherregal",
+"fr": "/fr/rimadesio/bibliotheque-zenit",
+"es": "/es/rimadesio/libreria-zenit"
+},
+"images": {
+"images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-5.jpg": "rimadesio-zenit-bookcase-01",
+"images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-6b.jpg": "rimadesio-zenit-bookcase-02",
+"images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-6.jpg": "rimadesio-zenit-bookcase-03",
+"images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-8.jpg": "rimadesio-zenit-bookcase-04",
+"images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-9.jpg": "rimadesio-zenit-bookcase-05",
+"images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-0.jpg": "rimadesio-zenit-bookcase-06",
+"images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-4.jpg": "rimadesio-zenit-bookcase-07",
+"images/shop/rimadesio/zenit/zenit-day-pagina-prodotto-3.jpg": "rimadesio-zenit-bookcase-08"
+},
+"drawings": {}
+},
+"DF-H8792": {
+"path": {
+"en": "/rimadesio/zenit-wardrobe",
+"ru": "/ru/rimadesio/shkaf-zenit",
+"de": "/de/rimadesio/zenit-kleiderkasten",
+"fr": "/fr/rimadesio/armoire-zenit",
+"es": "/es/rimadesio/armario-zenit"
+},
+"images": {
+"images/shop/rimadesio/zenit-night/zenit-night-2022-01.jpg": "rimadesio-zenit-wardrobe-01",
+"images/shop/rimadesio/zenit-night/zenit-night-aggiornamento-sett-2024-3.jpg": "rimadesio-zenit-wardrobe-02",
+"images/shop/rimadesio/zenit-night/zenit-night-aggiornamento-sett-2024-4.jpg": "rimadesio-zenit-wardrobe-03",
+"images/shop/rimadesio/zenit-night/zenit-night-aggiornamento-sett-2024-1.jpg": "rimadesio-zenit-wardrobe-04",
+"images/shop/rimadesio/zenit-night/zenit-night-aggiornamento-sett-2024-2.jpg": "rimadesio-zenit-wardrobe-05",
+"images/shop/rimadesio/zenit-night/ms-a-matter-of-style5.jpg": "rimadesio-zenit-wardrobe-06",
+"images/shop/rimadesio/zenit-night/ms-a-matter-of-style2.jpg": "rimadesio-zenit-wardrobe-07",
+"images/shop/rimadesio/zenit-night/IMG_Zenit_08.jpg": "rimadesio-zenit-wardrobe-08"
+},
+"drawings": {}
+},
 "DF-H9534": {
 "path": {
 "en": "/rugiano/asia-bookcase",
@@ -11833,6 +13235,151 @@
 "images/shop/misuraemme/stowe/drawings/stowe-l.1021mm.png": "misuraemme-stowe-coffee-table-dimensions-02",
 "images/shop/misuraemme/stowe/drawings/stowe-l.880mm.png": "misuraemme-stowe-coffee-table-dimensions-03"
 }
+},
+"DF-K8741": {
+"path": {
+"en": "/rimadesio/modulor-night-wall-panelling",
+"ru": "/ru/rimadesio/stenovye-paneli-modulor-night",
+"de": "/de/rimadesio/modulor-night-wandverkleidung",
+"fr": "/fr/rimadesio/boiserie-modulor-night",
+"es": "/es/rimadesio/revestimiento-de-pared-modulor-night"
+},
+"images": {
+"images/shop/rimadesio/modulor-night/rimadesio-modulor-night-7.jpg": "rimadesio-modulor-night-wall-panelling-01",
+"images/shop/rimadesio/modulor-night/rimadesio-modulor-night-1.jpg": "rimadesio-modulor-night-wall-panelling-02",
+"images/shop/rimadesio/modulor-night/rimadesio-modulor-night-2.jpg": "rimadesio-modulor-night-wall-panelling-03",
+"images/shop/rimadesio/modulor-night/rimadesio-modulor-night-3.jpg": "rimadesio-modulor-night-wall-panelling-04",
+"images/shop/rimadesio/modulor-night/rimadesio-modulor-night-4.jpg": "rimadesio-modulor-night-wall-panelling-05",
+"images/shop/rimadesio/modulor-night/rimadesio-modulor-night-5.jpg": "rimadesio-modulor-night-wall-panelling-06",
+"images/shop/rimadesio/modulor-night/modulor-zona-notte-agg-luglio-2024-1.jpg": "rimadesio-modulor-night-wall-panelling-07",
+"images/shop/rimadesio/modulor-night/modulor-zona-notte-agg-luglio-2024-2.jpg": "rimadesio-modulor-night-wall-panelling-08"
+},
+"drawings": {}
+},
+"DF-K8749": {
+"path": {
+"en": "/rimadesio/planet-coffee-table",
+"ru": "/ru/rimadesio/zhurnalnyy-stolik-planet",
+"de": "/de/rimadesio/planet-couchtisch",
+"fr": "/fr/rimadesio/table-basse-planet",
+"es": "/es/rimadesio/mesa-de-centro-planet"
+},
+"images": {
+"images/shop/rimadesio/planet/planet-2022-01.jpg": "rimadesio-planet-coffee-table-01",
+"images/shop/rimadesio/planet/planet-2022-02.jpg": "rimadesio-planet-coffee-table-02",
+"images/shop/rimadesio/planet/IMG_Planet_03.jpg": "rimadesio-planet-coffee-table-03",
+"images/shop/rimadesio/planet/IMG_Planet_05.jpg": "rimadesio-planet-coffee-table-04",
+"images/shop/rimadesio/planet/IMG_Planet_04.jpg": "rimadesio-planet-coffee-table-05",
+"images/shop/rimadesio/planet/IMG_Planet_02.jpg": "rimadesio-planet-coffee-table-06",
+"images/shop/rimadesio/planet/Render_Planet_01.jpg": "rimadesio-planet-coffee-table-07"
+},
+"drawings": {}
+},
+"DF-K8753": {
+"path": {
+"en": "/rimadesio/rialto-bedside-table",
+"ru": "/ru/rimadesio/prikrovatnaya-tumba-rialto",
+"de": "/de/rimadesio/rialto-nachtkastchen",
+"fr": "/fr/rimadesio/table-de-chevet-rialto",
+"es": "/es/rimadesio/mesita-de-noche-rialto"
+},
+"images": {
+"images/shop/rimadesio/rialto-comodini/rimadesio-rialto-comodino-1.jpg": "rimadesio-rialto-bedside-table-01",
+"images/shop/rimadesio/rialto-comodini/rimadesio-rialto-comodino-2.jpg": "rimadesio-rialto-bedside-table-02",
+"images/shop/rimadesio/rialto-comodini/rimadesio-rialto-comodino-3.jpg": "rimadesio-rialto-bedside-table-03",
+"images/shop/rimadesio/rialto-comodini/rialto-collection-pagina-prodotto-3.jpg": "rimadesio-rialto-bedside-table-04",
+"images/shop/rimadesio/rialto-comodini/rialto-comodino-pagina-prodotto-3-25.jpg": "rimadesio-rialto-bedside-table-05",
+"images/shop/rimadesio/rialto-comodini/rialto-collection-pagina-prodotto-6.jpg": "rimadesio-rialto-bedside-table-06",
+"images/shop/rimadesio/rialto-comodini/rialto-comodino-pagina-prodotto-4-25.jpg": "rimadesio-rialto-bedside-table-07",
+"images/shop/rimadesio/rialto-comodini/rialto-comodino-pagina-prodotto-2-25.jpg": "rimadesio-rialto-bedside-table-08",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web25.jpg": "rimadesio-rialto-01",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web26.jpg": "rimadesio-rialto-02"
+},
+"drawings": {}
+},
+"DF-K8754": {
+"path": {
+"en": "/rimadesio/rialto-coffee-table",
+"ru": "/ru/rimadesio/zhurnalnyy-stolik-rialto",
+"de": "/de/rimadesio/rialto-couchtisch",
+"fr": "/fr/rimadesio/table-basse-rialto",
+"es": "/es/rimadesio/mesa-de-centro-rialto"
+},
+"images": {
+"images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web2.jpg": "rimadesio-rialto-coffee-table-01",
+"images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web.jpg": "rimadesio-rialto-coffee-table-02",
+"images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web4.jpg": "rimadesio-rialto-coffee-table-03",
+"images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web3.jpg": "rimadesio-rialto-coffee-table-04",
+"images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web7.jpg": "rimadesio-rialto-coffee-table-05",
+"images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web8.jpg": "rimadesio-rialto-coffee-table-06",
+"images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web10.jpg": "rimadesio-rialto-coffee-table-07",
+"images/shop/rimadesio/rialto-coffee-table/rialto-coffee-table-pagina-prodotto-web9.jpg": "rimadesio-rialto-coffee-table-08"
+},
+"drawings": {}
+},
+"DF-K8765": {
+"path": {
+"en": "/rimadesio/self-bold-sideboard",
+"ru": "/ru/rimadesio/bufet-self-bold",
+"de": "/de/rimadesio/self-bold-sideboard",
+"fr": "/fr/rimadesio/buffet-self-bold",
+"es": "/es/rimadesio/aparador-self-bold"
+},
+"images": {
+"images/shop/rimadesio/self-bold/self-pagina-prodotto-19.jpg": "rimadesio-self-bold-sideboard-01",
+"images/shop/rimadesio/self-bold/self-pagina-prodotto-20.jpg": "rimadesio-self-bold-sideboard-02",
+"images/shop/rimadesio/self-bold/self-pagina-prodotto-21.jpg": "rimadesio-self-bold-sideboard-03",
+"images/shop/rimadesio/self-bold/self-bold-pagina-prodotto-agg.jpg": "rimadesio-self-bold-sideboard-04",
+"images/shop/rimadesio/self-bold/self-bold-pagina-prodotto-3.jpg": "rimadesio-self-bold-sideboard-05",
+"images/shop/rimadesio/self-bold/self-bold-pagina-prodotto-2.jpg": "rimadesio-self-bold-sideboard-06",
+"images/shop/rimadesio/self-bold/self-pagina-prodotto-33.jpg": "rimadesio-self-bold-sideboard-07",
+"images/shop/rimadesio/self-bold/Living_-2.jpg": "rimadesio-self-bold-sideboard-08",
+"images/shop/rimadesio/self-secretaire/IMG_Self-Bold_09.jpg": "rimadesio-self-bold-01",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-22.jpg": "rimadesio-self-01",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-24.jpg": "rimadesio-self-02",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-25.jpg": "rimadesio-self-03",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-26.jpg": "rimadesio-self-04"
+},
+"drawings": {}
+},
+"DF-K8772": {
+"path": {
+"en": "/rimadesio/sixty-coffee-table",
+"ru": "/ru/rimadesio/zhurnalnyy-stolik-sixty",
+"de": "/de/rimadesio/sixty-couchtisch",
+"fr": "/fr/rimadesio/table-basse-sixty",
+"es": "/es/rimadesio/mesa-de-centro-sixty"
+},
+"images": {
+"images/shop/rimadesio/sixty-coffee-table/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-2.jpg": "rimadesio-sixty-coffee-table-01",
+"images/shop/rimadesio/sixty-coffee-table/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-1.jpg": "rimadesio-sixty-coffee-table-02",
+"images/shop/rimadesio/sixty-coffee-table/RIMADESIO-Ottobre-2019_29910_QUADRO-RID.jpg": "rimadesio-sixty-coffee-table-03",
+"images/shop/rimadesio/sixty-coffee-table/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-3.jpg": "rimadesio-sixty-coffee-table-04",
+"images/shop/rimadesio/sixty-coffee-table/sixty.jpg": "rimadesio-sixty-coffee-table-05",
+"images/shop/rimadesio/sixty-coffee-table/sixty-coffee-table-agg-pagina-prodotto-giugno-2024-4.jpg": "rimadesio-sixty-coffee-table-06",
+"images/shop/rimadesio/sixty-coffee-table/0011_1.jpg": "rimadesio-sixty-coffee-table-07"
+},
+"drawings": {}
+},
+"DF-K8782": {
+"path": {
+"en": "/rimadesio/tray-coffee-table",
+"ru": "/ru/rimadesio/zhurnalnyy-stolik-tray",
+"de": "/de/rimadesio/tray-couchtisch",
+"fr": "/fr/rimadesio/table-basse-tray",
+"es": "/es/rimadesio/mesa-de-centro-tray"
+},
+"images": {
+"images/shop/rimadesio/tray/tray-pagina-prodotto-1.jpg": "rimadesio-tray-coffee-table-01",
+"images/shop/rimadesio/tray/tray-pagina-prodotto-2.jpg": "rimadesio-tray-coffee-table-02",
+"images/shop/rimadesio/tray/tray-2022-01.jpg": "rimadesio-tray-coffee-table-03",
+"images/shop/rimadesio/tray/tray-2022-02.jpg": "rimadesio-tray-coffee-table-04",
+"images/shop/rimadesio/tray/img-tray-01.jpg": "rimadesio-tray-coffee-table-05",
+"images/shop/rimadesio/tray/IMG_Tray_04.jpg": "rimadesio-tray-coffee-table-06",
+"images/shop/rimadesio/tray/tray-pagina-prodotto-3.jpg": "rimadesio-tray-coffee-table-07",
+"images/shop/rimadesio/tray/IMG_Tray_01.jpg": "rimadesio-tray-coffee-table-08"
+},
+"drawings": {}
 },
 "DF-K9518": {
 "path": {
@@ -16345,6 +17892,250 @@
 "drawings": {
 "images/shop/misuraemme/partenio/drawings/partenio-table-2d-misuraemme.png": "misuraemme-partenio-table-dimensions-01"
 }
+},
+"DF-T8723": {
+"path": {
+"en": "/rimadesio/flat-table",
+"ru": "/ru/rimadesio/stol-flat",
+"de": "/de/rimadesio/flat-tisch",
+"fr": "/fr/rimadesio/table-flat",
+"es": "/es/rimadesio/mesa-flat"
+},
+"images": {
+"images/shop/rimadesio/flat/RIMADESIO-Ottobre-2019_28938-RID.jpg": "rimadesio-flat-table-01",
+"images/shop/rimadesio/flat/flat-pagina-prodotto-1.jpg": "rimadesio-flat-table-02",
+"images/shop/rimadesio/flat/IMG_Flat_04-2.jpg": "rimadesio-flat-table-03",
+"images/shop/rimadesio/flat/IMG_Flat_03.jpg": "rimadesio-flat-table-04",
+"images/shop/rimadesio/flat/IMG_Flat_02.jpg": "rimadesio-flat-table-05",
+"images/shop/rimadesio/flat/IMG_Flat_01.jpg": "rimadesio-flat-table-06",
+"images/shop/rimadesio/flat/long-island-pagina-prodotto-7.jpg": "rimadesio-flat-01",
+"images/shop/rimadesio/flat/long-island-pagina-prodotto-8.jpg": "rimadesio-flat-02"
+},
+"drawings": {}
+},
+"DF-T8724": {
+"path": {
+"en": "/rimadesio/flat-system-desk",
+"ru": "/ru/rimadesio/pismennyy-stol-flat-system",
+"de": "/de/rimadesio/flat-system-schreibtisch",
+"fr": "/fr/rimadesio/bureau-flat-system",
+"es": "/es/rimadesio/escritorio-flat-system"
+},
+"images": {
+"images/shop/rimadesio/flat-system/IMG_Flat-System_04.jpg": "rimadesio-flat-system-desk-01",
+"images/shop/rimadesio/flat-system/IMG_Flat-System_06.jpg": "rimadesio-flat-system-desk-02",
+"images/shop/rimadesio/flat-system/IMG_Flat-System_03.jpg": "rimadesio-flat-system-desk-03",
+"images/shop/rimadesio/flat-system/IMG_Flat-System_05.jpg": "rimadesio-flat-system-desk-04",
+"images/shop/rimadesio/flat-system/IMG_Flat-System_02.jpg": "rimadesio-flat-system-desk-05",
+"images/shop/rimadesio/flat-system/IMG_Flat-System_01.jpg": "rimadesio-flat-system-desk-06",
+"images/shop/rimadesio/flat-system/flat-system-pagina-prodotto-1.jpg": "rimadesio-flat-system-desk-07",
+"images/shop/rimadesio/flat-system/flat-system-pagina-prodotto-2.jpg": "rimadesio-flat-system-desk-08"
+},
+"drawings": {}
+},
+"DF-T8725": {
+"path": {
+"en": "/rimadesio/francis-table",
+"ru": "/ru/rimadesio/stol-francis",
+"de": "/de/rimadesio/francis-tisch",
+"fr": "/fr/rimadesio/table-francis",
+"es": "/es/rimadesio/mesa-francis"
+},
+"images": {
+"images/shop/rimadesio/francis/francis-agg-pagina-prodotto.jpg": "rimadesio-francis-table-01",
+"images/shop/rimadesio/francis/francis-agg-pagina-prodotto-2.jpg": "rimadesio-francis-table-02",
+"images/shop/rimadesio/francis/francis-2021-01.jpg": "rimadesio-francis-table-03",
+"images/shop/rimadesio/francis/INTERIORS_ONE_1_cover.jpg": "rimadesio-francis-table-04",
+"images/shop/rimadesio/francis/INTERIORS_ONE_2.jpg": "rimadesio-francis-table-05",
+"images/shop/rimadesio/francis/INTERIORS_ONE_3.jpg": "rimadesio-francis-table-06",
+"images/shop/rimadesio/francis/francis-pagina-prodotto-1.jpg": "rimadesio-francis-table-07",
+"images/shop/rimadesio/francis/francis-agg-pagina-prodotto-agg-giugno-2024-10.jpg": "rimadesio-francis-table-08"
+},
+"drawings": {}
+},
+"DF-T8731": {
+"path": {
+"en": "/rimadesio/lambda-table",
+"ru": "/ru/rimadesio/stol-lambda",
+"de": "/de/rimadesio/lambda-tisch",
+"fr": "/fr/rimadesio/table-lambda",
+"es": "/es/rimadesio/mesa-lambda"
+},
+"images": {
+"images/shop/rimadesio/lambda/lambda-pagina-prodotto.jpg": "rimadesio-lambda-table-01",
+"images/shop/rimadesio/lambda/lambda-pagina-prodotto2.jpg": "rimadesio-lambda-table-02",
+"images/shop/rimadesio/lambda/lambda-pagina-prodotto7.jpg": "rimadesio-lambda-table-03",
+"images/shop/rimadesio/lambda/lambda-pagina-prodotto8.jpg": "rimadesio-lambda-table-04",
+"images/shop/rimadesio/lambda/lambda-pagina-prodotto9.jpg": "rimadesio-lambda-table-05",
+"images/shop/rimadesio/lambda/lambda-pagina-prodotto10.jpg": "rimadesio-lambda-table-06",
+"images/shop/rimadesio/lambda/lambda-pagina-prodotto3.jpg": "rimadesio-lambda-table-07",
+"images/shop/rimadesio/lambda/lambda-pagina-prodotto4.jpg": "rimadesio-lambda-table-08"
+},
+"drawings": {}
+},
+"DF-T8733": {
+"path": {
+"en": "/rimadesio/long-island-console-table",
+"ru": "/ru/rimadesio/konsol-long-island",
+"de": "/de/rimadesio/long-island-konsolentisch",
+"fr": "/fr/rimadesio/console-long-island",
+"es": "/es/rimadesio/consola-long-island"
+},
+"images": {
+"images/shop/rimadesio/long-island-consolle/rimadesio-long-island-1.jpg": "rimadesio-long-island-console-table-01",
+"images/shop/rimadesio/long-island-consolle/rimadesio-long-island-2.jpg": "rimadesio-long-island-console-table-02",
+"images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle4.jpg": "rimadesio-long-island-console-table-03",
+"images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle5.jpg": "rimadesio-long-island-console-table-04",
+"images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle.jpg": "rimadesio-long-island-console-table-05",
+"images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle2.jpg": "rimadesio-long-island-console-table-06",
+"images/shop/rimadesio/long-island-consolle/tagli-immagine-long-island-consolle3.jpg": "rimadesio-long-island-console-table-07",
+"images/shop/rimadesio/long-island-consolle/long-island-consolle-1.jpg": "rimadesio-long-island-console-table-08",
+"images/shop/rimadesio/flat/long-island-pagina-prodotto-7.jpg": "rimadesio-flat-01",
+"images/shop/rimadesio/flat/long-island-pagina-prodotto-8.jpg": "rimadesio-flat-02"
+},
+"drawings": {}
+},
+"DF-T8734": {
+"path": {
+"en": "/rimadesio/long-island-table",
+"ru": "/ru/rimadesio/stol-long-island",
+"de": "/de/rimadesio/long-island-tisch",
+"fr": "/fr/rimadesio/table-long-island",
+"es": "/es/rimadesio/mesa-long-island"
+},
+"images": {
+"images/shop/rimadesio/long-island/long-island-pagina-prodotto-2023.jpg": "rimadesio-long-island-table-01",
+"images/shop/rimadesio/long-island/IMG_Long-Island_09.jpg": "rimadesio-long-island-table-02",
+"images/shop/rimadesio/long-island/IMG_Long-Island_05.jpg": "rimadesio-long-island-table-03",
+"images/shop/rimadesio/long-island/IMG_Long-Island_06.jpg": "rimadesio-long-island-table-04",
+"images/shop/rimadesio/long-island/long-island-6.jpg": "rimadesio-long-island-table-05",
+"images/shop/rimadesio/long-island/long-island-5-1-1.jpg": "rimadesio-long-island-table-06",
+"images/shop/rimadesio/long-island/IMG_Long-Island_08.jpg": "rimadesio-long-island-table-07",
+"images/shop/rimadesio/long-island/IMG_Long-Island_07.jpg": "rimadesio-long-island-table-08",
+"images/shop/rimadesio/flat/long-island-pagina-prodotto-7.jpg": "rimadesio-flat-01",
+"images/shop/rimadesio/flat/long-island-pagina-prodotto-8.jpg": "rimadesio-flat-02"
+},
+"drawings": {}
+},
+"DF-T8736": {
+"path": {
+"en": "/rimadesio/manta-table",
+"ru": "/ru/rimadesio/stol-manta",
+"de": "/de/rimadesio/manta-tisch",
+"fr": "/fr/rimadesio/table-manta",
+"es": "/es/rimadesio/mesa-manta"
+},
+"images": {
+"images/shop/rimadesio/manta/manta-pagina-prodotto-agg-giugno-2024-1.jpg": "rimadesio-manta-table-01",
+"images/shop/rimadesio/manta/manta-pagina-prodotto-agg-giugno-2024-2.jpg": "rimadesio-manta-table-02",
+"images/shop/rimadesio/manta/manta-2022-01.jpg": "rimadesio-manta-table-03",
+"images/shop/rimadesio/manta/manta-2022-02.jpg": "rimadesio-manta-table-04",
+"images/shop/rimadesio/manta/RIMADESIO-spazio1145-3-2.jpg": "rimadesio-manta-table-05",
+"images/shop/rimadesio/manta/RIMADESIO-spazio1145-4-2.jpg": "rimadesio-manta-table-06",
+"images/shop/rimadesio/manta/manta-pagina-prodotto-agg-giugno-2024-3.jpg": "rimadesio-manta-table-07",
+"images/shop/rimadesio/manta/manta-pagina-prodotto-agg-giugno-2024-4.jpg": "rimadesio-manta-table-08",
+"images/shop/rimadesio/flat/long-island-pagina-prodotto-7.jpg": "rimadesio-flat-01",
+"images/shop/rimadesio/flat/long-island-pagina-prodotto-8.jpg": "rimadesio-flat-02"
+},
+"drawings": {}
+},
+"DF-T8737": {
+"path": {
+"en": "/rimadesio/manta-office-table",
+"ru": "/ru/rimadesio/stol-manta-office",
+"de": "/de/rimadesio/manta-office-tisch",
+"fr": "/fr/rimadesio/table-manta-office",
+"es": "/es/rimadesio/mesa-manta-office"
+},
+"images": {
+"images/shop/rimadesio/manta-office/News-2018_pagg-40-41.jpg": "rimadesio-manta-office-table-01",
+"images/shop/rimadesio/manta-office/Manta-2-Lavoro_10106-ok.jpg": "rimadesio-manta-office-table-02",
+"images/shop/rimadesio/manta-office/IMG_Manta_14.jpg": "rimadesio-manta-office-table-03",
+"images/shop/rimadesio/manta-office/IMG_Manta_13.jpg": "rimadesio-manta-office-table-04"
+},
+"drawings": {}
+},
+"DF-T8751": {
+"path": {
+"en": "/rimadesio/rialto-console-table",
+"ru": "/ru/rimadesio/konsol-rialto",
+"de": "/de/rimadesio/rialto-konsolentisch",
+"fr": "/fr/rimadesio/console-rialto",
+"es": "/es/rimadesio/consola-rialto"
+},
+"images": {
+"images/shop/rimadesio/rialto-consolle/rialto-consolle-pagina-prodotto.jpg": "rimadesio-rialto-console-table-01",
+"images/shop/rimadesio/rialto-consolle/rialto-consolle-pagina-prodotto-2.jpg": "rimadesio-rialto-console-table-02",
+"images/shop/rimadesio/rialto-consolle/rialto-consolle-pagina-prodotto-3.jpg": "rimadesio-rialto-console-table-03",
+"images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-3.jpg": "rimadesio-rialto-console-table-04",
+"images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-2.jpg": "rimadesio-rialto-console-table-05",
+"images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-1.jpg": "rimadesio-rialto-console-table-06",
+"images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-4.jpg": "rimadesio-rialto-console-table-07",
+"images/shop/rimadesio/rialto-consolle/rialto-consolle-agg-5.jpg": "rimadesio-rialto-console-table-08",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web25.jpg": "rimadesio-rialto-01",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web26.jpg": "rimadesio-rialto-02"
+},
+"drawings": {}
+},
+"DF-T8752": {
+"path": {
+"en": "/rimadesio/rialto-desk",
+"ru": "/ru/rimadesio/pismennyy-stol-rialto",
+"de": "/de/rimadesio/rialto-schreibtisch",
+"fr": "/fr/rimadesio/bureau-rialto",
+"es": "/es/rimadesio/escritorio-rialto"
+},
+"images": {
+"images/shop/rimadesio/rialto-4/rialto-scrittoio-pagina-prodotto-1-25.jpg": "rimadesio-rialto-desk-01",
+"images/shop/rimadesio/rialto-4/rialto-scrittoio-pagina-prodotto-2-25.jpg": "rimadesio-rialto-desk-02",
+"images/shop/rimadesio/rialto-4/rialto-scrittoio-pagina-prodotto-3-25.jpg": "rimadesio-rialto-desk-03",
+"images/shop/rimadesio/rialto-4/rialto-collection-pagina-prodotto-18.jpg": "rimadesio-rialto-desk-04",
+"images/shop/rimadesio/rialto-4/rialto-scrittoio-pagina-prodotto-4-25.jpg": "rimadesio-rialto-desk-05",
+"images/shop/rimadesio/rialto-4/rialto-collection-pagina-prodotto-9.jpg": "rimadesio-rialto-desk-06",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web25.jpg": "rimadesio-rialto-01",
+"images/shop/rimadesio/rialto-4/rialto-madia-pagina-prodotto-web26.jpg": "rimadesio-rialto-02"
+},
+"drawings": {}
+},
+"DF-T8762": {
+"path": {
+"en": "/rimadesio/self-secretaire-desk",
+"ru": "/ru/rimadesio/pismennyy-stol-self-secretaire",
+"de": "/de/rimadesio/self-secretaire-schreibtisch",
+"fr": "/fr/rimadesio/bureau-self-secretaire",
+"es": "/es/rimadesio/escritorio-self-secretaire"
+},
+"images": {
+"images/shop/rimadesio/self-secretaire/IMG_Self-Bold_09.jpg": "rimadesio-self-bold-01",
+"images/shop/rimadesio/self-secretaire/img-self-bold-07.jpg": "rimadesio-self-secretaire-desk-01",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-7.jpg": "rimadesio-self-secretaire-desk-02",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-8.jpg": "rimadesio-self-secretaire-desk-03",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-24.jpg": "rimadesio-self-02",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-25.jpg": "rimadesio-self-03",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-26.jpg": "rimadesio-self-04",
+"images/shop/rimadesio/self-secretaire/self-pagina-prodotto-parte-tecnica-22.jpg": "rimadesio-self-01"
+},
+"drawings": {}
+},
+"DF-T8766": {
+"path": {
+"en": "/rimadesio/self-plan-writing-desk",
+"ru": "/ru/rimadesio/pismennyy-stol-self-plan-writing",
+"de": "/de/rimadesio/self-plan-writing-schreibtisch",
+"fr": "/fr/rimadesio/bureau-self-plan-writing",
+"es": "/es/rimadesio/escritorio-self-plan-writing"
+},
+"images": {
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-3.jpg": "rimadesio-self-plan-04",
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-2.jpg": "rimadesio-self-plan-05",
+"images/shop/rimadesio/self-plan-writing-desk/interior-two-4.jpg": "rimadesio-self-plan-06",
+"images/shop/rimadesio/self-plan-writing-desk/self-plan-2022-5.jpg": "rimadesio-self-plan-07",
+"images/shop/rimadesio/self-plan-writing-desk/self-plan-2022-6.jpg": "rimadesio-self-plan-08",
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-5.jpg": "rimadesio-self-plan-01",
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-4.jpg": "rimadesio-self-plan-02",
+"images/shop/rimadesio/self-plan-writing-desk/self-pagina-prodotto-6.jpg": "rimadesio-self-plan-03"
+},
+"drawings": {}
 },
 "DF-T9506": {
 "path": {
