@@ -366,6 +366,25 @@
   :root[data-size="l"] .nav button[aria-current="page"], :root[data-size="xl"] .nav button[aria-current="page"] { color: var(--series); text-decoration: underline; text-underline-offset: 3px; }
   :root[data-size="l"] .seg button, :root[data-size="xl"] .seg button { min-height: 52px; }
   :root[data-size="l"] :focus-visible, :root[data-size="xl"] :focus-visible { outline: 3px solid var(--series); outline-offset: 2px; }
+  /* на весь экран (решено 30.10.2026): на планшете и компьютере — кнопка; в полноэкранном режиме кнопки Telegram
+     лежат поверх страницы — отступ сверху на их высоту (--tg-…-safe-area-inset-top ставит сам Telegram) */
+  :root.tg-fs body { padding-top: calc(16px + var(--tg-safe-area-inset-top, 0px) + var(--tg-content-safe-area-inset-top, 0px)) !important; }
+  :root.tg-fs .sheet, :root.tg-fs .viewer { padding-top: calc(var(--tg-safe-area-inset-top, 0px) + var(--tg-content-safe-area-inset-top, 0px)); }
+  .nav .in { flex: 1 1 auto; }
+  .nav .fs-btn { flex: 0 0 auto; width: calc(96px * min(var(--k), 1.25)); }
+  header.top { position: relative; }
+  header.top .fs-btn { position: absolute; top: 0; right: 0; min-height: 44px; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--border);
+    background: var(--raised, var(--surface)); color: var(--text-1); font: inherit; font-size: calc(14px * var(--k)); cursor: pointer; }
+  /* планшет (iPad 11–13″) и компьютер (решено 30.10.2026): шире колонка, проекты и заявки — в две-три колонки, плитки — по ширине */
+  @media (min-width: 900px) {
+    body { max-width: 1180px; }
+    .nav .in { max-width: 1080px; }
+    .sheet .in { max-width: 900px; }
+    .sheet footer .in2 { max-width: 868px; }
+    .plist { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+    .tiles { grid-template-columns: repeat(auto-fit, minmax(calc(170px * var(--k)), 1fr)); }
+  }
+  @media (min-width: 1250px) { .plist { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 </style>
 </head>
 <body>
@@ -552,7 +571,7 @@
     render(); window.scrollTo(0, 0); backBtn();
   }));
   function markNav() {
-    document.querySelectorAll('.nav button').forEach((b) => b.setAttribute('aria-current', b.dataset.tab === tab ? 'page' : 'false'));
+    document.querySelectorAll('.nav button[data-tab]').forEach((b) => b.setAttribute('aria-current', b.dataset.tab === tab ? 'page' : 'false'));
     const dot = document.getElementById('leads-dot'), n = S ? S.leads_new || 0 : 0;   // новые заявки — число на вкладке
     if (dot) { dot.hidden = !n; dot.textContent = n > 99 ? '99+' : String(n); }       // у разработчика вкладки «Заявки» нет
     const cd = document.getElementById('chat-dot'), u = S ? S.unread || 0 : 0;        // непрочитанная переписка с заказчиками
@@ -3088,6 +3107,7 @@
   function ownerMode() {
     OWNER = true;
     document.querySelectorAll('.nav button').forEach((b) => {
+      if (b.classList.contains('fs-btn')) return;            // «На весь экран» — не вкладка, остаётся
       if (!['projects', 'people', 'charts'].includes(b.dataset.tab)) b.remove();
       else if (b.dataset.tab === 'people') b.replaceChildren(el('span', null, '👥'), 'Доступ');
     });
@@ -3150,6 +3170,40 @@
   });
   let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (tab === 'money') render(); }, 200); });
   start();
+})();
+</script>
+<script>
+// На весь экран (решено 30.10.2026): на планшете (iPad) и компьютере — кнопка «⛶ На весь экран» (Telegram 8.0+).
+// Выбор запоминается на этом устройстве: в следующий раз приложение само откроется на весь экран.
+(() => {
+  const tg = window.Telegram && window.Telegram.WebApp;
+  const can = tg && typeof tg.requestFullscreen === 'function' && (!tg.isVersionAtLeast || tg.isVersionAtLeast('8.0'))
+    && Math.min(screen.width, screen.height) >= 600;
+  if (!can) return;
+  const LABEL = ["На весь экран", "Обычный размер", "Весь экран", "Свернуть"];
+  const save = (v) => { try { localStorage.setItem('tg-fullscreen', v); } catch (e) { /* нет хранилища */ } };
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'fs-btn';
+  const draw = () => {
+    const on = !!tg.isFullscreen;
+    document.documentElement.classList.toggle('tg-fs', on);
+    b.setAttribute('aria-pressed', String(on));
+    b.title = on ? LABEL[1] : LABEL[0];
+    b.setAttribute('aria-label', b.title);
+    const ic = on ? '⤡' : '⛶';
+    if (b.closest('.nav')) { b.replaceChildren(Object.assign(document.createElement('span'), { textContent: ic }), document.createTextNode(LABEL[on ? 3 : 2])); }
+    else b.textContent = ic + (LABEL[on ? 3 : 2] ? ' ' + LABEL[on ? 3 : 2] : '');
+  };
+  b.addEventListener('click', () => {
+    try { if (tg.isFullscreen) { tg.exitFullscreen(); save('0'); } else { tg.requestFullscreen(); save('1'); } } catch (e) { /* старый Telegram */ }
+  });
+  const nav = document.getElementById('nav'), top = document.querySelector('header.top');
+  (nav || top || document.body).append(b);
+  if (!nav && !top) Object.assign(b.style, { position: 'fixed', right: '12px', bottom: '12px', zIndex: 6 });
+  try { tg.onEvent('fullscreenChanged', draw); tg.onEvent('fullscreenFailed', draw); } catch (e) { /* нет событий */ }
+  draw();
+  let want = null; try { want = localStorage.getItem('tg-fullscreen'); } catch (e) { /* нет хранилища */ }
+  if (want === '1' && !tg.isFullscreen) { try { tg.requestFullscreen(); } catch (e) { /* не дали */ } }
 })();
 </script>
 </body>

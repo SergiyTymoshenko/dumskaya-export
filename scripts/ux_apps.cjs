@@ -27,7 +27,9 @@ const tgMock = (init) => `window.Telegram = { WebApp: (function () {
     setParams(p) { Object.assign(this, p); return this; } });
   return { initData: ${JSON.stringify(init)}, initDataUnsafe: { user: { id: 1, first_name: 'T', language_code: 'ru' } }, colorScheme: window.__tgScheme || 'light', themeParams: {},
     platform: window.__tgPlatform || 'ios', version: '8.0', viewportHeight: innerHeight, isExpanded: true,
-    isVersionAtLeast() { return true; }, ready() {}, expand() {}, close() {}, onEvent() {}, offEvent() {}, setHeaderColor() {}, setBackgroundColor() {},
+    isVersionAtLeast() { return true; }, ready() {}, expand() {}, close() {}, _ev: {}, onEvent(n, f) { (this._ev[n] = this._ev[n] || []).push(f); }, offEvent() {}, setHeaderColor() {}, setBackgroundColor() {},
+    isFullscreen: false, requestFullscreen() { this.isFullscreen = true; (this._ev.fullscreenChanged || []).forEach((f) => f()); },
+    exitFullscreen() { this.isFullscreen = false; (this._ev.fullscreenChanged || []).forEach((f) => f()); },
     enableClosingConfirmation() {}, disableClosingConfirmation() {}, disableVerticalSwipes() {},
     showConfirm(t, cb) { cb && cb(false); }, showAlert(t, cb) { cb && cb(); }, showPopup(p, cb) { cb && cb(''); },
     openLink(u) { window.__opened = u; }, openTelegramLink(u) { window.__opened = u; },
@@ -53,7 +55,7 @@ function startStand() {
 // контраст, размер кнопок, прокрутка вбок, ошибки скриптов — проверяются, как раньше
 const SR_ONLY = ['region', 'landmark-one-main', 'landmark-unique', 'aria-dialog-name', 'label', 'select-name', 'button-name',
   'link-name', 'image-alt', 'heading-order', 'empty-heading', 'page-has-heading-one', 'aria-allowed-role'];
-const SIZES = QUICK ? ['pm'] : ['pm', 'm', 'tg'];
+const SIZES = QUICK ? ['pm'] : ['pm', 'm', 'tg', 'tab'];     // tab — iPad 13″ Ирины (решено 30.10.2026)
 // роль → приложение, размеры текста (по умолчанию у всех «Обычный» — решено 25.10.2026; крупные проверяются тоже)
 const RUNS = [
   { app: '/api/crm/app', role: 'irina', name: 'studio', text: QUICK ? ['m'] : ['m', 'l', 'xl'], save: '/api/crm/ui' },
@@ -120,6 +122,19 @@ const RUNS = [
           await p.goto(BASE + run.app, { waitUntil: 'load' });     // «Графики» обновляются сами — сеть не затихает
           await p.waitForTimeout(1500);
           await look('открытие');
+          if (sz === 'tab' || sz === 'tabl') {         // на весь экран: кнопка есть, нажатие включает и выключает
+            const fb = await p.$('.fs-btn');
+            if (!fb) R.ok(false, `${tag}: кнопка «На весь экран»`, 'нет кнопки');
+            else {
+              await fb.click(); await p.waitForTimeout(300);
+              const on = await p.evaluate(() => window.Telegram.WebApp.isFullscreen && document.documentElement.classList.contains('tg-fs'));
+              await look('на весь экран');
+              await fb.click(); await p.waitForTimeout(300);
+              const off = await p.evaluate(() => !window.Telegram.WebApp.isFullscreen && !document.documentElement.classList.contains('tg-fs'));
+              await p.evaluate(() => { try { localStorage.removeItem('tg-fullscreen'); } catch (e) { /* нет */ } });
+              R.ok(on && off, `${tag}: кнопка «На весь экран»`, `включилось: ${on}, выключилось: ${off}`);
+            }
+          }
           // «Графики»: периоды и «Оба» — карточка «Google Analytics» (решено 29.10.2026) в каждом виде
           if (run.app === '/api/stats/app') {
             for (const per of ['1h', '24h', '365']) {

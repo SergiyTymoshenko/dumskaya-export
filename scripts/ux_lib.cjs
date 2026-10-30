@@ -28,6 +28,9 @@ const SIZES = {
   m: { viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
   pm: { viewport: { width: 440, height: 956 }, deviceScaleFactor: 3, isMobile: true, hasTouch: true },
   tg: { viewport: { width: 420, height: 760 } },
+  // iPad 13″ (не Pro; решено 30.10.2026 — у Ирины): портрет и альбом
+  tab: { viewport: { width: 1024, height: 1366 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
+  tabl: { viewport: { width: 1366, height: 1024 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true },
 };
 
 function report() {
