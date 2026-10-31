@@ -1,0 +1,4624 @@
+{
+ "factory": "giorgetti",
+ "brand": "Giorgetti",
+ "products": [
+  {
+   "sku": "DF-D10611",
+   "name_now": {
+    "en": "Tides rug",
+    "ru": "Ковёр Tides",
+    "de": "Tides Teppich",
+    "fr": "Tapis Tides",
+    "es": "Alfombra Tides"
+   },
+   "type_now": "rug",
+   "type_now_en": "rug",
+   "category": "rugs",
+   "place": "indoor",
+   "model": "Tides",
+   "collection": "Tides",
+   "designer": "",
+   "year": "2023",
+   "factory_section": "Atmosphere / Rugs",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/giorgetti-atmosphere/Rugs/tides",
+   "factory_text": "Hand-tufted wool and bamboo silk carpet. 2023\n\nThe surface is characterised by looping the wool fibre to create a sort of suture between the two materials that make up the design, accentuated by the finishes and by the pile of the rug; details that are cut, incised and sculpted by hand.",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "GA430",
+     "name": "GA430 — Handtufted rug in bamboo silk and wool. 1 colour (size: no limitations cm)",
+     "cm": null
+    },
+    {
+     "code": "GA431",
+     "name": "GA431 — Handtufted rug in bamboo silk and wool. 2 colours (size: no limitations cm)",
+     "cm": null
+    }
+   ],
+   "finishes": {},
+   "photos": 2,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-C10612",
+   "name_now": {
+    "en": "Tie chair",
+    "ru": "Стул Tie",
+    "de": "Tie Stuhl",
+    "fr": "Chaise Tie",
+    "es": "Silla Tie"
+   },
+   "type_now": "chair",
+   "type_now_en": "chair",
+   "category": "chairs",
+   "place": "indoor",
+   "model": "Tie",
+   "collection": "Tie",
+   "designer": "m2atelier",
+   "year": "2021",
+   "factory_section": "Chairs And Stools",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/chairs-and-stools/tie",
+   "factory_text": "The silhouette appears to be discreet until it reveals a deep, seductive slit on the back that recalls haute couture creations.\n\nChair with frame in Polimex (composite polyester/ polyurethane material) and padding in polyurethane foam covered in fibre. The cover in fabric or leather is enhanced by piping and a leather backrest insert.",
+   "factory_text_ru": "",
+   "tech": "Covers: Leather, Pelle Plus, Pelle Anilina Sense, CRUISE-CHENILLE, CRUISE-MELANGE, Coco, DAMARIS, Penny, SPLIT, Sandiego, Chamonix, Daydreamer, DUCHESSA, Tinto, Abba, Alcide, Nelson, Willis",
+   "versions": [
+    {
+     "code": "70901",
+     "name": "70901 — Castors",
+     "cm": null
+    },
+    {
+     "code": "70900",
+     "name": "70900 — Chair covered in fabric or leather with leather insert (51 x 64 x h 87 cm)",
+     "cm": {
+      "l": 51,
+      "w": 64,
+      "h": 87
+     }
+    }
+   ],
+   "finishes": {
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    },
+    "Leather / Pelle Anilina Sense": {
+     "count": 8,
+     "examples": [
+      "9244 Pomice",
+      "9245 Caolino",
+      "9249 Tufo",
+      "9247 Terra Di Siena",
+      "9251 Ambra",
+      "9246 Ardesia"
+     ]
+    },
+    "Fabric / CRUISE-CHENILLE": {
+     "count": 9,
+     "examples": [
+      "5266 Avena",
+      "5265 Carciofo",
+      "5263 Celeste",
+      "5269 Corteccia",
+      "5264 Emerald",
+      "5268 Flamingo"
+     ]
+    },
+    "Fabric / CRUISE-MELANGE": {
+     "count": 11,
+     "examples": [
+      "5274 Blue Qualrtz",
+      "5270 Cenere",
+      "5279 Cherry",
+      "5271 Ghiaia",
+      "5274 Glacier",
+      "5272 Graphite"
+     ]
+    },
+    "Fabric / Coco": {
+     "count": 18,
+     "examples": [
+      "6833 Ivory",
+      "6834 Perla",
+      "6835 Brume",
+      "6836 Silver",
+      "6837 Turchese",
+      "6838 Green"
+     ]
+    },
+    "Fabric / DAMARIS": {
+     "count": 20,
+     "examples": [
+      "5313 Bianco",
+      "5326 Bordeaux",
+      "5314 Frost",
+      "5316 Ghiaia",
+      "5324 Guscio",
+      "5315 Iceberg"
+     ]
+    },
+    "Fabric / Penny": {
+     "count": 26,
+     "examples": [
+      "6704 Avorio",
+      "6705 Sable",
+      "6722 Corda",
+      "6706 Lino",
+      "6708 Roccia",
+      "6725 Alga"
+     ]
+    },
+    "Fabric / SPLIT": {
+     "count": 16,
+     "examples": [
+      "5295 acciaio",
+      "5296 asfalto",
+      "5292 corda",
+      "5286 germoglio",
+      "5282 ghiaccio",
+      "5291 ginger"
+     ]
+    },
+    "Fabric / Sandiego": {
+     "count": 16,
+     "examples": [
+      "5036 Bianco",
+      "5037 Argento",
+      "5038 Ecru",
+      "5039 Nero",
+      "5040 Seppia",
+      "5041 Lava"
+     ]
+    },
+    "Fabric / Chamonix": {
+     "count": 14,
+     "examples": [
+      "5417 Nacre",
+      "5418 Argent",
+      "5419 Ocre",
+      "5420 Canard",
+      "5421 Kaki",
+      "5422 Argile"
+     ]
+    },
+    "Fabric / Daydreamer": {
+     "count": 12,
+     "examples": [
+      "5222 Algue",
+      "5217 Bois de rose",
+      "5218 Caki",
+      "5224 Dark Chocolate",
+      "5223 Fumo",
+      "5220 Ice"
+     ]
+    },
+    "Fabric / DUCHESSA": {
+     "count": 26,
+     "examples": [
+      "5245 Ballet Slipper",
+      "5258 Bamboo",
+      "5246 Blueberry",
+      "5257 Bottiglia",
+      "5235 Cappuccino",
+      "5236 Corteccia"
+     ]
+    },
+    "Fabric / Tinto": {
+     "count": 26,
+     "examples": [
+      "6510 Ottico",
+      "6511 Avorio",
+      "6512 Sable",
+      "6513 Acier",
+      "6514 Taupe",
+      "6515 Chocolat"
+     ]
+    },
+    "Fabric / Abba": {
+     "count": 10,
+     "examples": [
+      "5431 Bianco",
+      "5432 Vaniglia",
+      "5433 Cenere",
+      "5434 Sabbia",
+      "5435 Elefante",
+      "5436 Lava"
+     ]
+    },
+    "Fabric / Alcide": {
+     "count": 12,
+     "examples": [
+      "5209 Bosco",
+      "5202 Caracal",
+      "5208 Celeste",
+      "5211 Cincillà",
+      "5206 Corallo",
+      "5201 Ermellino"
+     ]
+    },
+    "Fabric / Nelson": {
+     "count": 10,
+     "examples": [
+      "5357 Acier",
+      "5358 Flax",
+      "5359 Blanc Petale",
+      "5360 Neige Poudre",
+      "5361 Glacier",
+      "5362 Bleu canard"
+     ]
+    },
+    "Fabric / Willis": {
+     "count": 8,
+     "examples": [
+      "5366 Bone",
+      "5367 linen",
+      "5369 ocean",
+      "5372 saffron",
+      "5370 sand",
+      "5368 sky"
+     ]
+    }
+   },
+   "photos": 5,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-A10613",
+   "name_now": {
+    "en": "Tie Xl armchair",
+    "ru": "Кресло Tie Xl",
+    "de": "Tie Xl Fauteuil",
+    "fr": "Fauteuil Tie Xl",
+    "es": "Sillón Tie Xl"
+   },
+   "type_now": "armchair",
+   "type_now_en": "armchair",
+   "category": "armchairs",
+   "place": "indoor",
+   "model": "Tie Xl",
+   "collection": "Tie Xl",
+   "designer": "m2atelier",
+   "year": "2023",
+   "factory_section": "Armchairs",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/armchairs/tie-xl",
+   "factory_text": "Soft, enveloping shapes, with a seductive slit at the back.\n\nArmchair with an oval-shaped headrest with Polimex frame, polyurethane foam padding and removable cover, mono- or two-colour.",
+   "factory_text_ru": "",
+   "tech": "Covers: Leather, Pelle Plus, Pelle Anilina Sense, Barren, CRUISE-CHENILLE, CRUISE-MELANGE, Coco, DAMARIS, Fargo, Penny, SPLIT, Sandiego, Chamonix, Daydreamer, DUCHESSA, Flash, Tinto, Abba, Alcide, Nelson, Willis",
+   "versions": [
+    {
+     "code": "74400",
+     "name": "74400 — Fabric or leather covered armchair with leather insert (76 x 90 x h 109 cm)",
+     "cm": {
+      "l": 76,
+      "w": 90,
+      "h": 109
+     }
+    },
+    {
+     "code": "74405",
+     "name": "74405 — Fabric or leather covered armchair, external leather with leather insert (76 x 90 x h 109 cm)",
+     "cm": {
+      "l": 76,
+      "w": 90,
+      "h": 109
+     }
+    }
+   ],
+   "finishes": {
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    },
+    "Leather / Pelle Anilina Sense": {
+     "count": 8,
+     "examples": [
+      "9244 Pomice",
+      "9245 Caolino",
+      "9249 Tufo",
+      "9247 Terra Di Siena",
+      "9251 Ambra",
+      "9246 Ardesia"
+     ]
+    },
+    "Fabric / Barren": {
+     "count": 18,
+     "examples": [
+      "5399 Bianco",
+      "5400 Avorio",
+      "5401 Alluminio",
+      "5402 Argento",
+      "5403 Castagno",
+      "5404 Pietra"
+     ]
+    },
+    "Fabric / CRUISE-CHENILLE": {
+     "count": 9,
+     "examples": [
+      "5266 Avena",
+      "5265 Carciofo",
+      "5263 Celeste",
+      "5269 Corteccia",
+      "5264 Emerald",
+      "5268 Flamingo"
+     ]
+    },
+    "Fabric / CRUISE-MELANGE": {
+     "count": 11,
+     "examples": [
+      "5274 Blue Qualrtz",
+      "5270 Cenere",
+      "5279 Cherry",
+      "5271 Ghiaia",
+      "5274 Glacier",
+      "5272 Graphite"
+     ]
+    },
+    "Fabric / Coco": {
+     "count": 18,
+     "examples": [
+      "6833 Ivory",
+      "6834 Perla",
+      "6835 Brume",
+      "6836 Silver",
+      "6837 Turchese",
+      "6838 Green"
+     ]
+    },
+    "Fabric / DAMARIS": {
+     "count": 20,
+     "examples": [
+      "5313 Bianco",
+      "5326 Bordeaux",
+      "5314 Frost",
+      "5316 Ghiaia",
+      "5324 Guscio",
+      "5315 Iceberg"
+     ]
+    },
+    "Fabric / Fargo": {
+     "count": 22,
+     "examples": [
+      "5451 Bianco",
+      "5452 Crema",
+      "5453 Mastice",
+      "5454 Pietra",
+      "5455 Visone",
+      "5456 Terra"
+     ]
+    },
+    "Fabric / Penny": {
+     "count": 26,
+     "examples": [
+      "6704 Avorio",
+      "6705 Sable",
+      "6722 Corda",
+      "6706 Lino",
+      "6708 Roccia",
+      "6725 Alga"
+     ]
+    },
+    "Fabric / SPLIT": {
+     "count": 16,
+     "examples": [
+      "5295 acciaio",
+      "5296 asfalto",
+      "5292 corda",
+      "5286 germoglio",
+      "5282 ghiaccio",
+      "5291 ginger"
+     ]
+    },
+    "Fabric / Sandiego": {
+     "count": 16,
+     "examples": [
+      "5036 Bianco",
+      "5037 Argento",
+      "5038 Ecru",
+      "5039 Nero",
+      "5040 Seppia",
+      "5041 Lava"
+     ]
+    },
+    "Fabric / Chamonix": {
+     "count": 14,
+     "examples": [
+      "5417 Nacre",
+      "5418 Argent",
+      "5419 Ocre",
+      "5420 Canard",
+      "5421 Kaki",
+      "5422 Argile"
+     ]
+    },
+    "Fabric / Daydreamer": {
+     "count": 12,
+     "examples": [
+      "5222 Algue",
+      "5217 Bois de rose",
+      "5218 Caki",
+      "5224 Dark Chocolate",
+      "5223 Fumo",
+      "5220 Ice"
+     ]
+    },
+    "Fabric / DUCHESSA": {
+     "count": 26,
+     "examples": [
+      "5245 Ballet Slipper",
+      "5258 Bamboo",
+      "5246 Blueberry",
+      "5257 Bottiglia",
+      "5235 Cappuccino",
+      "5236 Corteccia"
+     ]
+    },
+    "Fabric / Flash": {
+     "count": 10,
+     "examples": [
+      "5441 Avorio",
+      "5442 Sabbia",
+      "5443 Roccia",
+      "5444 caffè",
+      "5445 blu",
+      "5446 Ardesia"
+     ]
+    },
+    "Fabric / Tinto": {
+     "count": 26,
+     "examples": [
+      "6510 Ottico",
+      "6511 Avorio",
+      "6512 Sable",
+      "6513 Acier",
+      "6514 Taupe",
+      "6515 Chocolat"
+     ]
+    },
+    "Fabric / Abba": {
+     "count": 10,
+     "examples": [
+      "5431 Bianco",
+      "5432 Vaniglia",
+      "5433 Cenere",
+      "5434 Sabbia",
+      "5435 Elefante",
+      "5436 Lava"
+     ]
+    },
+    "Fabric / Alcide": {
+     "count": 12,
+     "examples": [
+      "5209 Bosco",
+      "5202 Caracal",
+      "5208 Celeste",
+      "5211 Cincillà",
+      "5206 Corallo",
+      "5201 Ermellino"
+     ]
+    },
+    "Fabric / Nelson": {
+     "count": 10,
+     "examples": [
+      "5357 Acier",
+      "5358 Flax",
+      "5359 Blanc Petale",
+      "5360 Neige Poudre",
+      "5361 Glacier",
+      "5362 Bleu canard"
+     ]
+    },
+    "Fabric / Willis": {
+     "count": 8,
+     "examples": [
+      "5366 Bone",
+      "5367 linen",
+      "5369 ocean",
+      "5372 saffron",
+      "5370 sand",
+      "5368 sky"
+     ]
+    }
+   },
+   "photos": 8,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-A10614",
+   "name_now": {
+    "en": "Tilt armchair",
+    "ru": "Кресло Tilt",
+    "de": "Tilt Fauteuil",
+    "fr": "Fauteuil Tilt",
+    "es": "Sillón Tilt"
+   },
+   "type_now": "armchair",
+   "type_now_en": "armchair",
+   "category": "armchairs",
+   "place": "indoor",
+   "model": "Tilt",
+   "collection": "Tilt",
+   "designer": "m2atelier",
+   "year": "2015",
+   "factory_section": "Armchairs",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/armchairs/tilt",
+   "factory_text": "An innovative armchair that offers a new standard of comfort, for a product that follows the movement of those taking a seat in its enveloping shape.\n\nArmchair and stool with the base in walnut canaletto wood and upholstery in fabric or leather in one colour or in two colours.",
+   "factory_text_ru": "",
+   "tech": "Covers: Walnut, Leather, Pelle Plus, Pelle Anilina Sense, CRUISE-CHENILLE, CRUISE-MELANGE, Coco, DAMARIS, Penny, SPLIT, Chamonix, Daydreamer, DUCHESSA, Flash, Tinto, Alcide, Nelson",
+   "versions": [
+    {
+     "code": "70602",
+     "name": "70602 — Swivel armchair with fabric or leather upholstery (96 x 73 x h 85 cm)",
+     "cm": {
+      "l": 96,
+      "w": 73,
+      "h": 85
+     }
+    },
+    {
+     "code": "70603",
+     "name": "70603 — Swivel armchair with leather external, fabric or leather internal (96 x 73 x h 85 cm)",
+     "cm": {
+      "l": 96,
+      "w": 73,
+      "h": 85
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Walnut": {
+     "count": 3,
+     "examples": [
+      "11 Natural walnut canaletto acrylic polishing",
+      "2W Natural walnut canaletto acrylic polishing",
+      "2Z Natural walnut canaletto acrylic polishing"
+     ]
+    },
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    },
+    "Leather / Pelle Anilina Sense": {
+     "count": 8,
+     "examples": [
+      "9244 Pomice",
+      "9245 Caolino",
+      "9249 Tufo",
+      "9247 Terra Di Siena",
+      "9251 Ambra",
+      "9246 Ardesia"
+     ]
+    },
+    "Fabric / CRUISE-CHENILLE": {
+     "count": 9,
+     "examples": [
+      "5266 Avena",
+      "5265 Carciofo",
+      "5263 Celeste",
+      "5269 Corteccia",
+      "5264 Emerald",
+      "5268 Flamingo"
+     ]
+    },
+    "Fabric / CRUISE-MELANGE": {
+     "count": 11,
+     "examples": [
+      "5274 Blue Qualrtz",
+      "5270 Cenere",
+      "5279 Cherry",
+      "5271 Ghiaia",
+      "5274 Glacier",
+      "5272 Graphite"
+     ]
+    },
+    "Fabric / Coco": {
+     "count": 18,
+     "examples": [
+      "6833 Ivory",
+      "6834 Perla",
+      "6835 Brume",
+      "6836 Silver",
+      "6837 Turchese",
+      "6838 Green"
+     ]
+    },
+    "Fabric / DAMARIS": {
+     "count": 20,
+     "examples": [
+      "5313 Bianco",
+      "5326 Bordeaux",
+      "5314 Frost",
+      "5316 Ghiaia",
+      "5324 Guscio",
+      "5315 Iceberg"
+     ]
+    },
+    "Fabric / Penny": {
+     "count": 26,
+     "examples": [
+      "6704 Avorio",
+      "6705 Sable",
+      "6722 Corda",
+      "6706 Lino",
+      "6708 Roccia",
+      "6725 Alga"
+     ]
+    },
+    "Fabric / SPLIT": {
+     "count": 16,
+     "examples": [
+      "5295 acciaio",
+      "5296 asfalto",
+      "5292 corda",
+      "5286 germoglio",
+      "5282 ghiaccio",
+      "5291 ginger"
+     ]
+    },
+    "Fabric / Chamonix": {
+     "count": 14,
+     "examples": [
+      "5417 Nacre",
+      "5418 Argent",
+      "5419 Ocre",
+      "5420 Canard",
+      "5421 Kaki",
+      "5422 Argile"
+     ]
+    },
+    "Fabric / Daydreamer": {
+     "count": 12,
+     "examples": [
+      "5222 Algue",
+      "5217 Bois de rose",
+      "5218 Caki",
+      "5224 Dark Chocolate",
+      "5223 Fumo",
+      "5220 Ice"
+     ]
+    },
+    "Fabric / DUCHESSA": {
+     "count": 26,
+     "examples": [
+      "5245 Ballet Slipper",
+      "5258 Bamboo",
+      "5246 Blueberry",
+      "5257 Bottiglia",
+      "5235 Cappuccino",
+      "5236 Corteccia"
+     ]
+    },
+    "Fabric / Flash": {
+     "count": 10,
+     "examples": [
+      "5441 Avorio",
+      "5442 Sabbia",
+      "5443 Roccia",
+      "5444 caffè",
+      "5445 blu",
+      "5446 Ardesia"
+     ]
+    },
+    "Fabric / Tinto": {
+     "count": 26,
+     "examples": [
+      "6510 Ottico",
+      "6511 Avorio",
+      "6512 Sable",
+      "6513 Acier",
+      "6514 Taupe",
+      "6515 Chocolat"
+     ]
+    },
+    "Fabric / Alcide": {
+     "count": 12,
+     "examples": [
+      "5209 Bosco",
+      "5202 Caracal",
+      "5208 Celeste",
+      "5211 Cincillà",
+      "5206 Corallo",
+      "5201 Ermellino"
+     ]
+    },
+    "Fabric / Nelson": {
+     "count": 10,
+     "examples": [
+      "5357 Acier",
+      "5358 Flax",
+      "5359 Blanc Petale",
+      "5360 Neige Poudre",
+      "5361 Glacier",
+      "5362 Bleu canard"
+     ]
+    }
+   },
+   "photos": 3,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-K10615",
+   "name_now": {
+    "en": "Too serving trolley",
+    "ru": "Сервировочный столик Too",
+    "de": "Too Servierwagen",
+    "fr": "Desserte Too",
+    "es": "Carrito auxiliar Too"
+   },
+   "type_now": "trolley",
+   "type_now_en": "serving trolley",
+   "category": "side-tables",
+   "place": "indoor",
+   "model": "Too",
+   "collection": "Too",
+   "designer": "Umberto Asnago",
+   "year": "2018",
+   "factory_section": "Tables And Trolleys",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/tables-and-trolleys/too",
+   "factory_text": "An elegant and impromptu piece designed to accompany the functions of the dining and the living room, especially for social occasions.\n\nTrolley in solid walnut Canaletto wood. The top is in saddle leather, the under top can be in saddle leather or in metal painted in a bronze colour.",
+   "factory_text_ru": "",
+   "tech": "Covers: Walnut",
+   "versions": [
+    {
+     "code": "65300",
+     "name": "65300 — Trolley in walnut canaletto and tops in saddle leather (94 x 50 x h 82 cm)",
+     "cm": {
+      "l": 94,
+      "w": 50,
+      "h": 82
+     }
+    },
+    {
+     "code": "65301",
+     "name": "65301 — Trolley in walnut canaletto, top in saddle leather, under top in metal (94 x 50 x h 82 cm)",
+     "cm": {
+      "l": 94,
+      "w": 50,
+      "h": 82
+     }
+    },
+    {
+     "code": "65305",
+     "name": "65305 — Rectangular tray in walnut canaletto and saddle leather (45 x 33 x h 2,5 cm)",
+     "cm": {
+      "l": 45,
+      "w": 33,
+      "h": 2.5
+     }
+    },
+    {
+     "code": "65306",
+     "name": "65306 — Rectangular tray in walnut canaletto and saddle leather (45 x 15 x h 2,5 cm)",
+     "cm": {
+      "l": 45,
+      "w": 15,
+      "h": 2.5
+     }
+    },
+    {
+     "code": "65307",
+     "name": "65307 — Rectangular tray in walnut canaletto (45 x 33 x h 2,5 cm)",
+     "cm": {
+      "l": 45,
+      "w": 33,
+      "h": 2.5
+     }
+    },
+    {
+     "code": "65308",
+     "name": "65308 — Rectangular tray in walnut canaletto (45 x 15 x h 2,5 cm)",
+     "cm": {
+      "l": 45,
+      "w": 15,
+      "h": 2.5
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Walnut": {
+     "count": 3,
+     "examples": [
+      "11 Natural walnut canaletto acrylic polishing",
+      "2W Natural walnut canaletto acrylic polishing",
+      "2Z Natural walnut canaletto acrylic polishing"
+     ]
+    }
+   },
+   "photos": 3,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-C10616",
+   "name_now": {
+    "en": "Topaze stool",
+    "ru": "Табурет Topaze",
+    "de": "Topaze Hocker",
+    "fr": "Tabouret Topaze",
+    "es": "Taburete Topaze"
+   },
+   "type_now": "stool",
+   "type_now_en": "stool",
+   "category": "stools",
+   "place": "indoor",
+   "model": "Topaze",
+   "collection": "Topaze",
+   "designer": "Antonello Mosca",
+   "year": "2010",
+   "factory_section": "Poufs And Benches",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/poufs-and-benches/topaze",
+   "factory_text": "Functional, multipurpose furnishing accessories with many shapes.\n\nStools in beech wood, covered in fabric or leather.",
+   "factory_text_ru": "",
+   "tech": "Covers: Beech Wood, Leather, Pelle Plus, Pelle Anilina Sense, Barren, Claron, CRUISE-CHENILLE, CRUISE-MELANGE, Coco, DAMARIS, Fargo, Penny, SPLIT, Sandiego, Chamonix, Daydreamer, DUCHESSA, Flash, Tinto, Abba, Alcide, Nelson, Tonga, Willis",
+   "versions": [
+    {
+     "code": "54070",
+     "name": "54070 — Stool in fabric or leather (Ø 46 x h 41 cm)",
+     "cm": {
+      "d": 46,
+      "h": 41
+     }
+    },
+    {
+     "code": "54071",
+     "name": "54071 — Stool in fabric or leather (Ø 47 x h 49 cm)",
+     "cm": {
+      "d": 47,
+      "h": 49
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Beech Wood": {
+     "count": 4,
+     "examples": [
+      "30 Mat beech wood polyurethane polishing",
+      "73 Mat beech wood polyurethane polishing",
+      "91 Mat beech wood polyurethane polishing",
+      "54 Mat beech wood polyurethane polishing"
+     ]
+    },
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    },
+    "Leather / Pelle Anilina Sense": {
+     "count": 8,
+     "examples": [
+      "9244 Pomice",
+      "9245 Caolino",
+      "9249 Tufo",
+      "9247 Terra Di Siena",
+      "9251 Ambra",
+      "9246 Ardesia"
+     ]
+    },
+    "Fabric / Barren": {
+     "count": 18,
+     "examples": [
+      "5399 Bianco",
+      "5400 Avorio",
+      "5401 Alluminio",
+      "5402 Argento",
+      "5403 Castagno",
+      "5404 Pietra"
+     ]
+    },
+    "Fabric / Claron": {
+     "count": 24,
+     "examples": [
+      "5333 Avorio",
+      "5334 Madreperla",
+      "5335 Talpa",
+      "5336 carruba",
+      "5337 castagna",
+      "5338 legno di rosa"
+     ]
+    },
+    "Fabric / CRUISE-CHENILLE": {
+     "count": 9,
+     "examples": [
+      "5266 Avena",
+      "5265 Carciofo",
+      "5263 Celeste",
+      "5269 Corteccia",
+      "5264 Emerald",
+      "5268 Flamingo"
+     ]
+    },
+    "Fabric / CRUISE-MELANGE": {
+     "count": 11,
+     "examples": [
+      "5274 Blue Qualrtz",
+      "5270 Cenere",
+      "5279 Cherry",
+      "5271 Ghiaia",
+      "5274 Glacier",
+      "5272 Graphite"
+     ]
+    },
+    "Fabric / Coco": {
+     "count": 18,
+     "examples": [
+      "6833 Ivory",
+      "6834 Perla",
+      "6835 Brume",
+      "6836 Silver",
+      "6837 Turchese",
+      "6838 Green"
+     ]
+    },
+    "Fabric / DAMARIS": {
+     "count": 20,
+     "examples": [
+      "5313 Bianco",
+      "5326 Bordeaux",
+      "5314 Frost",
+      "5316 Ghiaia",
+      "5324 Guscio",
+      "5315 Iceberg"
+     ]
+    },
+    "Fabric / Fargo": {
+     "count": 22,
+     "examples": [
+      "5451 Bianco",
+      "5452 Crema",
+      "5453 Mastice",
+      "5454 Pietra",
+      "5455 Visone",
+      "5456 Terra"
+     ]
+    },
+    "Fabric / Penny": {
+     "count": 26,
+     "examples": [
+      "6704 Avorio",
+      "6705 Sable",
+      "6722 Corda",
+      "6706 Lino",
+      "6708 Roccia",
+      "6725 Alga"
+     ]
+    },
+    "Fabric / SPLIT": {
+     "count": 16,
+     "examples": [
+      "5295 acciaio",
+      "5296 asfalto",
+      "5292 corda",
+      "5286 germoglio",
+      "5282 ghiaccio",
+      "5291 ginger"
+     ]
+    },
+    "Fabric / Sandiego": {
+     "count": 16,
+     "examples": [
+      "5036 Bianco",
+      "5037 Argento",
+      "5038 Ecru",
+      "5039 Nero",
+      "5040 Seppia",
+      "5041 Lava"
+     ]
+    },
+    "Fabric / Chamonix": {
+     "count": 14,
+     "examples": [
+      "5417 Nacre",
+      "5418 Argent",
+      "5419 Ocre",
+      "5420 Canard",
+      "5421 Kaki",
+      "5422 Argile"
+     ]
+    },
+    "Fabric / Daydreamer": {
+     "count": 12,
+     "examples": [
+      "5222 Algue",
+      "5217 Bois de rose",
+      "5218 Caki",
+      "5224 Dark Chocolate",
+      "5223 Fumo",
+      "5220 Ice"
+     ]
+    },
+    "Fabric / DUCHESSA": {
+     "count": 26,
+     "examples": [
+      "5245 Ballet Slipper",
+      "5258 Bamboo",
+      "5246 Blueberry",
+      "5257 Bottiglia",
+      "5235 Cappuccino",
+      "5236 Corteccia"
+     ]
+    },
+    "Fabric / Flash": {
+     "count": 10,
+     "examples": [
+      "5441 Avorio",
+      "5442 Sabbia",
+      "5443 Roccia",
+      "5444 caffè",
+      "5445 blu",
+      "5446 Ardesia"
+     ]
+    },
+    "Fabric / Tinto": {
+     "count": 26,
+     "examples": [
+      "6510 Ottico",
+      "6511 Avorio",
+      "6512 Sable",
+      "6513 Acier",
+      "6514 Taupe",
+      "6515 Chocolat"
+     ]
+    },
+    "Fabric / Abba": {
+     "count": 10,
+     "examples": [
+      "5431 Bianco",
+      "5432 Vaniglia",
+      "5433 Cenere",
+      "5434 Sabbia",
+      "5435 Elefante",
+      "5436 Lava"
+     ]
+    },
+    "Fabric / Alcide": {
+     "count": 12,
+     "examples": [
+      "5209 Bosco",
+      "5202 Caracal",
+      "5208 Celeste",
+      "5211 Cincillà",
+      "5206 Corallo",
+      "5201 Ermellino"
+     ]
+    },
+    "Fabric / Nelson": {
+     "count": 10,
+     "examples": [
+      "5357 Acier",
+      "5358 Flax",
+      "5359 Blanc Petale",
+      "5360 Neige Poudre",
+      "5361 Glacier",
+      "5362 Bleu canard"
+     ]
+    },
+    "Fabric / Tonga": {
+     "count": 7,
+     "examples": [
+      "5198 Bronzo",
+      "5199 Bruciato",
+      "5200 Cielo",
+      "5194 Grigio",
+      "5197 Lichene",
+      "5196 Muschio"
+     ]
+    },
+    "Fabric / Willis": {
+     "count": 8,
+     "examples": [
+      "5366 Bone",
+      "5367 linen",
+      "5369 ocean",
+      "5372 saffron",
+      "5370 sand",
+      "5368 sky"
+     ]
+    }
+   },
+   "photos": 2,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-H10617",
+   "name_now": {
+    "en": "Town storage system",
+    "ru": "Система хранения Town",
+    "de": "Town Stauraumsystem",
+    "fr": "Système de rangement Town",
+    "es": "Sistema de almacenaje Town"
+   },
+   "type_now": "storage",
+   "type_now_en": "storage system",
+   "category": "storage",
+   "place": "indoor",
+   "model": "Town",
+   "collection": "Town",
+   "designer": "Carlo Colombo",
+   "year": "2014, 2015, 2018",
+   "factory_section": "Containers And Bookcases",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/containers-and-bookcases/town",
+   "factory_text": "Town is a new skyline for living to compose as desired, in a vertical and horizontal way, depending on spaces and requirements, the rooms of the home.\n\nA multifunctional piece of furniture in walnut Canaletto wood, metal and saddle leather with a single, double or triple base and LED lighting on the lower part.",
+   "factory_text_ru": "",
+   "tech": "Covers: Walnut",
+   "versions": [
+    {
+     "code": "80000",
+     "name": "80000 — Single base in walnut canaletto (82 x 65 x h 12 cm)",
+     "cm": {
+      "l": 82,
+      "w": 65,
+      "h": 12
+     }
+    },
+    {
+     "code": "80001",
+     "name": "80001 — Double base in walnut canaletto (162 x 65 x h 12 cm)",
+     "cm": {
+      "l": 162,
+      "w": 65,
+      "h": 12
+     }
+    },
+    {
+     "code": "80002",
+     "name": "80002 — Triple base in walnut canaletto (241 x 65 x h 12 cm)",
+     "cm": {
+      "l": 241,
+      "w": 65,
+      "h": 12
+     }
+    },
+    {
+     "code": "80004",
+     "name": "80004 — Double flush base for cabinet (150 x 50 x h 7 cm)",
+     "cm": {
+      "l": 150,
+      "w": 50,
+      "h": 7
+     }
+    },
+    {
+     "code": "80005",
+     "name": "80005 — Triple flush base for cabinet (224 x 50 x h 7 cm)",
+     "cm": {
+      "l": 224,
+      "w": 50,
+      "h": 7
+     }
+    },
+    {
+     "code": "80006",
+     "name": "80006 — Double flush base for cabinet (150 x 50 x h 3 cm)",
+     "cm": {
+      "l": 150,
+      "w": 50,
+      "h": 3
+     }
+    },
+    {
+     "code": "80007",
+     "name": "80007 — Triple flush base for cabinet (224 x 50 x h 3 cm)",
+     "cm": {
+      "l": 224,
+      "w": 50,
+      "h": 3
+     }
+    },
+    {
+     "code": "80010",
+     "name": "80010 — Marble insert for base without cabinet for item nr 80000/80001/80002 (79 x 62 x h 1,5 cm)",
+     "cm": {
+      "l": 79,
+      "w": 62,
+      "h": 1.5
+     }
+    },
+    {
+     "code": "80011",
+     "name": "80011 — Marble insert for base with cabinet for item nr 80000/80001/80002 (79 x 62 x h 1,5 cm)",
+     "cm": {
+      "l": 79,
+      "w": 62,
+      "h": 1.5
+     }
+    },
+    {
+     "code": "80012",
+     "name": "80012 — Lacquered wooden insert for base without cabinet for item nr 80000/80001/80002 (79 x 62 x h 1,5 cm)",
+     "cm": {
+      "l": 79,
+      "w": 62,
+      "h": 1.5
+     }
+    },
+    {
+     "code": "80013",
+     "name": "80013 — Lacquered wooden insert for base with cabinet for item nr 80000/80001/80002 (79 x 62 x h 1,5 cm)",
+     "cm": {
+      "l": 79,
+      "w": 62,
+      "h": 1.5
+     }
+    },
+    {
+     "code": "80051",
+     "name": "80051 — Swivel cabinet in walnut canaletto with partitions and 4 drawers (69 x 52 x h 190 cm)",
+     "cm": {
+      "l": 69,
+      "w": 52,
+      "h": 190
+     }
+    },
+    {
+     "code": "80052",
+     "name": "80052 — Swivel cabinet in walnut canaletto with partitions and 8 drawers (69 x 52 x h 190 cm)",
+     "cm": {
+      "l": 69,
+      "w": 52,
+      "h": 190
+     }
+    },
+    {
+     "code": "80053",
+     "name": "80053 — Swivel cabinet in walnut canaletto with shelves (69 x 52 x h 190 cm)",
+     "cm": {
+      "l": 69,
+      "w": 52,
+      "h": 190
+     }
+    },
+    {
+     "code": "80101",
+     "name": "80101 — Cabinet in metal with swivel drawers and 2 doors (227 x 52 x h 76 cm)",
+     "cm": {
+      "l": 227,
+      "w": 52,
+      "h": 76
+     }
+    },
+    {
+     "code": "80106",
+     "name": "80106 — Cabinet in metal with 3 drawers (153 x 52 x h 76 cm)",
+     "cm": {
+      "l": 153,
+      "w": 52,
+      "h": 76
+     }
+    },
+    {
+     "code": "80110",
+     "name": "80110 — Cabinet in metal with 2 drawers (153 x 52 x h 44 cm)",
+     "cm": {
+      "l": 153,
+      "w": 52,
+      "h": 44
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Walnut": {
+     "count": 3,
+     "examples": [
+      "11 Natural walnut canaletto acrylic polishing",
+      "2W Natural walnut canaletto acrylic polishing",
+      "2Z Natural walnut canaletto acrylic polishing"
+     ]
+    }
+   },
+   "photos": 3,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-D10618",
+   "name_now": {
+    "en": "Trace accessory",
+    "ru": "Аксессуар Trace",
+    "de": "Trace Accessoire",
+    "fr": "Accessoire Trace",
+    "es": "Accesorio Trace"
+   },
+   "type_now": "decor",
+   "type_now_en": "accessory",
+   "category": "decor",
+   "place": "indoor",
+   "model": "Trace",
+   "collection": "Trace",
+   "designer": "",
+   "year": "2022",
+   "factory_section": "Atmosphere / Furnishing Accessories",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/giorgetti-atmosphere/furnishing-accessories/trace",
+   "factory_text": "Fil posé wallpaper, fabric effect. 2022\n\nDigital print with abstract pattern inspired by the impression left by a fingerprint. Available in six colour shades.",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "GA109",
+     "name": "GA109 — Wall upholstery (100 x h 3000 cm)",
+     "cm": {
+      "h": 3000
+     }
+    }
+   ],
+   "finishes": {},
+   "photos": 6,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-D10619",
+   "name_now": {
+    "en": "Tube vase",
+    "ru": "Ваза Tube",
+    "de": "Tube Vase",
+    "fr": "Vase Tube",
+    "es": "Jarrón Tube"
+   },
+   "type_now": "vase",
+   "type_now_en": "vase",
+   "category": "decor",
+   "place": "indoor",
+   "model": "Tube",
+   "collection": "Tube",
+   "designer": "",
+   "year": "2016",
+   "factory_section": "Atmosphere / Accessories",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/giorgetti-atmosphere/Accessories/tube",
+   "factory_text": "Vase that is blown into a mould that forms its cylindrical shape. 2016\n\nThe special decoration of Tube is created by hand-polishing the surface.",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "GA055G",
+     "name": "GA055G — High vase grey (Ø 10 x h 60 cm)",
+     "cm": {
+      "d": 10,
+      "h": 60
+     }
+    },
+    {
+     "code": "GA057G",
+     "name": "GA057G — Low vase grey (Ø 10 x h 40 cm)",
+     "cm": {
+      "d": 10,
+      "h": 40
+     }
+    },
+    {
+     "code": "GA110G",
+     "name": "GA110G — High vase white (Ø 10 x h 60 cm)",
+     "cm": {
+      "d": 10,
+      "h": 60
+     }
+    },
+    {
+     "code": "GA111G",
+     "name": "GA111G — High vase amethyst (Ø 10 x h 60 cm)",
+     "cm": {
+      "d": 10,
+      "h": 60
+     }
+    },
+    {
+     "code": "GA112G",
+     "name": "GA112G — Low vase white (Ø 10 x h 40 cm)",
+     "cm": {
+      "d": 10,
+      "h": 40
+     }
+    },
+    {
+     "code": "GA113G",
+     "name": "GA113G — Low vase amethyst (Ø 10 x h 40 cm)",
+     "cm": {
+      "d": 10,
+      "h": 40
+     }
+    }
+   ],
+   "finishes": {},
+   "photos": 6,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-T10620",
+   "name_now": {
+    "en": "Tycoon desk",
+    "ru": "Письменный стол Tycoon",
+    "de": "Tycoon Schreibtisch",
+    "fr": "Bureau Tycoon",
+    "es": "Escritorio Tycoon"
+   },
+   "type_now": "desk",
+   "type_now_en": "desk",
+   "category": "desks",
+   "place": "indoor",
+   "model": "Tycoon",
+   "collection": "Tycoon",
+   "designer": "Roberto Lazzeroni",
+   "year": "2014",
+   "factory_section": "Writing Desk",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/writing-desk/tycoon",
+   "factory_text": "Writing desk with a soft line and evident geometric decoration on the top.\n\nExecutive writing desk in maple, indian rosewood and saddle leather, with details in bronze colour painted metal with a natural effect.",
+   "factory_text_ru": "",
+   "tech": "Covers: Maple, Sapele Pommele",
+   "versions": [
+    {
+     "code": "70030",
+     "name": "70030 — Writing desk with saddle leather central insert and chest of drawers, rosewood inserts (270 x 100 x h 74 cm)",
+     "cm": {
+      "l": 270,
+      "w": 100,
+      "h": 74
+     }
+    },
+    {
+     "code": "70040",
+     "name": "70040 — Writing desk with saddle leather central insert and chest of drawers, saddle leather inserts (270 x 100 x h 74 cm)",
+     "cm": {
+      "l": 270,
+      "w": 100,
+      "h": 74
+     }
+    },
+    {
+     "code": "70034",
+     "name": "70034 — Writing desk with saddle leather central insert and chest of drawers, sapele inserts (270 x 100 x h 74 cm)",
+     "cm": {
+      "l": 270,
+      "w": 100,
+      "h": 74
+     }
+    },
+    {
+     "code": "70031",
+     "name": "70031 — Writing desk with right worktop, saddle leather central insert and chest of drawers, rosewood inserts and worktop (270 x 162 x h 74 cm)",
+     "cm": {
+      "l": 270,
+      "w": 162,
+      "h": 74
+     }
+    },
+    {
+     "code": "70041",
+     "name": "70041 — Writing desk with right worktop, saddle leather central insert and chest of drawers, saddle leather inserts and worktop (270 x 162 x h 74 cm)",
+     "cm": {
+      "l": 270,
+      "w": 162,
+      "h": 74
+     }
+    },
+    {
+     "code": "70043",
+     "name": "70043 — Writing desk with right worktop, saddle leather central insert and chest of drawers, sapele inserts and worktop (270 x 162 x h 74 cm)",
+     "cm": {
+      "l": 270,
+      "w": 162,
+      "h": 74
+     }
+    },
+    {
+     "code": "70032",
+     "name": "70032 — Writing desk with left worktop, saddle leather central insert and chest of drawers, rosewood inserts and worktop (270 x 162 x h 74 cm)",
+     "cm": {
+      "l": 270,
+      "w": 162,
+      "h": 74
+     }
+    },
+    {
+     "code": "70042",
+     "name": "70042 — Writing desk with left worktop, saddle leather central insert and chest of drawers, saddle leather inserts and worktop (270 x 162 x h 74 cm)",
+     "cm": {
+      "l": 270,
+      "w": 162,
+      "h": 74
+     }
+    },
+    {
+     "code": "70044",
+     "name": "70044 — Writing desk with left worktop, saddle leather central insert and chest of drawers, sapele inserts and worktop (270 x 162 x h 74 cm)",
+     "cm": {
+      "l": 270,
+      "w": 162,
+      "h": 74
+     }
+    },
+    {
+     "code": "70033",
+     "name": "70033 — Modesty panel with saddle leather upholstery (101 x 2,5 x h 64 IN 39 3/4 X 1 X H 25 1/8 cm)",
+     "cm": {
+      "l": 101,
+      "w": 2.5,
+      "h": 64
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Maple": {
+     "count": 1,
+     "examples": [
+      "28 Mat maple polyurethane polishing",
+      "45 Acero Opaco Lucidatura Poliuretanica",
+      "2C Maple acrylic polishing",
+      "2B Maple acrylic polishing",
+      "98 Maple acrylic polishing"
+     ]
+    },
+    "Wood / Sapele Pommele": {
+     "count": 3,
+     "examples": [
+      "2E Sapele pommelle mahogany water and acrylic polishing",
+      "2F Sapele pommelle mahogany water and acrylic polishing",
+      "2G Sapele pommelle mahogany water and acrylic polishing"
+     ]
+    }
+   },
+   "photos": 6,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DL-S10621",
+   "name_now": {
+    "en": "Upward pendant lamp",
+    "ru": "Подвесной светильник Upward",
+    "de": "Upward Pendelleuchte",
+    "fr": "Suspension Upward",
+    "es": "Lámpara colgante Upward"
+   },
+   "type_now": "suspension",
+   "type_now_en": "pendant lamp",
+   "category": "pendant-lamps",
+   "place": "indoor",
+   "model": "Upward",
+   "collection": "Upward",
+   "designer": "Nava + Arosio Studio",
+   "year": "2024",
+   "factory_section": "Atmosphere / Lighting",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/giorgetti-atmosphere/Lighting/upward",
+   "factory_text": "Like a sculpture, Upward merges into the space, reflecting and distorting it and then revealing its warm light at dusk.\n\nFloor and suspended lamp with sculptural aspect. Composed by nine spheres of different diameters in borosilicate glass, mirror titanium-hue PVD finish.LED lighting.For the floor lamp: touch control on the upper part.\"The project was born out of a reflection that led us to understand how the home is the functional setting of our lives, a place where we live unique experiences of our daily lives.\"-Nava+Arosio",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "GA457G",
+     "name": "GA457G — Floor lamp in borosilicate glass,  mirror titanium-hue PVD finish (Ø 31 x h 178 cm)",
+     "cm": {
+      "d": 31,
+      "h": 178
+     }
+    },
+    {
+     "code": "GA458G",
+     "name": "GA458G — Suspended  lamp in borosilicate glass,  mirror titanium-hue PVD finish (178 x Ø 31 cm)",
+     "cm": {
+      "d": 31
+     }
+    }
+   ],
+   "finishes": {},
+   "photos": 4,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-S10622",
+   "name_now": {
+    "en": "Urban sofa",
+    "ru": "Диван Urban",
+    "de": "Urban Sofa",
+    "fr": "Canapé Urban",
+    "es": "Sofá Urban"
+   },
+   "type_now": "sofa",
+   "type_now_en": "sofa",
+   "category": "sofas",
+   "place": "indoor",
+   "model": "Urban",
+   "collection": "Urban",
+   "designer": "Carlo Colombo",
+   "year": "2015",
+   "factory_section": "Sofas",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/sofas/urban",
+   "factory_text": "Urban unites the design of various periods with an industrial and contemporary architecture.\n\nArmchair and sofas in walnut canaletto wood and inserts of the front legs in shiny black nickel finished metal.",
+   "factory_text_ru": "",
+   "tech": "Covers: Walnut, Leather, Pelle Plus, Pelle Anilina Sense, Barren, Claron, CRUISE-CHENILLE, CRUISE-MELANGE, Coco, DAMARIS, Fargo, Penny, SPLIT, Sandiego, Chamonix, Daydreamer, DUCHESSA, Flash, Tinto, Abba, Alcide, Nelson, Willis",
+   "versions": [
+    {
+     "code": "66500",
+     "name": "66500 — Armchair with fabric or leather upholstery (96 x 93 x h 74 cm)",
+     "cm": {
+      "l": 96,
+      "w": 93,
+      "h": 74
+     }
+    },
+    {
+     "code": "66501",
+     "name": "66501 — Armchair with external in leather, fabric or leather cushions (96 x 93 x h 74 cm)",
+     "cm": {
+      "l": 96,
+      "w": 93,
+      "h": 74
+     }
+    },
+    {
+     "code": "66530",
+     "name": "66530 — Two-seat sofa with fabric or leather upholstery (200 x 93 x h 74 cm)",
+     "cm": {
+      "l": 200,
+      "w": 93,
+      "h": 74
+     }
+    },
+    {
+     "code": "66531",
+     "name": "66531 — Two-seat sofa with external in leather, fabric or leather cushions (200 x 93 x h 74 cm)",
+     "cm": {
+      "l": 200,
+      "w": 93,
+      "h": 74
+     }
+    },
+    {
+     "code": "66510",
+     "name": "66510 — Two-seat sofa with fabric or leather upholstery (240 x 93 x h 74 cm)",
+     "cm": {
+      "l": 240,
+      "w": 93,
+      "h": 74
+     }
+    },
+    {
+     "code": "66511",
+     "name": "66511 — Two-seat sofa with external in leather, fabric or leather cushions (240 x 93 x h 74 cm)",
+     "cm": {
+      "l": 240,
+      "w": 93,
+      "h": 74
+     }
+    },
+    {
+     "code": "66520",
+     "name": "66520 — Three-seat sofa with fabric or leather upholstery (280 x 93 x h 74 cm)",
+     "cm": {
+      "l": 280,
+      "w": 93,
+      "h": 74
+     }
+    },
+    {
+     "code": "66521",
+     "name": "66521 — Three-seat sofa with external in leather, fabric or leather cushions (280 x 93 x h 74 cm)",
+     "cm": {
+      "l": 280,
+      "w": 93,
+      "h": 74
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Walnut": {
+     "count": 3,
+     "examples": [
+      "11 Natural walnut canaletto acrylic polishing",
+      "2W Natural walnut canaletto acrylic polishing",
+      "2Z Natural walnut canaletto acrylic polishing"
+     ]
+    },
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    },
+    "Leather / Pelle Anilina Sense": {
+     "count": 8,
+     "examples": [
+      "9244 Pomice",
+      "9245 Caolino",
+      "9249 Tufo",
+      "9247 Terra Di Siena",
+      "9251 Ambra",
+      "9246 Ardesia"
+     ]
+    },
+    "Fabric / Barren": {
+     "count": 18,
+     "examples": [
+      "5399 Bianco",
+      "5400 Avorio",
+      "5401 Alluminio",
+      "5402 Argento",
+      "5403 Castagno",
+      "5404 Pietra"
+     ]
+    },
+    "Fabric / Claron": {
+     "count": 24,
+     "examples": [
+      "5333 Avorio",
+      "5334 Madreperla",
+      "5335 Talpa",
+      "5336 carruba",
+      "5337 castagna",
+      "5338 legno di rosa"
+     ]
+    },
+    "Fabric / CRUISE-CHENILLE": {
+     "count": 9,
+     "examples": [
+      "5266 Avena",
+      "5265 Carciofo",
+      "5263 Celeste",
+      "5269 Corteccia",
+      "5264 Emerald",
+      "5268 Flamingo"
+     ]
+    },
+    "Fabric / CRUISE-MELANGE": {
+     "count": 11,
+     "examples": [
+      "5274 Blue Qualrtz",
+      "5270 Cenere",
+      "5279 Cherry",
+      "5271 Ghiaia",
+      "5274 Glacier",
+      "5272 Graphite"
+     ]
+    },
+    "Fabric / Coco": {
+     "count": 18,
+     "examples": [
+      "6833 Ivory",
+      "6834 Perla",
+      "6835 Brume",
+      "6836 Silver",
+      "6837 Turchese",
+      "6838 Green"
+     ]
+    },
+    "Fabric / DAMARIS": {
+     "count": 20,
+     "examples": [
+      "5313 Bianco",
+      "5326 Bordeaux",
+      "5314 Frost",
+      "5316 Ghiaia",
+      "5324 Guscio",
+      "5315 Iceberg"
+     ]
+    },
+    "Fabric / Fargo": {
+     "count": 22,
+     "examples": [
+      "5451 Bianco",
+      "5452 Crema",
+      "5453 Mastice",
+      "5454 Pietra",
+      "5455 Visone",
+      "5456 Terra"
+     ]
+    },
+    "Fabric / Penny": {
+     "count": 26,
+     "examples": [
+      "6704 Avorio",
+      "6705 Sable",
+      "6722 Corda",
+      "6706 Lino",
+      "6708 Roccia",
+      "6725 Alga"
+     ]
+    },
+    "Fabric / SPLIT": {
+     "count": 16,
+     "examples": [
+      "5295 acciaio",
+      "5296 asfalto",
+      "5292 corda",
+      "5286 germoglio",
+      "5282 ghiaccio",
+      "5291 ginger"
+     ]
+    },
+    "Fabric / Sandiego": {
+     "count": 16,
+     "examples": [
+      "5036 Bianco",
+      "5037 Argento",
+      "5038 Ecru",
+      "5039 Nero",
+      "5040 Seppia",
+      "5041 Lava"
+     ]
+    },
+    "Fabric / Chamonix": {
+     "count": 14,
+     "examples": [
+      "5417 Nacre",
+      "5418 Argent",
+      "5419 Ocre",
+      "5420 Canard",
+      "5421 Kaki",
+      "5422 Argile"
+     ]
+    },
+    "Fabric / Daydreamer": {
+     "count": 12,
+     "examples": [
+      "5222 Algue",
+      "5217 Bois de rose",
+      "5218 Caki",
+      "5224 Dark Chocolate",
+      "5223 Fumo",
+      "5220 Ice"
+     ]
+    },
+    "Fabric / DUCHESSA": {
+     "count": 26,
+     "examples": [
+      "5245 Ballet Slipper",
+      "5258 Bamboo",
+      "5246 Blueberry",
+      "5257 Bottiglia",
+      "5235 Cappuccino",
+      "5236 Corteccia"
+     ]
+    },
+    "Fabric / Flash": {
+     "count": 10,
+     "examples": [
+      "5441 Avorio",
+      "5442 Sabbia",
+      "5443 Roccia",
+      "5444 caffè",
+      "5445 blu",
+      "5446 Ardesia"
+     ]
+    },
+    "Fabric / Tinto": {
+     "count": 26,
+     "examples": [
+      "6510 Ottico",
+      "6511 Avorio",
+      "6512 Sable",
+      "6513 Acier",
+      "6514 Taupe",
+      "6515 Chocolat"
+     ]
+    },
+    "Fabric / Abba": {
+     "count": 10,
+     "examples": [
+      "5431 Bianco",
+      "5432 Vaniglia",
+      "5433 Cenere",
+      "5434 Sabbia",
+      "5435 Elefante",
+      "5436 Lava"
+     ]
+    },
+    "Fabric / Alcide": {
+     "count": 12,
+     "examples": [
+      "5209 Bosco",
+      "5202 Caracal",
+      "5208 Celeste",
+      "5211 Cincillà",
+      "5206 Corallo",
+      "5201 Ermellino"
+     ]
+    },
+    "Fabric / Nelson": {
+     "count": 10,
+     "examples": [
+      "5357 Acier",
+      "5358 Flax",
+      "5359 Blanc Petale",
+      "5360 Neige Poudre",
+      "5361 Glacier",
+      "5362 Bleu canard"
+     ]
+    },
+    "Fabric / Willis": {
+     "count": 8,
+     "examples": [
+      "5366 Bone",
+      "5367 linen",
+      "5369 ocean",
+      "5372 saffron",
+      "5370 sand",
+      "5368 sky"
+     ]
+    }
+   },
+   "photos": 3,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-D10623",
+   "name_now": {
+    "en": "Uyuni mirror",
+    "ru": "Зеркало Uyuni",
+    "de": "Uyuni Spiegel",
+    "fr": "Miroir Uyuni",
+    "es": "Espejo Uyuni"
+   },
+   "type_now": "mirror",
+   "type_now_en": "mirror",
+   "category": "mirrors",
+   "place": "indoor",
+   "model": "Uyuni",
+   "collection": "Uyuni",
+   "designer": "m2atelier",
+   "year": "2021",
+   "factory_section": "Complements",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/complements/uyuni",
+   "factory_text": "Precious and elegant mirror, characterised by a gentle outline and a reflective surface, inspired by the Bolivian lake from which it takes its name.\n\nSmoked grey mirror with titanium liquid metal effect lacquered profile, shelf in Canaletto walnut.",
+   "factory_text_ru": "",
+   "tech": "Covers: Walnut",
+   "versions": [
+    {
+     "code": "60105",
+     "name": "60105 — Fumé grey mirror with lacquered frame with titanium liquid metal effect with LED (175 x 17,9 x h 140 cm)",
+     "cm": {
+      "l": 175,
+      "w": 17.9,
+      "h": 140
+     }
+    },
+    {
+     "code": "60100",
+     "name": "60100 — Fumé grey mirror with lacquered frame with titanium liquid metal effect without LED (175 x 17,9 x h 140 cm)",
+     "cm": {
+      "l": 175,
+      "w": 17.9,
+      "h": 140
+     }
+    },
+    {
+     "code": "60101",
+     "name": "60101 — Leather storage compatments (33,6 x 9,6 x h 8 cm)",
+     "cm": {
+      "l": 33.6,
+      "w": 9.6,
+      "h": 8
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Walnut": {
+     "count": 3,
+     "examples": [
+      "11 Natural walnut canaletto acrylic polishing",
+      "2W Natural walnut canaletto acrylic polishing",
+      "2Z Natural walnut canaletto acrylic polishing"
+     ]
+    }
+   },
+   "photos": 1,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-D10624",
+   "name_now": {
+    "en": "Vanity vase",
+    "ru": "Ваза Vanity",
+    "de": "Vanity Vase",
+    "fr": "Vase Vanity",
+    "es": "Jarrón Vanity"
+   },
+   "type_now": "vase",
+   "type_now_en": "vase",
+   "category": "decor",
+   "place": "indoor",
+   "model": "Vanity",
+   "collection": "Vanity",
+   "designer": "",
+   "year": "2016",
+   "factory_section": "Atmosphere / Accessories",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/giorgetti-atmosphere/Accessories/vanity",
+   "factory_text": "Deep shades of blue characterise this mouth-blown solid glass vase worked with a submerged core in colour and outer crystal. 2016\n\nDetails",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "GA032G",
+     "name": "GA032G — High vase crystal blue-grey (Ø 13 x h 29 cm)",
+     "cm": {
+      "d": 13,
+      "h": 29
+     }
+    },
+    {
+     "code": "GA033G",
+     "name": "GA033G — Low vase crystal blue-grey (Ø 16 x h 21 cm)",
+     "cm": {
+      "d": 16,
+      "h": 21
+     }
+    }
+   ],
+   "finishes": {},
+   "photos": 5,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-C10625",
+   "name_now": {
+    "en": "Venus stool",
+    "ru": "Табурет Venus",
+    "de": "Venus Hocker",
+    "fr": "Tabouret Venus",
+    "es": "Taburete Venus"
+   },
+   "type_now": "stool",
+   "type_now_en": "stool",
+   "category": "stools",
+   "place": "indoor",
+   "model": "Venus",
+   "collection": "Venus",
+   "designer": "Roberto Lazzeroni",
+   "year": "2014",
+   "factory_section": "Poufs And Benches",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/poufs-and-benches/venus-pouf",
+   "factory_text": "Venus is a feminine pouf with a soft, linear design.\n\nStool with the handle and the external upholstery in leather,and the cushion in fabric or leather.",
+   "factory_text_ru": "",
+   "tech": "Covers: Leather, Pelle Plus, Pelle Anilina Sense, Barren, Claron, CRUISE-CHENILLE, CRUISE-MELANGE, Gold Dust, Coco, DAMARIS, Fargo, Penny, SPLIT, Sandiego, Chamonix, Daydreamer, DUCHESSA, Flash, Tinto, Abba, Alcide, Nelson, Willis",
+   "versions": [
+    {
+     "code": "70085",
+     "name": "70085 — Stool in leather, seat in fabric or leather (40 x 40 x h 48 cm)",
+     "cm": {
+      "l": 40,
+      "w": 40,
+      "h": 48
+     }
+    }
+   ],
+   "finishes": {
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    },
+    "Leather / Pelle Anilina Sense": {
+     "count": 8,
+     "examples": [
+      "9244 Pomice",
+      "9245 Caolino",
+      "9249 Tufo",
+      "9247 Terra Di Siena",
+      "9251 Ambra",
+      "9246 Ardesia"
+     ]
+    },
+    "Fabric / Barren": {
+     "count": 18,
+     "examples": [
+      "5399 Bianco",
+      "5400 Avorio",
+      "5401 Alluminio",
+      "5402 Argento",
+      "5403 Castagno",
+      "5404 Pietra"
+     ]
+    },
+    "Fabric / Claron": {
+     "count": 24,
+     "examples": [
+      "5333 Avorio",
+      "5334 Madreperla",
+      "5335 Talpa",
+      "5336 carruba",
+      "5337 castagna",
+      "5338 legno di rosa"
+     ]
+    },
+    "Fabric / CRUISE-CHENILLE": {
+     "count": 9,
+     "examples": [
+      "5266 Avena",
+      "5265 Carciofo",
+      "5263 Celeste",
+      "5269 Corteccia",
+      "5264 Emerald",
+      "5268 Flamingo"
+     ]
+    },
+    "Fabric / CRUISE-MELANGE": {
+     "count": 11,
+     "examples": [
+      "5274 Blue Qualrtz",
+      "5270 Cenere",
+      "5279 Cherry",
+      "5271 Ghiaia",
+      "5274 Glacier",
+      "5272 Graphite"
+     ]
+    },
+    "Fabric / Gold Dust": {
+     "count": 24,
+     "examples": [
+      "5375 Blanc",
+      "5376 Poudre",
+      "5377 Avoine",
+      "5378 Lin",
+      "5379 Noisette",
+      "5380 Terre"
+     ]
+    },
+    "Fabric / Coco": {
+     "count": 18,
+     "examples": [
+      "6833 Ivory",
+      "6834 Perla",
+      "6835 Brume",
+      "6836 Silver",
+      "6837 Turchese",
+      "6838 Green"
+     ]
+    },
+    "Fabric / DAMARIS": {
+     "count": 20,
+     "examples": [
+      "5313 Bianco",
+      "5326 Bordeaux",
+      "5314 Frost",
+      "5316 Ghiaia",
+      "5324 Guscio",
+      "5315 Iceberg"
+     ]
+    },
+    "Fabric / Fargo": {
+     "count": 22,
+     "examples": [
+      "5451 Bianco",
+      "5452 Crema",
+      "5453 Mastice",
+      "5454 Pietra",
+      "5455 Visone",
+      "5456 Terra"
+     ]
+    },
+    "Fabric / Penny": {
+     "count": 26,
+     "examples": [
+      "6704 Avorio",
+      "6705 Sable",
+      "6722 Corda",
+      "6706 Lino",
+      "6708 Roccia",
+      "6725 Alga"
+     ]
+    },
+    "Fabric / SPLIT": {
+     "count": 16,
+     "examples": [
+      "5295 acciaio",
+      "5296 asfalto",
+      "5292 corda",
+      "5286 germoglio",
+      "5282 ghiaccio",
+      "5291 ginger"
+     ]
+    },
+    "Fabric / Sandiego": {
+     "count": 16,
+     "examples": [
+      "5036 Bianco",
+      "5037 Argento",
+      "5038 Ecru",
+      "5039 Nero",
+      "5040 Seppia",
+      "5041 Lava"
+     ]
+    },
+    "Fabric / Chamonix": {
+     "count": 14,
+     "examples": [
+      "5417 Nacre",
+      "5418 Argent",
+      "5419 Ocre",
+      "5420 Canard",
+      "5421 Kaki",
+      "5422 Argile"
+     ]
+    },
+    "Fabric / Daydreamer": {
+     "count": 12,
+     "examples": [
+      "5222 Algue",
+      "5217 Bois de rose",
+      "5218 Caki",
+      "5224 Dark Chocolate",
+      "5223 Fumo",
+      "5220 Ice"
+     ]
+    },
+    "Fabric / DUCHESSA": {
+     "count": 26,
+     "examples": [
+      "5245 Ballet Slipper",
+      "5258 Bamboo",
+      "5246 Blueberry",
+      "5257 Bottiglia",
+      "5235 Cappuccino",
+      "5236 Corteccia"
+     ]
+    },
+    "Fabric / Flash": {
+     "count": 10,
+     "examples": [
+      "5441 Avorio",
+      "5442 Sabbia",
+      "5443 Roccia",
+      "5444 caffè",
+      "5445 blu",
+      "5446 Ardesia"
+     ]
+    },
+    "Fabric / Tinto": {
+     "count": 26,
+     "examples": [
+      "6510 Ottico",
+      "6511 Avorio",
+      "6512 Sable",
+      "6513 Acier",
+      "6514 Taupe",
+      "6515 Chocolat"
+     ]
+    },
+    "Fabric / Abba": {
+     "count": 10,
+     "examples": [
+      "5431 Bianco",
+      "5432 Vaniglia",
+      "5433 Cenere",
+      "5434 Sabbia",
+      "5435 Elefante",
+      "5436 Lava"
+     ]
+    },
+    "Fabric / Alcide": {
+     "count": 12,
+     "examples": [
+      "5209 Bosco",
+      "5202 Caracal",
+      "5208 Celeste",
+      "5211 Cincillà",
+      "5206 Corallo",
+      "5201 Ermellino"
+     ]
+    },
+    "Fabric / Nelson": {
+     "count": 10,
+     "examples": [
+      "5357 Acier",
+      "5358 Flax",
+      "5359 Blanc Petale",
+      "5360 Neige Poudre",
+      "5361 Glacier",
+      "5362 Bleu canard"
+     ]
+    },
+    "Fabric / Willis": {
+     "count": 8,
+     "examples": [
+      "5366 Bone",
+      "5367 linen",
+      "5369 ocean",
+      "5372 saffron",
+      "5370 sand",
+      "5368 sky"
+     ]
+    }
+   },
+   "photos": 5,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": [
+    {
+     "sku": "DF-T10626",
+     "name": "Venus table",
+     "type": "table"
+    }
+   ]
+  },
+  {
+   "sku": "DF-T10626",
+   "name_now": {
+    "en": "Venus table",
+    "ru": "Стол Venus",
+    "de": "Venus Tisch",
+    "fr": "Table Venus",
+    "es": "Mesa Venus"
+   },
+   "type_now": "table",
+   "type_now_en": "table",
+   "category": "tables",
+   "place": "indoor",
+   "model": "Venus",
+   "collection": "Venus",
+   "designer": "Roberto Lazzeroni",
+   "year": "2014",
+   "factory_section": "Chests Of Drawers Night Tables And Vanity",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/chests-of-drawers-night-tables-and-vanity/venus-dressing-table",
+   "factory_text": "A dressing table that recalls past times, reinterpreted in a contemporary key.\n\nDressing table in walnut Canaletto wood and saddle leather, with the internal parts available in five colours with suede effect finish or in white painted Fiddleback Sycamore.",
+   "factory_text_ru": "",
+   "tech": "Covers: Walnut",
+   "versions": [
+    {
+     "code": "70080",
+     "name": "70080 — Dressing table in walnut canaletto and saddle leather, internal suede effect (103 x 65 x h 76 cm)",
+     "cm": {
+      "l": 103,
+      "w": 65,
+      "h": 76
+     }
+    },
+    {
+     "code": "70081",
+     "name": "70081 — Dressing table in walnut canaletto and saddle leather, internal white painted fiddleback sycamore (103 x 65 x h 76 cm)",
+     "cm": {
+      "l": 103,
+      "w": 65,
+      "h": 76
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Walnut": {
+     "count": 3,
+     "examples": [
+      "11 Natural walnut canaletto acrylic polishing",
+      "2W Natural walnut canaletto acrylic polishing",
+      "2Z Natural walnut canaletto acrylic polishing"
+     ]
+    }
+   },
+   "photos": 4,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": [
+    {
+     "sku": "DF-C10625",
+     "name": "Venus stool",
+     "type": "stool"
+    }
+   ]
+  },
+  {
+   "sku": "DF-S10627",
+   "name_now": {
+    "en": "Vesper sofa",
+    "ru": "Диван Vesper",
+    "de": "Vesper Sofa",
+    "fr": "Canapé Vesper",
+    "es": "Sofá Vesper"
+   },
+   "type_now": "sofa",
+   "type_now_en": "sofa",
+   "category": "sofas",
+   "place": "indoor",
+   "model": "Vesper",
+   "collection": "Vesper",
+   "designer": "Roberto Lazzeroni",
+   "year": "2021",
+   "factory_section": "Sofas",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/sofas/vesper",
+   "factory_text": "A seating system that overcomes the traditional idea of sofas to offer a dynamic and customisable concept.\n\nModular sofa interpreting contemporary living with fluidity.",
+   "factory_text_ru": "",
+   "tech": "Covers: Leather, Pelle Plus, Pelle Anilina Sense, CRUISE-CHENILLE, CRUISE-MELANGE, Coco, DAMARIS, Penny, SPLIT, Sandiego, Chamonix, Daydreamer, DUCHESSA, Tinto, Abba, Alcide, Nelson, Willis",
+   "versions": [
+    {
+     "code": "92010",
+     "name": "92010 — Left element with long backrest. Base and external backrest in leather, internal and seat in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92011",
+     "name": "92011 — Left element with long backrest. Base in leather, backrest and seat in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92012",
+     "name": "92012 — Left element with long backrest in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92013",
+     "name": "92013 — Right element with long backrest. Base and external backrest in leather, internal and seat in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92014",
+     "name": "92014 — Right element with long backrest. Base in leather, backrest and seat in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92015",
+     "name": "92015 — Right element with long backrest in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92016",
+     "name": "92016 — Left element with short backrest. Base and external backrest in leather, internal and seat in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92017",
+     "name": "92017 — Left element with short backrest. Base in leather, backrest and seat in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92018",
+     "name": "92018 — Left element with short backrest in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92019",
+     "name": "92019 — Right element with short backrest. Base and external backrest in leather, internal and seat in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92020",
+     "name": "92020 — Right element with short backrest. Base in leather, backrest and seat in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92021",
+     "name": "92021 — Right element with short backrest in fabric or leather (167 x 118 x h 77 cm)",
+     "cm": {
+      "l": 167,
+      "w": 118,
+      "h": 77
+     }
+    },
+    {
+     "code": "92022",
+     "name": "92022 — Left chaise longue. Base and external backrest in leather, internal and seat in fabric or leather (132 x 152 x h 77 cm)",
+     "cm": {
+      "l": 132,
+      "w": 152,
+      "h": 77
+     }
+    },
+    {
+     "code": "92023",
+     "name": "92023 — Left chaise longue. Base in leather, backrest and seat in fabric or leather (132 x 152 x h 77 cm)",
+     "cm": {
+      "l": 132,
+      "w": 152,
+      "h": 77
+     }
+    },
+    {
+     "code": "92024",
+     "name": "92024 — Left chaise longue in fabric or leather (132 x 152 x h 77 cm)",
+     "cm": {
+      "l": 132,
+      "w": 152,
+      "h": 77
+     }
+    },
+    {
+     "code": "92025",
+     "name": "92025 — Right chaise longue. Base and external backrest in leather, internal and seat in fabric or leather (132 x 152 x h 77 cm)",
+     "cm": {
+      "l": 132,
+      "w": 152,
+      "h": 77
+     }
+    },
+    {
+     "code": "92026",
+     "name": "92026 — Right chaise longue. Base leather, backrest and seat fabric or leather (132 x 152 x h 77 cm)",
+     "cm": {
+      "l": 132,
+      "w": 152,
+      "h": 77
+     }
+    },
+    {
+     "code": "92027",
+     "name": "92027 — Right chaise longue in fabric or leather (132 x 152 x h 77 cm)",
+     "cm": {
+      "l": 132,
+      "w": 152,
+      "h": 77
+     }
+    },
+    {
+     "code": "92028",
+     "name": "92028 — Angular element. Base and external backrest in leather, internal and seat in fabric or leather (160 x 119 x h 77 cm)",
+     "cm": {
+      "l": 160,
+      "w": 119,
+      "h": 77
+     }
+    },
+    {
+     "code": "92029",
+     "name": "92029 — Angular element. Base in leather, backrest and seat in fabric or leather (160 x 119 x h 77 cm)",
+     "cm": {
+      "l": 160,
+      "w": 119,
+      "h": 77
+     }
+    },
+    {
+     "code": "92030",
+     "name": "92030 — Angular element in fabric or leather (160 x 119 x h 77 cm)",
+     "cm": {
+      "l": 160,
+      "w": 119,
+      "h": 77
+     }
+    },
+    {
+     "code": "92034",
+     "name": "92034 — Central element with backrest. Base and external backrest in leather, internal and seat in fabric or leather (110 x 100 x h 77 cm)",
+     "cm": {
+      "l": 110,
+      "w": 100,
+      "h": 77
+     }
+    },
+    {
+     "code": "92035",
+     "name": "92035 — Central element with backrest. Base in leather, backrest and seat in fabric or leather (110 x 100 x h 77 cm)",
+     "cm": {
+      "l": 110,
+      "w": 100,
+      "h": 77
+     }
+    },
+    {
+     "code": "92036",
+     "name": "92036 — Central element with backrest in fabric or leather (110 x 100 x h 77 cm)",
+     "cm": {
+      "l": 110,
+      "w": 100,
+      "h": 77
+     }
+    },
+    {
+     "code": "92040",
+     "name": "92040 — Central element without backrest. Base in leather, seat in fabric or leather (110 x 100 x h 40 cm)",
+     "cm": {
+      "l": 110,
+      "w": 100,
+      "h": 40
+     }
+    },
+    {
+     "code": "92041",
+     "name": "92041 — Central element without backrest in fabric or leather (110 x 100 x h 40 cm)",
+     "cm": {
+      "l": 110,
+      "w": 100,
+      "h": 40
+     }
+    },
+    {
+     "code": "92053",
+     "name": "92053 — Central element with base and external backrest in leather, internal and seat in fabric or leather (162 x 100 x h 77 cm)",
+     "cm": {
+      "l": 162,
+      "w": 100,
+      "h": 77
+     }
+    },
+    {
+     "code": "92054",
+     "name": "92054 — Central element with base in leather, backrest and seat in fabric or leather (162 x 100 x h 77 cm)",
+     "cm": {
+      "l": 162,
+      "w": 100,
+      "h": 77
+     }
+    },
+    {
+     "code": "92055",
+     "name": "92055 — Central element with backrest in fabric or leather (162 x 100 x h 77 cm)",
+     "cm": {
+      "l": 162,
+      "w": 100,
+      "h": 77
+     }
+    },
+    {
+     "code": "92056",
+     "name": "92056 — Pouf with base in leather, backrest and seat in fabric or leather (124 x 128 x h 40 cm)",
+     "cm": {
+      "l": 124,
+      "w": 128,
+      "h": 40
+     }
+    },
+    {
+     "code": "92057",
+     "name": "92057 — Pouf in fabric or leather (124 x 128 x h 40 cm)",
+     "cm": {
+      "l": 124,
+      "w": 128,
+      "h": 40
+     }
+    },
+    {
+     "code": "92005",
+     "name": "92005 — Cushion (48 x 29 cm)",
+     "cm": {
+      "l": 48,
+      "w": 29
+     }
+    },
+    {
+     "code": "66805",
+     "name": "66805 — Cushion with fabric or leather upholstery (42 x 42 cm)",
+     "cm": {
+      "l": 42,
+      "w": 42
+     }
+    },
+    {
+     "code": "80581",
+     "name": "80581 — Cushion with fabric or leather upholstery (63 x 42 cm)",
+     "cm": {
+      "l": 63,
+      "w": 42
+     }
+    },
+    {
+     "code": "80582",
+     "name": "80582 — Cushion with fabric or leather upholstery (52 x 50 cm)",
+     "cm": {
+      "l": 52,
+      "w": 50
+     }
+    }
+   ],
+   "finishes": {
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    },
+    "Leather / Pelle Anilina Sense": {
+     "count": 8,
+     "examples": [
+      "9244 Pomice",
+      "9245 Caolino",
+      "9249 Tufo",
+      "9247 Terra Di Siena",
+      "9251 Ambra",
+      "9246 Ardesia"
+     ]
+    },
+    "Fabric / CRUISE-CHENILLE": {
+     "count": 9,
+     "examples": [
+      "5266 Avena",
+      "5265 Carciofo",
+      "5263 Celeste",
+      "5269 Corteccia",
+      "5264 Emerald",
+      "5268 Flamingo"
+     ]
+    },
+    "Fabric / CRUISE-MELANGE": {
+     "count": 11,
+     "examples": [
+      "5274 Blue Qualrtz",
+      "5270 Cenere",
+      "5279 Cherry",
+      "5271 Ghiaia",
+      "5274 Glacier",
+      "5272 Graphite"
+     ]
+    },
+    "Fabric / Coco": {
+     "count": 18,
+     "examples": [
+      "6833 Ivory",
+      "6834 Perla",
+      "6835 Brume",
+      "6836 Silver",
+      "6837 Turchese",
+      "6838 Green"
+     ]
+    },
+    "Fabric / DAMARIS": {
+     "count": 20,
+     "examples": [
+      "5313 Bianco",
+      "5326 Bordeaux",
+      "5314 Frost",
+      "5316 Ghiaia",
+      "5324 Guscio",
+      "5315 Iceberg"
+     ]
+    },
+    "Fabric / Penny": {
+     "count": 26,
+     "examples": [
+      "6704 Avorio",
+      "6705 Sable",
+      "6722 Corda",
+      "6706 Lino",
+      "6708 Roccia",
+      "6725 Alga"
+     ]
+    },
+    "Fabric / SPLIT": {
+     "count": 16,
+     "examples": [
+      "5295 acciaio",
+      "5296 asfalto",
+      "5292 corda",
+      "5286 germoglio",
+      "5282 ghiaccio",
+      "5291 ginger"
+     ]
+    },
+    "Fabric / Sandiego": {
+     "count": 16,
+     "examples": [
+      "5036 Bianco",
+      "5037 Argento",
+      "5038 Ecru",
+      "5039 Nero",
+      "5040 Seppia",
+      "5041 Lava"
+     ]
+    },
+    "Fabric / Chamonix": {
+     "count": 14,
+     "examples": [
+      "5417 Nacre",
+      "5418 Argent",
+      "5419 Ocre",
+      "5420 Canard",
+      "5421 Kaki",
+      "5422 Argile"
+     ]
+    },
+    "Fabric / Daydreamer": {
+     "count": 12,
+     "examples": [
+      "5222 Algue",
+      "5217 Bois de rose",
+      "5218 Caki",
+      "5224 Dark Chocolate",
+      "5223 Fumo",
+      "5220 Ice"
+     ]
+    },
+    "Fabric / DUCHESSA": {
+     "count": 26,
+     "examples": [
+      "5245 Ballet Slipper",
+      "5258 Bamboo",
+      "5246 Blueberry",
+      "5257 Bottiglia",
+      "5235 Cappuccino",
+      "5236 Corteccia"
+     ]
+    },
+    "Fabric / Tinto": {
+     "count": 26,
+     "examples": [
+      "6510 Ottico",
+      "6511 Avorio",
+      "6512 Sable",
+      "6513 Acier",
+      "6514 Taupe",
+      "6515 Chocolat"
+     ]
+    },
+    "Fabric / Abba": {
+     "count": 10,
+     "examples": [
+      "5431 Bianco",
+      "5432 Vaniglia",
+      "5433 Cenere",
+      "5434 Sabbia",
+      "5435 Elefante",
+      "5436 Lava"
+     ]
+    },
+    "Fabric / Alcide": {
+     "count": 12,
+     "examples": [
+      "5209 Bosco",
+      "5202 Caracal",
+      "5208 Celeste",
+      "5211 Cincillà",
+      "5206 Corallo",
+      "5201 Ermellino"
+     ]
+    },
+    "Fabric / Nelson": {
+     "count": 10,
+     "examples": [
+      "5357 Acier",
+      "5358 Flax",
+      "5359 Blanc Petale",
+      "5360 Neige Poudre",
+      "5361 Glacier",
+      "5362 Bleu canard"
+     ]
+    },
+    "Fabric / Willis": {
+     "count": 8,
+     "examples": [
+      "5366 Bone",
+      "5367 linen",
+      "5369 ocean",
+      "5372 saffron",
+      "5370 sand",
+      "5368 sky"
+     ]
+    }
+   },
+   "photos": 5,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-B10628",
+   "name_now": {
+    "en": "Vibe bed",
+    "ru": "Кровать Vibe",
+    "de": "Vibe Bett",
+    "fr": "Lit Vibe",
+    "es": "Cama Vibe"
+   },
+   "type_now": "bed",
+   "type_now_en": "bed",
+   "category": "beds",
+   "place": "indoor",
+   "model": "Vibe",
+   "collection": "Vibe",
+   "designer": "Carlo Colombo",
+   "year": "2022",
+   "factory_section": "Beds",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/beds/vibe",
+   "factory_text": "A reminder of the 1930s concept with soft, romantic lines.\n\nThe first double bed with provision for fixed bedside tables.Two removable shells form the headboard,which has a limited depth.\"The Vibe bed partly recalls designs from the 1930s. The headboard has a band that swivels as if it were a work of art. It is accompanied by the round Side Vibe bedside table, which can be hooked onto the bed frame or placed on the floor. It boasts a poetic and romantic design which I am very fond of. We aim to create increasingly beautiful objects and offer the world our work, bringing together design, creativity and the ability to make people smile and feel good.\"—Carlo Colombo",
+   "factory_text_ru": "",
+   "tech": "Covers: Leather, Pelle Plus, Pelle Anilina Sense, CRUISE-CHENILLE, CRUISE-MELANGE, Barren, Coco, DAMARIS, Penny, SPLIT, Sandiego, Chamonix, Daydreamer, DUCHESSA, Tinto, Alcide, Nelson",
+   "versions": [
+    {
+     "code": "71900",
+     "name": "71900 — Bed with fabric or leather cover and leather insert (slat base cm 180 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71910",
+     "name": "71910 — Bed with fabric or leather cover and leather insert (slat base cm 200 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71930",
+     "name": "71930 — Bed with fabric or leather cover and leather insert (slat base cm 153 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71920",
+     "name": "71920 — Bed with fabric or leather cover and leather insert (slat base cm 193 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71901",
+     "name": "71901 — Bed with fabric or leather cover and leather insert. Supplemented with n.1 right or left integrated bedside table (slat base cm 180 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71911",
+     "name": "71911 — Bed with fabric or leather cover and leather insert. Supplemented with n.1 right or left integrated bedside table (slat base cm 200 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71931",
+     "name": "71931 — Bed with fabric or leather cover and leather insert. Supplemented with n.1 right or left integrated bedside table (slat base cm 153 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71921",
+     "name": "71921 — Bed with fabric or leather cover and leather insert. Supplemented with n.1 right or left integrated bedside table (slat base cm 193 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71902",
+     "name": "71902 — Bed with fabric or leather cover and leather insert. Supplemented with n. 2 integrated bedside tables (slat base cm 180 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71912",
+     "name": "71912 — Bed with fabric or leather cover and leather insert. Supplemented with n. 2 integrated bedside tables (slat base cm 200 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71932",
+     "name": "71932 — Bed with fabric or leather cover and leather insert. Supplemented with n. 2 integrated bedside tables (slat base cm 153 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71922",
+     "name": "71922 — Bed with fabric or leather cover and leather insert. Supplemented with n. 2 integrated bedside tables (slat base cm 193 | cm)",
+     "cm": null
+    },
+    {
+     "code": "71933",
+     "name": "71933 — Bedside table for bed cod. (71901-71911-71931-71921-71902-71912-71932-71922) with marble top (Ø 36 x h 48 cm)",
+     "cm": {
+      "d": 36,
+      "h": 48
+     }
+    },
+    {
+     "code": "71934",
+     "name": "71934 — Bedside table for bed cod. (71901-71911-71931-71921-71902-71912-71932-71922) with Canaletto walnut top (Ø 36 x h 48 cm)",
+     "cm": {
+      "d": 36,
+      "h": 48
+     }
+    }
+   ],
+   "finishes": {
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    },
+    "Leather / Pelle Anilina Sense": {
+     "count": 8,
+     "examples": [
+      "9244 Pomice",
+      "9245 Caolino",
+      "9249 Tufo",
+      "9247 Terra Di Siena",
+      "9251 Ambra",
+      "9246 Ardesia"
+     ]
+    },
+    "Fabric / CRUISE-CHENILLE": {
+     "count": 9,
+     "examples": [
+      "5266 Avena",
+      "5265 Carciofo",
+      "5263 Celeste",
+      "5269 Corteccia",
+      "5264 Emerald",
+      "5268 Flamingo"
+     ]
+    },
+    "Fabric / CRUISE-MELANGE": {
+     "count": 11,
+     "examples": [
+      "5274 Blue Qualrtz",
+      "5270 Cenere",
+      "5279 Cherry",
+      "5271 Ghiaia",
+      "5274 Glacier",
+      "5272 Graphite"
+     ]
+    },
+    "Fabric / Barren": {
+     "count": 18,
+     "examples": [
+      "5399 Bianco",
+      "5400 Avorio",
+      "5401 Alluminio",
+      "5402 Argento",
+      "5403 Castagno",
+      "5404 Pietra"
+     ]
+    },
+    "Fabric / Coco": {
+     "count": 18,
+     "examples": [
+      "6833 Ivory",
+      "6834 Perla",
+      "6835 Brume",
+      "6836 Silver",
+      "6837 Turchese",
+      "6838 Green"
+     ]
+    },
+    "Fabric / DAMARIS": {
+     "count": 20,
+     "examples": [
+      "5313 Bianco",
+      "5326 Bordeaux",
+      "5314 Frost",
+      "5316 Ghiaia",
+      "5324 Guscio",
+      "5315 Iceberg"
+     ]
+    },
+    "Fabric / Penny": {
+     "count": 26,
+     "examples": [
+      "6704 Avorio",
+      "6705 Sable",
+      "6722 Corda",
+      "6706 Lino",
+      "6708 Roccia",
+      "6725 Alga"
+     ]
+    },
+    "Fabric / SPLIT": {
+     "count": 16,
+     "examples": [
+      "5295 acciaio",
+      "5296 asfalto",
+      "5292 corda",
+      "5286 germoglio",
+      "5282 ghiaccio",
+      "5291 ginger"
+     ]
+    },
+    "Fabric / Sandiego": {
+     "count": 16,
+     "examples": [
+      "5036 Bianco",
+      "5037 Argento",
+      "5038 Ecru",
+      "5039 Nero",
+      "5040 Seppia",
+      "5041 Lava"
+     ]
+    },
+    "Fabric / Chamonix": {
+     "count": 14,
+     "examples": [
+      "5417 Nacre",
+      "5418 Argent",
+      "5419 Ocre",
+      "5420 Canard",
+      "5421 Kaki",
+      "5422 Argile"
+     ]
+    },
+    "Fabric / Daydreamer": {
+     "count": 12,
+     "examples": [
+      "5222 Algue",
+      "5217 Bois de rose",
+      "5218 Caki",
+      "5224 Dark Chocolate",
+      "5223 Fumo",
+      "5220 Ice"
+     ]
+    },
+    "Fabric / DUCHESSA": {
+     "count": 26,
+     "examples": [
+      "5245 Ballet Slipper",
+      "5258 Bamboo",
+      "5246 Blueberry",
+      "5257 Bottiglia",
+      "5235 Cappuccino",
+      "5236 Corteccia"
+     ]
+    },
+    "Fabric / Tinto": {
+     "count": 26,
+     "examples": [
+      "6510 Ottico",
+      "6511 Avorio",
+      "6512 Sable",
+      "6513 Acier",
+      "6514 Taupe",
+      "6515 Chocolat"
+     ]
+    },
+    "Fabric / Alcide": {
+     "count": 12,
+     "examples": [
+      "5209 Bosco",
+      "5202 Caracal",
+      "5208 Celeste",
+      "5211 Cincillà",
+      "5206 Corallo",
+      "5201 Ermellino"
+     ]
+    },
+    "Fabric / Nelson": {
+     "count": 10,
+     "examples": [
+      "5357 Acier",
+      "5358 Flax",
+      "5359 Blanc Petale",
+      "5360 Neige Poudre",
+      "5361 Glacier",
+      "5362 Bleu canard"
+     ]
+    }
+   },
+   "photos": 6,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-S10629",
+   "name_now": {
+    "en": "Vittoria sofa",
+    "ru": "Диван Vittoria",
+    "de": "Vittoria Sofa",
+    "fr": "Canapé Vittoria",
+    "es": "Sofá Vittoria"
+   },
+   "type_now": "sofa",
+   "type_now_en": "sofa",
+   "category": "sofas",
+   "place": "indoor",
+   "model": "Vittoria",
+   "collection": "Vittoria",
+   "designer": "Carlo Colombo",
+   "year": "2013",
+   "factory_section": "Sofas",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/sofas/vittoria",
+   "factory_text": "A sofa and an armchair with a high back that makes it comfortable and pleasant.\n\nArmchair and sofas in one colour or two colours with the external part in leather and the internal one in fabric or leather.",
+   "factory_text_ru": "",
+   "tech": "Covers: Beech Wood, Leather, Pelle Plus, Pelle Anilina Sense, Barren, Claron, CRUISE-CHENILLE, CRUISE-MELANGE, Coco, DAMARIS, Fargo, Penny, SPLIT, Sandiego, Chamonix, Daydreamer, DUCHESSA, Flash, Tinto, Abba, Alcide, Nelson, Willis",
+   "versions": [
+    {
+     "code": "70500",
+     "name": "70500 — Armchair with fabric or leather upholstery (100 x 105 x h 79 cm)",
+     "cm": {
+      "l": 100,
+      "w": 105,
+      "h": 79
+     }
+    },
+    {
+     "code": "70501",
+     "name": "70501 — Armchair with external part in leather (100 x 105 x h 79 cm)",
+     "cm": {
+      "l": 100,
+      "w": 105,
+      "h": 79
+     }
+    },
+    {
+     "code": "70510",
+     "name": "70510 — Sofa with fabric or leather upholstery (202 x 105 x h 79 cm)",
+     "cm": {
+      "l": 202,
+      "w": 105,
+      "h": 79
+     }
+    },
+    {
+     "code": "70511",
+     "name": "70511 — Sofa with external part in leather (202 x 105 x h 79 cm)",
+     "cm": {
+      "l": 202,
+      "w": 105,
+      "h": 79
+     }
+    },
+    {
+     "code": "70520",
+     "name": "70520 — Sofa with fabric or leather upholstery (248 x 105 x h 79 cm)",
+     "cm": {
+      "l": 248,
+      "w": 105,
+      "h": 79
+     }
+    },
+    {
+     "code": "70521",
+     "name": "70521 — Sofa with external part in leather (248 x 105 x h 79 cm)",
+     "cm": {
+      "l": 248,
+      "w": 105,
+      "h": 79
+     }
+    },
+    {
+     "code": "70530",
+     "name": "70530 — Sofa with fabric or leather upholstery (284 x 105 x h 79 cm)",
+     "cm": {
+      "l": 284,
+      "w": 105,
+      "h": 79
+     }
+    },
+    {
+     "code": "70531",
+     "name": "70531 — Sofa with external part in leather (284 x 105 x h 79 cm)",
+     "cm": {
+      "l": 284,
+      "w": 105,
+      "h": 79
+     }
+    },
+    {
+     "code": "70540",
+     "name": "70540 — Cushion with fabric or leather upholstery (52 x 50 cm)",
+     "cm": {
+      "l": 52,
+      "w": 50
+     }
+    },
+    {
+     "code": "70550",
+     "name": "70550 — Stool with fabric or leather upholstery (76 x 76 x h 42 cm)",
+     "cm": {
+      "l": 76,
+      "w": 76,
+      "h": 42
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Beech Wood": {
+     "count": 1,
+     "examples": [
+      "30 Mat beech wood polyurethane polishing",
+      "73 Mat beech wood polyurethane polishing",
+      "91 Mat beech wood polyurethane polishing",
+      "54 Mat beech wood polyurethane polishing"
+     ]
+    },
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    },
+    "Leather / Pelle Anilina Sense": {
+     "count": 8,
+     "examples": [
+      "9244 Pomice",
+      "9245 Caolino",
+      "9249 Tufo",
+      "9247 Terra Di Siena",
+      "9251 Ambra",
+      "9246 Ardesia"
+     ]
+    },
+    "Fabric / Barren": {
+     "count": 18,
+     "examples": [
+      "5399 Bianco",
+      "5400 Avorio",
+      "5401 Alluminio",
+      "5402 Argento",
+      "5403 Castagno",
+      "5404 Pietra"
+     ]
+    },
+    "Fabric / Claron": {
+     "count": 24,
+     "examples": [
+      "5333 Avorio",
+      "5334 Madreperla",
+      "5335 Talpa",
+      "5336 carruba",
+      "5337 castagna",
+      "5338 legno di rosa"
+     ]
+    },
+    "Fabric / CRUISE-CHENILLE": {
+     "count": 9,
+     "examples": [
+      "5266 Avena",
+      "5265 Carciofo",
+      "5263 Celeste",
+      "5269 Corteccia",
+      "5264 Emerald",
+      "5268 Flamingo"
+     ]
+    },
+    "Fabric / CRUISE-MELANGE": {
+     "count": 11,
+     "examples": [
+      "5274 Blue Qualrtz",
+      "5270 Cenere",
+      "5279 Cherry",
+      "5271 Ghiaia",
+      "5274 Glacier",
+      "5272 Graphite"
+     ]
+    },
+    "Fabric / Coco": {
+     "count": 18,
+     "examples": [
+      "6833 Ivory",
+      "6834 Perla",
+      "6835 Brume",
+      "6836 Silver",
+      "6837 Turchese",
+      "6838 Green"
+     ]
+    },
+    "Fabric / DAMARIS": {
+     "count": 20,
+     "examples": [
+      "5313 Bianco",
+      "5326 Bordeaux",
+      "5314 Frost",
+      "5316 Ghiaia",
+      "5324 Guscio",
+      "5315 Iceberg"
+     ]
+    },
+    "Fabric / Fargo": {
+     "count": 22,
+     "examples": [
+      "5451 Bianco",
+      "5452 Crema",
+      "5453 Mastice",
+      "5454 Pietra",
+      "5455 Visone",
+      "5456 Terra"
+     ]
+    },
+    "Fabric / Penny": {
+     "count": 26,
+     "examples": [
+      "6704 Avorio",
+      "6705 Sable",
+      "6722 Corda",
+      "6706 Lino",
+      "6708 Roccia",
+      "6725 Alga"
+     ]
+    },
+    "Fabric / SPLIT": {
+     "count": 16,
+     "examples": [
+      "5295 acciaio",
+      "5296 asfalto",
+      "5292 corda",
+      "5286 germoglio",
+      "5282 ghiaccio",
+      "5291 ginger"
+     ]
+    },
+    "Fabric / Sandiego": {
+     "count": 16,
+     "examples": [
+      "5036 Bianco",
+      "5037 Argento",
+      "5038 Ecru",
+      "5039 Nero",
+      "5040 Seppia",
+      "5041 Lava"
+     ]
+    },
+    "Fabric / Chamonix": {
+     "count": 14,
+     "examples": [
+      "5417 Nacre",
+      "5418 Argent",
+      "5419 Ocre",
+      "5420 Canard",
+      "5421 Kaki",
+      "5422 Argile"
+     ]
+    },
+    "Fabric / Daydreamer": {
+     "count": 12,
+     "examples": [
+      "5222 Algue",
+      "5217 Bois de rose",
+      "5218 Caki",
+      "5224 Dark Chocolate",
+      "5223 Fumo",
+      "5220 Ice"
+     ]
+    },
+    "Fabric / DUCHESSA": {
+     "count": 26,
+     "examples": [
+      "5245 Ballet Slipper",
+      "5258 Bamboo",
+      "5246 Blueberry",
+      "5257 Bottiglia",
+      "5235 Cappuccino",
+      "5236 Corteccia"
+     ]
+    },
+    "Fabric / Flash": {
+     "count": 10,
+     "examples": [
+      "5441 Avorio",
+      "5442 Sabbia",
+      "5443 Roccia",
+      "5444 caffè",
+      "5445 blu",
+      "5446 Ardesia"
+     ]
+    },
+    "Fabric / Tinto": {
+     "count": 26,
+     "examples": [
+      "6510 Ottico",
+      "6511 Avorio",
+      "6512 Sable",
+      "6513 Acier",
+      "6514 Taupe",
+      "6515 Chocolat"
+     ]
+    },
+    "Fabric / Abba": {
+     "count": 10,
+     "examples": [
+      "5431 Bianco",
+      "5432 Vaniglia",
+      "5433 Cenere",
+      "5434 Sabbia",
+      "5435 Elefante",
+      "5436 Lava"
+     ]
+    },
+    "Fabric / Alcide": {
+     "count": 12,
+     "examples": [
+      "5209 Bosco",
+      "5202 Caracal",
+      "5208 Celeste",
+      "5211 Cincillà",
+      "5206 Corallo",
+      "5201 Ermellino"
+     ]
+    },
+    "Fabric / Nelson": {
+     "count": 10,
+     "examples": [
+      "5357 Acier",
+      "5358 Flax",
+      "5359 Blanc Petale",
+      "5360 Neige Poudre",
+      "5361 Glacier",
+      "5362 Bleu canard"
+     ]
+    },
+    "Fabric / Willis": {
+     "count": 8,
+     "examples": [
+      "5366 Bone",
+      "5367 linen",
+      "5369 ocean",
+      "5372 saffron",
+      "5370 sand",
+      "5368 sky"
+     ]
+    }
+   },
+   "photos": 5,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-D10630",
+   "name_now": {
+    "en": "Volteggio rug",
+    "ru": "Ковёр Volteggio",
+    "de": "Volteggio Teppich",
+    "fr": "Tapis Volteggio",
+    "es": "Alfombra Volteggio"
+   },
+   "type_now": "rug",
+   "type_now_en": "rug",
+   "category": "rugs",
+   "place": "indoor",
+   "model": "Volteggio",
+   "collection": "Volteggio",
+   "designer": "",
+   "year": "2026",
+   "factory_section": "Atmosphere / Rugs",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/giorgetti-atmosphere/Rugs/volteggio",
+   "factory_text": "Featuring a moiré effect, the Volteggio carpet exemplifies dynamism and a sense of movement. 2026\n\nCarpet crafted using a handloom jacquard technique, made from bamboo silk and wool, characterised by a particular moiré effect.",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "GA733",
+     "name": "GA733 — Handloom jacquard rug in bamboo silk and wool (MAXIMUM WIDTH W CM 450 | IN 177 1/8, LENGTH L NO LIMITATIONS cm)",
+     "cm": null
+    }
+   ],
+   "finishes": {},
+   "photos": 5,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DL-S10631",
+   "name_now": {
+    "en": "Water pendant lamp",
+    "ru": "Подвесной светильник Water",
+    "de": "Water Pendelleuchte",
+    "fr": "Suspension Water",
+    "es": "Lámpara colgante Water"
+   },
+   "type_now": "suspension",
+   "type_now_en": "pendant lamp",
+   "category": "pendant-lamps",
+   "place": "indoor",
+   "model": "Water",
+   "collection": "Water",
+   "designer": "Aatismo",
+   "year": "2024",
+   "factory_section": "Atmosphere / Lighting",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/giorgetti-atmosphere/Lighting/water",
+   "factory_text": "Suspension lamp with an optical effect like the ripples of seawater.\n\nSuspended lamp with crystal diffuser, with water-surface look. Spray coated aluminium cone.Dimmer compatible.Available with one or multiple lights (3,5,10 or 15). “In our exploration of the nature of light, we focused on water, one of the fundamental elements. We sought lighting with a presence that seemed to capture and give form to the shimmering light within the water at the edge of a shallow shore.”—Aatismo",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "GA481G",
+     "name": "GA481G — Suspended lamp with crystal diffuser. 1 light (Ø 12 x h 200 cm)",
+     "cm": {
+      "d": 12,
+      "h": 200
+     }
+    },
+    {
+     "code": "GA482G",
+     "name": "GA482G — Suspended lamp with crystal diffuser. 3 lights (Ø 30 x h 200 cm)",
+     "cm": {
+      "d": 30,
+      "h": 200
+     }
+    },
+    {
+     "code": "GA483G",
+     "name": "GA483G — Suspended lamp with crystal diffuser. 5 lights (Ø 48 x h 200 cm)",
+     "cm": {
+      "d": 48,
+      "h": 200
+     }
+    },
+    {
+     "code": "GA484G",
+     "name": "GA484G — Suspended lamp with crystal diffuser. 10 lights (132 x 42 x h 200 cm)",
+     "cm": {
+      "l": 132,
+      "w": 42,
+      "h": 200
+     }
+    },
+    {
+     "code": "GA485G",
+     "name": "GA485G — Suspended lamp with crystal diffuser. 15 lights (Ø 78 x h 200 cm)",
+     "cm": {
+      "d": 78,
+      "h": 200
+     }
+    }
+   ],
+   "finishes": {},
+   "photos": 3,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-D10632",
+   "name_now": {
+    "en": "Wave vase",
+    "ru": "Ваза Wave",
+    "de": "Wave Vase",
+    "fr": "Vase Wave",
+    "es": "Jarrón Wave"
+   },
+   "type_now": "vase",
+   "type_now_en": "vase",
+   "category": "decor",
+   "place": "indoor",
+   "model": "Wave",
+   "collection": "Wave",
+   "designer": "",
+   "year": "2017",
+   "factory_section": "Atmosphere / Accessories",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/giorgetti-atmosphere/Accessories/wave",
+   "factory_text": "Mouth-blown and hand-moulded vase with a characteristic organic shape. 2017\n\nEach Wave vase has a completely different movement, making it unique. The satin finishing gives fluidity to the vase, that changes colour depending on the point from which it is observed.",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "GA120G",
+     "name": "GA120G — Vase blue-grey (28 x 17 x h 37 cm)",
+     "cm": {
+      "l": 28,
+      "w": 17,
+      "h": 37
+     }
+    },
+    {
+     "code": "GA121G",
+     "name": "GA121G — Vase amethyst (28 x 17 x h 37 cm)",
+     "cm": {
+      "l": 28,
+      "w": 17,
+      "h": 37
+     }
+    }
+   ],
+   "finishes": {},
+   "photos": 4,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-D10633",
+   "name_now": {
+    "en": "Whisper rug",
+    "ru": "Ковёр Whisper",
+    "de": "Whisper Teppich",
+    "fr": "Tapis Whisper",
+    "es": "Alfombra Whisper"
+   },
+   "type_now": "rug",
+   "type_now_en": "rug",
+   "category": "rugs",
+   "place": "indoor",
+   "model": "Whisper",
+   "collection": "Whisper",
+   "designer": "",
+   "year": "2023",
+   "factory_section": "Atmosphere / Rugs",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/giorgetti-atmosphere/Rugs/whisper",
+   "factory_text": "Hand-tufted carpet in bamboo silk and wool. 2023\n\nWool and bamboo silk threads are inserted in a canvas, thread by thread, alternating both the material and the colour to create the organic curves of the motif.",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "GA428",
+     "name": "GA428 — Handtufted rug in bamboo silk and wool (Irregular shape size: no limitations cm)",
+     "cm": null
+    }
+   ],
+   "finishes": {},
+   "photos": 3,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-A10634",
+   "name_now": {
+    "en": "Woody pouf",
+    "ru": "Пуф Woody",
+    "de": "Woody Pouf",
+    "fr": "Pouf Woody",
+    "es": "Puf Woody"
+   },
+   "type_now": "pouf",
+   "type_now_en": "pouf",
+   "category": "poufs",
+   "place": "indoor",
+   "model": "Woody",
+   "collection": "Woody",
+   "designer": "Giorgetti R&D",
+   "year": "2023",
+   "factory_section": "Poufs And Benches",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/poufs-and-benches/woody",
+   "factory_text": "Pouf with organic shapes, in fabric or leather.",
+   "factory_text_ru": "",
+   "tech": "",
+   "versions": [
+    {
+     "code": "57050",
+     "name": "57050 — Pouf with fabric or leather cover (37 x 37 x h 42 cm)",
+     "cm": {
+      "l": 37,
+      "w": 37,
+      "h": 42
+     }
+    },
+    {
+     "code": "57040",
+     "name": "57040 — Pouf with base covered in leather and seat covered in fabric (37 x 37 x h 42 cm)",
+     "cm": {
+      "l": 37,
+      "w": 37,
+      "h": 42
+     }
+    }
+   ],
+   "finishes": {},
+   "photos": 4,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-K10635",
+   "name_now": {
+    "en": "Woody & Mia side table",
+    "ru": "Приставной столик Woody & Mia",
+    "de": "Woody & Mia Beistelltisch",
+    "fr": "Table d'appoint Woody & Mia",
+    "es": "Mesa auxiliar Woody & Mia"
+   },
+   "type_now": "side_table",
+   "type_now_en": "side table",
+   "category": "side-tables",
+   "place": "indoor",
+   "model": "Woody & Mia",
+   "collection": "Woody & Mia",
+   "designer": "Giorgetti R&D",
+   "year": "2023",
+   "factory_section": "Tables And Trolleys",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/tables-and-trolleys/woody-mia",
+   "factory_text": "Two distinct stories, and a common mark moulded in wood that binds them: this is the couple Woody & Mia.\n\nCoffee and side table or pouf made of a skilful mix of Canaletto walnut, leather and marble.",
+   "factory_text_ru": "",
+   "tech": "Covers: Walnut, Stones, Leather",
+   "versions": [
+    {
+     "code": "57000",
+     "name": "57000 — Coffee table with leather upholstery and Canaletto walnut top (105 x 105 x h 27 cm)",
+     "cm": {
+      "l": 105,
+      "w": 105,
+      "h": 27
+     }
+    },
+    {
+     "code": "57010",
+     "name": "57010 — Coffee table with leather upholstery and marble top (105 x 105 x h 27 cm)",
+     "cm": {
+      "l": 105,
+      "w": 105,
+      "h": 27
+     }
+    },
+    {
+     "code": "57020",
+     "name": "57020 — Side table with leather upholstery and Canaletto walnut top (37 x 37 x h 40 cm)",
+     "cm": {
+      "l": 37,
+      "w": 37,
+      "h": 40
+     }
+    },
+    {
+     "code": "57025",
+     "name": "57025 — Side table with leather upholstery and marble top (37 x 37 x h 40 cm)",
+     "cm": {
+      "l": 37,
+      "w": 37,
+      "h": 40
+     }
+    },
+    {
+     "code": "57030",
+     "name": "57030 — Side table with leather upholstery and leather top (37 x 37 x h 40 cm)",
+     "cm": {
+      "l": 37,
+      "w": 37,
+      "h": 40
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Walnut": {
+     "count": 3,
+     "examples": [
+      "11 Natural walnut canaletto acrylic polishing",
+      "2W Natural walnut canaletto acrylic polishing",
+      "2Z Natural walnut canaletto acrylic polishing"
+     ]
+    },
+    "Stones": {
+     "count": 5,
+     "examples": [
+      "Marble - Zebrino",
+      "Marble - Grigio Astratto",
+      "Marble - Calacatta",
+      "Marble - Black & Gold",
+      "Marble - Portoro",
+      "Marble - Arabescato Orobico"
+     ]
+    },
+    "Leather": {
+     "count": 26,
+     "examples": [
+      "9108 Bianco Polvere",
+      "9106 Ghiaccio",
+      "9101 Cemento",
+      "9103 Beige",
+      "9104 Cammello",
+      "9162 Taupe"
+     ]
+    }
+   },
+   "photos": 5,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": []
+  },
+  {
+   "sku": "DF-A10636",
+   "name_now": {
+    "en": "Yuan pouf",
+    "ru": "Пуф Yuan",
+    "de": "Yuan Pouf",
+    "fr": "Pouf Yuan",
+    "es": "Puf Yuan"
+   },
+   "type_now": "pouf",
+   "type_now_en": "pouf",
+   "category": "poufs",
+   "place": "indoor",
+   "model": "Yuan",
+   "collection": "Yuan",
+   "designer": "Outin.Design",
+   "year": "2026",
+   "factory_section": "Poufs And Benches",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/poufs-and-benches/yuan-pouf",
+   "factory_text": "A play between solids and voids, in which an ancient ritual meets various material extensions through elegant and dynamic lines.\n\nA multi-material composition within two spheres: solid ash frame meets Pau Ferro details, while the saddle leather interior creates a refined textural contrast. Available as either a pouf or a low table, this piece offers a sophisticated interplay of textures and versatile elegance.",
+   "factory_text_ru": "",
+   "tech": "Covers: Ash Wood",
+   "versions": [
+    {
+     "code": "77560",
+     "name": "77560 — Pouf with solid ash wood frame and seating in leather or fabric (⌀53,5 x h 44,5 cm cm)",
+     "cm": {
+      "h": 44.5
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Ash Wood": {
+     "count": 4,
+     "examples": [
+      "93 Ash wood acrylic polishing",
+      "96 Ash wood acrylic polishing",
+      "2P Ash wood acrylic polishing",
+      "2R Ash wood acrylic polishing",
+      "3F Ash wood grey water polishing for outdoor - OPEN AIR"
+     ]
+    }
+   },
+   "photos": 4,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": [
+    {
+     "sku": "DF-C10637",
+     "name": "Yuan chair",
+     "type": "chair"
+    },
+    {
+     "sku": "DF-T10638",
+     "name": "Yuan table",
+     "type": "table"
+    },
+    {
+     "sku": "DF-K10639",
+     "name": "Yuan coffee table",
+     "type": "coffee_table"
+    }
+   ]
+  },
+  {
+   "sku": "DF-C10637",
+   "name_now": {
+    "en": "Yuan chair",
+    "ru": "Стул Yuan",
+    "de": "Yuan Stuhl",
+    "fr": "Chaise Yuan",
+    "es": "Silla Yuan"
+   },
+   "type_now": "chair",
+   "type_now_en": "chair",
+   "category": "chairs",
+   "place": "indoor",
+   "model": "Yuan",
+   "collection": "Yuan",
+   "designer": "Outin.Design",
+   "year": "2026",
+   "factory_section": "Chairs And Stools",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/chairs-and-stools/yuan-chair",
+   "factory_text": "A play between solids and voids, in which an ancient ritual meets various material extensions through elegant and dynamic lines.\n\nThe armchair is crafted from a solid ash frame, enriched with Pau Ferro details that accentuate its artisanal character. The fully removable upholstery, available in leather or fabric, wraps the seat with elegance and versatility. Designed to suit a variety of settings, it adapts seamlessly to different uses while maintaining harmonious proportions and visual continuity.",
+   "factory_text_ru": "",
+   "tech": "Covers: Ash Wood",
+   "versions": [
+    {
+     "code": "77550",
+     "name": "77550 — Small armchair in solid ash wood with leather or fabric upholstery – tea version (64 x 64 x h 77,5 cm)",
+     "cm": {
+      "l": 64,
+      "w": 64,
+      "h": 77.5
+     }
+    },
+    {
+     "code": "77551",
+     "name": "77551 — Small armchair in solid ash wood with leather or fabric upholstery – dining version (64 x 64 x h 82,5 cm)",
+     "cm": {
+      "l": 64,
+      "w": 64,
+      "h": 82.5
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Ash Wood": {
+     "count": 4,
+     "examples": [
+      "93 Ash wood acrylic polishing",
+      "96 Ash wood acrylic polishing",
+      "2P Ash wood acrylic polishing",
+      "2R Ash wood acrylic polishing",
+      "3F Ash wood grey water polishing for outdoor - OPEN AIR"
+     ]
+    }
+   },
+   "photos": 5,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": [
+    {
+     "sku": "DF-A10636",
+     "name": "Yuan pouf",
+     "type": "pouf"
+    },
+    {
+     "sku": "DF-T10638",
+     "name": "Yuan table",
+     "type": "table"
+    },
+    {
+     "sku": "DF-K10639",
+     "name": "Yuan coffee table",
+     "type": "coffee_table"
+    }
+   ]
+  },
+  {
+   "sku": "DF-K10639",
+   "name_now": {
+    "en": "Yuan coffee table",
+    "ru": "Журнальный столик Yuan",
+    "de": "Yuan Couchtisch",
+    "fr": "Table basse Yuan",
+    "es": "Mesa de centro Yuan"
+   },
+   "type_now": "coffee_table",
+   "type_now_en": "coffee table",
+   "category": "coffee-tables",
+   "place": "indoor",
+   "model": "Yuan",
+   "collection": "Yuan",
+   "designer": "Outin.Design",
+   "year": "2026",
+   "factory_section": "Tables And Trolleys",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/tables-and-trolleys/yuan-low-table",
+   "factory_text": "A play between solids and voids, in which an ancient ritual meets various material extensions through elegant and dynamic lines.\n\nA multi-material composition within two spheres: solid ash frame meets Pau Ferro details, while the saddle leather interior creates a refined textural contrast. Available as either a pouf or a low table, this piece offers a sophisticated interplay of textures and versatile elegance.",
+   "factory_text_ru": "",
+   "tech": "Covers: Ash Wood, Stones",
+   "versions": [
+    {
+     "code": "77561",
+     "name": "77561 — Low table with solid ash wood frame and marble top (⌀53,5 x h 42 cm cm)",
+     "cm": {
+      "h": 42
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Ash Wood": {
+     "count": 4,
+     "examples": [
+      "93 Ash wood acrylic polishing",
+      "96 Ash wood acrylic polishing",
+      "2P Ash wood acrylic polishing",
+      "2R Ash wood acrylic polishing",
+      "3F Ash wood grey water polishing for outdoor - OPEN AIR"
+     ]
+    },
+    "Stones": {
+     "count": 6,
+     "examples": [
+      "Marble - Zebrino",
+      "Marble - Grigio Astratto",
+      "Marble - Calacatta",
+      "Marble - Black & Gold",
+      "Marble - Portoro",
+      "Marble - Arabescato Orobico"
+     ]
+    }
+   },
+   "photos": 3,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": [
+    {
+     "sku": "DF-A10636",
+     "name": "Yuan pouf",
+     "type": "pouf"
+    },
+    {
+     "sku": "DF-C10637",
+     "name": "Yuan chair",
+     "type": "chair"
+    },
+    {
+     "sku": "DF-T10638",
+     "name": "Yuan table",
+     "type": "table"
+    }
+   ]
+  },
+  {
+   "sku": "DF-T10638",
+   "name_now": {
+    "en": "Yuan table",
+    "ru": "Стол Yuan",
+    "de": "Yuan Tisch",
+    "fr": "Table Yuan",
+    "es": "Mesa Yuan"
+   },
+   "type_now": "table",
+   "type_now_en": "table",
+   "category": "tables",
+   "place": "indoor",
+   "model": "Yuan",
+   "collection": "Yuan",
+   "designer": "Outin.Design",
+   "year": "2026",
+   "factory_section": "Tables",
+   "factory_url": "https://www.giorgettimeda.com/ww/en/products/tables/yuan-table",
+   "factory_text": "A play between solids and voids, in which an ancient ritual meets various material extensions through elegant and dynamic lines.\n\nYuan is a table where material and form engage in a dialogue of understated elegance: the warmth of ash wood, the purity of marble, the depth of Antichi Impasti Romani® and the softness of leather come together in a refined balance. Its sculptural, dynamic lines enhance a harmonious interplay of contrasts and tactile affinities. A contemporary icon that interprets material as both sensory experience and distinctive expression",
+   "factory_text_ru": "",
+   "tech": "Covers: Ash Wood, Stones, Antichi Impasti Romani®, Pelle Plus",
+   "versions": [
+    {
+     "code": "77570",
+     "name": "77570 — Table with ash wood top and ash wood legs (230 x 83 x h 69 cm)",
+     "cm": {
+      "l": 230,
+      "w": 83,
+      "h": 69
+     }
+    },
+    {
+     "code": "77580",
+     "name": "77580 — Table with ash wood top and ash wood legs (250 x 110 x  h 74 cm)",
+     "cm": {
+      "l": 250,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77571",
+     "name": "77571 — Table with marble top and ash wood legs (230 x 83 x h 69 cm)",
+     "cm": {
+      "l": 230,
+      "w": 83,
+      "h": 69
+     }
+    },
+    {
+     "code": "77581",
+     "name": "77581 — Table with marble top and ash wood legs (250 x 110 x  h 74 cm)",
+     "cm": {
+      "l": 250,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77590",
+     "name": "77590 — Table with ash wood top and ash wood legs (300 x 110 x h 74 cm)",
+     "cm": {
+      "l": 300,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77591",
+     "name": "77591 — Table with marble top and ash wood legs (300 x 110 x h 74 cm)",
+     "cm": {
+      "l": 300,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77572",
+     "name": "77572 — Table with ash wood top and leather legs (230 x 83 x h 69 cm)",
+     "cm": {
+      "l": 230,
+      "w": 83,
+      "h": 69
+     }
+    },
+    {
+     "code": "77582",
+     "name": "77582 — Table with ash wood top and leather legs (250 x 110 x h 74 cm)",
+     "cm": {
+      "l": 250,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77573",
+     "name": "77573 — Table with marble top and leather legs (230 x 83 x h 69 cm)",
+     "cm": {
+      "l": 230,
+      "w": 83,
+      "h": 69
+     }
+    },
+    {
+     "code": "77583",
+     "name": "77583 — Table with marble top and leather legs (250 x 110 x  h 74 cm)",
+     "cm": {
+      "l": 250,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77592",
+     "name": "77592 — Table with ash wood top and leather legs (300 x 110 x h 74 cm)",
+     "cm": {
+      "l": 300,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77593",
+     "name": "77593 — Table with marble top and leather legs (300 x 110 x h 74 cm)",
+     "cm": {
+      "l": 300,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77574",
+     "name": "77574 — Table with ash wood top and Antichi Impasti Romani® legs (230 x 83 x h 69 cm)",
+     "cm": {
+      "l": 230,
+      "w": 83,
+      "h": 69
+     }
+    },
+    {
+     "code": "77584",
+     "name": "77584 — Table with ash wood top and Antichi Impasti Romani® legs (250 x 110 x  h 74 cm)",
+     "cm": {
+      "l": 250,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77575",
+     "name": "77575 — Table with marble top and Antichi Impasti Romani® legs (230 x 83 x h 69 cm)",
+     "cm": {
+      "l": 230,
+      "w": 83,
+      "h": 69
+     }
+    },
+    {
+     "code": "77585",
+     "name": "77585 — Table with marble top and Antichi Impasti Romani® legs (250 x 110 x  h 74 cm)",
+     "cm": {
+      "l": 250,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77576",
+     "name": "77576 — Table with Antichi Impasti Romani® top and Antichi Impasti Romani® legs (230 x 83 x h 69 cm)",
+     "cm": {
+      "l": 230,
+      "w": 83,
+      "h": 69
+     }
+    },
+    {
+     "code": "77594",
+     "name": "77594 — Table with ash wood top and Antichi Impasti Romani® legs (300 x 110 x h 74 cm)",
+     "cm": {
+      "l": 300,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77595",
+     "name": "77595 — Table with marble top and Antichi Impasti Romani® legs (300 x 110 x h 74 cm)",
+     "cm": {
+      "l": 300,
+      "w": 110,
+      "h": 74
+     }
+    },
+    {
+     "code": "77600",
+     "name": "77600 — Table with ash wood top and ash wood legs (⌀180 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77610",
+     "name": "77610 — Table with ash wood top and ash wood legs (⌀240 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77601",
+     "name": "77601 — Table with marble top and ash wood legs (⌀180 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77611",
+     "name": "77611 — Table with marble top and ash wood legs (⌀240 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77602",
+     "name": "77602 — Table with ash wood top and leather legs (⌀180 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77612",
+     "name": "77612 — Table with ash wood top and leather legs (⌀240 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77603",
+     "name": "77603 — Table with marble top and leather legs (⌀180 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77613",
+     "name": "77613 — Table with marble top and leather legs (⌀240 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77604",
+     "name": "77604 — Table with ash wood top and Antichi Impasti Romani® legs (⌀180 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77614",
+     "name": "77614 — Table with ash wood top and Antichi Impasti Romani® legs (⌀240 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77605",
+     "name": "77605 — Table with marble top and Antichi Impasti Romani® legs (⌀180 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    },
+    {
+     "code": "77615",
+     "name": "77615 — Table with marble top and Antichi Impasti Romani® legs (⌀240 x h 74 cm)",
+     "cm": {
+      "h": 74
+     }
+    }
+   ],
+   "finishes": {
+    "Wood / Ash Wood": {
+     "count": 4,
+     "examples": [
+      "93 Ash wood acrylic polishing",
+      "96 Ash wood acrylic polishing",
+      "2P Ash wood acrylic polishing",
+      "2R Ash wood acrylic polishing",
+      "3F Ash wood grey water polishing for outdoor - OPEN AIR"
+     ]
+    },
+    "Stones": {
+     "count": 7,
+     "examples": [
+      "Marble - Zebrino",
+      "Marble - Grigio Astratto",
+      "Marble - Calacatta",
+      "Marble - Black & Gold",
+      "Marble - Portoro",
+      "Marble - Arabescato Orobico"
+     ]
+    },
+    "Antichi Impasti Romani®": {
+     "count": 1,
+     "examples": [
+      "Antichi Impasti Romani®"
+     ]
+    },
+    "Leather / Pelle Plus": {
+     "count": 20,
+     "examples": [
+      "9313 ottico",
+      "9314 polvere",
+      "9315 walnut",
+      "9316 fard",
+      "9317 mandorla",
+      "9318 autunno"
+     ]
+    }
+   },
+   "photos": 9,
+   "drawings": 0,
+   "datasheet": true,
+   "same_collection": [
+    {
+     "sku": "DF-A10636",
+     "name": "Yuan pouf",
+     "type": "pouf"
+    },
+    {
+     "sku": "DF-C10637",
+     "name": "Yuan chair",
+     "type": "chair"
+    },
+    {
+     "sku": "DF-K10639",
+     "name": "Yuan coffee table",
+     "type": "coffee_table"
+    }
+   ]
+  }
+ ]
+}
