@@ -1,1 +1,1 @@
-{"id": "2026-10-31-dl-fix-17", "do": ["dl:misuraemme", "dl:rimadesio", "dl:lago", "dl:poliform", "dl:rugiano", "deploy-home"], "why": "Перекачать битые фото (121 ошибка сборки) и выложить каталог"}
+{"id": "2026-10-31-deploy-home-18", "do": ["dl:rimadesio", "deploy-home"], "why": "Обложка MisuraEmme; докачать 6 фото Rimadesio"}
