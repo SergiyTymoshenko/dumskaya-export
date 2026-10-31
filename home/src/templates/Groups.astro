@@ -5,7 +5,7 @@ import ProductCard from '../components/ProductCard.astro';
 import Img from '../components/Img.astro';
 import { ui } from '../lib/i18n';
 import { typo } from '../lib/typo';
-import { departments, byCategory, byBrand, outdoorProducts, brandList, brandsInfo, paths, catName, sortProducts, mixByBrand, countryName, type HPage, type Product } from '../lib/catalog';
+import { departments, byCategory, byBrand, outdoorProducts, brandList, brandsInfo, homeSite, manifest, paths, catName, sortProducts, mixByBrand, countryName, type HPage, type Product } from '../lib/catalog';
 interface Props { page: HPage }
 const { page } = Astro.props;
 const l = page.lang;
@@ -20,7 +20,7 @@ if (page.kind === 'dept') {
   tiles = d.categories.map((c: string) => ({ href: paths.cat(c)[l], image: byCategory[c].find((p) => p.images[0])?.images[0].name, title: catName(c, l), sub: T.products(byCategory[c].length) }));
 } else if (page.kind === 'brands') {
   lead = T.brandsLead;
-  tiles = brandList.map((b) => ({ href: paths.brand(b.slug)[l], image: byBrand[b.slug].find((p) => p.images[0])?.images[0].name, title: b.name, sub: T.products(byBrand[b.slug].length) }));
+  tiles = brandList.map((b) => ({ href: paths.brand(b.slug)[l], image: (manifest[homeSite.brand_covers?.[b.slug]] && homeSite.brand_covers[b.slug]) || byBrand[b.slug].find((p) => p.images[0])?.images[0].name, title: b.name, sub: T.products(byBrand[b.slug].length) }));
 } else if (page.kind === 'outdoor') {
   lead = T.outdoorLead;
   groups = groupBy(outdoorProducts, true).map((g: any) => ({ ...g, more: g.ps.length > 8 ? `${paths.cat(g.c)[l]}?outdoor=1` : undefined, ps: g.ps.slice(0, 8) }));
